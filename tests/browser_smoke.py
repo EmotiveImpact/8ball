@@ -109,8 +109,11 @@ def main():
                     # about:blank has no origin storage. Do not pretend to test native persistence.
                     page.locator('nav [data-tab="command"]').click()
                 page.locator('[data-open-case]').first.click()
-                page.get_by_role('heading',name='Northstar account recovery').wait_for()
-                check('reopening case preserves server state' if BRIDGE else 'native session token and server state survive reload',page.locator('[data-condition="records"]').count()==1)
+                # The command card has the same heading as the room; wait for actual case detail.
+                record=page.locator('[data-condition="records"]')
+                record.wait_for()
+                record_row=page.locator('.row').filter(has=record)
+                check('reopening case preserves server state' if BRIDGE else 'native session token and server state survive reload',record_row.locator('.pill').inner_text()=='True')
                 page.locator('[data-act="simulate"]').click()
                 page.locator('#scenario-form [name=budget]').fill('1')
                 page.locator('#scenario-form [type=submit]').click()
