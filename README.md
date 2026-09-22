@@ -54,7 +54,7 @@ python -m playwright install chromium
 python tests/browser_smoke.py
 ```
 
-The local browser environment blocked URL navigation. An explicitly documented offline ASGI bridge was used for local interaction/visual checks. It does not verify browser HTTP, CSP enforcement, native session storage or native downloads. The CI workflow requests the normal native journey. See `docs/VALIDATION.md` for the exact boundary and latest local results.
+The local browser environment blocked URL navigation, so initial checks used an explicitly documented offline ASGI bridge. The subsequent native GitHub Actions run **35752284823** passed all 27 browser checks over real HTTP, including native session storage and downloads, with the existing CSP enabled. It also passed all 86 pytest tests. See `docs/VALIDATION.md` for the tested commit, retrieved report, earlier harness fixes and remaining limitations.
 
 ## Documentation and next milestone
 
