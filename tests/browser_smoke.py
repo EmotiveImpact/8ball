@@ -91,7 +91,7 @@ def main():
                 page.locator('#observe-form [name=evidence_id]').select_option(index=1)
                 page.locator('#observe-form [name=rationale]').fill('The preservation log was checked by the case lead.')
                 page.locator('#observe-form [type=submit]').click()
-                page.wait_for_function("!document.querySelector('.modal')")
+                page.locator('.modal').wait_for(state='detached')
                 page.locator('nav [data-tab="actions"]').click()
                 row=page.locator('.row').filter(has=page.get_by_role('heading',name='Establish the root cause',exact=True))
                 check('verified condition unlocks downstream work',row.locator('.pill').inner_text()=='Ready')
@@ -101,7 +101,7 @@ def main():
                 check('approval unlocks eligible external-contact record',True)
                 page.locator('[data-act="complete"][data-id="listen"]').click()
                 page.locator('[data-act="confirm-action"]').click()
-                page.wait_for_function("!document.querySelector('.modal')")
+                page.locator('.modal').wait_for(state='detached')
                 check('completion does not verify outcome','intended result still unverified' in page.locator('main').inner_text())
                 if not BRIDGE:
                     page.reload()
