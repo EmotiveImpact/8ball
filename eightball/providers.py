@@ -74,8 +74,9 @@ def _gliclass_pipeline():
         from gliclass import GLiClassModel, ZeroShotClassificationPipeline
         from transformers import AutoTokenizer
         # Never download weights or execute remote model code on a case request.
-        model = GLiClassModel.from_pretrained(G_MODEL, local_files_only=True)
-        tokenizer = AutoTokenizer.from_pretrained(G_MODEL, add_prefix_space=True, local_files_only=True, trust_remote_code=False)
+        revision = os.getenv('EIGHTBALL_GLICLASS_REVISION')
+        model = GLiClassModel.from_pretrained(G_MODEL, revision=revision, local_files_only=True)
+        tokenizer = AutoTokenizer.from_pretrained(G_MODEL, revision=revision, add_prefix_space=True, local_files_only=True, trust_remote_code=False)
         return ZeroShotClassificationPipeline(model, tokenizer, classification_type='multi-label', device='cpu')
     except (ImportError, OSError, ValueError, TypeError, RuntimeError) as exc:
         raise ProviderUnavailable('GLiClass dependencies/weights are not installed locally; see docs/AI.md') from exc
