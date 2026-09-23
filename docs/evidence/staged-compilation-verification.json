@@ -1,0 +1,62 @@
+{
+  "code_commit": "3a33866f375be355658d8e5d82addb25bcc7eed9",
+  "code_tree": "1d513b7addb9bd5fd89b106dbb9d447d103e2f3f",
+  "base_commit": "af97506c37dbf14ded6208b36277dd3b87a11784",
+  "date": "2026-09-23",
+  "software": {
+    "pytest_passed": 306,
+    "new_compiler_tests": 37,
+    "native_workflow_run": 35911570084,
+    "native_artifact": 10773052381,
+    "native_artifact_sha256": "813b149abef9497a90ac100f3d82b6a7dc5efafa7ef3fa2baf51423b4457784c",
+    "native_v2_checks": 51,
+    "native_legacy_checks": 27,
+    "local_browser": "51 V0.2 checks using explicit ASGI bridge; no native browser HTTP/storage claim from this local run",
+    "original_qwen_rejection_test_preserved": true
+  },
+  "model": {
+    "workflow_run": 35911570117,
+    "job_id": 107352420478,
+    "status": "failed",
+    "artifact_id": 10772839284,
+    "artifact_sha256": "0bcfe28a223b38c4da42941917c49eef5b2eab181fc904a0189d895ebd1afc35",
+    "raw_report": "docs/evidence/staged-qwen-attempt1.json.xz",
+    "raw_json_sha256": "99d1bb22aacb0912693339dd2f4268fc3dd46aaafbe85091aacd88c07105e218",
+    "compressed_sha256": "b3c40c609e16ffbd27096242169d0e0703fb3a8b10029aabdef53a3a0a493e9e",
+    "runtime": {
+      "version": "0.34.3"
+    },
+    "model": "qwen3.5:4b",
+    "model_digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+    "fixture_sha256": "6758c54a9e873bf2f67ced368555b871d9cf890b55b4df33762a035be1deaeb3",
+    "actual_model_requests": true,
+    "graph_provider": "ollama_staged",
+    "schema_valid_fixtures": 3,
+    "total_fixtures": 4,
+    "all_live_states_unchanged": true,
+    "graph_seconds": 237.871,
+    "graph_failure_stage": "compile",
+    "reproduced_structural_failure": "Step results must not duplicate or bypass readiness and final verification",
+    "additional_manual_findings": [
+      "Success criteria included the supplier delivery failure rather than sufficient suitable chairs.",
+      "Readiness and acceptance were biased to on-site spares even for the hire route.",
+      "requires_existing included invented IDs not supplied by the case.",
+      "Some actions obtaining external agreement were labelled external=false."
+    ],
+    "independent_semantic_benchmark": false,
+    "quality_approved": false,
+    "limitations": [
+      "Same four engineering fixtures, not independent expert-labelled data.",
+      "The staged path supplies all action objects but the model still misinterprets the desired state.",
+      "Compilation and human-review boundaries prevent invalid output from altering the case; they do not prove semantic quality."
+    ]
+  },
+  "production_ready": false,
+  "merged": false,
+  "deployed": false,
+  "manual_planner_observation": {
+    "scope": "Additional detached two-success-criteria experiment on fictional compiler fixture, not a new benchmark",
+    "finding": "The bounded planner can produce a redundant candidate combining both alternative preparation routes when the same verifier satisfies multiple goals. Two lean alternatives also remain. This is not a global optimiser; dominance pruning remains unimplemented.",
+    "kernel_changed": false
+  }
+}

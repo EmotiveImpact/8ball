@@ -9,7 +9,7 @@ Last status review: 2026-09-23.
 ## Checkpoint and release boundary
 
 - Active integration branch: `feat/situation-intelligence-v2`; PR #2.
-- Inspected application baseline: `0c4104a675600c20a290766909bca60088766b35`.
+- Inspected application baseline: `3a33866f375be355658d8e5d82addb25bcc7eed9`.
 - This is a dated snapshot. Refresh the branch, PR and CI at the start of every session.
 - At inspection: draft PR = `true`; merged = `false`; production deployed = `false`.
 - Standalone ENDSTATE package released = `false`.
@@ -22,8 +22,8 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 ## Next work
 
+- **B02-09: Reliable reviewed graph proposals for new situations**. Use the preserved two-stage trace to separate target criteria from source facts, constrain references to supplied IDs and validate the frame before expanding routes. Compare providers against unchanged fixtures and independent semantic cases; do not invent missing actions or weaken the gate.
 - **ES01-05: Reusable core acceptance**. Complete the explicit embedded-package acceptance review and result-contract compatibility record; no standalone SDK or public release is implied.
-- **B02-09: Reliable reviewed graph proposals for new situations**. Reproduce the rejected graph, evaluate a constrained multi-stage compiler/provider, and rerun the unchanged gate.
 
 ## Version summary
 
@@ -146,12 +146,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-APP`, `EV-UI` (registry below).
 
 - [ ] **B02-09 Reliable reviewed graph proposals for new situations**
-  - Status: `blocked`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `blocked`. Owner: ChatGPT. Updated: 2026-09-23.
   - Acceptance: Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.
-  - Next: Reproduce the rejected graph, evaluate a constrained multi-stage compiler/provider, and rerun the unchanged gate.
-  - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`.
-  - Evidence: `EV-QWEN` (registry below).
-  - Blocker: Latest actual Qwen graph names an absent final verification action.
+  - Next: Use the preserved two-stage trace to separate target criteria from source facts, constrain references to supplied IDs and validate the frame before expanding routes. Compare providers against unchanged fixtures and independent semantic cases; do not invent missing actions or weaken the gate.
+  - Branch/base: `feat/situation-intelligence-v2` / `af97506c37dbf14ded6208b36277dd3b87a11784`.
+  - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`.
+  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL` (registry below).
+  - Blocker: Actual staged Qwen run 35911570117 failed: intermediate results repeated readiness/goal conditions; invented existing-condition references and outcome confusion also remain.
 
 - [ ] **B02-10 Robust source extraction, deadlines and entity reconciliation**
   - Status: `partial`. Owner: unassigned. Updated: 2026-09-23.
@@ -174,8 +175,8 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Next: Add a real-model integration journey distinct from rules/catalogue browser tests.
   - Dependencies: `B02-09`, `B02-10`, `B02-11`.
   - Existing code: `tests/browser_v2.py`.
-  - Evidence: `EV-QWEN`, `EV-UI` (registry below).
-  - Blocker: Graph generation fails the required gate; current native journeys use rules/catalogue.
+  - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL` (registry below).
+  - Blocker: Both legacy and staged graph generation still fail the required actual-model gate; native application journeys use rules/catalogue, not the full real-model flow.
 
 - [ ] **B02-13 Guided nested graph authoring instead of JSON-only advanced editing**
   - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
@@ -377,12 +378,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 ## ENDSTATE 0.3: Evaluated intelligence compilation
 
 - [ ] **ES03-01 Provider-independent reviewed outcome compiler**
-  - Status: `partial`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-23.
   - Acceptance: Source interpretation, typed graph drafting and deterministic validation are clean interchangeable interfaces outside the product layer.
-  - Next: Evolve existing adapters into ENDSTATE contracts without losing raw output/provenance.
+  - Next: The shared two-stage compiler and injected provider callback now exist. Extract and stabilise the remaining source-interpretation contracts, and resolve B02-09 before claiming reliable intelligence compilation.
+  - Branch/base: `feat/situation-intelligence-v2` / `af97506c37dbf14ded6208b36277dd3b87a11784`.
   - Dependencies: `ES01-01`.
-  - Existing code: `eightball/v2/intelligence.py`.
-  - Evidence: `EV-APP`, `EV-QWEN` (registry below).
+  - Existing code: `eightball/v2/intelligence.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`.
+  - Evidence: `EV-APP`, `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL` (registry below).
 
 - [ ] **ES03-02 Shared real-model semantic acceptance**
   - Status: `blocked`. Owner: unassigned. Updated: 2026-09-23.
@@ -546,3 +548,19 @@ These references have specific scopes and may be historical. A reference to a de
 - Result/scope: 269 local tests, including 36 extraction/compatibility checks; 51 V0.2 and 27 legacy native browser checks passed. Shared neutral/sales/support kernel fixtures, not new products or model-quality approval.
 - Code revision: `0c4104a675600c20a290766909bca60088766b35`.
 - External record: [verification source](https://github.com/EmotiveImpact/8ball/actions/runs/35904869115).
+
+### EV-STAGED-CODE
+
+- Kind: `software_validation`.
+- Repository evidence: [docs/evidence/staged-compilation-verification.json](../../docs/evidence/staged-compilation-verification.json).
+- Result/scope: 306 pytest tests including 37 new compiler regressions; 51 V0.2 and 27 legacy native browser checks passed. Two-stage provider-independent compilation is implemented; this does not verify model quality.
+- Code revision: `3a33866f375be355658d8e5d82addb25bcc7eed9`.
+- External record: [verification source](https://github.com/EmotiveImpact/8ball/actions/runs/35911570084).
+
+### EV-STAGED-MODEL
+
+- Kind: `failed_real_model_evaluation`.
+- Repository evidence: [docs/evidence/staged-compilation-verification.json](../../docs/evidence/staged-compilation-verification.json).
+- Result/scope: Actual staged Qwen test: 3/4 fixtures valid; supplier graph rejected for repeated readiness/goal results and also contained invented prerequisite IDs. Manual inspection found desired-outcome confusion. All live case states unchanged; B02-09 remains blocked.
+- Code revision: `3a33866f375be355658d8e5d82addb25bcc7eed9`.
+- External record: [verification source](https://github.com/EmotiveImpact/8ball/actions/runs/35911570117).

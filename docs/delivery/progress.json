@@ -1,94 +1,1449 @@
 {
-  "schema_version":1,
-  "updated_on":"2026-09-23",
-  "product":"8BALL",
-  "engine":"ENDSTATE",
-  "policy":"8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
-  "repository":{"full_name":"EmotiveImpact/8ball","development_branch":"feat/situation-intelligence-v2","pull_request":2,"inspected_code_commit":"0c4104a675600c20a290766909bca60088766b35","inspected_code_tree":"6259e4aa41bc948f560fd54e26025071a74c5867","main_at_inspection":"08bc26ef397ec960d1b33b099c40888a8229eac0","status_as_of":"2026-09-23","pr_draft":true,"merged":false,"production_deployed":false,"standalone_endstate_package_released":false,"refresh_required_each_session":true},
-  "evidence":{
-    "EV-APP":{"kind":"software_validation","path":"docs/v2/VALIDATION.md","code_commit":"117957d3ba4475c6644ff4833d036061d8be6d2c","url":"https://github.com/EmotiveImpact/8ball/actions/runs/35881920598","result":"Recorded 221 pytest checks and native application journeys passed; exact scope in validation record."},
-    "EV-HEAD":{"kind":"ci","path":"docs/evidence/release-verification.json","code_commit":"f87f775cb883d6914cff9230731671851a3fc660","url":"https://github.com/EmotiveImpact/8ball/actions/runs/35883330332","result":"Delivery-head application CI passed. Not model-quality or production approval."},
-    "EV-UI":{"kind":"native_browser","path":"docs/evidence/native-v2-browser-report.json","code_commit":"117957d3ba4475c6644ff4833d036061d8be6d2c","url":"https://github.com/EmotiveImpact/8ball/actions/runs/35881920598","result":"51 V0.2 native checks, 17 views at desktop/mobile widths; rules/catalogue proposals, not live model quality."},
-    "EV-V01":{"kind":"historical_software_validation","path":"docs/VALIDATION.md","code_commit":"32db6226a04f88335c3a3ae2abcb34247c1934e0","url":"https://github.com/EmotiveImpact/8ball/actions/runs/35752284823","result":"Original scope: 86 pytest and 27 native browser checks. Local alpha, not a public service."},
-    "EV-QWEN":{"kind":"failed_real_model_evaluation","path":"docs/v2/AI-EVALUATION.md","code_commit":"117957d3ba4475c6644ff4833d036061d8be6d2c","url":"https://github.com/EmotiveImpact/8ball/actions/runs/35881916301","result":"Three extraction fixtures structurally valid; novel supplier graph rejected because final verification action was absent. Full graph gate failed."},
-    "EV-CLASSIFIER":{"kind":"real_model_evaluation","path":"docs/v2/AI-EVALUATION.md","code_commit":"fa069ca19fdbb2bff5440fb0c116be8f52f948c5","url":"https://github.com/EmotiveImpact/8ball/actions/runs/35798129246","result":"Initial GLiClass configuration: 6/30 raw top-one labels, 100% abstention. Not production-approved."},
-    "EV-REMAINING":{"kind":"scope_audit","path":"docs/v2/REMAINING.md","code_commit":"f87f775cb883d6914cff9230731671851a3fc660","result":"Recorded guided-editor, source-handling, model-quality and production work remains."},
-    "EV-SECURITY":{"kind":"design_only","path":"docs/v2/PRODUCTION-SECURITY.md","code_commit":"f87f775cb883d6914cff9230731671851a3fc660","result":"Agency identity, vault, authorisation, revocation and recovery design; no provisioned services."},
-    "EV-DECISION":{"kind":"user_decision","path":"docs/decisions/0001-endstate.md","result":"User selected ENDSTATE; 8BALL remains the fixer application and reusable engine development supports it."},
-    "EV-ORIGINAL":{"kind":"preserved_reference","path":"docs/reference/8BALL-V0.2-ASTRA-PRD.md","git_blob_sha":"cdaa878bcfdee65a62e2096eae085af64a5377c6","result":"Exact original 37-section PRD preserved, not replaced by an abbreviated status index."},
-    "EV-TRACKING":{"kind":"documentation_validation","path":"docs/delivery/sessions/2026-09-23-endstate-naming.md","result":"Documentation-only verification recorded in this session checkpoint. Not proof of a runtime feature."},
-    "EV-KERNEL":{"kind":"software_validation","path":"docs/endstate/VALIDATION.md","code_commit":"0c4104a675600c20a290766909bca60088766b35","url":"https://github.com/EmotiveImpact/8ball/actions/runs/35904869115","result":"269 local tests, including 36 extraction/compatibility checks; 51 V0.2 and 27 legacy native browser checks passed. Shared neutral/sales/support kernel fixtures, not new products or model-quality approval."}
+  "schema_version": 1,
+  "updated_on": "2026-09-23",
+  "product": "8BALL",
+  "engine": "ENDSTATE",
+  "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
+  "repository": {
+    "full_name": "EmotiveImpact/8ball",
+    "development_branch": "feat/situation-intelligence-v2",
+    "pull_request": 2,
+    "inspected_code_commit": "3a33866f375be355658d8e5d82addb25bcc7eed9",
+    "inspected_code_tree": "1d513b7addb9bd5fd89b106dbb9d447d103e2f3f",
+    "main_at_inspection": "08bc26ef397ec960d1b33b099c40888a8229eac0",
+    "status_as_of": "2026-09-23",
+    "pr_draft": true,
+    "merged": false,
+    "production_deployed": false,
+    "standalone_endstate_package_released": false,
+    "refresh_required_each_session": true
   },
-  "milestones":[
-    {"id":"DOC","track":"Governance","version":"1.1","title":"Naming, PRD and shared delivery control","integration_state":"not_released","release_state":"not_released"},
-    {"id":"B01","track":"8BALL","version":"0.1","title":"Local outcome-planning foundation","integration_state":"unmerged","release_state":"not_released"},
-    {"id":"B02","track":"8BALL","version":"0.2","title":"Reviewed situation intelligence","integration_state":"unmerged","release_state":"not_released"},
-    {"id":"B03","track":"8BALL","version":"0.3","title":"Secure agency pilot","integration_state":"not_released","release_state":"not_released"},
-    {"id":"B04","track":"8BALL","version":"0.4","title":"Professionally reviewed resolution intelligence","integration_state":"not_released","release_state":"not_released"},
-    {"id":"B10","track":"8BALL","version":"1.0","title":"Supported fixer product","integration_state":"not_released","release_state":"not_released"},
-    {"id":"ES01","track":"ENDSTATE","version":"0.1","title":"Reusable engine core","integration_state":"unmerged","release_state":"not_released"},
-    {"id":"ES02","track":"ENDSTATE","version":"0.2","title":"Event-driven replanning","integration_state":"not_released","release_state":"not_released"},
-    {"id":"ES03","track":"ENDSTATE","version":"0.3","title":"Evaluated intelligence compilation","integration_state":"not_released","release_state":"not_released"},
-    {"id":"ES04","track":"ENDSTATE","version":"0.4","title":"Domain packs and integration interfaces","integration_state":"not_released","release_state":"not_released"},
-    {"id":"ES10","track":"ENDSTATE","version":"1.0","title":"Supported reusable engine","integration_state":"not_released","release_state":"not_released"}
+  "evidence": {
+    "EV-APP": {
+      "kind": "software_validation",
+      "path": "docs/v2/VALIDATION.md",
+      "code_commit": "117957d3ba4475c6644ff4833d036061d8be6d2c",
+      "url": "https://github.com/EmotiveImpact/8ball/actions/runs/35881920598",
+      "result": "Recorded 221 pytest checks and native application journeys passed; exact scope in validation record."
+    },
+    "EV-HEAD": {
+      "kind": "ci",
+      "path": "docs/evidence/release-verification.json",
+      "code_commit": "f87f775cb883d6914cff9230731671851a3fc660",
+      "url": "https://github.com/EmotiveImpact/8ball/actions/runs/35883330332",
+      "result": "Delivery-head application CI passed. Not model-quality or production approval."
+    },
+    "EV-UI": {
+      "kind": "native_browser",
+      "path": "docs/evidence/native-v2-browser-report.json",
+      "code_commit": "117957d3ba4475c6644ff4833d036061d8be6d2c",
+      "url": "https://github.com/EmotiveImpact/8ball/actions/runs/35881920598",
+      "result": "51 V0.2 native checks, 17 views at desktop/mobile widths; rules/catalogue proposals, not live model quality."
+    },
+    "EV-V01": {
+      "kind": "historical_software_validation",
+      "path": "docs/VALIDATION.md",
+      "code_commit": "32db6226a04f88335c3a3ae2abcb34247c1934e0",
+      "url": "https://github.com/EmotiveImpact/8ball/actions/runs/35752284823",
+      "result": "Original scope: 86 pytest and 27 native browser checks. Local alpha, not a public service."
+    },
+    "EV-QWEN": {
+      "kind": "failed_real_model_evaluation",
+      "path": "docs/v2/AI-EVALUATION.md",
+      "code_commit": "117957d3ba4475c6644ff4833d036061d8be6d2c",
+      "url": "https://github.com/EmotiveImpact/8ball/actions/runs/35881916301",
+      "result": "Three extraction fixtures structurally valid; novel supplier graph rejected because final verification action was absent. Full graph gate failed."
+    },
+    "EV-CLASSIFIER": {
+      "kind": "real_model_evaluation",
+      "path": "docs/v2/AI-EVALUATION.md",
+      "code_commit": "fa069ca19fdbb2bff5440fb0c116be8f52f948c5",
+      "url": "https://github.com/EmotiveImpact/8ball/actions/runs/35798129246",
+      "result": "Initial GLiClass configuration: 6/30 raw top-one labels, 100% abstention. Not production-approved."
+    },
+    "EV-REMAINING": {
+      "kind": "scope_audit",
+      "path": "docs/v2/REMAINING.md",
+      "code_commit": "f87f775cb883d6914cff9230731671851a3fc660",
+      "result": "Recorded guided-editor, source-handling, model-quality and production work remains."
+    },
+    "EV-SECURITY": {
+      "kind": "design_only",
+      "path": "docs/v2/PRODUCTION-SECURITY.md",
+      "code_commit": "f87f775cb883d6914cff9230731671851a3fc660",
+      "result": "Agency identity, vault, authorisation, revocation and recovery design; no provisioned services."
+    },
+    "EV-DECISION": {
+      "kind": "user_decision",
+      "path": "docs/decisions/0001-endstate.md",
+      "result": "User selected ENDSTATE; 8BALL remains the fixer application and reusable engine development supports it."
+    },
+    "EV-ORIGINAL": {
+      "kind": "preserved_reference",
+      "path": "docs/reference/8BALL-V0.2-ASTRA-PRD.md",
+      "git_blob_sha": "cdaa878bcfdee65a62e2096eae085af64a5377c6",
+      "result": "Exact original 37-section PRD preserved, not replaced by an abbreviated status index."
+    },
+    "EV-TRACKING": {
+      "kind": "documentation_validation",
+      "path": "docs/delivery/sessions/2026-09-23-endstate-naming.md",
+      "result": "Documentation-only verification recorded in this session checkpoint. Not proof of a runtime feature."
+    },
+    "EV-KERNEL": {
+      "kind": "software_validation",
+      "path": "docs/endstate/VALIDATION.md",
+      "code_commit": "0c4104a675600c20a290766909bca60088766b35",
+      "url": "https://github.com/EmotiveImpact/8ball/actions/runs/35904869115",
+      "result": "269 local tests, including 36 extraction/compatibility checks; 51 V0.2 and 27 legacy native browser checks passed. Shared neutral/sales/support kernel fixtures, not new products or model-quality approval."
+    },
+    "EV-STAGED-CODE": {
+      "kind": "software_validation",
+      "path": "docs/evidence/staged-compilation-verification.json",
+      "code_commit": "3a33866f375be355658d8e5d82addb25bcc7eed9",
+      "url": "https://github.com/EmotiveImpact/8ball/actions/runs/35911570084",
+      "result": "306 pytest tests including 37 new compiler regressions; 51 V0.2 and 27 legacy native browser checks passed. Two-stage provider-independent compilation is implemented; this does not verify model quality."
+    },
+    "EV-STAGED-MODEL": {
+      "kind": "failed_real_model_evaluation",
+      "path": "docs/evidence/staged-compilation-verification.json",
+      "code_commit": "3a33866f375be355658d8e5d82addb25bcc7eed9",
+      "url": "https://github.com/EmotiveImpact/8ball/actions/runs/35911570117",
+      "result": "Actual staged Qwen test: 3/4 fixtures valid; supplier graph rejected for repeated readiness/goal results and also contained invented prerequisite IDs. Manual inspection found desired-outcome confusion. All live case states unchanged; B02-09 remains blocked."
+    }
+  },
+  "milestones": [
+    {
+      "id": "DOC",
+      "track": "Governance",
+      "version": "1.1",
+      "title": "Naming, PRD and shared delivery control",
+      "integration_state": "not_released",
+      "release_state": "not_released"
+    },
+    {
+      "id": "B01",
+      "track": "8BALL",
+      "version": "0.1",
+      "title": "Local outcome-planning foundation",
+      "integration_state": "unmerged",
+      "release_state": "not_released"
+    },
+    {
+      "id": "B02",
+      "track": "8BALL",
+      "version": "0.2",
+      "title": "Reviewed situation intelligence",
+      "integration_state": "unmerged",
+      "release_state": "not_released"
+    },
+    {
+      "id": "B03",
+      "track": "8BALL",
+      "version": "0.3",
+      "title": "Secure agency pilot",
+      "integration_state": "not_released",
+      "release_state": "not_released"
+    },
+    {
+      "id": "B04",
+      "track": "8BALL",
+      "version": "0.4",
+      "title": "Professionally reviewed resolution intelligence",
+      "integration_state": "not_released",
+      "release_state": "not_released"
+    },
+    {
+      "id": "B10",
+      "track": "8BALL",
+      "version": "1.0",
+      "title": "Supported fixer product",
+      "integration_state": "not_released",
+      "release_state": "not_released"
+    },
+    {
+      "id": "ES01",
+      "track": "ENDSTATE",
+      "version": "0.1",
+      "title": "Reusable engine core",
+      "integration_state": "unmerged",
+      "release_state": "not_released"
+    },
+    {
+      "id": "ES02",
+      "track": "ENDSTATE",
+      "version": "0.2",
+      "title": "Event-driven replanning",
+      "integration_state": "not_released",
+      "release_state": "not_released"
+    },
+    {
+      "id": "ES03",
+      "track": "ENDSTATE",
+      "version": "0.3",
+      "title": "Evaluated intelligence compilation",
+      "integration_state": "not_released",
+      "release_state": "not_released"
+    },
+    {
+      "id": "ES04",
+      "track": "ENDSTATE",
+      "version": "0.4",
+      "title": "Domain packs and integration interfaces",
+      "integration_state": "not_released",
+      "release_state": "not_released"
+    },
+    {
+      "id": "ES10",
+      "track": "ENDSTATE",
+      "version": "1.0",
+      "title": "Supported reusable engine",
+      "integration_state": "not_released",
+      "release_state": "not_released"
+    }
   ],
-  "tasks":[
-    {"id":"DOC-01","milestone":"DOC","title":"Lock ENDSTATE name and fixer-first product boundary","status":"verified","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":[],"acceptance":"Accepted decision distinguishes 8BALL product, ENDSTATE engine and future applications.","evidence":["EV-DECISION"],"blockers":[],"next_action":"Preserve this decision in future work."},
-    {"id":"DOC-02","milestone":"DOC","title":"Fold the agreed direction into PRD and preserve the original","status":"verified","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":[],"acceptance":"Master PRD incorporates naming, reuse, living plans and unchanged original acceptance requirements. Original blob hash matches.","evidence":["EV-DECISION","EV-ORIGINAL"],"blockers":[],"next_action":"Use repository references instead of expecting chat access."},
-    {"id":"DOC-03","milestone":"DOC","title":"Create one evidence-linked version/subpart tracker for chat and Codex","status":"verified","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["scripts/delivery.py"],"depends_on":["DOC-01","DOC-02"],"acceptance":"Ledger validates; generated checklist is current; regression checks reject unsupported completion and broken IDs.","evidence":["EV-TRACKING"],"blockers":[],"next_action":"Use this ledger and session protocol in both chat and Codex; keep the generated checklist in sync."},
-    {"id":"B01-01","milestone":"B01","title":"Evidence-backed local planner and outcome semantics","status":"verified","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["eightball/models.py","eightball/engine.py","eightball/commands.py"],"depends_on":[],"acceptance":"Original bounded planner, supported-state distinctions and completion/effect separation satisfy the scoped alpha tests.","evidence":["EV-V01"],"blockers":[],"next_action":"Preserve this behaviour through ENDSTATE extraction."},
-    {"id":"B01-02","milestone":"B01","title":"Local workspace, persistence, scenarios and exports","status":"verified","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["web/app.js","eightball/store.py","tests/browser_smoke.py"],"depends_on":[],"acceptance":"Original local browser workflow persists cases and exports actual audit records with isolated scenarios.","evidence":["EV-V01"],"blockers":[],"next_action":"Keep the legacy UI/data path available or migrate with verified lineage."},
-    {"id":"B01-03","milestone":"B01","title":"Reproducible alpha acceptance evidence","status":"verified","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":[],"acceptance":"Original 86 backend and 27 native browser results are recorded with exact code scope.","evidence":["EV-V01"],"blockers":[],"next_action":"Merge/release only through a separate explicit decision."},
-    {"id":"B02-01","milestone":"B02","title":"Rich typed situation model and evidence provenance","status":"verified","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["eightball/v2/contracts.py","tests/test_v2_domain.py"],"depends_on":[],"acceptance":"Case-scoped object IDs, source references, claims/observations and preserved historical meanings pass current tests.","evidence":["EV-APP"],"blockers":[],"next_action":"Do not change observed meanings during extraction."},
-    {"id":"B02-02","milestone":"B02","title":"Human proposal review, accept/edit/reject and stale-state protection","status":"verified","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["eightball/v2/store.py","eightball/v2/intelligence.py","tests/test_v2_api.py"],"depends_on":[],"acceptance":"Review commits selected objects atomically; no privileged facts are created; rejected/stale proposals preserve live state.","evidence":["EV-APP","EV-UI"],"blockers":[],"next_action":"Retain identical review guarantees for real model outputs."},
-    {"id":"B02-03","milestone":"B02","title":"Signed AND/OR planner, guards, waits and resource estimates","status":"verified","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["eightball/v2/planner.py","tests/test_v2_domain.py"],"depends_on":[],"acceptance":"Bounded planning exposes evidence gaps, false/unknown distinctions, projected conflicts, decision incompatibilities and scheduling limits.","evidence":["EV-APP"],"blockers":[],"next_action":"Benchmark meaningful planning extensions without claiming global optimality."},
-    {"id":"B02-04","milestone":"B02","title":"Actors, relationships, timeline and decision records","status":"verified","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["eightball/v2/contracts.py","web/v2/views.js"],"depends_on":[],"acceptance":"Reported attributes and case decisions are represented and accessible in tested operator views. No autonomous profiling is claimed.","evidence":["EV-APP","EV-UI"],"blockers":[],"next_action":"Add authority/source-quality review in the model-quality work."},
-    {"id":"B02-05","milestone":"B02","title":"Questions, What Changed and isolated What If","status":"verified","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["eightball/v2/planner.py","eightball/v2/services.py"],"depends_on":[],"acceptance":"Graph-impact questions and recorded revision deltas operate; hypothetical state changes leave the live case unchanged.","evidence":["EV-APP","EV-UI"],"blockers":[],"next_action":"Connect future ingestion only through reviewed revisioned updates."},
-    {"id":"B02-06","milestone":"B02","title":"Approvals, completion/effect separation, audit and legacy import","status":"verified","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["eightball/v2/commands.py","eightball/v2/store.py","eightball/v2/services.py"],"depends_on":[],"acceptance":"Expiring approvals, protected decisions/answers, snapshot replay and lineage-preserving import satisfy current checks.","evidence":["EV-APP"],"blockers":[],"next_action":"Do not confuse local hash-chain integrity with production custody."},
-    {"id":"B02-07","milestone":"B02","title":"Seventeen-view local developer workspace","status":"verified","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["web/v2/app.js","web/v2/views.js","tests/browser_v2.py"],"depends_on":[],"acceptance":"Listed desktop/mobile journeys pass with real server, SQLite, native storage and downloads.","evidence":["EV-UI"],"blockers":[],"next_action":"Keep full accessibility and new model journeys as separate unchecked tasks."},
-    {"id":"B02-08","milestone":"B02","title":"Explicit playbook registry, case-local search and brief exports","status":"verified","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["eightball/v2/playbooks.py","eightball/v2/intelligence.py","eightball/v2/services.py"],"depends_on":[],"acceptance":"Eight labelled starter playbooks, lexical case search and operator-only brief exports work within the documented local scope.","evidence":["EV-APP","EV-UI"],"blockers":[],"next_action":"Obtain expert playbook approval in B04-01; do not claim secure client accounts."},
-    {"id":"B02-09","milestone":"B02","title":"Reliable reviewed graph proposals for new situations","status":"blocked","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["eightball/v2/intelligence.py","evals/live_generation.py"],"depends_on":[],"acceptance":"Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.","evidence":["EV-QWEN"],"blockers":["Latest actual Qwen graph names an absent final verification action."],"next_action":"Reproduce the rejected graph, evaluate a constrained multi-stage compiler/provider, and rerun the unchanged gate."},
-    {"id":"B02-10","milestone":"B02","title":"Robust source extraction, deadlines and entity reconciliation","status":"partial","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["eightball/v2/intelligence.py"],"depends_on":[],"acceptance":"Reviewed multi-source extraction preserves negation, uncertainty, identity and quoted support; date changes become explicit reviewed scheduling proposals.","evidence":["EV-QWEN","EV-REMAINING"],"blockers":["Only a few structural extraction fixtures observed; dates need operator resolution."],"next_action":"Add independent cases for repeated entities, pronouns, contradictions and time resolution."},
-    {"id":"B02-11","milestone":"B02","title":"Independent quality evaluation and production-model selection","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["evals/live_generation.py","evals/classification-cases.json"],"depends_on":[],"acceptance":"Expert-labelled held-out data and predeclared acceptance thresholds measure semantic errors, omissions, corrections, latency and abstention.","evidence":["EV-REMAINING"],"blockers":[],"next_action":"Freeze evaluation criteria before choosing or tuning a production model."},
-    {"id":"B02-12","milestone":"B02","title":"Full twenty-step real-model V0.2 acceptance journey","status":"blocked","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["tests/browser_v2.py"],"depends_on":["B02-09","B02-10","B02-11"],"acceptance":"Blank case -> real extraction -> mixed human review -> valid graph -> distinct routes -> new evidence/replan -> isolated refusal -> approval/completion -> reload/export, all native.","evidence":["EV-QWEN","EV-UI"],"blockers":["Graph generation fails the required gate; current native journeys use rules/catalogue."],"next_action":"Add a real-model integration journey distinct from rules/catalogue browser tests."},
-    {"id":"B02-13","milestone":"B02","title":"Guided nested graph authoring instead of JSON-only advanced editing","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["web/v2/forms.js"],"depends_on":[],"acceptance":"Operators can edit AND/OR, guards, contingencies and verification rules with guided controls and keyboard access.","evidence":["EV-REMAINING"],"blockers":[],"next_action":"Design focused authoring flows while preserving the JSON compatibility path."},
-    {"id":"B02-14","milestone":"B02","title":"Source chunking, duplication and reviewer-safe object reconciliation","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":[],"acceptance":"Longer sources retain exact provenance; duplicates and entity merges cannot rewrite observed meanings or lose attribution.","evidence":["EV-REMAINING"],"blockers":[],"next_action":"Define chunk/source version contracts and adversarial fixtures."},
-    {"id":"B02-15","milestone":"B02","title":"Model progress/cancellation and accurate installation status","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["ES03-04"],"acceptance":"The UI reports actual runtime/weights/credential state and cancels work without stale commits. No silent large model download.","evidence":["EV-REMAINING"],"blockers":[],"next_action":"Add explicit opt-in setup and availability/cancellation checks, not a fictional green badge."},
-    {"id":"B02-16","milestone":"B02","title":"Complete accessibility and supported-environment validation","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":[],"acceptance":"Keyboard, screen reader, empty/error/loading states and supported browsers/platform startup paths pass an explicit review.","evidence":["EV-REMAINING"],"blockers":[],"next_action":"Audit beyond existing viewport fit and Chromium interactions."},
-    {"id":"B02-17","milestone":"B02","title":"Prove compatibility after ENDSTATE core extraction","status":"verified","required":true,"owner":"ChatGPT","working_branch":"feat/situation-intelligence-v2","base_commit":"5e2098e9cb12251592eb3889ce7926798484699d","updated_on":"2026-09-23","code_paths":["tests/test_endstate_kernel.py","tests/browser_v2.py","tests/browser_smoke.py"],"depends_on":["ES01-02","ES01-03"],"acceptance":"Existing 8BALL cases, imports, approvals, audits, simulations and browser flows pass through the extracted core.","evidence":["EV-KERNEL"],"blockers":[],"next_action":"Preserve the extraction baseline and rerun all legacy/V2 suites for subsequent core changes."},
-    {"id":"B02-18","milestone":"B02","title":"V0.2 acceptance and release decision","status":"blocked","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["B02-01","B02-02","B02-03","B02-04","B02-05","B02-06","B02-07","B02-08","B02-09","B02-10","B02-11","B02-12","B02-13","B02-14","B02-15","B02-16","B02-17"],"acceptance":"All required V0.2 subparts have scoped evidence; reviews/gates pass; approval to integrate/release is recorded separately.","evidence":["EV-QWEN"],"blockers":["Real-model journey and developer-quality work remain unaccepted."],"next_action":"Keep PR #2 draft until the acceptance gate is met; do not infer permission to merge."},
-    {"id":"B03-01","milestone":"B03","title":"Identity, organisations and matter-scoped authorisation","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":[],"acceptance":"Authenticated identities and cross-tenant/matter denial tests cover read, write, export, search and model inference.","evidence":["EV-SECURITY"],"blockers":[],"next_action":"Implement from the approved production threat model."},
-    {"id":"B03-02","milestone":"B03","title":"Encrypted evidence vault and retention controls","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["B03-01"],"acceptance":"Immutable originals, hashes, upload quarantine/scanning, encryption, retention/hold/deletion and audited access are tested.","evidence":["EV-SECURITY"],"blockers":[],"next_action":"Implement without weakening source provenance."},
-    {"id":"B03-03","milestone":"B03","title":"Scoped specialist collaboration and real client portal","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["B03-01","B03-02"],"acceptance":"Experts receive revocable matter/object grants; clients receive separately reviewed projections, never internal records by default.","evidence":["EV-SECURITY"],"blockers":[],"next_action":"Build authenticated views rather than relabelling the existing preview."},
-    {"id":"B03-04","milestone":"B03","title":"Authorised ingestion, event handling and notifications","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["B03-01","ES02-01","ES02-02"],"acceptance":"Actual source connectors, durable updates and notifications respect permissions, source review, ordering and retry limits.","evidence":["EV-SECURITY"],"blockers":[],"next_action":"Build one authorised connector through ENDSTATE event contracts."},
-    {"id":"B03-05","milestone":"B03","title":"Independent audit checkpoints, recovery and operational monitoring","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":[],"acceptance":"Restore rehearsal, audit anchoring, revocation and operational incident tests pass without sensitive log leakage.","evidence":["EV-SECURITY"],"blockers":[],"next_action":"Set measurable service/recovery targets and test them."},
-    {"id":"B03-06","milestone":"B03","title":"Limited qualified-fixer pilot acceptance","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["B02-18","B03-01","B03-02","B03-03","B03-04","B03-05"],"acceptance":"Authorised pilot users validate usefulness, safety, corrections and confidentiality; critical findings closed before wider release.","evidence":[],"blockers":[],"next_action":"Recruit/review pilot criteria only after data and access gates pass."},
-    {"id":"B04-01","milestone":"B04","title":"Professionally reviewed fixer and crisis playbooks","status":"partial","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["eightball/v2/playbooks.py"],"depends_on":[],"acceptance":"Specialists approve versioned patterns, assumptions, authority and confirmation criteria; examples are not presented as proven solutions.","evidence":["EV-REMAINING"],"blockers":[],"next_action":"Review existing starters with qualified operators."},
-    {"id":"B04-02","milestone":"B04","title":"Governed precedent retrieval","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["B03-01","B03-02"],"acceptance":"Permissioned, source-linked precedent is case/matter scoped; access revocation and leakage tests pass. No automatic training.","evidence":[],"blockers":[],"next_action":"Agree governance and retention before indexing previous cases."},
-    {"id":"B04-03","milestone":"B04","title":"Measured operator benefit from richer resolution intelligence","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["B03-06","B04-01","B04-02"],"acceptance":"Held-out/pilot evidence shows useful questions and plans without unsupported causal or success-probability claims.","evidence":[],"blockers":[],"next_action":"Benchmark against the accepted baseline with real professional review."},
-    {"id":"B10-01","milestone":"B10","title":"Commercial onboarding, support and launch readiness","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["B03-06"],"acceptance":"Customer onboarding, support, service terms, brand/licence clearance and operating ownership are ready for the accepted scope.","evidence":[],"blockers":[],"next_action":"Define commercial acceptance with the product owner; no inferred public release."},
-    {"id":"B10-02","milestone":"B10","title":"8BALL V1 fixer production release","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["B10-01","B04-03"],"acceptance":"All advertised capabilities, security, accessibility, recovery, model policy and customer acceptance are evidenced for supported environments.","evidence":[],"blockers":[],"next_action":"Record explicit release and deployment decisions after gates."},
-    {"id":"ES01-01","milestone":"ES01","title":"Define ENDSTATE contracts and dependency boundary","status":"verified","required":true,"owner":"ChatGPT","working_branch":"feat/situation-intelligence-v2","base_commit":"5e2098e9cb12251592eb3889ce7926798484699d","updated_on":"2026-09-23","code_paths":["endstate/api.py","endstate/contracts.py","docs/endstate/CONTRACTS.md"],"depends_on":[],"acceptance":"Neutral engine inputs/outputs, version/error semantics and product/domain boundaries are documented with tests planned.","evidence":["EV-DECISION","EV-KERNEL"],"blockers":[],"next_action":"Preserve the versioned in-process boundary; stabilise nested result contracts in the package review."},
-    {"id":"ES01-02","milestone":"ES01","title":"Extract shared state, planning and explanation kernel","status":"verified","required":true,"owner":"ChatGPT","working_branch":"feat/situation-intelligence-v2","base_commit":"5e2098e9cb12251592eb3889ce7926798484699d","updated_on":"2026-09-23","code_paths":["endstate/state.py","endstate/planner.py","eightball/v2/planner.py"],"depends_on":["ES01-01"],"acceptance":"8BALL calls the extracted core; the core imports no 8BALL UI, named client or fixer playbook.","evidence":["EV-KERNEL"],"blockers":[],"next_action":"Continue 8BALL through the shared kernel; do not duplicate the planner for another domain."},
-    {"id":"ES01-03","milestone":"ES01","title":"Preserve storage, imports and audit lineage","status":"verified","required":true,"owner":"ChatGPT","working_branch":"feat/situation-intelligence-v2","base_commit":"5e2098e9cb12251592eb3889ce7926798484699d","updated_on":"2026-09-23","code_paths":["eightball/models.py","eightball/v2/contracts.py","tests/test_endstate_kernel.py","tests/fixtures/endstate/pre_extraction.json.xz"],"depends_on":["ES01-01"],"acceptance":"Old data, imports and event meanings remain readable; migrations preserve observations and expiring approval behaviour.","evidence":["EV-KERNEL"],"blockers":[],"next_action":"Keep frozen pre-extraction records and wire schemas as regression gates; do not regenerate expected results to hide changes."},
-    {"id":"ES01-04","milestone":"ES01","title":"Prove reuse through neutral, sales and support fixtures","status":"verified","required":true,"owner":"ChatGPT","working_branch":"feat/situation-intelligence-v2","base_commit":"5e2098e9cb12251592eb3889ce7926798484699d","updated_on":"2026-09-23","code_paths":["tests/test_endstate_kernel.py","endstate/api.py"],"depends_on":["ES01-02","ES01-03"],"acceptance":"One unchanged kernel plans three domains with domain-specific actions/policies; no duplicated engine or full new app.","evidence":["EV-KERNEL"],"blockers":[],"next_action":"Keep these as fictional reuse fixtures; future commercial domains need their own policies and evaluation."},
-    {"id":"ES01-05","milestone":"ES01","title":"Reusable core acceptance","status":"partial","required":true,"owner":"ChatGPT","working_branch":"feat/situation-intelligence-v2","base_commit":"5e2098e9cb12251592eb3889ce7926798484699d","updated_on":"2026-09-23","code_paths":["endstate/api.py","docs/endstate/CONTRACTS.md","tests/test_endstate_kernel.py"],"depends_on":["ES01-02","ES01-03","ES01-04"],"acceptance":"Current 8BALL suites and cross-domain fixtures pass on the proposed shared package; version compatibility is explicit.","evidence":["EV-KERNEL"],"blockers":[],"next_action":"Complete the explicit embedded-package acceptance review and result-contract compatibility record; no standalone SDK or public release is implied."},
-    {"id":"ES02-01","milestone":"ES02","title":"Normalised event and authority contract","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["ES01-01"],"acceptance":"Events carry source, version, occurrence/receipt time, matter scope and review status; incoming text never gets command authority.","evidence":[],"blockers":[],"next_action":"Define the observe/propose/review/commit/replan boundary."},
-    {"id":"ES02-02","milestone":"ES02","title":"Durable ordered updates, idempotency and replay","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["ES02-01"],"acceptance":"Duplicate, delayed, reordered and retried events cannot corrupt state or revive expired permissions.","evidence":[],"blockers":[],"next_action":"Implement event/outbox contracts and fault-injection tests."},
-    {"id":"ES02-03","milestone":"ES02","title":"Reviewed graph amendments and affected-route explanations","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["ES02-01","ES01-02"],"acceptance":"New information can propose a graph/dependency change, but cannot remove restrictions until reviewed at the correct revision.","evidence":[],"blockers":[],"next_action":"Separate observed fact updates from catalogue/graph amendments."},
-    {"id":"ES02-04","milestone":"ES02","title":"Freshness, cancellation and performance evidence","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["ES02-02","ES02-03"],"acceptance":"Measured latencies include ingestion, inference and review; incremental replan results match full recomputation; cancelled/stale work cannot commit.","evidence":[],"blockers":[],"next_action":"Define target workloads and latency budgets before a real-time claim."},
-    {"id":"ES03-01","milestone":"ES03","title":"Provider-independent reviewed outcome compiler","status":"partial","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["eightball/v2/intelligence.py"],"depends_on":["ES01-01"],"acceptance":"Source interpretation, typed graph drafting and deterministic validation are clean interchangeable interfaces outside the product layer.","evidence":["EV-APP","EV-QWEN"],"blockers":[],"next_action":"Evolve existing adapters into ENDSTATE contracts without losing raw output/provenance."},
-    {"id":"ES03-02","milestone":"ES03","title":"Shared real-model semantic acceptance","status":"blocked","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["B02-09","B02-11","B02-12"],"acceptance":"Use B02-09/B02-11/B02-12 evidence for a valid, useful source-to-plan route, not just JSON or an HTTP response.","evidence":["EV-QWEN"],"blockers":["Failed real graph generation; no independent quality approval."],"next_action":"Resolve the 8BALL gate once and link the same evidence here."},
-    {"id":"ES03-03","milestone":"ES03","title":"Optional Jev live judgement integration","status":"blocked","required":false,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["eightball/providers.py"],"depends_on":[],"acceptance":"An authorised real TypeSafe key exercises bounded classifications; permission, output and quality checks are recorded with secrets excluded.","evidence":["EV-QWEN"],"blockers":["No authorised TypeSafe credentials supplied for live evaluation."],"next_action":"Configure through a secure runtime secret mechanism only when authorised."},
-    {"id":"ES03-04","milestone":"ES03","title":"Local-model installation and live provider status","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":[],"acceptance":"Runtime, selected weights, version and connection status are actually detected; downloads are explicit and user-approved.","evidence":[],"blockers":[],"next_action":"Distinguish installed weights, running service, API credentials and test-run artefacts."},
-    {"id":"ES03-05","milestone":"ES03","title":"Failure handling, model trace and governed provider selection","status":"partial","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":["eightball/v2/intelligence.py","eightball/v2/store.py"],"depends_on":[],"acceptance":"Provider replacement, refusal, timeout, malformed output, prompt injection and trace retention satisfy shared gates with measured quality.","evidence":["EV-APP","EV-QWEN","EV-CLASSIFIER"],"blockers":[],"next_action":"Extend existing fail-closed tests and preserve negative model results."},
-    {"id":"ES04-01","milestone":"ES04","title":"Versioned domain-pack contract","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["ES01-04"],"acceptance":"Domain packs supply vocabulary, object mappings, action catalogues, policies, confirmation rules, prompts and integrations without core forks.","evidence":[],"blockers":[],"next_action":"Derive the contract from 8BALL and adjacent fixtures."},
-    {"id":"ES04-02","milestone":"ES04","title":"8BALL domain pack on ENDSTATE","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["ES04-01","B02-17"],"acceptance":"Fixer terminology/playbooks/experience are product-owned and use the shared contracts; existing routes/data remain compatible.","evidence":[],"blockers":[],"next_action":"Separate domain responsibilities only where real code supports the boundary."},
-    {"id":"ES04-03","milestone":"ES04","title":"Adjacent-domain proof and commercial-lane gate","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["ES04-01"],"acceptance":"Sales/support examples run on the same engine with their own evaluation/permissions; new product launches need explicit approval.","evidence":[],"blockers":[],"next_action":"Demonstrate reuse before considering sales, service or social-client products."},
-    {"id":"ES04-04","milestone":"ES04","title":"Decide and validate distribution interface","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["ES04-02","ES04-03"],"acceptance":"SDK/API/MCP options have a justified scope, auth/version contracts and consumer tests; do not declare all three products shipped.","evidence":[],"blockers":[],"next_action":"Choose the smallest actual integration need with the owner."},
-    {"id":"ES10-01","milestone":"ES10","title":"Compatibility, performance, licensing and support policy","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["ES04-04"],"acceptance":"Supported engine consumers, migrations, limits, licences and operational ownership are documented and exercised.","evidence":[],"blockers":[],"next_action":"Validate against real product/consumer requirements."},
-    {"id":"ES10-02","milestone":"ES10","title":"ENDSTATE V1 release gate","status":"not_started","required":true,"owner":null,"working_branch":null,"base_commit":null,"updated_on":"2026-09-23","code_paths":[],"depends_on":["ES10-01","ES03-02","ES02-04"],"acceptance":"Reusable contracts and quality/support promises have evidence; independent release approval is recorded.","evidence":[],"blockers":[],"next_action":"Do not block accepted 8BALL sales solely on a standalone-engine release."}
+  "tasks": [
+    {
+      "id": "DOC-01",
+      "milestone": "DOC",
+      "title": "Lock ENDSTATE name and fixer-first product boundary",
+      "status": "verified",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [],
+      "acceptance": "Accepted decision distinguishes 8BALL product, ENDSTATE engine and future applications.",
+      "evidence": [
+        "EV-DECISION"
+      ],
+      "blockers": [],
+      "next_action": "Preserve this decision in future work."
+    },
+    {
+      "id": "DOC-02",
+      "milestone": "DOC",
+      "title": "Fold the agreed direction into PRD and preserve the original",
+      "status": "verified",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [],
+      "acceptance": "Master PRD incorporates naming, reuse, living plans and unchanged original acceptance requirements. Original blob hash matches.",
+      "evidence": [
+        "EV-DECISION",
+        "EV-ORIGINAL"
+      ],
+      "blockers": [],
+      "next_action": "Use repository references instead of expecting chat access."
+    },
+    {
+      "id": "DOC-03",
+      "milestone": "DOC",
+      "title": "Create one evidence-linked version/subpart tracker for chat and Codex",
+      "status": "verified",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "scripts/delivery.py"
+      ],
+      "depends_on": [
+        "DOC-01",
+        "DOC-02"
+      ],
+      "acceptance": "Ledger validates; generated checklist is current; regression checks reject unsupported completion and broken IDs.",
+      "evidence": [
+        "EV-TRACKING"
+      ],
+      "blockers": [],
+      "next_action": "Use this ledger and session protocol in both chat and Codex; keep the generated checklist in sync."
+    },
+    {
+      "id": "B01-01",
+      "milestone": "B01",
+      "title": "Evidence-backed local planner and outcome semantics",
+      "status": "verified",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/models.py",
+        "eightball/engine.py",
+        "eightball/commands.py"
+      ],
+      "depends_on": [],
+      "acceptance": "Original bounded planner, supported-state distinctions and completion/effect separation satisfy the scoped alpha tests.",
+      "evidence": [
+        "EV-V01"
+      ],
+      "blockers": [],
+      "next_action": "Preserve this behaviour through ENDSTATE extraction."
+    },
+    {
+      "id": "B01-02",
+      "milestone": "B01",
+      "title": "Local workspace, persistence, scenarios and exports",
+      "status": "verified",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "web/app.js",
+        "eightball/store.py",
+        "tests/browser_smoke.py"
+      ],
+      "depends_on": [],
+      "acceptance": "Original local browser workflow persists cases and exports actual audit records with isolated scenarios.",
+      "evidence": [
+        "EV-V01"
+      ],
+      "blockers": [],
+      "next_action": "Keep the legacy UI/data path available or migrate with verified lineage."
+    },
+    {
+      "id": "B01-03",
+      "milestone": "B01",
+      "title": "Reproducible alpha acceptance evidence",
+      "status": "verified",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [],
+      "acceptance": "Original 86 backend and 27 native browser results are recorded with exact code scope.",
+      "evidence": [
+        "EV-V01"
+      ],
+      "blockers": [],
+      "next_action": "Merge/release only through a separate explicit decision."
+    },
+    {
+      "id": "B02-01",
+      "milestone": "B02",
+      "title": "Rich typed situation model and evidence provenance",
+      "status": "verified",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/v2/contracts.py",
+        "tests/test_v2_domain.py"
+      ],
+      "depends_on": [],
+      "acceptance": "Case-scoped object IDs, source references, claims/observations and preserved historical meanings pass current tests.",
+      "evidence": [
+        "EV-APP"
+      ],
+      "blockers": [],
+      "next_action": "Do not change observed meanings during extraction."
+    },
+    {
+      "id": "B02-02",
+      "milestone": "B02",
+      "title": "Human proposal review, accept/edit/reject and stale-state protection",
+      "status": "verified",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/v2/store.py",
+        "eightball/v2/intelligence.py",
+        "tests/test_v2_api.py"
+      ],
+      "depends_on": [],
+      "acceptance": "Review commits selected objects atomically; no privileged facts are created; rejected/stale proposals preserve live state.",
+      "evidence": [
+        "EV-APP",
+        "EV-UI"
+      ],
+      "blockers": [],
+      "next_action": "Retain identical review guarantees for real model outputs."
+    },
+    {
+      "id": "B02-03",
+      "milestone": "B02",
+      "title": "Signed AND/OR planner, guards, waits and resource estimates",
+      "status": "verified",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/v2/planner.py",
+        "tests/test_v2_domain.py"
+      ],
+      "depends_on": [],
+      "acceptance": "Bounded planning exposes evidence gaps, false/unknown distinctions, projected conflicts, decision incompatibilities and scheduling limits.",
+      "evidence": [
+        "EV-APP"
+      ],
+      "blockers": [],
+      "next_action": "Benchmark meaningful planning extensions without claiming global optimality."
+    },
+    {
+      "id": "B02-04",
+      "milestone": "B02",
+      "title": "Actors, relationships, timeline and decision records",
+      "status": "verified",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/v2/contracts.py",
+        "web/v2/views.js"
+      ],
+      "depends_on": [],
+      "acceptance": "Reported attributes and case decisions are represented and accessible in tested operator views. No autonomous profiling is claimed.",
+      "evidence": [
+        "EV-APP",
+        "EV-UI"
+      ],
+      "blockers": [],
+      "next_action": "Add authority/source-quality review in the model-quality work."
+    },
+    {
+      "id": "B02-05",
+      "milestone": "B02",
+      "title": "Questions, What Changed and isolated What If",
+      "status": "verified",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/v2/planner.py",
+        "eightball/v2/services.py"
+      ],
+      "depends_on": [],
+      "acceptance": "Graph-impact questions and recorded revision deltas operate; hypothetical state changes leave the live case unchanged.",
+      "evidence": [
+        "EV-APP",
+        "EV-UI"
+      ],
+      "blockers": [],
+      "next_action": "Connect future ingestion only through reviewed revisioned updates."
+    },
+    {
+      "id": "B02-06",
+      "milestone": "B02",
+      "title": "Approvals, completion/effect separation, audit and legacy import",
+      "status": "verified",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/v2/commands.py",
+        "eightball/v2/store.py",
+        "eightball/v2/services.py"
+      ],
+      "depends_on": [],
+      "acceptance": "Expiring approvals, protected decisions/answers, snapshot replay and lineage-preserving import satisfy current checks.",
+      "evidence": [
+        "EV-APP"
+      ],
+      "blockers": [],
+      "next_action": "Do not confuse local hash-chain integrity with production custody."
+    },
+    {
+      "id": "B02-07",
+      "milestone": "B02",
+      "title": "Seventeen-view local developer workspace",
+      "status": "verified",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "web/v2/app.js",
+        "web/v2/views.js",
+        "tests/browser_v2.py"
+      ],
+      "depends_on": [],
+      "acceptance": "Listed desktop/mobile journeys pass with real server, SQLite, native storage and downloads.",
+      "evidence": [
+        "EV-UI"
+      ],
+      "blockers": [],
+      "next_action": "Keep full accessibility and new model journeys as separate unchecked tasks."
+    },
+    {
+      "id": "B02-08",
+      "milestone": "B02",
+      "title": "Explicit playbook registry, case-local search and brief exports",
+      "status": "verified",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/v2/playbooks.py",
+        "eightball/v2/intelligence.py",
+        "eightball/v2/services.py"
+      ],
+      "depends_on": [],
+      "acceptance": "Eight labelled starter playbooks, lexical case search and operator-only brief exports work within the documented local scope.",
+      "evidence": [
+        "EV-APP",
+        "EV-UI"
+      ],
+      "blockers": [],
+      "next_action": "Obtain expert playbook approval in B04-01; do not claim secure client accounts."
+    },
+    {
+      "id": "B02-09",
+      "milestone": "B02",
+      "title": "Reliable reviewed graph proposals for new situations",
+      "status": "blocked",
+      "required": true,
+      "owner": "ChatGPT",
+      "working_branch": "feat/situation-intelligence-v2",
+      "base_commit": "af97506c37dbf14ded6208b36277dd3b87a11784",
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/v2/intelligence.py",
+        "evals/live_generation.py",
+        "endstate/compilation.py",
+        "tests/test_endstate_compilation.py"
+      ],
+      "depends_on": [],
+      "acceptance": "Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.",
+      "evidence": [
+        "EV-QWEN",
+        "EV-STAGED-CODE",
+        "EV-STAGED-MODEL"
+      ],
+      "blockers": [
+        "Actual staged Qwen run 35911570117 failed: intermediate results repeated readiness/goal conditions; invented existing-condition references and outcome confusion also remain."
+      ],
+      "next_action": "Use the preserved two-stage trace to separate target criteria from source facts, constrain references to supplied IDs and validate the frame before expanding routes. Compare providers against unchanged fixtures and independent semantic cases; do not invent missing actions or weaken the gate."
+    },
+    {
+      "id": "B02-10",
+      "milestone": "B02",
+      "title": "Robust source extraction, deadlines and entity reconciliation",
+      "status": "partial",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/v2/intelligence.py"
+      ],
+      "depends_on": [],
+      "acceptance": "Reviewed multi-source extraction preserves negation, uncertainty, identity and quoted support; date changes become explicit reviewed scheduling proposals.",
+      "evidence": [
+        "EV-QWEN",
+        "EV-REMAINING"
+      ],
+      "blockers": [
+        "Only a few structural extraction fixtures observed; dates need operator resolution."
+      ],
+      "next_action": "Add independent cases for repeated entities, pronouns, contradictions and time resolution."
+    },
+    {
+      "id": "B02-11",
+      "milestone": "B02",
+      "title": "Independent quality evaluation and production-model selection",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "evals/live_generation.py",
+        "evals/classification-cases.json"
+      ],
+      "depends_on": [],
+      "acceptance": "Expert-labelled held-out data and predeclared acceptance thresholds measure semantic errors, omissions, corrections, latency and abstention.",
+      "evidence": [
+        "EV-REMAINING"
+      ],
+      "blockers": [],
+      "next_action": "Freeze evaluation criteria before choosing or tuning a production model."
+    },
+    {
+      "id": "B02-12",
+      "milestone": "B02",
+      "title": "Full twenty-step real-model V0.2 acceptance journey",
+      "status": "blocked",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "tests/browser_v2.py"
+      ],
+      "depends_on": [
+        "B02-09",
+        "B02-10",
+        "B02-11"
+      ],
+      "acceptance": "Blank case -> real extraction -> mixed human review -> valid graph -> distinct routes -> new evidence/replan -> isolated refusal -> approval/completion -> reload/export, all native.",
+      "evidence": [
+        "EV-QWEN",
+        "EV-UI",
+        "EV-STAGED-MODEL"
+      ],
+      "blockers": [
+        "Both legacy and staged graph generation still fail the required actual-model gate; native application journeys use rules/catalogue, not the full real-model flow."
+      ],
+      "next_action": "Add a real-model integration journey distinct from rules/catalogue browser tests."
+    },
+    {
+      "id": "B02-13",
+      "milestone": "B02",
+      "title": "Guided nested graph authoring instead of JSON-only advanced editing",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "web/v2/forms.js"
+      ],
+      "depends_on": [],
+      "acceptance": "Operators can edit AND/OR, guards, contingencies and verification rules with guided controls and keyboard access.",
+      "evidence": [
+        "EV-REMAINING"
+      ],
+      "blockers": [],
+      "next_action": "Design focused authoring flows while preserving the JSON compatibility path."
+    },
+    {
+      "id": "B02-14",
+      "milestone": "B02",
+      "title": "Source chunking, duplication and reviewer-safe object reconciliation",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [],
+      "acceptance": "Longer sources retain exact provenance; duplicates and entity merges cannot rewrite observed meanings or lose attribution.",
+      "evidence": [
+        "EV-REMAINING"
+      ],
+      "blockers": [],
+      "next_action": "Define chunk/source version contracts and adversarial fixtures."
+    },
+    {
+      "id": "B02-15",
+      "milestone": "B02",
+      "title": "Model progress/cancellation and accurate installation status",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "ES03-04"
+      ],
+      "acceptance": "The UI reports actual runtime/weights/credential state and cancels work without stale commits. No silent large model download.",
+      "evidence": [
+        "EV-REMAINING"
+      ],
+      "blockers": [],
+      "next_action": "Add explicit opt-in setup and availability/cancellation checks, not a fictional green badge."
+    },
+    {
+      "id": "B02-16",
+      "milestone": "B02",
+      "title": "Complete accessibility and supported-environment validation",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [],
+      "acceptance": "Keyboard, screen reader, empty/error/loading states and supported browsers/platform startup paths pass an explicit review.",
+      "evidence": [
+        "EV-REMAINING"
+      ],
+      "blockers": [],
+      "next_action": "Audit beyond existing viewport fit and Chromium interactions."
+    },
+    {
+      "id": "B02-17",
+      "milestone": "B02",
+      "title": "Prove compatibility after ENDSTATE core extraction",
+      "status": "verified",
+      "required": true,
+      "owner": "ChatGPT",
+      "working_branch": "feat/situation-intelligence-v2",
+      "base_commit": "5e2098e9cb12251592eb3889ce7926798484699d",
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "tests/test_endstate_kernel.py",
+        "tests/browser_v2.py",
+        "tests/browser_smoke.py"
+      ],
+      "depends_on": [
+        "ES01-02",
+        "ES01-03"
+      ],
+      "acceptance": "Existing 8BALL cases, imports, approvals, audits, simulations and browser flows pass through the extracted core.",
+      "evidence": [
+        "EV-KERNEL"
+      ],
+      "blockers": [],
+      "next_action": "Preserve the extraction baseline and rerun all legacy/V2 suites for subsequent core changes."
+    },
+    {
+      "id": "B02-18",
+      "milestone": "B02",
+      "title": "V0.2 acceptance and release decision",
+      "status": "blocked",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "B02-01",
+        "B02-02",
+        "B02-03",
+        "B02-04",
+        "B02-05",
+        "B02-06",
+        "B02-07",
+        "B02-08",
+        "B02-09",
+        "B02-10",
+        "B02-11",
+        "B02-12",
+        "B02-13",
+        "B02-14",
+        "B02-15",
+        "B02-16",
+        "B02-17"
+      ],
+      "acceptance": "All required V0.2 subparts have scoped evidence; reviews/gates pass; approval to integrate/release is recorded separately.",
+      "evidence": [
+        "EV-QWEN"
+      ],
+      "blockers": [
+        "Real-model journey and developer-quality work remain unaccepted."
+      ],
+      "next_action": "Keep PR #2 draft until the acceptance gate is met; do not infer permission to merge."
+    },
+    {
+      "id": "B03-01",
+      "milestone": "B03",
+      "title": "Identity, organisations and matter-scoped authorisation",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [],
+      "acceptance": "Authenticated identities and cross-tenant/matter denial tests cover read, write, export, search and model inference.",
+      "evidence": [
+        "EV-SECURITY"
+      ],
+      "blockers": [],
+      "next_action": "Implement from the approved production threat model."
+    },
+    {
+      "id": "B03-02",
+      "milestone": "B03",
+      "title": "Encrypted evidence vault and retention controls",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "B03-01"
+      ],
+      "acceptance": "Immutable originals, hashes, upload quarantine/scanning, encryption, retention/hold/deletion and audited access are tested.",
+      "evidence": [
+        "EV-SECURITY"
+      ],
+      "blockers": [],
+      "next_action": "Implement without weakening source provenance."
+    },
+    {
+      "id": "B03-03",
+      "milestone": "B03",
+      "title": "Scoped specialist collaboration and real client portal",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "B03-01",
+        "B03-02"
+      ],
+      "acceptance": "Experts receive revocable matter/object grants; clients receive separately reviewed projections, never internal records by default.",
+      "evidence": [
+        "EV-SECURITY"
+      ],
+      "blockers": [],
+      "next_action": "Build authenticated views rather than relabelling the existing preview."
+    },
+    {
+      "id": "B03-04",
+      "milestone": "B03",
+      "title": "Authorised ingestion, event handling and notifications",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "B03-01",
+        "ES02-01",
+        "ES02-02"
+      ],
+      "acceptance": "Actual source connectors, durable updates and notifications respect permissions, source review, ordering and retry limits.",
+      "evidence": [
+        "EV-SECURITY"
+      ],
+      "blockers": [],
+      "next_action": "Build one authorised connector through ENDSTATE event contracts."
+    },
+    {
+      "id": "B03-05",
+      "milestone": "B03",
+      "title": "Independent audit checkpoints, recovery and operational monitoring",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [],
+      "acceptance": "Restore rehearsal, audit anchoring, revocation and operational incident tests pass without sensitive log leakage.",
+      "evidence": [
+        "EV-SECURITY"
+      ],
+      "blockers": [],
+      "next_action": "Set measurable service/recovery targets and test them."
+    },
+    {
+      "id": "B03-06",
+      "milestone": "B03",
+      "title": "Limited qualified-fixer pilot acceptance",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "B02-18",
+        "B03-01",
+        "B03-02",
+        "B03-03",
+        "B03-04",
+        "B03-05"
+      ],
+      "acceptance": "Authorised pilot users validate usefulness, safety, corrections and confidentiality; critical findings closed before wider release.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Recruit/review pilot criteria only after data and access gates pass."
+    },
+    {
+      "id": "B04-01",
+      "milestone": "B04",
+      "title": "Professionally reviewed fixer and crisis playbooks",
+      "status": "partial",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/v2/playbooks.py"
+      ],
+      "depends_on": [],
+      "acceptance": "Specialists approve versioned patterns, assumptions, authority and confirmation criteria; examples are not presented as proven solutions.",
+      "evidence": [
+        "EV-REMAINING"
+      ],
+      "blockers": [],
+      "next_action": "Review existing starters with qualified operators."
+    },
+    {
+      "id": "B04-02",
+      "milestone": "B04",
+      "title": "Governed precedent retrieval",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "B03-01",
+        "B03-02"
+      ],
+      "acceptance": "Permissioned, source-linked precedent is case/matter scoped; access revocation and leakage tests pass. No automatic training.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Agree governance and retention before indexing previous cases."
+    },
+    {
+      "id": "B04-03",
+      "milestone": "B04",
+      "title": "Measured operator benefit from richer resolution intelligence",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "B03-06",
+        "B04-01",
+        "B04-02"
+      ],
+      "acceptance": "Held-out/pilot evidence shows useful questions and plans without unsupported causal or success-probability claims.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Benchmark against the accepted baseline with real professional review."
+    },
+    {
+      "id": "B10-01",
+      "milestone": "B10",
+      "title": "Commercial onboarding, support and launch readiness",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "B03-06"
+      ],
+      "acceptance": "Customer onboarding, support, service terms, brand/licence clearance and operating ownership are ready for the accepted scope.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Define commercial acceptance with the product owner; no inferred public release."
+    },
+    {
+      "id": "B10-02",
+      "milestone": "B10",
+      "title": "8BALL V1 fixer production release",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "B10-01",
+        "B04-03"
+      ],
+      "acceptance": "All advertised capabilities, security, accessibility, recovery, model policy and customer acceptance are evidenced for supported environments.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Record explicit release and deployment decisions after gates."
+    },
+    {
+      "id": "ES01-01",
+      "milestone": "ES01",
+      "title": "Define ENDSTATE contracts and dependency boundary",
+      "status": "verified",
+      "required": true,
+      "owner": "ChatGPT",
+      "working_branch": "feat/situation-intelligence-v2",
+      "base_commit": "5e2098e9cb12251592eb3889ce7926798484699d",
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "endstate/api.py",
+        "endstate/contracts.py",
+        "docs/endstate/CONTRACTS.md"
+      ],
+      "depends_on": [],
+      "acceptance": "Neutral engine inputs/outputs, version/error semantics and product/domain boundaries are documented with tests planned.",
+      "evidence": [
+        "EV-DECISION",
+        "EV-KERNEL"
+      ],
+      "blockers": [],
+      "next_action": "Preserve the versioned in-process boundary; stabilise nested result contracts in the package review."
+    },
+    {
+      "id": "ES01-02",
+      "milestone": "ES01",
+      "title": "Extract shared state, planning and explanation kernel",
+      "status": "verified",
+      "required": true,
+      "owner": "ChatGPT",
+      "working_branch": "feat/situation-intelligence-v2",
+      "base_commit": "5e2098e9cb12251592eb3889ce7926798484699d",
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "endstate/state.py",
+        "endstate/planner.py",
+        "eightball/v2/planner.py"
+      ],
+      "depends_on": [
+        "ES01-01"
+      ],
+      "acceptance": "8BALL calls the extracted core; the core imports no 8BALL UI, named client or fixer playbook.",
+      "evidence": [
+        "EV-KERNEL"
+      ],
+      "blockers": [],
+      "next_action": "Continue 8BALL through the shared kernel; do not duplicate the planner for another domain."
+    },
+    {
+      "id": "ES01-03",
+      "milestone": "ES01",
+      "title": "Preserve storage, imports and audit lineage",
+      "status": "verified",
+      "required": true,
+      "owner": "ChatGPT",
+      "working_branch": "feat/situation-intelligence-v2",
+      "base_commit": "5e2098e9cb12251592eb3889ce7926798484699d",
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/models.py",
+        "eightball/v2/contracts.py",
+        "tests/test_endstate_kernel.py",
+        "tests/fixtures/endstate/pre_extraction.json.xz"
+      ],
+      "depends_on": [
+        "ES01-01"
+      ],
+      "acceptance": "Old data, imports and event meanings remain readable; migrations preserve observations and expiring approval behaviour.",
+      "evidence": [
+        "EV-KERNEL"
+      ],
+      "blockers": [],
+      "next_action": "Keep frozen pre-extraction records and wire schemas as regression gates; do not regenerate expected results to hide changes."
+    },
+    {
+      "id": "ES01-04",
+      "milestone": "ES01",
+      "title": "Prove reuse through neutral, sales and support fixtures",
+      "status": "verified",
+      "required": true,
+      "owner": "ChatGPT",
+      "working_branch": "feat/situation-intelligence-v2",
+      "base_commit": "5e2098e9cb12251592eb3889ce7926798484699d",
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "tests/test_endstate_kernel.py",
+        "endstate/api.py"
+      ],
+      "depends_on": [
+        "ES01-02",
+        "ES01-03"
+      ],
+      "acceptance": "One unchanged kernel plans three domains with domain-specific actions/policies; no duplicated engine or full new app.",
+      "evidence": [
+        "EV-KERNEL"
+      ],
+      "blockers": [],
+      "next_action": "Keep these as fictional reuse fixtures; future commercial domains need their own policies and evaluation."
+    },
+    {
+      "id": "ES01-05",
+      "milestone": "ES01",
+      "title": "Reusable core acceptance",
+      "status": "partial",
+      "required": true,
+      "owner": "ChatGPT",
+      "working_branch": "feat/situation-intelligence-v2",
+      "base_commit": "5e2098e9cb12251592eb3889ce7926798484699d",
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "endstate/api.py",
+        "docs/endstate/CONTRACTS.md",
+        "tests/test_endstate_kernel.py"
+      ],
+      "depends_on": [
+        "ES01-02",
+        "ES01-03",
+        "ES01-04"
+      ],
+      "acceptance": "Current 8BALL suites and cross-domain fixtures pass on the proposed shared package; version compatibility is explicit.",
+      "evidence": [
+        "EV-KERNEL"
+      ],
+      "blockers": [],
+      "next_action": "Complete the explicit embedded-package acceptance review and result-contract compatibility record; no standalone SDK or public release is implied."
+    },
+    {
+      "id": "ES02-01",
+      "milestone": "ES02",
+      "title": "Normalised event and authority contract",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "ES01-01"
+      ],
+      "acceptance": "Events carry source, version, occurrence/receipt time, matter scope and review status; incoming text never gets command authority.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Define the observe/propose/review/commit/replan boundary."
+    },
+    {
+      "id": "ES02-02",
+      "milestone": "ES02",
+      "title": "Durable ordered updates, idempotency and replay",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "ES02-01"
+      ],
+      "acceptance": "Duplicate, delayed, reordered and retried events cannot corrupt state or revive expired permissions.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Implement event/outbox contracts and fault-injection tests."
+    },
+    {
+      "id": "ES02-03",
+      "milestone": "ES02",
+      "title": "Reviewed graph amendments and affected-route explanations",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "ES02-01",
+        "ES01-02"
+      ],
+      "acceptance": "New information can propose a graph/dependency change, but cannot remove restrictions until reviewed at the correct revision.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Separate observed fact updates from catalogue/graph amendments."
+    },
+    {
+      "id": "ES02-04",
+      "milestone": "ES02",
+      "title": "Freshness, cancellation and performance evidence",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "ES02-02",
+        "ES02-03"
+      ],
+      "acceptance": "Measured latencies include ingestion, inference and review; incremental replan results match full recomputation; cancelled/stale work cannot commit.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Define target workloads and latency budgets before a real-time claim."
+    },
+    {
+      "id": "ES03-01",
+      "milestone": "ES03",
+      "title": "Provider-independent reviewed outcome compiler",
+      "status": "partial",
+      "required": true,
+      "owner": "ChatGPT",
+      "working_branch": "feat/situation-intelligence-v2",
+      "base_commit": "af97506c37dbf14ded6208b36277dd3b87a11784",
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/v2/intelligence.py",
+        "endstate/compilation.py",
+        "tests/test_endstate_compilation.py"
+      ],
+      "depends_on": [
+        "ES01-01"
+      ],
+      "acceptance": "Source interpretation, typed graph drafting and deterministic validation are clean interchangeable interfaces outside the product layer.",
+      "evidence": [
+        "EV-APP",
+        "EV-QWEN",
+        "EV-STAGED-CODE",
+        "EV-STAGED-MODEL"
+      ],
+      "blockers": [],
+      "next_action": "The shared two-stage compiler and injected provider callback now exist. Extract and stabilise the remaining source-interpretation contracts, and resolve B02-09 before claiming reliable intelligence compilation."
+    },
+    {
+      "id": "ES03-02",
+      "milestone": "ES03",
+      "title": "Shared real-model semantic acceptance",
+      "status": "blocked",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "B02-09",
+        "B02-11",
+        "B02-12"
+      ],
+      "acceptance": "Use B02-09/B02-11/B02-12 evidence for a valid, useful source-to-plan route, not just JSON or an HTTP response.",
+      "evidence": [
+        "EV-QWEN"
+      ],
+      "blockers": [
+        "Failed real graph generation; no independent quality approval."
+      ],
+      "next_action": "Resolve the 8BALL gate once and link the same evidence here."
+    },
+    {
+      "id": "ES03-03",
+      "milestone": "ES03",
+      "title": "Optional Jev live judgement integration",
+      "status": "blocked",
+      "required": false,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/providers.py"
+      ],
+      "depends_on": [],
+      "acceptance": "An authorised real TypeSafe key exercises bounded classifications; permission, output and quality checks are recorded with secrets excluded.",
+      "evidence": [
+        "EV-QWEN"
+      ],
+      "blockers": [
+        "No authorised TypeSafe credentials supplied for live evaluation."
+      ],
+      "next_action": "Configure through a secure runtime secret mechanism only when authorised."
+    },
+    {
+      "id": "ES03-04",
+      "milestone": "ES03",
+      "title": "Local-model installation and live provider status",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [],
+      "acceptance": "Runtime, selected weights, version and connection status are actually detected; downloads are explicit and user-approved.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Distinguish installed weights, running service, API credentials and test-run artefacts."
+    },
+    {
+      "id": "ES03-05",
+      "milestone": "ES03",
+      "title": "Failure handling, model trace and governed provider selection",
+      "status": "partial",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/v2/intelligence.py",
+        "eightball/v2/store.py"
+      ],
+      "depends_on": [],
+      "acceptance": "Provider replacement, refusal, timeout, malformed output, prompt injection and trace retention satisfy shared gates with measured quality.",
+      "evidence": [
+        "EV-APP",
+        "EV-QWEN",
+        "EV-CLASSIFIER"
+      ],
+      "blockers": [],
+      "next_action": "Extend existing fail-closed tests and preserve negative model results."
+    },
+    {
+      "id": "ES04-01",
+      "milestone": "ES04",
+      "title": "Versioned domain-pack contract",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "ES01-04"
+      ],
+      "acceptance": "Domain packs supply vocabulary, object mappings, action catalogues, policies, confirmation rules, prompts and integrations without core forks.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Derive the contract from 8BALL and adjacent fixtures."
+    },
+    {
+      "id": "ES04-02",
+      "milestone": "ES04",
+      "title": "8BALL domain pack on ENDSTATE",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "ES04-01",
+        "B02-17"
+      ],
+      "acceptance": "Fixer terminology/playbooks/experience are product-owned and use the shared contracts; existing routes/data remain compatible.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Separate domain responsibilities only where real code supports the boundary."
+    },
+    {
+      "id": "ES04-03",
+      "milestone": "ES04",
+      "title": "Adjacent-domain proof and commercial-lane gate",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "ES04-01"
+      ],
+      "acceptance": "Sales/support examples run on the same engine with their own evaluation/permissions; new product launches need explicit approval.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Demonstrate reuse before considering sales, service or social-client products."
+    },
+    {
+      "id": "ES04-04",
+      "milestone": "ES04",
+      "title": "Decide and validate distribution interface",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "ES04-02",
+        "ES04-03"
+      ],
+      "acceptance": "SDK/API/MCP options have a justified scope, auth/version contracts and consumer tests; do not declare all three products shipped.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Choose the smallest actual integration need with the owner."
+    },
+    {
+      "id": "ES10-01",
+      "milestone": "ES10",
+      "title": "Compatibility, performance, licensing and support policy",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "ES04-04"
+      ],
+      "acceptance": "Supported engine consumers, migrations, limits, licences and operational ownership are documented and exercised.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Validate against real product/consumer requirements."
+    },
+    {
+      "id": "ES10-02",
+      "milestone": "ES10",
+      "title": "ENDSTATE V1 release gate",
+      "status": "not_started",
+      "required": true,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-23",
+      "code_paths": [],
+      "depends_on": [
+        "ES10-01",
+        "ES03-02",
+        "ES02-04"
+      ],
+      "acceptance": "Reusable contracts and quality/support promises have evidence; independent release approval is recorded.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Do not block accepted 8BALL sales solely on a standalone-engine release."
+    }
   ],
-  "next_task_ids":["ES01-05","B02-09"],
-  "invariants":["Evidence, claims and observations are separate.","Unknown is not false; disputes are explicit.","Completing work does not establish its result.","Models propose; human-reviewed commands commit.","Simulations never mutate live case state.","No secret/model weights/private case material in this public repo.","No model-quality claim from a code-contract test.","Do not merge or deploy without explicit release authority."]
+  "next_task_ids": [
+    "B02-09",
+    "ES01-05"
+  ],
+  "invariants": [
+    "Evidence, claims and observations are separate.",
+    "Unknown is not false; disputes are explicit.",
+    "Completing work does not establish its result.",
+    "Models propose; human-reviewed commands commit.",
+    "Simulations never mutate live case state.",
+    "No secret/model weights/private case material in this public repo.",
+    "No model-quality claim from a code-contract test.",
+    "Do not merge or deploy without explicit release authority."
+  ]
 }

@@ -1,5 +1,11 @@
 # V0.2 actual-model evaluation and release decision
 
+## New staged experiment, 23 September 2026
+
+A separate `ollama_staged` graph path was implemented at `3a33866f375be355658d8e5d82addb25bcc7eed9`. Its shared ENDSTATE compiler accepts complete model-supplied actions and assigns technical IDs/wiring rather than repairing missing semantic steps. The old path and rejected-output regression are preserved.
+
+**Actual workflow 35911570117 failed.** The unchanged three extraction cases were structurally valid. The staged supplier response was rejected for repeated readiness/goal results; manual inspection also found invented prerequisite IDs and confusion of the original problem with the desired outcome. No live state changed. See `../endstate/COMPILATION.md`, `../evidence/staged-compilation-verification.json` and the losslessly archived raw `../evidence/staged-qwen-attempt1.json.xz`. The 306 passing software checks and 78 passing native browser checks do not clear this model-quality gate. The earlier records below remain historical evidence, not a current claim that only the legacy adapter exists.
+
 ## Decision
 
 **The manual/reviewed software workflow is tested. Arbitrary-situation AI graph generation has not passed its acceptance gate.** Keep PR #2 as a draft and the generative planner as an experimental, human-reviewed feature. Do not call the whole V0.2 PRD complete on the basis of the application test suite.

@@ -4,7 +4,7 @@
 
 The product is **8BALL for fixers**, powered by the reusable **ENDSTATE** engine. Read `AGENTS.md`, `docs/PRD.md`, `docs/ROADMAP.md`, this file and `docs/delivery/PROGRESS.md`. The full original 37-section PRD is now in `docs/reference/8BALL-V0.2-ASTRA-PRD.md`; do not rely on a missing chat attachment. Current states belong only in `docs/delivery/progress.json`.
 
-The latest verified application code checkpoint is `0c4104a675600c20a290766909bca60088766b35`, branch `feat/situation-intelligence-v2`, draft PR #2. ENDSTATE extraction evidence is in `docs/endstate/VALIDATION.md` and the contract is in `docs/endstate/CONTRACTS.md`. Refresh GitHub and local Git before starting: this is a checkpoint, not a promise that the remote head never changes. The ledger distinguishes this code baseline from later documentation commits.
+The latest verified application code checkpoint is `3a33866f375be355658d8e5d82addb25bcc7eed9`, branch `feat/situation-intelligence-v2`, draft PR #2. The staged drafting continuation, 306-test/native evidence and failed actual Qwen result are recorded in `docs/delivery/sessions/2026-09-23-staged-drafting.md` and `docs/endstate/COMPILATION.md`. ENDSTATE extraction evidence is in `docs/endstate/VALIDATION.md` and the contract is in `docs/endstate/CONTRACTS.md`. Refresh GitHub and local Git before starting: this is a checkpoint, not a promise that the remote head never changes. The ledger distinguishes this code baseline from later documentation commits.
 
 ## First session checks
 
@@ -15,7 +15,7 @@ The latest verified application code checkpoint is `0c4104a675600c20a290766909bc
 
 ## Current next work, not a fresh rewrite
 
-The first product blocker is `B02-09`: reliable reviewed graph proposals from genuinely new source material. The latest captured Qwen graph named a final verification action that was absent. Preserve and reproduce that failure. Do not manufacture the missing action, swap in a catalogue plan, weaken validation or shrink the test set to produce a green result. A typed multi-stage proposal/compiler or a different provider can be evaluated, but both must meet the same declared gate.
+The first product blocker is `B02-09`: reliable reviewed graph proposals from genuinely new source material. The original captured Qwen graph named an absent verification action. A new explicit two-stage compiler now supplies IDs/wiring from complete model operations, but actual run 35911570117 still failed: readiness/goal duplication, invented existing-condition IDs and target confusion. Both failures are preserved; no template or synthetic verifier fixes the model response. Preserve and reproduce that failure. Do not manufacture the missing action, swap in a catalogue plan, weaken validation or shrink the test set to produce a green result. A typed multi-stage proposal/compiler or a different provider can be evaluated, but both must meet the same declared gate.
 
 `ES01-01` through `ES01-04` now have scoped extraction evidence. 8BALL uses the embedded ENDSTATE kernel, and neutral/sales/support fixtures share that code without breaking old wire or audit records. Continue with `ES01-05`: review the embedded package and versioned result compatibility before accepting the package gate. This does not authorise a framework rewrite, public SDK launch or a new sales application.
 

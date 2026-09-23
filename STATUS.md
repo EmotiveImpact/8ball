@@ -1,21 +1,23 @@
 # 8BALL + ENDSTATE: current delivery checkpoint
 
-23 September 2026. **8BALL remains the fixer product. Its shared calculation kernel now lives in `endstate/`, called through compatibility adapters by 8BALL.** This is an embedded developer preview, not a standalone SDK or production service.
+23 September 2026. **8BALL is the fixer product. ENDSTATE is its shared calculation and proposal-compilation engine.** This remains a local developer preview, not a production agency service or public SDK.
 
-## Current code and evidence
+## Current code and verification
 
-Code commit **`0c4104a675600c20a290766909bca60088766b35`**, tree **`6259e4aa41bc948f560fd54e26025071a74c5867`**, on `feat/situation-intelligence-v2`. Native GitHub Actions run **35904869115** passed. Local results: **269 pytest tests**, including 36 extraction/compatibility checks. The downloaded native artifact records **51 V0.2 + 27 legacy browser checks**, real HTTP, SQLite, storage/reload and exports. See [ENDSTATE validation](docs/endstate/VALIDATION.md).
+Code commit **`3a33866f375be355658d8e5d82addb25bcc7eed9`**, tree **`1d513b7addb9bd5fd89b106dbb9d447d103e2f3f`**, on `feat/situation-intelligence-v2`. **306 pytest tests passed**, including 37 new compiler checks. Native GitHub workflow **35911570084** passed, with retrieved reports for **51 V0.2 and 27 legacy native Chromium checks**. Original wire/audit compatibility remains tested. See [the session evidence](docs/delivery/sessions/2026-09-23-staged-drafting.md).
 
-The separated core has no 8BALL, database, web-server or model-runtime import dependency. Neutral, sales and support fixtures use the same kernel. These are reuse tests, not three launched products. Existing wire schemas, plans, original database records and audit hashes are preserved by regression checks.
+ENDSTATE already powers 8BALL's planning through compatibility adapters. The new shared staged compiler separately asks a provider for outcome/verification objects and complete alternative routes, then assigns IDs and declared wiring. Every semantic action has a pointer to its model draft. No missing action is invented. The explicit `ollama_staged` graph-proposal option is available; catalogue remains the default and the old model path is preserved.
 
-## Shared progress
+## Actual model blocker remains
 
-The only editable task-status source is `docs/delivery/progress.json`. Regenerate [the checklist](docs/delivery/PROGRESS.md) with `python scripts/delivery.py --write`. The [roadmap](docs/ROADMAP.md), [contracts](docs/endstate/CONTRACTS.md) and [handoff](docs/delivery/HANDOFF.md) define the next work for both chat and Codex.
+Real Qwen workflow **35911570117 failed**. Three extraction fixtures produced valid structures, but the staged supplier graph was rejected for repeated readiness/goal results. It also contained invented existing-condition references and confused the original problem with the target outcome. All live case states remained unchanged. The full response and manual inspection are retained in [the verification record](docs/evidence/staged-compilation-verification.json). This is not production model-quality approval.
 
-ES01-01 through ES01-04 have scoped verification. ES01-05 remains partial pending explicit embedded-package acceptance and result-contract compatibility review. Do not turn that partial gate into an implied public release.
+The initial GLiClass configuration was also below its acceptance standard. No live JEV request was made without credentials. The new architecture is implemented and tested; arbitrary-situation intelligence is not declared solved.
 
-## Still open
+## Shared roadmap and next work
 
-B02-09, reliable new-situation model graph proposals, remains blocked on the recorded actual Qwen failure. B02-18, the full V0.2 release gate, is not complete. GLiClass's initial evaluation was poor; Jev has no authorised live-test credential. [AI evaluation](docs/v2/AI-EVALUATION.md) retains those facts. This kernel extraction does not claim new model quality.
+The sole editable status source is `docs/delivery/progress.json`; regenerate [PROGRESS.md](docs/delivery/PROGRESS.md) with `python scripts/delivery.py --write`. **8BALL V0.2: 9/18 required subparts verified. ENDSTATE V0.1: 4/5.** Counts are not effort or readiness percentages. B02-09 remains blocked and ES03-01 remains partial, now with the new code and actual model evidence.
 
-At this checkpoint PR #2 remains draft and unmerged; main remains at `08bc26ef397ec960d1b33b099c40888a8229eac0`. No merge, deployment or standalone ENDSTATE release. Real agency identities, expert/client access, confidential evidence storage and recovery controls remain production work. Use fictional/test information only.
+Next: target/reference-aware frame validation and evaluated provider improvements, without weakening the preserved gate. Complete ES01-05's embedded result/package contract review separately. The guided editor, robust source handling, accurate model status/cancellation, accessibility, independent quality evaluation and full real-model native journey are still outstanding V0.2 work.
+
+PR #2 remains draft and unmerged; main has not been changed. Secure agency identities, expert/client permissions, confidential evidence storage, recovery and commercial readiness remain future milestones. Use fictional/test data only. No deployment, autonomous external action or cross-client learning is running.
