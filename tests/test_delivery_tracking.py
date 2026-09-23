@@ -69,6 +69,10 @@ def test_unclaimed_in_progress_task_rejected():
     data = ledger()
     task = next(t for t in data['tasks'] if t['id'] == 'ES01-01')
     task['status'] = 'in_progress'
+    # This test must stay valid after the real task has an owner.
+    task['owner'] = None
+    task['working_branch'] = None
+    task['base_commit'] = None
     with pytest.raises(ValueError, match='needs owner'):
         delivery.validate(data)
 

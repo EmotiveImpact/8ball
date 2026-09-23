@@ -7,23 +7,10 @@ from datetime import datetime, timedelta
 from hashlib import sha256
 from itertools import product
 from .models import Situation, utcnow
+from endstate.state import condition_states
 
 LIMIT = 64
 RISK = {'low': 0, 'medium': 1, 'high': 2}
-
-
-def condition_states(case: Situation) -> dict:
-    evidence = {e.id: e for e in case.evidence}
-    superseded = {s for o in case.observations for s in o.supersedes}
-    result = {}
-    for c in case.graph.conditions:
-        active = [o for o in case.observations if o.condition_id == c.id and o.id not in superseded
-                  and evidence[o.evidence_id].status == 'reviewed']
-        values = {o.value for o in active}
-        status = 'disputed' if len(values) == 2 else ('true' if True in values else 'false' if values else 'unknown')
-        result[c.id] = {'status': status, 'observations': [o.id for o in active],
-                        'evidence': sorted({o.evidence_id for o in active})}
-    return result
 
 
 def action_status(case: Situation, action, states: dict) -> dict:

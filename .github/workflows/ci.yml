@@ -22,7 +22,7 @@ jobs:
       - run: python -m pytest -q
       - run: node --check web/app.js
       - run: for file in web/v2/*.js; do node --check "$file"; done
-      - run: python -m compileall -q eightball
+      - run: python -m compileall -q eightball endstate
       - run: python -m playwright install --with-deps chromium
       - name: Native browser journeys
         run: |
