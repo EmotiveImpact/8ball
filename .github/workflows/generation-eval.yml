@@ -2,7 +2,7 @@ name: Local generation evidence
 on:
   push:
     branches: [feat/situation-intelligence-v2]
-    paths: ['evals/live_generation.py', '.github/workflows/generation-eval.yml', 'eightball/v2/intelligence.py']
+    paths: ['evals/live_generation.py', '.github/workflows/generation-eval.yml', 'eightball/v2/intelligence.py', 'eightball/v2/contracts.py', 'eightball/v2/planner.py']
 permissions:
   contents: read
 jobs:

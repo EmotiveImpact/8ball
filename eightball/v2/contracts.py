@@ -315,7 +315,7 @@ class Case(Strict):
                 raise ValueError('Duplicate case object ID')
         sources={e.id:e for e in self.evidence};actors={a.id for a in self.actors}
         conds={c.id for c in self.graph.conditions};actions={a.id for a in self.graph.actions}
-        resources={r.id:r for r in self.resources};decisions={d.id:d for d in self.decisions}
+        resources={r.id for r in self.resources};decisions={d.id:d for d in self.decisions}
         def spans(prov):
             for r in prov.references:
                 if r.evidence_id not in sources or sources[r.evidence_id].text[r.start:r.end]!=r.quote:

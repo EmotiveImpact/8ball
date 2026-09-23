@@ -171,6 +171,28 @@ def make_app(store: Store, token: str) -> FastAPI:
         except ProviderUnavailable as exc:
             raise HTTPException(503, str(exc)) from None
 
+    from .v2.api import router as v2_router
+    from .v2.store import Store as V2Store
+    from fastapi.exceptions import RequestValidationError
+
+    @app.exception_handler(RequestValidationError)
+    async def request_validation_error(request, exc):
+        return JSONResponse({'detail': 'Invalid request fields', 'fields': [list(e['loc']) for e in exc.errors()]},status_code=422)
+
+    @app.exception_handler(Conflict)
+    async def conflict_error(request, exc):
+        return JSONResponse({'detail': str(exc)},status_code=409)
+
+    @app.exception_handler(KeyError)
+    async def missing_error(request, exc):
+        return JSONResponse({'detail': 'Case or object not found'},status_code=404)
+
+    @app.exception_handler(ValueError)
+    async def value_error(request, exc):
+        return JSONResponse({'detail': 'Invalid fields or references' if isinstance(exc,ValidationError) else str(exc)},status_code=422)
+
+    app.include_router(v2_router(V2Store(store.path),store,authorised))
     web = Path(__file__).resolve().parent.parent / 'web'
+    app.mount('/v2', StaticFiles(directory=web / 'v2', html=True), name='v2-web')
     app.mount('/', StaticFiles(directory=web, html=True), name='web')
     return app
