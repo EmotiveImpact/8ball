@@ -205,6 +205,12 @@ class Resource(Strict):
     available_until: AwareDatetime | None = None
     # Capacity-one named resources are real scheduling constraints in V0.2.
 
+    @model_validator(mode='after')
+    def valid_window(self):
+        if self.available_from and self.available_until and self.available_until<=self.available_from:
+            raise ValueError('Resource availability must end after it starts')
+        return self
+
 
 class Option(Strict):
     id: Identifier

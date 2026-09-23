@@ -186,6 +186,14 @@ def plan(case: Case, now: datetime | None = None, sort_by: str = 'fewest_unknown
                 elif d.selected is None:decisions.append({'id':d.id,'required_option':a.decision_option,'action_id':aid})
                 elif any(eid not in {e.id for e in case.evidence if e.status=='reviewed'} for eid in d.evidence_ids):
                     decisions.append({'id':d.id,'required_option':a.decision_option,'action_id':aid,'reason':'decision_evidence_retracted'})
+        required_options={}
+        for aid in sorted(selected):
+            action=actions[aid]
+            if action.decision_id:
+                required_options.setdefault(action.decision_id,set()).add(action.decision_option)
+        for decision_id,options in required_options.items():
+            if len(options)>1:
+                failures.append('Mutually exclusive decision options required: '+decision_id)
         while todo:
             eligible=[actions[i] for i in todo if all(before in ends for before,after in b.edges if after==i)]
             if not eligible:
@@ -224,6 +232,8 @@ def plan(case: Case, now: datetime | None = None, sort_by: str = 'fewest_unknown
         for _,_,aid,phase in sorted(clock):
             a=actions[aid]
             if phase=='start':
+                if evaluate(a.guard,projected)!='true':
+                    failures.append('Projected guard unmet at action start: '+a.title)
                 for constraint in case.constraints:
                     if constraint.action_ids and aid not in constraint.action_ids:continue
                     if constraint.predicate is not None and evaluate(constraint.predicate,projected)!='true':
@@ -235,6 +245,9 @@ def plan(case: Case, now: datetime | None = None, sort_by: str = 'fewest_unknown
                 for effect in a.effects:projected[effect.condition_id]={'status':'true' if effect.value else 'false'}
         if any(evaluate(o.success,projected)!='true' for o in mandatory):
             failures.append('Final projected state does not satisfy every mandatory objective')
+        for objective in case.graph.objectives:
+            if objective.failure is not None and evaluate(objective.failure,projected)=='true':
+                failures.append('Projected objective failure: '+objective.title)
         minutes=max(ends.values(),default=0);remaining_cost=sum(actions[i].cost for i in selected)
         finish=now+timedelta(minutes=minutes)
         evidenced=bool(mandatory) and not objective_failures and all(objective_states[o.id]=='true' for o in mandatory)
@@ -243,6 +256,12 @@ def plan(case: Case, now: datetime | None = None, sort_by: str = 'fewest_unknown
         if objective_failures:failures.append('A recorded objective failure condition is currently supported')
         gap_items=[{'condition_id':cid,'value':v,'reason':r,'status':states[cid]['status']} for cid,v,r in sorted(b.gaps)]
         gap_items.extend(guards)
+        required_gap_values={}
+        for gap in gap_items:
+            required_gap_values.setdefault(gap['condition_id'],set()).add(gap['value'])
+        for cid,values in required_gap_values.items():
+            if len(values)>1:
+                failures.append('Conflicting evidence assumptions: '+conditions[cid].title)
         risk=max([RISK[actions[i].risk] for i in selected] or [0])
         irreversible=[i for i in sorted(selected) if actions[i].reversibility=='irreversible']
         contingency_items=[{'action_id':i,**c.model_dump(mode='json'),'trigger_state':evaluate(c.when,states)}
@@ -262,7 +281,7 @@ def plan(case: Case, now: datetime | None = None, sort_by: str = 'fewest_unknown
                 'minutes':round(minutes,2),'remaining_cost':remaining_cost,'spent':spent,'total_cost':spent+remaining_cost,
                 'slack_minutes':round((case.deadline-finish).total_seconds()/60,1),
                 'risk':risk,'provisional':bool(gap_items or unknown_wait or external or decisions),
-                'evidence_coverage':{'supported':sum(states[c]['status'] in ('true','false') for c,_ in b.used),'required':len(b.used)},
+                'evidence_coverage':{'supported':sum(states[c]['status']==('true' if value else 'false') for c,value in b.used),'required':len(b.used)},
                 'objectives':{o.id:evaluate(o.success,projected) for o in case.graph.objectives},
                 'status':'constraint_failure' if failures else 'needs_evidence' if gap_items else 'needs_decision' if decisions else 'conditional',
                 'ready':[i for i in selected if action_states[i]['status']=='ready'],

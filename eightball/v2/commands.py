@@ -134,6 +134,8 @@ def apply(case:Case,cmd:Command,actor='local-operator',now=None) -> Case:
             raise ValueError('A recorded decision cannot be erased by editing its object')
         if p.kind=='question' and (obj.status!='open' or obj.answer or obj.evidence_ids):
             raise ValueError('Answer questions through the evidence-backed answer command')
+        if p.kind=='question' and any(q.id==obj.id and (q.status=='answered' or q.answer or q.evidence_ids) for q in case.questions):
+            raise ValueError('A recorded answer cannot be erased by editing its question; record a revised answer instead')
         merge_object(data,p.kind,obj.model_dump(mode='json'))
     elif cmd.kind=='replace_graph':data['graph']=p.graph.model_dump(mode='json')
     elif cmd.kind in ('approve','complete'):

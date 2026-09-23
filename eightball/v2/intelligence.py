@@ -181,12 +181,35 @@ def graph_items(case:Case,out:GraphOutput,source_ids:list[str],run_id:str):
     return items
 
 
+def validate_request(case: Case, provider: str, purpose: str, source_ids: list[str],
+                     *, playbook_id=None, allow_external=False):
+    """Validate operator input before acquiring an inference slot or logging a run."""
+    supported = {'rules': {'extract'}, 'playbook': {'graph'},
+                 'ollama': {'extract', 'graph', 'questions'},
+                 'jev': {'judgement'}, 'gliclass': {'judgement'}}
+    if purpose not in supported.get(provider, set()):
+        raise ValueError('That provider does not support the requested operation')
+    if len(source_ids) != len(set(source_ids)):
+        raise ValueError('Repeated source IDs')
+    sources = [e for e in case.evidence if e.id in source_ids and e.status != 'retracted']
+    if {e.id for e in sources} != set(source_ids):
+        raise ValueError('Unknown or retracted source in this case')
+    if purpose in ('extract', 'judgement') and not sources:
+        raise ValueError('Select at least one source')
+    limit = 6000 if purpose == 'judgement' else 12000
+    if sum(len(e.text) for e in sources) + (2 * max(0, len(sources)-1) if purpose=='judgement' else 0) > limit:
+        raise ValueError(f'Select source excerpts totalling at most {limit:,} characters')
+    if provider == 'playbook':
+        if not playbook_id:
+            raise ValueError('Choose a playbook explicitly')
+        get_playbook(playbook_id)
+    if provider == 'jev' and not allow_external:
+        raise ValueError('Explicit permission is required before sending selected sources to TypeSafe')
+    return sources
+
+
 def propose(case:Case,provider:str,purpose:str,source_ids:list[str],*,playbook_id=None,allow_external=False,client=None):
-    if len(source_ids)!=len(set(source_ids)):raise ValueError('Repeated source IDs')
-    sources=[e for e in case.evidence if e.id in source_ids and e.status!='retracted']
-    if {e.id for e in sources}!=set(source_ids):raise ValueError('Unknown or retracted source in this case')
-    if sum(len(e.text) for e in sources)>12000:raise ValueError('Select source excerpts totalling at most 12,000 characters')
-    if purpose in ('extract','judgement') and not sources:raise ValueError('Select at least one source')
+    sources=validate_request(case,provider,purpose,source_ids,playbook_id=playbook_id,allow_external=allow_external)
     started=time.perf_counter();run_id=uid();raw=None;model=provider;items=[]
     if provider=='rules' and purpose=='extract':
         raw=rules_extract(case,source_ids).model_dump(mode='json')

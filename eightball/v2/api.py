@@ -10,7 +10,7 @@ from .store import Store
 from .playbooks import demo_case, make_case, list_playbooks, get_playbook
 from .planner import plan, briefing, question_priorities
 from .services import detail, Scenario, simulate, migrate_legacy, client_brief, action_brief, situation_map
-from .intelligence import propose, retrieve, provider_status
+from .intelligence import propose, retrieve, provider_status, validate_request
 from ..store import Conflict, digest
 from ..models import utcnow
 from ..providers import ProviderUnavailable
@@ -135,12 +135,14 @@ def router(store:Store,legacy,authorised):
     def search(case_id:str,body:Search):return retrieve(store.get(case_id),body.query,body.types,body.limit)
 
     @r.get('/cases/{case_id}/proposals')
-    def proposals(case_id:str):return store.proposals(case_id)[:50]
+    def proposals(case_id:str):return store.proposals(case_id)
 
     @r.post('/cases/{case_id}/analyse')
     def analyse(case_id:str,body:Analyse):
         case=store.get(case_id)
         if body.expected_revision!=case.revision:raise Conflict('Reload before analysing this case')
+        validate_request(case,body.provider,body.purpose,body.source_ids,playbook_id=body.playbook_id,allow_external=body.allow_external)
+        if len(store.proposals(case_id))>=200:raise ValueError('Local proposal limit reached')
         if not model_slot.acquire(blocking=False):raise HTTPException(429,'Another analysis is already running. Try again after it finishes.')
         try:
             proposal=propose(case,body.provider,body.purpose,body.source_ids,playbook_id=body.playbook_id,allow_external=body.allow_external)
