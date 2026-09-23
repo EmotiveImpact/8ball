@@ -2,6 +2,21 @@
 
 **Find a way through.** Situation intelligence and outcome engineering for human-led case teams.
 
+## 8BALL, powered by ENDSTATE
+
+**8BALL is the fixer application we are building and selling first. ENDSTATE is the reusable outcome-engineering technology underneath it.** Other applications can later supply their own domain knowledge and workflows; this is not a plan to abandon fixers or build every industry at once.
+
+The current kernel remains inside `eightball/v2/`. ENDSTATE naming and future extraction are recorded; a standalone engine package, public SDK and additional production products are not yet delivered.
+
+For work in this chat or Codex, start with:
+
+- [Master PRD](docs/PRD.md) and [version roadmap](docs/ROADMAP.md).
+- [Version/subpart checklist](docs/delivery/PROGRESS.md), generated from `docs/delivery/progress.json`.
+- [Shared handoff](docs/delivery/HANDOFF.md) and [AGENTS.md](AGENTS.md).
+- [Original full V0.2 PRD](docs/reference/8BALL-V0.2-ASTRA-PRD.md), preserved without reducing its requirements.
+
+Update the ledger when a task changes, then run `python scripts/delivery.py --write` and `python scripts/delivery.py --check`. Built, verified, merged and released are separate states. The existing failed real-model graph gate remains open.
+
 ## V0.2 developer release
 
 The `/v2/` workspace turns source material into reviewable case objects, maintains an evidence-linked situation model, compares conditional routes and explains what changes when new information arrives. It is a real local application with FastAPI, SQLite, a responsive browser client and testable planning logic, not a chatbot or a static image.

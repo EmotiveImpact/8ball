@@ -1,5 +1,7 @@
 # Remaining acceptance and production work
 
+For the authoritative per-version/task states, use [the shared delivery checklist](../delivery/PROGRESS.md). This narrative preserves the outstanding V0.2 requirements; ENDSTATE reuse is additional tracked architecture work, not a reason to discard them.
+
 This list distinguishes implemented developer functionality from outstanding proof. It is not permission to silently reduce the original PRD.
 
 ## Before calling the intelligence layer validated

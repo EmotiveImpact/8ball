@@ -1,0 +1,21 @@
+name: Delivery documentation
+on:
+  push:
+    branches: [feat/situation-intelligence-v2, main]
+    paths: ['docs/**', 'AGENTS.md', 'STATUS.md', 'scripts/delivery.py', 'tests/test_delivery_tracking.py', '.github/workflows/delivery-docs.yml']
+  pull_request:
+    paths: ['docs/**', 'AGENTS.md', 'STATUS.md', 'scripts/delivery.py', 'tests/test_delivery_tracking.py', '.github/workflows/delivery-docs.yml']
+permissions:
+  contents: read
+jobs:
+  progress:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python scripts/delivery.py --check
+      - run: python -m pip install pytest==9.0.2
+      - run: python -m pytest -q tests/test_delivery_tracking.py

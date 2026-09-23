@@ -1,8 +1,14 @@
 # 8BALL V0.2 implementation requirements and acceptance index
 
+## ENDSTATE naming and shared delivery update
+
+The master product requirements are now [8BALL + ENDSTATE](PRD.md). **8BALL remains the fixer application; ENDSTATE is the accepted name of its reusable outcome engine.** This does not rename a model, change the original acceptance gate or assert that a standalone engine package already exists.
+
+Use [ROADMAP.md](ROADMAP.md) for product/engine version scope, [delivery/PROGRESS.md](delivery/PROGRESS.md) for per-version/subpart checkboxes and evidence, and [delivery/HANDOFF.md](delivery/HANDOFF.md) for working between this chat and Codex. Update only `delivery/progress.json` for task status and regenerate the checklist. No merge or deployment is authorised by this naming update.
+
 ## Authority and scope
 
-This is the repository implementation index to the accepted 37-section **8BALL V0.2 Astra PRD**, supplied in the conversation as `8BALL-V0.2-ASTRA-PRD.md`. The exact supplied reference has Git blob hash `cdaa878bcfdee65a62e2096eae085af64a5377c6`. This index does not supersede or silently remove requirements from that product vision. `docs/v2/ACCEPTANCE.md` maps implemented features to code; `docs/v2/REMAINING.md` identifies deferred or only partly validated work. A green software test is not proof of model judgement or operational effectiveness.
+This is the repository implementation index to the accepted 37-section **8BALL V0.2 Astra PRD**, now preserved in full at [`reference/8BALL-V0.2-ASTRA-PRD.md`](reference/8BALL-V0.2-ASTRA-PRD.md). The exact supplied reference has Git blob hash `cdaa878bcfdee65a62e2096eae085af64a5377c6`. This index does not supersede or silently remove requirements from that product vision. `docs/v2/ACCEPTANCE.md` maps implemented features to code; `docs/v2/REMAINING.md` identifies deferred or only partly validated work. A green software test is not proof of model judgement or operational effectiveness.
 
 The current delivery is a **local, single-operator developer release**, not the full production agency service. Do not label it production-ready or introduce real confidential client cases. Main remains unchanged until an explicit, validated merge decision.
 
