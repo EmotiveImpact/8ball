@@ -6,7 +6,7 @@
 
 **8BALL is the fixer application we are building and selling first. ENDSTATE is the reusable outcome-engineering technology underneath it.** Other applications can later supply their own domain knowledge and workflows; this is not a plan to abandon fixers or build every industry at once.
 
-The current kernel remains inside `eightball/v2/`. ENDSTATE naming and future extraction are recorded; a standalone engine package, public SDK and additional production products are not yet delivered.
+The shared calculation kernel now lives in `endstate/`; 8BALL calls it through compatibility adapters. See [the embedded contract](docs/endstate/CONTRACTS.md) and [extraction verification](docs/endstate/VALIDATION.md). A standalone supported SDK, public engine service and additional production products are not yet released.
 
 For work in this chat or Codex, start with:
 

@@ -4,7 +4,7 @@
 
 The product is **8BALL for fixers**, powered by the reusable **ENDSTATE** engine. Read `AGENTS.md`, `docs/PRD.md`, `docs/ROADMAP.md`, this file and `docs/delivery/PROGRESS.md`. The full original 37-section PRD is now in `docs/reference/8BALL-V0.2-ASTRA-PRD.md`; do not rely on a missing chat attachment. Current states belong only in `docs/delivery/progress.json`.
 
-The last inspected application baseline for this planning update is `f87f775cb883d6914cff9230731671851a3fc660`, branch `feat/situation-intelligence-v2`, draft PR #2. Refresh GitHub and local Git before starting: this is a checkpoint, not a promise that the remote head never changes. The ledger distinguishes this code baseline from later documentation commits.
+The latest verified application code checkpoint is `0c4104a675600c20a290766909bca60088766b35`, branch `feat/situation-intelligence-v2`, draft PR #2. ENDSTATE extraction evidence is in `docs/endstate/VALIDATION.md` and the contract is in `docs/endstate/CONTRACTS.md`. Refresh GitHub and local Git before starting: this is a checkpoint, not a promise that the remote head never changes. The ledger distinguishes this code baseline from later documentation commits.
 
 ## First session checks
 
@@ -17,7 +17,7 @@ The last inspected application baseline for this planning update is `f87f775cb88
 
 The first product blocker is `B02-09`: reliable reviewed graph proposals from genuinely new source material. The latest captured Qwen graph named a final verification action that was absent. Preserve and reproduce that failure. Do not manufacture the missing action, swap in a catalogue plan, weaken validation or shrink the test set to produce a green result. A typed multi-stage proposal/compiler or a different provider can be evaluated, but both must meet the same declared gate.
 
-`ES01-01` can proceed separately: define the ENDSTATE public contracts and dependency boundary around the existing state/planner, without breaking 8BALL imports, stored cases or evidence semantics. It does not authorise an entire framework rewrite or a new sales application. Start from actual reuse requirements and fixtures.
+`ES01-01` through `ES01-04` now have scoped extraction evidence. 8BALL uses the embedded ENDSTATE kernel, and neutral/sales/support fixtures share that code without breaking old wire or audit records. Continue with `ES01-05`: review the embedded package and versioned result compatibility before accepting the package gate. This does not authorise a framework rewrite, public SDK launch or a new sales application.
 
 `B02-18` stays blocked until the full V0.2 acceptance requirements pass. Optional `ES03-03` Jev live testing is blocked on an authorised key; never request a secret in a repository, PR comment, commit or public handoff.
 

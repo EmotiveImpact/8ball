@@ -9,7 +9,7 @@ Last status review: 2026-09-23.
 ## Checkpoint and release boundary
 
 - Active integration branch: `feat/situation-intelligence-v2`; PR #2.
-- Inspected application baseline: `f87f775cb883d6914cff9230731671851a3fc660`.
+- Inspected application baseline: `0c4104a675600c20a290766909bca60088766b35`.
 - This is a dated snapshot. Refresh the branch, PR and CI at the start of every session.
 - At inspection: draft PR = `true`; merged = `false`; production deployed = `false`.
 - Standalone ENDSTATE package released = `false`.
@@ -22,8 +22,8 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 ## Next work
 
+- **ES01-05: Reusable core acceptance**. Complete the explicit embedded-package acceptance review and result-contract compatibility record; no standalone SDK or public release is implied.
 - **B02-09: Reliable reviewed graph proposals for new situations**. Reproduce the rejected graph, evaluate a constrained multi-stage compiler/provider, and rerun the unchanged gate.
-- **ES01-01: Define ENDSTATE contracts and dependency boundary**. Map existing eightball/v2 contracts and avoid a naming-only directory rewrite.
 
 ## Version summary
 
@@ -31,11 +31,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 | --- | ---: | --- | --- |
 | Governance 1.1: Naming, PRD and shared delivery control | 3/3 | Scoped gate met | not released |
 | 8BALL 0.1: Local outcome-planning foundation | 3/3 | Scoped gate met | not released |
-| 8BALL 0.2: Reviewed situation intelligence | 8/18 | Not yet accepted | not released |
+| 8BALL 0.2: Reviewed situation intelligence | 9/18 | Not yet accepted | not released |
 | 8BALL 0.3: Secure agency pilot | 0/6 | Not yet accepted | not released |
 | 8BALL 0.4: Professionally reviewed resolution intelligence | 0/3 | Not yet accepted | not released |
 | 8BALL 1.0: Supported fixer product | 0/2 | Not yet accepted | not released |
-| ENDSTATE 0.1: Reusable engine core | 0/5 | Not yet accepted | not released |
+| ENDSTATE 0.1: Reusable engine core | 4/5 | Not yet accepted | not released |
 | ENDSTATE 0.2: Event-driven replanning | 0/4 | Not yet accepted | not released |
 | ENDSTATE 0.3: Evaluated intelligence compilation | 0/4 | Not yet accepted | not released |
 | ENDSTATE 0.4: Domain packs and integration interfaces | 0/4 | Not yet accepted | not released |
@@ -203,11 +203,14 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Next: Audit beyond existing viewport fit and Chromium interactions.
   - Evidence: `EV-REMAINING` (registry below).
 
-- [ ] **B02-17 Prove compatibility after ENDSTATE core extraction**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+- [x] **B02-17 Prove compatibility after ENDSTATE core extraction**
+  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
   - Acceptance: Existing 8BALL cases, imports, approvals, audits, simulations and browser flows pass through the extracted core.
-  - Next: Run all legacy/V2 suites against the actual new dependency boundary.
+  - Next: Preserve the extraction baseline and rerun all legacy/V2 suites for subsequent core changes.
+  - Branch/base: `feat/situation-intelligence-v2` / `5e2098e9cb12251592eb3889ce7926798484699d`.
   - Dependencies: `ES01-02`, `ES01-03`.
+  - Existing code: `tests/test_endstate_kernel.py`, `tests/browser_v2.py`, `tests/browser_smoke.py`.
+  - Evidence: `EV-KERNEL` (registry below).
 
 - [ ] **B02-18 V0.2 acceptance and release decision**
   - Status: `blocked`. Owner: unassigned. Updated: 2026-09-23.
@@ -299,36 +302,49 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 ## ENDSTATE 0.1: Reusable engine core
 
-- [ ] **ES01-01 Define ENDSTATE contracts and dependency boundary**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+- [x] **ES01-01 Define ENDSTATE contracts and dependency boundary**
+  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
   - Acceptance: Neutral engine inputs/outputs, version/error semantics and product/domain boundaries are documented with tests planned.
-  - Next: Map existing eightball/v2 contracts and avoid a naming-only directory rewrite.
-  - Existing code: `eightball/v2/contracts.py`, `eightball/v2/planner.py`.
-  - Evidence: `EV-DECISION` (registry below).
+  - Next: Preserve the versioned in-process boundary; stabilise nested result contracts in the package review.
+  - Branch/base: `feat/situation-intelligence-v2` / `5e2098e9cb12251592eb3889ce7926798484699d`.
+  - Existing code: `endstate/api.py`, `endstate/contracts.py`, `docs/endstate/CONTRACTS.md`.
+  - Evidence: `EV-DECISION`, `EV-KERNEL` (registry below).
 
-- [ ] **ES01-02 Extract shared state, planning and explanation kernel**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+- [x] **ES01-02 Extract shared state, planning and explanation kernel**
+  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
   - Acceptance: 8BALL calls the extracted core; the core imports no 8BALL UI, named client or fixer playbook.
-  - Next: Extract incrementally, retaining compatibility adapters.
+  - Next: Continue 8BALL through the shared kernel; do not duplicate the planner for another domain.
+  - Branch/base: `feat/situation-intelligence-v2` / `5e2098e9cb12251592eb3889ce7926798484699d`.
   - Dependencies: `ES01-01`.
+  - Existing code: `endstate/state.py`, `endstate/planner.py`, `eightball/v2/planner.py`.
+  - Evidence: `EV-KERNEL` (registry below).
 
-- [ ] **ES01-03 Preserve storage, imports and audit lineage**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+- [x] **ES01-03 Preserve storage, imports and audit lineage**
+  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
   - Acceptance: Old data, imports and event meanings remain readable; migrations preserve observations and expiring approval behaviour.
-  - Next: Add compatibility fixtures before moving persistence boundaries.
+  - Next: Keep frozen pre-extraction records and wire schemas as regression gates; do not regenerate expected results to hide changes.
+  - Branch/base: `feat/situation-intelligence-v2` / `5e2098e9cb12251592eb3889ce7926798484699d`.
   - Dependencies: `ES01-01`.
+  - Existing code: `eightball/models.py`, `eightball/v2/contracts.py`, `tests/test_endstate_kernel.py`, `tests/fixtures/endstate/pre_extraction.json.xz`.
+  - Evidence: `EV-KERNEL` (registry below).
 
-- [ ] **ES01-04 Prove reuse through neutral, sales and support fixtures**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+- [x] **ES01-04 Prove reuse through neutral, sales and support fixtures**
+  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
   - Acceptance: One unchanged kernel plans three domains with domain-specific actions/policies; no duplicated engine or full new app.
-  - Next: Create small fictional contract tests, including opt-out and remedy-authority restrictions.
+  - Next: Keep these as fictional reuse fixtures; future commercial domains need their own policies and evaluation.
+  - Branch/base: `feat/situation-intelligence-v2` / `5e2098e9cb12251592eb3889ce7926798484699d`.
   - Dependencies: `ES01-02`, `ES01-03`.
+  - Existing code: `tests/test_endstate_kernel.py`, `endstate/api.py`.
+  - Evidence: `EV-KERNEL` (registry below).
 
 - [ ] **ES01-05 Reusable core acceptance**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-23.
   - Acceptance: Current 8BALL suites and cross-domain fixtures pass on the proposed shared package; version compatibility is explicit.
-  - Next: Accept extracted package only with exact regression evidence.
+  - Next: Complete the explicit embedded-package acceptance review and result-contract compatibility record; no standalone SDK or public release is implied.
+  - Branch/base: `feat/situation-intelligence-v2` / `5e2098e9cb12251592eb3889ce7926798484699d`.
   - Dependencies: `ES01-02`, `ES01-03`, `ES01-04`.
+  - Existing code: `endstate/api.py`, `docs/endstate/CONTRACTS.md`, `tests/test_endstate_kernel.py`.
+  - Evidence: `EV-KERNEL` (registry below).
 
 
 ## ENDSTATE 0.2: Event-driven replanning
@@ -522,3 +538,11 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `documentation_validation`.
 - Repository evidence: [docs/delivery/sessions/2026-09-23-endstate-naming.md](../../docs/delivery/sessions/2026-09-23-endstate-naming.md).
 - Result/scope: Documentation-only verification recorded in this session checkpoint. Not proof of a runtime feature.
+
+### EV-KERNEL
+
+- Kind: `software_validation`.
+- Repository evidence: [docs/endstate/VALIDATION.md](../../docs/endstate/VALIDATION.md).
+- Result/scope: 269 local tests, including 36 extraction/compatibility checks; 51 V0.2 and 27 legacy native browser checks passed. Shared neutral/sales/support kernel fixtures, not new products or model-quality approval.
+- Code revision: `0c4104a675600c20a290766909bca60088766b35`.
+- External record: [verification source](https://github.com/EmotiveImpact/8ball/actions/runs/35904869115).

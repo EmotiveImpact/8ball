@@ -1,25 +1,21 @@
 # 8BALL + ENDSTATE: current delivery checkpoint
 
-Status review: 23 September 2026. **8BALL is the fixer product. ENDSTATE is the reusable engine underneath it.** The accepted naming does not mean a standalone kernel/package has already been extracted.
+23 September 2026. **8BALL remains the fixer product. Its shared calculation kernel now lives in `endstate/`, called through compatibility adapters by 8BALL.** This is an embedded developer preview, not a standalone SDK or production service.
 
-## Read the live progress record
+## Current code and evidence
 
-[docs/delivery/PROGRESS.md](docs/delivery/PROGRESS.md) is the version-by-version and subpart-by-subpart checklist. Edit its source, `docs/delivery/progress.json`, then regenerate it with `python scripts/delivery.py --write`. The [roadmap](docs/ROADMAP.md) defines milestone scope and the [handoff](docs/delivery/HANDOFF.md) defines how chat and Codex continue the same work.
+Code commit **`0c4104a675600c20a290766909bca60088766b35`**, tree **`6259e4aa41bc948f560fd54e26025071a74c5867`**, on `feat/situation-intelligence-v2`. Native GitHub Actions run **35904869115** passed. Local results: **269 pytest tests**, including 36 extraction/compatibility checks. The downloaded native artifact records **51 V0.2 + 27 legacy browser checks**, real HTTP, SQLite, storage/reload and exports. See [ENDSTATE validation](docs/endstate/VALIDATION.md).
 
-## Inspected application baseline
+The separated core has no 8BALL, database, web-server or model-runtime import dependency. Neutral, sales and support fixtures use the same kernel. These are reuse tests, not three launched products. Existing wire schemas, plans, original database records and audit hashes are preserved by regression checks.
 
-`f87f775cb883d6914cff9230731671851a3fc660` on `feat/situation-intelligence-v2`, draft PR #2. At inspection PRs #1 and #2 were unmerged and main remained at `08bc26ef397ec960d1b33b099c40888a8229eac0`. No hosted production deployment or standalone ENDSTATE release. Refresh this snapshot against GitHub before new work.
+## Shared progress
 
-The baseline's recorded application results are 221 pytest checks, 51 V0.2 native browser checks and 27 legacy native checks, with their scopes in `docs/v2/VALIDATION.md`. Those are historical application results, not a claim that new engine extraction or model-quality work has passed.
+The only editable task-status source is `docs/delivery/progress.json`. Regenerate [the checklist](docs/delivery/PROGRESS.md) with `python scripts/delivery.py --write`. The [roadmap](docs/ROADMAP.md), [contracts](docs/endstate/CONTRACTS.md) and [handoff](docs/delivery/HANDOFF.md) define the next work for both chat and Codex.
 
-The manual/reviewed local workflow is implemented and tested. The actual Qwen graph gate failed; the first GLiClass configuration performed poorly; Jev has no authorised live-test credential. See `docs/v2/AI-EVALUATION.md`. The full real-model V0.2 acceptance journey remains open.
+ES01-01 through ES01-04 have scoped verification. ES01-05 remains partial pending explicit embedded-package acceptance and result-contract compatibility review. Do not turn that partial gate into an implied public release.
 
-## This planning update
+## Still open
 
-ENDSTATE naming, fixer-first positioning, future reuse lanes, a coordinated version roadmap, the complete preserved original PRD, task/evidence tracking and the shared session protocol have been added. Application code and runtime behaviour are unchanged. Documentation/tooling checks are recorded in `docs/delivery/sessions/2026-09-23-endstate-naming.md`.
+B02-09, reliable new-situation model graph proposals, remains blocked on the recorded actual Qwen failure. B02-18, the full V0.2 release gate, is not complete. GLiClass's initial evaluation was poor; Jev has no authorised live-test credential. [AI evaluation](docs/v2/AI-EVALUATION.md) retains those facts. This kernel extraction does not claim new model quality.
 
-## Next work
-
-`B02-09`: reproduce and fix reliable new-situation graph proposals without weakening the evidence/verification gate. `ES01-01`: define the incremental ENDSTATE contract and extraction boundary while preserving the working fixer product. The ledger records both tracks and their dependencies. Agency security, expert/client accounts, evidence vault and deployment remain unimplemented production work.
-
-This update does not merge, deploy, install a model or declare V0.2 finished. Fictional/test case data only.
+At this checkpoint PR #2 remains draft and unmerged; main remains at `08bc26ef397ec960d1b33b099c40888a8229eac0`. No merge, deployment or standalone ENDSTATE release. Real agency identities, expert/client access, confidential evidence storage and recovery controls remain production work. Use fictional/test information only.

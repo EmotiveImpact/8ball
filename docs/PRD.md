@@ -47,7 +47,7 @@ The user can start with an outcome, but an outcome alone does not supply knowled
 
 ENDSTATE must be able to serve a second domain without duplicating its planner or leaking one client's records into another. It need not become a separately deployed service immediately. Keep one repository until a concrete packaging or ownership requirement justifies a split.
 
-**Present boundary:** existing code remains in `eightball/v2/`; separate ENDSTATE packaging is tracked as unfinished. This PRD does not rename code, migrate data, install a model or publish an SDK.
+**Implemented boundary, 23 September 2026:** shared calculation code now lives in `endstate/`, with 8BALL compatibility adapters retaining its case, command and storage contracts. Separate distribution and supported public SDK acceptance remain unfinished. See [the embedded contract](endstate/CONTRACTS.md) and [verification record](endstate/VALIDATION.md). No data migration or model installation is implied.
 
 ## 5. Core outcome contract
 
@@ -160,6 +160,6 @@ Never mark work verified from intention, a screenshot alone or an old test run c
 
 ## 16. Current state and release authority
 
-Baseline inspected for this planning revision: `f87f775cb883d6914cff9230731671851a3fc660` on `feat/situation-intelligence-v2`, draft PR #2. The recorded application suite passed; the arbitrary-situation AI graph gate remains failed. ENDSTATE is the accepted name and extraction target, not an already separated package. See the ledger for the exact evidence and checkboxes.
+The naming/roadmap baseline was `f87f775cb883d6914cff9230731671851a3fc660`. The subsequent implemented kernel extraction is verified at **`0c4104a675600c20a290766909bca60088766b35`** on `feat/situation-intelligence-v2`, draft PR #2. 8BALL now uses shared ENDSTATE calculation code; the standalone package gate is not yet accepted. The arbitrary-situation AI graph gate remains open. See the ledger for task-by-task evidence rather than treating a document revision as a release.
 
-This is a planning/documentation update. It does not authorise a main merge, mark PR #2 ready, install models, perform the kernel extraction or deploy a service. Earlier merge suggestions are recommendations, not completed operations. Re-read current GitHub state and obtain a clear release instruction before merging.
+No main merge, draft-to-ready change, public SDK release or production deployment is authorised by this checkpoint. Earlier merge suggestions remain recommendations, not completed operations. Refresh current GitHub state before further work and obtain a clear release instruction before merging.
