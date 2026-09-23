@@ -1,67 +1,72 @@
 # 8BALL
 
-**Find a way through.** Outcome-engineering software for a human-led situation room.
+**Find a way through.** Situation intelligence and outcome engineering for human-led case teams.
 
-`0.1.0-alpha.1` is a working, local, single-operator developer release. It is **not a production agency service**. Use fictional data only. This repository is public; never commit case files, keys, exports or personal information.
+## V0.2 developer release
 
-## What works
+The `/v2/` workspace turns source material into reviewable case objects, maintains an evidence-linked situation model, compares conditional routes and explains what changes when new information arrives. It is a real local application with FastAPI, SQLite, a responsive browser client and testable planning logic, not a chatbot or a static image.
 
-An operator defines the situation, desired outcome, constraints and a human-authored action catalogue. The engine works backwards from the goal, produces alternative routes, checks prerequisites, schedules work by owner and recalculates when evidence changes. A polished, responsive browser workspace connects to a real FastAPI service and SQLite database.
+**Local, single-operator, fictional/test cases only. Not a production agency service.** This repository is public. Never commit client information, keys, exports or model weights.
 
-There are eight views: agency command, situation room, outcome graph, ways through, evidence, actions and approvals, decision trail, and an operator-only client brief preview. The interface includes case intake, two editable playbooks, evidence review, disputed observations, revision-scoped approvals, completion recording, constraints, a non-persistent scenario sandbox and JSON audit export.
+### Start
 
-**Recording an action as completed never makes its intended result true.** Sending an offer is not proof that someone accepted it. A reviewed source plus a separate operator attestation establishes an evidenced condition. Conflicting attestations remain disputed until explicitly reconciled.
-
-## Start locally
-
-Use Python 3.12 or 3.13. The verified development environment is documented in `docs/VALIDATION.md`.
+Use Python 3.12 or 3.13:
 
 ```sh
 git clone https://github.com/EmotiveImpact/8ball.git
 cd 8ball
-git checkout feat/outcome-engine-alpha
+git checkout feat/situation-intelligence-v2
 python -m venv .venv
 . .venv/bin/activate
 python -m pip install -r requirements.txt
 python -m eightball
 ```
 
-On Windows activate with `.venv\Scripts\Activate.ps1` instead. Open `http://127.0.0.1:8048` and enter the operator token printed in the terminal. Select **Open fictional case**. The server intentionally binds to loopback only. It does not create a public website.
+Open **http://127.0.0.1:8048/v2/** and paste the operator token printed in the terminal. Windows users can run `scripts/run-local.ps1`; macOS/Linux users can run `sh scripts/run-local.sh`. These convenience scripts install only core application dependencies. Models are separately configured, not silently downloaded.
 
-The default database is `~/.eightball/cases.sqlite3`. Stop the process with Ctrl+C. Data survives restarting; a new token is generated unless `EIGHTBALL_TOKEN` is explicitly set to a secret of at least 32 characters. Environment variables must be exported by your shell; `.env.example` is documentation, not an automatically loaded configuration file. Do not pass the token to a public service.
+The CLI binds to loopback. Database: `~/.eightball/cases.sqlite3`, unless `EIGHTBALL_DB` is exported. Set a secret `EIGHTBALL_TOKEN` of at least 32 characters to retain the same token across restarts. The `.env.example` file documents variables; it is not automatically loaded. No paid API key, Node build or model is needed for manual planning, source capture or the catalogue.
 
-No Node installation, frontend build, model download or paid API key is needed for the core application. Optional models are disabled until deliberately configured and requested. The browser must use the local server, not open `web/index.html` directly.
+### Explore the actual loop
 
-## Try the outcome loop
+Open the fictional Northstar case. Inspect the live model, Now panel, open questions and four structural route alternatives. Add and review source text, then separately attest a condition and watch readiness change. Record a decision, approve a suitable action and record completed work: the intended result remains unverified until evidenced. Compare routes, test a refusal in What If, inspect What Changed and export the decision trail.
 
-Open the fictional Northstar case. Inspect its three candidate routes. Add an incident preservation log in Evidence, review the source, and attest the condition **Incident records preserved**. Root-cause investigation becomes ready. Record a task as completed and notice that its intended outcome remains unknown until evidenced. Use **What if?** to test a £1 budget; the routes fail that constraint without changing the case. Export the decision trail to inspect the stored event chain.
+Open a blank situation for intake. Paste sources or load a small `.txt` excerpt. Choose rules-based capture, an explicitly selected playbook, or a configured local model. Review proposals individually: accept, edit or reject. No proposal creates a verified fact. Related items are validated together; stale proposals cannot overwrite newer case state.
 
-Estimated time and cost come from the editable playbook. They are illustrative, conditional inputs, not measured business benchmarks or success predictions. Third-party consent cannot be guaranteed.
+### What is implemented
 
-## Optional AI
+Seventeen navigation views plus focused intake/detail/review dialogs: agency command, situation room, intake review, situation map, route comparison, actions/approvals, open questions, decisions, people/organisations, evidence/claims, timeline, changes, simulation, audit, client brief preview, playbooks and intelligence settings.
 
-Jev is a bounded judgement service, not the planner. GLiClass Edge is a small, local, open-weight classification candidate. A local Ollama model can propose source-grounded observations. The adapters are implemented and their interfaces/failure handling are tested, but **no live model inference or model-quality benchmark was run for this release**. See `docs/AI.md` for verified sources, configuration and evaluation requirements.
+The V0.2 domain supports signed AND/OR prerequisites, explicit guards, multiple objectives, failure criteria, scoped restrictions, resource windows, active/wait durations, decision gates, reversible/irreversible actions and disclosed side effects. Routes use bounded backward search and forward validation with greedy scheduling. Counts and estimates are structural/operator inputs, not success predictions. External responses remain contingent.
 
-AI can suggest; it cannot approve, attest, spend, send messages or modify a case. Free-text intake does not automatically generate a novel playbook in this alpha.
+Transactional persistence includes revision checks, idempotency, expiring approvals, event snapshots with linked hashes, replay verification, model proposal/disposition history and case export. Legacy alpha cases can be imported into a separate V0.2 case without altering the original. The original `/` workspace and its tests remain available.
 
-## Validation
+### AI reality
+
+Ollama adapters propose source-linked objects, novel graph structures and open questions. Jev and GLiClass provide optional bounded classifications. Every generated action begins approval-required. All model output remains advisory. The core engine owns arithmetic, state and constraints.
+
+The first real GLiClass CPU experiment completed but scored only 6/30 raw top-one matches with 100% abstention on our fictional challenge set. It is **not approved as a production classifier**. Results, exact model revision and environment are preserved. Do not confuse a completed model job with a good model. See `docs/v2/AI-EVALUATION.md` for model setup, actual generation evidence and limitations.
+
+### Validation and specifications
 
 ```sh
 python -m pip install -r requirements-dev.txt
 python -m pytest -q
 node --check web/app.js
+for file in web/v2/*.js; do node --check "$file"; done
 python -m playwright install chromium
 python tests/browser_smoke.py
+python tests/browser_v2.py
 ```
 
-The local browser environment blocked URL navigation, so initial checks used an explicitly documented offline ASGI bridge. The subsequent native GitHub Actions run **35752284823** passed all 27 browser checks over real HTTP, including native session storage and downloads, with the existing CSP enabled. It also passed all 86 pytest tests. See `docs/VALIDATION.md` for the tested commit, retrieved report, earlier harness fixes and remaining limitations.
+See `docs/v2/VALIDATION.md` for exact observed local/native CI results. Local bridged browser checks are explicitly distinguished from native browser networking, storage and downloads. `evals/` contains separate actual-model experiments.
 
-## Documentation and next milestone
+- `docs/PRD-V0.2.md`: accepted product requirements.
+- `docs/v2/ACCEPTANCE.md`: requirement-to-code map and boundaries.
+- `docs/v2/ARCHITECTURE.md`: implemented semantics and limitations.
+- `docs/v2/AI-EVALUATION.md`: model evidence and setup.
+- `docs/v2/PRODUCTION-SECURITY.md`: proposed agency infrastructure and release gate.
+- `STATUS.md`: delivery state; `AGENTS.md`: continuation rules.
 
-- `docs/PRD.md`: product, acceptance journey and scope.
-- `docs/ARCHITECTURE.md`: engine semantics, trust boundaries and production path.
-- `docs/AI.md`: Jev, small local alternatives and evaluation plan.
-- `docs/VALIDATION.md`: what was tested and what remains unverified.
-- `STATUS.md`: delivery state and next implementation priorities.
+### What this does not claim
 
-Before real client use: authenticated identities, tenant isolation, role-scoped expert access, encrypted evidence storage, retention/deletion controls, independently anchored audits, operational monitoring, tested recovery and professional review. Neither this README nor the software establishes legal privilege or regulatory compliance.
+No hosted deployment, tenant accounts, secure client portal, confidential file vault, OCR, automatic email/phone/payment execution, independently anchored forensic audit or guaranteed outcomes. The client brief is an operator preview. Free-text restrictions do not establish machine-verified legal compliance. Model/schema tests and fictional playbooks do not prove professional effectiveness. Complete the production security and expert-review gate before real client information is introduced.
