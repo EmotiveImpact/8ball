@@ -1,0 +1,28 @@
+name: Source package
+on:
+  push:
+    branches: [feat/situation-intelligence-v2]
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Package exact tracked source
+        run: |
+          mkdir -p "$RUNNER_TEMP/package"
+          git archive --format=zip --prefix=8ball/ HEAD > "$RUNNER_TEMP/package/8BALL-source.zip"
+          git rev-parse HEAD > "$RUNNER_TEMP/package/commit.txt"
+          git rev-parse 'HEAD^{tree}' > "$RUNNER_TEMP/package/tree.txt"
+          cd "$RUNNER_TEMP/package"
+          sha256sum 8BALL-source.zip > SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-package
+          path: ${{ runner.temp }}/package/
+          if-no-files-found: error
+          retention-days: 30
