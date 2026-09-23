@@ -65,15 +65,21 @@ def test_retracted_sources_cannot_be_sent_to_provider():
 
 
 def graph():
-    return {'conditions':[{'id':'resolved','title':'Service recovered','confirmation':'Owner confirms recovery'}],
-            'actions':[{'id':'recover','title':'Recover service','owner':'Operator',
-                        'minutes':60,'produces':['resolved'],'external':True}],
-            'goal_conditions':['resolved']}
+    return {'conditions':[
+                {'id':'repaired','title':'Service repaired','confirmation':'Technical checks'},
+                {'id':'resolved','title':'Service recovered and accepted','confirmation':'Owner confirms recovery'}],
+            'actions':[
+                {'id':'recover','title':'Recover service','owner':'Operator','requires_all':[],
+                 'minutes':60,'produces':['repaired'],'external':True},
+                {'id':'verify','title':'Verify and confirm acceptance','owner':'Case lead','requires_all':['repaired'],
+                 'minutes':15,'produces':['resolved'],'external':True}],
+            'goal_conditions':['resolved'],'final_verification_action_id':'verify'}
+
 
 
 def test_graph_generation_is_validated_proposal_only():
     c=case();p=propose(c,'ollama','graph',['source'],client=client(graph()))
-    assert len(p.items)==3 and not c.graph.actions and not c.observations
+    assert len(p.items)==5 and not c.graph.actions and not c.observations
     assert next(i for i in p.items if i.kind=='action').object['approval_required'] is True
     assert all(i.object['provenance']['origin']=='model_proposal' for i in p.items)
 
@@ -121,3 +127,17 @@ def test_compact_graph_does_not_replace_existing_conditions():
     from eightball.v2.contracts import Condition
     c=case();c.graph.conditions.append(Condition(id='resolved',title='Original meaning',confirmation='Reviewed source'))
     with pytest.raises(ValueError):propose(c,'ollama','graph',['source'],client=client(graph()))
+
+
+@pytest.mark.parametrize('mutator',[
+    lambda g:g['actions'][0].pop('requires_all'),
+    lambda g:g.update(final_verification_action_id='missing'),
+    lambda g:g['actions'][1].update(requires_all=[]),
+    lambda g:g.update(goal_conditions=['repaired']),
+    lambda g:g['actions'][0].update(produces=['resolved']),
+    lambda g:g['actions'][1].update(requires_all=['resolved']),
+])
+def test_draft_cannot_omit_dependencies_or_bypass_final_verification(mutator):
+    g=graph();mutator(g)
+    with pytest.raises((ValueError,ValidationError)):
+        propose(case(),'ollama','graph',['source'],client=client(g))

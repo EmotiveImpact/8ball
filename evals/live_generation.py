@@ -71,7 +71,11 @@ def main():
                 'limitations':['Four fictional engineering fixtures, not a benchmark.','Exact source matching and schema validity do not establish semantic correctness.','Graph routes are conditional hypotheses; no actions were executed or outcomes guaranteed.','Inspect every raw output and failed request.']}
         (OUT/'ollama-live-report.json').write_text(json.dumps(report,indent=2))
     if not all(x['live_state_unchanged'] for x in results):raise RuntimeError('Model changed live case state')
-    if not any(x['status']=='valid_proposal' and x['proposal_count'] for x in results):raise RuntimeError('No usable proposal was returned')
+    if not all(x['status']=='valid_proposal' for x in results):
+        raise RuntimeError('At least one fixture did not produce a valid proposal')
+    graph_result=next(x for x in results if x['purpose']=='graph')
+    if graph_result.get('candidate_routes',0)<2:
+        raise RuntimeError('The explicit alternative-supplier fixture did not preserve two alternative routes')
 
 
 if __name__=='__main__':main()
