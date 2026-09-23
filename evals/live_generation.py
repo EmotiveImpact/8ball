@@ -29,9 +29,10 @@ def run_one(title,text,purpose,desired):
            deadline=utcnow()+timedelta(days=3),budget=10000,
            evidence=[Evidence(id='source',title='Fictional source',source='Fixed evaluation fixture',text=text)])
     before=c.model_dump(mode='json');rec=Recorder();started=time.perf_counter()
-    result={'title':title,'purpose':purpose,'source':text,'desired_outcome':desired}
+    provider=os.getenv('EIGHTBALL_GRAPH_PROVIDER','ollama') if purpose=='graph' else 'ollama'
+    result={'title':title,'purpose':purpose,'provider':provider,'source':text,'desired_outcome':desired}
     try:
-        p=propose(c,'ollama',purpose,['source'],client=rec)
+        p=propose(c,provider,purpose,['source'],client=rec)
         result.update(status='valid_proposal',proposal=p.model_dump(mode='json'),proposal_count=len(p.items))
         if purpose=='graph':
             # Sandbox-only projection of all proposals for structural evaluation, never a live acceptance.
@@ -41,6 +42,10 @@ def run_one(title,text,purpose,desired):
             result['candidate_routes']=len(routes['routes'])
             result['route_statuses']=[r['status'] for r in routes['routes']]
             result['outcome_evidenced']=routes['outcome_evidenced']
+            result['drafted_action_count']=len(projected.graph.actions)
+            result['all_actions_need_approval']=all(a.approval_required for a in projected.graph.actions)
+            result['exact_human_outcome_preserved']=all(o.title==desired for o in projected.graph.objectives)
+            result['compiler_version']=(p.raw_output or {}).get('compiler_version')
         result['live_state_unchanged']=before==c.model_dump(mode='json')
     except Exception as e:
         result.update(status='rejected_or_unavailable',error_type=type(e).__name__,message=str(e)[:2000],live_state_unchanged=before==c.model_dump(mode='json'))
@@ -64,6 +69,7 @@ def main():
     for fixture in fixtures:
         results.append(run_one(*fixture))
         report={'actual_model_requests':True,'model':model,'runtime':runtime,'model_tags':tags,
+                'graph_provider':os.getenv('EIGHTBALL_GRAPH_PROVIDER','ollama'),
                 'fixture_sha256':hashlib.sha256(json.dumps(fixtures).encode()).hexdigest(),
                 'results':results,'schema_valid':sum(x['status']=='valid_proposal' for x in results),
                 'total':len(results),'all_live_states_unchanged':all(x['live_state_unchanged'] for x in results),
@@ -74,6 +80,8 @@ def main():
     if not all(x['status']=='valid_proposal' for x in results):
         raise RuntimeError('At least one fixture did not produce a valid proposal')
     graph_result=next(x for x in results if x['purpose']=='graph')
+    if graph_result.get('outcome_evidenced') or not graph_result.get('all_actions_need_approval') or not graph_result.get('exact_human_outcome_preserved'):
+        raise RuntimeError('Graph weakened the authority or human-outcome boundary')
     if graph_result.get('candidate_routes',0)<2:
         raise RuntimeError('The explicit alternative-supplier fixture did not preserve two alternative routes')
 

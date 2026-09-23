@@ -2,7 +2,7 @@ name: Local generation evidence
 on:
   push:
     branches: [feat/situation-intelligence-v2]
-    paths: ['evals/live_generation.py', '.github/workflows/generation-eval.yml', 'eightball/v2/intelligence.py', 'eightball/v2/contracts.py', 'eightball/v2/planner.py']
+    paths: ['evals/live_generation.py', '.github/workflows/generation-eval.yml', 'eightball/v2/intelligence.py', 'eightball/v2/contracts.py', 'eightball/v2/planner.py', 'endstate/compilation.py']
 permissions:
   contents: read
 jobs:
@@ -30,6 +30,7 @@ jobs:
       - name: Exercise actual V0.2 extraction and graph adapter
         env:
           EIGHTBALL_OLLAMA_MODEL: qwen3.5:4b
+          EIGHTBALL_GRAPH_PROVIDER: ollama_staged
         run: python evals/live_generation.py
       - uses: actions/upload-artifact@v4
         if: always()

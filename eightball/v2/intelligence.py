@@ -14,6 +14,7 @@ from .playbooks import get_playbook
 from .commands import merge_object
 from ..store import digest
 from ..providers import jev_classify, gliclass_classify, ProviderUnavailable
+from endstate.compilation import DraftRequest, draft_outcome
 
 PROMPT_VERSION='intake-2.4'
 
@@ -185,7 +186,7 @@ def validate_request(case: Case, provider: str, purpose: str, source_ids: list[s
                      *, playbook_id=None, allow_external=False):
     """Validate operator input before acquiring an inference slot or logging a run."""
     supported = {'rules': {'extract'}, 'playbook': {'graph'},
-                 'ollama': {'extract', 'graph', 'questions'},
+                 'ollama': {'extract', 'graph', 'questions'}, 'ollama_staged': {'graph'},
                  'jev': {'judgement'}, 'gliclass': {'judgement'}}
     if purpose not in supported.get(provider, set()):
         raise ValueError('That provider does not support the requested operation')
@@ -235,6 +236,19 @@ def propose(case:Case,provider:str,purpose:str,source_ids:list[str],*,playbook_i
           'For an actor, text is the actor name only, not the whole sentence. Represent uncertain assertions as claims. Return an empty items list when unsupported.',context,client)
         items=extraction_items(case,ExtractionOutput.model_validate(raw),source_ids,run_id,provider)
         note='Local AI extraction. Exact span validation does not prove semantic accuracy. Every item needs human review.'
+    elif provider=='ollama_staged' and purpose=='graph':
+        request=DraftRequest(outcome=case.desired_outcome,brief=case.summary,namespace=run_id,
+                             sources=[{'id':e.id,'text':e.text} for e in sources],
+                             existing_conditions=[{'id':c.id,'title':c.title} for c in case.graph.conditions])
+        def generate(schema, system, context):
+            return ollama_json(schema, system, context, client=client)
+        compiled,raw,model=draft_outcome(request,generate)
+        output=GraphOutput(conditions=compiled.graph.conditions,actions=compiled.graph.actions,
+                           objectives=compiled.graph.objectives)
+        items=graph_items(case,output,source_ids,run_id)
+        note=('Experimental two-stage ENDSTATE draft: model-defined outcome and verifier, then ordered alternative routes. '
+              'Code assigns IDs and explicit wiring; no missing action is invented. All actions require review and approval; '
+              'high risk / difficult to reverse are conservative defaults, not measured risk. No case facts changed.')
     elif provider=='ollama' and purpose=='graph':
         context={'desired_outcome':case.desired_outcome,'brief':case.summary,
                  'existing_conditions':[{'id':c.id,'title':c.title} for c in case.graph.conditions],
@@ -304,6 +318,8 @@ def provider_status():
         {'id':'playbook','name':'Reviewed catalogue','kind':'human_authored','configured':True,'note':'Eight starting structures; specialist review required'},
         {'id':'ollama','name':'Local structured model','kind':'local_generation','configured':None,'model':os.getenv('EIGHTBALL_OLLAMA_MODEL','qwen3.5:4b'),
          'note':'Install and run Ollama on this machine. Availability is checked only when requested.'},
+        {'id':'ollama_staged','name':'Local staged ENDSTATE draft','kind':'local_generation','configured':None,
+         'note':'Experimental two-stage outcome/frame and route drafting on the same local Ollama runtime. Explicit final verification and human review required.'},
         {'id':'gliclass','name':'GLiClass Edge','kind':'local_classification','configured':None,'note':'Experimental only. Initial 30-case configuration: 20% raw top-one accuracy and 100% abstention; not production-approved. Cached weights required.'},
         {'id':'jev','name':'Jev / TypeSafe','kind':'external_judgement','configured':bool(os.getenv('TYPESAFE_API_KEY')),
          'note':'Explicit permission required to transmit selected evidence. No automatic sends.'}]}

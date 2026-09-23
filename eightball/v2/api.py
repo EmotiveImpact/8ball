@@ -14,6 +14,8 @@ from .intelligence import propose, retrieve, provider_status, validate_request
 from ..store import Conflict, digest
 from ..models import utcnow
 from ..providers import ProviderUnavailable
+from endstate.compilation import DraftFailure
+import time
 
 
 class Intake(Strict):
@@ -28,7 +30,7 @@ class Intake(Strict):
 
 class Analyse(Strict):
     expected_revision: int = Field(strict=True,ge=0)
-    provider: Literal['rules','playbook','ollama','jev','gliclass']
+    provider: Literal['rules','playbook','ollama','ollama_staged','jev','gliclass']
     purpose: Literal['extract','graph','questions','judgement']
     source_ids: list[Identifier] = Field(default_factory=list,max_length=40)
     playbook_id: Identifier | None = None
@@ -144,14 +146,16 @@ def router(store:Store,legacy,authorised):
         validate_request(case,body.provider,body.purpose,body.source_ids,playbook_id=body.playbook_id,allow_external=body.allow_external)
         if len(store.proposals(case_id))>=200:raise ValueError('Local proposal limit reached')
         if not model_slot.acquire(blocking=False):raise HTTPException(429,'Another analysis is already running. Try again after it finishes.')
+        started=time.perf_counter()
         try:
             proposal=propose(case,body.provider,body.purpose,body.source_ids,playbook_id=body.playbook_id,allow_external=body.allow_external)
             store.save_proposal(proposal)
             return {'proposal':proposal.model_dump(mode='json'),'live_state_changed':False}
         except (ProviderUnavailable,ValidationError,ValueError) as exc:
             if not isinstance(exc,ProviderUnavailable) and body.provider in ('rules','playbook'):raise
-            failed=Proposal(case_id=case_id,base_revision=case.revision,provider=body.provider,model='unavailable',purpose=body.purpose,
-                            source_ids=body.source_ids,output_hash=digest({'failed':True}),latency_ms=0,status='failed',
+            trace=exc.trace if isinstance(exc,DraftFailure) else {'failed':True}
+            failed=Proposal(case_id=case_id,base_revision=case.revision,provider=body.provider,model=exc.model if isinstance(exc,DraftFailure) else 'unavailable',purpose=body.purpose,
+                            source_ids=body.source_ids,output_hash=digest(trace),raw_output=trace,latency_ms=round((time.perf_counter()-started)*1000,2),status='failed',
                             note='Provider unavailable or response failed validation. No model output was accepted. Retry or continue manually.')
             store.save_proposal(failed)
             raise HTTPException(503,failed.note) from None
