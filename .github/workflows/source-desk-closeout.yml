@@ -1,70 +1,36 @@
-name: Record verified native acceptance without changing runtime
+name: Preserve current source and real Git history (read only)
 on:
   push:
     branches: [ops/source-desk-closeout-20260926]
 permissions:
-  contents: write
+  contents: read
 jobs:
-  verify-and-preserve:
+  backup:
     if: github.repository == 'EmotiveImpact/8ball'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-    env:
-      BASE: 14c57907d26ea914e372e544bba4b0bd3988f5dc
-      EXPECTED_TREE: 214c4835869dbe70f7c6ff6811977e5bb5a62841
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 14c57907d26ea914e372e544bba4b0bd3988f5dc
+          ref: 290e310707cf8bef6caf2508c285312b091bd18b
           fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
-          cache: pip
-      - name: Apply exact reviewed documentation update
+          persist-credentials: false
+      - name: Verify source and export full fetched Git history
         shell: bash
         run: |
-          test "$(git rev-parse HEAD)" = "$BASE"
-          git show "$GITHUB_SHA:.github/record-native.py" > "$RUNNER_TEMP/record-native.py"
-          test "$(git hash-object "$RUNNER_TEMP/record-native.py")" = '1bef0040c732622a81287ef360071e0c0b05feef'
-          python "$RUNNER_TEMP/record-native.py"
-          python scripts/delivery.py --write
-          python scripts/emergence.py --write
-          python scripts/changelog.py --write
-          git add AGENTS.md CHANGELOG.md README.md STATUS.md docs
-          test "$(git write-tree)" = "$EXPECTED_TREE"
-          git diff --exit-code
-          python - <<'PY'
-          import subprocess
-          changed=subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines()
-          assert all(p in ['AGENTS.md','CHANGELOG.md','README.md','STATUS.md'] or p.startswith('docs/') for p in changed), changed
-          assert len(changed)==12, changed
-          PY
-      - run: python -m pip install -r requirements-dev.txt
-      - name: Documentation and immutable-history checks
-        shell: bash
-        run: |
-          mkdir -p artifacts
-          python scripts/delivery.py --check
-          python scripts/changelog.py --check --base "$BASE"
-          python scripts/emergence.py --check --base "$BASE"
-          python -m pytest -q tests/test_delivery_tracking.py tests/test_changelog.py tests/test_emergence_register.py | tee artifacts/documentation-tests.txt
-          test "$(git write-tree)" = "$EXPECTED_TREE"
-          git diff --exit-code
-      - name: Preserve receipt on the existing isolated correction branch
-        shell: bash
-        run: |
-          test "$(git rev-parse HEAD)" = "$BASE"
-          test "$(git write-tree)" = "$EXPECTED_TREE"
-          test "$(git ls-remote --heads origin refs/heads/fix/source-desk-native-20260926 | cut -f1)" = "$BASE"
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Record native acceptance and close scoped authoring and internal-core gates'
-          git push origin HEAD:refs/heads/fix/source-desk-native-20260926
-          git rev-parse HEAD HEAD^{tree} > artifacts/PUBLISHED-SOURCE.txt
+          test "$(git rev-parse HEAD)" = '290e310707cf8bef6caf2508c285312b091bd18b'
+          test "$(git rev-parse HEAD^{tree})" = '214c4835869dbe70f7c6ff6811977e5bb5a62841'
+          test -z "$(git status --porcelain)"
+          mkdir -p "$RUNNER_TEMP/8ball-backup"
+          git bundle create "$RUNNER_TEMP/8ball-backup/8ball-real-history.bundle" --all
+          git bundle verify "$RUNNER_TEMP/8ball-backup/8ball-real-history.bundle" > "$RUNNER_TEMP/8ball-backup/BUNDLE-VERIFICATION.txt" 2>&1
+          git for-each-ref --format='%(refname) %(objectname)' > "$RUNNER_TEMP/8ball-backup/REFS.txt"
+          git rev-parse HEAD HEAD^{tree} > "$RUNNER_TEMP/8ball-backup/SOURCE.txt"
+          git archive --format=zip --prefix=8ball/ --output="$RUNNER_TEMP/8ball-backup/8ball-published-source.zip" HEAD
+          cd "$RUNNER_TEMP/8ball-backup"
+          sha256sum 8ball-real-history.bundle 8ball-published-source.zip BUNDLE-VERIFICATION.txt REFS.txt SOURCE.txt > SHA256SUMS.txt
       - uses: actions/upload-artifact@v4
-        if: always()
         with:
-          name: source-desk-native-receipt-evidence
-          path: artifacts/
-          if-no-files-found: ignore
+          name: published-native-closeout-recovery
+          path: ${{ runner.temp }}/8ball-backup/
+          if-no-files-found: error
