@@ -1,0 +1,2191 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-09-25",
+  "required_prompts": [
+    {
+      "id": "ER-01",
+      "scope": "both",
+      "text": "What did we discover that was not explicit before, and what exact evidence made it visible?"
+    },
+    {
+      "id": "ER-02",
+      "scope": "both",
+      "text": "What could disprove the finding, and what conflicting or missing evidence have we considered?"
+    },
+    {
+      "id": "ER-03",
+      "scope": "situation",
+      "text": "Which declared dependencies, actors, decisions or sources connect apparently separate candidate routes?"
+    },
+    {
+      "id": "ER-04",
+      "scope": "situation",
+      "text": "Which verification question or review could most change our available options?"
+    },
+    {
+      "id": "ER-05",
+      "scope": "situation",
+      "text": "Are we still working towards the client’s explicit target and success criteria?"
+    },
+    {
+      "id": "ER-06",
+      "scope": "situation",
+      "text": "What may be stale, what could follow from our actions, and what event should make us reconsider?"
+    },
+    {
+      "id": "ER-07",
+      "scope": "build",
+      "text": "Which findings belong in 8BALL, ENDSTATE, an existing task, or a retained future candidate?"
+    },
+    {
+      "id": "ER-08",
+      "scope": "build",
+      "text": "What are we not implementing, why, and where can the owner review or reopen that choice?"
+    },
+    {
+      "id": "ER-09",
+      "scope": "build",
+      "text": "What actually passed, what failed, and which claimed capabilities still need independent or native verification?"
+    },
+    {
+      "id": "ER-10",
+      "scope": "both",
+      "text": "What might we still have missed, and how can the operator or owner record their own hypothesis?"
+    },
+    {
+      "id": "ER-11",
+      "scope": "both",
+      "text": "What course has an authorised human selected, and what exactly would require reconsideration rather than an automatic switch?"
+    },
+    {
+      "id": "ER-12",
+      "scope": "both",
+      "text": "Which available inputs were not processed, what limits bound this conclusion, and what could exist outside the current catalogue?"
+    },
+    {
+      "id": "ER-13",
+      "scope": "both",
+      "text": "When analysis fails, what safe recovery is available, who contributed the correction, and is the original failure still recorded?"
+    },
+    {
+      "id": "ER-14",
+      "scope": "build",
+      "text": "Can the exact implementation and evidence for every delivery claim be recovered, or must that claim remain reported-only?"
+    },
+    {
+      "id": "ER-15",
+      "scope": "both",
+      "text": "Does this improve the operator’s next decision or merely increase reviews, alerts and screens? How would we measure the difference?"
+    }
+  ],
+  "items": [
+    {
+      "id": "EM-001",
+      "title": "Two linked graphs, not one ambiguous picture",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "The provenance/reality graph and the outcome/action graph answer different questions.",
+      "product_implication": "Keep observations distinct from planned effects and expose their links without claiming causation.",
+      "task_ids": [
+        "B02-01",
+        "B02-03",
+        "ES01-02"
+      ],
+      "acceptance_task_ids": [
+        "B02-01",
+        "B02-03",
+        "ES01-02"
+      ],
+      "evidence_paths": [
+        "docs/v2/ARCHITECTURE.md",
+        "docs/delivery/EMERGENCE-REVIEW.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-002",
+      "title": "Information acquisition is part of the plan",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "Obtaining evidence can matter more than executing the next outward-facing action.",
+      "product_implication": "Create reviewable verification questions from structural findings; explore a distinct knowledge-action type later.",
+      "task_ids": [
+        "B02-05",
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "docs/delivery/EMERGENCE-REVIEW.md",
+        "eightball/v2/insights.py",
+        "docs/decisions/0004-evidence-led-course-and-recovery.md",
+        "docs/vision/8BALL.md",
+        "docs/vision/ENDSTATE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        },
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT vision refinement",
+          "reason": "Treat information-gathering work as a first-class next move in the case brief. Keep quantitative value-of-information optimisation a candidate."
+        }
+      ]
+    },
+    {
+      "id": "EM-003",
+      "title": "Freshness is separate from factual support",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "An older supported observation can warrant another review without becoming false.",
+      "product_implication": "Ship opt-in observation-age prompts; retain event-time and true expiry semantics for further work.",
+      "task_ids": [
+        "ES02-04",
+        "ES02-05",
+        "B02-21",
+        "ES02-06"
+      ],
+      "acceptance_task_ids": [
+        "ES02-04"
+      ],
+      "evidence_paths": [
+        "docs/delivery/EMERGENCE-REVIEW.md",
+        "endstate/insights.py",
+        "docs/decisions/0004-evidence-led-course-and-recovery.md",
+        "docs/vision/8BALL.md",
+        "docs/vision/ENDSTATE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        },
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT vision refinement",
+          "reason": "Strengthen the clock/support distinction in ENDSTATE vision. No autonomous freshness or monitoring service is added."
+        }
+      ]
+    },
+    {
+      "id": "EM-004",
+      "title": "Watch conditions should drive reconsideration",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "Useful plans include what would make the operator change course, not just the next step.",
+      "product_implication": "Define versioned watch triggers, event authority and durable ordered updates before claiming real-time insight monitoring.",
+      "task_ids": [
+        "ES02-01",
+        "ES02-02",
+        "ES02-03",
+        "ES02-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/EMERGENCE-REVIEW.md",
+        "docs/decisions/0004-evidence-led-course-and-recovery.md",
+        "docs/vision/8BALL.md",
+        "docs/vision/ENDSTATE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "deferred",
+          "by": "ChatGPT development proposal",
+          "reason": "Keep the event-driven roadmap intact. Manual scans are not a live event service."
+        },
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT vision refinement",
+          "reason": "Promote to explicit reconsideration-contract design priority under optional ES02-06; the event-service and original release gates stay open."
+        }
+      ]
+    },
+    {
+      "id": "EM-005",
+      "title": "Operator attention is a scarce resource",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "Many reviews and context switches can make a nominally quick route operationally poor.",
+      "product_implication": "Measure real operator load before introducing scoring or optimisation.",
+      "task_ids": [
+        "B04-03",
+        "B04-04"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/EMERGENCE-REVIEW.md",
+        "docs/decisions/0004-evidence-led-course-and-recovery.md",
+        "docs/vision/8BALL.md",
+        "docs/vision/ENDSTATE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "candidate",
+          "by": "ChatGPT development proposal",
+          "reason": "Preserved for owner review. No automatic scope or completion claim."
+        },
+        {
+          "date": "2026-09-24",
+          "decision": "candidate",
+          "by": "ChatGPT vision refinement",
+          "reason": "Carry forward as a measurable operator-workload hypothesis, not a new uncalibrated route score."
+        }
+      ]
+    },
+    {
+      "id": "EM-006",
+      "title": "Outcomes may need an acceptable envelope",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "A client may have an ideal result, minimum acceptable resolution and walk-away conditions.",
+      "product_implication": "Evaluate the existing multi-objective/failure model before adding an Outcome Envelope contract.",
+      "task_ids": [
+        "B02-03",
+        "B03-07"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/EMERGENCE-REVIEW.md",
+        "docs/decisions/0004-evidence-led-course-and-recovery.md",
+        "docs/vision/8BALL.md",
+        "docs/vision/ENDSTATE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "candidate",
+          "by": "ChatGPT development proposal",
+          "reason": "Preserved for owner review. No automatic scope or completion claim."
+        },
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT vision refinement",
+          "reason": "Promote an explicitly authorised mandate/fallback design to optional B03-07. Existing objective/failure semantics remain; do not silently relax client intent."
+        }
+      ]
+    },
+    {
+      "id": "EM-007",
+      "title": "Patterns across apparently separate requirements",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "Two nominal alternatives can share the same unresolved prerequisite.",
+      "product_implication": "Detect shared signed prerequisites in the selected bounded candidate set.",
+      "task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "endstate/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-008",
+      "title": "Truly hidden dependencies need more than graph counts",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "A link absent from the graph cannot be reliably discovered by counting declared links.",
+      "product_implication": "Add future evidence-grounded dependency hypotheses; do not claim that the first detector discovers unknown causality.",
+      "task_ids": [
+        "ES03-02",
+        "B02-09"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/v2/EMERGENT-INSIGHTS.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "deferred",
+          "by": "ChatGPT development proposal",
+          "reason": "Preserved for owner review. No automatic scope or completion claim."
+        }
+      ]
+    },
+    {
+      "id": "EM-009",
+      "title": "One question can affect several routes",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "A single missing observation may change multiple candidate paths.",
+      "product_implication": "Offer a human-reviewed question rather than pretending to compute a causal leverage score.",
+      "task_ids": [
+        "B02-05",
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "eightball/v2/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-010",
+      "title": "A peripheral actor can become structurally important",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "Multiple current actions may converge on the same recorded actor.",
+      "product_implication": "Show involvement as an inferred lead and ask who actually holds authority.",
+      "task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "endstate/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-011",
+      "title": "Contradictory sources must remain visible",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "Opposing active observations require deliberate reconciliation.",
+      "product_implication": "Detect recorded conflicts now; evaluate natural-language contradiction discovery separately.",
+      "task_ids": [
+        "B02-01",
+        "ES02-05",
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "endstate/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-012",
+      "title": "Weakening support deserves a review prompt",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "Retraction or concentrated evidence dependencies can weaken a plan’s evidential basis.",
+      "product_implication": "Show one-record support clusters and invalidate earlier insight reviews when referenced content changes.",
+      "task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "eightball/v2/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-013",
+      "title": "Route fragility needs explicit assumptions",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "Unknown waits and third-party decisions can dominate the apparent schedule.",
+      "product_implication": "Expose unbounded waits and shared decisions now; defer calibrated fragility scores.",
+      "task_ids": [
+        "ES02-05",
+        "B02-21",
+        "ES02-06"
+      ],
+      "acceptance_task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "endstate/insights.py",
+        "docs/decisions/0004-evidence-led-course-and-recovery.md",
+        "docs/vision/8BALL.md",
+        "docs/vision/ENDSTATE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        },
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT vision refinement",
+          "reason": "Make declared support/assumptions visible in the selected-course design, without promising robustness outside the examined catalogue."
+        }
+      ]
+    },
+    {
+      "id": "EM-014",
+      "title": "New information can reveal additional options",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "A different candidate set can appear after evidence or constraints change.",
+      "product_implication": "Compare named scans and distinguish new candidate IDs from genuinely new strategies.",
+      "task_ids": [
+        "B02-05",
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "eightball/v2/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-015",
+      "title": "Objective drift needs a separate check",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "A case can start solving a different problem from the requested outcome.",
+      "product_implication": "Flag target wording edits without changed criteria now; semantic drift detection remains an evaluated future capability.",
+      "task_ids": [
+        "B02-09",
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "eightball/v2/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-016",
+      "title": "High-value questions are not just blocked tasks",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "A question can distinguish competing explanations rather than immediately unlock an action.",
+      "product_implication": "Investigate information-value models with explicit uncertainty and expert labels instead of a made-up score.",
+      "task_ids": [
+        "B04-03",
+        "ES03-02"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/prompts/EMERGENT-INSIGHTS.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "candidate",
+          "by": "ChatGPT development proposal",
+          "reason": "Preserved for owner review. No automatic scope or completion claim."
+        }
+      ]
+    },
+    {
+      "id": "EM-017",
+      "title": "Second-order consequences can change the problem",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "An action can help one objective while creating another difficulty.",
+      "product_implication": "Surface declared possible side effects as hypotheses now; causal consequence prediction requires separate evidence.",
+      "task_ids": [
+        "B02-03",
+        "ES02-05",
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "endstate/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-018",
+      "title": "Outcome discovery must not rewrite the client’s intent",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "New evidence may justify an acceptable fallback or clarify what success really means.",
+      "product_implication": "Ask for an explicit client/operator decision when failure criteria are supported. Never change the objective autonomously.",
+      "task_ids": [
+        "B02-21",
+        "ES02-05",
+        "B03-07"
+      ],
+      "acceptance_task_ids": [
+        "B02-21",
+        "ES02-05"
+      ],
+      "evidence_paths": [
+        "endstate/insights.py",
+        "docs/decisions/0004-evidence-led-course-and-recovery.md",
+        "docs/vision/8BALL.md",
+        "docs/vision/ENDSTATE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        },
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT vision refinement",
+          "reason": "Link outcome clarification to explicit client-mandate authority; no automatic fallback adoption."
+        }
+      ]
+    },
+    {
+      "id": "EM-019",
+      "title": "Exact text and lineage are part of operational intelligence",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "A source excerpt needs its original position and version, not just a summary.",
+      "product_implication": "Preserve Source Desk linkage and include original-source review in future corroboration checks.",
+      "task_ids": [
+        "B02-14"
+      ],
+      "acceptance_task_ids": [
+        "B02-14"
+      ],
+      "evidence_paths": [
+        "docs/v2/SOURCE-DESK.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-020",
+      "title": "Compiler validation is not semantic correctness",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "Valid references and exact quotations can accompany an interpretation that misses the outcome.",
+      "product_implication": "Preserve the failing real-model gates and independent semantic evaluation.",
+      "task_ids": [
+        "B02-09",
+        "B02-11",
+        "ES03-02"
+      ],
+      "acceptance_task_ids": [
+        "B02-11"
+      ],
+      "evidence_paths": [
+        "docs/evidence/staged-compilation-verification.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-021",
+      "title": "Review state and evidence character must be separate",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "A human can find an inference useful without establishing it as true.",
+      "product_implication": "Use derived/inferred/hypothesis independently of review dispositions. Do not offer a misleading confirmed toggle.",
+      "task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "eightball/v2/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-022",
+      "title": "A dismissal is not deletion or permanent suppression",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "An initially unhelpful finding can become relevant when the case changes.",
+      "product_implication": "Retain dismissal reasons and reopen review when content changes or a finding recurs.",
+      "task_ids": [
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "eightball/v2/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-023",
+      "title": "The owner must see ideas the builder did not select",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "A development judgement can miss commercial or operational value visible to the owner.",
+      "product_implication": "Keep all discoveries in an evolving register, including deferred/declined suggestions and decision history.",
+      "task_ids": [
+        "DOC-06"
+      ],
+      "acceptance_task_ids": [
+        "DOC-06"
+      ],
+      "evidence_paths": [
+        "scripts/emergence.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-024",
+      "title": "A graph can falsely imply causation or control",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "Position, line density and repeated mentions can look more authoritative than they are.",
+      "product_implication": "Keep visual exploration read-only and state what every relationship actually represents.",
+      "task_ids": [
+        "B02-20",
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "B02-20",
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "docs/v2/GRAPH-EXPLORER.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-025",
+      "title": "Bounded search makes universal claims unsafe",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "Several calculated routes can overlap and are not all the routes reality permits.",
+      "product_implication": "Label the candidate pool, truncation and caps. Avoid “every viable route” and unsupported success percentages.",
+      "task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "endstate/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-026",
+      "title": "No finding is also a result",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "Forcing a model to produce insights encourages invented patterns.",
+      "product_implication": "Permit an empty scan/proposal and show disabled or capped rules rather than imply exhaustive understanding.",
+      "task_ids": [
+        "B02-21",
+        "ES02-05"
+      ],
+      "acceptance_task_ids": [
+        "B02-21",
+        "ES02-05"
+      ],
+      "evidence_paths": [
+        "endstate/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-027",
+      "title": "Cross-client learning is a separate permission boundary",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "Reusable technology does not make confidential client histories reusable by default.",
+      "product_implication": "Keep all case findings scoped; require an explicit governance and permission decision for precedent learning.",
+      "task_ids": [
+        "B04-02"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/v2/PRODUCTION-SECURITY.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "deferred",
+          "by": "ChatGPT development proposal",
+          "reason": "Preserved for owner review. No automatic scope or completion claim."
+        }
+      ]
+    },
+    {
+      "id": "EM-028",
+      "title": "An insight and its supporting observation have different clocks",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "A current scan can inspect an old observation; an old scan can be outdated after a fresh case edit.",
+      "product_implication": "Separate as-of time, observation-age policy, case revision and review-context expiry.",
+      "task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "eightball/v2/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-029",
+      "title": "Automatic promotion of insights would corrupt the authority boundary",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "Calling a pattern confirmed or acting on it could silently turn inference into fact.",
+      "product_implication": "Do not ship automatic attestation, approval, objective rewriting or external action from insights.",
+      "task_ids": [
+        "B02-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/prompts/EMERGENT-INSIGHTS.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "declined",
+          "by": "ChatGPT development proposal",
+          "reason": "Declined implementation approach, retained for owner review. It conflicts with the established evidence and authority boundary."
+        }
+      ]
+    },
+    {
+      "id": "EM-030",
+      "title": "Recurring scans can create noise instead of intelligence",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "Duplicate or low-impact signals could consume the attention they were meant to save.",
+      "product_implication": "Use stable identities and recurrence-aware review, then evaluate noise and missed findings with operators.",
+      "task_ids": [
+        "B02-21",
+        "B02-22"
+      ],
+      "acceptance_task_ids": [
+        "B02-22"
+      ],
+      "evidence_paths": [
+        "eightball/v2/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-031",
+      "title": "Provider cancellation cannot recall a request already sent",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "A cancelled UI request can still complete or incur provider charges.",
+      "product_implication": "Preserve current job cancellation/publication boundaries and honest progress language.",
+      "task_ids": [
+        "B02-15"
+      ],
+      "acceptance_task_ids": [
+        "B02-15"
+      ],
+      "evidence_paths": [
+        "docs/v2/ANALYSIS-JOBS.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-032",
+      "title": "Local source and remote repository can diverge",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "Several valid local checkpoints are not present on the integration branch after a blocked source write.",
+      "product_implication": "Ship reproducible cumulative patches, explicit handoffs and separate native/bridge claims; do not imply a clone contains unpublished work.",
+      "task_ids": [
+        "DOC-03",
+        "DOC-04",
+        "ES03-08"
+      ],
+      "acceptance_task_ids": [
+        "DOC-03",
+        "DOC-04"
+      ],
+      "evidence_paths": [
+        "docs/delivery/HANDOFF.md",
+        "docs/decisions/0004-evidence-led-course-and-recovery.md",
+        "docs/vision/8BALL.md",
+        "docs/vision/ENDSTATE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        },
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT vision refinement",
+          "reason": "Extend the recovery check: missing later source is reported-only, distinct from a verified earlier archive. See EM-062."
+        }
+      ]
+    },
+    {
+      "id": "EM-033",
+      "title": "User-supplied hypotheses complement automatic detection",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "The fixer may notice a meaningful connection that no current rule detects.",
+      "product_implication": "Keep a manually authored, record-linked hypothesis in the same case review history without promoting its truth.",
+      "task_ids": [
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "eightball/v2/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-034",
+      "title": "Evidence record counts do not establish source independence",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "Several excerpts or copies may trace back to one original source.",
+      "product_implication": "Explicitly qualify source-cluster detection; a future corroboration model must follow original-source lineage.",
+      "task_ids": [
+        "B02-14",
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "B02-14"
+      ],
+      "evidence_paths": [
+        "docs/v2/SOURCE-DESK.md",
+        "endstate/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-035",
+      "title": "Async case switching can expose the wrong context",
+      "origin": "Accepted product discussion and build review",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "An old response must not populate the newly selected client’s insight panel.",
+      "product_implication": "Guard responses by case ID and session epoch, clear state on switching/locking, and test it.",
+      "task_ids": [
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "B02-21"
+      ],
+      "evidence_paths": [
+        "web/v2/insights-view.js",
+        "tests/test_insight_ui.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development proposal",
+          "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        }
+      ]
+    },
+    {
+      "id": "EM-036",
+      "title": "Already-satisfied OR outcomes must not create artificial blockers",
+      "origin": "Emergent Insights regression test during this sprint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "The preserved planner can list alternative branches after an OR objective is already evidenced. Treating every listed alternative as still required creates false deadline pressure.",
+      "product_implication": "Suppress active-route-based emergence claims once mandatory outcomes are evidenced, while retaining true conflicts and review history. Preserve the planner compatibility contract.",
+      "task_ids": [
+        "ES02-05",
+        "B02-21"
+      ],
+      "acceptance_task_ids": [
+        "ES02-05"
+      ],
+      "evidence_paths": [
+        "tests/test_insight_engine.py",
+        "endstate/insights.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT development finding",
+          "reason": "A failing independent OR-goal fixture exposed a false-positive warning. Correct the detector boundary rather than relabel the test or alter the preserved planner."
+        }
+      ]
+    },
+    {
+      "id": "EM-037",
+      "title": "Governance upgrades must not rewrite pre-policy history",
+      "origin": "Cumulative integration inspection in Emergent Insights sprint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "supported_by_tests",
+      "observation": "Comparing the cumulative local build with its old remote base treated historical changelog entries as new and required fields that did not exist when those entries were written.",
+      "product_implication": "Apply stricter rules to future entries while pinning exact historical exceptions. Preserve old wording and refuse blanket date-based exemptions.",
+      "task_ids": [
+        "DOC-04",
+        "DOC-06"
+      ],
+      "acceptance_task_ids": [
+        "DOC-06"
+      ],
+      "evidence_paths": [
+        "scripts/changelog.py",
+        "tests/test_changelog.py",
+        "docs/delivery/CHANGELOG-POLICY.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Five exact content-bound historical exceptions preserve original records; future entries still require review and registry links. Cumulative integration tests make the boundary explicit."
+        }
+      ]
+    },
+    {
+      "id": "EM-038",
+      "title": "Identity belongs to a source mention, not a shared name",
+      "origin": "Source clarity sprint and its explicit limitations",
+      "first_seen": "2026-09-24",
+      "evidence_level": "supported_by_tests",
+      "observation": "A same-name fixture has two distinct actors. Selecting one source mention can establish a reviewer link without merging either actor or assigning authority.",
+      "product_implication": "Keep source-scoped identity judgements, negative identifications and rationale. Leave global alias merging to a separately reviewed mechanism.",
+      "task_ids": [
+        "B02-10"
+      ],
+      "acceptance_task_ids": [
+        "B02-10"
+      ],
+      "evidence_paths": [
+        "docs/v2/SOURCE-CLARITY.md",
+        "tests/test_grounding.py",
+        "docs/delivery/sessions/2026-09-24-source-clarity-local.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Implement the bounded operator review within existing source-handling tasks; broad model/native acceptance stays open."
+        }
+      ]
+    },
+    {
+      "id": "EM-039",
+      "title": "Interpreting a date and adopting a deadline are separate acts",
+      "origin": "Source clarity sprint and its explicit limitations",
+      "first_seen": "2026-09-24",
+      "evidence_level": "supported_by_tests",
+      "observation": "A correctly converted date still does not establish that it should constrain the whole case rather than one report, decision or question.",
+      "product_implication": "Preview the intended target and schedule impact, then explicitly commit one field with source and reviewer provenance.",
+      "task_ids": [
+        "B02-10"
+      ],
+      "acceptance_task_ids": [
+        "B02-10"
+      ],
+      "evidence_paths": [
+        "docs/v2/SOURCE-CLARITY.md",
+        "tests/test_grounding.py",
+        "docs/delivery/sessions/2026-09-24-source-clarity-local.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Implement the bounded operator review within existing source-handling tasks; broad model/native acceptance stays open."
+        }
+      ]
+    },
+    {
+      "id": "EM-040",
+      "title": "A wall-clock time can mean zero, one or two instants",
+      "origin": "Source clarity sprint and its explicit limitations",
+      "first_seen": "2026-09-24",
+      "evidence_level": "supported_by_tests",
+      "observation": "Timezone round-trip tests produce no real instant in a spring clock gap and two in an autumn fold. Source-relative dates also require a reference date independent of import time.",
+      "product_implication": "Demand explicit timezone/reference input, block nonexistent times and require a choice for repeated ones; preserve local and UTC forms.",
+      "task_ids": [
+        "B02-10"
+      ],
+      "acceptance_task_ids": [
+        "B02-10"
+      ],
+      "evidence_paths": [
+        "docs/v2/SOURCE-CLARITY.md",
+        "tests/test_time_review.py",
+        "docs/delivery/sessions/2026-09-24-source-clarity-local.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Implement the bounded operator review within existing source-handling tasks; broad model/native acceptance stays open."
+        }
+      ]
+    },
+    {
+      "id": "EM-041",
+      "title": "Retracting a source does not necessarily cancel an adopted constraint",
+      "origin": "Source clarity sprint and its explicit limitations",
+      "first_seen": "2026-09-24",
+      "evidence_level": "supported_by_tests",
+      "observation": "An operator-adopted deadline can remain important after its source is withdrawn. Automatically erasing it would silently change operational commitments.",
+      "product_implication": "Flag the interpretation for reconsideration, preserve the existing deadline and require an explicit later amendment.",
+      "task_ids": [
+        "B02-10"
+      ],
+      "acceptance_task_ids": [
+        "B02-10"
+      ],
+      "evidence_paths": [
+        "docs/v2/SOURCE-CLARITY.md",
+        "tests/test_grounding.py",
+        "docs/delivery/sessions/2026-09-24-source-clarity-local.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Implement the bounded operator review within existing source-handling tasks; broad model/native acceptance stays open."
+        }
+      ]
+    },
+    {
+      "id": "EM-042",
+      "title": "Exact quotation alone can still hide necessary context",
+      "origin": "Source clarity sprint and its explicit limitations",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "The selected name or date phrase omits nearby attribution, qualifications and negation. Exact offsets prove location, not a correct interpretation.",
+      "product_implication": "Keep surrounding source wording visible beside the exact selection and retain a route back to the original.",
+      "task_ids": [
+        "B02-14"
+      ],
+      "acceptance_task_ids": [
+        "B02-14"
+      ],
+      "evidence_paths": [
+        "docs/v2/SOURCE-CLARITY.md",
+        "tests/test_grounding.py",
+        "docs/delivery/sessions/2026-09-24-source-clarity-local.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Implement the bounded operator review within existing source-handling tasks; broad model/native acceptance stays open."
+        }
+      ]
+    },
+    {
+      "id": "EM-043",
+      "title": "Business days and end-of-day need explicit operational calendars",
+      "origin": "Source clarity sprint and its explicit limitations",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "The bounded calendar-day interpreter deliberately cannot decide what next business day or end of day means for every organisation, location or agreement.",
+      "product_implication": "Consider versioned calendars and explicit working-hour policies, but do not invent them or silently expand the current date-review scope.",
+      "task_ids": [
+        "B02-10"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/v2/SOURCE-CLARITY.md",
+        "tests/test_grounding.py",
+        "docs/delivery/sessions/2026-09-24-source-clarity-local.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "deferred",
+          "by": "ChatGPT build review",
+          "reason": "Retain for owner review. Jurisdiction and organisation calendars need explicit policy and independent tests before implementation."
+        }
+      ]
+    },
+    {
+      "id": "EM-044",
+      "title": "Route identity must distinguish dependency order",
+      "origin": "Plan Review sprint and reproducible structural fixtures",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "Two returned routes used the same actions but different producer ordering and constraint results, yet shared an ID. A dictionary-based comparison could silently replace one.",
+      "product_implication": "Disambiguate colliding routes by their declared dependency path while preserving non-colliding legacy IDs.",
+      "task_ids": [
+        "B02-03"
+      ],
+      "acceptance_task_ids": [
+        "B02-03"
+      ],
+      "evidence_paths": [
+        "docs/v2/PLAN-REVIEW.md",
+        "tests/test_plan_review.py",
+        "docs/evidence/route-identity-regression.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "An executable regression reproduced the old collision and confirms unique, stable IDs after the fix."
+        }
+      ]
+    },
+    {
+      "id": "EM-045",
+      "title": "A structurally clean graph may target the wrong outcome",
+      "origin": "Plan Review sprint and reproducible structural fixtures",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "A deliberately valid fixture targets sending an offer although the desired outcome requires customer acceptance. Graph validation alone raises no structural flag.",
+      "product_implication": "Require explicit human comparison of the requested target and actual success criteria; never claim semantic correctness from a clean structure.",
+      "task_ids": [
+        "B02-11",
+        "B02-09"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/v2/PLAN-REVIEW.md",
+        "tests/test_plan_review.py",
+        "docs/evidence/route-identity-regression.json",
+        "docs/decisions/0004-evidence-led-course-and-recovery.md",
+        "docs/vision/8BALL.md",
+        "docs/vision/ENDSTATE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Plan Review exposes target criteria beside the requested outcome; independent quality evaluation remains open."
+        },
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT vision refinement",
+          "reason": "Retain the semantic-target gate in both vision documents. A valid graph is not evidence the client intent was preserved."
+        }
+      ]
+    },
+    {
+      "id": "EM-046",
+      "title": "Plan judgement is not factual truth or permission to act",
+      "origin": "Plan Review sprint and reproducible structural fixtures",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "A reviewer can mark all rubric dimensions supported while the plan still contains unresolved waits and external dependencies. That judgement must not erase the warnings or approve work.",
+      "product_implication": "Store case-scoped reviews separately and bind them to exact context; evidence and execution approval remain their own processes.",
+      "task_ids": [
+        "B02-11",
+        "B02-13"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/v2/PLAN-REVIEW.md",
+        "tests/test_plan_review.py",
+        "docs/evidence/route-identity-regression.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "The separate journal and tests preserve all case facts, revisions and approvals."
+        }
+      ]
+    },
+    {
+      "id": "EM-047",
+      "title": "Independent scenario comparisons must share one baseline",
+      "origin": "Plan Review sprint and reproducible structural fixtures",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "A zero-budget scenario followed by a restored-budget scenario must not retain disabled actions or assumptions from the preceding experiment.",
+      "product_implication": "Copy the same input for each explicit scenario and label independent versus combined experiments.",
+      "task_ids": [
+        "B02-05",
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/v2/PLAN-REVIEW.md",
+        "tests/test_plan_review.py",
+        "docs/evidence/route-identity-regression.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Read-only copies and regression tests prevent accumulating hypothetical changes."
+        }
+      ]
+    },
+    {
+      "id": "EM-048",
+      "title": "Review detail can become an operator burden",
+      "origin": "Plan Review sprint and reproducible structural fixtures",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "Six explicit rubric judgements add accountability but can also create repetitive work across frequent revisions.",
+      "product_implication": "Measure review burden and determine which changes merit renewed attention before adding automated approval shortcuts.",
+      "task_ids": [
+        "B02-22",
+        "B04-04"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/v2/PLAN-REVIEW.md",
+        "tests/test_plan_review.py",
+        "docs/evidence/route-identity-regression.json",
+        "docs/decisions/0004-evidence-led-course-and-recovery.md",
+        "docs/vision/8BALL.md",
+        "docs/vision/ENDSTATE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "deferred",
+          "by": "ChatGPT build review",
+          "reason": "Retained for owner review. No evidence yet supports removing criteria or silently carrying judgements to changed cases."
+        },
+        {
+          "date": "2026-09-24",
+          "decision": "candidate",
+          "by": "ChatGPT vision refinement",
+          "reason": "Prioritise decision usefulness and progressive disclosure; keep the existing critical review gates intact pending evidence."
+        }
+      ]
+    },
+    {
+      "id": "EM-049",
+      "title": "An apparent failure can have a legitimate later recovery path",
+      "origin": "Plan Review sprint and reproducible structural fixtures",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "A destructive-effect fixture also allowed a different later action to restore a required condition. Declaring every such sequence impossible would have been an incorrect expected result.",
+      "product_implication": "Test final state and declared order, not a simplistic rule that every negative effect invalidates a route. Preserve the distinction between recovery possibilities and guarantees.",
+      "task_ids": [
+        "B02-03",
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/v2/PLAN-REVIEW.md",
+        "tests/test_plan_review.py",
+        "docs/evidence/route-identity-regression.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "The regression retains both the valid recovery ordering and failing ordering; the constrained fixture states its budget restriction explicitly."
+        }
+      ]
+    },
+    {
+      "id": "EM-050",
+      "title": "Nested output contracts need structural validation too",
+      "origin": "Integration and acceptance sprint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "PlanResponse previously guaranteed its outer envelope but not the complete nested result structure.",
+      "product_implication": "Validate route, clock, schedule, condition and briefing references without changing old wire records.",
+      "task_ids": [
+        "ES01-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "endstate/results.py",
+        "tests/test_endstate_results.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Bounded existing-task improvement; implementation does not imply that wider model/native/release acceptance has passed."
+        }
+      ]
+    },
+    {
+      "id": "EM-051",
+      "title": "Verification belongs to exact source and evidence bytes",
+      "origin": "Integration and acceptance sprint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "Separate successful test reports could be retained while the working source continued changing.",
+      "product_implication": "Record per-run source and artifact manifests and reject stale or mixed-mode evidence.",
+      "task_ids": [
+        "B02-12",
+        "B02-16"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "scripts/acceptance.py",
+        "tests/test_acceptance_runner.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Bounded existing-task improvement; implementation does not imply that wider model/native/release acceptance has passed."
+        }
+      ]
+    },
+    {
+      "id": "EM-052",
+      "title": "A built distribution is not an installed-product test",
+      "origin": "Integration and acceptance sprint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "The kernel could pass inside the application checkout without proving that the actual wheel contained and loaded the right files.",
+      "product_implication": "Test the installed artifact outside the repository and rerun the original application suite against that kernel.",
+      "task_ids": [
+        "ES01-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "scripts/build_endstate.py",
+        "docs/endstate/PACKAGE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Bounded existing-task improvement; implementation does not imply that wider model/native/release acceptance has passed."
+        }
+      ]
+    },
+    {
+      "id": "EM-053",
+      "title": "Operator orientation must survive replacement dialogs",
+      "origin": "Integration and acceptance sprint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "Navigation and replaced dialogs could leave keyboard focus on the body or on a removed control.",
+      "product_implication": "Preserve the root invoker, focus the visible dialog title and focus destination headings without changing authority.",
+      "task_ids": [
+        "B02-16"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "web/v2/ui.js",
+        "tests/browser_accessibility.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Bounded existing-task improvement; implementation does not imply that wider model/native/release acceptance has passed."
+        }
+      ]
+    },
+    {
+      "id": "EM-054",
+      "title": "Scripted real-model review is not independent judgement",
+      "origin": "Integration and acceptance sprint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "An actual-inference integration script can exercise approvals and evidence mechanics while still using developer-authored reviewer choices.",
+      "product_implication": "Label these choices and synthetic observations explicitly; do not use them to close independent quality or all-native human acceptance.",
+      "task_ids": [
+        "B02-11",
+        "B02-12"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "evals/full_journey.py",
+        "docs/v2/ACCEPTANCE-RUNNER.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Bounded existing-task improvement; implementation does not imply that wider model/native/release acceptance has passed."
+        }
+      ]
+    },
+    {
+      "id": "EM-055",
+      "title": "Available, called, correct, integrated and released are separate gates",
+      "origin": "Integration and acceptance sprint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "A configured provider can be unreachable; a valid model response can be semantically wrong; a passing local build can be unpushed and undeployed.",
+      "product_implication": "Keep availability, invocation, model quality, browser transport and release status separate, including failures and zero-call preflights.",
+      "task_ids": [
+        "B02-12",
+        "B02-15",
+        "B02-18",
+        "ES03-08"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "scripts/acceptance.py",
+        "evals/full_journey.py",
+        "docs/delivery/sessions/2026-09-24-integration-acceptance-local.md",
+        "docs/decisions/0004-evidence-led-course-and-recovery.md",
+        "docs/vision/8BALL.md",
+        "docs/vision/ENDSTATE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Bounded existing-task improvement; implementation does not imply that wider model/native/release acceptance has passed."
+        },
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT vision refinement",
+          "reason": "A narrated test total without its recoverable implementation is not current-source evidence. Preserve the missing-source caveat as well as native/model/publication states."
+        }
+      ]
+    },
+    {
+      "id": "EM-056",
+      "title": "A candidate route is not a human-selected course",
+      "origin": "Vision/source-recovery review of the available alpha.7 checkpoint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "The recovered alpha.7 contracts represent candidate routes and individual decisions, but do not define a dedicated course-selection record tying an operator choice to a route, target and snapshot.",
+      "product_implication": "Design a versioned selected-course record in 8BALL with a neutral ENDSTATE reference. Selection does not attest truth or authorise an action.",
+      "task_ids": [
+        "B03-07",
+        "ES02-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "endstate/contracts.py",
+        "endstate/results.py",
+        "docs/vision/8BALL.md",
+        "docs/vision/ENDSTATE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT documentation review",
+          "reason": "Adopt the bounded design direction, not runtime completion. Owner review and the listed acceptance work remain open."
+        },
+        {
+          "date": "2026-09-25",
+          "decision": "adopted",
+          "by": "ChatGPT local build",
+          "reason": "Local selected-course foundation implemented and focused-tested. Full mandate, secure team authority and continuous event handling remain outside this checkpoint."
+        }
+      ]
+    },
+    {
+      "id": "EM-057",
+      "title": "Recalculation must not silently recommit the operator",
+      "origin": "Vision/source-recovery review of the available alpha.7 checkpoint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "Once a team has chosen a course, repeated ranking changes could confuse action and accountability if the interface treats the newest first route as the plan being followed.",
+      "product_implication": "Separate refreshed alternatives from the chosen course. Present change reasons and request an explicit switch; preserve conservative approval invalidation.",
+      "task_ids": [
+        "ES02-06",
+        "B03-07",
+        "ES02-04"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/vision/8BALL.md",
+        "docs/vision/ENDSTATE.md",
+        "docs/vision/ACCEPTANCE-DESIGN.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT documentation review",
+          "reason": "Adopt the bounded design direction, not runtime completion. Owner review and the listed acceptance work remain open."
+        },
+        {
+          "date": "2026-09-25",
+          "decision": "adopted",
+          "by": "ChatGPT local build",
+          "reason": "Local selected-course foundation implemented and focused-tested. Full mandate, secure team authority and continuous event handling remain outside this checkpoint."
+        }
+      ]
+    },
+    {
+      "id": "EM-058",
+      "title": "Negative conclusions need an explicit coverage boundary",
+      "origin": "Vision/source-recovery review of the available alpha.7 checkpoint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "The recovered source separates full originals, selected excerpts and bounded route search. A result about the processed subset cannot establish completeness of the whole situation.",
+      "product_implication": "Expose supplied/selected/omitted inputs and catalogue/search limits alongside empty findings or no-route results. Do not collapse scope into a single confidence score.",
+      "task_ids": [
+        "B02-10",
+        "B02-14",
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "eightball/v2/source_desk.py",
+        "endstate/planner.py",
+        "docs/vision/ENDSTATE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT documentation review",
+          "reason": "Adopt the bounded design direction, not runtime completion. Owner review and the listed acceptance work remain open."
+        }
+      ]
+    },
+    {
+      "id": "EM-059",
+      "title": "Operational commitments may outlive the source that described them",
+      "origin": "Vision/source-recovery review of the available alpha.7 checkpoint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "Source Clarity already separates an adopted deadline from source retraction. The same distinction may be needed for promises, authorised concessions and other commitments made while handling a case.",
+      "product_implication": "Evaluate an explicit commitments record with its own withdrawal authority and history; do not cancel commitments solely because source support changes.",
+      "task_ids": [
+        "B03-07",
+        "B02-10"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/v2/SOURCE-CLARITY.md",
+        "docs/vision/8BALL.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "candidate",
+          "by": "ChatGPT documentation review",
+          "reason": "Retained for owner review; no new mandatory scope or implementation claim."
+        }
+      ]
+    },
+    {
+      "id": "EM-060",
+      "title": "Recovering a plan is different from proving a model reliable",
+      "origin": "Vision/source-recovery review of the available alpha.7 checkpoint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "The supplied Draft Repair handoff reports a human-correction workflow but not a recovered implementation. If restored, a successful human repair would demonstrate recoverability rather than unassisted model quality.",
+      "product_implication": "Recover and test the implementation, retain original failures and edits, and classify assisted success separately in evaluation. Do not change the frozen generation gate.",
+      "task_ids": [
+        "ES03-08",
+        "ES03-05",
+        "B02-09",
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/reference/2026-09-24-draft-repair-delivery-record.md",
+        "docs/vision/ENDSTATE.md",
+        "docs/vision/ACCEPTANCE-DESIGN.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT documentation review",
+          "reason": "Adopt the bounded design direction, not runtime completion. Owner review and the listed acceptance work remain open."
+        }
+      ]
+    },
+    {
+      "id": "EM-061",
+      "title": "The primary value test is a better decision, not a larger graph",
+      "origin": "Vision/source-recovery review of the available alpha.7 checkpoint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "The cumulative workspace has more inspection and review surfaces. It is not yet independently established whether that makes a fixer faster, more accurate or simply busier.",
+      "product_implication": "Measure correct next decisions, missed dependencies, false alarms and correction/review burden. Prefer progressive disclosure in the existing room over more dashboards.",
+      "task_ids": [
+        "B04-03",
+        "B02-22",
+        "B04-04"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/vision/8BALL.md",
+        "evals/PLAN-QUALITY-GATE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT documentation review",
+          "reason": "Adopt the bounded design direction, not runtime completion. Owner review and the listed acceptance work remain open."
+        }
+      ]
+    },
+    {
+      "id": "EM-062",
+      "title": "A delivery claim requires a recoverable implementation",
+      "origin": "Vision/source-recovery review of the available alpha.7 checkpoint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "observed_in_build",
+      "observation": "The latest supplied repair handoff states that its working tree was not recovered, while the alpha.7 ZIP can be reconstructed to its declared exact Git tree. Later reported test totals cannot be attached to that earlier source.",
+      "product_implication": "Preserve a source inventory and mark later work reported-only until recovered or explicitly rebuilt. A handoff, screenshot or test-count statement is not a runnable package.",
+      "task_ids": [
+        "DOC-03",
+        "DOC-04",
+        "ES03-08"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/reference/2026-09-24-draft-repair-delivery-record.md",
+        "docs/delivery/sessions/2026-09-24-vision-strengthening.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT documentation review",
+          "reason": "Adopt the bounded design direction, not runtime completion. Owner review and the listed acceptance work remain open."
+        }
+      ]
+    },
+    {
+      "id": "EM-063",
+      "title": "Human corrections can reveal failure classes without permitting training",
+      "origin": "Vision/source-recovery review of the available alpha.7 checkpoint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "A preserved correction could reveal a missing dependency, changed meaning or excessive review cost, but using that record for model training or another client is a separate decision.",
+      "product_implication": "Explore permissioned, case-scoped correction replay for evaluation. Keep retention, confidentiality and dataset approval explicit; never silently train on client work.",
+      "task_ids": [
+        "B04-04",
+        "B04-02",
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/vision/ENDSTATE.md",
+        "docs/vision/8BALL.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "candidate",
+          "by": "ChatGPT documentation review",
+          "reason": "Retained for owner review; no new mandatory scope or implementation claim."
+        }
+      ]
+    },
+    {
+      "id": "EM-064",
+      "title": "Some outcomes need evidence over a declared confirmation window",
+      "origin": "Vision/source-recovery review of the available alpha.7 checkpoint",
+      "first_seen": "2026-09-24",
+      "evidence_level": "operator_hypothesis",
+      "observation": "A single successful check can satisfy a present-state condition without establishing a requested period of sustained recovery. Not every outcome requires such a period.",
+      "product_implication": "Explore explicit outcome confirmation windows with the operator and preserve unknown timing. Do not add hidden universal stability periods or autonomous monitoring.",
+      "task_ids": [
+        "B03-07",
+        "ES02-04",
+        "ES02-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/vision/8BALL.md",
+        "docs/vision/ENDSTATE.md",
+        "docs/vision/ACCEPTANCE-DESIGN.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "candidate",
+          "by": "ChatGPT documentation review",
+          "reason": "Retained for owner review; no new mandatory scope or implementation claim."
+        }
+      ]
+    },
+    {
+      "id": "EM-065",
+      "title": "An evolving review protocol needs additive compatibility",
+      "origin": "Vision review regression run",
+      "first_seen": "2026-09-24",
+      "evidence_level": "supported_by_tests",
+      "observation": "The initial full regression rejected five added review prompts because a test required exactly ten. The protocol must permit new passes without silently dropping, rewording or reordering the existing ones.",
+      "product_implication": "Keep stable question IDs and append-only protocol history. Test both valid extensions and attempted loss of original review questions; do not weaken runtime safeguards to satisfy document tests.",
+      "task_ids": [
+        "DOC-05",
+        "DOC-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "scripts/emergence.py",
+        "tests/test_emergence_register.py",
+        "docs/delivery/sessions/2026-09-24-vision-strengthening.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-24",
+          "decision": "adopted",
+          "by": "ChatGPT regression review",
+          "reason": "Bounded documentation-tooling fix. Original ten passes remain mandatory and previously recorded protocol entries become append-only. No runtime or model-quality acceptance follows."
+        }
+      ]
+    },
+    {
+      "id": "EM-066",
+      "title": "A chosen course must preserve its exact prerequisite branch",
+      "origin": "Chosen Course recovery and local implementation",
+      "first_seen": "2026-09-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Recalculating only by the same action set can admit another OR branch or ordering. This implementation pins selected prerequisites and checks recorded order.",
+      "product_implication": "Retain a reproducible anchor and label remaining candidates as conditional, not an automatic new course.",
+      "task_ids": [
+        "B03-07",
+        "ES02-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-09-25-chosen-course-recovery.md",
+        "tests/test_courses.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-25",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Adopt in the bounded local implementation and reproducible delivery; wider secure/native/operator acceptance remains unverified."
+        }
+      ]
+    },
+    {
+      "id": "EM-067",
+      "title": "A review clock can change the judgement without changing case revision",
+      "origin": "Chosen Course recovery and local implementation",
+      "first_seen": "2026-09-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "A selected review time or deadline can be reached with no new source or state revision. Version-only checks would miss that reason to reconsider.",
+      "product_implication": "Bind assessments to explicit clocks as well as snapshots; on-request review is not continuous monitoring.",
+      "task_ids": [
+        "B03-07",
+        "ES02-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-09-25-chosen-course-recovery.md",
+        "tests/test_courses.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-25",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Adopt in the bounded local implementation and reproducible delivery; wider secure/native/operator acceptance remains unverified."
+        }
+      ]
+    },
+    {
+      "id": "EM-068",
+      "title": "Pausing the course record is not cancellation of work",
+      "origin": "Chosen Course recovery and local implementation",
+      "first_seen": "2026-09-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Course lifecycle and action approval histories are separate. A local pause has no channel to cancel external activity or revoke separate approvals.",
+      "product_implication": "State the exact effect of pause/resume/retirement and preserve action-authority boundaries.",
+      "task_ids": [
+        "B03-07",
+        "ES02-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-09-25-chosen-course-recovery.md",
+        "tests/test_courses.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-25",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Adopt in the bounded local implementation and reproducible delivery; wider secure/native/operator acceptance remains unverified."
+        }
+      ]
+    },
+    {
+      "id": "EM-069",
+      "title": "Acknowledging a warning must not clear its factual cause",
+      "origin": "Chosen Course recovery and local implementation",
+      "first_seen": "2026-09-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "A human review record can be appended while a hard constraint or explicit watch is still triggered. Treating review as clearance would hide an unresolved issue.",
+      "product_implication": "Show reviewed history and current diagnostics separately; require actual case changes or a new explicit course to change the basis.",
+      "task_ids": [
+        "B03-07",
+        "ES02-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-09-25-chosen-course-recovery.md",
+        "tests/test_courses.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-25",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Adopt in the bounded local implementation and reproducible delivery; wider secure/native/operator acceptance remains unverified."
+        }
+      ]
+    },
+    {
+      "id": "EM-070",
+      "title": "Unavailable work and a verification-only remainder can coexist",
+      "origin": "Chosen Course recovery and local implementation",
+      "first_seen": "2026-09-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Disabling a selected action may leave a candidate that asks for evidence of its intended result. That candidate is not proof the original work can proceed.",
+      "product_implication": "Surface unavailable selected actions separately from evidence gaps and avoid global impossibility or unconditional viability claims.",
+      "task_ids": [
+        "B03-07",
+        "ES02-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-09-25-chosen-course-recovery.md",
+        "tests/test_courses.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-25",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Adopt in the bounded local implementation and reproducible delivery; wider secure/native/operator acceptance remains unverified."
+        }
+      ]
+    },
+    {
+      "id": "EM-071",
+      "title": "An interrupted sprint needs reproducible source, not inherited result totals",
+      "origin": "Chosen Course recovery and local implementation",
+      "first_seen": "2026-09-25",
+      "evidence_level": "observed_in_build",
+      "observation": "The mounted alpha.7 archive and PRD overlay reproduced exactly; the interrupted Chosen Course narrative had no delivered implementation tree. New code and test results were rebuilt from the verified bytes.",
+      "product_implication": "Checkpoint actual source and include a Git bundle, cumulative patch and byte-level manifest so the next environment can reproduce the work.",
+      "task_ids": [
+        "DOC-03",
+        "DOC-04"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-09-25-chosen-course-recovery.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-09-25",
+          "decision": "adopted",
+          "by": "ChatGPT build review",
+          "reason": "Adopt in the bounded local implementation and reproducible delivery; wider secure/native/operator acceptance remains unverified."
+        }
+      ]
+    }
+  ]
+}

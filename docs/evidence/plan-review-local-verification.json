@@ -1,0 +1,105 @@
+{
+  "checkpoint": "0.2.0-alpha.6",
+  "title": "Plan Review and plan-quality evaluation infrastructure",
+  "date": "2026-09-24",
+  "delivery": "local_unreleased",
+  "remote_base": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+  "supplied_source_tree": "c057d35ff84c1480243208d9674f4e99f7bf74a6",
+  "baseline_tests": {
+    "pytest_passed": 746,
+    "independently_rerun": true
+  },
+  "current_tests": {
+    "pytest_passed": 794,
+    "new_pytest_checks": 48,
+    "browser_checks_passed": 308,
+    "new_browser_checks": 33,
+    "browser_mode": "explicit local ASGI bridge",
+    "browser_suites": [
+      {
+        "suite": "browser-report.json",
+        "checks_passed": 27,
+        "evidence": "docs/evidence/plan-review/browser-report.json"
+      },
+      {
+        "suite": "v2/browser-v2-report.json",
+        "checks_passed": 51,
+        "evidence": "docs/evidence/plan-review/browser-v2-report.json"
+      },
+      {
+        "suite": "development/development-browser-report.json",
+        "checks_passed": 15,
+        "evidence": "docs/evidence/plan-review/development-browser-report.json"
+      },
+      {
+        "suite": "graph/browser-graph-report.json",
+        "checks_passed": 38,
+        "evidence": "docs/evidence/plan-review/browser-graph-report.json"
+      },
+      {
+        "suite": "studio/studio-browser-report.json",
+        "checks_passed": 44,
+        "evidence": "docs/evidence/plan-review/studio-browser-report.json"
+      },
+      {
+        "suite": "sources/source-browser-report.json",
+        "checks_passed": 35,
+        "evidence": "docs/evidence/plan-review/source-browser-report.json"
+      },
+      {
+        "suite": "insights/insights-browser-report.json",
+        "checks_passed": 39,
+        "evidence": "docs/evidence/plan-review/insights-browser-report.json"
+      },
+      {
+        "suite": "grounding/browser-grounding-report.json",
+        "checks_passed": 26,
+        "evidence": "docs/evidence/plan-review/browser-grounding-report.json"
+      },
+      {
+        "suite": "plan-review/browser-plan-review-report.json",
+        "checks_passed": 33,
+        "evidence": "docs/evidence/plan-review/browser-plan-review-report.json"
+      }
+    ],
+    "python_compilation": "passed",
+    "javascript_syntax": "passed",
+    "delivery_emergence_changelog_guards": "passed",
+    "manual_visual_check": "actual desktop/mobile Plan Review screenshots inspected"
+  },
+  "engineering_evaluation": {
+    "synthetic_fixtures": 8,
+    "structural_checks_passed": 8,
+    "models_called": false,
+    "independent_expert_review": false,
+    "quality_gate": "NOT_ASSESSED",
+    "fixture_report": "docs/evidence/plan-review/structural-review-report.json",
+    "unfilled_review_sheet": "docs/evidence/plan-review/human-review-sheet.json",
+    "route_identity_regression": "docs/evidence/route-identity-regression.json"
+  },
+  "native_browser": {
+    "attempted": true,
+    "result": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:8048/v2/",
+    "policy_unchanged": true
+  },
+  "live_model_inference": false,
+  "new_github_native_ci": false,
+  "source_pushed": false,
+  "merged": false,
+  "deployed": false,
+  "regression": {
+    "file": "docs/evidence/route-identity-regression.json",
+    "before_unique_ids": 3,
+    "after_unique_ids": 4,
+    "returned_candidates": 4,
+    "noncolliding_legacy_ids_preserved": true
+  },
+  "boundaries": [
+    "Review recording cannot attest facts, change objectives or approve actions.",
+    "Scenarios are independent hypothetical copies, not cumulative live amendments.",
+    "The six-part human rubric is not an independent professional evaluation until qualified reviewers complete it.",
+    "Bridge checks exercise actual UI/API/SQLite but not native networking, storage, downloads or CSP enforcement.",
+    "The arbitrary-situation real-model acceptance gate is unchanged."
+  ],
+  "readiness_note": "Infrastructure and deterministic regression evidence only; not full V0.2, native release acceptance or an independent model-quality pass."
+}

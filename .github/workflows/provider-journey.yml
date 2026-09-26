@@ -1,0 +1,44 @@
+name: Explicit actual-provider journey
+on:
+  workflow_dispatch:
+    inputs:
+      consent:
+        description: "Type RUN_FICTIONAL_INFERENCE to authorise provider processing of the public engineering fixture"
+        required: true
+        type: string
+      model:
+        description: "Explicit Hugging Face namespace/model (not auto)"
+        required: true
+        type: string
+      provider:
+        description: "Explicit HF inference provider (not auto)"
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  fictional-journey:
+    if: ${{ inputs.consent == 'RUN_FICTIONAL_INFERENCE' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python -m playwright install --with-deps chromium
+      - name: Actual HF requests and native reload/export
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          EIGHTBALL_HF_MODEL: ${{ inputs.model }}
+          EIGHTBALL_HF_PROVIDER: ${{ inputs.provider }}
+        run: |
+          export EIGHTBALL_BROWSER="$(python -c 'from playwright.sync_api import sync_playwright; p=sync_playwright().start(); print(p.chromium.executable_path); p.stop()')"
+          python evals/full_journey.py --provider huggingface --allow-inference --allow-external --transport native
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: actual-provider-journey
+          path: artifacts/live-journey/
+          if-no-files-found: warn

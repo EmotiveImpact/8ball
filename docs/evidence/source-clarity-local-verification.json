@@ -1,0 +1,88 @@
+{
+  "version": "0.2.0-alpha.5",
+  "date": "2026-09-24",
+  "delivery": "local_unreleased",
+  "source_baseline_tree": "a6cdfbf32e2b5d7a9803b9de94a3b729d847c1f6",
+  "local_comparison_base": "7d6e144a8450cea090cc832ede44a2b3a5857ac0",
+  "remote_base": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+  "pytest": {
+    "baseline_passed": 672,
+    "current_passed": 746,
+    "new_tests": 74,
+    "new_test_files": [
+      "tests/test_time_review.py",
+      "tests/test_grounding.py"
+    ]
+  },
+  "browser": {
+    "suite_count": 8,
+    "total_checks": 275,
+    "suites": [
+      {
+        "path": "artifacts/browser-report.json",
+        "checks_passed": 27,
+        "network": "in-process ASGI bridge; browser HTTP, CSP and downloads NOT tested",
+        "errors": []
+      },
+      {
+        "path": "artifacts/v2/browser-v2-report.json",
+        "checks_passed": 51,
+        "network": "ASGI bridge, not browser HTTP",
+        "errors": []
+      },
+      {
+        "path": "artifacts/studio/studio-browser-report.json",
+        "checks_passed": 44,
+        "network": "explicit ASGI bridge",
+        "errors": []
+      },
+      {
+        "path": "artifacts/sources/source-browser-report.json",
+        "checks_passed": 35,
+        "network": "explicit ASGI bridge",
+        "errors": []
+      },
+      {
+        "path": "artifacts/development/development-browser-report.json",
+        "checks_passed": 15,
+        "network": "ASGI bridge",
+        "errors": []
+      },
+      {
+        "path": "artifacts/graph/browser-graph-report.json",
+        "checks_passed": 38,
+        "network": "ASGI bridge, not browser HTTP",
+        "errors": []
+      },
+      {
+        "path": "artifacts/insights/insights-browser-report.json",
+        "checks_passed": 39,
+        "network": "Explicit ASGI bridge, not browser HTTP",
+        "errors": []
+      },
+      {
+        "path": "artifacts/grounding/browser-grounding-report.json",
+        "checks_passed": 26,
+        "network": "Explicit ASGI bridge",
+        "errors": []
+      }
+    ],
+    "new_journey_checks": 26,
+    "mode": "explicit ASGI bridge, real Chromium/API/SQLite",
+    "native_attempt": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:8048/v2/",
+    "native_browser_verified": false
+  },
+  "python_compilation": "passed",
+  "javascript_syntax": "passed",
+  "actual_model_inference": false,
+  "external_provider_calls": false,
+  "pushed": false,
+  "merged": false,
+  "deployed": false,
+  "limits": [
+    "Human source interpretation, not autonomous entity or date extraction.",
+    "No global actor merge, business-day calendar, source truth attestation or hidden schedule edit.",
+    "No new native-browser security, storage/download or professional model-quality acceptance.",
+    "Local single-operator fictional-data developer application."
+  ]
+}

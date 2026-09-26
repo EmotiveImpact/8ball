@@ -1,6 +1,6 @@
 # ENDSTATE embedded kernel: contract and dependency boundary
 
-Status: internal preview, 23 September 2026. Work items ES01-01 through ES01-04. This is the first extraction from 8BALL, not a public SDK release or another application.
+Status: internal preview, 24 September 2026. Work items ES01-01 through ES01-05. This is the first extraction from 8BALL, not a public SDK release or another application.
 
 ## What is actually shared
 
@@ -24,7 +24,7 @@ The input is serialised to plain values, validated and copied at the calculation
 
 The response identifies `contract_version`, `snapshot_id`, `revision`, `plan` and `briefing`. Plans retain the existing V0.2 result shape: candidates, evidence gaps, constraints, selected prerequisites, schedules, readiness, question impact and visible search limits. The briefing provides Now, Next, Decisions, Questions, Routes and Watch.
 
-Invalid schema versions, naive clocks, negative values, unknown fields and dangling references raise Pydantic `ValidationError`. A well-formed but unsupported or impossible objective returns evidence gaps or constraint failures, not an invented route or guaranteed outcome. Nested output mappings remain the tested V0.2 structure; a fully typed, stabilised public result schema and distribution package are separate package-gate work.
+Invalid schema versions, naive clocks, negative values, unknown fields and dangling references raise Pydantic `ValidationError`. A well-formed but unsupported or impossible objective returns evidence gaps or constraint failures, not an invented route or guaranteed outcome. Nested output mappings now have explicit strict result schemas in `endstate/results.py`. Unknown fields, non-finite values, inconsistent route/action references, mixed revisions and mismatched plan/briefing routes are rejected. Values retain their tested dictionary/JSON shape. `scripts/export_endstate_schemas.py` exports the current request/response schemas without introducing a public service.
 
 Only `calculate` is the validated external boundary in this slice. `endstate.planner` functions are internal kernel operations over an already validated snapshot. Compatibility callers may still use them through 8BALL's adapter.
 
@@ -44,4 +44,4 @@ These are small fictional reuse fixtures, not finished sales/support application
 
 ## Next boundaries to stabilise
 
-Complete the package acceptance review, nested result schemas and distribution/compatibility tests before declaring ENDSTATE V0.1 accepted as a reusable package. Keep eventual observation commands, normalised events, incremental planning and graph compilation separate from this read-only calculation boundary. Continue building the fixer product rather than splitting into multiple commercial apps.
+The alpha.7 checkpoint adds an actual offline wheel build and isolated installation, with complete application code tests rerun against the installed kernel. Nested result schemas and the distribution test are implemented. Native cumulative application acceptance and supported-environment review remain separate. See `PACKAGE.md` and the integration session evidence before declaring any wider release scope. Keep eventual observation commands, normalised events, incremental planning and graph compilation separate from this read-only calculation boundary. Continue building the fixer product rather than splitting into multiple commercial apps.

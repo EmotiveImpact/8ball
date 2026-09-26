@@ -14,6 +14,7 @@ from .store import Store, Conflict
 from .engine import plan, difference
 from .seed import create_case
 from .providers import jev_classify, gliclass_classify, ollama_extract, ProviderUnavailable
+from .v2.request_limits import BoundedRequestBody, body_limit
 
 
 class Intake(Strict):
@@ -55,8 +56,9 @@ def make_app(store: Store, token: str) -> FastAPI:
                 length = int(request.headers.get('content-length', '-1'))
             except ValueError:
                 length = -1
-            if length < 0 or length > 300000:
-                return JSONResponse({'detail': 'Request needs Content-Length of at most 300000 bytes'}, status_code=413)
+            limit=body_limit(request.url.path)
+            if length < 0 or length > limit:
+                return JSONResponse({'detail': f'Request needs Content-Length of at most {limit} bytes'}, status_code=413)
             if request.headers.get('content-type', '').split(';')[0] != 'application/json':
                 return JSONResponse({'detail': 'JSON requests only'}, status_code=415)
         response = await call_next(request)
@@ -191,8 +193,11 @@ def make_app(store: Store, token: str) -> FastAPI:
     async def value_error(request, exc):
         return JSONResponse({'detail': 'Invalid fields or references' if isinstance(exc,ValidationError) else str(exc)},status_code=422)
 
-    app.include_router(v2_router(V2Store(store.path),store,authorised))
+    v2_routes = v2_router(V2Store(store.path),store,authorised)
+    app.state.analysis_jobs = v2_routes.analysis_jobs
+    app.include_router(v2_routes)
     web = Path(__file__).resolve().parent.parent / 'web'
     app.mount('/v2', StaticFiles(directory=web / 'v2', html=True), name='v2-web')
     app.mount('/', StaticFiles(directory=web, html=True), name='web')
+    app.add_middleware(BoundedRequestBody)
     return app

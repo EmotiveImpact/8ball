@@ -4,11 +4,12 @@ This internal preview accepts Python/JSON-shaped requests. It is not an HTTP
 endpoint. Costs use the caller's consistent whole-unit accounting convention.
 """
 from typing import Any, Literal, Mapping
-from pydantic import AwareDatetime, Field
+from pydantic import AwareDatetime, Field, model_validator
 from . import CONTRACT_VERSION
 from .contracts import PlanningSnapshot
 from .primitives import Strict, Identifier
 from . import planner
+from .results import PlanResult, BriefingResult, validate_plan
 
 Order = Literal['fewest_unknowns', 'fastest', 'lowest_cost', 'fewest_external',
                 'least_irreversible', 'operator_risk']
@@ -25,10 +26,25 @@ class PlanResponse(Strict):
     contract_version: Literal['endstate.plan.v1'] = CONTRACT_VERSION
     snapshot_id: Identifier
     revision: int = Field(strict=True, ge=0)
-    # Preserve the tested v2 result structure. Nested result schemas remain an
-    # explicit stabilisation task, not a claim of a fully released public SDK.
-    plan: dict[str, Any]
-    briefing: dict[str, Any]
+    plan: PlanResult
+    briefing: BriefingResult
+
+    @model_validator(mode='after')
+    def result_integrity(self):
+        validated = validate_plan(self.plan)
+        if validated['revision'] != self.revision:
+            raise ValueError('Response and plan revisions differ')
+        if self.briefing['routes'] != self.plan['routes']:
+            raise ValueError('Briefing refers to another plan')
+        actions = set(validated['action_states'])
+        routes = {r['id'] for r in validated['routes']}
+        conditions = set(validated['states'])
+        if any(n['id'] not in actions for n in self.briefing['now'] + self.briefing['next']):
+            raise ValueError('Briefing action is not in the result')
+        for q in self.briefing['questions']:
+            if not set(q['route_ids']) <= routes or not set(q['condition_ids']) <= conditions:
+                raise ValueError('Briefing question refers to another plan')
+        return self
 
 
 def calculate(request: PlanRequest | Mapping[str, Any]) -> PlanResponse:

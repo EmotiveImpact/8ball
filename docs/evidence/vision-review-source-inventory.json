@@ -1,0 +1,25 @@
+{
+  "review_date": "2026-09-24",
+  "review_scope": "documentation_only",
+  "runtime_base_version": "0.2.0-alpha.7",
+  "runtime_base_tree": "5c49a40395e6d22510a8895a90ddd2f759378efa",
+  "source_archive": "8BALL-Integrated-Build-Source.zip",
+  "source_archive_sha256": "0e066e76a4c90ee8d0022afc712c7267506b210fdca030be698871febc17f029",
+  "base_tracked_file_count": 230,
+  "later_report_name": "8BALL-Draft-Repair-Delivery.md",
+  "later_report_sha256": "c3796a396ba315b2f3cef173d9ab561d48d6b7c4c313125cb1132af332e794a6",
+  "later_report_source_recovered": false,
+  "later_report_test_count_reproduced": false,
+  "remote_refreshed": false,
+  "published": false,
+  "original_discoveries_retained": 55,
+  "new_discoveries": 10,
+  "original_required_task_count": 59,
+  "required_task_flags_or_statuses_changed": false,
+  "new_optional_task_ids": [
+    "B03-07",
+    "ES02-06",
+    "ES03-08",
+    "B04-04"
+  ]
+}

@@ -11,7 +11,7 @@ class Command(Strict):
     event_id: Identifier
     expected_revision: int = Field(strict=True, ge=0)
     kind: Literal['add_evidence','review_evidence','observe','metadata','upsert_object','replace_graph',
-                  'approve','complete','decide','answer','apply_proposal']
+                  'approve','complete','decide','answer','apply_proposal','import_source','capture_passages','retract_source','apply_deadline_review']
     payload: dict
 
 
@@ -104,6 +104,7 @@ def preserve_meaning(before:Case,after:Case):
 
 
 def apply(case:Case,cmd:Command,actor='local-operator',now=None) -> Case:
+    if cmd.kind in ('import_source','capture_passages','retract_source','apply_deadline_review'):raise ValueError('Source operations must use the Source Desk transaction service')
     if cmd.kind=='apply_proposal':raise ValueError('Proposals must be reviewed through the proposal service')
     now=now or utcnow()
     p=PAYLOADS[cmd.kind].model_validate(cmd.payload)

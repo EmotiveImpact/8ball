@@ -141,6 +141,10 @@ def render(data: dict[str, Any]) -> str:
         'No model-quality claim follows from a software CI pass.', '',
         '## Next work', '',
     ]
+    local = data.get('unpublished_checkpoint')
+    if local:
+        lines += ['**Unpublished development checkpoint:** ' + local['reason'],
+                  'Base: `' + local['base_commit'] + '`. See `' + local['session'] + '`.', '']
     by_id = {t['id']: t for t in data['tasks']}
     for tid in data['next_task_ids']:
         t = by_id[tid]

@@ -1,0 +1,25 @@
+{
+  "checks_passed": 15,
+  "checks": [
+    "black canvas uses approved token",
+    "ENDSTATE identity present",
+    "exact target and proposed criterion displayed for review",
+    "target coverage is not represented as semantic proof",
+    "absent hosted credentials are accurately shown",
+    "hosted setup does not imply paid calls",
+    "setup never requests a browser-stored API key",
+    "dialog Escape restores control focus",
+    "runtime probe gives explicit checked result",
+    "provider controls fit 1512px",
+    "workspace lock visible at 1512px",
+    "provider controls fit 390px",
+    "workspace lock visible at 390px",
+    "mobile lock clears the active workspace",
+    "no page runtime errors"
+  ],
+  "network": "ASGI bridge",
+  "real_huggingface_inference": false,
+  "proposal_source": "controlled fictional compiler fixture",
+  "local_probe_only": true,
+  "live_state_not_attested": true
+}

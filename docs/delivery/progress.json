@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-09-23",
+  "updated_on": "2026-09-25",
   "product": "8BALL",
   "engine": "ENDSTATE",
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
@@ -8,10 +8,10 @@
     "full_name": "EmotiveImpact/8ball",
     "development_branch": "feat/situation-intelligence-v2",
     "pull_request": 2,
-    "inspected_code_commit": "3a33866f375be355658d8e5d82addb25bcc7eed9",
-    "inspected_code_tree": "1d513b7addb9bd5fd89b106dbb9d447d103e2f3f",
+    "inspected_code_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+    "inspected_code_tree": "68ff7ac7b212fbdf67f77d051f69d13ed39485be",
     "main_at_inspection": "08bc26ef397ec960d1b33b099c40888a8229eac0",
-    "status_as_of": "2026-09-23",
+    "status_as_of": "2026-09-25",
     "pr_draft": true,
     "merged": false,
     "production_deployed": false,
@@ -109,6 +109,71 @@
       "code_commit": "3a33866f375be355658d8e5d82addb25bcc7eed9",
       "url": "https://github.com/EmotiveImpact/8ball/actions/runs/35911570117",
       "result": "Actual staged Qwen test: 3/4 fixtures valid; supplier graph rejected for repeated readiness/goal results and also contained invented prerequisite IDs. Manual inspection found desired-outcome confusion. All live case states unchanged; B02-09 remains blocked."
+    },
+    "EV-HF-BLACK-LOCAL": {
+      "kind": "local_test_and_visual_evidence",
+      "path": "docs/evidence/hf-black-local-verification.json",
+      "result": "362 local pytest checks; 93 explicitly bridged browser checks. No hosted inference, native browser networking or remote push for this change."
+    },
+    "EV-GRAPH-EXPLORER-LOCAL": {
+      "kind": "local_code_and_bridged_browser_evidence",
+      "path": "docs/evidence/relationship-explorer-local-verification.json",
+      "result": "399 pytest tests, including 37 pure projection/layout checks; 131 bridged browser checks including 38 new graph checks. Graph interactions preserve audit state. No native CI or model inference claimed."
+    },
+    "EV-PLAN-STUDIO-LOCAL": {
+      "kind": "local_software_and_interaction_evidence",
+      "path": "docs/evidence/plan-studio-local-verification.json",
+      "result": "484 local automated tests; 174 bridge browser checks, including 43 Plan Studio/job/changelog checks. No native browser or new actual-model inference claim."
+    },
+    "EV-SOURCE-DESK-LOCAL": {
+      "kind": "local_software_and_interaction_evidence",
+      "path": "docs/evidence/source-desk-local-verification.json",
+      "result": "566 local automated tests, including 82 new source/API/Unicode selection tests. Source Desk is local; no native CI or model-quality acceptance is implied."
+    },
+    "EV-EMERGENCE-REVIEW": {
+      "kind": "documentation_validation",
+      "path": "docs/delivery/sessions/2026-09-24-emergence-review-local.md",
+      "result": "Mandatory end-of-sprint emergence review is documented across agent/handoff/PRD/roadmap and regression-tested. It governs discovery; it does not by itself add runtime scope."
+    },
+    "EV-EMERGENT-INSIGHTS-LOCAL": {
+      "kind": "local_code_and_bridged_browser_evidence",
+      "path": "docs/evidence/emergent-insights-local-verification.json",
+      "result": "672 automated tests and 249 explicit ASGI-bridge browser checks across seven suites; 39 new Emergent Insights journey checks. No native or model-quality acceptance. 37 discoveries retained with prospective changelog policy."
+    },
+    "EV-SOURCE-CLARITY-LOCAL": {
+      "kind": "local_code_and_bridged_browser_evidence",
+      "path": "docs/evidence/source-clarity-local-verification.json",
+      "result": "746 automated tests, including 74 new checks; 275 explicit ASGI-bridge browser checks across eight suites, including 26 source-clarity checks. Native navigation was attempted and administrator-blocked. No model-quality or production acceptance."
+    },
+    "EV-PLAN-REVIEW-LOCAL": {
+      "kind": "local_software_validation",
+      "path": "docs/evidence/plan-review-local-verification.json",
+      "result": "Plan Review, quality-review infrastructure and route-identity regression. Actual checks and boundaries recorded in the linked file; not an independent expert evaluation."
+    },
+    "EV-INTEGRATION-LOCAL": {
+      "kind": "software_validation",
+      "path": "docs/evidence/integration-acceptance-local-verification.json",
+      "result": "855 code tests and a complete rerun against the installed internal wheel passed. All 344 browser checks across ten suites passed explicitly bridged. Source-bound reports are packaged separately; no new native/model/expert acceptance."
+    },
+    "EV-INTEGRATION-BLOCKED": {
+      "kind": "environment_blocker",
+      "path": "docs/evidence/integration-acceptance-local-verification.json",
+      "result": "Native loopback navigation administrator-blocked; local inference runtime unavailable and HF configuration absent. No runtime policy altered and no provider calls started."
+    },
+    "EV-VISION-REVIEW": {
+      "kind": "documentation_and_source_inventory",
+      "path": "docs/delivery/sessions/2026-09-24-vision-strengthening.md",
+      "result": "Vision/roadmap refinement over recovered alpha.7; no runtime feature or new required acceptance pass. Exact source inventory and document/history checks are recorded in this session."
+    },
+    "EV-DRAFT-RECOVERY-GAP": {
+      "kind": "reported_delivery_limitation",
+      "path": "docs/reference/2026-09-24-draft-repair-delivery-record.md",
+      "result": "The supplied Draft Repair handoff states that no completed draft-repair working tree was found. Reported 905-test results are not reproduced implementation evidence for recovered alpha.7."
+    },
+    "EV-CHOSEN-COURSE-LOCAL": {
+      "kind": "local_focused_code_and_bridge",
+      "path": "docs/evidence/chosen-course-focused-verification.json",
+      "result": "64 focused code tests and 29 explicit bridge browser checks passed. Native probe blocked. No model or production acceptance."
     }
   },
   "milestones": [
@@ -385,18 +450,21 @@
       "owner": null,
       "working_branch": null,
       "base_commit": null,
-      "updated_on": "2026-09-23",
+      "updated_on": "2026-09-24",
       "code_paths": [
         "eightball/v2/planner.py",
-        "tests/test_v2_domain.py"
+        "tests/test_v2_domain.py",
+        "endstate/planner.py",
+        "tests/test_plan_review.py"
       ],
       "depends_on": [],
       "acceptance": "Bounded planning exposes evidence gaps, false/unknown distinctions, projected conflicts, decision incompatibilities and scheduling limits.",
       "evidence": [
-        "EV-APP"
+        "EV-APP",
+        "EV-PLAN-REVIEW-LOCAL"
       ],
       "blockers": [],
-      "next_action": "Benchmark meaningful planning extensions without claiming global optimality."
+      "next_action": "Retain the frozen non-colliding outputs and the dependency-order identity regression. Native cumulative integration remains separate."
     },
     {
       "id": "B02-04",
@@ -521,8 +589,8 @@
       "status": "blocked",
       "required": true,
       "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "af97506c37dbf14ded6208b36277dd3b87a11784",
+      "working_branch": "work/hf-black-drafting",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
       "updated_on": "2026-09-23",
       "code_paths": [
         "eightball/v2/intelligence.py",
@@ -535,12 +603,14 @@
       "evidence": [
         "EV-QWEN",
         "EV-STAGED-CODE",
-        "EV-STAGED-MODEL"
+        "EV-STAGED-MODEL",
+        "EV-HF-BLACK-LOCAL"
       ],
       "blockers": [
-        "Actual staged Qwen run 35911570117 failed: intermediate results repeated readiness/goal conditions; invented existing-condition references and outcome confusion also remain."
+        "Actual staged Qwen run 35911570117 failed: intermediate results repeated readiness/goal conditions; invented existing-condition references and outcome confusion also remain.",
+        "New hosted/target-aware development work is unpushed; no HF key or new live-model result is available."
       ],
-      "next_action": "Use the preserved two-stage trace to separate target criteria from source facts, constrain references to supplied IDs and validate the frame before expanding routes. Compare providers against unchanged fixtures and independent semantic cases; do not invent missing actions or weaken the gate."
+      "next_action": "Apply/push the preserved local patch, run native CI and the unchanged four-case local/hosted generation gate. Target quotations and frame references are now validated early; semantic quality and live provider results remain unverified."
     },
     {
       "id": "B02-10",
@@ -548,45 +618,65 @@
       "title": "Robust source extraction, deadlines and entity reconciliation",
       "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "ChatGPT",
+      "working_branch": "work/B02-10/source-clarity",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-24",
       "code_paths": [
-        "eightball/v2/intelligence.py"
+        "eightball/v2/intelligence.py",
+        "endstate/time_review.py",
+        "eightball/v2/grounding.py",
+        "web/v2/grounding-view.js",
+        "tests/test_time_review.py",
+        "tests/test_grounding.py",
+        "tests/browser_grounding.py"
       ],
       "depends_on": [],
       "acceptance": "Reviewed multi-source extraction preserves negation, uncertainty, identity and quoted support; date changes become explicit reviewed scheduling proposals.",
       "evidence": [
         "EV-QWEN",
-        "EV-REMAINING"
+        "EV-REMAINING",
+        "EV-SOURCE-DESK-LOCAL",
+        "EV-SOURCE-CLARITY-LOCAL"
       ],
       "blockers": [
-        "Only a few structural extraction fixtures observed; dates need operator resolution."
+        "Native cumulative integration and independent multi-source identity/date usefulness review remain outstanding.",
+        "No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed."
       ],
-      "next_action": "Add independent cases for repeated entities, pronouns, contradictions and time resolution."
+      "next_action": "Run native integration, then evaluate multi-source identity/date workflows with reviewed professional fixtures. Preserve mention-level judgements and preview/apply boundaries; keep the source-to-plan gate unchanged."
     },
     {
       "id": "B02-11",
       "milestone": "B02",
       "title": "Independent quality evaluation and production-model selection",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "ChatGPT",
+      "working_branch": "work/B02-11/plan-review",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-24",
       "code_paths": [
         "evals/live_generation.py",
-        "evals/classification-cases.json"
+        "evals/classification-cases.json",
+        "endstate/plan_review.py",
+        "eightball/v2/plan_review.py",
+        "web/v2/plan-review-view.js",
+        "evals/plan_review_bench.py",
+        "evals/PLAN-QUALITY-GATE.md",
+        "tests/test_plan_review.py",
+        "tests/browser_plan_review.py"
       ],
       "depends_on": [],
       "acceptance": "Expert-labelled held-out data and predeclared acceptance thresholds measure semantic errors, omissions, corrections, latency and abstention.",
       "evidence": [
-        "EV-REMAINING"
+        "EV-REMAINING",
+        "EV-PLAN-REVIEW-LOCAL"
       ],
-      "blockers": [],
-      "next_action": "Freeze evaluation criteria before choosing or tuning a production model."
+      "blockers": [
+        "Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed. Local structural fixtures are not a model-quality benchmark.",
+        "New cumulative native-browser acceptance remains unavailable locally."
+      ],
+      "next_action": "Obtain owner/expert approval of the declared protocol, collect independent labels and run the preserved real-model gate with an explicitly configured provider. Do not count software or operator review as independent model approval."
     },
     {
       "id": "B02-12",
@@ -594,12 +684,15 @@
       "title": "Full twenty-step real-model V0.2 acceptance journey",
       "status": "blocked",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "ChatGPT",
+      "working_branch": "work/acceptance/integration-alpha7",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-24",
       "code_paths": [
-        "tests/browser_v2.py"
+        "tests/browser_v2.py",
+        "evals/full_journey.py",
+        "scripts/acceptance.py",
+        ".github/workflows/provider-journey.yml"
       ],
       "depends_on": [
         "B02-09",
@@ -610,92 +703,145 @@
       "evidence": [
         "EV-QWEN",
         "EV-UI",
-        "EV-STAGED-MODEL"
+        "EV-STAGED-MODEL",
+        "EV-INTEGRATION-LOCAL",
+        "EV-INTEGRATION-BLOCKED"
       ],
       "blockers": [
-        "Both legacy and staged graph generation still fail the required actual-model gate; native application journeys use rules/catalogue, not the full real-model flow."
+        "Both legacy and staged graph generation still fail the required actual-model gate; native application journeys use rules/catalogue, not the full real-model flow.",
+        "No running local model, authorised HF configuration or native browser navigation in the current environment. The new journey is implemented but has not made an actual inference call."
       ],
-      "next_action": "Add a real-model integration journey distinct from rules/catalogue browser tests."
+      "next_action": "Run the actual-provider integration command with configured service/token; preserve failures and collect a genuinely human all-native journey separately. No scripted review may satisfy independent semantic acceptance."
     },
     {
       "id": "B02-13",
       "milestone": "B02",
       "title": "Guided nested graph authoring instead of JSON-only advanced editing",
-      "status": "not_started",
+      "status": "implemented",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "ChatGPT",
+      "working_branch": "work/plan-studio-jobs-changelog",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-24",
       "code_paths": [
-        "web/v2/forms.js"
+        "web/v2/studio-model.js",
+        "web/v2/studio-view.js",
+        "eightball/v2/authoring.py",
+        "tests/test_plan_studio.py",
+        "tests/test_studio_model.py",
+        "tests/browser_studio.py",
+        "web/v2/plan-review-view.js"
       ],
       "depends_on": [],
       "acceptance": "Operators can edit AND/OR, guards, contingencies and verification rules with guided controls and keyboard access.",
       "evidence": [
-        "EV-REMAINING"
+        "EV-REMAINING",
+        "EV-PLAN-STUDIO-LOCAL",
+        "EV-PLAN-REVIEW-LOCAL"
       ],
-      "blockers": [],
-      "next_action": "Design focused authoring flows while preserving the JSON compatibility path."
+      "blockers": [
+        "Native browser CI and authorised source integration have not been run for this local checkpoint."
+      ],
+      "next_action": "Run the existing authoring and new live-plan review journeys under native CI after authorised cumulative integration."
     },
     {
       "id": "B02-14",
       "milestone": "B02",
       "title": "Source chunking, duplication and reviewer-safe object reconciliation",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "ChatGPT",
+      "working_branch": "work/B02-10/source-clarity",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-24",
+      "code_paths": [
+        "eightball/v2/source_contracts.py",
+        "eightball/v2/source_desk.py",
+        "eightball/v2/request_limits.py",
+        "web/v2/source-model.js",
+        "web/v2/source-view.js",
+        "tests/test_source_desk.py",
+        "tests/test_source_api.py",
+        "tests/browser_sources.py",
+        "endstate/time_review.py",
+        "eightball/v2/grounding.py",
+        "web/v2/grounding-view.js",
+        "tests/test_time_review.py",
+        "tests/test_grounding.py",
+        "tests/browser_grounding.py"
+      ],
       "depends_on": [],
       "acceptance": "Longer sources retain exact provenance; duplicates and entity merges cannot rewrite observed meanings or lose attribution.",
       "evidence": [
-        "EV-REMAINING"
+        "EV-REMAINING",
+        "EV-SOURCE-DESK-LOCAL",
+        "EV-SOURCE-CLARITY-LOCAL"
       ],
-      "blockers": [],
-      "next_action": "Define chunk/source version contracts and adversarial fixtures."
+      "blockers": [
+        "Native cumulative integration and independent multi-source identity/date usefulness review remain outstanding.",
+        "No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed."
+      ],
+      "next_action": "Run native integration, then evaluate multi-source identity/date workflows with reviewed professional fixtures. Preserve mention-level judgements and preview/apply boundaries; keep the source-to-plan gate unchanged."
     },
     {
       "id": "B02-15",
       "milestone": "B02",
       "title": "Model progress/cancellation and accurate installation status",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
+      "owner": "ChatGPT",
+      "working_branch": "work/plan-studio-jobs-changelog",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
       "updated_on": "2026-09-23",
-      "code_paths": [],
+      "code_paths": [
+        "eightball/v2/analysis_jobs.py",
+        "web/v2/job-view.js",
+        "tests/test_analysis_jobs.py"
+      ],
       "depends_on": [
         "ES03-04"
       ],
       "acceptance": "The UI reports actual runtime/weights/credential state and cancels work without stale commits. No silent large model download.",
       "evidence": [
-        "EV-REMAINING"
+        "EV-REMAINING",
+        "EV-HF-BLACK-LOCAL",
+        "EV-PLAN-STUDIO-LOCAL"
       ],
-      "blockers": [],
-      "next_action": "Add explicit opt-in setup and availability/cancellation checks, not a fictional green badge."
+      "blockers": [
+        "Native browser CI and authorised source integration have not been run for this local checkpoint."
+      ],
+      "next_action": "Run native CI after authorised integration and validate lifecycle behaviour with the selected real provider. Cancellation suppresses later stages/publication; it cannot recall in-flight provider compute."
     },
     {
       "id": "B02-16",
       "milestone": "B02",
       "title": "Complete accessibility and supported-environment validation",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "ChatGPT",
+      "working_branch": "work/acceptance/integration-alpha7",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-24",
+      "code_paths": [
+        "tests/browser_accessibility.py",
+        "web/v2/ui.js",
+        "web/v2/app.js",
+        "web/v2/style.css",
+        "scripts/acceptance.py"
+      ],
       "depends_on": [],
       "acceptance": "Keyboard, screen reader, empty/error/loading states and supported browsers/platform startup paths pass an explicit review.",
       "evidence": [
-        "EV-REMAINING"
+        "EV-REMAINING",
+        "EV-HF-BLACK-LOCAL",
+        "EV-GRAPH-EXPLORER-LOCAL",
+        "EV-INTEGRATION-LOCAL",
+        "EV-INTEGRATION-BLOCKED"
       ],
-      "blockers": [],
-      "next_action": "Audit beyond existing viewport fit and Chromium interactions."
+      "blockers": [
+        "Native browser policy and human screen-reader/OS validation remain outstanding."
+      ],
+      "next_action": "Run the complete native suite and human screen-reader/platform review. Source-bound bridge results and clear focus controls do not certify accessibility."
     },
     {
       "id": "B02-17",
@@ -751,7 +897,9 @@
         "B02-14",
         "B02-15",
         "B02-16",
-        "B02-17"
+        "B02-17",
+        "B02-19",
+        "B02-20"
       ],
       "acceptance": "All required V0.2 subparts have scoped evidence; reviews/gates pass; approval to integrate/release is recorded separately.",
       "evidence": [
@@ -1095,16 +1243,21 @@
       "id": "ES01-05",
       "milestone": "ES01",
       "title": "Reusable core acceptance",
-      "status": "partial",
+      "status": "implemented",
       "required": true,
       "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "5e2098e9cb12251592eb3889ce7926798484699d",
-      "updated_on": "2026-09-23",
+      "working_branch": "work/acceptance/integration-alpha7",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-24",
       "code_paths": [
         "endstate/api.py",
         "docs/endstate/CONTRACTS.md",
-        "tests/test_endstate_kernel.py"
+        "tests/test_endstate_kernel.py",
+        "endstate/results.py",
+        "pyproject.toml",
+        "scripts/build_endstate.py",
+        "scripts/export_endstate_schemas.py",
+        "tests/test_endstate_results.py"
       ],
       "depends_on": [
         "ES01-02",
@@ -1113,10 +1266,14 @@
       ],
       "acceptance": "Current 8BALL suites and cross-domain fixtures pass on the proposed shared package; version compatibility is explicit.",
       "evidence": [
-        "EV-KERNEL"
+        "EV-KERNEL",
+        "EV-INTEGRATION-LOCAL",
+        "EV-INTEGRATION-BLOCKED"
       ],
-      "blockers": [],
-      "next_action": "Complete the explicit embedded-package acceptance review and result-contract compatibility record; no standalone SDK or public release is implied."
+      "blockers": [
+        "Actual internal distribution and code compatibility pass on this environment; cumulative native application acceptance remains policy-blocked."
+      ],
+      "next_action": "Inspect the installed-wheel/source/schema evidence and run the cumulative native application gate in an authorised environment before closing broad package acceptance. Do not claim a public SDK release."
     },
     {
       "id": "ES02-01",
@@ -1203,8 +1360,8 @@
       "status": "partial",
       "required": true,
       "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "af97506c37dbf14ded6208b36277dd3b87a11784",
+      "working_branch": "work/hf-black-drafting",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
       "updated_on": "2026-09-23",
       "code_paths": [
         "eightball/v2/intelligence.py",
@@ -1219,10 +1376,11 @@
         "EV-APP",
         "EV-QWEN",
         "EV-STAGED-CODE",
-        "EV-STAGED-MODEL"
+        "EV-STAGED-MODEL",
+        "EV-HF-BLACK-LOCAL"
       ],
       "blockers": [],
-      "next_action": "The shared two-stage compiler and injected provider callback now exist. Extract and stabilise the remaining source-interpretation contracts, and resolve B02-09 before claiming reliable intelligence compilation."
+      "next_action": "Validate the target-aware compiler on real providers without weakening acceptance; retain independent semantic review. This local change does not complete the compiler quality gate."
     },
     {
       "id": "ES03-02",
@@ -1276,18 +1434,23 @@
       "id": "ES03-04",
       "milestone": "ES03",
       "title": "Local-model installation and live provider status",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
+      "owner": "ChatGPT",
+      "working_branch": "work/hf-black-drafting",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
       "updated_on": "2026-09-23",
-      "code_paths": [],
+      "code_paths": [
+        "eightball/v2/runtime_status.py",
+        "eightball/v2/hosted.py"
+      ],
       "depends_on": [],
       "acceptance": "Runtime, selected weights, version and connection status are actually detected; downloads are explicit and user-approved.",
-      "evidence": [],
+      "evidence": [
+        "EV-HF-BLACK-LOCAL"
+      ],
       "blockers": [],
-      "next_action": "Distinguish installed weights, running service, API credentials and test-run artefacts."
+      "next_action": "Retain truthful runtime/configuration status; complete setup/cancellation and actual-provider verification separately."
     },
     {
       "id": "ES03-05",
@@ -1430,10 +1593,381 @@
       "evidence": [],
       "blockers": [],
       "next_action": "Do not block accepted 8BALL sales solely on a standalone-engine release."
+    },
+    {
+      "id": "ES03-06",
+      "milestone": "ES03",
+      "title": "Opt-in Hugging Face development transport contract",
+      "status": "verified",
+      "required": false,
+      "owner": "ChatGPT",
+      "working_branch": "work/hf-black-drafting",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "eightball/v2/hosted.py",
+        "tests/test_hosted_and_grounding.py",
+        "evals/live_huggingface.py"
+      ],
+      "depends_on": [
+        "DOC-01"
+      ],
+      "acceptance": "Implemented transport is tested with controlled HTTP responses for permission, configuration, explicit routing, errors, size bounds, source scoping and no state mutation. This scope does not claim live inference.",
+      "evidence": [
+        "EV-HF-BLACK-LOCAL"
+      ],
+      "blockers": [],
+      "next_action": "Publish the local checkpoint and configure credentials later for ES03-07; do not reinterpret mocked contract tests as hosted model evaluation."
+    },
+    {
+      "id": "ES03-07",
+      "milestone": "ES03",
+      "title": "Actual hosted-model comparison on preserved fixtures",
+      "status": "blocked",
+      "required": false,
+      "owner": "ChatGPT",
+      "working_branch": "work/hf-black-drafting",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "evals/live_huggingface.py",
+        "evals/generation-cases.json"
+      ],
+      "depends_on": [
+        "ES03-06"
+      ],
+      "acceptance": "Authorised real HF requests record exact selected model/provider, outputs, same-fixture structural gate and human semantic review. No automatic or fictitious success.",
+      "evidence": [
+        "EV-HF-BLACK-LOCAL"
+      ],
+      "blockers": [
+        "No authorised HF token/model/provider configured; no real hosted inference performed."
+      ],
+      "next_action": "After explicit configuration, run the manual hosted harness without changing the original four inputs; then use independent labelled cases before model selection."
+    },
+    {
+      "id": "B02-19",
+      "milestone": "B02",
+      "title": "Black operator visual system and transparent intelligence controls",
+      "status": "partial",
+      "required": true,
+      "owner": "ChatGPT",
+      "working_branch": "work/hf-black-drafting",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "web/v2/style.css",
+        "web/v2/views.js",
+        "web/v2/forms.js",
+        "tests/browser_development.py"
+      ],
+      "depends_on": [
+        "B02-07"
+      ],
+      "acceptance": "Black/graphite design, legible status labels, exact-target review, provider controls and mobile lock work across the existing native desktop/mobile workflow without losing evidence/approval functions.",
+      "evidence": [
+        "EV-HF-BLACK-LOCAL",
+        "EV-GRAPH-EXPLORER-LOCAL"
+      ],
+      "blockers": [
+        "Local Chromium bridge checks passed; current native verification awaits a successful source push."
+      ],
+      "next_action": "Integrate the cumulative local build and run all six native browser suites; complete visual/accessibility review before accepting the expanded scope."
+    },
+    {
+      "id": "B02-20",
+      "milestone": "B02",
+      "title": "Black relationship explorer with local focus, directed flow and records view",
+      "status": "implemented",
+      "required": true,
+      "owner": "ChatGPT",
+      "working_branch": "work/B02-20/relationship-explorer",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "web/v2/graph-model.js",
+        "web/v2/graph-view.js",
+        "web/v2/views.js",
+        "web/v2/app.js",
+        "web/v2/style.css",
+        "tests/browser_v2.py",
+        "tests/browser_graph.py",
+        "tests/test_graph_explorer.py",
+        "scripts/design_preview.py"
+      ],
+      "depends_on": [
+        "B02-04",
+        "B02-07",
+        "B02-19"
+      ],
+      "acceptance": "Explore actual case records using Connections, Outcome flow and Records; inspect source/history and exact logic; keyboard/mobile controls and view-only audit invariants pass, including native browser validation.",
+      "evidence": [
+        "EV-GRAPH-EXPLORER-LOCAL"
+      ],
+      "blockers": [
+        "Native browser CI remains pending; code is only in the local checkpoint."
+      ],
+      "next_action": "Integrate the cumulative patch after reviewing the exact remote base, run all four native browser suites, then review accessibility and realistic dense-case usability before accepting the scoped task."
+    },
+    {
+      "id": "DOC-04",
+      "milestone": "DOC",
+      "title": "Mandatory changelog and in-app product history",
+      "status": "verified",
+      "required": true,
+      "owner": "ChatGPT",
+      "working_branch": "work/plan-studio-jobs-changelog",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-23",
+      "code_paths": [
+        "scripts/changelog.py",
+        "docs/delivery/changelog.json",
+        "web/v2/changelog-view.js"
+      ],
+      "depends_on": [],
+      "acceptance": "Every build adds a dated evidence-linked entry; generated CHANGELOG.md and in-app history share one source; base comparison detects missing entries or rewritten history.",
+      "evidence": [
+        "EV-PLAN-STUDIO-LOCAL"
+      ],
+      "blockers": [],
+      "next_action": "Enforce a new immutable-history changelog entry in each following session and integration commit. Local documentation/API/render scope verified; no source publication or release implied."
+    },
+    {
+      "id": "DOC-05",
+      "milestone": "DOC",
+      "title": "Mandatory end-of-sprint emergence review",
+      "status": "verified",
+      "required": true,
+      "owner": "ChatGPT",
+      "working_branch": "work/emergence-review",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-24",
+      "code_paths": [
+        "docs/delivery/EMERGENCE-REVIEW.md",
+        "scripts/changelog.py",
+        "tests/test_changelog.py"
+      ],
+      "depends_on": [
+        "DOC-03",
+        "DOC-04"
+      ],
+      "acceptance": "Every new build sprint explicitly records what emerged, its evidence level and roadmap disposition; new changelog entries cannot omit the emergence review.",
+      "evidence": [
+        "EV-EMERGENCE-REVIEW"
+      ],
+      "blockers": [],
+      "next_action": "Run the Emergence Review at every substantive build handoff; only promote discoveries to required roadmap scope through an explicit ledger or decision update."
+    },
+    {
+      "id": "DOC-06",
+      "milestone": "DOC",
+      "title": "Evolving complete emergence register and owner-review prompt suite",
+      "status": "verified",
+      "required": true,
+      "owner": "ChatGPT",
+      "working_branch": "feat/emergent-insights-local",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-24",
+      "code_paths": [
+        "scripts/emergence.py",
+        "docs/delivery/emergence.json",
+        "docs/prompts/EMERGENT-INSIGHTS.md"
+      ],
+      "depends_on": [
+        "DOC-05"
+      ],
+      "acceptance": "Every recorded discovery is retained, linked to roadmap scope, and rendered with append-only dispositions; declined items remain visible and no candidate inherits an unrelated completion tick.",
+      "evidence": [
+        "EV-EMERGENT-INSIGHTS-LOCAL",
+        "EV-VISION-REVIEW"
+      ],
+      "blockers": [],
+      "next_action": "Preserve all original discoveries and append review history. Use ADR 0004 and docs/vision for the strengthened direction; no optional candidate or delivery claim becomes verified without its own evidence."
+    },
+    {
+      "id": "B02-21",
+      "milestone": "B02",
+      "title": "Evidence-linked Emergent Insights and review workspace",
+      "status": "implemented",
+      "required": false,
+      "owner": "ChatGPT",
+      "working_branch": "feat/emergent-insights-local",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-24",
+      "code_paths": [
+        "eightball/v2/insights.py",
+        "web/v2/insights-view.js"
+      ],
+      "depends_on": [
+        "ES02-05",
+        "B02-03"
+      ],
+      "acceptance": "Current/historical findings, explicit review and hypotheses, safe question promotion, stale-context handling, reload/export and native desktop/mobile acceptance without changing factual state.",
+      "evidence": [
+        "EV-EMERGENT-INSIGHTS-LOCAL"
+      ],
+      "blockers": [
+        "Native browser navigation is administrator-blocked locally; new native integration acceptance remains required."
+      ],
+      "next_action": "Integrate the cumulative source through the authorised workflow, then run the full native insight review journey and operator acceptance. Preserve non-attestation and retained-history boundaries."
+    },
+    {
+      "id": "ES02-05",
+      "milestone": "ES02",
+      "title": "Bounded structural emergence detectors and typed explanations",
+      "status": "verified",
+      "required": false,
+      "owner": "ChatGPT",
+      "working_branch": "feat/emergent-insights-local",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-24",
+      "code_paths": [
+        "endstate/insights.py",
+        "tests/test_insight_engine.py"
+      ],
+      "depends_on": [
+        "ES01-02"
+      ],
+      "acceptance": "Revalidated snapshots produce reproducible, source/graph-linked findings with explicit limits, signed semantics and no mutation/network/model calls; independent fixtures exercise each implemented rule.",
+      "evidence": [
+        "EV-EMERGENT-INSIGHTS-LOCAL"
+      ],
+      "blockers": [],
+      "next_action": "Preserve the scoped deterministic/governance contract and rerun its regression tests at every integration. This tick is not native, commercial or model-quality approval."
+    },
+    {
+      "id": "B02-22",
+      "milestone": "B02",
+      "title": "Operator usefulness and full Emergent Insights acceptance",
+      "status": "not_started",
+      "required": false,
+      "owner": "ChatGPT",
+      "working_branch": "feat/emergent-insights-local",
+      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+      "updated_on": "2026-09-24",
+      "code_paths": [
+        "docs/v2/EMERGENT-INSIGHTS.md"
+      ],
+      "depends_on": [
+        "B02-21"
+      ],
+      "acceptance": "Owner/operator review of false positives, missed patterns, duplicate noise, thresholds and the complete native review journey before the feature is accepted.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Review false positives, missed findings, review burden and source interpretation with the owner/fixer; do not claim usefulness from code tests alone."
+    },
+    {
+      "id": "B03-07",
+      "milestone": "B03",
+      "title": "Client mandate and human-selected course workflow",
+      "status": "partial",
+      "required": false,
+      "owner": "ChatGPT",
+      "working_branch": "work/chosen-course-recovery",
+      "base_commit": "ba0a84a54a0e115ac35b9590c8dc41c931f3e123",
+      "updated_on": "2026-09-25",
+      "code_paths": [
+        "endstate/course.py",
+        "eightball/v2/courses.py",
+        "web/v2/course-view.js",
+        "tests/test_courses.py",
+        "tests/browser_courses.py"
+      ],
+      "depends_on": [
+        "B03-01",
+        "ES02-06"
+      ],
+      "acceptance": "Owner-approved mandate and selected-course records preserve target, scope, dependencies and human rationale; change explanations prompt reconsideration without granting approvals, altering facts or silently switching the chosen course. Native/operator acceptance required.",
+      "evidence": [
+        "EV-CHOSEN-COURSE-LOCAL"
+      ],
+      "blockers": [
+        "Only trusted local single-operator groundwork. Original secure identity/mandate and durable event prerequisites remain unaccepted.",
+        "Native integration and independent operator acceptance remain outstanding."
+      ],
+      "next_action": "Integrate the exact packaged source through the authorised workflow. Run all native suites and operator review; retain original prerequisite and authority boundaries. Do not claim secure agency or background monitoring acceptance."
+    },
+    {
+      "id": "ES02-06",
+      "milestone": "ES02",
+      "title": "Selected-course and bounded reconsideration contracts",
+      "status": "partial",
+      "required": false,
+      "owner": "ChatGPT",
+      "working_branch": "work/chosen-course-recovery",
+      "base_commit": "ba0a84a54a0e115ac35b9590c8dc41c931f3e123",
+      "updated_on": "2026-09-25",
+      "code_paths": [
+        "endstate/course.py",
+        "eightball/v2/courses.py",
+        "web/v2/course-view.js",
+        "tests/test_courses.py",
+        "tests/browser_courses.py"
+      ],
+      "depends_on": [
+        "ES02-01",
+        "ES02-03"
+      ],
+      "acceptance": "Versioned neutral input/output contracts distinguish candidate routes from a host-authorised course; changes to consulted sources, targets, guards, authority, estimates, clocks and resources produce traceable reconsideration results. Unknown scope requires review. Existing approval invalidation is preserved.",
+      "evidence": [
+        "EV-CHOSEN-COURSE-LOCAL"
+      ],
+      "blockers": [
+        "Only trusted local single-operator groundwork. Original secure identity/mandate and durable event prerequisites remain unaccepted.",
+        "Native integration and independent operator acceptance remain outstanding."
+      ],
+      "next_action": "Integrate the exact packaged source through the authorised workflow. Run all native suites and operator review; retain original prerequisite and authority boundaries. Do not claim secure agency or background monitoring acceptance."
+    },
+    {
+      "id": "ES03-08",
+      "milestone": "ES03",
+      "title": "Recover and reproduce reported human draft-repair implementation",
+      "status": "blocked",
+      "required": false,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-24",
+      "code_paths": [],
+      "depends_on": [
+        "ES03-01",
+        "B02-02"
+      ],
+      "acceptance": "Recovered or rebuilt exact source preserves the original failure, human edits, source/base revision and separate pending-proposal review; reproduction, stale-state denial and native interaction pass. Assisted repair never satisfies the unassisted model gate.",
+      "evidence": [
+        "EV-DRAFT-RECOVERY-GAP"
+      ],
+      "blockers": [
+        "The latest supplied repair handoff explicitly reports that no completed working tree was found. Only verified alpha.7 source was recovered in this review."
+      ],
+      "next_action": "Recover the exact later source/package or explicitly rebuild the bounded repair on the last verified source. Reproduce its actual tests before marking implemented; never relabel alpha.7 as the reported repair build."
+    },
+    {
+      "id": "B04-04",
+      "milestone": "B04",
+      "title": "Permissioned correction replay and operator-value evaluation",
+      "status": "deferred",
+      "required": false,
+      "owner": null,
+      "working_branch": null,
+      "base_commit": null,
+      "updated_on": "2026-09-24",
+      "code_paths": [],
+      "depends_on": [
+        "B03-01",
+        "B02-11"
+      ],
+      "acceptance": "An approved evaluation protocol measures the cost and benefit of suggestions/repairs on representative cases. Corrections retain provenance, access and retention limits; no cross-client retrieval or model training occurs without separate permission.",
+      "evidence": [],
+      "blockers": [],
+      "next_action": "Retain as an owner-review candidate. Define metrics and lawful dataset handling before collecting additional client information; no measured benefit is claimed."
     }
   ],
   "next_task_ids": [
     "B02-09",
+    "B02-11",
+    "B02-12",
+    "B02-16",
     "ES01-05"
   ],
   "invariants": [
@@ -1445,5 +1979,32 @@
     "No secret/model weights/private case material in this public repo.",
     "No model-quality claim from a code-contract test.",
     "Do not merge or deploy without explicit release authority."
-  ]
+  ],
+  "unpublished_checkpoint": {
+    "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+    "includes_previous_hf_black_tree": "13b8e17b911ee3712efcf8701477a2c24b8dc8f1",
+    "working_branch": "work/chosen-course-recovery",
+    "reason": "Cumulative source remains local. Current GitHub head inspected; no source push, merge or deployment in this session. Use exact-tree source/patch handoff.",
+    "session": "docs/delivery/sessions/2026-09-25-chosen-course-recovery.md",
+    "includes_previous_graph_tree": "827f0ba92ffcdf0c74fe89fbf2ca41e3b2d81302",
+    "local_version": "0.2.0-alpha.8",
+    "includes_previous_local_checkpoints": [
+      "HF/black provider work",
+      "Connections relationship explorer",
+      "Plan Studio and analysis jobs",
+      "Source Desk",
+      "Emergence Review process",
+      "Emergent Insights and evolving 37-discovery register",
+      "Source Clarity identity/deadline review and 43-discovery register",
+      "Plan Review alpha.6 and all 49 previous emergence discoveries"
+    ],
+    "documentation_overlay": {
+      "revision": "PRD 1.3",
+      "source_tree": "5c49a40395e6d22510a8895a90ddd2f759378efa",
+      "session": "docs/delivery/sessions/2026-09-24-vision-strengthening.md",
+      "runtime_changed": false,
+      "later_repair_source_recovered": false,
+      "remote_refreshed_this_review": false
+    }
+  }
 }

@@ -165,7 +165,7 @@ def plan(case: PlanningSnapshot, now: datetime | None = None, sort_by: str = 'fe
         return trim(options) or gap('cyclic_dependency')
 
     candidates=combine([expr_routes(o.success,set()) for o in mandatory]) if mandatory else []
-    results=[];spent=sum(actions[a].cost for a in case.completed)
+    results=[];identity_paths={};spent=sum(actions[a].cost for a in case.completed)
     resources={r.id:r for r in case.resources}
     for b in candidates:
         selected=set(b.needs);todo=set(selected);ends={};active_ends={};schedule=[];availability={}
@@ -288,6 +288,19 @@ def plan(case: PlanningSnapshot, now: datetime | None = None, sort_by: str = 'fe
                 'approvals':[i for i in selected if action_states[i]['status']=='approval_required']}
         result['fingerprint']=sha256(json.dumps({k:v for k,v in result.items() if k not in ('slack_minutes','ready','approvals')},sort_keys=True).encode()).hexdigest()
         results.append(result)
+        identity_paths.setdefault(route_id, []).append((result, {'edges': sorted(b.edges), 'roots': sorted(b.roots), 'asks': sorted(b.asks), 'gaps': sorted(b.gaps)}))
+    # Legacy identity omitted producer ordering. The same action set can form
+    # distinct dependency paths with different constraint results. Preserve all
+    # existing non-colliding IDs, but give colliding paths stable distinct IDs.
+    # This fixes comparison/delta dictionaries silently replacing one route.
+    for legacy_id, alternatives in identity_paths.items():
+        if len(alternatives) < 2:
+            continue
+        for route, path in alternatives:
+            suffix = sha256(json.dumps(path, sort_keys=True).encode()).hexdigest()[:16]
+            route['id'] = legacy_id + '_' + suffix
+            route['fingerprint'] = sha256(json.dumps({k:v for k,v in route.items()
+                if k not in ('fingerprint','slack_minutes','ready','approvals')},sort_keys=True).encode()).hexdigest()
     orders={
         'fewest_unknowns':lambda r:(len(r['evidence_gaps']),len(r['unknown_waits']),r['minutes'],r['id']),
         'fastest':lambda r:(r['minutes'],r['total_cost'],r['id']),

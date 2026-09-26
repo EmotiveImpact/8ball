@@ -34,11 +34,15 @@ def open_document(page,db):
     page.add_style_tag(content=(ROOT/'web/v2/style.css').read_text())
     page.evaluate("() => {window.fetch=async (path,init={})=>{const r=await window.__eightball_request(path,init);return new Response(r.body,{status:r.status})};}")
     parts=[]
-    for filename in ['ui.js','views.js','forms.js']:
+    for filename in ['ui.js','graph-model.js','graph-view.js','studio-model.js','studio-view.js','job-view.js','changelog-view.js','source-model.js','source-view.js','insights-view.js','grounding-view.js','plan-review-view.js','course-view.js','views.js','forms.js']:
         code=(ROOT/'web/v2'/filename).read_text()
         code=re.sub(r'^import .*?;\s*$', '', code, flags=re.M)
         code=re.sub(r'\bexport\s+', '', code)
-        parts.append(code)
+        if filename=='course-view.js':
+            exports='clearCourse,loadCourse,courseBanner,chooseCourseButton,courseTimeline,bindCourse'
+            parts.append('const {'+exports+'}=(()=>{'+code+';return {'+exports+'};})();')
+        else:
+            parts.append(code)
     parts.append('const F={snapshot,sourceChoices,newForm,evidenceForm,observationForm,analysisForm,scenarioForm,decisionForm,answerForm,metadataForm,graphForm,objectForm,objectDetail,actionDetail,editObject,questionProposalForm};')
     code=(ROOT/'web/v2/app.js').read_text();code=re.sub(r'^import .*?;\s*$','',code,flags=re.M);parts.append(code)
     page.add_script_tag(content='\n'.join(parts),type='module')
@@ -126,6 +130,8 @@ def main():
                     page.locator('nav [data-tab=evidence]').click();expect(page.locator('nav [data-tab=evidence]')).to_have_attribute('aria-current','page');page.locator('[data-action=add-evidence]').first.click();f=page.locator('form[data-form=evidence]')
                     f.locator('[name=title]').fill('Atlas briefing');f.locator('[name=source]').fill('Fictional service owner');f.locator('[name=text]').fill('The service stopped. Who can authorise the fallback? The impact is documented.');f.locator('[type=submit]').click();page.locator('.dialog').wait_for(state='detached')
                     page.locator('[data-action=analyse]').click();f=page.locator('form[data-form=analyse]');f.locator('[name=source_ids]').first.check();f.locator('[type=submit]').click();page.locator('.dialog').wait_for(state='detached');expect(page.locator('nav [data-tab=review]')).to_have_attribute('aria-current','page')
+                    # Analysis is now asynchronous: wait for actual published proposals, not just navigation.
+                    expect(page.locator('main')).to_contain_text('Rules-based source capture. Not AI.')
                     check('review queue explicitly identifies rules-based capture','Rules-based source capture. Not AI.' in page.locator('main').inner_text())
                     f=page.locator('form[data-form=review-proposal]').first;selections=f.locator('select[name^=choice_]');selections.nth(0).select_option('accepted');selections.nth(1).select_option('rejected');selections.nth(2).select_option('edited')
                     details=f.locator('details').nth(2);details.locator('summary').click();t=details.locator('textarea');obj=json.loads(t.input_value());obj['statement']='The reported impact needs reviewer confirmation.';t.fill(json.dumps(obj));f.locator('[type=submit]').click()

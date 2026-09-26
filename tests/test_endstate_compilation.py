@@ -40,7 +40,10 @@ def http_provider(outputs=None):
     def respond(req):
         body=json.loads(req.content);calls.append(body)
         assert str(req.url)=='http://127.0.0.1:11434/api/chat'
-        return httpx.Response(200,json={'model':'fixture-model','done':True,'message':{'content':json.dumps(outputs.pop(0))}})
+        output=outputs.pop(0)
+        if 'target_bindings' in body['format'].get('properties',{}) and 'success_criteria' in output:
+            output['target_bindings']=[{'criterion_index':i,'target_quote':OUTCOME} for i in range(len(output['success_criteria']))]
+        return httpx.Response(200,json={'model':'fixture-model','done':True,'message':{'content':json.dumps(output)}})
     return httpx.Client(transport=httpx.MockTransport(respond)),calls
 
 
@@ -232,11 +235,12 @@ def test_api_records_failed_staged_trace_separately_from_live_case(tmp_path,monk
     from eightball.v2 import intelligence
     old=LegacyStore(str(tmp_path/'api.db'));store=Store(old.path);c=case();store.create(c,fixture=True)
     token='fictional-api-test-token-long-enough-123456789'
-    responses=[(FIXTURE['frame'],'mock'),({'routes':[]},'mock')]
+    grounded=deepcopy(FIXTURE['frame']);grounded['target_bindings']=[{'criterion_index':i,'target_quote':OUTCOME} for i in range(len(grounded['success_criteria']))]
+    responses=[(grounded,'mock'),({'routes':[]},'mock')]
     monkeypatch.setattr(intelligence,'ollama_json',lambda *args,**kwargs:responses.pop(0))
     api=TestClient(make_app(old,token),headers={'Authorization':'Bearer '+token})
     result=api.post('/api/v2/cases/'+c.id+'/analyse',json={'expected_revision':0,'provider':'ollama_staged','purpose':'graph','source_ids':['source']})
     assert result.status_code==503 and store.get(c.id)==c
     saved=store.proposals(c.id)[0]
     assert saved['status']=='failed' and saved['raw_output']['failed_stage']=='routes'
-    assert saved['raw_output']['frame']==FIXTURE['frame'] and saved['model']=='mock'
+    assert saved['raw_output']['frame']==grounded and saved['model']=='mock'

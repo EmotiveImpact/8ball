@@ -33,3 +33,8 @@ Open V0.2 and the fictional Northstar case. Inspect the outcome graph and altern
 ## Honest non-goals
 
 No public hosted service, real client portal, tenant accounts, secure file vault, OCR, messaging connectors, autonomous phone/email/payment actions, automatic cross-client learning, causal outcome likelihoods or native mobile app is shipped. Jev requires credentials and authorised processing. Running model requests is not a validated model-quality benchmark. Refer to source-linked evaluation results rather than inferring capability from a model's size or a green CI badge.
+
+
+## Additive Emergent Insights scope (alpha.4)
+
+DOC-06 maintains the complete owner-review register; ES02-05 is the bounded deterministic detector contract. B02-21 implements the case review UI, separate history and explicit verification-question path; B02-22 is the independent usefulness/full acceptance gate. These additive items do not replace or complete the original V0.2 real-model, source interpretation or production requirements. An insight review cannot establish truth. Register adoption is not delivery verification.

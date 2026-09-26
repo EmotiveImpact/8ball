@@ -2,14 +2,14 @@
 
 > Generated from `docs/delivery/progress.json`. Edit the ledger, then run `python scripts/delivery.py --write`. Do not maintain a second set of statuses here.
 
-Last status review: 2026-09-23.
+Last status review: 2026-09-25.
 
 **8BALL is the fixer product. ENDSTATE is the reusable engine underneath it.**
 
 ## Checkpoint and release boundary
 
 - Active integration branch: `feat/situation-intelligence-v2`; PR #2.
-- Inspected application baseline: `3a33866f375be355658d8e5d82addb25bcc7eed9`.
+- Inspected application baseline: `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
 - This is a dated snapshot. Refresh the branch, PR and CI at the start of every session.
 - At inspection: draft PR = `true`; merged = `false`; production deployed = `false`.
 - Standalone ENDSTATE package released = `false`.
@@ -22,16 +22,22 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 ## Next work
 
-- **B02-09: Reliable reviewed graph proposals for new situations**. Use the preserved two-stage trace to separate target criteria from source facts, constrain references to supplied IDs and validate the frame before expanding routes. Compare providers against unchanged fixtures and independent semantic cases; do not invent missing actions or weaken the gate.
-- **ES01-05: Reusable core acceptance**. Complete the explicit embedded-package acceptance review and result-contract compatibility record; no standalone SDK or public release is implied.
+**Unpublished development checkpoint:** Cumulative source remains local. Current GitHub head inspected; no source push, merge or deployment in this session. Use exact-tree source/patch handoff.
+Base: `824ca6421ff3100e1af596347f2d1247dde8f8dc`. See `docs/delivery/sessions/2026-09-25-chosen-course-recovery.md`.
+
+- **B02-09: Reliable reviewed graph proposals for new situations**. Apply/push the preserved local patch, run native CI and the unchanged four-case local/hosted generation gate. Target quotations and frame references are now validated early; semantic quality and live provider results remain unverified.
+- **B02-11: Independent quality evaluation and production-model selection**. Obtain owner/expert approval of the declared protocol, collect independent labels and run the preserved real-model gate with an explicitly configured provider. Do not count software or operator review as independent model approval.
+- **B02-12: Full twenty-step real-model V0.2 acceptance journey**. Run the actual-provider integration command with configured service/token; preserve failures and collect a genuinely human all-native journey separately. No scripted review may satisfy independent semantic acceptance.
+- **B02-16: Complete accessibility and supported-environment validation**. Run the complete native suite and human screen-reader/platform review. Source-bound bridge results and clear focus controls do not certify accessibility.
+- **ES01-05: Reusable core acceptance**. Inspect the installed-wheel/source/schema evidence and run the cumulative native application gate in an authorised environment before closing broad package acceptance. Do not claim a public SDK release.
 
 ## Version summary
 
 | Track / milestone | Required subparts verified | Acceptance scope | Release |
 | --- | ---: | --- | --- |
-| Governance 1.1: Naming, PRD and shared delivery control | 3/3 | Scoped gate met | not released |
+| Governance 1.1: Naming, PRD and shared delivery control | 6/6 | Scoped gate met | not released |
 | 8BALL 0.1: Local outcome-planning foundation | 3/3 | Scoped gate met | not released |
-| 8BALL 0.2: Reviewed situation intelligence | 9/18 | Not yet accepted | not released |
+| 8BALL 0.2: Reviewed situation intelligence | 9/20 | Not yet accepted | not released |
 | 8BALL 0.3: Secure agency pilot | 0/6 | Not yet accepted | not released |
 | 8BALL 0.4: Professionally reviewed resolution intelligence | 0/3 | Not yet accepted | not released |
 | 8BALL 1.0: Supported fixer product | 0/2 | Not yet accepted | not released |
@@ -62,6 +68,32 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Dependencies: `DOC-01`, `DOC-02`.
   - Existing code: `scripts/delivery.py`.
   - Evidence: `EV-TRACKING` (registry below).
+
+- [x] **DOC-04 Mandatory changelog and in-app product history**
+  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
+  - Acceptance: Every build adds a dated evidence-linked entry; generated CHANGELOG.md and in-app history share one source; base comparison detects missing entries or rewritten history.
+  - Next: Enforce a new immutable-history changelog entry in each following session and integration commit. Local documentation/API/render scope verified; no source publication or release implied.
+  - Branch/base: `work/plan-studio-jobs-changelog` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Existing code: `scripts/changelog.py`, `docs/delivery/changelog.json`, `web/v2/changelog-view.js`.
+  - Evidence: `EV-PLAN-STUDIO-LOCAL` (registry below).
+
+- [x] **DOC-05 Mandatory end-of-sprint emergence review**
+  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-24.
+  - Acceptance: Every new build sprint explicitly records what emerged, its evidence level and roadmap disposition; new changelog entries cannot omit the emergence review.
+  - Next: Run the Emergence Review at every substantive build handoff; only promote discoveries to required roadmap scope through an explicit ledger or decision update.
+  - Branch/base: `work/emergence-review` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Dependencies: `DOC-03`, `DOC-04`.
+  - Existing code: `docs/delivery/EMERGENCE-REVIEW.md`, `scripts/changelog.py`, `tests/test_changelog.py`.
+  - Evidence: `EV-EMERGENCE-REVIEW` (registry below).
+
+- [x] **DOC-06 Evolving complete emergence register and owner-review prompt suite**
+  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-24.
+  - Acceptance: Every recorded discovery is retained, linked to roadmap scope, and rendered with append-only dispositions; declined items remain visible and no candidate inherits an unrelated completion tick.
+  - Next: Preserve all original discoveries and append review history. Use ADR 0004 and docs/vision for the strengthened direction; no optional candidate or delivery claim becomes verified without its own evidence.
+  - Branch/base: `feat/emergent-insights-local` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Dependencies: `DOC-05`.
+  - Existing code: `scripts/emergence.py`, `docs/delivery/emergence.json`, `docs/prompts/EMERGENT-INSIGHTS.md`.
+  - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL`, `EV-VISION-REVIEW` (registry below).
 
 
 ## 8BALL 0.1: Local outcome-planning foundation
@@ -104,11 +136,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-APP`, `EV-UI` (registry below).
 
 - [x] **B02-03 Signed AND/OR planner, guards, waits and resource estimates**
-  - Status: `verified`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `verified`. Owner: unassigned. Updated: 2026-09-24.
   - Acceptance: Bounded planning exposes evidence gaps, false/unknown distinctions, projected conflicts, decision incompatibilities and scheduling limits.
-  - Next: Benchmark meaningful planning extensions without claiming global optimality.
-  - Existing code: `eightball/v2/planner.py`, `tests/test_v2_domain.py`.
-  - Evidence: `EV-APP` (registry below).
+  - Next: Retain the frozen non-colliding outputs and the dependency-order identity regression. Native cumulative integration remains separate.
+  - Existing code: `eightball/v2/planner.py`, `tests/test_v2_domain.py`, `endstate/planner.py`, `tests/test_plan_review.py`.
+  - Evidence: `EV-APP`, `EV-PLAN-REVIEW-LOCAL` (registry below).
 
 - [x] **B02-04 Actors, relationships, timeline and decision records**
   - Status: `verified`. Owner: unassigned. Updated: 2026-09-23.
@@ -148,61 +180,76 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **B02-09 Reliable reviewed graph proposals for new situations**
   - Status: `blocked`. Owner: ChatGPT. Updated: 2026-09-23.
   - Acceptance: Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.
-  - Next: Use the preserved two-stage trace to separate target criteria from source facts, constrain references to supplied IDs and validate the frame before expanding routes. Compare providers against unchanged fixtures and independent semantic cases; do not invent missing actions or weaken the gate.
-  - Branch/base: `feat/situation-intelligence-v2` / `af97506c37dbf14ded6208b36277dd3b87a11784`.
+  - Next: Apply/push the preserved local patch, run native CI and the unchanged four-case local/hosted generation gate. Target quotations and frame references are now validated early; semantic quality and live provider results remain unverified.
+  - Branch/base: `work/hf-black-drafting` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
   - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`.
-  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL` (registry below).
-  - Blocker: Actual staged Qwen run 35911570117 failed: intermediate results repeated readiness/goal conditions; invented existing-condition references and outcome confusion also remain.
+  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL` (registry below).
+  - Blocker: Actual staged Qwen run 35911570117 failed: intermediate results repeated readiness/goal conditions; invented existing-condition references and outcome confusion also remain. New hosted/target-aware development work is unpushed; no HF key or new live-model result is available.
 
 - [ ] **B02-10 Robust source extraction, deadlines and entity reconciliation**
-  - Status: `partial`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-24.
   - Acceptance: Reviewed multi-source extraction preserves negation, uncertainty, identity and quoted support; date changes become explicit reviewed scheduling proposals.
-  - Next: Add independent cases for repeated entities, pronouns, contradictions and time resolution.
-  - Existing code: `eightball/v2/intelligence.py`.
-  - Evidence: `EV-QWEN`, `EV-REMAINING` (registry below).
-  - Blocker: Only a few structural extraction fixtures observed; dates need operator resolution.
+  - Next: Run native integration, then evaluate multi-source identity/date workflows with reviewed professional fixtures. Preserve mention-level judgements and preview/apply boundaries; keep the source-to-plan gate unchanged.
+  - Branch/base: `work/B02-10/source-clarity` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Existing code: `eightball/v2/intelligence.py`, `endstate/time_review.py`, `eightball/v2/grounding.py`, `web/v2/grounding-view.js`, `tests/test_time_review.py`, `tests/test_grounding.py`, `tests/browser_grounding.py`.
+  - Evidence: `EV-QWEN`, `EV-REMAINING`, `EV-SOURCE-DESK-LOCAL`, `EV-SOURCE-CLARITY-LOCAL` (registry below).
+  - Blocker: Native cumulative integration and independent multi-source identity/date usefulness review remain outstanding. No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed.
 
 - [ ] **B02-11 Independent quality evaluation and production-model selection**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-24.
   - Acceptance: Expert-labelled held-out data and predeclared acceptance thresholds measure semantic errors, omissions, corrections, latency and abstention.
-  - Next: Freeze evaluation criteria before choosing or tuning a production model.
-  - Existing code: `evals/live_generation.py`, `evals/classification-cases.json`.
-  - Evidence: `EV-REMAINING` (registry below).
+  - Next: Obtain owner/expert approval of the declared protocol, collect independent labels and run the preserved real-model gate with an explicitly configured provider. Do not count software or operator review as independent model approval.
+  - Branch/base: `work/B02-11/plan-review` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Existing code: `evals/live_generation.py`, `evals/classification-cases.json`, `endstate/plan_review.py`, `eightball/v2/plan_review.py`, `web/v2/plan-review-view.js`, `evals/plan_review_bench.py`, `evals/PLAN-QUALITY-GATE.md`, `tests/test_plan_review.py`, `tests/browser_plan_review.py`.
+  - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL` (registry below).
+  - Blocker: Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed. Local structural fixtures are not a model-quality benchmark. New cumulative native-browser acceptance remains unavailable locally.
 
 - [ ] **B02-12 Full twenty-step real-model V0.2 acceptance journey**
-  - Status: `blocked`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `blocked`. Owner: ChatGPT. Updated: 2026-09-24.
   - Acceptance: Blank case -> real extraction -> mixed human review -> valid graph -> distinct routes -> new evidence/replan -> isolated refusal -> approval/completion -> reload/export, all native.
-  - Next: Add a real-model integration journey distinct from rules/catalogue browser tests.
+  - Next: Run the actual-provider integration command with configured service/token; preserve failures and collect a genuinely human all-native journey separately. No scripted review may satisfy independent semantic acceptance.
+  - Branch/base: `work/acceptance/integration-alpha7` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
   - Dependencies: `B02-09`, `B02-10`, `B02-11`.
-  - Existing code: `tests/browser_v2.py`.
-  - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL` (registry below).
-  - Blocker: Both legacy and staged graph generation still fail the required actual-model gate; native application journeys use rules/catalogue, not the full real-model flow.
+  - Existing code: `tests/browser_v2.py`, `evals/full_journey.py`, `scripts/acceptance.py`, `.github/workflows/provider-journey.yml`.
+  - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED` (registry below).
+  - Blocker: Both legacy and staged graph generation still fail the required actual-model gate; native application journeys use rules/catalogue, not the full real-model flow. No running local model, authorised HF configuration or native browser navigation in the current environment. The new journey is implemented but has not made an actual inference call.
 
 - [ ] **B02-13 Guided nested graph authoring instead of JSON-only advanced editing**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `implemented`. Owner: ChatGPT. Updated: 2026-09-24.
   - Acceptance: Operators can edit AND/OR, guards, contingencies and verification rules with guided controls and keyboard access.
-  - Next: Design focused authoring flows while preserving the JSON compatibility path.
-  - Existing code: `web/v2/forms.js`.
-  - Evidence: `EV-REMAINING` (registry below).
+  - Next: Run the existing authoring and new live-plan review journeys under native CI after authorised cumulative integration.
+  - Branch/base: `work/plan-studio-jobs-changelog` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Existing code: `web/v2/studio-model.js`, `web/v2/studio-view.js`, `eightball/v2/authoring.py`, `tests/test_plan_studio.py`, `tests/test_studio_model.py`, `tests/browser_studio.py`, `web/v2/plan-review-view.js`.
+  - Evidence: `EV-REMAINING`, `EV-PLAN-STUDIO-LOCAL`, `EV-PLAN-REVIEW-LOCAL` (registry below).
+  - Blocker: Native browser CI and authorised source integration have not been run for this local checkpoint.
 
 - [ ] **B02-14 Source chunking, duplication and reviewer-safe object reconciliation**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-24.
   - Acceptance: Longer sources retain exact provenance; duplicates and entity merges cannot rewrite observed meanings or lose attribution.
-  - Next: Define chunk/source version contracts and adversarial fixtures.
-  - Evidence: `EV-REMAINING` (registry below).
+  - Next: Run native integration, then evaluate multi-source identity/date workflows with reviewed professional fixtures. Preserve mention-level judgements and preview/apply boundaries; keep the source-to-plan gate unchanged.
+  - Branch/base: `work/B02-10/source-clarity` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Existing code: `eightball/v2/source_contracts.py`, `eightball/v2/source_desk.py`, `eightball/v2/request_limits.py`, `web/v2/source-model.js`, `web/v2/source-view.js`, `tests/test_source_desk.py`, `tests/test_source_api.py`, `tests/browser_sources.py`, `endstate/time_review.py`, `eightball/v2/grounding.py`, `web/v2/grounding-view.js`, `tests/test_time_review.py`, `tests/test_grounding.py`, `tests/browser_grounding.py`.
+  - Evidence: `EV-REMAINING`, `EV-SOURCE-DESK-LOCAL`, `EV-SOURCE-CLARITY-LOCAL` (registry below).
+  - Blocker: Native cumulative integration and independent multi-source identity/date usefulness review remain outstanding. No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed.
 
 - [ ] **B02-15 Model progress/cancellation and accurate installation status**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-23.
   - Acceptance: The UI reports actual runtime/weights/credential state and cancels work without stale commits. No silent large model download.
-  - Next: Add explicit opt-in setup and availability/cancellation checks, not a fictional green badge.
+  - Next: Run native CI after authorised integration and validate lifecycle behaviour with the selected real provider. Cancellation suppresses later stages/publication; it cannot recall in-flight provider compute.
+  - Branch/base: `work/plan-studio-jobs-changelog` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
   - Dependencies: `ES03-04`.
-  - Evidence: `EV-REMAINING` (registry below).
+  - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`.
+  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL` (registry below).
+  - Blocker: Native browser CI and authorised source integration have not been run for this local checkpoint.
 
 - [ ] **B02-16 Complete accessibility and supported-environment validation**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-24.
   - Acceptance: Keyboard, screen reader, empty/error/loading states and supported browsers/platform startup paths pass an explicit review.
-  - Next: Audit beyond existing viewport fit and Chromium interactions.
-  - Evidence: `EV-REMAINING` (registry below).
+  - Next: Run the complete native suite and human screen-reader/platform review. Source-bound bridge results and clear focus controls do not certify accessibility.
+  - Branch/base: `work/acceptance/integration-alpha7` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Existing code: `tests/browser_accessibility.py`, `web/v2/ui.js`, `web/v2/app.js`, `web/v2/style.css`, `scripts/acceptance.py`.
+  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED` (registry below).
+  - Blocker: Native browser policy and human screen-reader/OS validation remain outstanding.
 
 - [x] **B02-17 Prove compatibility after ENDSTATE core extraction**
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
@@ -217,9 +264,47 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Status: `blocked`. Owner: unassigned. Updated: 2026-09-23.
   - Acceptance: All required V0.2 subparts have scoped evidence; reviews/gates pass; approval to integrate/release is recorded separately.
   - Next: Keep PR #2 draft until the acceptance gate is met; do not infer permission to merge.
-  - Dependencies: `B02-01`, `B02-02`, `B02-03`, `B02-04`, `B02-05`, `B02-06`, `B02-07`, `B02-08`, `B02-09`, `B02-10`, `B02-11`, `B02-12`, `B02-13`, `B02-14`, `B02-15`, `B02-16`, `B02-17`.
+  - Dependencies: `B02-01`, `B02-02`, `B02-03`, `B02-04`, `B02-05`, `B02-06`, `B02-07`, `B02-08`, `B02-09`, `B02-10`, `B02-11`, `B02-12`, `B02-13`, `B02-14`, `B02-15`, `B02-16`, `B02-17`, `B02-19`, `B02-20`.
   - Evidence: `EV-QWEN` (registry below).
   - Blocker: Real-model journey and developer-quality work remain unaccepted.
+
+- [ ] **B02-19 Black operator visual system and transparent intelligence controls**
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-23.
+  - Acceptance: Black/graphite design, legible status labels, exact-target review, provider controls and mobile lock work across the existing native desktop/mobile workflow without losing evidence/approval functions.
+  - Next: Integrate the cumulative local build and run all six native browser suites; complete visual/accessibility review before accepting the expanded scope.
+  - Branch/base: `work/hf-black-drafting` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Dependencies: `B02-07`.
+  - Existing code: `web/v2/style.css`, `web/v2/views.js`, `web/v2/forms.js`, `tests/browser_development.py`.
+  - Evidence: `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL` (registry below).
+  - Blocker: Local Chromium bridge checks passed; current native verification awaits a successful source push.
+
+- [ ] **B02-20 Black relationship explorer with local focus, directed flow and records view**
+  - Status: `implemented`. Owner: ChatGPT. Updated: 2026-09-23.
+  - Acceptance: Explore actual case records using Connections, Outcome flow and Records; inspect source/history and exact logic; keyboard/mobile controls and view-only audit invariants pass, including native browser validation.
+  - Next: Integrate the cumulative patch after reviewing the exact remote base, run all four native browser suites, then review accessibility and realistic dense-case usability before accepting the scoped task.
+  - Branch/base: `work/B02-20/relationship-explorer` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Dependencies: `B02-04`, `B02-07`, `B02-19`.
+  - Existing code: `web/v2/graph-model.js`, `web/v2/graph-view.js`, `web/v2/views.js`, `web/v2/app.js`, `web/v2/style.css`, `tests/browser_v2.py`, `tests/browser_graph.py`, `tests/test_graph_explorer.py`, `scripts/design_preview.py`.
+  - Evidence: `EV-GRAPH-EXPLORER-LOCAL` (registry below).
+  - Blocker: Native browser CI remains pending; code is only in the local checkpoint.
+
+- [ ] **B02-21 Evidence-linked Emergent Insights and review workspace** (optional, not a version gate)
+  - Status: `implemented`. Owner: ChatGPT. Updated: 2026-09-24.
+  - Acceptance: Current/historical findings, explicit review and hypotheses, safe question promotion, stale-context handling, reload/export and native desktop/mobile acceptance without changing factual state.
+  - Next: Integrate the cumulative source through the authorised workflow, then run the full native insight review journey and operator acceptance. Preserve non-attestation and retained-history boundaries.
+  - Branch/base: `feat/emergent-insights-local` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Dependencies: `ES02-05`, `B02-03`.
+  - Existing code: `eightball/v2/insights.py`, `web/v2/insights-view.js`.
+  - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL` (registry below).
+  - Blocker: Native browser navigation is administrator-blocked locally; new native integration acceptance remains required.
+
+- [ ] **B02-22 Operator usefulness and full Emergent Insights acceptance** (optional, not a version gate)
+  - Status: `not_started`. Owner: ChatGPT. Updated: 2026-09-24.
+  - Acceptance: Owner/operator review of false positives, missed patterns, duplicate noise, thresholds and the complete native review journey before the feature is accepted.
+  - Next: Review false positives, missed findings, review burden and source interpretation with the owner/fixer; do not claim usefulness from code tests alone.
+  - Branch/base: `feat/emergent-insights-local` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Dependencies: `B02-21`.
+  - Existing code: `docs/v2/EMERGENT-INSIGHTS.md`.
 
 
 ## 8BALL 0.3: Secure agency pilot
@@ -263,6 +348,16 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Next: Recruit/review pilot criteria only after data and access gates pass.
   - Dependencies: `B02-18`, `B03-01`, `B03-02`, `B03-03`, `B03-04`, `B03-05`.
 
+- [ ] **B03-07 Client mandate and human-selected course workflow** (optional, not a version gate)
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-25.
+  - Acceptance: Owner-approved mandate and selected-course records preserve target, scope, dependencies and human rationale; change explanations prompt reconsideration without granting approvals, altering facts or silently switching the chosen course. Native/operator acceptance required.
+  - Next: Integrate the exact packaged source through the authorised workflow. Run all native suites and operator review; retain original prerequisite and authority boundaries. Do not claim secure agency or background monitoring acceptance.
+  - Branch/base: `work/chosen-course-recovery` / `ba0a84a54a0e115ac35b9590c8dc41c931f3e123`.
+  - Dependencies: `B03-01`, `ES02-06`.
+  - Existing code: `endstate/course.py`, `eightball/v2/courses.py`, `web/v2/course-view.js`, `tests/test_courses.py`, `tests/browser_courses.py`.
+  - Evidence: `EV-CHOSEN-COURSE-LOCAL` (registry below).
+  - Blocker: Only trusted local single-operator groundwork. Original secure identity/mandate and durable event prerequisites remain unaccepted. Native integration and independent operator acceptance remain outstanding.
+
 
 ## 8BALL 0.4: Professionally reviewed resolution intelligence
 
@@ -284,6 +379,12 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Acceptance: Held-out/pilot evidence shows useful questions and plans without unsupported causal or success-probability claims.
   - Next: Benchmark against the accepted baseline with real professional review.
   - Dependencies: `B03-06`, `B04-01`, `B04-02`.
+
+- [ ] **B04-04 Permissioned correction replay and operator-value evaluation** (optional, not a version gate)
+  - Status: `deferred`. Owner: unassigned. Updated: 2026-09-24.
+  - Acceptance: An approved evaluation protocol measures the cost and benefit of suggestions/repairs on representative cases. Corrections retain provenance, access and retention limits; no cross-client retrieval or model training occurs without separate permission.
+  - Next: Retain as an owner-review candidate. Define metrics and lawful dataset handling before collecting additional client information; no measured benefit is claimed.
+  - Dependencies: `B03-01`, `B02-11`.
 
 
 ## 8BALL 1.0: Supported fixer product
@@ -339,13 +440,14 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-KERNEL` (registry below).
 
 - [ ] **ES01-05 Reusable core acceptance**
-  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-23.
+  - Status: `implemented`. Owner: ChatGPT. Updated: 2026-09-24.
   - Acceptance: Current 8BALL suites and cross-domain fixtures pass on the proposed shared package; version compatibility is explicit.
-  - Next: Complete the explicit embedded-package acceptance review and result-contract compatibility record; no standalone SDK or public release is implied.
-  - Branch/base: `feat/situation-intelligence-v2` / `5e2098e9cb12251592eb3889ce7926798484699d`.
+  - Next: Inspect the installed-wheel/source/schema evidence and run the cumulative native application gate in an authorised environment before closing broad package acceptance. Do not claim a public SDK release.
+  - Branch/base: `work/acceptance/integration-alpha7` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
   - Dependencies: `ES01-02`, `ES01-03`, `ES01-04`.
-  - Existing code: `endstate/api.py`, `docs/endstate/CONTRACTS.md`, `tests/test_endstate_kernel.py`.
-  - Evidence: `EV-KERNEL` (registry below).
+  - Existing code: `endstate/api.py`, `docs/endstate/CONTRACTS.md`, `tests/test_endstate_kernel.py`, `endstate/results.py`, `pyproject.toml`, `scripts/build_endstate.py`, `scripts/export_endstate_schemas.py`, `tests/test_endstate_results.py`.
+  - Evidence: `EV-KERNEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED` (registry below).
+  - Blocker: Actual internal distribution and code compatibility pass on this environment; cumulative native application acceptance remains policy-blocked.
 
 
 ## ENDSTATE 0.2: Event-driven replanning
@@ -374,17 +476,36 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Next: Define target workloads and latency budgets before a real-time claim.
   - Dependencies: `ES02-02`, `ES02-03`.
 
+- [x] **ES02-05 Bounded structural emergence detectors and typed explanations** (optional, not a version gate)
+  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-24.
+  - Acceptance: Revalidated snapshots produce reproducible, source/graph-linked findings with explicit limits, signed semantics and no mutation/network/model calls; independent fixtures exercise each implemented rule.
+  - Next: Preserve the scoped deterministic/governance contract and rerun its regression tests at every integration. This tick is not native, commercial or model-quality approval.
+  - Branch/base: `feat/emergent-insights-local` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Dependencies: `ES01-02`.
+  - Existing code: `endstate/insights.py`, `tests/test_insight_engine.py`.
+  - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL` (registry below).
+
+- [ ] **ES02-06 Selected-course and bounded reconsideration contracts** (optional, not a version gate)
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-25.
+  - Acceptance: Versioned neutral input/output contracts distinguish candidate routes from a host-authorised course; changes to consulted sources, targets, guards, authority, estimates, clocks and resources produce traceable reconsideration results. Unknown scope requires review. Existing approval invalidation is preserved.
+  - Next: Integrate the exact packaged source through the authorised workflow. Run all native suites and operator review; retain original prerequisite and authority boundaries. Do not claim secure agency or background monitoring acceptance.
+  - Branch/base: `work/chosen-course-recovery` / `ba0a84a54a0e115ac35b9590c8dc41c931f3e123`.
+  - Dependencies: `ES02-01`, `ES02-03`.
+  - Existing code: `endstate/course.py`, `eightball/v2/courses.py`, `web/v2/course-view.js`, `tests/test_courses.py`, `tests/browser_courses.py`.
+  - Evidence: `EV-CHOSEN-COURSE-LOCAL` (registry below).
+  - Blocker: Only trusted local single-operator groundwork. Original secure identity/mandate and durable event prerequisites remain unaccepted. Native integration and independent operator acceptance remain outstanding.
+
 
 ## ENDSTATE 0.3: Evaluated intelligence compilation
 
 - [ ] **ES03-01 Provider-independent reviewed outcome compiler**
   - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-23.
   - Acceptance: Source interpretation, typed graph drafting and deterministic validation are clean interchangeable interfaces outside the product layer.
-  - Next: The shared two-stage compiler and injected provider callback now exist. Extract and stabilise the remaining source-interpretation contracts, and resolve B02-09 before claiming reliable intelligence compilation.
-  - Branch/base: `feat/situation-intelligence-v2` / `af97506c37dbf14ded6208b36277dd3b87a11784`.
+  - Next: Validate the target-aware compiler on real providers without weakening acceptance; retain independent semantic review. This local change does not complete the compiler quality gate.
+  - Branch/base: `work/hf-black-drafting` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
   - Dependencies: `ES01-01`.
   - Existing code: `eightball/v2/intelligence.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`.
-  - Evidence: `EV-APP`, `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL` (registry below).
+  - Evidence: `EV-APP`, `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL` (registry below).
 
 - [ ] **ES03-02 Shared real-model semantic acceptance**
   - Status: `blocked`. Owner: unassigned. Updated: 2026-09-23.
@@ -403,9 +524,12 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Blocker: No authorised TypeSafe credentials supplied for live evaluation.
 
 - [ ] **ES03-04 Local-model installation and live provider status**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-23.
   - Acceptance: Runtime, selected weights, version and connection status are actually detected; downloads are explicit and user-approved.
-  - Next: Distinguish installed weights, running service, API credentials and test-run artefacts.
+  - Next: Retain truthful runtime/configuration status; complete setup/cancellation and actual-provider verification separately.
+  - Branch/base: `work/hf-black-drafting` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Existing code: `eightball/v2/runtime_status.py`, `eightball/v2/hosted.py`.
+  - Evidence: `EV-HF-BLACK-LOCAL` (registry below).
 
 - [ ] **ES03-05 Failure handling, model trace and governed provider selection**
   - Status: `partial`. Owner: unassigned. Updated: 2026-09-23.
@@ -413,6 +537,33 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Next: Extend existing fail-closed tests and preserve negative model results.
   - Existing code: `eightball/v2/intelligence.py`, `eightball/v2/store.py`.
   - Evidence: `EV-APP`, `EV-QWEN`, `EV-CLASSIFIER` (registry below).
+
+- [x] **ES03-06 Opt-in Hugging Face development transport contract** (optional, not a version gate)
+  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
+  - Acceptance: Implemented transport is tested with controlled HTTP responses for permission, configuration, explicit routing, errors, size bounds, source scoping and no state mutation. This scope does not claim live inference.
+  - Next: Publish the local checkpoint and configure credentials later for ES03-07; do not reinterpret mocked contract tests as hosted model evaluation.
+  - Branch/base: `work/hf-black-drafting` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Dependencies: `DOC-01`.
+  - Existing code: `eightball/v2/hosted.py`, `tests/test_hosted_and_grounding.py`, `evals/live_huggingface.py`.
+  - Evidence: `EV-HF-BLACK-LOCAL` (registry below).
+
+- [ ] **ES03-07 Actual hosted-model comparison on preserved fixtures** (optional, not a version gate)
+  - Status: `blocked`. Owner: ChatGPT. Updated: 2026-09-23.
+  - Acceptance: Authorised real HF requests record exact selected model/provider, outputs, same-fixture structural gate and human semantic review. No automatic or fictitious success.
+  - Next: After explicit configuration, run the manual hosted harness without changing the original four inputs; then use independent labelled cases before model selection.
+  - Branch/base: `work/hf-black-drafting` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Dependencies: `ES03-06`.
+  - Existing code: `evals/live_huggingface.py`, `evals/generation-cases.json`.
+  - Evidence: `EV-HF-BLACK-LOCAL` (registry below).
+  - Blocker: No authorised HF token/model/provider configured; no real hosted inference performed.
+
+- [ ] **ES03-08 Recover and reproduce reported human draft-repair implementation** (optional, not a version gate)
+  - Status: `blocked`. Owner: unassigned. Updated: 2026-09-24.
+  - Acceptance: Recovered or rebuilt exact source preserves the original failure, human edits, source/base revision and separate pending-proposal review; reproduction, stale-state denial and native interaction pass. Assisted repair never satisfies the unassisted model gate.
+  - Next: Recover the exact later source/package or explicitly rebuild the bounded repair on the last verified source. Reproduce its actual tests before marking implemented; never relabel alpha.7 as the reported repair build.
+  - Dependencies: `ES03-01`, `B02-02`.
+  - Evidence: `EV-DRAFT-RECOVERY-GAP` (registry below).
+  - Blocker: The latest supplied repair handoff explicitly reports that no completed working tree was found. Only verified alpha.7 source was recovered in this review.
 
 
 ## ENDSTATE 0.4: Domain packs and integration interfaces
@@ -564,3 +715,81 @@ These references have specific scopes and may be historical. A reference to a de
 - Result/scope: Actual staged Qwen test: 3/4 fixtures valid; supplier graph rejected for repeated readiness/goal results and also contained invented prerequisite IDs. Manual inspection found desired-outcome confusion. All live case states unchanged; B02-09 remains blocked.
 - Code revision: `3a33866f375be355658d8e5d82addb25bcc7eed9`.
 - External record: [verification source](https://github.com/EmotiveImpact/8ball/actions/runs/35911570117).
+
+### EV-HF-BLACK-LOCAL
+
+- Kind: `local_test_and_visual_evidence`.
+- Repository evidence: [docs/evidence/hf-black-local-verification.json](../../docs/evidence/hf-black-local-verification.json).
+- Result/scope: 362 local pytest checks; 93 explicitly bridged browser checks. No hosted inference, native browser networking or remote push for this change.
+
+### EV-GRAPH-EXPLORER-LOCAL
+
+- Kind: `local_code_and_bridged_browser_evidence`.
+- Repository evidence: [docs/evidence/relationship-explorer-local-verification.json](../../docs/evidence/relationship-explorer-local-verification.json).
+- Result/scope: 399 pytest tests, including 37 pure projection/layout checks; 131 bridged browser checks including 38 new graph checks. Graph interactions preserve audit state. No native CI or model inference claimed.
+
+### EV-PLAN-STUDIO-LOCAL
+
+- Kind: `local_software_and_interaction_evidence`.
+- Repository evidence: [docs/evidence/plan-studio-local-verification.json](../../docs/evidence/plan-studio-local-verification.json).
+- Result/scope: 484 local automated tests; 174 bridge browser checks, including 43 Plan Studio/job/changelog checks. No native browser or new actual-model inference claim.
+
+### EV-SOURCE-DESK-LOCAL
+
+- Kind: `local_software_and_interaction_evidence`.
+- Repository evidence: [docs/evidence/source-desk-local-verification.json](../../docs/evidence/source-desk-local-verification.json).
+- Result/scope: 566 local automated tests, including 82 new source/API/Unicode selection tests. Source Desk is local; no native CI or model-quality acceptance is implied.
+
+### EV-EMERGENCE-REVIEW
+
+- Kind: `documentation_validation`.
+- Repository evidence: [docs/delivery/sessions/2026-09-24-emergence-review-local.md](../../docs/delivery/sessions/2026-09-24-emergence-review-local.md).
+- Result/scope: Mandatory end-of-sprint emergence review is documented across agent/handoff/PRD/roadmap and regression-tested. It governs discovery; it does not by itself add runtime scope.
+
+### EV-EMERGENT-INSIGHTS-LOCAL
+
+- Kind: `local_code_and_bridged_browser_evidence`.
+- Repository evidence: [docs/evidence/emergent-insights-local-verification.json](../../docs/evidence/emergent-insights-local-verification.json).
+- Result/scope: 672 automated tests and 249 explicit ASGI-bridge browser checks across seven suites; 39 new Emergent Insights journey checks. No native or model-quality acceptance. 37 discoveries retained with prospective changelog policy.
+
+### EV-SOURCE-CLARITY-LOCAL
+
+- Kind: `local_code_and_bridged_browser_evidence`.
+- Repository evidence: [docs/evidence/source-clarity-local-verification.json](../../docs/evidence/source-clarity-local-verification.json).
+- Result/scope: 746 automated tests, including 74 new checks; 275 explicit ASGI-bridge browser checks across eight suites, including 26 source-clarity checks. Native navigation was attempted and administrator-blocked. No model-quality or production acceptance.
+
+### EV-PLAN-REVIEW-LOCAL
+
+- Kind: `local_software_validation`.
+- Repository evidence: [docs/evidence/plan-review-local-verification.json](../../docs/evidence/plan-review-local-verification.json).
+- Result/scope: Plan Review, quality-review infrastructure and route-identity regression. Actual checks and boundaries recorded in the linked file; not an independent expert evaluation.
+
+### EV-INTEGRATION-LOCAL
+
+- Kind: `software_validation`.
+- Repository evidence: [docs/evidence/integration-acceptance-local-verification.json](../../docs/evidence/integration-acceptance-local-verification.json).
+- Result/scope: 855 code tests and a complete rerun against the installed internal wheel passed. All 344 browser checks across ten suites passed explicitly bridged. Source-bound reports are packaged separately; no new native/model/expert acceptance.
+
+### EV-INTEGRATION-BLOCKED
+
+- Kind: `environment_blocker`.
+- Repository evidence: [docs/evidence/integration-acceptance-local-verification.json](../../docs/evidence/integration-acceptance-local-verification.json).
+- Result/scope: Native loopback navigation administrator-blocked; local inference runtime unavailable and HF configuration absent. No runtime policy altered and no provider calls started.
+
+### EV-VISION-REVIEW
+
+- Kind: `documentation_and_source_inventory`.
+- Repository evidence: [docs/delivery/sessions/2026-09-24-vision-strengthening.md](../../docs/delivery/sessions/2026-09-24-vision-strengthening.md).
+- Result/scope: Vision/roadmap refinement over recovered alpha.7; no runtime feature or new required acceptance pass. Exact source inventory and document/history checks are recorded in this session.
+
+### EV-DRAFT-RECOVERY-GAP
+
+- Kind: `reported_delivery_limitation`.
+- Repository evidence: [docs/reference/2026-09-24-draft-repair-delivery-record.md](../../docs/reference/2026-09-24-draft-repair-delivery-record.md).
+- Result/scope: The supplied Draft Repair handoff states that no completed draft-repair working tree was found. Reported 905-test results are not reproduced implementation evidence for recovered alpha.7.
+
+### EV-CHOSEN-COURSE-LOCAL
+
+- Kind: `local_focused_code_and_bridge`.
+- Repository evidence: [docs/evidence/chosen-course-focused-verification.json](../../docs/evidence/chosen-course-focused-verification.json).
+- Result/scope: 64 focused code tests and 29 explicit bridge browser checks passed. Native probe blocked. No model or production acceptance.

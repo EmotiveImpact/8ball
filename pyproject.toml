@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=82"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "endstate-engine"
+version = "0.1.0a2"
+description = "Internal read-only outcome calculation kernel, developed through 8BALL"
+readme = "docs/endstate/PACKAGE.md"
+requires-python = ">=3.12"
+dependencies = ["pydantic>=2.13.4,<3"]
+classifiers = ["Private :: Do Not Upload"]
+
+[tool.setuptools]
+packages = ["endstate"]
+
+[tool.setuptools.package-data]
+endstate = ["py.typed"]

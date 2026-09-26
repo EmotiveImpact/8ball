@@ -10,7 +10,7 @@ export const badge=(s,label)=>`<span class="badge ${esc(s)}">${esc(label??pretty
 export const button=(label,action,primary=false,attrs='')=>`<button type="button" class="button ${primary?'primary':''}" data-action="${esc(action)}" ${attrs}>${label}</button>`;
 export const note=text=>`<p class="note">${esc(text)}</p>`;
 export const icon=(name)=>{const paths={command:'M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z',room:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18ZM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z',map:'M5 5l14 1-4 13L5 5Zm0 0v14h10M19 6 5 19',routes:'M4 19V5h6M4 12h10l5 5M10 2l3 3-3 3M16 17h3v-3',evidence:'M6 3h8l4 4v14H6V3Zm8 0v5h4M9 12h6M9 16h6',people:'M16 21v-3c0-4-12-4-12 0v3M10 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM17 4c5 1 5 6 0 7M19 15c2 0 3 2 3 5',actions:'m4 12 5 5L20 6',questions:'M9 8c0-4 7-4 7 0 0 3-4 3-4 6M12 18v1M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z',decisions:'M4 4h6v6H4zM14 14h6v6h-6zM7 10v7h7M10 7h7v7',changes:'M20 7a9 9 0 1 0 1 8M20 2v5h-5M12 7v5l3 3',timeline:'M5 2v20M5 5h15M5 12h10M5 19h15',review:'M4 3h12v6M4 3v18h12v-7M8 7h4M8 11h3m4 1 2 2 5-6',playbooks:'M3 4h8v17H3zM13 4h8v17h-8zM6 8h2M16 8h2',models:'M8 4h8v16H8zM4 8h4M4 12h4M4 16h4M16 8h4M16 12h4M16 16h4M11 1v3M14 1v3M11 20v3M14 20v3',brief:'M4 4h16v16H4zM8 8h8M8 12h8M8 16h4',settings:'M12 3v18M3 12h18',lock:'M6 10h12v11H6zM8 10V6c0-5 8-5 8 0v4',search:'M10 3a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm5 12 6 6',plus:'M12 4v16M4 12h16',arrow:'M4 12h16m-6-6 6 6-6 6',close:'m5 5 14 14M19 5 5 19'};return `<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${paths[name]??paths.room}"/></svg>`;};
-export const S={cases:[],current:null,tab:'command',proposals:[],history:null,plays:[],providers:null,changes:[],map:null,mapView:'outcome',sort:'fewest_unknowns',scenario:null,comparison:null,selectedRoutes:new Set(),busy:false,epoch:0};
+export const S={cases:[],current:null,tab:'command',proposals:[],history:null,plays:[],providers:null,localHealth:null,changes:[],map:null,mapView:'outcome',sort:'fewest_unknowns',scenario:null,comparison:null,selectedRoutes:new Set(),busy:false,epoch:0};
 export const ctitle=id=>S.current?.case.graph.conditions.find(c=>c.id===id)?.title??id;
 export const atitle=id=>S.current?.case.graph.actions.find(a=>a.id===id)?.title??id;
 export const actorName=id=>S.current?.case.actors.find(a=>a.id===id)?.name??id;
@@ -25,7 +25,29 @@ export const warning=(text,tone='')=>`<div class="notice ${esc(tone)}">${esc(tex
 export const provenance=p=>p?`${badge('reported',pretty(p.origin))}${p.references?.map(s=>`<blockquote>${esc(s.quote)}<small>${esc(s.evidence_id)} · characters ${s.start}–${s.end}</small></blockquote>`).join('')??''}${p.note?note(p.note):''}`:'';
 export function saveFile(name,value,type='application/json'){const b=new Blob([type==='application/json'?JSON.stringify(value,null,2):value],{type});const u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);}
 let timer;
-export function toast(text,error=false){const el=$('#toast');el.textContent=text;el.className='visible'+(error?' error':'');clearTimeout(timer);timer=setTimeout(()=>el.className='',6500);}
-let previousFocus;
-export function closeModal(){$('#modal').innerHTML='';$('#app').inert=false;if(previousFocus?.isConnected)previousFocus.focus();}
-export function modal(title,body,wide=false){previousFocus=document.activeElement;$('#app').inert=true;$('#modal').innerHTML=`<div class="backdrop"><section class="dialog ${wide?'wide':''}" role="dialog" aria-modal="true" aria-label="${esc(title)}"><header><h2>${esc(title)}</h2><button type="button" data-action="close" class="icon-button" aria-label="Close dialog">${icon('close')}</button></header><div class="dialog-body">${body}</div></section></div>`;setTimeout(()=>$('.dialog input,.dialog select,.dialog textarea,.dialog button')?.focus(),0);}
+export function toast(text,error=false){const el=$('#toast');el.setAttribute('role',error?'alert':'status');el.setAttribute('aria-live',error?'assertive':'polite');el.textContent=text;el.className='visible'+(error?' error':'');clearTimeout(timer);timer=setTimeout(()=>el.className='',6500);}
+let previousFocus,focusSelector='',modalFocusTimer,modalSerial=0;
+function modalOriginSelector(el){
+ if(!(el instanceof Element))return '';
+ if(el.id)return '#'+CSS.escape(el.id);
+ const keys=['data-action','data-tab','data-object','data-id','data-pr-action','data-studio','data-kind'];
+ const attrs=keys.filter(k=>el.hasAttribute(k));
+ return attrs.length?el.tagName.toLowerCase()+attrs.map(k=>'['+k+'="'+CSS.escape(el.getAttribute(k))+'"]').join(''):'';
+}
+export function focusWorkspace(){const target=document.querySelector('#main h1')??document.querySelector('#main');if(target){target.setAttribute('tabindex','-1');target.focus({preventScroll:true});}}
+export function closeModal(){
+ const serial=++modalSerial;clearTimeout(modalFocusTimer);const hadModal=Boolean(document.querySelector('.dialog'));
+ $('#modal').innerHTML='';$('#app').inert=false;
+ const restore=()=>{if(serial!==modalSerial||document.querySelector('.dialog')||!hadModal)return;
+  const target=previousFocus?.isConnected?previousFocus:focusSelector?document.querySelector(focusSelector):null;
+  if(target&&!target.closest('[inert]')&&!target.disabled)target.focus({preventScroll:true});else focusWorkspace();};
+ restore();requestAnimationFrame(()=>{if(document.activeElement===document.body)restore();});
+}
+export function modal(title,body,wide=false){
+ // A replacement inspector retains the original invoker, not a soon-detached
+ // button inside the preceding dialog. Cancel pending focus from the old view.
+ if(!document.querySelector('.dialog')){previousFocus=document.activeElement;focusSelector=modalOriginSelector(previousFocus);}
+ clearTimeout(modalFocusTimer);const serial=++modalSerial;$('#app').inert=true;
+ $('#modal').innerHTML=`<div class="backdrop"><section class="dialog ${wide?'wide':''}" role="dialog" aria-modal="true" aria-labelledby="eightball-dialog-title"><header><h2 id="eightball-dialog-title" tabindex="-1">${esc(title)}</h2><button type="button" data-action="close" class="icon-button" aria-label="Close dialog">${icon('close')}</button></header><div class="dialog-body">${body}</div></section></div>`;
+ modalFocusTimer=setTimeout(()=>{if(serial===modalSerial)document.querySelector('#eightball-dialog-title')?.focus({preventScroll:true});},0);
+}
