@@ -3,6 +3,62 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-09-26-source-desk-search-race",
+      "date": "2026-09-26",
+      "version": "0.2.0-alpha.8",
+      "title": "Source Desk: preserve the operator query across delayed refreshes",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-14",
+        "B02-16",
+        "DOC-03",
+        "DOC-04",
+        "DOC-05"
+      ],
+      "summary": "Correct the native Source Desk failure without weakening search, original-text preservation or case-isolation checks. Alpha.8 was published before this correction; a new native result is still required.",
+      "added": [
+        "Twelve deterministic response-order component regressions and three real-API browser assertions."
+      ],
+      "changed": [
+        "Query state is captured on input; same-document renders preserve keyboard position. Search and navigation use independent generations."
+      ],
+      "fixed": [
+        "Delayed refresh no longer erases a typed query. Superseded results and earlier document requests cannot replace a newer operator choice."
+      ],
+      "verification": [
+        "938 local code tests passed; all 12 focused checks passed. Original source fails 8 of the new checks.",
+        "38 Source Desk browser checks passed through the explicit ASGI bridge. Native GitHub rerun must confirm the patched cumulative source."
+      ],
+      "limitations": [
+        "No new real model, independent expert or human accessibility review. No version acceptance, main merge or deployment.",
+        "The local native attempt remains administrator-blocked. No workaround changes its policy. Deferred research remains separate."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-09-26-source-desk-native-closeout.md",
+        "docs/evidence/source-desk-native-closeout.json",
+        "docs/evidence/source-desk-native-failure.txt",
+        "tests/test_source_view_races.py",
+        "tests/browser_sources.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Late rendering can lose a draft without a runtime error. This is new evidence for EM-035, EM-053 and EM-051, not an added feature lane."
+        ],
+        "risks": [
+          "Fast test transports can hide response-order failures; obsolete search results can mislead operators."
+        ],
+        "architecture_implications": [
+          "Keep draft state outside replaceable DOM and scope request generations to the work they supersede."
+        ],
+        "roadmap_decision": "existing_task: resolve Source Desk/native acceptance only; maintain the owner scope freeze.",
+        "insight_ids": [
+          "EM-035",
+          "EM-053",
+          "EM-051"
+        ]
+      }
+    },
+    {
       "id": "2026-09-25-chosen-course-recovery",
       "date": "2026-09-25",
       "version": "0.2.0-alpha.8",

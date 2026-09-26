@@ -1,7 +1,7 @@
 import {S,$,esc,icon,field,textarea,select,options,date,badge,button,modal,closeModal,note,warning,toast,saveFile} from './ui.js';
 import {sourceDisplayMap,sourceOriginalRange,sourceSelectionCount,addSourcePassage,sourceWirePassages,SOURCE_SELECTION_LIMIT} from './source-model.js';
 
-let sourceContext=null,sourceImportDraft=null,sourceRequestSequence=0;
+let sourceContext=null,sourceImportDraft=null,sourceRequestSequence=0,sourceSearchSequence=0;
 const sourceUid=()=>crypto.randomUUID?.()??Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('');
 const sourceNumber=n=>Number(n).toLocaleString('en-GB');
 const sourceButton=(label,action,attrs='',primary=false)=>`<button type="button" class="button ${primary?'primary':''}" data-source-action="${esc(action)}" ${attrs}>${label}</button>`;
@@ -12,9 +12,24 @@ function sourceState(){
   if(!S.sourceDesk||S.sourceDesk.caseId!==S.current?.case.id)S.sourceDesk={caseId:S.current?.case.id,index:null,page:null,selected:[],matches:[],query:'',open:false,loadError:null};
   return S.sourceDesk;
 }
-export function clearSourceDesk(){sourceRequestSequence++;sourceImportDraft=null;S.sourceDesk=null;}
-export function mountSourceReader(){
+export function clearSourceDesk(){sourceRequestSequence++;sourceSearchSequence++;sourceImportDraft=null;S.sourceDesk=null;}
+function sourceSearchFieldCurrent(el){
+  const st=S.sourceDesk,form=el?.closest?.('form[data-source-form="search"]');
+  return Boolean(st?.open&&S.tab==='evidence'&&form?.dataset.sourceCase===S.current?.case.id
+    &&form.dataset.sourceDocument===st.page?.document.id);
+}
+export function captureSourceFocus(){
+  const el=document.activeElement;
+  if(el?.id!=='sd-query'||!sourceSearchFieldCurrent(el))return null;
+  return {...sourceStamp(),documentId:S.sourceDesk.page.document.id,
+    start:el.selectionStart,end:el.selectionEnd,direction:el.selectionDirection};
+}
+export function mountSourceReader(focus=null){
   const reader=$('#sd-reader');if(reader&&S.sourceDesk?.page)reader.value=sourceDisplayMap(S.sourceDesk.page.text).text;
+  if(focus&&sourceStillCurrent(focus)&&S.sourceDesk?.page?.document.id===focus.documentId){
+    const query=$('#sd-query');
+    if(sourceSearchFieldCurrent(query)){query.focus({preventScroll:true});query.setSelectionRange(focus.start,focus.end,focus.direction);}
+  }
 }
 export function sourceOriginButton(evidenceId){return sourceButton('Source origin','origin',`data-id="${esc(evidenceId)}"`);}
 export function sourceDeskLauncher(){return sourceButton('Source Desk '+icon('arrow'),'open');}
@@ -32,7 +47,7 @@ export function sourceDeskView(){
   ${doc.previous_document_id?`<div class="sd-version-link">Linked to an earlier source. Neither version is automatically superseded. ${sourceButton('Open earlier original','document',`data-id="${esc(doc.previous_document_id)}"`)}</div>`:''}
   ${doc.status==='retracted'?warning('Retracted source. Existing passages are historical and cannot support live conditions. '+doc.retraction_reason):''}
   ${doc.warnings?.map(w=>warning(w,'neutral')).join('')??''}
-  <form class="sd-search" data-source-form="search"><label class="sr-only" for="sd-query">Search original text</label><input id="sd-query" name="query" type="search" required minlength="2" maxlength="200" value="${esc(st.query)}" placeholder="Find a phrase in this original…"><button type="submit" class="button">Find</button></form>
+  <form class="sd-search" data-source-form="search" data-source-case="${esc(st.caseId)}" data-source-document="${esc(doc.id)}"><label class="sr-only" for="sd-query">Search original text</label><input id="sd-query" name="query" type="search" required minlength="2" maxlength="200" value="${esc(st.query)}" placeholder="Find a phrase in this original…"><button type="submit" class="button">Find</button></form>
   ${st.matches.length?`<div class="sd-search-results" aria-label="Search results">${st.matches.map(m=>`<button type="button" data-source-action="search-hit" data-start="${m.context_start}" data-end="${m.context_end}"><b>Position ${m.start}</b> ${esc(m.context)}</button>`).join('')}${st.searchTruncated?note('First 50 matches shown. Refine the search.'):''}</div>`:''}
   <div class="sd-passages"><label>Passage <select data-source-select="chunk" aria-label="Choose source passage">${!p.chunks.some(ch=>ch.start===p.start&&ch.end===p.end)?`<option value="${p.start}:${p.end}" selected>Selected span: ${p.start} to ${p.end}</option>`:''}${p.chunks.map(ch=>`<option value="${ch.start}:${ch.end}" ${ch.start===p.start&&ch.end===p.end?'selected':''}>${ch.number}. Lines ${ch.line_start} to ${ch.line_end} · ${sourceNumber(ch.characters)} characters</option>`).join('')}</select></label><span>${sourceNumber(p.start)} to ${sourceNumber(p.end)} of ${sourceNumber(doc.characters)}</span></div>
   <label class="sd-text-label" for="sd-reader">Original text, lines ${p.line_start} to ${p.line_end}. Select text to capture an exact passage.</label><textarea id="sd-reader" class="sd-reader" readonly spellcheck="false" wrap="soft"></textarea>
@@ -45,24 +60,25 @@ export async function refreshSourceDeskIndex(){
   const stamp=sourceStamp(),index=await sourceContext.api(sourceBase());
   if(sourceStillCurrent(stamp)){const st=sourceState();st.index=index;const d=index.documents.find(d=>d.id===st.page?.document.id);if(d)st.page.document={...st.page.document,...d};}
 }
-async function sourceOpenDocument(documentId,start=0,end=null){
-  const stamp=sourceStamp(),seq=++sourceRequestSequence;const st=sourceState();
+async function sourceOpenDocument(documentId,start=0,end=null,seq=++sourceRequestSequence){
+  const stamp=sourceStamp();const st=sourceState();
+  if(st.page?.document.id!==documentId){sourceSearchSequence++;st.query='';st.matches=[];st.searchTruncated=false;}
   let result=await sourceContext.api(sourceBase()+'/'+encodeURIComponent(documentId)+`?start=${start}&limit=${end===null?4000:end-start}`);
-  if(!sourceStillCurrent(stamp)||seq!==sourceRequestSequence||S.tab!=='evidence')return;
+  if(!sourceStillCurrent(stamp)||seq!==sourceRequestSequence||S.tab!=='evidence'||!st.open)return;
   const chunk=result.chunks.find(c=>c.start===start);
   if(end===null&&chunk&&chunk.end!==result.end){
     result=await sourceContext.api(sourceBase()+'/'+encodeURIComponent(documentId)+`?start=${start}&limit=${chunk.end-start}`);
   }
   if(!sourceStillCurrent(stamp)||seq!==sourceRequestSequence)return;
-  if(S.tab!=='evidence')return;
+  if(S.tab!=='evidence'||!st.open)return;
   st.page=result;st.loadError=null;sourceContext.render();
 }
 async function sourceOpen(){
-  const stamp=sourceStamp();S.tab='evidence';sourceState().open=true;sourceContext.render();
-  await refreshSourceDeskIndex();if(!sourceStillCurrent(stamp)||S.tab!=='evidence')return;
+  const stamp=sourceStamp(),seq=++sourceRequestSequence;S.tab='evidence';sourceState().open=true;sourceContext.render();
+  await refreshSourceDeskIndex();if(!sourceStillCurrent(stamp)||seq!==sourceRequestSequence||S.tab!=='evidence'||!sourceState().open)return;
   const st=sourceState();sourceContext.render();
   const candidate=st.page?.document.id??st.index?.documents[0]?.id;
-  if(candidate)await sourceOpenDocument(candidate,st.page?.start??0,st.page?.end??null);
+  if(candidate)await sourceOpenDocument(candidate,st.page?.start??0,st.page?.end??null,seq);
 }
 async function sourceAfterWrite(result,stamp){
   if(!sourceStillCurrent(stamp))return;
@@ -116,7 +132,7 @@ async function sourceOrigin(eid){
 async function sourceAction(action,el){
   const st=sourceState();
   if(action==='open'){await sourceOpen();return;}
-  if(action==='evidence'){st.open=false;sourceContext.render();return;}
+  if(action==='evidence'){sourceRequestSequence++;sourceSearchSequence++;st.open=false;sourceContext.render();return;}
   if(action==='import'){const stamp=sourceStamp();await refreshSourceDeskIndex();if(sourceStillCurrent(stamp)&&S.tab==='evidence')sourceImportForm();return;}
   if(action==='paste-mode'){
     if(!sourceImportDraft)return;
@@ -126,7 +142,7 @@ async function sourceAction(action,el){
     $('#sd-file-note').textContent='Paste the text to store. Browser paste line endings are retained as received.';
     form.elements.text.focus();return;
   }
-  if(action==='document'){st.query='';st.matches=[];await sourceOpenDocument(el.dataset.id);return;}
+  if(action==='document'){sourceSearchSequence++;st.query='';st.matches=[];st.searchTruncated=false;await sourceOpenDocument(el.dataset.id);return;}
   if(action==='search-hit'){await sourceOpenDocument(st.page.document.id,Number(el.dataset.start),Number(el.dataset.end));return;}
   if(action==='select-text'||action==='select-page'){await sourceSelect(action==='select-page');return;}
   if(action==='clear'){st.selected=[];st.capture=null;sourceContext.render();return;}
@@ -162,9 +178,11 @@ async function sourceSubmit(form){
     sourceImportDraft=null;sourceState().open=true;S.tab='evidence';await sourceOpenDocument(result.document.id);toast('Original stored unchanged. Select passages for evidence review.');return;
   }
   if(form.dataset.sourceForm==='search'){
-    const stamp=sourceStamp(),doc=st.page.document.id,seq=++sourceRequestSequence;
+    if(!sourceSearchFieldCurrent(form.elements.query))return;
+    const stamp=sourceStamp(),doc=st.page.document.id,seq=++sourceSearchSequence;
+    st.query=v.query;
     const result=await sourceContext.api(sourceBase()+'/'+doc+'/search?q='+encodeURIComponent(v.query));
-    if(!sourceStillCurrent(stamp)||seq!==sourceRequestSequence||st.page.document.id!==doc)return;
+    if(!sourceStillCurrent(stamp)||seq!==sourceSearchSequence||S.sourceDesk!==st||!st.open||S.tab!=='evidence'||st.page?.document.id!==doc||st.query!==v.query)return;
     st.query=v.query;st.matches=result.matches;st.searchTruncated=result.truncated;sourceContext.render();if(!result.matches.length)toast('No literal matches in this original.');return;
   }
   if(form.dataset.sourceForm==='capture-commit'){
@@ -182,6 +200,14 @@ async function sourceSubmit(form){
 }
 export function bindSourceDesk(context){
   sourceContext=context;
+  document.addEventListener('input',e=>{
+    if(e.target.id!=='sd-query'||!sourceSearchFieldCurrent(e.target))return;
+    // Persist immediately: an in-flight page/index refresh may replace the DOM
+    // before the operator submits. Old search results belong to the old query.
+    sourceSearchSequence++;
+    const st=sourceState();st.query=e.target.value;st.matches=[];st.searchTruncated=false;
+    $('.sd-search-results')?.remove();
+  });
   document.addEventListener('click',async e=>{const el=e.target.closest('[data-source-action]');if(!el)return;e.preventDefault();try{await sourceAction(el.dataset.sourceAction,el);}catch(error){toast(error.message,true);}});
   document.addEventListener('change',async e=>{
     try{

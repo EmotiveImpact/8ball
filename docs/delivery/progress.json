@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-09-25",
+  "updated_on": "2026-09-26",
   "product": "8BALL",
   "engine": "ENDSTATE",
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
@@ -8,10 +8,10 @@
     "full_name": "EmotiveImpact/8ball",
     "development_branch": "feat/situation-intelligence-v2",
     "pull_request": 2,
-    "inspected_code_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
-    "inspected_code_tree": "68ff7ac7b212fbdf67f77d051f69d13ed39485be",
+    "inspected_code_commit": "d27ad600342245d0222b5f4573da8fdcbbf8c1d4",
+    "inspected_code_tree": "dafc6e3d2d0a28f081695aea634c57834ff81515",
     "main_at_inspection": "08bc26ef397ec960d1b33b099c40888a8229eac0",
-    "status_as_of": "2026-09-25",
+    "status_as_of": "2026-09-26",
     "pr_draft": true,
     "merged": false,
     "production_deployed": false,
@@ -174,6 +174,11 @@
       "kind": "local_focused_code_and_bridge",
       "path": "docs/evidence/chosen-course-focused-verification.json",
       "result": "64 focused code tests and 29 explicit bridge browser checks passed. Native probe blocked. No model or production acceptance."
+    },
+    "EV-SOURCE-SEARCH-RACE": {
+      "kind": "reproduced_failure_and_local_regression",
+      "path": "docs/evidence/source-desk-native-closeout.json",
+      "result": "Original native failure inspected; new component checks fail 8/12 on original source and pass 12/12 after correction. 938 local code tests, 38 explicit bridge Source Desk checks. Patched native acceptance pending."
     }
   },
   "milestones": [
@@ -751,9 +756,9 @@
       "status": "partial",
       "required": true,
       "owner": "ChatGPT",
-      "working_branch": "work/B02-10/source-clarity",
-      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
-      "updated_on": "2026-09-24",
+      "working_branch": "feat/situation-intelligence-v2",
+      "base_commit": "d27ad600342245d0222b5f4573da8fdcbbf8c1d4",
+      "updated_on": "2026-09-26",
       "code_paths": [
         "eightball/v2/source_contracts.py",
         "eightball/v2/source_desk.py",
@@ -768,20 +773,22 @@
         "web/v2/grounding-view.js",
         "tests/test_time_review.py",
         "tests/test_grounding.py",
-        "tests/browser_grounding.py"
+        "tests/browser_grounding.py",
+        "tests/test_source_view_races.py"
       ],
       "depends_on": [],
       "acceptance": "Longer sources retain exact provenance; duplicates and entity merges cannot rewrite observed meanings or lose attribution.",
       "evidence": [
         "EV-REMAINING",
         "EV-SOURCE-DESK-LOCAL",
-        "EV-SOURCE-CLARITY-LOCAL"
+        "EV-SOURCE-CLARITY-LOCAL",
+        "EV-SOURCE-SEARCH-RACE"
       ],
       "blockers": [
         "Native cumulative integration and independent multi-source identity/date usefulness review remain outstanding.",
         "No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed."
       ],
-      "next_action": "Run native integration, then evaluate multi-source identity/date workflows with reviewed professional fixtures. Preserve mention-level judgements and preview/apply boundaries; keep the source-to-plan gate unchanged."
+      "next_action": "Publish the tested Source Desk request-order correction and run all eleven native suites; then complete the original source/identity/date or human accessibility acceptance scope. Do not introduce deferred research."
     },
     {
       "id": "B02-15",
@@ -819,9 +826,9 @@
       "status": "partial",
       "required": true,
       "owner": "ChatGPT",
-      "working_branch": "work/acceptance/integration-alpha7",
-      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
-      "updated_on": "2026-09-24",
+      "working_branch": "feat/situation-intelligence-v2",
+      "base_commit": "d27ad600342245d0222b5f4573da8fdcbbf8c1d4",
+      "updated_on": "2026-09-26",
       "code_paths": [
         "tests/browser_accessibility.py",
         "web/v2/ui.js",
@@ -836,12 +843,13 @@
         "EV-HF-BLACK-LOCAL",
         "EV-GRAPH-EXPLORER-LOCAL",
         "EV-INTEGRATION-LOCAL",
-        "EV-INTEGRATION-BLOCKED"
+        "EV-INTEGRATION-BLOCKED",
+        "EV-SOURCE-SEARCH-RACE"
       ],
       "blockers": [
         "Native browser policy and human screen-reader/OS validation remain outstanding."
       ],
-      "next_action": "Run the complete native suite and human screen-reader/platform review. Source-bound bridge results and clear focus controls do not certify accessibility."
+      "next_action": "Publish the tested Source Desk request-order correction and run all eleven native suites; then complete the original source/identity/date or human accessibility acceptance scope. Do not introduce deferred research."
     },
     {
       "id": "B02-17",
@@ -1964,6 +1972,7 @@
     }
   ],
   "next_task_ids": [
+    "B02-14",
     "B02-09",
     "B02-11",
     "B02-12",
@@ -1981,30 +1990,10 @@
     "Do not merge or deploy without explicit release authority."
   ],
   "unpublished_checkpoint": {
-    "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
-    "includes_previous_hf_black_tree": "13b8e17b911ee3712efcf8701477a2c24b8dc8f1",
-    "working_branch": "work/chosen-course-recovery",
-    "reason": "Cumulative source remains local. Current GitHub head inspected; no source push, merge or deployment in this session. Use exact-tree source/patch handoff.",
-    "session": "docs/delivery/sessions/2026-09-25-chosen-course-recovery.md",
-    "includes_previous_graph_tree": "827f0ba92ffcdf0c74fe89fbf2ca41e3b2d81302",
-    "local_version": "0.2.0-alpha.8",
-    "includes_previous_local_checkpoints": [
-      "HF/black provider work",
-      "Connections relationship explorer",
-      "Plan Studio and analysis jobs",
-      "Source Desk",
-      "Emergence Review process",
-      "Emergent Insights and evolving 37-discovery register",
-      "Source Clarity identity/deadline review and 43-discovery register",
-      "Plan Review alpha.6 and all 49 previous emergence discoveries"
-    ],
-    "documentation_overlay": {
-      "revision": "PRD 1.3",
-      "source_tree": "5c49a40395e6d22510a8895a90ddd2f759378efa",
-      "session": "docs/delivery/sessions/2026-09-24-vision-strengthening.md",
-      "runtime_changed": false,
-      "later_repair_source_recovered": false,
-      "remote_refreshed_this_review": false
-    }
+    "base_commit": "d27ad600342245d0222b5f4573da8fdcbbf8c1d4",
+    "working_branch": "feat/situation-intelligence-v2",
+    "reason": "Alpha.8 itself is published. This narrowly scoped Source Desk correction is prepared for verified publication; new native result remains pending. Historical local-only notes below are preserved, not current remote status.",
+    "session": "docs/delivery/sessions/2026-09-26-source-desk-native-closeout.md",
+    "local_version": "0.2.0-alpha.8"
   }
 }

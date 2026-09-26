@@ -2,7 +2,7 @@ import {bindCourse,loadCourse,clearCourse} from './course-view.js';
 import {bindPlanReview,clearPlanReview} from './plan-review-view.js';
 import {bindGrounding,clearGrounding,loadGrounding} from './grounding-view.js';
 import {bindInsights,clearInsights,loadInsights} from './insights-view.js';
-import {bindSourceDesk,clearSourceDesk,mountSourceReader,refreshSourceDeskIndex} from './source-view.js';
+import {bindSourceDesk,clearSourceDesk,captureSourceFocus,mountSourceReader,refreshSourceDeskIndex} from './source-view.js';
 import {studioClick,studioChange} from './studio-view.js';
 import {studioDirty} from './studio-model.js';
 import {updateAnalysisMonitor,stopAnalysisPolling} from './job-view.js';
@@ -14,7 +14,7 @@ let token='',loadSequence=0;
 try{token=sessionStorage.getItem('8ball.token')??'';}catch{}
 const id=()=>globalThis.crypto?.randomUUID?.()??Array.from(globalThis.crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('');
 function setToken(v){token=v;try{if(v)sessionStorage.setItem('8ball.token',v);else sessionStorage.removeItem('8ball.token');}catch{}}
-function render(){const sections=new Map([...document.querySelectorAll('.st-section')].map(e=>[e.querySelector('summary').textContent,e.open]));$('#app').innerHTML=token?shell():login();if(S.tab==='studio')document.querySelectorAll('.st-section').forEach(e=>{if(sections.has(e.querySelector('summary').textContent))e.open=sections.get(e.querySelector('summary').textContent);});mountGraphWorkspace();mountSourceReader();document.body.classList.toggle('is-graph-view',Boolean(token)&&S.tab==='map');document.title=S.current?`8BALL · ${S.current.case.title}`:'8BALL · Find a way through';}
+function render(){const sourceFocus=captureSourceFocus();const sections=new Map([...document.querySelectorAll('.st-section')].map(e=>[e.querySelector('summary').textContent,e.open]));$('#app').innerHTML=token?shell():login();if(S.tab==='studio')document.querySelectorAll('.st-section').forEach(e=>{if(sections.has(e.querySelector('summary').textContent))e.open=sections.get(e.querySelector('summary').textContent);});mountGraphWorkspace();mountSourceReader(sourceFocus);document.body.classList.toggle('is-graph-view',Boolean(token)&&S.tab==='map');document.title=S.current?`8BALL · ${S.current.case.title}`:'8BALL · Find a way through';}
 function lock(){clearCourse();clearPlanReview();clearGrounding();clearInsights();clearSourceDesk();stopAnalysisPolling();S.studio=null;clearGraphViews();S.epoch++;setToken('');S.current=null;S.cases=[];S.proposals=[];S.history=null;S.changes=[];S.scenario=null;S.comparison=null;S.localHealth=null;S.providers=null;S.tab='command';closeModal();render();}
 async function api(path,body){const epoch=S.epoch;const r=await fetch('/api/v2'+path,{method:body===undefined?'GET':'POST',headers:{Authorization:'Bearer '+token,...(body===undefined?{}:{'Content-Type':'application/json'})},...(body===undefined?{}:{body:JSON.stringify(body)})});let data;try{data=await r.json();}catch{throw new Error('Server response was not readable. Check that the local server is running.');}if(epoch!==S.epoch)throw new Error('Workspace session changed.');if(r.status===401){lock();throw new Error('Enter the current operator token to continue.');}if(!r.ok)throw new Error(typeof data.detail==='string'?data.detail:'The request was rejected. Check the fields and references.');return data;}
 async function refreshCases(){S.cases=await api('/cases');}

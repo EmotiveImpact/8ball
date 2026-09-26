@@ -1,3 +1,13 @@
+# Current closeout: Source Desk native correction, 26 September 2026
+
+Alpha.8 is now published on `feat/situation-intelligence-v2` at `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`. Read `sessions/2026-09-26-source-desk-native-closeout.md` and `docs/evidence/source-desk-native-closeout.json`. This fix is over that exact remote parent, not a reconstruction to force-push. Previous local-only handoffs are history.
+
+Native run 36217951370 failed only browser-sources. The query refresh race is corrected with reproducible response-order tests. Local code: 938 passed; Source Desk bridge: 38 passed. Patched native verification remains pending until a new GitHub result is recorded. No real inference or independent/human review is implied.
+
+Finish the frozen V0.2/ENDSTATE core scope. Do not import the separate deep research, start another optional screen or merge into main until required acceptance and authority are satisfied. Keep all original gates, changelog history and 71 registered discoveries. This sprint revalidates EM-035/EM-053/EM-051; the detailed findings are retained in the session/changelog.
+
+---
+
 # Current handoff: Chosen Course recovery, alpha.8
 
 Read `docs/v2/CHOSEN-COURSE.md` and `docs/delivery/sessions/2026-09-25-chosen-course-recovery.md`. The recovered local base is `ba0a84a54a0e115ac35b9590c8dc41c931f3e123`, exact tree `907dc4ba85507de1ba1050e69425b3f926d611ac`. It contains alpha.7 and PRD 1.3; later narrated Draft Repair code was not recovered. This sprint reimplements and tests Chosen Course instead of inheriting earlier claimed results.

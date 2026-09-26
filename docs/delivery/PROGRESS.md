@@ -2,14 +2,14 @@
 
 > Generated from `docs/delivery/progress.json`. Edit the ledger, then run `python scripts/delivery.py --write`. Do not maintain a second set of statuses here.
 
-Last status review: 2026-09-25.
+Last status review: 2026-09-26.
 
 **8BALL is the fixer product. ENDSTATE is the reusable engine underneath it.**
 
 ## Checkpoint and release boundary
 
 - Active integration branch: `feat/situation-intelligence-v2`; PR #2.
-- Inspected application baseline: `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+- Inspected application baseline: `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`.
 - This is a dated snapshot. Refresh the branch, PR and CI at the start of every session.
 - At inspection: draft PR = `true`; merged = `false`; production deployed = `false`.
 - Standalone ENDSTATE package released = `false`.
@@ -22,13 +22,14 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 ## Next work
 
-**Unpublished development checkpoint:** Cumulative source remains local. Current GitHub head inspected; no source push, merge or deployment in this session. Use exact-tree source/patch handoff.
-Base: `824ca6421ff3100e1af596347f2d1247dde8f8dc`. See `docs/delivery/sessions/2026-09-25-chosen-course-recovery.md`.
+**Unpublished development checkpoint:** Alpha.8 itself is published. This narrowly scoped Source Desk correction is prepared for verified publication; new native result remains pending. Historical local-only notes below are preserved, not current remote status.
+Base: `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`. See `docs/delivery/sessions/2026-09-26-source-desk-native-closeout.md`.
 
+- **B02-14: Source chunking, duplication and reviewer-safe object reconciliation**. Publish the tested Source Desk request-order correction and run all eleven native suites; then complete the original source/identity/date or human accessibility acceptance scope. Do not introduce deferred research.
 - **B02-09: Reliable reviewed graph proposals for new situations**. Apply/push the preserved local patch, run native CI and the unchanged four-case local/hosted generation gate. Target quotations and frame references are now validated early; semantic quality and live provider results remain unverified.
 - **B02-11: Independent quality evaluation and production-model selection**. Obtain owner/expert approval of the declared protocol, collect independent labels and run the preserved real-model gate with an explicitly configured provider. Do not count software or operator review as independent model approval.
 - **B02-12: Full twenty-step real-model V0.2 acceptance journey**. Run the actual-provider integration command with configured service/token; preserve failures and collect a genuinely human all-native journey separately. No scripted review may satisfy independent semantic acceptance.
-- **B02-16: Complete accessibility and supported-environment validation**. Run the complete native suite and human screen-reader/platform review. Source-bound bridge results and clear focus controls do not certify accessibility.
+- **B02-16: Complete accessibility and supported-environment validation**. Publish the tested Source Desk request-order correction and run all eleven native suites; then complete the original source/identity/date or human accessibility acceptance scope. Do not introduce deferred research.
 - **ES01-05: Reusable core acceptance**. Inspect the installed-wheel/source/schema evidence and run the cumulative native application gate in an authorised environment before closing broad package acceptance. Do not claim a public SDK release.
 
 ## Version summary
@@ -224,12 +225,12 @@ Base: `824ca6421ff3100e1af596347f2d1247dde8f8dc`. See `docs/delivery/sessions/20
   - Blocker: Native browser CI and authorised source integration have not been run for this local checkpoint.
 
 - [ ] **B02-14 Source chunking, duplication and reviewer-safe object reconciliation**
-  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-24.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: Longer sources retain exact provenance; duplicates and entity merges cannot rewrite observed meanings or lose attribution.
-  - Next: Run native integration, then evaluate multi-source identity/date workflows with reviewed professional fixtures. Preserve mention-level judgements and preview/apply boundaries; keep the source-to-plan gate unchanged.
-  - Branch/base: `work/B02-10/source-clarity` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
-  - Existing code: `eightball/v2/source_contracts.py`, `eightball/v2/source_desk.py`, `eightball/v2/request_limits.py`, `web/v2/source-model.js`, `web/v2/source-view.js`, `tests/test_source_desk.py`, `tests/test_source_api.py`, `tests/browser_sources.py`, `endstate/time_review.py`, `eightball/v2/grounding.py`, `web/v2/grounding-view.js`, `tests/test_time_review.py`, `tests/test_grounding.py`, `tests/browser_grounding.py`.
-  - Evidence: `EV-REMAINING`, `EV-SOURCE-DESK-LOCAL`, `EV-SOURCE-CLARITY-LOCAL` (registry below).
+  - Next: Publish the tested Source Desk request-order correction and run all eleven native suites; then complete the original source/identity/date or human accessibility acceptance scope. Do not introduce deferred research.
+  - Branch/base: `feat/situation-intelligence-v2` / `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`.
+  - Existing code: `eightball/v2/source_contracts.py`, `eightball/v2/source_desk.py`, `eightball/v2/request_limits.py`, `web/v2/source-model.js`, `web/v2/source-view.js`, `tests/test_source_desk.py`, `tests/test_source_api.py`, `tests/browser_sources.py`, `endstate/time_review.py`, `eightball/v2/grounding.py`, `web/v2/grounding-view.js`, `tests/test_time_review.py`, `tests/test_grounding.py`, `tests/browser_grounding.py`, `tests/test_source_view_races.py`.
+  - Evidence: `EV-REMAINING`, `EV-SOURCE-DESK-LOCAL`, `EV-SOURCE-CLARITY-LOCAL`, `EV-SOURCE-SEARCH-RACE` (registry below).
   - Blocker: Native cumulative integration and independent multi-source identity/date usefulness review remain outstanding. No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed.
 
 - [ ] **B02-15 Model progress/cancellation and accurate installation status**
@@ -243,12 +244,12 @@ Base: `824ca6421ff3100e1af596347f2d1247dde8f8dc`. See `docs/delivery/sessions/20
   - Blocker: Native browser CI and authorised source integration have not been run for this local checkpoint.
 
 - [ ] **B02-16 Complete accessibility and supported-environment validation**
-  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-24.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: Keyboard, screen reader, empty/error/loading states and supported browsers/platform startup paths pass an explicit review.
-  - Next: Run the complete native suite and human screen-reader/platform review. Source-bound bridge results and clear focus controls do not certify accessibility.
-  - Branch/base: `work/acceptance/integration-alpha7` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Next: Publish the tested Source Desk request-order correction and run all eleven native suites; then complete the original source/identity/date or human accessibility acceptance scope. Do not introduce deferred research.
+  - Branch/base: `feat/situation-intelligence-v2` / `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`.
   - Existing code: `tests/browser_accessibility.py`, `web/v2/ui.js`, `web/v2/app.js`, `web/v2/style.css`, `scripts/acceptance.py`.
-  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED` (registry below).
+  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-SOURCE-SEARCH-RACE` (registry below).
   - Blocker: Native browser policy and human screen-reader/OS validation remain outstanding.
 
 - [x] **B02-17 Prove compatibility after ENDSTATE core extraction**
@@ -793,3 +794,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `local_focused_code_and_bridge`.
 - Repository evidence: [docs/evidence/chosen-course-focused-verification.json](../../docs/evidence/chosen-course-focused-verification.json).
 - Result/scope: 64 focused code tests and 29 explicit bridge browser checks passed. Native probe blocked. No model or production acceptance.
+
+### EV-SOURCE-SEARCH-RACE
+
+- Kind: `reproduced_failure_and_local_regression`.
+- Repository evidence: [docs/evidence/source-desk-native-closeout.json](../../docs/evidence/source-desk-native-closeout.json).
+- Result/scope: Original native failure inspected; new component checks fail 8/12 on original source and pass 12/12 after correction. 938 local code tests, 38 explicit bridge Source Desk checks. Patched native acceptance pending.

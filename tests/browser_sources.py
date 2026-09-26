@@ -101,9 +101,41 @@ def main():
                     page.locator('.source-card').last.locator('[data-action=observe]').click();f=page.locator('form[data-form=observe]')
                     f.locator('[name=condition_id]').select_option('root');f.locator('[name=value]').select_option('false');f.locator('[name=rationale]').fill('The original explicitly states the root cause has not been verified.');f.locator('[type=submit]').click();page.locator('.dialog').wait_for(state='detached')
                     check('human false attestation is recorded separately',store.get(c.id).observations[-1].value is False)
+                    # Hold only the next index request, then forward it unchanged to the
+                    # actual transport. This deterministically exercises typing while the
+                    # cached reader is visible and a late index/page refresh is pending.
+                    page.evaluate("""() => {
+                        const originalFetch=window.fetch;
+                        const gate={held:false,released:false,renders:0};
+                        window.__sourceRefreshRace=gate;
+                        const observer=new MutationObserver(()=>{
+                            if(gate.released){gate.renders++;document.documentElement.dataset.sourceRaceRenders=String(gate.renders);}
+                        });
+                        observer.observe(document.querySelector('#app'),{childList:true});
+                        window.fetch=async (...args)=>{
+                            if(!gate.held&&String(args[0]).endsWith('/sources')){
+                                gate.held=true;
+                                await new Promise(resolve=>{gate.release=resolve;document.documentElement.dataset.sourceRaceHeld='true';});
+                            }
+                            return originalFetch(...args);
+                        };
+                        gate.restore=()=>{window.fetch=originalFetch;observer.disconnect();};
+                    }""")
                     page.locator('[data-source-action=open]').click();expect(page.locator('#sd-reader')).to_be_visible()
-                    # Literal search gets the final appendix despite only displaying one page.
-                    search=page.locator('form[data-source-form=search]');search.locator('[name=query]').fill('UNSELECTED-SENTINEL');search.locator('[type=submit]').click();expect(page.locator('.sd-search-results>button')).to_have_count(1)
+                    expect(page.locator('html')).to_have_attribute('data-source-race-held','true')
+                    search=page.locator('form[data-source-form=search]')
+                    search.locator('[name=query]').fill('UNSELECTED-SENTINEL')
+                    search.locator('[name=query]').evaluate('(el)=>el.setSelectionRange(3,9)')
+                    before_search=store.audit(c.id)
+                    page.evaluate('() => {window.__sourceRefreshRace.released=true;window.__sourceRefreshRace.release();}')
+                    page.wait_for_function('() => window.__sourceRefreshRace.renders>=2')
+                    expect(search.locator('[name=query]')).to_have_value('UNSELECTED-SENTINEL')
+                    check('typing survives delayed source index and reader refresh',True)
+                    check('late source refresh preserves query focus and selection',page.evaluate("() => document.activeElement.id==='sd-query'&&document.activeElement.selectionStart===3&&document.activeElement.selectionEnd===9"))
+                    check('query draft and refresh do not mutate case evidence or audit',store.audit(c.id)==before_search)
+                    page.evaluate('() => window.__sourceRefreshRace.restore()')
+                    # Original assertion retained: literal search finds the hidden appendix.
+                    search.locator('[type=submit]').click();expect(page.locator('.sd-search-results>button')).to_have_count(1)
                     page.locator('.sd-search-results>button').click();expect(page.locator('#sd-reader')).to_have_value(__import__('re').compile('.*UNSELECTED-SENTINEL.*',__import__('re').S))
                     check('whole original search reaches text beyond displayed page',True)
                     check('source HTML is displayed as text not executed',page.evaluate('window.sourceAttack===undefined'))

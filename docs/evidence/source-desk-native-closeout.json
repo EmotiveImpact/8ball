@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-26",
+  "scope": "Source Desk request-order correction",
+  "base_commit": "d27ad600342245d0222b5f4573da8fdcbbf8c1d4",
+  "base_tree": "dafc6e3d2d0a28f081695aea634c57834ff81515",
+  "failed_native_run": 36217951370,
+  "failed_artifact": 10896994626,
+  "failed_artifact_sha256": "56106bb2c50a3ddfb25f40de8c6f851e6cfa45625df4863d804387e9ee14bce5",
+  "baseline_regression": {
+    "passed": 4,
+    "failed": 8
+  },
+  "fixed_component_checks": 12,
+  "code_tests_passed": 938,
+  "local_source_browser_checks": 38,
+  "local_browser_mode": "explicit ASGI bridge",
+  "local_native": "ERR_BLOCKED_BY_ADMINISTRATOR",
+  "patched_native_result": "not_yet_observed",
+  "model_calls": 0,
+  "human_reviews_performed": false,
+  "merged": false,
+  "deployed": false,
+  "assertions_removed": false,
+  "search_timeout_increased": false,
+  "csp_changed": false
+}

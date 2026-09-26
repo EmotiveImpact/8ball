@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Source Desk: preserve the operator query across delayed refreshes
+
+2026-09-26 · `local_unreleased`
+
+Correct the native Source Desk failure without weakening search, original-text preservation or case-isolation checks. Alpha.8 was published before this correction; a new native result is still required.
+
+### Added
+
+- Twelve deterministic response-order component regressions and three real-API browser assertions.
+
+### Changed
+
+- Query state is captured on input; same-document renders preserve keyboard position. Search and navigation use independent generations.
+
+### Fixed
+
+- Delayed refresh no longer erases a typed query. Superseded results and earlier document requests cannot replace a newer operator choice.
+
+### Verification
+
+- 938 local code tests passed; all 12 focused checks passed. Original source fails 8 of the new checks.
+- 38 Source Desk browser checks passed through the explicit ASGI bridge. Native GitHub rerun must confirm the patched cumulative source.
+
+### Limitations
+
+- No new real model, independent expert or human accessibility review. No version acceptance, main merge or deployment.
+- The local native attempt remains administrator-blocked. No workaround changes its policy. Deferred research remains separate.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Late rendering can lose a draft without a runtime error. This is new evidence for EM-035, EM-053 and EM-051, not an added feature lane.
+- Risk: Fast test transports can hide response-order failures; obsolete search results can mislead operators.
+- Architecture: Keep draft state outside replaceable DOM and scope request generations to the work they supersede.
+- Roadmap decision: existing_task: resolve Source Desk/native acceptance only; maintain the owner scope freeze.
+Registered discoveries: EM-035, EM-053, EM-051.
+
+Roadmap items: `B02-14`, `B02-16`, `DOC-03`, `DOC-04`, `DOC-05`.
+
+Evidence: [docs/delivery/sessions/2026-09-26-source-desk-native-closeout.md](docs/delivery/sessions/2026-09-26-source-desk-native-closeout.md), [docs/evidence/source-desk-native-closeout.json](docs/evidence/source-desk-native-closeout.json), [docs/evidence/source-desk-native-failure.txt](docs/evidence/source-desk-native-failure.txt), [tests/test_source_view_races.py](tests/test_source_view_races.py), [tests/browser_sources.py](tests/browser_sources.py).
+
 ## 0.2.0-alpha.8 · Chosen Course: retain the human choice and reasons to reconsider
 
 2026-09-25 · `local_unreleased`

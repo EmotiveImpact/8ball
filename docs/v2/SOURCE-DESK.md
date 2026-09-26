@@ -55,3 +55,7 @@ Only import/preview routes receive the larger 1,300,000-byte JSON-body allowance
 Run `tests/test_source_desk.py`, `tests/test_source_api.py`, all existing tests, and `tests/browser_sources.py` alongside the earlier browser suites. The source-map helper tests include CRLF, combining marks, emoji, surrogate boundaries, overlapping selections and a bounded batch. The browser journey uses the actual application and SQLite, not an invented source screen. Bridge/native results must be labelled separately.
 
 Continue B02-14 with reviewer-safe entity/claim reconciliation and independent mixed-document tests. Continue B02-10 with ambiguity-preserving dates, explicit timezone review and source-grounded identity proposals. No requirement is removed to mark the source milestone complete.
+
+## Native response-order correction, 26 September 2026
+
+Typing updates a case/document-scoped query draft immediately. Refreshing the same original preserves that text and keyboard selection. New queries invalidate old results; navigation/closure invalidate in-flight results from the prior view. A late reopen cannot select a document over a newer deliberate choice. These are local UI reads only, never evidence, approvals or model requests. Run `tests/test_source_view_races.py` and `tests/browser_sources.py` with all cumulative native suites. The browser adds a controlled delay and then forwards the real index request unchanged; original search/export/lineage assertions remain.
