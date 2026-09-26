@@ -1,0 +1,2594 @@
+{
+  "fixture_sha256": "5570e37895622e04bf4f9c226032b14e7ac8ff17a92df954f8f2d84d9adf9bee",
+  "status": "UNREVIEWED",
+  "notice": "Author-created engineering examples, not independent expert judgements. Do not fill in labels with a model and describe them as human validation.",
+  "reviews": [
+    {
+      "fixture_id": "two-alternatives",
+      "requested_outcome": "Resolve the customer issue and obtain their confirmation.",
+      "source_text": "The service failed. Repair or an approved alternative might resolve it. No remedy has yet been confirmed.",
+      "review_focus": "Two candidate paths must remain alternatives, not be treated as tasks both necessarily required.",
+      "candidate_snapshot": {
+        "id": "two-alternatives",
+        "owner": "Operator",
+        "deadline": "2026-09-25T09:00:00Z",
+        "budget": 3000,
+        "graph": {
+          "conditions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Issue understood",
+              "confirmation": "Review the recorded customer report",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "remedy",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "A remedy is available",
+              "confirmation": "Authorised owner confirms the available remedy",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "resolved",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Customer accepts resolution",
+              "confirmation": "Written customer confirmation of the delivered remedy",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            }
+          ],
+          "actions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Review issue",
+              "owner": "Lead",
+              "purpose": "Establish issue scope",
+              "requires": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "scope",
+                  "value": true
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "repair",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Repair the service",
+              "owner": "Engineer",
+              "purpose": "Restore service",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 60,
+              "cost": 500,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "replace",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Offer approved alternative",
+              "owner": "Lead",
+              "purpose": "Provide an authorised alternative",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 30,
+              "cost": 800,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "verify",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Verify resolution with customer",
+              "owner": "Lead",
+              "purpose": "Obtain customer confirmation",
+              "requires": {
+                "op": "atom",
+                "condition_id": "remedy",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "resolved",
+                  "value": true
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": true,
+              "wait_minutes": null,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            }
+          ],
+          "objectives": [
+            {
+              "id": "resolve",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Resolve issue with customer confirmation",
+              "mandatory": true,
+              "priority": 1,
+              "success": {
+                "op": "atom",
+                "condition_id": "resolved",
+                "value": true,
+                "args": []
+              },
+              "failure": null
+            }
+          ]
+        },
+        "evidence": [],
+        "observations": [],
+        "actors": [],
+        "relationships": [],
+        "events": [],
+        "claims": [],
+        "constraints": [],
+        "resources": [],
+        "decisions": [],
+        "questions": [],
+        "completed": [],
+        "approvals": [],
+        "revision": 0
+      },
+      "rubric": [
+        {
+          "criterion": "target",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "sources",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "dependencies",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "authority",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "estimates",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "alternatives",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        }
+      ]
+    },
+    {
+      "fixture_id": "missing-outcome",
+      "requested_outcome": "Resolve the customer issue and obtain their confirmation.",
+      "source_text": "The desired result is known but no mandatory condition has been selected.",
+      "review_focus": "No success expression must not mean success by default.",
+      "candidate_snapshot": {
+        "id": "missing-outcome",
+        "owner": "Operator",
+        "deadline": "2026-09-25T09:00:00Z",
+        "budget": 3000,
+        "graph": {
+          "conditions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Issue understood",
+              "confirmation": "Review the recorded customer report",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "remedy",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "A remedy is available",
+              "confirmation": "Authorised owner confirms the available remedy",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "resolved",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Customer accepts resolution",
+              "confirmation": "Written customer confirmation of the delivered remedy",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            }
+          ],
+          "actions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Review issue",
+              "owner": "Lead",
+              "purpose": "Establish issue scope",
+              "requires": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "scope",
+                  "value": true
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "repair",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Repair the service",
+              "owner": "Engineer",
+              "purpose": "Restore service",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 60,
+              "cost": 500,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "replace",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Offer approved alternative",
+              "owner": "Lead",
+              "purpose": "Provide an authorised alternative",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 30,
+              "cost": 800,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "verify",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Verify resolution with customer",
+              "owner": "Lead",
+              "purpose": "Obtain customer confirmation",
+              "requires": {
+                "op": "atom",
+                "condition_id": "remedy",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "resolved",
+                  "value": true
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": true,
+              "wait_minutes": null,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            }
+          ],
+          "objectives": []
+        },
+        "evidence": [],
+        "observations": [],
+        "actors": [],
+        "relationships": [],
+        "events": [],
+        "claims": [],
+        "constraints": [],
+        "resources": [],
+        "decisions": [],
+        "questions": [],
+        "completed": [],
+        "approvals": [],
+        "revision": 0
+      },
+      "rubric": [
+        {
+          "criterion": "target",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "sources",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "dependencies",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "authority",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "estimates",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "alternatives",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        }
+      ]
+    },
+    {
+      "fixture_id": "zero-budget",
+      "requested_outcome": "Resolve the customer issue within authorised budget.",
+      "source_text": "No expenditure is currently authorised. The proposed remedy has a stated cost.",
+      "review_focus": "Separate no compatible enumerated route from proof that no real-world option exists.",
+      "candidate_snapshot": {
+        "id": "zero-budget",
+        "owner": "Operator",
+        "deadline": "2026-09-25T09:00:00Z",
+        "budget": 0,
+        "graph": {
+          "conditions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Issue understood",
+              "confirmation": "Review the recorded customer report",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "remedy",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "A remedy is available",
+              "confirmation": "Authorised owner confirms the available remedy",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "resolved",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Customer accepts resolution",
+              "confirmation": "Written customer confirmation of the delivered remedy",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            }
+          ],
+          "actions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Review issue",
+              "owner": "Lead",
+              "purpose": "Establish issue scope",
+              "requires": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "scope",
+                  "value": true
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "repair",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Repair the service",
+              "owner": "Engineer",
+              "purpose": "Restore service",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 60,
+              "cost": 500,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "replace",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Offer approved alternative",
+              "owner": "Lead",
+              "purpose": "Provide an authorised alternative",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 30,
+              "cost": 800,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "verify",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Verify resolution with customer",
+              "owner": "Lead",
+              "purpose": "Obtain customer confirmation",
+              "requires": {
+                "op": "atom",
+                "condition_id": "remedy",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "resolved",
+                  "value": true
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": true,
+              "wait_minutes": null,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            }
+          ],
+          "objectives": [
+            {
+              "id": "resolve",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Resolve issue with customer confirmation",
+              "mandatory": true,
+              "priority": 1,
+              "success": {
+                "op": "atom",
+                "condition_id": "resolved",
+                "value": true,
+                "args": []
+              },
+              "failure": null
+            }
+          ]
+        },
+        "evidence": [],
+        "observations": [],
+        "actors": [],
+        "relationships": [],
+        "events": [],
+        "claims": [],
+        "constraints": [],
+        "resources": [],
+        "decisions": [],
+        "questions": [],
+        "completed": [],
+        "approvals": [],
+        "revision": 0
+      },
+      "rubric": [
+        {
+          "criterion": "target",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "sources",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "dependencies",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "authority",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "estimates",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "alternatives",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        }
+      ]
+    },
+    {
+      "fixture_id": "completed-not-confirmed",
+      "requested_outcome": "Customer confirms resolution.",
+      "source_text": "A call was completed, but there is no recorded evidence that the customer accepted the remedy.",
+      "review_focus": "Completed work must not become a successful result.",
+      "candidate_snapshot": {
+        "id": "completed-not-confirmed",
+        "owner": "Operator",
+        "deadline": "2026-09-25T09:00:00Z",
+        "budget": 3000,
+        "graph": {
+          "conditions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Issue understood",
+              "confirmation": "Review the recorded customer report",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "remedy",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "A remedy is available",
+              "confirmation": "Authorised owner confirms the available remedy",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "resolved",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Customer accepts resolution",
+              "confirmation": "Written customer confirmation of the delivered remedy",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            }
+          ],
+          "actions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Review issue",
+              "owner": "Lead",
+              "purpose": "Establish issue scope",
+              "requires": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "scope",
+                  "value": true
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "repair",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Repair the service",
+              "owner": "Engineer",
+              "purpose": "Restore service",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 60,
+              "cost": 500,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "replace",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Offer approved alternative",
+              "owner": "Lead",
+              "purpose": "Provide an authorised alternative",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 30,
+              "cost": 800,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "verify",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Verify resolution with customer",
+              "owner": "Lead",
+              "purpose": "Obtain customer confirmation",
+              "requires": {
+                "op": "atom",
+                "condition_id": "remedy",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "resolved",
+                  "value": true
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": true,
+              "wait_minutes": null,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            }
+          ],
+          "objectives": [
+            {
+              "id": "resolve",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Resolve issue with customer confirmation",
+              "mandatory": true,
+              "priority": 1,
+              "success": {
+                "op": "atom",
+                "condition_id": "resolved",
+                "value": true,
+                "args": []
+              },
+              "failure": null
+            }
+          ]
+        },
+        "evidence": [],
+        "observations": [],
+        "actors": [],
+        "relationships": [],
+        "events": [],
+        "claims": [],
+        "constraints": [],
+        "resources": [],
+        "decisions": [],
+        "questions": [],
+        "completed": [
+          "verify"
+        ],
+        "approvals": [],
+        "revision": 0
+      },
+      "rubric": [
+        {
+          "criterion": "target",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "sources",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "dependencies",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "authority",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "estimates",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "alternatives",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        }
+      ]
+    },
+    {
+      "fixture_id": "contradictory-evidence",
+      "requested_outcome": "Agree an evidence-backed resolution.",
+      "source_text": "Two reviewed fixture sources give opposite accounts of whether issue scope is understood.",
+      "review_focus": "A reviewer or model cannot average away a factual dispute.",
+      "candidate_snapshot": {
+        "id": "contradictory-evidence",
+        "owner": "Operator",
+        "deadline": "2026-09-25T09:00:00Z",
+        "budget": 3000,
+        "graph": {
+          "conditions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Issue understood",
+              "confirmation": "Review the recorded customer report",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "remedy",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "A remedy is available",
+              "confirmation": "Authorised owner confirms the available remedy",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "resolved",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Customer accepts resolution",
+              "confirmation": "Written customer confirmation of the delivered remedy",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            }
+          ],
+          "actions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Review issue",
+              "owner": "Lead",
+              "purpose": "Establish issue scope",
+              "requires": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "scope",
+                  "value": true
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "repair",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Repair the service",
+              "owner": "Engineer",
+              "purpose": "Restore service",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 60,
+              "cost": 500,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "replace",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Offer approved alternative",
+              "owner": "Lead",
+              "purpose": "Provide an authorised alternative",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 30,
+              "cost": 800,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "verify",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Verify resolution with customer",
+              "owner": "Lead",
+              "purpose": "Obtain customer confirmation",
+              "requires": {
+                "op": "atom",
+                "condition_id": "remedy",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "resolved",
+                  "value": true
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": true,
+              "wait_minutes": null,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            }
+          ],
+          "objectives": [
+            {
+              "id": "resolve",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Resolve issue with customer confirmation",
+              "mandatory": true,
+              "priority": 1,
+              "success": {
+                "op": "atom",
+                "condition_id": "resolved",
+                "value": true,
+                "args": []
+              },
+              "failure": null
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "id": "first",
+            "title": "Fictional source first",
+            "source": "Author-created test",
+            "text": "Conflicting fixture assertion.",
+            "status": "reviewed",
+            "added_at": "2026-09-24T09:00:00Z"
+          },
+          {
+            "id": "second",
+            "title": "Fictional source second",
+            "source": "Author-created test",
+            "text": "Conflicting fixture assertion.",
+            "status": "reviewed",
+            "added_at": "2026-09-24T09:00:00Z"
+          }
+        ],
+        "observations": [
+          {
+            "id": "first",
+            "condition_id": "scope",
+            "evidence_id": "first",
+            "value": true,
+            "rationale": "Engineering fixture only",
+            "supersedes": [],
+            "added_at": "2026-09-24T09:00:00Z"
+          },
+          {
+            "id": "second",
+            "condition_id": "scope",
+            "evidence_id": "second",
+            "value": false,
+            "rationale": "Engineering fixture only",
+            "supersedes": [],
+            "added_at": "2026-09-24T09:00:00Z"
+          }
+        ],
+        "actors": [],
+        "relationships": [],
+        "events": [],
+        "claims": [],
+        "constraints": [],
+        "resources": [],
+        "decisions": [],
+        "questions": [],
+        "completed": [],
+        "approvals": [],
+        "revision": 0
+      },
+      "rubric": [
+        {
+          "criterion": "target",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "sources",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "dependencies",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "authority",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "estimates",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "alternatives",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        }
+      ]
+    },
+    {
+      "fixture_id": "destructive-effect",
+      "requested_outcome": "Maintain an available remedy and obtain accepted resolution.",
+      "source_text": "One candidate action claims to resolve the issue but also removes the remedy required by the objective. The budget cannot fund both remedy options to restore it afterwards.",
+      "review_focus": "Forward simulation must not ignore a destructive effect on a mandatory outcome.",
+      "candidate_snapshot": {
+        "id": "destructive-effect",
+        "owner": "Operator",
+        "deadline": "2026-09-25T09:00:00Z",
+        "budget": 900,
+        "graph": {
+          "conditions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Issue understood",
+              "confirmation": "Review the recorded customer report",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "remedy",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "A remedy is available",
+              "confirmation": "Authorised owner confirms the available remedy",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "resolved",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Customer accepts resolution",
+              "confirmation": "Written customer confirmation of the delivered remedy",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            }
+          ],
+          "actions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Review issue",
+              "owner": "Lead",
+              "purpose": "Establish issue scope",
+              "requires": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "scope",
+                  "value": true
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "repair",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Repair the service",
+              "owner": "Engineer",
+              "purpose": "Restore service",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 60,
+              "cost": 500,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "replace",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Offer approved alternative",
+              "owner": "Lead",
+              "purpose": "Provide an authorised alternative",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 30,
+              "cost": 800,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "verify",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Verify resolution with customer",
+              "owner": "Lead",
+              "purpose": "Obtain customer confirmation",
+              "requires": {
+                "op": "atom",
+                "condition_id": "remedy",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "resolved",
+                  "value": true
+                },
+                {
+                  "condition_id": "remedy",
+                  "value": false
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": true,
+              "wait_minutes": null,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            }
+          ],
+          "objectives": [
+            {
+              "id": "resolve",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Resolve issue with customer confirmation",
+              "mandatory": true,
+              "priority": 1,
+              "success": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": [
+                  {
+                    "op": "atom",
+                    "condition_id": "resolved",
+                    "value": true,
+                    "args": []
+                  },
+                  {
+                    "op": "atom",
+                    "condition_id": "remedy",
+                    "value": true,
+                    "args": []
+                  }
+                ]
+              },
+              "failure": null
+            }
+          ]
+        },
+        "evidence": [],
+        "observations": [],
+        "actors": [],
+        "relationships": [],
+        "events": [],
+        "claims": [],
+        "constraints": [],
+        "resources": [],
+        "decisions": [],
+        "questions": [],
+        "completed": [],
+        "approvals": [],
+        "revision": 0
+      },
+      "rubric": [
+        {
+          "criterion": "target",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "sources",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "dependencies",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "authority",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "estimates",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "alternatives",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        }
+      ]
+    },
+    {
+      "fixture_id": "expired-deadline",
+      "requested_outcome": "Resolve the issue before the stated deadline.",
+      "source_text": "The deadline has already elapsed and no acceptance has been recorded.",
+      "review_focus": "A positive route duration cannot fit an expired deadline.",
+      "candidate_snapshot": {
+        "id": "expired-deadline",
+        "owner": "Operator",
+        "deadline": "2026-09-24T08:59:00Z",
+        "budget": 3000,
+        "graph": {
+          "conditions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Issue understood",
+              "confirmation": "Review the recorded customer report",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "remedy",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "A remedy is available",
+              "confirmation": "Authorised owner confirms the available remedy",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "resolved",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Customer accepts resolution",
+              "confirmation": "Written customer confirmation of the delivered remedy",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            }
+          ],
+          "actions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Review issue",
+              "owner": "Lead",
+              "purpose": "Establish issue scope",
+              "requires": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "scope",
+                  "value": true
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "repair",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Repair the service",
+              "owner": "Engineer",
+              "purpose": "Restore service",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 60,
+              "cost": 500,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "replace",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Offer approved alternative",
+              "owner": "Lead",
+              "purpose": "Provide an authorised alternative",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 30,
+              "cost": 800,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "verify",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Verify resolution with customer",
+              "owner": "Lead",
+              "purpose": "Obtain customer confirmation",
+              "requires": {
+                "op": "atom",
+                "condition_id": "remedy",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "resolved",
+                  "value": true
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": true,
+              "wait_minutes": null,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            }
+          ],
+          "objectives": [
+            {
+              "id": "resolve",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Resolve issue with customer confirmation",
+              "mandatory": true,
+              "priority": 1,
+              "success": {
+                "op": "atom",
+                "condition_id": "resolved",
+                "value": true,
+                "args": []
+              },
+              "failure": null
+            }
+          ]
+        },
+        "evidence": [],
+        "observations": [],
+        "actors": [],
+        "relationships": [],
+        "events": [],
+        "claims": [],
+        "constraints": [],
+        "resources": [],
+        "decisions": [],
+        "questions": [],
+        "completed": [],
+        "approvals": [],
+        "revision": 0
+      },
+      "rubric": [
+        {
+          "criterion": "target",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "sources",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "dependencies",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "authority",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "estimates",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "alternatives",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        }
+      ]
+    },
+    {
+      "fixture_id": "wrong-but-valid-outcome",
+      "requested_outcome": "Customer confirms resolution, not merely receipt of an offer.",
+      "source_text": "The customer has not accepted. Sending an offer is not the required outcome.",
+      "review_focus": "Deliberate semantic defect: this graph targets sending an offer instead of obtaining acceptance. Structural validity cannot certify meaning.",
+      "candidate_snapshot": {
+        "id": "wrong-but-valid-outcome",
+        "owner": "Operator",
+        "deadline": "2026-09-25T09:00:00Z",
+        "budget": 3000,
+        "graph": {
+          "conditions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Issue understood",
+              "confirmation": "Review the recorded customer report",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "remedy",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "A remedy is available",
+              "confirmation": "Authorised owner confirms the available remedy",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            },
+            {
+              "id": "resolved",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "An offer was sent",
+              "confirmation": "Outbound message is recorded",
+              "kind": "prerequisite",
+              "due_at": null,
+              "criticality": "ordinary",
+              "actor_id": null
+            }
+          ],
+          "actions": [
+            {
+              "id": "scope",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Review issue",
+              "owner": "Lead",
+              "purpose": "Establish issue scope",
+              "requires": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "scope",
+                  "value": true
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "repair",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Repair the service",
+              "owner": "Engineer",
+              "purpose": "Restore service",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 60,
+              "cost": 500,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "replace",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Offer approved alternative",
+              "owner": "Lead",
+              "purpose": "Provide an authorised alternative",
+              "requires": {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "remedy",
+                  "value": true
+                }
+              ],
+              "minutes": 30,
+              "cost": 800,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            },
+            {
+              "id": "verify",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Record the outbound offer",
+              "owner": "Lead",
+              "purpose": "Record sending, not acceptance",
+              "requires": {
+                "op": "atom",
+                "condition_id": "remedy",
+                "value": true,
+                "args": []
+              },
+              "guard": {
+                "op": "all",
+                "condition_id": null,
+                "value": true,
+                "args": []
+              },
+              "effects": [
+                {
+                  "condition_id": "resolved",
+                  "value": true
+                }
+              ],
+              "minutes": 20,
+              "cost": 0,
+              "risk": "low",
+              "approval_required": false,
+              "contingent": false,
+              "wait_minutes": 0,
+              "earliest_start": null,
+              "expires_at": null,
+              "reversibility": "reversible",
+              "side_effects": [],
+              "actor_ids": [],
+              "resources": [],
+              "decision_id": null,
+              "decision_option": null,
+              "enabled": true,
+              "contingencies": []
+            }
+          ],
+          "objectives": [
+            {
+              "id": "resolve",
+              "provenance": {
+                "origin": "operator",
+                "references": [],
+                "note": "",
+                "run_id": null
+              },
+              "title": "Resolve issue with customer confirmation",
+              "mandatory": true,
+              "priority": 1,
+              "success": {
+                "op": "atom",
+                "condition_id": "resolved",
+                "value": true,
+                "args": []
+              },
+              "failure": null
+            }
+          ]
+        },
+        "evidence": [],
+        "observations": [],
+        "actors": [],
+        "relationships": [],
+        "events": [],
+        "claims": [],
+        "constraints": [],
+        "resources": [],
+        "decisions": [],
+        "questions": [],
+        "completed": [],
+        "approvals": [],
+        "revision": 0
+      },
+      "rubric": [
+        {
+          "criterion": "target",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "sources",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "dependencies",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "authority",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "estimates",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        },
+        {
+          "criterion": "alternatives",
+          "verdict": null,
+          "rationale": null,
+          "reviewer": null
+        }
+      ]
+    }
+  ]
+}

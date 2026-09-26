@@ -1,0 +1,89 @@
+{
+  "checkpoint": "0.2.0-alpha.7",
+  "date": "2026-09-24",
+  "delivery": "local_unreleased",
+  "remote_base": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
+  "input_tree": "cc821a2c5bfba0aa4027dcdc435d93a33ba5670c",
+  "local_comparison_commit": "61ffde6b5b98165d376d0f88345c752d784b5659",
+  "observed": {
+    "baseline_tests_reproduced": 794,
+    "code_tests_passed": 855,
+    "new_code_tests": 61,
+    "installed_kernel_code_tests_passed": 855,
+    "new_keyboard_checks_passed": 36,
+    "new_keyboard_mode": "explicit ASGI bridge",
+    "consolidated_run": "20260924T053355Z-e24e76a1 (full source-bound report supplied in developer pack)",
+    "browser_checks_passed": 344,
+    "browser_mode": "explicit ASGI bridge",
+    "browser_suite_count": 10,
+    "structural_fixtures_passed": 8,
+    "python_compilation": "passed",
+    "javascript_syntax": "passed",
+    "generated_documents": "passed",
+    "source_and_artifact_inspection": "passed before documentation-only result update",
+    "browser_suites": [
+      {
+        "name": "browser-legacy",
+        "checks": 27
+      },
+      {
+        "name": "browser-workspace",
+        "checks": 51
+      },
+      {
+        "name": "browser-providers",
+        "checks": 15
+      },
+      {
+        "name": "browser-connections",
+        "checks": 38
+      },
+      {
+        "name": "browser-studio",
+        "checks": 44
+      },
+      {
+        "name": "browser-sources",
+        "checks": 35
+      },
+      {
+        "name": "browser-insights",
+        "checks": 39
+      },
+      {
+        "name": "browser-grounding",
+        "checks": 26
+      },
+      {
+        "name": "browser-plan_review",
+        "checks": 33
+      },
+      {
+        "name": "browser-accessibility",
+        "checks": 36
+      }
+    ]
+  },
+  "native_browser": {
+    "status": "blocked",
+    "reason": "ERR_BLOCKED_BY_ADMINISTRATOR",
+    "policy_changed": false
+  },
+  "providers": {
+    "actual_inference_performed": false,
+    "ollama": "Configured runtime could not be reached",
+    "huggingface": "Required server configuration not supplied",
+    "jev": "No credentials or live calls",
+    "downloads": "Official runtime/registry hosts failed DNS lookup; no model installed"
+  },
+  "expert_review": false,
+  "full_prd_acceptance": false,
+  "merged": false,
+  "deployed": false,
+  "public_sdk_released": false,
+  "limits": [
+    "Synthetic scripted review is not independent human evaluation.",
+    "A matching source/artifact hash is not an external signature.",
+    "Current platform only. Full human screen-reader and supported-platform evaluation remains outstanding."
+  ]
+}

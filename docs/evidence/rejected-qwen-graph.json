@@ -1,0 +1,73 @@
+{
+  "conditions": [
+    {
+      "id": "cond_001",
+      "title": "Venue Manager Confirms Spare Chair Availability",
+      "confirmation": "Written confirmation from the venue manager stating specific spare chairs are available on site."
+    },
+    {
+      "id": "cond_002",
+      "title": "Hire Company Provides Quote for Chairs",
+      "confirmation": "A valid, signed quote from a local hire company detailing chair availability and cost."
+    },
+    {
+      "id": "cond_003",
+      "title": "Venue Manager Approves Hire Company Option",
+      "confirmation": "Written approval from the venue manager permitting the use of chairs provided by the hire company."
+    }
+  ],
+  "actions": [
+    {
+      "id": "act_001",
+      "title": "Request Spare Chairs from Venue Manager",
+      "owner": "Event Coordinator",
+      "requires_all": [],
+      "produces": ["cond_001"],
+      "minutes": 30,
+      "cost": 0,
+      "external": true
+    },
+    {
+      "id": "act_002",
+      "title": "Contact Local Hire Company for Quote",
+      "owner": "Event Coordinator",
+      "requires_all": [],
+      "produces": ["cond_002"],
+      "minutes": 45,
+      "cost": 1500,
+      "external": true
+    },
+    {
+      "id": "act_003",
+      "title": "Submit Hire Company Quote to Venue Manager",
+      "owner": "Event Coordinator",
+      "requires_all": ["cond_002"],
+      "produces": ["cond_003"],
+      "minutes": 15,
+      "cost": 0,
+      "external": true
+    },
+    {
+      "id": "act_004",
+      "title": "Secure Spare Chairs from Venue Manager",
+      "owner": "Event Coordinator",
+      "requires_all": ["cond_001"],
+      "produces": ["cond_003"],
+      "minutes": 60,
+      "cost": 500,
+      "external": false
+    },
+    {
+      "id": "act_005",
+      "title": "Procure Chairs via Hire Company",
+      "owner": "Event Coordinator",
+      "requires_all": ["cond_003"],
+      "produces": ["cond_001", "cond_002"],
+      "minutes": 90,
+      "cost": 5000,
+      "external": true
+    }
+  ],
+  "goal_conditions": ["cond_001", "cond_002", "cond_003"],
+  "final_verification_action_id": "act_006"
+}

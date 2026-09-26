@@ -1,0 +1,513 @@
+{
+  "scope": "Author-created structural regression, not model inference or a real case",
+  "as_of": "2026-09-24T09:00:00+00:00",
+  "base_planner_blob": "91b1557621087db15701f14fbce137a3c0bb146d",
+  "fixture": {
+    "id": "destructive-effect",
+    "owner": "Operator",
+    "deadline": "2026-09-25T09:00:00Z",
+    "budget": 3000,
+    "graph": {
+      "conditions": [
+        {
+          "id": "scope",
+          "provenance": {
+            "origin": "operator",
+            "references": [],
+            "note": "",
+            "run_id": null
+          },
+          "title": "Issue understood",
+          "confirmation": "Review the recorded customer report",
+          "kind": "prerequisite",
+          "due_at": null,
+          "criticality": "ordinary",
+          "actor_id": null
+        },
+        {
+          "id": "remedy",
+          "provenance": {
+            "origin": "operator",
+            "references": [],
+            "note": "",
+            "run_id": null
+          },
+          "title": "A remedy is available",
+          "confirmation": "Authorised owner confirms the available remedy",
+          "kind": "prerequisite",
+          "due_at": null,
+          "criticality": "ordinary",
+          "actor_id": null
+        },
+        {
+          "id": "resolved",
+          "provenance": {
+            "origin": "operator",
+            "references": [],
+            "note": "",
+            "run_id": null
+          },
+          "title": "Customer accepts resolution",
+          "confirmation": "Written customer confirmation of the delivered remedy",
+          "kind": "prerequisite",
+          "due_at": null,
+          "criticality": "ordinary",
+          "actor_id": null
+        }
+      ],
+      "actions": [
+        {
+          "id": "scope",
+          "provenance": {
+            "origin": "operator",
+            "references": [],
+            "note": "",
+            "run_id": null
+          },
+          "title": "Review issue",
+          "owner": "Lead",
+          "purpose": "Establish issue scope",
+          "requires": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "guard": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "effects": [
+            {
+              "condition_id": "scope",
+              "value": true
+            }
+          ],
+          "minutes": 20,
+          "cost": 0,
+          "risk": "low",
+          "approval_required": false,
+          "contingent": false,
+          "wait_minutes": 0,
+          "earliest_start": null,
+          "expires_at": null,
+          "reversibility": "reversible",
+          "side_effects": [],
+          "actor_ids": [],
+          "resources": [],
+          "decision_id": null,
+          "decision_option": null,
+          "enabled": true,
+          "contingencies": []
+        },
+        {
+          "id": "repair",
+          "provenance": {
+            "origin": "operator",
+            "references": [],
+            "note": "",
+            "run_id": null
+          },
+          "title": "Repair the service",
+          "owner": "Engineer",
+          "purpose": "Restore service",
+          "requires": {
+            "op": "atom",
+            "condition_id": "scope",
+            "value": true,
+            "args": []
+          },
+          "guard": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "effects": [
+            {
+              "condition_id": "remedy",
+              "value": true
+            }
+          ],
+          "minutes": 60,
+          "cost": 500,
+          "risk": "low",
+          "approval_required": false,
+          "contingent": false,
+          "wait_minutes": 0,
+          "earliest_start": null,
+          "expires_at": null,
+          "reversibility": "reversible",
+          "side_effects": [],
+          "actor_ids": [],
+          "resources": [],
+          "decision_id": null,
+          "decision_option": null,
+          "enabled": true,
+          "contingencies": []
+        },
+        {
+          "id": "replace",
+          "provenance": {
+            "origin": "operator",
+            "references": [],
+            "note": "",
+            "run_id": null
+          },
+          "title": "Offer approved alternative",
+          "owner": "Lead",
+          "purpose": "Provide an authorised alternative",
+          "requires": {
+            "op": "atom",
+            "condition_id": "scope",
+            "value": true,
+            "args": []
+          },
+          "guard": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "effects": [
+            {
+              "condition_id": "remedy",
+              "value": true
+            }
+          ],
+          "minutes": 30,
+          "cost": 800,
+          "risk": "low",
+          "approval_required": false,
+          "contingent": false,
+          "wait_minutes": 0,
+          "earliest_start": null,
+          "expires_at": null,
+          "reversibility": "reversible",
+          "side_effects": [],
+          "actor_ids": [],
+          "resources": [],
+          "decision_id": null,
+          "decision_option": null,
+          "enabled": true,
+          "contingencies": []
+        },
+        {
+          "id": "verify",
+          "provenance": {
+            "origin": "operator",
+            "references": [],
+            "note": "",
+            "run_id": null
+          },
+          "title": "Verify resolution with customer",
+          "owner": "Lead",
+          "purpose": "Obtain customer confirmation",
+          "requires": {
+            "op": "atom",
+            "condition_id": "remedy",
+            "value": true,
+            "args": []
+          },
+          "guard": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "effects": [
+            {
+              "condition_id": "resolved",
+              "value": true
+            },
+            {
+              "condition_id": "remedy",
+              "value": false
+            }
+          ],
+          "minutes": 20,
+          "cost": 0,
+          "risk": "low",
+          "approval_required": false,
+          "contingent": true,
+          "wait_minutes": null,
+          "earliest_start": null,
+          "expires_at": null,
+          "reversibility": "reversible",
+          "side_effects": [],
+          "actor_ids": [],
+          "resources": [],
+          "decision_id": null,
+          "decision_option": null,
+          "enabled": true,
+          "contingencies": []
+        }
+      ],
+      "objectives": [
+        {
+          "id": "resolve",
+          "provenance": {
+            "origin": "operator",
+            "references": [],
+            "note": "",
+            "run_id": null
+          },
+          "title": "Resolve issue with customer confirmation",
+          "mandatory": true,
+          "priority": 1,
+          "success": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": [
+              {
+                "op": "atom",
+                "condition_id": "resolved",
+                "value": true,
+                "args": []
+              },
+              {
+                "op": "atom",
+                "condition_id": "remedy",
+                "value": true,
+                "args": []
+              }
+            ]
+          },
+          "failure": null
+        }
+      ]
+    },
+    "evidence": [],
+    "observations": [],
+    "actors": [],
+    "relationships": [],
+    "events": [],
+    "claims": [],
+    "constraints": [],
+    "resources": [],
+    "decisions": [],
+    "questions": [],
+    "completed": [],
+    "approvals": [],
+    "revision": 0
+  },
+  "before": [
+    {
+      "id": "4b16ffbf40a69e",
+      "title": "Repair the service / Verify resolution with customer",
+      "actions": [
+        "scope",
+        "repair",
+        "replace",
+        "verify"
+      ],
+      "dependencies": [
+        [
+          "replace",
+          "verify"
+        ],
+        [
+          "scope",
+          "repair"
+        ],
+        [
+          "scope",
+          "replace"
+        ]
+      ],
+      "minutes": 80,
+      "status": "conditional",
+      "hard_breaches": []
+    },
+    {
+      "id": "bb38a944ca6edf",
+      "title": "Offer approved alternative / Verify resolution with customer",
+      "actions": [
+        "scope",
+        "replace",
+        "verify"
+      ],
+      "dependencies": [
+        [
+          "replace",
+          "verify"
+        ],
+        [
+          "scope",
+          "replace"
+        ]
+      ],
+      "minutes": 70,
+      "status": "constraint_failure",
+      "hard_breaches": [
+        "Final projected state does not satisfy every mandatory objective"
+      ]
+    },
+    {
+      "id": "4b16ffbf40a69e",
+      "title": "Offer approved alternative / Verify resolution with customer",
+      "actions": [
+        "scope",
+        "repair",
+        "replace",
+        "verify"
+      ],
+      "dependencies": [
+        [
+          "repair",
+          "verify"
+        ],
+        [
+          "scope",
+          "repair"
+        ],
+        [
+          "scope",
+          "replace"
+        ]
+      ],
+      "minutes": 100,
+      "status": "constraint_failure",
+      "hard_breaches": [
+        "Final projected state does not satisfy every mandatory objective"
+      ]
+    },
+    {
+      "id": "8c416fea99bc79",
+      "title": "Repair the service / Verify resolution with customer",
+      "actions": [
+        "scope",
+        "repair",
+        "verify"
+      ],
+      "dependencies": [
+        [
+          "repair",
+          "verify"
+        ],
+        [
+          "scope",
+          "repair"
+        ]
+      ],
+      "minutes": 100,
+      "status": "constraint_failure",
+      "hard_breaches": [
+        "Final projected state does not satisfy every mandatory objective"
+      ]
+    }
+  ],
+  "after": [
+    {
+      "id": "4b16ffbf40a69e_ad884a4670d78428",
+      "title": "Repair the service / Verify resolution with customer",
+      "actions": [
+        "scope",
+        "repair",
+        "replace",
+        "verify"
+      ],
+      "dependencies": [
+        [
+          "replace",
+          "verify"
+        ],
+        [
+          "scope",
+          "repair"
+        ],
+        [
+          "scope",
+          "replace"
+        ]
+      ],
+      "minutes": 80,
+      "status": "conditional",
+      "hard_breaches": []
+    },
+    {
+      "id": "bb38a944ca6edf",
+      "title": "Offer approved alternative / Verify resolution with customer",
+      "actions": [
+        "scope",
+        "replace",
+        "verify"
+      ],
+      "dependencies": [
+        [
+          "replace",
+          "verify"
+        ],
+        [
+          "scope",
+          "replace"
+        ]
+      ],
+      "minutes": 70,
+      "status": "constraint_failure",
+      "hard_breaches": [
+        "Final projected state does not satisfy every mandatory objective"
+      ]
+    },
+    {
+      "id": "4b16ffbf40a69e_8b2758675e4d3502",
+      "title": "Offer approved alternative / Verify resolution with customer",
+      "actions": [
+        "scope",
+        "repair",
+        "replace",
+        "verify"
+      ],
+      "dependencies": [
+        [
+          "repair",
+          "verify"
+        ],
+        [
+          "scope",
+          "repair"
+        ],
+        [
+          "scope",
+          "replace"
+        ]
+      ],
+      "minutes": 100,
+      "status": "constraint_failure",
+      "hard_breaches": [
+        "Final projected state does not satisfy every mandatory objective"
+      ]
+    },
+    {
+      "id": "8c416fea99bc79",
+      "title": "Repair the service / Verify resolution with customer",
+      "actions": [
+        "scope",
+        "repair",
+        "verify"
+      ],
+      "dependencies": [
+        [
+          "repair",
+          "verify"
+        ],
+        [
+          "scope",
+          "repair"
+        ]
+      ],
+      "minutes": 100,
+      "status": "constraint_failure",
+      "hard_breaches": [
+        "Final projected state does not satisfy every mandatory objective"
+      ]
+    }
+  ],
+  "old_unique_ids": 3,
+  "new_unique_ids": 4,
+  "route_count": 4,
+  "current_source_sha256": "d336b88d0dee3876a2d4222245a7fb6b65c1798f107e9c93c1a8ed6e418b4cb4"
+}

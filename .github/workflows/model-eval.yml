@@ -1,0 +1,32 @@
+name: Small-model evidence
+on:
+  push:
+    branches: [feat/situation-intelligence-v2]
+    paths: ['evals/**', '.github/workflows/model-eval.yml', 'eightball/providers.py']
+permissions:
+  contents: read
+jobs:
+  real-classifier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install CPU inference dependencies
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r requirements.txt
+          python -m pip install 'gliclass @ git+https://github.com/Knowledgator/GLiClass.git@40baa67cdea577449bc3f6a251646377b2cb0a6c'
+      - name: Real inference on fictional challenge set
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          TOKENIZERS_PARALLELISM: 'false'
+        run: python evals/live_models.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: small-model-evidence
+          path: artifacts/models/
+          if-no-files-found: warn

@@ -1,0 +1,95 @@
+{
+  "frame": {
+    "readiness": {
+      "title": "Suitable chairs available for final inspection",
+      "confirmation": "Count and inspect chairs at the venue"
+    },
+    "success_criteria": [
+      {
+        "title": "Required chairs available and accepted",
+        "confirmation": "Venue manager confirms the required count and suitability in writing"
+      }
+    ],
+    "verification": {
+      "title": "Inspect chairs and obtain written acceptance",
+      "owner": "Venue manager",
+      "minutes": 20,
+      "cost": 100,
+      "external": true,
+      "wait_minutes": null,
+      "requires_existing": []
+    },
+    "approaches": [
+      {
+        "name": "Use on-site spare chairs",
+        "rationale": "Check the venue\u2019s spare stock and arrange it for the event"
+      },
+      {
+        "name": "Hire replacement chairs",
+        "rationale": "Check local hire availability and arrange authorised delivery"
+      }
+    ]
+  },
+  "routes": {
+    "routes": [
+      {
+        "approach_index": 0,
+        "sequential_steps": [
+          {
+            "action": {
+              "title": "Confirm usable spare stock",
+              "owner": "Venue coordinator",
+              "minutes": 20,
+              "cost": 100,
+              "external": true,
+              "wait_minutes": null,
+              "requires_existing": []
+            },
+            "result": {
+              "title": "Usable spare stock confirmed",
+              "confirmation": "Reviewed venue stock record and count"
+            }
+          }
+        ],
+        "establish_readiness": {
+          "title": "Arrange and count the venue chairs",
+          "owner": "Venue coordinator",
+          "minutes": 20,
+          "cost": 100,
+          "external": true,
+          "wait_minutes": null,
+          "requires_existing": []
+        }
+      },
+      {
+        "approach_index": 1,
+        "sequential_steps": [
+          {
+            "action": {
+              "title": "Confirm availability and approve hire terms",
+              "owner": "Case lead",
+              "minutes": 20,
+              "cost": 100,
+              "external": true,
+              "wait_minutes": null,
+              "requires_existing": []
+            },
+            "result": {
+              "title": "Chair hire approved and available",
+              "confirmation": "Written hire approval and supplier availability"
+            }
+          }
+        ],
+        "establish_readiness": {
+          "title": "Receive and count hired chairs",
+          "owner": "Venue coordinator",
+          "minutes": 20,
+          "cost": 100,
+          "external": true,
+          "wait_minutes": null,
+          "requires_existing": []
+        }
+      }
+    ]
+  }
+}

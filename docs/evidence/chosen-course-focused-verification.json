@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-25",
+  "scope": "focused local Chosen Course implementation",
+  "recovered_base_tree": "907dc4ba85507de1ba1050e69425b3f926d611ac",
+  "baseline_tests_passed": 862,
+  "focused_code_tests_passed": 64,
+  "focused_browser_checks_passed": 29,
+  "browser_transport": "explicit local ASGI bridge",
+  "native_probe": "ERR_BLOCKED_BY_ADMINISTRATOR",
+  "model_calls": 0,
+  "source_pushed": false,
+  "merged": false,
+  "deployed": false,
+  "full_scope_accepted": false,
+  "aggregate_report": "See the final source-bound report in the developer pack. Focused results alone do not accept V0.2 or V0.3."
+}

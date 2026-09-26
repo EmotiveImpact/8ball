@@ -1,0 +1,40 @@
+name: Local generation evidence
+on:
+  push:
+    branches: [feat/situation-intelligence-v2]
+    paths: ['evals/live_generation.py', 'evals/generation-cases.json', '.github/workflows/generation-eval.yml', 'eightball/v2/intelligence.py', 'eightball/v2/contracts.py', 'eightball/v2/planner.py', 'endstate/compilation.py']
+permissions:
+  contents: read
+jobs:
+  local-generation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install -r requirements.txt
+      - name: Verify and start pinned local runtime
+        run: |
+          curl -fL --retry 2 https://github.com/ollama/ollama/releases/download/v0.34.3/ollama-linux-amd64.tar.zst -o "$RUNNER_TEMP/ollama.tar.zst"
+          echo "e83a089fd0cd2f79ee2933cca2085846a2065f497adbc6467c402177c68423f9  $RUNNER_TEMP/ollama.tar.zst" | sha256sum --check
+          mkdir -p "$RUNNER_TEMP/ollama"
+          tar --zstd -xf "$RUNNER_TEMP/ollama.tar.zst" -C "$RUNNER_TEMP/ollama"
+          rm "$RUNNER_TEMP/ollama.tar.zst"
+          echo "$RUNNER_TEMP/ollama/bin" >> "$GITHUB_PATH"
+          OLLAMA_HOST=127.0.0.1:11434 OLLAMA_NO_CLOUD=1 OLLAMA_NUM_PARALLEL=1 OLLAMA_MODELS="$RUNNER_TEMP/ollama-models" "$RUNNER_TEMP/ollama/bin/ollama" serve > "$RUNNER_TEMP/ollama.log" 2>&1 &
+          for n in $(seq 1 30); do curl -fsS http://127.0.0.1:11434/api/version && break; sleep 1; done
+      - name: Explicit public-model download
+        run: ollama pull qwen3.5:4b
+      - name: Exercise actual V0.2 extraction and graph adapter
+        env:
+          EIGHTBALL_OLLAMA_MODEL: qwen3.5:4b
+          EIGHTBALL_GRAPH_PROVIDER: ollama_staged
+        run: python evals/live_generation.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: local-generation-evidence
+          path: artifacts/generation/
+          if-no-files-found: warn

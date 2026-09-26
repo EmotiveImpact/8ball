@@ -1,0 +1,998 @@
+{
+  "fixture_sha256": "5570e37895622e04bf4f9c226032b14e7ac8ff17a92df954f8f2d84d9adf9bee",
+  "fixture_scope": "Frozen author-created engineering fixtures, not held-out professional labels or a model benchmark.",
+  "rubric_version": "endstate.plan-rubric.v1",
+  "actual_model_inference": false,
+  "independent_review_completed": false,
+  "structural_checks_passed": 8,
+  "total": 8,
+  "quality_gate": "NOT_ASSESSED",
+  "production_model_selected": false,
+  "results": [
+    {
+      "id": "two-alternatives",
+      "structural_checks_passed": true,
+      "report": {
+        "contract_version": "endstate.plan-review.v1",
+        "as_of": "2026-09-24T09:00:00+00:00",
+        "snapshot_id": "two-alternatives",
+        "revision": 0,
+        "target_trace": [
+          {
+            "objective_id": "resolve",
+            "title": "Resolve issue with customer confirmation",
+            "status": "unknown",
+            "success_expression": {
+              "op": "atom",
+              "condition_id": "resolved",
+              "value": true,
+              "args": []
+            },
+            "conditions": [
+              {
+                "id": "resolved",
+                "required_value": true,
+                "title": "Customer accepts resolution",
+                "confirmation": "Written customer confirmation of the delivered remedy",
+                "current_state": "unknown",
+                "supporting_source_ids": [],
+                "declared_producers": [
+                  "verify"
+                ]
+              }
+            ]
+          }
+        ],
+        "flags": [
+          {
+            "rule": "unknown_wait",
+            "severity": "attention",
+            "title": "Verify resolution with customer: waiting time unspecified",
+            "detail": "The displayed duration is a lower bound, not a reliable finish time.",
+            "references": [
+              "action:verify"
+            ]
+          },
+          {
+            "rule": "external_no_branch",
+            "severity": "question",
+            "title": "Verify resolution with customer: external response has no declared fallback",
+            "detail": "Review refusal and no-response handling. This flag does not prove that a fallback is required or possible.",
+            "references": [
+              "action:verify"
+            ]
+          }
+        ],
+        "baseline": {
+          "candidate_routes": 2,
+          "constraint_compatible": 2,
+          "without_recorded_gaps_or_decisions": 2,
+          "search_truncated": false,
+          "outcome_evidenced": false,
+          "routes": [
+            {
+              "id": "bb38a944ca6edf",
+              "title": "Verify resolution with customer",
+              "status": "conditional",
+              "actions": [
+                "scope",
+                "replace",
+                "verify"
+              ],
+              "minutes": 70,
+              "total_cost": 800,
+              "provisional": true,
+              "hard_breaches": [],
+              "evidence_gaps": [],
+              "decisions": [],
+              "unknown_waits": [
+                "verify"
+              ],
+              "external_dependencies": [
+                "verify"
+              ]
+            },
+            {
+              "id": "8c416fea99bc79",
+              "title": "Verify resolution with customer",
+              "status": "conditional",
+              "actions": [
+                "scope",
+                "repair",
+                "verify"
+              ],
+              "minutes": 100,
+              "total_cost": 500,
+              "provisional": true,
+              "hard_breaches": [],
+              "evidence_gaps": [],
+              "decisions": [],
+              "unknown_waits": [
+                "verify"
+              ],
+              "external_dependencies": [
+                "verify"
+              ]
+            }
+          ]
+        },
+        "scenarios": [
+          {
+            "assumption": {
+              "kind": "remove_action",
+              "action_id": "repair"
+            },
+            "label": "Without action: Repair the service",
+            "as_of": "2026-09-24T09:00:00+00:00",
+            "hypothetical": true,
+            "result": {
+              "candidate_routes": 1,
+              "constraint_compatible": 1,
+              "without_recorded_gaps_or_decisions": 1,
+              "search_truncated": false,
+              "outcome_evidenced": false,
+              "routes": [
+                {
+                  "id": "bb38a944ca6edf",
+                  "title": "Verify resolution with customer",
+                  "status": "conditional",
+                  "actions": [
+                    "scope",
+                    "replace",
+                    "verify"
+                  ],
+                  "minutes": 70,
+                  "total_cost": 800,
+                  "provisional": true,
+                  "hard_breaches": [],
+                  "evidence_gaps": [],
+                  "decisions": [],
+                  "unknown_waits": [
+                    "verify"
+                  ],
+                  "external_dependencies": [
+                    "verify"
+                  ]
+                }
+              ]
+            },
+            "compatible_change": -1,
+            "note": "Independent scenario. No live state, facts, approval or selected route changed."
+          }
+        ],
+        "counts": {
+          "blocker": 0,
+          "attention": 1,
+          "question": 1,
+          "limit": 0
+        },
+        "semantics_verified": false,
+        "execution_authorised": false,
+        "scope": "Bounded structural inspection, not a success prediction or professional judgement. A clean graph may still describe the wrong plan."
+      }
+    },
+    {
+      "id": "missing-outcome",
+      "structural_checks_passed": true,
+      "report": {
+        "contract_version": "endstate.plan-review.v1",
+        "as_of": "2026-09-24T09:00:00+00:00",
+        "snapshot_id": "missing-outcome",
+        "revision": 0,
+        "target_trace": [],
+        "flags": [
+          {
+            "rule": "no_target",
+            "severity": "blocker",
+            "title": "No mandatory outcome criteria",
+            "detail": "Define explicit success conditions before treating this as a route to an outcome.",
+            "references": []
+          }
+        ],
+        "baseline": {
+          "candidate_routes": 0,
+          "constraint_compatible": 0,
+          "without_recorded_gaps_or_decisions": 0,
+          "search_truncated": false,
+          "outcome_evidenced": false,
+          "routes": []
+        },
+        "scenarios": [],
+        "counts": {
+          "blocker": 1,
+          "attention": 0,
+          "question": 0,
+          "limit": 0
+        },
+        "semantics_verified": false,
+        "execution_authorised": false,
+        "scope": "Bounded structural inspection, not a success prediction or professional judgement. A clean graph may still describe the wrong plan."
+      }
+    },
+    {
+      "id": "zero-budget",
+      "structural_checks_passed": true,
+      "report": {
+        "contract_version": "endstate.plan-review.v1",
+        "as_of": "2026-09-24T09:00:00+00:00",
+        "snapshot_id": "zero-budget",
+        "revision": 0,
+        "target_trace": [
+          {
+            "objective_id": "resolve",
+            "title": "Resolve issue with customer confirmation",
+            "status": "unknown",
+            "success_expression": {
+              "op": "atom",
+              "condition_id": "resolved",
+              "value": true,
+              "args": []
+            },
+            "conditions": [
+              {
+                "id": "resolved",
+                "required_value": true,
+                "title": "Customer accepts resolution",
+                "confirmation": "Written customer confirmation of the delivered remedy",
+                "current_state": "unknown",
+                "supporting_source_ids": [],
+                "declared_producers": [
+                  "verify"
+                ]
+              }
+            ]
+          }
+        ],
+        "flags": [
+          {
+            "rule": "no_compatible_candidate",
+            "severity": "attention",
+            "title": "No returned candidate fits all hard constraints",
+            "detail": "Inspect the breaches and search limits. This is not proof that the real situation is impossible.",
+            "references": []
+          },
+          {
+            "rule": "unknown_wait",
+            "severity": "attention",
+            "title": "Verify resolution with customer: waiting time unspecified",
+            "detail": "The displayed duration is a lower bound, not a reliable finish time.",
+            "references": [
+              "action:verify"
+            ]
+          },
+          {
+            "rule": "external_no_branch",
+            "severity": "question",
+            "title": "Verify resolution with customer: external response has no declared fallback",
+            "detail": "Review refusal and no-response handling. This flag does not prove that a fallback is required or possible.",
+            "references": [
+              "action:verify"
+            ]
+          }
+        ],
+        "baseline": {
+          "candidate_routes": 2,
+          "constraint_compatible": 0,
+          "without_recorded_gaps_or_decisions": 0,
+          "search_truncated": false,
+          "outcome_evidenced": false,
+          "routes": [
+            {
+              "id": "bb38a944ca6edf",
+              "title": "Verify resolution with customer",
+              "status": "constraint_failure",
+              "actions": [
+                "scope",
+                "replace",
+                "verify"
+              ],
+              "minutes": 70,
+              "total_cost": 800,
+              "provisional": true,
+              "hard_breaches": [
+                "Total estimated cost exceeds case budget"
+              ],
+              "evidence_gaps": [],
+              "decisions": [],
+              "unknown_waits": [
+                "verify"
+              ],
+              "external_dependencies": [
+                "verify"
+              ]
+            },
+            {
+              "id": "8c416fea99bc79",
+              "title": "Verify resolution with customer",
+              "status": "constraint_failure",
+              "actions": [
+                "scope",
+                "repair",
+                "verify"
+              ],
+              "minutes": 100,
+              "total_cost": 500,
+              "provisional": true,
+              "hard_breaches": [
+                "Total estimated cost exceeds case budget"
+              ],
+              "evidence_gaps": [],
+              "decisions": [],
+              "unknown_waits": [
+                "verify"
+              ],
+              "external_dependencies": [
+                "verify"
+              ]
+            }
+          ]
+        },
+        "scenarios": [],
+        "counts": {
+          "blocker": 0,
+          "attention": 2,
+          "question": 1,
+          "limit": 0
+        },
+        "semantics_verified": false,
+        "execution_authorised": false,
+        "scope": "Bounded structural inspection, not a success prediction or professional judgement. A clean graph may still describe the wrong plan."
+      }
+    },
+    {
+      "id": "completed-not-confirmed",
+      "structural_checks_passed": true,
+      "report": {
+        "contract_version": "endstate.plan-review.v1",
+        "as_of": "2026-09-24T09:00:00+00:00",
+        "snapshot_id": "completed-not-confirmed",
+        "revision": 0,
+        "target_trace": [
+          {
+            "objective_id": "resolve",
+            "title": "Resolve issue with customer confirmation",
+            "status": "unknown",
+            "success_expression": {
+              "op": "atom",
+              "condition_id": "resolved",
+              "value": true,
+              "args": []
+            },
+            "conditions": [
+              {
+                "id": "resolved",
+                "required_value": true,
+                "title": "Customer accepts resolution",
+                "confirmation": "Written customer confirmation of the delivered remedy",
+                "current_state": "unknown",
+                "supporting_source_ids": [],
+                "declared_producers": [
+                  "verify"
+                ]
+              }
+            ]
+          }
+        ],
+        "flags": [
+          {
+            "rule": "completion_unproved",
+            "severity": "attention",
+            "title": "Verify resolution with customer: result not established",
+            "detail": "The work is recorded as complete, but at least one intended effect lacks supporting evidence.",
+            "references": [
+              "action:verify"
+            ]
+          }
+        ],
+        "baseline": {
+          "candidate_routes": 1,
+          "constraint_compatible": 1,
+          "without_recorded_gaps_or_decisions": 0,
+          "search_truncated": false,
+          "outcome_evidenced": false,
+          "routes": [
+            {
+              "id": "7b8e44675de67b",
+              "title": "Verify outstanding conditions",
+              "status": "needs_evidence",
+              "actions": [],
+              "minutes": 0,
+              "total_cost": 0,
+              "provisional": true,
+              "hard_breaches": [],
+              "evidence_gaps": [
+                {
+                  "condition_id": "resolved",
+                  "value": true,
+                  "reason": "needs_observation",
+                  "status": "unknown"
+                }
+              ],
+              "decisions": [],
+              "unknown_waits": [],
+              "external_dependencies": []
+            }
+          ]
+        },
+        "scenarios": [],
+        "counts": {
+          "blocker": 0,
+          "attention": 1,
+          "question": 0,
+          "limit": 0
+        },
+        "semantics_verified": false,
+        "execution_authorised": false,
+        "scope": "Bounded structural inspection, not a success prediction or professional judgement. A clean graph may still describe the wrong plan."
+      }
+    },
+    {
+      "id": "contradictory-evidence",
+      "structural_checks_passed": true,
+      "report": {
+        "contract_version": "endstate.plan-review.v1",
+        "as_of": "2026-09-24T09:00:00+00:00",
+        "snapshot_id": "contradictory-evidence",
+        "revision": 0,
+        "target_trace": [
+          {
+            "objective_id": "resolve",
+            "title": "Resolve issue with customer confirmation",
+            "status": "unknown",
+            "success_expression": {
+              "op": "atom",
+              "condition_id": "resolved",
+              "value": true,
+              "args": []
+            },
+            "conditions": [
+              {
+                "id": "resolved",
+                "required_value": true,
+                "title": "Customer accepts resolution",
+                "confirmation": "Written customer confirmation of the delivered remedy",
+                "current_state": "unknown",
+                "supporting_source_ids": [],
+                "declared_producers": [
+                  "verify"
+                ]
+              }
+            ]
+          }
+        ],
+        "flags": [
+          {
+            "rule": "disputed_condition",
+            "severity": "attention",
+            "title": "Issue understood: conflicting evidence",
+            "detail": "Resolve conflicting observations explicitly; a model or review cannot settle them automatically.",
+            "references": [
+              "condition:scope"
+            ]
+          },
+          {
+            "rule": "unknown_wait",
+            "severity": "attention",
+            "title": "Verify resolution with customer: waiting time unspecified",
+            "detail": "The displayed duration is a lower bound, not a reliable finish time.",
+            "references": [
+              "action:verify"
+            ]
+          },
+          {
+            "rule": "external_no_branch",
+            "severity": "question",
+            "title": "Verify resolution with customer: external response has no declared fallback",
+            "detail": "Review refusal and no-response handling. This flag does not prove that a fallback is required or possible.",
+            "references": [
+              "action:verify"
+            ]
+          }
+        ],
+        "baseline": {
+          "candidate_routes": 2,
+          "constraint_compatible": 2,
+          "without_recorded_gaps_or_decisions": 0,
+          "search_truncated": false,
+          "outcome_evidenced": false,
+          "routes": [
+            {
+              "id": "6b961544a7cb7c",
+              "title": "Verify resolution with customer",
+              "status": "needs_evidence",
+              "actions": [
+                "replace",
+                "verify"
+              ],
+              "minutes": 50,
+              "total_cost": 800,
+              "provisional": true,
+              "hard_breaches": [],
+              "evidence_gaps": [
+                {
+                  "condition_id": "scope",
+                  "value": true,
+                  "reason": "disputed_evidence",
+                  "status": "disputed"
+                }
+              ],
+              "decisions": [],
+              "unknown_waits": [
+                "verify"
+              ],
+              "external_dependencies": [
+                "verify"
+              ]
+            },
+            {
+              "id": "b7ebada887707b",
+              "title": "Verify resolution with customer",
+              "status": "needs_evidence",
+              "actions": [
+                "repair",
+                "verify"
+              ],
+              "minutes": 80,
+              "total_cost": 500,
+              "provisional": true,
+              "hard_breaches": [],
+              "evidence_gaps": [
+                {
+                  "condition_id": "scope",
+                  "value": true,
+                  "reason": "disputed_evidence",
+                  "status": "disputed"
+                }
+              ],
+              "decisions": [],
+              "unknown_waits": [
+                "verify"
+              ],
+              "external_dependencies": [
+                "verify"
+              ]
+            }
+          ]
+        },
+        "scenarios": [],
+        "counts": {
+          "blocker": 0,
+          "attention": 2,
+          "question": 1,
+          "limit": 0
+        },
+        "semantics_verified": false,
+        "execution_authorised": false,
+        "scope": "Bounded structural inspection, not a success prediction or professional judgement. A clean graph may still describe the wrong plan."
+      }
+    },
+    {
+      "id": "destructive-effect",
+      "structural_checks_passed": true,
+      "report": {
+        "contract_version": "endstate.plan-review.v1",
+        "as_of": "2026-09-24T09:00:00+00:00",
+        "snapshot_id": "destructive-effect",
+        "revision": 0,
+        "target_trace": [
+          {
+            "objective_id": "resolve",
+            "title": "Resolve issue with customer confirmation",
+            "status": "unknown",
+            "success_expression": {
+              "op": "all",
+              "condition_id": null,
+              "value": true,
+              "args": [
+                {
+                  "op": "atom",
+                  "condition_id": "resolved",
+                  "value": true,
+                  "args": []
+                },
+                {
+                  "op": "atom",
+                  "condition_id": "remedy",
+                  "value": true,
+                  "args": []
+                }
+              ]
+            },
+            "conditions": [
+              {
+                "id": "remedy",
+                "required_value": true,
+                "title": "A remedy is available",
+                "confirmation": "Authorised owner confirms the available remedy",
+                "current_state": "unknown",
+                "supporting_source_ids": [],
+                "declared_producers": [
+                  "repair",
+                  "replace"
+                ]
+              },
+              {
+                "id": "resolved",
+                "required_value": true,
+                "title": "Customer accepts resolution",
+                "confirmation": "Written customer confirmation of the delivered remedy",
+                "current_state": "unknown",
+                "supporting_source_ids": [],
+                "declared_producers": [
+                  "verify"
+                ]
+              }
+            ]
+          }
+        ],
+        "flags": [
+          {
+            "rule": "no_compatible_candidate",
+            "severity": "attention",
+            "title": "No returned candidate fits all hard constraints",
+            "detail": "Inspect the breaches and search limits. This is not proof that the real situation is impossible.",
+            "references": []
+          },
+          {
+            "rule": "unknown_wait",
+            "severity": "attention",
+            "title": "Verify resolution with customer: waiting time unspecified",
+            "detail": "The displayed duration is a lower bound, not a reliable finish time.",
+            "references": [
+              "action:verify"
+            ]
+          },
+          {
+            "rule": "external_no_branch",
+            "severity": "question",
+            "title": "Verify resolution with customer: external response has no declared fallback",
+            "detail": "Review refusal and no-response handling. This flag does not prove that a fallback is required or possible.",
+            "references": [
+              "action:verify"
+            ]
+          }
+        ],
+        "baseline": {
+          "candidate_routes": 4,
+          "constraint_compatible": 0,
+          "without_recorded_gaps_or_decisions": 0,
+          "search_truncated": false,
+          "outcome_evidenced": false,
+          "routes": [
+            {
+              "id": "bb38a944ca6edf",
+              "title": "Offer approved alternative / Verify resolution with customer",
+              "status": "constraint_failure",
+              "actions": [
+                "scope",
+                "replace",
+                "verify"
+              ],
+              "minutes": 70,
+              "total_cost": 800,
+              "provisional": true,
+              "hard_breaches": [
+                "Final projected state does not satisfy every mandatory objective"
+              ],
+              "evidence_gaps": [],
+              "decisions": [],
+              "unknown_waits": [
+                "verify"
+              ],
+              "external_dependencies": [
+                "verify"
+              ]
+            },
+            {
+              "id": "4b16ffbf40a69e_ad884a4670d78428",
+              "title": "Repair the service / Verify resolution with customer",
+              "status": "constraint_failure",
+              "actions": [
+                "scope",
+                "repair",
+                "replace",
+                "verify"
+              ],
+              "minutes": 80,
+              "total_cost": 1300,
+              "provisional": true,
+              "hard_breaches": [
+                "Total estimated cost exceeds case budget"
+              ],
+              "evidence_gaps": [],
+              "decisions": [],
+              "unknown_waits": [
+                "verify"
+              ],
+              "external_dependencies": [
+                "verify"
+              ]
+            },
+            {
+              "id": "4b16ffbf40a69e_8b2758675e4d3502",
+              "title": "Offer approved alternative / Verify resolution with customer",
+              "status": "constraint_failure",
+              "actions": [
+                "scope",
+                "repair",
+                "replace",
+                "verify"
+              ],
+              "minutes": 100,
+              "total_cost": 1300,
+              "provisional": true,
+              "hard_breaches": [
+                "Final projected state does not satisfy every mandatory objective",
+                "Total estimated cost exceeds case budget"
+              ],
+              "evidence_gaps": [],
+              "decisions": [],
+              "unknown_waits": [
+                "verify"
+              ],
+              "external_dependencies": [
+                "verify"
+              ]
+            },
+            {
+              "id": "8c416fea99bc79",
+              "title": "Repair the service / Verify resolution with customer",
+              "status": "constraint_failure",
+              "actions": [
+                "scope",
+                "repair",
+                "verify"
+              ],
+              "minutes": 100,
+              "total_cost": 500,
+              "provisional": true,
+              "hard_breaches": [
+                "Final projected state does not satisfy every mandatory objective"
+              ],
+              "evidence_gaps": [],
+              "decisions": [],
+              "unknown_waits": [
+                "verify"
+              ],
+              "external_dependencies": [
+                "verify"
+              ]
+            }
+          ]
+        },
+        "scenarios": [],
+        "counts": {
+          "blocker": 0,
+          "attention": 2,
+          "question": 1,
+          "limit": 0
+        },
+        "semantics_verified": false,
+        "execution_authorised": false,
+        "scope": "Bounded structural inspection, not a success prediction or professional judgement. A clean graph may still describe the wrong plan."
+      }
+    },
+    {
+      "id": "expired-deadline",
+      "structural_checks_passed": true,
+      "report": {
+        "contract_version": "endstate.plan-review.v1",
+        "as_of": "2026-09-24T09:00:00+00:00",
+        "snapshot_id": "expired-deadline",
+        "revision": 0,
+        "target_trace": [
+          {
+            "objective_id": "resolve",
+            "title": "Resolve issue with customer confirmation",
+            "status": "unknown",
+            "success_expression": {
+              "op": "atom",
+              "condition_id": "resolved",
+              "value": true,
+              "args": []
+            },
+            "conditions": [
+              {
+                "id": "resolved",
+                "required_value": true,
+                "title": "Customer accepts resolution",
+                "confirmation": "Written customer confirmation of the delivered remedy",
+                "current_state": "unknown",
+                "supporting_source_ids": [],
+                "declared_producers": [
+                  "verify"
+                ]
+              }
+            ]
+          }
+        ],
+        "flags": [
+          {
+            "rule": "no_compatible_candidate",
+            "severity": "attention",
+            "title": "No returned candidate fits all hard constraints",
+            "detail": "Inspect the breaches and search limits. This is not proof that the real situation is impossible.",
+            "references": []
+          },
+          {
+            "rule": "unknown_wait",
+            "severity": "attention",
+            "title": "Verify resolution with customer: waiting time unspecified",
+            "detail": "The displayed duration is a lower bound, not a reliable finish time.",
+            "references": [
+              "action:verify"
+            ]
+          },
+          {
+            "rule": "external_no_branch",
+            "severity": "question",
+            "title": "Verify resolution with customer: external response has no declared fallback",
+            "detail": "Review refusal and no-response handling. This flag does not prove that a fallback is required or possible.",
+            "references": [
+              "action:verify"
+            ]
+          }
+        ],
+        "baseline": {
+          "candidate_routes": 2,
+          "constraint_compatible": 0,
+          "without_recorded_gaps_or_decisions": 0,
+          "search_truncated": false,
+          "outcome_evidenced": false,
+          "routes": [
+            {
+              "id": "bb38a944ca6edf",
+              "title": "Verify resolution with customer",
+              "status": "constraint_failure",
+              "actions": [
+                "scope",
+                "replace",
+                "verify"
+              ],
+              "minutes": 70,
+              "total_cost": 800,
+              "provisional": true,
+              "hard_breaches": [
+                "Outcome deadline exceeded"
+              ],
+              "evidence_gaps": [],
+              "decisions": [],
+              "unknown_waits": [
+                "verify"
+              ],
+              "external_dependencies": [
+                "verify"
+              ]
+            },
+            {
+              "id": "8c416fea99bc79",
+              "title": "Verify resolution with customer",
+              "status": "constraint_failure",
+              "actions": [
+                "scope",
+                "repair",
+                "verify"
+              ],
+              "minutes": 100,
+              "total_cost": 500,
+              "provisional": true,
+              "hard_breaches": [
+                "Outcome deadline exceeded"
+              ],
+              "evidence_gaps": [],
+              "decisions": [],
+              "unknown_waits": [
+                "verify"
+              ],
+              "external_dependencies": [
+                "verify"
+              ]
+            }
+          ]
+        },
+        "scenarios": [],
+        "counts": {
+          "blocker": 0,
+          "attention": 2,
+          "question": 1,
+          "limit": 0
+        },
+        "semantics_verified": false,
+        "execution_authorised": false,
+        "scope": "Bounded structural inspection, not a success prediction or professional judgement. A clean graph may still describe the wrong plan."
+      }
+    },
+    {
+      "id": "wrong-but-valid-outcome",
+      "structural_checks_passed": true,
+      "report": {
+        "contract_version": "endstate.plan-review.v1",
+        "as_of": "2026-09-24T09:00:00+00:00",
+        "snapshot_id": "wrong-but-valid-outcome",
+        "revision": 0,
+        "target_trace": [
+          {
+            "objective_id": "resolve",
+            "title": "Resolve issue with customer confirmation",
+            "status": "unknown",
+            "success_expression": {
+              "op": "atom",
+              "condition_id": "resolved",
+              "value": true,
+              "args": []
+            },
+            "conditions": [
+              {
+                "id": "resolved",
+                "required_value": true,
+                "title": "An offer was sent",
+                "confirmation": "Outbound message is recorded",
+                "current_state": "unknown",
+                "supporting_source_ids": [],
+                "declared_producers": [
+                  "verify"
+                ]
+              }
+            ]
+          }
+        ],
+        "flags": [],
+        "baseline": {
+          "candidate_routes": 2,
+          "constraint_compatible": 2,
+          "without_recorded_gaps_or_decisions": 2,
+          "search_truncated": false,
+          "outcome_evidenced": false,
+          "routes": [
+            {
+              "id": "bb38a944ca6edf",
+              "title": "Record the outbound offer",
+              "status": "conditional",
+              "actions": [
+                "scope",
+                "replace",
+                "verify"
+              ],
+              "minutes": 70,
+              "total_cost": 800,
+              "provisional": false,
+              "hard_breaches": [],
+              "evidence_gaps": [],
+              "decisions": [],
+              "unknown_waits": [],
+              "external_dependencies": []
+            },
+            {
+              "id": "8c416fea99bc79",
+              "title": "Record the outbound offer",
+              "status": "conditional",
+              "actions": [
+                "scope",
+                "repair",
+                "verify"
+              ],
+              "minutes": 100,
+              "total_cost": 500,
+              "provisional": false,
+              "hard_breaches": [],
+              "evidence_gaps": [],
+              "decisions": [],
+              "unknown_waits": [],
+              "external_dependencies": []
+            }
+          ]
+        },
+        "scenarios": [],
+        "counts": {
+          "blocker": 0,
+          "attention": 0,
+          "question": 0,
+          "limit": 0
+        },
+        "semantics_verified": false,
+        "execution_authorised": false,
+        "scope": "Bounded structural inspection, not a success prediction or professional judgement. A clean graph may still describe the wrong plan."
+      }
+    }
+  ]
+}
