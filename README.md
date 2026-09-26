@@ -1,5 +1,13 @@
 # 8BALL
 
+## Current publication and native acceptance, 26 September 2026
+
+8BALL 0.2.0-alpha.8 is published on `feat/situation-intelligence-v2`. The Source Desk correction at `14c57907d26ea914e372e544bba4b0bd3988f5dc` passed all eleven native browser suites (378 checks), 938 code tests and the same 938 against the installed ENDSTATE package. [Evidence](docs/evidence/native-closeout-2026-09-26.json) records exact scope, source and artifact hashes. B02-13 and ES01-05 have met their software acceptance scope; V0.2 has not. Required actual-provider, independent professional, human accessibility/platform and operator reviews remain open. No main merge, deployment or public SDK release. Deferred research remains separate.
+
+Historical local-only text below describes earlier checkpoints, not current publication. Read the canonical checklist and newest handoff before applying any archive.
+
+---
+
 **Current local checkpoint: 0.2.0-alpha.8, Chosen Course.** Select a reviewed candidate from Ways Through; inspect its original basis and current reconsideration reasons in the Situation Room. See `docs/v2/CHOSEN-COURSE.md`. Source remains local until an authorised push is verified. This does not complete V0.2 or permit confidential agency data.
 
 ## Latest local checkpoint: integrated acceptance, alpha.7

@@ -28,3 +28,7 @@ public release. The 8BALL UI remains the primary product and runs normally using
 `python -m eightball`. The package does not change its existing storage/audit
 wire formats. Input and output schemas can be exported using
 `python scripts/export_endstate_schemas.py --output artifacts/endstate-schemas`.
+
+## Scoped native compatibility acceptance, 26 September 2026
+
+ES01-05 is verified for the internal package compatibility scope at `14c57907d26ea914e372e544bba4b0bd3988f5dc`: all 938 application/code tests against the installed wheel and all eleven native application suites passed. See [native receipt](../evidence/native-closeout-2026-09-26.json). This does not publish a supported SDK, cover untested platforms, approve model quality or release the production product.

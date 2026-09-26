@@ -4,6 +4,49 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Native software acceptance passed; internal core and guided authoring verified
+
+2026-09-26 · `local_unreleased`
+
+Record the published Source Desk correction and completed native evidence. This receipt begins locally and has its own publication record; runtime scope is unchanged.
+
+### Added
+
+- A source-bound native acceptance receipt and scoped checklist decisions.
+
+### Changed
+
+- B02-13 and ES01-05 are verified for their documented software/compatibility scope. Remaining tasks now name actual outstanding model or human review instead of an obsolete unpushed/native blocker.
+
+### Fixed
+
+- Current README/status/handoff distinguish published alpha.8 from preserved historical local-only checkpoints.
+
+### Verification
+
+- GitHub run 36219154611: 938 code tests and 938 tests against the installed internal ENDSTATE wheel passed.
+- All eleven native browser suites passed: 378 checks including actual Source Desk original export.
+- Downloaded artifact hash and all source/evidence hashes verified. No runtime/test change in this receipt.
+
+### Limitations
+
+- V0.2 is not accepted. Actual-model quality, professional source review, human accessibility/platform and operator checks remain.
+- Research is separate; no main merge, release or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Native evidence closes transport-specific gaps but not human judgement; existing EM-035/EM-053/EM-051 remain applicable.
+- Risk: Historical local-only status can mislead the next builder unless current evidence is prominent.
+- Architecture: Keep source, verification, judgement and release states separate.
+- Roadmap decision: existing_task: close supported software scopes only; preserve required model/human gates and scope freeze.
+Registered discoveries: EM-035, EM-053, EM-051.
+
+Roadmap items: `B02-13`, `B02-14`, `B02-16`, `ES01-05`, `DOC-03`, `DOC-04`, `DOC-05`.
+
+Evidence: [docs/evidence/native-closeout-2026-09-26.json](docs/evidence/native-closeout-2026-09-26.json), [docs/delivery/sessions/2026-09-26-native-acceptance-receipt.md](docs/delivery/sessions/2026-09-26-native-acceptance-receipt.md).
+
 ## 0.2.0-alpha.8 · Source Desk: preserve the operator query across delayed refreshes
 
 2026-09-26 · `local_unreleased`

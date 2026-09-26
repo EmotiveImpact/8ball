@@ -811,7 +811,7 @@ A reviewer can mark all rubric dimensions supported while the plan still contain
 
 **Product implication:** Store case-scoped reviews separately and bind them to exact context; evidence and execution approval remain their own processes.
 
-**Roadmap links:** `B02-11` (partial), `B02-13` (implemented).
+**Roadmap links:** `B02-11` (partial), `B02-13` (verified).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/v2/PLAN-REVIEW.md`, `tests/test_plan_review.py`, `docs/evidence/route-identity-regression.json`.
 
@@ -880,7 +880,7 @@ PlanResponse previously guaranteed its outer envelope but not the complete neste
 
 **Product implication:** Validate route, clock, schedule, condition and briefing references without changing old wire records.
 
-**Roadmap links:** `ES01-05` (implemented).
+**Roadmap links:** `ES01-05` (verified).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `endstate/results.py`, `tests/test_endstate_results.py`.
 
@@ -914,7 +914,7 @@ The kernel could pass inside the application checkout without proving that the a
 
 **Product implication:** Test the installed artifact outside the repository and rerun the original application suite against that kernel.
 
-**Roadmap links:** `ES01-05` (implemented).
+**Roadmap links:** `ES01-05` (verified).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `scripts/build_endstate.py`, `docs/endstate/PACKAGE.md`.
 

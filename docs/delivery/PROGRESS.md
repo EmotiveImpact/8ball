@@ -9,7 +9,7 @@ Last status review: 2026-09-26.
 ## Checkpoint and release boundary
 
 - Active integration branch: `feat/situation-intelligence-v2`; PR #2.
-- Inspected application baseline: `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`.
+- Inspected application baseline: `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
 - This is a dated snapshot. Refresh the branch, PR and CI at the start of every session.
 - At inspection: draft PR = `true`; merged = `false`; production deployed = `false`.
 - Standalone ENDSTATE package released = `false`.
@@ -22,15 +22,15 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 ## Next work
 
-**Unpublished development checkpoint:** Alpha.8 itself is published. This narrowly scoped Source Desk correction is prepared for verified publication; new native result remains pending. Historical local-only notes below are preserved, not current remote status.
-Base: `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`. See `docs/delivery/sessions/2026-09-26-source-desk-native-closeout.md`.
-
-- **B02-14: Source chunking, duplication and reviewer-safe object reconciliation**. Publish the tested Source Desk request-order correction and run all eleven native suites; then complete the original source/identity/date or human accessibility acceptance scope. Do not introduce deferred research.
-- **B02-09: Reliable reviewed graph proposals for new situations**. Apply/push the preserved local patch, run native CI and the unchanged four-case local/hosted generation gate. Target quotations and frame references are now validated early; semantic quality and live provider results remain unverified.
-- **B02-11: Independent quality evaluation and production-model selection**. Obtain owner/expert approval of the declared protocol, collect independent labels and run the preserved real-model gate with an explicitly configured provider. Do not count software or operator review as independent model approval.
-- **B02-12: Full twenty-step real-model V0.2 acceptance journey**. Run the actual-provider integration command with configured service/token; preserve failures and collect a genuinely human all-native journey separately. No scripted review may satisfy independent semantic acceptance.
-- **B02-16: Complete accessibility and supported-environment validation**. Publish the tested Source Desk request-order correction and run all eleven native suites; then complete the original source/identity/date or human accessibility acceptance scope. Do not introduce deferred research.
-- **ES01-05: Reusable core acceptance**. Inspect the installed-wheel/source/schema evidence and run the cumulative native application gate in an authorised environment before closing broad package acceptance. Do not claim a public SDK release.
+- **B02-09: Reliable reviewed graph proposals for new situations**. Configure the selected provider and run the unchanged generation fixtures without catalogue substitution or human repair counting as model success.
+- **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
+- **B02-11: Independent quality evaluation and production-model selection**. Obtain protocol/label approval and run the preserved real-provider gate; native software acceptance is not semantic approval.
+- **B02-12: Full twenty-step real-model V0.2 acceptance journey**. Run the actual-provider integration with authorised service/token and collect independent human review.
+- **B02-15: Model progress/cancellation and accurate installation status**. Verify cancellation, stale results and runtime status with the actual selected provider; never recall already-billed work by implication.
+- **B02-16: Complete accessibility and supported-environment validation**. Complete the recorded human accessibility and supported-platform review, not another UI feature.
+- **B02-19: Black operator visual system and transparent intelligence controls**. Review the current black workspace without expanding scope; preserve passing native controls.
+- **B02-20: Black relationship explorer with local focus, directed flow and records view**. Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass.
+- **B02-18: V0.2 acceptance and release decision**. Keep PR #2 draft until the acceptance gate is met; do not infer permission to merge.
 
 ## Version summary
 
@@ -38,11 +38,11 @@ Base: `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`. See `docs/delivery/sessions/20
 | --- | ---: | --- | --- |
 | Governance 1.1: Naming, PRD and shared delivery control | 6/6 | Scoped gate met | not released |
 | 8BALL 0.1: Local outcome-planning foundation | 3/3 | Scoped gate met | not released |
-| 8BALL 0.2: Reviewed situation intelligence | 9/20 | Not yet accepted | not released |
+| 8BALL 0.2: Reviewed situation intelligence | 10/20 | Not yet accepted | not released |
 | 8BALL 0.3: Secure agency pilot | 0/6 | Not yet accepted | not released |
 | 8BALL 0.4: Professionally reviewed resolution intelligence | 0/3 | Not yet accepted | not released |
 | 8BALL 1.0: Supported fixer product | 0/2 | Not yet accepted | not released |
-| ENDSTATE 0.1: Reusable engine core | 4/5 | Not yet accepted | not released |
+| ENDSTATE 0.1: Reusable engine core | 5/5 | Scoped gate met | not released |
 | ENDSTATE 0.2: Event-driven replanning | 0/4 | Not yet accepted | not released |
 | ENDSTATE 0.3: Evaluated intelligence compilation | 0/4 | Not yet accepted | not released |
 | ENDSTATE 0.4: Domain packs and integration interfaces | 0/4 | Not yet accepted | not released |
@@ -179,78 +179,77 @@ Base: `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`. See `docs/delivery/sessions/20
   - Evidence: `EV-APP`, `EV-UI` (registry below).
 
 - [ ] **B02-09 Reliable reviewed graph proposals for new situations**
-  - Status: `blocked`. Owner: ChatGPT. Updated: 2026-09-23.
+  - Status: `blocked`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.
-  - Next: Apply/push the preserved local patch, run native CI and the unchanged four-case local/hosted generation gate. Target quotations and frame references are now validated early; semantic quality and live provider results remain unverified.
-  - Branch/base: `work/hf-black-drafting` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Next: Configure the selected provider and run the unchanged generation fixtures without catalogue substitution or human repair counting as model success.
+  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`.
-  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL` (registry below).
-  - Blocker: Actual staged Qwen run 35911570117 failed: intermediate results repeated readiness/goal conditions; invented existing-condition references and outcome confusion also remain. New hosted/target-aware development work is unpushed; no HF key or new live-model result is available.
+  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Blocker: Actual-model graph generation and semantic quality gate remain unaccepted; this native software run used controlled provider responses.
 
 - [ ] **B02-10 Robust source extraction, deadlines and entity reconciliation**
-  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-24.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: Reviewed multi-source extraction preserves negation, uncertainty, identity and quoted support; date changes become explicit reviewed scheduling proposals.
-  - Next: Run native integration, then evaluate multi-source identity/date workflows with reviewed professional fixtures. Preserve mention-level judgements and preview/apply boundaries; keep the source-to-plan gate unchanged.
-  - Branch/base: `work/B02-10/source-clarity` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Next: Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
+  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Existing code: `eightball/v2/intelligence.py`, `endstate/time_review.py`, `eightball/v2/grounding.py`, `web/v2/grounding-view.js`, `tests/test_time_review.py`, `tests/test_grounding.py`, `tests/browser_grounding.py`.
-  - Evidence: `EV-QWEN`, `EV-REMAINING`, `EV-SOURCE-DESK-LOCAL`, `EV-SOURCE-CLARITY-LOCAL` (registry below).
-  - Blocker: Native cumulative integration and independent multi-source identity/date usefulness review remain outstanding. No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed.
+  - Evidence: `EV-QWEN`, `EV-REMAINING`, `EV-SOURCE-DESK-LOCAL`, `EV-SOURCE-CLARITY-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Blocker: Independent multi-source identity/date usefulness review remains outstanding. No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed.
 
 - [ ] **B02-11 Independent quality evaluation and production-model selection**
-  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-24.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: Expert-labelled held-out data and predeclared acceptance thresholds measure semantic errors, omissions, corrections, latency and abstention.
-  - Next: Obtain owner/expert approval of the declared protocol, collect independent labels and run the preserved real-model gate with an explicitly configured provider. Do not count software or operator review as independent model approval.
-  - Branch/base: `work/B02-11/plan-review` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Next: Obtain protocol/label approval and run the preserved real-provider gate; native software acceptance is not semantic approval.
+  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Existing code: `evals/live_generation.py`, `evals/classification-cases.json`, `endstate/plan_review.py`, `eightball/v2/plan_review.py`, `web/v2/plan-review-view.js`, `evals/plan_review_bench.py`, `evals/PLAN-QUALITY-GATE.md`, `tests/test_plan_review.py`, `tests/browser_plan_review.py`.
-  - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL` (registry below).
-  - Blocker: Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed. Local structural fixtures are not a model-quality benchmark. New cumulative native-browser acceptance remains unavailable locally.
+  - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Blocker: Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed.
 
 - [ ] **B02-12 Full twenty-step real-model V0.2 acceptance journey**
-  - Status: `blocked`. Owner: ChatGPT. Updated: 2026-09-24.
+  - Status: `blocked`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: Blank case -> real extraction -> mixed human review -> valid graph -> distinct routes -> new evidence/replan -> isolated refusal -> approval/completion -> reload/export, all native.
-  - Next: Run the actual-provider integration command with configured service/token; preserve failures and collect a genuinely human all-native journey separately. No scripted review may satisfy independent semantic acceptance.
-  - Branch/base: `work/acceptance/integration-alpha7` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Next: Run the actual-provider integration with authorised service/token and collect independent human review.
+  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Dependencies: `B02-09`, `B02-10`, `B02-11`.
   - Existing code: `tests/browser_v2.py`, `evals/full_journey.py`, `scripts/acceptance.py`, `.github/workflows/provider-journey.yml`.
-  - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED` (registry below).
-  - Blocker: Both legacy and staged graph generation still fail the required actual-model gate; native application journeys use rules/catalogue, not the full real-model flow. No running local model, authorised HF configuration or native browser navigation in the current environment. The new journey is implemented but has not made an actual inference call.
+  - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Blocker: Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey.
 
-- [ ] **B02-13 Guided nested graph authoring instead of JSON-only advanced editing**
-  - Status: `implemented`. Owner: ChatGPT. Updated: 2026-09-24.
+- [x] **B02-13 Guided nested graph authoring instead of JSON-only advanced editing**
+  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: Operators can edit AND/OR, guards, contingencies and verification rules with guided controls and keyboard access.
-  - Next: Run the existing authoring and new live-plan review journeys under native CI after authorised cumulative integration.
-  - Branch/base: `work/plan-studio-jobs-changelog` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Next: Preserve the verified guided-authoring scope; broader human/platform accessibility remains B02-16.
+  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Existing code: `web/v2/studio-model.js`, `web/v2/studio-view.js`, `eightball/v2/authoring.py`, `tests/test_plan_studio.py`, `tests/test_studio_model.py`, `tests/browser_studio.py`, `web/v2/plan-review-view.js`.
-  - Evidence: `EV-REMAINING`, `EV-PLAN-STUDIO-LOCAL`, `EV-PLAN-REVIEW-LOCAL` (registry below).
-  - Blocker: Native browser CI and authorised source integration have not been run for this local checkpoint.
+  - Evidence: `EV-REMAINING`, `EV-PLAN-STUDIO-LOCAL`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
 
 - [ ] **B02-14 Source chunking, duplication and reviewer-safe object reconciliation**
   - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: Longer sources retain exact provenance; duplicates and entity merges cannot rewrite observed meanings or lose attribution.
-  - Next: Publish the tested Source Desk request-order correction and run all eleven native suites; then complete the original source/identity/date or human accessibility acceptance scope. Do not introduce deferred research.
-  - Branch/base: `feat/situation-intelligence-v2` / `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`.
+  - Next: Complete professional source/reconciliation review; keep native original/excerpt/export and request-order regressions.
+  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Existing code: `eightball/v2/source_contracts.py`, `eightball/v2/source_desk.py`, `eightball/v2/request_limits.py`, `web/v2/source-model.js`, `web/v2/source-view.js`, `tests/test_source_desk.py`, `tests/test_source_api.py`, `tests/browser_sources.py`, `endstate/time_review.py`, `eightball/v2/grounding.py`, `web/v2/grounding-view.js`, `tests/test_time_review.py`, `tests/test_grounding.py`, `tests/browser_grounding.py`, `tests/test_source_view_races.py`.
-  - Evidence: `EV-REMAINING`, `EV-SOURCE-DESK-LOCAL`, `EV-SOURCE-CLARITY-LOCAL`, `EV-SOURCE-SEARCH-RACE` (registry below).
-  - Blocker: Native cumulative integration and independent multi-source identity/date usefulness review remain outstanding. No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed.
+  - Evidence: `EV-REMAINING`, `EV-SOURCE-DESK-LOCAL`, `EV-SOURCE-CLARITY-LOCAL`, `EV-SOURCE-SEARCH-RACE`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Blocker: Independent multi-source identity/date usefulness review remains outstanding. No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed.
 
 - [ ] **B02-15 Model progress/cancellation and accurate installation status**
-  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-23.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: The UI reports actual runtime/weights/credential state and cancels work without stale commits. No silent large model download.
-  - Next: Run native CI after authorised integration and validate lifecycle behaviour with the selected real provider. Cancellation suppresses later stages/publication; it cannot recall in-flight provider compute.
-  - Branch/base: `work/plan-studio-jobs-changelog` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Next: Verify cancellation, stale results and runtime status with the actual selected provider; never recall already-billed work by implication.
+  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Dependencies: `ES03-04`.
   - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`.
-  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL` (registry below).
-  - Blocker: Native browser CI and authorised source integration have not been run for this local checkpoint.
+  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Blocker: Lifecycle behaviour with the selected real inference provider remains unverified.
 
 - [ ] **B02-16 Complete accessibility and supported-environment validation**
   - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: Keyboard, screen reader, empty/error/loading states and supported browsers/platform startup paths pass an explicit review.
-  - Next: Publish the tested Source Desk request-order correction and run all eleven native suites; then complete the original source/identity/date or human accessibility acceptance scope. Do not introduce deferred research.
-  - Branch/base: `feat/situation-intelligence-v2` / `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`.
+  - Next: Complete the recorded human accessibility and supported-platform review, not another UI feature.
+  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Existing code: `tests/browser_accessibility.py`, `web/v2/ui.js`, `web/v2/app.js`, `web/v2/style.css`, `scripts/acceptance.py`.
-  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-SOURCE-SEARCH-RACE` (registry below).
-  - Blocker: Native browser policy and human screen-reader/OS validation remain outstanding.
+  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-SOURCE-SEARCH-RACE`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Blocker: Human screen-reader and supported-browser/OS review remains outstanding; Linux/Chromium native software tests passed.
 
 - [x] **B02-17 Prove compatibility after ENDSTATE core extraction**
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
@@ -270,34 +269,34 @@ Base: `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`. See `docs/delivery/sessions/20
   - Blocker: Real-model journey and developer-quality work remain unaccepted.
 
 - [ ] **B02-19 Black operator visual system and transparent intelligence controls**
-  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-23.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: Black/graphite design, legible status labels, exact-target review, provider controls and mobile lock work across the existing native desktop/mobile workflow without losing evidence/approval functions.
-  - Next: Integrate the cumulative local build and run all six native browser suites; complete visual/accessibility review before accepting the expanded scope.
-  - Branch/base: `work/hf-black-drafting` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Next: Review the current black workspace without expanding scope; preserve passing native controls.
+  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Dependencies: `B02-07`.
   - Existing code: `web/v2/style.css`, `web/v2/views.js`, `web/v2/forms.js`, `tests/browser_development.py`.
-  - Evidence: `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL` (registry below).
-  - Blocker: Local Chromium bridge checks passed; current native verification awaits a successful source push.
+  - Evidence: `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Blocker: Owner visual review and broader human accessibility acceptance remain outstanding.
 
 - [ ] **B02-20 Black relationship explorer with local focus, directed flow and records view**
-  - Status: `implemented`. Owner: ChatGPT. Updated: 2026-09-23.
+  - Status: `implemented`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: Explore actual case records using Connections, Outcome flow and Records; inspect source/history and exact logic; keyboard/mobile controls and view-only audit invariants pass, including native browser validation.
-  - Next: Integrate the cumulative patch after reviewing the exact remote base, run all four native browser suites, then review accessibility and realistic dense-case usability before accepting the scoped task.
-  - Branch/base: `work/B02-20/relationship-explorer` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Next: Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass.
+  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Dependencies: `B02-04`, `B02-07`, `B02-19`.
   - Existing code: `web/v2/graph-model.js`, `web/v2/graph-view.js`, `web/v2/views.js`, `web/v2/app.js`, `web/v2/style.css`, `tests/browser_v2.py`, `tests/browser_graph.py`, `tests/test_graph_explorer.py`, `scripts/design_preview.py`.
-  - Evidence: `EV-GRAPH-EXPLORER-LOCAL` (registry below).
-  - Blocker: Native browser CI remains pending; code is only in the local checkpoint.
+  - Evidence: `EV-GRAPH-EXPLORER-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Blocker: Representative dense-case operator usability and broader accessibility review remain outstanding.
 
 - [ ] **B02-21 Evidence-linked Emergent Insights and review workspace** (optional, not a version gate)
-  - Status: `implemented`. Owner: ChatGPT. Updated: 2026-09-24.
+  - Status: `implemented`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: Current/historical findings, explicit review and hypotheses, safe question promotion, stale-context handling, reload/export and native desktop/mobile acceptance without changing factual state.
-  - Next: Integrate the cumulative source through the authorised workflow, then run the full native insight review journey and operator acceptance. Preserve non-attestation and retained-history boundaries.
-  - Branch/base: `feat/emergent-insights-local` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Next: Perform owner/fixer insight review without changing evidence/authority semantics.
+  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Dependencies: `ES02-05`, `B02-03`.
   - Existing code: `eightball/v2/insights.py`, `web/v2/insights-view.js`.
-  - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL` (registry below).
-  - Blocker: Native browser navigation is administrator-blocked locally; new native integration acceptance remains required.
+  - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Blocker: Operator acceptance remains outstanding; the complete native insight journey now passes.
 
 - [ ] **B02-22 Operator usefulness and full Emergent Insights acceptance** (optional, not a version gate)
   - Status: `not_started`. Owner: ChatGPT. Updated: 2026-09-24.
@@ -350,14 +349,14 @@ Base: `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`. See `docs/delivery/sessions/20
   - Dependencies: `B02-18`, `B03-01`, `B03-02`, `B03-03`, `B03-04`, `B03-05`.
 
 - [ ] **B03-07 Client mandate and human-selected course workflow** (optional, not a version gate)
-  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-25.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: Owner-approved mandate and selected-course records preserve target, scope, dependencies and human rationale; change explanations prompt reconsideration without granting approvals, altering facts or silently switching the chosen course. Native/operator acceptance required.
-  - Next: Integrate the exact packaged source through the authorised workflow. Run all native suites and operator review; retain original prerequisite and authority boundaries. Do not claim secure agency or background monitoring acceptance.
-  - Branch/base: `work/chosen-course-recovery` / `ba0a84a54a0e115ac35b9590c8dc41c931f3e123`.
+  - Next: Preserve existing local course work; defer remaining optional expansion under the owner freeze.
+  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Dependencies: `B03-01`, `ES02-06`.
   - Existing code: `endstate/course.py`, `eightball/v2/courses.py`, `web/v2/course-view.js`, `tests/test_courses.py`, `tests/browser_courses.py`.
-  - Evidence: `EV-CHOSEN-COURSE-LOCAL` (registry below).
-  - Blocker: Only trusted local single-operator groundwork. Original secure identity/mandate and durable event prerequisites remain unaccepted. Native integration and independent operator acceptance remain outstanding.
+  - Evidence: `EV-CHOSEN-COURSE-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Blocker: Secure identity/full mandate and durable event prerequisites remain unaccepted. Independent operator acceptance remains outstanding; native local workflow passes.
 
 
 ## 8BALL 0.4: Professionally reviewed resolution intelligence
@@ -440,15 +439,14 @@ Base: `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`. See `docs/delivery/sessions/20
   - Existing code: `tests/test_endstate_kernel.py`, `endstate/api.py`.
   - Evidence: `EV-KERNEL` (registry below).
 
-- [ ] **ES01-05 Reusable core acceptance**
-  - Status: `implemented`. Owner: ChatGPT. Updated: 2026-09-24.
+- [x] **ES01-05 Reusable core acceptance**
+  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: Current 8BALL suites and cross-domain fixtures pass on the proposed shared package; version compatibility is explicit.
-  - Next: Inspect the installed-wheel/source/schema evidence and run the cumulative native application gate in an authorised environment before closing broad package acceptance. Do not claim a public SDK release.
-  - Branch/base: `work/acceptance/integration-alpha7` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Next: Internal reusable-core compatibility scope verified. Maintain regression coverage; public SDK/commercial release and other platforms remain separate.
+  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Dependencies: `ES01-02`, `ES01-03`, `ES01-04`.
   - Existing code: `endstate/api.py`, `docs/endstate/CONTRACTS.md`, `tests/test_endstate_kernel.py`, `endstate/results.py`, `pyproject.toml`, `scripts/build_endstate.py`, `scripts/export_endstate_schemas.py`, `tests/test_endstate_results.py`.
-  - Evidence: `EV-KERNEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED` (registry below).
-  - Blocker: Actual internal distribution and code compatibility pass on this environment; cumulative native application acceptance remains policy-blocked.
+  - Evidence: `EV-KERNEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT` (registry below).
 
 
 ## ENDSTATE 0.2: Event-driven replanning
@@ -487,14 +485,14 @@ Base: `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`. See `docs/delivery/sessions/20
   - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL` (registry below).
 
 - [ ] **ES02-06 Selected-course and bounded reconsideration contracts** (optional, not a version gate)
-  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-25.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-26.
   - Acceptance: Versioned neutral input/output contracts distinguish candidate routes from a host-authorised course; changes to consulted sources, targets, guards, authority, estimates, clocks and resources produce traceable reconsideration results. Unknown scope requires review. Existing approval invalidation is preserved.
-  - Next: Integrate the exact packaged source through the authorised workflow. Run all native suites and operator review; retain original prerequisite and authority boundaries. Do not claim secure agency or background monitoring acceptance.
-  - Branch/base: `work/chosen-course-recovery` / `ba0a84a54a0e115ac35b9590c8dc41c931f3e123`.
+  - Next: Preserve bounded local calculations; defer optional durable-event expansion under the owner freeze.
+  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Dependencies: `ES02-01`, `ES02-03`.
   - Existing code: `endstate/course.py`, `eightball/v2/courses.py`, `web/v2/course-view.js`, `tests/test_courses.py`, `tests/browser_courses.py`.
-  - Evidence: `EV-CHOSEN-COURSE-LOCAL` (registry below).
-  - Blocker: Only trusted local single-operator groundwork. Original secure identity/mandate and durable event prerequisites remain unaccepted. Native integration and independent operator acceptance remain outstanding.
+  - Evidence: `EV-CHOSEN-COURSE-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Blocker: Original durable event prerequisites remain unaccepted. Independent operator acceptance remains outstanding; native local workflow passes.
 
 
 ## ENDSTATE 0.3: Evaluated intelligence compilation
@@ -800,3 +798,11 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `reproduced_failure_and_local_regression`.
 - Repository evidence: [docs/evidence/source-desk-native-closeout.json](../../docs/evidence/source-desk-native-closeout.json).
 - Result/scope: Original native failure inspected; new component checks fail 8/12 on original source and pass 12/12 after correction. 938 local code tests, 38 explicit bridge Source Desk checks. Patched native acceptance pending.
+
+### EV-NATIVE-CLOSEOUT
+
+- Kind: `native_software_acceptance`.
+- Repository evidence: [docs/evidence/native-closeout-2026-09-26.json](../../docs/evidence/native-closeout-2026-09-26.json).
+- Result/scope: 938 code and 938 installed-kernel checks; all 11 native Chromium suites pass (378 checks). Artifact and source-bound evidence verified. No actual model, independent professional or human accessibility acceptance.
+- Code revision: `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
+- External record: [verification source](https://github.com/EmotiveImpact/8ball/actions/runs/36219154611).

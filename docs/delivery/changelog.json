@@ -3,6 +3,62 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-09-26-native-acceptance-receipt",
+      "date": "2026-09-26",
+      "version": "0.2.0-alpha.8",
+      "title": "Native software acceptance passed; internal core and guided authoring verified",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-13",
+        "B02-14",
+        "B02-16",
+        "ES01-05",
+        "DOC-03",
+        "DOC-04",
+        "DOC-05"
+      ],
+      "summary": "Record the published Source Desk correction and completed native evidence. This receipt begins locally and has its own publication record; runtime scope is unchanged.",
+      "added": [
+        "A source-bound native acceptance receipt and scoped checklist decisions."
+      ],
+      "changed": [
+        "B02-13 and ES01-05 are verified for their documented software/compatibility scope. Remaining tasks now name actual outstanding model or human review instead of an obsolete unpushed/native blocker."
+      ],
+      "fixed": [
+        "Current README/status/handoff distinguish published alpha.8 from preserved historical local-only checkpoints."
+      ],
+      "verification": [
+        "GitHub run 36219154611: 938 code tests and 938 tests against the installed internal ENDSTATE wheel passed.",
+        "All eleven native browser suites passed: 378 checks including actual Source Desk original export.",
+        "Downloaded artifact hash and all source/evidence hashes verified. No runtime/test change in this receipt."
+      ],
+      "limitations": [
+        "V0.2 is not accepted. Actual-model quality, professional source review, human accessibility/platform and operator checks remain.",
+        "Research is separate; no main merge, release or deployment."
+      ],
+      "evidence_paths": [
+        "docs/evidence/native-closeout-2026-09-26.json",
+        "docs/delivery/sessions/2026-09-26-native-acceptance-receipt.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Native evidence closes transport-specific gaps but not human judgement; existing EM-035/EM-053/EM-051 remain applicable."
+        ],
+        "risks": [
+          "Historical local-only status can mislead the next builder unless current evidence is prominent."
+        ],
+        "architecture_implications": [
+          "Keep source, verification, judgement and release states separate."
+        ],
+        "roadmap_decision": "existing_task: close supported software scopes only; preserve required model/human gates and scope freeze.",
+        "insight_ids": [
+          "EM-035",
+          "EM-053",
+          "EM-051"
+        ]
+      }
+    },
+    {
       "id": "2026-09-26-source-desk-search-race",
       "date": "2026-09-26",
       "version": "0.2.0-alpha.8",

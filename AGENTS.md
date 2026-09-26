@@ -57,7 +57,7 @@ Read `docs/v2/PLAN-REVIEW.md` and `evals/PLAN-QUALITY-GATE.md`. Run `tests/test_
 
 ## Integrated acceptance and internal package (alpha.7)
 
-Read `docs/v2/ACCEPTANCE-RUNNER.md`, `docs/v2/ACCESSIBILITY.md` and `docs/endstate/PACKAGE.md`. Prefer `python scripts/acceptance.py --mode native --base <starting-sha>` to isolated test totals. It retains **all ten** browser suites. Never substitute `bridge` or `code` results for a blocked native run; report the mode, source hash and individual failures. Verify retained reports against their source and artifacts with `--inspect`. A valid evidence record can describe a failed or blocked run.
+Read `docs/v2/ACCEPTANCE-RUNNER.md`, `docs/v2/ACCESSIBILITY.md` and `docs/endstate/PACKAGE.md`. Prefer `python scripts/acceptance.py --mode native --base <starting-sha>` to isolated test totals. It retains **all eleven** browser suites, including Chosen Course. Never substitute `bridge` or `code` results for a blocked native run; report the mode, source hash and individual failures. Verify retained reports against their source and artifacts with `--inspect`. A valid evidence record can describe a failed or blocked run.
 
 Actual inference requires the separate `evals/full_journey.py` opt-in procedure and configured providers. Standard acceptance strips provider tokens and operator database settings. No silent downloads, paid retries, substitute catalogue plans or invented model outputs. Scripted integration judgements are not independent semantic evaluation. Keep B02-09/B02-11/B02-12/B02-16/B02-18 gates explicit. Build the internal wheel locally; never publish it or merge/deploy without an explicit authorised decision. Continue the mandatory changelog and complete emergence register on every sprint.
 

@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-26",
+  "scope": "Cumulative native software acceptance; not complete V0.2 or model quality",
+  "code_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
+  "code_tree": "1560ec43e469953884df6df50206057b903a9c70",
+  "workflow_run": 36219154611,
+  "workflow_url": "https://github.com/EmotiveImpact/8ball/actions/runs/36219154611",
+  "artifact_id": 10898327762,
+  "artifact_sha256": "abd0d2bdaf269412af328c72e0ef216468ff1c98c4d3b4491ebdbceac3ee870b",
+  "report_path": "acceptance/20260926T045349Z-20489cf2/report.json",
+  "report_sha256": "95b837a075f9f5a518169eed0057f8e427633603447dd5cf12afee1dde2f8c7b",
+  "source_fingerprint": "85564c0b223a33a7c1076e02d1f68c8c1694c702ad865f0cbe865fd3b9ad37e4",
+  "artifact_crc_verified": true,
+  "source_and_evidence_inspection_passed": true,
+  "code_tests": 938,
+  "installed_kernel_tests": 938,
+  "native_browser_checks": 378,
+  "browser_suites": {
+    "legacy": 27,
+    "workspace": 51,
+    "providers": 15,
+    "connections": 38,
+    "studio": 44,
+    "sources": 39,
+    "insights": 40,
+    "grounding": 26,
+    "plan_review": 33,
+    "accessibility": 36,
+    "courses": 29
+  },
+  "native_browser": true,
+  "structural_fixtures_passed": 8,
+  "model_calls": 0,
+  "independent_quality_review": false,
+  "human_screen_reader_review": false,
+  "full_v02_accepted": false,
+  "merged": false,
+  "deployed": false,
+  "scoped_tasks_verified": [
+    "B02-13",
+    "ES01-05"
+  ],
+  "limits": [
+    "Native Chromium on Linux with real loopback HTTP; not every browser or supported OS.",
+    "Provider paths use controlled responses for integration, not actual model quality.",
+    "The internal package passes compatibility scope; no public supported SDK release.",
+    "Research, new domains and optional feature expansion remain frozen."
+  ]
+}

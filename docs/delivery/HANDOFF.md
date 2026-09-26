@@ -1,3 +1,17 @@
+# Current closeout: published correction and native acceptance
+
+26 September 2026. Work from the current `feat/situation-intelligence-v2` branch, not older cumulative patches. Published runtime correction: `14c57907d26ea914e372e544bba4b0bd3988f5dc`, tree `1560ec43e469953884df6df50206057b903a9c70`. Native run 36219154611 passed all eleven suites (378 checks), 938 code tests and 938 installed-kernel tests. Exact artifact/source verification is recorded in `docs/evidence/native-closeout-2026-09-26.json` and `sessions/2026-09-26-native-acceptance-receipt.md`.
+
+B02-13 guided authoring and ES01-05 internal reusable-core compatibility are now verified. V0.2 required count is 10/20; ENDSTATE V0.1 is 5/5 scoped items. These are not time or commercial-readiness percentages. Remaining actual-model, source/professional and human accessibility/operator reviews are explicit in the canonical ledger. This receipt does not perform them.
+
+Keep PR #2 draft and preserve the research hold. No new optional screens, new domain application, main merge, deployment or version tag. This follow-up is documentation only. Historical source/evidence and the original failed native run are retained.
+
+## Emergence Review
+
+The original request-order discoveries are revalidated as EM-035/EM-053/EM-051. Native success is software evidence, not independent human judgement. All 71 discoveries remain retained; no new candidate becomes a required feature.
+
+---
+
 # Current closeout: Source Desk native correction, 26 September 2026
 
 Alpha.8 is now published on `feat/situation-intelligence-v2` at `d27ad600342245d0222b5f4573da8fdcbbf8c1d4`. Read `sessions/2026-09-26-source-desk-native-closeout.md` and `docs/evidence/source-desk-native-closeout.json`. This fix is over that exact remote parent, not a reconstruction to force-push. Previous local-only handoffs are history.
