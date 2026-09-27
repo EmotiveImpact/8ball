@@ -1,74 +1,50 @@
-name: Preserve complete deferred research handoff
+name: Measure existing V0.2 Qwen planning baseline
 on:
   push:
     branches: [ops/source-desk-closeout-20260926]
-    paths: [.github/workflows/source-desk-closeout.yml]
+    paths: ['.github/workflows/source-desk-closeout.yml']
 permissions:
-  contents: write
-concurrency:
-  group: endstate-research-archive-preservation
-  cancel-in-progress: false
+  contents: read
 jobs:
-  archive:
+  fictional-generation:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
-    env:
-      STAGED: 1cd9aa5b448dd5a3dff4f7632efa15d8bf42968a
-      PREVIOUS: 09e32b2be84cf287cb9adf89807bd9cc41ca05c5
-      TARGET: backup/research-recovered-2026-09-25
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 1cd9aa5b448dd5a3dff4f7632efa15d8bf42968a
+          ref: 290e310707cf8bef6caf2508c285312b091bd18b
           fetch-depth: 0
-      - name: Restore one historical snapshot and verify every original file
-        shell: bash
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install -r requirements.txt
+      - name: Verify unchanged source and public fixture
         run: |
-          test "$(git rev-parse HEAD)" = "$STAGED"
-          python - <<'PY'
-          import base64, hashlib, json, lzma, re, subprocess
-          from pathlib import Path
-          packed = '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'
-          decoded = lzma.decompress(base64.b64decode(packed, validate=True))
-          assert hashlib.sha256(decoded).hexdigest() == '67763ff8019f826e710f36cd73324c98473889cb062fa5f046be017f52d2866b'
-          base_blob = '9572e983cd0e52b23744f8db62b4fd43e21d05a1'
-          original = subprocess.check_output(['git','cat-file','blob',base_blob])
-          assert hashlib.sha1(b'blob '+str(len(original)).encode()+b'\0'+original).hexdigest() == base_blob
-          lines = original.decode('utf-8').splitlines(keepends=True)
-          ops = json.loads(decoded)
-          cursor, chunks = 0, []
-          for start, end, replacement in ops:
-              assert cursor <= start <= end <= len(lines)
-              chunks.extend(lines[cursor:start]); chunks.append(replacement); cursor = end
-          chunks.extend(lines[cursor:])
-          restored = ''.join(chunks).encode('utf-8')
-          assert hashlib.sha256(restored).hexdigest() == 'c49c516b1648f77fe40949c73bef4f1db216c49d5df8ecc4dbf7be1b0c016491'
-          root = Path('docs/handoff/2026-09-24-endstate-research/original-pack')
-          destination = root/'source-of-truth/CURRENT-INTEGRATED-BUILD-CHECKLIST.md'
-          assert not destination.exists()
-          destination.write_bytes(restored)
-          manifest = (root/'MANIFEST.md').read_bytes()
-          assert hashlib.sha256(manifest).hexdigest() == '944253e3a5405fd247377fb054207be3dd0f21aa00abd1a5c031311cdf011e9b'
-          entries = re.findall(r'^- `([^`]+)` - SHA-256 `([0-9a-f]{64})`$', manifest.decode(), re.M)
-          assert len(entries) == 17 and len({p for p, _ in entries}) == 17
-          for name, expected in entries:
-              path = root/name
-              assert path.resolve().is_relative_to(root.resolve())
-              assert hashlib.sha256(path.read_bytes()).hexdigest() == expected, name
-          assert {p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file()} == {name for name,_ in entries} | {'MANIFEST.md'}
-          print('Verified all 18 original files against the recovered research archive manifest.')
-          PY
-          git add -- docs/handoff/2026-09-24-endstate-research/original-pack/source-of-truth/CURRENT-INTEGRATED-BUILD-CHECKLIST.md
-          test "$(git diff --cached --name-only)" = 'docs/handoff/2026-09-24-endstate-research/original-pack/source-of-truth/CURRENT-INTEGRATED-BUILD-CHECKLIST.md'
-          git diff --exit-code
-      - name: Publish only the existing research backup branch
-        shell: bash
+          test "$(git rev-parse HEAD^{tree})" = '214c4835869dbe70f7c6ff6811977e5bb5a62841'
+          echo '2529e648df174aaeb560c9282d928bac483707ef366cb69e7eef2091b3f8dbd1  evals/generation-cases.json' | sha256sum --check
+          mkdir -p artifacts/generation
+          git rev-parse HEAD HEAD^{tree} > artifacts/generation/SOURCE.txt
+      - name: Start the previously selected pinned runtime
         run: |
-          actual="$(git ls-remote --heads origin "refs/heads/$TARGET" | cut -f1)"
-          test "$actual" = "$PREVIOUS"
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Complete and verify the 18-file deferred research archive'
-          git push origin "HEAD:refs/heads/$TARGET"
-          git rev-parse HEAD HEAD^{tree}
-          echo 'No application branch, main, PR state, model service or deployment was changed.'
+          curl -fL --retry 2 https://github.com/ollama/ollama/releases/download/v0.34.3/ollama-linux-amd64.tar.zst -o "$RUNNER_TEMP/ollama.tar.zst"
+          echo "e83a089fd0cd2f79ee2933cca2085846a2065f497adbc6467c402177c68423f9  $RUNNER_TEMP/ollama.tar.zst" | sha256sum --check
+          mkdir -p "$RUNNER_TEMP/ollama"
+          tar --zstd -xf "$RUNNER_TEMP/ollama.tar.zst" -C "$RUNNER_TEMP/ollama"
+          rm "$RUNNER_TEMP/ollama.tar.zst"
+          echo "$RUNNER_TEMP/ollama/bin" >> "$GITHUB_PATH"
+          OLLAMA_HOST=127.0.0.1:11434 OLLAMA_NO_CLOUD=1 OLLAMA_NUM_PARALLEL=1 OLLAMA_MODELS="$RUNNER_TEMP/ollama-models" "$RUNNER_TEMP/ollama/bin/ollama" serve > "$RUNNER_TEMP/ollama.log" 2>&1 &
+          for n in $(seq 1 30); do curl -fsS http://127.0.0.1:11434/api/version && break; sleep 1; done
+      - name: Explicit isolated download of the existing public development model
+        run: ollama pull qwen3.5:4b
+      - name: Actual unchanged four-case generation gate
+        env:
+          EIGHTBALL_OLLAMA_MODEL: qwen3.5:4b
+          EIGHTBALL_GRAPH_PROVIDER: ollama_staged
+        run: python evals/live_generation.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v02-qwen-baseline-20260927
+          path: artifacts/generation/
+          if-no-files-found: warn
