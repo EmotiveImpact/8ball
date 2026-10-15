@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "original_human_steps_verified": 20,
+  "unperformed_human_rows": 54,
+  "local_markdown_links_checked": 38,
+  "rubric_version": "endstate.plan-rubric.v1",
+  "protocol_approvals_and_thresholds": "unset",
+  "task_status_acceptance_required_values": "unchanged",
+  "fixture_sha256": "6758c54a9e873bf2f67ced368555b871d9cf890b55b4df33762a035be1deaeb3",
+  "files": {
+    "docs/delivery/review/HUMAN-ACCEPTANCE.template.md": "2a8b87d9ec97c43071091477fbb1cdde6241c288495e0da0ddb514f440f5c01b",
+    "docs/delivery/review/README.md": "ff7371c1b9813827e002396ad9348bac7f67cc1a8c908ab82275d58184b05109",
+    "docs/delivery/review/case-review.template.json": "6340220f9f57ff865a0ebf9671e0969a3666232f0c76a71bccc8adefb51beb9c",
+    "docs/delivery/review/protocol.template.json": "fa57f0e928968dd8904439fbd8d02c4764a1ff76d9b60bc89f1e573c1e4e380e"
+  },
+  "actual_model_calls": 0,
+  "human_acceptance_performed": false
+}

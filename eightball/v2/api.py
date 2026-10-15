@@ -10,7 +10,7 @@ from .store import Store
 from .playbooks import demo_case, make_case, list_playbooks, get_playbook
 from .planner import plan, briefing, question_priorities
 from .services import detail, Scenario, simulate, migrate_legacy, client_brief, action_brief, situation_map
-from .intelligence import propose, retrieve, provider_status, validate_request
+from .intelligence import propose, retrieve, provider_status, validate_request, ExtractionFailure
 from ..store import Conflict, digest
 from ..models import utcnow
 from ..providers import ProviderUnavailable
@@ -294,8 +294,8 @@ def router(store:Store,legacy,authorised):
             if isinstance(exc,HostedSetupRequired):
                 raise HTTPException(422,str(exc)) from None
             if not isinstance(exc,ProviderUnavailable) and body.provider in ('rules','playbook'):raise
-            trace=exc.trace if isinstance(exc,DraftFailure) else getattr(exc,'trace',{'failed':True}) if isinstance(exc,HostedFailure) else {'failed':True}
-            failed=Proposal(case_id=case_id,base_revision=case.revision,provider=body.provider,model=exc.model if isinstance(exc,DraftFailure) else 'unavailable',purpose=body.purpose,
+            trace=exc.trace if isinstance(exc,(DraftFailure,ExtractionFailure)) else getattr(exc,'trace',{'failed':True}) if isinstance(exc,HostedFailure) else {'failed':True}
+            failed=Proposal(case_id=case_id,base_revision=case.revision,provider=body.provider,model=exc.model if isinstance(exc,(DraftFailure,ExtractionFailure)) else 'unavailable',purpose=body.purpose,
                             source_ids=body.source_ids,output_hash=digest(trace),raw_output=trace,latency_ms=round((time.perf_counter()-started)*1000,2),status='failed',
                             note='Analysis stopped before review. No model output was accepted and no case facts changed. Inspect the recorded stage diagnostic or continue manually.')
             store.save_proposal(failed)

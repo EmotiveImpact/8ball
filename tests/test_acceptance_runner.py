@@ -156,3 +156,46 @@ def test_model_call_accounting_survives_rejection(monkeypatch):
         assert report['actual_model_calls_started']==2 and len(report['jobs'])==1
         assert report['jobs'][0]['status']=='failed'
     finally:client.close()
+
+
+@pytest.mark.parametrize('invalid',['schema','span'])
+def test_journey_report_preserves_actual_queue_rejection_after_disposable_database_cleanup(monkeypatch,tmp_path,invalid):
+    """Controlled responses exercise the queue/report path, never actual inference."""
+    import tempfile
+    import httpx
+    from eightball.v2.analysis_jobs import AnalysisJobs,AnalysisRequest
+    from eightball.v2.store import Store
+    from eightball.v2.playbooks import demo_case
+    from eightball.v2.intelligence import PROMPT_VERSION
+    raw={'items':[{'kind':'claim','text':'Unsupported claim',
+                  'source':{'evidence_id':'missing','quote':'Unsupported quotation'}}]}
+    if invalid=='schema':raw['items'][0]['kind']='observation'
+    report={'jobs':[],'provider_proposals':[],'actual_model_calls_started':0}
+    path=tmp_path/'retained-report.json'
+    with tempfile.TemporaryDirectory(dir=tmp_path) as disposable:
+        database=Path(disposable)/'case.db';store=Store(str(database));c=store.create(demo_case(),fixture=True)
+        def factory(**kw):
+            return httpx.Client(transport=httpx.MockTransport(lambda req:httpx.Response(200,json={
+                'model':'controlled-model','done':True,'message':{'content':json.dumps(raw)}})))
+        manager=AnalysisJobs(store,launch=False,client_factory=factory)
+        client=j.API('fixture-only')
+        def post(url,body):
+            assert url==f'/cases/{c.id}/analysis-jobs'
+            queued=manager.submit(c.id,AnalysisRequest.model_validate(body))
+            assert manager.run_next()
+            return queued
+        def read(url):
+            if url.endswith('/proposals'):return store.proposals(c.id)
+            return manager.get(c.id,url.rsplit('/',1)[1])
+        monkeypatch.setattr(client,'post',post);monkeypatch.setattr(client,'read',read)
+        try:
+            with pytest.raises(j.GateFailure):
+                client.analyse({'id':c.id,'revision':0},'ollama','extract',[c.evidence[0].id],report)
+        finally:client.close()
+        path.write_text(json.dumps(report,allow_nan=False))
+    assert not database.exists()
+    retained=json.loads(path.read_text())
+    assert retained['actual_model_calls_started']==1 and retained['jobs'][0]['status']=='failed'
+    failure=retained['provider_proposals'][0]
+    assert failure['status']=='failed' and failure['model']=='controlled-model' and failure['latency_ms']>=0
+    assert failure['raw_output']['prompt_version']==PROMPT_VERSION and failure['raw_output']['extraction']==raw

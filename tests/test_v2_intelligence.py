@@ -6,7 +6,7 @@ import pytest
 from pydantic import ValidationError
 from eightball.models import Evidence,utcnow
 from eightball.v2.contracts import Case,Objective,atom,all_of,any_of
-from eightball.v2.intelligence import propose,ollama_json,GraphOutput
+from eightball.v2.intelligence import propose,ollama_json,GraphOutput,ExtractionFailure
 from eightball.providers import ProviderUnavailable
 
 
@@ -52,6 +52,60 @@ def test_real_adapter_contract_cannot_change_state():
 def test_model_cannot_add_unsupported_spans_or_privileged_objects(output):
     with pytest.raises((ValueError,ValidationError)):
         propose(case(),'ollama','extract',['source'],client=client(output))
+
+
+@pytest.mark.parametrize('output,code',[
+    (extracted(kind='observation',value=True),'invalid_extraction_shape'),
+    (extracted(source={'evidence_id':'source','quote':'The client accepted the offer.'}), 'unsupported_extraction_span'),
+])
+def test_rejected_parsed_extraction_retains_detached_output_and_safe_diagnostic(output,code):
+    from copy import deepcopy
+    from hashlib import sha256
+    from eightball.v2.intelligence import PROMPT_VERSION,ExtractionOutput
+    from eightball.store import digest
+    c=case();before=c.model_dump(mode='json');original=deepcopy(output)
+    with client(output) as transport:
+        with pytest.raises(ExtractionFailure) as caught:
+            propose(c,'ollama','extract',['source'],client=transport)
+    failure=caught.value
+    assert failure.model=='fixture-model' and failure.trace['model']=='fixture-model'
+    assert failure.trace['prompt_version']==PROMPT_VERSION
+    assert failure.trace['schema_sha256']==digest(ExtractionOutput.model_json_schema())
+    assert failure.trace['sources']==[{'id':'source','text_sha256':sha256(c.evidence[0].text.encode()).hexdigest()}]
+    assert failure.trace['diagnostic']['code']==code and failure.trace['extraction']==original
+    assert 'input' not in json.dumps(failure.trace['diagnostic']) and 'accepted' not in str(failure)
+    output.clear()
+    assert failure.trace['extraction']==original and c.model_dump(mode='json')==before
+
+
+@pytest.mark.parametrize('raw,omission',[
+    ({'items':[],'unexpected':'x'*500001},'parsed_output_exceeds_limit'),
+    ({'items':[],'unexpected':float('inf')},'parsed_output_not_finite_json'),
+])
+def test_rejected_output_audit_cannot_store_oversized_or_nonfinite_json(monkeypatch,raw,omission):
+    from eightball.v2 import intelligence
+    monkeypatch.setattr(intelligence,'ollama_json',lambda *a,**k:(raw,'fixture-model'))
+    with pytest.raises(ExtractionFailure) as caught:propose(case(),'ollama','extract',['source'])
+    trace=caught.value.trace
+    assert trace['output_omitted']==omission and 'extraction' not in trace
+    json.dumps(trace,allow_nan=False)
+
+
+def test_hosted_extraction_rejection_retains_parsed_output_and_transport_without_credentials(monkeypatch):
+    token='hf_controlled-fixture-token'
+    monkeypatch.setenv('HF_TOKEN',token)
+    monkeypatch.setenv('EIGHTBALL_HF_MODEL','fixture/selected-model')
+    monkeypatch.setenv('EIGHTBALL_HF_PROVIDER','fixture-provider')
+    raw=extracted(kind='observation')
+    envelope={'model':'served-fixture-model','choices':[{'finish_reason':'stop',
+              'message':{'role':'assistant','content':json.dumps(raw)}}]}
+    with httpx.Client(transport=httpx.MockTransport(lambda req:httpx.Response(200,json=envelope))) as transport:
+        with pytest.raises(ExtractionFailure) as caught:
+            propose(case(),'huggingface','extract',['source'],allow_external=True,client=transport)
+    trace=caught.value.trace
+    assert trace['extraction']==raw and caught.value.model=='served-fixture-model'
+    assert len(trace['transport']['calls'])==1 and trace['transport']['calls'][0]['served_model']=='served-fixture-model'
+    assert token not in json.dumps(trace) and token not in str(caught.value)
 
 
 @pytest.mark.parametrize('envelope',[{'done':False},{'done_reason':'length'},{'message':{'content':'not json'}},{'done':'true'}])

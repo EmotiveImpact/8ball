@@ -1,3 +1,11 @@
+# Current handoff: provider failure evidence and review pack, 15 October 2026
+
+Continue on `fix/v02-provider-failure-evidence-20261015` from `45f8794733df9635d8daf5146a37fb94af9e8e90`, preserving both prior fixes. Read [this sprint record](sessions/2026-10-15-provider-failure-evidence.md) and [the unperformed review pack](review/README.md). The scoped change retains rejected extraction evidence; templates do not complete acceptance. Verification and publication must be recorded in the final receipt before handoff.
+
+The owner will review the app at the end. Provider choice was not understood and the copied fields remain placeholders; a plain-language free local Ollama/Qwen setup choice is pending. No permission is inferred from silence. Independent qualified review/approved thresholds remain distinct from owner visual/usability review. B02 remains 10/20; ES01 remains 5/5 internal. No main merge, deployment, deferred research or other application.
+
+---
+
 # Current closeout: graph keyboard focus verified; external acceptance blocked
 
 15 October 2026. Branch `fix/v02-graph-keyboard-20261015` includes the prior generation correction and the new graph keyboard fix. Tested code `5312c6c2f9ef39a68c320b2e1684897c6ac33265` passed **951 code + 951 installed-kernel tests and 382 checks in eleven native Chromium suites**, with source/artifact inspection valid. [Sprint handoff](sessions/2026-10-15-graph-keyboard-focus.md) and [receipt](../evidence/graph-keyboard-native-2026-10-15.json) preserve exact source and results. Subsequent receipt edits are documentation only, verified by generated/history guards.

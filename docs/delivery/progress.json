@@ -205,6 +205,11 @@
       "path": "docs/evidence/graph-keyboard-native-2026-10-15.json",
       "result": "Four native baseline focus failures corrected. 951 code tests, 951 installed-kernel tests and 382 native checks across eleven browser suites passed; source/artifact inspection valid. No human accessibility, dense-case operator or model acceptance.",
       "code_commit": "5312c6c2f9ef39a68c320b2e1684897c6ac33265"
+    },
+    "EV-PROVIDER-FAILURE-REVIEW": {
+      "kind": "implementation_and_review_preparation",
+      "path": "docs/delivery/sessions/2026-10-15-provider-failure-evidence.md",
+      "result": "Bounded rejected-extraction evidence correction and unperformed review templates; actual regression/native results pending final receipt. No model, semantic or human acceptance is claimed."
     }
   },
   "milestones": [
@@ -620,8 +625,8 @@
       "status": "blocked",
       "required": true,
       "owner": "Codex",
-      "working_branch": "fix/v02-generation-contract-20261015",
-      "base_commit": "290e310707cf8bef6caf2508c285312b091bd18b",
+      "working_branch": "fix/v02-provider-failure-evidence-20261015",
+      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
       "updated_on": "2026-10-15",
       "code_paths": [
         "eightball/v2/intelligence.py",
@@ -638,7 +643,8 @@
         "EV-HF-BLACK-LOCAL",
         "EV-NATIVE-CLOSEOUT",
         "EV-QWEN-20260927",
-        "EV-GENERATION-ROLE-CONTRACT"
+        "EV-GENERATION-ROLE-CONTRACT",
+        "EV-PROVIDER-FAILURE-REVIEW"
       ],
       "blockers": [
         "Fresh selected-provider generation has not been rerun after prompt correction; local Ollama is unreachable and hosted model/provider/credential variables are unset. Provider selection and inference permission are pending.",
@@ -652,10 +658,10 @@
       "title": "Robust source extraction, deadlines and entity reconciliation",
       "status": "partial",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
-      "updated_on": "2026-09-26",
+      "owner": "Codex",
+      "working_branch": "fix/v02-provider-failure-evidence-20261015",
+      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
+      "updated_on": "2026-10-15",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "endstate/time_review.py",
@@ -672,7 +678,8 @@
         "EV-REMAINING",
         "EV-SOURCE-DESK-LOCAL",
         "EV-SOURCE-CLARITY-LOCAL",
-        "EV-NATIVE-CLOSEOUT"
+        "EV-NATIVE-CLOSEOUT",
+        "EV-PROVIDER-FAILURE-REVIEW"
       ],
       "blockers": [
         "Independent multi-source identity/date usefulness review remains outstanding.",
@@ -686,10 +693,10 @@
       "title": "Independent quality evaluation and production-model selection",
       "status": "partial",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
-      "updated_on": "2026-09-26",
+      "owner": "Codex",
+      "working_branch": "fix/v02-provider-failure-evidence-20261015",
+      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
+      "updated_on": "2026-10-15",
       "code_paths": [
         "evals/live_generation.py",
         "evals/classification-cases.json",
@@ -706,12 +713,13 @@
       "evidence": [
         "EV-REMAINING",
         "EV-PLAN-REVIEW-LOCAL",
-        "EV-NATIVE-CLOSEOUT"
+        "EV-NATIVE-CLOSEOUT",
+        "EV-PROVIDER-FAILURE-REVIEW"
       ],
       "blockers": [
         "Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed."
       ],
-      "next_action": "Obtain protocol/label approval and run the preserved real-provider gate; native software acceptance is not semantic approval."
+      "next_action": "Use docs/delivery/review/protocol.template.json to obtain prospective owner/qualified reviewer approval and independently authored labels. Run authorized actual-provider comparisons only afterward; templates/native software acceptance are not semantic approval."
     },
     {
       "id": "B02-12",
@@ -719,10 +727,10 @@
       "title": "Full twenty-step real-model V0.2 acceptance journey",
       "status": "blocked",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
-      "updated_on": "2026-09-26",
+      "owner": "Codex",
+      "working_branch": "fix/v02-provider-failure-evidence-20261015",
+      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
+      "updated_on": "2026-10-15",
       "code_paths": [
         "tests/browser_v2.py",
         "evals/full_journey.py",
@@ -741,7 +749,8 @@
         "EV-STAGED-MODEL",
         "EV-INTEGRATION-LOCAL",
         "EV-INTEGRATION-BLOCKED",
-        "EV-NATIVE-CLOSEOUT"
+        "EV-NATIVE-CLOSEOUT",
+        "EV-PROVIDER-FAILURE-REVIEW"
       ],
       "blockers": [
         "Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey."
@@ -784,10 +793,10 @@
       "title": "Source chunking, duplication and reviewer-safe object reconciliation",
       "status": "partial",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
-      "updated_on": "2026-09-26",
+      "owner": "Codex",
+      "working_branch": "fix/v02-provider-failure-evidence-20261015",
+      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
+      "updated_on": "2026-10-15",
       "code_paths": [
         "eightball/v2/source_contracts.py",
         "eightball/v2/source_desk.py",
@@ -812,7 +821,8 @@
         "EV-SOURCE-DESK-LOCAL",
         "EV-SOURCE-CLARITY-LOCAL",
         "EV-SOURCE-SEARCH-RACE",
-        "EV-NATIVE-CLOSEOUT"
+        "EV-NATIVE-CLOSEOUT",
+        "EV-PROVIDER-FAILURE-REVIEW"
       ],
       "blockers": [
         "Independent multi-source identity/date usefulness review remains outstanding.",
@@ -826,10 +836,10 @@
       "title": "Model progress/cancellation and accurate installation status",
       "status": "partial",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
-      "updated_on": "2026-09-26",
+      "owner": "Codex",
+      "working_branch": "fix/v02-provider-failure-evidence-20261015",
+      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
+      "updated_on": "2026-10-15",
       "code_paths": [
         "eightball/v2/analysis_jobs.py",
         "web/v2/job-view.js",
@@ -843,7 +853,8 @@
         "EV-REMAINING",
         "EV-HF-BLACK-LOCAL",
         "EV-PLAN-STUDIO-LOCAL",
-        "EV-NATIVE-CLOSEOUT"
+        "EV-NATIVE-CLOSEOUT",
+        "EV-PROVIDER-FAILURE-REVIEW"
       ],
       "blockers": [
         "Lifecycle behaviour with the selected real inference provider remains unverified."
@@ -857,8 +868,8 @@
       "status": "partial",
       "required": true,
       "owner": "Codex",
-      "working_branch": "fix/v02-graph-keyboard-20261015",
-      "base_commit": "821d9f512a70aaa602587caa4ef604021719b01f",
+      "working_branch": "fix/v02-provider-failure-evidence-20261015",
+      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
       "updated_on": "2026-10-15",
       "code_paths": [
         "tests/browser_accessibility.py",
@@ -877,12 +888,13 @@
         "EV-INTEGRATION-BLOCKED",
         "EV-SOURCE-SEARCH-RACE",
         "EV-NATIVE-CLOSEOUT",
-        "EV-GRAPH-KEYBOARD-FOCUS"
+        "EV-GRAPH-KEYBOARD-FOCUS",
+        "EV-PROVIDER-FAILURE-REVIEW"
       ],
       "blockers": [
         "Human screen-reader and supported-browser/OS review remains outstanding; Linux/Chromium native software tests passed."
       ],
-      "next_action": "Complete the recorded human accessibility and supported-platform review, not another UI feature."
+      "next_action": "Complete the recorded human accessibility and supported-platform review, not another UI feature. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations."
     },
     {
       "id": "B02-17",
@@ -1692,10 +1704,10 @@
       "title": "Black operator visual system and transparent intelligence controls",
       "status": "partial",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
-      "updated_on": "2026-09-26",
+      "owner": "Codex",
+      "working_branch": "fix/v02-provider-failure-evidence-20261015",
+      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
+      "updated_on": "2026-10-15",
       "code_paths": [
         "web/v2/style.css",
         "web/v2/views.js",
@@ -1709,12 +1721,13 @@
       "evidence": [
         "EV-HF-BLACK-LOCAL",
         "EV-GRAPH-EXPLORER-LOCAL",
-        "EV-NATIVE-CLOSEOUT"
+        "EV-NATIVE-CLOSEOUT",
+        "EV-PROVIDER-FAILURE-REVIEW"
       ],
       "blockers": [
         "Owner visual review and broader human accessibility acceptance remain outstanding."
       ],
-      "next_action": "Review the current black workspace without expanding scope; preserve passing native controls."
+      "next_action": "Review the current black workspace without expanding scope; preserve passing native controls. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations."
     },
     {
       "id": "B02-20",
@@ -1723,8 +1736,8 @@
       "status": "implemented",
       "required": true,
       "owner": "Codex",
-      "working_branch": "fix/v02-graph-keyboard-20261015",
-      "base_commit": "821d9f512a70aaa602587caa4ef604021719b01f",
+      "working_branch": "fix/v02-provider-failure-evidence-20261015",
+      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
       "updated_on": "2026-10-15",
       "code_paths": [
         "web/v2/graph-model.js",
@@ -1746,12 +1759,13 @@
       "evidence": [
         "EV-GRAPH-EXPLORER-LOCAL",
         "EV-NATIVE-CLOSEOUT",
-        "EV-GRAPH-KEYBOARD-FOCUS"
+        "EV-GRAPH-KEYBOARD-FOCUS",
+        "EV-PROVIDER-FAILURE-REVIEW"
       ],
       "blockers": [
         "Representative dense-case operator usability and broader accessibility review remain outstanding."
       ],
-      "next_action": "Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass."
+      "next_action": "Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations."
     },
     {
       "id": "DOC-04",

@@ -4,6 +4,50 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Preserve rejected extraction evidence and prepare V0.2 human review
+
+2026-10-15 · `local_unreleased`
+
+Bounded failure provenance through provider/jobs/proposals, with unperformed prospective protocol, independent case review and original twenty-step human walkthrough.
+
+### Added
+
+- Unperformed review pack with source, lifecycle, accessibility/platform, visual/mobile and dense-graph task sheets.
+
+### Changed
+
+- Recording aids keep prospective approval, independent labels, owner review and scripted integration separate.
+
+### Fixed
+
+- Ollama extraction schema/span rejection previously lost parsed model output before async journey export; structural rejection and live-state guards remain.
+
+### Verification
+
+- 207 controlled provider/job/journey/hosted/compiler regressions passed. Original rejection/state/cancel/stale boundaries remain.
+- Review-pack verification passed: original 20 steps, 54 NOT_RUN rows, 38 local links, rubric/version/null defaults, unchanged task scope/status and frozen generation hash. Dependency check passed.
+- Cumulative native verification pending at implementation checkpoint; the final source-bound receipt records the actual result.
+
+### Limitations
+
+- No actual inference/model download or independent human acceptance at this preparation checkpoint. Provider choice/permission is pending; owner review is requested at the end.
+- B02 remains 10/20 and ES01 remains 5/5 internal; no release/merge/deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-051/055: a correct extraction rejection can lose its raw model output through the async disposable journey evidence path.
+- Discovery: EM-054: scripted twenty checks and original human twenty steps need separate unperformed recording aids.
+- Risk: Retaining provider failure must not expose arbitrary transport/credential errors or publish cancelled/stale output.
+- Architecture: Use the existing protected failed-proposal path; no kernel, truth or authority change.
+- Roadmap decision: existing_task B02-09/B02-11/B02-12/B02-15 plus existing human review scopes; no new required scope.
+Registered discoveries: EM-051, EM-054, EM-055.
+
+Roadmap items: `B02-09`, `B02-10`, `B02-11`, `B02-12`, `B02-14`, `B02-15`, `B02-16`, `B02-19`, `B02-20`, `DOC-03`, `DOC-04`, `DOC-05`.
+
+Evidence: [docs/delivery/sessions/2026-10-15-provider-failure-evidence.md](docs/delivery/sessions/2026-10-15-provider-failure-evidence.md), [docs/delivery/review/README.md](docs/delivery/review/README.md), [docs/evidence/v02-review-pack-2026-10-15.json](docs/evidence/v02-review-pack-2026-10-15.json).
+
 ## 0.2.0-alpha.8 · Graph keyboard fix passed cumulative native acceptance
 
 2026-10-15 · `pushed_unreleased`

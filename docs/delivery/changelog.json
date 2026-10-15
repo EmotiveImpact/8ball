@@ -3,6 +3,69 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-15-provider-failure-review",
+      "date": "2026-10-15",
+      "version": "0.2.0-alpha.8",
+      "title": "Preserve rejected extraction evidence and prepare V0.2 human review",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-09",
+        "B02-10",
+        "B02-11",
+        "B02-12",
+        "B02-14",
+        "B02-15",
+        "B02-16",
+        "B02-19",
+        "B02-20",
+        "DOC-03",
+        "DOC-04",
+        "DOC-05"
+      ],
+      "summary": "Bounded failure provenance through provider/jobs/proposals, with unperformed prospective protocol, independent case review and original twenty-step human walkthrough.",
+      "added": [
+        "Unperformed review pack with source, lifecycle, accessibility/platform, visual/mobile and dense-graph task sheets."
+      ],
+      "changed": [
+        "Recording aids keep prospective approval, independent labels, owner review and scripted integration separate."
+      ],
+      "fixed": [
+        "Ollama extraction schema/span rejection previously lost parsed model output before async journey export; structural rejection and live-state guards remain."
+      ],
+      "verification": [
+        "207 controlled provider/job/journey/hosted/compiler regressions passed. Original rejection/state/cancel/stale boundaries remain.",
+        "Review-pack verification passed: original 20 steps, 54 NOT_RUN rows, 38 local links, rubric/version/null defaults, unchanged task scope/status and frozen generation hash. Dependency check passed.",
+        "Cumulative native verification pending at implementation checkpoint; the final source-bound receipt records the actual result."
+      ],
+      "limitations": [
+        "No actual inference/model download or independent human acceptance at this preparation checkpoint. Provider choice/permission is pending; owner review is requested at the end.",
+        "B02 remains 10/20 and ES01 remains 5/5 internal; no release/merge/deployment."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-15-provider-failure-evidence.md",
+        "docs/delivery/review/README.md",
+        "docs/evidence/v02-review-pack-2026-10-15.json"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-051/055: a correct extraction rejection can lose its raw model output through the async disposable journey evidence path.",
+          "EM-054: scripted twenty checks and original human twenty steps need separate unperformed recording aids."
+        ],
+        "risks": [
+          "Retaining provider failure must not expose arbitrary transport/credential errors or publish cancelled/stale output."
+        ],
+        "architecture_implications": [
+          "Use the existing protected failed-proposal path; no kernel, truth or authority change."
+        ],
+        "roadmap_decision": "existing_task B02-09/B02-11/B02-12/B02-15 plus existing human review scopes; no new required scope.",
+        "insight_ids": [
+          "EM-051",
+          "EM-054",
+          "EM-055"
+        ]
+      }
+    },
+    {
       "id": "2026-10-15-graph-native-receipt",
       "date": "2026-10-15",
       "version": "0.2.0-alpha.8",
@@ -425,7 +488,7 @@
         "ES03-08",
         "B04-04"
       ],
-      "summary": "Documentation-only refinement: 8BALL becomes the fixer’s live situation room around an explicit mandate and human-selected course; ENDSTATE remains a neutral planning and reconsideration engine. No runtime completion or new required scope is implied.",
+      "summary": "Documentation-only refinement: 8BALL becomes the fixer\u2019s live situation room around an explicit mandate and human-selected course; ENDSTATE remains a neutral planning and reconsideration engine. No runtime completion or new required scope is implied.",
       "added": [
         "Separate 8BALL and ENDSTATE vision documents, ADR 0004 and proposed course/coverage/recovery acceptance scenarios.",
         "Ten new discoveries retained alongside all 55 originals; five additional end-of-sprint review prompts.",
@@ -436,7 +499,7 @@
         "Earlier fallback/watch/attention/recoverability discoveries have appended dispositions rather than rewritten observations."
       ],
       "fixed": [
-        "The latest handoff’s missing Draft Repair source is explicitly separated from the recovered alpha.7 implementation; later narrated test totals are not attached to the earlier source.",
+        "The latest handoff\u2019s missing Draft Repair source is explicitly separated from the recovered alpha.7 implementation; later narrated test totals are not attached to the earlier source.",
         "No-path wording now identifies the supplied catalogue and search bounds rather than implying global impossibility.",
         "The review protocol now permits additional passes while requiring the original ten and preserving recorded prompt text/order. Seven regression checks cover safe extension and denied rewrites."
       ],
@@ -706,7 +769,7 @@
           "The bounded calendar-day interpreter deliberately cannot decide what next business day or end of day means for every organisation, location or agreement."
         ],
         "risks": [
-          "Shared names, exact quotations and schema validation do not prove identity, authority or the source’s intended date.",
+          "Shared names, exact quotations and schema validation do not prove identity, authority or the source\u2019s intended date.",
           "Withdrawing evidence should prompt reconsideration, not silently remove adopted operational commitments."
         ],
         "architecture_implications": [
@@ -927,7 +990,7 @@
         "Guided nested AND/OR and explicit-false authoring, guards, intended effects, verification criteria, resources, decision gates and response contingencies.",
         "Read-only amendment preview with route differences, historical protections, undo/redo, discard and a separate revision-checked commit.",
         "Persistent local analysis status with bounded queue, stage counts, cancellation, stale-result rejection and restart interruption.",
-        "In-app What’s new and a generated root CHANGELOG.md. Every future build must update the shared changelog and delivery ledger.",
+        "In-app What\u2019s new and a generated root CHANGELOG.md. Every future build must update the shared changelog and delivery ledger.",
         "Desktop authoring columns scroll independently; smaller screens keep a responsive stacked layout."
       ],
       "changed": [

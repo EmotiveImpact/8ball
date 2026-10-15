@@ -217,3 +217,81 @@ def test_async_http_api_publishes_only_review_proposal(tmp_path):
     assert cl.get(base).json()['case']==before
     assert cl.get(base+'/history').json()['valid']
     assert cl.post(base+'/analysis-jobs',json=req).json()['id']==job['id']
+
+
+@pytest.mark.parametrize('invalid,code',[
+    ('schema','invalid_extraction_shape'),('span','unsupported_extraction_span'),
+])
+def test_actual_queue_worker_retains_rejected_extraction_without_case_changes(tmp_path,invalid,code):
+    from eightball.v2.intelligence import PROMPT_VERSION
+    store=Store(str(tmp_path/'failed-extraction.db'));c=store.create(demo_case(),fixture=True)
+    before=store.audit(c.id);source=c.evidence[0]
+    raw={'items':[{'kind':'claim','text':'The client accepted the offer.',
+                  'source':{'evidence_id':source.id,'quote':'Invented quotation absent from the fixture.'}}]}
+    if invalid=='schema':raw['items'][0]['kind']='observation'
+    calls=[]
+    def reply(req):
+        calls.append(str(req.url))
+        return httpx.Response(200,json={'model':'controlled-model','done':True,
+                                       'message':{'content':json.dumps(raw)}})
+    manager=AnalysisJobs(store,launch=False,client_factory=lambda **kw:httpx.Client(transport=httpx.MockTransport(reply)))
+    req=AnalysisRequest(request_id=uid(),expected_revision=0,provider='ollama',purpose='extract',source_ids=[source.id])
+    job=manager.submit(c.id,req);assert manager.run_next()
+    saved=store.proposals(c.id);done=manager.get(c.id,job['id'])
+    assert len(calls)==1 and done['status']=='failed' and done['calls_started']==done['calls_completed']==1
+    assert not done['worker_active'] and done['proposal_id']==saved[0]['id'] and len(saved)==1
+    proposal=saved[0];trace=proposal['raw_output']
+    assert proposal['status']=='failed' and not proposal['items'] and proposal['model']=='controlled-model'
+    assert proposal['source_ids']==[source.id] and proposal['base_revision']==0 and proposal['latency_ms']>=0
+    assert trace['failed_stage']=='extraction' and trace['prompt_version']==PROMPT_VERSION
+    assert trace['extraction']==raw and trace['diagnostic']['code']==code
+    after=store.audit(c.id)
+    assert proposal['output_hash']==digest(trace) and store.get(c.id)==c
+    assert {k:v for k,v in after.items() if k!='model_runs'}=={k:v for k,v in before.items() if k!='model_runs'}
+    assert after['model_runs']==[{'proposal':proposal,'review':None}]
+    assert 'Invented quotation' not in json.dumps(done)
+    assert AnalysisJobs(store,launch=False).get(c.id,job['id'])['proposal_id']==proposal['id']
+
+
+@pytest.mark.parametrize('stop',['cancel','stale'])
+def test_rejected_extraction_cannot_publish_after_cancel_or_case_change(tmp_path,stop):
+    store=Store(str(tmp_path/'stopped.db'));c=store.create(demo_case(),fixture=True)
+    raw={'items':[{'kind':'observation'}]};job=None
+    def reply(req):
+        if stop=='cancel':manager.cancel(c.id,job['id'])
+        else:store.change(c.id,Command(event_id=uid(),expected_revision=0,kind='metadata',payload={'budget':5000}))
+        return httpx.Response(200,json={'model':'controlled-model','done':True,'message':{'content':json.dumps(raw)}})
+    manager=AnalysisJobs(store,launch=False,client_factory=lambda **kw:httpx.Client(transport=httpx.MockTransport(reply)))
+    job=manager.submit(c.id,AnalysisRequest(request_id=uid(),expected_revision=0,provider='ollama',purpose='extract',source_ids=[c.evidence[0].id]))
+    assert manager.run_next()
+    done=manager.get(c.id,job['id'])
+    assert done['status']==('cancelled' if stop=='cancel' else 'superseded')
+    assert not done['proposal_id'] and not done['worker_active'] and not store.proposals(c.id)
+    assert store.get(c.id).observations==c.observations
+
+
+def test_ollama_http_error_body_is_not_extraction_evidence(tmp_path):
+    store=Store(str(tmp_path/'transport.db'));c=store.create(demo_case(),fixture=True)
+    def factory(**kw):
+        return httpx.Client(transport=httpx.MockTransport(lambda req:httpx.Response(500,text='HF_TOKEN=secret-fixture')))
+    manager=AnalysisJobs(store,launch=False,client_factory=factory)
+    job=manager.submit(c.id,AnalysisRequest(request_id=uid(),expected_revision=0,provider='ollama',purpose='extract',source_ids=[c.evidence[0].id]))
+    assert manager.run_next()
+    assert manager.get(c.id,job['id'])['status']=='failed' and not store.proposals(c.id)
+    assert 'secret-fixture' not in json.dumps(manager.list(c.id))
+
+
+def test_sync_api_retains_the_same_rejected_extraction_trace(tmp_path,monkeypatch):
+    from eightball.api import make_app
+    from eightball.store import Store as LegacyStore
+    from eightball.v2 import intelligence
+    from fastapi.testclient import TestClient
+    old=LegacyStore(str(tmp_path/'sync.db'));store=Store(old.path);c=store.create(demo_case(),fixture=True)
+    raw={'items':[{'kind':'observation'}]}
+    monkeypatch.setattr(intelligence,'ollama_json',lambda *a,**k:(raw,'controlled-model'))
+    api=TestClient(make_app(old,'x'*32),headers={'Authorization':'Bearer '+'x'*32})
+    result=api.post('/api/v2/cases/'+c.id+'/analyse',json={'expected_revision':0,'provider':'ollama','purpose':'extract','source_ids':[c.evidence[0].id]})
+    assert result.status_code==503 and 'observation' not in result.text
+    saved=store.proposals(c.id)[0]
+    assert saved['status']=='failed' and saved['model']=='controlled-model'
+    assert saved['raw_output']['extraction']==raw and store.get(c.id)==c

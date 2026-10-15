@@ -17,7 +17,7 @@ from typing import Callable
 import httpx
 from pydantic import Field, ValidationError
 from .contracts import Strict, Identifier, Proposal, Literal
-from .intelligence import propose, validate_request
+from .intelligence import propose, validate_request, ExtractionFailure
 from .hosted import HostedFailure, HostedSetupRequired
 from ..models import uid, utcnow
 from ..store import canonical, digest, Conflict
@@ -259,7 +259,7 @@ class AnalysisJobs:
         except Exception as exc:
             # Retain bounded structured draft diagnostics, never raw exception text.
             p = None
-            if request is not None and isinstance(exc, (DraftFailure, HostedFailure)):
+            if request is not None and isinstance(exc, (DraftFailure, HostedFailure, ExtractionFailure)):
                 trace = getattr(exc, 'trace', {'failed': True})
                 p = Proposal(case_id=job['case_id'], base_revision=job['base_revision'],
                              provider=request.provider, model=getattr(exc, 'model', 'unavailable'),
