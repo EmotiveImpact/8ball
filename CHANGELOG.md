@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Provider evidence and navigation fixes passed native software acceptance
+
+2026-10-15 · `pushed_unreleased`
+
+Source-bound final software receipt for bounded rejected extraction provenance, newer navigation preservation and unperformed review materials. Earlier failed evidence remains visible.
+
+### Added
+
+- Exact final source/report/per-suite hashes and private-copy review recording aids.
+
+### Changed
+
+- Canonical evidence and latest handoff record the final actual software result without promoting external acceptance gates.
+
+### Verification
+
+- At 294ff578, 964 source tests, 964 installed-kernel tests and 384 native checks across eleven suites passed; zero failed/errored/skipped code tests.
+- Compilation, JavaScript syntax, eight structural fixtures, internal wheel, schemas and generated/history guards passed; inspection valid=true/run_status=passed before documentation receipt edits.
+- Earlier c1defce native failure remains valid/failed and led to the refresh/navigation fix; no failed experiment was erased.
+
+### Limitations
+
+- Zero actual model calls or weights downloaded. Provider/download permission remains unanswered; owner review is deferred until the end as requested.
+- Review sheets remain unperformed; B02 stays 10/20 and ES01 stays 5/5 internal. Independent semantic/professional and human acceptance remain open.
+- Pushed source is not merged, released, deployed or remote-CI-verified; no research/industry scope expansion.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-051/055: preserve rejected extraction provenance through the disposable journey boundary.
+- Discovery: EM-035/053: older refresh destination must not override a later explicit navigation.
+- Discovery: EM-054: prepared human and independent review records remain distinct from scripted integration.
+- Risk: Passing source/native software checks does not clear provider quality or human acceptance.
+- Architecture: Failure retention and navigation sequencing preserve existing state, authority, source and session boundaries.
+- Roadmap decision: existing_task only; no required task promotion or deferred research implementation.
+Registered discoveries: EM-035, EM-051, EM-053, EM-054, EM-055.
+
+Roadmap items: `B02-09`, `B02-10`, `B02-11`, `B02-12`, `B02-14`, `B02-15`, `B02-16`, `B02-19`, `B02-20`, `DOC-03`, `DOC-04`, `DOC-05`.
+
+Evidence: [docs/evidence/provider-failure-native-2026-10-15.json](docs/evidence/provider-failure-native-2026-10-15.json), [docs/evidence/provider-failure-native-failed-2026-10-15.json](docs/evidence/provider-failure-native-failed-2026-10-15.json), [docs/evidence/v02-review-pack-2026-10-15.json](docs/evidence/v02-review-pack-2026-10-15.json), [docs/delivery/sessions/2026-10-15-provider-failure-evidence.md](docs/delivery/sessions/2026-10-15-provider-failure-evidence.md).
+
 ## 0.2.0-alpha.8 · Preserve explicit navigation when an earlier refresh finishes
 
 2026-10-15 · `local_unreleased`

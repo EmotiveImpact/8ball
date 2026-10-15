@@ -1,8 +1,10 @@
-# Current handoff: provider failure evidence and review pack, 15 October 2026
+# Current handoff: verified provider failure evidence and review pack, 15 October 2026
 
-Continue on `fix/v02-provider-failure-evidence-20261015` from `45f8794733df9635d8daf5146a37fb94af9e8e90`, preserving both prior fixes. Read [this sprint record](sessions/2026-10-15-provider-failure-evidence.md) and [the unperformed review pack](review/README.md). The scoped change retains rejected extraction evidence; templates do not complete acceptance. Verification and publication must be recorded in the final receipt before handoff.
+Continue on `fix/v02-provider-failure-evidence-20261015`, preserving generation-contract and graph-keyboard work. Read [this sprint record](sessions/2026-10-15-provider-failure-evidence.md), [the source-bound final receipt](../evidence/provider-failure-native-2026-10-15.json) and [the unperformed review pack](review/README.md). Rejected extraction now retains bounded parsed model output through queued/synchronous analysis and disposable journey reports. A cumulative failure also exposed and led to a correction for refresh overwriting newer navigation.
 
-The owner will review the app at the end. Provider choice was not understood and the copied fields remain placeholders; a plain-language free local Ollama/Qwen setup choice is pending. No permission is inferred from silence. Independent qualified review/approved thresholds remain distinct from owner visual/usability review. B02 remains 10/20; ES01 remains 5/5 internal. No main merge, deployment, deferred research or other application.
+At tested code commit `294ff578b963dcf50cc8d91d060182894773d159`, cumulative native acceptance passed 964 source tests, 964 installed-kernel tests and 384 native checks across all eleven suites. Source/artifact inspection was valid/passed before final documentation-only receipt edits; reconstruct that commit for re-inspection. Preserve the first failed run as well. Final response supplies the pushed receipt commit; no remote CI pass is implied.
+
+The owner will review the app at the end. Provider placeholders remain unfilled; the owner did not understand the first question, so a plain-language choice to install the existing free local Ollama/Qwen test setup was asked and remains pending. No silent download/inference, no paid call and no secret in chat. Independent qualified review/approved thresholds remain separate from owner visual/usability review. B02 remains 10/20 and ES01 remains 5/5 internal. Next: obtain the provider/download choice, configure deliberately, run unchanged four cases and actual-provider native/lifecycle checks, then genuine independent/human reviews. No main merge, deployment, deferred research or other application.
 
 ---
 

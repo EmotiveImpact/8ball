@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-15",
+  "scope": "Rejected extraction provenance, refresh/navigation correction and unperformed human review preparation; software regression only",
+  "branch": "fix/v02-provider-failure-evidence-20261015",
+  "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
+  "tested_code_commit": "294ff578b963dcf50cc8d91d060182894773d159",
+  "run_id": "20261015T224316Z-8df1acc3",
+  "status": "passed",
+  "mode": "native",
+  "source_fingerprint": "5f9d2dc44e0368956b9728c43202717e4547bf683000397d8777d2ea6cb9376d",
+  "report_sha256": "fa86342810b55db5e5076a03da0b03801cc9c2eff8a5ee34287d97cb22ac4af3",
+  "local_report_path": "artifacts/acceptance/20261015T224316Z-8df1acc3/report.json",
+  "completed_at": "2026-10-15T22:46:39.848690+00:00",
+  "inspection": {
+    "valid": true,
+    "run_status": "passed",
+    "performed_before_documentation_receipt": true
+  },
+  "code_tests": {
+    "tests": 964,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 964
+  },
+  "installed_kernel_tests": {
+    "tests": 964,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "native_browser_checks": 384,
+  "browser_suites": {
+    "browser-legacy": {
+      "count": 27,
+      "transport": "real loopback HTTP",
+      "sha256": "c553e60bb97ef58196ee5bee1f4fde22203273a6f5bade21c2d298c2faa549c6"
+    },
+    "browser-workspace": {
+      "count": 51,
+      "transport": "Native loopback HTTP",
+      "sha256": "ccffe9c582d516f163d069f2775e97a7621f5a1306531aea130afa6908e6945f"
+    },
+    "browser-providers": {
+      "count": 15,
+      "transport": "native loopback HTTP",
+      "sha256": "bbf0af67a54e14d14fab215a3b43ac7b72613af5df6e7e3fdcb796f7e1409093"
+    },
+    "browser-connections": {
+      "count": 42,
+      "transport": "Native loopback HTTP",
+      "sha256": "c0f21b9d6f57e53711802c0eeedae5647da1b4a0195eef504a797f16ce41f39c"
+    },
+    "browser-studio": {
+      "count": 44,
+      "transport": "native loopback HTTP",
+      "sha256": "458e2d912f7a9896da88e136e6aeba62970b56186a432d1509f53a09b1471797"
+    },
+    "browser-sources": {
+      "count": 39,
+      "transport": "native HTTP",
+      "sha256": "4abf02bc619f78c83f5133f848ceb2ef4cdb5b7810dbf8d8e9b8c93dcc93df27"
+    },
+    "browser-insights": {
+      "count": 40,
+      "transport": "Native loopback HTTP",
+      "sha256": "05a47f8e44b3e856cc19ad85bc4f2154835e5c6fed34788232f11969f304a952"
+    },
+    "browser-grounding": {
+      "count": 26,
+      "transport": "Native loopback HTTP",
+      "sha256": "4c0acde1ff3c693ac7714a556d7292a02bd4b8363b5c48091ee8ca5640153c35"
+    },
+    "browser-plan_review": {
+      "count": 33,
+      "transport": "Native loopback HTTP",
+      "sha256": "31e729ac5f4c7d638401be1211f9c255e08603623812b4b85ebd08a8516bf1aa"
+    },
+    "browser-accessibility": {
+      "count": 36,
+      "transport": "Native loopback HTTP",
+      "sha256": "1694bba70004e2b415b4a645d054f81605243be6dfce93d642b3fa47a1013e1d"
+    },
+    "browser-courses": {
+      "count": 31,
+      "transport": "Native loopback HTTP",
+      "sha256": "3dac79f1093e5145895cff92481ea8ce62a0b1d530544fca15c319c226663226"
+    }
+  },
+  "checks": {
+    "unit": "passed",
+    "compile": "passed",
+    "delivery": "passed",
+    "changelog": "passed",
+    "emergence": "passed",
+    "javascript": "passed",
+    "structural-fixtures": "passed",
+    "endstate-package": "passed",
+    "schemas": "passed",
+    "native-probe": "passed",
+    "browser-legacy": "passed",
+    "browser-workspace": "passed",
+    "browser-providers": "passed",
+    "browser-connections": "passed",
+    "browser-studio": "passed",
+    "browser-sources": "passed",
+    "browser-insights": "passed",
+    "browser-grounding": "passed",
+    "browser-plan_review": "passed",
+    "browser-accessibility": "passed",
+    "browser-courses": "passed"
+  },
+  "failed_cumulative_evidence": "docs/evidence/provider-failure-native-failed-2026-10-15.json",
+  "review_pack_validation": "docs/evidence/v02-review-pack-2026-10-15.json",
+  "actual_model_calls": 0,
+  "independent_semantic_review": false,
+  "human_acceptance": false,
+  "full_v02_accepted": false,
+  "merged": false,
+  "released": false,
+  "deployed": false,
+  "limits": [
+    "First native run failed only courses refresh/navigation; preserved unchanged. Corrected focused course suite passed31 checks and final cumulative run passed all384.",
+    "Controlled schema/span rejection tests preserve parsed outputs, not arbitrary transport-error bodies or non-JSON bytes. Explicit omission markers cover oversized/nonfinite output.",
+    "Prompt/schema validation and code review are not actual inference, independent semantic labels, owner review or human screen-reader/platform acceptance.",
+    "Full logs/JUnit/screenshots/schema/wheel remain locally under artifacts. The committed receipt is source/count/hash evidence, not an external artifact upload.",
+    "Inspection applies to tested_code_commit. Subsequent documentation receipt edits need reconstruction of that code commit for re-inspection and separate generated/history checks."
+  ],
+  "final_documentation_checks": {
+    "generated_history": "delivery, changelog and emergence passed against tested_code_commit; unchanged original task statuses/acceptance and fixture hash",
+    "git_diff_check": "passed",
+    "runtime_changes_after_native_acceptance": false
+  }
+}

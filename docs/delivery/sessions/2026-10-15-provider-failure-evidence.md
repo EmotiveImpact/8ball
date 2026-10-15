@@ -2,6 +2,20 @@
 
 Session: 15 October 2026. Base `45f8794733df9635d8daf5146a37fb94af9e8e90`; branch `fix/v02-provider-failure-evidence-20261015`. The clean starting checkout contains both earlier generation-contract and graph-keyboard fixes. All remote branches were fetched; application `290e310707cf8bef6caf2508c285312b091bd18b`, documentation `0ee5834c0745640369f5a538b770c346f234232a` and main `08bc26ef397ec960d1b33b099c40888a8229eac0` remain unchanged. No previous source was replaced.
 
+## Final software verification and publication
+
+Tested code commit `294ff578b963dcf50cc8d91d060182894773d159` passed native cumulative run `20261015T224316Z-8df1acc3`: **964 source tests, 964 installed-kernel tests and 384 native Chromium checks across all eleven suites**, with zero failed/errored/skipped code tests. Compilation, browser module syntax, eight structural fixtures, offline internal wheel, schemas and generated/history checks passed. Inspection returned `valid=true`, `run_status=passed`, `native_browser_verified=true` before these documentation receipt edits. Source fingerprint `5f9d2dc44e0368956b9728c43202717e4547bf683000397d8777d2ea6cb9376d`; report SHA-256 `fa86342810b55db5e5076a03da0b03801cc9c2eff8a5ee34287d97cb22ac4af3`.
+
+[Final receipt](../../evidence/provider-failure-native-2026-10-15.json) records source, per-suite counts/hashes and actual results. Reconstruct the tested code commit before re-inspecting the retained report; final receipt edits are documentation only. Full raw logs/JUnit/screenshots/schemas/wheel remain local under `artifacts/acceptance/20261015T224316Z-8df1acc3/`. The failed first run at c1defce remains intact, separately inspected as valid/failed. This final pass supersedes the earlier pending checkpoints below, without deleting or relabelling their failures.
+
+Implementation, review templates, exact original twenty-step sheet, changelog, canonical tracker, handoff and append-only Emergence Review are committed and pushed on `fix/v02-provider-failure-evidence-20261015`; the final response identifies the resulting receipt commit (a commit cannot contain its own hash). No unpushed implementation is intended at final handoff. No remote CI pass for this scoped branch is claimed.
+
+The copied provider fields remain placeholders. No download/inference permission was inferred from the owner's explanation that they did not understand; the plain-language free Ollama/Qwen setup choice remains unanswered. Zero real model calls, weight downloads or paid calls occurred. The owner will review the app at the end; independent qualified labels/protocol approval and genuine human source/accessibility/platform/visual/dense-case acceptance remain outstanding. Therefore the overall goal is **blocked, not complete**. B02 remains 10/20, ES01 remains 5/5 internal. No merge, release, deployment or industry application.
+
+**Next task:** obtain the explicit local-model setup choice (or another selected/authorized provider), install/configure it under that scope, run the unchanged four frozen fixtures with prompt `endstate.draft.prompts.v2`, preserve all outputs/failures and model/runtime identity, then run actual-provider native integration and lifecycle checks. Use the prepared private review records for independent protocol/labels and the owner's end review. Setup/start instructions were saved as a draft only; review/save and Publish in environment settings are needed for future environment configuration. Provider bindings remain absent.
+
+---
+
 ## Work and evidence boundary
 
 Recovered START-HERE, NEXT-AGENT-PROMPT, V02-CLOSEOUT and linked specification/architecture/research/decision context from the separate documentation branch, plus AGENTS, canonical ledger, current handoff, both earlier 15 October sprint records and their receipts. The research freeze, original PRDs and generation fixtures remain intact. No documentation-branch merge is required to read its records.
