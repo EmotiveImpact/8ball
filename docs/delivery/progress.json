@@ -196,8 +196,9 @@
     },
     "EV-GENERATION-ROLE-CONTRACT": {
       "kind": "controlled_regression_validation",
-      "path": "docs/delivery/sessions/2026-10-15-generation-role-contract.md",
-      "result": "Prompt/schema guidance clarified without compiler guard changes. 50 focused compiler/replay checks pass; controlled replay is not fresh inference. Cumulative native validation is pending at the implementation checkpoint."
+      "path": "docs/evidence/generation-role-contract-2026-10-15.json",
+      "result": "Native software acceptance passed: 951 code tests, 951 installed-kernel tests, 378 checks in eleven native Chromium suites; source/artifact inspection valid. Zero actual model calls; fresh provider and independent/human gates remain blocked/unaccepted.",
+      "code_commit": "8fad4118f07f91ac1884713530bac9479a7b51b7"
     }
   },
   "milestones": [

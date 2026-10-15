@@ -1,4 +1,22 @@
-# V0.2 generation-role contract: implementation checkpoint
+# V0.2 generation-role contract: completed software sprint
+
+## Final validation receipt
+
+The implementation checkpoint below is retained as written. Tested code commit: `8fad4118f07f91ac1884713530bac9479a7b51b7`. Cumulative native run `20261015T210711Z-b1e16249` passed: **951 code tests, 951 installed-kernel tests, 378 native Chromium checks across all eleven suites**, with zero failed/errored/skipped code tests. Compilation, all browser-module syntax checks, eight structural fixtures, offline internal wheel, schemas and all delivery/history checks passed. Inspection returned `valid=true`, `run_status=passed` against unchanged tested source. Source fingerprint: `cd783ba7e7c6d7507cb51fb751e3604f477bc362fbb3777a5675e3237959013e`.
+
+[Committed receipt](../../evidence/generation-role-contract-2026-10-15.json) records counts, per-suite hashes and report SHA-256. Full raw evidence remains locally under `artifacts/acceptance/20261015T210711Z-b1e16249/`; it was inspected before these documentation-only receipt edits. Reconstruct the tested code commit before re-inspecting the report. The final documentation changes do not alter runtime code. Their 60 delivery/changelog/emergence tests passed, alongside generated/history guards and git diff --check.
+
+Fallback public GitHub pages returned HTTP 200: PR #2 is Draft and its 23 visible body/comment blocks were read, including the most recent consolidation handoff. The earlier CI run `36219680306` publicly shows Success. API GraphQL/REST remain Forbidden, and the dynamic checks page could not supply a new run; no remote CI for this scoped branch is claimed. Application and documentation remote heads were re-fetched unchanged before finalisation.
+
+Actual-provider preflight `evals/full_journey.py --provider ollama_staged --transport native` exited **2, blocked**, with zero model calls. No inference permission was inferred from silence. Local Ollama remains unreachable and hosted credentials/model/provider configuration absent. Fresh generation, actual-provider lifecycle/journey, independent expert and human acceptance remain outstanding. B02-09 remains blocked; B02 10/20 and ES01 5/5 internal stay unchanged.
+
+EM-074 is preserved with evidence; EM-020/051/055/060 were revalidated. No further new discovery arose during native verification. All fifteen review passes below still apply. This sprint's implementation and documentation receipt are committed and pushed together to `fix/v02-generation-contract-20261015`; no unpushed implementation is intended at final handoff. The final response identifies the resulting receipt commit; a commit cannot contain its own hash. No PR comment could be posted through the forbidden API, and no private credential was requested to work around it.
+
+**Next task:** select/authorise a real provider/model through supported server configuration, then run the unchanged four-case generation gate with `endstate.draft.prompts.v2`. If Ollama is deliberately configured, the exact next command is `EIGHTBALL_OLLAMA_MODEL=<selected-installed-model> EIGHTBALL_GRAPH_PROVIDER=ollama_staged .venv/bin/python evals/live_generation.py`; preserve the raw results. Follow with the separately opted-in full native provider journey and cancellation/staleness checks. Independent reviewers must freeze the protocol/held-out cases and provide genuine labels; human source, screen-reader/platform, visual and dense-graph reviews remain required. No merge or deployment is authorised.
+
+---
+
+## Preserved implementation checkpoint
 
 Session: Codex cloud, 15 October 2026. Scope: B02-09 / ES03-01, with DOC-03/04/05 continuity. Branch `fix/v02-generation-contract-20261015`, base `290e310707cf8bef6caf2508c285312b091bd18b` (refreshed PR #2 Git head). The initial working tree was clean; no prior work was replaced. All remote heads were fetched explicitly because the initial fetch refspec covered only main.
 

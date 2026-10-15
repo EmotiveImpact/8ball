@@ -4,6 +4,47 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Native regression verified for the generation-role correction
+
+2026-10-15 · `pushed_unreleased`
+
+Source-bound native software acceptance passed at 8fad4118f07f91ac1884713530bac9479a7b51b7. The same sprint publishes its code and this receipt on the scoped development branch; no V0.2 or model-quality acceptance follows.
+
+### Added
+
+- A source-bound validation receipt retaining exact counts, per-suite hashes, environment and actual-provider preflight status.
+
+### Changed
+
+- Canonical evidence and latest handoff now record completed native regression rather than the implementation checkpoint pending state.
+
+### Verification
+
+- 951 code tests passed with zero skipped, failed or errored tests; the same 951 passed against the installed ENDSTATE wheel.
+- 378 native Chromium checks passed across all eleven suites. Python compilation, JavaScript syntax, schema export, eight structural fixtures and generated-document/history checks passed.
+- Acceptance inspection valid=true and run_status=passed at tested code; source fingerprint cd783ba7e7c6d7507cb51fb751e3604f477bc362fbb3777a5675e3237959013e.
+- Actual-provider preflight exited 2 (blocked), with zero calls; the public PR conversation and historical CI Success page were read after API reads were denied.
+- Final documentation-only receipt: 60 delivery/changelog/emergence tests passed; generated/history guards and git diff --check passed.
+
+### Limitations
+
+- No fresh inference, independent semantic evaluation or human accessibility/operator acceptance; B02 remains 10/20, ES01 remains 5/5 internal.
+- Native software evidence applies to the tested code revision. Final receipt edits are documentation only. No main merge, release or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-074 remains an unverified semantic model-effectiveness concern after native software success; existing EM-020/051/055/060 remain applicable.
+- Risk: Green contract/browser checks can be mistaken for successful inference or human acceptance.
+- Architecture: Keep code, installed-package, native transport, actual-provider, semantic review and release evidence separate.
+- Roadmap decision: existing_task: preserve B02-09 blocked until fresh selected-provider generation and independent judgement; no scope expansion.
+Registered discoveries: EM-074, EM-020, EM-051, EM-055, EM-060.
+
+Roadmap items: `B02-09`, `ES03-01`, `DOC-03`, `DOC-04`, `DOC-05`.
+
+Evidence: [docs/evidence/generation-role-contract-2026-10-15.json](docs/evidence/generation-role-contract-2026-10-15.json), [docs/delivery/sessions/2026-10-15-generation-role-contract.md](docs/delivery/sessions/2026-10-15-generation-role-contract.md).
+
 ## 0.2.0-alpha.8 · Clarify generated preparation, shared readiness and final verification
 
 2026-10-15 · `local_unreleased`

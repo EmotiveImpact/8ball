@@ -1607,7 +1607,8 @@
       "evidence_paths": [
         "scripts/acceptance.py",
         "tests/test_acceptance_runner.py",
-        "docs/delivery/sessions/2026-10-15-generation-role-contract.md"
+        "docs/delivery/sessions/2026-10-15-generation-role-contract.md",
+        "docs/evidence/generation-role-contract-2026-10-15.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -2233,7 +2234,8 @@
       "evidence_paths": [
         "docs/evidence/qwen-baseline-2026-09-27.json",
         "docs/delivery/sessions/2026-10-15-generation-role-contract.md",
-        "endstate/compilation.py"
+        "endstate/compilation.py",
+        "docs/evidence/generation-role-contract-2026-10-15.json"
       ],
       "owner_review": "pending",
       "history": [

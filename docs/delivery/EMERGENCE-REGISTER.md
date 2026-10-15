@@ -900,7 +900,7 @@ Separate successful test reports could be retained while the working source cont
 
 **Roadmap links:** `B02-12` (blocked), `B02-16` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`.
+**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/evidence/generation-role-contract-2026-10-15.json`.
 
 **Decision history:**
 
@@ -1263,7 +1263,7 @@ The archived Qwen frame requires on-site spare-chair confirmation even for its e
 
 **Roadmap links:** `B02-09` (blocked), `ES03-01` (partial).
 **Completion scope:** `B02-09`.
-**Evidence / source record:** `docs/evidence/qwen-baseline-2026-09-27.json`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `endstate/compilation.py`.
+**Evidence / source record:** `docs/evidence/qwen-baseline-2026-09-27.json`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `endstate/compilation.py`, `docs/evidence/generation-role-contract-2026-10-15.json`.
 
 **Decision history:**
 

@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-15",
+  "scope": "V0.2 generation-role prompt/schema guidance and controlled historical replay; native software regression only",
+  "branch": "fix/v02-generation-contract-20261015",
+  "base_commit": "290e310707cf8bef6caf2508c285312b091bd18b",
+  "tested_code_commit": "8fad4118f07f91ac1884713530bac9479a7b51b7",
+  "source_fingerprint": "cd783ba7e7c6d7507cb51fb751e3604f477bc362fbb3777a5675e3237959013e",
+  "run_id": "20261015T210711Z-b1e16249",
+  "mode": "native",
+  "status": "passed",
+  "completed_at": "2026-10-15T21:10:37.751829+00:00",
+  "report_sha256": "ccddd7d63499dbaef43a1de41450a2405a88dd3e1e3f41e063de06c2ac64b7e4",
+  "local_report_path": "artifacts/acceptance/20261015T210711Z-b1e16249/report.json",
+  "inspection": {
+    "valid": true,
+    "run_status": "passed",
+    "scope": "Inspected against unchanged tested code before this documentation-only receipt; not a signed attestation."
+  },
+  "code_tests": {
+    "tests": 951,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 951
+  },
+  "installed_kernel_tests": {
+    "tests": 951,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "browser_suites": {
+    "legacy": {
+      "count": 27,
+      "transport": "real loopback HTTP",
+      "sha256": "c553e60bb97ef58196ee5bee1f4fde22203273a6f5bade21c2d298c2faa549c6"
+    },
+    "workspace": {
+      "count": 51,
+      "transport": "Native loopback HTTP",
+      "sha256": "ccffe9c582d516f163d069f2775e97a7621f5a1306531aea130afa6908e6945f"
+    },
+    "providers": {
+      "count": 15,
+      "transport": "native loopback HTTP",
+      "sha256": "bbf0af67a54e14d14fab215a3b43ac7b72613af5df6e7e3fdcb796f7e1409093"
+    },
+    "connections": {
+      "count": 38,
+      "transport": "Native loopback HTTP",
+      "sha256": "240863f4b27031ae81339fa107388a67ac48dab35801fdc831bfe8df00166218"
+    },
+    "studio": {
+      "count": 44,
+      "transport": "native loopback HTTP",
+      "sha256": "458e2d912f7a9896da88e136e6aeba62970b56186a432d1509f53a09b1471797"
+    },
+    "sources": {
+      "count": 39,
+      "transport": "native HTTP",
+      "sha256": "4abf02bc619f78c83f5133f848ceb2ef4cdb5b7810dbf8d8e9b8c93dcc93df27"
+    },
+    "insights": {
+      "count": 40,
+      "transport": "Native loopback HTTP",
+      "sha256": "05a47f8e44b3e856cc19ad85bc4f2154835e5c6fed34788232f11969f304a952"
+    },
+    "grounding": {
+      "count": 26,
+      "transport": "Native loopback HTTP",
+      "sha256": "4c0acde1ff3c693ac7714a556d7292a02bd4b8363b5c48091ee8ca5640153c35"
+    },
+    "plan_review": {
+      "count": 33,
+      "transport": "Native loopback HTTP",
+      "sha256": "31e729ac5f4c7d638401be1211f9c255e08603623812b4b85ebd08a8516bf1aa"
+    },
+    "accessibility": {
+      "count": 36,
+      "transport": "Native loopback HTTP",
+      "sha256": "1694bba70004e2b415b4a645d054f81605243be6dfce93d642b3fa47a1013e1d"
+    },
+    "courses": {
+      "count": 29,
+      "transport": "Native loopback HTTP",
+      "sha256": "12da08af6ca67890e7ad7e9fe8386017c677fb6a0033e24edc9847d66fd220a3"
+    }
+  },
+  "native_browser_checks": 378,
+  "checks": {
+    "unit": "passed",
+    "compile": "passed",
+    "delivery": "passed",
+    "changelog": "passed",
+    "emergence": "passed",
+    "javascript": "passed",
+    "structural-fixtures": "passed",
+    "endstate-package": "passed",
+    "schemas": "passed",
+    "native-probe": "passed",
+    "browser-legacy": "passed",
+    "browser-workspace": "passed",
+    "browser-providers": "passed",
+    "browser-connections": "passed",
+    "browser-studio": "passed",
+    "browser-sources": "passed",
+    "browser-insights": "passed",
+    "browser-grounding": "passed",
+    "browser-plan_review": "passed",
+    "browser-accessibility": "passed",
+    "browser-courses": "passed"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "node": "24.19.0",
+    "chromium": "154.0.8037.57",
+    "platform": "Linux"
+  },
+  "prompt_version": "endstate.draft.prompts.v2",
+  "compiler_version": "endstate.draft.v1",
+  "actual_model_calls": 0,
+  "actual_provider_journey": {
+    "status": "blocked",
+    "exit_code": 2,
+    "calls_started": 0,
+    "reason": "Explicit --allow-inference is required; no inference permission or selected configured runtime/model.",
+    "local_report_path": "artifacts/live-journey/13a3179441b3/journey-report.json"
+  },
+  "live_repository_reads": {
+    "pr2_git_head": "290e310707cf8bef6caf2508c285312b091bd18b",
+    "pr3_git_head": "0ee5834c0745640369f5a538b770c346f234232a",
+    "github_api": "GraphQL and REST Forbidden",
+    "public_pr_page": "HTTP 200, Draft, 23 visible body/comment blocks read including consolidated handoff; no current change to scope",
+    "historical_ci_run": 36219680306,
+    "historical_ci_public_page_status": "Success",
+    "new_remote_ci_run": null
+  },
+  "independent_quality_review": false,
+  "human_acceptance": false,
+  "full_v02_accepted": false,
+  "merged": false,
+  "deployed": false,
+  "limits": [
+    "No new actual model inference or independent/human acceptance. Prompts may still produce semantically invalid or paraphrased bypasses.",
+    "The cumulative report belongs to tested_code_commit. Subsequent receipt changes are documentation only, checked separately.",
+    "Full logs, JUnit XML, screenshots, wheel and reports remain in local artifacts; this committed receipt records their source/counts/hashes, not an external artifact upload.",
+    "Known four-case replay is not an independent holdout benchmark.",
+    "No changes to original PRDs, canonical generation fixture, compiler guards, application version or deferred research scope."
+  ],
+  "final_documentation_checks": {
+    "tests": 60,
+    "passed": 60,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "command": ".venv/bin/python -m pytest -q tests/test_delivery_tracking.py tests/test_changelog.py tests/test_emergence_register.py",
+    "history_and_generated_checks": "delivery/changelog/emergence passed against the implementation and original application bases",
+    "git_diff_check": "passed"
+  }
+}

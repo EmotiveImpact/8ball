@@ -1,4 +1,14 @@
-# Current continuation: V0.2 generation-role contract, 15 October 2026
+# Current closeout: generation-role correction and native software verification
+
+15 October 2026. Work branch `fix/v02-generation-contract-20261015`, tested code `8fad4118f07f91ac1884713530bac9479a7b51b7`, from application/PR #2 base `290e310707cf8bef6caf2508c285312b091bd18b`. [Sprint handoff](sessions/2026-10-15-generation-role-contract.md) and [receipt](../evidence/generation-role-contract-2026-10-15.json) record **951 code + 951 installed-kernel tests and all 378 native Chromium checks** passing, with source/artifact inspection valid. Subsequent receipt edits are documentation only and checked separately.
+
+The generation prompts/schema descriptions now separate preparatory results, shared readiness and final verification; all compiler guards remain. The preserved actual Qwen failure still rejects unchanged in controlled replay. Prompt version `endstate.draft.prompts.v2` survives successful and failed traces. No new inference occurred: actual-provider preflight blocked with zero calls. B02-09 remains blocked; B02 10/20 and ES01 5/5 internal remain unchanged.
+
+Next: select and authorise provider/model, rerun all four unchanged generation fixtures, then the actual-provider native journey/cancellation checks and independent/human acceptance. Enter credentials only in supported server settings. Public PR conversation and historical CI Success were read; GitHub API remains Forbidden, so no new remote CI or PR comment is claimed. The final response records the resulting pushed receipt commit. No main merge, release, deployment or deferred research implementation.
+
+---
+
+# Previous implementation checkpoint: V0.2 generation-role contract, 15 October 2026
 
 Read [the current sprint checkpoint](sessions/2026-10-15-generation-role-contract.md). Work branch `fix/v02-generation-contract-20261015` starts from refreshed application/PR #2 head `290e310707cf8bef6caf2508c285312b091bd18b`. The consolidated specification remains on `docs/endstate-consolidated-handoff-2026-10-15` at `0ee5834c0745640369f5a538b770c346f234232a`; read its START-HERE, next-agent prompt and V02 closeout without merging it automatically.
 

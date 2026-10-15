@@ -818,5 +818,6 @@ These references have specific scopes and may be historical. A reference to a de
 ### EV-GENERATION-ROLE-CONTRACT
 
 - Kind: `controlled_regression_validation`.
-- Repository evidence: [docs/delivery/sessions/2026-10-15-generation-role-contract.md](../../docs/delivery/sessions/2026-10-15-generation-role-contract.md).
-- Result/scope: Prompt/schema guidance clarified without compiler guard changes. 50 focused compiler/replay checks pass; controlled replay is not fresh inference. Cumulative native validation is pending at the implementation checkpoint.
+- Repository evidence: [docs/evidence/generation-role-contract-2026-10-15.json](../../docs/evidence/generation-role-contract-2026-10-15.json).
+- Result/scope: Native software acceptance passed: 951 code tests, 951 installed-kernel tests, 378 checks in eleven native Chromium suites; source/artifact inspection valid. Zero actual model calls; fresh provider and independent/human gates remain blocked/unaccepted.
+- Code revision: `8fad4118f07f91ac1884713530bac9479a7b51b7`.
