@@ -1,0 +1,89 @@
+name: Publish verified consolidated documentation
+on:
+  push:
+    branches: [ops/documentation-handoff-20261015]
+    paths: ['.github/workflows/documentation-handoff.yml', '.github/handoff/**']
+permissions:
+  contents: write
+concurrency:
+  group: endstate-documentation-consolidation-20261015
+  cancel-in-progress: false
+jobs:
+  verify-and-preserve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SEED: 9c1119cda6c62f193cacd7d7d8007bb372f12886
+      BASE: 290e310707cf8bef6caf2508c285312b091bd18b
+      EXPECTED_TREE: 27d1fe6eb95c89074a072580db6e679ba4bd9640
+      TARGET: docs/endstate-consolidated-handoff-2026-10-15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 9c1119cda6c62f193cacd7d7d8007bb372f12886
+          fetch-depth: 0
+      - name: Recover exact reviewed documentation without changing runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$SEED"
+          test "$(git rev-parse HEAD^{tree})" = 06ce3bc7d5581ed35e355e162553941a38d7ffc5
+          test "$(git ls-remote origin refs/heads/feat/situation-intelligence-v2 | cut -f1)" = "$BASE"
+          python - <<'PY'
+          import base64, hashlib, lzma, os, subprocess
+          from pathlib import Path
+          payload = b''.join(subprocess.check_output(['git','show',os.environ['GITHUB_SHA']+':.github/handoff/part'+str(i)+'.b64']) for i in range(4))
+          assert len(payload) == 44204
+          assert hashlib.sha256(payload).hexdigest() == '2fb6d1b53d1d4f96918142e7ff07cb3cbe15a859218ea15a890246e12c01f655'
+          patch = lzma.decompress(base64.b64decode(payload, validate=True))
+          assert hashlib.sha256(patch).hexdigest() == 'd5108d4321575becabd2120d7e27e5f70c39bb09c813e14dd8963ad27500fa48'
+          Path(os.environ['RUNNER_TEMP'],'consolidation.patch').write_bytes(patch)
+          PY
+          git apply --check "$RUNNER_TEMP/consolidation.patch"
+          git apply --index "$RUNNER_TEMP/consolidation.patch"
+          test "$(git write-tree)" = "$EXPECTED_TREE"
+          git diff --exit-code
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install -r requirements-dev.txt
+      - name: Verify original documents, frozen gates, links and documentation tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python docs/delivery/verify_consolidation.py | tee artifacts/preservation.json
+          python scripts/delivery.py --check | tee artifacts/delivery.txt
+          python scripts/emergence.py --check --base "$BASE" | tee artifacts/emergence.txt
+          python scripts/changelog.py --check --base "$BASE" | tee artifacts/changelog.txt
+          python -m pytest -q tests/test_delivery_tracking.py tests/test_changelog.py tests/test_emergence_register.py | tee artifacts/documentation-tests.txt
+          test "$(git write-tree)" = "$EXPECTED_TREE"
+          git diff --exit-code
+      - name: Publish only the new documentation branch and preserve recovery files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$SEED"
+          test "$(git write-tree)" = "$EXPECTED_TREE"
+          test "$(git ls-remote origin refs/heads/feat/situation-intelligence-v2 | cut -f1)" = "$BASE"
+          test -z "$(git ls-remote --heads origin refs/heads/$TARGET)"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Consolidate ENDSTATE strategy and V0.2 continuation without runtime or gate changes'
+          git push origin HEAD:refs/heads/$TARGET
+          test "$(git ls-remote origin refs/heads/$TARGET | cut -f1)" = "$(git rev-parse HEAD)"
+          git rev-parse HEAD HEAD^{tree} > artifacts/PUBLISHED-SOURCE.txt
+          git diff --stat "$BASE" HEAD > artifacts/CHANGES.txt
+          git diff --binary "$BASE" HEAD > artifacts/consolidation-from-application.patch
+          git archive --format=zip HEAD > artifacts/8BALL-consolidated-source.zip
+          git branch recovery/consolidated-handoff HEAD
+          git bundle create artifacts/8BALL-consolidated-history.bundle recovery/consolidated-handoff
+          git bundle verify artifacts/8BALL-consolidated-history.bundle 2>&1 | tee artifacts/BUNDLE-VERIFICATION.txt
+          sha256sum artifacts/* > "$RUNNER_TEMP/handoff-checksums.txt"
+          mv "$RUNNER_TEMP/handoff-checksums.txt" artifacts/SHA256SUMS.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: consolidated-documentation-recovery
+          path: artifacts/
+          if-no-files-found: warn
