@@ -1135,7 +1135,9 @@
       ],
       "evidence_paths": [
         "web/v2/insights-view.js",
-        "tests/test_insight_ui.py"
+        "tests/test_insight_ui.py",
+        "docs/delivery/sessions/2026-10-15-provider-failure-evidence.md",
+        "docs/evidence/provider-failure-native-failed-2026-10-15.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -1144,6 +1146,12 @@
           "decision": "adopted",
           "by": "ChatGPT development proposal",
           "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        },
+        {
+          "date": "2026-10-15",
+          "decision": "adopted",
+          "by": "Codex native acceptance follow-up",
+          "reason": "Cumulative native failure exposes same-case refresh overwriting a later explicit navigation. Preserve original failure and order presentation requests without changing case facts or authority; deterministic native regression required."
         }
       ]
     },
@@ -1677,7 +1685,9 @@
         "tests/browser_accessibility.py",
         "docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md",
         "docs/evidence/graph-keyboard-baseline-2026-10-15.json",
-        "docs/evidence/graph-keyboard-native-2026-10-15.json"
+        "docs/evidence/graph-keyboard-native-2026-10-15.json",
+        "docs/delivery/sessions/2026-10-15-provider-failure-evidence.md",
+        "docs/evidence/provider-failure-native-failed-2026-10-15.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -1692,6 +1702,12 @@
           "decision": "adopted",
           "by": "Codex continuation review",
           "reason": "existing_task B02-16/B02-20: graph redraw replaces inspector/filter controls just as dialog replacement can lose the invoker. Preserve logical control identity and an explicit destination when a control disappears. Record native reproduction and corrected behavior; automated focus does not replace human acceptance."
+        },
+        {
+          "date": "2026-10-15",
+          "decision": "adopted",
+          "by": "Codex native acceptance follow-up",
+          "reason": "Cumulative native failure exposes same-case refresh overwriting a later explicit navigation. Preserve original failure and order presentation requests without changing case facts or authority; deterministic native regression required."
         }
       ]
     },

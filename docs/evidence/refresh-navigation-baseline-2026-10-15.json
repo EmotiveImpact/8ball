@@ -1,0 +1,11 @@
+{
+  "source_commit": "c1defceb8da6c221800e8b684e05c2672e783844",
+  "transport": "Native loopback HTTP; real case response held and fulfilled unchanged",
+  "browser": "154.0.8037.57",
+  "latest_explicit_navigation": "room",
+  "final_view": "routes",
+  "assertion_failure": "Locator expected to have attribute 'page'\nActual value: None \nCall log:\n  - Expect \"to_have_attribute\" with timeout 1000ms\n  - waiting for locator(\"nav [data-tab=room]\")\n    5 \u00d7 locator resolved to <button class=\"\" data-tab=\"room\">\u2026</button>\n      - unexpected value \"null\"\n",
+  "runtime_errors": [],
+  "case_audit_unchanged_by_interaction": true,
+  "model_calls": 0
+}

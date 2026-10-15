@@ -68,11 +68,42 @@ def main():
                     page.screenshot(path=str(OUT/'8BALL-Course-Inspector.png'),full_page=True);close()
                     check('dialog returns focus to original control',page.evaluate("document.activeElement?.dataset.courseAction==='inspect'"))
                     # Same choice survives order changes. The operator is not silently rerouted.
-                    nav('routes');page.locator('[data-sort]').select_option('lowest_cost');expect(page.locator('nav [data-tab=routes]')).to_have_attribute('aria-current','page')
+                    nav('routes');sorter=page.locator('[data-sort]').element_handle()
+                    page.locator('[data-sort]').select_option('lowest_cost')
+                    page.wait_for_function('(sorter) => !sorter.isConnected',arg=sorter);sorter.dispose()
+                    expect(page.locator('nav [data-tab=routes]')).to_have_attribute('aria-current','page')
                     check('sorting candidates does not replace course',store.audit(case.id)['chosen_courses']['current_id']==chosen)
                     # A substantive fact/constraint update recalculates the course, but never switches it.
                     current=store.get(case.id);store.change(case.id,Command(event_id='budget-change',expected_revision=current.revision,kind='metadata',payload={'budget':1}))
-                    page.locator('[data-action=refresh]').first.click();nav('room');expect(page.locator('.course-banner')).to_contain_text('Review required')
+                    # Hold the real detail response after transport completes.
+                    # A later explicit navigation must survive this older refresh;
+                    # forwarding the same response still has to refresh case data.
+                    page.evaluate('''caseId => {
+                        const originalFetch=window.fetch;
+                        const gate={held:false,released:false};
+                        window.__courseRefreshRace=gate;
+                        window.fetch=async (input,init)=>{
+                            const response=await originalFetch(input,init);
+                            if(!gate.held&&typeof input==='string'&&input.startsWith('/api/v2/cases/'+caseId+'?sort_by=')){
+                                gate.held=true;
+                                await new Promise(resolve=>{gate.release=()=>{gate.released=true;resolve();};});
+                                window.fetch=originalFetch;
+                            }
+                            return response;
+                        };
+                    }''',case.id)
+                    page.locator('[data-action=refresh]').first.click()
+                    page.wait_for_function('() => window.__courseRefreshRace.held')
+                    nav('room');expect(page.locator('#main h1')).to_be_focused()
+                    page.evaluate('() => window.__courseRefreshRace.release()')
+                    expect(page.locator('#toast')).to_have_text('Workspace refreshed from the server.')
+                    expect(page.locator('nav [data-tab=room]')).to_have_attribute('aria-current','page')
+                    expect(page.locator('#main h1')).to_be_focused()
+                    check('explicit Room navigation survives an earlier delayed refresh',True)
+                    expect(page.locator('.course-banner')).to_contain_text('Review required')
+                    page.locator('[data-action=metadata]').click()
+                    expect(page.locator('[data-form=metadata] [name=budget]')).to_have_value('1');close()
+                    check('delayed refresh still applies the changed case data',True)
                     check('budget change is explained in chosen-course banner','budget changed' in page.locator('.course-banner').inner_text().lower())
                     check('constraint failure preserves chosen course',store.audit(case.id)['chosen_courses']['current_id']==chosen)
                     page.screenshot(path=str(OUT/'8BALL-Course-Reconsideration.png'),full_page=True)

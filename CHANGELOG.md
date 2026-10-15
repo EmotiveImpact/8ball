@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Preserve explicit navigation when an earlier refresh finishes
+
+2026-10-15 · `local_unreleased`
+
+Cumulative verification exposed an asynchronous refresh overwriting a newer Room navigation. Preserve the failed run and correct the presentation race within existing acceptance.
+
+### Added
+
+- Deterministic native delayed-response regression retaining the actual fictional server data.
+
+### Changed
+
+- Later explicit navigation stays authoritative while current-case refresh still applies its data.
+
+### Fixed
+
+- Refresh/sort completion could send the operator back to an older tab.
+
+### Verification
+
+- First native cumulative run at c1defce failed only browser-courses; 964 code tests and prior ten suites passed. Evidence inspection valid=true, run_status=failed.
+- Unchanged c1defce deterministic native baseline reproduced the race; corrected native courses passed31 checks, retaining all29 previous assertions. Node syntax, Python compilation and diff checks passed. Cumulative rerun pending at correction checkpoint.
+
+### Limitations
+
+- No real model or human acceptance; B02 remains10/20 required scopes verified.
+- A valid failed report is retained, not counted as a passing native run.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-035/053: an older same-case refresh can overwrite a newer explicit tab choice despite case-load sequence guards.
+- Risk: A passing earlier timing-sensitive journey does not exclude a race; do not hide it with sleeps.
+- Architecture: Keep async presentation navigation ordering separate from case facts, revisions and chosen-course authority.
+- Roadmap decision: existing_task B02-16/B02-20; retain all acceptance and prior failed evidence.
+Registered discoveries: EM-035, EM-053, EM-051.
+
+Roadmap items: `B02-16`, `B02-20`, `DOC-03`, `DOC-04`, `DOC-05`.
+
+Evidence: [docs/delivery/sessions/2026-10-15-provider-failure-evidence.md](docs/delivery/sessions/2026-10-15-provider-failure-evidence.md), [docs/evidence/provider-failure-native-failed-2026-10-15.json](docs/evidence/provider-failure-native-failed-2026-10-15.json), [docs/evidence/refresh-navigation-baseline-2026-10-15.json](docs/evidence/refresh-navigation-baseline-2026-10-15.json), [docs/evidence/refresh-navigation-focused-2026-10-15.json](docs/evidence/refresh-navigation-focused-2026-10-15.json).
+
 ## 0.2.0-alpha.8 · Preserve rejected extraction evidence and prepare V0.2 human review
 
 2026-10-15 · `local_unreleased`

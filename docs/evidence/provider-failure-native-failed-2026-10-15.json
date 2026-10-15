@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-15",
+  "scope": "Preserved failed cumulative native run; failure is not acceptance",
+  "branch": "fix/v02-provider-failure-evidence-20261015",
+  "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
+  "tested_code_commit": "c1defceb8da6c221800e8b684e05c2672e783844",
+  "run_id": "20261015T223650Z-5ee50cc3",
+  "status": "failed",
+  "mode": "native",
+  "source_fingerprint": "edabb9677a846363f15433f243f7406732241565ea9b8b260af2225c132fcc2d",
+  "report_sha256": "311475113a89c62ad5cd982d8bdcc6f26cc4599cbd5d66349e8377efc3b3d306",
+  "local_report_path": "artifacts/acceptance/20261015T223650Z-5ee50cc3/report.json",
+  "code_tests": {
+    "tests": 964,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 964
+  },
+  "browser_checks_passed": 353,
+  "inspection": {
+    "valid": true,
+    "run_status": "failed",
+    "performed_before_followup_source_edits": true
+  },
+  "checks": {
+    "unit": "passed",
+    "compile": "passed",
+    "delivery": "passed",
+    "changelog": "passed",
+    "emergence": "passed",
+    "javascript": "passed",
+    "structural-fixtures": "passed",
+    "endstate-package": "passed",
+    "schemas": "passed",
+    "native-probe": "passed",
+    "browser-legacy": "passed",
+    "browser-workspace": "passed",
+    "browser-providers": "passed",
+    "browser-connections": "passed",
+    "browser-studio": "passed",
+    "browser-sources": "passed",
+    "browser-insights": "passed",
+    "browser-grounding": "passed",
+    "browser-plan_review": "passed",
+    "browser-accessibility": "passed",
+    "browser-courses": "failed"
+  },
+  "failure": {
+    "suite": "browser-courses",
+    "file": "tests/browser_courses.py",
+    "line": 75,
+    "assertion": "After refresh then Room navigation, aria-current should remain page on Room; actual null. Failure HTML retained Routes as selected.",
+    "diagnosis": "Older loadCase captured routes then overwrote the later explicit Room choice after asynchronous requests.",
+    "log_sha256": "1ebfd3a1b0927d9ba095dd00178672e5c01771fd2a7f763801fc83f47b2a399b",
+    "local_evidence_directory": "artifacts/acceptance/20261015T223650Z-5ee50cc3/browser-courses"
+  },
+  "actual_model_calls": 0,
+  "human_acceptance": false,
+  "full_v02_accepted": false,
+  "limits": [
+    "All source and installed-kernel tests plus ten browser suites passed; final Chosen Course suite failed and has no completed check count.",
+    "The report is valid for its tested source but its run_status is failed. No native acceptance pass is claimed.",
+    "Retain failure screenshots/HTML/logs under local artifacts; this committed receipt is not an external artifact upload."
+  ],
+  "installed_kernel_tests": {
+    "tests": 964,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}

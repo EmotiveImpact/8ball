@@ -10,7 +10,7 @@ import {mountGraphWorkspace,clearGraphViews} from './graph-view.js';
 import {S,$,esc,pretty,icon,field,textarea,select,options,warning,note,button,modal,closeModal,toast,saveFile,gbp,date,focusWorkspace} from './ui.js';
 import {shell,login,routeDetail,routeCard} from './views.js';
 import * as F from './forms.js';
-let token='',loadSequence=0;
+let token='',loadSequence=0,navigationSequence=0;
 try{token=sessionStorage.getItem('8ball.token')??'';}catch{}
 const id=()=>globalThis.crypto?.randomUUID?.()??Array.from(globalThis.crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('');
 function setToken(v){token=v;try{if(v)sessionStorage.setItem('8ball.token',v);else sessionStorage.removeItem('8ball.token');}catch{}}
@@ -19,14 +19,18 @@ function lock(){clearCourse();clearPlanReview();clearGrounding();clearInsights()
 async function api(path,body){const epoch=S.epoch;const r=await fetch('/api/v2'+path,{method:body===undefined?'GET':'POST',headers:{Authorization:'Bearer '+token,...(body===undefined?{}:{'Content-Type':'application/json'})},...(body===undefined?{}:{body:JSON.stringify(body)})});let data;try{data=await r.json();}catch{throw new Error('Server response was not readable. Check that the local server is running.');}if(epoch!==S.epoch)throw new Error('Workspace session changed.');if(r.status===401){lock();throw new Error('Enter the current operator token to continue.');}if(!r.ok)throw new Error(typeof data.detail==='string'?data.detail:'The request was rejected. Check the fields and references.');return data;}
 async function refreshCases(){S.cases=await api('/cases');}
 async function loadCase(caseId,tab='room'){
-  const seq=++loadSequence,epoch=S.epoch;
+  const seq=++loadSequence,epoch=S.epoch,navigation=navigationSequence;
   const data=await api('/cases/'+encodeURIComponent(caseId)+'?sort_by='+S.sort);
   if(seq!==loadSequence||epoch!==S.epoch)return;
   const proposals=await api(`/cases/${caseId}/proposals`);
   if(seq!==loadSequence||epoch!==S.epoch)return;
   if(S.current?.case.id!==caseId){clearCourse();clearPlanReview();clearGrounding();clearInsights();clearSourceDesk();}
   if(S.studio&&S.studio.caseId!==caseId)S.studio=null;
-  stopAnalysisPolling();S.current=data;S.proposals=proposals;S.tab=tab;S.scenario=null;S.history=null;S.changes=[];S.selectedRoutes.clear();
+  stopAnalysisPolling();S.current=data;S.proposals=proposals;
+  // A refresh may finish after the operator chose another view. Apply its new
+  // case data without restoring the earlier tab over that explicit navigation.
+  if(navigation===navigationSequence)S.tab=tab;
+  S.scenario=null;S.history=null;S.changes=[];S.selectedRoutes.clear();
   try{sessionStorage.setItem('8ball.v2.case',caseId);}catch{}
   await loadTab();if(seq!==loadSequence||epoch!==S.epoch)return;render();focusWorkspace();await updateAnalysisMonitor({api,render});
 }
@@ -38,7 +42,7 @@ function requestCaseOpen(caseId){
   return loadCase(caseId);
 }
 async function loadTab(){if(S.current&&['room','routes','timeline'].includes(S.tab))await loadCourse(api);if(S.tab==='grounding'){await loadGrounding(api);return;}if(S.tab==='insights'){await loadInsights(api);return;}if(S.tab==='discoveries'){S.buildDiscoveries=await api('/build-discoveries');return;}if(S.tab==='changelog'){S.changelog=await api('/changelog');return;}if(S.tab==='playbooks'){S.plays=await api('/playbooks');return;}if(S.tab==='models'){S.providers=await api('/status');return;}if(!S.current)return;const base='/cases/'+S.current.case.id;if(S.tab==='evidence')await refreshSourceDeskIndex();if(S.tab==='review')S.proposals=await api(base+'/proposals');if(S.tab==='changes')S.changes=await api(base+'/changes');if(S.tab==='audit')S.history=await api(base+'/history');}
-async function changeTab(tab){S.tab=tab;await loadTab();render();focusWorkspace();}
+async function changeTab(tab){navigationSequence++;S.tab=tab;await loadTab();render();focusWorkspace();}
 async function commit(kind,payload,context=null){if(S.busy)throw new Error('Another change is being saved.');const c=S.current.case;const caseId=context?.caseId??c.id;const revision=context?.revision??c.revision;if(caseId!==c.id)throw new Error('The selected case changed. Reopen this form.');S.busy=true;document.body.classList.add('is-busy');try{const data=await api(`/cases/${caseId}/commands`,{event_id:id(),expected_revision:revision,kind,payload});S.current=data;S.history=null;S.scenario=null;S.selectedRoutes.clear();S.proposals=await api(`/cases/${caseId}/proposals`);await refreshCases();closeModal();await loadTab();render();toast(kind==='complete'?'Work recorded. Its intended result still needs separate evidence.':'Saved. State, routes and blockers recalculated.');}finally{S.busy=false;document.body.classList.remove('is-busy');}}
 function formContext(form){return {caseId:form.dataset.caseId,revision:Number(form.dataset.revision)};}
 function sourceReview(id,status){const e=S.current.case.evidence.find(e=>e.id===id);modal(status==='reviewed'?'Review this source':'Retract this source',`<h3>${esc(e.title)}</h3><div class="source-text">${esc(e.text)}</div>${warning(status==='reviewed'?'This records your source review, not the truth of every assertion it contains.':'Retracted evidence stops supporting live conditions. History is preserved.','neutral')}<form data-form="source-review" data-id="${esc(id)}" data-status="${status}" ${F.snapshot()}><div class="form-actions"><button type="submit" class="button primary">Confirm ${status==='reviewed'?'review':'retraction'}</button></div></form>`);}

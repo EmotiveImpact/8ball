@@ -626,11 +626,12 @@ An old response must not populate the newly selected client’s insight panel.
 
 **Roadmap links:** `B02-21` (implemented).
 **Completion scope:** `B02-21`.
-**Evidence / source record:** `web/v2/insights-view.js`, `tests/test_insight_ui.py`.
+**Evidence / source record:** `web/v2/insights-view.js`, `tests/test_insight_ui.py`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/evidence/provider-failure-native-failed-2026-10-15.json`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT development proposal: Adopt bounded scope now; wider interpretation still needs owner and operator review.
+- 2026-10-15 · adopted · Codex native acceptance follow-up: Cumulative native failure exposes same-case refresh overwriting a later explicit navigation. Preserve original failure and order presentation requests without changing case facts or authority; deterministic native regression required.
 
 ### [x] EM-036: Already-satisfied OR outcomes must not create artificial blockers
 
@@ -936,12 +937,13 @@ Navigation and replaced dialogs could leave keyboard focus on the body or on a r
 
 **Roadmap links:** `B02-16` (partial), `B02-20` (implemented).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `web/v2/ui.js`, `tests/browser_accessibility.py`, `docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md`, `docs/evidence/graph-keyboard-baseline-2026-10-15.json`, `docs/evidence/graph-keyboard-native-2026-10-15.json`.
+**Evidence / source record:** `web/v2/ui.js`, `tests/browser_accessibility.py`, `docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md`, `docs/evidence/graph-keyboard-baseline-2026-10-15.json`, `docs/evidence/graph-keyboard-native-2026-10-15.json`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/evidence/provider-failure-native-failed-2026-10-15.json`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT build review: Bounded existing-task improvement; implementation does not imply that wider model/native/release acceptance has passed.
 - 2026-10-15 · adopted · Codex continuation review: existing_task B02-16/B02-20: graph redraw replaces inspector/filter controls just as dialog replacement can lose the invoker. Preserve logical control identity and an explicit destination when a control disappears. Record native reproduction and corrected behavior; automated focus does not replace human acceptance.
+- 2026-10-15 · adopted · Codex native acceptance follow-up: Cumulative native failure exposes same-case refresh overwriting a later explicit navigation. Preserve original failure and order presentation requests without changing case facts or authority; deterministic native regression required.
 
 ### [ ] EM-054: Scripted real-model review is not independent judgement
 

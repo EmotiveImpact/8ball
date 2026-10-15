@@ -833,4 +833,4 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `implementation_and_review_preparation`.
 - Repository evidence: [docs/delivery/sessions/2026-10-15-provider-failure-evidence.md](../../docs/delivery/sessions/2026-10-15-provider-failure-evidence.md).
-- Result/scope: Bounded rejected-extraction evidence correction and unperformed review templates; actual regression/native results pending final receipt. No model, semantic or human acceptance is claimed.
+- Result/scope: 207 focused controlled regressions passed and unperformed review materials validated. First cumulative native at c1defce failed only courses navigation; preserved evidence led to a bounded refresh/navigation fix and31 passing focused native course checks. Final cumulative rerun pending; no actual-model/human pass.
