@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-09-26",
+  "updated_on": "2026-10-15",
   "product": "8BALL",
   "engine": "ENDSTATE",
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
@@ -186,6 +186,18 @@
       "code_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
       "url": "https://github.com/EmotiveImpact/8ball/actions/runs/36219154611",
       "result": "938 code and 938 installed-kernel checks; all 11 native Chromium suites pass (378 checks). Artifact and source-bound evidence verified. No actual model, independent professional or human accessibility acceptance."
+    },
+    "EV-QWEN-20260927": {
+      "kind": "failed_real_model_evaluation",
+      "path": "docs/evidence/qwen-baseline-2026-09-27.json",
+      "code_commit": "290e310707cf8bef6caf2508c285312b091bd18b",
+      "url": "https://github.com/EmotiveImpact/8ball/actions/runs/36340454120",
+      "result": "Recovered historical actual Qwen baseline: three schema-valid extractions; graph rejected with result_bypasses_verification. All live states unchanged. No semantic benchmark or production approval."
+    },
+    "EV-GENERATION-ROLE-CONTRACT": {
+      "kind": "controlled_regression_validation",
+      "path": "docs/delivery/sessions/2026-10-15-generation-role-contract.md",
+      "result": "Prompt/schema guidance clarified without compiler guard changes. 50 focused compiler/replay checks pass; controlled replay is not fresh inference. Cumulative native validation is pending at the implementation checkpoint."
     }
   },
   "milestones": [
@@ -600,10 +612,10 @@
       "title": "Reliable reviewed graph proposals for new situations",
       "status": "blocked",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
-      "updated_on": "2026-09-26",
+      "owner": "Codex",
+      "working_branch": "fix/v02-generation-contract-20261015",
+      "base_commit": "290e310707cf8bef6caf2508c285312b091bd18b",
+      "updated_on": "2026-10-15",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "evals/live_generation.py",
@@ -617,12 +629,15 @@
         "EV-STAGED-CODE",
         "EV-STAGED-MODEL",
         "EV-HF-BLACK-LOCAL",
-        "EV-NATIVE-CLOSEOUT"
+        "EV-NATIVE-CLOSEOUT",
+        "EV-QWEN-20260927",
+        "EV-GENERATION-ROLE-CONTRACT"
       ],
       "blockers": [
-        "Actual-model graph generation and semantic quality gate remain unaccepted; this native software run used controlled provider responses."
+        "Fresh selected-provider generation has not been rerun after prompt correction; local Ollama is unreachable and hosted model/provider/credential variables are unset. Provider selection and inference permission are pending.",
+        "Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate."
       ],
-      "next_action": "Configure the selected provider and run the unchanged generation fixtures without catalogue substitution or human repair counting as model success."
+      "next_action": "Select and authorise a provider/model, rerun all four unchanged generation fixtures with prompt endstate.draft.prompts.v2, then run the actual-provider native journey and obtain independent human quality labels. Preserve every failure; do not repair output or substitute catalogue plans."
     },
     {
       "id": "B02-10",
@@ -1379,7 +1394,7 @@
       "owner": "ChatGPT",
       "working_branch": "work/hf-black-drafting",
       "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
-      "updated_on": "2026-09-23",
+      "updated_on": "2026-10-15",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "endstate/compilation.py",
@@ -1394,7 +1409,8 @@
         "EV-QWEN",
         "EV-STAGED-CODE",
         "EV-STAGED-MODEL",
-        "EV-HF-BLACK-LOCAL"
+        "EV-HF-BLACK-LOCAL",
+        "EV-GENERATION-ROLE-CONTRACT"
       ],
       "blockers": [],
       "next_action": "Validate the target-aware compiler on real providers without weakening acceptance; retain independent semantic review. This local change does not complete the compiler quality gate."

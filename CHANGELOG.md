@@ -4,6 +4,51 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Clarify generated preparation, shared readiness and final verification
+
+2026-10-15 · `local_unreleased`
+
+Correct generation guidance for the preserved Qwen failure while retaining every deterministic compiler guard. This is a development correction, not evidence that real-model generation now passes.
+
+### Added
+
+- Exact historical 27 September Qwen evidence and controlled replay of all four original outputs.
+- A separate prompt-version trace and explicit reserved readiness/success titles in second-stage context.
+
+### Changed
+
+- Schema descriptions and prompts distinguish preparatory results, branch-neutral readiness, future confirmation evidence and the single final verifier.
+- Successful and rejected local generation receipts retain prompt/compiler versions.
+
+### Fixed
+
+- Generation instructions now explicitly prohibit repeating the shared verifier within a route or claiming reserved success conditions as intermediate results. The original failed output still rejects unchanged.
+
+### Verification
+
+- Unchanged baseline: 938 code tests passed.
+- Focused compiler/replay checks: 50 passed. Initial test expansion exposed three fixture IndexErrors, corrected before this checkpoint.
+- Historical report copied byte-for-byte from documentation commit 0ee5834c0745640369f5a538b770c346f234232a; SHA-256 4db80b5a17816f414cd09f1f27737ca12e3b3cc95f9fb2009854cc5154a82992. Cumulative native acceptance pending.
+
+### Limitations
+
+- No new model requests, model downloads, independent reviewer labels or human acceptance. B02 remains 10/20; ES01 remains 5/5 internal.
+- Live GitHub API checks and review comments returned Forbidden; PR #2 Git head is verified. No merge, deployment, release or research feature adoption.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-074: shared readiness must be achievable by either alternative. Existing EM-020/051/055/060 are revalidated.
+- Risk: A model may paraphrase a forbidden result or supply irrelevant confirmation evidence; prompt/schema guidance is not semantic validation.
+- Architecture: Keep compiler contracts stable and version generation guidance separately; all state/authority boundaries remain unchanged.
+- Roadmap decision: existing_task: B02-09/ES03-01 only. Preserve every required model/human gate and defer research. EM-072/073 remain reserved on the pinned documentation branch.
+Registered discoveries: EM-074, EM-020, EM-051, EM-055, EM-060.
+
+Roadmap items: `B02-09`, `ES03-01`, `DOC-03`, `DOC-04`, `DOC-05`.
+
+Evidence: [docs/delivery/sessions/2026-10-15-generation-role-contract.md](docs/delivery/sessions/2026-10-15-generation-role-contract.md), [docs/evidence/qwen-baseline-2026-09-27.json](docs/evidence/qwen-baseline-2026-09-27.json), [tests/test_endstate_compilation.py](tests/test_endstate_compilation.py).
+
 ## 0.2.0-alpha.8 · Native software acceptance passed; internal core and guided authoring verified
 
 2026-09-26 · `local_unreleased`

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-09-25",
+  "updated_on": "2026-10-15",
   "required_prompts": [
     {
       "id": "ER-01",
@@ -701,7 +701,8 @@
         "B02-11"
       ],
       "evidence_paths": [
-        "docs/evidence/staged-compilation-verification.json"
+        "docs/evidence/staged-compilation-verification.json",
+        "docs/delivery/sessions/2026-10-15-generation-role-contract.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -710,6 +711,12 @@
           "decision": "adopted",
           "by": "ChatGPT development proposal",
           "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        },
+        {
+          "date": "2026-10-15",
+          "decision": "adopted",
+          "by": "Codex sprint review",
+          "reason": "Historical Qwen replay revalidates the distinction between exact compiler checks, prompt provenance, semantic quality and assisted recovery. Prompt version now survives success and rejection; fresh inference and human judgement remain outstanding."
         }
       ]
     },
@@ -1599,7 +1606,8 @@
       "acceptance_task_ids": [],
       "evidence_paths": [
         "scripts/acceptance.py",
-        "tests/test_acceptance_runner.py"
+        "tests/test_acceptance_runner.py",
+        "docs/delivery/sessions/2026-10-15-generation-role-contract.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1608,6 +1616,12 @@
           "decision": "adopted",
           "by": "ChatGPT build review",
           "reason": "Bounded existing-task improvement; implementation does not imply that wider model/native/release acceptance has passed."
+        },
+        {
+          "date": "2026-10-15",
+          "decision": "adopted",
+          "by": "Codex sprint review",
+          "reason": "Historical Qwen replay revalidates the distinction between exact compiler checks, prompt provenance, semantic quality and assisted recovery. Prompt version now survives success and rejection; fresh inference and human judgement remain outstanding."
         }
       ]
     },
@@ -1711,7 +1725,8 @@
         "docs/delivery/sessions/2026-09-24-integration-acceptance-local.md",
         "docs/decisions/0004-evidence-led-course-and-recovery.md",
         "docs/vision/8BALL.md",
-        "docs/vision/ENDSTATE.md"
+        "docs/vision/ENDSTATE.md",
+        "docs/delivery/sessions/2026-10-15-generation-role-contract.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1726,6 +1741,12 @@
           "decision": "adopted",
           "by": "ChatGPT vision refinement",
           "reason": "A narrated test total without its recoverable implementation is not current-source evidence. Preserve the missing-source caveat as well as native/model/publication states."
+        },
+        {
+          "date": "2026-10-15",
+          "decision": "adopted",
+          "by": "Codex sprint review",
+          "reason": "Historical Qwen replay revalidates the distinction between exact compiler checks, prompt provenance, semantic quality and assisted recovery. Prompt version now survives success and rejection; fresh inference and human judgement remain outstanding."
         }
       ]
     },
@@ -1873,7 +1894,8 @@
       "evidence_paths": [
         "docs/reference/2026-09-24-draft-repair-delivery-record.md",
         "docs/vision/ENDSTATE.md",
-        "docs/vision/ACCEPTANCE-DESIGN.md"
+        "docs/vision/ACCEPTANCE-DESIGN.md",
+        "docs/delivery/sessions/2026-10-15-generation-role-contract.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1882,6 +1904,12 @@
           "decision": "adopted",
           "by": "ChatGPT documentation review",
           "reason": "Adopt the bounded design direction, not runtime completion. Owner review and the listed acceptance work remain open."
+        },
+        {
+          "date": "2026-10-15",
+          "decision": "adopted",
+          "by": "Codex sprint review",
+          "reason": "Historical Qwen replay revalidates the distinction between exact compiler checks, prompt provenance, semantic quality and assisted recovery. Prompt version now survives success and rejection; fresh inference and human judgement remain outstanding."
         }
       ]
     },
@@ -2184,6 +2212,36 @@
           "decision": "adopted",
           "by": "ChatGPT build review",
           "reason": "Adopt in the bounded local implementation and reproducible delivery; wider secure/native/operator acceptance remains unverified."
+        }
+      ]
+    },
+    {
+      "id": "EM-074",
+      "title": "Shared readiness must be reachable through either genuine alternative",
+      "origin": "V0.2 Qwen baseline recovery and generation-role contract correction",
+      "first_seen": "2026-10-15",
+      "evidence_level": "observed_in_build",
+      "observation": "The archived Qwen frame requires on-site spare-chair confirmation even for its external-hire alternative. Duplicate-title validation rejects this particular output, but cannot prove semantic branch neutrality in otherwise valid wording.",
+      "product_implication": "Keep shared readiness separate from branch-specific preparation and from final success. Clarify generation guidance and include branch neutrality in independent review; do not weaken the validator or relabel a replay as model success.",
+      "task_ids": [
+        "B02-09",
+        "ES03-01"
+      ],
+      "acceptance_task_ids": [
+        "B02-09"
+      ],
+      "evidence_paths": [
+        "docs/evidence/qwen-baseline-2026-09-27.json",
+        "docs/delivery/sessions/2026-10-15-generation-role-contract.md",
+        "endstate/compilation.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-15",
+          "decision": "adopted",
+          "by": "Codex sprint review",
+          "reason": "existing_task: clarify the existing generation contract now; fresh-model effectiveness and independent review remain required. No research feature or new release gate added."
         }
       ]
     }

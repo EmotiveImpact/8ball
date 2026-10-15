@@ -2,7 +2,7 @@
 
 > Generated from `docs/delivery/progress.json`. Edit the ledger, then run `python scripts/delivery.py --write`. Do not maintain a second set of statuses here.
 
-Last status review: 2026-09-26.
+Last status review: 2026-10-15.
 
 **8BALL is the fixer product. ENDSTATE is the reusable engine underneath it.**
 
@@ -22,7 +22,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 ## Next work
 
-- **B02-09: Reliable reviewed graph proposals for new situations**. Configure the selected provider and run the unchanged generation fixtures without catalogue substitution or human repair counting as model success.
+- **B02-09: Reliable reviewed graph proposals for new situations**. Select and authorise a provider/model, rerun all four unchanged generation fixtures with prompt endstate.draft.prompts.v2, then run the actual-provider native journey and obtain independent human quality labels. Preserve every failure; do not repair output or substitute catalogue plans.
 - **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
 - **B02-11: Independent quality evaluation and production-model selection**. Obtain protocol/label approval and run the preserved real-provider gate; native software acceptance is not semantic approval.
 - **B02-12: Full twenty-step real-model V0.2 acceptance journey**. Run the actual-provider integration with authorised service/token and collect independent human review.
@@ -179,13 +179,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-APP`, `EV-UI` (registry below).
 
 - [ ] **B02-09 Reliable reviewed graph proposals for new situations**
-  - Status: `blocked`. Owner: ChatGPT. Updated: 2026-09-26.
+  - Status: `blocked`. Owner: Codex. Updated: 2026-10-15.
   - Acceptance: Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.
-  - Next: Configure the selected provider and run the unchanged generation fixtures without catalogue substitution or human repair counting as model success.
-  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
+  - Next: Select and authorise a provider/model, rerun all four unchanged generation fixtures with prompt endstate.draft.prompts.v2, then run the actual-provider native journey and obtain independent human quality labels. Preserve every failure; do not repair output or substitute catalogue plans.
+  - Branch/base: `fix/v02-generation-contract-20261015` / `290e310707cf8bef6caf2508c285312b091bd18b`.
   - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`.
-  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
-  - Blocker: Actual-model graph generation and semantic quality gate remain unaccepted; this native software run used controlled provider responses.
+  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT` (registry below).
+  - Blocker: Fresh selected-provider generation has not been rerun after prompt correction; local Ollama is unreachable and hosted model/provider/credential variables are unset. Provider selection and inference permission are pending. Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate.
 
 - [ ] **B02-10 Robust source extraction, deadlines and entity reconciliation**
   - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-26.
@@ -498,13 +498,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 ## ENDSTATE 0.3: Evaluated intelligence compilation
 
 - [ ] **ES03-01 Provider-independent reviewed outcome compiler**
-  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-23.
+  - Status: `partial`. Owner: ChatGPT. Updated: 2026-10-15.
   - Acceptance: Source interpretation, typed graph drafting and deterministic validation are clean interchangeable interfaces outside the product layer.
   - Next: Validate the target-aware compiler on real providers without weakening acceptance; retain independent semantic review. This local change does not complete the compiler quality gate.
   - Branch/base: `work/hf-black-drafting` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
   - Dependencies: `ES01-01`.
   - Existing code: `eightball/v2/intelligence.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`.
-  - Evidence: `EV-APP`, `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL` (registry below).
+  - Evidence: `EV-APP`, `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-GENERATION-ROLE-CONTRACT` (registry below).
 
 - [ ] **ES03-02 Shared real-model semantic acceptance**
   - Status: `blocked`. Owner: unassigned. Updated: 2026-09-23.
@@ -806,3 +806,17 @@ These references have specific scopes and may be historical. A reference to a de
 - Result/scope: 938 code and 938 installed-kernel checks; all 11 native Chromium suites pass (378 checks). Artifact and source-bound evidence verified. No actual model, independent professional or human accessibility acceptance.
 - Code revision: `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
 - External record: [verification source](https://github.com/EmotiveImpact/8ball/actions/runs/36219154611).
+
+### EV-QWEN-20260927
+
+- Kind: `failed_real_model_evaluation`.
+- Repository evidence: [docs/evidence/qwen-baseline-2026-09-27.json](../../docs/evidence/qwen-baseline-2026-09-27.json).
+- Result/scope: Recovered historical actual Qwen baseline: three schema-valid extractions; graph rejected with result_bypasses_verification. All live states unchanged. No semantic benchmark or production approval.
+- Code revision: `290e310707cf8bef6caf2508c285312b091bd18b`.
+- External record: [verification source](https://github.com/EmotiveImpact/8ball/actions/runs/36340454120).
+
+### EV-GENERATION-ROLE-CONTRACT
+
+- Kind: `controlled_regression_validation`.
+- Repository evidence: [docs/delivery/sessions/2026-10-15-generation-role-contract.md](../../docs/delivery/sessions/2026-10-15-generation-role-contract.md).
+- Result/scope: Prompt/schema guidance clarified without compiler guard changes. 50 focused compiler/replay checks pass; controlled replay is not fresh inference. Cumulative native validation is pending at the implementation checkpoint.

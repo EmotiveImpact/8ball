@@ -1,4 +1,12 @@
-# Current closeout: published correction and native acceptance
+# Current continuation: V0.2 generation-role contract, 15 October 2026
+
+Read [the current sprint checkpoint](sessions/2026-10-15-generation-role-contract.md). Work branch `fix/v02-generation-contract-20261015` starts from refreshed application/PR #2 head `290e310707cf8bef6caf2508c285312b091bd18b`. The consolidated specification remains on `docs/endstate-consolidated-handoff-2026-10-15` at `0ee5834c0745640369f5a538b770c346f234232a`; read its START-HERE, next-agent prompt and V02 closeout without merging it automatically.
+
+The actual Qwen baseline is now retained in this branch. Compiler safeguards remain unchanged; generation prompts/schema descriptions and versioned failure receipts are clarified. Fifty focused compiler/replay checks pass; cumulative native acceptance and implementation publication are pending at this checkpoint. B02-09 remains blocked pending authorised fresh inference and semantic review. Preserve remote EM-072/073; this sprint adds EM-074. No research features, release, merge or deployment.
+
+---
+
+# Previous closeout: published correction and native acceptance
 
 26 September 2026. Work from the current `feat/situation-intelligence-v2` branch, not older cumulative patches. Published runtime correction: `14c57907d26ea914e372e544bba4b0bd3988f5dc`, tree `1560ec43e469953884df6df50206057b903a9c70`. Native run 36219154611 passed all eleven suites (378 checks), 938 code tests and 938 installed-kernel tests. Exact artifact/source verification is recorded in `docs/evidence/native-closeout-2026-09-26.json` and `sessions/2026-09-26-native-acceptance-receipt.md`.
 

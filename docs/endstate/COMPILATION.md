@@ -2,6 +2,8 @@
 
 Internal contract: `endstate.draft.v1`. Introduced for B02-09 and ES03-01. This is a review-only compiler, not an autonomous operator or a production-quality model endorsement.
 
+Generation guidance is separately versioned as `endstate.draft.prompts.v2` in successful and failed traces. It explicitly separates preparatory intermediate results, readiness reachable through either alternative and the single final evidence-checking operation. Stage two receives reserved readiness/success titles. Schema descriptions guide the provider; they do not prove semantics or relax the compiler's collision guard. [The 15 October sprint record](../delivery/sessions/2026-10-15-generation-role-contract.md) preserves the actual historical Qwen failure and the controlled replay limits. Fresh inference remains required.
+
 ## Why a separate draft contract
 
 The previous single-response Qwen graph named a final verification action that it never supplied. The original invalid response and the original validator remain unchanged. The new path does not patch that response, invent a verification action or substitute a catalogue plan. Instead it asks the provider for smaller, complete semantic objects, then derives technical identifiers and wiring from an explicit restricted contract.

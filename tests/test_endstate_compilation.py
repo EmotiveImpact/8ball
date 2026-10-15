@@ -4,6 +4,7 @@ from copy import deepcopy
 from datetime import timedelta
 from pathlib import Path
 import json
+from hashlib import sha256
 
 import httpx
 import pytest
@@ -11,6 +12,7 @@ from pydantic import ValidationError
 
 from endstate.compilation import (
     CompileRequest, DraftRequest, OutcomeFrame, RouteDrafts, compile_outcome, draft_outcome, DraftFailure,
+    PROMPT_VERSION,
 )
 from endstate.contracts import Graph, PlanningSnapshot, Condition, literals
 from endstate.primitives import Evidence, Observation, utcnow
@@ -134,8 +136,16 @@ def test_cosmetic_renaming_does_not_manufacture_alternative_routes():
     with pytest.raises(ValueError,match='identical work'):compile_outcome(data)
 
 
-def test_step_results_cannot_be_declared_success_before_verification():
-    data=request();data['routes']['routes'][0]['sequential_steps'][0]['result']=data['frame']['success_criteria'][0]
+@pytest.mark.parametrize('reserved', ['readiness', 0, 1])
+@pytest.mark.parametrize('variant', ['exact', 'case', 'whitespace'])
+def test_step_results_cannot_be_declared_success_before_verification(reserved, variant):
+    data=request()
+    data['frame']['success_criteria'].append({'title':'Independent acceptance confirmed',
+                                             'confirmation':'Written acceptance from an authorised reviewer'})
+    result=deepcopy(data['frame']['readiness'] if reserved=='readiness' else data['frame']['success_criteria'][reserved])
+    if variant=='case':result['title']=result['title'].upper()
+    if variant=='whitespace':result['title']='  '+'  '.join(result['title'].split())+'  '
+    data['routes']['routes'][0]['sequential_steps'][0]['result']=result
     with pytest.raises(ValueError,match='bypass'):compile_outcome(data)
 
 
@@ -160,13 +170,82 @@ def test_mutated_nested_models_are_revalidated():
 def test_provider_independent_pipeline_calls_two_stages_and_retains_trace():
     returned=[deepcopy(FIXTURE['frame']),deepcopy(FIXTURE['routes'])];calls=[]
     def provider(schema,system,context):
-        calls.append((schema,context));return returned.pop(0),'fake-local-model'
+        calls.append((schema,context,system));return returned.pop(0),'fake-local-model'
     data={'namespace':'test','outcome':OUTCOME,'brief':'Fictional disrupted supply'}
     compiled,trace,model=draft_outcome(data,provider)
     assert len(calls)==2 and model=='fake-local-model'
     assert calls[1][1]['approach_indices'][1]['approach_index']==1
+    rules=calls[1][1]['compilation_rules']
+    assert rules['reserved_result_titles']==[FIXTURE['frame']['readiness']['title'],
+                                             *[c['title'] for c in FIXTURE['frame']['success_criteria']]]
+    assert 'reserved_result_titles' in calls[1][2]
+    assert 'frame.verification' in calls[1][0]['$defs']['RouteDraft']['properties']['establish_readiness']['description']
+    assert trace['prompt_version']==PROMPT_VERSION
     assert trace['frame']==FIXTURE['frame'] and trace['routes']==FIXTURE['routes']
     assert len(compiled.graph.actions)==5
+
+
+BASELINE_PATH=Path(__file__).resolve().parents[1]/'docs/evidence/qwen-baseline-2026-09-27.json'
+BASELINE=json.loads(BASELINE_PATH.read_text())
+
+
+@pytest.mark.parametrize('record', [r for r in BASELINE['results'] if r['purpose']=='extract'],
+                         ids=lambda record:record['title'])
+def test_historical_extractions_replay_without_new_inference_or_case_changes(record):
+    c=case();c.evidence[0].text=record['source'];before=c.model_dump(mode='json');calls=[]
+    def respond(req):
+        calls.append(req)
+        return httpx.Response(200,json=deepcopy(record['raw_responses'][len(calls)-1]))
+    with httpx.Client(transport=httpx.MockTransport(respond)) as client:
+        proposal=propose(c,'ollama','extract',['source'],client=client)
+    assert len(calls)==1 and c.model_dump(mode='json')==before
+    assert proposal.raw_output==record['proposal']['raw_output']
+    assert len(proposal.items)==record['proposal_count']
+    assert all(item.disposition=='pending' for item in proposal.items)
+
+
+def test_unmodified_september_qwen_graph_remains_rejected_with_exact_trace():
+    # Raw historical inference, replayed through a controlled transport. Not a new model run.
+    assert sha256(BASELINE_PATH.read_bytes()).hexdigest()=='4db80b5a17816f414cd09f1f27737ca12e3b3cc95f9fb2009854cc5154a82992'
+    fixtures=json.loads((BASELINE_PATH.parents[2]/'evals/generation-cases.json').read_text())
+    assert sha256(json.dumps(fixtures).encode()).hexdigest()==BASELINE['fixture_sha256']
+    record=next(r for r in BASELINE['results'] if r['purpose']=='graph')
+    c=case();c.evidence[0].text=record['source'];c.summary=record['source']
+    before=c.model_dump(mode='json');calls=[]
+    def respond(req):
+        calls.append(json.loads(req.content))
+        return httpx.Response(200,json=deepcopy(record['raw_responses'][len(calls)-1]))
+    with httpx.Client(transport=httpx.MockTransport(respond)) as client:
+        with pytest.raises(DraftFailure) as caught:
+            propose(c,'ollama_staged','graph',['source'],client=client)
+    trace=caught.value.trace
+    assert len(calls)==2 and c.model_dump(mode='json')==before
+    assert trace['failed_stage']=='compile' and trace['stage_count']==2
+    assert trace['diagnostic']==record['diagnostic']
+    assert trace['frame']==json.loads(record['raw_responses'][0]['message']['content'])
+    assert trace['routes']==json.loads(record['raw_responses'][1]['message']['content'])
+    assert trace['prompt_version']==PROMPT_VERSION
+
+
+def test_generation_runner_retains_versions_and_raw_responses_on_replayed_failure(monkeypatch):
+    from evals import live_generation
+    record=next(r for r in BASELINE['results'] if r['purpose']=='graph')
+    class ReplayRecorder:
+        def __init__(self):
+            self.responses=[]
+            self.client=httpx.Client(transport=httpx.MockTransport(self.respond))
+        def respond(self,req):
+            raw=deepcopy(record['raw_responses'][len(self.responses)])
+            self.responses.append(raw)
+            return httpx.Response(200,json=raw)
+        def post(self,*args,**kwargs):return self.client.post(*args,**kwargs)
+    monkeypatch.setattr(live_generation,'Recorder',ReplayRecorder)
+    monkeypatch.setenv('EIGHTBALL_GRAPH_PROVIDER','ollama_staged')
+    result=live_generation.run_one(record['title'],record['source'],'graph',record['desired_outcome'])
+    assert result['status']=='rejected_or_unavailable' and result['live_state_unchanged']
+    assert result['compiler_version']=='endstate.draft.v1' and result['prompt_version']==PROMPT_VERSION
+    assert result['diagnostic']==record['diagnostic']
+    assert result['raw_responses']==record['raw_responses']
 
 
 def test_invalid_first_stage_never_runs_second_stage():

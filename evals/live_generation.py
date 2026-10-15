@@ -46,9 +46,13 @@ def run_one(title,text,purpose,desired):
             result['all_actions_need_approval']=all(a.approval_required for a in projected.graph.actions)
             result['exact_human_outcome_preserved']=all(o.title==desired for o in projected.graph.objectives)
             result['compiler_version']=(p.raw_output or {}).get('compiler_version')
+            result['prompt_version']=(p.raw_output or {}).get('prompt_version')
         result['live_state_unchanged']=before==c.model_dump(mode='json')
     except Exception as e:
-        result.update(status='rejected_or_unavailable',error_type=type(e).__name__,diagnostic=getattr(e,'trace',{}).get('diagnostic'),message=str(e)[:2000],live_state_unchanged=before==c.model_dump(mode='json'))
+        trace=getattr(e,'trace',{})
+        result.update(status='rejected_or_unavailable',error_type=type(e).__name__,diagnostic=trace.get('diagnostic'),
+                      compiler_version=trace.get('compiler_version'),prompt_version=trace.get('prompt_version'),
+                      message=str(e)[:2000],live_state_unchanged=before==c.model_dump(mode='json'))
     finally:
         result['seconds']=round(time.perf_counter()-started,3);result['raw_responses']=rec.responses;rec.client.close()
     print(json.dumps({k:v for k,v in result.items() if k not in ('proposal','raw_responses')},indent=2),flush=True)

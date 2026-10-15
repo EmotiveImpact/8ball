@@ -3,6 +3,65 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-15-generation-role-contract",
+      "date": "2026-10-15",
+      "version": "0.2.0-alpha.8",
+      "title": "Clarify generated preparation, shared readiness and final verification",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-09",
+        "ES03-01",
+        "DOC-03",
+        "DOC-04",
+        "DOC-05"
+      ],
+      "summary": "Correct generation guidance for the preserved Qwen failure while retaining every deterministic compiler guard. This is a development correction, not evidence that real-model generation now passes.",
+      "added": [
+        "Exact historical 27 September Qwen evidence and controlled replay of all four original outputs.",
+        "A separate prompt-version trace and explicit reserved readiness/success titles in second-stage context."
+      ],
+      "changed": [
+        "Schema descriptions and prompts distinguish preparatory results, branch-neutral readiness, future confirmation evidence and the single final verifier.",
+        "Successful and rejected local generation receipts retain prompt/compiler versions."
+      ],
+      "fixed": [
+        "Generation instructions now explicitly prohibit repeating the shared verifier within a route or claiming reserved success conditions as intermediate results. The original failed output still rejects unchanged."
+      ],
+      "verification": [
+        "Unchanged baseline: 938 code tests passed.",
+        "Focused compiler/replay checks: 50 passed. Initial test expansion exposed three fixture IndexErrors, corrected before this checkpoint.",
+        "Historical report copied byte-for-byte from documentation commit 0ee5834c0745640369f5a538b770c346f234232a; SHA-256 4db80b5a17816f414cd09f1f27737ca12e3b3cc95f9fb2009854cc5154a82992. Cumulative native acceptance pending."
+      ],
+      "limitations": [
+        "No new model requests, model downloads, independent reviewer labels or human acceptance. B02 remains 10/20; ES01 remains 5/5 internal.",
+        "Live GitHub API checks and review comments returned Forbidden; PR #2 Git head is verified. No merge, deployment, release or research feature adoption."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-15-generation-role-contract.md",
+        "docs/evidence/qwen-baseline-2026-09-27.json",
+        "tests/test_endstate_compilation.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-074: shared readiness must be achievable by either alternative. Existing EM-020/051/055/060 are revalidated."
+        ],
+        "risks": [
+          "A model may paraphrase a forbidden result or supply irrelevant confirmation evidence; prompt/schema guidance is not semantic validation."
+        ],
+        "architecture_implications": [
+          "Keep compiler contracts stable and version generation guidance separately; all state/authority boundaries remain unchanged."
+        ],
+        "roadmap_decision": "existing_task: B02-09/ES03-01 only. Preserve every required model/human gate and defer research. EM-072/073 remain reserved on the pinned documentation branch.",
+        "insight_ids": [
+          "EM-074",
+          "EM-020",
+          "EM-051",
+          "EM-055",
+          "EM-060"
+        ]
+      }
+    },
+    {
       "id": "2026-09-26-native-acceptance-receipt",
       "date": "2026-09-26",
       "version": "0.2.0-alpha.8",

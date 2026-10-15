@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-09-25. **71 recorded discoveries.**
+Last review: 2026-10-15. **72 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -369,11 +369,12 @@ Valid references and exact quotations can accompany an interpretation that misse
 
 **Roadmap links:** `B02-09` (blocked), `B02-11` (partial), `ES03-02` (blocked).
 **Completion scope:** `B02-11`.
-**Evidence / source record:** `docs/evidence/staged-compilation-verification.json`.
+**Evidence / source record:** `docs/evidence/staged-compilation-verification.json`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT development proposal: Adopt bounded scope now; wider interpretation still needs owner and operator review.
+- 2026-10-15 · adopted · Codex sprint review: Historical Qwen replay revalidates the distinction between exact compiler checks, prompt provenance, semantic quality and assisted recovery. Prompt version now survives success and rejection; fresh inference and human judgement remain outstanding.
 
 ### [ ] EM-021: Review state and evidence character must be separate
 
@@ -899,11 +900,12 @@ Separate successful test reports could be retained while the working source cont
 
 **Roadmap links:** `B02-12` (blocked), `B02-16` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`.
+**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT build review: Bounded existing-task improvement; implementation does not imply that wider model/native/release acceptance has passed.
+- 2026-10-15 · adopted · Codex sprint review: Historical Qwen replay revalidates the distinction between exact compiler checks, prompt provenance, semantic quality and assisted recovery. Prompt version now survives success and rejection; fresh inference and human judgement remain outstanding.
 
 ### [ ] EM-052: A built distribution is not an installed-product test
 
@@ -967,12 +969,13 @@ A configured provider can be unreachable; a valid model response can be semantic
 
 **Roadmap links:** `B02-12` (blocked), `B02-15` (partial), `B02-18` (blocked), `ES03-08` (blocked).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `scripts/acceptance.py`, `evals/full_journey.py`, `docs/delivery/sessions/2026-09-24-integration-acceptance-local.md`, `docs/decisions/0004-evidence-led-course-and-recovery.md`, `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`.
+**Evidence / source record:** `scripts/acceptance.py`, `evals/full_journey.py`, `docs/delivery/sessions/2026-09-24-integration-acceptance-local.md`, `docs/decisions/0004-evidence-led-course-and-recovery.md`, `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT build review: Bounded existing-task improvement; implementation does not imply that wider model/native/release acceptance has passed.
 - 2026-09-24 · adopted · ChatGPT vision refinement: A narrated test total without its recoverable implementation is not current-source evidence. Preserve the missing-source caveat as well as native/model/publication states.
+- 2026-10-15 · adopted · Codex sprint review: Historical Qwen replay revalidates the distinction between exact compiler checks, prompt provenance, semantic quality and assisted recovery. Prompt version now survives success and rejection; fresh inference and human judgement remain outstanding.
 
 ### [ ] EM-056: A candidate route is not a human-selected course
 
@@ -1055,11 +1058,12 @@ The supplied Draft Repair handoff reports a human-correction workflow but not a 
 
 **Roadmap links:** `ES03-08` (blocked), `ES03-05` (partial), `B02-09` (blocked), `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/reference/2026-09-24-draft-repair-delivery-record.md`, `docs/vision/ENDSTATE.md`, `docs/vision/ACCEPTANCE-DESIGN.md`.
+**Evidence / source record:** `docs/reference/2026-09-24-draft-repair-delivery-record.md`, `docs/vision/ENDSTATE.md`, `docs/vision/ACCEPTANCE-DESIGN.md`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT documentation review: Adopt the bounded design direction, not runtime completion. Owner review and the listed acceptance work remain open.
+- 2026-10-15 · adopted · Codex sprint review: Historical Qwen replay revalidates the distinction between exact compiler checks, prompt provenance, semantic quality and assisted recovery. Prompt version now survives success and rejection; fresh inference and human judgement remain outstanding.
 
 ### [ ] EM-061: The primary value test is a better decision, not a larger graph
 
@@ -1247,3 +1251,20 @@ The mounted alpha.7 archive and PRD overlay reproduced exactly; the interrupted 
 **Decision history:**
 
 - 2026-09-25 · adopted · ChatGPT build review: Adopt in the bounded local implementation and reproducible delivery; wider secure/native/operator acceptance remains unverified.
+
+### [ ] EM-074: Shared readiness must be reachable through either genuine alternative
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-15. **Origin:** V0.2 Qwen baseline recovery and generation-role contract correction.
+
+The archived Qwen frame requires on-site spare-chair confirmation even for its external-hire alternative. Duplicate-title validation rejects this particular output, but cannot prove semantic branch neutrality in otherwise valid wording.
+
+**Product implication:** Keep shared readiness separate from branch-specific preparation and from final success. Clarify generation guidance and include branch neutrality in independent review; do not weaken the validator or relabel a replay as model success.
+
+**Roadmap links:** `B02-09` (blocked), `ES03-01` (partial).
+**Completion scope:** `B02-09`.
+**Evidence / source record:** `docs/evidence/qwen-baseline-2026-09-27.json`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `endstate/compilation.py`.
+
+**Decision history:**
+
+- 2026-10-15 · adopted · Codex sprint review: existing_task: clarify the existing generation contract now; fresh-model effectiveness and independent review remain required. No research feature or new release gate added.
