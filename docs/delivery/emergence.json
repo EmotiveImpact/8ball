@@ -1666,7 +1666,8 @@
       "acceptance_task_ids": [],
       "evidence_paths": [
         "web/v2/ui.js",
-        "tests/browser_accessibility.py"
+        "tests/browser_accessibility.py",
+        "docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1675,6 +1676,12 @@
           "decision": "adopted",
           "by": "ChatGPT build review",
           "reason": "Bounded existing-task improvement; implementation does not imply that wider model/native/release acceptance has passed."
+        },
+        {
+          "date": "2026-10-15",
+          "decision": "adopted",
+          "by": "Codex continuation review",
+          "reason": "existing_task B02-16/B02-20: graph redraw replaces inspector/filter controls just as dialog replacement can lose the invoker. Preserve logical control identity and an explicit destination when a control disappears. Record native reproduction and corrected behavior; automated focus does not replace human acceptance."
         }
       ]
     },

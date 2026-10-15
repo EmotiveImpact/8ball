@@ -935,11 +935,12 @@ Navigation and replaced dialogs could leave keyboard focus on the body or on a r
 
 **Roadmap links:** `B02-16` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `web/v2/ui.js`, `tests/browser_accessibility.py`.
+**Evidence / source record:** `web/v2/ui.js`, `tests/browser_accessibility.py`, `docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT build review: Bounded existing-task improvement; implementation does not imply that wider model/native/release acceptance has passed.
+- 2026-10-15 · adopted · Codex continuation review: existing_task B02-16/B02-20: graph redraw replaces inspector/filter controls just as dialog replacement can lose the invoker. Preserve logical control identity and an explicit destination when a control disappears. Record native reproduction and corrected behavior; automated focus does not replace human acceptance.
 
 ### [ ] EM-054: Scripted real-model review is not independent judgement
 

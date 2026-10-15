@@ -243,12 +243,12 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Blocker: Lifecycle behaviour with the selected real inference provider remains unverified.
 
 - [ ] **B02-16 Complete accessibility and supported-environment validation**
-  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-26.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-15.
   - Acceptance: Keyboard, screen reader, empty/error/loading states and supported browsers/platform startup paths pass an explicit review.
   - Next: Complete the recorded human accessibility and supported-platform review, not another UI feature.
-  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
+  - Branch/base: `fix/v02-graph-keyboard-20261015` / `821d9f512a70aaa602587caa4ef604021719b01f`.
   - Existing code: `tests/browser_accessibility.py`, `web/v2/ui.js`, `web/v2/app.js`, `web/v2/style.css`, `scripts/acceptance.py`.
-  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-SOURCE-SEARCH-RACE`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-SOURCE-SEARCH-RACE`, `EV-NATIVE-CLOSEOUT`, `EV-GRAPH-KEYBOARD-FOCUS` (registry below).
   - Blocker: Human screen-reader and supported-browser/OS review remains outstanding; Linux/Chromium native software tests passed.
 
 - [x] **B02-17 Prove compatibility after ENDSTATE core extraction**
@@ -279,13 +279,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Blocker: Owner visual review and broader human accessibility acceptance remain outstanding.
 
 - [ ] **B02-20 Black relationship explorer with local focus, directed flow and records view**
-  - Status: `implemented`. Owner: ChatGPT. Updated: 2026-09-26.
+  - Status: `implemented`. Owner: Codex. Updated: 2026-10-15.
   - Acceptance: Explore actual case records using Connections, Outcome flow and Records; inspect source/history and exact logic; keyboard/mobile controls and view-only audit invariants pass, including native browser validation.
   - Next: Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass.
-  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
+  - Branch/base: `fix/v02-graph-keyboard-20261015` / `821d9f512a70aaa602587caa4ef604021719b01f`.
   - Dependencies: `B02-04`, `B02-07`, `B02-19`.
   - Existing code: `web/v2/graph-model.js`, `web/v2/graph-view.js`, `web/v2/views.js`, `web/v2/app.js`, `web/v2/style.css`, `tests/browser_v2.py`, `tests/browser_graph.py`, `tests/test_graph_explorer.py`, `scripts/design_preview.py`.
-  - Evidence: `EV-GRAPH-EXPLORER-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Evidence: `EV-GRAPH-EXPLORER-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-GRAPH-KEYBOARD-FOCUS` (registry below).
   - Blocker: Representative dense-case operator usability and broader accessibility review remain outstanding.
 
 - [ ] **B02-21 Evidence-linked Emergent Insights and review workspace** (optional, not a version gate)
@@ -821,3 +821,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Repository evidence: [docs/evidence/generation-role-contract-2026-10-15.json](../../docs/evidence/generation-role-contract-2026-10-15.json).
 - Result/scope: Native software acceptance passed: 951 code tests, 951 installed-kernel tests, 378 checks in eleven native Chromium suites; source/artifact inspection valid. Zero actual model calls; fresh provider and independent/human gates remain blocked/unaccepted.
 - Code revision: `8fad4118f07f91ac1884713530bac9479a7b51b7`.
+
+### EV-GRAPH-KEYBOARD-FOCUS
+
+- Kind: `native_keyboard_regression`.
+- Repository evidence: [docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md](../../docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md).
+- Result/scope: Four native baseline keyboard actions reproduced focus loss to BODY. Corrected graph suite passes 42 native checks, including four new keyboard focus assertions, with unchanged case audit. Cumulative acceptance pending; human accessibility/dense-case gates remain open.

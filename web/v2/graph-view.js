@@ -82,6 +82,11 @@ export function mountGraphWorkspace(){
   function repaint({keepSearchFocus=false}={}){
     const oldFocus=document.activeElement;
     const focusKey=oldFocus?.dataset?.gxKey,focusSelect=oldFocus?.dataset?.gxSelect,oldPosition=oldFocus?.selectionStart;
+    // Inspector and filter buttons are replaced below. Retain their keyboard
+    // position, or return to the stable scope control when the button disappears.
+    const focusControl=oldFocus?.matches('[data-gx-focus]')?'[data-gx-focus]':
+      oldFocus?.matches('.gx-types [data-gx-all]')?'.gx-types [data-gx-all]':
+      oldFocus?.matches('[data-gx-clear],.gx-no-results [data-gx-all]')?'[data-gx-scope]':null;
     shown=graphVisible(graph,prefs);
     // Flow deliberately excludes descriptive links from placement; exact expressions remain in the inspector.
     if(prefs.mode==='outcome')shown={nodes:shown.nodes.filter(n=>['condition','action','objective'].includes(n.kind)),links:shown.links.filter(l=>['prerequisite','intended','objective','failure','guard'].includes(l.kind))};
@@ -104,6 +109,7 @@ export function mountGraphWorkspace(){
     if(keepSearchFocus){search.focus();try{search.setSelectionRange(oldPosition,oldPosition);}catch{}}
     else if(focusKey)root.querySelector(`[data-gx-key="${CSS.escape(focusKey)}"]`)?.focus({preventScroll:true});
     else if(focusSelect)root.querySelector(`[data-gx-select="${CSS.escape(focusSelect)}"]`)?.focus({preventScroll:true});
+    else if(focusControl)root.querySelector(focusControl)?.focus({preventScroll:true});
   }
   on(root,'click',e=>{
     const el=e.target.closest('[data-gx-key],[data-gx-select],[data-gx-mode],[data-gx-kind],[data-gx-fit],[data-gx-reset],[data-gx-zoom],[data-gx-clear],[data-gx-focus],[data-gx-pin],[data-gx-all]');if(!el)return;

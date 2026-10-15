@@ -1,0 +1,59 @@
+{
+  "source_commit": "821d9f512a70aaa602587caa4ef604021719b01f",
+  "renderer_sha256": "1696da788859f869e1b9b31dab55c3e45ad7d49dfb8b463f87b9088f73355c92",
+  "transport": "Native loopback HTTP",
+  "browser": "154.0.8037.57",
+  "results": [
+    {
+      "action": "neighbourhood",
+      "expected_focus": "[data-gx-focus]",
+      "actual_active": {
+        "tag": "BODY",
+        "attributes": {
+          "class": "is-graph-view"
+        }
+      },
+      "assertion_passed": false,
+      "assertion_failure": "Locator expected to be focused\nActual value: inactive \nCall log:\n  - Expect \"to_be_focused\" with timeout 1000ms\n  - waiting for locator(\"[data-gx-focus]\")\n    5 \u00d7 locator resolved to <button type=\"button\" data-gx-focus=\"\">\u2026</button>\n      - unexpected value \"inactive\"\n"
+    },
+    {
+      "action": "clear",
+      "expected_focus": ".gx-svg",
+      "actual_active": {
+        "tag": "BODY",
+        "attributes": {
+          "class": "is-graph-view"
+        }
+      },
+      "assertion_passed": false,
+      "assertion_failure": "Locator expected to be focused\nActual value: inactive \nCall log:\n  - Expect \"to_be_focused\" with timeout 1000ms\n  - waiting for locator(\".gx-svg\")\n    5 \u00d7 locator resolved to <svg role=\"group\" tabindex=\"0\" class=\"gx-svg \" viewBox=\"0 0 1200 740\" data-base-width=\"1200\" data-base-height=\"740\" aria-label=\"Connected case records\">\u2026</svg>\n      - unexpected value \"inactive\"\n"
+    },
+    {
+      "action": "reset-filters",
+      "expected_focus": ".gx-types [data-gx-all]",
+      "actual_active": {
+        "tag": "BODY",
+        "attributes": {
+          "class": "is-graph-view"
+        }
+      },
+      "assertion_passed": false,
+      "assertion_failure": "Locator expected to be focused\nActual value: inactive \nCall log:\n  - Expect \"to_be_focused\" with timeout 1000ms\n  - waiting for locator(\".gx-types [data-gx-all]\")\n    5 \u00d7 locator resolved to <button type=\"button\" data-gx-all=\"\" class=\"gx-clear-filters\">Reset filters</button>\n      - unexpected value \"inactive\"\n"
+    },
+    {
+      "action": "empty-reset",
+      "expected_focus": ".gx-svg",
+      "actual_active": {
+        "tag": "BODY",
+        "attributes": {
+          "class": "is-graph-view"
+        }
+      },
+      "assertion_passed": false,
+      "assertion_failure": "Locator expected to be focused\nActual value: inactive \nCall log:\n  - Expect \"to_be_focused\" with timeout 1000ms\n  - waiting for locator(\".gx-svg\")\n    5 \u00d7 locator resolved to <svg role=\"group\" tabindex=\"0\" class=\"gx-svg \" viewBox=\"0 0 1200 740\" data-base-width=\"1200\" data-base-height=\"740\" aria-label=\"Connected case records\">\u2026</svg>\n      - unexpected value \"inactive\"\n"
+    }
+  ],
+  "case_audit_unchanged": true,
+  "runtime_errors": [],
+  "model_calls": 0
+}

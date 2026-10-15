@@ -1,3 +1,9 @@
+# Current implementation checkpoint: graph keyboard focus, 15 October 2026
+
+Read [the graph sprint](sessions/2026-10-15-graph-keyboard-focus.md). Branch `fix/v02-graph-keyboard-20261015` starts from the pushed generation checkpoint `821d9f512a70aaa602587caa4ef604021719b01f`. Four native keyboard actions reproducibly lost focus to BODY; corrected graph checks pass 42 native assertions with unchanged case audit. Cumulative acceptance is pending at this implementation checkpoint. EM-053 is refined; no new feature or task status promotion. All actual-provider, independent and human acceptance requirements remain.
+
+---
+
 # Current closeout: generation-role correction and native software verification
 
 15 October 2026. Work branch `fix/v02-generation-contract-20261015`, tested code `8fad4118f07f91ac1884713530bac9479a7b51b7`, from application/PR #2 base `290e310707cf8bef6caf2508c285312b091bd18b`. [Sprint handoff](sessions/2026-10-15-generation-role-contract.md) and [receipt](../evidence/generation-role-contract-2026-10-15.json) record **951 code + 951 installed-kernel tests and all 378 native Chromium checks** passing, with source/artifact inspection valid. Subsequent receipt edits are documentation only and checked separately.

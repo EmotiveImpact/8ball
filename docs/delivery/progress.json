@@ -199,6 +199,11 @@
       "path": "docs/evidence/generation-role-contract-2026-10-15.json",
       "result": "Native software acceptance passed: 951 code tests, 951 installed-kernel tests, 378 checks in eleven native Chromium suites; source/artifact inspection valid. Zero actual model calls; fresh provider and independent/human gates remain blocked/unaccepted.",
       "code_commit": "8fad4118f07f91ac1884713530bac9479a7b51b7"
+    },
+    "EV-GRAPH-KEYBOARD-FOCUS": {
+      "kind": "native_keyboard_regression",
+      "path": "docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md",
+      "result": "Four native baseline keyboard actions reproduced focus loss to BODY. Corrected graph suite passes 42 native checks, including four new keyboard focus assertions, with unchanged case audit. Cumulative acceptance pending; human accessibility/dense-case gates remain open."
     }
   },
   "milestones": [
@@ -850,10 +855,10 @@
       "title": "Complete accessibility and supported-environment validation",
       "status": "partial",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
-      "updated_on": "2026-09-26",
+      "owner": "Codex",
+      "working_branch": "fix/v02-graph-keyboard-20261015",
+      "base_commit": "821d9f512a70aaa602587caa4ef604021719b01f",
+      "updated_on": "2026-10-15",
       "code_paths": [
         "tests/browser_accessibility.py",
         "web/v2/ui.js",
@@ -870,7 +875,8 @@
         "EV-INTEGRATION-LOCAL",
         "EV-INTEGRATION-BLOCKED",
         "EV-SOURCE-SEARCH-RACE",
-        "EV-NATIVE-CLOSEOUT"
+        "EV-NATIVE-CLOSEOUT",
+        "EV-GRAPH-KEYBOARD-FOCUS"
       ],
       "blockers": [
         "Human screen-reader and supported-browser/OS review remains outstanding; Linux/Chromium native software tests passed."
@@ -1715,10 +1721,10 @@
       "title": "Black relationship explorer with local focus, directed flow and records view",
       "status": "implemented",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
-      "updated_on": "2026-09-26",
+      "owner": "Codex",
+      "working_branch": "fix/v02-graph-keyboard-20261015",
+      "base_commit": "821d9f512a70aaa602587caa4ef604021719b01f",
+      "updated_on": "2026-10-15",
       "code_paths": [
         "web/v2/graph-model.js",
         "web/v2/graph-view.js",
@@ -1738,7 +1744,8 @@
       "acceptance": "Explore actual case records using Connections, Outcome flow and Records; inspect source/history and exact logic; keyboard/mobile controls and view-only audit invariants pass, including native browser validation.",
       "evidence": [
         "EV-GRAPH-EXPLORER-LOCAL",
-        "EV-NATIVE-CLOSEOUT"
+        "EV-NATIVE-CLOSEOUT",
+        "EV-GRAPH-KEYBOARD-FOCUS"
       ],
       "blockers": [
         "Representative dense-case operator usability and broader accessibility review remain outstanding."

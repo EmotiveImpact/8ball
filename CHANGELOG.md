@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Preserve keyboard orientation through graph control redraws
+
+2026-10-15 · `local_unreleased`
+
+Correct the graph control focus-loss regression within existing accessibility scope. Human screen-reader, platform and operator acceptance remain outstanding.
+
+### Added
+
+- Preserved native baseline evidence: four keyboard actions left focus on BODY while case audit remained unchanged.
+
+### Changed
+
+- Graph control redraw focus restoration and native keyboard regression checks.
+
+### Fixed
+
+- Keep focus on logical neighbourhood/reset controls, or the labelled scope selector when a disappearing control has no replacement.
+
+### Verification
+
+- Native baseline at 821d9f512a70aaa602587caa4ef604021719b01f reproduced four failed focus assertions, zero runtime errors and unchanged case audit.
+- Corrected native graph suite passed 42 checks (38 preserved plus four keyboard regressions); syntax, Python compilation and git diff --check passed. Cumulative acceptance is pending at this implementation checkpoint.
+
+### Limitations
+
+- No real inference, independent semantic judgement, human screen-reader, broad platform or dense-case operator acceptance.
+- B02 remains 10/20 required verified scopes; no application version change, main merge, release or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Revalidate EM-053: replacing visually equivalent graph controls still discards their DOM focus identity; disappearing controls need a deliberate destination.
+- Risk: Mouse-driven checks can pass while keyboard navigation drops to BODY; restoration must not create a focus trap.
+- Architecture: Focus continuity is presentation state only and must not modify case evidence, authority or graph semantics.
+- Roadmap decision: existing_task B02-16/B02-20. Preserve required human/provider gates and deferred research; no additional discovery ID or new feature required.
+Registered discoveries: EM-053, EM-051.
+
+Roadmap items: `B02-16`, `B02-20`, `DOC-03`, `DOC-04`, `DOC-05`.
+
+Evidence: [docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md](docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md), [docs/evidence/graph-keyboard-baseline-2026-10-15.json](docs/evidence/graph-keyboard-baseline-2026-10-15.json), [docs/evidence/graph-keyboard-focused-2026-10-15.json](docs/evidence/graph-keyboard-focused-2026-10-15.json).
+
 ## 0.2.0-alpha.8 · Native regression verified for the generation-role correction
 
 2026-10-15 · `pushed_unreleased`
