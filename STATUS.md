@@ -1,6 +1,6 @@
 # Current consolidated development checkpoint
 
-The latest application fixes and consolidated specifications/research are combined in this source for owner-authorized main integration. Start with [the build overview](docs/delivery/BUILD-OVERVIEW.md), [current handoff](docs/delivery/HANDOFF.md), [canonical tracker](docs/delivery/PROGRESS.md) and [integration decision](docs/decisions/0006-consolidated-development-main.md).
+The latest application fixes and consolidated specifications/research are together on **main**. GitHub PRs #1, #2 and #3 show Merged. [Consolidated native verification](docs/evidence/main-consolidation-native-2026-10-15.json) passed 964 source tests, 964 installed-kernel tests and 384 browser checks at merge6b57a45; inspection valid/passed before final documentation receipt edits. Start with [the build overview](docs/delivery/BUILD-OVERVIEW.md), [current handoff](docs/delivery/HANDOFF.md), [canonical tracker](docs/delivery/PROGRESS.md) and [integration decision](docs/decisions/0006-consolidated-development-main.md).
 
 The prior software pass at 294ff57 was 964 source tests, 964 installed-ENDSTATE tests and 384 native browser checks; exact new integration results belong to the new receipt. V0.2 remains 10/20 required scopes verified, ENDSTATE V0.1 remains 5/5 internally. Real-model, independent professional and human acceptance remain open. This is a development alpha, not a deployed/released service.
 

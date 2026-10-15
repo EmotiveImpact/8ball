@@ -1,6 +1,6 @@
 # Current consolidated build: 8BALL powered by ENDSTATE
 
-The owner has authorized consolidating the latest application fixes and separate documentation into one development build for **main**. Read [the build overview](docs/delivery/BUILD-OVERVIEW.md), [current integration handoff](docs/delivery/HANDOFF.md), [ADR 0006](docs/decisions/0006-consolidated-development-main.md), and [the integration session](docs/delivery/sessions/2026-10-15-main-consolidation.md).
+The latest application fixes and separate documentation are now consolidated in **main** under the owner's explicit instruction. GitHub PRs #1, #2 and #3 show Merged. The combined source passed 964 source tests, 964 installed-kernel tests and 384 native browser checks; see [the current receipt](docs/evidence/main-consolidation-native-2026-10-15.json). Read [the build overview](docs/delivery/BUILD-OVERVIEW.md), [current integration handoff](docs/delivery/HANDOFF.md), [ADR 0006](docs/decisions/0006-consolidated-development-main.md), and [the integration session](docs/delivery/sessions/2026-10-15-main-consolidation.md).
 
 The application parent is `486c85ec07a05c7af8b30b142d2ad19faf402e25`; documentation parent `0ee5834c0745640369f5a538b770c346f234232a`. All earlier active application work is included in that application parent. The current tree combines both histories and preserves original research variants. Refresh actual main/HEAD and the latest receipt before development.
 

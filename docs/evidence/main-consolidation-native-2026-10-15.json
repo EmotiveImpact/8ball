@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-15",
+  "scope": "Owner-authorized current-source/documentation integration into main; software verification, not V0.2 acceptance",
+  "branch": "main",
+  "integration_branch": "integration/v02-consolidated-20261015",
+  "application_parent": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
+  "documentation_parent": "0ee5834c0745640369f5a538b770c346f234232a",
+  "tested_merge_commit": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
+  "tested_merge_parents": [
+    "486c85ec07a05c7af8b30b142d2ad19faf402e25",
+    "0ee5834c0745640369f5a538b770c346f234232a"
+  ],
+  "main_source_merge_confirmed_at": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
+  "github_pull_requests_observed_merged": [
+    1,
+    2,
+    3
+  ],
+  "run_id": "20261015T225319Z-62e2dcc4",
+  "status": "passed",
+  "mode": "native",
+  "source_fingerprint": "9980113a775bb08046a8fc14d55d99d5e784f022e340692f6da548863ac2dff2",
+  "report_sha256": "853f765f7675594b0e2e4e8d70deb1a1840521accd37224627e9d17524f5a133",
+  "local_report_path": "artifacts/acceptance/20261015T225319Z-62e2dcc4/report.json",
+  "completed_at": "2026-10-15T22:56:47.101832+00:00",
+  "inspection": {
+    "valid": true,
+    "run_status": "passed",
+    "native_browser_verified": true,
+    "before_documentation_receipt_changes": true
+  },
+  "code_tests": {
+    "tests": 964,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 964
+  },
+  "installed_kernel_tests": {
+    "tests": 964,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "native_browser_checks": 384,
+  "browser_suites": {
+    "browser-legacy": {
+      "count": 27,
+      "transport": "real loopback HTTP",
+      "sha256": "c553e60bb97ef58196ee5bee1f4fde22203273a6f5bade21c2d298c2faa549c6"
+    },
+    "browser-workspace": {
+      "count": 51,
+      "transport": "Native loopback HTTP",
+      "sha256": "ccffe9c582d516f163d069f2775e97a7621f5a1306531aea130afa6908e6945f"
+    },
+    "browser-providers": {
+      "count": 15,
+      "transport": "native loopback HTTP",
+      "sha256": "bbf0af67a54e14d14fab215a3b43ac7b72613af5df6e7e3fdcb796f7e1409093"
+    },
+    "browser-connections": {
+      "count": 42,
+      "transport": "Native loopback HTTP",
+      "sha256": "c0f21b9d6f57e53711802c0eeedae5647da1b4a0195eef504a797f16ce41f39c"
+    },
+    "browser-studio": {
+      "count": 44,
+      "transport": "native loopback HTTP",
+      "sha256": "458e2d912f7a9896da88e136e6aeba62970b56186a432d1509f53a09b1471797"
+    },
+    "browser-sources": {
+      "count": 39,
+      "transport": "native HTTP",
+      "sha256": "4abf02bc619f78c83f5133f848ceb2ef4cdb5b7810dbf8d8e9b8c93dcc93df27"
+    },
+    "browser-insights": {
+      "count": 40,
+      "transport": "Native loopback HTTP",
+      "sha256": "05a47f8e44b3e856cc19ad85bc4f2154835e5c6fed34788232f11969f304a952"
+    },
+    "browser-grounding": {
+      "count": 26,
+      "transport": "Native loopback HTTP",
+      "sha256": "4c0acde1ff3c693ac7714a556d7292a02bd4b8363b5c48091ee8ca5640153c35"
+    },
+    "browser-plan_review": {
+      "count": 33,
+      "transport": "Native loopback HTTP",
+      "sha256": "31e729ac5f4c7d638401be1211f9c255e08603623812b4b85ebd08a8516bf1aa"
+    },
+    "browser-accessibility": {
+      "count": 36,
+      "transport": "Native loopback HTTP",
+      "sha256": "1694bba70004e2b415b4a645d054f81605243be6dfce93d642b3fa47a1013e1d"
+    },
+    "browser-courses": {
+      "count": 31,
+      "transport": "Native loopback HTTP",
+      "sha256": "3dac79f1093e5145895cff92481ea8ce62a0b1d530544fca15c319c226663226"
+    }
+  },
+  "checks": {
+    "unit": "passed",
+    "compile": "passed",
+    "delivery": "passed",
+    "changelog": "passed",
+    "emergence": "passed",
+    "javascript": "passed",
+    "structural-fixtures": "passed",
+    "endstate-package": "passed",
+    "schemas": "passed",
+    "native-probe": "passed",
+    "browser-legacy": "passed",
+    "browser-workspace": "passed",
+    "browser-providers": "passed",
+    "browser-connections": "passed",
+    "browser-studio": "passed",
+    "browser-sources": "passed",
+    "browser-insights": "passed",
+    "browser-grounding": "passed",
+    "browser-plan_review": "passed",
+    "browser-accessibility": "passed",
+    "browser-courses": "passed"
+  },
+  "preservation_receipt": "docs/evidence/main-consolidation-preservation-2026-10-15.json",
+  "preserved_discoveries": 74,
+  "actual_model_calls": 0,
+  "independent_quality_approved": false,
+  "human_acceptance_completed": false,
+  "full_v02_accepted": false,
+  "source_merged_into_main": true,
+  "released": false,
+  "deployed": false,
+  "limits": [
+    "Merged source is a development alpha; all existing actual-model and human/professional gates remain unchanged.",
+    "Inspection applies to the tested merge commit. Final publication/status receipt edits are documentation only; reconstruct tested_merge_commit to re-inspect raw local artifacts.",
+    "Earlier actual-model failures, software failures and passing reports remain at their exact source bytes.",
+    "Full raw logs/JUnit/screenshots/schemas/wheel remain local; committed receipt is source/count/hash evidence, not a public artifact upload.",
+    "Original archive Markdown retains its original trailing-space line breaks byte-for-byte; full diff whitespace warnings in those immutable archives are preserved rather than edited.",
+    "Main and integration pushes trigger no model or deployment workflow. New remote CI result is not claimed here."
+  ]
+}

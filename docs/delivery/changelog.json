@@ -3,6 +3,62 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-15-main-verified-receipt",
+      "date": "2026-10-15",
+      "version": "0.2.0-alpha.8",
+      "title": "Current 8BALL build consolidated and verified on main",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "DOC-02",
+        "DOC-03",
+        "DOC-04",
+        "DOC-05",
+        "DOC-06",
+        "B02-18"
+      ],
+      "summary": "Owner-authorized application/documentation integration is confirmed on main, with PRs1/2/3 showing Merged and a complete current build overview. This remains a development alpha.",
+      "added": [
+        "Source-bound consolidated native receipt and full-picture overview with current publication status."
+      ],
+      "changed": [
+        "Main now contains latest fixes, linked specifications, both original research variants and all74 discoveries. Canonical repository metadata records observed integration; acceptance remains unchanged."
+      ],
+      "fixed": [],
+      "verification": [
+        "At merge6b57a45,964 source tests,964 installed-kernel tests and384 native checks across eleven suites passed; source/artifact inspection valid/passed.",
+        "Parent/history/archive/PRD/fixture checks passed. Public PRs1/2/3 show Merged; remote main and integration refs verified at tested merge before documentation receipt."
+      ],
+      "limitations": [
+        "B02 remains10/20 and ES01 remains5/5 internal. Actual-model, independent professional and human acceptance remain open.",
+        "No deployment, release tag, model download/inference or deferred research runtime. Final receipt edits are documentation only; original archive whitespace is retained unchanged."
+      ],
+      "evidence_paths": [
+        "docs/evidence/main-consolidation-native-2026-10-15.json",
+        "docs/evidence/main-consolidation-preservation-2026-10-15.json",
+        "docs/delivery/sessions/2026-10-15-main-consolidation.md",
+        "docs/delivery/BUILD-OVERVIEW.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-051/055/072: consolidate current source/context but keep merged development distinct from model quality, human acceptance and release.",
+          "EM-073: both research variants and original manifests remain recoverable in the main tree."
+        ],
+        "risks": [
+          "An integrated default branch can be mistaken for accepted V0.2; the ledger and overview retain every open gate."
+        ],
+        "architecture_implications": [
+          "No runtime/authority/dependency change;135 runtime/workflow bytes/modes match latest application."
+        ],
+        "roadmap_decision": "existing delivery task and explicitly authorized source integration only; no acceptance promotion or scope change.",
+        "insight_ids": [
+          "EM-051",
+          "EM-055",
+          "EM-072",
+          "EM-073"
+        ]
+      }
+    },
+    {
       "id": "2026-10-15-main-consolidation",
       "date": "2026-10-15",
       "version": "0.2.0-alpha.8",

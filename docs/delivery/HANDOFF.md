@@ -1,3 +1,13 @@
+# Current handoff: consolidated development build is on main
+
+The owner-authorized integration is complete: current application/fixes, consolidated specifications and both research variants are together on **main**. GitHub PRs #1, #2 and #3 show Merged. The recovery/integration branch is `integration/v02-consolidated-20261015`; prior feature/fix/archive refs remain intact. Read [BUILD-OVERVIEW](BUILD-OVERVIEW.md), [ADR0006](../decisions/0006-consolidated-development-main.md) and [the integration session](sessions/2026-10-15-main-consolidation.md).
+
+Tested merge `6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f` passed **964 source tests, 964 installed-kernel tests and 384 native checks across eleven suites**; source/artifact inspection was valid/passed. [Final receipt](../evidence/main-consolidation-native-2026-10-15.json) and [preservation receipt](../evidence/main-consolidation-preservation-2026-10-15.json) retain exact scope/hashes. Reconstruct the tested merge before re-inspecting raw artifacts, since final status/publication edits are documentation only. Final response identifies the resulting main receipt commit.
+
+All 74 discoveries and both parents' changelog histories remain. Original PRDs and frozen generation cases are unchanged. B02 remains 10/20 required verified and ES01 remains 5/5 internal; no accepted release, deployment or new model permission. Next: deliberately configure a selected/authorized provider/model, run unchanged generation fixtures and actual-provider lifecycle/native journey, then independent professional evaluation and the owner's end review using the prepared review pack. The historical pending checkpoints below are superseded by this source-bound final result.
+
+---
+
 # Current handoff: owner-authorized consolidated main build
 
 Read [BUILD-OVERVIEW](BUILD-OVERVIEW.md), [the integration session](sessions/2026-10-15-main-consolidation.md) and [ADR0006](../decisions/0006-consolidated-development-main.md). Integration combines application 486c85e (including all prior fixes) and documentation 0ee5834 with both original research variants and all 74 discoveries. Main integration is now explicitly authorized as a development build, superseding the earlier main hold for this one merge. No deployment/release or acceptance waiver.

@@ -8,10 +8,10 @@ Last status review: 2026-10-15.
 
 ## Checkpoint and release boundary
 
-- Active integration branch: `feat/situation-intelligence-v2`; PR #2.
-- Inspected application baseline: `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
+- Active integration branch: `main`; PR #2.
+- Inspected application baseline: `6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f`.
 - This is a dated snapshot. Refresh the branch, PR and CI at the start of every session.
-- At inspection: draft PR = `true`; merged = `false`; production deployed = `false`.
+- At inspection: draft PR = `false`; merged = `true`; production deployed = `false`.
 - Standalone ENDSTATE package released = `false`.
 
 ## Checkbox meaning
@@ -30,7 +30,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - **B02-16: Complete accessibility and supported-environment validation**. Complete the recorded human accessibility and supported-platform review, not another UI feature. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
 - **B02-19: Black operator visual system and transparent intelligence controls**. Review the current black workspace without expanding scope; preserve passing native controls. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
 - **B02-20: Black relationship explorer with local focus, directed flow and records view**. Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
-- **B02-18: V0.2 acceptance and release decision**. Keep PR #2 draft until the acceptance gate is met; do not infer permission to merge.
+- **B02-18: V0.2 acceptance and release decision**. Source is integrated into main under explicit owner instruction ADR0006. Complete all unchanged real-model, independent professional and human acceptance gates before release acceptance; no deployment/tag is authorized.
 
 ## Version summary
 
@@ -265,9 +265,9 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **B02-18 V0.2 acceptance and release decision**
   - Status: `blocked`. Owner: unassigned. Updated: 2026-09-23.
   - Acceptance: All required V0.2 subparts have scoped evidence; reviews/gates pass; approval to integrate/release is recorded separately.
-  - Next: Keep PR #2 draft until the acceptance gate is met; do not infer permission to merge.
+  - Next: Source is integrated into main under explicit owner instruction ADR0006. Complete all unchanged real-model, independent professional and human acceptance gates before release acceptance; no deployment/tag is authorized.
   - Dependencies: `B02-01`, `B02-02`, `B02-03`, `B02-04`, `B02-05`, `B02-06`, `B02-07`, `B02-08`, `B02-09`, `B02-10`, `B02-11`, `B02-12`, `B02-13`, `B02-14`, `B02-15`, `B02-16`, `B02-17`, `B02-19`, `B02-20`.
-  - Evidence: `EV-QWEN` (registry below).
+  - Evidence: `EV-QWEN`, `EV-MAIN-CONSOLIDATION` (registry below).
   - Blocker: Real-model journey and developer-quality work remain unaccepted.
 
 - [ ] **B02-19 Black operator visual system and transparent intelligence controls**
@@ -840,6 +840,7 @@ These references have specific scopes and may be historical. A reference to a de
 
 ### EV-MAIN-CONSOLIDATION
 
-- Kind: `owner_authorized_source_integration`.
-- Repository evidence: [docs/delivery/sessions/2026-10-15-main-consolidation.md](../../docs/delivery/sessions/2026-10-15-main-consolidation.md).
-- Result/scope: Current application/documentation and historical research variants consolidated under explicit owner authority; task statuses and acceptance unchanged. New verification/publication pending final receipt.
+- Kind: `merged_source_and_native_software_validation`.
+- Repository evidence: [docs/evidence/main-consolidation-native-2026-10-15.json](../../docs/evidence/main-consolidation-native-2026-10-15.json).
+- Result/scope: Owner-authorized main source integration confirmed; PRs1/2/3 observed Merged. Native source-bound run passed964 source,964 installed-kernel tests and384 browser checks. All74 discoveries, both histories/archives and original task acceptance unchanged. No model/human pass, release or deployment.
+- Code revision: `6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f`.

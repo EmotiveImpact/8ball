@@ -6,17 +6,19 @@
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
   "repository": {
     "full_name": "EmotiveImpact/8ball",
-    "development_branch": "feat/situation-intelligence-v2",
+    "development_branch": "main",
     "pull_request": 2,
-    "inspected_code_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
-    "inspected_code_tree": "1560ec43e469953884df6df50206057b903a9c70",
-    "main_at_inspection": "08bc26ef397ec960d1b33b099c40888a8229eac0",
-    "status_as_of": "2026-09-26",
-    "pr_draft": true,
-    "merged": false,
+    "inspected_code_commit": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
+    "inspected_code_tree": "16f9791603f6663ebaacfaca53152cb3bef09c87",
+    "main_at_inspection": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
+    "status_as_of": "2026-10-15",
+    "pr_draft": false,
+    "merged": true,
     "production_deployed": false,
     "standalone_endstate_package_released": false,
-    "refresh_required_each_session": true
+    "refresh_required_each_session": true,
+    "integration_authority": "docs/decisions/0006-consolidated-development-main.md",
+    "source_merged_not_release_accepted": true
   },
   "evidence": {
     "EV-APP": {
@@ -213,9 +215,10 @@
       "result": "Final cumulative native passed 964 source, 964 installed-kernel tests and 384 browser checks across eleven suites after preserving/correcting an earlier failed navigation run. Inspection valid/passed at tested commit. Review templates remain unperformed; no actual-model, independent semantic or human acceptance."
     },
     "EV-MAIN-CONSOLIDATION": {
-      "kind": "owner_authorized_source_integration",
-      "path": "docs/delivery/sessions/2026-10-15-main-consolidation.md",
-      "result": "Current application/documentation and historical research variants consolidated under explicit owner authority; task statuses and acceptance unchanged. New verification/publication pending final receipt."
+      "kind": "merged_source_and_native_software_validation",
+      "path": "docs/evidence/main-consolidation-native-2026-10-15.json",
+      "result": "Owner-authorized main source integration confirmed; PRs1/2/3 observed Merged. Native source-bound run passed964 source,964 installed-kernel tests and384 browser checks. All74 discoveries, both histories/archives and original task acceptance unchanged. No model/human pass, release or deployment.",
+      "code_commit": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f"
     }
   },
   "milestones": [
@@ -964,12 +967,13 @@
       ],
       "acceptance": "All required V0.2 subparts have scoped evidence; reviews/gates pass; approval to integrate/release is recorded separately.",
       "evidence": [
-        "EV-QWEN"
+        "EV-QWEN",
+        "EV-MAIN-CONSOLIDATION"
       ],
       "blockers": [
         "Real-model journey and developer-quality work remain unaccepted."
       ],
-      "next_action": "Keep PR #2 draft until the acceptance gate is met; do not infer permission to merge."
+      "next_action": "Source is integrated into main under explicit owner instruction ADR0006. Complete all unchanged real-model, independent professional and human acceptance gates before release acceptance; no deployment/tag is authorized."
     },
     {
       "id": "B03-01",

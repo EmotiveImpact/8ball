@@ -4,6 +4,45 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Current 8BALL build consolidated and verified on main
+
+2026-10-15 · `pushed_unreleased`
+
+Owner-authorized application/documentation integration is confirmed on main, with PRs1/2/3 showing Merged and a complete current build overview. This remains a development alpha.
+
+### Added
+
+- Source-bound consolidated native receipt and full-picture overview with current publication status.
+
+### Changed
+
+- Main now contains latest fixes, linked specifications, both original research variants and all74 discoveries. Canonical repository metadata records observed integration; acceptance remains unchanged.
+
+### Verification
+
+- At merge6b57a45,964 source tests,964 installed-kernel tests and384 native checks across eleven suites passed; source/artifact inspection valid/passed.
+- Parent/history/archive/PRD/fixture checks passed. Public PRs1/2/3 show Merged; remote main and integration refs verified at tested merge before documentation receipt.
+
+### Limitations
+
+- B02 remains10/20 and ES01 remains5/5 internal. Actual-model, independent professional and human acceptance remain open.
+- No deployment, release tag, model download/inference or deferred research runtime. Final receipt edits are documentation only; original archive whitespace is retained unchanged.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-051/055/072: consolidate current source/context but keep merged development distinct from model quality, human acceptance and release.
+- Discovery: EM-073: both research variants and original manifests remain recoverable in the main tree.
+- Risk: An integrated default branch can be mistaken for accepted V0.2; the ledger and overview retain every open gate.
+- Architecture: No runtime/authority/dependency change;135 runtime/workflow bytes/modes match latest application.
+- Roadmap decision: existing delivery task and explicitly authorized source integration only; no acceptance promotion or scope change.
+Registered discoveries: EM-051, EM-055, EM-072, EM-073.
+
+Roadmap items: `DOC-02`, `DOC-03`, `DOC-04`, `DOC-05`, `DOC-06`, `B02-18`.
+
+Evidence: [docs/evidence/main-consolidation-native-2026-10-15.json](docs/evidence/main-consolidation-native-2026-10-15.json), [docs/evidence/main-consolidation-preservation-2026-10-15.json](docs/evidence/main-consolidation-preservation-2026-10-15.json), [docs/delivery/sessions/2026-10-15-main-consolidation.md](docs/delivery/sessions/2026-10-15-main-consolidation.md), [docs/delivery/BUILD-OVERVIEW.md](docs/delivery/BUILD-OVERVIEW.md).
+
 ## 0.2.0-alpha.8 · Consolidated development build for owner-authorized main integration
 
 2026-10-15 · `local_unreleased`

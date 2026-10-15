@@ -6,7 +6,7 @@ Start with [the complete build overview](docs/delivery/BUILD-OVERVIEW.md) and [S
 
 The current workflow includes source capture and provenance, reviewed extraction, identity/deadline interpretation, outcome graphs, alternative routes, Plan Studio and Plan Review, Chosen Course, approvals, completion/evidence separation, scenarios, relationship exploration, changes and audit/export. ENDSTATE supplies the shared calculation kernel. Manual/rules/catalogue operation works without an AI endpoint; model adapters exist but reliable source-to-plan generation remains unaccepted.
 
-The owner has explicitly authorized this combined development build to be integrated into **main** after verification. This is source consolidation, not deployment or release acceptance. Use the unified main/current integration source rather than switching to an older feature branch from historical instructions below.
+This consolidated development build is now in **main**, with source, installed-package and all eleven native browser suites verified. This is source consolidation, not deployment or release acceptance. Use the unified main/current integration source rather than switching to an older feature branch from historical instructions below.
 
 For fictional local development in an existing checkout:
 

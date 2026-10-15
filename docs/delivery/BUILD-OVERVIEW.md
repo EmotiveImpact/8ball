@@ -2,7 +2,7 @@
 
 Consolidation snapshot: 15 October 2026. **8BALL is the fixer application; ENDSTATE is the reusable engine underneath it.** The application helps an operator understand a situation, define the required result, compare conditional routes, choose a course, record authorised work and reconsider when evidence changes.
 
-The current build combines the application and its latest fixes from `486c85ec07a05c7af8b30b142d2ad19faf402e25` with the consolidated documentation/research from `0ee5834c0745640369f5a538b770c346f234232a`. They are being integrated on `integration/v02-consolidated-20261015`. The owner has now authorised consolidation and integration into `main`; verification and that integration remain pending at this snapshot. This is not a deployment or V0.2 acceptance decision. [The current handoff](HANDOFF.md) records subsequent verification and publication outcomes; earlier no-merge instructions remain historical records of the authority at those checkpoints.
+The current build combines the application and its latest fixes from `486c85ec07a05c7af8b30b142d2ad19faf402e25` with the consolidated documentation/research from `0ee5834c0745640369f5a538b770c346f234232a`. They are now consolidated in **main**, with the integration history retained on `integration/v02-consolidated-20261015`. The owner explicitly authorized this merge; GitHub PRs #1, #2 and #3 show Merged. This is not a deployment or V0.2 acceptance decision. [The current handoff](HANDOFF.md) records subsequent verification and publication outcomes; earlier no-merge instructions remain historical records of the authority at those checkpoints.
 
 Start with [START-HERE](../../START-HERE.md), then use this overview to understand the product. The [master PRD](../PRD.md), [roadmap](../ROADMAP.md), [system architecture](../architecture/ENDSTATE-SYSTEM.md) and [canonical delivery tracker](PROGRESS.md) provide the requirements, boundaries and actual task states.
 
@@ -67,6 +67,8 @@ The planner works within declared catalogues, evidence and search/scheduling lim
 ## Verification and acceptance
 
 At this consolidation snapshot the sole [canonical ledger](progress.json) records **8BALL V0.2: 10/20 required scopes verified** and **ENDSTATE V0.1: 5/5 internal-core scopes verified**. These are scoped acceptance items, not an estimate of time remaining or commercial readiness. This overview is not another editable status ledger.
+
+The [consolidated native receipt](../evidence/main-consolidation-native-2026-10-15.json) records the new combined source at `6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f`: **964 source tests, 964 installed-kernel tests and 384 native browser checks across all eleven suites passed**. Source/artifact inspection returned valid=true/run_status=passed before final documentation-only receipt edits. All 74 discoveries, both original research variants and all prior histories are preserved.
 
 The latest prior [source-bound native receipt](../evidence/provider-failure-native-2026-10-15.json) covers tested code `294ff578b963dcf50cc8d91d060182894773d159`: **964 source tests, 964 installed-kernel tests and 384 native Chromium checks across eleven suites passed**. It covers the earlier code at its recorded source hash. It is not a passing result for this new integration tree, an actual-model study or human acceptance. The initial failed cumulative run is preserved in [its separate receipt](../evidence/provider-failure-native-failed-2026-10-15.json).
 
