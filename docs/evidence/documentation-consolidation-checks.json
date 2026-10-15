@@ -1,0 +1,21 @@
+{
+  "checked_on": "2026-10-15",
+  "scope": "documentation only",
+  "base_commit": "290e310707cf8bef6caf2508c285312b091bd18b",
+  "regression_command": "python -m pytest -q tests/test_delivery_tracking.py tests/test_changelog.py tests/test_emergence_register.py",
+  "regression_tests_passed": 60,
+  "preservation_command": "python docs/delivery/verify_consolidation.py",
+  "protected_original_files": 5,
+  "research_files": 19,
+  "original_manifest_payloads_verified": 18,
+  "relative_links_checked": 52,
+  "prior_discoveries_unchanged": 71,
+  "discoveries_retained": 73,
+  "runtime_unchanged": true,
+  "progress_json_unchanged": true,
+  "new_model_calls": 0,
+  "new_native_browser_runs": 0,
+  "merge": false,
+  "deployment": false,
+  "publication": "Record final branch/commit and evidence externally after a successful remote verification; this check does not prove a push."
+}

@@ -1,3 +1,5 @@
+> **Continuing this project? Start with [START-HERE.md](START-HERE.md).** It connects the current build, acceptance work, preserved research and next-agent instructions. This branch is a documentation proposal; no runtime release or merge is implied.
+
 # 8BALL
 
 ## Current publication and native acceptance, 26 September 2026

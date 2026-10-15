@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-09-25",
+  "updated_on": "2026-10-15",
   "required_prompts": [
     {
       "id": "ER-01",
@@ -2184,6 +2184,62 @@
           "decision": "adopted",
           "by": "ChatGPT build review",
           "reason": "Adopt in the bounded local implementation and reproducible delivery; wider secure/native/operator acceptance remains unverified."
+        }
+      ]
+    },
+    {
+      "id": "EM-072",
+      "title": "A handoff needs a current entry point and historical precedence",
+      "origin": "Documentation consolidation and recovery audit",
+      "first_seen": "2026-10-15",
+      "evidence_level": "observed_in_build",
+      "observation": "Repeated local-only paragraphs coexist with a later published source and native pass. Without an authoritative dated entry point, a new agent could reapply old packages or reopen already verified engine work.",
+      "product_implication": "Keep a linked current closeout and immutable historical documents; read the canonical ledger before acting.",
+      "task_ids": [
+        "DOC-02",
+        "DOC-03",
+        "DOC-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-15-documentation-consolidation.md",
+        "docs/delivery/context-manifest.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-15",
+          "decision": "adopted",
+          "by": "ChatGPT documentation consolidation",
+          "reason": "Bounded documentation/recovery improvement only; no new required runtime scope or acceptance claim."
+        }
+      ]
+    },
+    {
+      "id": "EM-073",
+      "title": "Archive completeness must follow the supplied manifest, not an old file count",
+      "origin": "Documentation consolidation and recovery audit",
+      "first_seen": "2026-10-15",
+      "evidence_level": "observed_in_build",
+      "observation": "The newly supplied research ZIP contains 19 files, including README and its manifest, while previous delivery notes described an 18-file variant. Every payload must be verified and retained rather than reconciled by deleting the difference.",
+      "product_implication": "Preserve variant provenance and checksums, and state explicit gaps instead of claiming every external clone or chat is included.",
+      "task_ids": [
+        "DOC-02",
+        "DOC-03",
+        "DOC-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-15-documentation-consolidation.md",
+        "docs/delivery/context-manifest.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-15",
+          "decision": "adopted",
+          "by": "ChatGPT documentation consolidation",
+          "reason": "Bounded documentation/recovery improvement only; no new required runtime scope or acceptance claim."
         }
       ]
     }

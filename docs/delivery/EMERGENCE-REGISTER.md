@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-09-25. **71 recorded discoveries.**
+Last review: 2026-10-15. **73 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1247,3 +1247,37 @@ The mounted alpha.7 archive and PRD overlay reproduced exactly; the interrupted 
 **Decision history:**
 
 - 2026-09-25 · adopted · ChatGPT build review: Adopt in the bounded local implementation and reproducible delivery; wider secure/native/operator acceptance remains unverified.
+
+### [ ] EM-072: A handoff needs a current entry point and historical precedence
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-15. **Origin:** Documentation consolidation and recovery audit.
+
+Repeated local-only paragraphs coexist with a later published source and native pass. Without an authoritative dated entry point, a new agent could reapply old packages or reopen already verified engine work.
+
+**Product implication:** Keep a linked current closeout and immutable historical documents; read the canonical ledger before acting.
+
+**Roadmap links:** `DOC-02` (verified), `DOC-03` (verified), `DOC-06` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-15-documentation-consolidation.md`, `docs/delivery/context-manifest.json`.
+
+**Decision history:**
+
+- 2026-10-15 · adopted · ChatGPT documentation consolidation: Bounded documentation/recovery improvement only; no new required runtime scope or acceptance claim.
+
+### [ ] EM-073: Archive completeness must follow the supplied manifest, not an old file count
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-15. **Origin:** Documentation consolidation and recovery audit.
+
+The newly supplied research ZIP contains 19 files, including README and its manifest, while previous delivery notes described an 18-file variant. Every payload must be verified and retained rather than reconciled by deleting the difference.
+
+**Product implication:** Preserve variant provenance and checksums, and state explicit gaps instead of claiming every external clone or chat is included.
+
+**Roadmap links:** `DOC-02` (verified), `DOC-03` (verified), `DOC-06` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-15-documentation-consolidation.md`, `docs/delivery/context-manifest.json`.
+
+**Decision history:**
+
+- 2026-10-15 · adopted · ChatGPT documentation consolidation: Bounded documentation/recovery improvement only; no new required runtime scope or acceptance claim.
