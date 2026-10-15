@@ -4,6 +4,51 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 documentation · Consolidated research, future architecture and current closeout handoff
+
+2026-10-15 · `local_unreleased`
+
+Create one recoverable entry point linking the current published build to the full long-term research without changing runtime or current acceptance statuses. Publication is recorded separately after the exact documentation branch is verified.
+
+### Added
+
+- Root START-HERE and next-agent prompt; ten-scope V0.2 closeout; full ENDSTATE vision/roadmap/architecture supplements; source and experiment register; ADR 0005.
+- All 19 files from the newly supplied handoff ZIP preserved unchanged, plus raw actual-model baseline evidence and a checksum context manifest.
+
+### Changed
+
+- Append-only navigation from the preserved master PRD, roadmap, AGENTS and handoff. README discovery banner.
+
+### Fixed
+
+- Resolve historical local-only/old-count confusion for the next agent without erasing prior records.
+
+### Verification
+
+- 60 existing delivery/changelog/emergence regression tests passed locally.
+- Consolidation verifier passed: 19 original research files, all 18 manifest payload hashes, 52 relative links, five protected files, all 71 earlier discoveries and unchanged runtime/progress.
+- Canonical delivery, emergence and changelog checks passed against exact application base 290e310707cf8bef6caf2508c285312b091bd18b.
+
+### Limitations
+
+- Documentation only: no runtime feature, future research experiment, new native/model/human acceptance, version release, merge or deployment.
+- Existing 938/378 software results and 3/4 schema-valid failed Qwen baseline remain separately labelled historical evidence.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Current-state precedence is necessary when historical handoffs coexist with later publication.
+- Discovery: The supplied archive variant must be preserved by its manifest rather than an old file count.
+- Risk: A new agent might restart old work or treat accepted vision as permission to implement research during V0.2.
+- Architecture: One canonical task ledger; separate evidence, decisions, application scope, research and publication records.
+- Roadmap decision: existing_task: documentation consolidation and recoverability only; current required scopes and statuses unchanged.
+Registered discoveries: EM-072, EM-073.
+
+Roadmap items: `DOC-02`, `DOC-03`, `DOC-04`, `DOC-05`, `DOC-06`.
+
+Evidence: [docs/delivery/sessions/2026-10-15-documentation-consolidation.md](docs/delivery/sessions/2026-10-15-documentation-consolidation.md), [docs/delivery/context-manifest.json](docs/delivery/context-manifest.json).
+
 ## 0.2.0-alpha.8 · Native software acceptance passed; internal core and guided authoring verified
 
 2026-09-26 · `local_unreleased`

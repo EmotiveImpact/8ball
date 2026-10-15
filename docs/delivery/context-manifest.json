@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "consolidated_on": "2026-10-15",
+  "application_base_commit": "290e310707cf8bef6caf2508c285312b091bd18b",
+  "application_base_tree": "214c4835869dbe70f7c6ff6811977e5bb5a62841",
+  "documentation_branch": "docs/endstate-consolidated-handoff-2026-10-15",
+  "scope": "documentation_only_no_gate_changes",
+  "research_archive": {
+    "supplied_name": "ENDSTATE-HANDOFF-2026-09-24 (1).zip",
+    "sha256": "d66b26bec6f708c81c52a3fcd26255cd147a89eb0a9f34f767ad5b43f8e0a14f",
+    "file_count": 19,
+    "manifest_payload_hashes_checked": 18,
+    "files": [
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/00-START-HERE.md",
+        "bytes": 5655,
+        "sha256": "62f801e3c761fec42d8f7a65ffc9930b586fc7e919b054311ac02b2e56bb6ae2"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/01-CURRENT-STATE.md",
+        "bytes": 5648,
+        "sha256": "60456b53edf42767a5d2c38db3285b8463053c2c806cbaaeea8e9d111e94b2c1"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/02-ENDSTATE-EVOLUTION-RESEARCH.md",
+        "bytes": 8870,
+        "sha256": "2c79bf019f50879a02d0cb94c00dd0b58e4a5f3a616140c6f2cee12d8929cf7b"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/03-ENDSTATE-LAB.md",
+        "bytes": 5006,
+        "sha256": "130c3f839ec13dbba208cbab120648bec7b8d1db3099f2fbe6d5c464b4b94ce4"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/04-SALES-SDR-LANE.md",
+        "bytes": 5319,
+        "sha256": "0415ff755639b073a8aac6fb62109b0943105508c733a4076f4aa2df6f5ef211"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/05-BUILDER-PROMPT.md",
+        "bytes": 4327,
+        "sha256": "c24a53f59270605d1fe0c76316ab17171bb68feb71e69af263fef98edfed1dff"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/06-DECISIONS-AND-NON-NEGOTIABLES.md",
+        "bytes": 3775,
+        "sha256": "b0456cdfda45fae0472389309f544a98db70c390d1ba073421ead4fb72b24405"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/07-ROADMAP-STRATEGY.md",
+        "bytes": 3458,
+        "sha256": "b8c86846a0914d1f106f0b4d7518d6624b33757603a24c2a151eac7b95a89ecb"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/08-RESEARCH-DECISION-REGISTER.md",
+        "bytes": 14000,
+        "sha256": "aafe937f4cd2e71ab685fe2d09387d148ff2e9b6d4191939b11eb3ff95f3a59a"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/09-RESEARCH-SOURCES.md",
+        "bytes": 1140,
+        "sha256": "6f9298ac2327e3245210fff7b2e7aba650f794c704b4b1489514eac40fb2aa50"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/10-RECOVER-UNPUBLISHED-CODE.md",
+        "bytes": 2990,
+        "sha256": "c3405e31b303bbb76ddc8ab808adc909a9be4ffc0cf7335b5123b110872dab8e"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/GITHUB-BUILDER-PROMPT.md",
+        "bytes": 4327,
+        "sha256": "c24a53f59270605d1fe0c76316ab17171bb68feb71e69af263fef98edfed1dff"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/GITHUB-MASTER-HANDOFF.md",
+        "bytes": 6283,
+        "sha256": "e142e63dd1b03b0d843caecc0f2f7330db2b481ceaedd4c73282b686284c3647"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/MANIFEST.md",
+        "bytes": 2055,
+        "sha256": "987f22579f04ccc7e7875463232b3f295a01189352b2215d24765cc63d9f1d5b"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/README.md",
+        "bytes": 2454,
+        "sha256": "e5f31b81fccab7c583775e901549d16695e1dd3f95680d410501cc0e78fb6d29"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/source-of-truth/CURRENT-INTEGRATED-BUILD-CHECKLIST.md",
+        "bytes": 55130,
+        "sha256": "c49c516b1648f77fe40949c73bef4f1db216c49d5df8ecc4dbf7be1b0c016491"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/source-of-truth/MASTER-8BALL-ENDSTATE-PRD.md",
+        "bytes": 17884,
+        "sha256": "8f39726d8e735d28f69c72916ab0329183563352bb070a3308d00ec197d6167c"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/source-of-truth/ORIGINAL-8BALL-V0.2-ASTRA-PRD.md",
+        "bytes": 32893,
+        "sha256": "af2b15d808ff6cb92491d461f3e1b9d995fdafb6943ab78027397f2cf44ad0dd"
+      },
+      {
+        "path": "docs/reference/endstate-handoff-2026-09-24/source-of-truth/SOURCE-CLARITY-HANDOFF.md",
+        "bytes": 5434,
+        "sha256": "6907be99dd3484ea7d500c234d3dd023a2ed2b1bc27f5da9f877620296aa0a70"
+      }
+    ]
+  },
+  "preserved_exactly": [
+    {
+      "path": "docs/reference/8BALL-V0.1-PRD.md",
+      "sha256": "74877b46caf9014d3cfa4cb717d61e68947d8ea6f091852b70076c1e6966414f"
+    },
+    {
+      "path": "docs/reference/8BALL-V0.2-ASTRA-PRD.md",
+      "sha256": "af2b15d808ff6cb92491d461f3e1b9d995fdafb6943ab78027397f2cf44ad0dd"
+    },
+    {
+      "path": "docs/delivery/progress.json",
+      "sha256": "f44b2f5e5828c418aed4740a8332420e522cb18bf2bcaafffed41735b625b81c"
+    },
+    {
+      "path": "docs/delivery/PROGRESS.md",
+      "sha256": "61d4acda8d7c39d75e5f1164a0f7201b82a48702163b8c7d0b362aa691140a2a"
+    },
+    {
+      "path": "docs/prompts/EMERGENT-INSIGHTS.md",
+      "sha256": "52f018bd03736651d122902e4d4021cba4257aaf5f54ec9be1b80759805ee2ae"
+    }
+  ],
+  "qwen_baseline": {
+    "run_id": 36340454120,
+    "artifact_id": 10938777673,
+    "archive_sha256": "62a09fe447cea0d6f76d17b2a8bf13a77f816cd2ddcb3fc17f60dd0b7b98dce0",
+    "path": "docs/evidence/qwen-baseline-2026-09-27.json",
+    "sha256": "4db80b5a17816f414cd09f1f27737ca12e3b3cc95f9fb2009854cc5154a82992",
+    "result": "3/4 schema-valid; graph rejected; not semantic or production approval"
+  },
+  "known_gaps": [
+    "Full external repository clones not recovered or installed",
+    "Verbatim export of all conversations unavailable",
+    "Previously narrated Draft Repair runtime source not recovered",
+    "Prior master backup remains separate for historical binary ZIPs/screenshots",
+    "Independent model-quality and human accessibility/operator acceptance remain open"
+  ]
+}

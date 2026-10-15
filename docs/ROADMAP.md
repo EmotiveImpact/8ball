@@ -100,3 +100,9 @@ Immediate sequence: recover/verify the exact cumulative source, publish through 
 ## Chosen Course local checkpoint, 25 September 2026
 
 Optional B03-07 and ES02-06 are partial: local chosen-course records and on-request reconsideration are implemented. Their original dependencies on secure identity and event contracts remain outstanding. No required gate is removed, accepted or expanded by this checkpoint. See `v2/CHOSEN-COURSE.md` and the generated delivery ledger. First integrate the cumulative source, then run native acceptance and qualified operator review.
+
+## Research placement supplement, 15 October 2026
+
+[ROADMAP-INTEGRATION.md](strategy/ROADMAP-INTEGRATION.md) maps the full ENDSTATE research to the existing ES02/ES03/ES04 and B03/B04 milestones without changing their required tasks, statuses or exit gates. Prediction, possible worlds, domain packs, learning and Sales/SDR remain evidence-gated future work. The supplement does not introduce another acceptance tracker or rename the existing versions.
+
+Current action is [V0.2 closeout](delivery/V02-CLOSEOUT.md); ENDSTATE V0.1 internal-core compatibility is already verified at the inspected source. [START-HERE](../START-HERE.md) reconciles the historical local-only and earlier-count paragraphs above. Keep current source and the separate documentation proposal distinct until an explicit integration decision.

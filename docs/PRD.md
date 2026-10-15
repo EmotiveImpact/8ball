@@ -239,3 +239,9 @@ Do not create separate engines, graph stores or additional top-level screens sol
 ## Local implementation amendment: Chosen Course
 
 25 September 2026: `0.2.0-alpha.8` implements a bounded local selected-course workflow described in [CHOSEN-COURSE.md](v2/CHOSEN-COURSE.md). The operator explicitly selects/replaces a course and records lifecycle judgements; ENDSTATE reassesses recorded dependencies and clocks without altering facts or approvals. This is groundwork, not completion of the full client mandate, secure team authority, continuous events or V0.3. Original required V0.2 gates and historical requirements remain unchanged.
+
+## 20. Long-term ENDSTATE research integration: revision 1.4 addendum
+
+15 October 2026. The original text above, the immutable 37-section Astra PRD and existing version requirements are preserved. [The ENDSTATE vision addendum](strategy/ENDSTATE-VISION-ADDENDUM.md) incorporates decision intelligence, operational/behavioural prediction, possible-world simulation, stress testing, learning and future domain applications as long-term direction. Read it with [the future milestone mapping](strategy/ROADMAP-INTEGRATION.md), [system architecture](architecture/ENDSTATE-SYSTEM.md), [source/experiment register](research/ENDSTATE-REGISTER.md) and [ADR 0005](decisions/0005-research-consolidation.md).
+
+This is documentation integration only. No future research is marked implemented; V0.2 gates and the canonical ledger are unchanged. For current publication, model evidence and remaining work, use [START-HERE](../START-HERE.md) and [V02-CLOSEOUT](delivery/V02-CLOSEOUT.md), not earlier status paragraphs. The owner still prioritises current V0.2 acceptance; no merge or deployment is authorised.
