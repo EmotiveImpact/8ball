@@ -72,3 +72,15 @@ Answer the expanded ER-11 through ER-15 prompts as well as the original ten. Pre
 ## Chosen Course preservation
 
 Read `docs/v2/CHOSEN-COURSE.md`. Run `tests/test_courses.py` and the native-default `tests/browser_courses.py` with all prior suites. A selected route is a human intention, not an action permission or a fact. Never silently switch it when sorting or replanning. Preserve target, snapshot, exact prerequisite branch, sequence and rationale. Watches and review clocks remain explicit; reviewing does not clear warnings. Local pause/retirement must not be presented as external cancellation. Export/read must preserve old source-free formats and fail visibly on corrupt case/course history. Broader optional B03-07/ES02-06 prerequisites remain unfinished.
+
+## Consolidated research and next-agent entry point, 15 October 2026
+
+Read `START-HERE.md`, `docs/delivery/NEXT-AGENT-PROMPT.md` and `docs/delivery/V02-CLOSEOUT.md` before continuing. The owner has authorised long-term research documentation on `docs/endstate-consolidated-handoff-2026-10-15`, not runtime adoption or a rewrite. The original PRDs, existing required acceptance gates and canonical task statuses remain unchanged. `docs/strategy/`, `docs/architecture/ENDSTATE-SYSTEM.md`, `docs/research/` and ADR 0005 form the linked supplement; `docs/reference/endstate-handoff-2026-09-24/` preserves the entire supplied research pack unchanged.
+
+Historical local-only status text and old counts are not current instructions. Refresh live source/evidence: the inspected app is published alpha.8 at `290e310707cf8bef6caf2508c285312b091bd18b`, native software checks passed, B02 is 10/20 and ES01 is 5/5 internally. The 27 September actual Qwen graph still failed; inspect its retained report. No independent quality, human accessibility or V0.2 release acceptance is implied.
+
+Use one current status ledger, retain every emergence finding and link research decisions without silently promoting them into requirements. Do not apply old cumulative packages over the current branch. Do not merge this documentation branch, merge PR #2, close PR #1, release, deploy, install upstream projects or run paid inference on this instruction alone. The next agent should pick a bounded task from V02-CLOSEOUT and leave a source-bound, version-controlled handoff.
+
+## New owner-authorized integration decision, 15 October 2026
+
+The owner explicitly instructed merging everything to obtain a complete picture of the build. [ADR 0006](docs/decisions/0006-consolidated-development-main.md) authorizes this one verified consolidation into main, superseding earlier no-main-merge instructions for that integration only. Preserve all unfinished V0.2 gates, original PRDs/fixtures, source and histories. This does not authorize deployment, release/tag, model downloads/paid inference, deferred research implementation or another application. Current entry points and the latest source-bound receipt supersede older branch/snapshot instructions.

@@ -1,3 +1,29 @@
+# 8BALL — consolidated development build
+
+**8BALL is the fixer application, powered by the reusable ENDSTATE engine.** This tree brings together the complete current application, all recent fixes, the specifications, research archives and delivery history.
+
+Start with [the complete build overview](docs/delivery/BUILD-OVERVIEW.md) and [START-HERE](START-HERE.md). [The canonical tracker](docs/delivery/PROGRESS.md) records acceptance; the app remains V0.2 alpha, with real-model and human/professional gates unfinished.
+
+The current workflow includes source capture and provenance, reviewed extraction, identity/deadline interpretation, outcome graphs, alternative routes, Plan Studio and Plan Review, Chosen Course, approvals, completion/evidence separation, scenarios, relationship exploration, changes and audit/export. ENDSTATE supplies the shared calculation kernel. Manual/rules/catalogue operation works without an AI endpoint; model adapters exist but reliable source-to-plan generation remains unaccepted.
+
+The owner has explicitly authorized this combined development build to be integrated into **main** after verification. This is source consolidation, not deployment or release acceptance. Use the unified main/current integration source rather than switching to an older feature branch from historical instructions below.
+
+For fictional local development in an existing checkout:
+
+```sh
+.venv/bin/python -m eightball
+```
+
+Read [the current handoff](docs/delivery/HANDOFF.md) for exact source and verification, and [the review pack](docs/delivery/review/README.md) for remaining human acceptance. Full long-term plans and both original research variants are preserved; deferred research is not implemented by this merge.
+
+## Preserved earlier setup and implementation notes
+
+The older snapshots below retain their historical wording. Their branch names, test totals and local-only claims do not override the current handoff and source.
+
+---
+
+> **Continuing this project? Start with [START-HERE.md](START-HERE.md).** It connects the current build, acceptance work, preserved research and next-agent instructions. This branch is a documentation proposal; no runtime release or merge is implied.
+
 # 8BALL
 
 ## Current publication and native acceptance, 26 September 2026

@@ -1,3 +1,11 @@
+# Current handoff: owner-authorized consolidated main build
+
+Read [BUILD-OVERVIEW](BUILD-OVERVIEW.md), [the integration session](sessions/2026-10-15-main-consolidation.md) and [ADR0006](../decisions/0006-consolidated-development-main.md). Integration combines application 486c85e (including all prior fixes) and documentation 0ee5834 with both original research variants and all 74 discoveries. Main integration is now explicitly authorized as a development build, superseding the earlier main hold for this one merge. No deployment/release or acceptance waiver.
+
+Cumulative integration verification/publication is pending at this preparation checkpoint; a source-bound final receipt must supersede it with actual results before handoff. All canonical task statuses/scopes remain unchanged: B02 10/20 required verified, ES01 5/5 internal. Next unfinished acceptance remains authorized provider/model setup and original four-case generation, real-provider lifecycle/native journey, independent protocol/labels and the owner's end review. No download/inference permission has been inferred from the merge request. Preserve all earlier failed and passed receipts below at their exact source commits.
+
+---
+
 # Current handoff: verified provider failure evidence and review pack, 15 October 2026
 
 Continue on `fix/v02-provider-failure-evidence-20261015`, preserving generation-contract and graph-keyboard work. Read [this sprint record](sessions/2026-10-15-provider-failure-evidence.md), [the source-bound final receipt](../evidence/provider-failure-native-2026-10-15.json) and [the unperformed review pack](review/README.md). Rejected extraction now retains bounded parsed model output through queued/synchronous analysis and disposable journey reports. A cumulative failure also exposed and led to a correction for refresh overwriting newer navigation.
@@ -246,3 +254,11 @@ The owner has requested both case-level **Emergent Insights** and an evolving re
 Every handoff must list the `EM-nnn` discovery IDs considered, implemented, deferred or declined, the evidence level and the reason. Use `docs/prompts/EMERGENT-INSIGHTS.md` and the generated `docs/delivery/EMERGENCE-REGISTER.md`. Edit the JSON register and append decisions; do not remove discoveries or rewrite original observations. Include a clear owner-review queue. Run `python scripts/emergence.py --check --base <starting-sha>` in addition to the existing delivery/changelog checks. This is an evolving register, not a promise to implement every idea.
 
 For the Emergent Insights feature, keep model state, review disposition and present/historical context independent. A useful or review-complete finding is not a confirmed fact. A later scan must not silently inherit a dismissal after changed content or a disappearance/reappearance. Store reviewer reasons and the exact inspected snapshot/fingerprint. Test concurrency, stale context, authentication, case isolation, atomic question creation, exports and the black desktop/mobile workflow.
+
+## Consolidated continuation, 15 October 2026
+
+The latest documentation entry point is [START-HERE](../../START-HERE.md), with [the next-agent prompt](NEXT-AGENT-PROMPT.md), [current closeout plan](V02-CLOSEOUT.md), [future roadmap integration](../strategy/ROADMAP-INTEGRATION.md) and [system map](../architecture/ENDSTATE-SYSTEM.md). The complete supplied research handoff is archived locally in this documentation branch and cross-linked from [the research register](../research/ENDSTATE-REGISTER.md).
+
+Current application inspection: `feat/situation-intelligence-v2` at `290e310707cf8bef6caf2508c285312b091bd18b`, alpha.8, native software checks passed. B02 remains 10/20; ES01 is 5/5 internal compatibility. The preserved 27 September Qwen baseline failed graph compilation, so the next focus is B02-09 alongside real quality/operator acceptance. Do not repeat old unpushed-source recovery steps or reopen ES01 from historical research counts.
+
+The owner authorises documentation consolidation only on a separate branch, without changing the original PRD, current gates or active runtime. Read [this session receipt](sessions/2026-10-15-documentation-consolidation.md) for exact provenance, preservation checks and pending work. Full external clones, inaccessible chats and the unrecovered Draft Repair source are not claimed present.

@@ -1,3 +1,13 @@
+# Current consolidated development checkpoint
+
+The latest application fixes and consolidated specifications/research are combined in this source for owner-authorized main integration. Start with [the build overview](docs/delivery/BUILD-OVERVIEW.md), [current handoff](docs/delivery/HANDOFF.md), [canonical tracker](docs/delivery/PROGRESS.md) and [integration decision](docs/decisions/0006-consolidated-development-main.md).
+
+The prior software pass at 294ff57 was 964 source tests, 964 installed-ENDSTATE tests and 384 native browser checks; exact new integration results belong to the new receipt. V0.2 remains 10/20 required scopes verified, ENDSTATE V0.1 remains 5/5 internally. Real-model, independent professional and human acceptance remain open. This is a development alpha, not a deployed/released service.
+
+## Historical checkpoints
+
+---
+
 # Current publication and native acceptance, 26 September 2026
 
 8BALL 0.2.0-alpha.8 is published on `feat/situation-intelligence-v2`. The Source Desk correction at `14c57907d26ea914e372e544bba4b0bd3988f5dc` passed all eleven native browser suites (378 checks), 938 code tests and the same 938 against the installed ENDSTATE package. [Evidence](docs/evidence/native-closeout-2026-09-26.json) records exact scope, source and artifact hashes. B02-13 and ES01-05 have met their software acceptance scope; V0.2 has not. Required actual-provider, independent professional, human accessibility/platform and operator reviews remain open. No main merge, deployment or public SDK release. Deferred research remains separate.

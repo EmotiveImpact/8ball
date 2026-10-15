@@ -211,6 +211,11 @@
       "path": "docs/evidence/provider-failure-native-2026-10-15.json",
       "code_commit": "294ff578b963dcf50cc8d91d060182894773d159",
       "result": "Final cumulative native passed 964 source, 964 installed-kernel tests and 384 browser checks across eleven suites after preserving/correcting an earlier failed navigation run. Inspection valid/passed at tested commit. Review templates remain unperformed; no actual-model, independent semantic or human acceptance."
+    },
+    "EV-MAIN-CONSOLIDATION": {
+      "kind": "owner_authorized_source_integration",
+      "path": "docs/delivery/sessions/2026-10-15-main-consolidation.md",
+      "result": "Current application/documentation and historical research variants consolidated under explicit owner authority; task statuses and acceptance unchanged. New verification/publication pending final receipt."
     }
   },
   "milestones": [
@@ -329,16 +334,17 @@
       "title": "Fold the agreed direction into PRD and preserve the original",
       "status": "verified",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "Codex",
+      "working_branch": "integration/v02-consolidated-20261015",
+      "base_commit": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
+      "updated_on": "2026-10-15",
       "code_paths": [],
       "depends_on": [],
       "acceptance": "Master PRD incorporates naming, reuse, living plans and unchanged original acceptance requirements. Original blob hash matches.",
       "evidence": [
         "EV-DECISION",
-        "EV-ORIGINAL"
+        "EV-ORIGINAL",
+        "EV-MAIN-CONSOLIDATION"
       ],
       "blockers": [],
       "next_action": "Use repository references instead of expecting chat access."
@@ -349,10 +355,10 @@
       "title": "Create one evidence-linked version/subpart tracker for chat and Codex",
       "status": "verified",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "Codex",
+      "working_branch": "integration/v02-consolidated-20261015",
+      "base_commit": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
+      "updated_on": "2026-10-15",
       "code_paths": [
         "scripts/delivery.py"
       ],
@@ -362,7 +368,8 @@
       ],
       "acceptance": "Ledger validates; generated checklist is current; regression checks reject unsupported completion and broken IDs.",
       "evidence": [
-        "EV-TRACKING"
+        "EV-TRACKING",
+        "EV-MAIN-CONSOLIDATION"
       ],
       "blockers": [],
       "next_action": "Use this ledger and session protocol in both chat and Codex; keep the generated checklist in sync."
@@ -1774,10 +1781,10 @@
       "title": "Mandatory changelog and in-app product history",
       "status": "verified",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "work/plan-studio-jobs-changelog",
-      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
-      "updated_on": "2026-09-23",
+      "owner": "Codex",
+      "working_branch": "integration/v02-consolidated-20261015",
+      "base_commit": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
+      "updated_on": "2026-10-15",
       "code_paths": [
         "scripts/changelog.py",
         "docs/delivery/changelog.json",
@@ -1786,7 +1793,8 @@
       "depends_on": [],
       "acceptance": "Every build adds a dated evidence-linked entry; generated CHANGELOG.md and in-app history share one source; base comparison detects missing entries or rewritten history.",
       "evidence": [
-        "EV-PLAN-STUDIO-LOCAL"
+        "EV-PLAN-STUDIO-LOCAL",
+        "EV-MAIN-CONSOLIDATION"
       ],
       "blockers": [],
       "next_action": "Enforce a new immutable-history changelog entry in each following session and integration commit. Local documentation/API/render scope verified; no source publication or release implied."
@@ -1797,10 +1805,10 @@
       "title": "Mandatory end-of-sprint emergence review",
       "status": "verified",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "work/emergence-review",
-      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
-      "updated_on": "2026-09-24",
+      "owner": "Codex",
+      "working_branch": "integration/v02-consolidated-20261015",
+      "base_commit": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
+      "updated_on": "2026-10-15",
       "code_paths": [
         "docs/delivery/EMERGENCE-REVIEW.md",
         "scripts/changelog.py",
@@ -1812,7 +1820,8 @@
       ],
       "acceptance": "Every new build sprint explicitly records what emerged, its evidence level and roadmap disposition; new changelog entries cannot omit the emergence review.",
       "evidence": [
-        "EV-EMERGENCE-REVIEW"
+        "EV-EMERGENCE-REVIEW",
+        "EV-MAIN-CONSOLIDATION"
       ],
       "blockers": [],
       "next_action": "Run the Emergence Review at every substantive build handoff; only promote discoveries to required roadmap scope through an explicit ledger or decision update."
@@ -1823,10 +1832,10 @@
       "title": "Evolving complete emergence register and owner-review prompt suite",
       "status": "verified",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "feat/emergent-insights-local",
-      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
-      "updated_on": "2026-09-24",
+      "owner": "Codex",
+      "working_branch": "integration/v02-consolidated-20261015",
+      "base_commit": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
+      "updated_on": "2026-10-15",
       "code_paths": [
         "scripts/emergence.py",
         "docs/delivery/emergence.json",
@@ -1838,7 +1847,8 @@
       "acceptance": "Every recorded discovery is retained, linked to roadmap scope, and rendered with append-only dispositions; declined items remain visible and no candidate inherits an unrelated completion tick.",
       "evidence": [
         "EV-EMERGENT-INSIGHTS-LOCAL",
-        "EV-VISION-REVIEW"
+        "EV-VISION-REVIEW",
+        "EV-MAIN-CONSOLIDATION"
       ],
       "blockers": [],
       "next_action": "Preserve all original discoveries and append review history. Use ADR 0004 and docs/vision for the strengthened direction; no optional candidate or delivery claim becomes verified without its own evidence."

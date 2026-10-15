@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "scope": "Current integration preservation, separate from historical documentation-only checker",
+  "application_parent": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
+  "documentation_parent": "0ee5834c0745640369f5a538b770c346f234232a",
+  "historical_archive_parent": "a8ecd9c833e1d929d6b2152cd80b51ac173967e8",
+  "runtime_and_workflow_files_byte_and_mode_identical": 135,
+  "research_19_file_variant": "all manifest bytes match",
+  "older_variant_directory_files_byte_identical": 24,
+  "changelog_entries_preserved_from_both_parents": true,
+  "all_discovery_observations_histories_and_evidence_preserved": true,
+  "current_discoveries": 74,
+  "task_scope_status_required_dependencies_and_milestones": "unchanged",
+  "original_prd_blob": "cdaa878bcfdee65a62e2096eae085af64a5377c6",
+  "frozen_generation_sha256": "6758c54a9e873bf2f67ced368555b871d9cf890b55b4df33762a035be1deaeb3",
+  "historical_verifier_manifest_and_model_evidence": "unchanged",
+  "local_links_checked": 107,
+  "model_calls": 0,
+  "full_v02_accepted": false
+}
