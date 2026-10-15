@@ -4,6 +4,45 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Graph keyboard fix passed cumulative native acceptance
+
+2026-10-15 · `pushed_unreleased`
+
+Native software regression passed at 5312c6c2f9ef39a68c320b2e1684897c6ac33265. The implementation and this documentation receipt are published on the scoped graph-keyboard branch.
+
+### Added
+
+- Source-bound cumulative receipt and preserved baseline/fixed native graph evidence.
+
+### Changed
+
+- Canonical evidence and handoff record completed keyboard regression verification; remaining human/provider gates stay unchanged.
+
+### Verification
+
+- 951 source code tests and 951 installed-kernel tests passed with zero failures, errors or skips.
+- All 382 native Chromium checks passed across eleven suites, including 42 graph checks. Compilation, JavaScript syntax, schemas, eight structural fixtures and generated/history checks passed.
+- Source/artifact inspection returned valid=true, run_status=passed at the tested code commit.
+
+### Limitations
+
+- No actual model, independent semantic, human screen-reader/platform, visual or dense-case operator acceptance.
+- B02 remains 10/20; ES01 remains 5/5 internally. No main merge, release or deployment. Subsequent receipt edits are documentation only.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-053 orientation continuity applies to replaced in-page graph controls, not only dialogs. Native baseline and corrected evidence preserve the distinction.
+- Risk: Passing automated focus checks is not professional, screen-reader or supported-platform acceptance.
+- Architecture: Keep presentation focus state outside case commands, approvals and factual state; no graph semantics changed.
+- Roadmap decision: existing_task B02-16/B02-20; keep external acceptance blockers and deferred research unchanged.
+Registered discoveries: EM-053, EM-051.
+
+Roadmap items: `B02-16`, `B02-20`, `DOC-03`, `DOC-04`, `DOC-05`.
+
+Evidence: [docs/evidence/graph-keyboard-native-2026-10-15.json](docs/evidence/graph-keyboard-native-2026-10-15.json), [docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md](docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md).
+
 ## 0.2.0-alpha.8 · Preserve keyboard orientation through graph control redraws
 
 2026-10-15 · `local_unreleased`

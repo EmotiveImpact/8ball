@@ -3,6 +3,57 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-15-graph-native-receipt",
+      "date": "2026-10-15",
+      "version": "0.2.0-alpha.8",
+      "title": "Graph keyboard fix passed cumulative native acceptance",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "B02-16",
+        "B02-20",
+        "DOC-03",
+        "DOC-04",
+        "DOC-05"
+      ],
+      "summary": "Native software regression passed at 5312c6c2f9ef39a68c320b2e1684897c6ac33265. The implementation and this documentation receipt are published on the scoped graph-keyboard branch.",
+      "added": [
+        "Source-bound cumulative receipt and preserved baseline/fixed native graph evidence."
+      ],
+      "changed": [
+        "Canonical evidence and handoff record completed keyboard regression verification; remaining human/provider gates stay unchanged."
+      ],
+      "fixed": [],
+      "verification": [
+        "951 source code tests and 951 installed-kernel tests passed with zero failures, errors or skips.",
+        "All 382 native Chromium checks passed across eleven suites, including 42 graph checks. Compilation, JavaScript syntax, schemas, eight structural fixtures and generated/history checks passed.",
+        "Source/artifact inspection returned valid=true, run_status=passed at the tested code commit."
+      ],
+      "limitations": [
+        "No actual model, independent semantic, human screen-reader/platform, visual or dense-case operator acceptance.",
+        "B02 remains 10/20; ES01 remains 5/5 internally. No main merge, release or deployment. Subsequent receipt edits are documentation only."
+      ],
+      "evidence_paths": [
+        "docs/evidence/graph-keyboard-native-2026-10-15.json",
+        "docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-053 orientation continuity applies to replaced in-page graph controls, not only dialogs. Native baseline and corrected evidence preserve the distinction."
+        ],
+        "risks": [
+          "Passing automated focus checks is not professional, screen-reader or supported-platform acceptance."
+        ],
+        "architecture_implications": [
+          "Keep presentation focus state outside case commands, approvals and factual state; no graph semantics changed."
+        ],
+        "roadmap_decision": "existing_task B02-16/B02-20; keep external acceptance blockers and deferred research unchanged.",
+        "insight_ids": [
+          "EM-053",
+          "EM-051"
+        ]
+      }
+    },
+    {
       "id": "2026-10-15-graph-keyboard-focus",
       "date": "2026-10-15",
       "version": "0.2.0-alpha.8",

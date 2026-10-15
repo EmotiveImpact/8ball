@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-15",
+  "scope": "Graph control keyboard-focus regression, not human accessibility acceptance",
+  "branch": "fix/v02-graph-keyboard-20261015",
+  "base_commit": "821d9f512a70aaa602587caa4ef604021719b01f",
+  "tested_code_commit": "5312c6c2f9ef39a68c320b2e1684897c6ac33265",
+  "run_id": "20261015T211835Z-3e0eaa03",
+  "status": "passed",
+  "mode": "native",
+  "source_fingerprint": "f5045a26759ac5ef97880515ea917cd6320a0abe01ac756d89df0b73f59c1e43",
+  "report_sha256": "d505624936d7ad10a1e05b1376594a06feb502739d4bd994d4d25e6767c47807",
+  "local_report_path": "artifacts/acceptance/20261015T211835Z-3e0eaa03/report.json",
+  "completed_at": "2026-10-15T21:22:00.187852+00:00",
+  "inspection": {
+    "valid": true,
+    "run_status": "passed",
+    "performed_before_documentation_receipt": true
+  },
+  "code_tests": {
+    "tests": 951,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 951
+  },
+  "installed_kernel_tests": {
+    "tests": 951,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "browser_suites": {
+    "legacy": {
+      "count": 27,
+      "transport": "real loopback HTTP",
+      "sha256": "c553e60bb97ef58196ee5bee1f4fde22203273a6f5bade21c2d298c2faa549c6"
+    },
+    "workspace": {
+      "count": 51,
+      "transport": "Native loopback HTTP",
+      "sha256": "ccffe9c582d516f163d069f2775e97a7621f5a1306531aea130afa6908e6945f"
+    },
+    "providers": {
+      "count": 15,
+      "transport": "native loopback HTTP",
+      "sha256": "bbf0af67a54e14d14fab215a3b43ac7b72613af5df6e7e3fdcb796f7e1409093"
+    },
+    "connections": {
+      "count": 42,
+      "transport": "Native loopback HTTP",
+      "sha256": "c0f21b9d6f57e53711802c0eeedae5647da1b4a0195eef504a797f16ce41f39c"
+    },
+    "studio": {
+      "count": 44,
+      "transport": "native loopback HTTP",
+      "sha256": "458e2d912f7a9896da88e136e6aeba62970b56186a432d1509f53a09b1471797"
+    },
+    "sources": {
+      "count": 39,
+      "transport": "native HTTP",
+      "sha256": "4abf02bc619f78c83f5133f848ceb2ef4cdb5b7810dbf8d8e9b8c93dcc93df27"
+    },
+    "insights": {
+      "count": 40,
+      "transport": "Native loopback HTTP",
+      "sha256": "05a47f8e44b3e856cc19ad85bc4f2154835e5c6fed34788232f11969f304a952"
+    },
+    "grounding": {
+      "count": 26,
+      "transport": "Native loopback HTTP",
+      "sha256": "4c0acde1ff3c693ac7714a556d7292a02bd4b8363b5c48091ee8ca5640153c35"
+    },
+    "plan_review": {
+      "count": 33,
+      "transport": "Native loopback HTTP",
+      "sha256": "31e729ac5f4c7d638401be1211f9c255e08603623812b4b85ebd08a8516bf1aa"
+    },
+    "accessibility": {
+      "count": 36,
+      "transport": "Native loopback HTTP",
+      "sha256": "1694bba70004e2b415b4a645d054f81605243be6dfce93d642b3fa47a1013e1d"
+    },
+    "courses": {
+      "count": 29,
+      "transport": "Native loopback HTTP",
+      "sha256": "12da08af6ca67890e7ad7e9fe8386017c677fb6a0033e24edc9847d66fd220a3"
+    }
+  },
+  "native_browser_checks": 382,
+  "checks": {
+    "unit": "passed",
+    "compile": "passed",
+    "delivery": "passed",
+    "changelog": "passed",
+    "emergence": "passed",
+    "javascript": "passed",
+    "structural-fixtures": "passed",
+    "endstate-package": "passed",
+    "schemas": "passed",
+    "native-probe": "passed",
+    "browser-legacy": "passed",
+    "browser-workspace": "passed",
+    "browser-providers": "passed",
+    "browser-connections": "passed",
+    "browser-studio": "passed",
+    "browser-sources": "passed",
+    "browser-insights": "passed",
+    "browser-grounding": "passed",
+    "browser-plan_review": "passed",
+    "browser-accessibility": "passed",
+    "browser-courses": "passed"
+  },
+  "baseline_evidence": "docs/evidence/graph-keyboard-baseline-2026-10-15.json",
+  "focused_evidence": "docs/evidence/graph-keyboard-focused-2026-10-15.json",
+  "actual_model_calls": 0,
+  "human_screen_reader_review": false,
+  "independent_quality_review": false,
+  "full_v02_accepted": false,
+  "merged": false,
+  "released": false,
+  "deployed": false,
+  "limits": [
+    "The four baseline focus assertions failed as recorded; the fixed graph suite passes 42 native checks.",
+    "The same 951 code and installed-kernel tests pass; all eleven native browser suites pass 382 checks.",
+    "Source/artifact inspection applies to tested_code_commit. Later receipt edits are documentation only and have separate generated/history checks.",
+    "Full raw logs, JUnit, screenshots, schemas and wheel remain in local artifacts; this committed receipt preserves exact source/counts/hashes.",
+    "No new real-provider or human acceptance. Existing V0.2 scope remains 10/20 verified; ES01 remains 5/5 internal."
+  ],
+  "final_documentation_checks": {
+    "generated_and_history_checks": "delivery, changelog and emergence passed against tested_code_commit",
+    "git_diff_check": "passed",
+    "runtime_changes_after_native_acceptance": false
+  }
+}

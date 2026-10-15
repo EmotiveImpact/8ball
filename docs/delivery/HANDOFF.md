@@ -1,4 +1,14 @@
-# Current implementation checkpoint: graph keyboard focus, 15 October 2026
+# Current closeout: graph keyboard focus verified; external acceptance blocked
+
+15 October 2026. Branch `fix/v02-graph-keyboard-20261015` includes the prior generation correction and the new graph keyboard fix. Tested code `5312c6c2f9ef39a68c320b2e1684897c6ac33265` passed **951 code + 951 installed-kernel tests and 382 checks in eleven native Chromium suites**, with source/artifact inspection valid. [Sprint handoff](sessions/2026-10-15-graph-keyboard-focus.md) and [receipt](../evidence/graph-keyboard-native-2026-10-15.json) preserve exact source and results. Subsequent receipt edits are documentation only, verified by generated/history guards.
+
+Four native baseline keyboard actions dropped focus to BODY. Replacement controls now retain logical focus; disappearing controls move to the stable scope selector. The graph audit remains unchanged. EM-053 is refined without adding optional scope. No inference occurred, and no human acceptance is implied.
+
+The resumed goal is blocked after verified source publication: no usable local model service or hosted model/provider/credentials are configured, and independent/human acceptance remains outstanding. Next: deliberately select/authorise provider/model, configure it securely, run the unchanged four-case generation gate and full actual-provider native/lifecycle checks, then obtain real professional/owner/accessibility/operator reviews. B02 stays 10/20; ES01 stays 5/5 internally. Do not substitute new optional work or another industry application for these gates. No merge, release or deployment.
+
+---
+
+# Previous implementation checkpoint: graph keyboard focus, 15 October 2026
 
 Read [the graph sprint](sessions/2026-10-15-graph-keyboard-focus.md). Branch `fix/v02-graph-keyboard-20261015` starts from the pushed generation checkpoint `821d9f512a70aaa602587caa4ef604021719b01f`. Four native keyboard actions reproducibly lost focus to BODY; corrected graph checks pass 42 native assertions with unchanged case audit. Cumulative acceptance is pending at this implementation checkpoint. EM-053 is refined; no new feature or task status promotion. All actual-provider, independent and human acceptance requirements remain.
 

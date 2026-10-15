@@ -933,9 +933,9 @@ Navigation and replaced dialogs could leave keyboard focus on the body or on a r
 
 **Product implication:** Preserve the root invoker, focus the visible dialog title and focus destination headings without changing authority.
 
-**Roadmap links:** `B02-16` (partial).
+**Roadmap links:** `B02-16` (partial), `B02-20` (implemented).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `web/v2/ui.js`, `tests/browser_accessibility.py`, `docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md`.
+**Evidence / source record:** `web/v2/ui.js`, `tests/browser_accessibility.py`, `docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md`, `docs/evidence/graph-keyboard-baseline-2026-10-15.json`, `docs/evidence/graph-keyboard-native-2026-10-15.json`.
 
 **Decision history:**
 

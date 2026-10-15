@@ -1,5 +1,19 @@
 # V0.2 graph keyboard focus
 
+## Final software verification and publication
+
+Tested code commit `5312c6c2f9ef39a68c320b2e1684897c6ac33265` passed the single cumulative native run `20261015T211835Z-3e0eaa03`: **951 code tests, 951 installed-kernel tests and 382 native Chromium checks across all eleven suites**. The graph suite has 42 checks, four more than the previous checkpoint. No failed, errored or skipped code tests. Compilation, JavaScript syntax, schemas, eight structural fixtures and continuity/history guards passed. Inspection returned `valid=true`, `run_status=passed` against unchanged tested source, fingerprint `f5045a26759ac5ef97880515ea917cd6320a0abe01ac756d89df0b73f59c1e43`.
+
+[Committed cumulative receipt](../../evidence/graph-keyboard-native-2026-10-15.json) preserves the tested revision, report hash and counts. Full raw artifacts remain under `artifacts/acceptance/20261015T211835Z-3e0eaa03/`. Reconstruct the tested code commit to re-inspect those bytes; the following receipt edits are documentation only and receive separate generated/history checks.
+
+Both independent agents confirmed the other open required scopes need selected-provider execution or genuine independent/human acceptance; another automation helper would not meet those requirements. No additional required code behavior was established. This continuation therefore stops as **blocked**, not complete, after pushing the implementation and receipt to `fix/v02-graph-keyboard-20261015`. The final response supplies the resulting receipt commit; a commit cannot contain its own hash. No unpushed implementation is intended at final handoff. Main/application/documentation heads were re-fetched without concurrent changes.
+
+The next external action is selecting and authorising a model/provider and configuring its runtime or credentials securely. Then run the unchanged generation fixtures, actual-provider native journey and lifecycle checks. Independent professionals must freeze/approve the protocol and acceptance cases/labels; genuine human source, screen-reader/platform, owner visual and dense-graph reviews remain required. Preserve B02 10/20, ES01 5/5 internal and the deferred-research hold. No main merge or deployment.
+
+---
+
+## Preserved implementation checkpoint
+
 Session: Codex cloud, 15 October 2026. Tasks B02-16 / B02-20 with DOC-03/04/05 continuity. Branch `fix/v02-graph-keyboard-20261015`, base `821d9f512a70aaa602587caa4ef604021719b01f`. This base includes the previous generation-role correction and its source-bound native evidence; it does not imply a main merge or model acceptance. A clean base checkpoint was pushed before shared-file work.
 
 ## Scope and current observations

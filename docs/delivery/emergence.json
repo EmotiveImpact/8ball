@@ -1661,13 +1661,16 @@
       "observation": "Navigation and replaced dialogs could leave keyboard focus on the body or on a removed control.",
       "product_implication": "Preserve the root invoker, focus the visible dialog title and focus destination headings without changing authority.",
       "task_ids": [
-        "B02-16"
+        "B02-16",
+        "B02-20"
       ],
       "acceptance_task_ids": [],
       "evidence_paths": [
         "web/v2/ui.js",
         "tests/browser_accessibility.py",
-        "docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md"
+        "docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md",
+        "docs/evidence/graph-keyboard-baseline-2026-10-15.json",
+        "docs/evidence/graph-keyboard-native-2026-10-15.json"
       ],
       "owner_review": "pending",
       "history": [

@@ -825,5 +825,6 @@ These references have specific scopes and may be historical. A reference to a de
 ### EV-GRAPH-KEYBOARD-FOCUS
 
 - Kind: `native_keyboard_regression`.
-- Repository evidence: [docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md](../../docs/delivery/sessions/2026-10-15-graph-keyboard-focus.md).
-- Result/scope: Four native baseline keyboard actions reproduced focus loss to BODY. Corrected graph suite passes 42 native checks, including four new keyboard focus assertions, with unchanged case audit. Cumulative acceptance pending; human accessibility/dense-case gates remain open.
+- Repository evidence: [docs/evidence/graph-keyboard-native-2026-10-15.json](../../docs/evidence/graph-keyboard-native-2026-10-15.json).
+- Result/scope: Four native baseline focus failures corrected. 951 code tests, 951 installed-kernel tests and 382 native checks across eleven browser suites passed; source/artifact inspection valid. No human accessibility, dense-case operator or model acceptance.
+- Code revision: `5312c6c2f9ef39a68c320b2e1684897c6ac33265`.
