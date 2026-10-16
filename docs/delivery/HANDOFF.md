@@ -1,3 +1,11 @@
+# Latest research follow-up: Tencent memory and the combined reference case
+
+The owner supplied TencentDB Agent Memory and asked for the strongest combined design. Read [the plan follow-up](../strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md#follow-up-strongest-combined-architecture-and-tencent-memory) and [Tencent assessment](../research/github-2026-10-16/tencent-memory.md). This is a source-only extension of the existing research branch at base `7309f54539f17b973511e940147a817958891e42`, with runtime acceptance unchanged. Tencent is shortlisted for an optional non-client team/procedural-memory experiment through explicit APIs; source truth, revisions and authority remain in 8BALL. Its L2 scenario summaries do not replace hypothetical-world experiments.
+
+The first build requirement remains actual-provider V0.2 acceptance. The first proposed later research proof is one complete reference case with authored adverse scenarios and measured component contributions. [Follow-up receipt](../evidence/tencent-memory-research-2026-10-16.json); [session](sessions/2026-10-16-evolution-research.md#tencent-follow-up). No runtime installation, paid calls, main merge or deployment.
+
+---
+
 # Latest handoff: GitHub component research and evolution proposal
 
 16 October 2026. Read [the full plan](../strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md), [component sources](../research/GITHUB-COMPONENTS-2026-10-16.md) and [session record](sessions/2026-10-16-evolution-research.md). Documentation branch `docs/endstate-evolution-plan-20261016` starts from consolidated main `d7d36b842464d7ad0e974a59730a682f1739fccf`. The owner asked how to combine swarm, memory, decisions and the full vision; this proposal makes those choices and experiments reviewable. It does not install or promote deferred runtime features.

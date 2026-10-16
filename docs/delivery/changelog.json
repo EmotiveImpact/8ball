@@ -3,6 +3,66 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-16-tencent-memory-research",
+      "date": "2026-10-16",
+      "version": "0.2.0-alpha.8",
+      "title": "Tencent memory assessment and combined reference-case strategy",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "DOC-02",
+        "DOC-03",
+        "DOC-04",
+        "DOC-05",
+        "DOC-06"
+      ],
+      "summary": "Assessed the owner-supplied Tencent memory project and sharpened the combined design around one complete case, optional procedural memory and explicit scenario/decision contracts.",
+      "added": [
+        "Pinned Tencent source, contract/operations findings, candidate EM-080 and a six-responsibility architecture proposal."
+      ],
+      "changed": [
+        "Research register, plan, canonical documentation-task evidence and handoff updated additively."
+      ],
+      "fixed": [],
+      "verification": [
+        "Bounded source/configuration/licence inspection; current documentation/history/preservation checks recorded in the follow-up receipt."
+      ],
+      "limitations": [
+        "No upstream install/runtime test, inference, benchmark reproduction or independent/human acceptance.",
+        "All runtime task acceptance/status fields remain unchanged. Tencent is a candidate, not an imported feature."
+      ],
+      "evidence_paths": [
+        "docs/evidence/tencent-memory-research-2026-10-16.json",
+        "docs/research/github-2026-10-16/tencent-memory.md",
+        "docs/delivery/sessions/2026-10-16-evolution-research.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "L2 scenario is a memory narrative; generated procedures, citation ancestry and profile scopes need host-owned review and invalidation contracts."
+        ],
+        "risks": [
+          "Memory consolidation or model choice confidence may be mistaken for factual proof, validated expertise or route authority."
+        ],
+        "architecture_implications": [
+          "Keep canonical evidence/approval state in 8BALL and use optional scoped API adapters for derived memory."
+        ],
+        "roadmap_decision": "new_candidate and existing_task refinements only; no required runtime promotion.",
+        "insight_ids": [
+          "EM-019",
+          "EM-020",
+          "EM-027",
+          "EM-046",
+          "EM-055",
+          "EM-061",
+          "EM-063",
+          "EM-075",
+          "EM-076",
+          "EM-077",
+          "EM-078",
+          "EM-080"
+        ]
+      }
+    },
+    {
       "id": "2026-10-16-evolution-research",
       "date": "2026-10-16",
       "version": "0.2.0-alpha.8",

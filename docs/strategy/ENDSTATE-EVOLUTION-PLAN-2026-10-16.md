@@ -163,3 +163,28 @@ The next engineering task remains the selected-provider V0.2 generation and life
 After V0.2 acceptance, the first recommended research implementation is the authored scenario comparison contract and runner, followed by one isolated simulator comparison. This plan proposes sequencing and technology choices; it does not silently promote all optional research into required roadmap scope.
 
 No credible completion date follows from repository popularity or test counts. Estimate each implementation stage after the preceding evidence, prototype cost and human-review availability are known. The immediate V0.2 remainder is substantially different from the longer-term secure, learning, multi-actor product described here.
+
+## Follow-up: strongest combined architecture and Tencent memory
+
+The owner's follow-up supplied [TencentDB Agent Memory](https://github.com/TencentCloud/TencentDB-Agent-Memory). [Its source assessment](../research/github-2026-10-16/tencent-memory.md) adds a strong candidate for **procedural and team memory**: reusable workflows, project context, document/code indexes and versioned assets assigned to particular agents. It is MIT-licensed and supports standalone SQLite/files with BM25; Tencent Cloud storage is optional. Extraction/consolidation still needs a configured model. The source review does not establish runtime performance, independent quality or production readiness.
+
+The recommended architecture has six responsibilities:
+
+| Responsibility | Owner / candidate | Required output |
+| --- | --- | --- |
+| Reviewed case reality and authority | Existing 8BALL records and command boundaries | Sources, claims, observations, constraints, mandates, revisions and approvals with explicit provenance |
+| Conditional route reasoning | Existing ENDSTATE; optional OR-Tools for demonstrated scheduling gaps | Candidate routes, unmet prerequisites, hard limits, trade-offs and final verification requirements |
+| Useful recalled context | One evaluated memory adapter initially; Tencent for team/workflow assets, Graphiti for temporal relationship retrieval | Attributed retrieved passages or proposed playbook knowledge, with scope/version/retraction checks |
+| Hypothetical alternatives | Existing authored scenarios first; one MiroFish/OASIS or general simulator adapter | Isolated scenario assumptions, permitted events/actions, failure causes and retained raw runs |
+| Decision assessment | Deterministic checks, task-evaluated model/JEV, independent professional review | Separate feasibility, target alignment, omissions, uncertainty and operator-visible rationale |
+| Actual outcome learning | Permissioned observation/evaluation pipeline | Prediction-vs-outcome records, corrected playbooks, held-out evidence and reversible improvements |
+
+Tencent, Graphiti and Zep compete or complement specific retrieval needs; none needs to become the canonical case database. Start by evaluating **one** memory role. My provisional choice for a non-client project/team-knowledge experiment is Tencent's Core API/SDK, because the workflow/versioned-asset model fits continuity and reviewed procedural knowledge. Benchmark Graphiti if temporal claim/relationship retrieval proves the more important need. Selecting either requires its own measured evidence, operating cost and scoped integration decision.
+
+Tencent already contains JEV choice-provider code, with `selected`, `none` and `unavailable` outcomes, plus an optional persona-refresh gate. That is a useful bounded selection design. It does not demonstrate full-route judgement, real-world authority or calibrated outcome probability. Its L2 "scenario" is a topic/scene summary, so it does not replace the proposed possible-world experiment contract.
+
+For ENDSTATE, use explicit API/SDK calls that retrieve labelled context into a versioned proposal. Avoid enabling automatic prompt/proxy injection or generated executable skills as part of the initial experiment. Tencent's memory consolidation can rewrite/merge summaries and its model-driven extraction may create skills; our existing source, review and permission rules must still determine what becomes accepted playbook content or a case amendment.
+
+The most useful next milestone is **one complete reference case**, rather than another infrastructure inventory: import sources, preserve exact target/authority, generate alternative routes, replay adverse scenarios, compare their weaknesses, obtain a human choice, record authorised work, then separately verify the result. Keep the fictional scenario exercise separate from the unchanged V0.2 generation regression and from the independent holdout. Introduce each candidate only where its contribution can be measured on that loop.
+
+This follow-up sharpens the proposed choices. Current V0.2 acceptance, secure-pilot prerequisites, Lab sequencing and optional-task dispositions above still apply. No upstream product has been installed or integrated by this proposal.

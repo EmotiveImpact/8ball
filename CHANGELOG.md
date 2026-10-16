@@ -4,6 +4,43 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Tencent memory assessment and combined reference-case strategy
+
+2026-10-16 · `pushed_unreleased`
+
+Assessed the owner-supplied Tencent memory project and sharpened the combined design around one complete case, optional procedural memory and explicit scenario/decision contracts.
+
+### Added
+
+- Pinned Tencent source, contract/operations findings, candidate EM-080 and a six-responsibility architecture proposal.
+
+### Changed
+
+- Research register, plan, canonical documentation-task evidence and handoff updated additively.
+
+### Verification
+
+- Bounded source/configuration/licence inspection; current documentation/history/preservation checks recorded in the follow-up receipt.
+
+### Limitations
+
+- No upstream install/runtime test, inference, benchmark reproduction or independent/human acceptance.
+- All runtime task acceptance/status fields remain unchanged. Tencent is a candidate, not an imported feature.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: L2 scenario is a memory narrative; generated procedures, citation ancestry and profile scopes need host-owned review and invalidation contracts.
+- Risk: Memory consolidation or model choice confidence may be mistaken for factual proof, validated expertise or route authority.
+- Architecture: Keep canonical evidence/approval state in 8BALL and use optional scoped API adapters for derived memory.
+- Roadmap decision: new_candidate and existing_task refinements only; no required runtime promotion.
+Registered discoveries: EM-019, EM-020, EM-027, EM-046, EM-055, EM-061, EM-063, EM-075, EM-076, EM-077, EM-078, EM-080.
+
+Roadmap items: `DOC-02`, `DOC-03`, `DOC-04`, `DOC-05`, `DOC-06`.
+
+Evidence: [docs/evidence/tencent-memory-research-2026-10-16.json](docs/evidence/tencent-memory-research-2026-10-16.json), [docs/research/github-2026-10-16/tencent-memory.md](docs/research/github-2026-10-16/tencent-memory.md), [docs/delivery/sessions/2026-10-16-evolution-research.md](docs/delivery/sessions/2026-10-16-evolution-research.md).
+
 ## 0.2.0-alpha.8 · Source-pinned evolution plan for scenarios, memory and decision support
 
 2026-10-16 · `pushed_unreleased`

@@ -672,7 +672,8 @@
         "B02-14"
       ],
       "evidence_paths": [
-        "docs/v2/SOURCE-DESK.md"
+        "docs/v2/SOURCE-DESK.md",
+        "docs/research/github-2026-10-16/tencent-memory.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -681,6 +682,12 @@
           "decision": "adopted",
           "by": "ChatGPT development proposal",
           "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex Tencent source research",
+          "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
         }
       ]
     },
@@ -703,7 +710,8 @@
       "evidence_paths": [
         "docs/evidence/staged-compilation-verification.json",
         "docs/delivery/sessions/2026-10-15-generation-role-contract.md",
-        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md"
+        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
+        "docs/research/github-2026-10-16/tencent-memory.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -724,6 +732,12 @@
           "decision": "adopted",
           "by": "Codex research review",
           "reason": "existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex Tencent source research",
+          "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
         }
       ]
     },
@@ -911,7 +925,8 @@
       "acceptance_task_ids": [],
       "evidence_paths": [
         "docs/v2/PRODUCTION-SECURITY.md",
-        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md"
+        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
+        "docs/research/github-2026-10-16/tencent-memory.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -926,6 +941,12 @@
           "decision": "deferred",
           "by": "Codex research review",
           "reason": "existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "deferred",
+          "by": "Codex Tencent source research",
+          "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
         }
       ]
     },
@@ -1483,7 +1504,8 @@
         "docs/v2/PLAN-REVIEW.md",
         "tests/test_plan_review.py",
         "docs/evidence/route-identity-regression.json",
-        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md"
+        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
+        "docs/research/github-2026-10-16/tencent-memory.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1498,6 +1520,12 @@
           "decision": "adopted",
           "by": "Codex research review",
           "reason": "existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex Tencent source research",
+          "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
         }
       ]
     },
@@ -1818,7 +1846,8 @@
         "docs/vision/ENDSTATE.md",
         "docs/delivery/sessions/2026-10-15-generation-role-contract.md",
         "docs/delivery/sessions/2026-10-15-provider-failure-evidence.md",
-        "docs/delivery/sessions/2026-10-15-main-consolidation.md"
+        "docs/delivery/sessions/2026-10-15-main-consolidation.md",
+        "docs/research/github-2026-10-16/tencent-memory.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1851,6 +1880,12 @@
           "decision": "adopted",
           "by": "Codex integration review",
           "reason": "Unify latest source and separate documentation without replacing newer runtime/acceptance evidence. Preserve both archive variants and histories; owner authorizes this main integration, not release/model/human acceptance."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex Tencent source research",
+          "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
         }
       ]
     },
@@ -2034,7 +2069,8 @@
       "evidence_paths": [
         "docs/vision/8BALL.md",
         "evals/PLAN-QUALITY-GATE.md",
-        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md"
+        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
+        "docs/research/github-2026-10-16/tencent-memory.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2049,6 +2085,12 @@
           "decision": "adopted",
           "by": "Codex research review",
           "reason": "existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex Tencent source research",
+          "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
         }
       ]
     },
@@ -2096,7 +2138,8 @@
       "acceptance_task_ids": [],
       "evidence_paths": [
         "docs/vision/ENDSTATE.md",
-        "docs/vision/8BALL.md"
+        "docs/vision/8BALL.md",
+        "docs/research/github-2026-10-16/tencent-memory.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2105,6 +2148,12 @@
           "decision": "candidate",
           "by": "ChatGPT documentation review",
           "reason": "Retained for owner review; no new mandatory scope or implementation claim."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "candidate",
+          "by": "Codex Tencent source research",
+          "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
         }
       ]
     },
@@ -2449,7 +2498,8 @@
       "acceptance_task_ids": [],
       "evidence_paths": [
         "docs/research/GITHUB-COMPONENTS-2026-10-16.md",
-        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md"
+        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
+        "docs/research/github-2026-10-16/tencent-memory.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2458,6 +2508,12 @@
           "decision": "candidate",
           "by": "Codex research review",
           "reason": "new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "candidate",
+          "by": "Codex Tencent source research",
+          "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
         }
       ]
     },
@@ -2476,7 +2532,8 @@
       "acceptance_task_ids": [],
       "evidence_paths": [
         "docs/research/GITHUB-COMPONENTS-2026-10-16.md",
-        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md"
+        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
+        "docs/research/github-2026-10-16/tencent-memory.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2485,6 +2542,12 @@
           "decision": "candidate",
           "by": "Codex research review",
           "reason": "new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "candidate",
+          "by": "Codex Tencent source research",
+          "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
         }
       ]
     },
@@ -2503,7 +2566,8 @@
       "acceptance_task_ids": [],
       "evidence_paths": [
         "docs/research/GITHUB-COMPONENTS-2026-10-16.md",
-        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md"
+        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
+        "docs/research/github-2026-10-16/tencent-memory.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2512,6 +2576,12 @@
           "decision": "candidate",
           "by": "Codex research review",
           "reason": "new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "candidate",
+          "by": "Codex Tencent source research",
+          "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
         }
       ]
     },
@@ -2530,7 +2600,8 @@
       "acceptance_task_ids": [],
       "evidence_paths": [
         "docs/research/GITHUB-COMPONENTS-2026-10-16.md",
-        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md"
+        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
+        "docs/research/github-2026-10-16/tencent-memory.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2539,6 +2610,12 @@
           "decision": "candidate",
           "by": "Codex research review",
           "reason": "new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "candidate",
+          "by": "Codex Tencent source research",
+          "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
         }
       ]
     },
@@ -2566,6 +2643,33 @@
           "decision": "candidate",
           "by": "Codex research review",
           "reason": "new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added."
+        }
+      ]
+    },
+    {
+      "id": "EM-080",
+      "title": "A memory scenario summary is distinct from a hypothetical world branch",
+      "origin": "Owner-supplied TencentDB Agent Memory source assessment",
+      "first_seen": "2026-10-16",
+      "evidence_level": "operator_hypothesis",
+      "observation": "Tencent L2 scenario means a model-maintained topic/scene narrative. Shared terminology does not implement ENDSTATE immutable case branches, explicit perturbations, simulated transitions or comparison/replay contracts.",
+      "product_implication": "Use explicit adapter responsibility names and separate procedural recall from hypothetical-world experiments; verify each capability against its actual contract before counting it as available.",
+      "task_ids": [
+        "ES02-06",
+        "ES03-01"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/research/github-2026-10-16/tencent-memory.md",
+        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-16",
+          "decision": "candidate",
+          "by": "Codex source research",
+          "reason": "new_candidate: preserve terminology/contract distinction; no new required feature or runtime adoption."
         }
       ]
     }

@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-16. **79 recorded discoveries.**
+Last review: 2026-10-16. **80 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -352,11 +352,12 @@ A source excerpt needs its original position and version, not just a summary.
 
 **Roadmap links:** `B02-14` (partial).
 **Completion scope:** `B02-14`.
-**Evidence / source record:** `docs/v2/SOURCE-DESK.md`.
+**Evidence / source record:** `docs/v2/SOURCE-DESK.md`, `docs/research/github-2026-10-16/tencent-memory.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT development proposal: Adopt bounded scope now; wider interpretation still needs owner and operator review.
+- 2026-10-16 · adopted · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 
 ### [ ] EM-020: Compiler validation is not semantic correctness
 
@@ -369,13 +370,14 @@ Valid references and exact quotations can accompany an interpretation that misse
 
 **Roadmap links:** `B02-09` (blocked), `B02-11` (partial), `ES03-02` (blocked).
 **Completion scope:** `B02-11`.
-**Evidence / source record:** `docs/evidence/staged-compilation-verification.json`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
+**Evidence / source record:** `docs/evidence/staged-compilation-verification.json`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT development proposal: Adopt bounded scope now; wider interpretation still needs owner and operator review.
 - 2026-10-15 · adopted · Codex sprint review: Historical Qwen replay revalidates the distinction between exact compiler checks, prompt provenance, semantic quality and assisted recovery. Prompt version now survives success and rejection; fresh inference and human judgement remain outstanding.
 - 2026-10-16 · adopted · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
+- 2026-10-16 · adopted · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 
 ### [ ] EM-021: Review state and evidence character must be separate
 
@@ -490,12 +492,13 @@ Reusable technology does not make confidential client histories reusable by defa
 
 **Roadmap links:** `B04-02` (not_started).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/v2/PRODUCTION-SECURITY.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
+**Evidence / source record:** `docs/v2/PRODUCTION-SECURITY.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`.
 
 **Decision history:**
 
 - 2026-09-24 · deferred · ChatGPT development proposal: Preserved for owner review. No automatic scope or completion claim.
 - 2026-10-16 · deferred · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
+- 2026-10-16 · deferred · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 
 ### [ ] EM-028: An insight and its supporting observation have different clocks
 
@@ -817,12 +820,13 @@ A reviewer can mark all rubric dimensions supported while the plan still contain
 
 **Roadmap links:** `B02-11` (partial), `B02-13` (verified).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/v2/PLAN-REVIEW.md`, `tests/test_plan_review.py`, `docs/evidence/route-identity-regression.json`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
+**Evidence / source record:** `docs/v2/PLAN-REVIEW.md`, `tests/test_plan_review.py`, `docs/evidence/route-identity-regression.json`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT build review: The separate journal and tests preserve all case facts, revisions and approvals.
 - 2026-10-16 · adopted · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
+- 2026-10-16 · adopted · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 
 ### [ ] EM-047: Independent scenario comparisons must share one baseline
 
@@ -981,7 +985,7 @@ A configured provider can be unreachable; a valid model response can be semantic
 
 **Roadmap links:** `B02-12` (blocked), `B02-15` (partial), `B02-18` (blocked), `ES03-08` (blocked).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `scripts/acceptance.py`, `evals/full_journey.py`, `docs/delivery/sessions/2026-09-24-integration-acceptance-local.md`, `docs/decisions/0004-evidence-led-course-and-recovery.md`, `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`.
+**Evidence / source record:** `scripts/acceptance.py`, `evals/full_journey.py`, `docs/delivery/sessions/2026-09-24-integration-acceptance-local.md`, `docs/decisions/0004-evidence-led-course-and-recovery.md`, `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/research/github-2026-10-16/tencent-memory.md`.
 
 **Decision history:**
 
@@ -990,6 +994,7 @@ A configured provider can be unreachable; a valid model response can be semantic
 - 2026-10-15 · adopted · Codex sprint review: Historical Qwen replay revalidates the distinction between exact compiler checks, prompt provenance, semantic quality and assisted recovery. Prompt version now survives success and rejection; fresh inference and human judgement remain outstanding.
 - 2026-10-15 · adopted · Codex provider evidence sprint: Retain bounded rejected-extraction output through async jobs and disposable journey evidence. Concrete unperformed review records preserve the distinction between scripted integration, owner end review and independent professional evaluation; no gate is promoted.
 - 2026-10-15 · adopted · Codex integration review: Unify latest source and separate documentation without replacing newer runtime/acceptance evidence. Preserve both archive variants and histories; owner authorizes this main integration, not release/model/human acceptance.
+- 2026-10-16 · adopted · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 
 ### [ ] EM-056: A candidate route is not a human-selected course
 
@@ -1090,12 +1095,13 @@ The cumulative workspace has more inspection and review surfaces. It is not yet 
 
 **Roadmap links:** `B04-03` (not_started), `B02-22` (not_started), `B04-04` (deferred).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/vision/8BALL.md`, `evals/PLAN-QUALITY-GATE.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
+**Evidence / source record:** `docs/vision/8BALL.md`, `evals/PLAN-QUALITY-GATE.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT documentation review: Adopt the bounded design direction, not runtime completion. Owner review and the listed acceptance work remain open.
 - 2026-10-16 · adopted · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
+- 2026-10-16 · adopted · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 
 ### [ ] EM-062: A delivery claim requires a recoverable implementation
 
@@ -1125,11 +1131,12 @@ A preserved correction could reveal a missing dependency, changed meaning or exc
 
 **Roadmap links:** `B04-04` (deferred), `B04-02` (not_started), `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/vision/ENDSTATE.md`, `docs/vision/8BALL.md`.
+**Evidence / source record:** `docs/vision/ENDSTATE.md`, `docs/vision/8BALL.md`, `docs/research/github-2026-10-16/tencent-memory.md`.
 
 **Decision history:**
 
 - 2026-09-24 · candidate · ChatGPT documentation review: Retained for owner review; no new mandatory scope or implementation claim.
+- 2026-10-16 · candidate · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 
 ### [ ] EM-064: Some outcomes need evidence over a declared confirmation window
 
@@ -1332,11 +1339,12 @@ MiroFish/OASIS source inspection shows Twitter/Reddit action spaces and simulati
 
 **Roadmap links:** `ES03-01` (partial), `ES04-01` (not_started).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
+**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`.
 
 **Decision history:**
 
 - 2026-10-16 · candidate · Codex research review: new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added.
+- 2026-10-16 · candidate · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 
 ### [ ] EM-076: Memory deletion and retraction are projection contracts
 
@@ -1349,11 +1357,12 @@ Graphiti library and companion server episode deletion follow different cleanup 
 
 **Roadmap links:** `B03-02` (not_started), `B04-02` (not_started).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
+**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`.
 
 **Decision history:**
 
 - 2026-10-16 · candidate · Codex research review: new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added.
+- 2026-10-16 · candidate · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 
 ### [ ] EM-077: A whole experiment needs a budget beyond each model call
 
@@ -1366,11 +1375,12 @@ Model costs multiply across cases, branches, actors, rounds, repeats, embeddings
 
 **Roadmap links:** `ES03-05` (partial), `B03-04` (not_started).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
+**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`.
 
 **Decision history:**
 
 - 2026-10-16 · candidate · Codex research review: new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added.
+- 2026-10-16 · candidate · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 
 ### [ ] EM-078: Upstream names hide materially different licence and API boundaries
 
@@ -1383,11 +1393,12 @@ Pinned research found Mesa 4.0 alpha API changes, Phoenix Elastic License 2.0, M
 
 **Roadmap links:** `ES04-04` (not_started), `DOC-06` (verified).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
+**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`.
 
 **Decision history:**
 
 - 2026-10-16 · candidate · Codex research review: new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added.
+- 2026-10-16 · candidate · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 
 ### [ ] EM-079: Optimisation candidates must retain feasibility and uncertainty status
 
@@ -1405,3 +1416,20 @@ OR-Tools distinguishes feasible, optimal, unknown and infeasible under declared 
 **Decision history:**
 
 - 2026-10-16 · candidate · Codex research review: new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added.
+
+### [ ] EM-080: A memory scenario summary is distinct from a hypothetical world branch
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** operator_hypothesis.
+**First recorded:** 2026-10-16. **Origin:** Owner-supplied TencentDB Agent Memory source assessment.
+
+Tencent L2 scenario means a model-maintained topic/scene narrative. Shared terminology does not implement ENDSTATE immutable case branches, explicit perturbations, simulated transitions or comparison/replay contracts.
+
+**Product implication:** Use explicit adapter responsibility names and separate procedural recall from hypothetical-world experiments; verify each capability against its actual contract before counting it as available.
+
+**Roadmap links:** `ES02-06` (partial), `ES03-01` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-16/tencent-memory.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
+
+**Decision history:**
+
+- 2026-10-16 · candidate · Codex source research: new_candidate: preserve terminology/contract distinction; no new required feature or runtime adoption.

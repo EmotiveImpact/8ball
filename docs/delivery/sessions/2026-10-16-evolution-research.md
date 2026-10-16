@@ -57,3 +57,30 @@ After V0.2 acceptance, the recommended first research implementation is the auth
 - 17 local links in new research/plan/session pages and 80 links in existing entry points resolved. All 26 manifest entries have unique repository identities and immutable 40-character revisions. New research artifact hashes are in the receipt.
 - No installed-wheel/native-browser rerun or actual-provider/upstream/human acceptance was performed for this documentation-only change. Prior installed/native results remain historical.
 - Final documentation branch commit and remote confirmation are reported at handoff; main remains the inspected consolidated baseline. No uncommitted app work is part of this sprint.
+
+## Tencent follow-up
+
+Base `7309f54539f17b973511e940147a817958891e42`; same documentation branch. Owner requested a stronger overall recommendation and assessment of TencentDB Agent Memory. Pinned upstream `e9a82935b52741e0c798c75326e90b7144eb4d5f`. Added source summary, contract/operations notes, separate manifest, proposed six-responsibility architecture and a complete-reference-case milestone. Prior research receipts describe their exact earlier snapshot; reconstruct `7309f54` to compare its artifact hashes. The new receipt binds the follow-up files and current checks.
+
+### Emergence Review: Tencent follow-up
+
+Question: what did this work reveal that we had not properly seen? Memory's “scenario”, generated procedure “review”, source citations and cross-session scope have concrete semantics that differ from ENDSTATE requirements. EM-080 preserves the new terminology distinction; EM-019/020/027/046/055/061/063/075/076/077/078 gained additive source evidence and rationale. No candidate was promoted into required runtime scope.
+
+- ER-01/02: one additional source connects team/procedural continuity and bounded JEV choices; existing architecture remains authoritative.
+- ER-03: memory summaries can rewrite/merge and omit indexed source ancestry; generated review is a model step. Preserve counterevidence.
+- ER-04: measure the retrieval gap and obtain exact provider/model configuration before calls.
+- ER-05: use pinned beta source now and choose/test a supported source/image/SDK set at adoption.
+- ER-06: capture, consolidation, profiles and skill extraction multiply model calls and disclosure; no automatic learning.
+- ER-07: Tencent is a procedural-memory candidate; Graphiti a temporal-relationship candidate; use a baseline and one initial role.
+- ER-08: preserve fixer resolution and reusable-engine objectives; source review changes no acceptance gate.
+- ER-09: source retraction must invalidate/rebuild derived memory before reuse; review is not erasure.
+- ER-10: no runtime, auth/isolation certification, benchmark reproduction or interoperability result is claimed.
+- ER-11: JEV choice output is a proposal with none/unavailable states; it neither selects the human course nor grants authority.
+- ER-12: bounded contract/configuration inspection at one commit; README benchmark is upstream-reported and public test references are not reproduced receipts.
+- ER-13: retain raw failures, canonical originals and attribution; provider summaries do not repair generation acceptance outputs.
+- ER-14: pin source, preserve earlier evidence/history and bind follow-up documents/checks to their own receipt.
+- ER-15: compare citation recovery, useful recalled procedures, stale/incorrect synthesis, review effort, latency and model cost.
+
+Evidence: source observations and design hypotheses only. UX: retrieve labelled context within the existing product; architecture: optional explicit adapters; disposition: candidate refinement and existing documentation tasks. Model access and independent/human V0.2 requirements remain unresolved. Final validation/publication is recorded in the follow-up receipt and delivery response.
+
+Follow-up validation: 60 focused documentation/API/history tests passed in 1.10 seconds (one existing deprecation warning); delivery/changelog/emergence/whitespace checks passed. 181 protected source/test/script/workflow/archive/PRD files are byte-identical; all 69 task requirements/statuses and 11 milestones are unchanged; 57 local document links resolve. No upstream tests, full app/native rerun or model/human evaluation. New source/plan artifact hashes are in the follow-up receipt.

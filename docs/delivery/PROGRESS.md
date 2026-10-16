@@ -60,43 +60,43 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Master PRD incorporates naming, reuse, living plans and unchanged original acceptance requirements. Original blob hash matches.
   - Next: Use repository references instead of expecting chat access.
-  - Branch/base: `docs/endstate-evolution-plan-20261016` / `d7d36b842464d7ad0e974a59730a682f1739fccf`.
-  - Evidence: `EV-DECISION`, `EV-ORIGINAL`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH` (registry below).
+  - Branch/base: `docs/endstate-evolution-plan-20261016` / `7309f54539f17b973511e940147a817958891e42`.
+  - Evidence: `EV-DECISION`, `EV-ORIGINAL`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH` (registry below).
 
 - [x] **DOC-03 Create one evidence-linked version/subpart tracker for chat and Codex**
   - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Ledger validates; generated checklist is current; regression checks reject unsupported completion and broken IDs.
   - Next: Use this ledger and session protocol in both chat and Codex; keep the generated checklist in sync.
-  - Branch/base: `docs/endstate-evolution-plan-20261016` / `d7d36b842464d7ad0e974a59730a682f1739fccf`.
+  - Branch/base: `docs/endstate-evolution-plan-20261016` / `7309f54539f17b973511e940147a817958891e42`.
   - Dependencies: `DOC-01`, `DOC-02`.
   - Existing code: `scripts/delivery.py`.
-  - Evidence: `EV-TRACKING`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH` (registry below).
+  - Evidence: `EV-TRACKING`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH` (registry below).
 
 - [x] **DOC-04 Mandatory changelog and in-app product history**
   - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Every build adds a dated evidence-linked entry; generated CHANGELOG.md and in-app history share one source; base comparison detects missing entries or rewritten history.
   - Next: Enforce a new immutable-history changelog entry in each following session and integration commit. Local documentation/API/render scope verified; no source publication or release implied.
-  - Branch/base: `docs/endstate-evolution-plan-20261016` / `d7d36b842464d7ad0e974a59730a682f1739fccf`.
+  - Branch/base: `docs/endstate-evolution-plan-20261016` / `7309f54539f17b973511e940147a817958891e42`.
   - Existing code: `scripts/changelog.py`, `docs/delivery/changelog.json`, `web/v2/changelog-view.js`.
-  - Evidence: `EV-PLAN-STUDIO-LOCAL`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH` (registry below).
+  - Evidence: `EV-PLAN-STUDIO-LOCAL`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH` (registry below).
 
 - [x] **DOC-05 Mandatory end-of-sprint emergence review**
   - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Every new build sprint explicitly records what emerged, its evidence level and roadmap disposition; new changelog entries cannot omit the emergence review.
   - Next: Run the Emergence Review at every substantive build handoff; only promote discoveries to required roadmap scope through an explicit ledger or decision update.
-  - Branch/base: `docs/endstate-evolution-plan-20261016` / `d7d36b842464d7ad0e974a59730a682f1739fccf`.
+  - Branch/base: `docs/endstate-evolution-plan-20261016` / `7309f54539f17b973511e940147a817958891e42`.
   - Dependencies: `DOC-03`, `DOC-04`.
   - Existing code: `docs/delivery/EMERGENCE-REVIEW.md`, `scripts/changelog.py`, `tests/test_changelog.py`.
-  - Evidence: `EV-EMERGENCE-REVIEW`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH` (registry below).
+  - Evidence: `EV-EMERGENCE-REVIEW`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH` (registry below).
 
 - [x] **DOC-06 Evolving complete emergence register and owner-review prompt suite**
   - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Every recorded discovery is retained, linked to roadmap scope, and rendered with append-only dispositions; declined items remain visible and no candidate inherits an unrelated completion tick.
   - Next: Preserve all original discoveries and append review history. Use ADR 0004 and docs/vision for the strengthened direction; no optional candidate or delivery claim becomes verified without its own evidence.
-  - Branch/base: `docs/endstate-evolution-plan-20261016` / `d7d36b842464d7ad0e974a59730a682f1739fccf`.
+  - Branch/base: `docs/endstate-evolution-plan-20261016` / `7309f54539f17b973511e940147a817958891e42`.
   - Dependencies: `DOC-05`.
   - Existing code: `scripts/emergence.py`, `docs/delivery/emergence.json`, `docs/prompts/EMERGENT-INSIGHTS.md`.
-  - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL`, `EV-VISION-REVIEW`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH` (registry below).
+  - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL`, `EV-VISION-REVIEW`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH` (registry below).
 
 
 ## 8BALL 0.1: Local outcome-planning foundation
@@ -851,3 +851,10 @@ These references have specific scopes and may be historical. A reference to a de
 - Repository evidence: [docs/evidence/evolution-research-2026-10-16.json](../../docs/evidence/evolution-research-2026-10-16.json).
 - Result/scope: 26 pinned external repositories mapped to original product goals and proposed staged experiments. Source research and documentation validation only; no runtime, model, human or release acceptance.
 - Code revision: `d7d36b842464d7ad0e974a59730a682f1739fccf`.
+
+### EV-TENCENT-MEMORY-RESEARCH
+
+- Kind: `bounded_source_research_and_documentation_validation`.
+- Repository evidence: [docs/evidence/tencent-memory-research-2026-10-16.json](../../docs/evidence/tencent-memory-research-2026-10-16.json).
+- Result/scope: Tencent memory candidate assessed and combined architecture sharpened. Source-only findings and documentation checks; no upstream runtime, model, independent/human acceptance or required-scope change.
+- Code revision: `7309f54539f17b973511e940147a817958891e42`.

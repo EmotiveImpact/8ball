@@ -1,0 +1,12 @@
+{
+  "captured_on": "2026-10-16",
+  "repository": "TencentCloud/TencentDB-Agent-Memory",
+  "commit": "e9a82935b52741e0c798c75326e90b7144eb4d5f",
+  "source_url": "https://github.com/TencentCloud/TencentDB-Agent-Memory/tree/e9a82935b52741e0c798c75326e90b7144eb4d5f",
+  "application_base_commit": "7309f54539f17b973511e940147a817958891e42",
+  "license": "MIT source; dependencies/model/service terms separate",
+  "method": "Bounded source/manifests/configuration/contract inspection only",
+  "runtime_executed": false,
+  "inference_performed": false,
+  "adoption": "candidate only; optional non-client team/procedural knowledge experiment after scoped decision and demonstrated retrieval gap"
+}

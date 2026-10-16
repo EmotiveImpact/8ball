@@ -62,3 +62,7 @@ The engine's current remote HEAD is still `4e4fa06d7f527480b66ceb224a5d37bcfa2f9
 5. Numerical outputs need status semantics. OR-Tools timeout/unknown is not impossibility; pymoo may retain a least-infeasible candidate; sensitivity analysis is not causal identification.
 
 These discoveries are retained as EM-075 through EM-079 alongside refinements to earlier insights. They are candidate integration requirements and source observations, not newly accepted runtime features or rewritten V0.2 gates.
+
+## Owner follow-up: TencentDB Agent Memory (RS-36)
+
+[Source-pinned Tencent assessment](github-2026-10-16/tencent-memory.md), [contract findings](github-2026-10-16/tencent-memory-contracts.md), [operating/evaluation evidence](github-2026-10-16/tencent-memory-operations.md) and [manifest](github-2026-10-16/tencent-source-manifest.json) add a 27th repository without changing the earlier 26-repository snapshot. Best provisional fit is procedural/team continuity through a narrow Core API adapter. Its local SQLite/BM25 mode does not require Tencent Cloud; extraction/consolidation still calls a model. L2 “scenario” means a topic summary. Source attribution, cross-session profile scope, retraction and generated-skill review need explicit host-owned contracts. Existing JEV bounded-choice code is a useful reference, not a full-route quality result. The expanded [evolution plan](../strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md) makes one complete reference case the next research proof. No runtime adoption, installation or new acceptance pass.
