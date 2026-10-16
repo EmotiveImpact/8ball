@@ -25,6 +25,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from eightball.models import utcnow
 from eightball.v2.runtime_status import local_status
 from eightball.v2.hosted import settings,HostedSetupRequired
+from eightball.v2.compatible import settings as compatible_settings
 from scripts.acceptance import native_probe,ensure_port_available,source_manifest,output_directory
 
 STEPS=[
@@ -51,7 +52,13 @@ def preflight(provider,allow_inference=False,allow_external=False):
         try:cfg=settings()
         except HostedSetupRequired as exc:raise SetupBlocked(str(exc)) from None
         return {'provider':provider,'model':cfg.model,'inference_provider':cfg.provider,'credentials':'configured_not_authenticated'}
-    if provider!='ollama_staged':raise SetupBlocked('Only staged Ollama or explicit Hugging Face is supported')
+    if provider=='openai_compatible':
+        if not allow_external:raise SetupBlocked('Hosted fixtures require --allow-external. No hosted request started.')
+        try:cfg=compatible_settings()
+        except HostedSetupRequired as exc:raise SetupBlocked(str(exc)) from None
+        return {'provider':provider,'model':cfg.model,'inference_provider':cfg.provider,
+                'endpoint_host':cfg.endpoint_host,'credentials':'configured_not_authenticated'}
+    if provider!='ollama_staged':raise SetupBlocked('Choose staged Ollama, Hugging Face or the configured hosted API')
     local=local_status()
     if local['runtime']!='running' or local['model_present'] is not True:
         raise SetupBlocked(local['note'])
@@ -183,7 +190,7 @@ def run(provider,allow_inference=False,allow_external=False,transport='native',o
         source_id=c['evidence'][-1]['id'];step(3,c['evidence'][-1]['text']==text)
         prior=deepcopy(c)
         extraction=api.analyse(c,'ollama' if provider=='ollama_staged' else provider,'extract',[source_id],report,allow_external)
-        step(4,extraction['provider'] in ('ollama','huggingface'))
+        step(4,extraction['provider'] in ('ollama','huggingface','openai_compatible'))
         step(5,api.read(base)['case']==prior and not c['observations'])
         result=api.post(base+'/proposals/'+extraction['id']+'/review',{'event_id':uuid.uuid4().hex,'expected_revision':c['revision'],'choices':choices_for_mixed_review(extraction)})
         c=result['case'];step(6,not c['observations'],{'nature':'Scripted software review only; not independently judged'})
@@ -247,7 +254,7 @@ def run(provider,allow_inference=False,allow_external=False,transport='native',o
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--provider',choices=['ollama_staged','huggingface'],required=True)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--provider',choices=['ollama_staged','huggingface','openai_compatible'],required=True)
     p.add_argument('--allow-inference',action='store_true');p.add_argument('--allow-external',action='store_true')
     p.add_argument('--transport',choices=['native','http'],default='native');p.add_argument('--output',type=Path)
     a=p.parse_args();r,_=run(a.provider,a.allow_inference,a.allow_external,a.transport,a.output)

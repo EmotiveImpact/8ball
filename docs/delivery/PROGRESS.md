@@ -22,11 +22,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 ## Next work
 
-- **B02-09: Reliable reviewed graph proposals for new situations**. Select and authorise a provider/model, rerun all four unchanged generation fixtures with prompt endstate.draft.prompts.v2, then run the actual-provider native journey and obtain independent human quality labels. Preserve every failure; do not repair output or substitute catalogue plans.
+- **B02-09: Reliable reviewed graph proposals for new situations**. Activate selected Qwen/API settings and agree fixture spending/transmission, then run unchanged generation fixtures through the strict compatible adapter; preserve raw failures and obtain independent semantic evaluation. No catalogue or repaired-output substitution.
 - **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
 - **B02-11: Independent quality evaluation and production-model selection**. Use docs/delivery/review/protocol.template.json to obtain prospective owner/qualified reviewer approval and independently authored labels. Run authorized actual-provider comparisons only afterward; templates/native software acceptance are not semantic approval.
-- **B02-12: Full twenty-step real-model V0.2 acceptance journey**. Run the actual-provider integration with authorised service/token and collect independent human review.
-- **B02-15: Model progress/cancellation and accurate installation status**. Verify cancellation, stale results and runtime status with the actual selected provider; never recall already-billed work by implication.
+- **B02-12: Full twenty-step real-model V0.2 acceptance journey**. After the selected actual provider passes generation, run full_journey.py with openai_compatible and explicit inference/external flags, then genuine independent/human acceptance. Controlled HTTP/native tests are not this gate.
+- **B02-15: Model progress/cancellation and accurate installation status**. Controlled new-API cancellation/stale/restart paths are covered; repeat with the selected actual provider once configuration and budget/data permissions are active. Preserve already-sent-request limits.
 - **B02-16: Complete accessibility and supported-environment validation**. Complete the recorded human accessibility and supported-platform review, not another UI feature. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
 - **B02-19: Black operator visual system and transparent intelligence controls**. Review the current black workspace without expanding scope; preserve passing native controls. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
 - **B02-20: Black relationship explorer with local focus, directed flow and records view**. Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
@@ -36,7 +36,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 | Track / milestone | Required subparts verified | Acceptance scope | Release |
 | --- | ---: | --- | --- |
-| Governance 1.1: Naming, PRD and shared delivery control | 6/6 | Scoped gate met | not released |
+| Governance 1.1: Naming, PRD and shared delivery control | 7/7 | Scoped gate met | not released |
 | 8BALL 0.1: Local outcome-planning foundation | 3/3 | Scoped gate met | not released |
 | 8BALL 0.2: Reviewed situation intelligence | 10/20 | Not yet accepted | not released |
 | 8BALL 0.3: Secure agency pilot | 0/6 | Not yet accepted | not released |
@@ -97,6 +97,15 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Dependencies: `DOC-05`.
   - Existing code: `scripts/emergence.py`, `docs/delivery/emergence.json`, `docs/prompts/EMERGENT-INSIGHTS.md`.
   - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL`, `EV-VISION-REVIEW`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH`, `EV-RUFLO-RESEARCH` (registry below).
+
+- [x] **DOC-07 Preserve pinned upstream research source checkouts**
+  - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
+  - Acceptance: All28 inspected repository pins are populated as source-only research checkouts with original licences, exact manifest identities, explicit model/LFS/nested exceptions and reproducible Git-only verification. No runtime adoption or upstream execution.
+  - Next: Use the Git-only research helper for later restoration/verification; scope any upstream software installation or adaptation separately.
+  - Branch/base: `feat/v02-compatible-provider-20261016` / `c9fd38438ba52e9320bc55b96132086bfe57ce6a`.
+  - Dependencies: `DOC-06`.
+  - Existing code: `.gitmodules`, `research/README.md`, `research/inventory.json`, `research/sources.py`, `research/AGENTS.md`.
+  - Evidence: `EV-RESEARCH-COPY` (registry below).
 
 
 ## 8BALL 0.1: Local outcome-planning foundation
@@ -181,12 +190,12 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-APP`, `EV-UI` (registry below).
 
 - [ ] **B02-09 Reliable reviewed graph proposals for new situations**
-  - Status: `blocked`. Owner: Codex. Updated: 2026-10-15.
+  - Status: `blocked`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.
-  - Next: Select and authorise a provider/model, rerun all four unchanged generation fixtures with prompt endstate.draft.prompts.v2, then run the actual-provider native journey and obtain independent human quality labels. Preserve every failure; do not repair output or substitute catalogue plans.
-  - Branch/base: `fix/v02-provider-failure-evidence-20261015` / `45f8794733df9635d8daf5146a37fb94af9e8e90`.
-  - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`.
-  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW` (registry below).
+  - Next: Activate selected Qwen/API settings and agree fixture spending/transmission, then run unchanged generation fixtures through the strict compatible adapter; preserve raw failures and obtain independent semantic evaluation. No catalogue or repaired-output substitution.
+  - Branch/base: `feat/v02-compatible-provider-20261016` / `c9fd38438ba52e9320bc55b96132086bfe57ce6a`.
+  - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`, `eightball/v2/compatible.py`, `evals/live_compatible.py`.
+  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE` (registry below).
   - Blocker: Fresh selected-provider generation has not been rerun after prompt correction; local Ollama is unreachable and hosted model/provider/credential variables are unset. Provider selection and inference permission are pending. Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate.
 
 - [ ] **B02-10 Robust source extraction, deadlines and entity reconciliation**
@@ -208,13 +217,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Blocker: Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed.
 
 - [ ] **B02-12 Full twenty-step real-model V0.2 acceptance journey**
-  - Status: `blocked`. Owner: Codex. Updated: 2026-10-15.
+  - Status: `blocked`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Blank case -> real extraction -> mixed human review -> valid graph -> distinct routes -> new evidence/replan -> isolated refusal -> approval/completion -> reload/export, all native.
-  - Next: Run the actual-provider integration with authorised service/token and collect independent human review.
-  - Branch/base: `fix/v02-provider-failure-evidence-20261015` / `45f8794733df9635d8daf5146a37fb94af9e8e90`.
+  - Next: After the selected actual provider passes generation, run full_journey.py with openai_compatible and explicit inference/external flags, then genuine independent/human acceptance. Controlled HTTP/native tests are not this gate.
+  - Branch/base: `feat/v02-compatible-provider-20261016` / `c9fd38438ba52e9320bc55b96132086bfe57ce6a`.
   - Dependencies: `B02-09`, `B02-10`, `B02-11`.
   - Existing code: `tests/browser_v2.py`, `evals/full_journey.py`, `scripts/acceptance.py`, `.github/workflows/provider-journey.yml`.
-  - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW` (registry below).
+  - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE` (registry below).
   - Blocker: Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey.
 
 - [x] **B02-13 Guided nested graph authoring instead of JSON-only advanced editing**
@@ -235,13 +244,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Blocker: Independent multi-source identity/date usefulness review remains outstanding. No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed.
 
 - [ ] **B02-15 Model progress/cancellation and accurate installation status**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-15.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: The UI reports actual runtime/weights/credential state and cancels work without stale commits. No silent large model download.
-  - Next: Verify cancellation, stale results and runtime status with the actual selected provider; never recall already-billed work by implication.
-  - Branch/base: `fix/v02-provider-failure-evidence-20261015` / `45f8794733df9635d8daf5146a37fb94af9e8e90`.
+  - Next: Controlled new-API cancellation/stale/restart paths are covered; repeat with the selected actual provider once configuration and budget/data permissions are active. Preserve already-sent-request limits.
+  - Branch/base: `feat/v02-compatible-provider-20261016` / `c9fd38438ba52e9320bc55b96132086bfe57ce6a`.
   - Dependencies: `ES03-04`.
-  - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`.
-  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW` (registry below).
+  - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`, `eightball/v2/compatible.py`, `tests/test_compatible_integration.py`.
+  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE` (registry below).
   - Blocker: Lifecycle behaviour with the selected real inference provider remains unverified.
 
 - [ ] **B02-16 Complete accessibility and supported-environment validation**
@@ -533,11 +542,12 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-HF-BLACK-LOCAL` (registry below).
 
 - [ ] **ES03-05 Failure handling, model trace and governed provider selection**
-  - Status: `partial`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Provider replacement, refusal, timeout, malformed output, prompt injection and trace retention satisfy shared gates with measured quality.
-  - Next: Extend existing fail-closed tests and preserve negative model results.
+  - Next: Retain new strict API transport traces and controlled failure evidence; evaluate the selected actual model and independent source/plan quality before closing the broader gate.
+  - Branch/base: `feat/v02-compatible-provider-20261016` / `c9fd38438ba52e9320bc55b96132086bfe57ce6a`.
   - Existing code: `eightball/v2/intelligence.py`, `eightball/v2/store.py`.
-  - Evidence: `EV-APP`, `EV-QWEN`, `EV-CLASSIFIER` (registry below).
+  - Evidence: `EV-APP`, `EV-QWEN`, `EV-CLASSIFIER`, `EV-COMPATIBLE-CODE` (registry below).
 
 - [x] **ES03-06 Opt-in Hugging Face development transport contract** (optional, not a version gate)
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
@@ -565,6 +575,15 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Dependencies: `ES03-01`, `B02-02`.
   - Evidence: `EV-DRAFT-RECOVERY-GAP` (registry below).
   - Blocker: The latest supplied repair handoff explicitly reports that no completed working tree was found. Only verified alpha.7 source was recovered in this review.
+
+- [ ] **ES03-09 Opt-in OpenAI-compatible hosted endpoint contract** (optional, not a version gate)
+  - Status: `implemented`. Owner: Codex. Updated: 2026-10-16.
+  - Acceptance: Controlled HTTP and native UI checks verify explicit server-owned endpoint/model/provider, permission, pinned routing, bounded strict responses/failure evidence, secrets protection, stage/cancellation/stale/restart guards and unchanged frozen-fixture harness. This transport scope does not claim actual inference or semantic/human acceptance.
+  - Next: Complete cumulative native software verification, then activate selected actual Qwen/API settings and agreed spending/data scope for B02-09/B02-12/B02-15.
+  - Branch/base: `feat/v02-compatible-provider-20261016` / `c9fd38438ba52e9320bc55b96132086bfe57ce6a`.
+  - Dependencies: `ES03-06`.
+  - Existing code: `eightball/v2/compatible.py`, `tests/test_compatible_provider.py`, `tests/test_compatible_integration.py`, `tests/test_compatible_cli.py`, `evals/live_compatible.py`, `docs/v2/QWEN-SETUP.md`.
+  - Evidence: `EV-COMPATIBLE-CODE` (registry below).
 
 
 ## ENDSTATE 0.4: Domain packs and integration interfaces
@@ -865,3 +884,15 @@ These references have specific scopes and may be historical. A reference to a de
 - Repository evidence: [docs/evidence/ruflo-research-2026-10-16.json](../../docs/evidence/ruflo-research-2026-10-16.json).
 - Result/scope: Ruflo coordination/execution/memory contracts assessed; candidate optional harness, no runtime adoption or model/professional/human acceptance.
 - Code revision: `bf54f607bb0e13d0c6adfc0f59ee146e75be287b`.
+
+### EV-RESEARCH-COPY
+
+- Kind: `pinned_source_copy_verification`.
+- Repository evidence: [docs/evidence/research-copy-2026-10-16.json](../../docs/evidence/research-copy-2026-10-16.json).
+- Result/scope: 28 exact source checkouts, explicit model/LFS/nested exceptions and128 preserved licence/notice blobs verified; no runtime adoption.
+
+### EV-COMPATIBLE-CODE
+
+- Kind: `controlled_transport_and_software_validation`.
+- Repository evidence: [docs/evidence/compatible-native-2026-10-16.json](../../docs/evidence/compatible-native-2026-10-16.json).
+- Result/scope: Explicit API transport and controlled lifecycle/UI/preflight checks implemented; cumulative native verification pending. No actual provider, semantic or human acceptance.

@@ -1,0 +1,112 @@
+[submodule "research/external/666ghj/MiroFish"]
+	path = research/external/666ghj/MiroFish
+	url = https://github.com/666ghj/MiroFish.git
+	shallow = true
+[submodule "research/external/anyoptimization/pymoo"]
+	path = research/external/anyoptimization/pymoo
+	url = https://github.com/anyoptimization/pymoo.git
+	shallow = true
+[submodule "research/external/Arize-ai/phoenix"]
+	path = research/external/Arize-ai/phoenix
+	url = https://github.com/Arize-ai/phoenix.git
+	shallow = true
+[submodule "research/external/camel-ai/oasis"]
+	path = research/external/camel-ai/oasis
+	url = https://github.com/camel-ai/oasis.git
+	shallow = true
+[submodule "research/external/docling-project/docling"]
+	path = research/external/docling-project/docling
+	url = https://github.com/docling-project/docling.git
+	shallow = true
+[submodule "research/external/getzep/graphiti"]
+	path = research/external/getzep/graphiti
+	url = https://github.com/getzep/graphiti.git
+	shallow = true
+[submodule "research/external/getzep/zep"]
+	path = research/external/getzep/zep
+	url = https://github.com/getzep/zep.git
+	shallow = true
+[submodule "research/external/getzep/zep-python"]
+	path = research/external/getzep/zep-python
+	url = https://github.com/getzep/zep-python.git
+	shallow = true
+[submodule "research/external/google/or-tools"]
+	path = research/external/google/or-tools
+	url = https://github.com/google/or-tools.git
+	shallow = true
+[submodule "research/external/keycloak/keycloak"]
+	path = research/external/keycloak/keycloak
+	url = https://github.com/keycloak/keycloak.git
+	shallow = true
+[submodule "research/external/langchain-ai/langgraph"]
+	path = research/external/langchain-ai/langgraph
+	url = https://github.com/langchain-ai/langgraph.git
+	shallow = true
+[submodule "research/external/langchain-ai/langgraph-swarm-py"]
+	path = research/external/langchain-ai/langgraph-swarm-py
+	url = https://github.com/langchain-ai/langgraph-swarm-py.git
+	shallow = true
+[submodule "research/external/mem0ai/mem0"]
+	path = research/external/mem0ai/mem0
+	url = https://github.com/mem0ai/mem0.git
+	shallow = true
+[submodule "research/external/mesa/mesa"]
+	path = research/external/mesa/mesa
+	url = https://github.com/mesa/mesa.git
+	shallow = true
+[submodule "research/external/microsoft/autogen"]
+	path = research/external/microsoft/autogen
+	url = https://github.com/microsoft/autogen.git
+	shallow = true
+[submodule "research/external/open-policy-agent/opa"]
+	path = research/external/open-policy-agent/opa
+	url = https://github.com/open-policy-agent/opa.git
+	shallow = true
+[submodule "research/external/openfga/openfga"]
+	path = research/external/openfga/openfga
+	url = https://github.com/openfga/openfga.git
+	shallow = true
+[submodule "research/external/postgres/postgres"]
+	path = research/external/postgres/postgres
+	url = https://github.com/postgres/postgres.git
+	shallow = true
+[submodule "research/external/promptfoo/promptfoo"]
+	path = research/external/promptfoo/promptfoo
+	url = https://github.com/promptfoo/promptfoo.git
+	shallow = true
+[submodule "research/external/py-why/dowhy"]
+	path = research/external/py-why/dowhy
+	url = https://github.com/py-why/dowhy.git
+	shallow = true
+[submodule "research/external/py-why/EconML"]
+	path = research/external/py-why/EconML
+	url = https://github.com/py-why/EconML.git
+	shallow = true
+[submodule "research/external/SALib/SALib"]
+	path = research/external/SALib/SALib
+	url = https://github.com/SALib/SALib.git
+	shallow = true
+[submodule "research/external/simulatrex/possible-worlds"]
+	path = research/external/simulatrex/possible-worlds
+	url = https://github.com/simulatrex/possible-worlds.git
+	shallow = true
+[submodule "research/external/simulatrex/simulatrex-engine"]
+	path = research/external/simulatrex/simulatrex-engine
+	url = https://github.com/simulatrex/simulatrex-engine.git
+	shallow = true
+[submodule "research/external/temporalio/sdk-python"]
+	path = research/external/temporalio/sdk-python
+	url = https://github.com/temporalio/sdk-python.git
+	shallow = true
+[submodule "research/external/tsinghua-fib-lab/AgentSociety"]
+	path = research/external/tsinghua-fib-lab/AgentSociety
+	url = https://github.com/tsinghua-fib-lab/AgentSociety.git
+	shallow = true
+[submodule "research/external/TencentCloud/TencentDB-Agent-Memory"]
+	path = research/external/TencentCloud/TencentDB-Agent-Memory
+	url = https://github.com/TencentCloud/TencentDB-Agent-Memory.git
+	shallow = true
+[submodule "research/external/ruvnet/ruflo"]
+	path = research/external/ruvnet/ruflo
+	url = https://github.com/ruvnet/ruflo.git
+	shallow = true

@@ -1,3 +1,7 @@
+## Latest development: Qwen API transport and research source copies
+
+On `feat/v02-compatible-provider-20261016`, based on research checkpoint `c9fd384`, all28 inspected source repositories are now populated under [research/external](research/README.md) at immutable pins. The [Qwen setup guide](docs/v2/QWEN-SETUP.md) explains secure hosted endpoint configuration. Read [the current sprint](docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md) and [handoff](docs/delivery/HANDOFF.md) for actual software results. This development branch includes all consolidated main/fixes and research proposals. Actual-model, independent/human V0.2 acceptance remains open; source copies adopt no deferred runtime.
+
 ## Latest research proposal, 16 October 2026
 
 For the owner's requested GitHub search and combined system plan, read [ENDSTATE evolution](docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md), [pinned component research](docs/research/GITHUB-COMPONENTS-2026-10-16.md) and [the session handoff](docs/delivery/sessions/2026-10-16-evolution-research.md). This is a documentation proposal on `docs/endstate-evolution-plan-20261016`, based on consolidated main `d7d36b8`; application behavior and acceptance gates are unchanged. The next engineering requirement remains actual-provider V0.2 evaluation.

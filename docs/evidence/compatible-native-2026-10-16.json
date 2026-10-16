@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-16",
+  "kind": "software_verification",
+  "base_commit": "c9fd38438ba52e9320bc55b96132086bfe57ce6a",
+  "branch": "feat/v02-compatible-provider-20261016",
+  "status": "cumulative_native_pending",
+  "focused_checks": {
+    "transport_controlled_tests": 109,
+    "sqlite_http_lifecycle_tests": 22,
+    "cli_preflight_report_tests": 4,
+    "acceptance_boundary_tests": 36,
+    "native_development_checks": 22
+  },
+  "actual_model_calls": 0,
+  "independent_or_human_acceptance": false
+}

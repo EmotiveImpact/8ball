@@ -180,3 +180,7 @@ No hosted deployment, tenant accounts, secure client portal, confidential file v
 Read the [8BALL vision](docs/vision/8BALL.md) and [ENDSTATE vision](docs/vision/ENDSTATE.md). Their mandate, chosen-course and reconsideration additions are design direction, not newly shipped features. The existing required V0.2 gates remain open.
 
 This documentation overlay is based on the recoverable alpha.7 source. A later Draft Repair handoff reports unrecovered source; do not claim its runtime or test count from this package. [ADR 0004](docs/decisions/0004-evidence-led-course-and-recovery.md) records the boundary and optional candidate tasks.
+
+## Hosted Qwen setup and preserved upstream sources
+
+See [Qwen/API setup](docs/v2/QWEN-SETUP.md) for the optional hosted connection and [research sources](research/README.md) for all28 pinned upstream checkouts. These source copies are research data; they do not install or adopt upstream products. Current evidence and remaining acceptance live in the [handoff](docs/delivery/HANDOFF.md) and sole [progress ledger](docs/delivery/progress.json).

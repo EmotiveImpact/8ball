@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-16. **81 recorded discoveries.**
+Last review: 2026-10-16. **83 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -352,12 +352,13 @@ A source excerpt needs its original position and version, not just a summary.
 
 **Roadmap links:** `B02-14` (partial).
 **Completion scope:** `B02-14`.
-**Evidence / source record:** `docs/v2/SOURCE-DESK.md`, `docs/research/github-2026-10-16/tencent-memory.md`.
+**Evidence / source record:** `docs/v2/SOURCE-DESK.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT development proposal: Adopt bounded scope now; wider interpretation still needs owner and operator review.
 - 2026-10-16 · adopted · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
+- 2026-10-16 · adopted · Codex compatible-provider sprint: existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime.
 
 ### [ ] EM-020: Compiler validation is not semantic correctness
 
@@ -370,7 +371,7 @@ Valid references and exact quotations can accompany an interpretation that misse
 
 **Roadmap links:** `B02-09` (blocked), `B02-11` (partial), `ES03-02` (blocked).
 **Completion scope:** `B02-11`.
-**Evidence / source record:** `docs/evidence/staged-compilation-verification.json`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`.
+**Evidence / source record:** `docs/evidence/staged-compilation-verification.json`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`.
 
 **Decision history:**
 
@@ -379,6 +380,7 @@ Valid references and exact quotations can accompany an interpretation that misse
 - 2026-10-16 · adopted · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
 - 2026-10-16 · adopted · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 - 2026-10-16 · adopted · Codex Ruflo source review: existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence.
+- 2026-10-16 · adopted · Codex compatible-provider sprint: existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime.
 
 ### [ ] EM-021: Review state and evidence character must be separate
 
@@ -563,12 +565,13 @@ A cancelled UI request can still complete or incur provider charges.
 
 **Roadmap links:** `B02-15` (partial).
 **Completion scope:** `B02-15`.
-**Evidence / source record:** `docs/v2/ANALYSIS-JOBS.md`, `docs/research/github-2026-10-16/ruflo.md`.
+**Evidence / source record:** `docs/v2/ANALYSIS-JOBS.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT development proposal: Adopt bounded scope now; wider interpretation still needs owner and operator review.
 - 2026-10-16 · adopted · Codex Ruflo source review: existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence.
+- 2026-10-16 · adopted · Codex compatible-provider sprint: existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime.
 
 ### [x] EM-032: Local source and remote repository can diverge
 
@@ -912,7 +915,7 @@ Separate successful test reports could be retained while the working source cont
 
 **Roadmap links:** `B02-12` (blocked), `B02-16` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/evidence/generation-role-contract-2026-10-15.json`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/ruflo.md`.
+**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/evidence/generation-role-contract-2026-10-15.json`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`.
 
 **Decision history:**
 
@@ -922,6 +925,7 @@ Separate successful test reports could be retained while the working source cont
 - 2026-10-15 · adopted · Codex integration review: Unify latest source and separate documentation without replacing newer runtime/acceptance evidence. Preserve both archive variants and histories; owner authorizes this main integration, not release/model/human acceptance.
 - 2026-10-16 · adopted · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
 - 2026-10-16 · adopted · Codex Ruflo source review: existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence.
+- 2026-10-16 · adopted · Codex compatible-provider sprint: existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime.
 
 ### [ ] EM-052: A built distribution is not an installed-product test
 
@@ -970,7 +974,7 @@ An actual-inference integration script can exercise approvals and evidence mecha
 
 **Roadmap links:** `B02-11` (partial), `B02-12` (blocked).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `evals/full_journey.py`, `docs/v2/ACCEPTANCE-RUNNER.md`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/ruflo.md`.
+**Evidence / source record:** `evals/full_journey.py`, `docs/v2/ACCEPTANCE-RUNNER.md`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`.
 
 **Decision history:**
 
@@ -978,6 +982,7 @@ An actual-inference integration script can exercise approvals and evidence mecha
 - 2026-10-15 · adopted · Codex provider evidence sprint: Retain bounded rejected-extraction output through async jobs and disposable journey evidence. Concrete unperformed review records preserve the distinction between scripted integration, owner end review and independent professional evaluation; no gate is promoted.
 - 2026-10-16 · adopted · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
 - 2026-10-16 · adopted · Codex Ruflo source review: existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence.
+- 2026-10-16 · adopted · Codex compatible-provider sprint: existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime.
 
 ### [ ] EM-055: Available, called, correct, integrated and released are separate gates
 
@@ -990,7 +995,7 @@ A configured provider can be unreachable; a valid model response can be semantic
 
 **Roadmap links:** `B02-12` (blocked), `B02-15` (partial), `B02-18` (blocked), `ES03-08` (blocked).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `scripts/acceptance.py`, `evals/full_journey.py`, `docs/delivery/sessions/2026-09-24-integration-acceptance-local.md`, `docs/decisions/0004-evidence-led-course-and-recovery.md`, `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`.
+**Evidence / source record:** `scripts/acceptance.py`, `evals/full_journey.py`, `docs/delivery/sessions/2026-09-24-integration-acceptance-local.md`, `docs/decisions/0004-evidence-led-course-and-recovery.md`, `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`.
 
 **Decision history:**
 
@@ -1001,6 +1006,7 @@ A configured provider can be unreachable; a valid model response can be semantic
 - 2026-10-15 · adopted · Codex integration review: Unify latest source and separate documentation without replacing newer runtime/acceptance evidence. Preserve both archive variants and histories; owner authorizes this main integration, not release/model/human acceptance.
 - 2026-10-16 · adopted · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 - 2026-10-16 · adopted · Codex Ruflo source review: existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence.
+- 2026-10-16 · adopted · Codex compatible-provider sprint: existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime.
 
 ### [ ] EM-056: A candidate route is not a human-selected course
 
@@ -1292,13 +1298,14 @@ Repeated local-only paragraphs coexist with a later published source and native 
 
 **Roadmap links:** `DOC-02` (verified), `DOC-03` (verified), `DOC-06` (verified).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-15-documentation-consolidation.md`, `docs/delivery/context-manifest.json`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-15-documentation-consolidation.md`, `docs/delivery/context-manifest.json`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`.
 
 **Decision history:**
 
 - 2026-10-15 · adopted · ChatGPT documentation consolidation: Bounded documentation/recovery improvement only; no new required runtime scope or acceptance claim.
 - 2026-10-15 · adopted · Codex integration review: Unify latest source and separate documentation without replacing newer runtime/acceptance evidence. Preserve both archive variants and histories; owner authorizes this main integration, not release/model/human acceptance.
 - 2026-10-16 · adopted · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
+- 2026-10-16 · adopted · Codex compatible-provider sprint: existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime.
 
 ### [ ] EM-073: Archive completeness must follow the supplied manifest, not an old file count
 
@@ -1311,12 +1318,13 @@ The newly supplied research ZIP contains 19 files, including README and its mani
 
 **Roadmap links:** `DOC-02` (verified), `DOC-03` (verified), `DOC-06` (verified).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-15-documentation-consolidation.md`, `docs/delivery/context-manifest.json`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-15-documentation-consolidation.md`, `docs/delivery/context-manifest.json`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`.
 
 **Decision history:**
 
 - 2026-10-15 · adopted · ChatGPT documentation consolidation: Bounded documentation/recovery improvement only; no new required runtime scope or acceptance claim.
 - 2026-10-15 · adopted · Codex integration review: Unify latest source and separate documentation without replacing newer runtime/acceptance evidence. Preserve both archive variants and histories; owner authorizes this main integration, not release/model/human acceptance.
+- 2026-10-16 · adopted · Codex compatible-provider sprint: existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime.
 
 ### [ ] EM-074: Shared readiness must be reachable through either genuine alternative
 
@@ -1383,13 +1391,14 @@ Model costs multiply across cases, branches, actors, rounds, repeats, embeddings
 
 **Roadmap links:** `ES03-05` (partial), `B03-04` (not_started).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`.
+**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`.
 
 **Decision history:**
 
 - 2026-10-16 · candidate · Codex research review: new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added.
 - 2026-10-16 · candidate · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 - 2026-10-16 · candidate · Codex Ruflo source review: existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence.
+- 2026-10-16 · candidate · Codex compatible-provider sprint: existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime.
 
 ### [ ] EM-078: Upstream names hide materially different licence and API boundaries
 
@@ -1460,3 +1469,37 @@ The inspected Ruflo embedding policy permits a deterministic hash fallback when 
 **Decision history:**
 
 - 2026-10-16 · candidate · Codex bounded source review: new_candidate: retain an adapter validation requirement from source inspection; no runtime dependency or required scope promoted.
+
+### [ ] EM-082: External research copies need an application trust and test boundary
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-16. **Origin:** Qwen API transport and owner-authorized research-copy sprint.
+
+Copying28 upstream repositories introduces more than71000 tracked files, upstream tests/configuration/instructions and model references. App verification must not traverse or execute them; sparse-clean Git status alone also does not establish every intended source path is materialized.
+
+**Product implication:** Prune research/external before test/source traversal, fingerprint declared/checked-out pins and metadata, and verify every source path plus explicit sparse/model/LFS/nested exceptions and original notices.
+
+**Roadmap links:** `DOC-07` (verified), `DOC-06` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `research/README.md`, `research/inventory.json`, `scripts/acceptance.py`, `tests/test_acceptance_runner.py`.
+
+**Decision history:**
+
+- 2026-10-16 · adopted · Codex build review: existing_task: implement bounded source/transport safeguards within the owner-authorized source-copy and provider work; no real-model or independent acceptance inferred.
+
+### [ ] EM-083: Rejected model evidence needs attributed and byte-safe retention
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-16. **Origin:** Qwen API transport and owner-authorized research-copy sprint.
+
+A malformed HTTP200 body is not necessarily assistant output. Valid assistant text can contain malformed JSON, invalid Unicode or a credential encoded with Unicode escapes; literal-only redaction was insufficient in the first controlled transport review.
+
+**Product implication:** Keep exact bounded assistant text only after envelope attribution, retain original hashes/omission reasons, reject reflected credentials including decoded forms, preserve HTTP-error redaction, and never repair evaluation output.
+
+**Roadmap links:** `ES03-09` (implemented), `B02-15` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `eightball/v2/compatible.py`, `tests/test_compatible_provider.py`.
+
+**Decision history:**
+
+- 2026-10-16 · adopted · Codex build review: existing_task: implement bounded source/transport safeguards within the owner-authorized source-copy and provider work; no real-model or independent acceptance inferred.

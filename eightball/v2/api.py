@@ -38,7 +38,7 @@ class Intake(Strict):
 
 class Analyse(Strict):
     expected_revision: int = Field(strict=True,ge=0)
-    provider: Literal['rules','playbook','ollama','ollama_staged','huggingface','jev','gliclass']
+    provider: Literal['rules','playbook','ollama','ollama_staged','huggingface','openai_compatible','jev','gliclass']
     purpose: Literal['extract','graph','questions','judgement']
     source_ids: list[Identifier] = Field(default_factory=list,max_length=40)
     playbook_id: Identifier | None = None

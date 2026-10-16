@@ -1,3 +1,11 @@
+# Current development: explicit Qwen API and pinned research checkouts
+
+Branch `feat/v02-compatible-provider-20261016` from `c9fd38438ba52e9320bc55b96132086bfe57ce6a` preserves the consolidated app and all research history. [Sprint record](sessions/2026-10-16-compatible-provider-research-copy.md), [Qwen beginner setup](../v2/QWEN-SETUP.md), [source inventory](../../research/README.md). Hosted API/Qwen now follows existing proposals, strict compilation and lifecycle guards; all28 source repositories are copied as pinned research submodules with explicit model/LFS/nested exceptions. No upstream runtime is installed.
+
+Cumulative native software verification is pending at this preparation checkpoint; the final receipt below must report actual source-bound results. B02 remains10/20 required verified and ES01 remains5/5 internal. The owner is arranging a Qwen endpoint. A secure settings draft suggests Alibaba international, with blank exact model and a user-supplied key requirement. Saved draft is not active/authenticated model access. Agree fictional-fixture spending/data scope before actual calls, then run unchanged generation/live lifecycle/full journey and independent/human acceptance. The owner reviews usability/visuals at the end. No main merge or deployment.
+
+---
+
 # Latest research follow-up: Ruflo worker coordination
 
 The owner supplied Ruflo. Read [the source assessment](../research/github-2026-10-16/ruflo.md) and [plan placement](../strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md#follow-up-ruflos-place-in-the-combined-system). Base `bf54f607bb0e13d0c6adfc0f59ee146e75be287b`; same documentation branch. Ruflo is a candidate optional worker harness, requiring comparison with native subagents/jobs and explicit provider/memory/revision boundaries. Source-only research; [receipt](../evidence/ruflo-research-2026-10-16.json). B02 remains 10/20 required verified, ES01 5/5 internal; selected-provider and independent/human acceptance remain next. No runtime installation, model call, main merge or deployment.

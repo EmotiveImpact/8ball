@@ -237,6 +237,16 @@
       "path": "docs/evidence/ruflo-research-2026-10-16.json",
       "code_commit": "bf54f607bb0e13d0c6adfc0f59ee146e75be287b",
       "result": "Ruflo coordination/execution/memory contracts assessed; candidate optional harness, no runtime adoption or model/professional/human acceptance."
+    },
+    "EV-RESEARCH-COPY": {
+      "kind": "pinned_source_copy_verification",
+      "path": "docs/evidence/research-copy-2026-10-16.json",
+      "result": "28 exact source checkouts, explicit model/LFS/nested exceptions and128 preserved licence/notice blobs verified; no runtime adoption."
+    },
+    "EV-COMPATIBLE-CODE": {
+      "kind": "controlled_transport_and_software_validation",
+      "path": "docs/evidence/compatible-native-2026-10-16.json",
+      "result": "Explicit API transport and controlled lifecycle/UI/preflight checks implemented; cumulative native verification pending. No actual provider, semantic or human acceptance."
     }
   },
   "milestones": [
@@ -660,14 +670,16 @@
       "status": "blocked",
       "required": true,
       "owner": "Codex",
-      "working_branch": "fix/v02-provider-failure-evidence-20261015",
-      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
-      "updated_on": "2026-10-15",
+      "working_branch": "feat/v02-compatible-provider-20261016",
+      "base_commit": "c9fd38438ba52e9320bc55b96132086bfe57ce6a",
+      "updated_on": "2026-10-16",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "evals/live_generation.py",
         "endstate/compilation.py",
-        "tests/test_endstate_compilation.py"
+        "tests/test_endstate_compilation.py",
+        "eightball/v2/compatible.py",
+        "evals/live_compatible.py"
       ],
       "depends_on": [],
       "acceptance": "Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.",
@@ -679,13 +691,14 @@
         "EV-NATIVE-CLOSEOUT",
         "EV-QWEN-20260927",
         "EV-GENERATION-ROLE-CONTRACT",
-        "EV-PROVIDER-FAILURE-REVIEW"
+        "EV-PROVIDER-FAILURE-REVIEW",
+        "EV-COMPATIBLE-CODE"
       ],
       "blockers": [
         "Fresh selected-provider generation has not been rerun after prompt correction; local Ollama is unreachable and hosted model/provider/credential variables are unset. Provider selection and inference permission are pending.",
         "Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate."
       ],
-      "next_action": "Select and authorise a provider/model, rerun all four unchanged generation fixtures with prompt endstate.draft.prompts.v2, then run the actual-provider native journey and obtain independent human quality labels. Preserve every failure; do not repair output or substitute catalogue plans."
+      "next_action": "Activate selected Qwen/API settings and agree fixture spending/transmission, then run unchanged generation fixtures through the strict compatible adapter; preserve raw failures and obtain independent semantic evaluation. No catalogue or repaired-output substitution."
     },
     {
       "id": "B02-10",
@@ -763,9 +776,9 @@
       "status": "blocked",
       "required": true,
       "owner": "Codex",
-      "working_branch": "fix/v02-provider-failure-evidence-20261015",
-      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
-      "updated_on": "2026-10-15",
+      "working_branch": "feat/v02-compatible-provider-20261016",
+      "base_commit": "c9fd38438ba52e9320bc55b96132086bfe57ce6a",
+      "updated_on": "2026-10-16",
       "code_paths": [
         "tests/browser_v2.py",
         "evals/full_journey.py",
@@ -785,12 +798,13 @@
         "EV-INTEGRATION-LOCAL",
         "EV-INTEGRATION-BLOCKED",
         "EV-NATIVE-CLOSEOUT",
-        "EV-PROVIDER-FAILURE-REVIEW"
+        "EV-PROVIDER-FAILURE-REVIEW",
+        "EV-COMPATIBLE-CODE"
       ],
       "blockers": [
         "Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey."
       ],
-      "next_action": "Run the actual-provider integration with authorised service/token and collect independent human review."
+      "next_action": "After the selected actual provider passes generation, run full_journey.py with openai_compatible and explicit inference/external flags, then genuine independent/human acceptance. Controlled HTTP/native tests are not this gate."
     },
     {
       "id": "B02-13",
@@ -872,13 +886,15 @@
       "status": "partial",
       "required": true,
       "owner": "Codex",
-      "working_branch": "fix/v02-provider-failure-evidence-20261015",
-      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
-      "updated_on": "2026-10-15",
+      "working_branch": "feat/v02-compatible-provider-20261016",
+      "base_commit": "c9fd38438ba52e9320bc55b96132086bfe57ce6a",
+      "updated_on": "2026-10-16",
       "code_paths": [
         "eightball/v2/analysis_jobs.py",
         "web/v2/job-view.js",
-        "tests/test_analysis_jobs.py"
+        "tests/test_analysis_jobs.py",
+        "eightball/v2/compatible.py",
+        "tests/test_compatible_integration.py"
       ],
       "depends_on": [
         "ES03-04"
@@ -889,12 +905,13 @@
         "EV-HF-BLACK-LOCAL",
         "EV-PLAN-STUDIO-LOCAL",
         "EV-NATIVE-CLOSEOUT",
-        "EV-PROVIDER-FAILURE-REVIEW"
+        "EV-PROVIDER-FAILURE-REVIEW",
+        "EV-COMPATIBLE-CODE"
       ],
       "blockers": [
         "Lifecycle behaviour with the selected real inference provider remains unverified."
       ],
-      "next_action": "Verify cancellation, stale results and runtime status with the actual selected provider; never recall already-billed work by implication."
+      "next_action": "Controlled new-API cancellation/stale/restart paths are covered; repeat with the selected actual provider once configuration and budget/data permissions are active. Preserve already-sent-request limits."
     },
     {
       "id": "B02-16",
@@ -1547,10 +1564,10 @@
       "title": "Failure handling, model trace and governed provider selection",
       "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "Codex",
+      "working_branch": "feat/v02-compatible-provider-20261016",
+      "base_commit": "c9fd38438ba52e9320bc55b96132086bfe57ce6a",
+      "updated_on": "2026-10-16",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "eightball/v2/store.py"
@@ -1560,10 +1577,11 @@
       "evidence": [
         "EV-APP",
         "EV-QWEN",
-        "EV-CLASSIFIER"
+        "EV-CLASSIFIER",
+        "EV-COMPATIBLE-CODE"
       ],
       "blockers": [],
-      "next_action": "Extend existing fail-closed tests and preserve negative model results."
+      "next_action": "Retain new strict API transport traces and controlled failure evidence; evaluate the selected actual model and independent source/plan quality before closing the broader gate."
     },
     {
       "id": "ES04-01",
@@ -2070,6 +2088,61 @@
       "evidence": [],
       "blockers": [],
       "next_action": "Retain as an owner-review candidate. Define metrics and lawful dataset handling before collecting additional client information; no measured benefit is claimed."
+    },
+    {
+      "id": "DOC-07",
+      "milestone": "DOC",
+      "title": "Preserve pinned upstream research source checkouts",
+      "status": "verified",
+      "required": true,
+      "owner": "Codex",
+      "working_branch": "feat/v02-compatible-provider-20261016",
+      "base_commit": "c9fd38438ba52e9320bc55b96132086bfe57ce6a",
+      "updated_on": "2026-10-16",
+      "code_paths": [
+        ".gitmodules",
+        "research/README.md",
+        "research/inventory.json",
+        "research/sources.py",
+        "research/AGENTS.md"
+      ],
+      "depends_on": [
+        "DOC-06"
+      ],
+      "acceptance": "All28 inspected repository pins are populated as source-only research checkouts with original licences, exact manifest identities, explicit model/LFS/nested exceptions and reproducible Git-only verification. No runtime adoption or upstream execution.",
+      "evidence": [
+        "EV-RESEARCH-COPY"
+      ],
+      "blockers": [],
+      "next_action": "Use the Git-only research helper for later restoration/verification; scope any upstream software installation or adaptation separately."
+    },
+    {
+      "id": "ES03-09",
+      "milestone": "ES03",
+      "title": "Opt-in OpenAI-compatible hosted endpoint contract",
+      "status": "implemented",
+      "required": false,
+      "owner": "Codex",
+      "working_branch": "feat/v02-compatible-provider-20261016",
+      "base_commit": "c9fd38438ba52e9320bc55b96132086bfe57ce6a",
+      "updated_on": "2026-10-16",
+      "code_paths": [
+        "eightball/v2/compatible.py",
+        "tests/test_compatible_provider.py",
+        "tests/test_compatible_integration.py",
+        "tests/test_compatible_cli.py",
+        "evals/live_compatible.py",
+        "docs/v2/QWEN-SETUP.md"
+      ],
+      "depends_on": [
+        "ES03-06"
+      ],
+      "acceptance": "Controlled HTTP and native UI checks verify explicit server-owned endpoint/model/provider, permission, pinned routing, bounded strict responses/failure evidence, secrets protection, stage/cancellation/stale/restart guards and unchanged frozen-fixture harness. This transport scope does not claim actual inference or semantic/human acceptance.",
+      "evidence": [
+        "EV-COMPATIBLE-CODE"
+      ],
+      "blockers": [],
+      "next_action": "Complete cumulative native software verification, then activate selected actual Qwen/API settings and agreed spending/data scope for B02-09/B02-12/B02-15."
     }
   ],
   "next_task_ids": [

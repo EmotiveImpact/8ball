@@ -673,7 +673,8 @@
       ],
       "evidence_paths": [
         "docs/v2/SOURCE-DESK.md",
-        "docs/research/github-2026-10-16/tencent-memory.md"
+        "docs/research/github-2026-10-16/tencent-memory.md",
+        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -688,6 +689,12 @@
           "decision": "adopted",
           "by": "Codex Tencent source research",
           "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex compatible-provider sprint",
+          "reason": "existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime."
         }
       ]
     },
@@ -712,7 +719,8 @@
         "docs/delivery/sessions/2026-10-15-generation-role-contract.md",
         "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
         "docs/research/github-2026-10-16/tencent-memory.md",
-        "docs/research/github-2026-10-16/ruflo.md"
+        "docs/research/github-2026-10-16/ruflo.md",
+        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -745,6 +753,12 @@
           "decision": "adopted",
           "by": "Codex Ruflo source review",
           "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex compatible-provider sprint",
+          "reason": "existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime."
         }
       ]
     },
@@ -1055,7 +1069,8 @@
       ],
       "evidence_paths": [
         "docs/v2/ANALYSIS-JOBS.md",
-        "docs/research/github-2026-10-16/ruflo.md"
+        "docs/research/github-2026-10-16/ruflo.md",
+        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1070,6 +1085,12 @@
           "decision": "adopted",
           "by": "Codex Ruflo source review",
           "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex compatible-provider sprint",
+          "reason": "existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime."
         }
       ]
     },
@@ -1697,7 +1718,8 @@
         "docs/delivery/sessions/2026-10-15-provider-failure-evidence.md",
         "docs/delivery/sessions/2026-10-15-main-consolidation.md",
         "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
-        "docs/research/github-2026-10-16/ruflo.md"
+        "docs/research/github-2026-10-16/ruflo.md",
+        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1736,6 +1758,12 @@
           "decision": "adopted",
           "by": "Codex Ruflo source review",
           "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex compatible-provider sprint",
+          "reason": "existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime."
         }
       ]
     },
@@ -1827,7 +1855,8 @@
         "docs/v2/ACCEPTANCE-RUNNER.md",
         "docs/delivery/sessions/2026-10-15-provider-failure-evidence.md",
         "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
-        "docs/research/github-2026-10-16/ruflo.md"
+        "docs/research/github-2026-10-16/ruflo.md",
+        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1854,6 +1883,12 @@
           "decision": "adopted",
           "by": "Codex Ruflo source review",
           "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex compatible-provider sprint",
+          "reason": "existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime."
         }
       ]
     },
@@ -1883,7 +1918,8 @@
         "docs/delivery/sessions/2026-10-15-provider-failure-evidence.md",
         "docs/delivery/sessions/2026-10-15-main-consolidation.md",
         "docs/research/github-2026-10-16/tencent-memory.md",
-        "docs/research/github-2026-10-16/ruflo.md"
+        "docs/research/github-2026-10-16/ruflo.md",
+        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1928,6 +1964,12 @@
           "decision": "adopted",
           "by": "Codex Ruflo source review",
           "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex compatible-provider sprint",
+          "reason": "existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime."
         }
       ]
     },
@@ -2442,7 +2484,8 @@
         "docs/delivery/sessions/2026-10-15-documentation-consolidation.md",
         "docs/delivery/context-manifest.json",
         "docs/delivery/sessions/2026-10-15-main-consolidation.md",
-        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md"
+        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
+        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2463,6 +2506,12 @@
           "decision": "adopted",
           "by": "Codex research review",
           "reason": "existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex compatible-provider sprint",
+          "reason": "existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime."
         }
       ]
     },
@@ -2483,7 +2532,8 @@
       "evidence_paths": [
         "docs/delivery/sessions/2026-10-15-documentation-consolidation.md",
         "docs/delivery/context-manifest.json",
-        "docs/delivery/sessions/2026-10-15-main-consolidation.md"
+        "docs/delivery/sessions/2026-10-15-main-consolidation.md",
+        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2498,6 +2548,12 @@
           "decision": "adopted",
           "by": "Codex integration review",
           "reason": "Unify latest source and separate documentation without replacing newer runtime/acceptance evidence. Preserve both archive variants and histories; owner authorizes this main integration, not release/model/human acceptance."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex compatible-provider sprint",
+          "reason": "existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime."
         }
       ]
     },
@@ -2624,7 +2680,8 @@
         "docs/research/GITHUB-COMPONENTS-2026-10-16.md",
         "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
         "docs/research/github-2026-10-16/tencent-memory.md",
-        "docs/research/github-2026-10-16/ruflo.md"
+        "docs/research/github-2026-10-16/ruflo.md",
+        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2645,6 +2702,12 @@
           "decision": "candidate",
           "by": "Codex Ruflo source review",
           "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "candidate",
+          "by": "Codex compatible-provider sprint",
+          "reason": "existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime."
         }
       ]
     },
@@ -2766,6 +2829,62 @@
           "decision": "candidate",
           "by": "Codex bounded source review",
           "reason": "new_candidate: retain an adapter validation requirement from source inspection; no runtime dependency or required scope promoted."
+        }
+      ]
+    },
+    {
+      "id": "EM-082",
+      "title": "External research copies need an application trust and test boundary",
+      "origin": "Qwen API transport and owner-authorized research-copy sprint",
+      "first_seen": "2026-10-16",
+      "evidence_level": "supported_by_tests",
+      "observation": "Copying28 upstream repositories introduces more than71000 tracked files, upstream tests/configuration/instructions and model references. App verification must not traverse or execute them; sparse-clean Git status alone also does not establish every intended source path is materialized.",
+      "product_implication": "Prune research/external before test/source traversal, fingerprint declared/checked-out pins and metadata, and verify every source path plus explicit sparse/model/LFS/nested exceptions and original notices.",
+      "task_ids": [
+        "DOC-07",
+        "DOC-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "research/README.md",
+        "research/inventory.json",
+        "scripts/acceptance.py",
+        "tests/test_acceptance_runner.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex build review",
+          "reason": "existing_task: implement bounded source/transport safeguards within the owner-authorized source-copy and provider work; no real-model or independent acceptance inferred."
+        }
+      ]
+    },
+    {
+      "id": "EM-083",
+      "title": "Rejected model evidence needs attributed and byte-safe retention",
+      "origin": "Qwen API transport and owner-authorized research-copy sprint",
+      "first_seen": "2026-10-16",
+      "evidence_level": "supported_by_tests",
+      "observation": "A malformed HTTP200 body is not necessarily assistant output. Valid assistant text can contain malformed JSON, invalid Unicode or a credential encoded with Unicode escapes; literal-only redaction was insufficient in the first controlled transport review.",
+      "product_implication": "Keep exact bounded assistant text only after envelope attribution, retain original hashes/omission reasons, reject reflected credentials including decoded forms, preserve HTTP-error redaction, and never repair evaluation output.",
+      "task_ids": [
+        "ES03-09",
+        "B02-15"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "eightball/v2/compatible.py",
+        "tests/test_compatible_provider.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex build review",
+          "reason": "existing_task: implement bounded source/transport safeguards within the owner-authorized source-copy and provider work; no real-model or independent acceptance inferred."
         }
       ]
     }

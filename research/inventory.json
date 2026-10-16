@@ -1,0 +1,1883 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-10-16T09:39:12.970158+00:00",
+  "application_base_commit": "c9fd38438ba52e9320bc55b96132086bfe57ce6a",
+  "purpose": "Pinned source-only research copies; no dependency/runtime adoption or product acceptance",
+  "input_manifests": [
+    {
+      "path": "docs/research/github-2026-10-16/source-manifest.json",
+      "sha256": "56f616ef97ad2b1f11b73a1fb30d4272593f9ec29e066525ee0b8b59def26d5c"
+    },
+    {
+      "path": "docs/research/github-2026-10-16/tencent-source-manifest.json",
+      "sha256": "1eb39d0b00c1cb6680b42e3796f28c6c2a938304c8d08ed9db444ff0c7cd3ccb"
+    },
+    {
+      "path": "docs/research/github-2026-10-16/ruflo-source-manifest.json",
+      "sha256": "c18cf0bdc90b698f85c8a4a9fb5987360ff25b889153e71aa9f6af895100ba17"
+    }
+  ],
+  "policy": {
+    "upstream_code_executed": false,
+    "dependencies_installed": false,
+    "models_invoked": false,
+    "lfs_smudging": false,
+    "nested_submodule_recursion": false,
+    "model_file_exceptions": "Exact omitted paths recorded per repository; all other tracked source present",
+    "environment_project_roots_added": false
+  },
+  "summary": {
+    "repository_count": 28,
+    "tracked_blob_count": 71419,
+    "materialized_blob_count": 71417,
+    "worktree_source_bytes": 2179495349,
+    "git_metadata_bytes_at_capture": 1033584336,
+    "preserved_license_notice_files": 128,
+    "omitted_model_file_count": 2,
+    "uninitialized_nested_submodule_count": 2,
+    "unhydrated_lfs_pointer_count": 51
+  },
+  "repositories": [
+    {
+      "repository": "666ghj/MiroFish",
+      "url": "https://github.com/666ghj/MiroFish.git",
+      "commit": "7657031ac01184afe2cb220f5ee3545573b5e843",
+      "path": "research/external/666ghj/MiroFish",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 128,
+      "materialized_blob_count": 128,
+      "worktree_source_bytes": 9064963,
+      "git_metadata_bytes_at_capture": 7082609,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "0ad25db4bd1d86c452db3f9602ccdbe172438f52"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "anyoptimization/pymoo",
+      "url": "https://github.com/anyoptimization/pymoo.git",
+      "commit": "23110c155aa8f31b5f1b86928227fb3931ba7f00",
+      "path": "research/external/anyoptimization/pymoo",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 765,
+      "materialized_blob_count": 765,
+      "worktree_source_bytes": 3139616,
+      "git_metadata_bytes_at_capture": 1637365,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "9c8e20ab85c1d538df580fdf137c933707fc92b1"
+        },
+        {
+          "path": "docs/source/license.rst",
+          "mode": "100644",
+          "git_blob": "b20533a13885d57b519029a2c3285c0f13197c3b"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "Arize-ai/phoenix",
+      "url": "https://github.com/Arize-ai/phoenix.git",
+      "commit": "2be380f7a360b7a71f97fc510de5e9679e58f7c9",
+      "path": "research/external/Arize-ai/phoenix",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 8417,
+      "materialized_blob_count": 8417,
+      "worktree_source_bytes": 69755130,
+      "git_metadata_bytes_at_capture": 19897862,
+      "tracked_symlink_count": 22,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "23d3aa7c871a4eb153186073e3d2b72d586f64be"
+        },
+        {
+          "path": "docs/phoenix/self-hosting/license.mdx",
+          "mode": "100644",
+          "git_blob": "ce842aa93d2cad3d61c1854a8039f2c55a13a954"
+        },
+        {
+          "path": "js/packages/phoenix-cli/LICENSE",
+          "mode": "100644",
+          "git_blob": "314cc24fb517b5cd03dce11ec5d719bfff007e99"
+        },
+        {
+          "path": "js/packages/phoenix-config/LICENSE",
+          "mode": "100644",
+          "git_blob": "314cc24fb517b5cd03dce11ec5d719bfff007e99"
+        },
+        {
+          "path": "js/packages/phoenix-evals/LICENSE",
+          "mode": "100644",
+          "git_blob": "b9d26d72ccd93b938a99d819748b904b75f71eb1"
+        },
+        {
+          "path": "js/packages/phoenix-mcp/LICENSE",
+          "mode": "100644",
+          "git_blob": "1d13d891197e29ba0cf36787c91221ad36065775"
+        },
+        {
+          "path": "packages/phoenix-client/LICENSE",
+          "mode": "100644",
+          "git_blob": "c3d0cba85d6ba9c892cd5ad59cd78ccb2c67381c"
+        },
+        {
+          "path": "packages/phoenix-evals/LICENSE",
+          "mode": "100644",
+          "git_blob": "23d3aa7c871a4eb153186073e3d2b72d586f64be"
+        },
+        {
+          "path": "packages/phoenix-otel/LICENSE",
+          "mode": "100644",
+          "git_blob": "c3d0cba85d6ba9c892cd5ad59cd78ccb2c67381c"
+        },
+        {
+          "path": "packages/phoenix-sqlean/LICENSE",
+          "mode": "100644",
+          "git_blob": "673f46f4a88d2779fef26dc610734de7e8b538fa"
+        },
+        {
+          "path": "src/phoenix/vendor/json_canonicalization_scheme/LICENSE",
+          "mode": "100644",
+          "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+        },
+        {
+          "path": "src/phoenix/vendor/json_canonicalization_scheme/LICENSE.PSF",
+          "mode": "100644",
+          "git_blob": "c6e7e49fb84209f088d196fb56112f0ece3fffcc"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "camel-ai/oasis",
+      "url": "https://github.com/camel-ai/oasis.git",
+      "commit": "bc805a19978a620bb400f4c644ce9d772ccbfc70",
+      "path": "research/external/camel-ai/oasis",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 462,
+      "materialized_blob_count": 462,
+      "worktree_source_bytes": 39680002,
+      "git_metadata_bytes_at_capture": 36847277,
+      "tracked_symlink_count": 9,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "c46213dce5875ed087fc9fe3ce329b69d98713ed"
+        },
+        {
+          "path": "licenses/license_template.txt",
+          "mode": "100644",
+          "git_blob": "d963f8cc82537d40a47b3d85e0ded38259938c01"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "docling-project/docling",
+      "url": "https://github.com/docling-project/docling.git",
+      "commit": "f690a5232c505c787a1e952216b431134b4d7c94",
+      "path": "research/external/docling-project/docling",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 1889,
+      "materialized_blob_count": 1889,
+      "worktree_source_bytes": 213106160,
+      "git_metadata_bytes_at_capture": 149748088,
+      "tracked_symlink_count": 8,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": ".agents/skills/dignified-python/LICENSE",
+          "mode": "100644",
+          "git_blob": "82b6b68d6ad4d65757310c2e7dab12ccae01de36"
+        },
+        {
+          "path": ".github/license-header.txt",
+          "mode": "100644",
+          "git_blob": "f484a56fd8ee72f74262dd8ec36f07dfc42b07ba"
+        },
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "6684a401bf0f700fd37104ab7c8da340036f7166"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "getzep/graphiti",
+      "url": "https://github.com/getzep/graphiti.git",
+      "commit": "d50741d1bf463cbe3859eb73914cbff1b66839e6",
+      "path": "research/external/getzep/graphiti",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 423,
+      "materialized_blob_count": 423,
+      "worktree_source_bytes": 23112349,
+      "git_metadata_bytes_at_capture": 7370247,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "5feb0d9d299a1107adfa8331306b13cc0eff2d78"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "getzep/zep",
+      "url": "https://github.com/getzep/zep.git",
+      "commit": "3997767fccf83bbea7b54ad5f73554f2e5bcd54e",
+      "path": "research/external/getzep/zep",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 1038,
+      "materialized_blob_count": 1038,
+      "worktree_source_bytes": 426156466,
+      "git_metadata_bytes_at_capture": 35276339,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+        },
+        {
+          "path": "ingestion/LICENSE",
+          "mode": "100644",
+          "git_blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+        },
+        {
+          "path": "integrations/adk/typescript/LICENSE",
+          "mode": "100644",
+          "git_blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+        },
+        {
+          "path": "integrations/mastra/typescript/LICENSE",
+          "mode": "100644",
+          "git_blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+        },
+        {
+          "path": "integrations/vercel-ai/typescript/LICENSE",
+          "mode": "100644",
+          "git_blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+        },
+        {
+          "path": "mcp/zep-mcp-server/LICENSE",
+          "mode": "100644",
+          "git_blob": "a0c972474b0e7e51f7b7b4a49be2b84e762313ec"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "getzep/zep-python",
+      "url": "https://github.com/getzep/zep-python.git",
+      "commit": "ec41ccdde6fe92dc0de378c7bfb0c2483af324ce",
+      "path": "research/external/getzep/zep-python",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 205,
+      "materialized_blob_count": 205,
+      "worktree_source_bytes": 1471134,
+      "git_metadata_bytes_at_capture": 220565,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "f49a4e16e68b128803cc2dcea614603632b04eac"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "google/or-tools",
+      "url": "https://github.com/google/or-tools.git",
+      "commit": "100f66e6242ab8bf8d32feb8f3bf086db66ae2b5",
+      "path": "research/external/google/or-tools",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 4842,
+      "materialized_blob_count": 4842,
+      "worktree_source_bytes": 132853946,
+      "git_metadata_bytes_at_capture": 24148828,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+        },
+        {
+          "path": "ortools/julia/ORTools.jl/LICENSE",
+          "mode": "100644",
+          "git_blob": "cbe9ed1ae265f874daff30c105a5988566928092"
+        },
+        {
+          "path": "ortools/julia/ORToolsBinaries.jl/LICENSE",
+          "mode": "100644",
+          "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+        },
+        {
+          "path": "ortools/julia/ORToolsGenerated.jl/LICENSE.md",
+          "mode": "100644",
+          "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "keycloak/keycloak",
+      "url": "https://github.com/keycloak/keycloak.git",
+      "commit": "eae20e964b2e23cfd8f4ed18b599343ebb056e8f",
+      "path": "research/external/keycloak/keycloak",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 13541,
+      "materialized_blob_count": 13541,
+      "worktree_source_bytes": 124448205,
+      "git_metadata_bytes_at_capture": 58417670,
+      "tracked_symlink_count": 20,
+      "root_license_notice_paths": [
+        "LICENSE.txt"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE.txt",
+          "mode": "100644",
+          "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+        },
+        {
+          "path": "distribution/galleon-feature-packs/saml-adapter-galleon-pack/src/main/resources/license/licenses.xml",
+          "mode": "100644",
+          "git_blob": "e10310b7e51c87374f0673a28a715590d85f5f58"
+        },
+        {
+          "path": "distribution/galleon-feature-packs/saml-adapter-galleon-pack/src/main/resources/packages/docs.licenses/content/docs/licenses/licenses.xsl",
+          "mode": "100644",
+          "git_blob": "fc4aff49582e08ab7a39fd2162f05a3708925159"
+        },
+        {
+          "path": "distribution/licenses-common/src/main/resources/licenses.css",
+          "mode": "100644",
+          "git_blob": "66b541bbf3095443ea3ca902f4ecc799f65954b4"
+        },
+        {
+          "path": "distribution/licenses-common/src/main/resources/licenses.xsl",
+          "mode": "100644",
+          "git_blob": "0c7f38728410d2a3512c799f3e11eb39f8ac62f2"
+        },
+        {
+          "path": "distribution/maven-plugins/licenses-processor/src/main/groovy/LicenseProcessMojo.groovy",
+          "mode": "100644",
+          "git_blob": "4a1bb705cdb64151a188222b3cb51efc40e4068c"
+        },
+        {
+          "path": "distribution/saml-adapters/wildfly-adapter/wildfly-modules/src/main/resources/licenses/keycloak/licenses.xml",
+          "mode": "100644",
+          "git_blob": "bac7cdfbcc59c5981f1f0f7d000fb53805324fa4"
+        },
+        {
+          "path": "docs/documentation/License.html",
+          "mode": "100644",
+          "git_blob": "6ae1dfd8201e2b2bc49fc8e37f79a5f9cfd48045"
+        },
+        {
+          "path": "docs/documentation/server_admin/topics/License.adoc",
+          "mode": "100644",
+          "git_blob": "becb5fbc6d5a657daed369d9bcb50b0f4ceba2b5"
+        },
+        {
+          "path": "js/libs/keycloak-admin-client/LICENSE",
+          "mode": "100644",
+          "git_blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "langchain-ai/langgraph",
+      "url": "https://github.com/langchain-ai/langgraph.git",
+      "commit": "e77a5cb08c1f3ff306d997dd76fc7169afdab5ea",
+      "path": "research/external/langchain-ai/langgraph",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 691,
+      "materialized_blob_count": 691,
+      "worktree_source_bytes": 14273920,
+      "git_metadata_bytes_at_capture": 3976035,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "fc0602feecdd6748623c852ab534e1ca612673c7"
+        },
+        {
+          "path": "libs/checkpoint-postgres/LICENSE",
+          "mode": "100644",
+          "git_blob": "fc0602feecdd6748623c852ab534e1ca612673c7"
+        },
+        {
+          "path": "libs/checkpoint-sqlite/LICENSE",
+          "mode": "100644",
+          "git_blob": "fc0602feecdd6748623c852ab534e1ca612673c7"
+        },
+        {
+          "path": "libs/checkpoint/LICENSE",
+          "mode": "100644",
+          "git_blob": "fc0602feecdd6748623c852ab534e1ca612673c7"
+        },
+        {
+          "path": "libs/cli/LICENSE",
+          "mode": "100644",
+          "git_blob": "fc0602feecdd6748623c852ab534e1ca612673c7"
+        },
+        {
+          "path": "libs/cli/js-examples/LICENSE",
+          "mode": "100644",
+          "git_blob": "57d0481d4b50c89fee2cb9e88242639d8e674028"
+        },
+        {
+          "path": "libs/langgraph/LICENSE",
+          "mode": "100644",
+          "git_blob": "fc0602feecdd6748623c852ab534e1ca612673c7"
+        },
+        {
+          "path": "libs/prebuilt/LICENSE",
+          "mode": "100644",
+          "git_blob": "fc0602feecdd6748623c852ab534e1ca612673c7"
+        },
+        {
+          "path": "libs/sdk-py/LICENSE",
+          "mode": "100644",
+          "git_blob": "fc0602feecdd6748623c852ab534e1ca612673c7"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "langchain-ai/langgraph-swarm-py",
+      "url": "https://github.com/langchain-ai/langgraph-swarm-py.git",
+      "commit": "5442a15cdd0ed210589148900c9960c24c489d04",
+      "path": "research/external/langchain-ai/langgraph-swarm-py",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 32,
+      "materialized_blob_count": 32,
+      "worktree_source_bytes": 764318,
+      "git_metadata_bytes_at_capture": 427539,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "771f1479bc24f594d05a7b10ed45441f463f0124"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "mem0ai/mem0",
+      "url": "https://github.com/mem0ai/mem0.git",
+      "commit": "0724291bd864cf807e88ee8981c8226644e8fb42",
+      "path": "research/external/mem0ai/mem0",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 1839,
+      "materialized_blob_count": 1839,
+      "worktree_source_bytes": 36756528,
+      "git_metadata_bytes_at_capture": 18259594,
+      "tracked_symlink_count": 11,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "d20d5102c3cf97ecbee54afd65893de4a11d26fe"
+        },
+        {
+          "path": "integrations/deepseek-plugin/LICENSE",
+          "mode": "100644",
+          "git_blob": "d20d5102c3cf97ecbee54afd65893de4a11d26fe"
+        },
+        {
+          "path": "integrations/hermes-plugin-mem0/LICENSE",
+          "mode": "100644",
+          "git_blob": "5ee05954cf06ffca63aab44c7dae8609877ddf80"
+        },
+        {
+          "path": "integrations/mem0-strands/LICENSE",
+          "mode": "100644",
+          "git_blob": "d20d5102c3cf97ecbee54afd65893de4a11d26fe"
+        },
+        {
+          "path": "integrations/mem0-strands/NOTICE",
+          "mode": "100644",
+          "git_blob": "c9d36f25326a6e9e1e8f210cab1fd806958c7f2b"
+        },
+        {
+          "path": "integrations/n8n-nodes-mem0/LICENSE",
+          "mode": "100644",
+          "git_blob": "036d7eaae4f0406026d37e3ba3bc0cc7f503acd7"
+        },
+        {
+          "path": "integrations/openclaw/LICENSE",
+          "mode": "100644",
+          "git_blob": "d20d5102c3cf97ecbee54afd65893de4a11d26fe"
+        },
+        {
+          "path": "integrations/opencode-plugin/LICENSE",
+          "mode": "100644",
+          "git_blob": "bfa36bdd4ee6350023433365980b75b68baab95f"
+        },
+        {
+          "path": "integrations/pi-agent-plugin/LICENSE",
+          "mode": "100644",
+          "git_blob": "bfa36bdd4ee6350023433365980b75b68baab95f"
+        },
+        {
+          "path": "integrations/zapier-mem0/LICENSE",
+          "mode": "100644",
+          "git_blob": "d20d5102c3cf97ecbee54afd65893de4a11d26fe"
+        },
+        {
+          "path": "mem0-ts/src/oss/src/utils/notices.ts",
+          "mode": "100644",
+          "git_blob": "cca5a7d52419626380ee36dcb42e10c03ebd2c08"
+        },
+        {
+          "path": "mem0-ts/src/oss/tests/notices.decay-feature.test.ts",
+          "mode": "100644",
+          "git_blob": "e1be27403ee77067c954f37d04594a022f86abe5"
+        },
+        {
+          "path": "mem0-ts/src/oss/tests/notices.decay-usage.test.ts",
+          "mode": "100644",
+          "git_blob": "76179cfe6e77a861e30a83cff1234e8be6123285"
+        },
+        {
+          "path": "mem0-ts/src/oss/tests/notices.first-run.test.ts",
+          "mode": "100644",
+          "git_blob": "115ea06f205e741b668abbc9f2fef228e34860c4"
+        },
+        {
+          "path": "mem0-ts/src/oss/tests/notices.foundation.test.ts",
+          "mode": "100644",
+          "git_blob": "4c510eaf35ee5f4fd1d315905764d3ab2faefff6"
+        },
+        {
+          "path": "mem0-ts/src/oss/tests/notices.performance-slow-query.test.ts",
+          "mode": "100644",
+          "git_blob": "7ca47ceecd949a118ad8440b95ac11883f4918a2"
+        },
+        {
+          "path": "mem0-ts/src/oss/tests/notices.scale-threshold.test.ts",
+          "mode": "100644",
+          "git_blob": "b39cc1a956db446c73385736e27169b292e863aa"
+        },
+        {
+          "path": "mem0-ts/src/oss/tests/notices.temporal-feature.test.ts",
+          "mode": "100644",
+          "git_blob": "95506287849b1fe00aa29a74839bf5a2fba2507c"
+        },
+        {
+          "path": "mem0-ts/src/oss/tests/notices.temporal-usage.test.ts",
+          "mode": "100644",
+          "git_blob": "21b26e1105875e2a31ed5a53656973c911e62d46"
+        },
+        {
+          "path": "mem0/memory/notices.py",
+          "mode": "100644",
+          "git_blob": "96bea5b1b575e767c035b951d7d588935cd81ac9"
+        },
+        {
+          "path": "skills/mem0-cli/LICENSE",
+          "mode": "100644",
+          "git_blob": "78c99ae280e90f9274949bcdbbb13676c8ab893f"
+        },
+        {
+          "path": "skills/mem0-integrate/LICENSE",
+          "mode": "100644",
+          "git_blob": "78c99ae280e90f9274949bcdbbb13676c8ab893f"
+        },
+        {
+          "path": "skills/mem0-oss-to-platform/LICENSE",
+          "mode": "100644",
+          "git_blob": "78c99ae280e90f9274949bcdbbb13676c8ab893f"
+        },
+        {
+          "path": "skills/mem0-test-integration/LICENSE",
+          "mode": "100644",
+          "git_blob": "78c99ae280e90f9274949bcdbbb13676c8ab893f"
+        },
+        {
+          "path": "skills/mem0-vercel-ai-sdk/LICENSE",
+          "mode": "100644",
+          "git_blob": "78c99ae280e90f9274949bcdbbb13676c8ab893f"
+        },
+        {
+          "path": "skills/mem0/LICENSE",
+          "mode": "100644",
+          "git_blob": "78c99ae280e90f9274949bcdbbb13676c8ab893f"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [
+        {
+          "path": "evaluation",
+          "commit": "4b61c5d31b9c668a12b4f5e78064248a02c82d2b",
+          "populated": false,
+          "reason": "Nested submodules intentionally not initialized or recursed"
+        }
+      ],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "mesa/mesa",
+      "url": "https://github.com/mesa/mesa.git",
+      "commit": "5451086fe47ab78e9ba894aa1b4c3063f4c247f1",
+      "path": "research/external/mesa/mesa",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 245,
+      "materialized_blob_count": 245,
+      "worktree_source_bytes": 2251595,
+      "git_metadata_bytes_at_capture": 870909,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE",
+        "NOTICE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+        },
+        {
+          "path": "NOTICE",
+          "mode": "100644",
+          "git_blob": "abeac775e0c94ec6596166b1f32aaa4ccb332809"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "microsoft/autogen",
+      "url": "https://github.com/microsoft/autogen.git",
+      "commit": "027ecf0a379bcc1d09956d46d12d44a3ad9cee14",
+      "path": "research/external/microsoft/autogen",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 1837,
+      "materialized_blob_count": 1837,
+      "worktree_source_bytes": 48344797,
+      "git_metadata_bytes_at_capture": 23950251,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE",
+        "LICENSE-CODE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "2f244ac814036ecd9ba9f69782e89ce6b1dca9eb"
+        },
+        {
+          "path": "LICENSE-CODE",
+          "mode": "100644",
+          "git_blob": "9e841e7a26e4eb057b24511e7b92d42b257a80e5"
+        },
+        {
+          "path": "python/packages/agbench/LICENSE-CODE",
+          "mode": "100644",
+          "git_blob": "9e841e7a26e4eb057b24511e7b92d42b257a80e5"
+        },
+        {
+          "path": "python/packages/autogen-agentchat/LICENSE-CODE",
+          "mode": "100644",
+          "git_blob": "9e841e7a26e4eb057b24511e7b92d42b257a80e5"
+        },
+        {
+          "path": "python/packages/autogen-core/LICENSE-CODE",
+          "mode": "100644",
+          "git_blob": "9e841e7a26e4eb057b24511e7b92d42b257a80e5"
+        },
+        {
+          "path": "python/packages/autogen-ext/LICENSE-CODE",
+          "mode": "100644",
+          "git_blob": "9e841e7a26e4eb057b24511e7b92d42b257a80e5"
+        },
+        {
+          "path": "python/packages/autogen-magentic-one/LICENSE-CODE",
+          "mode": "100644",
+          "git_blob": "9e841e7a26e4eb057b24511e7b92d42b257a80e5"
+        },
+        {
+          "path": "python/packages/autogen-studio/LICENSE-CODE",
+          "mode": "100644",
+          "git_blob": "9e841e7a26e4eb057b24511e7b92d42b257a80e5"
+        },
+        {
+          "path": "python/packages/autogen-test-utils/LICENSE-CODE",
+          "mode": "100644",
+          "git_blob": "9e841e7a26e4eb057b24511e7b92d42b257a80e5"
+        },
+        {
+          "path": "python/packages/component-schema-gen/LICENSE-CODE",
+          "mode": "100644",
+          "git_blob": "9e841e7a26e4eb057b24511e7b92d42b257a80e5"
+        },
+        {
+          "path": "python/packages/magentic-one-cli/LICENSE-CODE",
+          "mode": "100644",
+          "git_blob": "9e841e7a26e4eb057b24511e7b92d42b257a80e5"
+        },
+        {
+          "path": "python/packages/pyautogen/LICENSE-CODE",
+          "mode": "100644",
+          "git_blob": "9e841e7a26e4eb057b24511e7b92d42b257a80e5"
+        },
+        {
+          "path": "python/samples/gitty/LICENSE",
+          "mode": "100644",
+          "git_blob": "9e841e7a26e4eb057b24511e7b92d42b257a80e5"
+        },
+        {
+          "path": "python/templates/new-package/{{cookiecutter.package_name}}/LICENSE-CODE",
+          "mode": "100644",
+          "git_blob": "9e841e7a26e4eb057b24511e7b92d42b257a80e5"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [
+        {
+          "path": "autogen-landing.jpg",
+          "git_blob": "c8572e4dd060fd7592f810371e295b570d8f3511",
+          "materialized": false,
+          "lfs_oid": "sha256:149a1ab7bec4917c445992c0bff2d4402cb194207a03d4bec573d74d52aac5e8",
+          "payload_size_bytes": 269405
+        },
+        {
+          "path": "dotnet/nuget/icon.png",
+          "git_blob": "076fc48c562090d64b2f32d0607adbea1e35b158",
+          "materialized": false,
+          "lfs_oid": "sha256:02dbf31fea0b92714c80fdc90888da7e96374a1f52c621a939835fd3c876ddcc",
+          "payload_size_bytes": 426084
+        },
+        {
+          "path": "dotnet/resource/images/background.png",
+          "git_blob": "ca276f81f5b02407873e926a64a9c85536e3d793",
+          "materialized": false,
+          "lfs_oid": "sha256:300b7c9d6ba0c23a3e52fbd2e268141ddcca0434a9fb9dcf7e58e7e903d36dcf",
+          "payload_size_bytes": 2126185
+        },
+        {
+          "path": "dotnet/resource/images/square.png",
+          "git_blob": "afb4f4cd4df802274ca1c87083e823f1526dd6d3",
+          "materialized": false,
+          "lfs_oid": "sha256:8323d0b8eceb752e14c29543b2e28bb2fc648ed9719095c31b7708867a4dc918",
+          "payload_size_bytes": 491
+        },
+        {
+          "path": "dotnet/samples/dev-team/docs/images/github-sk-dev-team.png",
+          "git_blob": "fce661eefbc9446fd9e1bbb5e7f3e3a2b4d81afb",
+          "materialized": false,
+          "lfs_oid": "sha256:a5c18db95ff3d7357cd9112e3e8698185d819c796a053b070782d019ff1437c9",
+          "payload_size_bytes": 309649
+        },
+        {
+          "path": "dotnet/samples/dev-team/docs/images/new-codespace.png",
+          "git_blob": "970545c0da8dd8af894f478939cb58cffa4a950b",
+          "materialized": false,
+          "lfs_oid": "sha256:d01b942495de39ee2ab443283cfa22b51de8482710709b984dd21d5907b59a1b",
+          "payload_size_bytes": 27275
+        },
+        {
+          "path": "dotnet/samples/dev-team/docs/images/overview.png",
+          "git_blob": "1f018dabf2c35c28a573b0eac072b27cf5a4de75",
+          "materialized": false,
+          "lfs_oid": "sha256:8de049310295afdeca720b7b289967d8f960998e426c10ccd862b3bcfb81ef0b",
+          "payload_size_bytes": 348879
+        },
+        {
+          "path": "dotnet/samples/dev-team/docs/images/solution-explorer.png",
+          "git_blob": "bd69edbf4fffa8ff5e7fe9acf39f08d20f0cfe02",
+          "materialized": false,
+          "lfs_oid": "sha256:62294a0181f1f0b5a2cb9dff20cc6911df9df80a1752a2d7bdf22b7615d2fc78",
+          "payload_size_bytes": 60694
+        },
+        {
+          "path": "dotnet/test/AutoGen.Anthropic.Tests/images/square.png",
+          "git_blob": "5c2b3ed820b1ba03225a808aff504b9b2fb75f6c",
+          "materialized": false,
+          "lfs_oid": "sha256:8341030e5b93aab2c55dcd40ffa26ced8e42cc15736a8348176ffd155ad2d937",
+          "payload_size_bytes": 8167
+        },
+        {
+          "path": "dotnet/test/AutoGen.Ollama.Tests/images/image.png",
+          "git_blob": "ca276f81f5b02407873e926a64a9c85536e3d793",
+          "materialized": false,
+          "lfs_oid": "sha256:300b7c9d6ba0c23a3e52fbd2e268141ddcca0434a9fb9dcf7e58e7e903d36dcf",
+          "payload_size_bytes": 2126185
+        },
+        {
+          "path": "dotnet/test/AutoGen.Ollama.Tests/images/square.png",
+          "git_blob": "afb4f4cd4df802274ca1c87083e823f1526dd6d3",
+          "materialized": false,
+          "lfs_oid": "sha256:8323d0b8eceb752e14c29543b2e28bb2fc648ed9719095c31b7708867a4dc918",
+          "payload_size_bytes": 491
+        },
+        {
+          "path": "dotnet/test/AutoGen.Tests/ApprovalTests/square.png",
+          "git_blob": "afb4f4cd4df802274ca1c87083e823f1526dd6d3",
+          "materialized": false,
+          "lfs_oid": "sha256:8323d0b8eceb752e14c29543b2e28bb2fc648ed9719095c31b7708867a4dc918",
+          "payload_size_bytes": 491
+        },
+        {
+          "path": "dotnet/website/images/articles/CreateAgentWithTools/single-turn-tool-call-with-auto-invoke.png",
+          "git_blob": "27914072b2711f454a7cd10e947f40e436965141",
+          "materialized": false,
+          "lfs_oid": "sha256:f0d8e2ab194e31dc70e39ba081a755c8e792d291bef4dc8b4c5cc372bed9ec50",
+          "payload_size_bytes": 215389
+        },
+        {
+          "path": "dotnet/website/images/articles/CreateAgentWithTools/single-turn-tool-call-without-auto-invoke.png",
+          "git_blob": "a0711e505e8ccbbfbb4825ee7b28a7eb846d60e4",
+          "materialized": false,
+          "lfs_oid": "sha256:5f2e632fb24641eb2fac7fff995c9b3213023c45c3238531eec5a340072865f6",
+          "payload_size_bytes": 202768
+        },
+        {
+          "path": "dotnet/website/images/articles/CreateUserProxyAgent/image-1.png",
+          "git_blob": "fd467c44af78bcee5ab1193ee64089327cd36b8c",
+          "materialized": false,
+          "lfs_oid": "sha256:91813a034edc3918a27758296d77150d1c8d650911847bdc6a42cca79307714a",
+          "payload_size_bytes": 9009
+        },
+        {
+          "path": "dotnet/website/images/articles/DynamicGroupChat/dynamicChat.gif",
+          "git_blob": "d756f674114acae29dbd16978bc7c3ca9f9d4795",
+          "materialized": false,
+          "lfs_oid": "sha256:5cba3069e9669a1b8013f0b2fa4d191c1d7b0b7919b1664f1f8ec98a90c7a2b2",
+          "payload_size_bytes": 411517
+        },
+        {
+          "path": "dotnet/website/images/articles/PrintMessageMiddleware/printMessage.png",
+          "git_blob": "db31ade0de89cabe2ecb843210eca398b798cc53",
+          "materialized": false,
+          "lfs_oid": "sha256:7ec3bc40d4e3c1228d5799e448a34521998e7abb700bc978afc790389805ecb4",
+          "payload_size_bytes": 86924
+        },
+        {
+          "path": "dotnet/website/images/articles/PrintMessageMiddleware/streamingoutput.gif",
+          "git_blob": "a2afd4f58473f36f9973a87bfe1ad38c93d794dc",
+          "materialized": false,
+          "lfs_oid": "sha256:95feb667fe74177506435ca52fcf183fb187a3a407fac0b3b220bd9e8da721c7",
+          "payload_size_bytes": 547023
+        },
+        {
+          "path": "dotnet/website/images/articles/SequentialGroupChat/SearcherSummarizer.gif",
+          "git_blob": "250bf00b8dca26fee9715cb0723a9dac4a15b8c8",
+          "materialized": false,
+          "lfs_oid": "sha256:c6d8a5a534efaf49ecc796ad3ca8e62fb7a236b55d894bda7a0c258564195b5d",
+          "payload_size_bytes": 620269
+        },
+        {
+          "path": "dotnet/website/images/articles/UseAutoGenAsModelinAGStudio/FinalStepsA.png",
+          "git_blob": "0403a8cf9742d3660879dadf2fe742e651c442ee",
+          "materialized": false,
+          "lfs_oid": "sha256:491f8f538c55ce8768179cabfd3789c71c4a07b7d809f85deba9b8f4b759c00e",
+          "payload_size_bytes": 42329
+        },
+        {
+          "path": "dotnet/website/images/articles/UseAutoGenAsModelinAGStudio/FinalStepsB.png",
+          "git_blob": "03a68735c082b9834956d497bf829d32e692319e",
+          "materialized": false,
+          "lfs_oid": "sha256:e319fad11682c46c3dc511e2fc63e033f3f99efb06d4530e7f72d1f4af23848f",
+          "payload_size_bytes": 31528
+        },
+        {
+          "path": "dotnet/website/images/articles/UseAutoGenAsModelinAGStudio/FinalStepsC.png",
+          "git_blob": "7326ad14d040e5818800aa17fbb253125199e7ac",
+          "materialized": false,
+          "lfs_oid": "sha256:a8024b5336615e8c2c3497df7a5890a331bd5bdc7b15dd06abd7ec528ffe0932",
+          "payload_size_bytes": 70169
+        },
+        {
+          "path": "dotnet/website/images/articles/UseAutoGenAsModelinAGStudio/Step5.2OpenAIModel.png",
+          "git_blob": "b2b7481bbe7822b4bf6c168b9fe3db8d95be3f43",
+          "materialized": false,
+          "lfs_oid": "sha256:911f2f7c1ab4f9403386298d9769243c0aa8cc22c6f119342cc107a654d1463a",
+          "payload_size_bytes": 44041
+        },
+        {
+          "path": "dotnet/website/images/articles/UseAutoGenAsModelinAGStudio/Step5.3ModelNameAndURL.png",
+          "git_blob": "d1c19f300806b6847f6779e81adc9f96800239a4",
+          "materialized": false,
+          "lfs_oid": "sha256:ec10a48ed3f0a6d8448e0ce425658f3857c2cf89e2badef8a8d3a8c3744fc3bf",
+          "payload_size_bytes": 51944
+        },
+        {
+          "path": "dotnet/website/images/articles/UseAutoGenAsModelinAGStudio/Step6.png",
+          "git_blob": "67c73445442785ddd4a8d9a2cb0ba2d1158017a4",
+          "materialized": false,
+          "lfs_oid": "sha256:f016faea51f64af3970fde41ac95249c4e0423b02573f058c36dc1e6ba15562d",
+          "payload_size_bytes": 50669
+        },
+        {
+          "path": "dotnet/website/images/articles/UseAutoGenAsModelinAGStudio/Step6b.png",
+          "git_blob": "ebd19bff045a468493220c9c117b2193a3417673",
+          "materialized": false,
+          "lfs_oid": "sha256:4a23cbbf5d3d24eaf1da9370e0914f186815f2ecbf46131d2fd6eb5ff3264d96",
+          "payload_size_bytes": 22569
+        },
+        {
+          "path": "dotnet/website/images/articles/UseAutoGenAsModelinAGStudio/Terminal.png",
+          "git_blob": "9edefc3aebf359f1f2102341167ef9471ce6e28e",
+          "materialized": false,
+          "lfs_oid": "sha256:97328776c25fd0a61c76065db379406d8d3c96bd8773490c34c168cd7c69a855",
+          "payload_size_bytes": 58527
+        },
+        {
+          "path": "dotnet/website/images/articles/UseAutoGenAsModelinAGStudio/TheModelTab.png",
+          "git_blob": "55e7bd862613b55b57ff7fcc6ac2c3ab6aeba072",
+          "materialized": false,
+          "lfs_oid": "sha256:1d7f4f3a772278e6de320a3601a76f8a9862cab4a9c0da03fad3058b86fcfaf7",
+          "payload_size_bytes": 45260
+        },
+        {
+          "path": "python/docs/src/_static/images/logo/favicon-16x16.png",
+          "git_blob": "ef6b18ab2189c8bdbe2c44812b3c42c714e8d0d5",
+          "materialized": false,
+          "lfs_oid": "sha256:b4a649cf9cca62edf0f4f6e4acf76981fb9b27399b4d598b22b189c92424f4ea",
+          "payload_size_bytes": 434
+        },
+        {
+          "path": "python/docs/src/_static/images/logo/favicon-32x32.png",
+          "git_blob": "7b017c34f7093e90f4a7389192c4e8ff42500085",
+          "materialized": false,
+          "lfs_oid": "sha256:a272fc4c4a508fd936c130a727728da6c773de710a5ae600d06fac06329e0f6d",
+          "payload_size_bytes": 998
+        },
+        {
+          "path": "python/docs/src/_static/images/logo/favicon-512x512.png",
+          "git_blob": "2700ece240f5a766dee41fbcacf7ede95ac86c1e",
+          "materialized": false,
+          "lfs_oid": "sha256:c1f90048923bdaa4e2eeb6ab70f3cc059dc706d43e7208f336102702fc231b81",
+          "payload_size_bytes": 45618
+        },
+        {
+          "path": "python/docs/src/images/autogen-magentic-one-agents.png",
+          "git_blob": "cfed3e9729e50355b5c2ded6d003e4d5525dea48",
+          "materialized": false,
+          "lfs_oid": "sha256:25a3a1f79319b89d80b8459af8b522eb9a884dea842b11e3d7dae2bca30add5e",
+          "payload_size_bytes": 90181
+        },
+        {
+          "path": "python/docs/src/images/autogen-magentic-one-example.png",
+          "git_blob": "afa76da21d8b28fba7506dc0417d2581e3932637",
+          "materialized": false,
+          "lfs_oid": "sha256:fc910bda7e5f3b54d6502f26384f7b10b67f0597d7ac4631dfb45801882768fa",
+          "payload_size_bytes": 201460
+        },
+        {
+          "path": "python/docs/src/images/example-company.jpg",
+          "git_blob": "ade3d7f86bba399f6532220c4429a2592c3fe626",
+          "materialized": false,
+          "lfs_oid": "sha256:f487409436d338efe69d2e6aab69d7ac786321e215136b2d18736031bf5028ae",
+          "payload_size_bytes": 112131
+        },
+        {
+          "path": "python/docs/src/images/example-literature.jpg",
+          "git_blob": "fc718ef7e57a931dabbe9f11251275640816d89a",
+          "materialized": false,
+          "lfs_oid": "sha256:a450a2917e21ee9d643e4c6bf7fee62fadd2e654772492ce821ac467ac6ad195",
+          "payload_size_bytes": 31965
+        },
+        {
+          "path": "python/docs/src/images/example-travel.jpeg",
+          "git_blob": "70f20a917a5449afafd6cc8a3fea52eaab8e39ca",
+          "materialized": false,
+          "lfs_oid": "sha256:33c5749af8ebeb72d6020a147baebb3b801a14502d1c2d299dbe892d9ac5d8e0",
+          "payload_size_bytes": 10894
+        },
+        {
+          "path": "python/docs/src/images/open-ai-telemetry-example.png",
+          "git_blob": "e21b48f1749a41e93b13a4440b3b6c8b74e83cb9",
+          "materialized": false,
+          "lfs_oid": "sha256:96c0f435a6fc683b705db71b471281c5bbd8b7cf498894f43c491d6bb8c34711",
+          "payload_size_bytes": 528018
+        },
+        {
+          "path": "python/docs/src/user-guide/agentchat-user-guide/jaeger.png",
+          "git_blob": "cbda69c199ee2e593085092ef13827ea9a8151f3",
+          "materialized": false,
+          "lfs_oid": "sha256:d0e3f50140f8bef32e2f626792490b2c1c4728e5ec10130241cf3f49ada44a20",
+          "payload_size_bytes": 167573
+        },
+        {
+          "path": "python/docs/src/user-guide/autogenstudio-user-guide/jsoneditor.jpg",
+          "git_blob": "ec22f9dbb778c3830b4f95e102f28bf717c0b630",
+          "materialized": false,
+          "lfs_oid": "sha256:afa594c040c6f8e342bb4ebd4a140e4e8cdd7291f01025f467c44d75acc52dad",
+          "payload_size_bytes": 758268
+        },
+        {
+          "path": "python/docs/src/user-guide/autogenstudio-user-guide/teambuilder.jpg",
+          "git_blob": "bf419d191be8998113ba401a79af53c8163d2fe0",
+          "materialized": false,
+          "lfs_oid": "sha256:2d3c49bf0e8931375ab20cb1bf8eb5d8682c1a12b9609b8c0b993d1ae76f70ec",
+          "payload_size_bytes": 734326
+        },
+        {
+          "path": "python/packages/autogen-ext/imgs/task_centric_memory.png",
+          "git_blob": "763b4b3cfbf09db313b78b014739d7fe072020a3",
+          "materialized": false,
+          "lfs_oid": "sha256:a9d5d3cdaa77c863ecbeec41ce988c1018d49b2e914a9b3775f6574ea4bbbcee",
+          "payload_size_bytes": 37076
+        },
+        {
+          "path": "python/packages/autogen-ext/imgs/task_centric_memory_2.png",
+          "git_blob": "1aed539683e27d10ecfd8a17770a25debfd8196e",
+          "materialized": false,
+          "lfs_oid": "sha256:119f7baf93e71fee417d1a9f9f994f6b3d4fbbc5aae930096a6897e755167e61",
+          "payload_size_bytes": 28253
+        },
+        {
+          "path": "python/packages/autogen-ext/imgs/task_centric_memory_3.png",
+          "git_blob": "7674512390b849ceb4a59e797518ccf15591638b",
+          "materialized": false,
+          "lfs_oid": "sha256:e2af80416085182ba099e5094014f37b7f88daf972dce704d862540566a52bb9",
+          "payload_size_bytes": 30082
+        },
+        {
+          "path": "python/packages/autogen-studio/docs/ags_screen.png",
+          "git_blob": "3cafcb18b9338868689b9ef03e837e82dbde8e36",
+          "materialized": false,
+          "lfs_oid": "sha256:876389d20f68c9c6e230563a145f8e10c6870bf8633163f0a6fe1f5db8d8ffe8",
+          "payload_size_bytes": 195570
+        },
+        {
+          "path": "python/packages/autogen-studio/frontend/src/images/icon.png",
+          "git_blob": "94e6dd38ed962227845a0c052748a2b7c883fcc0",
+          "materialized": false,
+          "lfs_oid": "sha256:7ec19e710d8b38d99b5f1b170db18eb192cd3a50fe80f1c103f88cce68e057b4",
+          "payload_size_bytes": 33034
+        },
+        {
+          "path": "python/samples/core_distributed-group-chat/public/avatars/editor.png",
+          "git_blob": "1963104774a626228864792606e8baf792a8aaf6",
+          "materialized": false,
+          "lfs_oid": "sha256:ca081360cdb35adbc43e282675757a8f94a6b59cba38224c36a6ca2a80a4dce5",
+          "payload_size_bytes": 5675
+        },
+        {
+          "path": "python/samples/core_distributed-group-chat/public/avatars/group_chat_manager.png",
+          "git_blob": "08a537646f93a6eb036da0b350722e18ed94e59d",
+          "materialized": false,
+          "lfs_oid": "sha256:7e8370f35865293d3126f7f282e6ffef8052a266d205ce2acbee5d211c531a18",
+          "payload_size_bytes": 6026
+        },
+        {
+          "path": "python/samples/core_distributed-group-chat/public/avatars/user.png",
+          "git_blob": "8e67f65f3b65a90f08e5814b20840a189add163b",
+          "materialized": false,
+          "lfs_oid": "sha256:52e3e0154e49f6a09b2a16d6671acb98c32ab53490ff080f0674e83163c640e8",
+          "payload_size_bytes": 5215
+        },
+        {
+          "path": "python/samples/core_distributed-group-chat/public/avatars/writer.png",
+          "git_blob": "eacb0bfa1634d6ba4ed73e1f1a52ef8f70d55280",
+          "materialized": false,
+          "lfs_oid": "sha256:bd82203ec3fa337ea5b61de36c3e4223c175871e40e34ee6b36c3281130979b4",
+          "payload_size_bytes": 5426
+        },
+        {
+          "path": "python/samples/core_distributed-group-chat/public/favicon.png",
+          "git_blob": "27e52d184bfcae73b91a6fa59cce73d6c662bef5",
+          "materialized": false,
+          "lfs_oid": "sha256:a60b36ba9e366a244eb641ca59588b6734839c360a42405a369d7af77e7613fc",
+          "payload_size_bytes": 3700
+        },
+        {
+          "path": "python/samples/core_distributed-group-chat/public/logo.png",
+          "git_blob": "27e52d184bfcae73b91a6fa59cce73d6c662bef5",
+          "materialized": false,
+          "lfs_oid": "sha256:a60b36ba9e366a244eb641ca59588b6734839c360a42405a369d7af77e7613fc",
+          "payload_size_bytes": 3700
+        }
+      ],
+      "lfs_attribute_paths": [
+        ".gitattributes",
+        "dotnet/test/AutoGen.Anthropic.Tests/images/.gitattributes"
+      ]
+    },
+    {
+      "repository": "open-policy-agent/opa",
+      "url": "https://github.com/open-policy-agent/opa.git",
+      "commit": "fdf6011f57fdc25f01de1982e296bb402cf37625",
+      "path": "research/external/open-policy-agent/opa",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 7917,
+      "materialized_blob_count": 7917,
+      "worktree_source_bytes": 74210516,
+      "git_metadata_bytes_at_capture": 40048500,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "8f71f43fee3f78649d238238cbde51e6d7055c82"
+        },
+        {
+          "path": "internal/edittree/bitvector/license.txt",
+          "mode": "100644",
+          "git_blob": "04d42108eeb28f7d5d1a91704845b20148287e53"
+        },
+        {
+          "path": "internal/gojsonschema/LICENSE-APACHE-2.0.txt",
+          "mode": "100644",
+          "git_blob": "55ede8a42cc9e9eb71a44fcda698fa8c249475a8"
+        },
+        {
+          "path": "internal/methodlesstemplate/LICENSE",
+          "mode": "100644",
+          "git_blob": "2a7cf70da6e498df9c11ab6a5eaa2ddd7af34da4"
+        },
+        {
+          "path": "internal/providers/aws/NOTICE.txt",
+          "mode": "100644",
+          "git_blob": "5f14d1162ed45c1497667760e5c9078d8fb93014"
+        },
+        {
+          "path": "internal/semver/LICENSE",
+          "mode": "100644",
+          "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "openfga/openfga",
+      "url": "https://github.com/openfga/openfga.git",
+      "commit": "fb8e7df866742a0c947e3066919ee59ac9e70eea",
+      "path": "research/external/openfga/openfga",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 578,
+      "materialized_blob_count": 578,
+      "worktree_source_bytes": 6995545,
+      "git_metadata_bytes_at_capture": 1444910,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "4959a5e50d66e62e675d8d033d66cca0f390458d"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "postgres/postgres",
+      "url": "https://github.com/postgres/postgres.git",
+      "commit": "eb7cc1d09e742d369540016455d0f55c619106f2",
+      "path": "research/external/postgres/postgres",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 7719,
+      "materialized_blob_count": 7719,
+      "worktree_source_bytes": 146843342,
+      "git_metadata_bytes_at_capture": 33610584,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "COPYRIGHT"
+      ],
+      "license_notices": [
+        {
+          "path": "COPYRIGHT",
+          "mode": "100644",
+          "git_blob": "0a397648dcd3c2177acc58bd7daecd11ad64be62"
+        },
+        {
+          "path": "src/backend/regex/COPYRIGHT",
+          "mode": "100644",
+          "git_blob": "e50cfb1ff1968bf12a2c0abfd707f807cbccf6e2"
+        },
+        {
+          "path": "src/tools/copyright.pl",
+          "mode": "100755",
+          "git_blob": "6a37dec7da15bc57c95697f05e49e0027d181f42"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "promptfoo/promptfoo",
+      "url": "https://github.com/promptfoo/promptfoo.git",
+      "commit": "132a2d38b1b0adc953b0db650f950d573bc113c4",
+      "path": "research/external/promptfoo/promptfoo",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 5948,
+      "materialized_blob_count": 5947,
+      "worktree_source_bytes": 245008702,
+      "git_metadata_bytes_at_capture": 185797201,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "af3fa111d9303b3041d225fb851534e50a4bbec2"
+        },
+        {
+          "path": "plugins/promptfoo/skills/promptfoo-provider-setup/scripts/vendor/LICENSE",
+          "mode": "100644",
+          "git_blob": "09d3a29e93d1239edf737a58fb1cd893808abc82"
+        },
+        {
+          "path": "src/redteam/providers/crescendo/LICENSE",
+          "mode": "100644",
+          "git_blob": "108088fa81ee480d367a61d19f1a4ea69e58f7c7"
+        }
+      ],
+      "omitted_model_files": [
+        {
+          "path": "test/fixtures/transformers/tiny-bert/onnx/model.onnx",
+          "git_blob": "1f1f0ec14471f40fcda4bf0fb66e3ba1f990355d",
+          "reason": "Tracked model-weight artifact intentionally not materialized"
+        }
+      ],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "py-why/dowhy",
+      "url": "https://github.com/py-why/dowhy.git",
+      "commit": "10648f1a295cbb40fd9cdd7ce43521a6ef954078",
+      "path": "research/external/py-why/dowhy",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 530,
+      "materialized_blob_count": 530,
+      "worktree_source_bytes": 26741720,
+      "git_metadata_bytes_at_capture": 13262818,
+      "tracked_symlink_count": 1,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "4c2f3418f06a299577362f7738e26662c2211849"
+        },
+        {
+          "path": "docs/source/example_notebooks/datasets/LICENSE",
+          "mode": "100644",
+          "git_blob": "f967e5b7a9935c210c5b90d07ecfd764129cf64c"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "py-why/EconML",
+      "url": "https://github.com/py-why/EconML.git",
+      "commit": "d625dd696ea28c62e6e4d8baea6e4154b98c30b4",
+      "path": "research/external/py-why/EconML",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 299,
+      "materialized_blob_count": 299,
+      "worktree_source_bytes": 57043957,
+      "git_metadata_bytes_at_capture": 20932336,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "f55033a55ba9fe7d7d66d0b6a99f6bf523c83395"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "ruvnet/ruflo",
+      "url": "https://github.com/ruvnet/ruflo.git",
+      "commit": "1882006a02487590c8c66a7eec8d7504f6af33c3",
+      "path": "research/external/ruvnet/ruflo",
+      "source_manifest": "docs/research/github-2026-10-16/ruflo-source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 7837,
+      "materialized_blob_count": 7836,
+      "worktree_source_bytes": 143092024,
+      "git_metadata_bytes_at_capture": 69774551,
+      "tracked_symlink_count": 4,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "5c4718198a4156beacc780980077043a98b0dd6a"
+        },
+        {
+          "path": "plugins/ruflo-console/hooks/notices.ts",
+          "mode": "100644",
+          "git_blob": "2ba25085bfb863966148d0b618974b5846d14858"
+        },
+        {
+          "path": "plugins/ruflo-console/tests/notices.spec.ts",
+          "mode": "100644",
+          "git_blob": "a9bb97388780e3059fae491e2f1a136ff4ad324e"
+        },
+        {
+          "path": "ruflo/src/ruvocal/LICENSE",
+          "mode": "100644",
+          "git_blob": "e44d8f5b79a0643c99977835611e1da9d08fc3cf"
+        }
+      ],
+      "omitted_model_files": [
+        {
+          "path": "v3/@claude-flow/cli/assets/model-router/seed-router.fastgrnn.safetensors",
+          "git_blob": "c43e32fdca51b372a870d92c375104db940b2687",
+          "reason": "Tracked model-weight artifact intentionally not materialized"
+        }
+      ],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "SALib/SALib",
+      "url": "https://github.com/SALib/SALib.git",
+      "commit": "748cf169e82227bcc56dcfc961fcfb03a1e0df45",
+      "path": "research/external/SALib/SALib",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 184,
+      "materialized_blob_count": 184,
+      "worktree_source_bytes": 3602571,
+      "git_metadata_bytes_at_capture": 1202200,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE.md"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE.md",
+          "mode": "100644",
+          "git_blob": "8b7aae3efb360fb2e594242dd665f4b9fd56e784"
+        },
+        {
+          "path": "docs/license.rst",
+          "mode": "100644",
+          "git_blob": "79a60f1688598acf0662b32e3055111fd9690a7b"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "simulatrex/possible-worlds",
+      "url": "https://github.com/simulatrex/possible-worlds.git",
+      "commit": "08837a790f6ca0d98f7468935e9139292ea7cb78",
+      "path": "research/external/simulatrex/possible-worlds",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 72,
+      "materialized_blob_count": 72,
+      "worktree_source_bytes": 9940996,
+      "git_metadata_bytes_at_capture": 9606708,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "simulatrex/simulatrex-engine",
+      "url": "https://github.com/simulatrex/simulatrex-engine.git",
+      "commit": "4e4fa06d7f527480b66ceb224a5d37bcfa2f9150",
+      "path": "research/external/simulatrex/simulatrex-engine",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 107,
+      "materialized_blob_count": 107,
+      "worktree_source_bytes": 9044581,
+      "git_metadata_bytes_at_capture": 8728925,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "temporalio/sdk-python",
+      "url": "https://github.com/temporalio/sdk-python.git",
+      "commit": "346d4dcd0863657c3a33283c952a296762059339",
+      "path": "research/external/temporalio/sdk-python",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 710,
+      "materialized_blob_count": 710,
+      "worktree_source_bytes": 11069375,
+      "git_metadata_bytes_at_capture": 2224909,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "c7f1b9e7e809f4134614fdd5bd1b00c5e3a8df87"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [
+        {
+          "path": "temporalio/bridge/sdk-core",
+          "commit": "212e8150066527b57e792b80626fe0d14e7f1da1",
+          "populated": false,
+          "reason": "Nested submodules intentionally not initialized or recursed"
+        }
+      ],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "TencentCloud/TencentDB-Agent-Memory",
+      "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory.git",
+      "commit": "e9a82935b52741e0c798c75326e90b7144eb4d5f",
+      "path": "research/external/TencentCloud/TencentDB-Agent-Memory",
+      "source_manifest": "docs/research/github-2026-10-16/tencent-source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 1258,
+      "materialized_blob_count": 1258,
+      "worktree_source_bytes": 46470354,
+      "git_metadata_bytes_at_capture": 37141511,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "86fd8a122221fc402da9fd64724172d08c6bbbd3"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    },
+    {
+      "repository": "tsinghua-fib-lab/AgentSociety",
+      "url": "https://github.com/tsinghua-fib-lab/AgentSociety.git",
+      "commit": "8cc5bb9a9c27d039ec5519375db9d73ccf508cba",
+      "path": "research/external/tsinghua-fib-lab/AgentSociety",
+      "source_manifest": "docs/research/github-2026-10-16/source-manifest.json",
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true
+      },
+      "tracked_blob_count": 1906,
+      "materialized_blob_count": 1906,
+      "worktree_source_bytes": 254252537,
+      "git_metadata_bytes_at_capture": 221678005,
+      "tracked_symlink_count": 3,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "92320630901b7774431ff3575dc5bea218e6401d"
+        },
+        {
+          "path": "extension/LICENSE",
+          "mode": "100644",
+          "git_blob": "542a2059e0e64fd5d8be642faf95de0886e9440f"
+        },
+        {
+          "path": "extension/NOTICE",
+          "mode": "100644",
+          "git_blob": "3c50ab30096085de89cb95390e1289ee3589cb08"
+        },
+        {
+          "path": "extension/skills/agentsociety-analysis/v1.0.0/support/frontend-design/LICENSE.txt",
+          "mode": "100644",
+          "git_blob": "f433b1a53f5b830a205fd2df78e2b34974656c7b"
+        },
+        {
+          "path": "packages/agentsociety-benchmark/LICENSE",
+          "mode": "100644",
+          "git_blob": "92320630901b7774431ff3575dc5bea218e6401d"
+        },
+        {
+          "path": "packages/agentsociety-community/LICENSE",
+          "mode": "100644",
+          "git_blob": "92320630901b7774431ff3575dc5bea218e6401d"
+        },
+        {
+          "path": "packages/agentsociety/LICENSE",
+          "mode": "100644",
+          "git_blob": "92320630901b7774431ff3575dc5bea218e6401d"
+        },
+        {
+          "path": "packages/agentsociety2/LICENSE",
+          "mode": "100644",
+          "git_blob": "92320630901b7774431ff3575dc5bea218e6401d"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "lfs_attribute_paths": []
+    }
+  ]
+}

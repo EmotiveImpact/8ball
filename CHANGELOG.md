@@ -4,6 +4,50 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Hosted Qwen API connection and preserved research sources
+
+2026-10-16 · `local_unreleased`
+
+Added explicit hosted OpenAI-compatible generation through existing review/compilation, and populated all28 inspected repositories as pinned source-only research checkouts.
+
+### Added
+
+- Server-configured hosted API/Qwen transport, UI/setup guide, unchanged-fixture wrapper and actual-journey provider option.
+- Pinned research Gitlinks, original notice inventory, Git-only restoration/verification and external-source test/fingerprint boundary.
+
+### Changed
+
+- Actual provider settings use secure environment fields; normal acceptance strips them and never infers. Existing HF/local routes and frozen generation requirements remain.
+
+### Fixed
+
+- Controlled rejected responses retain attributed bounded assistant text with byte-safe credential omission; unsupported output is never silently repaired.
+
+### Verification
+
+- 109 controlled transport,22 SQLite/HTTP lifecycle,4 CLI and36 acceptance-boundary tests passed in focused runs.
+- 22 native development browser checks passed; all28 source pins/notices/exceptions verified. Cumulative native acceptance is pending at this code checkpoint.
+
+### Limitations
+
+- Zero actual model calls; selected provider, spending/data scope, independent semantic evaluation and human acceptance remain open.
+- Model files/LFS payloads/nested dependencies are explicitly unmaterialized research exceptions; no upstream dependencies or software were run.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-082: research source copies require explicit trust/discovery/fingerprint and completeness boundaries.
+- Discovery: EM-083: rejection traces need attributed, byte-safe raw evidence and escaped-credential protection.
+- Risk: Configuration or controlled HTTP success may be mistaken for actual-model/human acceptance; a captured source tree may be mistaken for an adopted dependency.
+- Architecture: Keep optional provider transport in the application host; ENDSTATE compiler/authority semantics unchanged. External source pins are provenance inputs, not runtime imports.
+- Roadmap decision: Owner-authorized DOC-07 and optional ES03-09 plus existing gate refinements; all original required acceptance remains.
+Registered discoveries: EM-019, EM-020, EM-031, EM-051, EM-054, EM-055, EM-072, EM-073, EM-077, EM-082, EM-083.
+
+Roadmap items: `DOC-07`, `ES03-09`, `B02-09`, `B02-12`, `B02-15`, `ES03-05`.
+
+Evidence: [docs/evidence/compatible-native-2026-10-16.json](docs/evidence/compatible-native-2026-10-16.json), [docs/evidence/research-copy-2026-10-16.json](docs/evidence/research-copy-2026-10-16.json), [docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md](docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md), [docs/v2/QWEN-SETUP.md](docs/v2/QWEN-SETUP.md), [research/inventory.json](research/inventory.json).
+
 ## 0.2.0-alpha.8 · Ruflo worker-harness assessment and architecture placement
 
 2026-10-16 · `pushed_unreleased`
