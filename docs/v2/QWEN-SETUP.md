@@ -59,6 +59,9 @@ the same setting names.
 
 ## 3. What the agent will verify
 
+The [actual-provider evidence guide](ACTUAL-PROVIDER-EVIDENCE.md) describes unique
+retained generation runs, deliberate lifecycle trials and their limits.
+
 Configuration checks send no request. The Intelligence page shows **Hosted API /
 Qwen**, model, host and configured/not-tested status. The browser receives no
 private key. Select this provider for source analysis or graph drafting; each
@@ -74,7 +77,7 @@ Once settings are active and the fictional test budget/transmission is agreed:
 These deliberate model calls may be billed. They do not run on import, status
 checks or ordinary acceptance. The first uses the unchanged four generation
 fixtures/compiler/pass gate and writes
-`artifacts/compatible/compatible-report.json`. The second runs a disposable
+`artifacts/compatible/<unique-run>/compatible-report.json`. The second runs a disposable
 fictional journey and retains its own report. Cancellation, stale results and
 interruptions also need selected-provider checks.
 
@@ -95,6 +98,9 @@ Other hosted OpenAI-compatible services use the same base URL/model/key settings
 OpenRouter additionally needs `EIGHTBALL_API_PROVIDER=openrouter` and one explicit
 `EIGHTBALL_API_ROUTING_PROVIDER` from its provider list. The request pins that
 provider and disables fallbacks. Strict JSON-schema support must be tested.
+An explicit catalog model ending `:free` is accepted on the exact OpenRouter
+endpoint; the random `openrouter/free` router is rejected. This is syntax and
+identity support, not a claim that a model is currently free or available.
 
 The existing Hugging Face connection retains its own `HF_TOKEN`,
 `EIGHTBALL_HF_MODEL` and `EIGHTBALL_HF_PROVIDER` settings.

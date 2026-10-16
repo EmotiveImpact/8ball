@@ -1,3 +1,7 @@
+# Latest evaluation readiness, 16 October 2026
+
+The [technical direction](../strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md) makes the component choices understandable and keeps all deferred runtime research separate. On `feat/v02-evaluation-readiness-20261016`, [actual-provider tooling](../v2/ACTUAL-PROVIDER-EVIDENCE.md) preserves unique generation runs, exact returned assistant text and explicit lifecycle observations. Its final software receipt is separate from actual-model acceptance. All ten required scopes below remain unchanged. The owner already authorises fictional tests up to US$5 with free access expected; the actual service URL/exact model and active secure configuration remain missing. Do not repeat the permission question or infer model access from this coding conversation.
+
 # Current consolidated closeout
 
 Read [BUILD-OVERVIEW](BUILD-OVERVIEW.md), [HANDOFF](HANDOFF.md), [the integration session](sessions/2026-10-15-main-consolidation.md) and [ADR 0006](../decisions/0006-consolidated-development-main.md). The owner authorized combining current source and documentation into main as a development build. All ten required V0.2 scopes listed in the historical table below remain unfinished at their recorded states; integration does not change acceptance.

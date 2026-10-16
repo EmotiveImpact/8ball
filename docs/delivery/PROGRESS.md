@@ -26,7 +26,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
 - **B02-11: Independent quality evaluation and production-model selection**. Use docs/delivery/review/protocol.template.json to obtain prospective owner/qualified reviewer approval and independently authored labels. Run authorized actual-provider comparisons only afterward; templates/native software acceptance are not semantic approval.
 - **B02-12: Full twenty-step real-model V0.2 acceptance journey**. After the selected actual provider passes generation, run full_journey.py with openai_compatible and explicit inference/external flags, then genuine independent/human acceptance. Controlled HTTP/native tests are not this gate.
-- **B02-15: Model progress/cancellation and accurate installation status**. Controlled new-API cancellation/stale/restart paths are covered. Repeat with the selected actual endpoint after secure configuration and free-access limits are confirmed, within the authorised fictional-fixture US$5 ceiling. Preserve already-sent-request limits.
+- **B02-15: Model progress/cancellation and accurate installation status**. After successful current-source frozen generation, run the opt-in lifecycle tool and native provider journey on the actual selected endpoint. Local admission-trigger observations do not prove remote receipt/cancellation; retain races/omissions and complete remaining provider/human scope.
 - **B02-16: Complete accessibility and supported-environment validation**. Complete the recorded human accessibility and supported-platform review, not another UI feature. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
 - **B02-19: Black operator visual system and transparent intelligence controls**. Review the current black workspace without expanding scope; preserve passing native controls. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
 - **B02-20: Black relationship explorer with local focus, directed flow and records view**. Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
@@ -93,10 +93,10 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Every recorded discovery is retained, linked to roadmap scope, and rendered with append-only dispositions; declined items remain visible and no candidate inherits an unrelated completion tick.
   - Next: Preserve all original discoveries and append review history. Use ADR 0004 and docs/vision for the strengthened direction; no optional candidate or delivery claim becomes verified without its own evidence.
-  - Branch/base: `feat/v02-compatible-provider-20261016` / `f9b33af1bf78d9828e4b7c7c43d26936669b122b`.
+  - Branch/base: `feat/v02-evaluation-readiness-20261016` / `0fed04b5e299f4a2e53050456559133c1231b088`.
   - Dependencies: `DOC-05`.
   - Existing code: `scripts/emergence.py`, `docs/delivery/emergence.json`, `docs/prompts/EMERGENT-INSIGHTS.md`.
-  - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL`, `EV-VISION-REVIEW`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH`, `EV-RUFLO-RESEARCH`, `EV-RUFLO-OWNER-REVIEW` (registry below).
+  - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL`, `EV-VISION-REVIEW`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH`, `EV-RUFLO-RESEARCH`, `EV-RUFLO-OWNER-REVIEW`, `EV-WHOLE-SYSTEM-REVIEW` (registry below).
 
 - [x] **DOC-07 Preserve pinned upstream research source checkouts**
   - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
@@ -193,9 +193,9 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Status: `blocked`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.
   - Next: Activate the owner-selected free-access Qwen/API endpoint and exact model, confirm its service limits, then run unchanged generation fixtures within the authorised fictional-fixture US$5 ceiling. Preserve raw failures and obtain independent semantic evaluation; no catalogue or repaired-output substitution.
-  - Branch/base: `feat/v02-compatible-provider-20261016` / `c9fd38438ba52e9320bc55b96132086bfe57ce6a`.
+  - Branch/base: `feat/v02-evaluation-readiness-20261016` / `0fed04b5e299f4a2e53050456559133c1231b088`.
   - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`, `eightball/v2/compatible.py`, `evals/live_compatible.py`.
-  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE` (registry below).
+  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS` (registry below).
   - Blocker: Fresh selected-provider generation has not been rerun after prompt correction. The owner-selected endpoint/model and active credentials are not yet supplied. Fictional fixtures are authorised up to US$5, with free access expected; confirm actual provider limits before calls. Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate.
 
 - [ ] **B02-10 Robust source extraction, deadlines and entity reconciliation**
@@ -208,22 +208,22 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Blocker: Independent multi-source identity/date usefulness review remains outstanding. No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed.
 
 - [ ] **B02-11 Independent quality evaluation and production-model selection**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-15.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Expert-labelled held-out data and predeclared acceptance thresholds measure semantic errors, omissions, corrections, latency and abstention.
   - Next: Use docs/delivery/review/protocol.template.json to obtain prospective owner/qualified reviewer approval and independently authored labels. Run authorized actual-provider comparisons only afterward; templates/native software acceptance are not semantic approval.
-  - Branch/base: `fix/v02-provider-failure-evidence-20261015` / `45f8794733df9635d8daf5146a37fb94af9e8e90`.
+  - Branch/base: `feat/v02-evaluation-readiness-20261016` / `0fed04b5e299f4a2e53050456559133c1231b088`.
   - Existing code: `evals/live_generation.py`, `evals/classification-cases.json`, `endstate/plan_review.py`, `eightball/v2/plan_review.py`, `web/v2/plan-review-view.js`, `evals/plan_review_bench.py`, `evals/PLAN-QUALITY-GATE.md`, `tests/test_plan_review.py`, `tests/browser_plan_review.py`.
-  - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW` (registry below).
+  - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-EVALUATION-READINESS` (registry below).
   - Blocker: Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed.
 
 - [ ] **B02-12 Full twenty-step real-model V0.2 acceptance journey**
   - Status: `blocked`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Blank case -> real extraction -> mixed human review -> valid graph -> distinct routes -> new evidence/replan -> isolated refusal -> approval/completion -> reload/export, all native.
   - Next: After the selected actual provider passes generation, run full_journey.py with openai_compatible and explicit inference/external flags, then genuine independent/human acceptance. Controlled HTTP/native tests are not this gate.
-  - Branch/base: `feat/v02-compatible-provider-20261016` / `c9fd38438ba52e9320bc55b96132086bfe57ce6a`.
+  - Branch/base: `feat/v02-evaluation-readiness-20261016` / `0fed04b5e299f4a2e53050456559133c1231b088`.
   - Dependencies: `B02-09`, `B02-10`, `B02-11`.
   - Existing code: `tests/browser_v2.py`, `evals/full_journey.py`, `scripts/acceptance.py`, `.github/workflows/provider-journey.yml`.
-  - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE` (registry below).
+  - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS` (registry below).
   - Blocker: Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey.
 
 - [x] **B02-13 Guided nested graph authoring instead of JSON-only advanced editing**
@@ -246,11 +246,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **B02-15 Model progress/cancellation and accurate installation status**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: The UI reports actual runtime/weights/credential state and cancels work without stale commits. No silent large model download.
-  - Next: Controlled new-API cancellation/stale/restart paths are covered. Repeat with the selected actual endpoint after secure configuration and free-access limits are confirmed, within the authorised fictional-fixture US$5 ceiling. Preserve already-sent-request limits.
-  - Branch/base: `feat/v02-compatible-provider-20261016` / `c9fd38438ba52e9320bc55b96132086bfe57ce6a`.
+  - Next: After successful current-source frozen generation, run the opt-in lifecycle tool and native provider journey on the actual selected endpoint. Local admission-trigger observations do not prove remote receipt/cancellation; retain races/omissions and complete remaining provider/human scope.
+  - Branch/base: `feat/v02-evaluation-readiness-20261016` / `0fed04b5e299f4a2e53050456559133c1231b088`.
   - Dependencies: `ES03-04`.
-  - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`, `eightball/v2/compatible.py`, `tests/test_compatible_integration.py`.
-  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE` (registry below).
+  - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`, `eightball/v2/compatible.py`, `tests/test_compatible_integration.py`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`.
+  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS` (registry below).
   - Blocker: Lifecycle behaviour with the selected real inference provider remains unverified.
 
 - [ ] **B02-16 Complete accessibility and supported-environment validation**
@@ -545,9 +545,9 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Status: `partial`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Provider replacement, refusal, timeout, malformed output, prompt injection and trace retention satisfy shared gates with measured quality.
   - Next: Retain new strict API transport traces and controlled failure evidence; evaluate the selected actual model and independent source/plan quality before closing the broader gate.
-  - Branch/base: `feat/v02-compatible-provider-20261016` / `c9fd38438ba52e9320bc55b96132086bfe57ce6a`.
+  - Branch/base: `feat/v02-evaluation-readiness-20261016` / `0fed04b5e299f4a2e53050456559133c1231b088`.
   - Existing code: `eightball/v2/intelligence.py`, `eightball/v2/store.py`.
-  - Evidence: `EV-APP`, `EV-QWEN`, `EV-CLASSIFIER`, `EV-COMPATIBLE-CODE` (registry below).
+  - Evidence: `EV-APP`, `EV-QWEN`, `EV-CLASSIFIER`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS` (registry below).
 
 - [x] **ES03-06 Opt-in Hugging Face development transport contract** (optional, not a version gate)
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
@@ -559,13 +559,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-HF-BLACK-LOCAL` (registry below).
 
 - [ ] **ES03-07 Actual hosted-model comparison on preserved fixtures** (optional, not a version gate)
-  - Status: `blocked`. Owner: ChatGPT. Updated: 2026-09-23.
+  - Status: `blocked`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Authorised real HF requests record exact selected model/provider, outputs, same-fixture structural gate and human semantic review. No automatic or fictitious success.
   - Next: After explicit configuration, run the manual hosted harness without changing the original four inputs; then use independent labelled cases before model selection.
-  - Branch/base: `work/hf-black-drafting` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Branch/base: `feat/v02-evaluation-readiness-20261016` / `0fed04b5e299f4a2e53050456559133c1231b088`.
   - Dependencies: `ES03-06`.
   - Existing code: `evals/live_huggingface.py`, `evals/generation-cases.json`.
-  - Evidence: `EV-HF-BLACK-LOCAL` (registry below).
+  - Evidence: `EV-HF-BLACK-LOCAL`, `EV-EVALUATION-READINESS` (registry below).
   - Blocker: No authorised HF token/model/provider configured; no real hosted inference performed.
 
 - [ ] **ES03-08 Recover and reproduce reported human draft-repair implementation** (optional, not a version gate)
@@ -579,11 +579,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [x] **ES03-09 Opt-in OpenAI-compatible hosted endpoint contract** (optional, not a version gate)
   - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Controlled HTTP and native UI checks verify explicit server-owned endpoint/model/provider, permission, pinned routing, bounded strict responses/failure evidence, secrets protection, stage/cancellation/stale/restart guards and unchanged frozen-fixture harness. This transport scope does not claim actual inference or semantic/human acceptance.
-  - Next: Bounded controlled transport/software contract is verified. Activate the owner-selected free-access endpoint/model and secure key, confirm its limits and run actual B02 generation/lifecycle/journey within the authorised fictional-fixture US$5 ceiling.
-  - Branch/base: `feat/v02-compatible-provider-20261016` / `c9fd38438ba52e9320bc55b96132086bfe57ce6a`.
+  - Next: Verify the refreshed cumulative software checkpoint, then use the exact selected endpoint/model for unchanged actual generation; explicit :free syntax support is not free availability or semantic acceptance.
+  - Branch/base: `feat/v02-evaluation-readiness-20261016` / `0fed04b5e299f4a2e53050456559133c1231b088`.
   - Dependencies: `ES03-06`.
   - Existing code: `eightball/v2/compatible.py`, `tests/test_compatible_provider.py`, `tests/test_compatible_integration.py`, `tests/test_compatible_cli.py`, `evals/live_compatible.py`, `docs/v2/QWEN-SETUP.md`.
-  - Evidence: `EV-COMPATIBLE-CODE` (registry below).
+  - Evidence: `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS` (registry below).
 
 
 ## ENDSTATE 0.4: Domain packs and integration interfaces
@@ -902,3 +902,15 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `bounded_source_research`.
 - Repository evidence: [docs/evidence/ruflo-owner-review-2026-10-16.json](../../docs/evidence/ruflo-owner-review-2026-10-16.json).
 - Result/scope: Current upstream pin rechecked; plain-English owner explanation distinguishes orchestration, free model access, confidence/feedback targets, mocked benchmarks and historical remediations. Source-only; no runtime acceptance.
+
+### EV-WHOLE-SYSTEM-REVIEW
+
+- Kind: `bounded_source_investigation`.
+- Repository evidence: [docs/research/github-2026-10-16/whole-system-review.md](../../docs/research/github-2026-10-16/whole-system-review.md).
+- Result/scope: All 28 candidate dispositions and source-specific operating/evidence/dependency limits preserved; deferred runtime remains unadopted.
+
+### EV-EVALUATION-READINESS
+
+- Kind: `controlled_software_verification`.
+- Repository evidence: [docs/evidence/whole-system-readiness-2026-10-16.json](../../docs/evidence/whole-system-readiness-2026-10-16.json).
+- Result/scope: Fixed explicit-free model selection, exact successful assistant retention, unique/checkpointed frozen runs and opt-in lifecycle observations. Focused tests passed; cumulative native pending. Actual calls zero.

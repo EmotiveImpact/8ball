@@ -147,6 +147,33 @@ def test_strict_request_auth_receipt_and_configuration_freeze(monkeypatch):
     assert session.receipt['calls'][0]['status'] == 'response_received'
 
 
+def test_success_retains_exact_assistant_text_without_envelope_or_headers(monkeypatch):
+    configure(monkeypatch)
+    raw = ' \n{\r\n  "items" : ["café", "\\u00e9", "e\u0301", "雪"]\r\n}\t '
+    data = envelope(); data['choices'][0]['message']['content'] = raw
+    # Unknown provider fields and HTTP headers must never become raw evidence.
+    data['provider_debug'] = 'OUTER_ENVELOPE_SENTINEL ' + TOKEN
+    body = json.dumps(data, ensure_ascii=False).encode()
+    cl, requests = client(httpx.Response(200, content=body, headers={
+        'X-Provider-Debug': 'HEADER_SENTINEL ' + TOKEN,
+        'Set-Cookie': 'private=' + TOKEN}))
+    session = CompatibleSession(allow_external=True, client=cl)
+    output, _ = session.generate(SCHEMA, 'Extract', {'sources': ['Fictional']})
+    assert output == {'items': ['café', 'é', 'e\u0301', '雪']} and len(requests) == 1
+    call = session.receipt['calls'][0]
+    assert call['status'] == 'response_received' and call['raw_content'] == raw
+    assert call['raw_content_sha256'] == sha256(raw.encode()).hexdigest()
+    assert call['response_body_sha256'] == sha256(body).hexdigest()
+    assert call['response_body_bytes'] == len(body)
+    assert call['response_sha256'] == compatible._hash(output)
+    assert call['raw_content_sha256'] != call['response_sha256']
+    assert call['raw_content_sha256'] != call['response_body_sha256']
+    assert 'raw_content_omitted' not in call
+    serialized = json.dumps(session.receipt, ensure_ascii=False)
+    assert all(secret not in serialized for secret in (TOKEN, 'OUTER_ENVELOPE_SENTINEL', 'HEADER_SENTINEL'))
+    assert all(key not in call for key in ('response_body', 'envelope', 'headers', 'cookies'))
+
+
 @pytest.mark.parametrize('host', ['dashscope.aliyuncs.com', 'dashscope-intl.aliyuncs.com', 'dashscope-us.aliyuncs.com'])
 def test_only_exact_dashscope_hosts_disable_thinking(monkeypatch, host):
     configure(monkeypatch, 'https://' + host + '/compatible-mode/v1', 'alibaba')
@@ -173,6 +200,85 @@ def test_openrouter_requires_an_explicit_pinned_provider_no_fallbacks(monkeypatc
         'order': ['Alibaba'], 'only': ['Alibaba'],
         'allow_fallbacks': False, 'require_parameters': True}
     assert session.receipt['routing_provider'] == 'Alibaba'
+
+
+def test_openrouter_explicit_free_catalog_model_preserves_identity_and_pin(monkeypatch):
+    configure(monkeypatch, 'https://openrouter.ai/api/v1', 'openrouter')
+    # A fictional catalog slug tests the protocol, not live availability.
+    model = 'qwen/fixture-model:free'
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', model)
+    monkeypatch.setenv('EIGHTBALL_API_ROUTING_PROVIDER', 'Fixture Provider')
+    status = configuration_status()
+    assert status['configuration_state'] == 'configured_not_tested'
+    assert status['model'] == model and not status['live_inference_verified']
+    response = envelope(); response['model'] = model
+    cl, requests = client(httpx.Response(200, json=response))
+    session = CompatibleSession(allow_external=True, client=cl)
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', 'qwen/changed-paid-model')
+    monkeypatch.setenv('EIGHTBALL_API_ROUTING_PROVIDER', 'Other Provider')
+    output, served_model = session.generate(SCHEMA, 'Extract', {'sources': ['Fictional']})
+    assert output == {'items': []} and served_model == model and len(requests) == 1
+    payload = json.loads(requests[0].content)
+    assert str(requests[0].url) == 'https://openrouter.ai/api/v1/chat/completions'
+    assert payload['model'] == model
+    assert payload['provider'] == {'order': ['Fixture Provider'], 'only': ['Fixture Provider'],
+                                   'allow_fallbacks': False, 'require_parameters': True}
+    assert payload['response_format']['type'] == 'json_schema'
+    assert payload['response_format']['json_schema']['strict'] is True
+    assert session.receipt['requested_model'] == session.receipt['calls'][0]['served_model'] == model
+    assert session.receipt['routing_provider'] == 'Fixture Provider'
+    assert not session.receipt['automatic_routing']
+    assert TOKEN not in json.dumps(session.receipt)
+
+
+@pytest.mark.parametrize('model', ['openrouter/free', 'OpenRouter/Free',
+    'openrouter/free:free', 'openrouter/auto', 'openrouter/auto:free'])
+def test_openrouter_model_routers_are_rejected_before_http(monkeypatch, model):
+    configure(monkeypatch, 'https://openrouter.ai/api/v1', 'openrouter')
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', model)
+    monkeypatch.setenv('EIGHTBALL_API_ROUTING_PROVIDER', 'Fixture Provider')
+    cl, requests = client()
+    with pytest.raises(HostedSetupRequired):
+        CompatibleSession(allow_external=True, client=cl)
+    assert not requests and not configuration_status()['configured']
+
+
+@pytest.mark.parametrize('model', ['qwen/model:nitro', 'qwen/model:free:nitro',
+    'qwen/model:nitro:free', 'qwen/model:free:free', 'qwen/model:FREE',
+    'qwen/model:free/extra', 'qwen/model:free?key=x', 'qwen/model:free#x',
+    'qwen/model%3afree', 'model:free', 'owner/group/model:free', '../model:free',
+    'qwen//model:free', 'qwen/' + 'm' * 171 + ':free'])
+def test_openrouter_free_exception_does_not_enable_suffix_or_identifier_abuse(monkeypatch, model):
+    configure(monkeypatch, 'https://openrouter.ai/api/v1', 'openrouter')
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', model)
+    monkeypatch.setenv('EIGHTBALL_API_ROUTING_PROVIDER', 'Fixture Provider')
+    cl, requests = client()
+    with pytest.raises(HostedSetupRequired):
+        CompatibleSession(allow_external=True, client=cl)
+    assert not requests and not configuration_status()['configured']
+
+
+@pytest.mark.parametrize('base', [BASE, 'https://api.openrouter.ai/api/v1',
+    'https://openrouter.ai.other.example/api/v1'])
+def test_free_catalog_suffix_is_not_enabled_for_other_hosts(monkeypatch, base):
+    configure(monkeypatch, base)
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', 'qwen/fixture-model:free')
+    cl, requests = client()
+    with pytest.raises(HostedSetupRequired):
+        CompatibleSession(allow_external=True, client=cl)
+    assert not requests and not configuration_status()['configured']
+
+
+@pytest.mark.parametrize('pin', [None, 'auto', 'A,B'])
+def test_explicit_free_catalog_model_still_requires_valid_provider_pin(monkeypatch, pin):
+    configure(monkeypatch, 'https://openrouter.ai/api/v1', 'openrouter')
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', 'qwen/fixture-model:free')
+    if pin is not None:
+        monkeypatch.setenv('EIGHTBALL_API_ROUTING_PROVIDER', pin)
+    cl, requests = client()
+    with pytest.raises(HostedSetupRequired):
+        CompatibleSession(allow_external=True, client=cl)
+    assert not requests and not configuration_status()['configured']
 
 
 @pytest.mark.parametrize('pin', ['auto', 'fastest', 'cheapest', 'A,B', 'A\nB'])
@@ -266,6 +372,8 @@ def test_original_rejected_assistant_text_and_identity_are_retained(monkeypatch,
 
 @pytest.mark.parametrize('raw', [
     'not JSON ' + TOKEN, json.dumps({'secret': TOKEN}),
+    json.dumps({'items': [TOKEN]}),
+    json.dumps({'items': [TOKEN]}).replace('_', '\\u005f'),
     json.dumps({'secret': TOKEN}).replace('_', '\\u005f'),
     json.dumps({TOKEN: ['nested']}).replace('_', '\\u005f'),
     '{"secret":"' + TOKEN.replace('_', '\\u005f') + '",',

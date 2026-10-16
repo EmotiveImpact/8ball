@@ -4,6 +4,55 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Whole-system direction and retained model evaluation evidence
+
+2026-10-16 · `local_unreleased`
+
+Reviewed all 28 source candidates and chose a lean acceptance-first direction; fixed model-identity configuration and prepared retained generation/lifecycle evidence without model calls.
+
+### Added
+
+- Owner-readable complete disposition matrix, source findings and actual-provider evidence guide.
+- Unique immutable generation checkpoints and opt-in cancel/stale/owned-process-restart observations.
+- EM-085..093 plus additive history preserving every earlier discovery.
+
+### Changed
+
+- Exact successful assistant text retained only after existing validation; rejected/error/credential boundaries remain.
+- Explicit OpenRouter :free catalog variants supported with pinned provider; random free router rejected.
+
+### Fixed
+
+- Repeated hosted runs no longer overwrite earlier experiment reports.
+- Lifecycle cleanup terminates its owned process even if client close raises.
+
+### Verification
+
+- Focused controlled suites passed: 160 transport/integration, 68 retention/CLI/hosted-grounding, 89 lifecycle/CLI/integration/job tests including 30 new lifecycle cases; counts overlap.
+- All 28 candidate pins reviewed by category; no upstream execution, install, model download or actual inference. Cumulative native verification pending at this code checkpoint.
+
+### Limitations
+
+- Zero actual model calls; endpoint/exact model/secure access remain missing. Existing fictional-only US$5 authorisation is preserved.
+- Application admission is not remote delivery; lifecycle races/response loss remain explicit, with no automatic repeat.
+- Current B02 remains 10/20 required verified and ES01 5/5 internal; independent professional and genuine human gates remain.
+- No deferred runtime adoption, main merge, release or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-085..087: fixed-model identity, durable experiment evidence and separate admission/remote observations.
+- Discovery: EM-088..093: document coordinates, telemetry, actor failures, dependency environments, durability/retries and eval mode execution.
+- Risk: Framework/model/service success can be mistaken for actual outcome correctness, scope isolation, free entitlement or genuine acceptance.
+- Architecture: Keep existing host/engine authority; introduce optional isolated specialists only through measured source-aware contracts.
+- Roadmap decision: Existing task engineering/documentation refinements; candidate adapter concerns retained without promoting deferred research into required scope.
+Registered discoveries: EM-085, EM-086, EM-087, EM-088, EM-089, EM-090, EM-091, EM-092, EM-093.
+
+Roadmap items: `DOC-06`, `B02-09`, `B02-11`, `B02-12`, `B02-15`, `ES03-05`, `ES03-09`.
+
+Evidence: [docs/strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md](docs/strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md), [docs/research/github-2026-10-16/whole-system-review.md](docs/research/github-2026-10-16/whole-system-review.md), [docs/evidence/whole-system-readiness-2026-10-16.json](docs/evidence/whole-system-readiness-2026-10-16.json), [docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md](docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md), [docs/v2/ACTUAL-PROVIDER-EVIDENCE.md](docs/v2/ACTUAL-PROVIDER-EVIDENCE.md).
+
 ## 0.2.0-alpha.8 · Ruflo explained with current pinned-source evidence
 
 2026-10-16 · `pushed_unreleased`

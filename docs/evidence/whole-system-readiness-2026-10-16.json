@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-16",
+  "kind": "source_investigation_and_software_verification",
+  "base_commit": "0fed04b5e299f4a2e53050456559133c1231b088",
+  "branch": "feat/v02-evaluation-readiness-20261016",
+  "status": "cumulative_native_pending",
+  "research": {
+    "scope": "Bounded actual-source/manifests and existing research review, not exhaustive/security audit or reproduced upstream benchmarks",
+    "candidate_repositories": {
+      "666ghj/MiroFish": "7657031ac01184afe2cb220f5ee3545573b5e843",
+      "anyoptimization/pymoo": "23110c155aa8f31b5f1b86928227fb3931ba7f00",
+      "Arize-ai/phoenix": "2be380f7a360b7a71f97fc510de5e9679e58f7c9",
+      "camel-ai/oasis": "bc805a19978a620bb400f4c644ce9d772ccbfc70",
+      "docling-project/docling": "f690a5232c505c787a1e952216b431134b4d7c94",
+      "getzep/graphiti": "d50741d1bf463cbe3859eb73914cbff1b66839e6",
+      "getzep/zep": "3997767fccf83bbea7b54ad5f73554f2e5bcd54e",
+      "getzep/zep-python": "ec41ccdde6fe92dc0de378c7bfb0c2483af324ce",
+      "google/or-tools": "100f66e6242ab8bf8d32feb8f3bf086db66ae2b5",
+      "keycloak/keycloak": "eae20e964b2e23cfd8f4ed18b599343ebb056e8f",
+      "langchain-ai/langgraph": "e77a5cb08c1f3ff306d997dd76fc7169afdab5ea",
+      "langchain-ai/langgraph-swarm-py": "5442a15cdd0ed210589148900c9960c24c489d04",
+      "mem0ai/mem0": "0724291bd864cf807e88ee8981c8226644e8fb42",
+      "mesa/mesa": "5451086fe47ab78e9ba894aa1b4c3063f4c247f1",
+      "microsoft/autogen": "027ecf0a379bcc1d09956d46d12d44a3ad9cee14",
+      "open-policy-agent/opa": "fdf6011f57fdc25f01de1982e296bb402cf37625",
+      "openfga/openfga": "fb8e7df866742a0c947e3066919ee59ac9e70eea",
+      "postgres/postgres": "eb7cc1d09e742d369540016455d0f55c619106f2",
+      "promptfoo/promptfoo": "132a2d38b1b0adc953b0db650f950d573bc113c4",
+      "py-why/dowhy": "10648f1a295cbb40fd9cdd7ce43521a6ef954078",
+      "py-why/EconML": "d625dd696ea28c62e6e4d8baea6e4154b98c30b4",
+      "ruvnet/ruflo": "1882006a02487590c8c66a7eec8d7504f6af33c3",
+      "SALib/SALib": "748cf169e82227bcc56dcfc961fcfb03a1e0df45",
+      "simulatrex/possible-worlds": "08837a790f6ca0d98f7468935e9139292ea7cb78",
+      "simulatrex/simulatrex-engine": "4e4fa06d7f527480b66ceb224a5d37bcfa2f9150",
+      "temporalio/sdk-python": "346d4dcd0863657c3a33283c952a296762059339",
+      "TencentCloud/TencentDB-Agent-Memory": "e9a82935b52741e0c798c75326e90b7144eb4d5f",
+      "tsinghua-fib-lab/AgentSociety": "8cc5bb9a9c27d039ec5519375db9d73ccf508cba"
+    },
+    "additional_official_documentation_refs": {
+      "OpenRouterTeam/docs": "cf946639e64019ddad516b9536d9be766c45e10d",
+      "QwenLM/Qwen3": "7a2f61ffc7a20d47efcd2bf97f6f2bf52729042e"
+    },
+    "official_websites": "Alibaba/OpenRouter direct website reads failed through inherited proxy; GitHub mirrors accessible",
+    "upstream_code_executed": false,
+    "runtime_adoption": false
+  },
+  "focused_checks": {
+    "transport_and_integration": 160,
+    "retention_cli_hosted_grounding": 68,
+    "lifecycle_cli_integration_jobs": 89,
+    "new_lifecycle_cases": 30,
+    "counts_overlap": true
+  },
+  "actual_model_calls": 0,
+  "provider_readiness": {
+    "observations_current": true,
+    "runtime": "running",
+    "secrets_configured": false,
+    "runtime_variables_configured": false,
+    "network_policy_state": "unknown"
+  },
+  "owner_authorization": {
+    "fictional_repository_examples_only": true,
+    "max_usd": 5,
+    "expects_free_access": true,
+    "exact_service_model_and_active_credentials": "not supplied"
+  },
+  "independent_professional_or_human_acceptance": false,
+  "full_v02_accepted": false,
+  "merged_into_main": false,
+  "released": false,
+  "deployed": false,
+  "limits": [
+    "Lifecycle trigger is local call admission; remote receipt/completion/billing remain unknown.",
+    "Discarded/killed job responses can be unavailable; no invented evidence. Fast races remain inconclusive without retry.",
+    "Compatible raw retention covers exact bounded assistant text, not the full HTTP envelope/headers/error bodies.",
+    "Generation checkpoints bracket fixtures, not internal graph stages; hard kill retains the last durable checkpoint.",
+    "Application has no dollar ledger; verify selected endpoint pricing/free quota/provider-enforced cap before actual paid use.",
+    "Independent study templates and agent reviews are not professional/human acceptance."
+  ]
+}

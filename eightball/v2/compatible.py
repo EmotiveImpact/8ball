@@ -115,12 +115,19 @@ def settings() -> CompatibleSettings:
                               values['EIGHTBALL_API_PROVIDER'])
     if not 8 <= len(token) <= 4096 or any(ord(c) < 33 or ord(c) > 126 for c in token):
         raise HostedSetupRequired('EIGHTBALL_API_KEY has an invalid format. No hosted request was made.')
-    if (not _MODEL.fullmatch(model) or any(part in {'', '.', '..'} for part in model.split('/'))
-            or model.lower() in _AUTOMATIC or model.lower() == 'openrouter/auto'):
+    endpoint, host = _endpoint(values['EIGHTBALL_API_BASE_URL'])
+    # OpenRouter's explicit :free catalog entry is a fixed model selection,
+    # unlike its openrouter/free router. Do not generalize this exception to
+    # other hosts or routing suffixes such as :nitro.
+    catalog_model = model.removesuffix(':free') if host == 'openrouter.ai' else model
+    if (len(model) > 180 or not _MODEL.fullmatch(catalog_model)
+            or any(part in {'', '.', '..'} for part in catalog_model.split('/'))
+            or (catalog_model != model and catalog_model.count('/') != 1)
+            or catalog_model.lower() in _AUTOMATIC
+            or catalog_model.lower() in {'openrouter/auto', 'openrouter/free'}):
         raise HostedSetupRequired('EIGHTBALL_API_MODEL must be one explicit model identifier, without a URL or automatic routing suffix.')
     if provider in _AUTOMATIC or not re.fullmatch(r'[a-z][a-z0-9-]{0,63}', provider):
         raise HostedSetupRequired('Choose one explicit EIGHTBALL_API_PROVIDER identity; automatic routing is not enabled.')
-    endpoint, host = _endpoint(values['EIGHTBALL_API_BASE_URL'])
     routing = os.getenv('EIGHTBALL_API_ROUTING_PROVIDER', '').strip()
     if host == 'openrouter.ai':
         if (provider != 'openrouter' or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9 ._-]{0,79}', routing)
@@ -252,8 +259,12 @@ class CompatibleSession:
             tokens = {key: usage[key] for key in ('prompt_tokens', 'completion_tokens', 'total_tokens') if key in usage}
             if any(type(n) is not int or n < 0 for n in tokens.values()):
                 raise HostedFailure('invalid_usage')
+            # Preserve the exact bounded assistant text after all transport and
+            # credential checks. Parsed/canonical JSON and the HTTP envelope
+            # hash are separate evidence; neither replaces these source bytes.
             call.update(status='response_received', usage=tokens,
-                        response_sha256=_hash(output), finish_reason='stop')
+                        response_sha256=_hash(output), finish_reason='stop',
+                        raw_content=assistant_content)
             return output, model
         except HostedFailure as exc:
             call.update(status='failed', error_code=exc.code)

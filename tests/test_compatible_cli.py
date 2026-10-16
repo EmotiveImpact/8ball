@@ -60,7 +60,9 @@ def test_compatible_eval_preserves_all_frozen_rejections_without_fallback(tmp_pa
     monkeypatch.setattr(live_huggingface, 'propose', rejected)
     result = live_huggingface.main(['--allow-hosted', '--output', str(tmp_path)],
                                    default_provider='openai_compatible')
-    report = json.loads((tmp_path / 'compatible-report.json').read_text())
+    reports = list(tmp_path.glob('*/compatible-report.json'))
+    assert len(reports) == 1
+    report = json.loads(reports[0].read_text())
     frozen = json.loads((ROOT / 'evals/generation-cases.json').read_text())
     assert result == 1 and not report['structural_gate_passed']
     assert report['fixture_sha256'] == live_huggingface.FIXTURES_SHA256

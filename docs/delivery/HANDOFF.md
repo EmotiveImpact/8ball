@@ -1,3 +1,13 @@
+# Current sprint: whole-system investigation and evaluation readiness
+
+Branch `feat/v02-evaluation-readiness-20261016`, base `0fed04b5e299f4a2e53050456559133c1231b088`, preserves all earlier work. Read [technical direction](../strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md), [source findings for all 28 candidates](../research/github-2026-10-16/whole-system-review.md), [provider evidence guide](../v2/ACTUAL-PROVIDER-EVIDENCE.md) and [full sprint/ER-01–15](sessions/2026-10-16-whole-system-evaluation-readiness.md). Keep current app/engine, prove one exact provider, then compare one specialist per demonstrated need. No new research runtime is adopted.
+
+Code fixes explicit OpenRouter free-variant identity versus random routing, retains successful assistant text, creates unique/checkpointed hosted experiments and adds opt-in cancel/stale/owned-process-restart observations. Focused controlled suites passed; [receipt](../evidence/whole-system-readiness-2026-10-16.json) is pending cumulative native verification at this code checkpoint. The final receipt must identify its actual tested commit/results. Historical native totals below are not a fresh result for this source. All 93 discoveries are retained; original task scopes/statuses remain unchanged.
+
+Actual inference is zero; runtime has no provider variables/secrets. Owner already authorises fictional examples up to US$5 and expects free access. Next dependency is its public endpoint/exact model and secure active key, followed by selected-service limits and unchanged generation/lifecycle/native journey. The lifecycle trigger is application admission, not remote delivery; missing discarded responses and fast races remain explicit. Independent prospective study/qualified labels and human/owner end review remain separate. No further main merge, release or deployment.
+
+---
+
 # Latest owner research: Ruflo explained
 
 The owner's follow-up investigation is preserved in [the plain-English Ruflo guide](../research/github-2026-10-16/ruflo-owner-guide.md), [source receipt](../evidence/ruflo-owner-review-2026-10-16.json) and [full session/ER review](sessions/2026-10-16-ruflo-owner-review.md). On the same development branch, base `f9b33af`, current upstream HEAD/main still matched pinned `1882006`. Documentation only: no upstream execution/install, model calls, app changes, main merge or deployment. Canonical continuity checks passed; no fresh native-test or remote-CI result is claimed.

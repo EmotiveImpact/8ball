@@ -1,3 +1,7 @@
+# Evaluation evidence update, 16 October 2026
+
+Read [actual-provider evidence](ACTUAL-PROVIDER-EVIDENCE.md) for unique checkpointed hosted-fixture reports and the opt-in application lifecycle runner. Controlled software checks do not complete actual-model or human acceptance. Ordinary native acceptance still strips provider settings and makes no model calls. Historical fixed report paths below describe older runner versions.
+
 # Integrated acceptance: source bytes, evidence and scope
 
 The current runner retains **eleven** browser suites. It prunes source-only
