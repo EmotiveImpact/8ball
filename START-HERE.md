@@ -1,3 +1,7 @@
+## Latest owner research: understand Ruflo
+
+Read [the plain-English Ruflo investigation](docs/research/github-2026-10-16/ruflo-owner-guide.md) and [source-only handoff](docs/delivery/sessions/2026-10-16-ruflo-owner-review.md). This explains optional worker coordination, separately supplied model access and evidence limits. No runtime adoption or acceptance change; the verified development below is preserved.
+
 ## Latest development: Qwen API transport and research source copies
 
 On `feat/v02-compatible-provider-20261016`, based on research checkpoint `c9fd384`, all 28 inspected source repositories are now populated under [research/external](research/README.md) at immutable pins. Tested code `ddfead7` passed 1,104 source tests, 1,104 installed-kernel tests and 391 native browser checks across 11 suites; [source-bound receipt](docs/evidence/compatible-native-2026-10-16.json). The [Qwen setup guide](docs/v2/QWEN-SETUP.md) explains secure hosted endpoint configuration. Read [the current sprint](docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md) and [handoff](docs/delivery/HANDOFF.md). This development branch includes all consolidated main/fixes and research proposals. Actual-model, independent/human V0.2 acceptance remains open; source copies adopt no deferred runtime. The owner authorises fictional model tests up to US$5 and expects their supplied endpoint to be free; confirm the service limits after receiving its public URL/model and secure key.

@@ -720,7 +720,8 @@
         "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
         "docs/research/github-2026-10-16/tencent-memory.md",
         "docs/research/github-2026-10-16/ruflo.md",
-        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md"
+        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md",
+        "docs/research/github-2026-10-16/ruflo-owner-guide.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -759,6 +760,12 @@
           "decision": "adopted",
           "by": "Codex compatible-provider sprint",
           "reason": "existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex Ruflo owner source review",
+          "reason": "existing_task/candidate refinement: preserve separate model-access, bookkeeping, API-success, worker-routing and business-outcome targets; record synthetic/live benchmark scope and historical audit remediations. Optional coordinator remains unadopted."
         }
       ]
     },
@@ -1919,7 +1926,8 @@
         "docs/delivery/sessions/2026-10-15-main-consolidation.md",
         "docs/research/github-2026-10-16/tencent-memory.md",
         "docs/research/github-2026-10-16/ruflo.md",
-        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md"
+        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md",
+        "docs/research/github-2026-10-16/ruflo-owner-guide.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1970,6 +1978,12 @@
           "decision": "adopted",
           "by": "Codex compatible-provider sprint",
           "reason": "existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex Ruflo owner source review",
+          "reason": "existing_task/candidate refinement: preserve separate model-access, bookkeeping, API-success, worker-routing and business-outcome targets; record synthetic/live benchmark scope and historical audit remediations. Optional coordinator remains unadopted."
         }
       ]
     },
@@ -2681,7 +2695,8 @@
         "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
         "docs/research/github-2026-10-16/tencent-memory.md",
         "docs/research/github-2026-10-16/ruflo.md",
-        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md"
+        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md",
+        "docs/research/github-2026-10-16/ruflo-owner-guide.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2708,6 +2723,12 @@
           "decision": "candidate",
           "by": "Codex compatible-provider sprint",
           "reason": "existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "candidate",
+          "by": "Codex Ruflo owner source review",
+          "reason": "existing_task/candidate refinement: preserve separate model-access, bookkeeping, API-success, worker-routing and business-outcome targets; record synthetic/live benchmark scope and historical audit remediations. Optional coordinator remains unadopted."
         }
       ]
     },
@@ -2820,7 +2841,8 @@
       ],
       "acceptance_task_ids": [],
       "evidence_paths": [
-        "docs/research/github-2026-10-16/ruflo.md"
+        "docs/research/github-2026-10-16/ruflo.md",
+        "docs/research/github-2026-10-16/ruflo-owner-guide.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2829,6 +2851,12 @@
           "decision": "candidate",
           "by": "Codex bounded source review",
           "reason": "new_candidate: retain an adapter validation requirement from source inspection; no runtime dependency or required scope promoted."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "candidate",
+          "by": "Codex Ruflo owner source review",
+          "reason": "existing_task/candidate refinement: preserve separate model-access, bookkeeping, API-success, worker-routing and business-outcome targets; record synthetic/live benchmark scope and historical audit remediations. Optional coordinator remains unadopted."
         }
       ]
     },
@@ -2899,6 +2927,33 @@
           "decision": "adopted",
           "by": "Codex build review",
           "reason": "existing_task: cumulative native run at ddfead7 passed 1,104 source/1,104 installed tests and 391 browser checks; inspection valid. This adds software evidence only, not live-provider or independent/human acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-084",
+      "title": "Confidence metrics need explicit prediction targets",
+      "origin": "Owner-requested plain-English Ruflo investigation",
+      "first_seen": "2026-10-16",
+      "evidence_level": "operator_hypothesis",
+      "observation": "The inspected Ruflo Q-router reports softmax confidence over learned worker-role Q-values; the inspected execution feedback uses return without API error as success. These metrics concern worker assignment and transport completion, while no calibrated business-outcome probability is established by those paths.",
+      "product_implication": "Label the target and provenance of confidence/success metrics. Keep worker assignment, provider completion, independent plan quality and actual outcome measurement distinct; require held-out calibration before presenting a probability of achieving the client outcome.",
+      "task_ids": [
+        "ES03-02",
+        "ES03-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/research/github-2026-10-16/ruflo-owner-guide.md",
+        "docs/evidence/ruflo-owner-review-2026-10-16.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-16",
+          "decision": "candidate",
+          "by": "Codex bounded source review",
+          "reason": "new_candidate: preserve a prediction-target/adapter evaluation requirement. No new required scope, runtime integration or independent acceptance follows from inspected source."
         }
       ]
     }

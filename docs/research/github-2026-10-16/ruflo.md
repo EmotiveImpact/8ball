@@ -4,6 +4,9 @@
 
 ## Recommendation
 
+For the owner's plain-English explanation, free-Qwen clarification and checked
+claims, read [Ruflo owner guide](ruflo-owner-guide.md).
+
 Shortlist Ruflo as an optional developer/worker coordination harness. It surrounds Claude Code/Codex or configured model calls with tools, task/agent management, memory, hooks and workflow coordination. It is a different layer from MiroFish/OASIS social simulation and ENDSTATE conditional route calculation. Compare a bounded workflow against the current native agent/job approach before importing it into product runtime.
 
 Source licence is MIT; root package is `claude-flow` 3.56.10 and declares Node >=20. Branding aliases and individual component versions differ. A compatible host/model configuration is still needed. Claude-specific console/mod functionality is not automatically portable to every MCP client. Optional AgentDB/RuVector packages bring their own dependency/runtime constraints.

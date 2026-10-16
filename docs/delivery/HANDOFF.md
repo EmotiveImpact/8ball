@@ -1,3 +1,11 @@
+# Latest owner research: Ruflo explained
+
+The owner's follow-up investigation is preserved in [the plain-English Ruflo guide](../research/github-2026-10-16/ruflo-owner-guide.md), [source receipt](../evidence/ruflo-owner-review-2026-10-16.json) and [full session/ER review](sessions/2026-10-16-ruflo-owner-review.md). On the same development branch, base `f9b33af`, current upstream HEAD/main still matched pinned `1882006`. Documentation only: no upstream execution/install, model calls, app changes, main merge or deployment. Canonical continuity checks passed; no fresh native-test or remote-CI result is claimed.
+
+Ruflo remains optional worker coordination. It needs separately supplied model access and does not provide our selected free Qwen endpoint. Registration, keyless echo, provider completion, worker-routing confidence and independent outcome quality are distinct; EM-084 preserves the prediction-target concern. All 84 discoveries remain visible. Original task scopes/statuses and B02 10/20, ES01 5/5 are unchanged. Next engineering task is still the owner's public endpoint/exact model, secure key and actual unchanged-fixture/lifecycle/journey tests within fictional-only US$5 authorisation and expected free-access limits. Owner end review and independent professional evaluation remain separate. The verified application receipt below continues to apply at its exact tested commit.
+
+---
+
 # Latest verified development: hosted Qwen API and 28 research sources
 
 `feat/v02-compatible-provider-20261016` preserves all consolidated application fixes and research history. Tested code commit `ddfead7fe2e44a01ec202d2196384c5dc2596c5b` passed **1,104 source tests, 1,104 installed-kernel tests and 391 native browser checks across all 11 suites**. Source/artifact inspection was valid/passed before final documentation edits. [Final receipt](../evidence/compatible-native-2026-10-16.json), [source-copy receipt](../evidence/research-copy-2026-10-16.json), [full sprint and ER-01–15](sessions/2026-10-16-compatible-provider-research-copy.md), [beginner Qwen guide](../v2/QWEN-SETUP.md).

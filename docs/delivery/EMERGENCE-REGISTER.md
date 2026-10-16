@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-16. **83 recorded discoveries.**
+Last review: 2026-10-16. **84 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -371,7 +371,7 @@ Valid references and exact quotations can accompany an interpretation that misse
 
 **Roadmap links:** `B02-09` (blocked), `B02-11` (partial), `ES03-02` (blocked).
 **Completion scope:** `B02-11`.
-**Evidence / source record:** `docs/evidence/staged-compilation-verification.json`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`.
+**Evidence / source record:** `docs/evidence/staged-compilation-verification.json`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`, `docs/research/github-2026-10-16/ruflo-owner-guide.md`.
 
 **Decision history:**
 
@@ -381,6 +381,7 @@ Valid references and exact quotations can accompany an interpretation that misse
 - 2026-10-16 · adopted · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 - 2026-10-16 · adopted · Codex Ruflo source review: existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence.
 - 2026-10-16 · adopted · Codex compatible-provider sprint: existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime.
+- 2026-10-16 · adopted · Codex Ruflo owner source review: existing_task/candidate refinement: preserve separate model-access, bookkeeping, API-success, worker-routing and business-outcome targets; record synthetic/live benchmark scope and historical audit remediations. Optional coordinator remains unadopted.
 
 ### [ ] EM-021: Review state and evidence character must be separate
 
@@ -995,7 +996,7 @@ A configured provider can be unreachable; a valid model response can be semantic
 
 **Roadmap links:** `B02-12` (blocked), `B02-15` (partial), `B02-18` (blocked), `ES03-08` (blocked).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `scripts/acceptance.py`, `evals/full_journey.py`, `docs/delivery/sessions/2026-09-24-integration-acceptance-local.md`, `docs/decisions/0004-evidence-led-course-and-recovery.md`, `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`.
+**Evidence / source record:** `scripts/acceptance.py`, `evals/full_journey.py`, `docs/delivery/sessions/2026-09-24-integration-acceptance-local.md`, `docs/decisions/0004-evidence-led-course-and-recovery.md`, `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`, `docs/research/github-2026-10-16/ruflo-owner-guide.md`.
 
 **Decision history:**
 
@@ -1007,6 +1008,7 @@ A configured provider can be unreachable; a valid model response can be semantic
 - 2026-10-16 · adopted · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 - 2026-10-16 · adopted · Codex Ruflo source review: existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence.
 - 2026-10-16 · adopted · Codex compatible-provider sprint: existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime.
+- 2026-10-16 · adopted · Codex Ruflo owner source review: existing_task/candidate refinement: preserve separate model-access, bookkeeping, API-success, worker-routing and business-outcome targets; record synthetic/live benchmark scope and historical audit remediations. Optional coordinator remains unadopted.
 
 ### [ ] EM-056: A candidate route is not a human-selected course
 
@@ -1391,7 +1393,7 @@ Model costs multiply across cases, branches, actors, rounds, repeats, embeddings
 
 **Roadmap links:** `ES03-05` (partial), `B03-04` (not_started).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`.
+**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`, `docs/research/github-2026-10-16/ruflo-owner-guide.md`.
 
 **Decision history:**
 
@@ -1399,6 +1401,7 @@ Model costs multiply across cases, branches, actors, rounds, repeats, embeddings
 - 2026-10-16 · candidate · Codex Tencent source research: existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance.
 - 2026-10-16 · candidate · Codex Ruflo source review: existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence.
 - 2026-10-16 · candidate · Codex compatible-provider sprint: existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime.
+- 2026-10-16 · candidate · Codex Ruflo owner source review: existing_task/candidate refinement: preserve separate model-access, bookkeeping, API-success, worker-routing and business-outcome targets; record synthetic/live benchmark scope and historical audit remediations. Optional coordinator remains unadopted.
 
 ### [ ] EM-078: Upstream names hide materially different licence and API boundaries
 
@@ -1464,11 +1467,12 @@ The inspected Ruflo embedding policy permits a deterministic hash fallback when 
 
 **Roadmap links:** `B04-02` (not_started), `ES03-05` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/research/github-2026-10-16/ruflo.md`.
+**Evidence / source record:** `docs/research/github-2026-10-16/ruflo.md`, `docs/research/github-2026-10-16/ruflo-owner-guide.md`.
 
 **Decision history:**
 
 - 2026-10-16 · candidate · Codex bounded source review: new_candidate: retain an adapter validation requirement from source inspection; no runtime dependency or required scope promoted.
+- 2026-10-16 · candidate · Codex Ruflo owner source review: existing_task/candidate refinement: preserve separate model-access, bookkeeping, API-success, worker-routing and business-outcome targets; record synthetic/live benchmark scope and historical audit remediations. Optional coordinator remains unadopted.
 
 ### [ ] EM-082: External research copies need an application trust and test boundary
 
@@ -1505,3 +1509,20 @@ A malformed HTTP200 body is not necessarily assistant output. Valid assistant te
 
 - 2026-10-16 · adopted · Codex build review: existing_task: implement bounded source/transport safeguards within the owner-authorized source-copy and provider work; no real-model or independent acceptance inferred.
 - 2026-10-16 · adopted · Codex build review: existing_task: cumulative native run at ddfead7 passed 1,104 source/1,104 installed tests and 391 browser checks; inspection valid. This adds software evidence only, not live-provider or independent/human acceptance.
+
+### [ ] EM-084: Confidence metrics need explicit prediction targets
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** operator_hypothesis.
+**First recorded:** 2026-10-16. **Origin:** Owner-requested plain-English Ruflo investigation.
+
+The inspected Ruflo Q-router reports softmax confidence over learned worker-role Q-values; the inspected execution feedback uses return without API error as success. These metrics concern worker assignment and transport completion, while no calibrated business-outcome probability is established by those paths.
+
+**Product implication:** Label the target and provenance of confidence/success metrics. Keep worker assignment, provider completion, independent plan quality and actual outcome measurement distinct; require held-out calibration before presenting a probability of achieving the client outcome.
+
+**Roadmap links:** `ES03-02` (blocked), `ES03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-16/ruflo-owner-guide.md`, `docs/evidence/ruflo-owner-review-2026-10-16.json`.
+
+**Decision history:**
+
+- 2026-10-16 · candidate · Codex bounded source review: new_candidate: preserve a prediction-target/adapter evaluation requirement. No new required scope, runtime integration or independent acceptance follows from inspected source.

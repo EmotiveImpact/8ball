@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Ruflo explained with current pinned-source evidence
+
+2026-10-16 · `pushed_unreleased`
+
+Added an owner-readable source investigation of Ruflo worker coordination, model access, confidence and evidence limits. Application behavior and acceptance gates are unchanged.
+
+### Added
+
+- Plain-English owner guide, pinned-source receipt and complete ER-01–15 handoff.
+- EM-084 preserves the prediction target behind worker-routing confidence; prior findings receive additive evidence.
+
+### Changed
+
+- Clarified that Ruflo still needs a separately supplied model service and provides no selected free Qwen endpoint for 8BALL.
+- Preserved upstream historical audit/remediation dates alongside current unmeasured telemetry and synthetic/live benchmark distinctions.
+
+### Verification
+
+- Read-only source inspection; HTTPS Git remote HEAD/main matched copied commit 1882006a02487590c8c66a7eec8d7504f6af33c3.
+- Canonical delivery/emergence/changelog regeneration and base-history checks passed; local documentation links, original scopes/statuses and whitespace checked.
+
+### Limitations
+
+- No installation, upstream execution, model calls or independent benchmark reproduction.
+- Previous 1,104/1,104/391 software results belong to tested ddfead7; this documentation review does not rerun or extend those results.
+- Ruflo remains optional research; V0.2 real-model and independent/human requirements remain open. No merge or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-084: confidence/success metrics require an explicit prediction target; worker routing is separate from client-outcome probability.
+- Discovery: Additive EM-020/055/077/081 source evidence: actual access/execution, exact model/retry accounting, semantic memory and dated remediation scope.
+- Risk: A keyless demo, API-success reward or persuasive swarm dashboard may be mistaken for working free inference or correct scenario decisions.
+- Architecture: Keep model access, optional worker coordination, hypothetical simulation and reviewed case authority separate.
+- Roadmap decision: Existing DOC-06 documentation refinement and candidate ES03-02/05 evaluation concern; no new required task or runtime adoption.
+Registered discoveries: EM-020, EM-055, EM-077, EM-081, EM-084.
+
+Roadmap items: `DOC-06`, `ES03-02`, `ES03-05`.
+
+Evidence: [docs/research/github-2026-10-16/ruflo-owner-guide.md](docs/research/github-2026-10-16/ruflo-owner-guide.md), [docs/evidence/ruflo-owner-review-2026-10-16.json](docs/evidence/ruflo-owner-review-2026-10-16.json), [docs/delivery/sessions/2026-10-16-ruflo-owner-review.md](docs/delivery/sessions/2026-10-16-ruflo-owner-review.md).
+
 ## 0.2.0-alpha.8 · Verified hosted transport and pinned research-copy checkpoint
 
 2026-10-16 · `pushed_unreleased`

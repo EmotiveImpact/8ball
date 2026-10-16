@@ -3,6 +3,62 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-16-ruflo-owner-source-review",
+      "date": "2026-10-16",
+      "version": "0.2.0-alpha.8",
+      "title": "Ruflo explained with current pinned-source evidence",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "DOC-06",
+        "ES03-02",
+        "ES03-05"
+      ],
+      "summary": "Added an owner-readable source investigation of Ruflo worker coordination, model access, confidence and evidence limits. Application behavior and acceptance gates are unchanged.",
+      "added": [
+        "Plain-English owner guide, pinned-source receipt and complete ER-01\u201315 handoff.",
+        "EM-084 preserves the prediction target behind worker-routing confidence; prior findings receive additive evidence."
+      ],
+      "changed": [
+        "Clarified that Ruflo still needs a separately supplied model service and provides no selected free Qwen endpoint for 8BALL.",
+        "Preserved upstream historical audit/remediation dates alongside current unmeasured telemetry and synthetic/live benchmark distinctions."
+      ],
+      "fixed": [],
+      "verification": [
+        "Read-only source inspection; HTTPS Git remote HEAD/main matched copied commit 1882006a02487590c8c66a7eec8d7504f6af33c3.",
+        "Canonical delivery/emergence/changelog regeneration and base-history checks passed; local documentation links, original scopes/statuses and whitespace checked."
+      ],
+      "limitations": [
+        "No installation, upstream execution, model calls or independent benchmark reproduction.",
+        "Previous 1,104/1,104/391 software results belong to tested ddfead7; this documentation review does not rerun or extend those results.",
+        "Ruflo remains optional research; V0.2 real-model and independent/human requirements remain open. No merge or deployment."
+      ],
+      "evidence_paths": [
+        "docs/research/github-2026-10-16/ruflo-owner-guide.md",
+        "docs/evidence/ruflo-owner-review-2026-10-16.json",
+        "docs/delivery/sessions/2026-10-16-ruflo-owner-review.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-084: confidence/success metrics require an explicit prediction target; worker routing is separate from client-outcome probability.",
+          "Additive EM-020/055/077/081 source evidence: actual access/execution, exact model/retry accounting, semantic memory and dated remediation scope."
+        ],
+        "risks": [
+          "A keyless demo, API-success reward or persuasive swarm dashboard may be mistaken for working free inference or correct scenario decisions."
+        ],
+        "architecture_implications": [
+          "Keep model access, optional worker coordination, hypothetical simulation and reviewed case authority separate."
+        ],
+        "roadmap_decision": "Existing DOC-06 documentation refinement and candidate ES03-02/05 evaluation concern; no new required task or runtime adoption.",
+        "insight_ids": [
+          "EM-020",
+          "EM-055",
+          "EM-077",
+          "EM-081",
+          "EM-084"
+        ]
+      }
+    },
+    {
       "id": "2026-10-16-compatible-provider-native-receipt",
       "date": "2026-10-16",
       "version": "0.2.0-alpha.8",

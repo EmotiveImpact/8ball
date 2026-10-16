@@ -93,10 +93,10 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Every recorded discovery is retained, linked to roadmap scope, and rendered with append-only dispositions; declined items remain visible and no candidate inherits an unrelated completion tick.
   - Next: Preserve all original discoveries and append review history. Use ADR 0004 and docs/vision for the strengthened direction; no optional candidate or delivery claim becomes verified without its own evidence.
-  - Branch/base: `docs/endstate-evolution-plan-20261016` / `bf54f607bb0e13d0c6adfc0f59ee146e75be287b`.
+  - Branch/base: `feat/v02-compatible-provider-20261016` / `f9b33af1bf78d9828e4b7c7c43d26936669b122b`.
   - Dependencies: `DOC-05`.
   - Existing code: `scripts/emergence.py`, `docs/delivery/emergence.json`, `docs/prompts/EMERGENT-INSIGHTS.md`.
-  - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL`, `EV-VISION-REVIEW`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH`, `EV-RUFLO-RESEARCH` (registry below).
+  - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL`, `EV-VISION-REVIEW`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH`, `EV-RUFLO-RESEARCH`, `EV-RUFLO-OWNER-REVIEW` (registry below).
 
 - [x] **DOC-07 Preserve pinned upstream research source checkouts**
   - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
@@ -896,3 +896,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `controlled_transport_and_software_validation`.
 - Repository evidence: [docs/evidence/compatible-native-2026-10-16.json](../../docs/evidence/compatible-native-2026-10-16.json).
 - Result/scope: Tested ddfead7: 1,104 source tests, 1,104 installed-kernel tests and 391 native checks across 11 suites passed; exact source/artifact inspection valid. No actual provider, semantic or human acceptance.
+
+### EV-RUFLO-OWNER-REVIEW
+
+- Kind: `bounded_source_research`.
+- Repository evidence: [docs/evidence/ruflo-owner-review-2026-10-16.json](../../docs/evidence/ruflo-owner-review-2026-10-16.json).
+- Result/scope: Current upstream pin rechecked; plain-English owner explanation distinguishes orchestration, free model access, confidence/feedback targets, mocked benchmarks and historical remediations. Source-only; no runtime acceptance.
