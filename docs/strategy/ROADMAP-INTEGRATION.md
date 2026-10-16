@@ -46,3 +46,7 @@ Documentation consolidation is authorised now. A new Sales product, imported sim
 ## Closing this stretch
 
 Use [V02-CLOSEOUT.md](../delivery/V02-CLOSEOUT.md), not the future table, for today's work. Keep PR #2 draft until its required gates pass and the final integration decision is explicitly recorded. Then the agreed route is one cumulative merge, superseded PR #1 cleanup and an accepted version tag. No merge, closure, tag or deployment is performed by this documentation branch.
+
+## Concrete component plan, 16 October 2026
+
+The [evolution plan](ENDSTATE-EVOLUTION-PLAN-2026-10-16.md) now maps this same sequence to current GitHub candidates, prototype gates and costs. It retains F-01..12, Lab A–F and all canonical task requirements. Research source pins and limitations are in [the component register](../research/GITHUB-COMPONENTS-2026-10-16.md). This supplements the historical map; current source is already consolidated on main, while V0.2 acceptance remains open.

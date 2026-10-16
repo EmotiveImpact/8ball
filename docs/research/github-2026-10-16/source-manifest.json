@@ -1,0 +1,137 @@
+{
+  "captured_on": "2026-10-16",
+  "application_baseline": "d7d36b842464d7ad0e974a59730a682f1739fccf",
+  "inspection": "Bounded source/docs/licence review; no candidate runtime or interoperability tests. Read individual reports for scope.",
+  "repositories": [
+    {
+      "repository": "666ghj/MiroFish",
+      "commit": "7657031ac01184afe2cb220f5ee3545573b5e843",
+      "url": "https://github.com/666ghj/MiroFish/tree/7657031ac01184afe2cb220f5ee3545573b5e843"
+    },
+    {
+      "repository": "anyoptimization/pymoo",
+      "commit": "23110c155aa8f31b5f1b86928227fb3931ba7f00",
+      "url": "https://github.com/anyoptimization/pymoo/tree/23110c155aa8f31b5f1b86928227fb3931ba7f00"
+    },
+    {
+      "repository": "Arize-ai/phoenix",
+      "commit": "2be380f7a360b7a71f97fc510de5e9679e58f7c9",
+      "url": "https://github.com/Arize-ai/phoenix/tree/2be380f7a360b7a71f97fc510de5e9679e58f7c9"
+    },
+    {
+      "repository": "camel-ai/oasis",
+      "commit": "bc805a19978a620bb400f4c644ce9d772ccbfc70",
+      "url": "https://github.com/camel-ai/oasis/tree/bc805a19978a620bb400f4c644ce9d772ccbfc70"
+    },
+    {
+      "repository": "docling-project/docling",
+      "commit": "f690a5232c505c787a1e952216b431134b4d7c94",
+      "url": "https://github.com/docling-project/docling/tree/f690a5232c505c787a1e952216b431134b4d7c94"
+    },
+    {
+      "repository": "getzep/graphiti",
+      "commit": "d50741d1bf463cbe3859eb73914cbff1b66839e6",
+      "url": "https://github.com/getzep/graphiti/tree/d50741d1bf463cbe3859eb73914cbff1b66839e6"
+    },
+    {
+      "repository": "getzep/zep",
+      "commit": "3997767fccf83bbea7b54ad5f73554f2e5bcd54e",
+      "url": "https://github.com/getzep/zep/tree/3997767fccf83bbea7b54ad5f73554f2e5bcd54e"
+    },
+    {
+      "repository": "getzep/zep-python",
+      "commit": "ec41ccdde6fe92dc0de378c7bfb0c2483af324ce",
+      "url": "https://github.com/getzep/zep-python/tree/ec41ccdde6fe92dc0de378c7bfb0c2483af324ce"
+    },
+    {
+      "repository": "google/or-tools",
+      "commit": "100f66e6242ab8bf8d32feb8f3bf086db66ae2b5",
+      "url": "https://github.com/google/or-tools/tree/100f66e6242ab8bf8d32feb8f3bf086db66ae2b5"
+    },
+    {
+      "repository": "keycloak/keycloak",
+      "commit": "eae20e964b2e23cfd8f4ed18b599343ebb056e8f",
+      "url": "https://github.com/keycloak/keycloak/tree/eae20e964b2e23cfd8f4ed18b599343ebb056e8f"
+    },
+    {
+      "repository": "langchain-ai/langgraph",
+      "commit": "e77a5cb08c1f3ff306d997dd76fc7169afdab5ea",
+      "url": "https://github.com/langchain-ai/langgraph/tree/e77a5cb08c1f3ff306d997dd76fc7169afdab5ea"
+    },
+    {
+      "repository": "langchain-ai/langgraph-swarm-py",
+      "commit": "5442a15cdd0ed210589148900c9960c24c489d04",
+      "url": "https://github.com/langchain-ai/langgraph-swarm-py/tree/5442a15cdd0ed210589148900c9960c24c489d04"
+    },
+    {
+      "repository": "mem0ai/mem0",
+      "commit": "0724291bd864cf807e88ee8981c8226644e8fb42",
+      "url": "https://github.com/mem0ai/mem0/tree/0724291bd864cf807e88ee8981c8226644e8fb42"
+    },
+    {
+      "repository": "mesa/mesa",
+      "commit": "5451086fe47ab78e9ba894aa1b4c3063f4c247f1",
+      "url": "https://github.com/mesa/mesa/tree/5451086fe47ab78e9ba894aa1b4c3063f4c247f1"
+    },
+    {
+      "repository": "microsoft/autogen",
+      "commit": "027ecf0a379bcc1d09956d46d12d44a3ad9cee14",
+      "url": "https://github.com/microsoft/autogen/tree/027ecf0a379bcc1d09956d46d12d44a3ad9cee14"
+    },
+    {
+      "repository": "open-policy-agent/opa",
+      "commit": "fdf6011f57fdc25f01de1982e296bb402cf37625",
+      "url": "https://github.com/open-policy-agent/opa/tree/fdf6011f57fdc25f01de1982e296bb402cf37625"
+    },
+    {
+      "repository": "openfga/openfga",
+      "commit": "fb8e7df866742a0c947e3066919ee59ac9e70eea",
+      "url": "https://github.com/openfga/openfga/tree/fb8e7df866742a0c947e3066919ee59ac9e70eea"
+    },
+    {
+      "repository": "postgres/postgres",
+      "commit": "eb7cc1d09e742d369540016455d0f55c619106f2",
+      "url": "https://github.com/postgres/postgres/tree/eb7cc1d09e742d369540016455d0f55c619106f2"
+    },
+    {
+      "repository": "promptfoo/promptfoo",
+      "commit": "132a2d38b1b0adc953b0db650f950d573bc113c4",
+      "url": "https://github.com/promptfoo/promptfoo/tree/132a2d38b1b0adc953b0db650f950d573bc113c4"
+    },
+    {
+      "repository": "py-why/dowhy",
+      "commit": "10648f1a295cbb40fd9cdd7ce43521a6ef954078",
+      "url": "https://github.com/py-why/dowhy/tree/10648f1a295cbb40fd9cdd7ce43521a6ef954078"
+    },
+    {
+      "repository": "py-why/EconML",
+      "commit": "d625dd696ea28c62e6e4d8baea6e4154b98c30b4",
+      "url": "https://github.com/py-why/EconML/tree/d625dd696ea28c62e6e4d8baea6e4154b98c30b4"
+    },
+    {
+      "repository": "SALib/SALib",
+      "commit": "748cf169e82227bcc56dcfc961fcfb03a1e0df45",
+      "url": "https://github.com/SALib/SALib/tree/748cf169e82227bcc56dcfc961fcfb03a1e0df45"
+    },
+    {
+      "repository": "simulatrex/possible-worlds",
+      "commit": "08837a790f6ca0d98f7468935e9139292ea7cb78",
+      "url": "https://github.com/simulatrex/possible-worlds/tree/08837a790f6ca0d98f7468935e9139292ea7cb78"
+    },
+    {
+      "repository": "simulatrex/simulatrex-engine",
+      "commit": "4e4fa06d7f527480b66ceb224a5d37bcfa2f9150",
+      "url": "https://github.com/simulatrex/simulatrex-engine/tree/4e4fa06d7f527480b66ceb224a5d37bcfa2f9150"
+    },
+    {
+      "repository": "temporalio/sdk-python",
+      "commit": "346d4dcd0863657c3a33283c952a296762059339",
+      "url": "https://github.com/temporalio/sdk-python/tree/346d4dcd0863657c3a33283c952a296762059339"
+    },
+    {
+      "repository": "tsinghua-fib-lab/AgentSociety",
+      "commit": "8cc5bb9a9c27d039ec5519375db9d73ccf508cba",
+      "url": "https://github.com/tsinghua-fib-lab/AgentSociety/tree/8cc5bb9a9c27d039ec5519375db9d73ccf508cba"
+    }
+  ]
+}

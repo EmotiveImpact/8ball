@@ -4,6 +4,45 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Source-pinned evolution plan for scenarios, memory and decision support
+
+2026-10-16 · `pushed_unreleased`
+
+Owner-requested GitHub research maps 26 pinned repositories and 25 product capability families into a staged ENDSTATE/8BALL proposal, with a plain Zep explanation and bounded adoption experiments.
+
+### Added
+
+- Full evolution plan; pinned component register and six source/capability reports; query/source manifests; five candidate discoveries EM-075 through EM-079.
+
+### Changed
+
+- Linked the proposal into current entry points, handoff and existing roadmap/research registers; canonical runtime task requirements and statuses remain unchanged.
+
+### Verification
+
+- Documentation/history/ledger checks, focused documentation tests and source/requirement preservation are recorded with actual results in the session receipt.
+- Upstream source/manifests/licences inspected; no candidate installation, inference, interoperability, predictive or human acceptance test.
+
+### Limitations
+
+- Recommendations are proposals, not imported features. B02 stays 10/20 required verified; ES01 stays 5/5 internal.
+- Hosted model/provider identity, authorised test spending/transmission and independent/human review remain unresolved inputs for current V0.2 acceptance.
+- Research branch is unmerged; application runtime and original fixtures are unchanged. No release or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Domain action mappings, memory retraction contracts, aggregate experiment budgets, upstream licence/API differences and optimiser-status semantics need explicit adapter evaluation.
+- Risk: Combining frameworks can duplicate state and multiply cost while concealing absent calibration or independent acceptance.
+- Architecture: Keep ENDSTATE contracts and reviewed case records authoritative; compare optional source/memory/simulation/decision adapters against simpler baselines.
+- Roadmap decision: new_candidate and existing_task refinements only; proposed sequencing maps to existing milestones/Lab IDs without new required runtime scope.
+Registered discoveries: EM-020, EM-027, EM-046, EM-047, EM-051, EM-054, EM-061, EM-072, EM-075, EM-076, EM-077, EM-078, EM-079.
+
+Roadmap items: `DOC-02`, `DOC-03`, `DOC-04`, `DOC-05`, `DOC-06`.
+
+Evidence: [docs/evidence/evolution-research-2026-10-16.json](docs/evidence/evolution-research-2026-10-16.json), [docs/delivery/sessions/2026-10-16-evolution-research.md](docs/delivery/sessions/2026-10-16-evolution-research.md), [docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md](docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md), [docs/research/GITHUB-COMPONENTS-2026-10-16.md](docs/research/GITHUB-COMPONENTS-2026-10-16.md).
+
 ## 0.2.0-alpha.8 · Current 8BALL build consolidated and verified on main
 
 2026-10-15 · `pushed_unreleased`

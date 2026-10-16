@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-15",
+  "updated_on": "2026-10-16",
   "product": "8BALL",
   "engine": "ENDSTATE",
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
@@ -219,6 +219,12 @@
       "path": "docs/evidence/main-consolidation-native-2026-10-15.json",
       "result": "Owner-authorized main source integration confirmed; PRs1/2/3 observed Merged. Native source-bound run passed964 source,964 installed-kernel tests and384 browser checks. All74 discoveries, both histories/archives and original task acceptance unchanged. No model/human pass, release or deployment.",
       "code_commit": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f"
+    },
+    "EV-EVOLUTION-RESEARCH": {
+      "kind": "source_research_and_documentation_validation",
+      "path": "docs/evidence/evolution-research-2026-10-16.json",
+      "code_commit": "d7d36b842464d7ad0e974a59730a682f1739fccf",
+      "result": "26 pinned external repositories mapped to original product goals and proposed staged experiments. Source research and documentation validation only; no runtime, model, human or release acceptance."
     }
   },
   "milestones": [
@@ -338,16 +344,17 @@
       "status": "verified",
       "required": true,
       "owner": "Codex",
-      "working_branch": "integration/v02-consolidated-20261015",
-      "base_commit": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
-      "updated_on": "2026-10-15",
+      "working_branch": "docs/endstate-evolution-plan-20261016",
+      "base_commit": "d7d36b842464d7ad0e974a59730a682f1739fccf",
+      "updated_on": "2026-10-16",
       "code_paths": [],
       "depends_on": [],
       "acceptance": "Master PRD incorporates naming, reuse, living plans and unchanged original acceptance requirements. Original blob hash matches.",
       "evidence": [
         "EV-DECISION",
         "EV-ORIGINAL",
-        "EV-MAIN-CONSOLIDATION"
+        "EV-MAIN-CONSOLIDATION",
+        "EV-EVOLUTION-RESEARCH"
       ],
       "blockers": [],
       "next_action": "Use repository references instead of expecting chat access."
@@ -359,9 +366,9 @@
       "status": "verified",
       "required": true,
       "owner": "Codex",
-      "working_branch": "integration/v02-consolidated-20261015",
-      "base_commit": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
-      "updated_on": "2026-10-15",
+      "working_branch": "docs/endstate-evolution-plan-20261016",
+      "base_commit": "d7d36b842464d7ad0e974a59730a682f1739fccf",
+      "updated_on": "2026-10-16",
       "code_paths": [
         "scripts/delivery.py"
       ],
@@ -372,7 +379,8 @@
       "acceptance": "Ledger validates; generated checklist is current; regression checks reject unsupported completion and broken IDs.",
       "evidence": [
         "EV-TRACKING",
-        "EV-MAIN-CONSOLIDATION"
+        "EV-MAIN-CONSOLIDATION",
+        "EV-EVOLUTION-RESEARCH"
       ],
       "blockers": [],
       "next_action": "Use this ledger and session protocol in both chat and Codex; keep the generated checklist in sync."
@@ -1786,9 +1794,9 @@
       "status": "verified",
       "required": true,
       "owner": "Codex",
-      "working_branch": "integration/v02-consolidated-20261015",
-      "base_commit": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
-      "updated_on": "2026-10-15",
+      "working_branch": "docs/endstate-evolution-plan-20261016",
+      "base_commit": "d7d36b842464d7ad0e974a59730a682f1739fccf",
+      "updated_on": "2026-10-16",
       "code_paths": [
         "scripts/changelog.py",
         "docs/delivery/changelog.json",
@@ -1798,7 +1806,8 @@
       "acceptance": "Every build adds a dated evidence-linked entry; generated CHANGELOG.md and in-app history share one source; base comparison detects missing entries or rewritten history.",
       "evidence": [
         "EV-PLAN-STUDIO-LOCAL",
-        "EV-MAIN-CONSOLIDATION"
+        "EV-MAIN-CONSOLIDATION",
+        "EV-EVOLUTION-RESEARCH"
       ],
       "blockers": [],
       "next_action": "Enforce a new immutable-history changelog entry in each following session and integration commit. Local documentation/API/render scope verified; no source publication or release implied."
@@ -1810,9 +1819,9 @@
       "status": "verified",
       "required": true,
       "owner": "Codex",
-      "working_branch": "integration/v02-consolidated-20261015",
-      "base_commit": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
-      "updated_on": "2026-10-15",
+      "working_branch": "docs/endstate-evolution-plan-20261016",
+      "base_commit": "d7d36b842464d7ad0e974a59730a682f1739fccf",
+      "updated_on": "2026-10-16",
       "code_paths": [
         "docs/delivery/EMERGENCE-REVIEW.md",
         "scripts/changelog.py",
@@ -1825,7 +1834,8 @@
       "acceptance": "Every new build sprint explicitly records what emerged, its evidence level and roadmap disposition; new changelog entries cannot omit the emergence review.",
       "evidence": [
         "EV-EMERGENCE-REVIEW",
-        "EV-MAIN-CONSOLIDATION"
+        "EV-MAIN-CONSOLIDATION",
+        "EV-EVOLUTION-RESEARCH"
       ],
       "blockers": [],
       "next_action": "Run the Emergence Review at every substantive build handoff; only promote discoveries to required roadmap scope through an explicit ledger or decision update."
@@ -1837,9 +1847,9 @@
       "status": "verified",
       "required": true,
       "owner": "Codex",
-      "working_branch": "integration/v02-consolidated-20261015",
-      "base_commit": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
-      "updated_on": "2026-10-15",
+      "working_branch": "docs/endstate-evolution-plan-20261016",
+      "base_commit": "d7d36b842464d7ad0e974a59730a682f1739fccf",
+      "updated_on": "2026-10-16",
       "code_paths": [
         "scripts/emergence.py",
         "docs/delivery/emergence.json",
@@ -1852,7 +1862,8 @@
       "evidence": [
         "EV-EMERGENT-INSIGHTS-LOCAL",
         "EV-VISION-REVIEW",
-        "EV-MAIN-CONSOLIDATION"
+        "EV-MAIN-CONSOLIDATION",
+        "EV-EVOLUTION-RESEARCH"
       ],
       "blockers": [],
       "next_action": "Preserve all original discoveries and append review history. Use ADR 0004 and docs/vision for the strengthened direction; no optional candidate or delivery claim becomes verified without its own evidence."

@@ -1,3 +1,7 @@
+## Latest research proposal, 16 October 2026
+
+For the owner's requested GitHub search and combined system plan, read [ENDSTATE evolution](docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md), [pinned component research](docs/research/GITHUB-COMPONENTS-2026-10-16.md) and [the session handoff](docs/delivery/sessions/2026-10-16-evolution-research.md). This is a documentation proposal on `docs/endstate-evolution-plan-20261016`, based on consolidated main `d7d36b8`; application behavior and acceptance gates are unchanged. The next engineering requirement remains actual-provider V0.2 evaluation.
+
 # Current consolidated build: 8BALL powered by ENDSTATE
 
 The latest application fixes and separate documentation are now consolidated in **main** under the owner's explicit instruction. GitHub PRs #1, #2 and #3 show Merged. The combined source passed 964 source tests, 964 installed-kernel tests and 384 native browser checks; see [the current receipt](docs/evidence/main-consolidation-native-2026-10-15.json). Read [the build overview](docs/delivery/BUILD-OVERVIEW.md), [current integration handoff](docs/delivery/HANDOFF.md), [ADR 0006](docs/decisions/0006-consolidated-development-main.md), and [the integration session](docs/delivery/sessions/2026-10-15-main-consolidation.md).

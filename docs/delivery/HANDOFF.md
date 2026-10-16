@@ -1,3 +1,11 @@
+# Latest handoff: GitHub component research and evolution proposal
+
+16 October 2026. Read [the full plan](../strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md), [component sources](../research/GITHUB-COMPONENTS-2026-10-16.md) and [session record](sessions/2026-10-16-evolution-research.md). Documentation branch `docs/endstate-evolution-plan-20261016` starts from consolidated main `d7d36b842464d7ad0e974a59730a682f1739fccf`. The owner asked how to combine swarm, memory, decisions and the full vision; this proposal makes those choices and experiments reviewable. It does not install or promote deferred runtime features.
+
+The latest application remains the consolidated main build below. B02 remains 10/20 required verified, ES01 5/5 internal. All previous failed/passed evidence, original PRDs/fixtures and task requirements are retained. Next: select/authorise the provider/model and bounded fictional-fixture run, complete existing V0.2 model/lifecycle/independent/human gates, then evaluate the proposed authored-scenario baseline and optional adapters through explicit scoped decisions. The owner still intends their usability/visual review at the end.
+
+---
+
 # Current handoff: consolidated development build is on main
 
 The owner-authorized integration is complete: current application/fixes, consolidated specifications and both research variants are together on **main**. GitHub PRs #1, #2 and #3 show Merged. The recovery/integration branch is `integration/v02-consolidated-20261015`; prior feature/fix/archive refs remain intact. Read [BUILD-OVERVIEW](BUILD-OVERVIEW.md), [ADR0006](../decisions/0006-consolidated-development-main.md) and [the integration session](sessions/2026-10-15-main-consolidation.md).

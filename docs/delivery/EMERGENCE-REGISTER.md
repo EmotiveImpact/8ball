@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-15. **74 recorded discoveries.**
+Last review: 2026-10-16. **79 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -369,12 +369,13 @@ Valid references and exact quotations can accompany an interpretation that misse
 
 **Roadmap links:** `B02-09` (blocked), `B02-11` (partial), `ES03-02` (blocked).
 **Completion scope:** `B02-11`.
-**Evidence / source record:** `docs/evidence/staged-compilation-verification.json`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`.
+**Evidence / source record:** `docs/evidence/staged-compilation-verification.json`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT development proposal: Adopt bounded scope now; wider interpretation still needs owner and operator review.
 - 2026-10-15 · adopted · Codex sprint review: Historical Qwen replay revalidates the distinction between exact compiler checks, prompt provenance, semantic quality and assisted recovery. Prompt version now survives success and rejection; fresh inference and human judgement remain outstanding.
+- 2026-10-16 · adopted · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
 
 ### [ ] EM-021: Review state and evidence character must be separate
 
@@ -489,11 +490,12 @@ Reusable technology does not make confidential client histories reusable by defa
 
 **Roadmap links:** `B04-02` (not_started).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/v2/PRODUCTION-SECURITY.md`.
+**Evidence / source record:** `docs/v2/PRODUCTION-SECURITY.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
 
 **Decision history:**
 
 - 2026-09-24 · deferred · ChatGPT development proposal: Preserved for owner review. No automatic scope or completion claim.
+- 2026-10-16 · deferred · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
 
 ### [ ] EM-028: An insight and its supporting observation have different clocks
 
@@ -815,11 +817,12 @@ A reviewer can mark all rubric dimensions supported while the plan still contain
 
 **Roadmap links:** `B02-11` (partial), `B02-13` (verified).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/v2/PLAN-REVIEW.md`, `tests/test_plan_review.py`, `docs/evidence/route-identity-regression.json`.
+**Evidence / source record:** `docs/v2/PLAN-REVIEW.md`, `tests/test_plan_review.py`, `docs/evidence/route-identity-regression.json`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT build review: The separate journal and tests preserve all case facts, revisions and approvals.
+- 2026-10-16 · adopted · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
 
 ### [ ] EM-047: Independent scenario comparisons must share one baseline
 
@@ -832,11 +835,12 @@ A zero-budget scenario followed by a restored-budget scenario must not retain di
 
 **Roadmap links:** `B02-05` (verified), `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/v2/PLAN-REVIEW.md`, `tests/test_plan_review.py`, `docs/evidence/route-identity-regression.json`.
+**Evidence / source record:** `docs/v2/PLAN-REVIEW.md`, `tests/test_plan_review.py`, `docs/evidence/route-identity-regression.json`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT build review: Read-only copies and regression tests prevent accumulating hypothetical changes.
+- 2026-10-16 · adopted · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
 
 ### [ ] EM-048: Review detail can become an operator burden
 
@@ -901,7 +905,7 @@ Separate successful test reports could be retained while the working source cont
 
 **Roadmap links:** `B02-12` (blocked), `B02-16` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/evidence/generation-role-contract-2026-10-15.json`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`.
+**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/evidence/generation-role-contract-2026-10-15.json`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
 
 **Decision history:**
 
@@ -909,6 +913,7 @@ Separate successful test reports could be retained while the working source cont
 - 2026-10-15 · adopted · Codex sprint review: Historical Qwen replay revalidates the distinction between exact compiler checks, prompt provenance, semantic quality and assisted recovery. Prompt version now survives success and rejection; fresh inference and human judgement remain outstanding.
 - 2026-10-15 · adopted · Codex provider evidence sprint: Retain bounded rejected-extraction output through async jobs and disposable journey evidence. Concrete unperformed review records preserve the distinction between scripted integration, owner end review and independent professional evaluation; no gate is promoted.
 - 2026-10-15 · adopted · Codex integration review: Unify latest source and separate documentation without replacing newer runtime/acceptance evidence. Preserve both archive variants and histories; owner authorizes this main integration, not release/model/human acceptance.
+- 2026-10-16 · adopted · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
 
 ### [ ] EM-052: A built distribution is not an installed-product test
 
@@ -957,12 +962,13 @@ An actual-inference integration script can exercise approvals and evidence mecha
 
 **Roadmap links:** `B02-11` (partial), `B02-12` (blocked).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `evals/full_journey.py`, `docs/v2/ACCEPTANCE-RUNNER.md`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`.
+**Evidence / source record:** `evals/full_journey.py`, `docs/v2/ACCEPTANCE-RUNNER.md`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT build review: Bounded existing-task improvement; implementation does not imply that wider model/native/release acceptance has passed.
 - 2026-10-15 · adopted · Codex provider evidence sprint: Retain bounded rejected-extraction output through async jobs and disposable journey evidence. Concrete unperformed review records preserve the distinction between scripted integration, owner end review and independent professional evaluation; no gate is promoted.
+- 2026-10-16 · adopted · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
 
 ### [ ] EM-055: Available, called, correct, integrated and released are separate gates
 
@@ -1084,11 +1090,12 @@ The cumulative workspace has more inspection and review surfaces. It is not yet 
 
 **Roadmap links:** `B04-03` (not_started), `B02-22` (not_started), `B04-04` (deferred).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/vision/8BALL.md`, `evals/PLAN-QUALITY-GATE.md`.
+**Evidence / source record:** `docs/vision/8BALL.md`, `evals/PLAN-QUALITY-GATE.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT documentation review: Adopt the bounded design direction, not runtime completion. Owner review and the listed acceptance work remain open.
+- 2026-10-16 · adopted · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
 
 ### [ ] EM-062: A delivery claim requires a recoverable implementation
 
@@ -1271,12 +1278,13 @@ Repeated local-only paragraphs coexist with a later published source and native 
 
 **Roadmap links:** `DOC-02` (verified), `DOC-03` (verified), `DOC-06` (verified).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-15-documentation-consolidation.md`, `docs/delivery/context-manifest.json`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-15-documentation-consolidation.md`, `docs/delivery/context-manifest.json`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
 
 **Decision history:**
 
 - 2026-10-15 · adopted · ChatGPT documentation consolidation: Bounded documentation/recovery improvement only; no new required runtime scope or acceptance claim.
 - 2026-10-15 · adopted · Codex integration review: Unify latest source and separate documentation without replacing newer runtime/acceptance evidence. Preserve both archive variants and histories; owner authorizes this main integration, not release/model/human acceptance.
+- 2026-10-16 · adopted · Codex research review: existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement.
 
 ### [ ] EM-073: Archive completeness must follow the supplied manifest, not an old file count
 
@@ -1312,3 +1320,88 @@ The archived Qwen frame requires on-site spare-chair confirmation even for its e
 **Decision history:**
 
 - 2026-10-15 · adopted · Codex sprint review: existing_task: clarify the existing generation contract now; fresh-model effectiveness and independent review remain required. No research feature or new release gate added.
+
+### [ ] EM-075: A simulator needs a tested domain action and environment mapping
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** operator_hypothesis.
+**First recorded:** 2026-10-16. **Origin:** Owner-requested GitHub component/evolution research; source inspection, not runtime experiment.
+
+MiroFish/OASIS source inspection shows Twitter/Reddit action spaces and simulation/report loops. Broader prediction language does not supply fixer-specific actors, legal actions, constraints or outcome verification.
+
+**Product implication:** Evaluate domain mapping and incremental useful-failure discovery against authored scenarios before adopting a simulator. Preserve broader possible-world ambition as research.
+
+**Roadmap links:** `ES03-01` (partial), `ES04-01` (not_started).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
+
+**Decision history:**
+
+- 2026-10-16 · candidate · Codex research review: new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added.
+
+### [ ] EM-076: Memory deletion and retraction are projection contracts
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** operator_hypothesis.
+**First recorded:** 2026-10-16. **Origin:** Owner-requested GitHub component/evolution research; source inspection, not runtime experiment.
+
+Graphiti library and companion server episode deletion follow different cleanup paths; multi-source support and generated simulation memory can outlive or be removed with one episode. Source-level inspection does not prove product retraction behavior.
+
+**Product implication:** Keep canonical source retraction authoritative; test shared support, namespace separation, deletion/rebuild and case access before memory adoption.
+
+**Roadmap links:** `B03-02` (not_started), `B04-02` (not_started).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
+
+**Decision history:**
+
+- 2026-10-16 · candidate · Codex research review: new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added.
+
+### [ ] EM-077: A whole experiment needs a budget beyond each model call
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** operator_hypothesis.
+**First recorded:** 2026-10-16. **Origin:** Owner-requested GitHub component/evolution research; source inspection, not runtime experiment.
+
+Model costs multiply across cases, branches, actors, rounds, repeats, embeddings and reports. Promptfoo cost assertions run after a response; per-call caps do not themselves bound total experiment spending.
+
+**Product implication:** Require an aggregate experiment budget and stop accounting, provider caps where available, attempted-call receipts and explicit retry/cancellation policy.
+
+**Roadmap links:** `ES03-05` (partial), `B03-04` (not_started).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
+
+**Decision history:**
+
+- 2026-10-16 · candidate · Codex research review: new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added.
+
+### [ ] EM-078: Upstream names hide materially different licence and API boundaries
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** operator_hypothesis.
+**First recorded:** 2026-10-16. **Origin:** Owner-requested GitHub component/evolution research; source inspection, not runtime experiment.
+
+Pinned research found Mesa 4.0 alpha API changes, Phoenix Elastic License 2.0, MiroFish AGPL and multiple incompatible runtime/dependency ranges. Familiar project names alone do not identify an adoptable supported stack.
+
+**Product implication:** Keep source pins, stable release selection and dependency/licence review with each optional adapter; compare alternatives before stacking frameworks.
+
+**Roadmap links:** `ES04-04` (not_started), `DOC-06` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
+
+**Decision history:**
+
+- 2026-10-16 · candidate · Codex research review: new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added.
+
+### [ ] EM-079: Optimisation candidates must retain feasibility and uncertainty status
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** operator_hypothesis.
+**First recorded:** 2026-10-16. **Origin:** Owner-requested GitHub component/evolution research; source inspection, not runtime experiment.
+
+OR-Tools distinguishes feasible, optimal, unknown and infeasible under declared assumptions; pymoo may retain a least-infeasible candidate when none is feasible. Numeric sensitivity also depends on assumed input ranges.
+
+**Product implication:** Preserve solver status and search bounds, revalidate returned routes, keep unknowns explicit and never promote a best-found candidate into execution authority or a calibrated forecast.
+
+**Roadmap links:** `ES03-01` (partial), `ES02-06` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`.
+
+**Decision history:**
+
+- 2026-10-16 · candidate · Codex research review: new_candidate: retain source-informed integration requirement for the proposed experiments; no required scope or runtime acceptance added.
