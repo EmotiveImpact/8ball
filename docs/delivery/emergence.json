@@ -3122,6 +3122,12 @@
           "decision": "adopted",
           "by": "Codex sprint review",
           "reason": "existing_task: preserve bounded engineering evidence or optional adapter requirement; no independent/model/human acceptance or new required research scope."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex native verification",
+          "reason": "existing_task: tested 17a275c passed 1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites passed; source/artifact inspection valid. No actual model or independent/human acceptance. This is bounded software evidence only; no gate promotion."
         }
       ]
     },
@@ -3150,6 +3156,12 @@
           "decision": "adopted",
           "by": "Codex sprint review",
           "reason": "existing_task: preserve bounded engineering evidence or optional adapter requirement; no independent/model/human acceptance or new required research scope."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex native verification",
+          "reason": "existing_task: tested 17a275c passed 1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites passed; source/artifact inspection valid. No actual model or independent/human acceptance. This is bounded software evidence only; no gate promotion."
         }
       ]
     },
@@ -3178,6 +3190,12 @@
           "decision": "adopted",
           "by": "Codex sprint review",
           "reason": "existing_task: preserve bounded engineering evidence or optional adapter requirement; no independent/model/human acceptance or new required research scope."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex native verification",
+          "reason": "existing_task: tested 17a275c passed 1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites passed; source/artifact inspection valid. No actual model or independent/human acceptance. This is bounded software evidence only; no gate promotion."
         }
       ]
     },

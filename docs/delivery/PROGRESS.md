@@ -579,7 +579,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [x] **ES03-09 Opt-in OpenAI-compatible hosted endpoint contract** (optional, not a version gate)
   - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Controlled HTTP and native UI checks verify explicit server-owned endpoint/model/provider, permission, pinned routing, bounded strict responses/failure evidence, secrets protection, stage/cancellation/stale/restart guards and unchanged frozen-fixture harness. This transport scope does not claim actual inference or semantic/human acceptance.
-  - Next: Verify the refreshed cumulative software checkpoint, then use the exact selected endpoint/model for unchanged actual generation; explicit :free syntax support is not free availability or semantic acceptance.
+  - Next: Bounded software transport contract remains verified. Activate the actual selected endpoint/model and run unchanged generation plus matching lifecycle/native journey within authorised fictional-only scope and confirmed service limits; explicit :free support does not prove free availability or semantic quality.
   - Branch/base: `feat/v02-evaluation-readiness-20261016` / `0fed04b5e299f4a2e53050456559133c1231b088`.
   - Dependencies: `ES03-06`.
   - Existing code: `eightball/v2/compatible.py`, `tests/test_compatible_provider.py`, `tests/test_compatible_integration.py`, `tests/test_compatible_cli.py`, `evals/live_compatible.py`, `docs/v2/QWEN-SETUP.md`.
@@ -913,4 +913,4 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `controlled_software_verification`.
 - Repository evidence: [docs/evidence/whole-system-readiness-2026-10-16.json](../../docs/evidence/whole-system-readiness-2026-10-16.json).
-- Result/scope: Fixed explicit-free model selection, exact successful assistant retention, unique/checkpointed frozen runs and opt-in lifecycle observations. Focused tests passed; cumulative native pending. Actual calls zero.
+- Result/scope: 1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites passed; source/artifact inspection valid. No actual model or independent/human acceptance.

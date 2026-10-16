@@ -4,6 +4,47 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Verified whole-system evaluation-readiness checkpoint
+
+2026-10-16 · `pushed_unreleased`
+
+Whole-system technical direction and bounded evaluation fixes passed cumulative native software verification; all original model and human acceptance gates remain.
+
+### Added
+
+- Exact-source final receipt for tested code 17a275c, 93 retained discoveries and all 28 research pins.
+
+### Changed
+
+- Current sprint metadata now points to the verified development branch; historical main integration and earlier native evidence are retained.
+
+### Verification
+
+- 1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites passed; source/artifact inspection valid. No actual model or independent/human acceptance.
+- Python compilation, 17 JavaScript modules, 8 structural cases, internal package/schema export and continuity guards passed.
+- Original task scopes/statuses, frozen generation fixture bytes, compiler source and original PRD remained unchanged.
+
+### Limitations
+
+- Zero actual model calls; actual service access, independent study/labels and human reviews remain missing.
+- Lifecycle admission timing and omitted discarded responses do not establish remote cancellation or complete provider evidence.
+- No deferred runtime adoption, new remote CI claim, main merge, release or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-085..087: fixed-model identity, durable experiment evidence and separate admission/remote observations.
+- Discovery: EM-088..093: document coordinates, telemetry, actor failures, dependency environments, durability/retries and eval mode execution.
+- Risk: Framework/model/service success can be mistaken for actual outcome correctness, scope isolation, free entitlement or genuine acceptance.
+- Architecture: Keep existing host/engine authority; introduce optional isolated specialists only through measured source-aware contracts.
+- Roadmap decision: Existing task engineering/documentation refinements; candidate adapter concerns retained without promoting deferred research into required scope.
+Registered discoveries: EM-085, EM-086, EM-087, EM-088, EM-089, EM-090, EM-091, EM-092, EM-093.
+
+Roadmap items: `DOC-06`, `B02-09`, `B02-11`, `B02-12`, `B02-15`, `ES03-05`, `ES03-09`.
+
+Evidence: [docs/strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md](docs/strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md), [docs/research/github-2026-10-16/whole-system-review.md](docs/research/github-2026-10-16/whole-system-review.md), [docs/evidence/whole-system-readiness-2026-10-16.json](docs/evidence/whole-system-readiness-2026-10-16.json), [docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md](docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md), [docs/v2/ACTUAL-PROVIDER-EVIDENCE.md](docs/v2/ACTUAL-PROVIDER-EVIDENCE.md).
+
 ## 0.2.0-alpha.8 · Whole-system direction and retained model evaluation evidence
 
 2026-10-16 · `local_unreleased`

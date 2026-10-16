@@ -1563,6 +1563,7 @@ The hosted model validator rejected an explicit OpenRouter :free catalog variant
 **Decision history:**
 
 - 2026-10-16 · adopted · Codex sprint review: existing_task: preserve bounded engineering evidence or optional adapter requirement; no independent/model/human acceptance or new required research scope.
+- 2026-10-16 · adopted · Codex native verification: existing_task: tested 17a275c passed 1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites passed; source/artifact inspection valid. No actual model or independent/human acceptance. This is bounded software evidence only; no gate promotion.
 
 ### [ ] EM-086: Experiment evidence must survive successive runs and interruptions
 
@@ -1580,6 +1581,7 @@ The hosted frozen-fixture runner wrote to one reusable report path, so a later i
 **Decision history:**
 
 - 2026-10-16 · adopted · Codex sprint review: existing_task: preserve bounded engineering evidence or optional adapter requirement; no independent/model/human acceptance or new required research scope.
+- 2026-10-16 · adopted · Codex native verification: existing_task: tested 17a275c passed 1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites passed; source/artifact inspection valid. No actual model or independent/human acceptance. This is bounded software evidence only; no gate promotion.
 
 ### [ ] EM-087: Call admission and remote delivery require separate observations
 
@@ -1597,6 +1599,7 @@ The application increments calls_started before HTTP. Cancelled/stale/interrupte
 **Decision history:**
 
 - 2026-10-16 · adopted · Codex sprint review: existing_task: preserve bounded engineering evidence or optional adapter requirement; no independent/model/human acceptance or new required research scope.
+- 2026-10-16 · adopted · Codex native verification: existing_task: tested 17a275c passed 1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites passed; source/artifact inspection valid. No actual model or independent/human acceptance. This is bounded software evidence only; no gate promotion.
 
 ### [ ] EM-088: Document provenance needs original and derivative coordinate systems
 

@@ -38,9 +38,7 @@ CLI/hosted-grounding tests; 89 lifecycle/CLI/integration/job tests including 30 
 lifecycle cases. These overlap and are not an additive total. Independent agent
 engineering review is not independent professional acceptance.
 
-Cumulative native verification is pending at this code checkpoint. A final
-receipt will retain tested commit, source/report hashes and actual test/browser
-counts. Previous 1,104/1,104/391 results belong to `ddfead7`, not this new source.
+Cumulative native verification tested `17a275c5a143d9721bcbf59113a66873be81d38d` and passed **1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites**. Source/artifact inspection was valid/passed before final documentation edits. Run `20261016T133232Z-049dda8a` finished `2026-10-16T13:36:31.038109+00:00`. Source fingerprint `2399f6406f4a1acbb3486dd4bbf58d5f49e908b2076b81c2be3ca3a53fd53f65`; report SHA256 `a8f4d78acde45bdc4112cece6e11e5f3ba57feda5950fd9e0ae49d5ee14a1541`. [Final receipt](../../evidence/whole-system-readiness-2026-10-16.json) records individual suites and limits. Raw logs/JUnit/screenshots/schema/wheel remain local in ignored artifacts; this is not an artifact upload. Final status/receipt edits are documentation only. Reconstruct the tested code with all 28 pins populated to re-inspect retained artifacts. No new remote CI is claimed.
 Current runtime has no provider variables/secrets; actual inference this sprint
 is zero. No model/download/install/spending or private-data transmission.
 
@@ -70,7 +68,7 @@ including deferred/negative recommendations, remains in the source review.
 | ER-15 | Measure missed constraints, useful alternatives, independent correctness, correction time, latency/cost and operator effort, rather than graph/agent counts. |
 
 Evidence: focused controlled engineering tests and bounded source observations;
-cumulative native result follows in the final receipt. Architecture: separate
+cumulative native result is recorded in the final receipt. Architecture: separate
 case authority, model proposals, hypothetical simulation, retrieval projections
 and workflow state. UX: owner receives clear defaults and only necessary external
 inputs; metrics identify their prediction target. Disposition: code refinements

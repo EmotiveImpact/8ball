@@ -106,9 +106,10 @@ these decisions, including historical fixes and unverified claims.
 ## Model access and money, plainly
 
 The model in this coding conversation builds the software. The application still
-needs its own model service. The only immediate owner input is the service's
-**public URL and exact model identifier**, with any private key entered through
-secure settings. The agent can set the matching public configuration.
+needs its own model service. The immediate owner input is the service's **public link or API URL**,
+plus any private key entered through secure settings. If the owner does not know
+the exact model identifier, the agent can investigate the service's catalog and
+recommend one compatible fixed model and matching public configuration.
 
 The owner already authorises the repository's fictional examples up to **US$5**
 and expects free access. Do not ask for that permission again. Current observed
