@@ -3,6 +3,65 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-16-ruflo-research",
+      "date": "2026-10-16",
+      "version": "0.2.0-alpha.8",
+      "title": "Ruflo worker-harness assessment and architecture placement",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "DOC-02",
+        "DOC-03",
+        "DOC-04",
+        "DOC-05",
+        "DOC-06"
+      ],
+      "summary": "Assessed the owner-supplied Ruflo project as an optional coordination harness, preserving ENDSTATE outcome/evidence boundaries and identifying semantic-backend validation needs.",
+      "added": [
+        "Pinned source findings/manifest and candidate EM-081; worker-coordinator role in the proposed combined design."
+      ],
+      "changed": [
+        "Research register, canonical documentation-task evidence, handoff and emergence history updated additively."
+      ],
+      "fixed": [],
+      "verification": [
+        "Actual documentation/history/preservation check results are in the source-bound follow-up receipt."
+      ],
+      "limitations": [
+        "Source inspection only: no upstream tests, install, provider/model calls or predictive/professional/human acceptance.",
+        "No runtime task requirements/statuses, original PRDs/fixtures or application code changed."
+      ],
+      "evidence_paths": [
+        "docs/evidence/ruflo-research-2026-10-16.json",
+        "docs/research/github-2026-10-16/ruflo.md",
+        "docs/delivery/sessions/2026-10-16-evolution-research.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "A vector-shaped hash fallback does not establish semantic retrieval; actual agent execution remains separate from registration and task correctness."
+        ],
+        "risks": [
+          "A second coordinator can duplicate state and imply completed/validated work from status or consensus alone."
+        ],
+        "architecture_implications": [
+          "Optional typed worker adapter; case revisions, source facts and human approvals remain authoritative in 8BALL."
+        ],
+        "roadmap_decision": "candidate and existing_task refinements only; no runtime adoption or required scope promotion.",
+        "insight_ids": [
+          "EM-020",
+          "EM-031",
+          "EM-046",
+          "EM-051",
+          "EM-054",
+          "EM-055",
+          "EM-061",
+          "EM-075",
+          "EM-077",
+          "EM-078",
+          "EM-081"
+        ]
+      }
+    },
+    {
       "id": "2026-10-16-tencent-memory-research",
       "date": "2026-10-16",
       "version": "0.2.0-alpha.8",

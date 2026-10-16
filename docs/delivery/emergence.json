@@ -711,7 +711,8 @@
         "docs/evidence/staged-compilation-verification.json",
         "docs/delivery/sessions/2026-10-15-generation-role-contract.md",
         "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
-        "docs/research/github-2026-10-16/tencent-memory.md"
+        "docs/research/github-2026-10-16/tencent-memory.md",
+        "docs/research/github-2026-10-16/ruflo.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -738,6 +739,12 @@
           "decision": "adopted",
           "by": "Codex Tencent source research",
           "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex Ruflo source review",
+          "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
         }
       ]
     },
@@ -1047,7 +1054,8 @@
         "B02-15"
       ],
       "evidence_paths": [
-        "docs/v2/ANALYSIS-JOBS.md"
+        "docs/v2/ANALYSIS-JOBS.md",
+        "docs/research/github-2026-10-16/ruflo.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1056,6 +1064,12 @@
           "decision": "adopted",
           "by": "ChatGPT development proposal",
           "reason": "Adopt bounded scope now; wider interpretation still needs owner and operator review."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex Ruflo source review",
+          "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
         }
       ]
     },
@@ -1505,7 +1519,8 @@
         "tests/test_plan_review.py",
         "docs/evidence/route-identity-regression.json",
         "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
-        "docs/research/github-2026-10-16/tencent-memory.md"
+        "docs/research/github-2026-10-16/tencent-memory.md",
+        "docs/research/github-2026-10-16/ruflo.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1526,6 +1541,12 @@
           "decision": "adopted",
           "by": "Codex Tencent source research",
           "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex Ruflo source review",
+          "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
         }
       ]
     },
@@ -1675,7 +1696,8 @@
         "docs/evidence/generation-role-contract-2026-10-15.json",
         "docs/delivery/sessions/2026-10-15-provider-failure-evidence.md",
         "docs/delivery/sessions/2026-10-15-main-consolidation.md",
-        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md"
+        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
+        "docs/research/github-2026-10-16/ruflo.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1708,6 +1730,12 @@
           "decision": "adopted",
           "by": "Codex research review",
           "reason": "existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex Ruflo source review",
+          "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
         }
       ]
     },
@@ -1798,7 +1826,8 @@
         "evals/full_journey.py",
         "docs/v2/ACCEPTANCE-RUNNER.md",
         "docs/delivery/sessions/2026-10-15-provider-failure-evidence.md",
-        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md"
+        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
+        "docs/research/github-2026-10-16/ruflo.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1819,6 +1848,12 @@
           "decision": "adopted",
           "by": "Codex research review",
           "reason": "existing_task: component research preserves semantic/professional evaluation, source/case boundaries, shared scenario baselines, exact evidence and measured operator value. Research proposal changes no acceptance requirement."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex Ruflo source review",
+          "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
         }
       ]
     },
@@ -1847,7 +1882,8 @@
         "docs/delivery/sessions/2026-10-15-generation-role-contract.md",
         "docs/delivery/sessions/2026-10-15-provider-failure-evidence.md",
         "docs/delivery/sessions/2026-10-15-main-consolidation.md",
-        "docs/research/github-2026-10-16/tencent-memory.md"
+        "docs/research/github-2026-10-16/tencent-memory.md",
+        "docs/research/github-2026-10-16/ruflo.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1886,6 +1922,12 @@
           "decision": "adopted",
           "by": "Codex Tencent source research",
           "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex Ruflo source review",
+          "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
         }
       ]
     },
@@ -2070,7 +2112,8 @@
         "docs/vision/8BALL.md",
         "evals/PLAN-QUALITY-GATE.md",
         "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
-        "docs/research/github-2026-10-16/tencent-memory.md"
+        "docs/research/github-2026-10-16/tencent-memory.md",
+        "docs/research/github-2026-10-16/ruflo.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2091,6 +2134,12 @@
           "decision": "adopted",
           "by": "Codex Tencent source research",
           "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex Ruflo source review",
+          "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
         }
       ]
     },
@@ -2499,7 +2548,8 @@
       "evidence_paths": [
         "docs/research/GITHUB-COMPONENTS-2026-10-16.md",
         "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
-        "docs/research/github-2026-10-16/tencent-memory.md"
+        "docs/research/github-2026-10-16/tencent-memory.md",
+        "docs/research/github-2026-10-16/ruflo.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2514,6 +2564,12 @@
           "decision": "candidate",
           "by": "Codex Tencent source research",
           "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "candidate",
+          "by": "Codex Ruflo source review",
+          "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
         }
       ]
     },
@@ -2567,7 +2623,8 @@
       "evidence_paths": [
         "docs/research/GITHUB-COMPONENTS-2026-10-16.md",
         "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
-        "docs/research/github-2026-10-16/tencent-memory.md"
+        "docs/research/github-2026-10-16/tencent-memory.md",
+        "docs/research/github-2026-10-16/ruflo.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2582,6 +2639,12 @@
           "decision": "candidate",
           "by": "Codex Tencent source research",
           "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "candidate",
+          "by": "Codex Ruflo source review",
+          "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
         }
       ]
     },
@@ -2601,7 +2664,8 @@
       "evidence_paths": [
         "docs/research/GITHUB-COMPONENTS-2026-10-16.md",
         "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
-        "docs/research/github-2026-10-16/tencent-memory.md"
+        "docs/research/github-2026-10-16/tencent-memory.md",
+        "docs/research/github-2026-10-16/ruflo.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2616,6 +2680,12 @@
           "decision": "candidate",
           "by": "Codex Tencent source research",
           "reason": "existing_task/candidate refinement: memory summaries and generated procedures need retained citations, scoped profiles, retraction/rebuild, actual-outcome evaluation and distinct bounded-choice failure states. MIT/beta source and model calls do not establish product acceptance."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "candidate",
+          "by": "Codex Ruflo source review",
+          "reason": "existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence."
         }
       ]
     },
@@ -2670,6 +2740,32 @@
           "decision": "candidate",
           "by": "Codex source research",
           "reason": "new_candidate: preserve terminology/contract distinction; no new required feature or runtime adoption."
+        }
+      ]
+    },
+    {
+      "id": "EM-081",
+      "title": "A vector-shaped fallback does not establish semantic retrieval",
+      "origin": "Owner-supplied Ruflo source assessment",
+      "first_seen": "2026-10-16",
+      "evidence_level": "operator_hypothesis",
+      "observation": "The inspected Ruflo embedding policy permits a deterministic hash fallback when real embedders cannot load unless strict real-embedding policy is enabled. A correctly shaped vector or running search endpoint therefore does not establish meaningful semantic retrieval.",
+      "product_implication": "Optional retrieval adapters must expose active backend/degraded mode and pass task-relevant semantic fixtures; configure fail-closed behavior where semantic output is required before adopting the provider.",
+      "task_ids": [
+        "B04-02",
+        "ES03-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/research/github-2026-10-16/ruflo.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-16",
+          "decision": "candidate",
+          "by": "Codex bounded source review",
+          "reason": "new_candidate: retain an adapter validation requirement from source inspection; no runtime dependency or required scope promoted."
         }
       ]
     }

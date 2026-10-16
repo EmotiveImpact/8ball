@@ -1,3 +1,9 @@
+# Latest research follow-up: Ruflo worker coordination
+
+The owner supplied Ruflo. Read [the source assessment](../research/github-2026-10-16/ruflo.md) and [plan placement](../strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md#follow-up-ruflos-place-in-the-combined-system). Base `bf54f607bb0e13d0c6adfc0f59ee146e75be287b`; same documentation branch. Ruflo is a candidate optional worker harness, requiring comparison with native subagents/jobs and explicit provider/memory/revision boundaries. Source-only research; [receipt](../evidence/ruflo-research-2026-10-16.json). B02 remains 10/20 required verified, ES01 5/5 internal; selected-provider and independent/human acceptance remain next. No runtime installation, model call, main merge or deployment.
+
+---
+
 # Latest research follow-up: Tencent memory and the combined reference case
 
 The owner supplied TencentDB Agent Memory and asked for the strongest combined design. Read [the plan follow-up](../strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md#follow-up-strongest-combined-architecture-and-tencent-memory) and [Tencent assessment](../research/github-2026-10-16/tencent-memory.md). This is a source-only extension of the existing research branch at base `7309f54539f17b973511e940147a817958891e42`, with runtime acceptance unchanged. Tencent is shortlisted for an optional non-client team/procedural-memory experiment through explicit APIs; source truth, revisions and authority remain in 8BALL. Its L2 scenario summaries do not replace hypothetical-world experiments.

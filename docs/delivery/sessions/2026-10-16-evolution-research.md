@@ -84,3 +84,31 @@ Question: what did this work reveal that we had not properly seen? Memory's “s
 Evidence: source observations and design hypotheses only. UX: retrieve labelled context within the existing product; architecture: optional explicit adapters; disposition: candidate refinement and existing documentation tasks. Model access and independent/human V0.2 requirements remain unresolved. Final validation/publication is recorded in the follow-up receipt and delivery response.
 
 Follow-up validation: 60 focused documentation/API/history tests passed in 1.10 seconds (one existing deprecation warning); delivery/changelog/emergence/whitespace checks passed. 181 protected source/test/script/workflow/archive/PRD files are byte-identical; all 69 task requirements/statuses and 11 milestones are unchanged; 57 local document links resolve. No upstream tests, full app/native rerun or model/human evaluation. New source/plan artifact hashes are in the follow-up receipt.
+
+## Ruflo follow-up
+
+Base `bf54f607bb0e13d0c6adfc0f59ee146e75be287b`; upstream `1882006a02487590c8c66a7eec8d7504f6af33c3`. Added bounded source notes/manifest and worker-coordinator placement in the proposed architecture. Native Git source inspection only; no upstream scripts/tests/install/inference. Prior receipts remain bound to their earlier committed snapshots.
+
+### Emergence Review: Ruflo follow-up
+
+The review exposed a concrete semantic-retrieval fallback requirement (EM-081) and refined existing distinctions among coordination, execution, correctness, independent acceptance, authority and simulated worlds. Architecture: optional worker adapter, one authoritative reviewed case. UX: show real execution/degraded status if adopted. Disposition: candidate/existing task refinements only.
+
+- ER-01: one source proposal and documentation update; runtime unchanged.
+- ER-02: coordination can dispatch existing typed workers; ENDSTATE remains generic.
+- ER-03: registration/status/marker presence is weaker evidence than execution and correct output; hash embeddings are not semantics.
+- ER-04: compare the native baseline before adding another coordinator.
+- ER-05: pin exact source and supported package/host/provider set at adoption.
+- ER-06: hooks, postinstall compatibility patches, optional backends and worker calls add operational/permission/cost effects.
+- ER-07: Ruflo offers an optional worker slot; MiroFish/OASIS remains a different simulation slot.
+- ER-08: preserve fixer outcomes, source evidence and unchanged V0.2 requirements.
+- ER-09: backend degradation and cancellation/stale output demand explicit review/failure paths.
+- ER-10: source inspection cannot establish runtime/quality/security/performance claims.
+- ER-11: no worker vote selects the human course or grants action permission.
+- ER-12: bounded manifest/execution/memory/verification review, not whole-repo certification.
+- ER-13: retain failed/timeout/raw results and real backend identity.
+- ER-14: exact source pin, canonical histories and follow-up receipt; no inherited fresh-test claims.
+- ER-15: measure independently useful work, corrections, latency and actual spend against current workers.
+
+Next engineering gate: selected-provider V0.2 generation/lifecycle and independent/human acceptance. Any coordinator trial is a later explicitly scoped fictional experiment. Follow-up receipt records actual documentation checks and preserved requirements.
+
+Ruflo follow-up validation: 60 focused documentation/API/history tests passed in 1.22 seconds, one existing warning. Delivery/changelog/emergence checks pass with 69 tasks, 11 milestones, 26 entries and 81 discoveries; 181 protected source/test/script/workflow/archive/PRD files and all task requirements/statuses/milestones are unchanged. 62 local links resolve. No upstream runtime/model/native tests. Receipt retains new source/plan hashes; final response identifies pushed commit.

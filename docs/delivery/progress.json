@@ -231,6 +231,12 @@
       "path": "docs/evidence/tencent-memory-research-2026-10-16.json",
       "code_commit": "7309f54539f17b973511e940147a817958891e42",
       "result": "Tencent memory candidate assessed and combined architecture sharpened. Source-only findings and documentation checks; no upstream runtime, model, independent/human acceptance or required-scope change."
+    },
+    "EV-RUFLO-RESEARCH": {
+      "kind": "bounded_source_research_and_documentation_validation",
+      "path": "docs/evidence/ruflo-research-2026-10-16.json",
+      "code_commit": "bf54f607bb0e13d0c6adfc0f59ee146e75be287b",
+      "result": "Ruflo coordination/execution/memory contracts assessed; candidate optional harness, no runtime adoption or model/professional/human acceptance."
     }
   },
   "milestones": [
@@ -351,7 +357,7 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "docs/endstate-evolution-plan-20261016",
-      "base_commit": "7309f54539f17b973511e940147a817958891e42",
+      "base_commit": "bf54f607bb0e13d0c6adfc0f59ee146e75be287b",
       "updated_on": "2026-10-16",
       "code_paths": [],
       "depends_on": [],
@@ -361,7 +367,8 @@
         "EV-ORIGINAL",
         "EV-MAIN-CONSOLIDATION",
         "EV-EVOLUTION-RESEARCH",
-        "EV-TENCENT-MEMORY-RESEARCH"
+        "EV-TENCENT-MEMORY-RESEARCH",
+        "EV-RUFLO-RESEARCH"
       ],
       "blockers": [],
       "next_action": "Use repository references instead of expecting chat access."
@@ -374,7 +381,7 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "docs/endstate-evolution-plan-20261016",
-      "base_commit": "7309f54539f17b973511e940147a817958891e42",
+      "base_commit": "bf54f607bb0e13d0c6adfc0f59ee146e75be287b",
       "updated_on": "2026-10-16",
       "code_paths": [
         "scripts/delivery.py"
@@ -388,7 +395,8 @@
         "EV-TRACKING",
         "EV-MAIN-CONSOLIDATION",
         "EV-EVOLUTION-RESEARCH",
-        "EV-TENCENT-MEMORY-RESEARCH"
+        "EV-TENCENT-MEMORY-RESEARCH",
+        "EV-RUFLO-RESEARCH"
       ],
       "blockers": [],
       "next_action": "Use this ledger and session protocol in both chat and Codex; keep the generated checklist in sync."
@@ -1803,7 +1811,7 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "docs/endstate-evolution-plan-20261016",
-      "base_commit": "7309f54539f17b973511e940147a817958891e42",
+      "base_commit": "bf54f607bb0e13d0c6adfc0f59ee146e75be287b",
       "updated_on": "2026-10-16",
       "code_paths": [
         "scripts/changelog.py",
@@ -1816,7 +1824,8 @@
         "EV-PLAN-STUDIO-LOCAL",
         "EV-MAIN-CONSOLIDATION",
         "EV-EVOLUTION-RESEARCH",
-        "EV-TENCENT-MEMORY-RESEARCH"
+        "EV-TENCENT-MEMORY-RESEARCH",
+        "EV-RUFLO-RESEARCH"
       ],
       "blockers": [],
       "next_action": "Enforce a new immutable-history changelog entry in each following session and integration commit. Local documentation/API/render scope verified; no source publication or release implied."
@@ -1829,7 +1838,7 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "docs/endstate-evolution-plan-20261016",
-      "base_commit": "7309f54539f17b973511e940147a817958891e42",
+      "base_commit": "bf54f607bb0e13d0c6adfc0f59ee146e75be287b",
       "updated_on": "2026-10-16",
       "code_paths": [
         "docs/delivery/EMERGENCE-REVIEW.md",
@@ -1845,7 +1854,8 @@
         "EV-EMERGENCE-REVIEW",
         "EV-MAIN-CONSOLIDATION",
         "EV-EVOLUTION-RESEARCH",
-        "EV-TENCENT-MEMORY-RESEARCH"
+        "EV-TENCENT-MEMORY-RESEARCH",
+        "EV-RUFLO-RESEARCH"
       ],
       "blockers": [],
       "next_action": "Run the Emergence Review at every substantive build handoff; only promote discoveries to required roadmap scope through an explicit ledger or decision update."
@@ -1858,7 +1868,7 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "docs/endstate-evolution-plan-20261016",
-      "base_commit": "7309f54539f17b973511e940147a817958891e42",
+      "base_commit": "bf54f607bb0e13d0c6adfc0f59ee146e75be287b",
       "updated_on": "2026-10-16",
       "code_paths": [
         "scripts/emergence.py",
@@ -1874,7 +1884,8 @@
         "EV-VISION-REVIEW",
         "EV-MAIN-CONSOLIDATION",
         "EV-EVOLUTION-RESEARCH",
-        "EV-TENCENT-MEMORY-RESEARCH"
+        "EV-TENCENT-MEMORY-RESEARCH",
+        "EV-RUFLO-RESEARCH"
       ],
       "blockers": [],
       "next_action": "Preserve all original discoveries and append review history. Use ADR 0004 and docs/vision for the strengthened direction; no optional candidate or delivery claim becomes verified without its own evidence."

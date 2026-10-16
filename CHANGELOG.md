@@ -4,6 +4,43 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Ruflo worker-harness assessment and architecture placement
+
+2026-10-16 · `pushed_unreleased`
+
+Assessed the owner-supplied Ruflo project as an optional coordination harness, preserving ENDSTATE outcome/evidence boundaries and identifying semantic-backend validation needs.
+
+### Added
+
+- Pinned source findings/manifest and candidate EM-081; worker-coordinator role in the proposed combined design.
+
+### Changed
+
+- Research register, canonical documentation-task evidence, handoff and emergence history updated additively.
+
+### Verification
+
+- Actual documentation/history/preservation check results are in the source-bound follow-up receipt.
+
+### Limitations
+
+- Source inspection only: no upstream tests, install, provider/model calls or predictive/professional/human acceptance.
+- No runtime task requirements/statuses, original PRDs/fixtures or application code changed.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A vector-shaped hash fallback does not establish semantic retrieval; actual agent execution remains separate from registration and task correctness.
+- Risk: A second coordinator can duplicate state and imply completed/validated work from status or consensus alone.
+- Architecture: Optional typed worker adapter; case revisions, source facts and human approvals remain authoritative in 8BALL.
+- Roadmap decision: candidate and existing_task refinements only; no runtime adoption or required scope promotion.
+Registered discoveries: EM-020, EM-031, EM-046, EM-051, EM-054, EM-055, EM-061, EM-075, EM-077, EM-078, EM-081.
+
+Roadmap items: `DOC-02`, `DOC-03`, `DOC-04`, `DOC-05`, `DOC-06`.
+
+Evidence: [docs/evidence/ruflo-research-2026-10-16.json](docs/evidence/ruflo-research-2026-10-16.json), [docs/research/github-2026-10-16/ruflo.md](docs/research/github-2026-10-16/ruflo.md), [docs/delivery/sessions/2026-10-16-evolution-research.md](docs/delivery/sessions/2026-10-16-evolution-research.md).
+
 ## 0.2.0-alpha.8 · Tencent memory assessment and combined reference-case strategy
 
 2026-10-16 · `pushed_unreleased`

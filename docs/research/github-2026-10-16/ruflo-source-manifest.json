@@ -1,0 +1,12 @@
+{
+  "captured_on": "2026-10-16",
+  "repository": "ruvnet/ruflo",
+  "commit": "1882006a02487590c8c66a7eec8d7504f6af33c3",
+  "url": "https://github.com/ruvnet/ruflo/tree/1882006a02487590c8c66a7eec8d7504f6af33c3",
+  "license": "MIT source; dependencies/model/host/service terms separate",
+  "application_base_commit": "bf54f607bb0e13d0c6adfc0f59ee146e75be287b",
+  "method": "Native Git no-checkout source capture and bounded manifest/code/evidence inspection",
+  "runtime_executed": false,
+  "inference_performed": false,
+  "adoption": "candidate optional developer/worker coordinator; compare current native jobs/subagents before product adoption"
+}
