@@ -6,6 +6,11 @@ connection uses the existing source, outcome, validation and human-review flow.
 
 ## 1. Get the connection details
 
+If someone is already giving you an endpoint, skip creating another account.
+Get its public API base URL, exact model identifier and private API key through
+their secure process. Share only the public URL/model in chat, then follow
+section 2. If the service uses no key, tell the agent so it can check compatibility.
+
 The suggested starting service is **Alibaba Cloud Model Studio**, Qwen's
 official hosted service. Start at [Alibaba Cloud](https://www.alibabacloud.com/)
 and find Model Studio, or use a provider you already have.

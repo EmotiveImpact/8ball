@@ -22,11 +22,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 ## Next work
 
-- **B02-09: Reliable reviewed graph proposals for new situations**. Activate selected Qwen/API settings and agree fixture spending/transmission, then run unchanged generation fixtures through the strict compatible adapter; preserve raw failures and obtain independent semantic evaluation. No catalogue or repaired-output substitution.
+- **B02-09: Reliable reviewed graph proposals for new situations**. Activate the owner-selected free-access Qwen/API endpoint and exact model, confirm its service limits, then run unchanged generation fixtures within the authorised fictional-fixture US$5 ceiling. Preserve raw failures and obtain independent semantic evaluation; no catalogue or repaired-output substitution.
 - **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
 - **B02-11: Independent quality evaluation and production-model selection**. Use docs/delivery/review/protocol.template.json to obtain prospective owner/qualified reviewer approval and independently authored labels. Run authorized actual-provider comparisons only afterward; templates/native software acceptance are not semantic approval.
 - **B02-12: Full twenty-step real-model V0.2 acceptance journey**. After the selected actual provider passes generation, run full_journey.py with openai_compatible and explicit inference/external flags, then genuine independent/human acceptance. Controlled HTTP/native tests are not this gate.
-- **B02-15: Model progress/cancellation and accurate installation status**. Controlled new-API cancellation/stale/restart paths are covered; repeat with the selected actual provider once configuration and budget/data permissions are active. Preserve already-sent-request limits.
+- **B02-15: Model progress/cancellation and accurate installation status**. Controlled new-API cancellation/stale/restart paths are covered. Repeat with the selected actual endpoint after secure configuration and free-access limits are confirmed, within the authorised fictional-fixture US$5 ceiling. Preserve already-sent-request limits.
 - **B02-16: Complete accessibility and supported-environment validation**. Complete the recorded human accessibility and supported-platform review, not another UI feature. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
 - **B02-19: Black operator visual system and transparent intelligence controls**. Review the current black workspace without expanding scope; preserve passing native controls. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
 - **B02-20: Black relationship explorer with local focus, directed flow and records view**. Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
@@ -192,11 +192,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **B02-09 Reliable reviewed graph proposals for new situations**
   - Status: `blocked`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.
-  - Next: Activate selected Qwen/API settings and agree fixture spending/transmission, then run unchanged generation fixtures through the strict compatible adapter; preserve raw failures and obtain independent semantic evaluation. No catalogue or repaired-output substitution.
+  - Next: Activate the owner-selected free-access Qwen/API endpoint and exact model, confirm its service limits, then run unchanged generation fixtures within the authorised fictional-fixture US$5 ceiling. Preserve raw failures and obtain independent semantic evaluation; no catalogue or repaired-output substitution.
   - Branch/base: `feat/v02-compatible-provider-20261016` / `c9fd38438ba52e9320bc55b96132086bfe57ce6a`.
   - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`, `eightball/v2/compatible.py`, `evals/live_compatible.py`.
   - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE` (registry below).
-  - Blocker: Fresh selected-provider generation has not been rerun after prompt correction; local Ollama is unreachable and hosted model/provider/credential variables are unset. Provider selection and inference permission are pending. Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate.
+  - Blocker: Fresh selected-provider generation has not been rerun after prompt correction. The owner-selected endpoint/model and active credentials are not yet supplied. Fictional fixtures are authorised up to US$5, with free access expected; confirm actual provider limits before calls. Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate.
 
 - [ ] **B02-10 Robust source extraction, deadlines and entity reconciliation**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-15.
@@ -246,7 +246,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **B02-15 Model progress/cancellation and accurate installation status**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: The UI reports actual runtime/weights/credential state and cancels work without stale commits. No silent large model download.
-  - Next: Controlled new-API cancellation/stale/restart paths are covered; repeat with the selected actual provider once configuration and budget/data permissions are active. Preserve already-sent-request limits.
+  - Next: Controlled new-API cancellation/stale/restart paths are covered. Repeat with the selected actual endpoint after secure configuration and free-access limits are confirmed, within the authorised fictional-fixture US$5 ceiling. Preserve already-sent-request limits.
   - Branch/base: `feat/v02-compatible-provider-20261016` / `c9fd38438ba52e9320bc55b96132086bfe57ce6a`.
   - Dependencies: `ES03-04`.
   - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`, `eightball/v2/compatible.py`, `tests/test_compatible_integration.py`.
@@ -576,10 +576,10 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-DRAFT-RECOVERY-GAP` (registry below).
   - Blocker: The latest supplied repair handoff explicitly reports that no completed working tree was found. Only verified alpha.7 source was recovered in this review.
 
-- [ ] **ES03-09 Opt-in OpenAI-compatible hosted endpoint contract** (optional, not a version gate)
-  - Status: `implemented`. Owner: Codex. Updated: 2026-10-16.
+- [x] **ES03-09 Opt-in OpenAI-compatible hosted endpoint contract** (optional, not a version gate)
+  - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
   - Acceptance: Controlled HTTP and native UI checks verify explicit server-owned endpoint/model/provider, permission, pinned routing, bounded strict responses/failure evidence, secrets protection, stage/cancellation/stale/restart guards and unchanged frozen-fixture harness. This transport scope does not claim actual inference or semantic/human acceptance.
-  - Next: Complete cumulative native software verification, then activate selected actual Qwen/API settings and agreed spending/data scope for B02-09/B02-12/B02-15.
+  - Next: Bounded controlled transport/software contract is verified. Activate the owner-selected free-access endpoint/model and secure key, confirm its limits and run actual B02 generation/lifecycle/journey within the authorised fictional-fixture US$5 ceiling.
   - Branch/base: `feat/v02-compatible-provider-20261016` / `c9fd38438ba52e9320bc55b96132086bfe57ce6a`.
   - Dependencies: `ES03-06`.
   - Existing code: `eightball/v2/compatible.py`, `tests/test_compatible_provider.py`, `tests/test_compatible_integration.py`, `tests/test_compatible_cli.py`, `evals/live_compatible.py`, `docs/v2/QWEN-SETUP.md`.
@@ -895,4 +895,4 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `controlled_transport_and_software_validation`.
 - Repository evidence: [docs/evidence/compatible-native-2026-10-16.json](../../docs/evidence/compatible-native-2026-10-16.json).
-- Result/scope: Explicit API transport and controlled lifecycle/UI/preflight checks implemented; cumulative native verification pending. No actual provider, semantic or human acceptance.
+- Result/scope: Tested ddfead7: 1,104 source tests, 1,104 installed-kernel tests and 391 native checks across 11 suites passed; exact source/artifact inspection valid. No actual provider, semantic or human acceptance.

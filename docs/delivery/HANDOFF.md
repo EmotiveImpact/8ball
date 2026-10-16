@@ -1,4 +1,16 @@
-# Current development: explicit Qwen API and pinned research checkouts
+# Latest verified development: hosted Qwen API and 28 research sources
+
+`feat/v02-compatible-provider-20261016` preserves all consolidated application fixes and research history. Tested code commit `ddfead7fe2e44a01ec202d2196384c5dc2596c5b` passed **1,104 source tests, 1,104 installed-kernel tests and 391 native browser checks across all 11 suites**. Source/artifact inspection was valid/passed before final documentation edits. [Final receipt](../evidence/compatible-native-2026-10-16.json), [source-copy receipt](../evidence/research-copy-2026-10-16.json), [full sprint and ER-01–15](sessions/2026-10-16-compatible-provider-research-copy.md), [beginner Qwen guide](../v2/QWEN-SETUP.md).
+
+All 28 pinned research checkouts and 128 original notice files were verified. Two model files are explicitly omitted, 51 LFS pointers remain unhydrated and two nested submodules remain uninitialised; no upstream software was run. Restore/verify with the Git-only helper in [research](../../research/README.md), and prune external sources from app discovery. The optional hosted transport is verified for its bounded controlled software contract only. All 83 emergence discoveries are retained; B02 remains **10/20 required verified**, ES01 **5/5 internal**.
+
+The owner now authorises the repository's fictional model tests up to **US$5**, expects their supplied endpoint to be free, and will do owner usability/visual review at the end. Next: receive the **public endpoint URL and exact model**, obtain any key only through secure environment settings, confirm the endpoint's actual free-access limits, and run unchanged frozen generation plus actual-provider cancellation/stale/interruption/full journey. Independent professional/semantic evaluation and genuine human acceptance remain separate. Actual model calls so far: **zero**.
+
+The saved draft still offers Alibaba international as an editable suggestion, with a blank exact model and private-key requirement. It is not active/authenticated access. Update the hostname/secret destination if the owner supplies another service. No new remote CI result is claimed: the branch has no push CI trigger and no new PR was opened. Main is unchanged at `d7d36b842464d7ad0e974a59730a682f1739fccf`; no merge, deployment or release occurred. Final receipt/status edits are documentation only; reconstruct the tested code and 28 checkout pins before re-inspecting raw local artifacts. The previous main integration metadata in the ledger remains a dated historical snapshot; `repository.current_sprint` and task branches identify this development.
+
+---
+
+# Preparation checkpoint: explicit Qwen API and pinned research checkouts
 
 Branch `feat/v02-compatible-provider-20261016` from `c9fd38438ba52e9320bc55b96132086bfe57ce6a` preserves the consolidated app and all research history. [Sprint record](sessions/2026-10-16-compatible-provider-research-copy.md), [Qwen beginner setup](../v2/QWEN-SETUP.md), [source inventory](../../research/README.md). Hosted API/Qwen now follows existing proposals, strict compilation and lifecycle guards; all28 source repositories are copied as pinned research submodules with explicit model/LFS/nested exceptions. No upstream runtime is installed.
 

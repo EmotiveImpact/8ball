@@ -34,13 +34,15 @@ The saved environment draft suggests Alibaba international
 `alibaba-model-studio`, a blank exact model and user-supplied `EIGHTBALL_API_KEY`
 secret scoped to `dashscope-intl.aliyuncs.com`. The save added this destination
 and requires user Save/Publish. This does not activate/authenticate the current
-task or grant spending. Other regions/providers need matching settings/secret
+task or itself grant spending. Other regions/providers need matching settings/secret
 destination. No key value was requested in chat or committed.
 
 Observed runtime has no ready provider secret/model. A manual configuration
 preflight exited 2 before any request. Actual model calls in this sprint: **zero**.
-Agree selected endpoint/model and fictional-fixture transmission/spending before
-running actual generation/lifecycle/journey checks. The owner will review the
+The owner subsequently authorised the repository's fictional examples up to
+US$5, while expecting the endpoint they supply to be free access. Confirm the
+actual service limits after receiving its public URL/exact model and secure key;
+no endpoint was supplied or actual call made during this sprint. The owner will review the
 product at the end; independent professional/semantic judgement remains separate.
 
 ## Verification checkpoint
@@ -56,10 +58,28 @@ status/setup/focus/selection/permission checks. Its proposal is a controlled
 fictional fixture, never real Qwen output. The archive Git-only verifier and
 population repeatability passed for all 28 pins and 128 original notice files.
 
-Cumulative native verification is pending at this code checkpoint. A final
-source-bound receipt will record the tested commit, source/artifact hashes,
-actual code/installed/browser counts and any failures. No historical result is
-claimed as a fresh run. The previous model failures remain preserved.
+The cumulative native run tested code commit
+`ddfead7fe2e44a01ec202d2196384c5dc2596c5b` and passed **1,104 source tests,
+1,104 installed-kernel regressions and 391 native browser checks across all
+11 suites**. Python compilation, 17 JavaScript module checks, structural
+fixtures, internal package/schema export and continuity guards passed.
+Run `20261016T094827Z-13d47ae7` finished at 09:51:56 UTC. Source fingerprint:
+`a67ae2482bd858a1d4cf2fa63e0c12624746ce3d9eac1c80f01fc9c9aef438e5`.
+Report SHA256:
+`6f9ead281050589d6d73d92006dc4e8e2071cce31305a33ff9cb538591ed90a6`.
+Inspection was valid/passed before final documentation edits.
+[Final receipt](../../evidence/compatible-native-2026-10-16.json) records all
+counts, checks and 28 source pins. Raw software artifacts remain local under
+ignored `artifacts/acceptance/20261016T094827Z-13d47ae7`; the receipt is not an
+artifact upload. Reconstruct the tested code with all source pins populated to
+re-inspect it. The previous model failures remain preserved.
+
+The bounded optional ES03-09 controlled transport/software contract is verified.
+Original B02 required statuses remain unchanged. GitHub Actions has no push
+trigger for this development branch and no PR was opened; no new remote CI
+result is claimed. Main remains `d7d36b842464d7ad0e974a59730a682f1739fccf`.
+The final receipt/changelog/status commit changes documentation only; the
+development branch is pushed without merging or deploying.
 
 ## Emergence Review
 
@@ -74,7 +94,7 @@ evidence. No deferred runtime feature was promoted.
 | ER-01 | Owner-authorised source copy and bounded provider implementation; DOC-07 and optional ES03-09. |
 | ER-02 | One existing compiler/review/job path serves the new endpoint; no second planner. |
 | ER-03 | Clean pinned sparse checkouts may omit source; literal key redaction missed Unicode-escaped echoes in an initial controlled test. Fixed and retained as EM-082/083. |
-| ER-04 | Exact actual model, active credentials and fixture spending/transmission remain necessary inputs. |
+| ER-04 | Exact endpoint/model and active credentials remain missing. Fictional tests are authorised up to US$5 with free access expected; verify service limits. |
 | ER-05 | Pin exact upstream revisions and preserve actual model/prompt/schema identities; aliases are not immutable weights. |
 | ER-06 | Research hooks/tests/model payloads must not execute; cancelled remote requests may still complete/be billed. |
 | ER-07 | A generic hosted endpoint removes the need to install local weights for this test path; no provider is silently selected. |
@@ -96,8 +116,9 @@ documentation deliverable and compatible transport is a bounded optional scope.
 
 ## Remaining work and next task
 
-B02 remains 10/20 required verified; ES01 remains 5/5 internal. Activate selected
-Qwen settings, agree fixture spending/transmission, run unchanged generation
+B02 remains 10/20 required verified; ES01 remains 5/5 internal. Activate the owner's
+selected free-access Qwen settings, confirm service limits within the authorised
+fictional-fixture US$5 ceiling, run unchanged generation
 fixtures and actual selected-provider cancellation/stale/interruption/journey,
 then independently authored evaluation and genuine human acceptance. Keep the
 owner's end review and independent professional review distinct. No main merge,

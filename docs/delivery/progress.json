@@ -18,7 +18,16 @@
     "standalone_endstate_package_released": false,
     "refresh_required_each_session": true,
     "integration_authority": "docs/decisions/0006-consolidated-development-main.md",
-    "source_merged_not_release_accepted": true
+    "source_merged_not_release_accepted": true,
+    "current_sprint": {
+      "branch": "feat/v02-compatible-provider-20261016",
+      "tested_code_commit": "ddfead7fe2e44a01ec202d2196384c5dc2596c5b",
+      "tested_code_tree": "45f1695216d8afa720da22ba136cad29dfea14e5",
+      "base_commit": "c9fd38438ba52e9320bc55b96132086bfe57ce6a",
+      "status_as_of": "2026-10-16",
+      "merged": false,
+      "remote_ci": "No result claimed; push trigger excludes this branch and no PR opened."
+    }
   },
   "evidence": {
     "EV-APP": {
@@ -246,7 +255,7 @@
     "EV-COMPATIBLE-CODE": {
       "kind": "controlled_transport_and_software_validation",
       "path": "docs/evidence/compatible-native-2026-10-16.json",
-      "result": "Explicit API transport and controlled lifecycle/UI/preflight checks implemented; cumulative native verification pending. No actual provider, semantic or human acceptance."
+      "result": "Tested ddfead7: 1,104 source tests, 1,104 installed-kernel tests and 391 native checks across 11 suites passed; exact source/artifact inspection valid. No actual provider, semantic or human acceptance."
     }
   },
   "milestones": [
@@ -695,10 +704,10 @@
         "EV-COMPATIBLE-CODE"
       ],
       "blockers": [
-        "Fresh selected-provider generation has not been rerun after prompt correction; local Ollama is unreachable and hosted model/provider/credential variables are unset. Provider selection and inference permission are pending.",
+        "Fresh selected-provider generation has not been rerun after prompt correction. The owner-selected endpoint/model and active credentials are not yet supplied. Fictional fixtures are authorised up to US$5, with free access expected; confirm actual provider limits before calls.",
         "Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate."
       ],
-      "next_action": "Activate selected Qwen/API settings and agree fixture spending/transmission, then run unchanged generation fixtures through the strict compatible adapter; preserve raw failures and obtain independent semantic evaluation. No catalogue or repaired-output substitution."
+      "next_action": "Activate the owner-selected free-access Qwen/API endpoint and exact model, confirm its service limits, then run unchanged generation fixtures within the authorised fictional-fixture US$5 ceiling. Preserve raw failures and obtain independent semantic evaluation; no catalogue or repaired-output substitution."
     },
     {
       "id": "B02-10",
@@ -911,7 +920,7 @@
       "blockers": [
         "Lifecycle behaviour with the selected real inference provider remains unverified."
       ],
-      "next_action": "Controlled new-API cancellation/stale/restart paths are covered; repeat with the selected actual provider once configuration and budget/data permissions are active. Preserve already-sent-request limits."
+      "next_action": "Controlled new-API cancellation/stale/restart paths are covered. Repeat with the selected actual endpoint after secure configuration and free-access limits are confirmed, within the authorised fictional-fixture US$5 ceiling. Preserve already-sent-request limits."
     },
     {
       "id": "B02-16",
@@ -2120,7 +2129,7 @@
       "id": "ES03-09",
       "milestone": "ES03",
       "title": "Opt-in OpenAI-compatible hosted endpoint contract",
-      "status": "implemented",
+      "status": "verified",
       "required": false,
       "owner": "Codex",
       "working_branch": "feat/v02-compatible-provider-20261016",
@@ -2142,7 +2151,7 @@
         "EV-COMPATIBLE-CODE"
       ],
       "blockers": [],
-      "next_action": "Complete cumulative native software verification, then activate selected actual Qwen/API settings and agreed spending/data scope for B02-09/B02-12/B02-15."
+      "next_action": "Bounded controlled transport/software contract is verified. Activate the owner-selected free-access endpoint/model and secure key, confirm its limits and run actual B02 generation/lifecycle/journey within the authorised fictional-fixture US$5 ceiling."
     }
   ],
   "next_task_ids": [

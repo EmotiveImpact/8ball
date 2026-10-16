@@ -1481,11 +1481,12 @@ Copying28 upstream repositories introduces more than71000 tracked files, upstrea
 
 **Roadmap links:** `DOC-07` (verified), `DOC-06` (verified).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `research/README.md`, `research/inventory.json`, `scripts/acceptance.py`, `tests/test_acceptance_runner.py`.
+**Evidence / source record:** `research/README.md`, `research/inventory.json`, `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/evidence/compatible-native-2026-10-16.json`.
 
 **Decision history:**
 
 - 2026-10-16 · adopted · Codex build review: existing_task: implement bounded source/transport safeguards within the owner-authorized source-copy and provider work; no real-model or independent acceptance inferred.
+- 2026-10-16 · adopted · Codex build review: existing_task: cumulative native run at ddfead7 passed 1,104 source/1,104 installed tests and 391 browser checks; inspection valid. This adds software evidence only, not live-provider or independent/human acceptance.
 
 ### [ ] EM-083: Rejected model evidence needs attributed and byte-safe retention
 
@@ -1496,10 +1497,11 @@ A malformed HTTP200 body is not necessarily assistant output. Valid assistant te
 
 **Product implication:** Keep exact bounded assistant text only after envelope attribution, retain original hashes/omission reasons, reject reflected credentials including decoded forms, preserve HTTP-error redaction, and never repair evaluation output.
 
-**Roadmap links:** `ES03-09` (implemented), `B02-15` (partial).
+**Roadmap links:** `ES03-09` (verified), `B02-15` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `eightball/v2/compatible.py`, `tests/test_compatible_provider.py`.
+**Evidence / source record:** `eightball/v2/compatible.py`, `tests/test_compatible_provider.py`, `docs/evidence/compatible-native-2026-10-16.json`.
 
 **Decision history:**
 
 - 2026-10-16 · adopted · Codex build review: existing_task: implement bounded source/transport safeguards within the owner-authorized source-copy and provider work; no real-model or independent acceptance inferred.
+- 2026-10-16 · adopted · Codex build review: existing_task: cumulative native run at ddfead7 passed 1,104 source/1,104 installed tests and 391 browser checks; inspection valid. This adds software evidence only, not live-provider or independent/human acceptance.

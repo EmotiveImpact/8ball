@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Verified hosted transport and pinned research-copy checkpoint
+
+2026-10-16 · `pushed_unreleased`
+
+Source-only copies and the optional hosted API transport passed cumulative native software verification on the development branch. All original V0.2 model and human gates remain open.
+
+### Added
+
+- Source-bound final receipt for tested commit ddfead7 and all 28 declared/checked-out research pins.
+
+### Changed
+
+- ES03-09 is verified only for its explicit controlled transport/software scope. Original B02 remains 10/20 required verified; ENDSTATE V0.1 remains 5/5 internally.
+- Owner authorises fictional model tests up to US$5 and expects their supplied endpoint to be free; exact endpoint/model, active secret and actual service limits remain pending.
+
+### Verification
+
+- 1,104 source tests and 1,104 installed-kernel regression tests passed.
+- 391 native browser checks passed across all 11 suites; source/evidence inspection valid and run passed.
+- All 28 research source checkouts and 128 notice files verified; Git-only population repeatability passed. No upstream software was executed.
+
+### Limitations
+
+- Zero actual model calls; real-model, independent professional and human acceptance remain open.
+- Pushed development source is not a main merge, deployment or release. New remote CI is not claimed; branch push is outside configured CI triggers.
+- Raw software artifacts remain local; committed receipt preserves hashes/counts. The earlier local checkpoint entry is retained as history.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-082: research source copies require explicit trust/discovery/fingerprint and completeness boundaries.
+- Discovery: EM-083: rejection traces need attributed, byte-safe raw evidence and escaped-credential protection.
+- Risk: Configuration or controlled HTTP success may be mistaken for actual-model/human acceptance; a captured source tree may be mistaken for an adopted dependency.
+- Architecture: Keep optional provider transport in the application host; ENDSTATE compiler/authority semantics unchanged. External source pins are provenance inputs, not runtime imports.
+- Roadmap decision: Owner-authorized DOC-07 and optional ES03-09 plus existing gate refinements; all original required acceptance remains.
+Registered discoveries: EM-019, EM-020, EM-031, EM-051, EM-054, EM-055, EM-072, EM-073, EM-077, EM-082, EM-083.
+
+Roadmap items: `DOC-07`, `ES03-09`, `B02-09`, `B02-12`, `B02-15`.
+
+Evidence: [docs/evidence/compatible-native-2026-10-16.json](docs/evidence/compatible-native-2026-10-16.json), [docs/evidence/research-copy-2026-10-16.json](docs/evidence/research-copy-2026-10-16.json), [docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md](docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md), [docs/v2/QWEN-SETUP.md](docs/v2/QWEN-SETUP.md).
+
 ## 0.2.0-alpha.8 · Hosted Qwen API connection and preserved research sources
 
 2026-10-16 · `local_unreleased`

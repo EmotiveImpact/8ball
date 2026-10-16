@@ -2849,7 +2849,8 @@
         "research/README.md",
         "research/inventory.json",
         "scripts/acceptance.py",
-        "tests/test_acceptance_runner.py"
+        "tests/test_acceptance_runner.py",
+        "docs/evidence/compatible-native-2026-10-16.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -2858,6 +2859,12 @@
           "decision": "adopted",
           "by": "Codex build review",
           "reason": "existing_task: implement bounded source/transport safeguards within the owner-authorized source-copy and provider work; no real-model or independent acceptance inferred."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex build review",
+          "reason": "existing_task: cumulative native run at ddfead7 passed 1,104 source/1,104 installed tests and 391 browser checks; inspection valid. This adds software evidence only, not live-provider or independent/human acceptance."
         }
       ]
     },
@@ -2876,7 +2883,8 @@
       "acceptance_task_ids": [],
       "evidence_paths": [
         "eightball/v2/compatible.py",
-        "tests/test_compatible_provider.py"
+        "tests/test_compatible_provider.py",
+        "docs/evidence/compatible-native-2026-10-16.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -2885,6 +2893,12 @@
           "decision": "adopted",
           "by": "Codex build review",
           "reason": "existing_task: implement bounded source/transport safeguards within the owner-authorized source-copy and provider work; no real-model or independent acceptance inferred."
+        },
+        {
+          "date": "2026-10-16",
+          "decision": "adopted",
+          "by": "Codex build review",
+          "reason": "existing_task: cumulative native run at ddfead7 passed 1,104 source/1,104 installed tests and 391 browser checks; inspection valid. This adds software evidence only, not live-provider or independent/human acceptance."
         }
       ]
     }
