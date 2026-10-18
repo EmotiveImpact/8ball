@@ -1,3 +1,5 @@
+For the owner-selected Anthropic test connection, use [Anthropic setup](ANTHROPIC-SETUP.md). The Qwen guide below remains available for a later explicitly chosen Qwen service.
+
 # Connect a hosted Qwen model: beginner setup
 
 A hosted service runs Qwen and gives 8BALL an API connection. You do not need

@@ -1,3 +1,9 @@
+# Current provider preparation: Anthropic
+
+[Anthropic setup](../v2/ANTHROPIC-SETUP.md) prepares the owner-selected test service; key/destination activation and actual compatibility are still missing. [Full session](sessions/2026-10-18-anthropic-configuration.md) preserves evidence and every remaining gate. No required task/status changes: B02 remains 10/20 and ES01 5/5 internally.
+
+---
+
 # Current evidence preparation, 18 October 2026
 
 [Current sprint](sessions/2026-10-18-review-evidence.md) preserves all prior development and tightens source/returned-call evidence. [Optional prospective recording](review/PROSPECTIVE-RECORDING.md) identifies missing study records without selecting thresholds, authenticating declarations or replacing legitimate manual v1 studies. All original task statuses/requirements remain unchanged; B02 stays 10/20 verified and ES01 5/5 internally. Actual endpoint/model/secure credentials and genuine independent/human evidence are still missing. Source-valid software checks alone do not close those gates.

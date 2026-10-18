@@ -3,6 +3,62 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-18-anthropic-configuration",
+      "date": "2026-10-18",
+      "version": "0.2.0-alpha.8",
+      "title": "Anthropic test configuration and secure key-entry instructions",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "B02-09",
+        "B02-15",
+        "ES03-05",
+        "DOC-06"
+      ],
+      "summary": "Prepared owner-selected Anthropic connection settings and exact existing-key destination instructions without claiming live compatibility or changing acceptance.",
+      "added": [
+        "Beginner Anthropic setup guide, source/configuration receipt and full Emergence Review."
+      ],
+      "changed": [
+        "Saved non-secret model/provider/URL suggestions and added api.anthropic.com to custom network destinations.",
+        "Canonical next actions identify selected Anthropic and missing owner key/destination activation."
+      ],
+      "fixed": [],
+      "verification": [
+        "142 existing controlled transport/CLI tests passed in 1.30s; isolated fictional-key format/status check used no DNS or HTTP.",
+        "60 continuity tests passed in 1.37s (one existing Starlette/AnyIO deprecation warning); append-only history and canonical generator checks passed.",
+        "Official SDK source lists claude-sonnet-4-6; official compatibility-documentation access was blocked by the inherited proxy (HTTP403), without an origin response.",
+        "No new native run is claimed. Independent agent source/guide review is engineering review, not independent professional acceptance."
+      ],
+      "limitations": [
+        "Existing EIGHTBALL_API_KEY secret is still destination-bound to the old Qwen service. Automatic retarget was rejected; owner must edit that row, enter key securely and Save/Publish. No duplicate secret was added.",
+        "Actual Anthropic compatibility/schema enforcement, account model access/pricing and active settings remain unverified; zero live model calls.",
+        "No application code, tests, dependencies, original PRD, frozen fixtures or task scope/statuses changed; independent/human acceptance remains open.",
+        "No SDK/runtime installation, model download, spending, main merge, release or deployment."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-18-anthropic-configuration.md",
+        "docs/evidence/anthropic-setup-2026-10-18.json",
+        "docs/v2/ANTHROPIC-SETUP.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-098: visible provider settings and managed key destination must be changed separately."
+        ],
+        "risks": [
+          "A valid setting format/SDK model listing can be mistaken for active access, remote structured-output enforcement or successful inference."
+        ],
+        "architecture_implications": [
+          "Keep server-owned explicit provider identity, secret destination restrictions and unchanged local compilation/approval gates."
+        ],
+        "roadmap_decision": "Refine existing provider/setup tasks; retain every original acceptance requirement/status and all earlier discoveries.",
+        "insight_ids": [
+          "EM-098",
+          "EM-051",
+          "EM-085"
+        ]
+      }
+    },
+    {
       "id": "2026-10-18-review-evidence-native-receipt",
       "date": "2026-10-18",
       "version": "0.2.0-alpha.8",

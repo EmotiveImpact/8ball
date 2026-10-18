@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-18. **97 recorded discoveries.**
+Last review: 2026-10-18. **98 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -922,7 +922,7 @@ Separate successful test reports could be retained while the working source cont
 
 **Roadmap links:** `B02-12` (blocked), `B02-16` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/evidence/generation-role-contract-2026-10-15.json`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`, `docs/research/github-2026-10-16/whole-system-review.md`, `docs/delivery/sessions/2026-10-18-review-evidence.md`.
+**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/evidence/generation-role-contract-2026-10-15.json`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`, `docs/research/github-2026-10-16/whole-system-review.md`, `docs/delivery/sessions/2026-10-18-review-evidence.md`, `docs/delivery/sessions/2026-10-18-anthropic-configuration.md`.
 
 **Decision history:**
 
@@ -935,6 +935,7 @@ Separate successful test reports could be retained while the working source cont
 - 2026-10-16 · adopted · Codex compatible-provider sprint: existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime.
 - 2026-10-16 · adopted · Codex whole-system investigation: existing_task/candidate refinement: Unique model-run checkpoints and exact assistant text improve source/evidence recovery; partial and hard-kill gaps remain explicit. No deferred runtime or acceptance promotion.
 - 2026-10-18 · adopted · Codex sprint review: existing_task refinement: recovered newer pushed source from an older restored checkout; preserve source-bound run evidence and additive optional recording compatibility. Saved setup is not an active published environment. No acceptance promotion.
+- 2026-10-18 · adopted · Codex Anthropic preparation: existing_task refinement: SDK-listed model identity, compatibility request formatting, allowed secret destination, active authentication and actual model quality remain separate. Official compatibility docs read was403; prepared configuration is not an inference result.
 
 ### [ ] EM-052: A built distribution is not an installed-product test
 
@@ -1561,12 +1562,13 @@ The hosted model validator rejected an explicit OpenRouter :free catalog variant
 
 **Roadmap links:** `ES03-09` (verified), `ES03-05` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/research/github-2026-10-16/whole-system-review.md`, `docs/evidence/whole-system-readiness-2026-10-16.json`, `docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md`.
+**Evidence / source record:** `docs/research/github-2026-10-16/whole-system-review.md`, `docs/evidence/whole-system-readiness-2026-10-16.json`, `docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md`, `docs/delivery/sessions/2026-10-18-anthropic-configuration.md`.
 
 **Decision history:**
 
 - 2026-10-16 · adopted · Codex sprint review: existing_task: preserve bounded engineering evidence or optional adapter requirement; no independent/model/human acceptance or new required research scope.
 - 2026-10-16 · adopted · Codex native verification: existing_task: tested 17a275c passed 1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites passed; source/artifact inspection valid. No actual model or independent/human acceptance. This is bounded software evidence only; no gate promotion.
+- 2026-10-18 · adopted · Codex Anthropic preparation: existing_task refinement: SDK-listed model identity, compatibility request formatting, allowed secret destination, active authentication and actual model quality remain separate. Official compatibility docs read was403; prepared configuration is not an inference result.
 
 ### [ ] EM-086: Experiment evidence must survive successive runs and interruptions
 
@@ -1778,3 +1780,20 @@ Compatible provider receipts bind the endpoint host but not the full configured 
 
 - 2026-10-18 · candidate · Codex engineering review: new_candidate: preserve the observed limitation explicitly rather than broadening this sprint into endpoint identity redesign. No model acceptance or configuration attestation is claimed.
 - 2026-10-18 · candidate · Codex native verification: new_candidate retained: 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits. No model/professional/human acceptance or required scope promotion.
+
+### [ ] EM-098: Changing provider also requires changing the managed secret destination
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-18. **Origin:** Owner-selected Anthropic environment preparation.
+
+The existing generic API-key requirement was labelled Qwen and allowed only its former service host. An automatic change to its allowed destination was rejected with no draft mutation; changing URL/model suggestions alone cannot rebind that managed key. Duplicate requirements are explicitly prohibited.
+
+**Product implication:** Show a novice one exact existing key variable and destination edit. Preserve saved bindings, require the owner to edit that row securely, and distinguish draft network/variable preparation from active credential delivery and actual inference.
+
+**Roadmap links:** `B02-09` (blocked), `B02-15` (partial), `ES03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-18-anthropic-configuration.md`, `docs/evidence/anthropic-setup-2026-10-18.json`, `docs/v2/ANTHROPIC-SETUP.md`.
+
+**Decision history:**
+
+- 2026-10-18 · adopted · Codex configuration review: existing_task: document the observed secret-rebinding restriction and exact owner step; no new required feature, model/professional/human acceptance or runtime research adoption.

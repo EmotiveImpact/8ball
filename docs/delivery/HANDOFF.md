@@ -1,3 +1,13 @@
+# Current configuration continuation: owner-selected Anthropic
+
+Branch feat/v02-review-evidence-20261018, base `12ffdadb2f094e8f31fbd60486b5f775894b32ec`. [Setup guide](../v2/ANTHROPIC-SETUP.md), [receipt](../evidence/anthropic-setup-2026-10-18.json) and [full session/ER-01–15](sessions/2026-10-18-anthropic-configuration.md) give exact fields and current limits. Draft non-secret values are prepared, and api.anthropic.com was added to custom destinations; the old key slot cannot be retargeted automatically. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, enter key securely, Save and Publish. No duplicate requirement or key value was added.
+
+Claude Sonnet 4.6 is an SDK-listed proposed test model, not verified account access. Existing generic /chat/completions compatibility/auth/schema enforcement remain unverified; official compatibility docs access was blocked by the inherited proxy (HTTP 403). 142 controlled transport/CLI checks passed; no actual inference/spending. Application source/tests/dependencies are unchanged. Prior 1267/1267/391 native counts remain tied to tested `25ca5e2`, not new documentation or an Anthropic response. All 98 discoveries and original task scope/statuses remain intact.
+
+Next: observe active key/destination/model/network configuration, confirm service limits under existing fictional-only US$5 permission, then run unchanged fixtures and retain actual compatibility failures before deciding any native adapter work. Genuine independent/human review and owner end review remain open; no main merge/release/deployment.
+
+---
+
 # Current sprint: source-stable model evidence and prospective recording
 
 Branch `feat/v02-review-evidence-20261018`, base `e513237f5b66c0689fa870e0d82873d8b71e4d8a`. Read [full sprint/ER-01–15](sessions/2026-10-18-review-evidence.md), [provider evidence](../v2/ACTUAL-PROVIDER-EVIDENCE.md) and [optional private recording guide](review/PROSPECTIVE-RECORDING.md). Recovered newer pushed source from an older clean restored main checkout; all prior work is preserved. Source stability and returned-call prerequisite checks are engineering evidence controls. Optional v2 recording checks do not replace legitimate v1 manual studies or grant independent acceptance.

@@ -1,3 +1,9 @@
+# Current provider choice: Anthropic test preparation
+
+The owner selected Anthropic. [Exact secure setup fields](docs/v2/ANTHROPIC-SETUP.md) and [configuration/source receipt](docs/evidence/anthropic-setup-2026-10-18.json) distinguish prepared settings from active access. The existing EIGHTBALL_API_KEY secret needs its destination changed to api.anthropic.com and the key entered securely, then Save/Publish. Claude Sonnet 4.6 compatibility is unverified until actual responses; keep every original local gate. [Full sprint/ER review](docs/delivery/sessions/2026-10-18-anthropic-configuration.md). Application code is unchanged; earlier native results below belong to their exact tested source. All 98 discoveries and original task statuses remain preserved.
+
+---
+
 # Current development: source-stable evidence and prospective study records
 
 Verified code `25ca5e2dce4f28ec33d9b132cccabfa15b23683e` passed 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites; source/artifact inspection valid before documentation-only final receipts. [Exact receipt](docs/evidence/review-evidence-native-2026-10-18.json).

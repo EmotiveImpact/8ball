@@ -51,7 +51,19 @@
         "evidence": "docs/evidence/whole-system-readiness-2026-10-16.json",
         "remote_ci": "No result claimed; branch push is outside configured push triggers."
       }
-    ]
+    ],
+    "provider_configuration_preparation": {
+      "date": "2026-10-18",
+      "branch": "feat/v02-review-evidence-20261018",
+      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "endpoint_host": "api.anthropic.com",
+      "evidence": "docs/evidence/anthropic-setup-2026-10-18.json",
+      "live_compatibility_verified": false,
+      "active_secret_available": false,
+      "next_input": "Owner must edit existing EIGHTBALL_API_KEY allowed destination to api.anthropic.com, enter private Anthropic API key in settings, Save and Publish."
+    }
   },
   "evidence": {
     "EV-APP": {
@@ -301,6 +313,11 @@
       "path": "docs/evidence/review-evidence-native-2026-10-18.json",
       "result": "1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits. No actual-model, independent professional or human acceptance.",
       "code_commit": "25ca5e2dce4f28ec33d9b132cccabfa15b23683e"
+    },
+    "EV-ANTHROPIC-SETUP": {
+      "kind": "configuration_and_source_inspection",
+      "path": "docs/evidence/anthropic-setup-2026-10-18.json",
+      "result": "Prepared Anthropic compatibility settings; 142 existing controlled transport/CLI tests passed and isolated format check made no requests. Live compatibility/account access remain unverified; owner must edit old secret destination and supply key securely."
     }
   },
   "milestones": [
@@ -725,7 +742,7 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "feat/v02-review-evidence-20261018",
-      "base_commit": "e513237f5b66c0689fa870e0d82873d8b71e4d8a",
+      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
       "updated_on": "2026-10-18",
       "code_paths": [
         "eightball/v2/intelligence.py",
@@ -735,7 +752,8 @@
         "eightball/v2/compatible.py",
         "evals/live_compatible.py",
         "evals/live_huggingface.py",
-        "tests/test_hosted_eval_retention.py"
+        "tests/test_hosted_eval_retention.py",
+        "docs/v2/ANTHROPIC-SETUP.md"
       ],
       "depends_on": [],
       "acceptance": "Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.",
@@ -750,13 +768,14 @@
         "EV-PROVIDER-FAILURE-REVIEW",
         "EV-COMPATIBLE-CODE",
         "EV-EVALUATION-READINESS",
-        "EV-REVIEW-EVIDENCE-20261018"
+        "EV-REVIEW-EVIDENCE-20261018",
+        "EV-ANTHROPIC-SETUP"
       ],
       "blockers": [
-        "Fresh selected-provider generation has not been rerun after prompt correction. The owner-selected endpoint/model and active credentials are not yet supplied. Fictional fixtures are authorised up to US$5, with free access expected; confirm actual provider limits before calls.",
+        "Owner selected Anthropic, with prepared claude-sonnet-4-6 compatibility settings; account availability/pricing, active credentials/destination and real inference remain unverified. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, supply key securely and Save/Publish. Fictional fixtures up to US$5 remain authorised.",
         "Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate."
       ],
-      "next_action": "Activate the owner-selected free-access Qwen/API endpoint and exact model, confirm its service limits, then run unchanged generation fixtures within the authorised fictional-fixture US$5 ceiling. Preserve raw failures and obtain independent semantic evaluation; no catalogue or repaired-output substitution."
+      "next_action": "Follow docs/v2/ANTHROPIC-SETUP.md: observe active key/destination/network settings, confirm model access/service limits within the existing fictional-only US$5 ceiling, then run unchanged generation fixtures. Preserve any compatibility rejection before deciding whether a native Messages adapter is needed; no repair/substitution or weakened local graph gate."
     },
     {
       "id": "B02-10",
@@ -954,9 +973,9 @@
       "status": "partial",
       "required": true,
       "owner": "Codex",
-      "working_branch": "feat/v02-evaluation-readiness-20261016",
-      "base_commit": "0fed04b5e299f4a2e53050456559133c1231b088",
-      "updated_on": "2026-10-16",
+      "working_branch": "feat/v02-review-evidence-20261018",
+      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
+      "updated_on": "2026-10-18",
       "code_paths": [
         "eightball/v2/analysis_jobs.py",
         "web/v2/job-view.js",
@@ -977,12 +996,13 @@
         "EV-NATIVE-CLOSEOUT",
         "EV-PROVIDER-FAILURE-REVIEW",
         "EV-COMPATIBLE-CODE",
-        "EV-EVALUATION-READINESS"
+        "EV-EVALUATION-READINESS",
+        "EV-ANTHROPIC-SETUP"
       ],
       "blockers": [
         "Lifecycle behaviour with the selected real inference provider remains unverified."
       ],
-      "next_action": "After successful current-source frozen generation, run the opt-in lifecycle tool and native provider journey on the actual selected endpoint. Local admission-trigger observations do not prove remote receipt/cancellation; retain races/omissions and complete remaining provider/human scope."
+      "next_action": "Activate owner-selected Anthropic configuration after editing the existing secret destination and entering key securely. Require successful current-source generation before opted-in lifecycle/native provider journey. Local admission is not remote cancellation; preserve races/omissions and genuine human scope."
     },
     {
       "id": "B02-16",
@@ -1637,7 +1657,7 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "feat/v02-review-evidence-20261018",
-      "base_commit": "e513237f5b66c0689fa870e0d82873d8b71e4d8a",
+      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
       "updated_on": "2026-10-18",
       "code_paths": [
         "eightball/v2/intelligence.py",
@@ -1651,7 +1671,8 @@
         "EV-CLASSIFIER",
         "EV-COMPATIBLE-CODE",
         "EV-EVALUATION-READINESS",
-        "EV-REVIEW-EVIDENCE-20261018"
+        "EV-REVIEW-EVIDENCE-20261018",
+        "EV-ANTHROPIC-SETUP"
       ],
       "blockers": [],
       "next_action": "Retain new strict API transport traces and controlled failure evidence; evaluate the selected actual model and independent source/plan quality before closing the broader gate."

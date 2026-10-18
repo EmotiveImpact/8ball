@@ -1,3 +1,9 @@
+# Latest provider decision: Anthropic
+
+Read the latest START-HERE/HANDOFF first. Owner now selects Anthropic; use docs/v2/ANTHROPIC-SETUP.md and sessions/2026-10-18-anthropic-configuration.md rather than treating the older Qwen endpoint question as current. The existing key slot needs owner destination edit/key entry/Save-Publish. Format checks are not authentication or compatibility evidence; keep original frozen fixtures/local gates and all failed attempts. No actual model call has occurred on this configuration. All previous source and acceptance boundaries remain.
+
+---
+
 # Current continuation, 18 October 2026
 
 Read START-HERE.md and the newest HANDOFF section first. Preserve `feat/v02-review-evidence-20261018`, based on the latest `e513237f5b66c0689fa870e0d82873d8b71e4d8a`; fetch all remote branches and inspect actual heads/local work before switching. [Current sprint](sessions/2026-10-18-review-evidence.md) supersedes older source/count snapshots below. Do not reset to main or older feature tips. Source-stable model evidence and optional prospective recording remain engineering tools, not actual-model/independent/human acceptance. Provider access is still absent; fictional fixtures up to US$5 are already authorised, free access expected. Follow the current source-bound receipt and canonical ledger; no automatic further main merge, release, deployment or deferred runtime.

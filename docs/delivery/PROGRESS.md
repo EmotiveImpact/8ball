@@ -22,11 +22,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 ## Next work
 
-- **B02-09: Reliable reviewed graph proposals for new situations**. Activate the owner-selected free-access Qwen/API endpoint and exact model, confirm its service limits, then run unchanged generation fixtures within the authorised fictional-fixture US$5 ceiling. Preserve raw failures and obtain independent semantic evaluation; no catalogue or repaired-output substitution.
+- **B02-09: Reliable reviewed graph proposals for new situations**. Follow docs/v2/ANTHROPIC-SETUP.md: observe active key/destination/network settings, confirm model access/service limits within the existing fictional-only US$5 ceiling, then run unchanged generation fixtures. Preserve any compatibility rejection before deciding whether a native Messages adapter is needed; no repair/substitution or weakened local graph gate.
 - **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
 - **B02-11: Independent quality evaluation and production-model selection**. Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval.
 - **B02-12: Full twenty-step real-model V0.2 acceptance journey**. After the selected actual provider passes generation, run full_journey.py with openai_compatible and explicit inference/external flags, then genuine independent/human acceptance. Controlled HTTP/native tests are not this gate.
-- **B02-15: Model progress/cancellation and accurate installation status**. After successful current-source frozen generation, run the opt-in lifecycle tool and native provider journey on the actual selected endpoint. Local admission-trigger observations do not prove remote receipt/cancellation; retain races/omissions and complete remaining provider/human scope.
+- **B02-15: Model progress/cancellation and accurate installation status**. Activate owner-selected Anthropic configuration after editing the existing secret destination and entering key securely. Require successful current-source generation before opted-in lifecycle/native provider journey. Local admission is not remote cancellation; preserve races/omissions and genuine human scope.
 - **B02-16: Complete accessibility and supported-environment validation**. Complete the recorded human accessibility and supported-platform review, not another UI feature. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
 - **B02-19: Black operator visual system and transparent intelligence controls**. Review the current black workspace without expanding scope; preserve passing native controls. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
 - **B02-20: Black relationship explorer with local focus, directed flow and records view**. Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
@@ -192,11 +192,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **B02-09 Reliable reviewed graph proposals for new situations**
   - Status: `blocked`. Owner: Codex. Updated: 2026-10-18.
   - Acceptance: Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.
-  - Next: Activate the owner-selected free-access Qwen/API endpoint and exact model, confirm its service limits, then run unchanged generation fixtures within the authorised fictional-fixture US$5 ceiling. Preserve raw failures and obtain independent semantic evaluation; no catalogue or repaired-output substitution.
-  - Branch/base: `feat/v02-review-evidence-20261018` / `e513237f5b66c0689fa870e0d82873d8b71e4d8a`.
-  - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`, `eightball/v2/compatible.py`, `evals/live_compatible.py`, `evals/live_huggingface.py`, `tests/test_hosted_eval_retention.py`.
-  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018` (registry below).
-  - Blocker: Fresh selected-provider generation has not been rerun after prompt correction. The owner-selected endpoint/model and active credentials are not yet supplied. Fictional fixtures are authorised up to US$5, with free access expected; confirm actual provider limits before calls. Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate.
+  - Next: Follow docs/v2/ANTHROPIC-SETUP.md: observe active key/destination/network settings, confirm model access/service limits within the existing fictional-only US$5 ceiling, then run unchanged generation fixtures. Preserve any compatibility rejection before deciding whether a native Messages adapter is needed; no repair/substitution or weakened local graph gate.
+  - Branch/base: `feat/v02-review-evidence-20261018` / `12ffdadb2f094e8f31fbd60486b5f775894b32ec`.
+  - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`, `eightball/v2/compatible.py`, `evals/live_compatible.py`, `evals/live_huggingface.py`, `tests/test_hosted_eval_retention.py`, `docs/v2/ANTHROPIC-SETUP.md`.
+  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-ANTHROPIC-SETUP` (registry below).
+  - Blocker: Owner selected Anthropic, with prepared claude-sonnet-4-6 compatibility settings; account availability/pricing, active credentials/destination and real inference remain unverified. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, supply key securely and Save/Publish. Fictional fixtures up to US$5 remain authorised. Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate.
 
 - [ ] **B02-10 Robust source extraction, deadlines and entity reconciliation**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-15.
@@ -244,13 +244,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Blocker: Independent multi-source identity/date usefulness review remains outstanding. No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed.
 
 - [ ] **B02-15 Model progress/cancellation and accurate installation status**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-16.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-18.
   - Acceptance: The UI reports actual runtime/weights/credential state and cancels work without stale commits. No silent large model download.
-  - Next: After successful current-source frozen generation, run the opt-in lifecycle tool and native provider journey on the actual selected endpoint. Local admission-trigger observations do not prove remote receipt/cancellation; retain races/omissions and complete remaining provider/human scope.
-  - Branch/base: `feat/v02-evaluation-readiness-20261016` / `0fed04b5e299f4a2e53050456559133c1231b088`.
+  - Next: Activate owner-selected Anthropic configuration after editing the existing secret destination and entering key securely. Require successful current-source generation before opted-in lifecycle/native provider journey. Local admission is not remote cancellation; preserve races/omissions and genuine human scope.
+  - Branch/base: `feat/v02-review-evidence-20261018` / `12ffdadb2f094e8f31fbd60486b5f775894b32ec`.
   - Dependencies: `ES03-04`.
   - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`, `eightball/v2/compatible.py`, `tests/test_compatible_integration.py`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`.
-  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS` (registry below).
+  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-ANTHROPIC-SETUP` (registry below).
   - Blocker: Lifecycle behaviour with the selected real inference provider remains unverified.
 
 - [ ] **B02-16 Complete accessibility and supported-environment validation**
@@ -545,9 +545,9 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Status: `partial`. Owner: Codex. Updated: 2026-10-18.
   - Acceptance: Provider replacement, refusal, timeout, malformed output, prompt injection and trace retention satisfy shared gates with measured quality.
   - Next: Retain new strict API transport traces and controlled failure evidence; evaluate the selected actual model and independent source/plan quality before closing the broader gate.
-  - Branch/base: `feat/v02-review-evidence-20261018` / `e513237f5b66c0689fa870e0d82873d8b71e4d8a`.
+  - Branch/base: `feat/v02-review-evidence-20261018` / `12ffdadb2f094e8f31fbd60486b5f775894b32ec`.
   - Existing code: `eightball/v2/intelligence.py`, `eightball/v2/store.py`.
-  - Evidence: `EV-APP`, `EV-QWEN`, `EV-CLASSIFIER`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018` (registry below).
+  - Evidence: `EV-APP`, `EV-QWEN`, `EV-CLASSIFIER`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-ANTHROPIC-SETUP` (registry below).
 
 - [x] **ES03-06 Opt-in Hugging Face development transport contract** (optional, not a version gate)
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
@@ -921,3 +921,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Repository evidence: [docs/evidence/review-evidence-native-2026-10-18.json](../../docs/evidence/review-evidence-native-2026-10-18.json).
 - Result/scope: 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits. No actual-model, independent professional or human acceptance.
 - Code revision: `25ca5e2dce4f28ec33d9b132cccabfa15b23683e`.
+
+### EV-ANTHROPIC-SETUP
+
+- Kind: `configuration_and_source_inspection`.
+- Repository evidence: [docs/evidence/anthropic-setup-2026-10-18.json](../../docs/evidence/anthropic-setup-2026-10-18.json).
+- Result/scope: Prepared Anthropic compatibility settings; 142 existing controlled transport/CLI tests passed and isolated format check made no requests. Live compatibility/account access remain unverified; owner must edit old secret destination and supply key securely.

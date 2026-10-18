@@ -1770,7 +1770,8 @@
         "docs/research/github-2026-10-16/ruflo.md",
         "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md",
         "docs/research/github-2026-10-16/whole-system-review.md",
-        "docs/delivery/sessions/2026-10-18-review-evidence.md"
+        "docs/delivery/sessions/2026-10-18-review-evidence.md",
+        "docs/delivery/sessions/2026-10-18-anthropic-configuration.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1827,6 +1828,12 @@
           "decision": "adopted",
           "by": "Codex sprint review",
           "reason": "existing_task refinement: recovered newer pushed source from an older restored checkout; preserve source-bound run evidence and additive optional recording compatibility. Saved setup is not an active published environment. No acceptance promotion."
+        },
+        {
+          "date": "2026-10-18",
+          "decision": "adopted",
+          "by": "Codex Anthropic preparation",
+          "reason": "existing_task refinement: SDK-listed model identity, compatibility request formatting, allowed secret destination, active authentication and actual model quality remain separate. Official compatibility docs read was403; prepared configuration is not an inference result."
         }
       ]
     },
@@ -3134,7 +3141,8 @@
       "evidence_paths": [
         "docs/research/github-2026-10-16/whole-system-review.md",
         "docs/evidence/whole-system-readiness-2026-10-16.json",
-        "docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md"
+        "docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md",
+        "docs/delivery/sessions/2026-10-18-anthropic-configuration.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -3149,6 +3157,12 @@
           "decision": "adopted",
           "by": "Codex native verification",
           "reason": "existing_task: tested 17a275c passed 1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites passed; source/artifact inspection valid. No actual model or independent/human acceptance. This is bounded software evidence only; no gate promotion."
+        },
+        {
+          "date": "2026-10-18",
+          "decision": "adopted",
+          "by": "Codex Anthropic preparation",
+          "reason": "existing_task refinement: SDK-listed model identity, compatibility request formatting, allowed secret destination, active authentication and actual model quality remain separate. Official compatibility docs read was403; prepared configuration is not an inference result."
         }
       ]
     },
@@ -3533,6 +3547,35 @@
           "decision": "candidate",
           "by": "Codex native verification",
           "reason": "new_candidate retained: 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits. No model/professional/human acceptance or required scope promotion."
+        }
+      ]
+    },
+    {
+      "id": "EM-098",
+      "title": "Changing provider also requires changing the managed secret destination",
+      "origin": "Owner-selected Anthropic environment preparation",
+      "first_seen": "2026-10-18",
+      "evidence_level": "observed_in_build",
+      "observation": "The existing generic API-key requirement was labelled Qwen and allowed only its former service host. An automatic change to its allowed destination was rejected with no draft mutation; changing URL/model suggestions alone cannot rebind that managed key. Duplicate requirements are explicitly prohibited.",
+      "product_implication": "Show a novice one exact existing key variable and destination edit. Preserve saved bindings, require the owner to edit that row securely, and distinguish draft network/variable preparation from active credential delivery and actual inference.",
+      "task_ids": [
+        "B02-09",
+        "B02-15",
+        "ES03-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-18-anthropic-configuration.md",
+        "docs/evidence/anthropic-setup-2026-10-18.json",
+        "docs/v2/ANTHROPIC-SETUP.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-18",
+          "decision": "adopted",
+          "by": "Codex configuration review",
+          "reason": "existing_task: document the observed secret-rebinding restriction and exact owner step; no new required feature, model/professional/human acceptance or runtime research adoption."
         }
       ]
     }
