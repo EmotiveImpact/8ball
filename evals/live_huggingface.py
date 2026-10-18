@@ -36,6 +36,33 @@ class EvaluationInterrupted(BaseException):
         self.signum=signum
 
 
+class SourceEvidenceInvalid(ValueError):
+    """A fixed safe diagnostic: source inspection must not expose local paths."""
+
+
+def inspect_source(report, point):
+    """Bind every admitted fixture and the final receipt to one source tree.
+
+    A later successful inspection cannot erase an earlier drift or inspection
+    failure. Completed provider responses remain in the same failed receipt.
+    """
+    try:
+        current=source_manifest()
+    except Exception as exc:
+        report['source_unchanged_during_run']=False
+        report['source_checks'].append({'point':point,'status':'inspection_failed',
+                                        'error_type':type(exc).__name__})
+        if point=='finish':report['source_at_finish']=None
+        raise SourceEvidenceInvalid('Source inspection failed; no further fixture may start.') from None
+    same=report['source']==current
+    report['source_checks'].append({'point':point,'status':'matched' if same else 'changed',
+                                    'sha256':current['sha256']})
+    report['source_unchanged_during_run']=same and report['source_unchanged_during_run'] is not False
+    if point=='finish':report['source_at_finish']=current
+    if not same:
+        raise SourceEvidenceInvalid('Source changed during the run; no further fixture may start.')
+
+
 def source_commit():
     """Identity only; the complete manifest also binds uncommitted source bytes."""
     try:
@@ -91,6 +118,7 @@ def main(argv=None, *, default_provider='huggingface'):
     report={'schema_version':2,'runner_version':RUNNER_VERSION,'run_id':run_id,
             'started_at':started_at.isoformat(),'status':'running','complete':False,
             'source':source_manifest(),'source_commit':source_commit(),
+            'source_at_finish':None,'source_unchanged_during_run':None,'source_checks':[],
             'versions':{'intake_prompt':INTAKE_PROMPT_VERSION,'graph_prompt':GRAPH_PROMPT_VERSION,
                         'compiler':COMPILER_VERSION,'python':sys.version.split()[0]},
             'provider':args.provider,'requested_model':configured.model,
@@ -122,6 +150,7 @@ def main(argv=None, *, default_provider='huggingface'):
         except ValueError:
             pass
         for index,(title,text,purpose,desired) in enumerate(fixtures):
+            inspect_source(report,'before_fixture_'+str(index))
             c=Case(title=title,client='Fictional evaluation only',summary=text,desired_outcome=desired,
                    deadline=utcnow()+timedelta(days=3),budget=10000,
                    evidence=[Evidence(id='source',title='Fictional fixture',source='Frozen evaluation set',text=text)])
@@ -161,7 +190,13 @@ def main(argv=None, *, default_provider='huggingface'):
         passed=(all(r['status']=='valid_proposal' and r['live_state_unchanged'] for r in report['results'])
                 and graph.get('candidate_routes',0)>=2 and not graph.get('outcome_evidenced',True)
                 and graph.get('all_actions_need_approval') and graph.get('exact_human_outcome_preserved'))
-        report.update(structural_gate_passed=bool(passed),status='passed' if passed else 'failed',complete=True)
+        report.update(structural_gate_passed=bool(passed),complete=True)
+        inspect_source(report,'before_result')
+        report['status']='passed' if passed else 'failed'
+    except SourceEvidenceInvalid as exc:
+        report.update(status='failed',complete=len(report['results'])==len(fixtures),
+                      reason=str(exc))
+        if report['structural_gate_passed'] is None:report['structural_gate_passed']=False
     except BaseException as exc:
         interrupted=isinstance(exc,(KeyboardInterrupt,SystemExit,EvaluationInterrupted))
         report.update(status='interrupted' if interrupted else 'aborted',complete=False,
@@ -174,9 +209,13 @@ def main(argv=None, *, default_provider='huggingface'):
         raise
     finally:
         if signal_installed:signal.signal(signal.SIGTERM,previous_signal)
+        try:
+            inspect_source(report,'finish')
+        except SourceEvidenceInvalid as exc:
+            report.update(status='failed',reason=str(exc))
         report['finished_at']=utcnow().isoformat()
         checkpoint(report,directory,report_name)
-    return 0 if passed else 1
+    return 0 if report['status']=='passed' else 1
 
 
 if __name__=='__main__':

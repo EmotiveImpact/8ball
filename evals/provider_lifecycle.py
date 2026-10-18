@@ -76,6 +76,38 @@ def checkpoint(report, directory):
         temporary.unlink(missing_ok=True)
 
 
+def matching_returned_calls(row, provider, configured):
+    """Check captured engineering receipts, never authenticate a remote event.
+
+    The report is unsigned. Its summary flag alone cannot stand in for the
+    returned calls and model/configuration identity of each frozen fixture.
+    """
+    proposal = row['proposal']
+    transport = proposal['raw_output']['transport']
+    calls = transport['calls']
+    served_model = proposal['model']
+    routing = getattr(configured, 'routing_provider', None) or configured.provider
+    expected_transport = ('openai_compatible' if provider == 'openai_compatible'
+                          else 'huggingface_inference_providers')
+    matches = (
+        proposal['provider'] == provider and proposal['purpose'] == row['purpose']
+        and isinstance(served_model, str) and 1 <= len(served_model) <= 180
+        and transport['transport'] == expected_transport
+        and transport['requested_model'] == configured.model
+        and transport['routing_provider'] == routing
+        and transport['automatic_routing'] is False
+        and transport['explicit_operator_permission'] is True
+        and isinstance(calls, list) and len(calls) == (2 if row['purpose'] == 'graph' else 1)
+        and all(call['status'] == 'response_received' and call['http_status'] == 200
+                and call['finish_reason'] == 'stop' and call['served_model'] == served_model
+                for call in calls)
+    )
+    if provider == 'openai_compatible':
+        matches = (matches and transport['endpoint_host'] == configured.endpoint_host
+                   and transport['api_provider'] == configured.provider)
+    return matches
+
+
 def generation_prerequisite(path, provider, configured, source, fixtures):
     """Local matching evidence, not a signature or independent approval."""
     if path is None:
@@ -97,10 +129,12 @@ def generation_prerequisite(path, provider, configured, source, fixtures):
             and report['actual_hosted_requests'] is True
             and report['provider'] == provider and report['requested_model'] == configured.model
             and report['routing_provider'] == routing and report['source'] == source
+            and report['source_unchanged_during_run'] is True and report['source_at_finish'] == source
             and report['fixture_sha256'] == FIXTURES_SHA256
             and report['planned_fixtures'] == report['completed_fixtures'] == len(rows) == len(fixtures)
             and all(row['status'] == 'valid_proposal' and row['live_state_unchanged'] is True
                     and [row['title'], row['source'], row['purpose'], row['desired_outcome']] == fixtures[index]
+                    and matching_returned_calls(row, provider, configured)
                     for index, row in enumerate(rows))
             and type(graph['candidate_routes']) is int and graph['candidate_routes'] >= 2
             and graph['outcome_evidenced'] is False

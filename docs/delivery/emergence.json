@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-16",
+  "updated_on": "2026-10-18",
   "required_prompts": [
     {
       "id": "ER-01",
@@ -25,7 +25,7 @@
     {
       "id": "ER-05",
       "scope": "situation",
-      "text": "Are we still working towards the client\u2019s explicit target and success criteria?"
+      "text": "Are we still working towards the client’s explicit target and success criteria?"
     },
     {
       "id": "ER-06",
@@ -75,7 +75,7 @@
     {
       "id": "ER-15",
       "scope": "both",
-      "text": "Does this improve the operator\u2019s next decision or merely increase reviews, alerts and screens? How would we measure the difference?"
+      "text": "Does this improve the operator’s next decision or merely increase reviews, alerts and screens? How would we measure the difference?"
     }
   ],
   "items": [
@@ -444,7 +444,7 @@
       "origin": "Accepted product discussion and build review",
       "first_seen": "2026-09-24",
       "evidence_level": "observed_in_build",
-      "observation": "Retraction or concentrated evidence dependencies can weaken a plan\u2019s evidential basis.",
+      "observation": "Retraction or concentrated evidence dependencies can weaken a plan’s evidential basis.",
       "product_implication": "Show one-record support clusters and invalidate earlier insight reviews when referenced content changes.",
       "task_ids": [
         "ES02-05",
@@ -620,7 +620,7 @@
     },
     {
       "id": "EM-018",
-      "title": "Outcome discovery must not rewrite the client\u2019s intent",
+      "title": "Outcome discovery must not rewrite the client’s intent",
       "origin": "Accepted product discussion and build review",
       "first_seen": "2026-09-24",
       "evidence_level": "operator_hypothesis",
@@ -902,7 +902,7 @@
       "first_seen": "2026-09-24",
       "evidence_level": "observed_in_build",
       "observation": "Several calculated routes can overlap and are not all the routes reality permits.",
-      "product_implication": "Label the candidate pool, truncation and caps. Avoid \u201cevery viable route\u201d and unsupported success percentages.",
+      "product_implication": "Label the candidate pool, truncation and caps. Avoid “every viable route” and unsupported success percentages.",
       "task_ids": [
         "ES02-05",
         "B02-21"
@@ -1237,7 +1237,7 @@
       "origin": "Accepted product discussion and build review",
       "first_seen": "2026-09-24",
       "evidence_level": "observed_in_build",
-      "observation": "An old response must not populate the newly selected client\u2019s insight panel.",
+      "observation": "An old response must not populate the newly selected client’s insight panel.",
       "product_implication": "Guard responses by case ID and session epoch, clear state on switching/locking, and test it.",
       "task_ids": [
         "B02-21"
@@ -1769,7 +1769,8 @@
         "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
         "docs/research/github-2026-10-16/ruflo.md",
         "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md",
-        "docs/research/github-2026-10-16/whole-system-review.md"
+        "docs/research/github-2026-10-16/whole-system-review.md",
+        "docs/delivery/sessions/2026-10-18-review-evidence.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1820,6 +1821,12 @@
           "decision": "adopted",
           "by": "Codex whole-system investigation",
           "reason": "existing_task/candidate refinement: Unique model-run checkpoints and exact assistant text improve source/evidence recovery; partial and hard-kill gaps remain explicit. No deferred runtime or acceptance promotion."
+        },
+        {
+          "date": "2026-10-18",
+          "decision": "adopted",
+          "by": "Codex sprint review",
+          "reason": "existing_task refinement: recovered newer pushed source from an older restored checkout; preserve source-bound run evidence and additive optional recording compatibility. Saved setup is not an active published environment. No acceptance promotion."
         }
       ]
     },
@@ -2384,7 +2391,8 @@
       "evidence_paths": [
         "scripts/emergence.py",
         "tests/test_emergence_register.py",
-        "docs/delivery/sessions/2026-09-24-vision-strengthening.md"
+        "docs/delivery/sessions/2026-09-24-vision-strengthening.md",
+        "docs/delivery/sessions/2026-10-18-review-evidence.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2393,6 +2401,12 @@
           "decision": "adopted",
           "by": "ChatGPT regression review",
           "reason": "Bounded documentation-tooling fix. Original ten passes remain mandatory and previously recorded protocol entries become append-only. No runtime or model-quality acceptance follows."
+        },
+        {
+          "date": "2026-10-18",
+          "decision": "adopted",
+          "by": "Codex sprint review",
+          "reason": "existing_task refinement: recovered newer pushed source from an older restored checkout; preserve source-bound run evidence and additive optional recording compatibility. Saved setup is not an active published environment. No acceptance promotion."
         }
       ]
     },
@@ -2545,7 +2559,8 @@
       ],
       "acceptance_task_ids": [],
       "evidence_paths": [
-        "docs/delivery/sessions/2026-09-25-chosen-course-recovery.md"
+        "docs/delivery/sessions/2026-09-25-chosen-course-recovery.md",
+        "docs/delivery/sessions/2026-10-18-review-evidence.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2554,6 +2569,12 @@
           "decision": "adopted",
           "by": "ChatGPT build review",
           "reason": "Adopt in the bounded local implementation and reproducible delivery; wider secure/native/operator acceptance remains unverified."
+        },
+        {
+          "date": "2026-10-18",
+          "decision": "adopted",
+          "by": "Codex sprint review",
+          "reason": "existing_task refinement: recovered newer pushed source from an older restored checkout; preserve source-bound run evidence and additive optional recording compatibility. Saved setup is not an active published environment. No acceptance promotion."
         }
       ]
     },
@@ -3147,7 +3168,8 @@
       "evidence_paths": [
         "docs/research/github-2026-10-16/whole-system-review.md",
         "docs/evidence/whole-system-readiness-2026-10-16.json",
-        "docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md"
+        "docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md",
+        "docs/delivery/sessions/2026-10-18-review-evidence.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -3162,6 +3184,12 @@
           "decision": "adopted",
           "by": "Codex native verification",
           "reason": "existing_task: tested 17a275c passed 1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites passed; source/artifact inspection valid. No actual model or independent/human acceptance. This is bounded software evidence only; no gate promotion."
+        },
+        {
+          "date": "2026-10-18",
+          "decision": "adopted",
+          "by": "Codex sprint review",
+          "reason": "existing_task refinement: recovered newer pushed source from an older restored checkout; preserve source-bound run evidence and additive optional recording compatibility. Saved setup is not an active published environment. No acceptance promotion."
         }
       ]
     },
@@ -3364,6 +3392,119 @@
           "decision": "candidate",
           "by": "Codex sprint review",
           "reason": "new_candidate: preserve bounded engineering evidence or optional adapter requirement; no independent/model/human acceptance or new required research scope."
+        }
+      ]
+    },
+    {
+      "id": "EM-094",
+      "title": "Structural success can outlive valid source provenance",
+      "origin": "V0.2 source-stable evidence and prospective review sprint",
+      "first_seen": "2026-10-18",
+      "evidence_level": "supported_by_tests",
+      "observation": "A controlled hosted-fixture response changed the source after the initial fingerprint. The old runner still evaluated all four fixtures and returned success. Bracketing source checks now fail the evidence gate and preserve structural results and raw responses independently.",
+      "product_implication": "Bind each admitted fixture and final receipt to the same inspected source, keep observed drift sticky, and stop subsequent fixtures. These snapshots do not establish continuous source stability or loaded-code identity.",
+      "task_ids": [
+        "B02-09",
+        "ES03-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "evals/live_huggingface.py",
+        "tests/test_hosted_eval_retention.py",
+        "docs/delivery/sessions/2026-10-18-review-evidence.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-18",
+          "decision": "adopted",
+          "by": "Codex sprint review",
+          "reason": "existing_task: bounded evidence-tool refinement; no new required acceptance gate, research runtime or professional/human approval."
+        }
+      ]
+    },
+    {
+      "id": "EM-095",
+      "title": "A summary flag is weaker than returned-call evidence",
+      "origin": "V0.2 source-stable evidence and prospective review sprint",
+      "first_seen": "2026-10-18",
+      "evidence_level": "supported_by_tests",
+      "observation": "Lifecycle prerequisites accepted representative schema-2 summaries without any proposal or returned-call records because the top-level actual-hosted-request flag was sufficient. Per-fixture identity, call records and stable final source must be checked separately.",
+      "product_implication": "Treat receipts as unsigned engineering records. Reject inconsistent or missing generation prerequisites before admitting a new actual-provider lifecycle run; this does not authenticate remote execution.",
+      "task_ids": [
+        "B02-09",
+        "B02-12",
+        "ES03-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "evals/provider_lifecycle.py",
+        "tests/test_provider_lifecycle.py",
+        "docs/delivery/sessions/2026-10-18-review-evidence.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-18",
+          "decision": "adopted",
+          "by": "Codex sprint review",
+          "reason": "existing_task: bounded evidence-tool refinement; no new required acceptance gate, research runtime or professional/human approval."
+        }
+      ]
+    },
+    {
+      "id": "EM-096",
+      "title": "Mechanical study readiness is separate from genuine prospective approval",
+      "origin": "V0.2 source-stable evidence and prospective review sprint",
+      "first_seen": "2026-10-18",
+      "evidence_level": "supported_by_tests",
+      "observation": "An optional strict recording format can identify missing prospective study details, numeric threshold decisions, changed gates, mismatched private artifacts and exact public fixture reuse. It cannot authenticate reviewer qualifications, independent authorship, permissions, approval or when execution actually occurred.",
+      "product_implication": "Keep existing manual v1 studies legitimate, add recording v2 without revising the semantic protocol, and leave all independent/model/human acceptance flags false even when a fictional bundle is mechanically complete.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "evals/review_readiness.py",
+        "tests/test_review_readiness.py",
+        "docs/delivery/sessions/2026-10-18-review-evidence.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-18",
+          "decision": "adopted",
+          "by": "Codex sprint review",
+          "reason": "existing_task: bounded evidence-tool refinement; no new required acceptance gate, research runtime or professional/human approval."
+        }
+      ]
+    },
+    {
+      "id": "EM-097",
+      "title": "Endpoint host identity does not distinguish service paths",
+      "origin": "Independent engineering review of lifecycle prerequisites",
+      "first_seen": "2026-10-18",
+      "evidence_level": "observed_in_build",
+      "observation": "Compatible provider receipts bind the endpoint host but not the full configured API base path. Two service or tenant paths on the same host therefore cannot be distinguished by the current receipt configuration identity.",
+      "product_implication": "Treat existing receipts as host-bound unsigned engineering records. Consider a separately scoped canonical base-URL fingerprint before reusing evidence across same-host path changes; never include keys or sensitive URL components.",
+      "task_ids": [
+        "B02-09",
+        "B02-12",
+        "ES03-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "evals/provider_lifecycle.py",
+        "docs/v2/ACTUAL-PROVIDER-EVIDENCE.md",
+        "docs/delivery/sessions/2026-10-18-review-evidence.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-18",
+          "decision": "candidate",
+          "by": "Codex engineering review",
+          "reason": "new_candidate: preserve the observed limitation explicitly rather than broadening this sprint into endpoint identity redesign. No model acceptance or configuration attestation is claimed."
         }
       ]
     }

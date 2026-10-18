@@ -3,6 +3,69 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-18-review-evidence",
+      "date": "2026-10-18",
+      "version": "0.2.0-alpha.8",
+      "title": "Source-stable model evidence and prospective review preparation",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-09",
+        "B02-11",
+        "B02-12",
+        "ES03-05",
+        "DOC-06"
+      ],
+      "summary": "Protect hosted fixture evidence from observed source drift and prepare optional private prospective study records without claiming model or human acceptance.",
+      "added": [
+        "Optional offline recording-v2 checker and unfilled protocol/dataset templates for the unchanged semantic protocol."
+      ],
+      "changed": [
+        "Lifecycle prerequisites require stable matching source and per-fixture returned-call consistency; receipts remain unsigned.",
+        "Canonical progress and continuation records preserve all earlier work and unchanged acceptance statuses."
+      ],
+      "fixed": [
+        "Hosted fixtures could report success after their source changed during a controlled response. Observed drift or inspection failure now blocks later fixtures and final evidence success while preserving raw responses and structural results."
+      ],
+      "verification": [
+        "138 focused controlled tests passed in 7.58s; final cumulative native verification pending.",
+        "Independent agent engineering review found no blocking correctness defect; this is not independent professional acceptance.",
+        "Pinned development environment restored; pip check passed. No live provider calls."
+      ],
+      "limitations": [
+        "Exact service/model/active secure key, actual-model results, genuine independent study and human acceptance remain missing.",
+        "Source checks bracket fixtures/final result, not every internal graph stage or every instant; source fingerprints do not prove loaded-code identity.",
+        "Mechanical recording consistency does not authenticate declarations or establish held-out scientific adequacy. Existing manual v1 studies remain legitimate.",
+        "Research source bodies are unpopulated in this restored checkout; no upstream runtime adoption, further main merge, release or deployment.",
+        "Compatible receipts identify endpoint host, not different API base paths on that host (EM-097 candidate)."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-18-review-evidence.md",
+        "evals/review_readiness.py",
+        "docs/delivery/review/README.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-094: structural success and source-valid evidence need separate outcomes.",
+          "EM-095: summary flags alone cannot support returned-call evidence.",
+          "EM-096: mechanical study readiness and genuine prospective approval are separate.",
+          "EM-097: host-only endpoint identity cannot distinguish service paths; preserve as a candidate."
+        ],
+        "risks": [
+          "Unauthenticated records, discrete source checks and declared coverage can be overinterpreted as continuous attestation or independent acceptance."
+        ],
+        "architecture_implications": [
+          "Keep offline evidence tools separate from case authority; retain original compiler, fixtures and semantic protocol."
+        ],
+        "roadmap_decision": "Refine existing tasks only; preserve every original status/acceptance requirement, prior form and discovery.",
+        "insight_ids": [
+          "EM-094",
+          "EM-095",
+          "EM-096",
+          "EM-097"
+        ]
+      }
+    },
+    {
       "id": "2026-10-16-whole-system-native-receipt",
       "date": "2026-10-16",
       "version": "0.2.0-alpha.8",
@@ -151,7 +214,7 @@
       ],
       "summary": "Added an owner-readable source investigation of Ruflo worker coordination, model access, confidence and evidence limits. Application behavior and acceptance gates are unchanged.",
       "added": [
-        "Plain-English owner guide, pinned-source receipt and complete ER-01\u201315 handoff.",
+        "Plain-English owner guide, pinned-source receipt and complete ER-01–15 handoff.",
         "EM-084 preserves the prediction target behind worker-routing confidence; prior findings receive additive evidence."
       ],
       "changed": [
@@ -1282,7 +1345,7 @@
         "ES03-08",
         "B04-04"
       ],
-      "summary": "Documentation-only refinement: 8BALL becomes the fixer\u2019s live situation room around an explicit mandate and human-selected course; ENDSTATE remains a neutral planning and reconsideration engine. No runtime completion or new required scope is implied.",
+      "summary": "Documentation-only refinement: 8BALL becomes the fixer’s live situation room around an explicit mandate and human-selected course; ENDSTATE remains a neutral planning and reconsideration engine. No runtime completion or new required scope is implied.",
       "added": [
         "Separate 8BALL and ENDSTATE vision documents, ADR 0004 and proposed course/coverage/recovery acceptance scenarios.",
         "Ten new discoveries retained alongside all 55 originals; five additional end-of-sprint review prompts.",
@@ -1293,7 +1356,7 @@
         "Earlier fallback/watch/attention/recoverability discoveries have appended dispositions rather than rewritten observations."
       ],
       "fixed": [
-        "The latest handoff\u2019s missing Draft Repair source is explicitly separated from the recovered alpha.7 implementation; later narrated test totals are not attached to the earlier source.",
+        "The latest handoff’s missing Draft Repair source is explicitly separated from the recovered alpha.7 implementation; later narrated test totals are not attached to the earlier source.",
         "No-path wording now identifies the supplied catalogue and search bounds rather than implying global impossibility.",
         "The review protocol now permits additional passes while requiring the original ten and preserving recorded prompt text/order. Seven regression checks cover safe extension and denied rewrites."
       ],
@@ -1563,7 +1626,7 @@
           "The bounded calendar-day interpreter deliberately cannot decide what next business day or end of day means for every organisation, location or agreement."
         ],
         "risks": [
-          "Shared names, exact quotations and schema validation do not prove identity, authority or the source\u2019s intended date.",
+          "Shared names, exact quotations and schema validation do not prove identity, authority or the source’s intended date.",
           "Withdrawing evidence should prompt reconsideration, not silently remove adopted operational commitments."
         ],
         "architecture_implications": [
@@ -1784,7 +1847,7 @@
         "Guided nested AND/OR and explicit-false authoring, guards, intended effects, verification criteria, resources, decision gates and response contingencies.",
         "Read-only amendment preview with route differences, historical protections, undo/redo, discard and a separate revision-checked commit.",
         "Persistent local analysis status with bounded queue, stage counts, cancellation, stale-result rejection and restart interruption.",
-        "In-app What\u2019s new and a generated root CHANGELOG.md. Every future build must update the shared changelog and delivery ledger.",
+        "In-app What’s new and a generated root CHANGELOG.md. Every future build must update the shared changelog and delivery ledger.",
         "Desktop authoring columns scroll independently; smaller screens keep a responsive stacked layout."
       ],
       "changed": [

@@ -1,3 +1,13 @@
+# Current sprint: source-stable model evidence and prospective recording
+
+Branch `feat/v02-review-evidence-20261018`, base `e513237f5b66c0689fa870e0d82873d8b71e4d8a`. Read [full sprint/ER-01–15](sessions/2026-10-18-review-evidence.md), [provider evidence](../v2/ACTUAL-PROVIDER-EVIDENCE.md) and [optional private recording guide](review/PROSPECTIVE-RECORDING.md). Recovered newer pushed source from an older clean restored main checkout; all prior work is preserved. Source stability and returned-call prerequisite checks are engineering evidence controls. Optional v2 recording checks do not replace legitimate v1 manual studies or grant independent acceptance.
+
+Focused combined tests: 138 passed in 7.58s. Final cumulative native verification is pending at this code checkpoint; final receipt will record exact tested source and results. All 97 discoveries are retained. Original task scope/statuses, PRD, frozen fixtures, compiler prompts and semantic protocol remain unchanged. Research Gitlinks remain preserved but source bodies are unpopulated in this restored environment.
+
+Provider bindings are absent; actual inference is zero. Existing permission covers fictional fixtures up to US$5, free access expected. Next input is the public model-service link, exact compatible model and secure active key, then actual unchanged generation/lifecycle/native journeys and genuine prospective independent/human reviews. Source checks sample fixture boundaries; unsigned receipts do not prove continuous stability, loaded-code identity or full API-path identity. Owner usability/visual review is at the end. No further main merge, release or deployment.
+
+---
+
 # Latest verified sprint: whole-system investigation and evaluation readiness
 
 Branch `feat/v02-evaluation-readiness-20261016`, base `0fed04b5e299f4a2e53050456559133c1231b088`, preserves all earlier work. Read [technical direction](../strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md), [source findings for all 28 candidates](../research/github-2026-10-16/whole-system-review.md), [provider evidence guide](../v2/ACTUAL-PROVIDER-EVIDENCE.md) and [full sprint/ER-01–15](sessions/2026-10-16-whole-system-evaluation-readiness.md). Keep current app/engine, prove one exact provider, then compare one specialist per demonstrated need. No new research runtime is adopted.

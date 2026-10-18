@@ -1,3 +1,9 @@
+# Current evidence preparation, 18 October 2026
+
+[Current sprint](sessions/2026-10-18-review-evidence.md) preserves all prior development and tightens source/returned-call evidence. [Optional prospective recording](review/PROSPECTIVE-RECORDING.md) identifies missing study records without selecting thresholds, authenticating declarations or replacing legitimate manual v1 studies. All original task statuses/requirements remain unchanged; B02 stays 10/20 verified and ES01 5/5 internally. Actual endpoint/model/secure credentials and genuine independent/human evidence are still missing. Source-valid software checks alone do not close those gates.
+
+---
+
 # Latest evaluation readiness, 16 October 2026
 
 The [technical direction](../strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md) makes the component choices understandable and keeps all deferred runtime research separate. On `feat/v02-evaluation-readiness-20261016`, [actual-provider tooling](../v2/ACTUAL-PROVIDER-EVIDENCE.md) preserves unique generation runs, exact returned assistant text and explicit lifecycle observations. Its final software receipt is separate from actual-model acceptance. All ten required scopes below remain unchanged. The owner already authorises fictional tests up to US$5 with free access expected; the actual service URL/exact model and active secure configuration remain missing. Do not repeat the permission question or infer model access from this coding conversation.

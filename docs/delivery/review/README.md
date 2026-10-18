@@ -10,7 +10,7 @@ Prepared 15 October 2026. These are **unperformed review materials**, not accept
 4. Complete the human walkthrough on a disposable fictional case using the actual selected model. Record observed results, failures and evidence, including corrections. A blocked or unperformed item stays `BLOCKED` or `NOT_RUN`. Do not sign from the scripted journey report.
 5. Return findings for fixes. Repeat affected checks against the corrected source, retaining earlier failed evidence. Only matching completed evidence can support a proposed ledger update; integration/release authority is a separate explicit decision.
 
-No provider, numerical threshold, reviewer approval or completed acceptance is filled in by these templates. Nulls and empty arrays mean **not supplied**, never zero errors or a passing result. Template JSON is a recording aid, not a machine-enforced gate validator. Do not use an overall score to hide a critical failure.
+No provider, numerical threshold, reviewer approval or completed acceptance is filled in by these templates. Nulls and empty arrays mean **not supplied**, never zero errors or a passing result. The original v1 template JSON is a manual recording aid. The additive [optional v2 recording/checker guide](PROSPECTIVE-RECORDING.md) checks local consistency and identifies missing details; it neither replaces legitimate manual v1 studies nor grants any semantic or human acceptance. Do not use an overall score to hide a critical failure.
 
 ## Existing contracts and evidence
 

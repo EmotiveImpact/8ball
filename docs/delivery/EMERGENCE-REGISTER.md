@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-16. **93 recorded discoveries.**
+Last review: 2026-10-18. **97 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -922,7 +922,7 @@ Separate successful test reports could be retained while the working source cont
 
 **Roadmap links:** `B02-12` (blocked), `B02-16` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/evidence/generation-role-contract-2026-10-15.json`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`, `docs/research/github-2026-10-16/whole-system-review.md`.
+**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/evidence/generation-role-contract-2026-10-15.json`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`, `docs/research/github-2026-10-16/whole-system-review.md`, `docs/delivery/sessions/2026-10-18-review-evidence.md`.
 
 **Decision history:**
 
@@ -934,6 +934,7 @@ Separate successful test reports could be retained while the working source cont
 - 2026-10-16 · adopted · Codex Ruflo source review: existing_task/candidate refinement: worker coordination and actual provider execution are different from hypothetical population simulation, correct plans, independent review and case authority. Preserve backend, version, budget and cancellation evidence.
 - 2026-10-16 · adopted · Codex compatible-provider sprint: existing_task refinement: preserve exact upstream pins/source exceptions, managed provider configuration, raw rejection evidence, stage/cancel/revision boundaries and actual-versus-controlled acceptance. Source copying adopts no upstream runtime.
 - 2026-10-16 · adopted · Codex whole-system investigation: existing_task/candidate refinement: Unique model-run checkpoints and exact assistant text improve source/evidence recovery; partial and hard-kill gaps remain explicit. No deferred runtime or acceptance promotion.
+- 2026-10-18 · adopted · Codex sprint review: existing_task refinement: recovered newer pushed source from an older restored checkout; preserve source-bound run evidence and additive optional recording compatibility. Saved setup is not an active published environment. No acceptance promotion.
 
 ### [ ] EM-052: A built distribution is not an installed-product test
 
@@ -1192,11 +1193,12 @@ The initial full regression rejected five added review prompts because a test re
 
 **Roadmap links:** `DOC-05` (verified), `DOC-06` (verified).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `scripts/emergence.py`, `tests/test_emergence_register.py`, `docs/delivery/sessions/2026-09-24-vision-strengthening.md`.
+**Evidence / source record:** `scripts/emergence.py`, `tests/test_emergence_register.py`, `docs/delivery/sessions/2026-09-24-vision-strengthening.md`, `docs/delivery/sessions/2026-10-18-review-evidence.md`.
 
 **Decision history:**
 
 - 2026-09-24 · adopted · ChatGPT regression review: Bounded documentation-tooling fix. Original ten passes remain mandatory and previously recorded protocol entries become append-only. No runtime or model-quality acceptance follows.
+- 2026-10-18 · adopted · Codex sprint review: existing_task refinement: recovered newer pushed source from an older restored checkout; preserve source-bound run evidence and additive optional recording compatibility. Saved setup is not an active published environment. No acceptance promotion.
 
 ### [ ] EM-066: A chosen course must preserve its exact prerequisite branch
 
@@ -1294,11 +1296,12 @@ The mounted alpha.7 archive and PRD overlay reproduced exactly; the interrupted 
 
 **Roadmap links:** `DOC-03` (verified), `DOC-04` (verified).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-09-25-chosen-course-recovery.md`.
+**Evidence / source record:** `docs/delivery/sessions/2026-09-25-chosen-course-recovery.md`, `docs/delivery/sessions/2026-10-18-review-evidence.md`.
 
 **Decision history:**
 
 - 2026-09-25 · adopted · ChatGPT build review: Adopt in the bounded local implementation and reproducible delivery; wider secure/native/operator acceptance remains unverified.
+- 2026-10-18 · adopted · Codex sprint review: existing_task refinement: recovered newer pushed source from an older restored checkout; preserve source-bound run evidence and additive optional recording compatibility. Saved setup is not an active published environment. No acceptance promotion.
 
 ### [ ] EM-072: A handoff needs a current entry point and historical precedence
 
@@ -1576,12 +1579,13 @@ The hosted frozen-fixture runner wrote to one reusable report path, so a later i
 
 **Roadmap links:** `ES03-05` (partial), `B02-09` (blocked).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/research/github-2026-10-16/whole-system-review.md`, `docs/evidence/whole-system-readiness-2026-10-16.json`, `docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md`.
+**Evidence / source record:** `docs/research/github-2026-10-16/whole-system-review.md`, `docs/evidence/whole-system-readiness-2026-10-16.json`, `docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md`, `docs/delivery/sessions/2026-10-18-review-evidence.md`.
 
 **Decision history:**
 
 - 2026-10-16 · adopted · Codex sprint review: existing_task: preserve bounded engineering evidence or optional adapter requirement; no independent/model/human acceptance or new required research scope.
 - 2026-10-16 · adopted · Codex native verification: existing_task: tested 17a275c passed 1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites passed; source/artifact inspection valid. No actual model or independent/human acceptance. This is bounded software evidence only; no gate promotion.
+- 2026-10-18 · adopted · Codex sprint review: existing_task refinement: recovered newer pushed source from an older restored checkout; preserve source-bound run evidence and additive optional recording compatibility. Saved setup is not an active published environment. No acceptance promotion.
 
 ### [ ] EM-087: Call admission and remote delivery require separate observations
 
@@ -1702,3 +1706,71 @@ Pinned Phoenix dry_run still executes experiment tasks and defaults to three ret
 **Decision history:**
 
 - 2026-10-16 · candidate · Codex sprint review: new_candidate: preserve bounded engineering evidence or optional adapter requirement; no independent/model/human acceptance or new required research scope.
+
+### [ ] EM-094: Structural success can outlive valid source provenance
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-18. **Origin:** V0.2 source-stable evidence and prospective review sprint.
+
+A controlled hosted-fixture response changed the source after the initial fingerprint. The old runner still evaluated all four fixtures and returned success. Bracketing source checks now fail the evidence gate and preserve structural results and raw responses independently.
+
+**Product implication:** Bind each admitted fixture and final receipt to the same inspected source, keep observed drift sticky, and stop subsequent fixtures. These snapshots do not establish continuous source stability or loaded-code identity.
+
+**Roadmap links:** `B02-09` (blocked), `ES03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `evals/live_huggingface.py`, `tests/test_hosted_eval_retention.py`, `docs/delivery/sessions/2026-10-18-review-evidence.md`.
+
+**Decision history:**
+
+- 2026-10-18 · adopted · Codex sprint review: existing_task: bounded evidence-tool refinement; no new required acceptance gate, research runtime or professional/human approval.
+
+### [ ] EM-095: A summary flag is weaker than returned-call evidence
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-18. **Origin:** V0.2 source-stable evidence and prospective review sprint.
+
+Lifecycle prerequisites accepted representative schema-2 summaries without any proposal or returned-call records because the top-level actual-hosted-request flag was sufficient. Per-fixture identity, call records and stable final source must be checked separately.
+
+**Product implication:** Treat receipts as unsigned engineering records. Reject inconsistent or missing generation prerequisites before admitting a new actual-provider lifecycle run; this does not authenticate remote execution.
+
+**Roadmap links:** `B02-09` (blocked), `B02-12` (blocked), `ES03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`, `docs/delivery/sessions/2026-10-18-review-evidence.md`.
+
+**Decision history:**
+
+- 2026-10-18 · adopted · Codex sprint review: existing_task: bounded evidence-tool refinement; no new required acceptance gate, research runtime or professional/human approval.
+
+### [ ] EM-096: Mechanical study readiness is separate from genuine prospective approval
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-18. **Origin:** V0.2 source-stable evidence and prospective review sprint.
+
+An optional strict recording format can identify missing prospective study details, numeric threshold decisions, changed gates, mismatched private artifacts and exact public fixture reuse. It cannot authenticate reviewer qualifications, independent authorship, permissions, approval or when execution actually occurred.
+
+**Product implication:** Keep existing manual v1 studies legitimate, add recording v2 without revising the semantic protocol, and leave all independent/model/human acceptance flags false even when a fictional bundle is mechanically complete.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `evals/review_readiness.py`, `tests/test_review_readiness.py`, `docs/delivery/sessions/2026-10-18-review-evidence.md`.
+
+**Decision history:**
+
+- 2026-10-18 · adopted · Codex sprint review: existing_task: bounded evidence-tool refinement; no new required acceptance gate, research runtime or professional/human approval.
+
+### [ ] EM-097: Endpoint host identity does not distinguish service paths
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-18. **Origin:** Independent engineering review of lifecycle prerequisites.
+
+Compatible provider receipts bind the endpoint host but not the full configured API base path. Two service or tenant paths on the same host therefore cannot be distinguished by the current receipt configuration identity.
+
+**Product implication:** Treat existing receipts as host-bound unsigned engineering records. Consider a separately scoped canonical base-URL fingerprint before reusing evidence across same-host path changes; never include keys or sensitive URL components.
+
+**Roadmap links:** `B02-09` (blocked), `B02-12` (blocked), `ES03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `evals/provider_lifecycle.py`, `docs/v2/ACTUAL-PROVIDER-EVIDENCE.md`, `docs/delivery/sessions/2026-10-18-review-evidence.md`.
+
+**Decision history:**
+
+- 2026-10-18 · candidate · Codex engineering review: new_candidate: preserve the observed limitation explicitly rather than broadening this sprint into endpoint identity redesign. No model acceptance or configuration attestation is claimed.

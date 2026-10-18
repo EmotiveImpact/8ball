@@ -51,6 +51,33 @@ def rejected(*args,**kwargs):
     raise failure
 
 
+@pytest.fixture
+def successful_requests(monkeypatch):
+    """Actual proposal/compiler paths over controlled remote envelopes only."""
+    state=SimpleNamespace(requests=[],on_response=lambda:None)
+    responses=[]
+    for title,text,purpose,outcome in FIXTURES:
+        if purpose=='extract':
+            responses.append({'items':[{'kind':'claim','text':'Controlled fictional claim',
+                'source':{'evidence_id':'source','quote':text}}]})
+        else:
+            frame=deepcopy(STAGED['frame'])
+            frame['target_bindings']=[{'criterion_index':i,'target_quote':outcome}
+                                     for i in range(len(frame['success_criteria']))]
+            responses.extend([frame,deepcopy(STAGED['routes'])])
+    def respond(request):
+        state.requests.append(request)
+        output=responses.pop(0)
+        state.on_response()
+        return httpx.Response(200,json={'model':'controlled-served-model',
+            'choices':[{'index':0,'finish_reason':'stop','message':{'role':'assistant',
+                'content':json.dumps(output)}}]})
+    with httpx.Client(transport=httpx.MockTransport(respond)) as client:
+        monkeypatch.setattr(runner,'propose',lambda case,provider,purpose,sources,**kwargs:
+                            actual_propose(case,provider,purpose,sources,client=client,**kwargs))
+        yield state
+
+
 @pytest.mark.parametrize('provider,name',[
     ('openai_compatible','compatible-report.json'),('huggingface','huggingface-report.json')])
 def test_successive_rejections_keep_every_prior_receipt_and_snapshot(tmp_path,monkeypatch,provider,name):
@@ -129,6 +156,9 @@ def test_structural_success_and_raw_transport_survive_a_later_failed_invocation(
     original=first.read_bytes()
     report=json.loads(original)
     assert report['status']=='passed' and report['complete'] and report['structural_gate_passed']
+    assert report['source_unchanged_during_run'] and report['source_at_finish']==report['source']
+    assert report['source_checks'][-1]['point']=='finish'
+    assert all(check['status']=='matched' for check in report['source_checks'])
     assert report['actual_hosted_requests'] and report['all_live_states_unchanged']
     assert len(requests)==5 and not responses
     graph=report['results'][-1]
@@ -219,3 +249,73 @@ def test_checkpoint_failure_aborts_before_any_following_provider_request(tmp_pat
     report=json.loads(report_files(tmp_path)[0].read_text())
     assert report['started_fixtures']==1 and report['completed_fixtures']==0
     assert report['status']=='running' and not report['complete']
+
+
+def test_source_drift_after_response_retains_output_and_stops_next_fixture(tmp_path,monkeypatch,successful_requests):
+    identity={'sha256':'initial','files':{}}
+    monkeypatch.setattr(runner,'source_manifest',lambda:deepcopy(identity))
+    successful_requests.on_response=lambda:identity.update(sha256='changed')
+    assert run(tmp_path)==1
+    report=json.loads(report_files(tmp_path)[0].read_text())
+    assert report['status']=='failed' and not report['complete']
+    assert report['started_fixtures']==report['completed_fixtures']==len(successful_requests.requests)==1
+    assert not report['source_unchanged_during_run']
+    assert report['source']['sha256']=='initial' and report['source_at_finish']['sha256']=='changed'
+    assert report['source_checks'][-2]=={'point':'before_fixture_1','status':'changed','sha256':'changed'}
+    returned=report['results'][0]['proposal']['raw_output']['transport']['calls'][0]
+    assert returned['raw_content'] and returned['status']=='response_received'
+    assert report['results'][0]['status']=='valid_proposal' and report['active_fixture'] is None
+
+
+def test_source_drift_in_last_response_keeps_structural_result_but_invalidates_evidence(tmp_path,monkeypatch,successful_requests):
+    identity={'sha256':'initial','files':{}}
+    monkeypatch.setattr(runner,'source_manifest',lambda:deepcopy(identity))
+    def drift_last():
+        if len(successful_requests.requests)==5:identity.update(sha256='changed')
+    successful_requests.on_response=drift_last
+    assert run(tmp_path)==1
+    report=json.loads(report_files(tmp_path)[0].read_text())
+    assert report['status']=='failed' and report['complete']
+    assert report['structural_gate_passed'] is True and not report['source_unchanged_during_run']
+    assert report['completed_fixtures']==4 and len(successful_requests.requests)==5
+    assert len(report['results'][-1]['proposal']['raw_output']['transport']['calls'])==2
+    assert report['source_checks'][-2]['point']=='before_result'
+    assert report['source_checks'][-2]['status']=='changed'
+
+
+def test_restored_source_does_not_erase_observed_drift(tmp_path,monkeypatch,successful_requests):
+    inspections=[]
+    def inspect():
+        inspections.append(True)
+        return {'sha256':'changed' if len(inspections)==3 else 'initial','files':{}}
+    monkeypatch.setattr(runner,'source_manifest',inspect)
+    assert run(tmp_path)==1
+    report=json.loads(report_files(tmp_path)[0].read_text())
+    assert report['status']=='failed' and not report['source_unchanged_during_run']
+    assert report['source_at_finish']==report['source']
+    assert report['source_checks'][-2]['status']=='changed' and report['source_checks'][-1]['status']=='matched'
+    assert len(successful_requests.requests)==1
+
+
+@pytest.mark.parametrize('after_last_response',[False,True])
+def test_source_inspection_error_fails_closed_without_losing_returned_evidence(tmp_path,monkeypatch,successful_requests,after_last_response):
+    inspections=[]
+    def inspect():
+        inspections.append(True)
+        if (after_last_response and len(successful_requests.requests)==5
+                or not after_last_response and len(inspections)>1):
+            raise OSError('private local path or diagnostic must not escape')
+        return {'sha256':'initial','files':{}}
+    monkeypatch.setattr(runner,'source_manifest',inspect)
+    assert run(tmp_path)==1
+    path=report_files(tmp_path)[0]
+    report=json.loads(path.read_text())
+    assert report['status']=='failed' and not report['source_unchanged_during_run']
+    assert report['source_at_finish'] is None
+    assert report['source_checks'][-1]=={'point':'finish','status':'inspection_failed','error_type':'OSError'}
+    assert 'private local path' not in path.read_text()
+    assert len(successful_requests.requests)==(5 if after_last_response else 0)
+    assert report['completed_fixtures']==(4 if after_last_response else 0)
+    if after_last_response:
+        assert report['structural_gate_passed'] is True
+        assert report['results'][-1]['proposal']['raw_output']['transport']['calls'][-1]['raw_content']

@@ -4,6 +4,7 @@ The adapter below drives real SQLite cases, real AnalysisJobs and the compatible
 transport. Only the remote HTTP response and owned-server process are controlled.
 """
 from copy import deepcopy
+from datetime import timedelta
 import json
 from pathlib import Path
 import subprocess
@@ -14,10 +15,12 @@ import httpx
 import pytest
 
 from evals import provider_lifecycle as lifecycle
-from eightball.models import uid
+from eightball.models import uid, utcnow
 from eightball.v2.analysis_jobs import AnalysisJobs, AnalysisRequest
-from eightball.v2.commands import Command
-from eightball.v2.contracts import Case
+from eightball.v2.commands import Command, merge_object
+from eightball.v2.contracts import Case, Evidence
+from eightball.v2.intelligence import propose
+from eightball.v2.planner import plan
 from eightball.v2.store import Store
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -39,21 +42,51 @@ def configure(monkeypatch):
     monkeypatch.setattr(lifecycle, 'source_manifest', lambda: deepcopy(SOURCE))
 
 
-def generation_report(tmp_path, **changes):
+def generation_report(tmp_path, *, provider='openai_compatible', **changes):
+    """Representative receipts from real proposal code, controlled HTTP only."""
     rows = []
-    for title, text, purpose, outcome in FIXTURES:
-        row = {'title': title, 'source': text, 'purpose': purpose, 'desired_outcome': outcome,
-               'status': 'valid_proposal', 'live_state_unchanged': True}
+    configured = lifecycle.compatible_settings() if provider == 'openai_compatible' else lifecycle.hosted_settings()
+    for index, (title, text, purpose, outcome) in enumerate(FIXTURES):
+        case = Case(title=title, client='Controlled test only', summary=text, desired_outcome=outcome,
+            deadline=utcnow() + timedelta(days=3), budget=10000,
+            evidence=[Evidence(id='source', title='Frozen fixture', source='Controlled test', text=text)])
+        if purpose == 'extract':
+            responses = [{'items': [{'kind': 'claim', 'text': 'Controlled fictional claim',
+                'source': {'evidence_id': 'source', 'quote': text}}]}]
+        else:
+            frame = deepcopy(STAGED['frame'])
+            frame['target_bindings'] = [{'criterion_index': i, 'target_quote': outcome}
+                                       for i in range(len(frame['success_criteria']))]
+            responses = [frame, deepcopy(STAGED['routes'])]
+        def respond(request):
+            return httpx.Response(200, json={'model': 'controlled-served-model',
+                'choices': [{'index': 0, 'finish_reason': 'stop', 'message': {'role': 'assistant',
+                    'content': json.dumps(responses.pop(0))}}]})
+        before = case.model_dump(mode='json')
+        with httpx.Client(transport=httpx.MockTransport(respond)) as client:
+            proposal = propose(case, provider, purpose, ['source'], allow_external=True, client=client)
+        row = {'fixture_index': index, 'title': title, 'source': text, 'purpose': purpose,
+            'desired_outcome': outcome, 'status': 'valid_proposal',
+            'live_state_unchanged': case.model_dump(mode='json') == before,
+            'proposal': proposal.model_dump(mode='json'), 'proposal_count': len(proposal.items)}
         if purpose == 'graph':
-            row.update(candidate_routes=2, outcome_evidenced=False,
-                       all_actions_need_approval=True, exact_human_outcome_preserved=True)
+            data = case.model_dump(mode='json')
+            for item in proposal.items: merge_object(data, item.kind, item.object)
+            projected = Case.model_validate(data)
+            routes = plan(projected)
+            row.update(candidate_routes=len(routes['routes']), outcome_evidenced=routes['outcome_evidenced'],
+                all_actions_need_approval=all(action.approval_required for action in projected.graph.actions),
+                exact_human_outcome_preserved=all(objective.title == outcome for objective in projected.graph.objectives))
         rows.append(row)
     report = {'schema_version': 2, 'status': 'passed', 'complete': True,
-        'source': deepcopy(SOURCE), 'provider': 'openai_compatible',
-        'requested_model': 'qwen/controlled-model', 'routing_provider': 'controlled-provider',
-        'endpoint_host': 'fixture.invalid', 'fixture_sha256': lifecycle.FIXTURES_SHA256,
+        'source': deepcopy(SOURCE), 'source_at_finish': deepcopy(SOURCE),
+        'source_unchanged_during_run': True, 'provider': provider,
+        'requested_model': configured.model,
+        'routing_provider': getattr(configured, 'routing_provider', None) or configured.provider,
+        'fixture_sha256': lifecycle.FIXTURES_SHA256,
         'planned_fixtures': len(rows), 'completed_fixtures': len(rows), 'results': rows,
         'structural_gate_passed': True, 'actual_hosted_requests': True}
+    if provider == 'openai_compatible': report['endpoint_host'] = configured.endpoint_host
     report.update(changes)
     path = tmp_path / 'generation.json'
     path.write_text(json.dumps(report))
@@ -189,6 +222,9 @@ def test_preflight_requires_both_permissions_before_owned_server(tmp_path, monke
     {'actual_hosted_requests': False}, {'fixture_sha256': 'changed'},
     {'requested_model': 'different'}, {'routing_provider': 'different'},
     {'endpoint_host': 'different.example'}, {'source': {'sha256': 'old', 'files': {}}},
+    {'source_unchanged_during_run': False}, {'source_unchanged_during_run': None},
+    {'source_unchanged_during_run': 'true'}, {'source_at_finish': None},
+    {'source_at_finish': {'sha256': 'changed', 'files': {}}},
     {'structural_gate_passed': False}, {'results': []}, {'schema_version': 1},
 ])
 def test_generation_prerequisite_rejects_mismatched_receipt_without_server(tmp_path, monkeypatch, changes):
@@ -220,6 +256,76 @@ def test_openrouter_receipt_matches_pinned_routing_provider(tmp_path, monkeypatc
     result = lifecycle.generation_prerequisite(path, 'openai_compatible',
         lifecycle.compatible_settings(), SOURCE, FIXTURES)
     assert result['status'] == 'matching_local_report' and not result['independent_approval']
+
+
+@pytest.mark.parametrize('field', ['source_unchanged_during_run', 'source_at_finish'])
+def test_older_receipt_without_source_stability_evidence_is_blocked(tmp_path, field):
+    path = generation_report(tmp_path)
+    report = json.loads(path.read_text())
+    del report[field]
+    path.write_text(json.dumps(report))
+    with pytest.raises(lifecycle.SetupBlocked, match='prerequisite'):
+        lifecycle.generation_prerequisite(path, 'openai_compatible',
+            lifecycle.compatible_settings(), SOURCE, FIXTURES)
+
+
+@pytest.mark.parametrize('fixture_index, path_parts, replacement', [
+    (0, ('proposal',), None),
+    (0, ('proposal', 'provider'), 'huggingface'),
+    (0, ('proposal', 'purpose'), 'graph'),
+    (0, ('proposal', 'model'), ''),
+    (0, ('proposal', 'raw_output', 'transport', 'calls'), []),
+    (3, ('proposal', 'raw_output', 'transport', 'calls'), []),
+    (0, ('proposal', 'raw_output', 'transport', 'requested_model'), 'another-model'),
+    (0, ('proposal', 'raw_output', 'transport', 'routing_provider'), 'another-provider'),
+    (0, ('proposal', 'raw_output', 'transport', 'api_provider'), 'another-service'),
+    (0, ('proposal', 'raw_output', 'transport', 'endpoint_host'), 'another.invalid'),
+    (0, ('proposal', 'raw_output', 'transport', 'automatic_routing'), True),
+    (0, ('proposal', 'raw_output', 'transport', 'explicit_operator_permission'), False),
+    (0, ('proposal', 'raw_output', 'transport', 'calls', 0, 'status'), 'failed'),
+    (0, ('proposal', 'raw_output', 'transport', 'calls', 0, 'http_status'), 429),
+    (0, ('proposal', 'raw_output', 'transport', 'calls', 0, 'finish_reason'), 'length'),
+    (0, ('proposal', 'raw_output', 'transport', 'calls', 0, 'served_model'), 'another-served-model'),
+])
+def test_generation_summary_does_not_replace_captured_matching_calls(tmp_path, monkeypatch, fixture_index, path_parts, replacement):
+    server = controlled_server(monkeypatch)
+    path = generation_report(tmp_path)
+    report = json.loads(path.read_text())
+    target = report['results'][fixture_index]
+    for part in path_parts[:-1]: target = target[part]
+    target[path_parts[-1]] = replacement
+    assert report['actual_hosted_requests'] is True
+    path.write_text(json.dumps(report))
+    result, _ = lifecycle.run('openai_compatible', allow_inference=True,
+        allow_external=True, generation_report=path, output=tmp_path / 'runs')
+    assert result['status'] == 'blocked' and result['scenarios'] == []
+    assert not server.instances
+
+
+def test_graph_prerequisite_requires_both_returned_stages(tmp_path):
+    path = generation_report(tmp_path)
+    report = json.loads(path.read_text())
+    graph = next(row for row in report['results'] if row['purpose'] == 'graph')
+    graph['proposal']['raw_output']['transport']['calls'].pop()
+    path.write_text(json.dumps(report))
+    with pytest.raises(lifecycle.SetupBlocked, match='prerequisite'):
+        lifecycle.generation_prerequisite(path, 'openai_compatible',
+            lifecycle.compatible_settings(), SOURCE, FIXTURES)
+
+
+def test_huggingface_captured_receipts_remain_valid_without_compatible_fields(tmp_path, monkeypatch):
+    monkeypatch.setenv('HF_TOKEN', KEY)
+    monkeypatch.setenv('EIGHTBALL_HF_MODEL', 'Qwen/controlled-hf-model')
+    monkeypatch.setenv('EIGHTBALL_HF_PROVIDER', 'fixture-provider')
+    path = generation_report(tmp_path, provider='huggingface')
+    report = json.loads(path.read_text())
+    transport = report['results'][0]['proposal']['raw_output']['transport']
+    assert 'endpoint_host' not in transport and 'api_provider' not in transport
+    assert transport['calls'][0]['served_model'] == 'controlled-served-model'
+    result = lifecycle.generation_prerequisite(path, 'huggingface',
+        lifecycle.hosted_settings(), SOURCE, FIXTURES)
+    assert result['status'] == 'matching_local_report'
+    assert not result['independent_approval'] and not result['cryptographically_signed']
 
 
 def test_all_lifecycle_outcomes_use_real_jobs_without_publication_or_second_call(tmp_path, monkeypatch):

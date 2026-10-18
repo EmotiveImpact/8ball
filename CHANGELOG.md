@@ -4,6 +4,56 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Source-stable model evidence and prospective review preparation
+
+2026-10-18 · `local_unreleased`
+
+Protect hosted fixture evidence from observed source drift and prepare optional private prospective study records without claiming model or human acceptance.
+
+### Added
+
+- Optional offline recording-v2 checker and unfilled protocol/dataset templates for the unchanged semantic protocol.
+
+### Changed
+
+- Lifecycle prerequisites require stable matching source and per-fixture returned-call consistency; receipts remain unsigned.
+- Canonical progress and continuation records preserve all earlier work and unchanged acceptance statuses.
+
+### Fixed
+
+- Hosted fixtures could report success after their source changed during a controlled response. Observed drift or inspection failure now blocks later fixtures and final evidence success while preserving raw responses and structural results.
+
+### Verification
+
+- 138 focused controlled tests passed in 7.58s; final cumulative native verification pending.
+- Independent agent engineering review found no blocking correctness defect; this is not independent professional acceptance.
+- Pinned development environment restored; pip check passed. No live provider calls.
+
+### Limitations
+
+- Exact service/model/active secure key, actual-model results, genuine independent study and human acceptance remain missing.
+- Source checks bracket fixtures/final result, not every internal graph stage or every instant; source fingerprints do not prove loaded-code identity.
+- Mechanical recording consistency does not authenticate declarations or establish held-out scientific adequacy. Existing manual v1 studies remain legitimate.
+- Research source bodies are unpopulated in this restored checkout; no upstream runtime adoption, further main merge, release or deployment.
+- Compatible receipts identify endpoint host, not different API base paths on that host (EM-097 candidate).
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-094: structural success and source-valid evidence need separate outcomes.
+- Discovery: EM-095: summary flags alone cannot support returned-call evidence.
+- Discovery: EM-096: mechanical study readiness and genuine prospective approval are separate.
+- Discovery: EM-097: host-only endpoint identity cannot distinguish service paths; preserve as a candidate.
+- Risk: Unauthenticated records, discrete source checks and declared coverage can be overinterpreted as continuous attestation or independent acceptance.
+- Architecture: Keep offline evidence tools separate from case authority; retain original compiler, fixtures and semantic protocol.
+- Roadmap decision: Refine existing tasks only; preserve every original status/acceptance requirement, prior form and discovery.
+Registered discoveries: EM-094, EM-095, EM-096, EM-097.
+
+Roadmap items: `B02-09`, `B02-11`, `B02-12`, `ES03-05`, `DOC-06`.
+
+Evidence: [docs/delivery/sessions/2026-10-18-review-evidence.md](docs/delivery/sessions/2026-10-18-review-evidence.md), [evals/review_readiness.py](evals/review_readiness.py), [docs/delivery/review/README.md](docs/delivery/review/README.md).
+
 ## 0.2.0-alpha.8 · Verified whole-system evaluation-readiness checkpoint
 
 2026-10-16 · `pushed_unreleased`

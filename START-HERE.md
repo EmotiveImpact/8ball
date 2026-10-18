@@ -1,3 +1,9 @@
+# Current development: source-stable evidence and prospective study records
+
+Continue `feat/v02-review-evidence-20261018` from `e513237f5b66c0689fa870e0d82873d8b71e4d8a`, preserving all earlier work. [Current sprint and full Emergence Review](docs/delivery/sessions/2026-10-18-review-evidence.md) records the restored environment, engineering changes and exact verification. [Optional private recording guide](docs/delivery/review/PROSPECTIVE-RECORDING.md) prepares genuine future studies without granting approval. The [canonical ledger](docs/delivery/progress.json) retains every required gate/status. Actual service/model/secure key are still missing; existing fictional-fixture US$5 permission does not need to be requested again. Owner review is at the end; independent qualified review remains distinct. No further main merge/release/deployment. Earlier source-bound results below remain historical.
+
+---
+
 ## Current work: whole-system direction and evaluation readiness
 
 Continue `feat/v02-evaluation-readiness-20261016` from `0fed04b`, preserving every earlier fix and research source. Read [the owner's technical direction](docs/strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md), [all-category source findings](docs/research/github-2026-10-16/whole-system-review.md), [actual-provider evidence guide](docs/v2/ACTUAL-PROVIDER-EVIDENCE.md) and [current sprint](docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md). The sprint fixes explicit-model identity and retains generation/lifecycle evidence; tested code `17a275c` passed 1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites. [Exact-source receipt](docs/evidence/whole-system-readiness-2026-10-16.json) records valid inspection and limits. B02 stays 10/20 and ES01 5/5 internally; no deferred runtime adoption or new model calls.

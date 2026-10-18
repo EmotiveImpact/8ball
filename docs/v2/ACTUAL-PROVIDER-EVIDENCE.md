@@ -39,6 +39,14 @@ transport traces. Numbered exclusive checkpoints bracket each fixture. The
 current report within that run updates atomically; earlier runs and checkpoints
 are never replaced. Write failure prevents starting a subsequent fixture.
 
+Current reports also record `source_checks`, `source_at_finish` and
+`source_unchanged_during_run`. Source is inspected before each fixture and final
+success. Observed drift or an inspection error is sticky, blocks later fixtures
+and fails the evidence gate even if every returned structure passes. Raw returned
+responses and partial checkpoints remain. These discrete checks cannot prove
+continuous stability or which code was loaded; a graph's internal second stage
+can already have started before the next check. Do not edit source during a run.
+
 Compatible receipts preserve exact bounded assistant text on success and
 attributed rejection, plus separate literal-text, canonical-output and outer
 HTTP-body hashes. UTF-8, credential-reflection, size, refusal, truncation and
@@ -60,9 +68,15 @@ After successful generation from the same source/provider, replace the run ID:
 ```
 
 The runner checks a complete schema-2 receipt, all four exact fixtures and the
-original structural gate, returned-call evidence, source fingerprint, endpoint,
+original structural gate, per-fixture returned-call evidence, stable final source,
+endpoint host,
 requested model and routing provider. This is an unsigned engineering receipt,
 not independent approval. Changed source/configuration requires fresh evidence.
+Older reports lacking source-stability/returned-call records cannot establish
+this prerequisite. Existing failures remain historical, without fabrication or
+retroactive filling of missing records. Host identity does not distinguish
+different API base paths on the same host; review that residual configuration
+limitation before interpreting a receipt as evidence for a changed service path.
 
 It starts only its own disposable local app/database and submits one graph job
 per fresh case for cancel, metadata supersession and actual owned-process restart
