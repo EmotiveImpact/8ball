@@ -1,5 +1,7 @@
 # Current development: source-stable evidence and prospective study records
 
+Verified code `25ca5e2dce4f28ec33d9b132cccabfa15b23683e` passed 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites; source/artifact inspection valid before documentation-only final receipts. [Exact receipt](docs/evidence/review-evidence-native-2026-10-18.json).
+
 Continue `feat/v02-review-evidence-20261018` from `e513237f5b66c0689fa870e0d82873d8b71e4d8a`, preserving all earlier work. [Current sprint and full Emergence Review](docs/delivery/sessions/2026-10-18-review-evidence.md) records the restored environment, engineering changes and exact verification. [Optional private recording guide](docs/delivery/review/PROSPECTIVE-RECORDING.md) prepares genuine future studies without granting approval. The [canonical ledger](docs/delivery/progress.json) retains every required gate/status. Actual service/model/secure key are still missing; existing fictional-fixture US$5 permission does not need to be requested again. Owner review is at the end; independent qualified review remains distinct. No further main merge/release/deployment. Earlier source-bound results below remain historical.
 
 ---

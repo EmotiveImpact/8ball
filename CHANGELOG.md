@@ -4,6 +4,52 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Verified source-stable evaluation and review-record checkpoint
+
+2026-10-18 · `pushed_unreleased`
+
+Cumulative native software verification passed for source-stable generation receipts, lifecycle prerequisites and optional prospective recording. Real-model and genuine independent/human acceptance remain open.
+
+### Added
+
+- Source-bound final receipt for tested code 25ca5e2dce4f28ec33d9b132cccabfa15b23683e, all eleven native suites and the actual unpopulated research checkout state.
+
+### Changed
+
+- Current canonical sprint evidence and next-agent handoff identify the verified development source while retaining every prior checkpoint and all 97 discoveries.
+
+### Verification
+
+- 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits.
+- 138 focused controlled tests passed; independent agent engineering review found no blocking issue. These overlap the cumulative tests and are not professional acceptance.
+- Compilation, 17 JavaScript modules, eight structural fixture cases, internal package/schema export and append-only continuity guards passed.
+- Original PRD, frozen generation bytes, compiler, semantic protocol, v1 review forms and every task scope/status remain unchanged.
+
+### Limitations
+
+- Exact service/model/active secure key, actual-model results, genuine independent study and human acceptance remain missing.
+- Source checks bracket fixtures/final result, not every internal graph stage or every instant; source fingerprints do not prove loaded-code identity.
+- Mechanical recording consistency does not authenticate declarations or establish held-out scientific adequacy. Existing manual v1 studies remain legitimate.
+- Research source bodies are unpopulated in this restored checkout; no upstream runtime adoption, further main merge, release or deployment.
+- Compatible receipts identify endpoint host, not different API base paths on that host (EM-097 candidate).
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-094: structural success and source-valid evidence need separate outcomes.
+- Discovery: EM-095: summary flags alone cannot support returned-call evidence.
+- Discovery: EM-096: mechanical study readiness and genuine prospective approval are separate.
+- Discovery: EM-097: host-only endpoint identity cannot distinguish service paths; preserve as a candidate.
+- Risk: Unauthenticated records, discrete source checks and declared coverage can be overinterpreted as continuous attestation or independent acceptance.
+- Architecture: Keep offline evidence tools separate from case authority; retain original compiler, fixtures and semantic protocol.
+- Roadmap decision: Refine existing tasks only; preserve every original status/acceptance requirement, prior form and discovery.
+Registered discoveries: EM-094, EM-095, EM-096, EM-097.
+
+Roadmap items: `B02-09`, `B02-11`, `B02-12`, `ES03-05`, `DOC-06`.
+
+Evidence: [docs/evidence/review-evidence-native-2026-10-18.json](docs/evidence/review-evidence-native-2026-10-18.json), [docs/delivery/sessions/2026-10-18-review-evidence.md](docs/delivery/sessions/2026-10-18-review-evidence.md), [docs/delivery/review/PROSPECTIVE-RECORDING.md](docs/delivery/review/PROSPECTIVE-RECORDING.md).
+
 ## 0.2.0-alpha.8 · Source-stable model evidence and prospective review preparation
 
 2026-10-18 · `local_unreleased`

@@ -1718,11 +1718,12 @@ A controlled hosted-fixture response changed the source after the initial finger
 
 **Roadmap links:** `B02-09` (blocked), `ES03-05` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `evals/live_huggingface.py`, `tests/test_hosted_eval_retention.py`, `docs/delivery/sessions/2026-10-18-review-evidence.md`.
+**Evidence / source record:** `evals/live_huggingface.py`, `tests/test_hosted_eval_retention.py`, `docs/delivery/sessions/2026-10-18-review-evidence.md`, `docs/evidence/review-evidence-native-2026-10-18.json`.
 
 **Decision history:**
 
 - 2026-10-18 · adopted · Codex sprint review: existing_task: bounded evidence-tool refinement; no new required acceptance gate, research runtime or professional/human approval.
+- 2026-10-18 · adopted · Codex native verification: existing_task software evidence: 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits. No model/professional/human acceptance or required scope promotion.
 
 ### [ ] EM-095: A summary flag is weaker than returned-call evidence
 
@@ -1735,11 +1736,12 @@ Lifecycle prerequisites accepted representative schema-2 summaries without any p
 
 **Roadmap links:** `B02-09` (blocked), `B02-12` (blocked), `ES03-05` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`, `docs/delivery/sessions/2026-10-18-review-evidence.md`.
+**Evidence / source record:** `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`, `docs/delivery/sessions/2026-10-18-review-evidence.md`, `docs/evidence/review-evidence-native-2026-10-18.json`.
 
 **Decision history:**
 
 - 2026-10-18 · adopted · Codex sprint review: existing_task: bounded evidence-tool refinement; no new required acceptance gate, research runtime or professional/human approval.
+- 2026-10-18 · adopted · Codex native verification: existing_task software evidence: 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits. No model/professional/human acceptance or required scope promotion.
 
 ### [ ] EM-096: Mechanical study readiness is separate from genuine prospective approval
 
@@ -1752,11 +1754,12 @@ An optional strict recording format can identify missing prospective study detai
 
 **Roadmap links:** `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `evals/review_readiness.py`, `tests/test_review_readiness.py`, `docs/delivery/sessions/2026-10-18-review-evidence.md`.
+**Evidence / source record:** `evals/review_readiness.py`, `tests/test_review_readiness.py`, `docs/delivery/sessions/2026-10-18-review-evidence.md`, `docs/evidence/review-evidence-native-2026-10-18.json`.
 
 **Decision history:**
 
 - 2026-10-18 · adopted · Codex sprint review: existing_task: bounded evidence-tool refinement; no new required acceptance gate, research runtime or professional/human approval.
+- 2026-10-18 · adopted · Codex native verification: existing_task software evidence: 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits. No model/professional/human acceptance or required scope promotion.
 
 ### [ ] EM-097: Endpoint host identity does not distinguish service paths
 
@@ -1769,8 +1772,9 @@ Compatible provider receipts bind the endpoint host but not the full configured 
 
 **Roadmap links:** `B02-09` (blocked), `B02-12` (blocked), `ES03-05` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `evals/provider_lifecycle.py`, `docs/v2/ACTUAL-PROVIDER-EVIDENCE.md`, `docs/delivery/sessions/2026-10-18-review-evidence.md`.
+**Evidence / source record:** `evals/provider_lifecycle.py`, `docs/v2/ACTUAL-PROVIDER-EVIDENCE.md`, `docs/delivery/sessions/2026-10-18-review-evidence.md`, `docs/evidence/review-evidence-native-2026-10-18.json`.
 
 **Decision history:**
 
 - 2026-10-18 · candidate · Codex engineering review: new_candidate: preserve the observed limitation explicitly rather than broadening this sprint into endpoint identity redesign. No model acceptance or configuration attestation is claimed.
+- 2026-10-18 · candidate · Codex native verification: new_candidate retained: 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits. No model/professional/human acceptance or required scope promotion.

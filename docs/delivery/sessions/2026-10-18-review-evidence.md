@@ -49,8 +49,16 @@ Focused combined retention/lifecycle/compatible CLI/recording checks passed
 138 checks (8.59s), with no blocking finding; this is not professional acceptance.
 A preceding command used a nonexistent CLI test filename and collected no tests;
 the corrected command is the result above. Earlier 47/72/66 subsets overlap.
-Full final native verification and exact-source receipt follow the stable code
-checkpoint. Prior 16 October totals remain historical for their exact source.
+At the code checkpoint cumulative verification was pending. The subsequent
+complete native run tested `25ca5e2dce4f28ec33d9b132cccabfa15b23683e` and passed
+**1,267 source tests, 1,267 installed-kernel regressions and 391 native checks
+across all 11 suites**. Exact-source/artifact inspection was valid/passed before
+final documentation edits. Run `20261018T163040Z-8278ad73` finished
+`2026-10-18T16:34:25.952748+00:00`; source fingerprint
+`b1f2b74f10381037cb35cda10fdfd1f6c7148f1696b5e69febeedb26b7fa3e71`; report SHA-256
+`ca7ed54b40fd1a62152dc71f1047124b2de5a77c636a6e0467c2d56324fb69b6`. The [final receipt](../../evidence/review-evidence-native-2026-10-18.json)
+preserves individual results and limitations. Raw artifacts remain locally
+ignored, not uploaded by this receipt. Prior 16 October results remain historical.
 
 Remote Git heads were refreshed. GitHub Actions API access returned Forbidden;
 no current remote CI result is claimed. The existing push filter excludes this
@@ -106,3 +114,14 @@ lifecycle and native actual-provider journeys. Prepare the private prospective
 study with genuinely qualified independent reviewers; owner usability/visual
 and human accessibility/platform acceptance remain separate. No further main
 merge, release or deployment is authorised by this sprint.
+
+## Delivery and continuation
+
+The tested code checkpoint is `25ca5e2dce4f28ec33d9b132cccabfa15b23683e` (tree
+`7f282146923e18634693ca3fa739b8d4bc41b494`). Final changes add documentation/status/receipt
+only and do not change runtime code. Completed work is pushed on
+`feat/v02-review-evidence-20261018`; inspect its current remote head for the
+final receipt commit. Main remains `d7d36b842464d7ad0e974a59730a682f1739fccf`.
+The cloud continuation draft points at the latest pushed development source;
+Save and Publish is required to activate it. A saved draft is not confirmation
+of an active provider or a successfully restored future snapshot.

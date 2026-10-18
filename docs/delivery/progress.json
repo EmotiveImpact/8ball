@@ -24,9 +24,11 @@
       "base_commit": "e513237f5b66c0689fa870e0d82873d8b71e4d8a",
       "status_as_of": "2026-10-18",
       "merged": false,
-      "verification": "Engineering changes in progress; final cumulative native verification pending.",
-      "evidence": "docs/delivery/sessions/2026-10-18-review-evidence.md",
-      "remote_ci": "API Forbidden; no current remote CI result claimed. New branch is outside configured push triggers."
+      "verification": "1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits.",
+      "evidence": "docs/evidence/review-evidence-native-2026-10-18.json",
+      "remote_ci": "API Forbidden; no current remote CI result claimed. New branch is outside configured push triggers.",
+      "tested_code_commit": "25ca5e2dce4f28ec33d9b132cccabfa15b23683e",
+      "tested_code_tree": "7f282146923e18634693ca3fa739b8d4bc41b494"
     },
     "verified_sprint_history": [
       {
@@ -296,8 +298,9 @@
     },
     "EV-REVIEW-EVIDENCE-20261018": {
       "kind": "controlled_software_verification",
-      "path": "docs/delivery/sessions/2026-10-18-review-evidence.md",
-      "result": "Controlled source-provenance reproduction, source-stability checks, lifecycle receipt consistency and optional prospective recording helper; final cumulative verification pending. No actual inference or independent/human acceptance."
+      "path": "docs/evidence/review-evidence-native-2026-10-18.json",
+      "result": "1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits. No actual-model, independent professional or human acceptance.",
+      "code_commit": "25ca5e2dce4f28ec33d9b132cccabfa15b23683e"
     }
   },
   "milestones": [

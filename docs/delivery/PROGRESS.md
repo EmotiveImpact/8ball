@@ -918,5 +918,6 @@ These references have specific scopes and may be historical. A reference to a de
 ### EV-REVIEW-EVIDENCE-20261018
 
 - Kind: `controlled_software_verification`.
-- Repository evidence: [docs/delivery/sessions/2026-10-18-review-evidence.md](../../docs/delivery/sessions/2026-10-18-review-evidence.md).
-- Result/scope: Controlled source-provenance reproduction, source-stability checks, lifecycle receipt consistency and optional prospective recording helper; final cumulative verification pending. No actual inference or independent/human acceptance.
+- Repository evidence: [docs/evidence/review-evidence-native-2026-10-18.json](../../docs/evidence/review-evidence-native-2026-10-18.json).
+- Result/scope: 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits. No actual-model, independent professional or human acceptance.
+- Code revision: `25ca5e2dce4f28ec33d9b132cccabfa15b23683e`.

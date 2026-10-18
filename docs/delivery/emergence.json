@@ -3411,7 +3411,8 @@
       "evidence_paths": [
         "evals/live_huggingface.py",
         "tests/test_hosted_eval_retention.py",
-        "docs/delivery/sessions/2026-10-18-review-evidence.md"
+        "docs/delivery/sessions/2026-10-18-review-evidence.md",
+        "docs/evidence/review-evidence-native-2026-10-18.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -3420,6 +3421,12 @@
           "decision": "adopted",
           "by": "Codex sprint review",
           "reason": "existing_task: bounded evidence-tool refinement; no new required acceptance gate, research runtime or professional/human approval."
+        },
+        {
+          "date": "2026-10-18",
+          "decision": "adopted",
+          "by": "Codex native verification",
+          "reason": "existing_task software evidence: 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits. No model/professional/human acceptance or required scope promotion."
         }
       ]
     },
@@ -3440,7 +3447,8 @@
       "evidence_paths": [
         "evals/provider_lifecycle.py",
         "tests/test_provider_lifecycle.py",
-        "docs/delivery/sessions/2026-10-18-review-evidence.md"
+        "docs/delivery/sessions/2026-10-18-review-evidence.md",
+        "docs/evidence/review-evidence-native-2026-10-18.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -3449,6 +3457,12 @@
           "decision": "adopted",
           "by": "Codex sprint review",
           "reason": "existing_task: bounded evidence-tool refinement; no new required acceptance gate, research runtime or professional/human approval."
+        },
+        {
+          "date": "2026-10-18",
+          "decision": "adopted",
+          "by": "Codex native verification",
+          "reason": "existing_task software evidence: 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits. No model/professional/human acceptance or required scope promotion."
         }
       ]
     },
@@ -3467,7 +3481,8 @@
       "evidence_paths": [
         "evals/review_readiness.py",
         "tests/test_review_readiness.py",
-        "docs/delivery/sessions/2026-10-18-review-evidence.md"
+        "docs/delivery/sessions/2026-10-18-review-evidence.md",
+        "docs/evidence/review-evidence-native-2026-10-18.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -3476,6 +3491,12 @@
           "decision": "adopted",
           "by": "Codex sprint review",
           "reason": "existing_task: bounded evidence-tool refinement; no new required acceptance gate, research runtime or professional/human approval."
+        },
+        {
+          "date": "2026-10-18",
+          "decision": "adopted",
+          "by": "Codex native verification",
+          "reason": "existing_task software evidence: 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits. No model/professional/human acceptance or required scope promotion."
         }
       ]
     },
@@ -3496,7 +3517,8 @@
       "evidence_paths": [
         "evals/provider_lifecycle.py",
         "docs/v2/ACTUAL-PROVIDER-EVIDENCE.md",
-        "docs/delivery/sessions/2026-10-18-review-evidence.md"
+        "docs/delivery/sessions/2026-10-18-review-evidence.md",
+        "docs/evidence/review-evidence-native-2026-10-18.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -3505,6 +3527,12 @@
           "decision": "candidate",
           "by": "Codex engineering review",
           "reason": "new_candidate: preserve the observed limitation explicitly rather than broadening this sprint into endpoint identity redesign. No model acceptance or configuration attestation is claimed."
+        },
+        {
+          "date": "2026-10-18",
+          "decision": "candidate",
+          "by": "Codex native verification",
+          "reason": "new_candidate retained: 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits. No model/professional/human acceptance or required scope promotion."
         }
       ]
     }
