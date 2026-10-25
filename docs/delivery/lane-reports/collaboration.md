@@ -186,3 +186,77 @@ integrated proof. Studio/tracking/accessibility are outside this lane's owned
 paths; no assertion or shared ledger is weakened. Native existing-workspace
 regressions do not exercise the new opt-in collaboration mounts. Final source
 run appended after test-import checkpoint; no B03 acceptance implied.
+
+### Final independently executed source checkpoint
+
+- Tested and remote-verified functional head:
+  `6537ccc29b5b4d2be141f69142b48602c472ecfd`; runtime implementation is
+  `6de309cadd19bedaac2472fbe272d5484e31ecf3`. No shared code was merged.
+- Native run `20261025T234326Z-658b2934`, same command/base as above, exited 1.
+  Source SHA-256
+  `f3396dfd0b005a035e90b8aa75a836de5600c5549079422d13acc819ac0a0af1`;
+  source unchanged during the run. `--inspect` on this exact checkpoint returned
+  `valid=true`, `run_status=failed`, `native_browser_verified=false`,
+  `model_quality_approved=false`, `released=false`.
+- **1393 source tests and 1393 installed-wheel regressions passed**, with no
+  failures/errors/skips; 37 focused lane tests pass in both default/importlib
+  modes. The actual offline ENDSTATE wheel build/isolated install passed, no
+  package publish or network used by that build. Python compile, all 19 browser
+  JS syntax checks, delivery, emergence, schema generation and structural
+  fixtures passed.
+- Eleven existing native suites passed **379 checks**: legacy 27, workspace 54,
+  providers 22, connections 42, sources 39, insights 40, grounding 26,
+  plan-review 35, accessibility 36, chosen-courses 31, event-review 27.
+  These include the required `browser_smoke.py` and `browser_v2.py`; no bridge
+  substitute or new collaboration journey is implied. Prior intermittent
+  accessibility failure remains above; this rerun alone is not root-cause proof.
+- Exactly two retained final failures: canonical changelog base guard requires
+  a new canonical entry (lane fragments cannot satisfy it), and Studio line149
+  expects `local unreleased` whereas the frozen partition's first entry is
+  truthfully `pushed_unreleased`. Integrator must append/reconcile shipping
+  records and regression expectation without rewriting history or falsely
+  declaring release, then rerun full integrated native acceptance.
+- No configured linter or type-check command was found in project metadata;
+  compilation, pytest and Node syntax checks above are the available static
+  checks. `git diff --check` passed. Sample hooks only; no active pre-commit hook.
+- Final identity contract consumed: same principal must remain bound across
+  current authority checks, not merely an equally permitted replacement. The
+  `CurrentPolicy` host adapter must compare reauthenticated actor to its supplied
+  identity when using `require(..., db=db)` rather than identity's own pinned
+  `transaction` wrapper. Reviewer durable policy remains a separate check.
+- Final documentation/fragment-only appendix after this tested source is not
+  included in that fingerprint. Recover the tested commit before inspecting
+  its archived report; never attribute this run to a future combined tree.
+  All native artifacts remain local lane evidence; central integration must
+  produce its own exact-source run. No B03-03 or production acceptance claimed.
+- For canonical changelog ordering, put the final pushed/native receipt entry
+  before the older local checkpoint entry without modifying that historical
+  record. Do not exploit the older local label merely to satisfy Studio's test.
+- Append-only EM-177 records the isolated-import test portability discovery as
+  existing-task verification, with failed and repaired receipts retained. The
+  prior EM-173..176 observations/dispositions remain unchanged. No new required
+  scope is promoted. Optional verified future-session dependency blueprint was
+  accepted/saved in Devin settings; it changes no repository/shared app wiring
+  and its future snapshot build is not evidence for this tested checkpoint.
+- Recovery-inspection experiment: a detached `6537ccc` worktree matches every
+  recorded source file byte and gitlink index pin, but `inspect` correctly
+  returns invalid there because its 28 external research checkouts are absent
+  (`checkout_commit=null` rather than the original checked-out pins). No source
+  files differ. Rehydrate those exact source-only pins with the documented
+  Git-only helper before a later full-manifest inspection; do not execute
+  upstream material. Original run-time `--inspect valid=true` is retained above.
+- Final artifact bundle `artifacts/collaboration-final-native-evidence.tar.gz`
+  contains the original complete final run directory (not new results), SHA-256
+  `88d6927d48714f7de60541555c4483af9acbd713084887241a5c8ba7d0e33b6c`.
+  It can be inspected only with the exact tested source and research checkout
+  metadata, not this later record appendix or an integrated tree. Earlier two
+  failed run artifacts remain separately retained on the lane VM.
+- Final disposable merge/schema/base/render validation passed for all five lane
+  findings and both changelog entries; canonical files remained unchanged.
+  Repeated delivery/emergence generation and checks passed; repeated canonical
+  changelog base guard remains failed for the documented central integration
+  reason. Final source-path/diff checks passed; no shared-file edits.
+- Delivery: assigned branch only, pushed/unreleased. Final record commit/head
+  returned in the handoff rather than fabricated inside its own contents.
+  No unpushed functional work or shared-file changes intended; next action is
+  central fail-closed adapter/router/UI integration with cross-lane negatives.
