@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **106 recorded discoveries.**
+Last review: 2026-10-25. **107 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1936,3 +1936,20 @@ A route guard may pass before a grant is revoked, and a separate registry cannot
 **Decision history:**
 
 - 2026-10-25 · adopted · Codex: existing_task: verified local review API with unchanged production and human gates.
+
+### [ ] EM-107: Matter scope and revision do not uniquely identify a processing case
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Same-matter event review reproduction.
+
+Two cases may share a matter and revision. An attempt storing only matter scope and base revision can then be consumed by either case. The existing full native suite passed while an additional reproduction demonstrated this missing lineage constraint.
+
+**Product implication:** Bind case processing explicitly at enqueue and reject unbound new consumption. Preserve historical unknown identity during migration; previously committed receipts remain records of what happened.
+
+**Roadmap links:** `ES02-02` (partial), `ES02-03` (partial).
+**Completion scope:** `ES02-02`, `ES02-03`.
+**Evidence / source record:** `docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json`, `docs/delivery/sessions/2026-10-25-endstate-event-api.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: correct demonstrated lineage failure without inventing historical case ownership.

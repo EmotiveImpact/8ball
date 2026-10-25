@@ -3836,6 +3836,36 @@
           "reason": "existing_task: verified local review API with unchanged production and human gates."
         }
       ]
+    },
+    {
+      "id": "EM-107",
+      "title": "Matter scope and revision do not uniquely identify a processing case",
+      "origin": "Same-matter event review reproduction",
+      "first_seen": "2026-10-25",
+      "evidence_level": "observed_in_build",
+      "observation": "Two cases may share a matter and revision. An attempt storing only matter scope and base revision can then be consumed by either case. The existing full native suite passed while an additional reproduction demonstrated this missing lineage constraint.",
+      "product_implication": "Bind case processing explicitly at enqueue and reject unbound new consumption. Preserve historical unknown identity during migration; previously committed receipts remain records of what happened.",
+      "task_ids": [
+        "ES02-02",
+        "ES02-03"
+      ],
+      "acceptance_task_ids": [
+        "ES02-02",
+        "ES02-03"
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-event-api.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex",
+          "reason": "existing_task: correct demonstrated lineage failure without inventing historical case ownership."
+        }
+      ]
     }
   ]
 }

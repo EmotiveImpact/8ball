@@ -35,8 +35,8 @@ class EventReviews:
         with self.store.connection() as db:
             db.execute('BEGIN IMMEDIATE')
             _, scope = EventOutbox._authorize(db, case_id, reader)
-            work = db.execute('SELECT * FROM event_work WHERE id=? AND organisation_id=? AND matter_id=?',
-                              (work_id, *scope)).fetchone()
+            work = db.execute('SELECT * FROM event_work WHERE id=? AND organisation_id=? AND matter_id=? AND case_id=?',
+                              (work_id, *scope, case_id)).fetchone()
             if work is None:
                 raise KeyError('Processing attempt not found')
             row = db.execute('''SELECT sequence,received_at,body,digest FROM incoming_events
@@ -69,6 +69,8 @@ class EventReviews:
                                    (case_id,)).fetchone()
             if work is None or ownership is None or tuple(ownership) != (work['organisation_id'], work['matter_id']):
                 raise PermissionError('Matter access is not permitted')
+            if work['case_id'] is not None and work['case_id'] != case_id:
+                raise PermissionError('Processing result belongs to a different case')
             scope = Resource(organisation_id=work['organisation_id'], matter_id=work['matter_id'])
             now = utcnow()
             grants = tuple(Grant.model_validate_json(row['body']) for row in
@@ -98,6 +100,8 @@ class EventReviews:
                 if digest(record) != old['digest'] or record['request_hash'] != request_hash:
                     raise Conflict('This processing result has a different or corrupt review')
                 return record
+            if work['case_id'] is None:
+                raise Conflict('Historical attempt has no case binding; create an explicit new case-bound attempt')
             if work['state'] != 'awaiting_review':
                 raise Conflict('Processing result is not awaiting review')
             case = self.store._get(db, case_id)

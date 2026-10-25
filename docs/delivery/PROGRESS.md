@@ -482,19 +482,19 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Duplicate, delayed, reordered and retried events cannot corrupt state or revive expired permissions.
   - Next: Integrate explicit event-review UI/API and host worker dispatch. Local atomic outbox now retains per-reader delivery; actual daemon, production isolation, migration, measured replanning and original model/human gates remain unfinished.
-  - Branch/base: `feat/agency-authorisation-20261025` / `e0ae9b081629239a16ce79e95628cf504227fbc6`.
+  - Branch/base: `feat/agency-authorisation-20261025` / `f75dad585a86deb75b3e8703be70cbe042c49f7a`.
   - Dependencies: `ES02-01`.
   - Existing code: `endstate/events.py`, `eightball/event_inbox.py`, `tests/test_event_inbox.py`, `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_outbox.py`.
-  - Evidence: `EV-EVENT-INBOX`, `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX` (registry below).
+  - Evidence: `EV-EVENT-INBOX`, `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-CASE-BINDING-GAP` (registry below).
 
 - [ ] **ES02-03 Reviewed graph amendments and affected-route explanations**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: New information can propose a graph/dependency change, but cannot remove restrictions until reviewed at the correct revision.
   - Next: Build the browser event-review surface and authenticated host worker dispatch around the current identity/revision-checked API; retain OIDC login, PostgreSQL isolation, migration, performance and original model/human gates.
-  - Branch/base: `feat/agency-authorisation-20261025` / `fd57f16dd66a1ce52a3f60144ddbeaf8fcfc117c`.
+  - Branch/base: `feat/agency-authorisation-20261025` / `f75dad585a86deb75b3e8703be70cbe042c49f7a`.
   - Dependencies: `ES02-01`, `ES01-02`.
   - Existing code: `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_api.py`, `tests/test_agency_access.py`.
-  - Evidence: `EV-EVENT-CONSUMPTION`, `EV-EVENT-API` (registry below).
+  - Evidence: `EV-EVENT-CONSUMPTION`, `EV-EVENT-API`, `EV-EVENT-CASE-BINDING-GAP` (registry below).
 
 - [ ] **ES02-04 Freshness, cancellation and performance evidence**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
@@ -999,4 +999,10 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `controlled_authenticated_api`.
 - Repository evidence: [docs/delivery/sessions/2026-10-25-endstate-event-api.md](../../docs/delivery/sessions/2026-10-25-endstate-event-api.md).
-- Result/scope: Signed-identity review/read/notice API implemented; cumulative validation pending. Browser review, worker and production/model/human gates remain unfinished.
+- Result/scope: 61 focused tests and preceding native suite passed; additional case-binding failure preserved separately. Explicit binding correction awaits cumulative native verification.
+
+### EV-EVENT-CASE-BINDING-GAP
+
+- Kind: `preserved_correctness_failure`.
+- Repository evidence: [docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json](../../docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json).
+- Result/scope: Existing native suite passed but separate same-matter cross-case reproduction failed on f75dad5; correction implemented, cumulative revalidation pending.

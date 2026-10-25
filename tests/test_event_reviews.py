@@ -30,7 +30,7 @@ def review(tmp_path):
         expires_at=utcnow()+timedelta(hours=1)))
     EventInbox(store.path).append(IncomingEvent(**SCOPE,source_id='source',source_version='v1',
         event_id='incoming',kind='proposal_received',base_revision=0,text='Original fictional source'),**SCOPE)
-    queue=EventWork(store.path);job=queue.enqueue(**SCOPE,sequence=1,base_revision=0)
+    queue=EventWork(store.path);job=queue.enqueue(**SCOPE,sequence=1,base_revision=0,case_id=case.id)
     token=queue.claim(job,**SCOPE)
     queue.finish(job,token,'Original unreviewed processing text',**SCOPE,current_revision=0,permission_valid=True)
     graph=case.graph.model_dump(mode='json');graph['actions'][0]['cost']+=100
@@ -254,7 +254,7 @@ def test_outbox_orders_two_changes_and_concurrent_pulls_repeat_same_notice(revie
     reviews.commit_graph(**request)
     EventInbox(store.path).append(IncomingEvent(**SCOPE,source_id='source',source_version='v2',
         event_id='incoming-2',kind='proposal_received',base_revision=1,text='Second fictional source'),**SCOPE)
-    job=queue.enqueue(**SCOPE,sequence=2,base_revision=1);token=queue.claim(job,**SCOPE)
+    job=queue.enqueue(**SCOPE,sequence=2,base_revision=1,case_id=case.id);token=queue.claim(job,**SCOPE)
     queue.finish(job,token,'Second proposed result',**SCOPE,current_revision=1,permission_valid=True)
     graph=store.get(case.id).graph.model_dump(mode='json');graph['actions'][0]['cost']+=1
     command=Command(event_id='second-review',expected_revision=1,kind='replace_graph',payload={'graph':graph})
@@ -268,3 +268,44 @@ def test_outbox_orders_two_changes_and_concurrent_pulls_repeat_same_notice(revie
     assert second['revision']==2 and second['id']>notices[0]['id']
     outbox.acknowledge(**reader,notice_id=second['id'])
     assert outbox.pull(**reader) is None
+
+
+def test_processing_result_cannot_move_to_another_case_in_same_matter(review):
+    store,case,reviews,registry,queue,request=review
+    other=store.create(demo_case(),fixture=True);registry.bind_case(other.id,Resource(**SCOPE))
+    with pytest.raises(PermissionError):reviews.commit_graph(**(request|{'case_id':other.id}))
+    notice_reader(review)
+    with pytest.raises(KeyError):reviews.view(case_id=other.id,work_id=request['work_id'],reader=request['reviewer'])
+    assert store.get(other.id).revision==0 and store.get(case.id).revision==0
+    assert queue.inspect(request['work_id'],**SCOPE)['state']=='awaiting_review'
+
+
+def test_historical_unbound_attempt_migration_preserves_output_but_cannot_commit(review):
+    store,case,reviews,_,queue,request=review
+    with store.connection() as db:
+        db.execute('ALTER TABLE event_work DROP COLUMN case_id');db.commit()
+    migrated=EventWork(store.path)
+    work=migrated.inspect(request['work_id'],**SCOPE)
+    assert work['case_id'] is None and work['result']=='Original unreviewed processing text'
+    before=store.audit(case.id)
+    with pytest.raises(Conflict,match='no case binding'):reviews.commit_graph(**request)
+    assert store.audit(case.id)==before
+    assert migrated.inspect(request['work_id'],**SCOPE)['state']=='awaiting_review'
+
+
+def test_historical_committed_review_keeps_idempotent_acknowledgement(review):
+    store,case,reviews,_,_,request=review
+    record=reviews.commit_graph(**request)
+    with store.connection() as db:
+        db.execute('UPDATE event_work SET case_id=NULL');db.commit()
+    assert reviews.commit_graph(**request)==record
+    assert store.audit(case.id)['valid'] and store.get(case.id).revision==1
+
+
+def test_case_bound_enqueue_rejects_other_scope_and_unknown_case(review):
+    from eightball.event_inbox import EventConflict
+    store,_,_,registry,queue,_=review
+    other=store.create(demo_case(),fixture=True)
+    registry.bind_case(other.id,Resource(organisation_id='other',matter_id='other'))
+    for case_id in (other.id,'missing-case'):
+        with pytest.raises(EventConflict):queue.enqueue(**SCOPE,sequence=1,base_revision=0,case_id=case_id)

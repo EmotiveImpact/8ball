@@ -444,7 +444,12 @@
     "EV-EVENT-API": {
       "kind": "controlled_authenticated_api",
       "path": "docs/delivery/sessions/2026-10-25-endstate-event-api.md",
-      "result": "Signed-identity review/read/notice API implemented; cumulative validation pending. Browser review, worker and production/model/human gates remain unfinished."
+      "result": "61 focused tests and preceding native suite passed; additional case-binding failure preserved separately. Explicit binding correction awaits cumulative native verification."
+    },
+    "EV-EVENT-CASE-BINDING-GAP": {
+      "kind": "preserved_correctness_failure",
+      "path": "docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json",
+      "result": "Existing native suite passed but separate same-matter cross-case reproduction failed on f75dad5; correction implemented, cumulative revalidation pending."
     }
   },
   "milestones": [
@@ -1645,7 +1650,7 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "feat/agency-authorisation-20261025",
-      "base_commit": "e0ae9b081629239a16ce79e95628cf504227fbc6",
+      "base_commit": "f75dad585a86deb75b3e8703be70cbe042c49f7a",
       "updated_on": "2026-10-25",
       "code_paths": [
         "endstate/events.py",
@@ -1665,7 +1670,8 @@
         "EV-EVENT-INBOX",
         "EV-EVENT-WORK",
         "EV-EVENT-CONSUMPTION",
-        "EV-EVENT-OUTBOX"
+        "EV-EVENT-OUTBOX",
+        "EV-EVENT-CASE-BINDING-GAP"
       ],
       "blockers": [],
       "next_action": "Integrate explicit event-review UI/API and host worker dispatch. Local atomic outbox now retains per-reader delivery; actual daemon, production isolation, migration, measured replanning and original model/human gates remain unfinished."
@@ -1678,7 +1684,7 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "feat/agency-authorisation-20261025",
-      "base_commit": "fd57f16dd66a1ce52a3f60144ddbeaf8fcfc117c",
+      "base_commit": "f75dad585a86deb75b3e8703be70cbe042c49f7a",
       "updated_on": "2026-10-25",
       "code_paths": [
         "eightball/v2/event_reviews.py",
@@ -1693,7 +1699,8 @@
       "acceptance": "New information can propose a graph/dependency change, but cannot remove restrictions until reviewed at the correct revision.",
       "evidence": [
         "EV-EVENT-CONSUMPTION",
-        "EV-EVENT-API"
+        "EV-EVENT-API",
+        "EV-EVENT-CASE-BINDING-GAP"
       ],
       "blockers": [],
       "next_action": "Build the browser event-review surface and authenticated host worker dispatch around the current identity/revision-checked API; retain OIDC login, PostgreSQL isolation, migration, performance and original model/human gates."

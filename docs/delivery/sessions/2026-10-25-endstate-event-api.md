@@ -35,3 +35,13 @@ What did this reveal? A verified route identity is insufficient if the case tran
 | ER-15 | Reviewers can inspect original material and submit explicit amendments; actual usability still needs a browser surface and operator review. |
 
 Evidence: controlled signed-JWT API and database tests. UX implication: distinguish read permission from review authority and delivery acknowledgement. Disposition: existing tasks stay partial, no new research runtime or external-action authority.
+
+## Additional demonstrated gap and correction
+
+The preceding API checkpoint f75dad585a86deb75b3e8703be70cbe042c49f7a passed its existing 1,341 source /1,341 installed /396 native checks with valid source inspection and green CI. A separate temporary-database reproduction demonstrated an uncovered failure: an unbound processing result could change another case in the same matter at revision 0. [Preserved result](../../evidence/endstate-event-api-case-binding-gap-2026-10-25.json). The passing suite does not erase that failure.
+
+Correction: EventWork optionally binds a case at enqueue against actual case/matter ownership. Reviewed consumption requires this binding. Generic/unbound event attempts remain retained but cannot create case changes. A migration adds a nullable case column without guessing historical ownership. Previously committed historical receipts retain their exact idempotent acknowledgement and export semantics; no new case change is allowed from an unbound attempt. New tests cover two cases in one matter, unknown/wrong-scope enqueue, old-schema migration and historical committed acknowledgements.
+
+### Additional Emergence Review
+
+EM-107: matter scope and matching revision are insufficient processing lineage when a matter contains several cases. ER-02/03 require an explicit host case binding; ER-06/09 preserve transactional scope and original result; ER-10/13 forbid invented migration identity; ER-12 adds the missing same-matter and migration regressions; ER-14 preserves the earlier passing suite and separate failure. The remaining ER-01–15 answers above remain applicable. Disposition: existing ES02-02/03 correctness correction, with task status still partial.

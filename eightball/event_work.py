@@ -26,6 +26,10 @@ class EventWork:
                 created_at TEXT NOT NULL, finished_at TEXT,
                 FOREIGN KEY(organisation_id,matter_id,sequence)
                     REFERENCES incoming_events(organisation_id,matter_id,sequence))''')
+            if 'case_id' not in {row['name'] for row in db.execute('PRAGMA table_info(event_work)')}:
+                # Historical attempts have unknown case identity. Preserve them
+                # unbound; never infer a case from a coincidentally equal revision.
+                db.execute('ALTER TABLE event_work ADD COLUMN case_id TEXT')
 
     @contextmanager
     def _transaction(self):
@@ -49,10 +53,21 @@ class EventWork:
             raise KeyError(work_id)
         return row
 
-    def enqueue(self, *, organisation_id, matter_id, sequence, base_revision):
+    def enqueue(self, *, organisation_id, matter_id, sequence, base_revision, case_id=None):
         if type(sequence) is not int or sequence < 1 or type(base_revision) is not int or base_revision < 0:
             raise ValueError('Explicit event sequence and base revision required')
         with self._transaction() as db:
+            if case_id is not None:
+                if not isinstance(case_id, str) or not case_id or len(case_id) > 100:
+                    raise ValueError('Explicit case identity required')
+                tables = {row[0] for row in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+                if not {'agency_case_scope', 'v2_cases'} <= tables:
+                    raise EventConflict('Case processing requires a bound case database')
+                bound = db.execute('''SELECT 1 FROM agency_case_scope s JOIN v2_cases c ON c.id=s.case_id
+                    WHERE s.case_id=? AND s.organisation_id=? AND s.matter_id=?''',
+                    (case_id, organisation_id, matter_id)).fetchone()
+                if bound is None:
+                    raise EventConflict('Case does not belong to the processing scope')
             # Verify the source bytes and scope before admitting a new attempt.
             row = db.execute('''SELECT sequence,received_at,body,digest FROM incoming_events
                 WHERE organisation_id=? AND matter_id=? AND sequence=?''',
@@ -65,9 +80,11 @@ class EventWork:
             if receipt.event.base_revision is not None and receipt.event.base_revision != base_revision:
                 raise EventConflict('Event base revision mismatch')
             work_id = uuid4().hex
-            db.execute('INSERT INTO event_work VALUES (?,?,?,?,?,?,NULL,NULL,NULL,?,NULL)',
+            db.execute('''INSERT INTO event_work
+                       (id,organisation_id,matter_id,sequence,base_revision,state,created_at,case_id)
+                       VALUES (?,?,?,?,?,?,?,?)''',
                        (work_id, organisation_id, matter_id, sequence, base_revision,
-                        'queued', self._now().isoformat()))
+                        'queued', self._now().isoformat(), case_id))
             return work_id
 
     def claim(self, work_id, *, organisation_id, matter_id, lease_seconds=60):

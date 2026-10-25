@@ -93,7 +93,7 @@ def events(fixture,tmp_path):
     args=dict(organisation_id='agency-a',matter_id='matter-a')
     EventInbox(store.path).append(IncomingEvent(**args,source_id='source',source_version='1',event_id='source-event',
         kind='proposal_received',base_revision=0,text='Fictional source for reviewed change'),**args)
-    queue=EventWork(store.path);work=queue.enqueue(**args,sequence=1,base_revision=0)
+    queue=EventWork(store.path);work=queue.enqueue(**args,sequence=1,base_revision=0,case_id=own.id)
     token=queue.claim(work,**args);queue.finish(work,token,'Original proposed change',**args,current_revision=0,permission_valid=True)
     graph=own.graph.model_dump(mode='json');graph['actions'][0]['cost']+=10
     body=dict(command=dict(event_id='review-api',expected_revision=0,kind='replace_graph',payload={'graph':graph}),

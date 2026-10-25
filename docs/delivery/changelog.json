@@ -3,6 +3,53 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-endstate-case-binding",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Bind reviewed processing to its intended case",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-03"
+      ],
+      "summary": "Correct demonstrated cross-case consumption within one matter by binding new case attempts explicitly.",
+      "added": [
+        "Nullable historical case-binding migration and cross-case/migration regressions."
+      ],
+      "changed": [
+        "Unbound attempts remain retained but cannot create case changes."
+      ],
+      "fixed": [
+        "An unbound result could previously commit against a different same-matter case at a matching revision."
+      ],
+      "verification": [
+        "Preserved prior native pass and separate failing correctness reproduction; focused/full correction validation follows."
+      ],
+      "limitations": [
+        "No inferred historical ownership or automatic replay.",
+        "Browser review, worker, production and original human/model gates remain unfinished."
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-event-api.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Two cases may share a matter and revision. An attempt storing only matter scope and base revision can then be consumed by either case. The existing full native suite passed while an additional reproduction demonstrated this missing lineage constraint."
+        ],
+        "risks": [
+          "Matching matter/revision alone can conceal wrong-case lineage."
+        ],
+        "architecture_implications": [
+          "Explicit case binding at enqueue; preserve unknown identity in historical rows."
+        ],
+        "roadmap_decision": "existing_task: correct demonstrated ES02 lineage gap.",
+        "insight_ids": [
+          "EM-107"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-endstate-event-api",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",

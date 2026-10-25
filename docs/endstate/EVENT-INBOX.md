@@ -46,3 +46,7 @@ Results can await review; they cannot mutate a case. Permission and revision obs
 ## Authenticated event API
 
 With agency mode configured against the same database as cases, `/api/v2/cases/{case_id}/event-work/{work_id}` returns original source/result and reviewability under current READ permission. POST `.../review` accepts only an explicit `command` and `rationale`; the verified JWT supplies reviewer identity and the transaction requires READ plus WRITE. POST `/api/v2/cases/{case_id}/change-notices/pull` and `.../{notice_id}/acknowledge` use current READ permission and never approve actions. Other unsupported agency mutation/model routes remain denied. These routes are absent for local-token mode or a separate access database. No browser review UI or external delivery is installed. [Session](../delivery/sessions/2026-10-25-endstate-event-api.md).
+
+## Case binding and historical migration
+
+New case-processing attempts pass `case_id` to `EventWork.enqueue`, which verifies the case belongs to the supplied matter. An event's matter and base revision alone cannot identify its case. Unbound generic/historical attempts remain retained, but new reviewed consumption rejects them. Migration adds a nullable case column without inferring ownership. Already committed historical review receipts retain their prior duplicate-acknowledgement and export behaviour. No automatic retry or backfill occurs.
