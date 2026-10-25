@@ -4,6 +4,39 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Publish the current workspace screenshot for owner review
+
+2026-10-25 · `local_unreleased`
+
+Make the actual local workspace screenshot accessible on GitHub at the owner request.
+
+### Added
+
+- docs/screenshots/8ball-situation-room-2026-10-25.png
+
+### Verification
+
+- Screenshot captured from native Chromium against the local application with fictional test data.
+- The screenshot capture journey passed 51 workspace checks.
+
+### Limitations
+
+- Screenshot is not human acceptance, real-model evidence or a production deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: No new product finding; publish existing fictional workspace evidence for owner access.
+- Risk: A screenshot must not imply production or model acceptance.
+- Architecture: None; application source unchanged.
+- Roadmap decision: no_action: evidence publication only; no task status changes.
+Registered discoveries: EM-099.
+
+Roadmap items: `B03-01`.
+
+Evidence: [docs/screenshots/8ball-situation-room-2026-10-25.png](docs/screenshots/8ball-situation-room-2026-10-25.png), [docs/delivery/sessions/2026-10-25-agency-authorisation.md](docs/delivery/sessions/2026-10-25-agency-authorisation.md).
+
 ## 0.2.0-alpha.8 · Verify agency policy foundation against existing workflows
 
 2026-10-25 · `local_unreleased`

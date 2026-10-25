@@ -33,3 +33,7 @@ Disposition: existing required task B03-01; no relaxed V0.2 gate. Evidence level
 ## Completed verification
 
 Source a5d82bdacafc0d898660ce3ba4a5183a8d7240c3: 1,280 source tests, 1,280 installed-engine regressions and all 391 native checks across 11 suites passed. Source/artifact inspection valid before documentation-only receipt edits. Exact receipt: ../../evidence/agency-authorisation-native-2026-10-25.json. One existing Starlette/AnyIO deprecation warning per Python run. No inference, deployment or security-acceptance claim.
+
+## Owner-accessible screenshot
+
+At the owner request, published docs/screenshots/8ball-situation-room-2026-10-25.png from a fresh native Chromium run using fictional data. The workspace journey passed 51 checks. This is application evidence only, not independent/human or live-model acceptance. Emergence addendum: no new discovery or scope change; existing boundaries remain.

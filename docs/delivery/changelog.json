@@ -3,6 +3,48 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-publish-workspace-screenshot",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Publish the current workspace screenshot for owner review",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01"
+      ],
+      "summary": "Make the actual local workspace screenshot accessible on GitHub at the owner request.",
+      "added": [
+        "docs/screenshots/8ball-situation-room-2026-10-25.png"
+      ],
+      "changed": [],
+      "fixed": [],
+      "verification": [
+        "Screenshot captured from native Chromium against the local application with fictional test data.",
+        "The screenshot capture journey passed 51 workspace checks."
+      ],
+      "limitations": [
+        "Screenshot is not human acceptance, real-model evidence or a production deployment."
+      ],
+      "evidence_paths": [
+        "docs/screenshots/8ball-situation-room-2026-10-25.png",
+        "docs/delivery/sessions/2026-10-25-agency-authorisation.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "No new product finding; publish existing fictional workspace evidence for owner access."
+        ],
+        "risks": [
+          "A screenshot must not imply production or model acceptance."
+        ],
+        "architecture_implications": [
+          "None; application source unchanged."
+        ],
+        "roadmap_decision": "no_action: evidence publication only; no task status changes.",
+        "insight_ids": [
+          "EM-099"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-agency-policy-verification",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",
