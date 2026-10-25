@@ -28,3 +28,9 @@ actions or revive an expired grant because this inbox has no such capability.
 The future boundary is: observe → retain → propose → review → commit at the
 correct revision → replan → explain → ask for reconsideration. Never skip review
 or carry an old permission forward merely because an event is retried.
+
+## Durable processing attempts
+
+The host `eightball.event_work.EventWork` now stores explicit attempts linked to scoped inbox records. It supports exclusive claim, bounded lease, retained output disposition, cancellation and interruption. Expiry never automatically reschedules an attempt. A fresh enqueue is an explicit new attempt and preserves the old record. Claim-token hashes stay private and are omitted from inspection output.
+
+Results can await review; they cannot mutate a case. Permission and revision observations are trusted host inputs, not proof of transaction-wide authorisation. The real worker/outbox, reviewed commit, transactional revalidation and performance gate remain unfinished.

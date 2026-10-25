@@ -393,6 +393,11 @@
       "kind": "controlled_event_persistence",
       "path": "docs/evidence/endstate-event-inbox-native-2026-10-25.json",
       "result": "1302 source tests,1302 installed-engine regressions and394 native browser checks passed; exact inspection valid and both checkpoint CI runs passed. Incoming events remain pending, with no live worker or case mutation."
+    },
+    "EV-EVENT-WORK": {
+      "kind": "controlled_durable_processing",
+      "path": "docs/delivery/sessions/2026-10-25-endstate-processing.md",
+      "result": "18 focused inbox/lifecycle tests passed; cumulative validation pending. No worker daemon, model calls, external actions or case commits."
     }
   },
   "milestones": [
@@ -1590,22 +1595,25 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "feat/agency-authorisation-20261025",
-      "base_commit": "48e572e95be8b28d0b317d7bc8b3a18893a3ef76",
+      "base_commit": "5f72a356790b0cd3f0a27e79ba1e9801f4a14937",
       "updated_on": "2026-10-25",
       "code_paths": [
         "endstate/events.py",
         "eightball/event_inbox.py",
-        "tests/test_event_inbox.py"
+        "tests/test_event_inbox.py",
+        "eightball/event_work.py",
+        "tests/test_event_work.py"
       ],
       "depends_on": [
         "ES02-01"
       ],
       "acceptance": "Duplicate, delayed, reordered and retried events cannot corrupt state or revive expired permissions.",
       "evidence": [
-        "EV-EVENT-INBOX"
+        "EV-EVENT-INBOX",
+        "EV-EVENT-WORK"
       ],
       "blockers": [],
-      "next_action": "Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes."
+      "next_action": "Implement reviewed result consumption and revision/permission checks inside the actual case transaction; add explicit durable worker/outbox integration and measured full-versus-incremental replanning. No automatic retries or model calls."
     },
     {
       "id": "ES02-03",
@@ -1631,21 +1639,26 @@
       "id": "ES02-04",
       "milestone": "ES02",
       "title": "Freshness, cancellation and performance evidence",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Codex",
+      "working_branch": "feat/agency-authorisation-20261025",
+      "base_commit": "5f72a356790b0cd3f0a27e79ba1e9801f4a14937",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "eightball/event_work.py",
+        "tests/test_event_work.py"
+      ],
       "depends_on": [
         "ES02-02",
         "ES02-03"
       ],
       "acceptance": "Measured latencies include ingestion, inference and review; incremental replan results match full recomputation; cancelled/stale work cannot commit.",
-      "evidence": [],
+      "evidence": [
+        "EV-EVENT-WORK"
+      ],
       "blockers": [],
-      "next_action": "Define target workloads and latency budgets before a real-time claim."
+      "next_action": "Implement reviewed result consumption and revision/permission checks inside the actual case transaction; add explicit durable worker/outbox integration and measured full-versus-incremental replanning. No automatic retries or model calls."
     },
     {
       "id": "ES03-01",

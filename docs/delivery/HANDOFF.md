@@ -1,3 +1,7 @@
+# Current ENDSTATE sprint: durable attempt lifecycle
+
+[Session and full emergence review](sessions/2026-10-25-endstate-processing.md). EventWork persists explicit scoped attempts, exclusive claims, bounded leases and terminal dispositions. Next implement reviewed consumption with actual transactional revision/permission checks and explicit worker/outbox integration. Both product statuses remain in PROGRESS.md; original V0.2 model/human and production gates remain open.
+
 Verified event-inbox checkpoint:1302 source tests,1302 installed-engine regressions and394 native browser checks passed, with valid exact-source inspection and green checkpoint CI. [Receipt](../evidence/endstate-event-inbox-native-2026-10-25.json).
 
 # Current execution: ENDSTATE events and both product trackers

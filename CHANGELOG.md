@@ -4,6 +4,44 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Add durable event-processing attempts and cancellation
+
+2026-10-25 · `local_unreleased`
+
+Persist explicit processing attempts with exclusive claims, bounded leases, cancellation and revision/permission disposition.
+
+### Added
+
+- Durable processing lifecycle bound to an existing scoped inbox record.
+- Tests for restart, duplicate claims, cancellation, expiry, stale results and revoked permission.
+
+### Changed
+
+- ES02-04 now partial; all remaining acceptance and integration requirements stay open.
+
+### Verification
+
+- 18 focused inbox/lifecycle tests passed; cumulative validation pending.
+
+### Limitations
+
+- Trusted host must supply authenticated scope and current revision/permission observations; no public API is installed.
+- No worker daemon/outbox, automatic model call, case mutation or production transactional isolation.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Expired processing leases cannot establish whether a remote request was executed.
+- Risk: Silent reclamation can repeat paid or irreversible operations.
+- Architecture: Explicit attempts and interruption; late results cannot publish after cancellation.
+- Roadmap decision: existing_task: advance ES02-02/04 while preserving unfinished gates.
+Registered discoveries: EM-102.
+
+Roadmap items: `ES02-02`, `ES02-04`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-endstate-processing.md](docs/delivery/sessions/2026-10-25-endstate-processing.md), [eightball/event_work.py](eightball/event_work.py).
+
 ## 0.2.0-alpha.8 · Verify ENDSTATE inbox and shared build tracking
 
 2026-10-25 · `local_unreleased`

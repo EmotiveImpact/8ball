@@ -1,3 +1,7 @@
+# Current ENDSTATE work: durable processing attempts
+
+[Latest session](docs/delivery/sessions/2026-10-25-endstate-processing.md), [standing goal](docs/delivery/BUILD-GOAL.md), [both product trackers](docs/delivery/PROGRESS.md). Continue feat/agency-authorisation-20261025, preserving newer work. EventWork adds exclusive claims, cancellation, interruption and stale/denied result handling. Reviewed case commits and worker/outbox integration remain next; no automatic external execution or production acceptance.
+
 # Standing build goal and current execution
 
 [Build goal](docs/delivery/BUILD-GOAL.md) defines the owner-authorised full product. [Canonical progress for 8BALL and ENDSTATE](docs/delivery/PROGRESS.md) shows actual task states, remaining work and next actions. [Latest sprint](docs/delivery/sessions/2026-10-25-endstate-event-inbox.md) implements the neutral event contract and durable host inbox. Continue current branch feat/agency-authorisation-20261025, preserving newer source. ES02-01/02 and B03-01 are partial; no production or actual-model/human acceptance is implied.

@@ -3,6 +3,52 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-endstate-processing",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Add durable event-processing attempts and cancellation",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04"
+      ],
+      "summary": "Persist explicit processing attempts with exclusive claims, bounded leases, cancellation and revision/permission disposition.",
+      "added": [
+        "Durable processing lifecycle bound to an existing scoped inbox record.",
+        "Tests for restart, duplicate claims, cancellation, expiry, stale results and revoked permission."
+      ],
+      "changed": [
+        "ES02-04 now partial; all remaining acceptance and integration requirements stay open."
+      ],
+      "fixed": [],
+      "verification": [
+        "18 focused inbox/lifecycle tests passed; cumulative validation pending."
+      ],
+      "limitations": [
+        "Trusted host must supply authenticated scope and current revision/permission observations; no public API is installed.",
+        "No worker daemon/outbox, automatic model call, case mutation or production transactional isolation."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-endstate-processing.md",
+        "eightball/event_work.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Expired processing leases cannot establish whether a remote request was executed."
+        ],
+        "risks": [
+          "Silent reclamation can repeat paid or irreversible operations."
+        ],
+        "architecture_implications": [
+          "Explicit attempts and interruption; late results cannot publish after cancellation."
+        ],
+        "roadmap_decision": "existing_task: advance ES02-02/04 while preserving unfinished gates.",
+        "insight_ids": [
+          "EM-102"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-endstate-event-inbox-verification",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",

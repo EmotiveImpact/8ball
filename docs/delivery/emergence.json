@@ -3687,6 +3687,36 @@
           "reason": "existing_task: implement neutral event contract and durable host inbox without promoting incoming data into authority."
         }
       ]
+    },
+    {
+      "id": "EM-102",
+      "title": "A durable lease is not permission to repeat external work",
+      "origin": "ENDSTATE event processing lifecycle",
+      "first_seen": "2026-10-25",
+      "evidence_level": "observed_in_build",
+      "observation": "A restarted process cannot infer whether a leased operation already reached an external service. Expired attempts must become interrupted rather than being silently claimed again. A new explicit attempt must preserve the previous record.",
+      "product_implication": "Keep durable attempt identity, opaque claim ownership, original revision and terminal history. Stale or denied outputs remain separate from reviewable results.",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-02",
+        "ES02-04"
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-endstate-processing.md",
+        "eightball/event_work.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex",
+          "reason": "existing_task: durable processing foundation without automatic paid replay or action authority."
+        }
+      ]
     }
   ]
 }

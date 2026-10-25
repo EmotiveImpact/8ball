@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **101 recorded discoveries.**
+Last review: 2026-10-25. **102 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -72,7 +72,7 @@ An older supported observation can warrant another review without becoming false
 
 **Product implication:** Ship opt-in observation-age prompts; retain event-time and true expiry semantics for further work.
 
-**Roadmap links:** `ES02-04` (not_started), `ES02-05` (verified), `B02-21` (implemented), `ES02-06` (partial).
+**Roadmap links:** `ES02-04` (partial), `ES02-05` (verified), `B02-21` (implemented), `ES02-06` (partial).
 **Completion scope:** `ES02-04`.
 **Evidence / source record:** `docs/delivery/EMERGENCE-REVIEW.md`, `endstate/insights.py`, `docs/decisions/0004-evidence-led-course-and-recovery.md`, `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`.
 
@@ -1049,7 +1049,7 @@ Once a team has chosen a course, repeated ranking changes could confuse action a
 
 **Product implication:** Separate refreshed alternatives from the chosen course. Present change reasons and request an explicit switch; preserve conservative approval invalidation.
 
-**Roadmap links:** `ES02-06` (partial), `B03-07` (partial), `ES02-04` (not_started).
+**Roadmap links:** `ES02-06` (partial), `B03-07` (partial), `ES02-04` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`, `docs/vision/ACCEPTANCE-DESIGN.md`.
 
@@ -1176,7 +1176,7 @@ A single successful check can satisfy a present-state condition without establis
 
 **Product implication:** Explore explicit outcome confirmation windows with the operator and preserve unknown timing. Do not add hidden universal stability periods or autonomous monitoring.
 
-**Roadmap links:** `B03-07` (partial), `ES02-04` (not_started), `ES02-06` (partial).
+**Roadmap links:** `B03-07` (partial), `ES02-04` (partial), `ES02-06` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`, `docs/vision/ACCEPTANCE-DESIGN.md`.
 
@@ -1686,7 +1686,7 @@ LangGraph defaults to async durability and resumes interrupted nodes from their 
 
 **Product implication:** Choose durability/attempt/time/idempotency policies explicitly, recheck source/case/permission on resume and reconcile ambiguous external outcomes before retry.
 
-**Roadmap links:** `ES02-02` (partial), `ES02-04` (not_started).
+**Roadmap links:** `ES02-02` (partial), `ES02-04` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/research/github-2026-10-16/whole-system-review.md`, `docs/evidence/whole-system-readiness-2026-10-16.json`, `docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md`.
 
@@ -1851,3 +1851,20 @@ A delayed source event can arrive after a newer occurrence. Reordering by its cl
 **Decision history:**
 
 - 2026-10-25 · adopted · Codex: existing_task: implement neutral event contract and durable host inbox without promoting incoming data into authority.
+
+### [ ] EM-102: A durable lease is not permission to repeat external work
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** ENDSTATE event processing lifecycle.
+
+A restarted process cannot infer whether a leased operation already reached an external service. Expired attempts must become interrupted rather than being silently claimed again. A new explicit attempt must preserve the previous record.
+
+**Product implication:** Keep durable attempt identity, opaque claim ownership, original revision and terminal history. Stale or denied outputs remain separate from reviewable results.
+
+**Roadmap links:** `ES02-02` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-02`, `ES02-04`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-25-endstate-processing.md`, `eightball/event_work.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: durable processing foundation without automatic paid replay or action authority.
