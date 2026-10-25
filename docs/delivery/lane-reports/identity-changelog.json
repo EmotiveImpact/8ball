@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "2026-10-25-identity-current-authority-oidc",
+      "date": "2026-10-25",
+      "version": "v0.2 alpha.13 identity engineering lane",
+      "title": "Current identity transactions and pinned OIDC session seam",
+      "summary": "Add fail-closed current identity/grant transactions and opt-in OIDC code/PKCE browser sessions without mounting shared routes or claiming production provider acceptance.",
+      "delivery": "local_unreleased",
+      "added": [
+        "CurrentAuthority reauthentication and same-database all-object/all-operation require/transaction services.",
+        "Pinned public-client code/S256-PKCE exchange, one-use attempts, durable hashed opaque sessions and explicit local logout/revocation.",
+        "Separate register_identity_routes and isolated mountIdentity UI; offline signed identity/protocol/isolation regressions."
+      ],
+      "changed": [
+        "AgencyAccess can consume optional durable sessions while retaining the existing bearer guard map/allowed hook and default-deny unknown routes.",
+        "Publish exact same-transaction object/revision/policy integration contract; common app/router/nav/manifests are untouched."
+      ],
+      "fixed": [
+        "Stale SQLite WAL snapshots cannot authorize from old grants.",
+        "Changed authenticated principals roll back even when both identities hold grants.",
+        "Cancellation/expiry after provider exchange prevents session publication and no failed exchange is retried."
+      ],
+      "verification": [
+        "101 focused authorisation/agency/identity/OIDC tests passed with one existing deprecation warning after final stability hardening.",
+        "Earlier full suite passed 1420 tests before the final two stability tests; final executed full/native evidence is preserved in the identity lane receipt.",
+        "First native run retained as failed: missing setuptools (installed afterward) and frozen Studio shipping-state assertion; eleven other native suites passed. No all-native pass is claimed."
+      ],
+      "limitations": [
+        "Not mounted in shared routers/navigation; integrated consuming services must supply exact object ownership/revision/vault-policy adapters and current identity checks.",
+        "No live OIDC provider, actual MFA verification, provider account administration/rotation, PostgreSQL row policies, independent security review, live inference or native identity UI acceptance.",
+        "Canonical delivery/register/changelog reconciliation and shipping-state test repair are central integration work; no merge/deploy/release/PR change is authorized."
+      ],
+      "task_ids": [
+        "B03-01"
+      ],
+      "evidence_paths": [
+        "docs/delivery/lane-reports/identity.md",
+        "docs/v2/AGENCY-ACCESS.md",
+        "tests/test_identity_authority.py",
+        "tests/test_oidc_login.py",
+        "tests/test_identity_api.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Object-only grants and a subset of operations cannot authorize whole-case access or another object; every requested operation must be checked against every consumed object.",
+          "An active SQLite read transaction can retain pre-revocation grants; obtaining a writer reservation before authority reads makes that stale snapshot fail closed.",
+          "Rechecking only that some current principal has grants can permit a transaction to begin as one actor and end as another equally permitted actor.",
+          "A login attempt consumed before provider exchange still needs cancellation and expiry checks before publishing the returned identity session.",
+          "Revoking a local opaque session neither terminates a provider account/session nor withdraws independently issued API tokens or future sign-ins."
+        ],
+        "risks": [
+          "Fixture identity/MFA claims cannot stand in for independent provider and production-isolation review.",
+          "Unused expired attempt retention requires an explicit protected-store host policy, not a hidden background scan.",
+          "Frozen shipping-state/native-test mismatch must remain failed evidence until reconciled centrally."
+        ],
+        "architecture_implications": [
+          "Keep 8BALL host identity outside the reusable ENDSTATE kernel; reuse existing Identity/Resource/Operation/Grant.",
+          "Authentication, current object/matter grants, source-policy/revision review and domain action approval remain separate consuming-transaction checks."
+        ],
+        "roadmap_decision": "Bounded existing_task B03-01 engineering only; EM-139 remains a candidate and production gates stay external. No canonical status or required-scope expansion.",
+        "insight_ids": [
+          "EM-133",
+          "EM-134",
+          "EM-135",
+          "EM-136",
+          "EM-137",
+          "EM-138",
+          "EM-139",
+          "EM-140"
+        ]
+      }
+    }
+  ]
+}
