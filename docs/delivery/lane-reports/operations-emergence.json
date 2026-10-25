@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-10-25",
+  "items": [
+    {
+      "id": "EM-193",
+      "title": "Signed local audit bytes do not establish independent checkpoint custody",
+      "first_seen": "2026-10-25",
+      "origin": "operations-2101512c",
+      "evidence_level": "supported_by_tests",
+      "observation": "Signing/verifying real Ed25519 checkpoints rejects altered digest, scope, revision and key, but the tool cannot verify that key or checkpoint custody is independent of the database administrator.",
+      "product_implication": "Production audit claims require separately trusted key/checkpoint custody, rotation and external anchoring rather than an extra local hash.",
+      "evidence_paths": [
+        "tests/test_operations_recovery.py",
+        "docs/operations/2026-10-25-operations-2101512c.md",
+        "docs/delivery/lane-reports/operations.md"
+      ],
+      "task_ids": [
+        "B03-05"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: keep the signed engineering seam in B03-05 and preserve independent custody/production acceptance as explicit external gates."
+        }
+      ]
+    },
+    {
+      "id": "EM-194",
+      "title": "A scoped audit checkpoint does not scope a whole-database restore",
+      "first_seen": "2026-10-25",
+      "origin": "operations-2101512c",
+      "evidence_level": "supported_by_tests",
+      "observation": "The real SQLite backup/replay rehearsal verifies explicit case checkpoints including alpha import lineage, while copying every database byte; organisation/matter labels cannot turn that copy into a scoped export.",
+      "product_implication": "Keep rehearsal host-only and fictional, require reviewed scope binding before signing, and never expose this implementation as a tenant-filtered recovery API.",
+      "evidence_paths": [
+        "tests/test_operations_recovery.py",
+        "docs/operations/2026-10-25-operations-2101512c.md",
+        "docs/delivery/lane-reports/operations.md"
+      ],
+      "task_ids": [
+        "B03-05"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: implement explicit new-file rehearsal only; managed/tenant-safe production backup and restore remain separate acceptance gates."
+        }
+      ]
+    },
+    {
+      "id": "EM-195",
+      "title": "Current revocation observations are not remote revocation commands or atomicity",
+      "first_seen": "2026-10-25",
+      "origin": "operations-2101512c",
+      "evidence_level": "supported_by_tests",
+      "observation": "Transactional tests show missing/unavailable surface probes cannot establish denial, close must rerun all six surfaces, and adapter failure or post-command revocation rolls back. A local transaction cannot guarantee atomic remote vault/search/worker state.",
+      "product_implication": "Use fresh scoped probes and current authority, distinguish unavailable from denied, and require host-reviewed remote consistency rather than declaring a local journal entry globally revoked.",
+      "evidence_paths": [
+        "tests/test_operations_journal.py",
+        "docs/operations/2026-10-25-operations-2101512c.md",
+        "docs/delivery/lane-reports/operations.md"
+      ],
+      "task_ids": [
+        "B03-05"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: retain fail-closed observations in B03-05 with explicit injection/remote-service gates; no cross-lane revocation command is invented."
+        }
+      ]
+    },
+    {
+      "id": "EM-196",
+      "title": "Digest-matching release artifacts do not authenticate their claimed human decisions",
+      "first_seen": "2026-10-25",
+      "origin": "operations-2101512c",
+      "evidence_level": "supported_by_tests",
+      "observation": "A complete source-bound artifact matrix in tests remains evidence_supplied_pending_authentication with human_decisions_authenticated and release/deploy/real-pilot authority false, even when every claimed evidence kind is present.",
+      "product_implication": "Onboarding, legal, owner and customer acceptance require their actual authorised humans; software consistency tooling may expose gaps but cannot sign off those gates.",
+      "evidence_paths": [
+        "tests/test_operations_readiness.py",
+        "docs/operations/2026-10-25-operations-2101512c.md",
+        "docs/delivery/lane-reports/operations.md"
+      ],
+      "task_ids": [
+        "B10-01",
+        "B10-02"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: apply consistency-only evidence handling to existing B10-01/B10-02, preserving all human/legal/customer and release gates."
+        }
+      ]
+    },
+    {
+      "id": "EM-197",
+      "title": "A fictional resolution digest cannot erase the original failed pilot observation",
+      "first_seen": "2026-10-25",
+      "origin": "operations-2101512c",
+      "evidence_level": "supported_by_tests",
+      "observation": "Fictional protocol tests preserve failed and unknown observations, missing dimensions and critical/high blockers. Supplying a resolution digest removes an unresolved-reference gap but does not turn the original failed observation into pass.",
+      "product_implication": "Use an explicit later reviewed protocol/retest for closure rather than relabeling history; fictional complete observations never validate real qualified-fixer usefulness.",
+      "evidence_paths": [
+        "tests/test_pilot_tooling.py",
+        "docs/operations/2026-10-25-operations-2101512c.md",
+        "docs/delivery/lane-reports/operations.md"
+      ],
+      "task_ids": [
+        "B03-06"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: build conservative fictional pilot tooling only, retaining real participants, protocol review and upstream acceptance prerequisites."
+        }
+      ]
+    },
+    {
+      "id": "EM-198",
+      "title": "Confidential support metadata needs a separately controlled diagnostic narrative",
+      "first_seen": "2026-10-25",
+      "origin": "operations-2101512c",
+      "evidence_level": "supported_by_tests",
+      "observation": "Strict operation schemas and sanitized probe-exception tests exclude arbitrary source text and adapter exception details while preserving opaque IDs, category, revision and evidence digests. That exclusion alone does not show that an incident can be diagnosed adequately.",
+      "product_implication": "Keep detailed support reports in separately authorised evidence storage and measure triage/correction burden with authorised operators; do not restore sensitive free text to operational logs for convenience.",
+      "evidence_paths": [
+        "tests/test_operations_journal.py",
+        "docs/operations/2026-10-25-operations-2101512c.md",
+        "docs/delivery/lane-reports/operations.md"
+      ],
+      "task_ids": [
+        "B10-01"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: keep constrained metadata and document controlled support evidence handling. Diagnostic sufficiency remains an operator-evaluation hypothesis, not a new required product."
+        }
+      ]
+    },
+    {
+      "id": "EM-199",
+      "title": "Native current-build checks conflate shipping state with runtime version",
+      "first_seen": "2026-10-25",
+      "origin": "operations-2101512c",
+      "evidence_level": "supported_by_tests",
+      "observation": "The native Studio suite failed twice at current build and limits visible: the frozen partition changelog says pushed unreleased, but the existing test also demands local unreleased although the running version substring is present.",
+      "product_implication": "Reconcile truthful branch shipping state with runtime-version assertions during shared integration; do not fake a local-only changelog state merely to obtain green native acceptance.",
+      "evidence_paths": [
+        "docs/operations/verification-2101512c.json",
+        "docs/operations/2026-10-25-operations-2101512c.md",
+        "docs/delivery/lane-reports/operations.md"
+      ],
+      "task_ids": [
+        "B10-02"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "deferred",
+          "by": "Devin",
+          "reason": "decision_record: preserve the exact shared-changelog native failure for integration, outside this builder's write ownership. No task acceptance or new required scope is promoted."
+        },
+        {
+          "date": "2026-10-25",
+          "decision": "deferred",
+          "by": "Devin",
+          "reason": "Exact committed-source native rerun reproduced the same assertion a third time. All 12 suites were attempted with provider settings stripped and runtime/canonical source unchanged; 11 passed, Studio alone failed. Preserve this failure for shared integration, not a fabricated success."
+        }
+      ]
+    }
+  ]
+}
