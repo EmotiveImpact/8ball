@@ -4,6 +4,44 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Verify authenticated event review and case-binding correction
+
+2026-10-25 · `local_unreleased`
+
+Record corrected full native evidence while retaining the separately demonstrated same-matter failure.
+
+### Added
+
+- Source-bound corrected native receipt.
+
+### Changed
+
+- Both product trackers, entry page and handoff now reference the verified API checkpoint.
+
+### Verification
+
+- 1345 source /1345 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed.
+- 65 focused API/event/review/lifecycle tests passed.
+
+### Limitations
+
+- No inferred historical ownership or automatic replay.
+- Browser review, worker, production and original human/model gates remain unfinished.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Two cases may share a matter and revision. An attempt storing only matter scope and base revision can then be consumed by either case. The existing full native suite passed while an additional reproduction demonstrated this missing lineage constraint.
+- Risk: Matching matter/revision alone can conceal wrong-case lineage.
+- Architecture: Explicit case binding at enqueue; preserve unknown identity in historical rows.
+- Roadmap decision: existing_task: correct demonstrated ES02 lineage gap.
+Registered discoveries: EM-106, EM-107.
+
+Roadmap items: `ES02-02`, `ES02-03`.
+
+Evidence: [docs/evidence/endstate-event-api-native-2026-10-25.json](docs/evidence/endstate-event-api-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-event-api.md](docs/delivery/sessions/2026-10-25-endstate-event-api.md).
+
 ## 0.2.0-alpha.8 · Bind reviewed processing to its intended case
 
 2026-10-25 · `local_unreleased`

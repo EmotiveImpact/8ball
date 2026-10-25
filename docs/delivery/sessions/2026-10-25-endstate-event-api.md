@@ -45,3 +45,9 @@ Correction: EventWork optionally binds a case at enqueue against actual case/mat
 ### Additional Emergence Review
 
 EM-107: matter scope and matching revision are insufficient processing lineage when a matter contains several cases. ER-02/03 require an explicit host case binding; ER-06/09 preserve transactional scope and original result; ER-10/13 forbid invented migration identity; ER-12 adds the missing same-matter and migration regressions; ER-14 preserves the earlier passing suite and separate failure. The remaining ER-01–15 answers above remain applicable. Disposition: existing ES02-02/03 correctness correction, with task status still partial.
+
+## Verified corrected closeout
+
+65 focused API/event/review/lifecycle tests passed. Corrected source `cd4ec0c9613c959688c701f293edcdc2dd986fd3` passed 1,345 source tests, 1,345 installed-engine regressions and 396 native checks across all eleven browser suites. Exact-source/artifact inspection passed before final receipt edits. Both checkpoint CI workflows passed: 40210692080 and 40210692192. [Receipt](../../evidence/endstate-event-api-native-2026-10-25.json) links the preserved additional failure.
+
+Code is pushed to feat/agency-authorisation-20261025, draft PR5; documentation receipt is committed separately. No merge, release or deployment. Next: browser event-review UI and authenticated host worker dispatch, followed by migration/performance evidence. Original real-model, independent/human acceptance, OIDC login and production isolation remain open. EM-106/107 and all previous discoveries are retained.

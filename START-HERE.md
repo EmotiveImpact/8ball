@@ -6,9 +6,9 @@ Continue `feat/agency-authorisation-20261025` ([draft PR5](https://github.com/Em
 
 ## Latest verified work
 
-Reviewed graph changes now atomically retain a durable local change notice. Ordered per-reader delivery and acknowledgement recheck current read permission and survive restarts. [Session and emergence review](docs/delivery/sessions/2026-10-25-endstate-outbox.md); [exact-source verification receipt](docs/evidence/endstate-outbox-native-2026-10-25.json).
+Authenticated event review and notice delivery now use verified identities and transactional permissions. Case processing is explicitly bound to its intended case; historical unbound attempts cannot create new changes. [Session and emergence review](docs/delivery/sessions/2026-10-25-endstate-event-api.md); [corrected source-bound receipt](docs/evidence/endstate-event-api-native-2026-10-25.json), including the preserved earlier failure.
 
-Next: explicit event review UI/API and authenticated host worker dispatch. The full product remains unfinished. Model evaluation, independent review, human acceptance and production readiness retain their original gates. Only [progress.json](docs/delivery/progress.json) carries editable task statuses.
+Next: event-review browser UI and authenticated host worker dispatch. The full product remains unfinished. Model evaluation, independent review, human acceptance and production readiness retain their original gates. Only [progress.json](docs/delivery/progress.json) carries editable task statuses.
 
 ## Requirements and continuity
 

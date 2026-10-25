@@ -3,6 +3,53 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-endstate-event-api-verified",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify authenticated event review and case-binding correction",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-03"
+      ],
+      "summary": "Record corrected full native evidence while retaining the separately demonstrated same-matter failure.",
+      "added": [
+        "Source-bound corrected native receipt."
+      ],
+      "changed": [
+        "Both product trackers, entry page and handoff now reference the verified API checkpoint."
+      ],
+      "fixed": [],
+      "verification": [
+        "1345 source /1345 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed.",
+        "65 focused API/event/review/lifecycle tests passed."
+      ],
+      "limitations": [
+        "No inferred historical ownership or automatic replay.",
+        "Browser review, worker, production and original human/model gates remain unfinished."
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-event-api-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-event-api.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Two cases may share a matter and revision. An attempt storing only matter scope and base revision can then be consumed by either case. The existing full native suite passed while an additional reproduction demonstrated this missing lineage constraint."
+        ],
+        "risks": [
+          "Matching matter/revision alone can conceal wrong-case lineage."
+        ],
+        "architecture_implications": [
+          "Explicit case binding at enqueue; preserve unknown identity in historical rows."
+        ],
+        "roadmap_decision": "existing_task: correct demonstrated ES02 lineage gap.",
+        "insight_ids": [
+          "EM-106",
+          "EM-107"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-endstate-case-binding",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",

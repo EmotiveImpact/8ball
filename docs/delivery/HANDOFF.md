@@ -1,3 +1,11 @@
+# Latest verified checkpoint: authenticated event review with case binding
+
+[Session and emergence review](sessions/2026-10-25-endstate-event-api.md), [corrected native receipt](../evidence/endstate-event-api-native-2026-10-25.json), [preserved uncovered failure](../evidence/endstate-event-api-case-binding-gap-2026-10-25.json). Source `cd4ec0c9613c959688c701f293edcdc2dd986fd3` passed 1,345 source tests, 1,345 installed-engine regressions and 396 native browser checks; exact inspection and checkpoint CI passed.
+
+Shared-registry agency mode exposes explicit event read/review and local notice pull/acknowledgement. JWT identity is server-bound; review rechecks READ and WRITE in the transaction. New case attempts carry explicit case binding. Historical unbound attempts remain retained but cannot produce new case changes.
+
+Continue draft PR5 branch feat/agency-authorisation-20261025. Next: event-review browser UI and authenticated worker dispatch. Real OIDC login, PostgreSQL isolation, migration/performance, model and genuine human acceptance remain unfinished. See BUILD-GOAL.md and the sole canonical PROGRESS.md tracker. Older checkpoints below are historical.
+
 # Latest verified checkpoint: transactional local change outbox
 
 [Session and emergence review](sessions/2026-10-25-endstate-outbox.md), [receipt](../evidence/endstate-outbox-native-2026-10-25.json). Source `49f5e04fe8f4f122818c09343aba030338a26347` passed 1,331 source tests, 1,331 installed-engine regressions and 396 native browser checks; exact inspection and checkpoint CI passed. Reviewed case changes now create durable notices atomically, with ordered per-reader delivery and current READ checks at pull/acknowledgement.

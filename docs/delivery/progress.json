@@ -21,12 +21,12 @@
     "source_merged_not_release_accepted": true,
     "current_sprint": {
       "branch": "feat/agency-authorisation-20261025",
-      "base_commit": "e0ae9b081629239a16ce79e95628cf504227fbc6",
-      "tested_code_commit": "49f5e04fe8f4f122818c09343aba030338a26347",
+      "base_commit": "fd57f16dd66a1ce52a3f60144ddbeaf8fcfc117c",
+      "tested_code_commit": "cd4ec0c9613c959688c701f293edcdc2dd986fd3",
       "status_as_of": "2026-10-25",
       "merged": false,
-      "evidence": "docs/evidence/endstate-outbox-native-2026-10-25.json",
-      "verification": "1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed."
+      "evidence": "docs/evidence/endstate-event-api-native-2026-10-25.json",
+      "verification": "1345 source /1345 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed."
     },
     "verified_sprint_history": [
       {
@@ -113,6 +113,15 @@
         "merged": false,
         "evidence": "docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json",
         "verification": "1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "e0ae9b081629239a16ce79e95628cf504227fbc6",
+        "tested_code_commit": "49f5e04fe8f4f122818c09343aba030338a26347",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-outbox-native-2026-10-25.json",
+        "verification": "1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed."
       }
     ],
     "provider_configuration_preparation": {
@@ -443,13 +452,13 @@
     },
     "EV-EVENT-API": {
       "kind": "controlled_authenticated_api",
-      "path": "docs/delivery/sessions/2026-10-25-endstate-event-api.md",
-      "result": "61 focused tests and preceding native suite passed; additional case-binding failure preserved separately. Explicit binding correction awaits cumulative native verification."
+      "path": "docs/evidence/endstate-event-api-native-2026-10-25.json",
+      "result": "1345 source /1345 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed. Includes explicit case binding; no browser login/review, worker dispatch or production/model/human acceptance."
     },
     "EV-EVENT-CASE-BINDING-GAP": {
       "kind": "preserved_correctness_failure",
       "path": "docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json",
-      "result": "Existing native suite passed but separate same-matter cross-case reproduction failed on f75dad5; correction implemented, cumulative revalidation pending."
+      "result": "Failure preserved at f75dad5; corrected in cd4ec0c with four case-binding/migration tests and cumulative 1345 source /1345 installed /396 native checks. See EV-EVENT-API."
     }
   },
   "milestones": [

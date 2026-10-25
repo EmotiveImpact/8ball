@@ -998,11 +998,11 @@ These references have specific scopes and may be historical. A reference to a de
 ### EV-EVENT-API
 
 - Kind: `controlled_authenticated_api`.
-- Repository evidence: [docs/delivery/sessions/2026-10-25-endstate-event-api.md](../../docs/delivery/sessions/2026-10-25-endstate-event-api.md).
-- Result/scope: 61 focused tests and preceding native suite passed; additional case-binding failure preserved separately. Explicit binding correction awaits cumulative native verification.
+- Repository evidence: [docs/evidence/endstate-event-api-native-2026-10-25.json](../../docs/evidence/endstate-event-api-native-2026-10-25.json).
+- Result/scope: 1345 source /1345 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed. Includes explicit case binding; no browser login/review, worker dispatch or production/model/human acceptance.
 
 ### EV-EVENT-CASE-BINDING-GAP
 
 - Kind: `preserved_correctness_failure`.
 - Repository evidence: [docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json](../../docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json).
-- Result/scope: Existing native suite passed but separate same-matter cross-case reproduction failed on f75dad5; correction implemented, cumulative revalidation pending.
+- Result/scope: Failure preserved at f75dad5; corrected in cd4ec0c with four case-binding/migration tests and cumulative 1345 source /1345 installed /396 native checks. See EV-EVENT-API.
