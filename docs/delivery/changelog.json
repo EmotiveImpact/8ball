@@ -3,6 +3,54 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-agency-api-overview-verification",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify agency access and publish the clearer overview",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01",
+        "B02-19"
+      ],
+      "summary": "Record cumulative native verification, checkpoint CI and final uncertainty wording correction.",
+      "added": [
+        "Source-bound verification receipt and owner-accessible overview screenshot."
+      ],
+      "changed": [
+        "Display unknown and disputed counts separately."
+      ],
+      "fixed": [],
+      "verification": [
+        "1291 source +1291 installed-engine +394 native browser checks passed on7fbb34a.",
+        "Both checkpoint CI workflows passed; exact artifact/source inspection valid.",
+        "Final wording passed node syntax and54 native workspace checks."
+      ],
+      "limitations": [
+        "No live OIDC browser login/MFA, PostgreSQL row enforcement, write/worker authorisation or production acceptance.",
+        "Remaining roadmap steps and V0.2 actual-model/human gates remain open."
+      ],
+      "evidence_paths": [
+        "docs/evidence/agency-api-overview-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-agency-api-overview.md",
+        "docs/screenshots/8ball-overview-2026-10-25.png"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Authenticated identity alone cannot protect aggregate and asynchronous local routes."
+        ],
+        "risks": [
+          "Grant revocation must span transaction/worker paths; in-flight responses cannot be recalled."
+        ],
+        "architecture_implications": [
+          "Explicit deny-by-default opt-in boundary, no client-created grants or silent migrations."
+        ],
+        "roadmap_decision": "existing_task: continue B03-01 and B02-19; no production deployment or gate promotion.",
+        "insight_ids": [
+          "EM-100"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-agency-api-overview",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",

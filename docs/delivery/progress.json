@@ -21,12 +21,11 @@
     "source_merged_not_release_accepted": true,
     "current_sprint": {
       "branch": "feat/agency-authorisation-20261025",
-      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
-      "tested_code_commit": "a5d82bdacafc0d898660ce3ba4a5183a8d7240c3",
+      "base_commit": "75fb95fd5c15f0f0d0b040d5b679de72f19e9ee6",
+      "tested_code_commit": "7fbb34ac346e5e884a7f0dc52908e38be514c4de",
+      "evidence": "docs/evidence/agency-api-overview-native-2026-10-25.json",
       "status_as_of": "2026-10-25",
-      "merged": false,
-      "evidence": "docs/evidence/agency-authorisation-native-2026-10-25.json",
-      "verification": "1280 source / 1280 installed-engine / 391 native browser checks passed."
+      "merged": false
     },
     "verified_sprint_history": [
       {
@@ -69,6 +68,15 @@
         "verification": "1267 source tests, 1267 installed-engine regressions and 391 native browser checks across 11 suites passed; inspection valid before receipt edits.",
         "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
         "remote_ci": "Both checkpoint PR workflows passed: 40199806937 and 40199807143. Final receipt-head CI and merge tracked in PR4."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+        "tested_code_commit": "a5d82bdacafc0d898660ce3ba4a5183a8d7240c3",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/agency-authorisation-native-2026-10-25.json",
+        "verification": "1280 source / 1280 installed-engine / 391 native browser checks passed."
       }
     ],
     "provider_configuration_preparation": {
@@ -360,8 +368,8 @@
     },
     "EV-AGENCY-API": {
       "kind": "controlled_api_and_browser",
-      "path": "docs/delivery/sessions/2026-10-25-agency-api-overview.md",
-      "result": "24 policy/API checks passed and initial native workspace 51 checks passed; cumulative validation pending. No live identity provider or production isolation acceptance."
+      "path": "docs/evidence/agency-api-overview-native-2026-10-25.json",
+      "result": "1291 source +1291 installed-engine +394 native browser checks and checkpoint CI passed. Final uncertainty wording passed54 native workspace checks. Agency boundary remains read-only and pre-production."
     }
   },
   "milestones": [

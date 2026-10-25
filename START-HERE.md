@@ -1,3 +1,7 @@
+# Latest build: clearer overview and scoped agency API reads
+
+Continue `feat/agency-authorisation-20261025`, preserving newer remote work. [Current handoff](docs/delivery/sessions/2026-10-25-agency-api-overview.md), [verification](docs/evidence/agency-api-overview-native-2026-10-25.json), [screenshot](docs/screenshots/8ball-overview-2026-10-25.png). Persistent grants and signed-token validation now protect an opt-in read/history/export API surface. Browser OIDC/MFA, writes/workers and production database enforcement remain unfinished. Full-product engineering is authorised; no deployment, production acceptance or deferred research adoption is implied.
+
 # Current development: full-product roadmap
 
 Owner explicitly authorised later product milestones on 25 October. B03-01 now has a tested permission-policy component; OIDC, durable grants, API/worker and database enforcement remain unfinished. Continue `feat/agency-authorisation-20261025`, preserving any newer remote work. See [session](docs/delivery/sessions/2026-10-25-agency-authorisation.md) and [receipt](docs/evidence/agency-authorisation-native-2026-10-25.json). The earlier V0.2 model/human gates remain open. No deployment or deferred research adoption.

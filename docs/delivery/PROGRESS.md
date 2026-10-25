@@ -945,5 +945,5 @@ These references have specific scopes and may be historical. A reference to a de
 ### EV-AGENCY-API
 
 - Kind: `controlled_api_and_browser`.
-- Repository evidence: [docs/delivery/sessions/2026-10-25-agency-api-overview.md](../../docs/delivery/sessions/2026-10-25-agency-api-overview.md).
-- Result/scope: 24 policy/API checks passed and initial native workspace 51 checks passed; cumulative validation pending. No live identity provider or production isolation acceptance.
+- Repository evidence: [docs/evidence/agency-api-overview-native-2026-10-25.json](../../docs/evidence/agency-api-overview-native-2026-10-25.json).
+- Result/scope: 1291 source +1291 installed-engine +394 native browser checks and checkpoint CI passed. Final uncertainty wording passed54 native workspace checks. Agency boundary remains read-only and pre-production.

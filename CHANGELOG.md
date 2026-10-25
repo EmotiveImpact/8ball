@@ -4,6 +4,45 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Verify agency access and publish the clearer overview
+
+2026-10-25 · `local_unreleased`
+
+Record cumulative native verification, checkpoint CI and final uncertainty wording correction.
+
+### Added
+
+- Source-bound verification receipt and owner-accessible overview screenshot.
+
+### Changed
+
+- Display unknown and disputed counts separately.
+
+### Verification
+
+- 1291 source +1291 installed-engine +394 native browser checks passed on7fbb34a.
+- Both checkpoint CI workflows passed; exact artifact/source inspection valid.
+- Final wording passed node syntax and54 native workspace checks.
+
+### Limitations
+
+- No live OIDC browser login/MFA, PostgreSQL row enforcement, write/worker authorisation or production acceptance.
+- Remaining roadmap steps and V0.2 actual-model/human gates remain open.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Authenticated identity alone cannot protect aggregate and asynchronous local routes.
+- Risk: Grant revocation must span transaction/worker paths; in-flight responses cannot be recalled.
+- Architecture: Explicit deny-by-default opt-in boundary, no client-created grants or silent migrations.
+- Roadmap decision: existing_task: continue B03-01 and B02-19; no production deployment or gate promotion.
+Registered discoveries: EM-100.
+
+Roadmap items: `B03-01`, `B02-19`.
+
+Evidence: [docs/evidence/agency-api-overview-native-2026-10-25.json](docs/evidence/agency-api-overview-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-agency-api-overview.md](docs/delivery/sessions/2026-10-25-agency-api-overview.md), [docs/screenshots/8ball-overview-2026-10-25.png](docs/screenshots/8ball-overview-2026-10-25.png).
+
 ## 0.2.0-alpha.8 · Add authenticated agency read access and a clearer Situation Room
 
 2026-10-25 · `local_unreleased`

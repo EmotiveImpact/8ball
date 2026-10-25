@@ -29,3 +29,13 @@ What did this reveal? Existing local aggregate and asynchronous routes need thei
 | ER-15 | Continue authenticated transaction/worker integration, then vault/collaboration. |
 
 Evidence level: controlled API and native browser tests. UX: summary before graph detail. Architecture: no automatic trust in token header key URLs or algorithms. Disposition: existing tasks; no acceptance promotion, real client data, release or deployment.
+
+## Completed verification and limits
+
+Checkpoint7fbb34ac346e5e884a7f0dc52908e38be514c4de passed 1291 source tests, 1291 installed-engine regressions and 394 native browser checks across11 suites; exact-source/artifact inspection valid before final edits. GitHub runs40203256823/40203256857 both passed. Earlier attempt20261025T143801Z-f1e3e17b was interrupted after an abbreviated ledger base SHA failed the documentation guard; retained as nonpassing, then corrected and rerun.
+
+Final overview wording now separately counts unknown and disputed conditions. After this small UI correction, node syntax and all54 native workspace checks passed. Exact receipt: docs/evidence/agency-api-overview-native-2026-10-25.json. Final-head CI remains a separate run. Screenshot: docs/screenshots/8ball-overview-2026-10-25.png. No model or live identity-provider calls.
+
+Next: complete OIDC browser login/PKCE/MFA integration and account administration, PostgreSQL transaction-scoped access and verified-actor mutation/worker enforcement; then vault/collaboration/durable processing. The remaining production roadmap is not implemented by this read boundary. Original required gates remain intact.
+
+Emergence addendum: unknown and disputed evidence are different states; overview counts must preserve that distinction (existing engine rule, applied in the UI correction; no scope expansion).
