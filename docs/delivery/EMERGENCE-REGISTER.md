@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **98 recorded discoveries.**
+Last review: 2026-10-25. **99 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1635,7 +1635,7 @@ Pinned Mem0 enables operation telemetry by default to us.i.posthog.com even when
 
 **Product implication:** Record all data exits and telemetry configuration before an isolated future pilot; local storage alone cannot establish no external transmission.
 
-**Roadmap links:** `B03-01` (not_started), `B04-02` (not_started).
+**Roadmap links:** `B03-01` (partial), `B04-02` (not_started).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/research/github-2026-10-16/whole-system-review.md`, `docs/evidence/whole-system-readiness-2026-10-16.json`, `docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md`.
 
@@ -1800,3 +1800,20 @@ The existing generic API-key requirement was labelled Qwen and allowed only its 
 
 - 2026-10-18 · adopted · Codex configuration review: existing_task: document the observed secret-rebinding restriction and exact owner step; no new required feature, model/professional/human acceptance or runtime research adoption.
 - 2026-10-25 · adopted · Codex integration review: existing_task: preserve source and uncertain auth evidence, resolve already-integrated PR ancestry, prepare exact next-agent tests. A generic save rejection did not establish the earlier claimed field-specific cause. No acceptance promotion.
+
+### [ ] EM-099: Object grants cannot authorise aggregate matter operations
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Agency authorisation foundation.
+
+A grant to read one object cannot grant a matter listing, search, export or inference over other objects. Identity includes issuer as well as subject.
+
+**Product implication:** Enforce server-owned scope on every consumed object and reload revoked grants; policy permits remain separate from action approval.
+
+**Roadmap links:** `B03-01` (partial).
+**Completion scope:** `B03-01`.
+**Evidence / source record:** `eightball/authorisation.py`, `tests/test_authorisation.py`, `docs/delivery/sessions/2026-10-25-agency-authorisation.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: implement fail-closed policy foundation under owner-authorised full-product roadmap; API enforcement remains unfinished.

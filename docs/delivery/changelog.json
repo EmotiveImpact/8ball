@@ -3,6 +3,50 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-agency-authorisation",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Begin the agency permission foundation",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01"
+      ],
+      "summary": "Owner authorised the full product roadmap; add exact issuer/subject, tenant/matter/object and operation-scoped permission calculation.",
+      "added": [
+        "Immutable identity/resource/grant records and deny-by-default policy.",
+        "13 denial tests covering all six operations, foreign scopes, revocation, expiry and read-only object grants."
+      ],
+      "changed": [
+        "B03-01 is partial; existing V0.2 acceptance remains unchanged."
+      ],
+      "fixed": [],
+      "verification": [
+        "13 policy tests passed; cumulative native verification follows."
+      ],
+      "limitations": [
+        "Not connected to the local API. No OIDC, persistent membership, PostgreSQL row policy or production isolation claim."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-agency-authorisation.md",
+        "tests/test_authorisation.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Object grants must not expand into aggregate matter operations."
+        ],
+        "risks": [
+          "Policy-only tests do not prove request or transaction enforcement."
+        ],
+        "architecture_implications": [
+          "Use verified identity and server-owned membership; enforce all consumed objects."
+        ],
+        "roadmap_decision": "Proceed with B03-01 under explicit full-product scope; no production deployment.",
+        "insight_ids": [
+          "EM-099"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-build-verification",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",
@@ -437,7 +481,7 @@
       ],
       "summary": "Added an owner-readable source investigation of Ruflo worker coordination, model access, confidence and evidence limits. Application behavior and acceptance gates are unchanged.",
       "added": [
-        "Plain-English owner guide, pinned-source receipt and complete ER-01–15 handoff.",
+        "Plain-English owner guide, pinned-source receipt and complete ER-01\u201315 handoff.",
         "EM-084 preserves the prediction target behind worker-routing confidence; prior findings receive additive evidence."
       ],
       "changed": [
@@ -1568,7 +1612,7 @@
         "ES03-08",
         "B04-04"
       ],
-      "summary": "Documentation-only refinement: 8BALL becomes the fixer’s live situation room around an explicit mandate and human-selected course; ENDSTATE remains a neutral planning and reconsideration engine. No runtime completion or new required scope is implied.",
+      "summary": "Documentation-only refinement: 8BALL becomes the fixer\u2019s live situation room around an explicit mandate and human-selected course; ENDSTATE remains a neutral planning and reconsideration engine. No runtime completion or new required scope is implied.",
       "added": [
         "Separate 8BALL and ENDSTATE vision documents, ADR 0004 and proposed course/coverage/recovery acceptance scenarios.",
         "Ten new discoveries retained alongside all 55 originals; five additional end-of-sprint review prompts.",
@@ -1579,7 +1623,7 @@
         "Earlier fallback/watch/attention/recoverability discoveries have appended dispositions rather than rewritten observations."
       ],
       "fixed": [
-        "The latest handoff’s missing Draft Repair source is explicitly separated from the recovered alpha.7 implementation; later narrated test totals are not attached to the earlier source.",
+        "The latest handoff\u2019s missing Draft Repair source is explicitly separated from the recovered alpha.7 implementation; later narrated test totals are not attached to the earlier source.",
         "No-path wording now identifies the supplied catalogue and search bounds rather than implying global impossibility.",
         "The review protocol now permits additional passes while requiring the original ten and preserving recorded prompt text/order. Seven regression checks cover safe extension and denied rewrites."
       ],
@@ -1849,7 +1893,7 @@
           "The bounded calendar-day interpreter deliberately cannot decide what next business day or end of day means for every organisation, location or agreement."
         ],
         "risks": [
-          "Shared names, exact quotations and schema validation do not prove identity, authority or the source’s intended date.",
+          "Shared names, exact quotations and schema validation do not prove identity, authority or the source\u2019s intended date.",
           "Withdrawing evidence should prompt reconsideration, not silently remove adopted operational commitments."
         ],
         "architecture_implications": [
@@ -2070,7 +2114,7 @@
         "Guided nested AND/OR and explicit-false authoring, guards, intended effects, verification criteria, resources, decision gates and response contingencies.",
         "Read-only amendment preview with route differences, historical protections, undo/redo, discard and a separate revision-checked commit.",
         "Persistent local analysis status with bounded queue, stage counts, cancellation, stale-result rejection and restart interruption.",
-        "In-app What’s new and a generated root CHANGELOG.md. Every future build must update the shared changelog and delivery ledger.",
+        "In-app What\u2019s new and a generated root CHANGELOG.md. Every future build must update the shared changelog and delivery ledger.",
         "Desktop authoring columns scroll independently; smaller screens keep a responsive stacked layout."
       ],
       "changed": [

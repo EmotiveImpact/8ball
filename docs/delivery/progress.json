@@ -342,6 +342,11 @@
       "kind": "integration_and_test_handoff",
       "path": "docs/evidence/build-consolidation-native-2026-10-25.json",
       "result": "1267 source + 1267 installed-engine + 391 native browser checks passed; exact inspection valid; both checkpoint CI workflows passed. PR3 closed as already integrated. No model/independent/human acceptance."
+    },
+    "EV-AGENCY-POLICY": {
+      "kind": "controlled_policy_tests",
+      "path": "docs/delivery/sessions/2026-10-25-agency-authorisation.md",
+      "result": "13 policy tests passed; API/OIDC/database enforcement not yet implemented."
     }
   },
   "milestones": [
@@ -1139,20 +1144,24 @@
       "id": "B03-01",
       "milestone": "B03",
       "title": "Identity, organisations and matter-scoped authorisation",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Codex",
+      "working_branch": "feat/agency-authorisation-20261025",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "eightball/authorisation.py",
+        "tests/test_authorisation.py"
+      ],
       "depends_on": [],
       "acceptance": "Authenticated identities and cross-tenant/matter denial tests cover read, write, export, search and model inference.",
       "evidence": [
-        "EV-SECURITY"
+        "EV-SECURITY",
+        "EV-AGENCY-POLICY"
       ],
       "blockers": [],
-      "next_action": "Implement from the approved production threat model."
+      "next_action": "Implement verified OIDC identity, durable scoped grants and request/transaction enforcement across every API and background-job path. Policy unit tests alone do not establish tenant isolation."
     },
     {
       "id": "B03-02",

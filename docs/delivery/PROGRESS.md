@@ -321,10 +321,12 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 ## 8BALL 0.3: Secure agency pilot
 
 - [ ] **B03-01 Identity, organisations and matter-scoped authorisation**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Authenticated identities and cross-tenant/matter denial tests cover read, write, export, search and model inference.
-  - Next: Implement from the approved production threat model.
-  - Evidence: `EV-SECURITY` (registry below).
+  - Next: Implement verified OIDC identity, durable scoped grants and request/transaction enforcement across every API and background-job path. Policy unit tests alone do not establish tenant isolation.
+  - Branch/base: `feat/agency-authorisation-20261025` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
+  - Existing code: `eightball/authorisation.py`, `tests/test_authorisation.py`.
+  - Evidence: `EV-SECURITY`, `EV-AGENCY-POLICY` (registry below).
 
 - [ ] **B03-02 Encrypted evidence vault and retention controls**
   - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
@@ -933,3 +935,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `integration_and_test_handoff`.
 - Repository evidence: [docs/evidence/build-consolidation-native-2026-10-25.json](../../docs/evidence/build-consolidation-native-2026-10-25.json).
 - Result/scope: 1267 source + 1267 installed-engine + 391 native browser checks passed; exact inspection valid; both checkpoint CI workflows passed. PR3 closed as already integrated. No model/independent/human acceptance.
+
+### EV-AGENCY-POLICY
+
+- Kind: `controlled_policy_tests`.
+- Repository evidence: [docs/delivery/sessions/2026-10-25-agency-authorisation.md](../../docs/delivery/sessions/2026-10-25-agency-authorisation.md).
+- Result/scope: 13 policy tests passed; API/OIDC/database enforcement not yet implemented.

@@ -4,6 +4,43 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Begin the agency permission foundation
+
+2026-10-25 · `local_unreleased`
+
+Owner authorised the full product roadmap; add exact issuer/subject, tenant/matter/object and operation-scoped permission calculation.
+
+### Added
+
+- Immutable identity/resource/grant records and deny-by-default policy.
+- 13 denial tests covering all six operations, foreign scopes, revocation, expiry and read-only object grants.
+
+### Changed
+
+- B03-01 is partial; existing V0.2 acceptance remains unchanged.
+
+### Verification
+
+- 13 policy tests passed; cumulative native verification follows.
+
+### Limitations
+
+- Not connected to the local API. No OIDC, persistent membership, PostgreSQL row policy or production isolation claim.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Object grants must not expand into aggregate matter operations.
+- Risk: Policy-only tests do not prove request or transaction enforcement.
+- Architecture: Use verified identity and server-owned membership; enforce all consumed objects.
+- Roadmap decision: Proceed with B03-01 under explicit full-product scope; no production deployment.
+Registered discoveries: EM-099.
+
+Roadmap items: `B03-01`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-agency-authorisation.md](docs/delivery/sessions/2026-10-25-agency-authorisation.md), [tests/test_authorisation.py](tests/test_authorisation.py).
+
 ## 0.2.0-alpha.8 · Combined build passes native verification and checkpoint CI
 
 2026-10-25 · `local_unreleased`
