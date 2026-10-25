@@ -3628,6 +3628,35 @@
           "reason": "existing_task: implement fail-closed policy foundation under owner-authorised full-product roadmap; API enforcement remains unfinished."
         }
       ]
+    },
+    {
+      "id": "EM-100",
+      "title": "Adding authenticated identity does not make every existing route safe",
+      "origin": "Agency API and overview sprint",
+      "first_seen": "2026-10-25",
+      "evidence_level": "observed_in_build",
+      "observation": "The local API has aggregate listings, legacy imports and asynchronous jobs whose existing single-operator assumptions cannot inherit agency permissions from a sign-in check alone.",
+      "product_implication": "Use an explicit opt-in allowlist and deny unintegrated routes until actor, transaction and worker enforcement exists. Present a readable situation overview before graph detail.",
+      "task_ids": [
+        "B03-01",
+        "B02-19"
+      ],
+      "acceptance_task_ids": [
+        "B03-01"
+      ],
+      "evidence_paths": [
+        "docs/v2/AGENCY-ACCESS.md",
+        "docs/delivery/sessions/2026-10-25-agency-api-overview.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex",
+          "reason": "existing_task: preserve local compatibility and refuse unsafe agency operations while implementing the full product roadmap."
+        }
+      ]
     }
   ]
 }

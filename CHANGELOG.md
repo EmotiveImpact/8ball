@@ -4,6 +4,45 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Add authenticated agency read access and a clearer Situation Room
+
+2026-10-25 · `local_unreleased`
+
+Persist scoped grants, validate signed issuer/audience-bound tokens and enforce an opt-in API read boundary; lead the workspace with a plain-language summary.
+
+### Added
+
+- Persistent registry, RS256 token validation and API denial tests.
+- Situation summary, evidence/change links and keyboard-expandable graph.
+
+### Changed
+
+- Agency mode denies all unintegrated routes; local mode remains compatible.
+
+### Verification
+
+- 24 focused policy/API tests passed.
+- Initial native workspace journey passed 51 checks; new disclosure checks and cumulative run follow.
+
+### Limitations
+
+- No live OIDC browser login/MFA, PostgreSQL row enforcement, write/worker authorisation or production acceptance.
+- Remaining roadmap steps and V0.2 actual-model/human gates remain open.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Authenticated identity alone cannot protect aggregate and asynchronous local routes.
+- Risk: Grant revocation must span transaction/worker paths; in-flight responses cannot be recalled.
+- Architecture: Explicit deny-by-default opt-in boundary, no client-created grants or silent migrations.
+- Roadmap decision: existing_task: continue B03-01 and B02-19; no production deployment or gate promotion.
+Registered discoveries: EM-100.
+
+Roadmap items: `B03-01`, `B02-19`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-agency-api-overview.md](docs/delivery/sessions/2026-10-25-agency-api-overview.md), [docs/v2/AGENCY-ACCESS.md](docs/v2/AGENCY-ACCESS.md).
+
 ## 0.2.0-alpha.8 · Publish the current workspace screenshot for owner review
 
 2026-10-25 · `local_unreleased`

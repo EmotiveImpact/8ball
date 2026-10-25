@@ -3,6 +3,53 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-agency-api-overview",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Add authenticated agency read access and a clearer Situation Room",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01",
+        "B02-19"
+      ],
+      "summary": "Persist scoped grants, validate signed issuer/audience-bound tokens and enforce an opt-in API read boundary; lead the workspace with a plain-language summary.",
+      "added": [
+        "Persistent registry, RS256 token validation and API denial tests.",
+        "Situation summary, evidence/change links and keyboard-expandable graph."
+      ],
+      "changed": [
+        "Agency mode denies all unintegrated routes; local mode remains compatible."
+      ],
+      "fixed": [],
+      "verification": [
+        "24 focused policy/API tests passed.",
+        "Initial native workspace journey passed 51 checks; new disclosure checks and cumulative run follow."
+      ],
+      "limitations": [
+        "No live OIDC browser login/MFA, PostgreSQL row enforcement, write/worker authorisation or production acceptance.",
+        "Remaining roadmap steps and V0.2 actual-model/human gates remain open."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-agency-api-overview.md",
+        "docs/v2/AGENCY-ACCESS.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Authenticated identity alone cannot protect aggregate and asynchronous local routes."
+        ],
+        "risks": [
+          "Grant revocation must span transaction/worker paths; in-flight responses cannot be recalled."
+        ],
+        "architecture_implications": [
+          "Explicit deny-by-default opt-in boundary, no client-created grants or silent migrations."
+        ],
+        "roadmap_decision": "existing_task: continue B03-01 and B02-19; no production deployment or gate promotion.",
+        "insight_ids": [
+          "EM-100"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-publish-workspace-screenshot",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",

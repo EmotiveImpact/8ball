@@ -357,6 +357,11 @@
       "kind": "controlled_policy_tests",
       "path": "docs/evidence/agency-authorisation-native-2026-10-25.json",
       "result": "1280 source tests, 1280 installed-engine regressions and 391 native browser checks passed; source inspection valid. Policy only, not integrated production enforcement."
+    },
+    "EV-AGENCY-API": {
+      "kind": "controlled_api_and_browser",
+      "path": "docs/delivery/sessions/2026-10-25-agency-api-overview.md",
+      "result": "24 policy/API checks passed and initial native workspace 51 checks passed; cumulative validation pending. No live identity provider or production isolation acceptance."
     }
   },
   "milestones": [
@@ -1158,20 +1163,23 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "feat/agency-authorisation-20261025",
-      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "base_commit": "75fb95fd5c15f0f0d0b040d5b679de72f19e9ee6",
       "updated_on": "2026-10-25",
       "code_paths": [
         "eightball/authorisation.py",
-        "tests/test_authorisation.py"
+        "tests/test_authorisation.py",
+        "eightball/agency_access.py",
+        "tests/test_agency_access.py"
       ],
       "depends_on": [],
       "acceptance": "Authenticated identities and cross-tenant/matter denial tests cover read, write, export, search and model inference.",
       "evidence": [
         "EV-SECURITY",
-        "EV-AGENCY-POLICY"
+        "EV-AGENCY-POLICY",
+        "EV-AGENCY-API"
       ],
       "blockers": [],
-      "next_action": "Implement verified OIDC identity, durable scoped grants and request/transaction enforcement across every API and background-job path. Policy unit tests alone do not establish tenant isolation."
+      "next_action": "Implement browser OIDC/PKCE/MFA and account administration, PostgreSQL transaction/row enforcement and verified-actor mutations; current agency mode permits scoped read/history/export only."
     },
     {
       "id": "B03-02",
@@ -1901,9 +1909,9 @@
       "status": "partial",
       "required": true,
       "owner": "Codex",
-      "working_branch": "fix/v02-provider-failure-evidence-20261015",
-      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
-      "updated_on": "2026-10-15",
+      "working_branch": "feat/agency-authorisation-20261025",
+      "base_commit": "75fb95fd5c15f0f0d0b040d5b679de72f19e9ee6",
+      "updated_on": "2026-10-25",
       "code_paths": [
         "web/v2/style.css",
         "web/v2/views.js",
@@ -1918,7 +1926,8 @@
         "EV-HF-BLACK-LOCAL",
         "EV-GRAPH-EXPLORER-LOCAL",
         "EV-NATIVE-CLOSEOUT",
-        "EV-PROVIDER-FAILURE-REVIEW"
+        "EV-PROVIDER-FAILURE-REVIEW",
+        "EV-AGENCY-API"
       ],
       "blockers": [
         "Owner visual review and broader human accessibility acceptance remain outstanding."

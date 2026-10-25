@@ -280,13 +280,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Blocker: Real-model journey and developer-quality work remain unaccepted.
 
 - [ ] **B02-19 Black operator visual system and transparent intelligence controls**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-15.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Black/graphite design, legible status labels, exact-target review, provider controls and mobile lock work across the existing native desktop/mobile workflow without losing evidence/approval functions.
   - Next: Review the current black workspace without expanding scope; preserve passing native controls. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
-  - Branch/base: `fix/v02-provider-failure-evidence-20261015` / `45f8794733df9635d8daf5146a37fb94af9e8e90`.
+  - Branch/base: `feat/agency-authorisation-20261025` / `75fb95fd5c15f0f0d0b040d5b679de72f19e9ee6`.
   - Dependencies: `B02-07`.
   - Existing code: `web/v2/style.css`, `web/v2/views.js`, `web/v2/forms.js`, `tests/browser_development.py`.
-  - Evidence: `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW` (registry below).
+  - Evidence: `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-AGENCY-API` (registry below).
   - Blocker: Owner visual review and broader human accessibility acceptance remain outstanding.
 
 - [ ] **B02-20 Black relationship explorer with local focus, directed flow and records view**
@@ -323,10 +323,10 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **B03-01 Identity, organisations and matter-scoped authorisation**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Authenticated identities and cross-tenant/matter denial tests cover read, write, export, search and model inference.
-  - Next: Implement verified OIDC identity, durable scoped grants and request/transaction enforcement across every API and background-job path. Policy unit tests alone do not establish tenant isolation.
-  - Branch/base: `feat/agency-authorisation-20261025` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
-  - Existing code: `eightball/authorisation.py`, `tests/test_authorisation.py`.
-  - Evidence: `EV-SECURITY`, `EV-AGENCY-POLICY` (registry below).
+  - Next: Implement browser OIDC/PKCE/MFA and account administration, PostgreSQL transaction/row enforcement and verified-actor mutations; current agency mode permits scoped read/history/export only.
+  - Branch/base: `feat/agency-authorisation-20261025` / `75fb95fd5c15f0f0d0b040d5b679de72f19e9ee6`.
+  - Existing code: `eightball/authorisation.py`, `tests/test_authorisation.py`, `eightball/agency_access.py`, `tests/test_agency_access.py`.
+  - Evidence: `EV-SECURITY`, `EV-AGENCY-POLICY`, `EV-AGENCY-API` (registry below).
 
 - [ ] **B03-02 Encrypted evidence vault and retention controls**
   - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
@@ -941,3 +941,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `controlled_policy_tests`.
 - Repository evidence: [docs/evidence/agency-authorisation-native-2026-10-25.json](../../docs/evidence/agency-authorisation-native-2026-10-25.json).
 - Result/scope: 1280 source tests, 1280 installed-engine regressions and 391 native browser checks passed; source inspection valid. Policy only, not integrated production enforcement.
+
+### EV-AGENCY-API
+
+- Kind: `controlled_api_and_browser`.
+- Repository evidence: [docs/delivery/sessions/2026-10-25-agency-api-overview.md](../../docs/delivery/sessions/2026-10-25-agency-api-overview.md).
+- Result/scope: 24 policy/API checks passed and initial native workspace 51 checks passed; cumulative validation pending. No live identity provider or production isolation acceptance.

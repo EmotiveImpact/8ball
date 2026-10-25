@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **99 recorded discoveries.**
+Last review: 2026-10-25. **100 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1817,3 +1817,20 @@ A grant to read one object cannot grant a matter listing, search, export or infe
 **Decision history:**
 
 - 2026-10-25 · adopted · Codex: existing_task: implement fail-closed policy foundation under owner-authorised full-product roadmap; API enforcement remains unfinished.
+
+### [ ] EM-100: Adding authenticated identity does not make every existing route safe
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Agency API and overview sprint.
+
+The local API has aggregate listings, legacy imports and asynchronous jobs whose existing single-operator assumptions cannot inherit agency permissions from a sign-in check alone.
+
+**Product implication:** Use an explicit opt-in allowlist and deny unintegrated routes until actor, transaction and worker enforcement exists. Present a readable situation overview before graph detail.
+
+**Roadmap links:** `B03-01` (partial), `B02-19` (partial).
+**Completion scope:** `B03-01`.
+**Evidence / source record:** `docs/v2/AGENCY-ACCESS.md`, `docs/delivery/sessions/2026-10-25-agency-api-overview.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: preserve local compatibility and refuse unsafe agency operations while implementing the full product roadmap.

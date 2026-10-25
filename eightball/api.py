@@ -40,7 +40,7 @@ class Advice(Strict):
     allow_external: bool = Field(default=False, strict=True)
 
 
-def make_app(store: Store, token: str) -> FastAPI:
+def make_app(store: Store, token: str, *, agency_access=None) -> FastAPI:
     if len(token) < 32:
         raise ValueError('Use an operator token of at least 32 characters')
     app = FastAPI(title='8BALL local alpha', version=__version__, docs_url=None, redoc_url=None, openapi_url=None)
@@ -69,6 +69,8 @@ def make_app(store: Store, token: str) -> FastAPI:
         return response
 
     def authorised(request: Request):
+        if agency_access is not None:
+            return agency_access(request)
         supplied = request.headers.get('authorization', '')
         if not hmac.compare_digest(supplied, 'Bearer ' + token):
             raise HTTPException(401, 'An operator token is required')
