@@ -3,6 +3,53 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-review-refresh-race",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Resolve stale Plan Review loading after a case refresh",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-11",
+        "ES02-04"
+      ],
+      "summary": "Fix the race demonstrated during cumulative validation without publishing stale review results or automatically retrying.",
+      "added": [
+        "Deterministic native in-flight revision-change checks and retained failed-run receipt."
+      ],
+      "changed": [
+        "Context changes now show a manual reopen action instead of endless review loading."
+      ],
+      "fixed": [],
+      "verification": [
+        "First cumulative run failed in native Plan Review; exact inspection valid/failed.",
+        "After correction all35 focused native Plan Review checks passed; cumulative rerun follows."
+      ],
+      "limitations": [
+        "No independent review or model/human acceptance.",
+        "Durable processing still requires actual transactional case integration."
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-processing-failed-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-processing.md",
+        "tests/browser_plan_review.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Discarding stale data must also resolve pending user-interface states."
+        ],
+        "risks": [
+          "Intermittent refresh ordering can leave an inaccessible review despite green CI elsewhere."
+        ],
+        "architecture_implications": [
+          "Bind completion/error handling to dialog ownership and revision; manual reopening only."
+        ],
+        "roadmap_decision": "existing_task: preserve demonstrated failure and add deterministic native coverage.",
+        "insight_ids": [
+          "EM-103"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-endstate-processing",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",

@@ -4,6 +4,44 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Resolve stale Plan Review loading after a case refresh
+
+2026-10-25 · `local_unreleased`
+
+Fix the race demonstrated during cumulative validation without publishing stale review results or automatically retrying.
+
+### Added
+
+- Deterministic native in-flight revision-change checks and retained failed-run receipt.
+
+### Changed
+
+- Context changes now show a manual reopen action instead of endless review loading.
+
+### Verification
+
+- First cumulative run failed in native Plan Review; exact inspection valid/failed.
+- After correction all35 focused native Plan Review checks passed; cumulative rerun follows.
+
+### Limitations
+
+- No independent review or model/human acceptance.
+- Durable processing still requires actual transactional case integration.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Discarding stale data must also resolve pending user-interface states.
+- Risk: Intermittent refresh ordering can leave an inaccessible review despite green CI elsewhere.
+- Architecture: Bind completion/error handling to dialog ownership and revision; manual reopening only.
+- Roadmap decision: existing_task: preserve demonstrated failure and add deterministic native coverage.
+Registered discoveries: EM-103.
+
+Roadmap items: `B02-11`, `ES02-04`.
+
+Evidence: [docs/evidence/endstate-processing-failed-2026-10-25.json](docs/evidence/endstate-processing-failed-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-processing.md](docs/delivery/sessions/2026-10-25-endstate-processing.md), [tests/browser_plan_review.py](tests/browser_plan_review.py).
+
 ## 0.2.0-alpha.8 · Add durable event-processing attempts and cancellation
 
 2026-10-25 · `local_unreleased`

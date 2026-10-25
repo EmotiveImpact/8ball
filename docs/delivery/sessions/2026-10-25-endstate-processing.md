@@ -29,3 +29,11 @@ What did this reveal? A lease timeout cannot prove whether an external service a
 | ER-15 | Build reviewed case integration and durable outbox next. |
 
 Evidence: controlled persistence/lifecycle tests. UX: distinguish interrupted, cancelled, stale and permission-denied work. Architecture: no automatic service execution/retry. Disposition: existing ES02-02/04 tasks remain partial.
+
+## Demonstrated review race and correction
+
+The first cumulative native run20261025T151314Z-2277beb7 failed Plan Review: opening while a refresh completed changed the snapshot stamp, and discarded responses left the dialog loading indefinitely. Exact source/artifact inspection was valid/failed before editing. Both remote checkpoint workflows passed, showing why the retained local failure still matters. Receipt: docs/evidence/endstate-processing-failed-2026-10-25.json.
+
+The review now displays an explicit context-changed state with a manual reopen button; it neither publishes the stale assessment nor retries automatically. Responses from superseded dialogs cannot overwrite the current one. The native journey now waits for the actual refreshed revision and separately forces an in-flight revision change. All35 focused native Plan Review checks passed after the fix. Full cumulative rerun follows.
+
+Emergence addendum (ER-03/06/12/13): rejecting stale data is not a complete UI outcome; pending indicators need a terminal recovery state (EM-103). Preserve the failed run and actual focused reproduction. Existing lease behaviour also relies on a trusted host wall clock; clock-skew handling and transactional permission checks remain production work, not claims of this component.

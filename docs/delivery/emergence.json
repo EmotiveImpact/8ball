@@ -3717,6 +3717,36 @@
           "reason": "existing_task: durable processing foundation without automatic paid replay or action authority."
         }
       ]
+    },
+    {
+      "id": "EM-103",
+      "title": "Discarding stale review responses must resolve the loading state",
+      "origin": "Native Plan Review race during ENDSTATE lifecycle verification",
+      "first_seen": "2026-10-25",
+      "evidence_level": "observed_in_build",
+      "observation": "Case refresh changed the review snapshot while assessment was in flight. The stale response was safely discarded, but its dialog remained on Inspecting indefinitely. Remote CI passing did not negate the local observed race.",
+      "product_implication": "End stale loading with an explicit recovery state and deliberate reopening, while never allowing an older request to overwrite a newer dialog.",
+      "task_ids": [
+        "B02-11",
+        "ES02-04"
+      ],
+      "acceptance_task_ids": [
+        "B02-11"
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-processing-failed-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-processing.md",
+        "tests/browser_plan_review.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex",
+          "reason": "existing_task: fix observed race, add deterministic native coverage and preserve the failed receipt."
+        }
+      ]
     }
   ]
 }

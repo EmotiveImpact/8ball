@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **102 recorded discoveries.**
+Last review: 2026-10-25. **103 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1868,3 +1868,20 @@ A restarted process cannot infer whether a leased operation already reached an e
 **Decision history:**
 
 - 2026-10-25 · adopted · Codex: existing_task: durable processing foundation without automatic paid replay or action authority.
+
+### [ ] EM-103: Discarding stale review responses must resolve the loading state
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Native Plan Review race during ENDSTATE lifecycle verification.
+
+Case refresh changed the review snapshot while assessment was in flight. The stale response was safely discarded, but its dialog remained on Inspecting indefinitely. Remote CI passing did not negate the local observed race.
+
+**Product implication:** End stale loading with an explicit recovery state and deliberate reopening, while never allowing an older request to overwrite a newer dialog.
+
+**Roadmap links:** `B02-11` (partial), `ES02-04` (partial).
+**Completion scope:** `B02-11`.
+**Evidence / source record:** `docs/evidence/endstate-processing-failed-2026-10-25.json`, `docs/delivery/sessions/2026-10-25-endstate-processing.md`, `tests/browser_plan_review.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: fix observed race, add deterministic native coverage and preserve the failed receipt.

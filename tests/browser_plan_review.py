@@ -45,6 +45,21 @@ def main():
                     page.locator(f'[data-case="{case.id}"]').click();nav('studio')
                     page.locator('[data-studio=select][data-kind=actions][data-id=direct]').click()
                     page.locator('[data-studio-field=cost]').fill('2222');page.locator('[data-studio-field=cost]').press('Tab')
+                    if not BRIDGE:
+                        # Deterministically refresh the client snapshot while its
+                        # assessment request is in flight; stale results must
+                        # leave an explicit recovery state, not an endless spinner.
+                        def change_context(route):
+                            page.evaluate("async()=>{const {S}=await import('/v2/ui.js');S.current.case.revision+=1;}")
+                            route.continue_()
+                        page.route('**/plan-reviews/assess',change_context)
+                        page.locator('[data-pr-action=open]').click()
+                        expect(page.locator('[data-pr-root]')).to_contain_text('Case context changed')
+                        check('stale assessment offers explicit reopening instead of endless loading',page.get_by_role('button',name='Reopen Plan Review').is_visible())
+                        check('stale assessment is not rendered as current',page.locator('.pr-target').count()==0)
+                        page.unroute('**/plan-reviews/assess',change_context)
+                        page.evaluate("async()=>{const {S}=await import('/v2/ui.js');S.current.case.revision-=1;}")
+                        page.keyboard.press('Escape')
                     page.locator('[data-pr-action=open]').click();page.locator('.pr-target').wait_for()
                     check('review is anchored to the exact requested outcome',case.desired_outcome in page.locator('.pr-target').inner_text())
                     check('review explicitly excludes unsaved graph edits','not unsaved Plan Studio changes' in page.locator('[data-pr-root]').inner_text())
@@ -93,7 +108,8 @@ def main():
                     check('review cannot grant action approval',not store.get(case.id).approvals)
                     # Later changes do not erase the earlier human review.
                     store.change(case.id,Command(event_id='later',expected_revision=0,kind='metadata',payload={'budget':6000}))
-                    page.keyboard.press('Escape');page.locator('[data-action=refresh]').click();expect(page.locator('nav [data-tab=studio]')).to_have_attribute('aria-current','page')
+                    page.keyboard.press('Escape');page.locator('[data-action=refresh]').click();expect(page.locator('.page-footer')).to_contain_text('CASE REV 1')
+                    expect(page.locator('nav [data-tab=studio]')).to_have_attribute('aria-current','page')
                     page.locator('[data-pr-action=open]').click();page.locator('.pr-target').wait_for();tab('history')
                     check('old review is marked historical after case changes','case has changed since this review' in page.locator('.pr-history').inner_text())
                     page.keyboard.press('Escape');nav('command');page.locator(f'[data-case="{other.id}"]').click();page.locator('[data-action=discard-open-case]').click();nav('studio')
