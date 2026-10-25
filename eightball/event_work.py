@@ -36,7 +36,12 @@ class EventWork:
                 db.execute('ALTER TABLE event_work ADD COLUMN case_id TEXT')
 
     @contextmanager
-    def _transaction(self):
+    def _transaction(self, db=None):
+        if db is not None:
+            if not db.in_transaction:
+                raise ValueError('An owning transaction is required')
+            yield db
+            return
         with sqlite3.connect(self.path, timeout=10) as db:
             db.row_factory = sqlite3.Row
             db.execute('PRAGMA foreign_keys=ON')
@@ -57,10 +62,10 @@ class EventWork:
             raise KeyError(work_id)
         return row
 
-    def enqueue(self, *, organisation_id, matter_id, sequence, base_revision, case_id=None):
+    def enqueue(self, *, organisation_id, matter_id, sequence, base_revision, case_id=None, _db=None):
         if type(sequence) is not int or sequence < 1 or type(base_revision) is not int or base_revision < 0:
             raise ValueError('Explicit event sequence and base revision required')
-        with self._transaction() as db:
+        with self._transaction(_db) as db:
             if case_id is not None:
                 if not isinstance(case_id, str) or not case_id or len(case_id) > 100:
                     raise ValueError('Explicit case identity required')
@@ -91,10 +96,10 @@ class EventWork:
                         'queued', self._now().isoformat(), case_id))
             return work_id
 
-    def claim(self, work_id, *, organisation_id, matter_id, lease_seconds=60):
+    def claim(self, work_id, *, organisation_id, matter_id, lease_seconds=60, _db=None):
         if type(lease_seconds) is not int or not 1 <= lease_seconds <= 600:
             raise ValueError('Lease must be between one and 600 seconds')
-        with self._transaction() as db:
+        with self._transaction(_db) as db:
             row = self._row(db, (organisation_id, matter_id), work_id)
             if row['state'] != 'queued':
                 raise EventConflict('This attempt cannot be claimed again')
@@ -105,12 +110,12 @@ class EventWork:
             return token
 
     def finish(self, work_id, token, result, *, organisation_id, matter_id,
-               current_revision, permission_valid):
+               current_revision, permission_valid, _db=None):
         if not isinstance(result, str) or not result or len(result.encode('utf-8')) > MAX_RESULT_BYTES:
             raise ValueError('A bounded result text is required')
         if type(current_revision) is not int or current_revision < 0 or type(permission_valid) is not bool:
             raise ValueError('Explicit host revision and permission observations required')
-        with self._transaction() as db:
+        with self._transaction(_db) as db:
             row = self._row(db, (organisation_id, matter_id), work_id)
             if row['state'] != 'running' or not isinstance(token, str) or not secrets.compare_digest(
                     row['token_hash'], sha256(token.encode()).hexdigest()):
@@ -123,8 +128,8 @@ class EventWork:
                        (state, result, now.isoformat(), work_id))
             return state
 
-    def cancel(self, work_id, *, organisation_id, matter_id):
-        with self._transaction() as db:
+    def cancel(self, work_id, *, organisation_id, matter_id, _db=None):
+        with self._transaction(_db) as db:
             row = self._row(db, (organisation_id, matter_id), work_id)
             if row['state'] == 'cancelled':
                 return
@@ -133,8 +138,8 @@ class EventWork:
             db.execute('UPDATE event_work SET state=?,token_hash=NULL,finished_at=? WHERE id=?',
                        ('cancelled', self._now().isoformat(), work_id))
 
-    def inspect(self, work_id, *, organisation_id, matter_id):
-        with self._transaction() as db:
+    def inspect(self, work_id, *, organisation_id, matter_id, _db=None):
+        with self._transaction(_db) as db:
             row = self._row(db, (organisation_id, matter_id), work_id)
             if row['state'] == 'running' and self._now() >= datetime.fromisoformat(row['deadline']):
                 db.execute('UPDATE event_work SET state=?,token_hash=NULL,finished_at=? WHERE id=?',

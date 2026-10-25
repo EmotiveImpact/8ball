@@ -1,5 +1,115 @@
 # Incoming events and the host inbox
-## Current reviewed-consumption increment
+## Current explicit local dispatch (events lane)
+
+`eightball.event_workers.EventWorkerService` now combines the existing durable
+inbox, queue, current grants and case revision in owning SQLite transactions.
+It provides explicit text intake, source-processing review, idempotent enqueue,
+one-call processing, cancellation and content status. No import/startup loop,
+URL fetch, folder/vault scan, automatic inference/retry or external send exists.
+The original local app and alpha import/audit paths are unchanged.
+
+The host authenticates identities. `authority(db, identity, resource,
+operations, now) -> bool` defaults to current `agency_grants`; operations are a
+tuple of `eightball.authorisation.Operation`. Whole-matter READ/INFER is required
+to request/run processing; READ/WRITE to review source processing, revoke that
+review or cancel. Text intake requires WRITE; content status requires READ.
+Object-only grants do not become whole-matter access.
+
+### Required current source policy
+
+Both dispatch and graph review require the same trusted host callback:
+
+```python
+source_policy(db, identity: Identity, case_id: str,
+              receipt: EventReceipt, now: datetime) -> bool
+```
+
+The callback checks current source/object access, quarantine/scan status,
+retention/withdrawal and processing/egress permission. Missing/false policy
+**fails closed** at source-processing review, enqueue, claim, result publication,
+content status, preview and graph commit. Never substitute an allow-all callback
+for a missing vault/provider policy adapter. The tests' explicitly fictional
+local-text policy is not a managed service. Callbacks must be synchronous,
+side-effect-free current checks on the supplied transaction; independent policy
+stores still need a production revocation/transaction design.
+
+`review_source` binds an explicit reviewer/rationale to receipt digest, case and
+revision. This is neither factual verification nor action permission. Review
+revocation blocks processing/publication/consumption. A changed case requires a
+fresh review. An old revision-bound envelope cannot silently be rebased; retain
+it and supply an explicit new envelope/review for a new revision if intended.
+
+`enqueue` requires sequence, revision, review ID and bounded request ID. Identical
+retries return the same work ID only after current checks. Concurrent requests
+cannot duplicate active work. At most three explicit attempts exist per
+case/receipt. A new attempt requires a new request ID and terminal prior work.
+
+The host explicitly invokes `process(case_id=..., work_id=...,
+worker=verified_identity)`. A durable claim/run marker precedes one configured
+`processor(receipt, detached_case_snapshot) -> str` call. There is deliberately
+no processing/provider-execution HTTP route. Processor text is bounded and
+retained, never a command or observed effect. Provider selection, timeouts,
+resource/budget and external consent remain host/provider obligations; this
+service never grants permission for a paid call. An absent processor is an
+error, not invented success. Exceptions retain only a safe `processor_failed`
+code; invalid/oversize output becomes `invalid_result`, without truncation.
+
+Finalization rechecks grants, source review/policy, case revision, lease and
+cancellation. Late/stale/denied output is inert retained trace, not a reviewable
+amendment. Cancellation cannot recall an in-flight request. A crash after claim
+or failed result persistence requires explicit inspection, never silent provider
+repetition; expiry becomes `interrupted`, not automatically requeued.
+
+### Optional integration and reviewed consumption
+
+On a protected agency router, after verified authentication and operation-policy
+mapping, call `register_event_worker_routes(router, service)` and
+`register_event_routes(router, store, source_policy=policy)` from
+`eightball.v2.event_api`. Construct both the worker and `EventReviews` with the
+same current source policy. Missing policy denies dispatched graph consumption
+even for a reviewer with grants. Unknown agency routes must remain denied;
+never mount these as a local-token fallback. No shared router changes are made
+by this lane. OIDC, PostgreSQL isolation and production object policies are not
+implemented by these SQLite services.
+
+The existing graph preview stays read-only. Reviewed consumption requires exact
+case/matter/revision, current READ/WRITE, source-review/policy and explicit graph
+command/rationale. It atomically persists the audit, original receipt/result,
+review and local outbox notice. Approvals are invalidated by the existing command
+service; intended effects never become observed truth. Notices are local pull/
+acknowledgement records, not external notification delivery or action approval.
+
+### Conservative replan parity and local timing
+
+`eightball.event_workers.replan.EventReplanner.replan(PlanRequest)` returns a
+typed response, mode and measured elapsed duration. Its bounded, detached cache
+reuses only identical planning inputs at the exact explicit as-of clock. A
+revision-only change is reusable only without revision-bound action approvals.
+Every graph/evidence/clock/sort/other input change uses full ENDSTATE calculation;
+revision changes with approvals also force full calculation. Tests compare the
+complete response to fresh `endstate.api.calculate`. This is conservative
+unchanged-input reuse, not general partial-graph computation or a performance
+guarantee. Replanning never changes a case, action authority or chosen course.
+
+Review records include available ingestion, processor-stage, pre-commit review
+processing, review-wait and receipt-to-review durations. Ingestion/review
+durations stop before their owning transaction commits; absent historical
+metrics remain null. Local instrumentation and a fictional processor exercise
+are not actual-model inference or human-review latency evidence. Full combined
+provider/review and general incremental-graph performance acceptance remain open.
+
+Exact tests, limitations and integration steps: [lane receipt](../delivery/lane-reports/events.md).
+No broad ES02/B03 acceptance, native-browser result, real provider success,
+independent review, release or deployment follows from this increment.
+
+## Historical checkpoint notes (superseded capability gaps)
+
+The sections below retain earlier component descriptions and historical gaps.
+The current section above, live source and lane receipt control this increment;
+past statements that worker/outbox/UI are absent are not current implementation
+claims. Historical receipts remain bound only to their own source bytes.
+
+### Reviewed-consumption checkpoint
 
 The local host service `eightball.v2.event_reviews.EventReviews` now commits explicit graph reviews atomically with current scope, permission and revision checks. It preserves source/result/reviewer provenance and links conditional exports to the case audit chain. Public agency writes, browser review integration, production database isolation and durable worker/outbox remain unfinished. The earlier sections below describe preceding checkpoints.
 

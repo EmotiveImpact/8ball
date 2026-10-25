@@ -4,6 +4,8 @@ The host must authenticate the reviewer before calling this service. It is not
 an HTTP endpoint or a replacement for production PostgreSQL tenant policies.
 """
 import json
+from datetime import datetime
+from time import perf_counter
 from urllib.parse import urlencode
 from endstate.events import EventReceipt
 
@@ -11,6 +13,7 @@ from ..agency_access import AccessRegistry
 from ..authorisation import Grant, Identity, Operation, Resource, permits
 from ..event_inbox import EventInbox
 from ..event_work import EventWork
+from ..event_workers.service import EventWorkerService
 from ..models import utcnow
 from ..store import Conflict, canonical, digest
 from .commands import Command, apply
@@ -19,8 +22,9 @@ from .authoring import GraphPreview, preview_graph
 
 
 class EventReviews:
-    def __init__(self, store):
+    def __init__(self, store, *, source_policy=None):
         self.store = store
+        self.source_policy = source_policy
         # Grants, attempts and cases must share the transaction database.
         AccessRegistry(store.path)
         EventWork(store.path)
@@ -49,13 +53,20 @@ class EventReviews:
             receipt = EventInbox._receipt(tuple(row))
             if (receipt.event.organisation_id, receipt.event.matter_id) != scope:
                 raise Conflict('Incoming event scope is corrupt')
+            source_review_current = True
+            try:
+                EventWorkerService.validate_consumption(db, work, receipt, identity=reader,
+                    source_policy=self.source_policy, now=utcnow())
+            except ValueError:
+                source_review_current = False
             case = self.store._get(db, case_id)
             grants = tuple(Grant.model_validate_json(row['body']) for row in
                            db.execute('SELECT body FROM agency_grants WHERE revoked=0'))
             result = dict(work_id=work_id, case_id=case_id, state=work['state'],
                           base_revision=work['base_revision'], current_revision=case.revision,
                           source_receipt=receipt.model_dump(mode='json'), original_result=work['result'],
-                          reviewable=work['state']=='awaiting_review' and work['base_revision']==case.revision,
+                          reviewable=source_review_current and work['state']=='awaiting_review' and work['base_revision']==case.revision,
+                          source_processing_review_current=source_review_current,
                           can_review=permits(reader, Resource(organisation_id=scope[0], matter_id=scope[1]),
                                              Operation.WRITE, grants, now=utcnow()),
                           review_url='/v2/event-review.html?'+urlencode({'case':case_id,'work':work_id}),
@@ -73,12 +84,20 @@ class EventReviews:
                 raise KeyError('Processing attempt not found')
             if work['state']!='awaiting_review' or work['base_revision']!=request.expected_revision:
                 raise Conflict('Attempt is not awaiting review at this revision')
+            row = db.execute('''SELECT sequence,received_at,body,digest FROM incoming_events
+                WHERE organisation_id=? AND matter_id=? AND sequence=?''',
+                (*scope, work['sequence'])).fetchone()
+            if row is None:
+                raise Conflict('Incoming event is missing')
+            EventWorkerService.validate_consumption(db, work, EventInbox._receipt(tuple(row)),
+                identity=reader, source_policy=self.source_policy, now=utcnow())
             result = preview_graph(self.store._get(db, case_id), request)
             EventOutbox._authorize(db, case_id, reader)
             return result
 
     def commit_graph(self, *, work_id: str, case_id: str, reviewer: Identity,
                      command: Command, rationale: str, require_read: bool = False):
+        started = perf_counter()
         if not isinstance(reviewer, Identity) or not isinstance(command, Command):
             raise ValueError('Verified identity and typed command required')
         if command.kind != 'replace_graph' or not isinstance(rationale, str) or len(rationale.strip()) < 10 or len(rationale) > 2000:
@@ -108,6 +127,8 @@ class EventReviews:
             receipt = EventInbox._receipt(tuple(source_row))
             if (receipt.event.organisation_id, receipt.event.matter_id) != tuple(ownership):
                 raise Conflict('Incoming event scope is corrupt')
+            EventWorkerService.validate_consumption(db, work, receipt, identity=reviewer,
+                source_policy=self.source_policy, now=now)
             request = dict(work_id=work_id, case_id=case_id,
                            organisation_id=scope.organisation_id, matter_id=scope.matter_id,
                            reviewer=reviewer.model_dump(mode='json'),
@@ -144,18 +165,47 @@ class EventReviews:
                           original_result=work['result'], committed_revision=updated.revision,
                           reviewed_at=persisted_event['recorded_at'], actor=actor, changes=changes,
                           explicit_review_recorded=True, unassisted_model_acceptance=False)
+            record['latencies'] = self._latencies(db, work, receipt, now, perf_counter()-started)
             db.execute('INSERT INTO event_consumptions VALUES (?,?,?,?,?,?)',
                        (work_id, case_id, scope.organisation_id, scope.matter_id,
                         canonical(record), digest(record)))
             db.execute("UPDATE event_work SET state='committed',token_hash=NULL WHERE id=?", (work_id,))
             EventOutbox.append(db, record)
             commit_time = utcnow()
+            EventWorkerService.validate_consumption(db, work, receipt, identity=reviewer,
+                source_policy=self.source_policy, now=commit_time)
             if not permits(reviewer, scope, Operation.WRITE, grants, now=commit_time):
                 raise PermissionError('Write permission expired before commit')
             if require_read and not permits(reviewer, scope, Operation.READ, grants, now=commit_time):
                 raise PermissionError('Read permission expired before commit')
             db.commit()
             return record
+
+    @staticmethod
+    def _latencies(db, work, receipt, reviewed_at, review_seconds):
+        def seconds_since(value):
+            if value is None:
+                return None
+            elapsed = (reviewed_at - value).total_seconds()
+            return elapsed if elapsed >= 0 else None
+
+        tables = {r[0] for r in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+        ingestion = inference = None
+        if 'event_ingestion_metrics' in tables:
+            row = db.execute('''SELECT ingestion_seconds FROM event_ingestion_metrics
+                WHERE organisation_id=? AND matter_id=? AND sequence=?''',
+                (work['organisation_id'], work['matter_id'], work['sequence'])).fetchone()
+            ingestion = row[0] if row else None
+        if 'event_dispatch_runs' in tables:
+            row = db.execute('SELECT inference_seconds FROM event_dispatch_runs WHERE work_id=?',
+                             (work['id'],)).fetchone()
+            inference = row[0] if row else None
+        return dict(ingestion_seconds=ingestion, inference_seconds=inference,
+                    review_processing_seconds_before_commit=review_seconds,
+                    review_wait_seconds=seconds_since(datetime.fromisoformat(work['finished_at'])
+                                                     if work['finished_at'] else None),
+                    receipt_to_review_seconds=seconds_since(receipt.received_at),
+                    scope='Local process measurements, not a real-provider or human latency benchmark')
 
 
 def read_consumptions(db, case_id):
