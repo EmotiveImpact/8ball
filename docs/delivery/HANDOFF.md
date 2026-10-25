@@ -1,3 +1,13 @@
+# Latest verified checkpoint: browser event review; final publication blocked
+
+[Session and full emergence review](sessions/2026-10-25-endstate-review-ui.md), [native receipt](../evidence/endstate-review-ui-native-2026-10-25.json), [desktop screenshot](../screenshots/8ball-event-review-2026-10-25.png). Source `461d3f2cecfcd8c4a00da40a56f56763d0d4fc90` passed 1,346 source tests, 1,346 installed-engine regressions and 423 native browser checks across twelve suites, with valid exact-source inspection. Preserved failed native/CI runs are linked in the receipt; corrected-checkpoint CI is unverified because authentication failed.
+
+The code checkpoint was pushed to draft PR5 branch feat/agency-authorisation-20261025. Final documentation/screenshots are committed locally and remain unpushed. GitHub API returns 401 Bad credentials and Git cannot authenticate. Refresh/reconnect the environment GitHub connection, preserve local HEAD, push the branch, inspect CI and update PR5. No force push, main merge, release or deployment.
+
+The scoped browser page shows original source/output, reuses Plan Studio, previews without writes and commits explicit amendments with rationale. Read-only/stale/locked/uncertain-save states fail closed. It uses configured account tokens in memory; actual OIDC sign-in and genuine human acceptance remain unfinished.
+
+Next engineering task: fix the demonstrated full-result retention boundary (16,501-character fictional graph exceeds 12,000-character work cap) before authenticated worker dispatch, then measure full end-to-end event/replanning performance. The standing BUILD-GOAL remains in progress; PROGRESS.md is the sole generated task tracker for both products. Earlier entries below are historical.
+
 # Latest verified checkpoint: authenticated event review with case binding
 
 [Session and emergence review](sessions/2026-10-25-endstate-event-api.md), [corrected native receipt](../evidence/endstate-event-api-native-2026-10-25.json), [preserved uncovered failure](../evidence/endstate-event-api-case-binding-gap-2026-10-25.json). Source `cd4ec0c9613c959688c701f293edcdc2dd986fd3` passed 1,345 source tests, 1,345 installed-engine regressions and 396 native browser checks; exact inspection and checkpoint CI passed.

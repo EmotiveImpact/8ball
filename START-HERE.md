@@ -6,9 +6,11 @@ Continue `feat/agency-authorisation-20261025` ([draft PR5](https://github.com/Em
 
 ## Latest verified work
 
-Authenticated event review and notice delivery now use verified identities and transactional permissions. Case processing is explicitly bound to its intended case; historical unbound attempts cannot create new changes. [Session and emergence review](docs/delivery/sessions/2026-10-25-endstate-event-api.md); [corrected source-bound receipt](docs/evidence/endstate-event-api-native-2026-10-25.json), including the preserved earlier failure.
+The browser event-review page now shows original source/output and supports explicit Plan Studio amendments, preview, rationale, commit and change-notice acknowledgement. [Session](docs/delivery/sessions/2026-10-25-endstate-review-ui.md), [native verification](docs/evidence/endstate-review-ui-native-2026-10-25.json), [screenshot](docs/screenshots/8ball-event-review-2026-10-25.png).
 
-Next: event-review browser UI and authenticated host worker dispatch. The full product remains unfinished. Model evaluation, independent review, human acceptance and production readiness retain their original gates. Only [progress.json](docs/delivery/progress.json) carries editable task statuses.
+The code checkpoint was pushed, but final receipts/screenshots are local pending GitHub reconnection: API and Git authentication stopped working. Preserve local HEAD before any checkout. Push the closeout and inspect CI once access is restored.
+
+Next: complete structured-result retention before authenticated worker dispatch. The full product remains unfinished. Model evaluation, independent review, human acceptance and production readiness retain their original gates. Only [progress.json](docs/delivery/progress.json) carries editable task statuses.
 
 ## Requirements and continuity
 

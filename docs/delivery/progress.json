@@ -21,12 +21,15 @@
     "source_merged_not_release_accepted": true,
     "current_sprint": {
       "branch": "feat/agency-authorisation-20261025",
-      "base_commit": "fd57f16dd66a1ce52a3f60144ddbeaf8fcfc117c",
-      "tested_code_commit": "cd4ec0c9613c959688c701f293edcdc2dd986fd3",
+      "base_commit": "825c8c3969f6cf723a188cc6ae16094aa15c9e7e",
+      "tested_code_commit": "461d3f2cecfcd8c4a00da40a56f56763d0d4fc90",
       "status_as_of": "2026-10-25",
       "merged": false,
-      "evidence": "docs/evidence/endstate-event-api-native-2026-10-25.json",
-      "verification": "1345 source /1345 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed."
+      "evidence": "docs/evidence/endstate-review-ui-native-2026-10-25.json",
+      "verification": "1346 source /1346 installed-engine /423 native browser checks across 12 suites passed; exact inspection valid. Corrected checkpoint CI unavailable after GitHub authentication failure.",
+      "code_checkpoint_pushed": true,
+      "receipt_pushed": false,
+      "publication_blocker": "Both GitHub API authentication and Git remote authentication failed after the code checkpoint was pushed. Refresh/reconnect the environment GitHub connection, then push this branch."
     },
     "verified_sprint_history": [
       {
@@ -122,6 +125,15 @@
         "merged": false,
         "evidence": "docs/evidence/endstate-outbox-native-2026-10-25.json",
         "verification": "1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "fd57f16dd66a1ce52a3f60144ddbeaf8fcfc117c",
+        "tested_code_commit": "cd4ec0c9613c959688c701f293edcdc2dd986fd3",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-event-api-native-2026-10-25.json",
+        "verification": "1345 source /1345 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed."
       }
     ],
     "provider_configuration_preparation": {
@@ -462,13 +474,13 @@
     },
     "EV-EVENT-REVIEW-UI": {
       "kind": "native_scoped_review_ui",
-      "path": "docs/delivery/sessions/2026-10-25-endstate-review-ui.md",
-      "result": "Standalone native 27 checks passed; integrated new suite then failed its CSP-incompatible screenshot wait. Failure preserved separately; corrected full validation pending."
+      "path": "docs/evidence/endstate-review-ui-native-2026-10-25.json",
+      "result": "1346 source /1346 installed-engine /423 native browser checks across 12 suites passed; exact inspection valid. Corrected checkpoint CI unavailable after GitHub authentication failure. Browser review implemented for configured account tokens; not genuine human or OIDC acceptance."
     },
     "EV-EVENT-REVIEW-CSP-FAILURE": {
       "kind": "native_failed",
       "path": "docs/evidence/event-review-native-csp-failure-2026-10-25.json",
-      "result": "Native/CI screenshot wait failed unchanged CSP; locator/time deadline correction pending revalidation."
+      "result": "Failed native/CI runs preserved. CSP-safe locator assertion with explicit deadline passes corrected full 1346 source /1346 installed /423 native run; see EV-EVENT-REVIEW-UI."
     },
     "EV-EVENT-RESULT-SIZE": {
       "kind": "controlled_boundary_failure",

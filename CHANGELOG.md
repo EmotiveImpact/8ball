@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Verify browser event review across twelve native suites
+
+2026-10-25 · `local_unreleased`
+
+Record the corrected source-bound browser review result and screenshots, retaining failed runs and explicit publication/output-retention blockers.
+
+### Added
+
+- Verified native receipt and desktop/mobile screenshots.
+
+### Changed
+
+- Current handoff and both product trackers point to the verified UI checkpoint.
+
+### Verification
+
+- 1346 source /1346 installed-engine /423 native browser checks across 12 suites passed; exact inspection valid. Corrected checkpoint CI unavailable after GitHub authentication failure.
+- 84 focused code/runner tests and 27 standalone event-review checks passed.
+
+### Limitations
+
+- Development account-token flow, not actual OIDC browser sign-in or genuine human acceptance.
+- Full structured output exceeds current work-result text cap; preserve docs/evidence/event-result-size-boundary-2026-10-25.json and fix retention before worker dispatch.
+- Authenticated worker dispatch, production isolation and actual-model/independent acceptance remain unfinished.
+- Final receipt/screenshot edits are documentation-only and committed locally pending GitHub reconnection.
+- Both GitHub API authentication and Git remote authentication failed after the code checkpoint was pushed. Refresh/reconnect the environment GitHub connection, then push this branch.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Ordinary structured graphs exceed the provisional result cap.
+- Discovery: Native test waits must respect CSP and real notification lifetimes.
+- Risk: A green older suite cannot establish an uncovered integration requirement.
+- Architecture: Preserve full output before worker integration; keep CSP unchanged.
+- Roadmap decision: existing_task: record verified bounded review UI, preserve full-output retention as unfinished and pause publication at the demonstrated authentication blocker.
+Registered discoveries: EM-108, EM-109, EM-110, EM-111.
+
+Roadmap items: `B03-01`, `ES02-03`, `ES02-04`.
+
+Evidence: [docs/evidence/endstate-review-ui-native-2026-10-25.json](docs/evidence/endstate-review-ui-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-review-ui.md](docs/delivery/sessions/2026-10-25-endstate-review-ui.md), [docs/screenshots/8ball-event-review-2026-10-25.png](docs/screenshots/8ball-event-review-2026-10-25.png), [docs/screenshots/8ball-event-review-mobile-2026-10-25.png](docs/screenshots/8ball-event-review-mobile-2026-10-25.png).
+
 ## 0.2.0-alpha.8 · Preserve native review failures and correct CSP-safe screenshot wait
 
 2026-10-25 · `local_unreleased`

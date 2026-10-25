@@ -1010,14 +1010,14 @@ These references have specific scopes and may be historical. A reference to a de
 ### EV-EVENT-REVIEW-UI
 
 - Kind: `native_scoped_review_ui`.
-- Repository evidence: [docs/delivery/sessions/2026-10-25-endstate-review-ui.md](../../docs/delivery/sessions/2026-10-25-endstate-review-ui.md).
-- Result/scope: Standalone native 27 checks passed; integrated new suite then failed its CSP-incompatible screenshot wait. Failure preserved separately; corrected full validation pending.
+- Repository evidence: [docs/evidence/endstate-review-ui-native-2026-10-25.json](../../docs/evidence/endstate-review-ui-native-2026-10-25.json).
+- Result/scope: 1346 source /1346 installed-engine /423 native browser checks across 12 suites passed; exact inspection valid. Corrected checkpoint CI unavailable after GitHub authentication failure. Browser review implemented for configured account tokens; not genuine human or OIDC acceptance.
 
 ### EV-EVENT-REVIEW-CSP-FAILURE
 
 - Kind: `native_failed`.
 - Repository evidence: [docs/evidence/event-review-native-csp-failure-2026-10-25.json](../../docs/evidence/event-review-native-csp-failure-2026-10-25.json).
-- Result/scope: Native/CI screenshot wait failed unchanged CSP; locator/time deadline correction pending revalidation.
+- Result/scope: Failed native/CI runs preserved. CSP-safe locator assertion with explicit deadline passes corrected full 1346 source /1346 installed /423 native run; see EV-EVENT-REVIEW-UI.
 
 ### EV-EVENT-RESULT-SIZE
 
