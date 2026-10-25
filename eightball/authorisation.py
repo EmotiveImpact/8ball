@@ -1,8 +1,8 @@
 """Matter-scoped policy for the agency build, not an authentication adapter.
 
 Inputs must come from verified identity and server-owned membership records.
-The local V0.2 API does not use this policy yet. Never accept these records from
-request bodies or treat a permit as case/action approval.
+The opt-in agency boundary consumes this policy; trusted-local mode is separate.
+Never accept these records from request bodies or treat a permit as case/action approval.
 """
 from datetime import datetime
 from enum import Enum
