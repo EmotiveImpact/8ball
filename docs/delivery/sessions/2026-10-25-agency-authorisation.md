@@ -29,3 +29,7 @@ What did this reveal? Object permissions do not compose automatically into aggre
 | ER-15 | Continue B03-01 integration before claiming accounts shipped. |
 
 Disposition: existing required task B03-01; no relaxed V0.2 gate. Evidence level: controlled tests. UX implication: eventual client/specialist access must not expose an entire matter because one object is shared.
+
+## Completed verification
+
+Source a5d82bdacafc0d898660ce3ba4a5183a8d7240c3: 1,280 source tests, 1,280 installed-engine regressions and all 391 native checks across 11 suites passed. Source/artifact inspection valid before documentation-only receipt edits. Exact receipt: ../../evidence/agency-authorisation-native-2026-10-25.json. One existing Starlette/AnyIO deprecation warning per Python run. No inference, deployment or security-acceptance claim.

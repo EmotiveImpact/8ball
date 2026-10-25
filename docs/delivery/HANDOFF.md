@@ -1,3 +1,7 @@
+# Current sprint: agency permission foundation
+
+The owner selected full-product roadmap engineering beyond V0.2. Continue `feat/agency-authorisation-20261025`; [session](sessions/2026-10-25-agency-authorisation.md) records scope and full emergence review. 1280 source, 1280 installed-engine and 391 native browser checks passed. Next: verified OIDC identity, durable scoped grants and complete request/worker/database enforcement for B03-01. The current local API still uses its single-operator token; this component does not make it multi-tenant or production-ready. All V0.2 acceptance gates remain.
+
 # Current handoff: combined development build
 
 Current cumulative software verification passed on `a9254e6087ef606d581d626bfcda9d7e555c857e`:

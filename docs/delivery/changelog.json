@@ -3,6 +3,49 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-agency-policy-verification",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify agency policy foundation against existing workflows",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01"
+      ],
+      "summary": "Record cumulative native software verification without claiming production enforcement.",
+      "added": [
+        "Source-bound native verification receipt."
+      ],
+      "changed": [],
+      "fixed": [],
+      "verification": [
+        "1280 source tests and 1280 installed-engine regressions passed.",
+        "391 native browser checks across all eleven suites passed.",
+        "Exact source/artifact inspection valid before receipt edits."
+      ],
+      "limitations": [
+        "Not connected to the local API. No OIDC, persistent membership, PostgreSQL row policy or production isolation claim."
+      ],
+      "evidence_paths": [
+        "docs/evidence/agency-authorisation-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-agency-authorisation.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Object grants must not expand into aggregate matter operations."
+        ],
+        "risks": [
+          "Policy-only tests do not prove request or transaction enforcement."
+        ],
+        "architecture_implications": [
+          "Use verified identity and server-owned membership; enforce all consumed objects."
+        ],
+        "roadmap_decision": "Proceed with B03-01 under explicit full-product scope; no production deployment.",
+        "insight_ids": [
+          "EM-099"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-agency-authorisation",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",

@@ -939,5 +939,5 @@ These references have specific scopes and may be historical. A reference to a de
 ### EV-AGENCY-POLICY
 
 - Kind: `controlled_policy_tests`.
-- Repository evidence: [docs/delivery/sessions/2026-10-25-agency-authorisation.md](../../docs/delivery/sessions/2026-10-25-agency-authorisation.md).
-- Result/scope: 13 policy tests passed; API/OIDC/database enforcement not yet implemented.
+- Repository evidence: [docs/evidence/agency-authorisation-native-2026-10-25.json](../../docs/evidence/agency-authorisation-native-2026-10-25.json).
+- Result/scope: 1280 source tests, 1280 installed-engine regressions and 391 native browser checks passed; source inspection valid. Policy only, not integrated production enforcement.

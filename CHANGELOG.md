@@ -4,6 +4,40 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Verify agency policy foundation against existing workflows
+
+2026-10-25 · `local_unreleased`
+
+Record cumulative native software verification without claiming production enforcement.
+
+### Added
+
+- Source-bound native verification receipt.
+
+### Verification
+
+- 1280 source tests and 1280 installed-engine regressions passed.
+- 391 native browser checks across all eleven suites passed.
+- Exact source/artifact inspection valid before receipt edits.
+
+### Limitations
+
+- Not connected to the local API. No OIDC, persistent membership, PostgreSQL row policy or production isolation claim.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Object grants must not expand into aggregate matter operations.
+- Risk: Policy-only tests do not prove request or transaction enforcement.
+- Architecture: Use verified identity and server-owned membership; enforce all consumed objects.
+- Roadmap decision: Proceed with B03-01 under explicit full-product scope; no production deployment.
+Registered discoveries: EM-099.
+
+Roadmap items: `B03-01`.
+
+Evidence: [docs/evidence/agency-authorisation-native-2026-10-25.json](docs/evidence/agency-authorisation-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-agency-authorisation.md](docs/delivery/sessions/2026-10-25-agency-authorisation.md).
+
 ## 0.2.0-alpha.8 · Begin the agency permission foundation
 
 2026-10-25 · `local_unreleased`
