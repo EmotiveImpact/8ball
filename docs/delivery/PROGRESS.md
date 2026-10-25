@@ -992,5 +992,5 @@ These references have specific scopes and may be historical. A reference to a de
 ### EV-EVENT-OUTBOX
 
 - Kind: `controlled_local_delivery`.
-- Repository evidence: [docs/delivery/sessions/2026-10-25-endstate-outbox.md](../../docs/delivery/sessions/2026-10-25-endstate-outbox.md).
-- Result/scope: Local transactional notice delivery implemented; focused/native validation pending. No external send, daemon or human acceptance.
+- Repository evidence: [docs/evidence/endstate-outbox-native-2026-10-25.json](../../docs/evidence/endstate-outbox-native-2026-10-25.json).
+- Result/scope: 1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed. Local pull-based delivery only; daemon/browser/production/model/human gates remain unfinished.

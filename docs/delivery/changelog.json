@@ -3,6 +3,52 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-endstate-outbox-verified",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify durable local delivery against full native suite",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04"
+      ],
+      "summary": "Record exact-source native and checkpoint CI evidence for the local transactional outbox.",
+      "added": [
+        "Source-bound verification receipt."
+      ],
+      "changed": [
+        "Current handoff, tracker evidence and entry page now point to the verified outbox checkpoint."
+      ],
+      "fixed": [],
+      "verification": [
+        "1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed.",
+        "40 focused event/review/outbox tests passed."
+      ],
+      "limitations": [
+        "No daemon, browser integration, external delivery, PostgreSQL isolation or historical backfill.",
+        "No model or human acceptance."
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-outbox-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-outbox.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "A committed graph review can be lost to downstream readers if notice creation occurs after its transaction. Atomic creation plus independent durable per-reader acknowledgement survives restarts, but repeats remain possible and acknowledgement cannot carry execution authority."
+        ],
+        "risks": [
+          "Repeated delivery is expected until acknowledgement."
+        ],
+        "architecture_implications": [
+          "Case/review/outbox share one local transaction."
+        ],
+        "roadmap_decision": "existing_task: advance ES02 while preserving unfinished acceptance gates.",
+        "insight_ids": [
+          "EM-105"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-endstate-outbox",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",

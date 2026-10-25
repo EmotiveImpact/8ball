@@ -35,3 +35,9 @@ What did this reveal? Acknowledging delivery is a separate durable per-reader fa
 | ER-15 | Reliable notice persistence can reduce missed updates; usefulness needs actual operator evaluation. |
 
 Evidence: controlled local transactions. Risk: recipients can repeat a delivery after restart, so later consumers must remain idempotent. UX: distinguish delivered/acknowledged from reviewed/approved. Disposition: existing ES02-02/04 remain partial; all original model/human gates remain open.
+
+## Verified closeout
+
+40 focused event/review/outbox tests passed. Source `49f5e04fe8f4f122818c09343aba030338a26347` passed 1,331 source tests, 1,331 installed-engine regressions and 396 native browser checks across eleven suites. Exact source/artifact inspection passed before receipt edits. Both checkpoint CI workflows passed: 40209159166 and 40209159271. [Receipt](../../evidence/endstate-outbox-native-2026-10-25.json). Code is pushed on feat/agency-authorisation-20261025 in draft PR5; this documentation closeout is committed separately. No release, merge or deployment occurred.
+
+Next: explicit event review UI/API and authenticated host worker dispatch, preserving duplicate/cancellation/revocation checks. Migration, performance comparisons and all original production/model/human gates remain unfinished. EM-105 records this sprint discovery; no further scope is adopted by this verification.

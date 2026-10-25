@@ -21,12 +21,12 @@
     "source_merged_not_release_accepted": true,
     "current_sprint": {
       "branch": "feat/agency-authorisation-20261025",
-      "base_commit": "cbbe5eaa028bbb9c6427ac721570eaa67a402fad",
-      "tested_code_commit": "87c5322c23ebe7a3fc062ce15985a3d82d84eea2",
+      "base_commit": "e0ae9b081629239a16ce79e95628cf504227fbc6",
+      "tested_code_commit": "49f5e04fe8f4f122818c09343aba030338a26347",
       "status_as_of": "2026-10-25",
       "merged": false,
-      "evidence": "docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json",
-      "verification": "1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed."
+      "evidence": "docs/evidence/endstate-outbox-native-2026-10-25.json",
+      "verification": "1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed."
     },
     "verified_sprint_history": [
       {
@@ -104,6 +104,15 @@
         "merged": false,
         "evidence": "docs/evidence/endstate-processing-native-2026-10-25.json",
         "verification": "1309 source /1309 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "cbbe5eaa028bbb9c6427ac721570eaa67a402fad",
+        "tested_code_commit": "87c5322c23ebe7a3fc062ce15985a3d82d84eea2",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json",
+        "verification": "1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed."
       }
     ],
     "provider_configuration_preparation": {
@@ -429,8 +438,8 @@
     },
     "EV-EVENT-OUTBOX": {
       "kind": "controlled_local_delivery",
-      "path": "docs/delivery/sessions/2026-10-25-endstate-outbox.md",
-      "result": "Local transactional notice delivery implemented; focused/native validation pending. No external send, daemon or human acceptance."
+      "path": "docs/evidence/endstate-outbox-native-2026-10-25.json",
+      "result": "1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed. Local pull-based delivery only; daemon/browser/production/model/human gates remain unfinished."
     }
   },
   "milestones": [

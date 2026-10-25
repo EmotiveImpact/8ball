@@ -4,6 +4,44 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Verify durable local delivery against full native suite
+
+2026-10-25 · `local_unreleased`
+
+Record exact-source native and checkpoint CI evidence for the local transactional outbox.
+
+### Added
+
+- Source-bound verification receipt.
+
+### Changed
+
+- Current handoff, tracker evidence and entry page now point to the verified outbox checkpoint.
+
+### Verification
+
+- 1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed.
+- 40 focused event/review/outbox tests passed.
+
+### Limitations
+
+- No daemon, browser integration, external delivery, PostgreSQL isolation or historical backfill.
+- No model or human acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A committed graph review can be lost to downstream readers if notice creation occurs after its transaction. Atomic creation plus independent durable per-reader acknowledgement survives restarts, but repeats remain possible and acknowledgement cannot carry execution authority.
+- Risk: Repeated delivery is expected until acknowledgement.
+- Architecture: Case/review/outbox share one local transaction.
+- Roadmap decision: existing_task: advance ES02 while preserving unfinished acceptance gates.
+Registered discoveries: EM-105.
+
+Roadmap items: `ES02-02`, `ES02-04`.
+
+Evidence: [docs/evidence/endstate-outbox-native-2026-10-25.json](docs/evidence/endstate-outbox-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-outbox.md](docs/delivery/sessions/2026-10-25-endstate-outbox.md).
+
 ## 0.2.0-alpha.8 · Persist reviewed change notices with per-reader delivery
 
 2026-10-25 · `local_unreleased`

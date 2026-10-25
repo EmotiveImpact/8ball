@@ -1,3 +1,9 @@
+# Latest verified checkpoint: transactional local change outbox
+
+[Session and emergence review](sessions/2026-10-25-endstate-outbox.md), [receipt](../evidence/endstate-outbox-native-2026-10-25.json). Source `49f5e04fe8f4f122818c09343aba030338a26347` passed 1,331 source tests, 1,331 installed-engine regressions and 396 native browser checks; exact inspection and checkpoint CI passed. Reviewed case changes now create durable notices atomically, with ordered per-reader delivery and current READ checks at pull/acknowledgement.
+
+Continue draft PR5 branch feat/agency-authorisation-20261025. Next: explicit event review UI/API and authenticated host worker dispatch. Local outbox delivery is not an external sender, production tenant guarantee or human acceptance. Both product statuses remain in PROGRESS.md; the full BUILD-GOAL.md remains in progress. Earlier checkpoints below are historical.
+
 # Latest verified checkpoint: reviewed event consumption
 
 1,323 source tests, 1,323 installed-engine regressions and 396 native browser checks passed on `87c5322c23ebe7a3fc062ce15985a3d82d84eea2`; exact inspection and checkpoint CI passed. [Receipt](../evidence/endstate-reviewed-consumption-native-2026-10-25.json), [session](sessions/2026-10-25-endstate-reviewed-consumption.md), [standing goal](BUILD-GOAL.md). Continue PR5 branch feat/agency-authorisation-20261025. Next: explicit review UI/API and durable worker/outbox. Original model, human and production gates remain open. Earlier checkpoints below are historical.
