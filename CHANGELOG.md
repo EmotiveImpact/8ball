@@ -4,6 +4,45 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Build the ENDSTATE event contract and durable host inbox
+
+2026-10-25 · `local_unreleased`
+
+Retain scoped incoming events with duplicate/conflict handling and durable arrival order; publish one explicit build goal and refresh both product trackers.
+
+### Added
+
+- Neutral pending-event/receipt contracts and SQLite host inbox.
+- Eleven tests for restart, concurrent duplicates, changed retries, delayed events, scope and corruption.
+- BUILD-GOAL.md with completion criteria and links to canonical status.
+
+### Changed
+
+- ES02-01/02 now partial; current branch/PR and next tasks refreshed without erasing prior inspections.
+
+### Verification
+
+- 11 focused event/inbox tests passed; cumulative native verification pending.
+
+### Limitations
+
+- No live connectors, durable worker/outbox, reviewed case commits or automatic replanning yet.
+- 8BALL accounts, vault, collaboration, production and genuine model/human acceptance remain unfinished.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Occurrence time and receipt order are separate; retries must retain their original receipt.
+- Risk: Automatic replay could wrongly reauthorise work if connected directly to commands.
+- Architecture: Pure kernel contract; database remains in host. Scope asserted before append.
+- Roadmap decision: existing_task: ES02-01/02 increment, no acceptance or deployment promotion.
+Registered discoveries: EM-101.
+
+Roadmap items: `ES02-01`, `ES02-02`, `DOC-06`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-endstate-event-inbox.md](docs/delivery/sessions/2026-10-25-endstate-event-inbox.md), [docs/endstate/EVENT-INBOX.md](docs/endstate/EVENT-INBOX.md), [docs/delivery/BUILD-GOAL.md](docs/delivery/BUILD-GOAL.md).
+
 ## 0.2.0-alpha.8 · Verify agency access and publish the clearer overview
 
 2026-10-25 · `local_unreleased`

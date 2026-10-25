@@ -3657,6 +3657,36 @@
           "reason": "existing_task: preserve local compatibility and refuse unsafe agency operations while implementing the full product roadmap."
         }
       ]
+    },
+    {
+      "id": "EM-101",
+      "title": "Arrival order and occurrence time must remain separate during replay",
+      "origin": "ENDSTATE durable inbox",
+      "first_seen": "2026-10-25",
+      "evidence_level": "observed_in_build",
+      "observation": "A delayed source event can arrive after a newer occurrence. Reordering by its claimed clock or replacing an earlier receipt on retry would change history. Identical deliveries need the same retained receipt; changed content under the same identity must conflict.",
+      "product_implication": "Retain scoped arrival sequence, optional occurrence time and original receipt; ingestion remains pending and cannot execute commands.",
+      "task_ids": [
+        "ES02-01",
+        "ES02-02"
+      ],
+      "acceptance_task_ids": [
+        "ES02-01",
+        "ES02-02"
+      ],
+      "evidence_paths": [
+        "docs/endstate/EVENT-INBOX.md",
+        "docs/delivery/sessions/2026-10-25-endstate-event-inbox.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex",
+          "reason": "existing_task: implement neutral event contract and durable host inbox without promoting incoming data into authority."
+        }
+      ]
     }
   ]
 }

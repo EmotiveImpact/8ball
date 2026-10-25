@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **100 recorded discoveries.**
+Last review: 2026-10-25. **101 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -90,7 +90,7 @@ Useful plans include what would make the operator change course, not just the ne
 
 **Product implication:** Define versioned watch triggers, event authority and durable ordered updates before claiming real-time insight monitoring.
 
-**Roadmap links:** `ES02-01` (not_started), `ES02-02` (not_started), `ES02-03` (not_started), `ES02-06` (partial).
+**Roadmap links:** `ES02-01` (partial), `ES02-02` (partial), `ES02-03` (not_started), `ES02-06` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/delivery/EMERGENCE-REVIEW.md`, `docs/decisions/0004-evidence-led-course-and-recovery.md`, `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`.
 
@@ -1686,7 +1686,7 @@ LangGraph defaults to async durability and resumes interrupted nodes from their 
 
 **Product implication:** Choose durability/attempt/time/idempotency policies explicitly, recheck source/case/permission on resume and reconcile ambiguous external outcomes before retry.
 
-**Roadmap links:** `ES02-02` (not_started), `ES02-04` (not_started).
+**Roadmap links:** `ES02-02` (partial), `ES02-04` (not_started).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/research/github-2026-10-16/whole-system-review.md`, `docs/evidence/whole-system-readiness-2026-10-16.json`, `docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md`.
 
@@ -1834,3 +1834,20 @@ The local API has aggregate listings, legacy imports and asynchronous jobs whose
 **Decision history:**
 
 - 2026-10-25 · adopted · Codex: existing_task: preserve local compatibility and refuse unsafe agency operations while implementing the full product roadmap.
+
+### [ ] EM-101: Arrival order and occurrence time must remain separate during replay
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** ENDSTATE durable inbox.
+
+A delayed source event can arrive after a newer occurrence. Reordering by its claimed clock or replacing an earlier receipt on retry would change history. Identical deliveries need the same retained receipt; changed content under the same identity must conflict.
+
+**Product implication:** Retain scoped arrival sequence, optional occurrence time and original receipt; ingestion remains pending and cannot execute commands.
+
+**Roadmap links:** `ES02-01` (partial), `ES02-02` (partial).
+**Completion scope:** `ES02-01`, `ES02-02`.
+**Evidence / source record:** `docs/endstate/EVENT-INBOX.md`, `docs/delivery/sessions/2026-10-25-endstate-event-inbox.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: implement neutral event contract and durable host inbox without promoting incoming data into authority.

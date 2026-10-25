@@ -1,3 +1,7 @@
+# Standing build goal and current execution
+
+[Build goal](docs/delivery/BUILD-GOAL.md) defines the owner-authorised full product. [Canonical progress for 8BALL and ENDSTATE](docs/delivery/PROGRESS.md) shows actual task states, remaining work and next actions. [Latest sprint](docs/delivery/sessions/2026-10-25-endstate-event-inbox.md) implements the neutral event contract and durable host inbox. Continue current branch feat/agency-authorisation-20261025, preserving newer source. ES02-01/02 and B03-01 are partial; no production or actual-model/human acceptance is implied.
+
 # Latest build: clearer overview and scoped agency API reads
 
 Continue `feat/agency-authorisation-20261025`, preserving newer remote work. [Current handoff](docs/delivery/sessions/2026-10-25-agency-api-overview.md), [verification](docs/evidence/agency-api-overview-native-2026-10-25.json), [screenshot](docs/screenshots/8ball-overview-2026-10-25.png). Persistent grants and signed-token validation now protect an opt-in read/history/export API surface. Browser OIDC/MFA, writes/workers and production database enforcement remain unfinished. Full-product engineering is authorised; no deployment, production acceptance or deferred research adoption is implied.

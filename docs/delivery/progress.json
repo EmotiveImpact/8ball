@@ -6,14 +6,14 @@
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
   "repository": {
     "full_name": "EmotiveImpact/8ball",
-    "development_branch": "main",
-    "pull_request": 2,
-    "inspected_code_commit": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
-    "inspected_code_tree": "16f9791603f6663ebaacfaca53152cb3bef09c87",
-    "main_at_inspection": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
-    "status_as_of": "2026-10-15",
-    "pr_draft": false,
-    "merged": true,
+    "development_branch": "feat/agency-authorisation-20261025",
+    "pull_request": 5,
+    "inspected_code_commit": "48e572e95be8b28d0b317d7bc8b3a18893a3ef76",
+    "inspected_code_tree": "9b98e9f70d4d29fc32a75e125a1ab6a054040e88",
+    "main_at_inspection": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+    "status_as_of": "2026-10-25",
+    "pr_draft": true,
+    "merged": false,
     "production_deployed": false,
     "standalone_endstate_package_released": false,
     "refresh_required_each_session": true,
@@ -100,7 +100,16 @@
       "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
       "pull_request": 4,
       "merge_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba"
-    }
+    },
+    "inspection_history": [
+      {
+        "development_branch": "main",
+        "pull_request": 2,
+        "inspected_code_commit": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
+        "status_as_of": "2026-10-15",
+        "merged": true
+      }
+    ]
   },
   "evidence": {
     "EV-APP": {
@@ -370,6 +379,11 @@
       "kind": "controlled_api_and_browser",
       "path": "docs/evidence/agency-api-overview-native-2026-10-25.json",
       "result": "1291 source +1291 installed-engine +394 native browser checks and checkpoint CI passed. Final uncertainty wording passed54 native workspace checks. Agency boundary remains read-only and pre-production."
+    },
+    "EV-EVENT-INBOX": {
+      "kind": "controlled_event_persistence",
+      "path": "docs/delivery/sessions/2026-10-25-endstate-event-inbox.md",
+      "result": "11 focused event/inbox tests passed; cumulative native validation pending. No live connector, model, case mutation, worker or outbox."
     }
   },
   "milestones": [
@@ -1538,39 +1552,51 @@
       "id": "ES02-01",
       "milestone": "ES02",
       "title": "Normalised event and authority contract",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Codex",
+      "working_branch": "feat/agency-authorisation-20261025",
+      "base_commit": "48e572e95be8b28d0b317d7bc8b3a18893a3ef76",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "endstate/events.py",
+        "eightball/event_inbox.py",
+        "tests/test_event_inbox.py"
+      ],
       "depends_on": [
         "ES01-01"
       ],
       "acceptance": "Events carry source, version, occurrence/receipt time, matter scope and review status; incoming text never gets command authority.",
-      "evidence": [],
+      "evidence": [
+        "EV-EVENT-INBOX"
+      ],
       "blockers": [],
-      "next_action": "Define the observe/propose/review/commit/replan boundary."
+      "next_action": "Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes."
     },
     {
       "id": "ES02-02",
       "milestone": "ES02",
       "title": "Durable ordered updates, idempotency and replay",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Codex",
+      "working_branch": "feat/agency-authorisation-20261025",
+      "base_commit": "48e572e95be8b28d0b317d7bc8b3a18893a3ef76",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "endstate/events.py",
+        "eightball/event_inbox.py",
+        "tests/test_event_inbox.py"
+      ],
       "depends_on": [
         "ES02-01"
       ],
       "acceptance": "Duplicate, delayed, reordered and retried events cannot corrupt state or revive expired permissions.",
-      "evidence": [],
+      "evidence": [
+        "EV-EVENT-INBOX"
+      ],
       "blockers": [],
-      "next_action": "Implement event/outbox contracts and fault-injection tests."
+      "next_action": "Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes."
     },
     {
       "id": "ES02-03",
@@ -2308,6 +2334,9 @@
     }
   ],
   "next_task_ids": [
+    "ES02-01",
+    "ES02-02",
+    "B03-01",
     "B02-09",
     "B02-10",
     "B02-11",

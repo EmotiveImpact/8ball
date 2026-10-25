@@ -1,3 +1,7 @@
+# Current execution: ENDSTATE events and both product trackers
+
+[Standing goal](BUILD-GOAL.md), [canonical status](PROGRESS.md), [latest sprint](sessions/2026-10-25-endstate-event-inbox.md). ENDSTATE now has pending event/receipt contracts and a durable scoped host inbox with duplicate/conflict/restart handling. Next: reviewed consumption, durable workers/outbox and revision/permission checks. 8BALL continues with browser sign-in, account administration and database/worker enforcement; its other remaining milestones are listed in the same ledger. Keep all original model/human/production gates open until evidenced.
+
 # Latest sprint: agency API reads and simpler Situation Room
 
 [Full session](sessions/2026-10-25-agency-api-overview.md) and [receipt](../evidence/agency-api-overview-native-2026-10-25.json) record1291 source/1291 installed-engine/394 native checks on7fbb34a, checkpoint CI and54 subsequent workspace checks after uncertainty wording correction. Continue current development branch feat/agency-authorisation-20261025. Implement browser OIDC, account administration, PostgreSQL access transactions and actor-bound writes/workers next. Current agency surface is read/history/export only. Preserve all broader roadmap and model/human acceptance gates.

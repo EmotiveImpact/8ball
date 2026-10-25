@@ -6,12 +6,14 @@ Last status review: 2026-10-25.
 
 **8BALL is the fixer product. ENDSTATE is the reusable engine underneath it.**
 
+Build objective and completion criteria: [BUILD-GOAL.md](BUILD-GOAL.md). The sections below are the current status for both tracks, not separate backlogs.
+
 ## Checkpoint and release boundary
 
-- Active integration branch: `main`; PR #2.
-- Inspected application baseline: `6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f`.
+- Active integration branch: `feat/agency-authorisation-20261025`; PR #5.
+- Inspected application baseline: `48e572e95be8b28d0b317d7bc8b3a18893a3ef76`.
 - This is a dated snapshot. Refresh the branch, PR and CI at the start of every session.
-- At inspection: draft PR = `false`; merged = `true`; production deployed = `false`.
+- At inspection: draft PR = `true`; merged = `false`; production deployed = `false`.
 - Standalone ENDSTATE package released = `false`.
 
 ## Checkbox meaning
@@ -22,6 +24,9 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 ## Next work
 
+- **ES02-01: Normalised event and authority contract**. Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
+- **ES02-02: Durable ordered updates, idempotency and replay**. Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
+- **B03-01: Identity, organisations and matter-scoped authorisation**. Implement browser OIDC/PKCE/MFA and account administration, PostgreSQL transaction/row enforcement and verified-actor mutations; current agency mode permits scoped read/history/export only.
 - **B02-09: Reliable reviewed graph proposals for new situations**. Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
 - **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
 - **B02-11: Independent quality evaluation and production-model selection**. Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval.
@@ -465,16 +470,22 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 ## ENDSTATE 0.2: Event-driven replanning
 
 - [ ] **ES02-01 Normalised event and authority contract**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Events carry source, version, occurrence/receipt time, matter scope and review status; incoming text never gets command authority.
-  - Next: Define the observe/propose/review/commit/replan boundary.
+  - Next: Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
+  - Branch/base: `feat/agency-authorisation-20261025` / `48e572e95be8b28d0b317d7bc8b3a18893a3ef76`.
   - Dependencies: `ES01-01`.
+  - Existing code: `endstate/events.py`, `eightball/event_inbox.py`, `tests/test_event_inbox.py`.
+  - Evidence: `EV-EVENT-INBOX` (registry below).
 
 - [ ] **ES02-02 Durable ordered updates, idempotency and replay**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Duplicate, delayed, reordered and retried events cannot corrupt state or revive expired permissions.
-  - Next: Implement event/outbox contracts and fault-injection tests.
+  - Next: Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
+  - Branch/base: `feat/agency-authorisation-20261025` / `48e572e95be8b28d0b317d7bc8b3a18893a3ef76`.
   - Dependencies: `ES02-01`.
+  - Existing code: `endstate/events.py`, `eightball/event_inbox.py`, `tests/test_event_inbox.py`.
+  - Evidence: `EV-EVENT-INBOX` (registry below).
 
 - [ ] **ES02-03 Reviewed graph amendments and affected-route explanations**
   - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
@@ -947,3 +958,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `controlled_api_and_browser`.
 - Repository evidence: [docs/evidence/agency-api-overview-native-2026-10-25.json](../../docs/evidence/agency-api-overview-native-2026-10-25.json).
 - Result/scope: 1291 source +1291 installed-engine +394 native browser checks and checkpoint CI passed. Final uncertainty wording passed54 native workspace checks. Agency boundary remains read-only and pre-production.
+
+### EV-EVENT-INBOX
+
+- Kind: `controlled_event_persistence`.
+- Repository evidence: [docs/delivery/sessions/2026-10-25-endstate-event-inbox.md](../../docs/delivery/sessions/2026-10-25-endstate-event-inbox.md).
+- Result/scope: 11 focused event/inbox tests passed; cumulative native validation pending. No live connector, model, case mutation, worker or outbox.
