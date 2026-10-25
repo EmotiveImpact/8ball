@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "2026-10-25-vault-immutable-originals",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8-vault-engineering",
+      "title": "Isolated encrypted originals and transaction-bound source gates",
+      "summary": "Implement bounded fictional text-original vault services, registerable API and explicit-control UI seam for existing B03-02. No shared app wiring or production/independent acceptance is claimed.",
+      "delivery": "pushed_unreleased",
+      "added": [
+        "AES-GCM envelope-encrypted immutable exact UTF-8 originals with SHA-256, quarantine and explicit hash/revision-bound scanner lifecycle, cancellation/restart/idempotency without automatic retry.",
+        "Current-authority scope/object checks, separate privileged controls, retention/hold/guarded local-only ciphertext deletion, append-only locally verified audit chain and same-transaction require_source publication gate.",
+        "Bounded strict registerable FastAPI routes, scoped mountable UI and44 fictional service/ASGI/security tests."
+      ],
+      "changed": [
+        "No shared router/store/navigation/manifests, Source Desk, existing alpha source or frozen canonical delivery register changed. Integrator must explicitly mount and inject current identity/session, key/scanner/deletion/provenance adapters."
+      ],
+      "fixed": [],
+      "verification": [
+        "44 focused vault tests pass; final full shell regression1400 passed in60.05s on functional commita228fa169a40b9014b930bf4aeac215960f751f8, Python compilation and all19 browser-module syntax checks passed; only a dependency TestClient deprecation warning remains.",
+        "Initial full run96 Node-PATH failures/1299 passes retained, corrected by using existing nvm Node24 on PATH. Later added post-unwrap expiry test exposed caller-row-factory dependency (targeted1fail43pass/full1fail1399pass); cursor-local Row handling and authority recheck fixed it, retaining regression without weakening tests.",
+    "Unmodified canonical delivery/emergence validators pass and changelog --check passes; changelog --check --base remains the explicit central-integration gate until canonical fragments are appended. Virtual additive119-discovery/59-entry merge passed existing schema/evidence/history/base validators and rendering in an isolated460-file overlay without canonical edits. Lane fragments are proposals, not a replacement status ledger."
+      ],
+      "limitations": [
+        "Fictional local bounded UTF-8 text engineering only; not managed KMS, real malware detection, independent audit anchoring, storage-wide/legal erasure, backup/recovery or production tenant-isolation evidence.",
+        "No common-router/UI/navigation or Source Desk/projection wiring, native/browser/accessibility/operator/professional acceptance, real client data, paid/live inference or external send. B03-01 and all security/production gates remain open.",
+        "Delivery proposal may be applied centrally only with this lane's remote-head verification; no PR/main/release/deployment/pilot permission is implied."
+      ],
+      "task_ids": [
+        "B03-02"
+      ],
+      "evidence_paths": [
+        "docs/v2/VAULT.md",
+        "docs/delivery/lane-reports/vault.md",
+        "tests/test_vault.py",
+        "tests/test_vault_api.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "The vault's existing WRITE grant cannot safely imply scan, lawful-hold, retention, local-deletion or audit powers. A separate current transactional control callback is required and missing control denies.",
+          "Revocation, scan cancellation and hold/retention revision changes during scanning invalidate publication even when a scanner later reports clean. Interrupted scans must not automatically resume or repeat on command replay.",
+          "Deleting a local encrypted blob can preserve an immutable descriptor and audited tombstone while leaving derived text, WAL/filesystem remnants, backups, replicas and provider retention outside its scope. Without current dependency clearance the vault must deny deletion.",
+          "A source handle returned before projection publication can become stale, revoked or unavailable. The final source gate must run on the caller's same-database transaction and verify current scope, exact revision/hash, clean release and authenticated ciphertext, with audit rolled back alongside the mutation.",
+          "AES-GCM protects original bytes and authenticates their descriptor, but filenames, scope metadata and audit identifiers remain outside the content envelope. SQLite triggers/hash chains do not protect against an administrator rewriting or truncating the database and chain.",
+          "The isolated panel separates immutable original version from mutable vault revision and clears visible object data/disables mutations after an uncertain command outcome. Disposal/generation guards reject late responses; no automatic retry is performed. These are implemented safeguards, not browser or operator-value evidence."
+        ],
+        "risks": [
+          "Separate-connection revocation races, stale scan/projection publication, privileged-control conflation, overclaimed deletion and metadata/audit/key custody."
+        ],
+        "architecture_implications": [
+          "Source/collaboration final checks must share one BEGIN IMMEDIATE transaction; handles never authorize later transactions. Privileged controls and injected infrastructure stay distinct from kernel calculation and factual evidence."
+        ],
+        "roadmap_decision": "existing_task B03-02 safeguards only: EM-153/154/155/156/158 adopted bounded implementation; EM-157 deferred production custody/security gate. No new required task, owner approval or broad status promotion.",
+        "insight_ids": [
+          "EM-153",
+          "EM-154",
+          "EM-155",
+          "EM-156",
+          "EM-157",
+          "EM-158"
+        ]
+      }
+    }
+  ]
+}
