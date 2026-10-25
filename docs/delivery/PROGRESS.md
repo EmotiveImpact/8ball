@@ -26,7 +26,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 - **ES02-01: Normalised event and authority contract**. Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
 - **ES02-02: Durable ordered updates, idempotency and replay**. Integrate explicit event-review UI/API and host worker dispatch. Local atomic outbox now retains per-reader delivery; actual daemon, production isolation, migration, measured replanning and original model/human gates remain unfinished.
-- **B03-01: Identity, organisations and matter-scoped authorisation**. Implement browser OIDC/PKCE/MFA and account administration, PostgreSQL transaction/row enforcement and verified-actor mutations; current agency mode permits scoped read/history/export only.
+- **B03-01: Identity, organisations and matter-scoped authorisation**. Build the browser event-review surface and authenticated host worker dispatch around the current identity/revision-checked API; retain OIDC login, PostgreSQL isolation, migration, performance and original model/human gates.
 - **B02-09: Reliable reviewed graph proposals for new situations**. Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
 - **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
 - **B02-11: Independent quality evaluation and production-model selection**. Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval.
@@ -328,10 +328,10 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **B03-01 Identity, organisations and matter-scoped authorisation**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Authenticated identities and cross-tenant/matter denial tests cover read, write, export, search and model inference.
-  - Next: Implement browser OIDC/PKCE/MFA and account administration, PostgreSQL transaction/row enforcement and verified-actor mutations; current agency mode permits scoped read/history/export only.
-  - Branch/base: `feat/agency-authorisation-20261025` / `75fb95fd5c15f0f0d0b040d5b679de72f19e9ee6`.
-  - Existing code: `eightball/authorisation.py`, `tests/test_authorisation.py`, `eightball/agency_access.py`, `tests/test_agency_access.py`.
-  - Evidence: `EV-SECURITY`, `EV-AGENCY-POLICY`, `EV-AGENCY-API` (registry below).
+  - Next: Build the browser event-review surface and authenticated host worker dispatch around the current identity/revision-checked API; retain OIDC login, PostgreSQL isolation, migration, performance and original model/human gates.
+  - Branch/base: `feat/agency-authorisation-20261025` / `fd57f16dd66a1ce52a3f60144ddbeaf8fcfc117c`.
+  - Existing code: `eightball/authorisation.py`, `tests/test_authorisation.py`, `eightball/agency_access.py`, `tests/test_agency_access.py`, `eightball/v2/event_api.py`.
+  - Evidence: `EV-SECURITY`, `EV-AGENCY-POLICY`, `EV-AGENCY-API`, `EV-EVENT-API` (registry below).
 
 - [ ] **B03-02 Encrypted evidence vault and retention controls**
   - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
@@ -490,20 +490,20 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **ES02-03 Reviewed graph amendments and affected-route explanations**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: New information can propose a graph/dependency change, but cannot remove restrictions until reviewed at the correct revision.
-  - Next: Integrate explicit reviewed-event UI/API and durable worker/outbox around the tested local transaction; retain current identity/revision checks and prove cancellation, replay and full-versus-incremental replanning. Production database isolation and human/model gates remain separate.
-  - Branch/base: `feat/agency-authorisation-20261025` / `cbbe5eaa028bbb9c6427ac721570eaa67a402fad`.
+  - Next: Build the browser event-review surface and authenticated host worker dispatch around the current identity/revision-checked API; retain OIDC login, PostgreSQL isolation, migration, performance and original model/human gates.
+  - Branch/base: `feat/agency-authorisation-20261025` / `fd57f16dd66a1ce52a3f60144ddbeaf8fcfc117c`.
   - Dependencies: `ES02-01`, `ES01-02`.
-  - Existing code: `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`.
-  - Evidence: `EV-EVENT-CONSUMPTION` (registry below).
+  - Existing code: `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_api.py`, `tests/test_agency_access.py`.
+  - Evidence: `EV-EVENT-CONSUMPTION`, `EV-EVENT-API` (registry below).
 
 - [ ] **ES02-04 Freshness, cancellation and performance evidence**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Measured latencies include ingestion, inference and review; incremental replan results match full recomputation; cancelled/stale work cannot commit.
-  - Next: Integrate explicit event-review UI/API and host worker dispatch. Local atomic outbox now retains per-reader delivery; actual daemon, production isolation, migration, measured replanning and original model/human gates remain unfinished.
-  - Branch/base: `feat/agency-authorisation-20261025` / `e0ae9b081629239a16ce79e95628cf504227fbc6`.
+  - Next: Build the browser event-review surface and authenticated host worker dispatch around the current identity/revision-checked API; retain OIDC login, PostgreSQL isolation, migration, performance and original model/human gates.
+  - Branch/base: `feat/agency-authorisation-20261025` / `fd57f16dd66a1ce52a3f60144ddbeaf8fcfc117c`.
   - Dependencies: `ES02-02`, `ES02-03`.
-  - Existing code: `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_outbox.py`.
-  - Evidence: `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX` (registry below).
+  - Existing code: `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_outbox.py`, `eightball/v2/event_api.py`, `tests/test_agency_access.py`.
+  - Evidence: `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-API` (registry below).
 
 - [x] **ES02-05 Bounded structural emergence detectors and typed explanations** (optional, not a version gate)
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-24.
@@ -994,3 +994,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `controlled_local_delivery`.
 - Repository evidence: [docs/evidence/endstate-outbox-native-2026-10-25.json](../../docs/evidence/endstate-outbox-native-2026-10-25.json).
 - Result/scope: 1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed. Local pull-based delivery only; daemon/browser/production/model/human gates remain unfinished.
+
+### EV-EVENT-API
+
+- Kind: `controlled_authenticated_api`.
+- Repository evidence: [docs/delivery/sessions/2026-10-25-endstate-event-api.md](../../docs/delivery/sessions/2026-10-25-endstate-event-api.md).
+- Result/scope: Signed-identity review/read/notice API implemented; cumulative validation pending. Browser review, worker and production/model/human gates remain unfinished.

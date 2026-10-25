@@ -4,6 +4,44 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Connect reviewed ENDSTATE events to authenticated API
+
+2026-10-25 · `local_unreleased`
+
+Expose explicit source/result review and local notice delivery through signed identity and transactional permission checks.
+
+### Added
+
+- Event detail/review and notice pull/acknowledgement routes for shared-registry agency mode.
+- Signed API regression coverage for identity spoofing, scope, stale/cancelled work and revoked permissions.
+
+### Changed
+
+- HTTP review explicitly requires current read and write permission.
+
+### Verification
+
+- Focused and cumulative native validation pending.
+
+### Limitations
+
+- No browser review screen, OIDC browser login, worker daemon, production isolation or external send.
+- No actual-model or genuine independent/human acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A route guard may pass before a grant is revoked, and a separate registry cannot participate in the case transaction. A write response containing source/result provenance also requires current read access, even when write permission is present.
+- Risk: A successful route guard alone is not transaction-wide authority.
+- Architecture: Shared registry/case database and read/write revalidation in review commit.
+- Roadmap decision: existing_task: advance authenticated review without relaxing production gates.
+Registered discoveries: EM-106.
+
+Roadmap items: `B03-01`, `ES02-03`, `ES02-04`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-endstate-event-api.md](docs/delivery/sessions/2026-10-25-endstate-event-api.md), [eightball/v2/event_api.py](eightball/v2/event_api.py).
+
 ## 0.2.0-alpha.8 · Verify durable local delivery against full native suite
 
 2026-10-25 · `local_unreleased`

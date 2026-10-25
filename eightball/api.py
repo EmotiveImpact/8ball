@@ -195,7 +195,10 @@ def make_app(store: Store, token: str, *, agency_access=None) -> FastAPI:
     async def value_error(request, exc):
         return JSONResponse({'detail': 'Invalid fields or references' if isinstance(exc,ValidationError) else str(exc)},status_code=422)
 
-    v2_routes = v2_router(V2Store(store.path),store,authorised)
+    # Event review transactions require the same durable registry as the cases.
+    agency_events = (agency_access is not None and
+                     Path(agency_access.registry.path).resolve() == Path(store.path).resolve())
+    v2_routes = v2_router(V2Store(store.path),store,authorised,agency_events=agency_events)
     app.state.analysis_jobs = v2_routes.analysis_jobs
     app.include_router(v2_routes)
     web = Path(__file__).resolve().parent.parent / 'web'

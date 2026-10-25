@@ -30,8 +30,34 @@ class EventReviews:
                 organisation_id TEXT NOT NULL, matter_id TEXT NOT NULL,
                 record TEXT NOT NULL, digest TEXT NOT NULL)''')
 
+    def view(self, *, work_id: str, case_id: str, reader: Identity):
+        """Read original source and output at one current authorised snapshot."""
+        with self.store.connection() as db:
+            db.execute('BEGIN IMMEDIATE')
+            _, scope = EventOutbox._authorize(db, case_id, reader)
+            work = db.execute('SELECT * FROM event_work WHERE id=? AND organisation_id=? AND matter_id=?',
+                              (work_id, *scope)).fetchone()
+            if work is None:
+                raise KeyError('Processing attempt not found')
+            row = db.execute('''SELECT sequence,received_at,body,digest FROM incoming_events
+                WHERE organisation_id=? AND matter_id=? AND sequence=?''',
+                (*scope, work['sequence'])).fetchone()
+            if row is None:
+                raise Conflict('Incoming event is missing')
+            receipt = EventInbox._receipt(tuple(row))
+            if (receipt.event.organisation_id, receipt.event.matter_id) != scope:
+                raise Conflict('Incoming event scope is corrupt')
+            case = self.store._get(db, case_id)
+            result = dict(work_id=work_id, case_id=case_id, state=work['state'],
+                          base_revision=work['base_revision'], current_revision=case.revision,
+                          source_receipt=receipt.model_dump(mode='json'), original_result=work['result'],
+                          reviewable=work['state']=='awaiting_review' and work['base_revision']==case.revision,
+                          command_authority=False)
+            EventOutbox._authorize(db, case_id, reader)
+            return result
+
     def commit_graph(self, *, work_id: str, case_id: str, reviewer: Identity,
-                     command: Command, rationale: str):
+                     command: Command, rationale: str, require_read: bool = False):
         if not isinstance(reviewer, Identity) or not isinstance(command, Command):
             raise ValueError('Verified identity and typed command required')
         if command.kind != 'replace_graph' or not isinstance(rationale, str) or len(rationale.strip()) < 10 or len(rationale) > 2000:
@@ -49,6 +75,8 @@ class EventReviews:
                            db.execute('SELECT body FROM agency_grants WHERE revoked=0'))
             if not permits(reviewer, scope, Operation.WRITE, grants, now=now):
                 raise PermissionError('Current matter write permission is required')
+            if require_read and not permits(reviewer, scope, Operation.READ, grants, now=now):
+                raise PermissionError('Current matter read permission is required')
             source_row = db.execute('''SELECT sequence,received_at,body,digest FROM incoming_events
                 WHERE organisation_id=? AND matter_id=? AND sequence=?''',
                 (scope.organisation_id, scope.matter_id, work['sequence'])).fetchone()
@@ -96,8 +124,11 @@ class EventReviews:
                         canonical(record), digest(record)))
             db.execute("UPDATE event_work SET state='committed',token_hash=NULL WHERE id=?", (work_id,))
             EventOutbox.append(db, record)
-            if not permits(reviewer, scope, Operation.WRITE, grants, now=utcnow()):
+            commit_time = utcnow()
+            if not permits(reviewer, scope, Operation.WRITE, grants, now=commit_time):
                 raise PermissionError('Write permission expired before commit')
+            if require_read and not permits(reviewer, scope, Operation.READ, grants, now=commit_time):
+                raise PermissionError('Read permission expired before commit')
             db.commit()
             return record
 

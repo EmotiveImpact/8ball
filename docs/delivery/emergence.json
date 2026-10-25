@@ -3806,6 +3806,36 @@
           "reason": "existing_task: local durable delivery foundation; external effects and production acceptance remain unimplemented."
         }
       ]
+    },
+    {
+      "id": "EM-106",
+      "title": "Reviewed API writes must share the grant transaction and authorise returned source",
+      "origin": "Authenticated event review API",
+      "first_seen": "2026-10-25",
+      "evidence_level": "observed_in_build",
+      "observation": "A route guard may pass before a grant is revoked, and a separate registry cannot participate in the case transaction. A write response containing source/result provenance also requires current read access, even when write permission is present.",
+      "product_implication": "Register event routes only with a shared case/registry database, bind JWT identity server-side, and require READ plus WRITE inside the HTTP review transaction.",
+      "task_ids": [
+        "B03-01",
+        "ES02-03",
+        "ES02-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-03"
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-endstate-event-api.md",
+        "eightball/v2/event_api.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex",
+          "reason": "existing_task: verified local review API with unchanged production and human gates."
+        }
+      ]
     }
   ]
 }

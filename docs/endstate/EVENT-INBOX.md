@@ -42,3 +42,7 @@ Results can await review; they cannot mutate a case. Permission and revision obs
 ## Transactional local notice outbox
 
 `eightball.v2.event_outbox.EventOutbox` inserts a small reviewed-change notice in the same transaction as graph consumption. Trusted authenticated readers require current whole-matter READ grants to pull or acknowledge. The oldest unacknowledged case notice repeats until acknowledged; delivery is durable and independent for each reader. Acknowledgement never approves an action or modifies the case. Notices verify their metadata against the review record. No external sender, worker daemon, browser surface or historical backfill is installed. See [session](../delivery/sessions/2026-10-25-endstate-outbox.md).
+
+## Authenticated event API
+
+With agency mode configured against the same database as cases, `/api/v2/cases/{case_id}/event-work/{work_id}` returns original source/result and reviewability under current READ permission. POST `.../review` accepts only an explicit `command` and `rationale`; the verified JWT supplies reviewer identity and the transaction requires READ plus WRITE. POST `/api/v2/cases/{case_id}/change-notices/pull` and `.../{notice_id}/acknowledge` use current READ permission and never approve actions. Other unsupported agency mutation/model routes remain denied. These routes are absent for local-token mode or a separate access database. No browser review UI or external delivery is installed. [Session](../delivery/sessions/2026-10-25-endstate-event-api.md).

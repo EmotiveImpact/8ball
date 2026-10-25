@@ -75,17 +75,21 @@ class AgencyAccess:
 
     def __call__(self, request: Request):
         identity = self.identity(request.headers.get('authorization', ''))
-        # Explicit read surface only until mutation transactions carry verified
-        # actors and worker publication rechecks revocation. Unknown routes deny.
+        # Only explicitly mapped operations are exposed. Reviewed-event writes
+        # recheck permissions/revision inside their own case transaction.
         case_id = request.path_params.get('case_id')
         operations = {
-            '/api/v2/cases/{case_id}': Operation.READ,
-            '/api/v2/cases/{case_id}/history': Operation.READ,
-            '/api/v2/cases/{case_id}/export': Operation.EXPORT,
+            ('GET', '/api/v2/cases/{case_id}'): Operation.READ,
+            ('GET', '/api/v2/cases/{case_id}/history'): Operation.READ,
+            ('GET', '/api/v2/cases/{case_id}/export'): Operation.EXPORT,
+            ('GET', '/api/v2/cases/{case_id}/event-work/{work_id}'): Operation.READ,
+            ('POST', '/api/v2/cases/{case_id}/event-work/{work_id}/review'): Operation.WRITE,
+            ('POST', '/api/v2/cases/{case_id}/change-notices/pull'): Operation.READ,
+            ('POST', '/api/v2/cases/{case_id}/change-notices/{notice_id}/acknowledge'): Operation.READ,
         }
         route = request.scope.get('route')
-        operation = operations.get(getattr(route, 'path', ''))
-        if (request.method != 'GET' or not case_id or operation is None
+        operation = operations.get((request.method, getattr(route, 'path', '')))
+        if (not case_id or operation is None
                 or not self.registry.allowed(identity, case_id, operation)):
             raise HTTPException(403, 'Access is not permitted')
         request.state.agency_identity = identity

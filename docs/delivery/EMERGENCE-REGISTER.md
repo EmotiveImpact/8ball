@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **105 recorded discoveries.**
+Last review: 2026-10-25. **106 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1919,3 +1919,20 @@ A committed graph review can be lost to downstream readers if notice creation oc
 **Decision history:**
 
 - 2026-10-25 · adopted · Codex: existing_task: local durable delivery foundation; external effects and production acceptance remain unimplemented.
+
+### [ ] EM-106: Reviewed API writes must share the grant transaction and authorise returned source
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Authenticated event review API.
+
+A route guard may pass before a grant is revoked, and a separate registry cannot participate in the case transaction. A write response containing source/result provenance also requires current read access, even when write permission is present.
+
+**Product implication:** Register event routes only with a shared case/registry database, bind JWT identity server-side, and require READ plus WRITE inside the HTTP review transaction.
+
+**Roadmap links:** `B03-01` (partial), `ES02-03` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-03`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-25-endstate-event-api.md`, `eightball/v2/event_api.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: verified local review API with unchanged production and human gates.
