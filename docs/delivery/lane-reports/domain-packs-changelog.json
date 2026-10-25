@@ -8,7 +8,7 @@
       "version": "0.2.0-alpha.8-domain-packs-preview",
       "title": "Internal data-only domain-pack and consumer preview",
       "summary": "Add strict domain-pack inputs, explicit all-section content pins, conservative migration reports and a read-only scoped consumer; four fictional catalogues use the unchanged kernel without launching another product.",
-      "delivery": "local_unreleased",
+      "delivery": "pushed_unreleased",
       "added": [
         "Versioned bounded JSON pack schema/loader with native graph/action/policy contracts, vocabulary, mappings, explicit confirmation rules, inert prompts and host-registered integration declarations.",
         "Neutral/sales/support fictional reuse fixtures and an exact export of the existing product-owned supplier playbook; detached current-authority scoped read-only consumer and conservative review-only migrations.",
