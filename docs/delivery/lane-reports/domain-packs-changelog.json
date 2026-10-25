@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "product": "8BALL, powered by ENDSTATE",
+  "entries": [
+    {
+      "id": "2026-10-25-domain-packs-source-consumer",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8-domain-packs-preview",
+      "title": "Internal data-only domain-pack and consumer preview",
+      "summary": "Add strict domain-pack inputs, explicit all-section content pins, conservative migration reports and a read-only scoped consumer; four fictional catalogues use the unchanged kernel without launching another product.",
+      "delivery": "local_unreleased",
+      "added": [
+        "Versioned bounded JSON pack schema/loader with native graph/action/policy contracts, vocabulary, mappings, explicit confirmation rules, inert prompts and host-registered integration declarations.",
+        "Neutral/sales/support fictional reuse fixtures and an exact export of the existing product-owned supplier playbook; detached current-authority scoped read-only consumer and conservative review-only migrations.",
+        "Source-isolated consumer and negative tests, distribution/ownership documentation, exact lane receipt and complete emergence review."
+      ],
+      "changed": [],
+      "fixed": [],
+      "verification": [
+        "95 focused tests passed (59 domain-pack + 36 retained kernel); 1415 full source tests passed with one upstream Starlette/AnyIO deprecation warning.",
+        "Python compilation and all 18 browser-module syntax checks passed. Ten original native browser suites completed with 352 checks; Studio failed the frozen newest-changelog local-unreleased assertion, with no bridge or fake pass.",
+        "Existing internal-wheel smoke passed; full installed-wheel regressions FAILED collection because the integration-owned package manifest omits the new subpackage. Initial setup/focused failures and corrected commands are retained in the receipt."
+      ],
+      "limitations": [
+        "Source-only internal engineering preview, not complete ES04/ES10 or native/package acceptance. Integrator must include endstate.domain_packs in the frozen manifest, reconcile truthful changelog/test state and rerun combined native acceptance.",
+        "No current transactional production isolation, async cancellation fencing, real model/professional/human acceptance, second application, public SDK/API/MCP, connector execution, automatic case migration, licence/support commitment or independent release approval.",
+        "No shared/canonical tracking edits in this builder; lane-local fragments need serial integration and regeneration."
+      ],
+      "task_ids": [
+        "ES04-01",
+        "ES04-02",
+        "ES04-03",
+        "ES04-04",
+        "ES10-01",
+        "ES10-02"
+      ],
+      "evidence_paths": [
+        "endstate/domain_packs/contracts.py",
+        "endstate/domain_packs/loader.py",
+        "endstate/domain_packs/consumer.py",
+        "tests/test_domain_packs.py",
+        "tests/fixtures/domain_packs/fixer.json",
+        "tests/fixtures/domain_packs/neutral.json",
+        "tests/fixtures/domain_packs/sales.json",
+        "tests/fixtures/domain_packs/support.json",
+        "docs/endstate/DOMAIN-PACKS.md",
+        "docs/delivery/lane-reports/domain-packs.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "A canonical all-section pack digest can detect changes to prompts, policies and adapter declarations, but neither a digest nor a caller subject authenticates a consumer. The read-only consumer needs independently host-authenticated identity, current scoped grants and a fresh revision-bound snapshot; local bearer identity, cross-scope requests and post-read revocation are rejected in focused tests.",
+          "The support reuse fixture originally had confirmed policy state. A reusable pack must reject that state, while a live host snapshot may independently record manual policy review. Focused tests show that review alone still cannot satisfy an unobserved authority predicate, and that unrelated catalogue changes fail review matching.",
+          "The frozen setuptools manifest lists only endstate. The internal wheel smoke passes but omits endstate.domain_packs; the actual installed-wheel regression run fails test collection with ModuleNotFoundError. Source-isolated reuse and 1415 source tests therefore do not prove this preview ships. No top-level LICENSE/LICENCE file or independent release approval was found/created in this checkpoint."
+        ],
+        "risks": [
+          "Pack declarations or hashes mistaken for host authority, executable integration registration or verified facts.",
+          "Source-only packaging success mistaken for distribution/release or complete native acceptance."
+        ],
+        "architecture_implications": [
+          "Keep data-only templates detached from source-backed case state; host injects current-authority/scoped reads and retains transactional commits.",
+          "Package manifest and canonical tracking are integration-owned; no automatic public exposure or live migrations."
+        ],
+        "roadmap_decision": "existing_task / decision_record only for ES04-01..04 and ES10-01..02; preserve all prerequisite, human, licence/support and independent release gates. No new required tasks.",
+        "insight_ids": [
+          "EM-213",
+          "EM-214",
+          "EM-215"
+        ]
+      }
+    }
+  ]
+}

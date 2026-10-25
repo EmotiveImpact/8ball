@@ -1,0 +1,347 @@
+{
+  "schema_version": "endstate.domain-pack.v1",
+  "pack_id": "support",
+  "pack_version": "0.1.0",
+  "engine_contract": "endstate.plan.v1",
+  "owner": "Fictional support evaluation owner",
+  "description": "Fictional support reuse fixture, not a launched product.",
+  "distribution": "internal_review_required",
+  "vocabulary": [
+    {
+      "concept": "snapshot",
+      "singular": "Snapshot",
+      "plural": "Snapshots"
+    },
+    {
+      "concept": "actor",
+      "singular": "Participant",
+      "plural": "Participants"
+    },
+    {
+      "concept": "action",
+      "singular": "Action",
+      "plural": "Actions"
+    },
+    {
+      "concept": "condition",
+      "singular": "Condition",
+      "plural": "Conditions"
+    },
+    {
+      "concept": "objective",
+      "singular": "Outcome",
+      "plural": "Outcomes"
+    },
+    {
+      "concept": "evidence",
+      "singular": "Source",
+      "plural": "Sources"
+    },
+    {
+      "concept": "observation",
+      "singular": "Observation",
+      "plural": "Observations"
+    },
+    {
+      "concept": "question",
+      "singular": "Question",
+      "plural": "Questions"
+    }
+  ],
+  "object_mappings": [
+    {
+      "product_object": "support_record",
+      "engine_object": "snapshot",
+      "description": "Detached read-only planning inputs; host owns records and authority."
+    },
+    {
+      "product_object": "work_item",
+      "engine_object": "action",
+      "description": "An intended effect is not an observation."
+    }
+  ],
+  "catalogue": {
+    "graph": {
+      "conditions": [
+        {
+          "id": "ready",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "Fictional engineering catalogue; not professionally validated.",
+            "run_id": null
+          },
+          "title": "Remedy delivered",
+          "confirmation": "Reviewed direct confirmation",
+          "kind": "prerequisite",
+          "due_at": null,
+          "criticality": "ordinary",
+          "actor_id": null
+        },
+        {
+          "id": "verified",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "Fictional engineering catalogue; not professionally validated.",
+            "run_id": null
+          },
+          "title": "Required outcome confirmed",
+          "confirmation": "Reviewed confirmation of the full stated outcome",
+          "kind": "prerequisite",
+          "due_at": null,
+          "criticality": "ordinary",
+          "actor_id": null
+        },
+        {
+          "id": "authority",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "Fictional engineering catalogue; not professionally validated.",
+            "run_id": null
+          },
+          "title": "Remedy authority established",
+          "confirmation": "Recorded approval within limits",
+          "kind": "prerequisite",
+          "due_at": null,
+          "criticality": "ordinary",
+          "actor_id": null
+        }
+      ],
+      "actions": [
+        {
+          "id": "route_a",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "Fictional engineering catalogue; not professionally validated.",
+            "run_id": null
+          },
+          "title": "Deliver approved replacement",
+          "owner": "Support lead",
+          "purpose": "Deliver approved replacement",
+          "requires": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "guard": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "effects": [
+            {
+              "condition_id": "ready",
+              "value": true
+            }
+          ],
+          "minutes": 20,
+          "cost": 100,
+          "risk": "low",
+          "approval_required": true,
+          "contingent": true,
+          "wait_minutes": null,
+          "earliest_start": null,
+          "expires_at": null,
+          "reversibility": "reversible",
+          "side_effects": [],
+          "actor_ids": [],
+          "resources": [],
+          "decision_id": null,
+          "decision_option": null,
+          "enabled": true,
+          "contingencies": []
+        },
+        {
+          "id": "route_b",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "Fictional engineering catalogue; not professionally validated.",
+            "run_id": null
+          },
+          "title": "Complete approved refund",
+          "owner": "Support lead",
+          "purpose": "Complete approved refund",
+          "requires": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "guard": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "effects": [
+            {
+              "condition_id": "ready",
+              "value": true
+            }
+          ],
+          "minutes": 40,
+          "cost": 50,
+          "risk": "low",
+          "approval_required": true,
+          "contingent": true,
+          "wait_minutes": null,
+          "earliest_start": null,
+          "expires_at": null,
+          "reversibility": "reversible",
+          "side_effects": [],
+          "actor_ids": [],
+          "resources": [],
+          "decision_id": null,
+          "decision_option": null,
+          "enabled": true,
+          "contingencies": []
+        },
+        {
+          "id": "verify",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "Fictional engineering catalogue; not professionally validated.",
+            "run_id": null
+          },
+          "title": "Check evidence of the outcome",
+          "owner": "Support lead",
+          "purpose": "Verify the actual result separately from completed work",
+          "requires": {
+            "op": "atom",
+            "condition_id": "ready",
+            "value": true,
+            "args": []
+          },
+          "guard": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "effects": [
+            {
+              "condition_id": "verified",
+              "value": true
+            }
+          ],
+          "minutes": 10,
+          "cost": 0,
+          "risk": "low",
+          "approval_required": false,
+          "contingent": false,
+          "wait_minutes": 0,
+          "earliest_start": null,
+          "expires_at": null,
+          "reversibility": "reversible",
+          "side_effects": [],
+          "actor_ids": [],
+          "resources": [],
+          "decision_id": null,
+          "decision_option": null,
+          "enabled": true,
+          "contingencies": []
+        }
+      ],
+      "objectives": [
+        {
+          "id": "outcome",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "Fictional engineering catalogue; not professionally validated.",
+            "run_id": null
+          },
+          "title": "Agreed outcome",
+          "mandatory": true,
+          "priority": 1,
+          "success": {
+            "op": "atom",
+            "condition_id": "verified",
+            "value": true,
+            "args": []
+          },
+          "failure": null
+        }
+      ]
+    },
+    "constraints": [
+      {
+        "id": "remedy_policy",
+        "provenance": {
+          "origin": "playbook",
+          "references": [],
+          "note": "Fictional engineering catalogue; not professionally validated.",
+          "run_id": null
+        },
+        "title": "Only offer an authorised remedy",
+        "kind": "operational",
+        "hard": true,
+        "predicate": {
+          "op": "atom",
+          "condition_id": "authority",
+          "value": true,
+          "args": []
+        },
+        "action_ids": [
+          "route_a",
+          "route_b"
+        ],
+        "confirmed": false
+      }
+    ],
+    "resources": [],
+    "actors": [],
+    "questions": []
+  },
+  "confirmation_rules": [
+    {
+      "condition_id": "ready",
+      "evidence_requirement": "Reviewed direct confirmation",
+      "reviewer_role": "Fictional support reviewer",
+      "mode": "explicit_reviewed_observation"
+    },
+    {
+      "condition_id": "verified",
+      "evidence_requirement": "Reviewed confirmation of the full stated outcome",
+      "reviewer_role": "Fictional support reviewer",
+      "mode": "explicit_reviewed_observation"
+    },
+    {
+      "condition_id": "authority",
+      "evidence_requirement": "Recorded approval within limits",
+      "reviewer_role": "Fictional support reviewer",
+      "mode": "explicit_reviewed_observation"
+    }
+  ],
+  "prompts": [
+    {
+      "id": "reviewed_graph",
+      "purpose": "graph",
+      "text": "Propose only from explicitly supplied sources and target. Unknown is not false. Keep completion, intended effects, observed results, selected courses and action authority separate. Preserve exact source references; no sends or observations. Return proposals for operator review.",
+      "output_contract": "Host-selected proposal schema; product adapter must bind version and source scope.",
+      "disposition": "proposal_only"
+    }
+  ],
+  "integrations": [
+    {
+      "id": "source_adapter",
+      "adapter_key": "support_source",
+      "contract_version": "1.0.0",
+      "operations": [
+        "source_ingest"
+      ],
+      "required_permissions": [
+        "source_read"
+      ],
+      "activation": "host_registration_required",
+      "external_permission": "explicit_per_operation"
+    }
+  ]
+}
