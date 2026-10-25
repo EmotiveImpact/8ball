@@ -71,8 +71,11 @@ class Search(Strict):
 SORT=Literal['fewest_unknowns','fastest','lowest_cost','fewest_external','least_irreversible','operator_risk']
 
 
-def router(store:Store,legacy,authorised):
+def router(store:Store,legacy,authorised, *, agency_events=False):
     r=APIRouter(prefix='/api/v2',dependencies=[Depends(authorised)])
+    if agency_events:
+        from .event_api import register_event_routes
+        register_event_routes(r, store)
     model_slot=BoundedSemaphore(1)
     jobs=AnalysisJobs(store, model_slot)
     r.analysis_jobs=jobs

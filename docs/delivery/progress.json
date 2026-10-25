@@ -6,28 +6,27 @@
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
   "repository": {
     "full_name": "EmotiveImpact/8ball",
-    "development_branch": "main",
-    "pull_request": 2,
-    "inspected_code_commit": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
-    "inspected_code_tree": "16f9791603f6663ebaacfaca53152cb3bef09c87",
-    "main_at_inspection": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
-    "status_as_of": "2026-10-15",
-    "pr_draft": false,
-    "merged": true,
+    "development_branch": "feat/agency-authorisation-20261025",
+    "pull_request": 5,
+    "inspected_code_commit": "48e572e95be8b28d0b317d7bc8b3a18893a3ef76",
+    "inspected_code_tree": "9b98e9f70d4d29fc32a75e125a1ab6a054040e88",
+    "main_at_inspection": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+    "status_as_of": "2026-10-25",
+    "pr_draft": true,
+    "merged": false,
     "production_deployed": false,
     "standalone_endstate_package_released": false,
     "refresh_required_each_session": true,
     "integration_authority": "docs/decisions/0007-owner-build-consolidation.md",
     "source_merged_not_release_accepted": true,
     "current_sprint": {
-      "branch": "integration/v02-complete-build-20261025",
-      "base_commit": "16b8fff43f5f0614846ac4b01db1ddbe40dcff4e",
+      "branch": "feat/agency-authorisation-20261025",
+      "base_commit": "98ee073a1c5f25658aab915183c696c8b4099985",
+      "tested_code_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
       "status_as_of": "2026-10-25",
       "merged": false,
-      "tested_code_commit": "a9254e6087ef606d581d626bfcda9d7e555c857e",
-      "verification": "1267 source tests, 1267 installed-engine regressions and 391 native browser checks across 11 suites passed; inspection valid before receipt edits.",
-      "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
-      "remote_ci": "Both checkpoint PR workflows passed: 40199806937 and 40199807143. Final receipt-head CI and merge tracked in PR4."
+      "evidence": "docs/evidence/complete-result-retention-native-2026-10-25.json",
+      "verification": "1349 source /1349 installed-engine /423 native browser checks across twelve suites passed; exact inspection and both checkpoint CI workflows passed."
     },
     "verified_sprint_history": [
       {
@@ -60,6 +59,91 @@
         "remote_ci": "API Forbidden; no current remote CI result claimed. New branch is outside configured push triggers.",
         "tested_code_commit": "25ca5e2dce4f28ec33d9b132cccabfa15b23683e",
         "tested_code_tree": "7f282146923e18634693ca3fa739b8d4bc41b494"
+      },
+      {
+        "branch": "integration/v02-complete-build-20261025",
+        "base_commit": "16b8fff43f5f0614846ac4b01db1ddbe40dcff4e",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "tested_code_commit": "a9254e6087ef606d581d626bfcda9d7e555c857e",
+        "verification": "1267 source tests, 1267 installed-engine regressions and 391 native browser checks across 11 suites passed; inspection valid before receipt edits.",
+        "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
+        "remote_ci": "Both checkpoint PR workflows passed: 40199806937 and 40199807143. Final receipt-head CI and merge tracked in PR4."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+        "tested_code_commit": "a5d82bdacafc0d898660ce3ba4a5183a8d7240c3",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/agency-authorisation-native-2026-10-25.json",
+        "verification": "1280 source / 1280 installed-engine / 391 native browser checks passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "75fb95fd5c15f0f0d0b040d5b679de72f19e9ee6",
+        "tested_code_commit": "7fbb34ac346e5e884a7f0dc52908e38be514c4de",
+        "evidence": "docs/evidence/agency-api-overview-native-2026-10-25.json",
+        "status_as_of": "2026-10-25",
+        "merged": false
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "48e572e95be8b28d0b317d7bc8b3a18893a3ef76",
+        "tested_code_commit": "20400336bd5462733755001b42e991c05944e1d1",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-event-inbox-native-2026-10-25.json",
+        "verification": "1302 source /1302 installed-engine /394 native browser checks passed; checkpoint CI passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "5f72a356790b0cd3f0a27e79ba1e9801f4a14937",
+        "tested_code_commit": "e95401aa289be03ab98810955e4fe02fdd8bbea2",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-processing-native-2026-10-25.json",
+        "verification": "1309 source /1309 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "cbbe5eaa028bbb9c6427ac721570eaa67a402fad",
+        "tested_code_commit": "87c5322c23ebe7a3fc062ce15985a3d82d84eea2",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json",
+        "verification": "1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "e0ae9b081629239a16ce79e95628cf504227fbc6",
+        "tested_code_commit": "49f5e04fe8f4f122818c09343aba030338a26347",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-outbox-native-2026-10-25.json",
+        "verification": "1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "fd57f16dd66a1ce52a3f60144ddbeaf8fcfc117c",
+        "tested_code_commit": "cd4ec0c9613c959688c701f293edcdc2dd986fd3",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-event-api-native-2026-10-25.json",
+        "verification": "1345 source /1345 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "825c8c3969f6cf723a188cc6ae16094aa15c9e7e",
+        "tested_code_commit": "461d3f2cecfcd8c4a00da40a56f56763d0d4fc90",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-review-ui-native-2026-10-25.json",
+        "verification": "1346 source /1346 installed-engine /423 native browser checks across 12 suites passed; exact inspection valid. Corrected checkpoint CI unavailable after GitHub authentication failure.",
+        "code_checkpoint_pushed": true,
+        "receipt_pushed": true,
+        "publication_blocker": null,
+        "publication_recovered_commit": "98ee073a1c5f25658aab915183c696c8b4099985"
       }
     ],
     "provider_configuration_preparation": {
@@ -77,12 +161,22 @@
     "integration_20261025": {
       "branch": "integration/v02-complete-build-20261025",
       "base_commit": "16b8fff43f5f0614846ac4b01db1ddbe40dcff4e",
-      "status": "native_and_checkpoint_ci_passed_final_merge_pending",
+      "status": "merged",
       "handoff": "docs/delivery/NEXT-BUILD.md",
       "tested_commit": "a9254e6087ef606d581d626bfcda9d7e555c857e",
       "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
-      "pull_request": 4
-    }
+      "pull_request": 4,
+      "merge_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba"
+    },
+    "inspection_history": [
+      {
+        "development_branch": "main",
+        "pull_request": 2,
+        "inspected_code_commit": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
+        "status_as_of": "2026-10-15",
+        "merged": true
+      }
+    ]
   },
   "evidence": {
     "EV-APP": {
@@ -342,6 +436,71 @@
       "kind": "integration_and_test_handoff",
       "path": "docs/evidence/build-consolidation-native-2026-10-25.json",
       "result": "1267 source + 1267 installed-engine + 391 native browser checks passed; exact inspection valid; both checkpoint CI workflows passed. PR3 closed as already integrated. No model/independent/human acceptance."
+    },
+    "EV-AGENCY-POLICY": {
+      "kind": "controlled_policy_tests",
+      "path": "docs/evidence/agency-authorisation-native-2026-10-25.json",
+      "result": "1280 source tests, 1280 installed-engine regressions and 391 native browser checks passed; source inspection valid. Policy only, not integrated production enforcement."
+    },
+    "EV-AGENCY-API": {
+      "kind": "controlled_api_and_browser",
+      "path": "docs/evidence/agency-api-overview-native-2026-10-25.json",
+      "result": "1291 source +1291 installed-engine +394 native browser checks and checkpoint CI passed. Final uncertainty wording passed54 native workspace checks. Agency boundary remains read-only and pre-production."
+    },
+    "EV-EVENT-INBOX": {
+      "kind": "controlled_event_persistence",
+      "path": "docs/evidence/endstate-event-inbox-native-2026-10-25.json",
+      "result": "1302 source tests,1302 installed-engine regressions and394 native browser checks passed; exact inspection valid and both checkpoint CI runs passed. Incoming events remain pending, with no live worker or case mutation."
+    },
+    "EV-EVENT-WORK": {
+      "kind": "controlled_durable_processing",
+      "path": "docs/evidence/endstate-processing-native-2026-10-25.json",
+      "result": "1309 source +1309 installed-engine +396 native browser checks passed; exact inspection valid and checkpoint CI green. Original failed Plan Review race retained and corrected with deterministic native coverage. No actual-model/independent/human acceptance."
+    },
+    "EV-REVIEW-REFRESH-RACE": {
+      "kind": "native_regression_fix",
+      "path": "docs/evidence/endstate-processing-native-2026-10-25.json",
+      "result": "Retained local native failure; explicit stale-context recovery and deterministic in-flight revision-change coverage now pass."
+    },
+    "EV-EVENT-CONSUMPTION": {
+      "kind": "controlled_atomic_review",
+      "path": "docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json",
+      "result": "1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed. Public writes, worker/outbox, model and human acceptance remain unfinished."
+    },
+    "EV-EVENT-OUTBOX": {
+      "kind": "controlled_local_delivery",
+      "path": "docs/evidence/endstate-outbox-native-2026-10-25.json",
+      "result": "1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed. Local pull-based delivery only; daemon/browser/production/model/human gates remain unfinished."
+    },
+    "EV-EVENT-API": {
+      "kind": "controlled_authenticated_api",
+      "path": "docs/evidence/endstate-event-api-native-2026-10-25.json",
+      "result": "1345 source /1345 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed. Includes explicit case binding; no browser login/review, worker dispatch or production/model/human acceptance."
+    },
+    "EV-EVENT-CASE-BINDING-GAP": {
+      "kind": "preserved_correctness_failure",
+      "path": "docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json",
+      "result": "Failure preserved at f75dad5; corrected in cd4ec0c with four case-binding/migration tests and cumulative 1345 source /1345 installed /396 native checks. See EV-EVENT-API."
+    },
+    "EV-EVENT-REVIEW-UI": {
+      "kind": "native_scoped_review_ui",
+      "path": "docs/evidence/endstate-review-ui-native-2026-10-25.json",
+      "result": "1346 source /1346 installed-engine /423 native browser checks across 12 suites passed; exact inspection valid. Corrected checkpoint CI unavailable after GitHub authentication failure. Browser review implemented for configured account tokens; not genuine human or OIDC acceptance."
+    },
+    "EV-EVENT-REVIEW-CSP-FAILURE": {
+      "kind": "native_failed",
+      "path": "docs/evidence/event-review-native-csp-failure-2026-10-25.json",
+      "result": "Failed native/CI runs preserved. CSP-safe locator assertion with explicit deadline passes corrected full 1346 source /1346 installed /423 native run; see EV-EVENT-REVIEW-UI."
+    },
+    "EV-EVENT-RESULT-SIZE": {
+      "kind": "controlled_boundary_failure",
+      "path": "docs/evidence/event-result-size-boundary-2026-10-25.json",
+      "result": "Historical failure preserved; corrected at baca8ad and verified by full graph restart/review/export plus 1349 source /1349 installed /423 native checks. See EV-EVENT-RESULT-RETENTION."
+    },
+    "EV-EVENT-RESULT-RETENTION": {
+      "kind": "controlled_full_result_retention",
+      "path": "docs/evidence/complete-result-retention-native-2026-10-25.json",
+      "result": "1349 source /1349 installed-engine /423 native browser checks across twelve suites passed; exact inspection and both checkpoint CI workflows passed. Full original graph survives restart, review and export; worker/model/human gates remain unfinished."
     }
   },
   "milestones": [
@@ -870,7 +1029,8 @@
         "EV-NATIVE-CLOSEOUT",
         "EV-PROVIDER-FAILURE-REVIEW",
         "EV-EVALUATION-READINESS",
-        "EV-REVIEW-EVIDENCE-20261018"
+        "EV-REVIEW-EVIDENCE-20261018",
+        "EV-REVIEW-REFRESH-RACE"
       ],
       "blockers": [
         "Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed."
@@ -1139,20 +1299,32 @@
       "id": "B03-01",
       "milestone": "B03",
       "title": "Identity, organisations and matter-scoped authorisation",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Codex",
+      "working_branch": "feat/agency-authorisation-20261025",
+      "base_commit": "825c8c3969f6cf723a188cc6ae16094aa15c9e7e",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "eightball/authorisation.py",
+        "tests/test_authorisation.py",
+        "eightball/agency_access.py",
+        "tests/test_agency_access.py",
+        "eightball/v2/event_api.py",
+        "web/v2/event-review.js",
+        "tests/browser_event_review.py"
+      ],
       "depends_on": [],
       "acceptance": "Authenticated identities and cross-tenant/matter denial tests cover read, write, export, search and model inference.",
       "evidence": [
-        "EV-SECURITY"
+        "EV-SECURITY",
+        "EV-AGENCY-POLICY",
+        "EV-AGENCY-API",
+        "EV-EVENT-API",
+        "EV-EVENT-REVIEW-UI"
       ],
       "blockers": [],
-      "next_action": "Implement from the approved production threat model."
+      "next_action": "Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates."
     },
     {
       "id": "B03-02",
@@ -1503,79 +1675,133 @@
       "id": "ES02-01",
       "milestone": "ES02",
       "title": "Normalised event and authority contract",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Codex",
+      "working_branch": "feat/agency-authorisation-20261025",
+      "base_commit": "48e572e95be8b28d0b317d7bc8b3a18893a3ef76",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "endstate/events.py",
+        "eightball/event_inbox.py",
+        "tests/test_event_inbox.py"
+      ],
       "depends_on": [
         "ES01-01"
       ],
       "acceptance": "Events carry source, version, occurrence/receipt time, matter scope and review status; incoming text never gets command authority.",
-      "evidence": [],
+      "evidence": [
+        "EV-EVENT-INBOX"
+      ],
       "blockers": [],
-      "next_action": "Define the observe/propose/review/commit/replan boundary."
+      "next_action": "Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes."
     },
     {
       "id": "ES02-02",
       "milestone": "ES02",
       "title": "Durable ordered updates, idempotency and replay",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Codex",
+      "working_branch": "feat/agency-authorisation-20261025",
+      "base_commit": "98ee073a1c5f25658aab915183c696c8b4099985",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "endstate/events.py",
+        "eightball/event_inbox.py",
+        "tests/test_event_inbox.py",
+        "eightball/event_work.py",
+        "tests/test_event_work.py",
+        "eightball/v2/event_reviews.py",
+        "tests/test_event_reviews.py",
+        "eightball/v2/event_outbox.py"
+      ],
       "depends_on": [
         "ES02-01"
       ],
       "acceptance": "Duplicate, delayed, reordered and retried events cannot corrupt state or revive expired permissions.",
-      "evidence": [],
+      "evidence": [
+        "EV-EVENT-INBOX",
+        "EV-EVENT-WORK",
+        "EV-EVENT-CONSUMPTION",
+        "EV-EVENT-OUTBOX",
+        "EV-EVENT-CASE-BINDING-GAP",
+        "EV-EVENT-RESULT-SIZE",
+        "EV-EVENT-RESULT-RETENTION"
+      ],
       "blockers": [],
-      "next_action": "Implement event/outbox contracts and fault-injection tests."
+      "next_action": "Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates."
     },
     {
       "id": "ES02-03",
       "milestone": "ES02",
       "title": "Reviewed graph amendments and affected-route explanations",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Codex",
+      "working_branch": "feat/agency-authorisation-20261025",
+      "base_commit": "825c8c3969f6cf723a188cc6ae16094aa15c9e7e",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "eightball/v2/event_reviews.py",
+        "tests/test_event_reviews.py",
+        "eightball/v2/event_api.py",
+        "tests/test_agency_access.py",
+        "web/v2/event-review.js",
+        "tests/browser_event_review.py"
+      ],
       "depends_on": [
         "ES02-01",
         "ES01-02"
       ],
       "acceptance": "New information can propose a graph/dependency change, but cannot remove restrictions until reviewed at the correct revision.",
-      "evidence": [],
+      "evidence": [
+        "EV-EVENT-CONSUMPTION",
+        "EV-EVENT-API",
+        "EV-EVENT-CASE-BINDING-GAP",
+        "EV-EVENT-REVIEW-UI",
+        "EV-EVENT-REVIEW-CSP-FAILURE"
+      ],
       "blockers": [],
-      "next_action": "Separate observed fact updates from catalogue/graph amendments."
+      "next_action": "Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates."
     },
     {
       "id": "ES02-04",
       "milestone": "ES02",
       "title": "Freshness, cancellation and performance evidence",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Codex",
+      "working_branch": "feat/agency-authorisation-20261025",
+      "base_commit": "98ee073a1c5f25658aab915183c696c8b4099985",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "eightball/event_work.py",
+        "tests/test_event_work.py",
+        "eightball/v2/event_reviews.py",
+        "tests/test_event_reviews.py",
+        "eightball/v2/event_outbox.py",
+        "eightball/v2/event_api.py",
+        "tests/test_agency_access.py",
+        "web/v2/event-review.js",
+        "tests/browser_event_review.py"
+      ],
       "depends_on": [
         "ES02-02",
         "ES02-03"
       ],
       "acceptance": "Measured latencies include ingestion, inference and review; incremental replan results match full recomputation; cancelled/stale work cannot commit.",
-      "evidence": [],
+      "evidence": [
+        "EV-EVENT-WORK",
+        "EV-EVENT-CONSUMPTION",
+        "EV-EVENT-OUTBOX",
+        "EV-EVENT-API",
+        "EV-EVENT-REVIEW-UI",
+        "EV-EVENT-RESULT-SIZE",
+        "EV-EVENT-RESULT-RETENTION"
+      ],
       "blockers": [],
-      "next_action": "Define target workloads and latency budgets before a real-time claim."
+      "next_action": "Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates."
     },
     {
       "id": "ES03-01",
@@ -1882,9 +2108,9 @@
       "status": "partial",
       "required": true,
       "owner": "Codex",
-      "working_branch": "fix/v02-provider-failure-evidence-20261015",
-      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
-      "updated_on": "2026-10-15",
+      "working_branch": "feat/agency-authorisation-20261025",
+      "base_commit": "75fb95fd5c15f0f0d0b040d5b679de72f19e9ee6",
+      "updated_on": "2026-10-25",
       "code_paths": [
         "web/v2/style.css",
         "web/v2/views.js",
@@ -1899,7 +2125,8 @@
         "EV-HF-BLACK-LOCAL",
         "EV-GRAPH-EXPLORER-LOCAL",
         "EV-NATIVE-CLOSEOUT",
-        "EV-PROVIDER-FAILURE-REVIEW"
+        "EV-PROVIDER-FAILURE-REVIEW",
+        "EV-AGENCY-API"
       ],
       "blockers": [
         "Owner visual review and broader human accessibility acceptance remain outstanding."
@@ -2272,6 +2499,9 @@
     }
   ],
   "next_task_ids": [
+    "ES02-01",
+    "ES02-02",
+    "B03-01",
     "B02-09",
     "B02-10",
     "B02-11",

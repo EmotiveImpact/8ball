@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **98 recorded discoveries.**
+Last review: 2026-10-25. **112 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -72,7 +72,7 @@ An older supported observation can warrant another review without becoming false
 
 **Product implication:** Ship opt-in observation-age prompts; retain event-time and true expiry semantics for further work.
 
-**Roadmap links:** `ES02-04` (not_started), `ES02-05` (verified), `B02-21` (implemented), `ES02-06` (partial).
+**Roadmap links:** `ES02-04` (partial), `ES02-05` (verified), `B02-21` (implemented), `ES02-06` (partial).
 **Completion scope:** `ES02-04`.
 **Evidence / source record:** `docs/delivery/EMERGENCE-REVIEW.md`, `endstate/insights.py`, `docs/decisions/0004-evidence-led-course-and-recovery.md`, `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`.
 
@@ -90,7 +90,7 @@ Useful plans include what would make the operator change course, not just the ne
 
 **Product implication:** Define versioned watch triggers, event authority and durable ordered updates before claiming real-time insight monitoring.
 
-**Roadmap links:** `ES02-01` (not_started), `ES02-02` (not_started), `ES02-03` (not_started), `ES02-06` (partial).
+**Roadmap links:** `ES02-01` (partial), `ES02-02` (partial), `ES02-03` (partial), `ES02-06` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/delivery/EMERGENCE-REVIEW.md`, `docs/decisions/0004-evidence-led-course-and-recovery.md`, `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`.
 
@@ -1049,7 +1049,7 @@ Once a team has chosen a course, repeated ranking changes could confuse action a
 
 **Product implication:** Separate refreshed alternatives from the chosen course. Present change reasons and request an explicit switch; preserve conservative approval invalidation.
 
-**Roadmap links:** `ES02-06` (partial), `B03-07` (partial), `ES02-04` (not_started).
+**Roadmap links:** `ES02-06` (partial), `B03-07` (partial), `ES02-04` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`, `docs/vision/ACCEPTANCE-DESIGN.md`.
 
@@ -1176,7 +1176,7 @@ A single successful check can satisfy a present-state condition without establis
 
 **Product implication:** Explore explicit outcome confirmation windows with the operator and preserve unknown timing. Do not add hidden universal stability periods or autonomous monitoring.
 
-**Roadmap links:** `B03-07` (partial), `ES02-04` (not_started), `ES02-06` (partial).
+**Roadmap links:** `B03-07` (partial), `ES02-04` (partial), `ES02-06` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`, `docs/vision/ACCEPTANCE-DESIGN.md`.
 
@@ -1635,7 +1635,7 @@ Pinned Mem0 enables operation telemetry by default to us.i.posthog.com even when
 
 **Product implication:** Record all data exits and telemetry configuration before an isolated future pilot; local storage alone cannot establish no external transmission.
 
-**Roadmap links:** `B03-01` (not_started), `B04-02` (not_started).
+**Roadmap links:** `B03-01` (partial), `B04-02` (not_started).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/research/github-2026-10-16/whole-system-review.md`, `docs/evidence/whole-system-readiness-2026-10-16.json`, `docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md`.
 
@@ -1686,7 +1686,7 @@ LangGraph defaults to async durability and resumes interrupted nodes from their 
 
 **Product implication:** Choose durability/attempt/time/idempotency policies explicitly, recheck source/case/permission on resume and reconcile ambiguous external outcomes before retry.
 
-**Roadmap links:** `ES02-02` (not_started), `ES02-04` (not_started).
+**Roadmap links:** `ES02-02` (partial), `ES02-04` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/research/github-2026-10-16/whole-system-review.md`, `docs/evidence/whole-system-readiness-2026-10-16.json`, `docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md`.
 
@@ -1800,3 +1800,242 @@ The existing generic API-key requirement was labelled Qwen and allowed only its 
 
 - 2026-10-18 · adopted · Codex configuration review: existing_task: document the observed secret-rebinding restriction and exact owner step; no new required feature, model/professional/human acceptance or runtime research adoption.
 - 2026-10-25 · adopted · Codex integration review: existing_task: preserve source and uncertain auth evidence, resolve already-integrated PR ancestry, prepare exact next-agent tests. A generic save rejection did not establish the earlier claimed field-specific cause. No acceptance promotion.
+
+### [ ] EM-099: Object grants cannot authorise aggregate matter operations
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Agency authorisation foundation.
+
+A grant to read one object cannot grant a matter listing, search, export or inference over other objects. Identity includes issuer as well as subject.
+
+**Product implication:** Enforce server-owned scope on every consumed object and reload revoked grants; policy permits remain separate from action approval.
+
+**Roadmap links:** `B03-01` (partial).
+**Completion scope:** `B03-01`.
+**Evidence / source record:** `eightball/authorisation.py`, `tests/test_authorisation.py`, `docs/delivery/sessions/2026-10-25-agency-authorisation.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: implement fail-closed policy foundation under owner-authorised full-product roadmap; API enforcement remains unfinished.
+
+### [ ] EM-100: Adding authenticated identity does not make every existing route safe
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Agency API and overview sprint.
+
+The local API has aggregate listings, legacy imports and asynchronous jobs whose existing single-operator assumptions cannot inherit agency permissions from a sign-in check alone.
+
+**Product implication:** Use an explicit opt-in allowlist and deny unintegrated routes until actor, transaction and worker enforcement exists. Present a readable situation overview before graph detail.
+
+**Roadmap links:** `B03-01` (partial), `B02-19` (partial).
+**Completion scope:** `B03-01`.
+**Evidence / source record:** `docs/v2/AGENCY-ACCESS.md`, `docs/delivery/sessions/2026-10-25-agency-api-overview.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: preserve local compatibility and refuse unsafe agency operations while implementing the full product roadmap.
+
+### [ ] EM-101: Arrival order and occurrence time must remain separate during replay
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** ENDSTATE durable inbox.
+
+A delayed source event can arrive after a newer occurrence. Reordering by its claimed clock or replacing an earlier receipt on retry would change history. Identical deliveries need the same retained receipt; changed content under the same identity must conflict.
+
+**Product implication:** Retain scoped arrival sequence, optional occurrence time and original receipt; ingestion remains pending and cannot execute commands.
+
+**Roadmap links:** `ES02-01` (partial), `ES02-02` (partial).
+**Completion scope:** `ES02-01`, `ES02-02`.
+**Evidence / source record:** `docs/endstate/EVENT-INBOX.md`, `docs/delivery/sessions/2026-10-25-endstate-event-inbox.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: implement neutral event contract and durable host inbox without promoting incoming data into authority.
+
+### [ ] EM-102: A durable lease is not permission to repeat external work
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** ENDSTATE event processing lifecycle.
+
+A restarted process cannot infer whether a leased operation already reached an external service. Expired attempts must become interrupted rather than being silently claimed again. A new explicit attempt must preserve the previous record.
+
+**Product implication:** Keep durable attempt identity, opaque claim ownership, original revision and terminal history. Stale or denied outputs remain separate from reviewable results.
+
+**Roadmap links:** `ES02-02` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-02`, `ES02-04`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-25-endstate-processing.md`, `eightball/event_work.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: durable processing foundation without automatic paid replay or action authority.
+
+### [ ] EM-103: Discarding stale review responses must resolve the loading state
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Native Plan Review race during ENDSTATE lifecycle verification.
+
+Case refresh changed the review snapshot while assessment was in flight. The stale response was safely discarded, but its dialog remained on Inspecting indefinitely. Remote CI passing did not negate the local observed race.
+
+**Product implication:** End stale loading with an explicit recovery state and deliberate reopening, while never allowing an older request to overwrite a newer dialog.
+
+**Roadmap links:** `B02-11` (partial), `ES02-04` (partial).
+**Completion scope:** `B02-11`.
+**Evidence / source record:** `docs/evidence/endstate-processing-failed-2026-10-25.json`, `docs/delivery/sessions/2026-10-25-endstate-processing.md`, `tests/browser_plan_review.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: fix observed race, add deterministic native coverage and preserve the failed receipt.
+
+### [ ] EM-104: Reviewed consumption must bind source, result, identity and case commit together
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** ENDSTATE reviewed graph transaction.
+
+A durable processing result alone cannot authorise a graph update. The explicit review must bind the original receipt and result, reviewer, rationale, command and exact revision, with permission checked inside the same write transaction and again before commit if calculation can outlive a grant.
+
+**Product implication:** Preserve source/result and explicit edits in a case-linked receipt. Reject stale, revoked, expired or cross-matter consumption; retain original export shape for cases without consumed events.
+
+**Roadmap links:** `ES02-02` (partial), `ES02-03` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-03`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md`, `eightball/v2/event_reviews.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: atomic local reviewed consumption with provenance and unchanged semantic/human acceptance gates.
+
+### [ ] EM-105: Delivery acknowledgement is separate from review and action approval
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** ENDSTATE transactional local outbox.
+
+A committed graph review can be lost to downstream readers if notice creation occurs after its transaction. Atomic creation plus independent durable per-reader acknowledgement survives restarts, but repeats remain possible and acknowledgement cannot carry execution authority.
+
+**Product implication:** Persist a small case/revision notice in the same transaction. Recheck current read permissions on pull and acknowledgement; keep delivered, reviewed and approved states distinct.
+
+**Roadmap links:** `ES02-02` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-02`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-25-endstate-outbox.md`, `eightball/v2/event_outbox.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: local durable delivery foundation; external effects and production acceptance remain unimplemented.
+
+### [ ] EM-106: Reviewed API writes must share the grant transaction and authorise returned source
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Authenticated event review API.
+
+A route guard may pass before a grant is revoked, and a separate registry cannot participate in the case transaction. A write response containing source/result provenance also requires current read access, even when write permission is present.
+
+**Product implication:** Register event routes only with a shared case/registry database, bind JWT identity server-side, and require READ plus WRITE inside the HTTP review transaction.
+
+**Roadmap links:** `B03-01` (partial), `ES02-03` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-03`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-25-endstate-event-api.md`, `eightball/v2/event_api.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: verified local review API with unchanged production and human gates.
+
+### [ ] EM-107: Matter scope and revision do not uniquely identify a processing case
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Same-matter event review reproduction.
+
+Two cases may share a matter and revision. An attempt storing only matter scope and base revision can then be consumed by either case. The existing full native suite passed while an additional reproduction demonstrated this missing lineage constraint.
+
+**Product implication:** Bind case processing explicitly at enqueue and reject unbound new consumption. Preserve historical unknown identity during migration; previously committed receipts remain records of what happened.
+
+**Roadmap links:** `ES02-02` (partial), `ES02-03` (partial).
+**Completion scope:** `ES02-02`, `ES02-03`.
+**Evidence / source record:** `docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json`, `docs/delivery/sessions/2026-10-25-endstate-event-api.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: correct demonstrated lineage failure without inventing historical case ownership.
+
+### [ ] EM-108: A lost save acknowledgement requires outcome recovery, not automatic replay
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Native browser event review.
+
+The server can commit a reviewed amendment while the browser loses its acknowledgement. Retrying automatically would confuse mutation intent with network recovery. A controlled native test committed once, discarded the response and recovered the outcome through explicit refresh.
+
+**Product implication:** Disable editing while outcome is uncertain; retain original source/result and use deliberate refresh without repeating the mutation.
+
+**Roadmap links:** `ES02-03` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-03`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-25-endstate-review-ui.md`, `tests/browser_event_review.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: improve review recovery and native evidence without relaxing acceptance.
+
+### [ ] EM-109: Disabled-state tests must inspect interactive controls
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Native browser event review.
+
+The first native review run asserted Playwright disabled state on a fieldset. The DOM had the disabled attribute, but that assertion did not verify its controls. Inspecting the actual rationale input and preview button accurately exercised read-only access.
+
+**Product implication:** Preserve the failed artifact and assert effective disabled state on real controls; do not remove permission checks to obtain a passing test.
+
+**Roadmap links:** `ES02-03` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-03`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-25-endstate-review-ui.md`, `docs/evidence/event-review-browser-first-failure-2026-10-25.json`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: improve review recovery and native evidence without relaxing acceptance.
+
+### [ ] EM-110: A structured plan already exceeds the provisional result-text cap
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Native browser event review.
+
+The fictional demo graph serializes to 16,501 characters. EventWork accepts at most 12,000 characters, so preserving the complete graph through that path failed without truncation and left the attempt running.
+
+**Product implication:** Before connecting the worker, retain complete provider output within justified bounds or immutable artifact references, and explicitly preserve oversized failure evidence.
+
+**Roadmap links:** `ES02-02` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-02`, `ES02-04`.
+**Evidence / source record:** `docs/evidence/event-result-size-boundary-2026-10-25.json`, `docs/delivery/sessions/2026-10-25-endstate-review-ui.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: retain demonstrated integration boundaries and fix test harness without weakening acceptance.
+- 2026-10-25 · adopted · Codex: Existing output boundary corrected to supported 500000 UTF-8 bytes with exact retention tests; authenticated worker and actual-provider acceptance remain unfinished.
+
+### [ ] EM-111: Native test waits must honour both CSP and application timing
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Native browser event review.
+
+A screenshot wait using string evaluation failed under script-src self in both local native and GitHub CI runs. Its locator replacement first used a 5-second default despite a 6.5-second notification lifetime.
+
+**Product implication:** Keep CSP intact, assert with browser locator APIs and use a bounded deadline matching the real notification lifetime; preserve failed runs.
+
+**Roadmap links:** `ES02-03` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-03`, `ES02-04`.
+**Evidence / source record:** `docs/evidence/event-review-native-csp-failure-2026-10-25.json`, `docs/delivery/sessions/2026-10-25-endstate-review-ui.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: retain demonstrated integration boundaries and fix test harness without weakening acceptance.
+
+### [ ] EM-112: Result capacity should count encoded bytes across the provider and queue boundary
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Complete processing-result retention.
+
+Character count and UTF-8 byte count differ for multilingual text. A character-only bound neither matches the provider envelope limit nor reliably bounds stored output. Exact and one-byte-over tests demonstrated the difference.
+
+**Product implication:** Use a justified byte limit, preserve exact original text and reject oversized results without mutating or silently repairing the attempt.
+
+**Roadmap links:** `ES02-02` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-02`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-25-complete-result-retention.md`, `tests/test_event_work.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: consistent bounded retention without provider or semantic acceptance claims.

@@ -1,3 +1,9 @@
+# Current full-build continuation
+
+Read START-HERE.md, BUILD-GOAL.md, PROGRESS.md and the newest HANDOFF section on `feat/agency-authorisation-20261025` (draft PR5). Inspect current remote/local heads and preserve newer work; main is an earlier consolidation. The original PRDs and all acceptance gates still apply. Latest verified result-retention source `baca8ad9efa531e5f172058845852963d7d5234a` passed 1349 source /1349 installed /423 native checks across twelve suites. See the exact-source receipt in HANDOFF.
+
+Next: authenticated host worker dispatch with retained provider/model/prompt evidence and current case/revision/permission checks. Continue the full existing roadmap while unavailable model/human prerequisites are tracked honestly. Do not merge, deploy, invent acceptance, adopt deferred research or start another application. Preserve all 112 discoveries and append changelog/tracker/handoff/verification each sprint. Earlier prompts below are historical.
+
 # Latest continuation
 
 Follow [NEXT-BUILD.md](NEXT-BUILD.md) on the consolidated current main. Inspect

@@ -40,7 +40,7 @@ class Advice(Strict):
     allow_external: bool = Field(default=False, strict=True)
 
 
-def make_app(store: Store, token: str) -> FastAPI:
+def make_app(store: Store, token: str, *, agency_access=None) -> FastAPI:
     if len(token) < 32:
         raise ValueError('Use an operator token of at least 32 characters')
     app = FastAPI(title='8BALL local alpha', version=__version__, docs_url=None, redoc_url=None, openapi_url=None)
@@ -69,6 +69,8 @@ def make_app(store: Store, token: str) -> FastAPI:
         return response
 
     def authorised(request: Request):
+        if agency_access is not None:
+            return agency_access(request)
         supplied = request.headers.get('authorization', '')
         if not hmac.compare_digest(supplied, 'Bearer ' + token):
             raise HTTPException(401, 'An operator token is required')
@@ -193,7 +195,10 @@ def make_app(store: Store, token: str) -> FastAPI:
     async def value_error(request, exc):
         return JSONResponse({'detail': 'Invalid fields or references' if isinstance(exc,ValidationError) else str(exc)},status_code=422)
 
-    v2_routes = v2_router(V2Store(store.path),store,authorised)
+    # Event review transactions require the same durable registry as the cases.
+    agency_events = (agency_access is not None and
+                     Path(agency_access.registry.path).resolve() == Path(store.path).resolve())
+    v2_routes = v2_router(V2Store(store.path),store,authorised,agency_events=agency_events)
     app.state.analysis_jobs = v2_routes.analysis_jobs
     app.include_router(v2_routes)
     web = Path(__file__).resolve().parent.parent / 'web'

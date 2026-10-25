@@ -6,12 +6,14 @@ Last status review: 2026-10-25.
 
 **8BALL is the fixer product. ENDSTATE is the reusable engine underneath it.**
 
+Build objective and completion criteria: [BUILD-GOAL.md](BUILD-GOAL.md). The sections below are the current status for both tracks, not separate backlogs.
+
 ## Checkpoint and release boundary
 
-- Active integration branch: `main`; PR #2.
-- Inspected application baseline: `6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f`.
+- Active integration branch: `feat/agency-authorisation-20261025`; PR #5.
+- Inspected application baseline: `48e572e95be8b28d0b317d7bc8b3a18893a3ef76`.
 - This is a dated snapshot. Refresh the branch, PR and CI at the start of every session.
-- At inspection: draft PR = `false`; merged = `true`; production deployed = `false`.
+- At inspection: draft PR = `true`; merged = `false`; production deployed = `false`.
 - Standalone ENDSTATE package released = `false`.
 
 ## Checkbox meaning
@@ -22,6 +24,9 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 ## Next work
 
+- **ES02-01: Normalised event and authority contract**. Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
+- **ES02-02: Durable ordered updates, idempotency and replay**. Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates.
+- **B03-01: Identity, organisations and matter-scoped authorisation**. Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
 - **B02-09: Reliable reviewed graph proposals for new situations**. Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
 - **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
 - **B02-11: Independent quality evaluation and production-model selection**. Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval.
@@ -213,7 +218,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Next: Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval.
   - Branch/base: `feat/v02-review-evidence-20261018` / `e513237f5b66c0689fa870e0d82873d8b71e4d8a`.
   - Existing code: `evals/live_generation.py`, `evals/classification-cases.json`, `endstate/plan_review.py`, `eightball/v2/plan_review.py`, `web/v2/plan-review-view.js`, `evals/plan_review_bench.py`, `evals/PLAN-QUALITY-GATE.md`, `tests/test_plan_review.py`, `tests/browser_plan_review.py`, `evals/review_readiness.py`, `tests/test_review_readiness.py`, `docs/delivery/review/protocol-v2.template.json`, `docs/delivery/review/dataset-manifest.template.json`.
-  - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018` (registry below).
+  - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-REVIEW-REFRESH-RACE` (registry below).
   - Blocker: Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed.
 
 - [ ] **B02-12 Full twenty-step real-model V0.2 acceptance journey**
@@ -280,13 +285,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Blocker: Real-model journey and developer-quality work remain unaccepted.
 
 - [ ] **B02-19 Black operator visual system and transparent intelligence controls**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-15.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Black/graphite design, legible status labels, exact-target review, provider controls and mobile lock work across the existing native desktop/mobile workflow without losing evidence/approval functions.
   - Next: Review the current black workspace without expanding scope; preserve passing native controls. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
-  - Branch/base: `fix/v02-provider-failure-evidence-20261015` / `45f8794733df9635d8daf5146a37fb94af9e8e90`.
+  - Branch/base: `feat/agency-authorisation-20261025` / `75fb95fd5c15f0f0d0b040d5b679de72f19e9ee6`.
   - Dependencies: `B02-07`.
   - Existing code: `web/v2/style.css`, `web/v2/views.js`, `web/v2/forms.js`, `tests/browser_development.py`.
-  - Evidence: `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW` (registry below).
+  - Evidence: `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-AGENCY-API` (registry below).
   - Blocker: Owner visual review and broader human accessibility acceptance remain outstanding.
 
 - [ ] **B02-20 Black relationship explorer with local focus, directed flow and records view**
@@ -321,10 +326,12 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 ## 8BALL 0.3: Secure agency pilot
 
 - [ ] **B03-01 Identity, organisations and matter-scoped authorisation**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Authenticated identities and cross-tenant/matter denial tests cover read, write, export, search and model inference.
-  - Next: Implement from the approved production threat model.
-  - Evidence: `EV-SECURITY` (registry below).
+  - Next: Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
+  - Branch/base: `feat/agency-authorisation-20261025` / `825c8c3969f6cf723a188cc6ae16094aa15c9e7e`.
+  - Existing code: `eightball/authorisation.py`, `tests/test_authorisation.py`, `eightball/agency_access.py`, `tests/test_agency_access.py`, `eightball/v2/event_api.py`, `web/v2/event-review.js`, `tests/browser_event_review.py`.
+  - Evidence: `EV-SECURITY`, `EV-AGENCY-POLICY`, `EV-AGENCY-API`, `EV-EVENT-API`, `EV-EVENT-REVIEW-UI` (registry below).
 
 - [ ] **B03-02 Encrypted evidence vault and retention controls**
   - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
@@ -463,28 +470,40 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 ## ENDSTATE 0.2: Event-driven replanning
 
 - [ ] **ES02-01 Normalised event and authority contract**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Events carry source, version, occurrence/receipt time, matter scope and review status; incoming text never gets command authority.
-  - Next: Define the observe/propose/review/commit/replan boundary.
+  - Next: Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
+  - Branch/base: `feat/agency-authorisation-20261025` / `48e572e95be8b28d0b317d7bc8b3a18893a3ef76`.
   - Dependencies: `ES01-01`.
+  - Existing code: `endstate/events.py`, `eightball/event_inbox.py`, `tests/test_event_inbox.py`.
+  - Evidence: `EV-EVENT-INBOX` (registry below).
 
 - [ ] **ES02-02 Durable ordered updates, idempotency and replay**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Duplicate, delayed, reordered and retried events cannot corrupt state or revive expired permissions.
-  - Next: Implement event/outbox contracts and fault-injection tests.
+  - Next: Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates.
+  - Branch/base: `feat/agency-authorisation-20261025` / `98ee073a1c5f25658aab915183c696c8b4099985`.
   - Dependencies: `ES02-01`.
+  - Existing code: `endstate/events.py`, `eightball/event_inbox.py`, `tests/test_event_inbox.py`, `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_outbox.py`.
+  - Evidence: `EV-EVENT-INBOX`, `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-CASE-BINDING-GAP`, `EV-EVENT-RESULT-SIZE`, `EV-EVENT-RESULT-RETENTION` (registry below).
 
 - [ ] **ES02-03 Reviewed graph amendments and affected-route explanations**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: New information can propose a graph/dependency change, but cannot remove restrictions until reviewed at the correct revision.
-  - Next: Separate observed fact updates from catalogue/graph amendments.
+  - Next: Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
+  - Branch/base: `feat/agency-authorisation-20261025` / `825c8c3969f6cf723a188cc6ae16094aa15c9e7e`.
   - Dependencies: `ES02-01`, `ES01-02`.
+  - Existing code: `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_api.py`, `tests/test_agency_access.py`, `web/v2/event-review.js`, `tests/browser_event_review.py`.
+  - Evidence: `EV-EVENT-CONSUMPTION`, `EV-EVENT-API`, `EV-EVENT-CASE-BINDING-GAP`, `EV-EVENT-REVIEW-UI`, `EV-EVENT-REVIEW-CSP-FAILURE` (registry below).
 
 - [ ] **ES02-04 Freshness, cancellation and performance evidence**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Measured latencies include ingestion, inference and review; incremental replan results match full recomputation; cancelled/stale work cannot commit.
-  - Next: Define target workloads and latency budgets before a real-time claim.
+  - Next: Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates.
+  - Branch/base: `feat/agency-authorisation-20261025` / `98ee073a1c5f25658aab915183c696c8b4099985`.
   - Dependencies: `ES02-02`, `ES02-03`.
+  - Existing code: `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_outbox.py`, `eightball/v2/event_api.py`, `tests/test_agency_access.py`, `web/v2/event-review.js`, `tests/browser_event_review.py`.
+  - Evidence: `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-API`, `EV-EVENT-REVIEW-UI`, `EV-EVENT-RESULT-SIZE`, `EV-EVENT-RESULT-RETENTION` (registry below).
 
 - [x] **ES02-05 Bounded structural emergence detectors and typed explanations** (optional, not a version gate)
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-24.
@@ -933,3 +952,81 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `integration_and_test_handoff`.
 - Repository evidence: [docs/evidence/build-consolidation-native-2026-10-25.json](../../docs/evidence/build-consolidation-native-2026-10-25.json).
 - Result/scope: 1267 source + 1267 installed-engine + 391 native browser checks passed; exact inspection valid; both checkpoint CI workflows passed. PR3 closed as already integrated. No model/independent/human acceptance.
+
+### EV-AGENCY-POLICY
+
+- Kind: `controlled_policy_tests`.
+- Repository evidence: [docs/evidence/agency-authorisation-native-2026-10-25.json](../../docs/evidence/agency-authorisation-native-2026-10-25.json).
+- Result/scope: 1280 source tests, 1280 installed-engine regressions and 391 native browser checks passed; source inspection valid. Policy only, not integrated production enforcement.
+
+### EV-AGENCY-API
+
+- Kind: `controlled_api_and_browser`.
+- Repository evidence: [docs/evidence/agency-api-overview-native-2026-10-25.json](../../docs/evidence/agency-api-overview-native-2026-10-25.json).
+- Result/scope: 1291 source +1291 installed-engine +394 native browser checks and checkpoint CI passed. Final uncertainty wording passed54 native workspace checks. Agency boundary remains read-only and pre-production.
+
+### EV-EVENT-INBOX
+
+- Kind: `controlled_event_persistence`.
+- Repository evidence: [docs/evidence/endstate-event-inbox-native-2026-10-25.json](../../docs/evidence/endstate-event-inbox-native-2026-10-25.json).
+- Result/scope: 1302 source tests,1302 installed-engine regressions and394 native browser checks passed; exact inspection valid and both checkpoint CI runs passed. Incoming events remain pending, with no live worker or case mutation.
+
+### EV-EVENT-WORK
+
+- Kind: `controlled_durable_processing`.
+- Repository evidence: [docs/evidence/endstate-processing-native-2026-10-25.json](../../docs/evidence/endstate-processing-native-2026-10-25.json).
+- Result/scope: 1309 source +1309 installed-engine +396 native browser checks passed; exact inspection valid and checkpoint CI green. Original failed Plan Review race retained and corrected with deterministic native coverage. No actual-model/independent/human acceptance.
+
+### EV-REVIEW-REFRESH-RACE
+
+- Kind: `native_regression_fix`.
+- Repository evidence: [docs/evidence/endstate-processing-native-2026-10-25.json](../../docs/evidence/endstate-processing-native-2026-10-25.json).
+- Result/scope: Retained local native failure; explicit stale-context recovery and deterministic in-flight revision-change coverage now pass.
+
+### EV-EVENT-CONSUMPTION
+
+- Kind: `controlled_atomic_review`.
+- Repository evidence: [docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json](../../docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json).
+- Result/scope: 1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed. Public writes, worker/outbox, model and human acceptance remain unfinished.
+
+### EV-EVENT-OUTBOX
+
+- Kind: `controlled_local_delivery`.
+- Repository evidence: [docs/evidence/endstate-outbox-native-2026-10-25.json](../../docs/evidence/endstate-outbox-native-2026-10-25.json).
+- Result/scope: 1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed. Local pull-based delivery only; daemon/browser/production/model/human gates remain unfinished.
+
+### EV-EVENT-API
+
+- Kind: `controlled_authenticated_api`.
+- Repository evidence: [docs/evidence/endstate-event-api-native-2026-10-25.json](../../docs/evidence/endstate-event-api-native-2026-10-25.json).
+- Result/scope: 1345 source /1345 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed. Includes explicit case binding; no browser login/review, worker dispatch or production/model/human acceptance.
+
+### EV-EVENT-CASE-BINDING-GAP
+
+- Kind: `preserved_correctness_failure`.
+- Repository evidence: [docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json](../../docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json).
+- Result/scope: Failure preserved at f75dad5; corrected in cd4ec0c with four case-binding/migration tests and cumulative 1345 source /1345 installed /396 native checks. See EV-EVENT-API.
+
+### EV-EVENT-REVIEW-UI
+
+- Kind: `native_scoped_review_ui`.
+- Repository evidence: [docs/evidence/endstate-review-ui-native-2026-10-25.json](../../docs/evidence/endstate-review-ui-native-2026-10-25.json).
+- Result/scope: 1346 source /1346 installed-engine /423 native browser checks across 12 suites passed; exact inspection valid. Corrected checkpoint CI unavailable after GitHub authentication failure. Browser review implemented for configured account tokens; not genuine human or OIDC acceptance.
+
+### EV-EVENT-REVIEW-CSP-FAILURE
+
+- Kind: `native_failed`.
+- Repository evidence: [docs/evidence/event-review-native-csp-failure-2026-10-25.json](../../docs/evidence/event-review-native-csp-failure-2026-10-25.json).
+- Result/scope: Failed native/CI runs preserved. CSP-safe locator assertion with explicit deadline passes corrected full 1346 source /1346 installed /423 native run; see EV-EVENT-REVIEW-UI.
+
+### EV-EVENT-RESULT-SIZE
+
+- Kind: `controlled_boundary_failure`.
+- Repository evidence: [docs/evidence/event-result-size-boundary-2026-10-25.json](../../docs/evidence/event-result-size-boundary-2026-10-25.json).
+- Result/scope: Historical failure preserved; corrected at baca8ad and verified by full graph restart/review/export plus 1349 source /1349 installed /423 native checks. See EV-EVENT-RESULT-RETENTION.
+
+### EV-EVENT-RESULT-RETENTION
+
+- Kind: `controlled_full_result_retention`.
+- Repository evidence: [docs/evidence/complete-result-retention-native-2026-10-25.json](../../docs/evidence/complete-result-retention-native-2026-10-25.json).
+- Result/scope: 1349 source /1349 installed-engine /423 native browser checks across twelve suites passed; exact inspection and both checkpoint CI workflows passed. Full original graph survives restart, review and export; worker/model/human gates remain unfinished.

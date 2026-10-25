@@ -4,7 +4,7 @@ const prButton=(label,action,extra='')=>`<button type="button" class="button" da
 const prId=()=>crypto.randomUUID?.()??Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('');
 const prRoot=()=>document.querySelector('[data-pr-root]');
 const prStamp=()=>[S.epoch,S.current?.case.id,S.current?.case.revision].join(':');
-export function clearPlanReview(){prSerial++;prSession=null;}
+export function clearPlanReview(){prSerial++;prSession=null;if(prRoot())prRoot().innerHTML=warning('Case context changed. Reopen Plan Review.')+prButton('Reopen Plan Review','open');}
 const prValid=(seq,stamp)=>seq===prSerial&&stamp===prStamp()&&Boolean(prRoot());
 function prCollect(){const f=document.querySelector('[data-pr-form="judgements"]');if(f&&prSession)prSession.draft=Object.fromEntries(new FormData(f));}
 const prRefTitle=id=>prSession?.assessment.references.find(r=>r.id===id)?.title??id;
@@ -30,7 +30,9 @@ function prRender(){if(!prRoot()||!prSession)return;const a=prSession.assessment
  prRoot().innerHTML=`<div class="pr-topline"><span>${badge('reported','LIVE CASE REVIEW')} Revision ${a.case_revision} · ${date(a.inspection.as_of)}</span><span>${prButton('Export assessment','export')}${prButton('Saved reviews','history')}</span></div><p class="note">${esc(a.notice)}</p><div class="pr-tabs" role="group" aria-label="Plan review sections">${[['findings','Plan checks'],['scenarios','Scenario checks'],['human','Human review'],['history','Review history']].map(([id,t])=>`<button type="button" data-pr-action="tab" data-pr-tab="${id}" aria-pressed="${prSession.tab===id}">${t}</button>`).join('')}</div><div class="pr-content">${prSession.tab==='findings'?prDiagnostics(a):prSession.tab==='scenarios'?prStress(a):prSession.tab==='human'?prJudgements(a):prHistory()}</div><p class="note">ENDSTATE ${esc(a.inspection.contract_version)} · New review recording expires after 15 minutes. ${a.inspection.baseline.search_truncated?'Search was truncated.':''}</p>`;
 }
 async function prOpen(){const seq=++prSerial,stamp=prStamp();prSession=null;modal('Plan Review',`<div data-pr-root class="pr-review"><p class="note" role="status">Inspecting the live graph and recorded evidence…</p></div>`,true);
- try{const c=structuredClone(S.current.case),base=`/cases/${c.id}/plan-reviews`;const [data,history]=await Promise.all([prService.api(base+'/assess',{expected_revision:c.revision,scenarios:[]}),prService.api(base)]);if(!prValid(seq,stamp))return;prSession={assessment:data.assessment,sequence:data.sequence,history,case:c,tab:'findings',draft:{},stamp};prRender();}catch(e){if(prValid(seq,stamp))prRoot().innerHTML=warning(e.message);}
+ const root=prRoot(),ownsDialog=()=>seq===prSerial&&root===prRoot();
+ const stale=()=>{if(ownsDialog())root.innerHTML=warning('Case context changed. Reopen Plan Review.')+prButton('Reopen Plan Review','open');};
+ try{const c=structuredClone(S.current.case),base=`/cases/${c.id}/plan-reviews`;const [data,history]=await Promise.all([prService.api(base+'/assess',{expected_revision:c.revision,scenarios:[]}),prService.api(base)]);if(!prValid(seq,stamp)){stale();return;}prSession={assessment:data.assessment,sequence:data.sequence,history,case:c,tab:'findings',draft:{},stamp};prRender();}catch(e){if(ownsDialog()){if(stamp!==prStamp())stale();else root.innerHTML=warning(e.message);}}
 }
 export function bindPlanReview(services){prService=services;
  document.addEventListener('change',e=>{if(!e.target.matches('[data-pr-form=judgements] select[name^=ref_]')||!prSession)return;prCollect();const criterion=e.target.name.slice(4),target=document.querySelector(`[data-pr-reference="${criterion}"]`);if(target)target.innerHTML=prReferencePreview(e.target.value);});

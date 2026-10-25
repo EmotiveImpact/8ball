@@ -1,0 +1,28 @@
+{
+  "tested_commit": "20400336bd5462733755001b42e991c05944e1d1",
+  "run_id": "20261025T145349Z-6342668e",
+  "source_sha256": "910dc0df473345f2c415b978b761007fc5cfd96a54805f453f2cbf89c3f7631d",
+  "report_sha256": "a9ec6302902a50326edaf2042cae87a4d258e6ef9576eb555f8992272d4f04d0",
+  "status": "passed",
+  "source_tests": 1302,
+  "installed_engine_tests": 1302,
+  "native_browser_checks": 394,
+  "native_suites": 11,
+  "inspection_valid_before_receipt_edits": true,
+  "source_unchanged_during_run": true,
+  "checkpoint_ci": [
+    40204433283,
+    40204433474
+  ],
+  "checkpoint_ci_conclusion": "success",
+  "raw_artifacts": "artifacts/acceptance/20261025T145349Z-6342668e",
+  "raw_artifacts_committed": false,
+  "limitations": [
+    "Unsigned local receipt, not independent security or model/human acceptance.",
+    "Event ingestion does not execute a worker, apply amendments, replan or authorise actions.",
+    "Final documentation-only receipt changes have separate CI."
+  ],
+  "model_inference_performed": false,
+  "released": false,
+  "deployed": false
+}

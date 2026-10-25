@@ -1,3 +1,69 @@
+# Latest verified checkpoint: complete bounded result retention
+
+[Session](sessions/2026-10-25-complete-result-retention.md), [receipt](../evidence/complete-result-retention-native-2026-10-25.json). Source `baca8ad9efa531e5f172058845852963d7d5234a` passed 1,349 source tests, 1,349 installed-engine regressions and 423 native browser checks across twelve suites. Exact inspection and both checkpoint CI workflows passed.
+
+Complete original graph output now survives the queue, restart, explicit review and audit export under a 500000-byte UTF-8 bound. The previous oversized-result failure is retained as historical evidence. GitHub access recovered and the earlier browser-review closeout/screenshots are pushed.
+
+Continue draft PR5 branch feat/agency-authorisation-20261025. Next: authenticated host worker dispatch with retained provider evidence and transaction-wide permission/revision checks. OIDC login, production accounts/storage, measured replanning and original model/independent/human acceptance remain unfinished. BUILD-GOAL.md and PROGRESS.md hold the full plan and current task state for both products. Earlier entries below are historical.
+
+# Current sprint: complete result retention; GitHub publication restored
+
+[Session](sessions/2026-10-25-complete-result-retention.md). Previous closeout `98ee073`, including screenshots and native evidence, is now pushed and confirmed remotely. Earlier publication-blocked text below is historical.
+
+The queue now retains complete output up to the supported 500000-byte UTF-8 boundary, without truncation. Full graph restart/review/export and multibyte bounds are covered: 36 focused tests passed; full native verification follows. Next: authenticated host worker dispatch with provider evidence and current case/permission rechecks. Both products remain tracked in PROGRESS.md and BUILD-GOAL.md; no production/model/human acceptance is implied.
+
+# Latest verified checkpoint: browser event review; final publication blocked
+
+[Session and full emergence review](sessions/2026-10-25-endstate-review-ui.md), [native receipt](../evidence/endstate-review-ui-native-2026-10-25.json), [desktop screenshot](../screenshots/8ball-event-review-2026-10-25.png). Source `461d3f2cecfcd8c4a00da40a56f56763d0d4fc90` passed 1,346 source tests, 1,346 installed-engine regressions and 423 native browser checks across twelve suites, with valid exact-source inspection. Preserved failed native/CI runs are linked in the receipt; corrected-checkpoint CI is unverified because authentication failed.
+
+The code checkpoint was pushed to draft PR5 branch feat/agency-authorisation-20261025. Final documentation/screenshots are committed locally and remain unpushed. GitHub API returns 401 Bad credentials and Git cannot authenticate. Refresh/reconnect the environment GitHub connection, preserve local HEAD, push the branch, inspect CI and update PR5. No force push, main merge, release or deployment.
+
+The scoped browser page shows original source/output, reuses Plan Studio, previews without writes and commits explicit amendments with rationale. Read-only/stale/locked/uncertain-save states fail closed. It uses configured account tokens in memory; actual OIDC sign-in and genuine human acceptance remain unfinished.
+
+Next engineering task: fix the demonstrated full-result retention boundary (16,501-character fictional graph exceeds 12,000-character work cap) before authenticated worker dispatch, then measure full end-to-end event/replanning performance. The standing BUILD-GOAL remains in progress; PROGRESS.md is the sole generated task tracker for both products. Earlier entries below are historical.
+
+# Latest verified checkpoint: authenticated event review with case binding
+
+[Session and emergence review](sessions/2026-10-25-endstate-event-api.md), [corrected native receipt](../evidence/endstate-event-api-native-2026-10-25.json), [preserved uncovered failure](../evidence/endstate-event-api-case-binding-gap-2026-10-25.json). Source `cd4ec0c9613c959688c701f293edcdc2dd986fd3` passed 1,345 source tests, 1,345 installed-engine regressions and 396 native browser checks; exact inspection and checkpoint CI passed.
+
+Shared-registry agency mode exposes explicit event read/review and local notice pull/acknowledgement. JWT identity is server-bound; review rechecks READ and WRITE in the transaction. New case attempts carry explicit case binding. Historical unbound attempts remain retained but cannot produce new case changes.
+
+Continue draft PR5 branch feat/agency-authorisation-20261025. Next: event-review browser UI and authenticated worker dispatch. Real OIDC login, PostgreSQL isolation, migration/performance, model and genuine human acceptance remain unfinished. See BUILD-GOAL.md and the sole canonical PROGRESS.md tracker. Older checkpoints below are historical.
+
+# Latest verified checkpoint: transactional local change outbox
+
+[Session and emergence review](sessions/2026-10-25-endstate-outbox.md), [receipt](../evidence/endstate-outbox-native-2026-10-25.json). Source `49f5e04fe8f4f122818c09343aba030338a26347` passed 1,331 source tests, 1,331 installed-engine regressions and 396 native browser checks; exact inspection and checkpoint CI passed. Reviewed case changes now create durable notices atomically, with ordered per-reader delivery and current READ checks at pull/acknowledgement.
+
+Continue draft PR5 branch feat/agency-authorisation-20261025. Next: explicit event review UI/API and authenticated host worker dispatch. Local outbox delivery is not an external sender, production tenant guarantee or human acceptance. Both product statuses remain in PROGRESS.md; the full BUILD-GOAL.md remains in progress. Earlier checkpoints below are historical.
+
+# Latest verified checkpoint: reviewed event consumption
+
+1,323 source tests, 1,323 installed-engine regressions and 396 native browser checks passed on `87c5322c23ebe7a3fc062ce15985a3d82d84eea2`; exact inspection and checkpoint CI passed. [Receipt](../evidence/endstate-reviewed-consumption-native-2026-10-25.json), [session](sessions/2026-10-25-endstate-reviewed-consumption.md), [standing goal](BUILD-GOAL.md). Continue PR5 branch feat/agency-authorisation-20261025. Next: explicit review UI/API and durable worker/outbox. Original model, human and production gates remain open. Earlier checkpoints below are historical.
+
+# Current ENDSTATE sprint: atomic reviewed graph consumption
+
+[Session](sessions/2026-10-25-endstate-reviewed-consumption.md). Current local host service verifies scoped write grants and exact case/attempt revisions, applies the existing graph command and records provenance/consumption atomically. Source/result and explicit reviewer edits survive case export. Next: explicit review UI/API, durable worker/outbox and measured replanning, preserving production/model/human gates.
+
+Latest verified ENDSTATE processing checkpoint: **1,309 source tests, 1,309 installed-engine regressions and 396 native browser checks passed**, with valid source inspection and green checkpoint CI. [Receipt](../evidence/endstate-processing-native-2026-10-25.json). Original failed Plan Review race is retained and fixed. Next: reviewed graph amendments committed atomically with current revision/permission checks and a durable consumption record. The full goal remains in progress.
+
+# Current ENDSTATE sprint: durable attempt lifecycle
+
+[Session and full emergence review](sessions/2026-10-25-endstate-processing.md). EventWork persists explicit scoped attempts, exclusive claims, bounded leases and terminal dispositions. Next implement reviewed consumption with actual transactional revision/permission checks and explicit worker/outbox integration. Both product statuses remain in PROGRESS.md; original V0.2 model/human and production gates remain open.
+
+Verified event-inbox checkpoint:1302 source tests,1302 installed-engine regressions and394 native browser checks passed, with valid exact-source inspection and green checkpoint CI. [Receipt](../evidence/endstate-event-inbox-native-2026-10-25.json).
+
+# Current execution: ENDSTATE events and both product trackers
+
+[Standing goal](BUILD-GOAL.md), [canonical status](PROGRESS.md), [latest sprint](sessions/2026-10-25-endstate-event-inbox.md). ENDSTATE now has pending event/receipt contracts and a durable scoped host inbox with duplicate/conflict/restart handling. Next: reviewed consumption, durable workers/outbox and revision/permission checks. 8BALL continues with browser sign-in, account administration and database/worker enforcement; its other remaining milestones are listed in the same ledger. Keep all original model/human/production gates open until evidenced.
+
+# Latest sprint: agency API reads and simpler Situation Room
+
+[Full session](sessions/2026-10-25-agency-api-overview.md) and [receipt](../evidence/agency-api-overview-native-2026-10-25.json) record1291 source/1291 installed-engine/394 native checks on7fbb34a, checkpoint CI and54 subsequent workspace checks after uncertainty wording correction. Continue current development branch feat/agency-authorisation-20261025. Implement browser OIDC, account administration, PostgreSQL access transactions and actor-bound writes/workers next. Current agency surface is read/history/export only. Preserve all broader roadmap and model/human acceptance gates.
+
+# Current sprint: agency permission foundation
+
+The owner selected full-product roadmap engineering beyond V0.2. Continue `feat/agency-authorisation-20261025`; [session](sessions/2026-10-25-agency-authorisation.md) records scope and full emergence review. 1280 source, 1280 installed-engine and 391 native browser checks passed. Next: verified OIDC identity, durable scoped grants and complete request/worker/database enforcement for B03-01. The current local API still uses its single-operator token; this component does not make it multi-tenant or production-ready. All V0.2 acceptance gates remain.
+
 # Current handoff: combined development build
 
 Current cumulative software verification passed on `a9254e6087ef606d581d626bfcda9d7e555c857e`:

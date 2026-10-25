@@ -3,6 +3,1050 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-complete-result-retention-verified",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify complete result retention and publish current build plan",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04"
+      ],
+      "summary": "Record source-bound full-suite evidence for complete processing output and update the continuing build handoff.",
+      "added": [
+        "Source-bound native verification receipt."
+      ],
+      "changed": [
+        "Latest tracker, entry point and next-agent prompt now reference the verified development branch and full build goal."
+      ],
+      "fixed": [],
+      "verification": [
+        "1349 source /1349 installed-engine /423 native browser checks across twelve suites passed; exact inspection and both checkpoint CI workflows passed.",
+        "36 focused work/review tests passed."
+      ],
+      "limitations": [
+        "Authenticated background dispatch and actual-model/independent/human acceptance remain unfinished.",
+        "Oversized transport failures still need separate raw provider evidence; no silent truncation or retries."
+      ],
+      "evidence_paths": [
+        "docs/evidence/complete-result-retention-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-complete-result-retention.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Character count and UTF-8 byte count differ for multilingual text. A character-only bound neither matches the provider envelope limit nor reliably bounds stored output. Exact and one-byte-over tests demonstrated the difference."
+        ],
+        "risks": [
+          "Capacity correction is not proof of model quality or complete worker integration."
+        ],
+        "architecture_implications": [
+          "Provider-independent byte-bounded output retention and exact review/export lineage."
+        ],
+        "roadmap_decision": "existing_task: correct ES02 retention and continue authenticated worker integration.",
+        "insight_ids": [
+          "EM-110",
+          "EM-112"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-complete-result-retention",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Retain complete structured processing output",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04"
+      ],
+      "summary": "Correct the provisional text cap so complete ordinary graph output survives processing, review and export without truncation.",
+      "added": [
+        "Full graph and UTF-8 byte-boundary regressions."
+      ],
+      "changed": [
+        "Result cap now matches the supported 500000-byte hosted response-envelope limit.",
+        "Previous final browser-review receipt and screenshots were pushed after GitHub access recovered."
+      ],
+      "fixed": [
+        "Ordinary fictional graph output exceeded the previous 12000-character result cap."
+      ],
+      "verification": [
+        "36 focused work/review tests passed; cumulative native verification pending.",
+        "Remote branch confirmed previous closeout 98ee073 after successful push."
+      ],
+      "limitations": [
+        "Authenticated background dispatch and actual-model/independent/human acceptance remain unfinished.",
+        "Oversized transport failures still need separate raw provider evidence; no silent truncation or retries."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-complete-result-retention.md",
+        "docs/evidence/event-result-size-boundary-2026-10-25.json"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Character count and UTF-8 byte count differ for multilingual text. A character-only bound neither matches the provider envelope limit nor reliably bounds stored output. Exact and one-byte-over tests demonstrated the difference."
+        ],
+        "risks": [
+          "Capacity correction is not proof of model quality or complete worker integration."
+        ],
+        "architecture_implications": [
+          "Provider-independent byte-bounded output retention and exact review/export lineage."
+        ],
+        "roadmap_decision": "existing_task: correct ES02 retention and continue authenticated worker integration.",
+        "insight_ids": [
+          "EM-110",
+          "EM-112"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-event-review-ui-verified",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify browser event review across twelve native suites",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01",
+        "ES02-03",
+        "ES02-04"
+      ],
+      "summary": "Record the corrected source-bound browser review result and screenshots, retaining failed runs and explicit publication/output-retention blockers.",
+      "added": [
+        "Verified native receipt and desktop/mobile screenshots."
+      ],
+      "changed": [
+        "Current handoff and both product trackers point to the verified UI checkpoint."
+      ],
+      "fixed": [],
+      "verification": [
+        "1346 source /1346 installed-engine /423 native browser checks across 12 suites passed; exact inspection valid. Corrected checkpoint CI unavailable after GitHub authentication failure.",
+        "84 focused code/runner tests and 27 standalone event-review checks passed."
+      ],
+      "limitations": [
+        "Development account-token flow, not actual OIDC browser sign-in or genuine human acceptance.",
+        "Full structured output exceeds current work-result text cap; preserve docs/evidence/event-result-size-boundary-2026-10-25.json and fix retention before worker dispatch.",
+        "Authenticated worker dispatch, production isolation and actual-model/independent acceptance remain unfinished.",
+        "Final receipt/screenshot edits are documentation-only and committed locally pending GitHub reconnection.",
+        "Both GitHub API authentication and Git remote authentication failed after the code checkpoint was pushed. Refresh/reconnect the environment GitHub connection, then push this branch."
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-review-ui-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-review-ui.md",
+        "docs/screenshots/8ball-event-review-2026-10-25.png",
+        "docs/screenshots/8ball-event-review-mobile-2026-10-25.png"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Ordinary structured graphs exceed the provisional result cap.",
+          "Native test waits must respect CSP and real notification lifetimes."
+        ],
+        "risks": [
+          "A green older suite cannot establish an uncovered integration requirement."
+        ],
+        "architecture_implications": [
+          "Preserve full output before worker integration; keep CSP unchanged."
+        ],
+        "roadmap_decision": "existing_task: record verified bounded review UI, preserve full-output retention as unfinished and pause publication at the demonstrated authentication blocker.",
+        "insight_ids": [
+          "EM-108",
+          "EM-109",
+          "EM-110",
+          "EM-111"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-event-review-native-correction",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Preserve native review failures and correct CSP-safe screenshot wait",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01",
+        "ES02-03",
+        "ES02-04"
+      ],
+      "summary": "Retain integrated and standalone failures, correct only the screenshot wait, and record structured-output retention as unfinished worker work.",
+      "added": [
+        "Native/CI failure receipt and explicit result-size boundary experiment."
+      ],
+      "changed": [
+        "Screenshot wait uses a locator assertion and an explicit deadline beyond the existing notification lifetime."
+      ],
+      "fixed": [
+        "CSP-incompatible string evaluation in browser-test screenshot wait."
+      ],
+      "verification": [
+        "Prior source/package and original eleven native suites passed; new event-review suite failed. Corrected native rerun pending."
+      ],
+      "limitations": [
+        "Full provider-output retention exceeds the current work-result cap and remains unfinished.",
+        "Actual OIDC login, worker dispatch, production isolation and genuine model/human acceptance remain open."
+      ],
+      "evidence_paths": [
+        "docs/evidence/event-review-native-csp-failure-2026-10-25.json",
+        "docs/evidence/event-result-size-boundary-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-review-ui.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Ordinary structured graphs exceed the provisional result cap.",
+          "Native test waits must respect CSP and real notification lifetimes."
+        ],
+        "risks": [
+          "A green older suite cannot establish an uncovered integration requirement."
+        ],
+        "architecture_implications": [
+          "Preserve full output before worker integration; keep CSP unchanged."
+        ],
+        "roadmap_decision": "existing_task: correct test harness and retain the worker boundary as unfinished scope.",
+        "insight_ids": [
+          "EM-110",
+          "EM-111"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-endstate-review-ui",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Review incoming changes through the browser",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01",
+        "ES02-03",
+        "ES02-04"
+      ],
+      "summary": "Show original source/output, author a reviewed amendment in Plan Studio, preview effects and commit explicitly with recoverable session handling.",
+      "added": [
+        "Case-scoped review page and permission-checked preview endpoint.",
+        "Twelfth native browser suite with original source, read-only, stale, lost acknowledgement and mobile checks."
+      ],
+      "changed": [
+        "Plan Studio can omit its separate live-review shortcut when embedded in event review."
+      ],
+      "fixed": [],
+      "verification": [
+        "27 standalone native browser checks passed; full native validation pending.",
+        "Initial incorrect fieldset assertion is preserved and replaced with actual disabled-control assertions."
+      ],
+      "limitations": [
+        "Development account-token flow only; real OIDC sign-in and genuine human acceptance remain unfinished.",
+        "No authenticated worker dispatch, external send or production isolation."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-endstate-review-ui.md",
+        "docs/evidence/event-review-browser-first-failure-2026-10-25.json",
+        "web/v2/event-review.js"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Lost acknowledgement is an unknown outcome, not permission to retry.",
+          "Disabled-state tests must inspect actual interactive descendants."
+        ],
+        "risks": [
+          "Late responses must not restore sensitive material after locking."
+        ],
+        "architecture_implications": [
+          "Session epochs, explicit refresh, existing editor semantics and a case-scoped transactional preview."
+        ],
+        "roadmap_decision": "existing_task: advance browser event review while retaining all production/model/human gates.",
+        "insight_ids": [
+          "EM-108",
+          "EM-109"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-endstate-event-api-verified",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify authenticated event review and case-binding correction",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-03"
+      ],
+      "summary": "Record corrected full native evidence while retaining the separately demonstrated same-matter failure.",
+      "added": [
+        "Source-bound corrected native receipt."
+      ],
+      "changed": [
+        "Both product trackers, entry page and handoff now reference the verified API checkpoint."
+      ],
+      "fixed": [],
+      "verification": [
+        "1345 source /1345 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed.",
+        "65 focused API/event/review/lifecycle tests passed."
+      ],
+      "limitations": [
+        "No inferred historical ownership or automatic replay.",
+        "Browser review, worker, production and original human/model gates remain unfinished."
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-event-api-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-event-api.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Two cases may share a matter and revision. An attempt storing only matter scope and base revision can then be consumed by either case. The existing full native suite passed while an additional reproduction demonstrated this missing lineage constraint."
+        ],
+        "risks": [
+          "Matching matter/revision alone can conceal wrong-case lineage."
+        ],
+        "architecture_implications": [
+          "Explicit case binding at enqueue; preserve unknown identity in historical rows."
+        ],
+        "roadmap_decision": "existing_task: correct demonstrated ES02 lineage gap.",
+        "insight_ids": [
+          "EM-106",
+          "EM-107"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-endstate-case-binding",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Bind reviewed processing to its intended case",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-03"
+      ],
+      "summary": "Correct demonstrated cross-case consumption within one matter by binding new case attempts explicitly.",
+      "added": [
+        "Nullable historical case-binding migration and cross-case/migration regressions."
+      ],
+      "changed": [
+        "Unbound attempts remain retained but cannot create case changes."
+      ],
+      "fixed": [
+        "An unbound result could previously commit against a different same-matter case at a matching revision."
+      ],
+      "verification": [
+        "Preserved prior native pass and separate failing correctness reproduction; focused/full correction validation follows."
+      ],
+      "limitations": [
+        "No inferred historical ownership or automatic replay.",
+        "Browser review, worker, production and original human/model gates remain unfinished."
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-event-api.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Two cases may share a matter and revision. An attempt storing only matter scope and base revision can then be consumed by either case. The existing full native suite passed while an additional reproduction demonstrated this missing lineage constraint."
+        ],
+        "risks": [
+          "Matching matter/revision alone can conceal wrong-case lineage."
+        ],
+        "architecture_implications": [
+          "Explicit case binding at enqueue; preserve unknown identity in historical rows."
+        ],
+        "roadmap_decision": "existing_task: correct demonstrated ES02 lineage gap.",
+        "insight_ids": [
+          "EM-107"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-endstate-event-api",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Connect reviewed ENDSTATE events to authenticated API",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01",
+        "ES02-03",
+        "ES02-04"
+      ],
+      "summary": "Expose explicit source/result review and local notice delivery through signed identity and transactional permission checks.",
+      "added": [
+        "Event detail/review and notice pull/acknowledgement routes for shared-registry agency mode.",
+        "Signed API regression coverage for identity spoofing, scope, stale/cancelled work and revoked permissions."
+      ],
+      "changed": [
+        "HTTP review explicitly requires current read and write permission."
+      ],
+      "fixed": [],
+      "verification": [
+        "Focused and cumulative native validation pending."
+      ],
+      "limitations": [
+        "No browser review screen, OIDC browser login, worker daemon, production isolation or external send.",
+        "No actual-model or genuine independent/human acceptance."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-endstate-event-api.md",
+        "eightball/v2/event_api.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "A route guard may pass before a grant is revoked, and a separate registry cannot participate in the case transaction. A write response containing source/result provenance also requires current read access, even when write permission is present."
+        ],
+        "risks": [
+          "A successful route guard alone is not transaction-wide authority."
+        ],
+        "architecture_implications": [
+          "Shared registry/case database and read/write revalidation in review commit."
+        ],
+        "roadmap_decision": "existing_task: advance authenticated review without relaxing production gates.",
+        "insight_ids": [
+          "EM-106"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-endstate-outbox-verified",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify durable local delivery against full native suite",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04"
+      ],
+      "summary": "Record exact-source native and checkpoint CI evidence for the local transactional outbox.",
+      "added": [
+        "Source-bound verification receipt."
+      ],
+      "changed": [
+        "Current handoff, tracker evidence and entry page now point to the verified outbox checkpoint."
+      ],
+      "fixed": [],
+      "verification": [
+        "1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed.",
+        "40 focused event/review/outbox tests passed."
+      ],
+      "limitations": [
+        "No daemon, browser integration, external delivery, PostgreSQL isolation or historical backfill.",
+        "No model or human acceptance."
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-outbox-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-outbox.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "A committed graph review can be lost to downstream readers if notice creation occurs after its transaction. Atomic creation plus independent durable per-reader acknowledgement survives restarts, but repeats remain possible and acknowledgement cannot carry execution authority."
+        ],
+        "risks": [
+          "Repeated delivery is expected until acknowledgement."
+        ],
+        "architecture_implications": [
+          "Case/review/outbox share one local transaction."
+        ],
+        "roadmap_decision": "existing_task: advance ES02 while preserving unfinished acceptance gates.",
+        "insight_ids": [
+          "EM-105"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-endstate-outbox",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Persist reviewed change notices with per-reader delivery",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04"
+      ],
+      "summary": "Create local notices atomically with reviewed graph commits and retain ordered, permission-checked delivery acknowledgements.",
+      "added": [
+        "Transactional outbox and per-reader restart-safe delivery.",
+        "Rollback, concurrency, ordering, revocation and tampering regressions."
+      ],
+      "changed": [],
+      "fixed": [],
+      "verification": [
+        "Focused and cumulative native validation pending."
+      ],
+      "limitations": [
+        "No daemon, browser integration, external delivery, PostgreSQL isolation or historical backfill.",
+        "No model or human acceptance."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-endstate-outbox.md",
+        "eightball/v2/event_outbox.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "A committed graph review can be lost to downstream readers if notice creation occurs after its transaction. Atomic creation plus independent durable per-reader acknowledgement survives restarts, but repeats remain possible and acknowledgement cannot carry execution authority."
+        ],
+        "risks": [
+          "Repeated delivery is expected until acknowledgement."
+        ],
+        "architecture_implications": [
+          "Case/review/outbox share one local transaction."
+        ],
+        "roadmap_decision": "existing_task: advance ES02 while preserving unfinished acceptance gates.",
+        "insight_ids": [
+          "EM-105"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-endstate-reviewed-consumption-verified",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify reviewed consumption and clarify the current entry point",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-03",
+        "ES02-04"
+      ],
+      "summary": "Record source-bound native evidence and preserve historical entry notes in an archive.",
+      "added": [
+        "Source-bound acceptance receipt."
+      ],
+      "changed": [
+        "START-HERE now links the standing goal, current tracker and original requirements; previous entry text preserved unchanged."
+      ],
+      "fixed": [],
+      "verification": [
+        "1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed."
+      ],
+      "limitations": [
+        "Authenticated reviewer identity is supplied by trusted host; public agency writes remain disabled.",
+        "No PostgreSQL tenant policies, automatic worker/outbox, live model or genuine human/independent acceptance."
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Review provenance and permission must be bound to the actual transaction, not just the preceding processing attempt."
+        ],
+        "risks": [
+          "A grant can expire during calculation; a rehashed receipt alone must not substitute original results or explanations."
+        ],
+        "architecture_implications": [
+          "Single local database transaction, explicit review request hash, conditional case-chain-linked export and a final expiry check."
+        ],
+        "roadmap_decision": "existing_task: advance ES02-03 without exposing incomplete agency write routes or claiming production acceptance.",
+        "insight_ids": [
+          "EM-104"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-endstate-reviewed-consumption",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Commit reviewed event graph amendments atomically",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-03",
+        "ES02-04"
+      ],
+      "summary": "Bind explicit reviewed graph changes to original events/results and current case revision/permission in a single local transaction.",
+      "added": [
+        "Local reviewed-consumption service and conditional case export records.",
+        "Tests for duplicate/concurrent consumption, stale revisions, scope/permission denial, rollback, expiry during calculation and provenance tampering."
+      ],
+      "changed": [
+        "ES02-03 now partial; existing graph validation, approval invalidation and change explanations are reused."
+      ],
+      "fixed": [],
+      "verification": [
+        "32 focused event/review/lifecycle tests passed; cumulative native validation pending."
+      ],
+      "limitations": [
+        "Authenticated reviewer identity is supplied by trusted host; public agency writes remain disabled.",
+        "No PostgreSQL tenant policies, automatic worker/outbox, live model or genuine human/independent acceptance."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md",
+        "eightball/v2/event_reviews.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Review provenance and permission must be bound to the actual transaction, not just the preceding processing attempt."
+        ],
+        "risks": [
+          "A grant can expire during calculation; a rehashed receipt alone must not substitute original results or explanations."
+        ],
+        "architecture_implications": [
+          "Single local database transaction, explicit review request hash, conditional case-chain-linked export and a final expiry check."
+        ],
+        "roadmap_decision": "existing_task: advance ES02-03 without exposing incomplete agency write routes or claiming production acceptance.",
+        "insight_ids": [
+          "EM-104"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-endstate-processing-verification",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify durable processing and corrected review recovery",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04",
+        "B02-11"
+      ],
+      "summary": "Record passing cumulative software evidence after retaining and fixing the observed Plan Review race.",
+      "added": [
+        "Source-bound passing receipt linked to the original failed run."
+      ],
+      "changed": [
+        "Canonical tracker and handoff record the next reviewed case-transaction boundary."
+      ],
+      "fixed": [],
+      "verification": [
+        "1309 source and1309 installed-engine tests passed.",
+        "396 native browser checks across11 suites passed.",
+        "Exact source/artifact inspection valid before receipt edits; both checkpoint CI workflows passed."
+      ],
+      "limitations": [
+        "No independent review or model/human acceptance.",
+        "Durable processing still requires actual transactional case integration."
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-processing-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-processing.md",
+        "docs/evidence/endstate-processing-failed-2026-10-25.json"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Discarding stale data must also resolve pending user-interface states."
+        ],
+        "risks": [
+          "Intermittent refresh ordering can leave an inaccessible review despite green CI elsewhere."
+        ],
+        "architecture_implications": [
+          "Bind completion/error handling to dialog ownership and revision; manual reopening only."
+        ],
+        "roadmap_decision": "existing_task: preserve demonstrated failure and add deterministic native coverage.",
+        "insight_ids": [
+          "EM-102",
+          "EM-103"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-review-refresh-race",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Resolve stale Plan Review loading after a case refresh",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-11",
+        "ES02-04"
+      ],
+      "summary": "Fix the race demonstrated during cumulative validation without publishing stale review results or automatically retrying.",
+      "added": [
+        "Deterministic native in-flight revision-change checks and retained failed-run receipt."
+      ],
+      "changed": [
+        "Context changes now show a manual reopen action instead of endless review loading."
+      ],
+      "fixed": [],
+      "verification": [
+        "First cumulative run failed in native Plan Review; exact inspection valid/failed.",
+        "After correction all35 focused native Plan Review checks passed; cumulative rerun follows."
+      ],
+      "limitations": [
+        "No independent review or model/human acceptance.",
+        "Durable processing still requires actual transactional case integration."
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-processing-failed-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-processing.md",
+        "tests/browser_plan_review.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Discarding stale data must also resolve pending user-interface states."
+        ],
+        "risks": [
+          "Intermittent refresh ordering can leave an inaccessible review despite green CI elsewhere."
+        ],
+        "architecture_implications": [
+          "Bind completion/error handling to dialog ownership and revision; manual reopening only."
+        ],
+        "roadmap_decision": "existing_task: preserve demonstrated failure and add deterministic native coverage.",
+        "insight_ids": [
+          "EM-103"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-endstate-processing",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Add durable event-processing attempts and cancellation",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04"
+      ],
+      "summary": "Persist explicit processing attempts with exclusive claims, bounded leases, cancellation and revision/permission disposition.",
+      "added": [
+        "Durable processing lifecycle bound to an existing scoped inbox record.",
+        "Tests for restart, duplicate claims, cancellation, expiry, stale results and revoked permission."
+      ],
+      "changed": [
+        "ES02-04 now partial; all remaining acceptance and integration requirements stay open."
+      ],
+      "fixed": [],
+      "verification": [
+        "18 focused inbox/lifecycle tests passed; cumulative validation pending."
+      ],
+      "limitations": [
+        "Trusted host must supply authenticated scope and current revision/permission observations; no public API is installed.",
+        "No worker daemon/outbox, automatic model call, case mutation or production transactional isolation."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-endstate-processing.md",
+        "eightball/event_work.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Expired processing leases cannot establish whether a remote request was executed."
+        ],
+        "risks": [
+          "Silent reclamation can repeat paid or irreversible operations."
+        ],
+        "architecture_implications": [
+          "Explicit attempts and interruption; late results cannot publish after cancellation."
+        ],
+        "roadmap_decision": "existing_task: advance ES02-02/04 while preserving unfinished gates.",
+        "insight_ids": [
+          "EM-102"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-endstate-event-inbox-verification",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify ENDSTATE inbox and shared build tracking",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-01",
+        "ES02-02",
+        "DOC-06"
+      ],
+      "summary": "Record cumulative native and checkpoint CI results for the durable inbox and written build goal.",
+      "added": [
+        "Source-bound event-inbox verification receipt."
+      ],
+      "changed": [
+        "Both product trackers link the verified increment and retain unfinished gates."
+      ],
+      "fixed": [],
+      "verification": [
+        "1302 source tests and1302 installed-engine regressions passed.",
+        "394 native browser checks across11 suites passed.",
+        "Exact source/artifact inspection valid before final receipt edits; both checkpoint CI workflows passed."
+      ],
+      "limitations": [
+        "No live connectors, durable worker/outbox, reviewed case commits or automatic replanning yet.",
+        "8BALL accounts, vault, collaboration, production and genuine model/human acceptance remain unfinished."
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-event-inbox-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-event-inbox.md",
+        "docs/delivery/BUILD-GOAL.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Occurrence time and receipt order are separate; retries must retain their original receipt."
+        ],
+        "risks": [
+          "Automatic replay could wrongly reauthorise work if connected directly to commands."
+        ],
+        "architecture_implications": [
+          "Pure kernel contract; database remains in host. Scope asserted before append."
+        ],
+        "roadmap_decision": "existing_task: ES02-01/02 increment, no acceptance or deployment promotion.",
+        "insight_ids": [
+          "EM-101"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-endstate-event-inbox",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Build the ENDSTATE event contract and durable host inbox",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-01",
+        "ES02-02",
+        "DOC-06"
+      ],
+      "summary": "Retain scoped incoming events with duplicate/conflict handling and durable arrival order; publish one explicit build goal and refresh both product trackers.",
+      "added": [
+        "Neutral pending-event/receipt contracts and SQLite host inbox.",
+        "Eleven tests for restart, concurrent duplicates, changed retries, delayed events, scope and corruption.",
+        "BUILD-GOAL.md with completion criteria and links to canonical status."
+      ],
+      "changed": [
+        "ES02-01/02 now partial; current branch/PR and next tasks refreshed without erasing prior inspections."
+      ],
+      "fixed": [],
+      "verification": [
+        "11 focused event/inbox tests passed; cumulative native verification pending."
+      ],
+      "limitations": [
+        "No live connectors, durable worker/outbox, reviewed case commits or automatic replanning yet.",
+        "8BALL accounts, vault, collaboration, production and genuine model/human acceptance remain unfinished."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-endstate-event-inbox.md",
+        "docs/endstate/EVENT-INBOX.md",
+        "docs/delivery/BUILD-GOAL.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Occurrence time and receipt order are separate; retries must retain their original receipt."
+        ],
+        "risks": [
+          "Automatic replay could wrongly reauthorise work if connected directly to commands."
+        ],
+        "architecture_implications": [
+          "Pure kernel contract; database remains in host. Scope asserted before append."
+        ],
+        "roadmap_decision": "existing_task: ES02-01/02 increment, no acceptance or deployment promotion.",
+        "insight_ids": [
+          "EM-101"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-agency-api-overview-verification",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify agency access and publish the clearer overview",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01",
+        "B02-19"
+      ],
+      "summary": "Record cumulative native verification, checkpoint CI and final uncertainty wording correction.",
+      "added": [
+        "Source-bound verification receipt and owner-accessible overview screenshot."
+      ],
+      "changed": [
+        "Display unknown and disputed counts separately."
+      ],
+      "fixed": [],
+      "verification": [
+        "1291 source +1291 installed-engine +394 native browser checks passed on7fbb34a.",
+        "Both checkpoint CI workflows passed; exact artifact/source inspection valid.",
+        "Final wording passed node syntax and54 native workspace checks."
+      ],
+      "limitations": [
+        "No live OIDC browser login/MFA, PostgreSQL row enforcement, write/worker authorisation or production acceptance.",
+        "Remaining roadmap steps and V0.2 actual-model/human gates remain open."
+      ],
+      "evidence_paths": [
+        "docs/evidence/agency-api-overview-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-agency-api-overview.md",
+        "docs/screenshots/8ball-overview-2026-10-25.png"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Authenticated identity alone cannot protect aggregate and asynchronous local routes."
+        ],
+        "risks": [
+          "Grant revocation must span transaction/worker paths; in-flight responses cannot be recalled."
+        ],
+        "architecture_implications": [
+          "Explicit deny-by-default opt-in boundary, no client-created grants or silent migrations."
+        ],
+        "roadmap_decision": "existing_task: continue B03-01 and B02-19; no production deployment or gate promotion.",
+        "insight_ids": [
+          "EM-100"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-agency-api-overview",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Add authenticated agency read access and a clearer Situation Room",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01",
+        "B02-19"
+      ],
+      "summary": "Persist scoped grants, validate signed issuer/audience-bound tokens and enforce an opt-in API read boundary; lead the workspace with a plain-language summary.",
+      "added": [
+        "Persistent registry, RS256 token validation and API denial tests.",
+        "Situation summary, evidence/change links and keyboard-expandable graph."
+      ],
+      "changed": [
+        "Agency mode denies all unintegrated routes; local mode remains compatible."
+      ],
+      "fixed": [],
+      "verification": [
+        "24 focused policy/API tests passed.",
+        "Initial native workspace journey passed 51 checks; new disclosure checks and cumulative run follow."
+      ],
+      "limitations": [
+        "No live OIDC browser login/MFA, PostgreSQL row enforcement, write/worker authorisation or production acceptance.",
+        "Remaining roadmap steps and V0.2 actual-model/human gates remain open."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-agency-api-overview.md",
+        "docs/v2/AGENCY-ACCESS.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Authenticated identity alone cannot protect aggregate and asynchronous local routes."
+        ],
+        "risks": [
+          "Grant revocation must span transaction/worker paths; in-flight responses cannot be recalled."
+        ],
+        "architecture_implications": [
+          "Explicit deny-by-default opt-in boundary, no client-created grants or silent migrations."
+        ],
+        "roadmap_decision": "existing_task: continue B03-01 and B02-19; no production deployment or gate promotion.",
+        "insight_ids": [
+          "EM-100"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-publish-workspace-screenshot",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Publish the current workspace screenshot for owner review",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01"
+      ],
+      "summary": "Make the actual local workspace screenshot accessible on GitHub at the owner request.",
+      "added": [
+        "docs/screenshots/8ball-situation-room-2026-10-25.png"
+      ],
+      "changed": [],
+      "fixed": [],
+      "verification": [
+        "Screenshot captured from native Chromium against the local application with fictional test data.",
+        "The screenshot capture journey passed 51 workspace checks."
+      ],
+      "limitations": [
+        "Screenshot is not human acceptance, real-model evidence or a production deployment."
+      ],
+      "evidence_paths": [
+        "docs/screenshots/8ball-situation-room-2026-10-25.png",
+        "docs/delivery/sessions/2026-10-25-agency-authorisation.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "No new product finding; publish existing fictional workspace evidence for owner access."
+        ],
+        "risks": [
+          "A screenshot must not imply production or model acceptance."
+        ],
+        "architecture_implications": [
+          "None; application source unchanged."
+        ],
+        "roadmap_decision": "no_action: evidence publication only; no task status changes.",
+        "insight_ids": [
+          "EM-099"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-agency-policy-verification",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify agency policy foundation against existing workflows",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01"
+      ],
+      "summary": "Record cumulative native software verification without claiming production enforcement.",
+      "added": [
+        "Source-bound native verification receipt."
+      ],
+      "changed": [],
+      "fixed": [],
+      "verification": [
+        "1280 source tests and 1280 installed-engine regressions passed.",
+        "391 native browser checks across all eleven suites passed.",
+        "Exact source/artifact inspection valid before receipt edits."
+      ],
+      "limitations": [
+        "Not connected to the local API. No OIDC, persistent membership, PostgreSQL row policy or production isolation claim."
+      ],
+      "evidence_paths": [
+        "docs/evidence/agency-authorisation-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-agency-authorisation.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Object grants must not expand into aggregate matter operations."
+        ],
+        "risks": [
+          "Policy-only tests do not prove request or transaction enforcement."
+        ],
+        "architecture_implications": [
+          "Use verified identity and server-owned membership; enforce all consumed objects."
+        ],
+        "roadmap_decision": "Proceed with B03-01 under explicit full-product scope; no production deployment.",
+        "insight_ids": [
+          "EM-099"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-agency-authorisation",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Begin the agency permission foundation",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01"
+      ],
+      "summary": "Owner authorised the full product roadmap; add exact issuer/subject, tenant/matter/object and operation-scoped permission calculation.",
+      "added": [
+        "Immutable identity/resource/grant records and deny-by-default policy.",
+        "13 denial tests covering all six operations, foreign scopes, revocation, expiry and read-only object grants."
+      ],
+      "changed": [
+        "B03-01 is partial; existing V0.2 acceptance remains unchanged."
+      ],
+      "fixed": [],
+      "verification": [
+        "13 policy tests passed; cumulative native verification follows."
+      ],
+      "limitations": [
+        "Not connected to the local API. No OIDC, persistent membership, PostgreSQL row policy or production isolation claim."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-agency-authorisation.md",
+        "tests/test_authorisation.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Object grants must not expand into aggregate matter operations."
+        ],
+        "risks": [
+          "Policy-only tests do not prove request or transaction enforcement."
+        ],
+        "architecture_implications": [
+          "Use verified identity and server-owned membership; enforce all consumed objects."
+        ],
+        "roadmap_decision": "Proceed with B03-01 under explicit full-product scope; no production deployment.",
+        "insight_ids": [
+          "EM-099"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-build-verification",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",
@@ -437,7 +1481,7 @@
       ],
       "summary": "Added an owner-readable source investigation of Ruflo worker coordination, model access, confidence and evidence limits. Application behavior and acceptance gates are unchanged.",
       "added": [
-        "Plain-English owner guide, pinned-source receipt and complete ER-01–15 handoff.",
+        "Plain-English owner guide, pinned-source receipt and complete ER-01\u201315 handoff.",
         "EM-084 preserves the prediction target behind worker-routing confidence; prior findings receive additive evidence."
       ],
       "changed": [
@@ -1568,7 +2612,7 @@
         "ES03-08",
         "B04-04"
       ],
-      "summary": "Documentation-only refinement: 8BALL becomes the fixer’s live situation room around an explicit mandate and human-selected course; ENDSTATE remains a neutral planning and reconsideration engine. No runtime completion or new required scope is implied.",
+      "summary": "Documentation-only refinement: 8BALL becomes the fixer\u2019s live situation room around an explicit mandate and human-selected course; ENDSTATE remains a neutral planning and reconsideration engine. No runtime completion or new required scope is implied.",
       "added": [
         "Separate 8BALL and ENDSTATE vision documents, ADR 0004 and proposed course/coverage/recovery acceptance scenarios.",
         "Ten new discoveries retained alongside all 55 originals; five additional end-of-sprint review prompts.",
@@ -1579,7 +2623,7 @@
         "Earlier fallback/watch/attention/recoverability discoveries have appended dispositions rather than rewritten observations."
       ],
       "fixed": [
-        "The latest handoff’s missing Draft Repair source is explicitly separated from the recovered alpha.7 implementation; later narrated test totals are not attached to the earlier source.",
+        "The latest handoff\u2019s missing Draft Repair source is explicitly separated from the recovered alpha.7 implementation; later narrated test totals are not attached to the earlier source.",
         "No-path wording now identifies the supplied catalogue and search bounds rather than implying global impossibility.",
         "The review protocol now permits additional passes while requiring the original ten and preserving recorded prompt text/order. Seven regression checks cover safe extension and denied rewrites."
       ],
@@ -1849,7 +2893,7 @@
           "The bounded calendar-day interpreter deliberately cannot decide what next business day or end of day means for every organisation, location or agreement."
         ],
         "risks": [
-          "Shared names, exact quotations and schema validation do not prove identity, authority or the source’s intended date.",
+          "Shared names, exact quotations and schema validation do not prove identity, authority or the source\u2019s intended date.",
           "Withdrawing evidence should prompt reconsideration, not silently remove adopted operational commitments."
         ],
         "architecture_implications": [
@@ -2070,7 +3114,7 @@
         "Guided nested AND/OR and explicit-false authoring, guards, intended effects, verification criteria, resources, decision gates and response contingencies.",
         "Read-only amendment preview with route differences, historical protections, undo/redo, discard and a separate revision-checked commit.",
         "Persistent local analysis status with bounded queue, stage counts, cancellation, stale-result rejection and restart interruption.",
-        "In-app What’s new and a generated root CHANGELOG.md. Every future build must update the shared changelog and delivery ledger.",
+        "In-app What\u2019s new and a generated root CHANGELOG.md. Every future build must update the shared changelog and delivery ledger.",
         "Desktop authoring columns scroll independently; smaller screens keep a responsive stacked layout."
       ],
       "changed": [
