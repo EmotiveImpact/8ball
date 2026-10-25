@@ -1023,10 +1023,10 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `controlled_boundary_failure`.
 - Repository evidence: [docs/evidence/event-result-size-boundary-2026-10-25.json](../../docs/evidence/event-result-size-boundary-2026-10-25.json).
-- Result/scope: Historical 12000-character rejection preserved. Bound corrected to 500000 UTF-8 bytes; focused restart/review/export tests passed. See EV-EVENT-RESULT-RETENTION.
+- Result/scope: Historical failure preserved; corrected at baca8ad and verified by full graph restart/review/export plus 1349 source /1349 installed /423 native checks. See EV-EVENT-RESULT-RETENTION.
 
 ### EV-EVENT-RESULT-RETENTION
 
 - Kind: `controlled_full_result_retention`.
-- Repository evidence: [docs/delivery/sessions/2026-10-25-complete-result-retention.md](../../docs/delivery/sessions/2026-10-25-complete-result-retention.md).
-- Result/scope: 36 focused work/review tests passed; full native verification pending. Complete graph output retained at a 500000-byte UTF-8 bound.
+- Repository evidence: [docs/evidence/complete-result-retention-native-2026-10-25.json](../../docs/evidence/complete-result-retention-native-2026-10-25.json).
+- Result/scope: 1349 source /1349 installed-engine /423 native browser checks across twelve suites passed; exact inspection and both checkpoint CI workflows passed. Full original graph survives restart, review and export; worker/model/human gates remain unfinished.

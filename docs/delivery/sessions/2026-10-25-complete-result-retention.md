@@ -31,3 +31,9 @@ What did this reveal? The processing boundary should match the real provider env
 | ER-15 | Reviewers can now receive a complete ordinary graph result through the queue; operator/model usefulness remains unproven. |
 
 Disposition: existing ES02-02/04 implementation correction. No new application, deferred research runtime, merge, deployment or paid inference.
+
+## Verified closeout
+
+Source `baca8ad9efa531e5f172058845852963d7d5234a` passed 1,349 source tests, 1,349 installed-engine regressions and 423 native browser checks across twelve suites. Exact-source/artifact inspection passed before receipt edits. Both checkpoint CI workflows passed: 40242301342 and 40242301344. [Receipt](../../evidence/complete-result-retention-native-2026-10-25.json). The original result-size failure remains linked.
+
+Code is pushed on feat/agency-authorisation-20261025, draft PR5; final receipt is committed/pushed separately. GitHub authentication is working. Next engineering task: authenticated host worker dispatch with retained provider/model/prompt evidence and current permission/revision checks. Full product/model/human acceptance remains unfinished; no merge or deployment. All 112 discoveries remain preserved.

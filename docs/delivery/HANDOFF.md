@@ -1,3 +1,11 @@
+# Latest verified checkpoint: complete bounded result retention
+
+[Session](sessions/2026-10-25-complete-result-retention.md), [receipt](../evidence/complete-result-retention-native-2026-10-25.json). Source `baca8ad9efa531e5f172058845852963d7d5234a` passed 1,349 source tests, 1,349 installed-engine regressions and 423 native browser checks across twelve suites. Exact inspection and both checkpoint CI workflows passed.
+
+Complete original graph output now survives the queue, restart, explicit review and audit export under a 500000-byte UTF-8 bound. The previous oversized-result failure is retained as historical evidence. GitHub access recovered and the earlier browser-review closeout/screenshots are pushed.
+
+Continue draft PR5 branch feat/agency-authorisation-20261025. Next: authenticated host worker dispatch with retained provider evidence and transaction-wide permission/revision checks. OIDC login, production accounts/storage, measured replanning and original model/independent/human acceptance remain unfinished. BUILD-GOAL.md and PROGRESS.md hold the full plan and current task state for both products. Earlier entries below are historical.
+
 # Current sprint: complete result retention; GitHub publication restored
 
 [Session](sessions/2026-10-25-complete-result-retention.md). Previous closeout `98ee073`, including screenshots and native evidence, is now pushed and confirmed remotely. Earlier publication-blocked text below is historical.

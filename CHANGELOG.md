@@ -4,6 +4,44 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Verify complete result retention and publish current build plan
+
+2026-10-25 · `local_unreleased`
+
+Record source-bound full-suite evidence for complete processing output and update the continuing build handoff.
+
+### Added
+
+- Source-bound native verification receipt.
+
+### Changed
+
+- Latest tracker, entry point and next-agent prompt now reference the verified development branch and full build goal.
+
+### Verification
+
+- 1349 source /1349 installed-engine /423 native browser checks across twelve suites passed; exact inspection and both checkpoint CI workflows passed.
+- 36 focused work/review tests passed.
+
+### Limitations
+
+- Authenticated background dispatch and actual-model/independent/human acceptance remain unfinished.
+- Oversized transport failures still need separate raw provider evidence; no silent truncation or retries.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Character count and UTF-8 byte count differ for multilingual text. A character-only bound neither matches the provider envelope limit nor reliably bounds stored output. Exact and one-byte-over tests demonstrated the difference.
+- Risk: Capacity correction is not proof of model quality or complete worker integration.
+- Architecture: Provider-independent byte-bounded output retention and exact review/export lineage.
+- Roadmap decision: existing_task: correct ES02 retention and continue authenticated worker integration.
+Registered discoveries: EM-110, EM-112.
+
+Roadmap items: `ES02-02`, `ES02-04`.
+
+Evidence: [docs/evidence/complete-result-retention-native-2026-10-25.json](docs/evidence/complete-result-retention-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-complete-result-retention.md](docs/delivery/sessions/2026-10-25-complete-result-retention.md).
+
 ## 0.2.0-alpha.8 · Retain complete structured processing output
 
 2026-10-25 · `local_unreleased`

@@ -21,16 +21,12 @@
     "source_merged_not_release_accepted": true,
     "current_sprint": {
       "branch": "feat/agency-authorisation-20261025",
-      "base_commit": "825c8c3969f6cf723a188cc6ae16094aa15c9e7e",
-      "tested_code_commit": "461d3f2cecfcd8c4a00da40a56f56763d0d4fc90",
+      "base_commit": "98ee073a1c5f25658aab915183c696c8b4099985",
+      "tested_code_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
       "status_as_of": "2026-10-25",
       "merged": false,
-      "evidence": "docs/evidence/endstate-review-ui-native-2026-10-25.json",
-      "verification": "1346 source /1346 installed-engine /423 native browser checks across 12 suites passed; exact inspection valid. Corrected checkpoint CI unavailable after GitHub authentication failure.",
-      "code_checkpoint_pushed": true,
-      "receipt_pushed": true,
-      "publication_blocker": null,
-      "publication_recovered_commit": "98ee073a1c5f25658aab915183c696c8b4099985"
+      "evidence": "docs/evidence/complete-result-retention-native-2026-10-25.json",
+      "verification": "1349 source /1349 installed-engine /423 native browser checks across twelve suites passed; exact inspection and both checkpoint CI workflows passed."
     },
     "verified_sprint_history": [
       {
@@ -135,6 +131,19 @@
         "merged": false,
         "evidence": "docs/evidence/endstate-event-api-native-2026-10-25.json",
         "verification": "1345 source /1345 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "825c8c3969f6cf723a188cc6ae16094aa15c9e7e",
+        "tested_code_commit": "461d3f2cecfcd8c4a00da40a56f56763d0d4fc90",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-review-ui-native-2026-10-25.json",
+        "verification": "1346 source /1346 installed-engine /423 native browser checks across 12 suites passed; exact inspection valid. Corrected checkpoint CI unavailable after GitHub authentication failure.",
+        "code_checkpoint_pushed": true,
+        "receipt_pushed": true,
+        "publication_blocker": null,
+        "publication_recovered_commit": "98ee073a1c5f25658aab915183c696c8b4099985"
       }
     ],
     "provider_configuration_preparation": {
@@ -486,12 +495,12 @@
     "EV-EVENT-RESULT-SIZE": {
       "kind": "controlled_boundary_failure",
       "path": "docs/evidence/event-result-size-boundary-2026-10-25.json",
-      "result": "Historical 12000-character rejection preserved. Bound corrected to 500000 UTF-8 bytes; focused restart/review/export tests passed. See EV-EVENT-RESULT-RETENTION."
+      "result": "Historical failure preserved; corrected at baca8ad and verified by full graph restart/review/export plus 1349 source /1349 installed /423 native checks. See EV-EVENT-RESULT-RETENTION."
     },
     "EV-EVENT-RESULT-RETENTION": {
       "kind": "controlled_full_result_retention",
-      "path": "docs/delivery/sessions/2026-10-25-complete-result-retention.md",
-      "result": "36 focused work/review tests passed; full native verification pending. Complete graph output retained at a 500000-byte UTF-8 bound."
+      "path": "docs/evidence/complete-result-retention-native-2026-10-25.json",
+      "result": "1349 source /1349 installed-engine /423 native browser checks across twelve suites passed; exact inspection and both checkpoint CI workflows passed. Full original graph survives restart, review and export; worker/model/human gates remain unfinished."
     }
   },
   "milestones": [
