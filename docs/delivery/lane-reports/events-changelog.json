@@ -9,7 +9,7 @@
       "version": "unreleased",
       "title": "Explicit current-policy event dispatch and conservative replan parity",
       "summary": "Adds reviewed text intake, bounded current-authority worker attempts, source-policy-gated graph consumption and local timing without implicit inference, retries or sends. Production identity/vault/provider wiring and combined acceptance remain open.",
-      "delivery": "local_unreleased",
+      "delivery": "pushed_unreleased",
       "added": [
         "Optional explicit manual-text intake/source-processing review/attempt/cancel/status API registration; no HTTP provider-execution route.",
         "Durable one-call dispatch under current grants/review/source policy; three explicit attempts maximum, safe failure/late-output retention and local stage metrics.",
@@ -32,7 +32,7 @@
         "One actual-clock fictional local processing/review/replan timing exercise retained; no actual-model/human/performance acceptance implied."
       ],
       "limitations": [
-        "This entry describes the local engineering checkpoint; remote push equality is separately verified in the final handoff. No release, main merge, PR change or deployment.",
+        "The unreleased engineering checkpoint is pushed only to the assigned branch; final remote-head equality is separately verified in the handoff. No release, main merge, PR change or deployment.",
         "No native UI/testing-agent, real provider inference, external connector/delivery, production source policy, independent quality or human acceptance run.",
         "Source policy callback must connect current object/quarantine/scan/retention/processing/egress checks; a test policy is not a managed service.",
         "Replan reuse is conservative unchanged-input caching, not a general partial-graph algorithm; real combined provider/human/durability latency remains open.",

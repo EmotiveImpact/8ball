@@ -10,6 +10,10 @@
 - Tested functional checkpoint: `f749627f9f7456ddcc5744f22374c57f8c5e64be`.
 - Final handoff adds only these lane-local records. Its resulting commit and
   remote-head equality are reported after push, not fabricated inside that commit.
+- Initial source-plus-record push `ab93300657ad21965ba8fc54669f3d382a41a6ad`
+  was verified identical locally and at the assigned remote head. This final
+  records-only correction truthfully marks that checkpoint pushed/unreleased;
+  its own final remote-head equality is reported separately after the last push.
 - No main/other-lane merge, PR edit, release/tag, deployment or external send.
 - Only fictional fixtures; no provider credentials, weights or real-client data.
 
