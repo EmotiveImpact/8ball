@@ -8,6 +8,10 @@ an internal **source-only engineering preview**, not complete roadmap/product ac
 - Assigned branch: `devin/1792969169-roadmap-domain-packs`.
 - Actual required starting/partition commit: `56c9b79428a612dff11e2fae0219640d156032ff`.
 - Parent implementation baseline: `baca8ad9efa531e5f172058845852963d7d5234a`.
+- Implemented/tested runtime and first receipt commit:
+  `aa54fde9cb5ee43972399f1c2752d80bd9378c3c`, pushed to the assigned branch and
+  independently matched with `git ls-remote --heads origin` after push. Subsequent
+  handoff-only edits record that observed shipping state; no runtime/test bytes change.
 - No merge/PR/release/deployment, source archive execution, actual inference, model download,
   real-client record or external send. Python 3.12.13 / Node 24.19.0; fictional data only.
 - This receipt is committed with its code. The exact containing commit is returned on push;
@@ -132,9 +136,10 @@ source vault/connector, public distribution, licence grant, support/SLO or indep
 ENDSTATE release approval is demonstrated. No top-level LICENSE/LICENCE file was present;
 this lane chooses none. Independent/human decisions stay outside engineering evidence.
 
-Functional changes and lane-local records are intended for the assigned branch only.
-No shared/canonical path is edited. Final remote equality/commit is returned after push;
-that response, rather than a self-referential in-file hash, records the final head. Ignored
+Functional changes and lane-local records were committed and pushed only to the assigned
+branch; remote equality was verified for `aa54fde9cb5ee43972399f1c2752d80bd9378c3c`.
+No shared/canonical path is edited. Final handoff-only remote equality/commit is returned
+after its push; that response, rather than a self-referential in-file hash, records the final head. Ignored
 VM artifacts are not committed product data. Next action is integrator inclusion of the
 subpackage + truthful changelog/Studio reconciliation + adapter review and combined exact
 source-bound acceptance, preserving all unfinished gates and later upstream evidence.
