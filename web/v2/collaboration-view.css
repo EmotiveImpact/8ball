@@ -1,0 +1,12 @@
+.collaboration-panel { max-width: 65rem; margin-inline: auto; padding: 1.25rem; }
+.collaboration-panel fieldset { margin-block: 1.5rem; padding: 1rem; border: 1px solid currentColor; }
+.collaboration-panel form { display: grid; gap: .85rem; margin-block: 1rem; }
+.collaboration-panel label { display: grid; gap: .35rem; }
+.collaboration-panel input, .collaboration-panel textarea, .collaboration-panel select { width: 100%; max-width: 100%; color: inherit; background: inherit; border: 1px solid currentColor; padding: .65rem; font: inherit; box-sizing: border-box; }
+.collaboration-panel input[type=checkbox] { width: auto; justify-self: start; }
+.collaboration-panel button { min-height: 44px; padding: .6rem 1rem; cursor: pointer; }
+.collaboration-panel button:disabled { cursor: not-allowed; opacity: .6; }
+.collaboration-panel :focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+.collaboration-panel code, .collaboration-panel p, .collaboration-panel li { overflow-wrap: anywhere; }
+.collaboration-copy { white-space: pre-wrap; }
+@media (max-width: 40rem) { .collaboration-panel { padding: .5rem; } .collaboration-panel fieldset { padding: .65rem; } }
