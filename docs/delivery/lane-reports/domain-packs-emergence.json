@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-10-25",
+  "required_prompts": [
+    {
+      "id": "ER-01",
+      "scope": "both",
+      "text": "What did we discover that was not explicit before, and what exact evidence made it visible?"
+    },
+    {
+      "id": "ER-02",
+      "scope": "both",
+      "text": "What could disprove the finding, and what conflicting or missing evidence have we considered?"
+    },
+    {
+      "id": "ER-03",
+      "scope": "situation",
+      "text": "Which declared dependencies, actors, decisions or sources connect apparently separate candidate routes?"
+    },
+    {
+      "id": "ER-04",
+      "scope": "situation",
+      "text": "Which verification question or review could most change our available options?"
+    },
+    {
+      "id": "ER-05",
+      "scope": "situation",
+      "text": "Are we still working towards the client’s explicit target and success criteria?"
+    },
+    {
+      "id": "ER-06",
+      "scope": "situation",
+      "text": "What may be stale, what could follow from our actions, and what event should make us reconsider?"
+    },
+    {
+      "id": "ER-07",
+      "scope": "build",
+      "text": "Which findings belong in 8BALL, ENDSTATE, an existing task, or a retained future candidate?"
+    },
+    {
+      "id": "ER-08",
+      "scope": "build",
+      "text": "What are we not implementing, why, and where can the owner review or reopen that choice?"
+    },
+    {
+      "id": "ER-09",
+      "scope": "build",
+      "text": "What actually passed, what failed, and which claimed capabilities still need independent or native verification?"
+    },
+    {
+      "id": "ER-10",
+      "scope": "both",
+      "text": "What might we still have missed, and how can the operator or owner record their own hypothesis?"
+    },
+    {
+      "id": "ER-11",
+      "scope": "both",
+      "text": "What course has an authorised human selected, and what exactly would require reconsideration rather than an automatic switch?"
+    },
+    {
+      "id": "ER-12",
+      "scope": "both",
+      "text": "Which available inputs were not processed, what limits bound this conclusion, and what could exist outside the current catalogue?"
+    },
+    {
+      "id": "ER-13",
+      "scope": "both",
+      "text": "When analysis fails, what safe recovery is available, who contributed the correction, and is the original failure still recorded?"
+    },
+    {
+      "id": "ER-14",
+      "scope": "build",
+      "text": "Can the exact implementation and evidence for every delivery claim be recovered, or must that claim remain reported-only?"
+    },
+    {
+      "id": "ER-15",
+      "scope": "both",
+      "text": "Does this improve the operator’s next decision or merely increase reviews, alerts and screens? How would we measure the difference?"
+    }
+  ],
+  "items": [
+    {
+      "origin": "2026-10-25-domain-packs-engineering",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "id": "EM-213",
+      "title": "Pack content identity is not current case authority",
+      "observation": "A canonical all-section pack digest can detect changes to prompts, policies and adapter declarations, but neither a digest nor a caller subject authenticates a consumer. The read-only consumer needs independently host-authenticated identity, current scoped grants and a fresh revision-bound snapshot; local bearer identity, cross-scope requests and post-read revocation are rejected in focused tests.",
+      "product_implication": "Keep pack review state host-owned and do not use a content pin or preview response as approval, publisher identity or a later commit/send/download ticket.",
+      "task_ids": [
+        "ES04-01",
+        "ES04-04"
+      ],
+      "evidence_paths": [
+        "endstate/domain_packs/loader.py",
+        "endstate/domain_packs/consumer.py",
+        "tests/test_domain_packs.py"
+      ],
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task / decision_record: bounded engineering and safe integration guidance under the linked existing tasks only. No new required scope, acceptance promotion, owner approval, public launch or release decision."
+        }
+      ]
+    },
+    {
+      "origin": "2026-10-25-domain-packs-engineering",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "id": "EM-214",
+      "title": "Reusable policy templates must not pre-confirm a case",
+      "observation": "The support reuse fixture originally had confirmed policy state. A reusable pack must reject that state, while a live host snapshot may independently record manual policy review. Focused tests show that review alone still cannot satisfy an unobserved authority predicate, and that unrelated catalogue changes fail review matching.",
+      "product_implication": "Keep reusable hypotheses, human policy review, observed authority, action permission, completion and verified remedy outcome separate; never overlay a pack onto live state.",
+      "task_ids": [
+        "ES04-01",
+        "ES04-03"
+      ],
+      "evidence_paths": [
+        "tests/fixtures/domain_packs/support.json",
+        "endstate/domain_packs/contracts.py",
+        "endstate/domain_packs/consumer.py",
+        "tests/test_domain_packs.py"
+      ],
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task / decision_record: bounded engineering and safe integration guidance under the linked existing tasks only. No new required scope, acceptance promotion, owner approval, public launch or release decision."
+        }
+      ]
+    },
+    {
+      "origin": "2026-10-25-domain-packs-engineering",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "id": "EM-215",
+      "title": "Passing source consumers do not establish packaged distribution",
+      "observation": "The frozen setuptools manifest lists only endstate. The internal wheel smoke passes but omits endstate.domain_packs; the actual installed-wheel regression run fails test collection with ModuleNotFoundError. Source-isolated reuse and 1415 source tests therefore do not prove this preview ships. No top-level LICENSE/LICENCE file or independent release approval was found/created in this checkpoint.",
+      "product_implication": "Integration must explicitly include the subpackage and rerun installed regressions, then separately settle licence/support/distribution and independent release approval; do not launch SDK/API/MCP from source-only evidence.",
+      "task_ids": [
+        "ES04-04",
+        "ES10-01",
+        "ES10-02"
+      ],
+      "evidence_paths": [
+        "pyproject.toml",
+        "docs/endstate/DOMAIN-PACKS.md",
+        "tests/test_domain_packs.py",
+        "docs/delivery/lane-reports/domain-packs.md"
+      ],
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task / decision_record: bounded engineering and safe integration guidance under the linked existing tasks only. No new required scope, acceptance promotion, owner approval, public launch or release decision."
+        }
+      ]
+    }
+  ]
+}
