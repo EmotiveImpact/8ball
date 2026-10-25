@@ -931,5 +931,5 @@ These references have specific scopes and may be historical. A reference to a de
 ### EV-OCT25-INTEGRATION
 
 - Kind: `integration_and_test_handoff`.
-- Repository evidence: [docs/delivery/sessions/2026-10-25-build-consolidation.md](../../docs/delivery/sessions/2026-10-25-build-consolidation.md).
-- Result/scope: Owner-authorised integration preparation; fresh native verification pending. No real-model or independent/human acceptance.
+- Repository evidence: [docs/evidence/build-consolidation-native-2026-10-25.json](../../docs/evidence/build-consolidation-native-2026-10-25.json).
+- Result/scope: 1267 source + 1267 installed-engine + 391 native browser checks passed; exact inspection valid; both checkpoint CI workflows passed. PR3 closed as already integrated. No model/independent/human acceptance.

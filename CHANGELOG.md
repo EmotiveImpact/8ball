@@ -4,6 +4,46 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Combined build passes native verification and checkpoint CI
+
+2026-10-25 · `local_unreleased`
+
+Record current cumulative software evidence and resolve already-integrated PR3; preserve all actual-model and human gates.
+
+### Added
+
+- Source-bound verification receipt with all eleven native browser suites and checkpoint CI results.
+
+### Changed
+
+- Canonical integration evidence now records completed software verification; final merge is tracked by PR4.
+
+### Verification
+
+- 1267 source tests and 1267 installed-engine regressions passed.
+- 391 native browser checks across all eleven suites passed.
+- Source/artifact inspection valid before documentation-only receipt edits.
+- GitHub validation 40199806937 and documentation 40199807143 passed on a9254e6087ef606d581d626bfcda9d7e555c857e.
+
+### Limitations
+
+- No model generation, independent professional or human acceptance claimed.
+- No deployment, release tag or research runtime adoption.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Existing source/evidence and secret-delivery findings apply; an open PR can already be integrated by ancestry.
+- Risk: Stale PR targets, uncertain authentication causes and generic UI errors can mislead the next agent.
+- Architecture: Preserve all source, frozen gates and case authority while consolidating delivery.
+- Roadmap decision: Existing-task integration under ADR0007; no required task/status changes.
+Registered discoveries: EM-051, EM-071, EM-098.
+
+Roadmap items: `B02-09`, `B02-15`, `ES03-05`, `DOC-06`.
+
+Evidence: [docs/evidence/build-consolidation-native-2026-10-25.json](docs/evidence/build-consolidation-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-build-consolidation.md](docs/delivery/sessions/2026-10-25-build-consolidation.md), [docs/delivery/NEXT-BUILD.md](docs/delivery/NEXT-BUILD.md).
+
 ## 0.2.0-alpha.8 · Owner-requested combined build and executable test handoff
 
 2026-10-25 · `local_unreleased`

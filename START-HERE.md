@@ -1,5 +1,13 @@
 # Current owner request: consolidate the completed build
 
+Combined source `a9254e6087ef606d581d626bfcda9d7e555c857e` passed 1,267 source
+tests, 1,267 installed-engine tests and 391 native browser checks, plus both
+checkpoint GitHub CI workflows. [Verification receipt](docs/evidence/build-consolidation-native-2026-10-25.json).
+[PR4](https://github.com/EmotiveImpact/8ball/pull/4) records final-head CI and the
+owner-authorised merge. Start from current remote main once that PR is merged;
+older branch instructions below are historical. PR3 was closed because its exact
+head was already integrated. Actual-model and human acceptance remain open.
+
 Read [NEXT-BUILD.md](docs/delivery/NEXT-BUILD.md) for the next agent's executable
 software/model/lifecycle test procedure. [ADR0007](docs/decisions/0007-owner-build-consolidation.md)
 records the new explicit integration authority; [current session](docs/delivery/sessions/2026-10-25-build-consolidation.md)

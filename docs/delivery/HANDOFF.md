@@ -1,5 +1,14 @@
 # Current handoff: combined development build
 
+Current cumulative software verification passed on `a9254e6087ef606d581d626bfcda9d7e555c857e`:
+1,267 source tests, 1,267 installed-engine regressions and 391 native checks across
+11 browser suites; exact inspection valid before receipt edits, checkpoint CI green.
+[Receipt](../evidence/build-consolidation-native-2026-10-25.json).
+[PR4](https://github.com/EmotiveImpact/8ball/pull/4) is the authoritative final-head
+CI/merge record. After merge, continue current remote main rather than an older
+feature branch. PR3 was closed as already integrated. Original acceptance gates
+and all discoveries remain intact; next run is the prepared actual-provider test.
+
 Use [NEXT-BUILD.md](NEXT-BUILD.md), [integration session](sessions/2026-10-25-build-consolidation.md)
 and [ADR0007](../decisions/0007-owner-build-consolidation.md). Owner authorises
 this consolidation into main; model and human acceptance remain outstanding.

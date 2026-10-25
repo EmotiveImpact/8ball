@@ -3,6 +3,59 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-build-verification",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Combined build passes native verification and checkpoint CI",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-09",
+        "B02-15",
+        "ES03-05",
+        "DOC-06"
+      ],
+      "summary": "Record current cumulative software evidence and resolve already-integrated PR3; preserve all actual-model and human gates.",
+      "added": [
+        "Source-bound verification receipt with all eleven native browser suites and checkpoint CI results."
+      ],
+      "changed": [
+        "Canonical integration evidence now records completed software verification; final merge is tracked by PR4."
+      ],
+      "fixed": [],
+      "verification": [
+        "1267 source tests and 1267 installed-engine regressions passed.",
+        "391 native browser checks across all eleven suites passed.",
+        "Source/artifact inspection valid before documentation-only receipt edits.",
+        "GitHub validation 40199806937 and documentation 40199807143 passed on a9254e6087ef606d581d626bfcda9d7e555c857e."
+      ],
+      "limitations": [
+        "No model generation, independent professional or human acceptance claimed.",
+        "No deployment, release tag or research runtime adoption."
+      ],
+      "evidence_paths": [
+        "docs/evidence/build-consolidation-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-build-consolidation.md",
+        "docs/delivery/NEXT-BUILD.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Existing source/evidence and secret-delivery findings apply; an open PR can already be integrated by ancestry."
+        ],
+        "risks": [
+          "Stale PR targets, uncertain authentication causes and generic UI errors can mislead the next agent."
+        ],
+        "architecture_implications": [
+          "Preserve all source, frozen gates and case authority while consolidating delivery."
+        ],
+        "roadmap_decision": "Existing-task integration under ADR0007; no required task/status changes.",
+        "insight_ids": [
+          "EM-051",
+          "EM-071",
+          "EM-098"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-build-consolidation",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",

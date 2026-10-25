@@ -1,5 +1,35 @@
 # Owner-requested combined development build
 
+## Completed software verification
+
+Tested commit `a9254e6087ef606d581d626bfcda9d7e555c857e` passed 1,267 source
+tests, 1,267 installed-engine regressions and 391 native browser checks across
+all eleven suites. The source remained unchanged during the run; `--inspect`
+confirmed the exact source and local artifact bytes before these receipt edits.
+Compilation, JavaScript, structural fixtures, package/schema and delivery/history
+checks passed. One Starlette/AnyIO deprecation warning occurred in each Python run.
+[Exact receipt](../../evidence/build-consolidation-native-2026-10-25.json).
+
+Current checkpoint GitHub validation run 40199806937 and documentation run
+40199807143 both passed on that exact commit. The final receipt is documentation
+only and receives separate PR CI. [PR4](https://github.com/EmotiveImpact/8ball/pull/4)
+records the final head, checks and merge outcome; this pre-merge receipt does not
+predict that outcome. No runtime source, fixture, prompt or acceptance change was
+needed after the successful cumulative run.
+
+PR3 was closed after Git/API verification that its exact head already belongs to
+main. Retargeting it to main returned no new commits. It was not newly merged;
+all its content is preserved. PRs1/2 were already merged. No branches were deleted.
+
+Remaining gates are actual authenticated model generation/lifecycle/journey,
+genuine independent professional evaluation, and human/platform/owner reviews.
+The next concrete test is the unchanged frozen generation run in NEXT-BUILD.md.
+No inference was performed in this integration. All 98 discoveries and original
+task acceptance/statuses are retained. Source and receipts will be pushed together;
+the final GitHub PR record establishes remote delivery, not this earlier sentence.
+
+## Initial checkpoint (historical)
+
 Base16b8fff43f5f0614846ac4b01db1ddbe40dcff4e. Branch
 integration/v02-complete-build-20261025. ADR0007 records new explicit merge
 authority. Existing application code and local uncommitted authentication

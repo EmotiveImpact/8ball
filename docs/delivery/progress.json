@@ -20,15 +20,14 @@
     "integration_authority": "docs/decisions/0007-owner-build-consolidation.md",
     "source_merged_not_release_accepted": true,
     "current_sprint": {
-      "branch": "feat/v02-review-evidence-20261018",
-      "base_commit": "e513237f5b66c0689fa870e0d82873d8b71e4d8a",
-      "status_as_of": "2026-10-18",
+      "branch": "integration/v02-complete-build-20261025",
+      "base_commit": "16b8fff43f5f0614846ac4b01db1ddbe40dcff4e",
+      "status_as_of": "2026-10-25",
       "merged": false,
-      "verification": "1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits.",
-      "evidence": "docs/evidence/review-evidence-native-2026-10-18.json",
-      "remote_ci": "API Forbidden; no current remote CI result claimed. New branch is outside configured push triggers.",
-      "tested_code_commit": "25ca5e2dce4f28ec33d9b132cccabfa15b23683e",
-      "tested_code_tree": "7f282146923e18634693ca3fa739b8d4bc41b494"
+      "tested_code_commit": "a9254e6087ef606d581d626bfcda9d7e555c857e",
+      "verification": "1267 source tests, 1267 installed-engine regressions and 391 native browser checks across 11 suites passed; inspection valid before receipt edits.",
+      "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
+      "remote_ci": "Both checkpoint PR workflows passed: 40199806937 and 40199807143. Final receipt-head CI and merge tracked in PR4."
     },
     "verified_sprint_history": [
       {
@@ -50,6 +49,17 @@
         "verification": "Local cumulative native passed; exact source/artifact inspection valid before final documentation edits.",
         "evidence": "docs/evidence/whole-system-readiness-2026-10-16.json",
         "remote_ci": "No result claimed; branch push is outside configured push triggers."
+      },
+      {
+        "branch": "feat/v02-review-evidence-20261018",
+        "base_commit": "e513237f5b66c0689fa870e0d82873d8b71e4d8a",
+        "status_as_of": "2026-10-18",
+        "merged": false,
+        "verification": "1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits.",
+        "evidence": "docs/evidence/review-evidence-native-2026-10-18.json",
+        "remote_ci": "API Forbidden; no current remote CI result claimed. New branch is outside configured push triggers.",
+        "tested_code_commit": "25ca5e2dce4f28ec33d9b132cccabfa15b23683e",
+        "tested_code_tree": "7f282146923e18634693ca3fa739b8d4bc41b494"
       }
     ],
     "provider_configuration_preparation": {
@@ -67,8 +77,11 @@
     "integration_20261025": {
       "branch": "integration/v02-complete-build-20261025",
       "base_commit": "16b8fff43f5f0614846ac4b01db1ddbe40dcff4e",
-      "status": "native_verification_pending",
-      "handoff": "docs/delivery/NEXT-BUILD.md"
+      "status": "native_and_checkpoint_ci_passed_final_merge_pending",
+      "handoff": "docs/delivery/NEXT-BUILD.md",
+      "tested_commit": "a9254e6087ef606d581d626bfcda9d7e555c857e",
+      "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
+      "pull_request": 4
     }
   },
   "evidence": {
@@ -327,8 +340,8 @@
     },
     "EV-OCT25-INTEGRATION": {
       "kind": "integration_and_test_handoff",
-      "path": "docs/delivery/sessions/2026-10-25-build-consolidation.md",
-      "result": "Owner-authorised integration preparation; fresh native verification pending. No real-model or independent/human acceptance."
+      "path": "docs/evidence/build-consolidation-native-2026-10-25.json",
+      "result": "1267 source + 1267 installed-engine + 391 native browser checks passed; exact inspection valid; both checkpoint CI workflows passed. PR3 closed as already integrated. No model/independent/human acceptance."
     }
   },
   "milestones": [
