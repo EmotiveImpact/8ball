@@ -8,7 +8,7 @@ from pydantic import ValidationError
 from eightball.authorisation import Identity
 from eightball.projections.service import ClientContent, ClientStatement, DraftRequest, ReviewRequest, Projections
 from eightball.store import Conflict
-from test_collaboration import AUTHOR, REVIEWER, EXPERT, CLIENT, env, grant_request
+from tests.test_collaboration import AUTHOR, REVIEWER, EXPERT, CLIENT, env, grant_request
 
 
 def draft(env, **updates):

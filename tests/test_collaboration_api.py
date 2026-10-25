@@ -5,8 +5,8 @@ from fastapi.testclient import TestClient
 
 from eightball.v2.collaboration_api import register_collaboration_routes
 from eightball.v2.request_limits import BoundedRequestBody
-from test_collaboration import AUTHOR, REVIEWER, CLIENT, EXPERT, env
-from test_projection import draft, client_grant
+from tests.test_collaboration import AUTHOR, REVIEWER, CLIENT, EXPERT, env
+from tests.test_projection import draft, client_grant
 
 
 def fixture_app(env):

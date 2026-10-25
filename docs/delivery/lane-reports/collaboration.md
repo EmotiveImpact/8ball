@@ -150,5 +150,39 @@ revocable without granting clients internal source rights.
 
 ## Native and final delivery appendix
 
-Pending at the source checkpoint; append exact native and remote evidence after
-the independently executed run. This preserves the prior local/pending state.
+### Retained first two native runs on implementation `6de309c`
+
+Both commands used Node 24 + `.venv/bin` PATH and
+`python scripts/acceptance.py --mode native --base
+56c9b79428a612dff11e2fae0219640d156032ff`. Both completed with exit 1,
+`source_unchanged_during_run=true`, native-browser verification false and no
+model/release acceptance. `--inspect` reported valid source/artifact bytes for
+both before this documentation appendix changed the source fingerprint.
+
+- `20261025T233435Z-c7b94637`: source SHA-256
+  `bc2c419de922cea03c370e73c4e7912464166be5df2c0441483d0062d661ec21`;
+  1393 unit tests pass, compile/JS/schema/structural/delivery/emergence pass,
+  eleven existing native browser suites pass (379 checks), Studio fails its
+  hardcoded `local unreleased` assertion against partition `pushed_unreleased`,
+  canonical changelog guard fails `Changed build needs a new changelog entry`,
+  ENDSTATE package build fails missing `setuptools.build_meta`.
+- Installed the documented `setuptools>=82` plus wheel into this isolated
+  venv (resolved setuptools 84.2.1 / wheel 0.48.0). No dependency manifest change.
+- `20261025T233841Z-a93e3c7b`: exact same source hash; 1393 unit tests pass;
+  same compile/JS/schema/structural/delivery/emergence passes, ten native suites
+  pass (343 checks), unchanged Studio/changelog failures. Accessibility now
+  fails `native validity is exposed to assistive technology` (first run passed;
+  no runtime errors). Package building reaches installed-kernel regression
+  collection but two lane tests fail importing bare `test_collaboration` under
+  `--import-mode=importlib`.
+- Corrected only test imports to package-qualified `tests.test_collaboration`
+  / `tests.test_projection`. Default and isolated importlib focused runs then
+  both pass 37 tests (one dependency warning). This is a test portability fix,
+  not an installed-kernel or native-suite pass; final rerun pending below.
+
+Original run reports/logs are retained under each
+`artifacts/acceptance/<run_id>/` on this lane VM, not committed as portable
+integrated proof. Studio/tracking/accessibility are outside this lane's owned
+paths; no assertion or shared ledger is weakened. Native existing-workspace
+regressions do not exercise the new opt-in collaboration mounts. Final source
+run appended after test-import checkpoint; no B03 acceptance implied.
