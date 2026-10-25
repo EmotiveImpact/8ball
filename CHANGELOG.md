@@ -4,6 +4,43 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Verify reviewed consumption and clarify the current entry point
+
+2026-10-25 · `local_unreleased`
+
+Record source-bound native evidence and preserve historical entry notes in an archive.
+
+### Added
+
+- Source-bound acceptance receipt.
+
+### Changed
+
+- START-HERE now links the standing goal, current tracker and original requirements; previous entry text preserved unchanged.
+
+### Verification
+
+- 1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed.
+
+### Limitations
+
+- Authenticated reviewer identity is supplied by trusted host; public agency writes remain disabled.
+- No PostgreSQL tenant policies, automatic worker/outbox, live model or genuine human/independent acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Review provenance and permission must be bound to the actual transaction, not just the preceding processing attempt.
+- Risk: A grant can expire during calculation; a rehashed receipt alone must not substitute original results or explanations.
+- Architecture: Single local database transaction, explicit review request hash, conditional case-chain-linked export and a final expiry check.
+- Roadmap decision: existing_task: advance ES02-03 without exposing incomplete agency write routes or claiming production acceptance.
+Registered discoveries: EM-104.
+
+Roadmap items: `ES02-02`, `ES02-03`, `ES02-04`.
+
+Evidence: [docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json](docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md](docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md).
+
 ## 0.2.0-alpha.8 · Commit reviewed event graph amendments atomically
 
 2026-10-25 · `local_unreleased`

@@ -31,3 +31,9 @@ What did this reveal? An explicit reviewed result must be tied to the actual aut
 | ER-15 | Connect explicit UI/API review and durable delivery without automatic execution. |
 
 Evidence: controlled local transaction and lifecycle tests. UX: show original source/output alongside explicit reviewed edits and resulting route changes. Disposition: existing ES02 tasks remain partial; no automatic model call, external action, deployment or release.
+
+## Verified closeout
+
+Source `87c5322c23ebe7a3fc062ce15985a3d82d84eea2` passed 1,323 source tests, 1,323 installed-engine regressions and 396 native checks across all eleven browser suites. Exact-source inspection passed before receipt edits. Both checkpoint CI workflows passed (40208276077, 40208276162). [Receipt](../../evidence/endstate-reviewed-consumption-native-2026-10-25.json). No actual model or independent/human acceptance occurred. Full emergence review above remains applicable; navigation cleanup adds no new product finding.
+
+Work is committed on feat/agency-authorisation-20261025 for PR5; final documentation receipt is pushed separately. Next: explicit event review UI/API and durable worker/outbox integration with current identity, revision and permission checks.

@@ -21,12 +21,12 @@
     "source_merged_not_release_accepted": true,
     "current_sprint": {
       "branch": "feat/agency-authorisation-20261025",
-      "base_commit": "5f72a356790b0cd3f0a27e79ba1e9801f4a14937",
-      "tested_code_commit": "e95401aa289be03ab98810955e4fe02fdd8bbea2",
+      "base_commit": "cbbe5eaa028bbb9c6427ac721570eaa67a402fad",
+      "tested_code_commit": "87c5322c23ebe7a3fc062ce15985a3d82d84eea2",
       "status_as_of": "2026-10-25",
       "merged": false,
-      "evidence": "docs/evidence/endstate-processing-native-2026-10-25.json",
-      "verification": "1309 source /1309 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed."
+      "evidence": "docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json",
+      "verification": "1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed."
     },
     "verified_sprint_history": [
       {
@@ -95,6 +95,15 @@
         "merged": false,
         "evidence": "docs/evidence/endstate-event-inbox-native-2026-10-25.json",
         "verification": "1302 source /1302 installed-engine /394 native browser checks passed; checkpoint CI passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "5f72a356790b0cd3f0a27e79ba1e9801f4a14937",
+        "tested_code_commit": "e95401aa289be03ab98810955e4fe02fdd8bbea2",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-processing-native-2026-10-25.json",
+        "verification": "1309 source /1309 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed."
       }
     ],
     "provider_configuration_preparation": {
@@ -415,8 +424,8 @@
     },
     "EV-EVENT-CONSUMPTION": {
       "kind": "controlled_atomic_review",
-      "path": "docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md",
-      "result": "32 focused event/review/lifecycle tests passed; cumulative validation pending. No public write endpoint, worker daemon, actual model or human acceptance."
+      "path": "docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json",
+      "result": "1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed. Public writes, worker/outbox, model and human acceptance remain unfinished."
     }
   },
   "milestones": [

@@ -986,5 +986,5 @@ These references have specific scopes and may be historical. A reference to a de
 ### EV-EVENT-CONSUMPTION
 
 - Kind: `controlled_atomic_review`.
-- Repository evidence: [docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md](../../docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md).
-- Result/scope: 32 focused event/review/lifecycle tests passed; cumulative validation pending. No public write endpoint, worker daemon, actual model or human acceptance.
+- Repository evidence: [docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json](../../docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json).
+- Result/scope: 1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed. Public writes, worker/outbox, model and human acceptance remain unfinished.

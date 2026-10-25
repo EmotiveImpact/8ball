@@ -1,3 +1,7 @@
+# Latest verified checkpoint: reviewed event consumption
+
+1,323 source tests, 1,323 installed-engine regressions and 396 native browser checks passed on `87c5322c23ebe7a3fc062ce15985a3d82d84eea2`; exact inspection and checkpoint CI passed. [Receipt](../evidence/endstate-reviewed-consumption-native-2026-10-25.json), [session](sessions/2026-10-25-endstate-reviewed-consumption.md), [standing goal](BUILD-GOAL.md). Continue PR5 branch feat/agency-authorisation-20261025. Next: explicit review UI/API and durable worker/outbox. Original model, human and production gates remain open. Earlier checkpoints below are historical.
+
 # Current ENDSTATE sprint: atomic reviewed graph consumption
 
 [Session](sessions/2026-10-25-endstate-reviewed-consumption.md). Current local host service verifies scoped write grants and exact case/attempt revisions, applies the existing graph command and records provenance/consumption atomically. Source/result and explicit reviewer edits survive case export. Next: explicit review UI/API, durable worker/outbox and measured replanning, preserving production/model/human gates.

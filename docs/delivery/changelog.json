@@ -3,6 +3,52 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-endstate-reviewed-consumption-verified",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify reviewed consumption and clarify the current entry point",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-03",
+        "ES02-04"
+      ],
+      "summary": "Record source-bound native evidence and preserve historical entry notes in an archive.",
+      "added": [
+        "Source-bound acceptance receipt."
+      ],
+      "changed": [
+        "START-HERE now links the standing goal, current tracker and original requirements; previous entry text preserved unchanged."
+      ],
+      "fixed": [],
+      "verification": [
+        "1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed."
+      ],
+      "limitations": [
+        "Authenticated reviewer identity is supplied by trusted host; public agency writes remain disabled.",
+        "No PostgreSQL tenant policies, automatic worker/outbox, live model or genuine human/independent acceptance."
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Review provenance and permission must be bound to the actual transaction, not just the preceding processing attempt."
+        ],
+        "risks": [
+          "A grant can expire during calculation; a rehashed receipt alone must not substitute original results or explanations."
+        ],
+        "architecture_implications": [
+          "Single local database transaction, explicit review request hash, conditional case-chain-linked export and a final expiry check."
+        ],
+        "roadmap_decision": "existing_task: advance ES02-03 without exposing incomplete agency write routes or claiming production acceptance.",
+        "insight_ids": [
+          "EM-104"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-endstate-reviewed-consumption",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",
