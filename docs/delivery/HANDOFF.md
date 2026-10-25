@@ -1,3 +1,5 @@
+Verified event-inbox checkpoint:1302 source tests,1302 installed-engine regressions and394 native browser checks passed, with valid exact-source inspection and green checkpoint CI. [Receipt](../evidence/endstate-event-inbox-native-2026-10-25.json).
+
 # Current execution: ENDSTATE events and both product trackers
 
 [Standing goal](BUILD-GOAL.md), [canonical status](PROGRESS.md), [latest sprint](sessions/2026-10-25-endstate-event-inbox.md). ENDSTATE now has pending event/receipt contracts and a durable scoped host inbox with duplicate/conflict/restart handling. Next: reviewed consumption, durable workers/outbox and revision/permission checks. 8BALL continues with browser sign-in, account administration and database/worker enforcement; its other remaining milestones are listed in the same ledger. Keep all original model/human/production gates open until evidenced.

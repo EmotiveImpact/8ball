@@ -4,6 +4,45 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Verify ENDSTATE inbox and shared build tracking
+
+2026-10-25 · `local_unreleased`
+
+Record cumulative native and checkpoint CI results for the durable inbox and written build goal.
+
+### Added
+
+- Source-bound event-inbox verification receipt.
+
+### Changed
+
+- Both product trackers link the verified increment and retain unfinished gates.
+
+### Verification
+
+- 1302 source tests and1302 installed-engine regressions passed.
+- 394 native browser checks across11 suites passed.
+- Exact source/artifact inspection valid before final receipt edits; both checkpoint CI workflows passed.
+
+### Limitations
+
+- No live connectors, durable worker/outbox, reviewed case commits or automatic replanning yet.
+- 8BALL accounts, vault, collaboration, production and genuine model/human acceptance remain unfinished.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Occurrence time and receipt order are separate; retries must retain their original receipt.
+- Risk: Automatic replay could wrongly reauthorise work if connected directly to commands.
+- Architecture: Pure kernel contract; database remains in host. Scope asserted before append.
+- Roadmap decision: existing_task: ES02-01/02 increment, no acceptance or deployment promotion.
+Registered discoveries: EM-101.
+
+Roadmap items: `ES02-01`, `ES02-02`, `DOC-06`.
+
+Evidence: [docs/evidence/endstate-event-inbox-native-2026-10-25.json](docs/evidence/endstate-event-inbox-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-event-inbox.md](docs/delivery/sessions/2026-10-25-endstate-event-inbox.md), [docs/delivery/BUILD-GOAL.md](docs/delivery/BUILD-GOAL.md).
+
 ## 0.2.0-alpha.8 · Build the ENDSTATE event contract and durable host inbox
 
 2026-10-25 · `local_unreleased`

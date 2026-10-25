@@ -29,3 +29,9 @@ What did this reveal? Claimed occurrence time and durable receipt order are diff
 | ER-15 | Implement reviewed consumption and durable worker/outbox next, alongside agency access. |
 
 Evidence: controlled tests. UX: show pending incoming information separately from accepted case changes. Architecture: no network/database dependency inside ENDSTATE. Disposition: existing tasks only; no production release/deployment or new research runtime.
+
+## Verified source and next action
+
+Tested 20400336bd5462733755001b42e991c05944e1d1: 1302 source tests, 1302 installed-engine regressions and394 native browser checks across11 suites passed. Exact source/artifact inspection valid before documentation-only receipt edits. Both checkpoint CI runs40204433283/40204433474 passed. One existing Starlette/AnyIO warning in each Python run. Receipt: ../../evidence/endstate-event-inbox-native-2026-10-25.json.
+
+Next ENDSTATE work: reviewed consumption, worker/outbox, expected-revision and permission revalidation. Next8BALL work: browser sign-in/account administration and database/worker enforcement. All remaining requirements and blockers for both products remain in the generated canonical progress checklist. The standing goal is BUILD-GOAL.md. No original gate was weakened or marked complete by this increment.

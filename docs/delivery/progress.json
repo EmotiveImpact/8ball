@@ -21,11 +21,12 @@
     "source_merged_not_release_accepted": true,
     "current_sprint": {
       "branch": "feat/agency-authorisation-20261025",
-      "base_commit": "75fb95fd5c15f0f0d0b040d5b679de72f19e9ee6",
-      "tested_code_commit": "7fbb34ac346e5e884a7f0dc52908e38be514c4de",
-      "evidence": "docs/evidence/agency-api-overview-native-2026-10-25.json",
+      "base_commit": "48e572e95be8b28d0b317d7bc8b3a18893a3ef76",
+      "tested_code_commit": "20400336bd5462733755001b42e991c05944e1d1",
       "status_as_of": "2026-10-25",
-      "merged": false
+      "merged": false,
+      "evidence": "docs/evidence/endstate-event-inbox-native-2026-10-25.json",
+      "verification": "1302 source /1302 installed-engine /394 native browser checks passed; checkpoint CI passed."
     },
     "verified_sprint_history": [
       {
@@ -77,6 +78,14 @@
         "merged": false,
         "evidence": "docs/evidence/agency-authorisation-native-2026-10-25.json",
         "verification": "1280 source / 1280 installed-engine / 391 native browser checks passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "75fb95fd5c15f0f0d0b040d5b679de72f19e9ee6",
+        "tested_code_commit": "7fbb34ac346e5e884a7f0dc52908e38be514c4de",
+        "evidence": "docs/evidence/agency-api-overview-native-2026-10-25.json",
+        "status_as_of": "2026-10-25",
+        "merged": false
       }
     ],
     "provider_configuration_preparation": {
@@ -382,8 +391,8 @@
     },
     "EV-EVENT-INBOX": {
       "kind": "controlled_event_persistence",
-      "path": "docs/delivery/sessions/2026-10-25-endstate-event-inbox.md",
-      "result": "11 focused event/inbox tests passed; cumulative native validation pending. No live connector, model, case mutation, worker or outbox."
+      "path": "docs/evidence/endstate-event-inbox-native-2026-10-25.json",
+      "result": "1302 source tests,1302 installed-engine regressions and394 native browser checks passed; exact inspection valid and both checkpoint CI runs passed. Incoming events remain pending, with no live worker or case mutation."
     }
   },
   "milestones": [

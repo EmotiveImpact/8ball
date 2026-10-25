@@ -962,5 +962,5 @@ These references have specific scopes and may be historical. A reference to a de
 ### EV-EVENT-INBOX
 
 - Kind: `controlled_event_persistence`.
-- Repository evidence: [docs/delivery/sessions/2026-10-25-endstate-event-inbox.md](../../docs/delivery/sessions/2026-10-25-endstate-event-inbox.md).
-- Result/scope: 11 focused event/inbox tests passed; cumulative native validation pending. No live connector, model, case mutation, worker or outbox.
+- Repository evidence: [docs/evidence/endstate-event-inbox-native-2026-10-25.json](../../docs/evidence/endstate-event-inbox-native-2026-10-25.json).
+- Result/scope: 1302 source tests,1302 installed-engine regressions and394 native browser checks passed; exact inspection valid and both checkpoint CI runs passed. Incoming events remain pending, with no live worker or case mutation.

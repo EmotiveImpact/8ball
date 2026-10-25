@@ -3,6 +3,55 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-endstate-event-inbox-verification",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify ENDSTATE inbox and shared build tracking",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-01",
+        "ES02-02",
+        "DOC-06"
+      ],
+      "summary": "Record cumulative native and checkpoint CI results for the durable inbox and written build goal.",
+      "added": [
+        "Source-bound event-inbox verification receipt."
+      ],
+      "changed": [
+        "Both product trackers link the verified increment and retain unfinished gates."
+      ],
+      "fixed": [],
+      "verification": [
+        "1302 source tests and1302 installed-engine regressions passed.",
+        "394 native browser checks across11 suites passed.",
+        "Exact source/artifact inspection valid before final receipt edits; both checkpoint CI workflows passed."
+      ],
+      "limitations": [
+        "No live connectors, durable worker/outbox, reviewed case commits or automatic replanning yet.",
+        "8BALL accounts, vault, collaboration, production and genuine model/human acceptance remain unfinished."
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-event-inbox-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-event-inbox.md",
+        "docs/delivery/BUILD-GOAL.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Occurrence time and receipt order are separate; retries must retain their original receipt."
+        ],
+        "risks": [
+          "Automatic replay could wrongly reauthorise work if connected directly to commands."
+        ],
+        "architecture_implications": [
+          "Pure kernel contract; database remains in host. Scope asserted before append."
+        ],
+        "roadmap_decision": "existing_task: ES02-01/02 increment, no acceptance or deployment promotion.",
+        "insight_ids": [
+          "EM-101"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-endstate-event-inbox",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",
