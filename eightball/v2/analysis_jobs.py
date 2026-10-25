@@ -33,7 +33,7 @@ MAX_CASE_JOBS = 200
 class AnalysisRequest(Strict):
     request_id: Identifier
     expected_revision: int = Field(strict=True, ge=0)
-    provider: Literal['rules', 'playbook', 'ollama', 'ollama_staged', 'huggingface', 'jev', 'gliclass']
+    provider: Literal['rules', 'playbook', 'ollama', 'ollama_staged', 'huggingface', 'openai_compatible', 'jev', 'gliclass']
     purpose: Literal['extract', 'graph', 'questions', 'judgement']
     source_ids: list[Identifier] = Field(default_factory=list, max_length=40)
     playbook_id: Identifier | None = None
@@ -57,9 +57,9 @@ def public_job(row: dict) -> dict:
 
 class ControlledClient:
     """Wrap both local JSON calls and hosted streaming with stage checkpoints."""
-    def __init__(self, manager, job_id, factory=httpx.Client):
+    def __init__(self, manager, job_id, factory=httpx.Client, *, trust_env=False):
         self.manager, self.job_id = manager, job_id
-        self.client = factory(follow_redirects=False, trust_env=False)
+        self.client = factory(follow_redirects=False, trust_env=trust_env)
 
     def post(self, *args, **kwargs):
         self.manager.checkpoint(self.job_id, 'provider_request', starting=True)
@@ -249,7 +249,8 @@ class AnalysisJobs:
                 job = self._get(db, job_id)
                 case = self.store._get(db, job['case_id'])
             request = AnalysisRequest.model_validate(job['request'])
-            client = ControlledClient(self, job_id, self.client_factory)
+            client = ControlledClient(self, job_id, self.client_factory,
+                                      trust_env=request.provider == 'openai_compatible')
             p = self.runner(case, request.provider, request.purpose, request.source_ids,
                             playbook_id=request.playbook_id, allow_external=request.allow_external, client=client)
             self.checkpoint(job_id, 'validating_proposal')

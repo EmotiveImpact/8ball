@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "tested_commit": "a9254e6087ef606d581d626bfcda9d7e555c857e",
+  "tested_tree": "967313130ce58db02d3c817cbf7f632d6384cd7e",
+  "run_id": "20261025T135438Z-14fb09bf",
+  "source_sha256": "f0022dde76a3c14e01a0ffc3d87c55670c52fb72c0d0ba322f27516e78e677c3",
+  "report_sha256": "638185bd9c1034f9bda7b157782e3d452eaae4121399234f8a2939d73f9d4abf",
+  "started_at": "2026-10-25T13:54:38.960766+00:00",
+  "finished_at": "2026-10-25T14:00:20.194016+00:00",
+  "mode": "native",
+  "status": "passed",
+  "source_tests": {
+    "tests": 1267,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 1267
+  },
+  "installed_engine_tests": {
+    "passed": 1267,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "native_browser_checks": 391,
+  "checks": [
+    {
+      "name": "unit",
+      "status": "passed"
+    },
+    {
+      "name": "compile",
+      "status": "passed"
+    },
+    {
+      "name": "delivery",
+      "status": "passed"
+    },
+    {
+      "name": "changelog",
+      "status": "passed"
+    },
+    {
+      "name": "emergence",
+      "status": "passed"
+    },
+    {
+      "name": "javascript",
+      "status": "passed"
+    },
+    {
+      "name": "structural-fixtures",
+      "status": "passed"
+    },
+    {
+      "name": "endstate-package",
+      "status": "passed"
+    },
+    {
+      "name": "schemas",
+      "status": "passed"
+    },
+    {
+      "name": "native-probe",
+      "status": "passed"
+    },
+    {
+      "name": "browser-legacy",
+      "status": "passed",
+      "browser": {
+        "count": 27,
+        "transport": "real loopback HTTP",
+        "sha256": "c553e60bb97ef58196ee5bee1f4fde22203273a6f5bade21c2d298c2faa549c6"
+      }
+    },
+    {
+      "name": "browser-workspace",
+      "status": "passed",
+      "browser": {
+        "count": 51,
+        "transport": "Native loopback HTTP",
+        "sha256": "ccffe9c582d516f163d069f2775e97a7621f5a1306531aea130afa6908e6945f"
+      }
+    },
+    {
+      "name": "browser-providers",
+      "status": "passed",
+      "browser": {
+        "count": 22,
+        "transport": "native loopback HTTP",
+        "sha256": "6e40ca17878fdcbd8b2fd2b1ab5754ee92840a85a6a242cd93198b119d4c34b5"
+      }
+    },
+    {
+      "name": "browser-connections",
+      "status": "passed",
+      "browser": {
+        "count": 42,
+        "transport": "Native loopback HTTP",
+        "sha256": "c0f21b9d6f57e53711802c0eeedae5647da1b4a0195eef504a797f16ce41f39c"
+      }
+    },
+    {
+      "name": "browser-studio",
+      "status": "passed",
+      "browser": {
+        "count": 44,
+        "transport": "native loopback HTTP",
+        "sha256": "458e2d912f7a9896da88e136e6aeba62970b56186a432d1509f53a09b1471797"
+      }
+    },
+    {
+      "name": "browser-sources",
+      "status": "passed",
+      "browser": {
+        "count": 39,
+        "transport": "native HTTP",
+        "sha256": "4abf02bc619f78c83f5133f848ceb2ef4cdb5b7810dbf8d8e9b8c93dcc93df27"
+      }
+    },
+    {
+      "name": "browser-insights",
+      "status": "passed",
+      "browser": {
+        "count": 40,
+        "transport": "Native loopback HTTP",
+        "sha256": "05a47f8e44b3e856cc19ad85bc4f2154835e5c6fed34788232f11969f304a952"
+      }
+    },
+    {
+      "name": "browser-grounding",
+      "status": "passed",
+      "browser": {
+        "count": 26,
+        "transport": "Native loopback HTTP",
+        "sha256": "4c0acde1ff3c693ac7714a556d7292a02bd4b8363b5c48091ee8ca5640153c35"
+      }
+    },
+    {
+      "name": "browser-plan_review",
+      "status": "passed",
+      "browser": {
+        "count": 33,
+        "transport": "Native loopback HTTP",
+        "sha256": "31e729ac5f4c7d638401be1211f9c255e08603623812b4b85ebd08a8516bf1aa"
+      }
+    },
+    {
+      "name": "browser-accessibility",
+      "status": "passed",
+      "browser": {
+        "count": 36,
+        "transport": "Native loopback HTTP",
+        "sha256": "1694bba70004e2b415b4a645d054f81605243be6dfce93d642b3fa47a1013e1d"
+      }
+    },
+    {
+      "name": "browser-courses",
+      "status": "passed",
+      "browser": {
+        "count": 31,
+        "transport": "Native loopback HTTP",
+        "sha256": "3dac79f1093e5145895cff92481ea8ce62a0b1d530544fca15c319c226663226"
+      }
+    }
+  ],
+  "inspection_before_receipt_edits": {
+    "valid": true,
+    "reason": "Source and local evidence bytes match; this is not a signed attestation",
+    "source_unchanged_during_run": true
+  },
+  "remote_ci": [
+    {
+      "run_id": 40199806937,
+      "workflow": "8BALL validation",
+      "head_sha": "a9254e6087ef606d581d626bfcda9d7e555c857e",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 40199807143,
+      "workflow": "Delivery documentation",
+      "head_sha": "a9254e6087ef606d581d626bfcda9d7e555c857e",
+      "conclusion": "success"
+    }
+  ],
+  "pull_requests": {
+    "1": "Previously merged",
+    "2": "Previously merged",
+    "3": "Closed on 2026-10-25: exact head 0ee5834c0745640369f5a538b770c346f234232a already ancestor of main; not newly merged",
+    "4": "Integration PR; final merge and final-head CI must be verified on GitHub"
+  },
+  "raw_artifacts": "artifacts/acceptance/20261025T135438Z-14fb09bf",
+  "raw_artifacts_committed": false,
+  "research_gitlinks": {
+    "research/external/666ghj/MiroFish": {
+      "index_commit": "7657031ac01184afe2cb220f5ee3545573b5e843",
+      "checkout_commit": null
+    },
+    "research/external/Arize-ai/phoenix": {
+      "index_commit": "2be380f7a360b7a71f97fc510de5e9679e58f7c9",
+      "checkout_commit": null
+    },
+    "research/external/SALib/SALib": {
+      "index_commit": "748cf169e82227bcc56dcfc961fcfb03a1e0df45",
+      "checkout_commit": null
+    },
+    "research/external/TencentCloud/TencentDB-Agent-Memory": {
+      "index_commit": "e9a82935b52741e0c798c75326e90b7144eb4d5f",
+      "checkout_commit": null
+    },
+    "research/external/anyoptimization/pymoo": {
+      "index_commit": "23110c155aa8f31b5f1b86928227fb3931ba7f00",
+      "checkout_commit": null
+    },
+    "research/external/camel-ai/oasis": {
+      "index_commit": "bc805a19978a620bb400f4c644ce9d772ccbfc70",
+      "checkout_commit": null
+    },
+    "research/external/docling-project/docling": {
+      "index_commit": "f690a5232c505c787a1e952216b431134b4d7c94",
+      "checkout_commit": null
+    },
+    "research/external/getzep/graphiti": {
+      "index_commit": "d50741d1bf463cbe3859eb73914cbff1b66839e6",
+      "checkout_commit": null
+    },
+    "research/external/getzep/zep": {
+      "index_commit": "3997767fccf83bbea7b54ad5f73554f2e5bcd54e",
+      "checkout_commit": null
+    },
+    "research/external/getzep/zep-python": {
+      "index_commit": "ec41ccdde6fe92dc0de378c7bfb0c2483af324ce",
+      "checkout_commit": null
+    },
+    "research/external/google/or-tools": {
+      "index_commit": "100f66e6242ab8bf8d32feb8f3bf086db66ae2b5",
+      "checkout_commit": null
+    },
+    "research/external/keycloak/keycloak": {
+      "index_commit": "eae20e964b2e23cfd8f4ed18b599343ebb056e8f",
+      "checkout_commit": null
+    },
+    "research/external/langchain-ai/langgraph": {
+      "index_commit": "e77a5cb08c1f3ff306d997dd76fc7169afdab5ea",
+      "checkout_commit": null
+    },
+    "research/external/langchain-ai/langgraph-swarm-py": {
+      "index_commit": "5442a15cdd0ed210589148900c9960c24c489d04",
+      "checkout_commit": null
+    },
+    "research/external/mem0ai/mem0": {
+      "index_commit": "0724291bd864cf807e88ee8981c8226644e8fb42",
+      "checkout_commit": null
+    },
+    "research/external/mesa/mesa": {
+      "index_commit": "5451086fe47ab78e9ba894aa1b4c3063f4c247f1",
+      "checkout_commit": null
+    },
+    "research/external/microsoft/autogen": {
+      "index_commit": "027ecf0a379bcc1d09956d46d12d44a3ad9cee14",
+      "checkout_commit": null
+    },
+    "research/external/open-policy-agent/opa": {
+      "index_commit": "fdf6011f57fdc25f01de1982e296bb402cf37625",
+      "checkout_commit": null
+    },
+    "research/external/openfga/openfga": {
+      "index_commit": "fb8e7df866742a0c947e3066919ee59ac9e70eea",
+      "checkout_commit": null
+    },
+    "research/external/postgres/postgres": {
+      "index_commit": "eb7cc1d09e742d369540016455d0f55c619106f2",
+      "checkout_commit": null
+    },
+    "research/external/promptfoo/promptfoo": {
+      "index_commit": "132a2d38b1b0adc953b0db650f950d573bc113c4",
+      "checkout_commit": null
+    },
+    "research/external/py-why/EconML": {
+      "index_commit": "d625dd696ea28c62e6e4d8baea6e4154b98c30b4",
+      "checkout_commit": null
+    },
+    "research/external/py-why/dowhy": {
+      "index_commit": "10648f1a295cbb40fd9cdd7ce43521a6ef954078",
+      "checkout_commit": null
+    },
+    "research/external/ruvnet/ruflo": {
+      "index_commit": "1882006a02487590c8c66a7eec8d7504f6af33c3",
+      "checkout_commit": null
+    },
+    "research/external/simulatrex/possible-worlds": {
+      "index_commit": "08837a790f6ca0d98f7468935e9139292ea7cb78",
+      "checkout_commit": null
+    },
+    "research/external/simulatrex/simulatrex-engine": {
+      "index_commit": "4e4fa06d7f527480b66ceb224a5d37bcfa2f9150",
+      "checkout_commit": null
+    },
+    "research/external/temporalio/sdk-python": {
+      "index_commit": "346d4dcd0863657c3a33283c952a296762059339",
+      "checkout_commit": null
+    },
+    "research/external/tsinghua-fib-lab/AgentSociety": {
+      "index_commit": "8cc5bb9a9c27d039ec5519375db9d73ccf508cba",
+      "checkout_commit": null
+    }
+  },
+  "limitations": [
+    "Receipt is an unsigned observation; inspect retained raw artifacts at the tested source.",
+    "Final receipt changes are documentation-only; exact final-head CI is separate.",
+    "28 research source Gitlinks preserved; source bodies unpopulated.",
+    "One Starlette/AnyIO deprecation warning in each Python run."
+  ],
+  "model_inference_performed": false,
+  "model_quality_approved": false,
+  "independent_review_performed": false,
+  "human_acceptance_performed": false,
+  "released": false,
+  "deployed": false
+}

@@ -1,0 +1,256 @@
+{
+  "date": "2026-10-16",
+  "kind": "software_verification",
+  "base_commit": "c9fd38438ba52e9320bc55b96132086bfe57ce6a",
+  "branch": "feat/v02-compatible-provider-20261016",
+  "status": "passed",
+  "focused_checks": {
+    "transport_controlled_tests": 109,
+    "sqlite_http_lifecycle_tests": 22,
+    "cli_preflight_report_tests": 4,
+    "acceptance_boundary_tests": 36,
+    "native_development_checks": 22
+  },
+  "actual_model_calls": 0,
+  "independent_or_human_acceptance": false,
+  "checkpoint_status": "cumulative_native_pending_at_code_commit",
+  "tested_code_commit": "ddfead7fe2e44a01ec202d2196384c5dc2596c5b",
+  "run_id": "20261016T094827Z-13d47ae7",
+  "mode": "native",
+  "source_fingerprint": "a67ae2482bd858a1d4cf2fa63e0c12624746ce3d9eac1c80f01fc9c9aef438e5",
+  "report_sha256": "6f9ead281050589d6d73d92006dc4e8e2071cce31305a33ff9cb538591ed90a6",
+  "local_report_path": "artifacts/acceptance/20261016T094827Z-13d47ae7/report.json",
+  "completed_at": "2026-10-16T09:51:56.211513+00:00",
+  "inspection": {
+    "valid": true,
+    "run_status": "passed",
+    "native_browser_verified": true,
+    "before_documentation_receipt_changes": true
+  },
+  "code_tests": {
+    "tests": 1104,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 1104
+  },
+  "installed_kernel_tests": {
+    "tests": 1104,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "native_browser_checks": 391,
+  "browser_suites": {
+    "browser-legacy": {
+      "count": 27,
+      "transport": "real loopback HTTP",
+      "sha256": "c553e60bb97ef58196ee5bee1f4fde22203273a6f5bade21c2d298c2faa549c6"
+    },
+    "browser-workspace": {
+      "count": 51,
+      "transport": "Native loopback HTTP",
+      "sha256": "ccffe9c582d516f163d069f2775e97a7621f5a1306531aea130afa6908e6945f"
+    },
+    "browser-providers": {
+      "count": 22,
+      "transport": "native loopback HTTP",
+      "sha256": "6e40ca17878fdcbd8b2fd2b1ab5754ee92840a85a6a242cd93198b119d4c34b5"
+    },
+    "browser-connections": {
+      "count": 42,
+      "transport": "Native loopback HTTP",
+      "sha256": "c0f21b9d6f57e53711802c0eeedae5647da1b4a0195eef504a797f16ce41f39c"
+    },
+    "browser-studio": {
+      "count": 44,
+      "transport": "native loopback HTTP",
+      "sha256": "458e2d912f7a9896da88e136e6aeba62970b56186a432d1509f53a09b1471797"
+    },
+    "browser-sources": {
+      "count": 39,
+      "transport": "native HTTP",
+      "sha256": "4abf02bc619f78c83f5133f848ceb2ef4cdb5b7810dbf8d8e9b8c93dcc93df27"
+    },
+    "browser-insights": {
+      "count": 40,
+      "transport": "Native loopback HTTP",
+      "sha256": "05a47f8e44b3e856cc19ad85bc4f2154835e5c6fed34788232f11969f304a952"
+    },
+    "browser-grounding": {
+      "count": 26,
+      "transport": "Native loopback HTTP",
+      "sha256": "4c0acde1ff3c693ac7714a556d7292a02bd4b8363b5c48091ee8ca5640153c35"
+    },
+    "browser-plan_review": {
+      "count": 33,
+      "transport": "Native loopback HTTP",
+      "sha256": "31e729ac5f4c7d638401be1211f9c255e08603623812b4b85ebd08a8516bf1aa"
+    },
+    "browser-accessibility": {
+      "count": 36,
+      "transport": "Native loopback HTTP",
+      "sha256": "1694bba70004e2b415b4a645d054f81605243be6dfce93d642b3fa47a1013e1d"
+    },
+    "browser-courses": {
+      "count": 31,
+      "transport": "Native loopback HTTP",
+      "sha256": "3dac79f1093e5145895cff92481ea8ce62a0b1d530544fca15c319c226663226"
+    }
+  },
+  "checks": {
+    "unit": "passed",
+    "compile": "passed",
+    "delivery": "passed",
+    "changelog": "passed",
+    "emergence": "passed",
+    "javascript": "passed",
+    "structural-fixtures": "passed",
+    "endstate-package": "passed",
+    "schemas": "passed",
+    "native-probe": "passed",
+    "browser-legacy": "passed",
+    "browser-workspace": "passed",
+    "browser-providers": "passed",
+    "browser-connections": "passed",
+    "browser-studio": "passed",
+    "browser-sources": "passed",
+    "browser-insights": "passed",
+    "browser-grounding": "passed",
+    "browser-plan_review": "passed",
+    "browser-accessibility": "passed",
+    "browser-courses": "passed"
+  },
+  "research_gitlinks": {
+    "research/external/666ghj/MiroFish": {
+      "index_commit": "7657031ac01184afe2cb220f5ee3545573b5e843",
+      "checkout_commit": "7657031ac01184afe2cb220f5ee3545573b5e843"
+    },
+    "research/external/Arize-ai/phoenix": {
+      "index_commit": "2be380f7a360b7a71f97fc510de5e9679e58f7c9",
+      "checkout_commit": "2be380f7a360b7a71f97fc510de5e9679e58f7c9"
+    },
+    "research/external/SALib/SALib": {
+      "index_commit": "748cf169e82227bcc56dcfc961fcfb03a1e0df45",
+      "checkout_commit": "748cf169e82227bcc56dcfc961fcfb03a1e0df45"
+    },
+    "research/external/TencentCloud/TencentDB-Agent-Memory": {
+      "index_commit": "e9a82935b52741e0c798c75326e90b7144eb4d5f",
+      "checkout_commit": "e9a82935b52741e0c798c75326e90b7144eb4d5f"
+    },
+    "research/external/anyoptimization/pymoo": {
+      "index_commit": "23110c155aa8f31b5f1b86928227fb3931ba7f00",
+      "checkout_commit": "23110c155aa8f31b5f1b86928227fb3931ba7f00"
+    },
+    "research/external/camel-ai/oasis": {
+      "index_commit": "bc805a19978a620bb400f4c644ce9d772ccbfc70",
+      "checkout_commit": "bc805a19978a620bb400f4c644ce9d772ccbfc70"
+    },
+    "research/external/docling-project/docling": {
+      "index_commit": "f690a5232c505c787a1e952216b431134b4d7c94",
+      "checkout_commit": "f690a5232c505c787a1e952216b431134b4d7c94"
+    },
+    "research/external/getzep/graphiti": {
+      "index_commit": "d50741d1bf463cbe3859eb73914cbff1b66839e6",
+      "checkout_commit": "d50741d1bf463cbe3859eb73914cbff1b66839e6"
+    },
+    "research/external/getzep/zep": {
+      "index_commit": "3997767fccf83bbea7b54ad5f73554f2e5bcd54e",
+      "checkout_commit": "3997767fccf83bbea7b54ad5f73554f2e5bcd54e"
+    },
+    "research/external/getzep/zep-python": {
+      "index_commit": "ec41ccdde6fe92dc0de378c7bfb0c2483af324ce",
+      "checkout_commit": "ec41ccdde6fe92dc0de378c7bfb0c2483af324ce"
+    },
+    "research/external/google/or-tools": {
+      "index_commit": "100f66e6242ab8bf8d32feb8f3bf086db66ae2b5",
+      "checkout_commit": "100f66e6242ab8bf8d32feb8f3bf086db66ae2b5"
+    },
+    "research/external/keycloak/keycloak": {
+      "index_commit": "eae20e964b2e23cfd8f4ed18b599343ebb056e8f",
+      "checkout_commit": "eae20e964b2e23cfd8f4ed18b599343ebb056e8f"
+    },
+    "research/external/langchain-ai/langgraph": {
+      "index_commit": "e77a5cb08c1f3ff306d997dd76fc7169afdab5ea",
+      "checkout_commit": "e77a5cb08c1f3ff306d997dd76fc7169afdab5ea"
+    },
+    "research/external/langchain-ai/langgraph-swarm-py": {
+      "index_commit": "5442a15cdd0ed210589148900c9960c24c489d04",
+      "checkout_commit": "5442a15cdd0ed210589148900c9960c24c489d04"
+    },
+    "research/external/mem0ai/mem0": {
+      "index_commit": "0724291bd864cf807e88ee8981c8226644e8fb42",
+      "checkout_commit": "0724291bd864cf807e88ee8981c8226644e8fb42"
+    },
+    "research/external/mesa/mesa": {
+      "index_commit": "5451086fe47ab78e9ba894aa1b4c3063f4c247f1",
+      "checkout_commit": "5451086fe47ab78e9ba894aa1b4c3063f4c247f1"
+    },
+    "research/external/microsoft/autogen": {
+      "index_commit": "027ecf0a379bcc1d09956d46d12d44a3ad9cee14",
+      "checkout_commit": "027ecf0a379bcc1d09956d46d12d44a3ad9cee14"
+    },
+    "research/external/open-policy-agent/opa": {
+      "index_commit": "fdf6011f57fdc25f01de1982e296bb402cf37625",
+      "checkout_commit": "fdf6011f57fdc25f01de1982e296bb402cf37625"
+    },
+    "research/external/openfga/openfga": {
+      "index_commit": "fb8e7df866742a0c947e3066919ee59ac9e70eea",
+      "checkout_commit": "fb8e7df866742a0c947e3066919ee59ac9e70eea"
+    },
+    "research/external/postgres/postgres": {
+      "index_commit": "eb7cc1d09e742d369540016455d0f55c619106f2",
+      "checkout_commit": "eb7cc1d09e742d369540016455d0f55c619106f2"
+    },
+    "research/external/promptfoo/promptfoo": {
+      "index_commit": "132a2d38b1b0adc953b0db650f950d573bc113c4",
+      "checkout_commit": "132a2d38b1b0adc953b0db650f950d573bc113c4"
+    },
+    "research/external/py-why/EconML": {
+      "index_commit": "d625dd696ea28c62e6e4d8baea6e4154b98c30b4",
+      "checkout_commit": "d625dd696ea28c62e6e4d8baea6e4154b98c30b4"
+    },
+    "research/external/py-why/dowhy": {
+      "index_commit": "10648f1a295cbb40fd9cdd7ce43521a6ef954078",
+      "checkout_commit": "10648f1a295cbb40fd9cdd7ce43521a6ef954078"
+    },
+    "research/external/ruvnet/ruflo": {
+      "index_commit": "1882006a02487590c8c66a7eec8d7504f6af33c3",
+      "checkout_commit": "1882006a02487590c8c66a7eec8d7504f6af33c3"
+    },
+    "research/external/simulatrex/possible-worlds": {
+      "index_commit": "08837a790f6ca0d98f7468935e9139292ea7cb78",
+      "checkout_commit": "08837a790f6ca0d98f7468935e9139292ea7cb78"
+    },
+    "research/external/simulatrex/simulatrex-engine": {
+      "index_commit": "4e4fa06d7f527480b66ceb224a5d37bcfa2f9150",
+      "checkout_commit": "4e4fa06d7f527480b66ceb224a5d37bcfa2f9150"
+    },
+    "research/external/temporalio/sdk-python": {
+      "index_commit": "346d4dcd0863657c3a33283c952a296762059339",
+      "checkout_commit": "346d4dcd0863657c3a33283c952a296762059339"
+    },
+    "research/external/tsinghua-fib-lab/AgentSociety": {
+      "index_commit": "8cc5bb9a9c27d039ec5519375db9d73ccf508cba",
+      "checkout_commit": "8cc5bb9a9c27d039ec5519375db9d73ccf508cba"
+    }
+  },
+  "preserved_discoveries": 83,
+  "full_v02_accepted": false,
+  "merged_into_main": false,
+  "released": false,
+  "deployed": false,
+  "fixture_authorization": {
+    "fictional_repository_examples": true,
+    "max_usd": 5,
+    "preference": "Owner-provided endpoint expected to be free; confirm actual service limits/pricing before calls.",
+    "selected_endpoint_model_and_active_credentials": "not_yet_supplied"
+  },
+  "limits": [
+    "Software verification only: controlled HTTP and fictional native browser checks are not actual inference, independent professional review or genuine human acceptance.",
+    "Inspection applies to the exact tested code commit with all 28 research pins checked out. Final receipt/status changes are documentation only; reconstruct that source state to inspect retained raw artifacts again.",
+    "Raw logs/JUnit/screenshots/schemas/internal wheel remain local in ignored artifacts; this committed receipt preserves source, count and artifact identity, not a public artifact upload.",
+    "GitHub Actions has no push trigger for this development branch; no new pull request or remote CI result is claimed. The current result is the local cumulative native run.",
+    "Original PRDs, frozen generation fixtures, compiler prompts and all original required acceptance gates remain unchanged. Earlier failed evidence is retained."
+  ]
+}

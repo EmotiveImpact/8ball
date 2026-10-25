@@ -3,6 +3,799 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-build-verification",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Combined build passes native verification and checkpoint CI",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-09",
+        "B02-15",
+        "ES03-05",
+        "DOC-06"
+      ],
+      "summary": "Record current cumulative software evidence and resolve already-integrated PR3; preserve all actual-model and human gates.",
+      "added": [
+        "Source-bound verification receipt with all eleven native browser suites and checkpoint CI results."
+      ],
+      "changed": [
+        "Canonical integration evidence now records completed software verification; final merge is tracked by PR4."
+      ],
+      "fixed": [],
+      "verification": [
+        "1267 source tests and 1267 installed-engine regressions passed.",
+        "391 native browser checks across all eleven suites passed.",
+        "Source/artifact inspection valid before documentation-only receipt edits.",
+        "GitHub validation 40199806937 and documentation 40199807143 passed on a9254e6087ef606d581d626bfcda9d7e555c857e."
+      ],
+      "limitations": [
+        "No model generation, independent professional or human acceptance claimed.",
+        "No deployment, release tag or research runtime adoption."
+      ],
+      "evidence_paths": [
+        "docs/evidence/build-consolidation-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-build-consolidation.md",
+        "docs/delivery/NEXT-BUILD.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Existing source/evidence and secret-delivery findings apply; an open PR can already be integrated by ancestry."
+        ],
+        "risks": [
+          "Stale PR targets, uncertain authentication causes and generic UI errors can mislead the next agent."
+        ],
+        "architecture_implications": [
+          "Preserve all source, frozen gates and case authority while consolidating delivery."
+        ],
+        "roadmap_decision": "Existing-task integration under ADR0007; no required task/status changes.",
+        "insight_ids": [
+          "EM-051",
+          "EM-071",
+          "EM-098"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-25-build-consolidation",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Owner-requested combined build and executable test handoff",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-09",
+        "B02-15",
+        "ES03-05",
+        "DOC-06"
+      ],
+      "summary": "Consolidate completed development and resolve stale PR bookkeeping under explicit owner authority; retain all model and human gates.",
+      "added": [
+        "ADR0007 and NEXT-BUILD.md with exact software/provider/lifecycle commands and independent/human review boundaries.",
+        "Preserved October25 authentication observation, without asserting an unproved root cause."
+      ],
+      "changed": [
+        "Integration branch contains all prior development; canonical next action is the prepared actual-provider test handoff."
+      ],
+      "fixed": [],
+      "verification": [
+        "Git ancestry confirms main is an ancestor of development and PR3 head already exists in main.",
+        "Fresh cumulative native verification pending at this checkpoint."
+      ],
+      "limitations": [
+        "No model generation, independent professional or human acceptance claimed.",
+        "No deployment, release tag or research runtime adoption."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-build-consolidation.md",
+        "docs/decisions/0007-owner-build-consolidation.md",
+        "docs/delivery/NEXT-BUILD.md",
+        "docs/evidence/anthropic-authentication-2026-10-25.json"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Existing source/evidence and secret-delivery findings apply; an open PR can already be integrated by ancestry."
+        ],
+        "risks": [
+          "Stale PR targets, uncertain authentication causes and generic UI errors can mislead the next agent."
+        ],
+        "architecture_implications": [
+          "Preserve all source, frozen gates and case authority while consolidating delivery."
+        ],
+        "roadmap_decision": "Existing-task integration under ADR0007; no required task/status changes.",
+        "insight_ids": [
+          "EM-051",
+          "EM-071",
+          "EM-098"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-18-anthropic-configuration",
+      "date": "2026-10-18",
+      "version": "0.2.0-alpha.8",
+      "title": "Anthropic test configuration and secure key-entry instructions",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "B02-09",
+        "B02-15",
+        "ES03-05",
+        "DOC-06"
+      ],
+      "summary": "Prepared owner-selected Anthropic connection settings and exact existing-key destination instructions without claiming live compatibility or changing acceptance.",
+      "added": [
+        "Beginner Anthropic setup guide, source/configuration receipt and full Emergence Review."
+      ],
+      "changed": [
+        "Saved non-secret model/provider/URL suggestions and added api.anthropic.com to custom network destinations.",
+        "Canonical next actions identify selected Anthropic and missing owner key/destination activation."
+      ],
+      "fixed": [],
+      "verification": [
+        "142 existing controlled transport/CLI tests passed in 1.30s; isolated fictional-key format/status check used no DNS or HTTP.",
+        "60 continuity tests passed in 1.37s (one existing Starlette/AnyIO deprecation warning); append-only history and canonical generator checks passed.",
+        "Official SDK source lists claude-sonnet-4-6; official compatibility-documentation access was blocked by the inherited proxy (HTTP403), without an origin response.",
+        "No new native run is claimed. Independent agent source/guide review is engineering review, not independent professional acceptance."
+      ],
+      "limitations": [
+        "Existing EIGHTBALL_API_KEY secret is still destination-bound to the old Qwen service. Automatic retarget was rejected; owner must edit that row, enter key securely and Save/Publish. No duplicate secret was added.",
+        "Actual Anthropic compatibility/schema enforcement, account model access/pricing and active settings remain unverified; zero live model calls.",
+        "No application code, tests, dependencies, original PRD, frozen fixtures or task scope/statuses changed; independent/human acceptance remains open.",
+        "No SDK/runtime installation, model download, spending, main merge, release or deployment."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-18-anthropic-configuration.md",
+        "docs/evidence/anthropic-setup-2026-10-18.json",
+        "docs/v2/ANTHROPIC-SETUP.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-098: visible provider settings and managed key destination must be changed separately."
+        ],
+        "risks": [
+          "A valid setting format/SDK model listing can be mistaken for active access, remote structured-output enforcement or successful inference."
+        ],
+        "architecture_implications": [
+          "Keep server-owned explicit provider identity, secret destination restrictions and unchanged local compilation/approval gates."
+        ],
+        "roadmap_decision": "Refine existing provider/setup tasks; retain every original acceptance requirement/status and all earlier discoveries.",
+        "insight_ids": [
+          "EM-098",
+          "EM-051",
+          "EM-085"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-18-review-evidence-native-receipt",
+      "date": "2026-10-18",
+      "version": "0.2.0-alpha.8",
+      "title": "Verified source-stable evaluation and review-record checkpoint",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "B02-09",
+        "B02-11",
+        "B02-12",
+        "ES03-05",
+        "DOC-06"
+      ],
+      "summary": "Cumulative native software verification passed for source-stable generation receipts, lifecycle prerequisites and optional prospective recording. Real-model and genuine independent/human acceptance remain open.",
+      "added": [
+        "Source-bound final receipt for tested code 25ca5e2dce4f28ec33d9b132cccabfa15b23683e, all eleven native suites and the actual unpopulated research checkout state."
+      ],
+      "changed": [
+        "Current canonical sprint evidence and next-agent handoff identify the verified development source while retaining every prior checkpoint and all 97 discoveries."
+      ],
+      "fixed": [],
+      "verification": [
+        "1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits.",
+        "138 focused controlled tests passed; independent agent engineering review found no blocking issue. These overlap the cumulative tests and are not professional acceptance.",
+        "Compilation, 17 JavaScript modules, eight structural fixture cases, internal package/schema export and append-only continuity guards passed.",
+        "Original PRD, frozen generation bytes, compiler, semantic protocol, v1 review forms and every task scope/status remain unchanged."
+      ],
+      "limitations": [
+        "Exact service/model/active secure key, actual-model results, genuine independent study and human acceptance remain missing.",
+        "Source checks bracket fixtures/final result, not every internal graph stage or every instant; source fingerprints do not prove loaded-code identity.",
+        "Mechanical recording consistency does not authenticate declarations or establish held-out scientific adequacy. Existing manual v1 studies remain legitimate.",
+        "Research source bodies are unpopulated in this restored checkout; no upstream runtime adoption, further main merge, release or deployment.",
+        "Compatible receipts identify endpoint host, not different API base paths on that host (EM-097 candidate)."
+      ],
+      "evidence_paths": [
+        "docs/evidence/review-evidence-native-2026-10-18.json",
+        "docs/delivery/sessions/2026-10-18-review-evidence.md",
+        "docs/delivery/review/PROSPECTIVE-RECORDING.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-094: structural success and source-valid evidence need separate outcomes.",
+          "EM-095: summary flags alone cannot support returned-call evidence.",
+          "EM-096: mechanical study readiness and genuine prospective approval are separate.",
+          "EM-097: host-only endpoint identity cannot distinguish service paths; preserve as a candidate."
+        ],
+        "risks": [
+          "Unauthenticated records, discrete source checks and declared coverage can be overinterpreted as continuous attestation or independent acceptance."
+        ],
+        "architecture_implications": [
+          "Keep offline evidence tools separate from case authority; retain original compiler, fixtures and semantic protocol."
+        ],
+        "roadmap_decision": "Refine existing tasks only; preserve every original status/acceptance requirement, prior form and discovery.",
+        "insight_ids": [
+          "EM-094",
+          "EM-095",
+          "EM-096",
+          "EM-097"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-18-review-evidence",
+      "date": "2026-10-18",
+      "version": "0.2.0-alpha.8",
+      "title": "Source-stable model evidence and prospective review preparation",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-09",
+        "B02-11",
+        "B02-12",
+        "ES03-05",
+        "DOC-06"
+      ],
+      "summary": "Protect hosted fixture evidence from observed source drift and prepare optional private prospective study records without claiming model or human acceptance.",
+      "added": [
+        "Optional offline recording-v2 checker and unfilled protocol/dataset templates for the unchanged semantic protocol."
+      ],
+      "changed": [
+        "Lifecycle prerequisites require stable matching source and per-fixture returned-call consistency; receipts remain unsigned.",
+        "Canonical progress and continuation records preserve all earlier work and unchanged acceptance statuses."
+      ],
+      "fixed": [
+        "Hosted fixtures could report success after their source changed during a controlled response. Observed drift or inspection failure now blocks later fixtures and final evidence success while preserving raw responses and structural results."
+      ],
+      "verification": [
+        "138 focused controlled tests passed in 7.58s; final cumulative native verification pending.",
+        "Independent agent engineering review found no blocking correctness defect; this is not independent professional acceptance.",
+        "Pinned development environment restored; pip check passed. No live provider calls."
+      ],
+      "limitations": [
+        "Exact service/model/active secure key, actual-model results, genuine independent study and human acceptance remain missing.",
+        "Source checks bracket fixtures/final result, not every internal graph stage or every instant; source fingerprints do not prove loaded-code identity.",
+        "Mechanical recording consistency does not authenticate declarations or establish held-out scientific adequacy. Existing manual v1 studies remain legitimate.",
+        "Research source bodies are unpopulated in this restored checkout; no upstream runtime adoption, further main merge, release or deployment.",
+        "Compatible receipts identify endpoint host, not different API base paths on that host (EM-097 candidate)."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-18-review-evidence.md",
+        "evals/review_readiness.py",
+        "docs/delivery/review/README.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-094: structural success and source-valid evidence need separate outcomes.",
+          "EM-095: summary flags alone cannot support returned-call evidence.",
+          "EM-096: mechanical study readiness and genuine prospective approval are separate.",
+          "EM-097: host-only endpoint identity cannot distinguish service paths; preserve as a candidate."
+        ],
+        "risks": [
+          "Unauthenticated records, discrete source checks and declared coverage can be overinterpreted as continuous attestation or independent acceptance."
+        ],
+        "architecture_implications": [
+          "Keep offline evidence tools separate from case authority; retain original compiler, fixtures and semantic protocol."
+        ],
+        "roadmap_decision": "Refine existing tasks only; preserve every original status/acceptance requirement, prior form and discovery.",
+        "insight_ids": [
+          "EM-094",
+          "EM-095",
+          "EM-096",
+          "EM-097"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-16-whole-system-native-receipt",
+      "date": "2026-10-16",
+      "version": "0.2.0-alpha.8",
+      "title": "Verified whole-system evaluation-readiness checkpoint",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "DOC-06",
+        "B02-09",
+        "B02-11",
+        "B02-12",
+        "B02-15",
+        "ES03-05",
+        "ES03-09"
+      ],
+      "summary": "Whole-system technical direction and bounded evaluation fixes passed cumulative native software verification; all original model and human acceptance gates remain.",
+      "added": [
+        "Exact-source final receipt for tested code 17a275c, 93 retained discoveries and all 28 research pins."
+      ],
+      "changed": [
+        "Current sprint metadata now points to the verified development branch; historical main integration and earlier native evidence are retained."
+      ],
+      "fixed": [],
+      "verification": [
+        "1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites passed; source/artifact inspection valid. No actual model or independent/human acceptance.",
+        "Python compilation, 17 JavaScript modules, 8 structural cases, internal package/schema export and continuity guards passed.",
+        "Original task scopes/statuses, frozen generation fixture bytes, compiler source and original PRD remained unchanged."
+      ],
+      "limitations": [
+        "Zero actual model calls; actual service access, independent study/labels and human reviews remain missing.",
+        "Lifecycle admission timing and omitted discarded responses do not establish remote cancellation or complete provider evidence.",
+        "No deferred runtime adoption, new remote CI claim, main merge, release or deployment."
+      ],
+      "evidence_paths": [
+        "docs/strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md",
+        "docs/research/github-2026-10-16/whole-system-review.md",
+        "docs/evidence/whole-system-readiness-2026-10-16.json",
+        "docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md",
+        "docs/v2/ACTUAL-PROVIDER-EVIDENCE.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-085..087: fixed-model identity, durable experiment evidence and separate admission/remote observations.",
+          "EM-088..093: document coordinates, telemetry, actor failures, dependency environments, durability/retries and eval mode execution."
+        ],
+        "risks": [
+          "Framework/model/service success can be mistaken for actual outcome correctness, scope isolation, free entitlement or genuine acceptance."
+        ],
+        "architecture_implications": [
+          "Keep existing host/engine authority; introduce optional isolated specialists only through measured source-aware contracts."
+        ],
+        "roadmap_decision": "Existing task engineering/documentation refinements; candidate adapter concerns retained without promoting deferred research into required scope.",
+        "insight_ids": [
+          "EM-085",
+          "EM-086",
+          "EM-087",
+          "EM-088",
+          "EM-089",
+          "EM-090",
+          "EM-091",
+          "EM-092",
+          "EM-093"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-16-whole-system-evaluation-readiness",
+      "date": "2026-10-16",
+      "version": "0.2.0-alpha.8",
+      "title": "Whole-system direction and retained model evaluation evidence",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "DOC-06",
+        "B02-09",
+        "B02-11",
+        "B02-12",
+        "B02-15",
+        "ES03-05",
+        "ES03-09"
+      ],
+      "summary": "Reviewed all 28 source candidates and chose a lean acceptance-first direction; fixed model-identity configuration and prepared retained generation/lifecycle evidence without model calls.",
+      "added": [
+        "Owner-readable complete disposition matrix, source findings and actual-provider evidence guide.",
+        "Unique immutable generation checkpoints and opt-in cancel/stale/owned-process-restart observations.",
+        "EM-085..093 plus additive history preserving every earlier discovery."
+      ],
+      "changed": [
+        "Exact successful assistant text retained only after existing validation; rejected/error/credential boundaries remain.",
+        "Explicit OpenRouter :free catalog variants supported with pinned provider; random free router rejected."
+      ],
+      "fixed": [
+        "Repeated hosted runs no longer overwrite earlier experiment reports.",
+        "Lifecycle cleanup terminates its owned process even if client close raises."
+      ],
+      "verification": [
+        "Focused controlled suites passed: 160 transport/integration, 68 retention/CLI/hosted-grounding, 89 lifecycle/CLI/integration/job tests including 30 new lifecycle cases; counts overlap.",
+        "All 28 candidate pins reviewed by category; no upstream execution, install, model download or actual inference. Cumulative native verification pending at this code checkpoint."
+      ],
+      "limitations": [
+        "Zero actual model calls; endpoint/exact model/secure access remain missing. Existing fictional-only US$5 authorisation is preserved.",
+        "Application admission is not remote delivery; lifecycle races/response loss remain explicit, with no automatic repeat.",
+        "Current B02 remains 10/20 required verified and ES01 5/5 internal; independent professional and genuine human gates remain.",
+        "No deferred runtime adoption, main merge, release or deployment."
+      ],
+      "evidence_paths": [
+        "docs/strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md",
+        "docs/research/github-2026-10-16/whole-system-review.md",
+        "docs/evidence/whole-system-readiness-2026-10-16.json",
+        "docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md",
+        "docs/v2/ACTUAL-PROVIDER-EVIDENCE.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-085..087: fixed-model identity, durable experiment evidence and separate admission/remote observations.",
+          "EM-088..093: document coordinates, telemetry, actor failures, dependency environments, durability/retries and eval mode execution."
+        ],
+        "risks": [
+          "Framework/model/service success can be mistaken for actual outcome correctness, scope isolation, free entitlement or genuine acceptance."
+        ],
+        "architecture_implications": [
+          "Keep existing host/engine authority; introduce optional isolated specialists only through measured source-aware contracts."
+        ],
+        "roadmap_decision": "Existing task engineering/documentation refinements; candidate adapter concerns retained without promoting deferred research into required scope.",
+        "insight_ids": [
+          "EM-085",
+          "EM-086",
+          "EM-087",
+          "EM-088",
+          "EM-089",
+          "EM-090",
+          "EM-091",
+          "EM-092",
+          "EM-093"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-16-ruflo-owner-source-review",
+      "date": "2026-10-16",
+      "version": "0.2.0-alpha.8",
+      "title": "Ruflo explained with current pinned-source evidence",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "DOC-06",
+        "ES03-02",
+        "ES03-05"
+      ],
+      "summary": "Added an owner-readable source investigation of Ruflo worker coordination, model access, confidence and evidence limits. Application behavior and acceptance gates are unchanged.",
+      "added": [
+        "Plain-English owner guide, pinned-source receipt and complete ER-01–15 handoff.",
+        "EM-084 preserves the prediction target behind worker-routing confidence; prior findings receive additive evidence."
+      ],
+      "changed": [
+        "Clarified that Ruflo still needs a separately supplied model service and provides no selected free Qwen endpoint for 8BALL.",
+        "Preserved upstream historical audit/remediation dates alongside current unmeasured telemetry and synthetic/live benchmark distinctions."
+      ],
+      "fixed": [],
+      "verification": [
+        "Read-only source inspection; HTTPS Git remote HEAD/main matched copied commit 1882006a02487590c8c66a7eec8d7504f6af33c3.",
+        "Canonical delivery/emergence/changelog regeneration and base-history checks passed; local documentation links, original scopes/statuses and whitespace checked."
+      ],
+      "limitations": [
+        "No installation, upstream execution, model calls or independent benchmark reproduction.",
+        "Previous 1,104/1,104/391 software results belong to tested ddfead7; this documentation review does not rerun or extend those results.",
+        "Ruflo remains optional research; V0.2 real-model and independent/human requirements remain open. No merge or deployment."
+      ],
+      "evidence_paths": [
+        "docs/research/github-2026-10-16/ruflo-owner-guide.md",
+        "docs/evidence/ruflo-owner-review-2026-10-16.json",
+        "docs/delivery/sessions/2026-10-16-ruflo-owner-review.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-084: confidence/success metrics require an explicit prediction target; worker routing is separate from client-outcome probability.",
+          "Additive EM-020/055/077/081 source evidence: actual access/execution, exact model/retry accounting, semantic memory and dated remediation scope."
+        ],
+        "risks": [
+          "A keyless demo, API-success reward or persuasive swarm dashboard may be mistaken for working free inference or correct scenario decisions."
+        ],
+        "architecture_implications": [
+          "Keep model access, optional worker coordination, hypothetical simulation and reviewed case authority separate."
+        ],
+        "roadmap_decision": "Existing DOC-06 documentation refinement and candidate ES03-02/05 evaluation concern; no new required task or runtime adoption.",
+        "insight_ids": [
+          "EM-020",
+          "EM-055",
+          "EM-077",
+          "EM-081",
+          "EM-084"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-16-compatible-provider-native-receipt",
+      "date": "2026-10-16",
+      "version": "0.2.0-alpha.8",
+      "title": "Verified hosted transport and pinned research-copy checkpoint",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "DOC-07",
+        "ES03-09",
+        "B02-09",
+        "B02-12",
+        "B02-15"
+      ],
+      "summary": "Source-only copies and the optional hosted API transport passed cumulative native software verification on the development branch. All original V0.2 model and human gates remain open.",
+      "added": [
+        "Source-bound final receipt for tested commit ddfead7 and all 28 declared/checked-out research pins."
+      ],
+      "changed": [
+        "ES03-09 is verified only for its explicit controlled transport/software scope. Original B02 remains 10/20 required verified; ENDSTATE V0.1 remains 5/5 internally.",
+        "Owner authorises fictional model tests up to US$5 and expects their supplied endpoint to be free; exact endpoint/model, active secret and actual service limits remain pending."
+      ],
+      "fixed": [],
+      "verification": [
+        "1,104 source tests and 1,104 installed-kernel regression tests passed.",
+        "391 native browser checks passed across all 11 suites; source/evidence inspection valid and run passed.",
+        "All 28 research source checkouts and 128 notice files verified; Git-only population repeatability passed. No upstream software was executed."
+      ],
+      "limitations": [
+        "Zero actual model calls; real-model, independent professional and human acceptance remain open.",
+        "Pushed development source is not a main merge, deployment or release. New remote CI is not claimed; branch push is outside configured CI triggers.",
+        "Raw software artifacts remain local; committed receipt preserves hashes/counts. The earlier local checkpoint entry is retained as history."
+      ],
+      "evidence_paths": [
+        "docs/evidence/compatible-native-2026-10-16.json",
+        "docs/evidence/research-copy-2026-10-16.json",
+        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md",
+        "docs/v2/QWEN-SETUP.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-082: research source copies require explicit trust/discovery/fingerprint and completeness boundaries.",
+          "EM-083: rejection traces need attributed, byte-safe raw evidence and escaped-credential protection."
+        ],
+        "risks": [
+          "Configuration or controlled HTTP success may be mistaken for actual-model/human acceptance; a captured source tree may be mistaken for an adopted dependency."
+        ],
+        "architecture_implications": [
+          "Keep optional provider transport in the application host; ENDSTATE compiler/authority semantics unchanged. External source pins are provenance inputs, not runtime imports."
+        ],
+        "roadmap_decision": "Owner-authorized DOC-07 and optional ES03-09 plus existing gate refinements; all original required acceptance remains.",
+        "insight_ids": [
+          "EM-019",
+          "EM-020",
+          "EM-031",
+          "EM-051",
+          "EM-054",
+          "EM-055",
+          "EM-072",
+          "EM-073",
+          "EM-077",
+          "EM-082",
+          "EM-083"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-16-compatible-provider-source-copy",
+      "date": "2026-10-16",
+      "version": "0.2.0-alpha.8",
+      "title": "Hosted Qwen API connection and preserved research sources",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "DOC-07",
+        "ES03-09",
+        "B02-09",
+        "B02-12",
+        "B02-15",
+        "ES03-05"
+      ],
+      "summary": "Added explicit hosted OpenAI-compatible generation through existing review/compilation, and populated all28 inspected repositories as pinned source-only research checkouts.",
+      "added": [
+        "Server-configured hosted API/Qwen transport, UI/setup guide, unchanged-fixture wrapper and actual-journey provider option.",
+        "Pinned research Gitlinks, original notice inventory, Git-only restoration/verification and external-source test/fingerprint boundary."
+      ],
+      "changed": [
+        "Actual provider settings use secure environment fields; normal acceptance strips them and never infers. Existing HF/local routes and frozen generation requirements remain."
+      ],
+      "fixed": [
+        "Controlled rejected responses retain attributed bounded assistant text with byte-safe credential omission; unsupported output is never silently repaired."
+      ],
+      "verification": [
+        "109 controlled transport,22 SQLite/HTTP lifecycle,4 CLI and36 acceptance-boundary tests passed in focused runs.",
+        "22 native development browser checks passed; all28 source pins/notices/exceptions verified. Cumulative native acceptance is pending at this code checkpoint."
+      ],
+      "limitations": [
+        "Zero actual model calls; selected provider, spending/data scope, independent semantic evaluation and human acceptance remain open.",
+        "Model files/LFS payloads/nested dependencies are explicitly unmaterialized research exceptions; no upstream dependencies or software were run."
+      ],
+      "evidence_paths": [
+        "docs/evidence/compatible-native-2026-10-16.json",
+        "docs/evidence/research-copy-2026-10-16.json",
+        "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md",
+        "docs/v2/QWEN-SETUP.md",
+        "research/inventory.json"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-082: research source copies require explicit trust/discovery/fingerprint and completeness boundaries.",
+          "EM-083: rejection traces need attributed, byte-safe raw evidence and escaped-credential protection."
+        ],
+        "risks": [
+          "Configuration or controlled HTTP success may be mistaken for actual-model/human acceptance; a captured source tree may be mistaken for an adopted dependency."
+        ],
+        "architecture_implications": [
+          "Keep optional provider transport in the application host; ENDSTATE compiler/authority semantics unchanged. External source pins are provenance inputs, not runtime imports."
+        ],
+        "roadmap_decision": "Owner-authorized DOC-07 and optional ES03-09 plus existing gate refinements; all original required acceptance remains.",
+        "insight_ids": [
+          "EM-019",
+          "EM-020",
+          "EM-031",
+          "EM-051",
+          "EM-054",
+          "EM-055",
+          "EM-072",
+          "EM-073",
+          "EM-077",
+          "EM-082",
+          "EM-083"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-16-ruflo-research",
+      "date": "2026-10-16",
+      "version": "0.2.0-alpha.8",
+      "title": "Ruflo worker-harness assessment and architecture placement",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "DOC-02",
+        "DOC-03",
+        "DOC-04",
+        "DOC-05",
+        "DOC-06"
+      ],
+      "summary": "Assessed the owner-supplied Ruflo project as an optional coordination harness, preserving ENDSTATE outcome/evidence boundaries and identifying semantic-backend validation needs.",
+      "added": [
+        "Pinned source findings/manifest and candidate EM-081; worker-coordinator role in the proposed combined design."
+      ],
+      "changed": [
+        "Research register, canonical documentation-task evidence, handoff and emergence history updated additively."
+      ],
+      "fixed": [],
+      "verification": [
+        "Actual documentation/history/preservation check results are in the source-bound follow-up receipt."
+      ],
+      "limitations": [
+        "Source inspection only: no upstream tests, install, provider/model calls or predictive/professional/human acceptance.",
+        "No runtime task requirements/statuses, original PRDs/fixtures or application code changed."
+      ],
+      "evidence_paths": [
+        "docs/evidence/ruflo-research-2026-10-16.json",
+        "docs/research/github-2026-10-16/ruflo.md",
+        "docs/delivery/sessions/2026-10-16-evolution-research.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "A vector-shaped hash fallback does not establish semantic retrieval; actual agent execution remains separate from registration and task correctness."
+        ],
+        "risks": [
+          "A second coordinator can duplicate state and imply completed/validated work from status or consensus alone."
+        ],
+        "architecture_implications": [
+          "Optional typed worker adapter; case revisions, source facts and human approvals remain authoritative in 8BALL."
+        ],
+        "roadmap_decision": "candidate and existing_task refinements only; no runtime adoption or required scope promotion.",
+        "insight_ids": [
+          "EM-020",
+          "EM-031",
+          "EM-046",
+          "EM-051",
+          "EM-054",
+          "EM-055",
+          "EM-061",
+          "EM-075",
+          "EM-077",
+          "EM-078",
+          "EM-081"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-16-tencent-memory-research",
+      "date": "2026-10-16",
+      "version": "0.2.0-alpha.8",
+      "title": "Tencent memory assessment and combined reference-case strategy",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "DOC-02",
+        "DOC-03",
+        "DOC-04",
+        "DOC-05",
+        "DOC-06"
+      ],
+      "summary": "Assessed the owner-supplied Tencent memory project and sharpened the combined design around one complete case, optional procedural memory and explicit scenario/decision contracts.",
+      "added": [
+        "Pinned Tencent source, contract/operations findings, candidate EM-080 and a six-responsibility architecture proposal."
+      ],
+      "changed": [
+        "Research register, plan, canonical documentation-task evidence and handoff updated additively."
+      ],
+      "fixed": [],
+      "verification": [
+        "Bounded source/configuration/licence inspection; current documentation/history/preservation checks recorded in the follow-up receipt."
+      ],
+      "limitations": [
+        "No upstream install/runtime test, inference, benchmark reproduction or independent/human acceptance.",
+        "All runtime task acceptance/status fields remain unchanged. Tencent is a candidate, not an imported feature."
+      ],
+      "evidence_paths": [
+        "docs/evidence/tencent-memory-research-2026-10-16.json",
+        "docs/research/github-2026-10-16/tencent-memory.md",
+        "docs/delivery/sessions/2026-10-16-evolution-research.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "L2 scenario is a memory narrative; generated procedures, citation ancestry and profile scopes need host-owned review and invalidation contracts."
+        ],
+        "risks": [
+          "Memory consolidation or model choice confidence may be mistaken for factual proof, validated expertise or route authority."
+        ],
+        "architecture_implications": [
+          "Keep canonical evidence/approval state in 8BALL and use optional scoped API adapters for derived memory."
+        ],
+        "roadmap_decision": "new_candidate and existing_task refinements only; no required runtime promotion.",
+        "insight_ids": [
+          "EM-019",
+          "EM-020",
+          "EM-027",
+          "EM-046",
+          "EM-055",
+          "EM-061",
+          "EM-063",
+          "EM-075",
+          "EM-076",
+          "EM-077",
+          "EM-078",
+          "EM-080"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-16-evolution-research",
+      "date": "2026-10-16",
+      "version": "0.2.0-alpha.8",
+      "title": "Source-pinned evolution plan for scenarios, memory and decision support",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "DOC-02",
+        "DOC-03",
+        "DOC-04",
+        "DOC-05",
+        "DOC-06"
+      ],
+      "summary": "Owner-requested GitHub research maps 26 pinned repositories and 25 product capability families into a staged ENDSTATE/8BALL proposal, with a plain Zep explanation and bounded adoption experiments.",
+      "added": [
+        "Full evolution plan; pinned component register and six source/capability reports; query/source manifests; five candidate discoveries EM-075 through EM-079."
+      ],
+      "changed": [
+        "Linked the proposal into current entry points, handoff and existing roadmap/research registers; canonical runtime task requirements and statuses remain unchanged."
+      ],
+      "fixed": [],
+      "verification": [
+        "Documentation/history/ledger checks, focused documentation tests and source/requirement preservation are recorded with actual results in the session receipt.",
+        "Upstream source/manifests/licences inspected; no candidate installation, inference, interoperability, predictive or human acceptance test."
+      ],
+      "limitations": [
+        "Recommendations are proposals, not imported features. B02 stays 10/20 required verified; ES01 stays 5/5 internal.",
+        "Hosted model/provider identity, authorised test spending/transmission and independent/human review remain unresolved inputs for current V0.2 acceptance.",
+        "Research branch is unmerged; application runtime and original fixtures are unchanged. No release or deployment."
+      ],
+      "evidence_paths": [
+        "docs/evidence/evolution-research-2026-10-16.json",
+        "docs/delivery/sessions/2026-10-16-evolution-research.md",
+        "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md",
+        "docs/research/GITHUB-COMPONENTS-2026-10-16.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Domain action mappings, memory retraction contracts, aggregate experiment budgets, upstream licence/API differences and optimiser-status semantics need explicit adapter evaluation."
+        ],
+        "risks": [
+          "Combining frameworks can duplicate state and multiply cost while concealing absent calibration or independent acceptance."
+        ],
+        "architecture_implications": [
+          "Keep ENDSTATE contracts and reviewed case records authoritative; compare optional source/memory/simulation/decision adapters against simpler baselines."
+        ],
+        "roadmap_decision": "new_candidate and existing_task refinements only; proposed sequencing maps to existing milestones/Lab IDs without new required runtime scope.",
+        "insight_ids": [
+          "EM-020",
+          "EM-027",
+          "EM-046",
+          "EM-047",
+          "EM-051",
+          "EM-054",
+          "EM-061",
+          "EM-072",
+          "EM-075",
+          "EM-076",
+          "EM-077",
+          "EM-078",
+          "EM-079"
+        ]
+      }
+    },
+    {
       "id": "2026-10-15-main-verified-receipt",
       "date": "2026-10-15",
       "version": "0.2.0-alpha.8",
@@ -775,7 +1568,7 @@
         "ES03-08",
         "B04-04"
       ],
-      "summary": "Documentation-only refinement: 8BALL becomes the fixer\u2019s live situation room around an explicit mandate and human-selected course; ENDSTATE remains a neutral planning and reconsideration engine. No runtime completion or new required scope is implied.",
+      "summary": "Documentation-only refinement: 8BALL becomes the fixer’s live situation room around an explicit mandate and human-selected course; ENDSTATE remains a neutral planning and reconsideration engine. No runtime completion or new required scope is implied.",
       "added": [
         "Separate 8BALL and ENDSTATE vision documents, ADR 0004 and proposed course/coverage/recovery acceptance scenarios.",
         "Ten new discoveries retained alongside all 55 originals; five additional end-of-sprint review prompts.",
@@ -786,7 +1579,7 @@
         "Earlier fallback/watch/attention/recoverability discoveries have appended dispositions rather than rewritten observations."
       ],
       "fixed": [
-        "The latest handoff\u2019s missing Draft Repair source is explicitly separated from the recovered alpha.7 implementation; later narrated test totals are not attached to the earlier source.",
+        "The latest handoff’s missing Draft Repair source is explicitly separated from the recovered alpha.7 implementation; later narrated test totals are not attached to the earlier source.",
         "No-path wording now identifies the supplied catalogue and search bounds rather than implying global impossibility.",
         "The review protocol now permits additional passes while requiring the original ten and preserving recorded prompt text/order. Seven regression checks cover safe extension and denied rewrites."
       ],
@@ -1056,7 +1849,7 @@
           "The bounded calendar-day interpreter deliberately cannot decide what next business day or end of day means for every organisation, location or agreement."
         ],
         "risks": [
-          "Shared names, exact quotations and schema validation do not prove identity, authority or the source\u2019s intended date.",
+          "Shared names, exact quotations and schema validation do not prove identity, authority or the source’s intended date.",
           "Withdrawing evidence should prompt reconsideration, not silently remove adopted operational commitments."
         ],
         "architecture_implications": [
@@ -1277,7 +2070,7 @@
         "Guided nested AND/OR and explicit-false authoring, guards, intended effects, verification criteria, resources, decision gates and response contingencies.",
         "Read-only amendment preview with route differences, historical protections, undo/redo, discard and a separate revision-checked commit.",
         "Persistent local analysis status with bounded queue, stage counts, cancellation, stale-result rejection and restart interruption.",
-        "In-app What\u2019s new and a generated root CHANGELOG.md. Every future build must update the shared changelog and delivery ledger.",
+        "In-app What’s new and a generated root CHANGELOG.md. Every future build must update the shared changelog and delivery ledger.",
         "Desktop authoring columns scroll independently; smaller screens keep a responsive stacked layout."
       ],
       "changed": [

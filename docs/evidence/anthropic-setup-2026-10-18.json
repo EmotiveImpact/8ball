@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-18",
+  "kind": "configuration_preparation_and_bounded_official_source_inspection",
+  "branch": "feat/v02-review-evidence-20261018",
+  "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
+  "configuration_only": true,
+  "application_source_changed": false,
+  "prepared_settings": {
+    "EIGHTBALL_API_BASE_URL": "https://api.anthropic.com/v1",
+    "EIGHTBALL_API_MODEL": "claude-sonnet-4-6",
+    "EIGHTBALL_API_PROVIDER": "anthropic"
+  },
+  "saved_draft_revision": 8,
+  "draft_published_or_active_verified": false,
+  "secret": {
+    "variable": "EIGHTBALL_API_KEY",
+    "existing_label": "Qwen API key",
+    "saved_binding_observed": false,
+    "saved_allowed_domains": [
+      "dashscope-intl.aliyuncs.com"
+    ],
+    "required_owner_destination_edit": "api.anthropic.com",
+    "secret_values_accessed": false,
+    "automatic_target_edit": "rejected; no draft changes saved from that attempt",
+    "duplicate_requirement_added": false
+  },
+  "network": {
+    "custom_domains_after_successful_save": [
+      "api.anthropic.com",
+      "dashscope-intl.aliyuncs.com"
+    ],
+    "existing_domains_preserved": true,
+    "active_network_state_verified": false
+  },
+  "official_source": {
+    "repository": "anthropics/anthropic-sdk-python",
+    "commit": "bcd55fe1d3f0f1240765f8cef04295b67337f55a",
+    "model_id_listed": true,
+    "account_availability_and_pricing_tested": false,
+    "compatibility_docs_url": "https://platform.claude.com/docs/en/api/openai-sdk",
+    "compatibility_docs_read": "Blocked by inherited proxy: Tunnel connection failed403Forbidden; no origin response or bypass established",
+    "native_messages_api_implemented": false,
+    "upstream_code_executed_or_installed": false
+  },
+  "configuration_check": {
+    "fictional_key_only": true,
+    "dns_and_http_blocked_in_process": true,
+    "derived_endpoint": "https://api.anthropic.com/v1/chat/completions",
+    "configuration_state": "configured_not_tested",
+    "credentials_validated": false,
+    "live_inference_verified": false
+  },
+  "focused_existing_transport_and_cli_tests": {
+    "passed": 142,
+    "seconds": 1.3,
+    "live_inference": false
+  },
+  "continuity_checks": {
+    "passed": 60,
+    "seconds": 1.37,
+    "warnings": 1,
+    "warning": "Existing Starlette TestClient deprecated AnyIO BlockingPortal alias",
+    "source_history_checks": "passed against12ffdad baseline; regenerated canonical files"
+  },
+  "actual_model_calls": 0,
+  "inference_spending": 0,
+  "independent_professional_review": false,
+  "human_acceptance": false,
+  "full_v02_acceptance": false,
+  "main_merged": false,
+  "released": false,
+  "deployed": false,
+  "limits": [
+    "Anthropic compatibility URL/authentication/parameters/response_format enforcement are not established by readable SDK source or configuration formatting. First actual response must be retained and evaluated unchanged.",
+    "The official SDK lists the model but does not establish availability or cost for the owner account.",
+    "Existing secret target cannot be changed by this draft tool; owner must edit existing row, supply key securely, save and publish. Non-secret/network save does not change that secret.",
+    "Earlier native1267/1267/391 results apply to tested code25ca5e2, not this changed documentation source or an actual Anthropic response.",
+    "No app code, tests, dependency declarations, original PRD, frozen fixture bytes or acceptance gates were changed."
+  ],
+  "independent_agent_source_document_review": "No blocking issue; not independent professional acceptance"
+}

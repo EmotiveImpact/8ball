@@ -42,21 +42,60 @@ BROWSER_SUITES=[
  ('courses','tests/browser_courses.py','browser-courses-report.json'),
 ]
 EXCLUDE={'.git','.venv','__pycache__','.pytest_cache','artifacts','node_modules','build','dist','test-results'}
+EXTERNAL_RESEARCH=Path('research/external')
 
 
 def now():return datetime.now(timezone.utc).isoformat()
 def digest(raw:bytes):return hashlib.sha256(raw).hexdigest()
 
 
+def research_gitlinks(root:Path):
+    """Bind research checkouts to Git pins without parsing their source trees."""
+    if not (root/'.git').exists():return {}
+    listing=subprocess.run(['git','-C',str(root),'ls-files','--stage','-z','--',EXTERNAL_RESEARCH.as_posix()],
+                           check=True,capture_output=True,text=True,timeout=15).stdout
+    links={}
+    for record in listing.split('\0'):
+        if not record:continue
+        header,name=record.split('\t',1)
+        mode,commit,stage=header.split()
+        if mode!='160000':continue
+        if stage!='0':raise ValueError('Unresolved research gitlink: '+name)
+        checkout=root/name
+        current=None
+        if (checkout/'.git').exists():
+            current=subprocess.run(['git','-C',str(checkout),'rev-parse','--verify','HEAD'],
+                                   check=True,capture_output=True,text=True,timeout=15).stdout.strip()
+        links[name]={'index_commit':commit,'checkout_commit':current}
+    return dict(sorted(links.items()))
+
+
 def source_manifest(root:Path=ROOT):
     files={}
-    for path in sorted(root.rglob('*')):
-        rel=path.relative_to(root)
-        if any(p in EXCLUDE or p.endswith('.egg-info') for p in rel.parts):continue
-        if (path.name.startswith('.env') and path.name!='.env.example') or path.suffix in ('.db','.sqlite','.sqlite3','.pyc','.log'):continue
-        if path.is_symlink():raise ValueError('Source manifest refuses symbolic links: '+str(rel))
-        if path.is_file():files[rel.as_posix()]=digest(path.read_bytes())
-    return {'sha256':digest(json.dumps(files,sort_keys=True,separators=(',',':')).encode()),'files':files}
+    # Prune before descending: upstream tests, symlinks and large source trees
+    # are research material, not application source or acceptance inputs.
+    for directory,dirs,names in os.walk(root,topdown=True,followlinks=False):
+        parent=Path(directory)
+        kept=[]
+        for name in sorted(dirs):
+            path=parent/name;rel=path.relative_to(root)
+            if name in EXCLUDE or name.endswith('.egg-info') or rel==EXTERNAL_RESEARCH:continue
+            if path.is_symlink():raise ValueError('Source manifest refuses symbolic links: '+str(rel))
+            kept.append(name)
+        dirs[:]=kept
+        for name in sorted(names):
+            path=parent/name;rel=path.relative_to(root)
+            if name in EXCLUDE or name.endswith('.egg-info'):continue
+            if (name.startswith('.env') and name!='.env.example') or path.suffix in ('.db','.sqlite','.sqlite3','.pyc','.log'):continue
+            if path.is_symlink():raise ValueError('Source manifest refuses symbolic links: '+str(rel))
+            if path.is_file():files[rel.as_posix()]=digest(path.read_bytes())
+    files=dict(sorted(files.items()))
+    links=research_gitlinks(root)
+    # Preserve the original manifest shape/hash for source without research pins.
+    payload={'files':files,'research_gitlinks':links} if links else files
+    result={'sha256':digest(json.dumps(payload,sort_keys=True,separators=(',',':')).encode()),'files':files}
+    if links:result['research_gitlinks']=links
+    return result
 
 
 def selected_environment(mode):
@@ -64,6 +103,8 @@ def selected_environment(mode):
     # Standard verification cannot accidentally use configured private providers
     # or an operator's own database. Tests create fictional disposable stores.
     for key in ('HF_TOKEN','HUGGINGFACE_API_TOKEN','TYPESAFE_API_KEY','OPENAI_API_KEY',
+                'EIGHTBALL_API_KEY','EIGHTBALL_API_BASE_URL','EIGHTBALL_API_MODEL',
+                'EIGHTBALL_API_PROVIDER','EIGHTBALL_API_ROUTING_PROVIDER',
                 'EIGHTBALL_DB','EIGHTBALL_TOKEN','EIGHTBALL_ARTIFACTS','EIGHTBALL_BROWSER_BRIDGE'):
         env.pop(key,None)
     if mode=='bridge':env['EIGHTBALL_BROWSER_BRIDGE']='1'

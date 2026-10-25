@@ -1,5 +1,9 @@
 # Hugging Face development provider
 
+For Qwen or another hosted OpenAI-compatible endpoint, use the separate
+[beginner API guide](QWEN-SETUP.md). Its `EIGHTBALL_API_*` settings do not replace
+the Hugging Face settings below.
+
 Developer adapter, not production-model approval. The current session did not have a Hugging Face key and did not make any hosted inference requests.
 
 ## Configuration later

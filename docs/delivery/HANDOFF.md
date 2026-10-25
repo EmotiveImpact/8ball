@@ -1,3 +1,100 @@
+# Current handoff: combined development build
+
+Current cumulative software verification passed on `a9254e6087ef606d581d626bfcda9d7e555c857e`:
+1,267 source tests, 1,267 installed-engine regressions and 391 native checks across
+11 browser suites; exact inspection valid before receipt edits, checkpoint CI green.
+[Receipt](../evidence/build-consolidation-native-2026-10-25.json).
+[PR4](https://github.com/EmotiveImpact/8ball/pull/4) is the authoritative final-head
+CI/merge record. After merge, continue current remote main rather than an older
+feature branch. PR3 was closed as already integrated. Original acceptance gates
+and all discoveries remain intact; next run is the prepared actual-provider test.
+
+Use [NEXT-BUILD.md](NEXT-BUILD.md), [integration session](sessions/2026-10-25-build-consolidation.md)
+and [ADR0007](../decisions/0007-owner-build-consolidation.md). Owner authorises
+this consolidation into main; model and human acceptance remain outstanding.
+The session/final receipt records actual tested source and PR outcomes. Preserve
+all prior work and never attach old native totals to a newer untested source.
+
+# Historical configuration continuation: owner-selected Anthropic
+
+Branch feat/v02-review-evidence-20261018, base `12ffdadb2f094e8f31fbd60486b5f775894b32ec`. [Setup guide](../v2/ANTHROPIC-SETUP.md), [receipt](../evidence/anthropic-setup-2026-10-18.json) and [full session/ER-01–15](sessions/2026-10-18-anthropic-configuration.md) give exact fields and current limits. Draft non-secret values are prepared, and api.anthropic.com was added to custom destinations; the old key slot cannot be retargeted automatically. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, enter key securely, Save and Publish. No duplicate requirement or key value was added.
+
+Claude Sonnet 4.6 is an SDK-listed proposed test model, not verified account access. Existing generic /chat/completions compatibility/auth/schema enforcement remain unverified; official compatibility docs access was blocked by the inherited proxy (HTTP 403). 142 controlled transport/CLI checks passed; no actual inference/spending. Application source/tests/dependencies are unchanged. Prior 1267/1267/391 native counts remain tied to tested `25ca5e2`, not new documentation or an Anthropic response. All 98 discoveries and original task scope/statuses remain intact.
+
+Next: observe active key/destination/model/network configuration, confirm service limits under existing fictional-only US$5 permission, then run unchanged fixtures and retain actual compatibility failures before deciding any native adapter work. Genuine independent/human review and owner end review remain open; no main merge/release/deployment.
+
+---
+
+# Current sprint: source-stable model evidence and prospective recording
+
+Branch `feat/v02-review-evidence-20261018`, base `e513237f5b66c0689fa870e0d82873d8b71e4d8a`. Read [full sprint/ER-01–15](sessions/2026-10-18-review-evidence.md), [provider evidence](../v2/ACTUAL-PROVIDER-EVIDENCE.md) and [optional private recording guide](review/PROSPECTIVE-RECORDING.md). Recovered newer pushed source from an older clean restored main checkout; all prior work is preserved. Source stability and returned-call prerequisite checks are engineering evidence controls. Optional v2 recording checks do not replace legitimate v1 manual studies or grant independent acceptance.
+
+Tested code `25ca5e2dce4f28ec33d9b132cccabfa15b23683e` passed **1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites**. Source/artifact inspection was valid/passed before final documentation edits. [Final receipt](../evidence/review-evidence-native-2026-10-18.json) records source/report hashes, every suite and limits. Focused 138 tests overlap the cumulative count; no current remote CI is claimed. All 97 discoveries are retained. Original task scope/statuses, PRD, frozen fixtures, compiler prompts and semantic protocol remain unchanged. Research Gitlinks remain preserved but source bodies are unpopulated in this restored environment.
+
+Provider bindings are absent; actual inference is zero. Existing permission covers fictional fixtures up to US$5, free access expected. Next input is the public model-service link, exact compatible model and secure active key, then actual unchanged generation/lifecycle/native journeys and genuine prospective independent/human reviews. Source checks sample fixture boundaries; unsigned receipts do not prove continuous stability, loaded-code identity or full API-path identity. Owner usability/visual review is at the end. No further main merge, release or deployment.
+
+---
+
+# Latest verified sprint: whole-system investigation and evaluation readiness
+
+Branch `feat/v02-evaluation-readiness-20261016`, base `0fed04b5e299f4a2e53050456559133c1231b088`, preserves all earlier work. Read [technical direction](../strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md), [source findings for all 28 candidates](../research/github-2026-10-16/whole-system-review.md), [provider evidence guide](../v2/ACTUAL-PROVIDER-EVIDENCE.md) and [full sprint/ER-01–15](sessions/2026-10-16-whole-system-evaluation-readiness.md). Keep current app/engine, prove one exact provider, then compare one specialist per demonstrated need. No new research runtime is adopted.
+
+Code fixes explicit OpenRouter free-variant identity versus random routing, retains successful assistant text, creates unique/checkpointed hosted experiments and adds opt-in cancel/stale/owned-process-restart observations. Tested code `17a275c5a143d9721bcbf59113a66873be81d38d` passed **1,171 source tests, 1,171 installed-kernel regressions and 391 native browser checks across all 11 suites**, with valid source/artifact inspection before documentation-only final edits. [Final receipt](../evidence/whole-system-readiness-2026-10-16.json) preserves exact hashes/counts; reconstruct that source and its 28 checkout pins to re-inspect local raw artifacts. No new remote CI is claimed. All 93 discoveries are retained; original task scopes/statuses remain unchanged.
+
+Actual inference is zero; runtime has no provider variables/secrets. Owner already authorises fictional examples up to US$5 and expects free access. Next dependency is its public endpoint/exact model and secure active key, followed by selected-service limits and unchanged generation/lifecycle/native journey. The lifecycle trigger is application admission, not remote delivery; missing discarded responses and fast races remain explicit. Independent prospective study/qualified labels and human/owner end review remain separate. No further main merge, release or deployment.
+
+---
+
+# Latest owner research: Ruflo explained
+
+The owner's follow-up investigation is preserved in [the plain-English Ruflo guide](../research/github-2026-10-16/ruflo-owner-guide.md), [source receipt](../evidence/ruflo-owner-review-2026-10-16.json) and [full session/ER review](sessions/2026-10-16-ruflo-owner-review.md). On the same development branch, base `f9b33af`, current upstream HEAD/main still matched pinned `1882006`. Documentation only: no upstream execution/install, model calls, app changes, main merge or deployment. Canonical continuity checks passed; no fresh native-test or remote-CI result is claimed.
+
+Ruflo remains optional worker coordination. It needs separately supplied model access and does not provide our selected free Qwen endpoint. Registration, keyless echo, provider completion, worker-routing confidence and independent outcome quality are distinct; EM-084 preserves the prediction-target concern. All 84 discoveries remain visible. Original task scopes/statuses and B02 10/20, ES01 5/5 are unchanged. Next engineering task is still the owner's public endpoint/exact model, secure key and actual unchanged-fixture/lifecycle/journey tests within fictional-only US$5 authorisation and expected free-access limits. Owner end review and independent professional evaluation remain separate. The verified application receipt below continues to apply at its exact tested commit.
+
+---
+
+# Latest verified development: hosted Qwen API and 28 research sources
+
+`feat/v02-compatible-provider-20261016` preserves all consolidated application fixes and research history. Tested code commit `ddfead7fe2e44a01ec202d2196384c5dc2596c5b` passed **1,104 source tests, 1,104 installed-kernel tests and 391 native browser checks across all 11 suites**. Source/artifact inspection was valid/passed before final documentation edits. [Final receipt](../evidence/compatible-native-2026-10-16.json), [source-copy receipt](../evidence/research-copy-2026-10-16.json), [full sprint and ER-01–15](sessions/2026-10-16-compatible-provider-research-copy.md), [beginner Qwen guide](../v2/QWEN-SETUP.md).
+
+All 28 pinned research checkouts and 128 original notice files were verified. Two model files are explicitly omitted, 51 LFS pointers remain unhydrated and two nested submodules remain uninitialised; no upstream software was run. Restore/verify with the Git-only helper in [research](../../research/README.md), and prune external sources from app discovery. The optional hosted transport is verified for its bounded controlled software contract only. All 83 emergence discoveries are retained; B02 remains **10/20 required verified**, ES01 **5/5 internal**.
+
+The owner now authorises the repository's fictional model tests up to **US$5**, expects their supplied endpoint to be free, and will do owner usability/visual review at the end. Next: receive the **public endpoint URL and exact model**, obtain any key only through secure environment settings, confirm the endpoint's actual free-access limits, and run unchanged frozen generation plus actual-provider cancellation/stale/interruption/full journey. Independent professional/semantic evaluation and genuine human acceptance remain separate. Actual model calls so far: **zero**.
+
+The saved draft still offers Alibaba international as an editable suggestion, with a blank exact model and private-key requirement. It is not active/authenticated access. Update the hostname/secret destination if the owner supplies another service. No new remote CI result is claimed: the branch has no push CI trigger and no new PR was opened. Main is unchanged at `d7d36b842464d7ad0e974a59730a682f1739fccf`; no merge, deployment or release occurred. Final receipt/status edits are documentation only; reconstruct the tested code and 28 checkout pins before re-inspecting raw local artifacts. The previous main integration metadata in the ledger remains a dated historical snapshot; `repository.current_sprint` and task branches identify this development.
+
+---
+
+# Preparation checkpoint: explicit Qwen API and pinned research checkouts
+
+Branch `feat/v02-compatible-provider-20261016` from `c9fd38438ba52e9320bc55b96132086bfe57ce6a` preserves the consolidated app and all research history. [Sprint record](sessions/2026-10-16-compatible-provider-research-copy.md), [Qwen beginner setup](../v2/QWEN-SETUP.md), [source inventory](../../research/README.md). Hosted API/Qwen now follows existing proposals, strict compilation and lifecycle guards; all28 source repositories are copied as pinned research submodules with explicit model/LFS/nested exceptions. No upstream runtime is installed.
+
+Cumulative native software verification is pending at this preparation checkpoint; the final receipt below must report actual source-bound results. B02 remains10/20 required verified and ES01 remains5/5 internal. The owner is arranging a Qwen endpoint. A secure settings draft suggests Alibaba international, with blank exact model and a user-supplied key requirement. Saved draft is not active/authenticated model access. Agree fictional-fixture spending/data scope before actual calls, then run unchanged generation/live lifecycle/full journey and independent/human acceptance. The owner reviews usability/visuals at the end. No main merge or deployment.
+
+---
+
+# Latest research follow-up: Ruflo worker coordination
+
+The owner supplied Ruflo. Read [the source assessment](../research/github-2026-10-16/ruflo.md) and [plan placement](../strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md#follow-up-ruflos-place-in-the-combined-system). Base `bf54f607bb0e13d0c6adfc0f59ee146e75be287b`; same documentation branch. Ruflo is a candidate optional worker harness, requiring comparison with native subagents/jobs and explicit provider/memory/revision boundaries. Source-only research; [receipt](../evidence/ruflo-research-2026-10-16.json). B02 remains 10/20 required verified, ES01 5/5 internal; selected-provider and independent/human acceptance remain next. No runtime installation, model call, main merge or deployment.
+
+---
+
+# Latest research follow-up: Tencent memory and the combined reference case
+
+The owner supplied TencentDB Agent Memory and asked for the strongest combined design. Read [the plan follow-up](../strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md#follow-up-strongest-combined-architecture-and-tencent-memory) and [Tencent assessment](../research/github-2026-10-16/tencent-memory.md). This is a source-only extension of the existing research branch at base `7309f54539f17b973511e940147a817958891e42`, with runtime acceptance unchanged. Tencent is shortlisted for an optional non-client team/procedural-memory experiment through explicit APIs; source truth, revisions and authority remain in 8BALL. Its L2 scenario summaries do not replace hypothetical-world experiments.
+
+The first build requirement remains actual-provider V0.2 acceptance. The first proposed later research proof is one complete reference case with authored adverse scenarios and measured component contributions. [Follow-up receipt](../evidence/tencent-memory-research-2026-10-16.json); [session](sessions/2026-10-16-evolution-research.md#tencent-follow-up). No runtime installation, paid calls, main merge or deployment.
+
+---
+
+# Latest handoff: GitHub component research and evolution proposal
+
+16 October 2026. Read [the full plan](../strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md), [component sources](../research/GITHUB-COMPONENTS-2026-10-16.md) and [session record](sessions/2026-10-16-evolution-research.md). Documentation branch `docs/endstate-evolution-plan-20261016` starts from consolidated main `d7d36b842464d7ad0e974a59730a682f1739fccf`. The owner asked how to combine swarm, memory, decisions and the full vision; this proposal makes those choices and experiments reviewable. It does not install or promote deferred runtime features.
+
+The latest application remains the consolidated main build below. B02 remains 10/20 required verified, ES01 5/5 internal. All previous failed/passed evidence, original PRDs/fixtures and task requirements are retained. Next: select/authorise the provider/model and bounded fictional-fixture run, complete existing V0.2 model/lifecycle/independent/human gates, then evaluate the proposed authored-scenario baseline and optional adapters through explicit scoped decisions. The owner still intends their usability/visual review at the end.
+
+---
+
 # Current handoff: consolidated development build is on main
 
 The owner-authorized integration is complete: current application/fixes, consolidated specifications and both research variants are together on **main**. GitHub PRs #1, #2 and #3 show Merged. The recovery/integration branch is `integration/v02-consolidated-20261015`; prior feature/fix/archive refs remain intact. Read [BUILD-OVERVIEW](BUILD-OVERVIEW.md), [ADR0006](../decisions/0006-consolidated-development-main.md) and [the integration session](sessions/2026-10-15-main-consolidation.md).

@@ -1,4 +1,22 @@
+# Evaluation evidence update, 16 October 2026
+
+Read [actual-provider evidence](ACTUAL-PROVIDER-EVIDENCE.md) for unique checkpointed hosted-fixture reports and the opt-in application lifecycle runner. Controlled software checks do not complete actual-model or human acceptance. Ordinary native acceptance still strips provider settings and makes no model calls. Historical fixed report paths below describe older runner versions.
+
 # Integrated acceptance: source bytes, evidence and scope
+
+The current runner retains **eleven** browser suites. It prunes source-only
+`research/external/` checkouts before app scans/test discovery while fingerprinting
+research metadata and declared/checked-out Gitlink identities. Standard software
+acceptance strips hosted API settings and credentials. Historical notes below
+retain their original scope/evidence.
+
+For the explicitly configured API route, see [Qwen setup](QWEN-SETUP.md):
+
+```sh
+python evals/full_journey.py --provider openai_compatible --allow-inference --allow-external --transport native
+```
+
+This actual-provider command has separate data/budget authorisation.
 
 `0.2.0-alpha.7`, local unreleased integration checkpoint. This closes fragmentation in the **verification workflow**, not all V0.2 product gates.
 

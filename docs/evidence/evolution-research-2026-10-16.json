@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-16",
+  "kind": "source_research_and_documentation_validation",
+  "base_commit": "d7d36b842464d7ad0e974a59730a682f1739fccf",
+  "branch": "docs/endstate-evolution-plan-20261016",
+  "validation_status": "passed",
+  "scope": "Documentation/research proposal only; application byte preservation and current source test rerun. Upstream candidates were not executed.",
+  "checks": {
+    "pytest": {
+      "command": ".venv/bin/python -m pytest -q",
+      "passed": 964,
+      "failed": 0,
+      "duration_seconds": 31.59,
+      "warnings": 1,
+      "warning_scope": "Existing Starlette testclient uses deprecated AnyIO BlockingPortal alias."
+    },
+    "python_compilation": {
+      "command": ".venv/bin/python -m compileall -q eightball endstate scripts evals",
+      "result": "passed"
+    },
+    "javascript_syntax": {
+      "command": "node --check for each web/**/*.js file",
+      "modules": 17,
+      "result": "passed"
+    },
+    "documentation": {
+      "delivery": "69 tasks and 11 milestones valid; generated checklist current",
+      "changelog": "24 entries; base history preserved",
+      "emergence": "79 discoveries; original prompts/wording/history preserved; ER01..15 recorded",
+      "whitespace": "git diff --check passed"
+    },
+    "preservation": {
+      "protected_files_byte_identical": 181,
+      "all_69_task_requirements_and_statuses_preserved": true,
+      "all_11_milestones_preserved": true,
+      "new_document_local_links_resolved": 17,
+      "unique_pinned_repositories": 26,
+      "original_prd_git_blob": "cdaa878bcfdee65a62e2096eae085af64a5377c6",
+      "generation_fixture_raw_file_sha256": "2529e648df174aaeb560c9282d928bac483707ef366cb69e7eef2091b3f8dbd1",
+      "existing_entrypoint_local_links_resolved": 80
+    }
+  },
+  "research": {
+    "repositories_pinned": 26,
+    "product_capability_families": 25,
+    "methods": [
+      "public GitHub repository HTML searches",
+      "native git refs and source-only clones",
+      "immutable raw/source files",
+      "manifest and licence inspection"
+    ],
+    "limitations": [
+      "Bounded source review, not exhaustive repository audit",
+      "No upstream runtime/interoperability/accuracy/security validation",
+      "Hosted pricing and service processing/retention terms not independently verified"
+    ]
+  },
+  "artifact_sha256": {
+    "docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md": "51ec1d6fc63de2b3683b7117a3a65df2b6f4acd43c3576ce0704370f479484bb",
+    "docs/research/GITHUB-COMPONENTS-2026-10-16.md": "3e5e10806f065e4be94ab58ddd7b585e84d75d93bf8ce07e0d54d1e335fbf23c",
+    "docs/research/github-2026-10-16/agency-components.md": "8eda8fd341c543a50f980e5d922a8a3c1e438c1ec96b3c25c53fdd74fe1aef1a",
+    "docs/research/github-2026-10-16/capability-map.md": "9ba4797bee3291519046c66187afdee822bd9413060a1a845c404ee3b20dccfd",
+    "docs/research/github-2026-10-16/decision.md": "87703ca2628067f2d6264111aa7f134385cd21fa73aa5cdcc3f9294af51ec4d0",
+    "docs/research/github-2026-10-16/evaluation-workflow.md": "b2564d1d39d1de6eb9997e90a8843e8bb28ca37163d104fce3f5c6572f806135",
+    "docs/research/github-2026-10-16/github-search-results.json": "c9c8ca2850caf0260baaea49614def0c7b233342bccf46424d2f1aaa96149053",
+    "docs/research/github-2026-10-16/memory.md": "beaed6d443ec73630051d76a076d2108080cdba830629a9b9c44c76ff2ef04ae",
+    "docs/research/github-2026-10-16/mirofish-assessment.json": "47ad794af65420601b0eb487c6dd72aa2860564c9e750e0d5bc49c29f8bdbac1",
+    "docs/research/github-2026-10-16/mirofish.md": "26e9417430d9f6d131370e4689fc2981dff393d7c04e9aa5227585259a0136ae",
+    "docs/research/github-2026-10-16/source-manifest.json": "56f616ef97ad2b1f11b73a1fb30d4272593f9ec29e066525ee0b8b59def26d5c"
+  },
+  "not_run": [
+    "installed-wheel rerun",
+    "native-browser rerun",
+    "upstream candidate tests",
+    "actual-model calls",
+    "independent professional evaluation",
+    "human acceptance"
+  ],
+  "runtime_changed": false,
+  "dependencies_installed": false,
+  "model_weights_downloaded": false,
+  "inference_performed": false,
+  "independent_or_human_acceptance_performed": false,
+  "main_merge": false,
+  "deployment": false,
+  "release": false,
+  "remaining_acceptance": {
+    "B02_required_verified": 10,
+    "B02_required_total": 20,
+    "ES01_internal_verified": 5,
+    "ES01_internal_total": 5
+  },
+  "publication_note": "Commit on the stated documentation branch; final delivery message reports the pushed commit and checked remote ref. Consolidated application main remains unchanged."
+}

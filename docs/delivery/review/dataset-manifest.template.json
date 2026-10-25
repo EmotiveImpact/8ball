@@ -1,0 +1,19 @@
+{
+  "manifest_version": "v02-independent-dataset.v1",
+  "dataset_id": null,
+  "author_ref": null,
+  "author_role_and_qualifications_ref": null,
+  "independently_authored": null,
+  "development_exposure_and_exclusions": null,
+  "source_permission_and_retention_ref": null,
+  "frozen_at": null,
+  "required_coverage": [
+    "negation", "contradiction", "unclear_identity", "authority",
+    "relative_dates_and_timezones", "missing_dependencies",
+    "meaningful_alternatives", "final_verification", "refusal_and_external_wait",
+    "competing_objectives", "injection_text", "ambiguous_outcome"
+  ],
+  "case_count": null,
+  "reviewers": [],
+  "cases": []
+}

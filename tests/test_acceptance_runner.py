@@ -3,6 +3,8 @@ from copy import deepcopy
 from pathlib import Path
 import json
 import os
+import subprocess
+import sys
 import pytest
 from scripts import acceptance as a
 from evals import full_journey as j
@@ -45,6 +47,77 @@ def test_manifest_bound_to_content_not_only_names(tmp_path):
     assert a.source_manifest(tmp_path)!=before
 
 
+def test_manifest_retains_legacy_shape_and_hash_without_research_gitlinks(tmp_path):
+    write(tmp_path/'app.py','first\n');write(tmp_path/'docs/readme.md','fixture\n')
+    files={'app.py':a.digest(b'first\n'),'docs/readme.md':a.digest(b'fixture\n')}
+    assert a.source_manifest(tmp_path)=={
+        'files':files,'sha256':a.digest(json.dumps(files,sort_keys=True,separators=(',',':')).encode())}
+
+
+def test_research_tree_is_pruned_before_traversal_but_app_and_inventory_stay_bound(tmp_path,monkeypatch):
+    app=write(tmp_path/'eightball/app.py','value=1\n')
+    inventory=write(tmp_path/'research/inventory.json','{"commit":"first"}')
+    vendor=write(tmp_path/'research/external/vendor/test_upstream.py','raise RuntimeError("never import")\n')
+    (vendor.parent/'upstream-symlink').symlink_to(tmp_path/'missing')
+    original_walk=a.os.walk
+    visited=[]
+    def observe(*args,**kwargs):
+        for row in original_walk(*args,**kwargs):
+            visited.append(Path(row[0]));yield row
+    monkeypatch.setattr(a.os,'walk',observe)
+    before=a.source_manifest(tmp_path)
+    assert set(before['files'])=={'eightball/app.py','research/inventory.json'}
+    assert all(not path.is_relative_to(tmp_path/'research/external') for path in visited)
+    vendor.write_text('different upstream source\n')
+    assert a.source_manifest(tmp_path)==before
+    inventory.write_text('{"commit":"second"}')
+    changed_inventory=a.source_manifest(tmp_path)
+    assert changed_inventory!=before
+    app.write_text('value=2\n')
+    assert a.source_manifest(tmp_path)!=changed_inventory
+
+
+def test_manifest_binds_research_gitlink_pin_and_checkout_head(tmp_path):
+    def git(root,*args):
+        return subprocess.run(['git','-C',str(root),*args],check=True,capture_output=True,text=True).stdout.strip()
+    root=tmp_path/'source';root.mkdir();git(root,'init','-q')
+    vendor=root/'research/external/vendor';vendor.mkdir(parents=True);git(vendor,'init','-q')
+    write(vendor/'upstream.py','first\n');git(vendor,'add','upstream.py')
+    git(vendor,'-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','-qm','first')
+    first=git(vendor,'rev-parse','HEAD')
+    git(root,'update-index','--add','--cacheinfo',f'160000,{first},research/external/vendor')
+    before=a.source_manifest(root)
+    assert before['research_gitlinks']=={'research/external/vendor':{'index_commit':first,'checkout_commit':first}}
+    write(vendor/'upstream.py','second\n');git(vendor,'add','upstream.py')
+    git(vendor,'-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','-qm','second')
+    second=git(vendor,'rev-parse','HEAD')
+    drifted=a.source_manifest(root)
+    assert drifted['sha256']!=before['sha256']
+    assert drifted['research_gitlinks']['research/external/vendor']=={'index_commit':first,'checkout_commit':second}
+    git(root,'update-index','--cacheinfo',f'160000,{second},research/external/vendor')
+    assert a.source_manifest(root)['sha256']!=drifted['sha256']
+    # Uninitialized checkouts still retain their declared pin without looking up
+    # the containing application's HEAD as if it were the vendor's HEAD.
+    import shutil
+    shutil.rmtree(vendor/'.git')
+    uninitialized=a.source_manifest(root)
+    assert uninitialized['research_gitlinks']['research/external/vendor']=={'index_commit':second,'checkout_commit':None}
+
+
+@pytest.mark.parametrize('explicit_root',[False,True])
+def test_repository_pytest_config_never_collects_external_research(tmp_path,explicit_root):
+    write(tmp_path/'pytest.ini',(a.ROOT/'pytest.ini').read_text())
+    write(tmp_path/'tests/test_application.py','def test_app():\n    pass\n')
+    write(tmp_path/'research/external/vendor/conftest.py','raise RuntimeError("upstream conftest executed")\n')
+    write(tmp_path/'research/external/vendor/test_vendor.py','invalid Python syntax !\n')
+    command=[sys.executable,'-m','pytest','--collect-only','-q']
+    if explicit_root:command.append('.')
+    result=subprocess.run(command,cwd=tmp_path,capture_output=True,text=True,timeout=30)
+    assert result.returncode==0,result.stdout+result.stderr
+    assert 'tests/test_application.py::test_app' in result.stdout
+    assert 'vendor' not in result.stdout and '1 test collected' in result.stdout
+
+
 def test_outputs_cannot_pollute_source(tmp_path):
     root=tmp_path/'source';root.mkdir()
     with pytest.raises(ValueError):a.output_directory(root/'docs/reports',root)
@@ -54,11 +127,14 @@ def test_outputs_cannot_pollute_source(tmp_path):
 
 @pytest.mark.parametrize('mode',['native','code','bridge'])
 def test_standard_verification_removes_credentials_and_case_path(monkeypatch,mode):
-    for k in ('HF_TOKEN','TYPESAFE_API_KEY','OPENAI_API_KEY','EIGHTBALL_DB','EIGHTBALL_TOKEN'):
+    private=('HF_TOKEN','TYPESAFE_API_KEY','OPENAI_API_KEY','EIGHTBALL_DB','EIGHTBALL_TOKEN',
+             'EIGHTBALL_API_KEY','EIGHTBALL_API_BASE_URL','EIGHTBALL_API_MODEL',
+             'EIGHTBALL_API_PROVIDER','EIGHTBALL_API_ROUTING_PROVIDER')
+    for k in private:
         monkeypatch.setenv(k,'not-a-real-secret')
     monkeypatch.setenv('EIGHTBALL_BROWSER_BRIDGE','1')
     env=a.selected_environment(mode)
-    assert not any(k in env for k in ('HF_TOKEN','TYPESAFE_API_KEY','OPENAI_API_KEY','EIGHTBALL_DB','EIGHTBALL_TOKEN'))
+    assert not any(k in env for k in private)
     assert ('EIGHTBALL_BROWSER_BRIDGE' in env)==(mode=='bridge')
 
 

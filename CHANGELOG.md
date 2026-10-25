@@ -4,6 +4,555 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Combined build passes native verification and checkpoint CI
+
+2026-10-25 · `local_unreleased`
+
+Record current cumulative software evidence and resolve already-integrated PR3; preserve all actual-model and human gates.
+
+### Added
+
+- Source-bound verification receipt with all eleven native browser suites and checkpoint CI results.
+
+### Changed
+
+- Canonical integration evidence now records completed software verification; final merge is tracked by PR4.
+
+### Verification
+
+- 1267 source tests and 1267 installed-engine regressions passed.
+- 391 native browser checks across all eleven suites passed.
+- Source/artifact inspection valid before documentation-only receipt edits.
+- GitHub validation 40199806937 and documentation 40199807143 passed on a9254e6087ef606d581d626bfcda9d7e555c857e.
+
+### Limitations
+
+- No model generation, independent professional or human acceptance claimed.
+- No deployment, release tag or research runtime adoption.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Existing source/evidence and secret-delivery findings apply; an open PR can already be integrated by ancestry.
+- Risk: Stale PR targets, uncertain authentication causes and generic UI errors can mislead the next agent.
+- Architecture: Preserve all source, frozen gates and case authority while consolidating delivery.
+- Roadmap decision: Existing-task integration under ADR0007; no required task/status changes.
+Registered discoveries: EM-051, EM-071, EM-098.
+
+Roadmap items: `B02-09`, `B02-15`, `ES03-05`, `DOC-06`.
+
+Evidence: [docs/evidence/build-consolidation-native-2026-10-25.json](docs/evidence/build-consolidation-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-build-consolidation.md](docs/delivery/sessions/2026-10-25-build-consolidation.md), [docs/delivery/NEXT-BUILD.md](docs/delivery/NEXT-BUILD.md).
+
+## 0.2.0-alpha.8 · Owner-requested combined build and executable test handoff
+
+2026-10-25 · `local_unreleased`
+
+Consolidate completed development and resolve stale PR bookkeeping under explicit owner authority; retain all model and human gates.
+
+### Added
+
+- ADR0007 and NEXT-BUILD.md with exact software/provider/lifecycle commands and independent/human review boundaries.
+- Preserved October25 authentication observation, without asserting an unproved root cause.
+
+### Changed
+
+- Integration branch contains all prior development; canonical next action is the prepared actual-provider test handoff.
+
+### Verification
+
+- Git ancestry confirms main is an ancestor of development and PR3 head already exists in main.
+- Fresh cumulative native verification pending at this checkpoint.
+
+### Limitations
+
+- No model generation, independent professional or human acceptance claimed.
+- No deployment, release tag or research runtime adoption.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Existing source/evidence and secret-delivery findings apply; an open PR can already be integrated by ancestry.
+- Risk: Stale PR targets, uncertain authentication causes and generic UI errors can mislead the next agent.
+- Architecture: Preserve all source, frozen gates and case authority while consolidating delivery.
+- Roadmap decision: Existing-task integration under ADR0007; no required task/status changes.
+Registered discoveries: EM-051, EM-071, EM-098.
+
+Roadmap items: `B02-09`, `B02-15`, `ES03-05`, `DOC-06`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-build-consolidation.md](docs/delivery/sessions/2026-10-25-build-consolidation.md), [docs/decisions/0007-owner-build-consolidation.md](docs/decisions/0007-owner-build-consolidation.md), [docs/delivery/NEXT-BUILD.md](docs/delivery/NEXT-BUILD.md), [docs/evidence/anthropic-authentication-2026-10-25.json](docs/evidence/anthropic-authentication-2026-10-25.json).
+
+## 0.2.0-alpha.8 · Anthropic test configuration and secure key-entry instructions
+
+2026-10-18 · `pushed_unreleased`
+
+Prepared owner-selected Anthropic connection settings and exact existing-key destination instructions without claiming live compatibility or changing acceptance.
+
+### Added
+
+- Beginner Anthropic setup guide, source/configuration receipt and full Emergence Review.
+
+### Changed
+
+- Saved non-secret model/provider/URL suggestions and added api.anthropic.com to custom network destinations.
+- Canonical next actions identify selected Anthropic and missing owner key/destination activation.
+
+### Verification
+
+- 142 existing controlled transport/CLI tests passed in 1.30s; isolated fictional-key format/status check used no DNS or HTTP.
+- 60 continuity tests passed in 1.37s (one existing Starlette/AnyIO deprecation warning); append-only history and canonical generator checks passed.
+- Official SDK source lists claude-sonnet-4-6; official compatibility-documentation access was blocked by the inherited proxy (HTTP403), without an origin response.
+- No new native run is claimed. Independent agent source/guide review is engineering review, not independent professional acceptance.
+
+### Limitations
+
+- Existing EIGHTBALL_API_KEY secret is still destination-bound to the old Qwen service. Automatic retarget was rejected; owner must edit that row, enter key securely and Save/Publish. No duplicate secret was added.
+- Actual Anthropic compatibility/schema enforcement, account model access/pricing and active settings remain unverified; zero live model calls.
+- No application code, tests, dependencies, original PRD, frozen fixtures or task scope/statuses changed; independent/human acceptance remains open.
+- No SDK/runtime installation, model download, spending, main merge, release or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-098: visible provider settings and managed key destination must be changed separately.
+- Risk: A valid setting format/SDK model listing can be mistaken for active access, remote structured-output enforcement or successful inference.
+- Architecture: Keep server-owned explicit provider identity, secret destination restrictions and unchanged local compilation/approval gates.
+- Roadmap decision: Refine existing provider/setup tasks; retain every original acceptance requirement/status and all earlier discoveries.
+Registered discoveries: EM-098, EM-051, EM-085.
+
+Roadmap items: `B02-09`, `B02-15`, `ES03-05`, `DOC-06`.
+
+Evidence: [docs/delivery/sessions/2026-10-18-anthropic-configuration.md](docs/delivery/sessions/2026-10-18-anthropic-configuration.md), [docs/evidence/anthropic-setup-2026-10-18.json](docs/evidence/anthropic-setup-2026-10-18.json), [docs/v2/ANTHROPIC-SETUP.md](docs/v2/ANTHROPIC-SETUP.md).
+
+## 0.2.0-alpha.8 · Verified source-stable evaluation and review-record checkpoint
+
+2026-10-18 · `pushed_unreleased`
+
+Cumulative native software verification passed for source-stable generation receipts, lifecycle prerequisites and optional prospective recording. Real-model and genuine independent/human acceptance remain open.
+
+### Added
+
+- Source-bound final receipt for tested code 25ca5e2dce4f28ec33d9b132cccabfa15b23683e, all eleven native suites and the actual unpopulated research checkout state.
+
+### Changed
+
+- Current canonical sprint evidence and next-agent handoff identify the verified development source while retaining every prior checkpoint and all 97 discoveries.
+
+### Verification
+
+- 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits.
+- 138 focused controlled tests passed; independent agent engineering review found no blocking issue. These overlap the cumulative tests and are not professional acceptance.
+- Compilation, 17 JavaScript modules, eight structural fixture cases, internal package/schema export and append-only continuity guards passed.
+- Original PRD, frozen generation bytes, compiler, semantic protocol, v1 review forms and every task scope/status remain unchanged.
+
+### Limitations
+
+- Exact service/model/active secure key, actual-model results, genuine independent study and human acceptance remain missing.
+- Source checks bracket fixtures/final result, not every internal graph stage or every instant; source fingerprints do not prove loaded-code identity.
+- Mechanical recording consistency does not authenticate declarations or establish held-out scientific adequacy. Existing manual v1 studies remain legitimate.
+- Research source bodies are unpopulated in this restored checkout; no upstream runtime adoption, further main merge, release or deployment.
+- Compatible receipts identify endpoint host, not different API base paths on that host (EM-097 candidate).
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-094: structural success and source-valid evidence need separate outcomes.
+- Discovery: EM-095: summary flags alone cannot support returned-call evidence.
+- Discovery: EM-096: mechanical study readiness and genuine prospective approval are separate.
+- Discovery: EM-097: host-only endpoint identity cannot distinguish service paths; preserve as a candidate.
+- Risk: Unauthenticated records, discrete source checks and declared coverage can be overinterpreted as continuous attestation or independent acceptance.
+- Architecture: Keep offline evidence tools separate from case authority; retain original compiler, fixtures and semantic protocol.
+- Roadmap decision: Refine existing tasks only; preserve every original status/acceptance requirement, prior form and discovery.
+Registered discoveries: EM-094, EM-095, EM-096, EM-097.
+
+Roadmap items: `B02-09`, `B02-11`, `B02-12`, `ES03-05`, `DOC-06`.
+
+Evidence: [docs/evidence/review-evidence-native-2026-10-18.json](docs/evidence/review-evidence-native-2026-10-18.json), [docs/delivery/sessions/2026-10-18-review-evidence.md](docs/delivery/sessions/2026-10-18-review-evidence.md), [docs/delivery/review/PROSPECTIVE-RECORDING.md](docs/delivery/review/PROSPECTIVE-RECORDING.md).
+
+## 0.2.0-alpha.8 · Source-stable model evidence and prospective review preparation
+
+2026-10-18 · `local_unreleased`
+
+Protect hosted fixture evidence from observed source drift and prepare optional private prospective study records without claiming model or human acceptance.
+
+### Added
+
+- Optional offline recording-v2 checker and unfilled protocol/dataset templates for the unchanged semantic protocol.
+
+### Changed
+
+- Lifecycle prerequisites require stable matching source and per-fixture returned-call consistency; receipts remain unsigned.
+- Canonical progress and continuation records preserve all earlier work and unchanged acceptance statuses.
+
+### Fixed
+
+- Hosted fixtures could report success after their source changed during a controlled response. Observed drift or inspection failure now blocks later fixtures and final evidence success while preserving raw responses and structural results.
+
+### Verification
+
+- 138 focused controlled tests passed in 7.58s; final cumulative native verification pending.
+- Independent agent engineering review found no blocking correctness defect; this is not independent professional acceptance.
+- Pinned development environment restored; pip check passed. No live provider calls.
+
+### Limitations
+
+- Exact service/model/active secure key, actual-model results, genuine independent study and human acceptance remain missing.
+- Source checks bracket fixtures/final result, not every internal graph stage or every instant; source fingerprints do not prove loaded-code identity.
+- Mechanical recording consistency does not authenticate declarations or establish held-out scientific adequacy. Existing manual v1 studies remain legitimate.
+- Research source bodies are unpopulated in this restored checkout; no upstream runtime adoption, further main merge, release or deployment.
+- Compatible receipts identify endpoint host, not different API base paths on that host (EM-097 candidate).
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-094: structural success and source-valid evidence need separate outcomes.
+- Discovery: EM-095: summary flags alone cannot support returned-call evidence.
+- Discovery: EM-096: mechanical study readiness and genuine prospective approval are separate.
+- Discovery: EM-097: host-only endpoint identity cannot distinguish service paths; preserve as a candidate.
+- Risk: Unauthenticated records, discrete source checks and declared coverage can be overinterpreted as continuous attestation or independent acceptance.
+- Architecture: Keep offline evidence tools separate from case authority; retain original compiler, fixtures and semantic protocol.
+- Roadmap decision: Refine existing tasks only; preserve every original status/acceptance requirement, prior form and discovery.
+Registered discoveries: EM-094, EM-095, EM-096, EM-097.
+
+Roadmap items: `B02-09`, `B02-11`, `B02-12`, `ES03-05`, `DOC-06`.
+
+Evidence: [docs/delivery/sessions/2026-10-18-review-evidence.md](docs/delivery/sessions/2026-10-18-review-evidence.md), [evals/review_readiness.py](evals/review_readiness.py), [docs/delivery/review/README.md](docs/delivery/review/README.md).
+
+## 0.2.0-alpha.8 · Verified whole-system evaluation-readiness checkpoint
+
+2026-10-16 · `pushed_unreleased`
+
+Whole-system technical direction and bounded evaluation fixes passed cumulative native software verification; all original model and human acceptance gates remain.
+
+### Added
+
+- Exact-source final receipt for tested code 17a275c, 93 retained discoveries and all 28 research pins.
+
+### Changed
+
+- Current sprint metadata now points to the verified development branch; historical main integration and earlier native evidence are retained.
+
+### Verification
+
+- 1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites passed; source/artifact inspection valid. No actual model or independent/human acceptance.
+- Python compilation, 17 JavaScript modules, 8 structural cases, internal package/schema export and continuity guards passed.
+- Original task scopes/statuses, frozen generation fixture bytes, compiler source and original PRD remained unchanged.
+
+### Limitations
+
+- Zero actual model calls; actual service access, independent study/labels and human reviews remain missing.
+- Lifecycle admission timing and omitted discarded responses do not establish remote cancellation or complete provider evidence.
+- No deferred runtime adoption, new remote CI claim, main merge, release or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-085..087: fixed-model identity, durable experiment evidence and separate admission/remote observations.
+- Discovery: EM-088..093: document coordinates, telemetry, actor failures, dependency environments, durability/retries and eval mode execution.
+- Risk: Framework/model/service success can be mistaken for actual outcome correctness, scope isolation, free entitlement or genuine acceptance.
+- Architecture: Keep existing host/engine authority; introduce optional isolated specialists only through measured source-aware contracts.
+- Roadmap decision: Existing task engineering/documentation refinements; candidate adapter concerns retained without promoting deferred research into required scope.
+Registered discoveries: EM-085, EM-086, EM-087, EM-088, EM-089, EM-090, EM-091, EM-092, EM-093.
+
+Roadmap items: `DOC-06`, `B02-09`, `B02-11`, `B02-12`, `B02-15`, `ES03-05`, `ES03-09`.
+
+Evidence: [docs/strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md](docs/strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md), [docs/research/github-2026-10-16/whole-system-review.md](docs/research/github-2026-10-16/whole-system-review.md), [docs/evidence/whole-system-readiness-2026-10-16.json](docs/evidence/whole-system-readiness-2026-10-16.json), [docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md](docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md), [docs/v2/ACTUAL-PROVIDER-EVIDENCE.md](docs/v2/ACTUAL-PROVIDER-EVIDENCE.md).
+
+## 0.2.0-alpha.8 · Whole-system direction and retained model evaluation evidence
+
+2026-10-16 · `local_unreleased`
+
+Reviewed all 28 source candidates and chose a lean acceptance-first direction; fixed model-identity configuration and prepared retained generation/lifecycle evidence without model calls.
+
+### Added
+
+- Owner-readable complete disposition matrix, source findings and actual-provider evidence guide.
+- Unique immutable generation checkpoints and opt-in cancel/stale/owned-process-restart observations.
+- EM-085..093 plus additive history preserving every earlier discovery.
+
+### Changed
+
+- Exact successful assistant text retained only after existing validation; rejected/error/credential boundaries remain.
+- Explicit OpenRouter :free catalog variants supported with pinned provider; random free router rejected.
+
+### Fixed
+
+- Repeated hosted runs no longer overwrite earlier experiment reports.
+- Lifecycle cleanup terminates its owned process even if client close raises.
+
+### Verification
+
+- Focused controlled suites passed: 160 transport/integration, 68 retention/CLI/hosted-grounding, 89 lifecycle/CLI/integration/job tests including 30 new lifecycle cases; counts overlap.
+- All 28 candidate pins reviewed by category; no upstream execution, install, model download or actual inference. Cumulative native verification pending at this code checkpoint.
+
+### Limitations
+
+- Zero actual model calls; endpoint/exact model/secure access remain missing. Existing fictional-only US$5 authorisation is preserved.
+- Application admission is not remote delivery; lifecycle races/response loss remain explicit, with no automatic repeat.
+- Current B02 remains 10/20 required verified and ES01 5/5 internal; independent professional and genuine human gates remain.
+- No deferred runtime adoption, main merge, release or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-085..087: fixed-model identity, durable experiment evidence and separate admission/remote observations.
+- Discovery: EM-088..093: document coordinates, telemetry, actor failures, dependency environments, durability/retries and eval mode execution.
+- Risk: Framework/model/service success can be mistaken for actual outcome correctness, scope isolation, free entitlement or genuine acceptance.
+- Architecture: Keep existing host/engine authority; introduce optional isolated specialists only through measured source-aware contracts.
+- Roadmap decision: Existing task engineering/documentation refinements; candidate adapter concerns retained without promoting deferred research into required scope.
+Registered discoveries: EM-085, EM-086, EM-087, EM-088, EM-089, EM-090, EM-091, EM-092, EM-093.
+
+Roadmap items: `DOC-06`, `B02-09`, `B02-11`, `B02-12`, `B02-15`, `ES03-05`, `ES03-09`.
+
+Evidence: [docs/strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md](docs/strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md), [docs/research/github-2026-10-16/whole-system-review.md](docs/research/github-2026-10-16/whole-system-review.md), [docs/evidence/whole-system-readiness-2026-10-16.json](docs/evidence/whole-system-readiness-2026-10-16.json), [docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md](docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md), [docs/v2/ACTUAL-PROVIDER-EVIDENCE.md](docs/v2/ACTUAL-PROVIDER-EVIDENCE.md).
+
+## 0.2.0-alpha.8 · Ruflo explained with current pinned-source evidence
+
+2026-10-16 · `pushed_unreleased`
+
+Added an owner-readable source investigation of Ruflo worker coordination, model access, confidence and evidence limits. Application behavior and acceptance gates are unchanged.
+
+### Added
+
+- Plain-English owner guide, pinned-source receipt and complete ER-01–15 handoff.
+- EM-084 preserves the prediction target behind worker-routing confidence; prior findings receive additive evidence.
+
+### Changed
+
+- Clarified that Ruflo still needs a separately supplied model service and provides no selected free Qwen endpoint for 8BALL.
+- Preserved upstream historical audit/remediation dates alongside current unmeasured telemetry and synthetic/live benchmark distinctions.
+
+### Verification
+
+- Read-only source inspection; HTTPS Git remote HEAD/main matched copied commit 1882006a02487590c8c66a7eec8d7504f6af33c3.
+- Canonical delivery/emergence/changelog regeneration and base-history checks passed; local documentation links, original scopes/statuses and whitespace checked.
+
+### Limitations
+
+- No installation, upstream execution, model calls or independent benchmark reproduction.
+- Previous 1,104/1,104/391 software results belong to tested ddfead7; this documentation review does not rerun or extend those results.
+- Ruflo remains optional research; V0.2 real-model and independent/human requirements remain open. No merge or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-084: confidence/success metrics require an explicit prediction target; worker routing is separate from client-outcome probability.
+- Discovery: Additive EM-020/055/077/081 source evidence: actual access/execution, exact model/retry accounting, semantic memory and dated remediation scope.
+- Risk: A keyless demo, API-success reward or persuasive swarm dashboard may be mistaken for working free inference or correct scenario decisions.
+- Architecture: Keep model access, optional worker coordination, hypothetical simulation and reviewed case authority separate.
+- Roadmap decision: Existing DOC-06 documentation refinement and candidate ES03-02/05 evaluation concern; no new required task or runtime adoption.
+Registered discoveries: EM-020, EM-055, EM-077, EM-081, EM-084.
+
+Roadmap items: `DOC-06`, `ES03-02`, `ES03-05`.
+
+Evidence: [docs/research/github-2026-10-16/ruflo-owner-guide.md](docs/research/github-2026-10-16/ruflo-owner-guide.md), [docs/evidence/ruflo-owner-review-2026-10-16.json](docs/evidence/ruflo-owner-review-2026-10-16.json), [docs/delivery/sessions/2026-10-16-ruflo-owner-review.md](docs/delivery/sessions/2026-10-16-ruflo-owner-review.md).
+
+## 0.2.0-alpha.8 · Verified hosted transport and pinned research-copy checkpoint
+
+2026-10-16 · `pushed_unreleased`
+
+Source-only copies and the optional hosted API transport passed cumulative native software verification on the development branch. All original V0.2 model and human gates remain open.
+
+### Added
+
+- Source-bound final receipt for tested commit ddfead7 and all 28 declared/checked-out research pins.
+
+### Changed
+
+- ES03-09 is verified only for its explicit controlled transport/software scope. Original B02 remains 10/20 required verified; ENDSTATE V0.1 remains 5/5 internally.
+- Owner authorises fictional model tests up to US$5 and expects their supplied endpoint to be free; exact endpoint/model, active secret and actual service limits remain pending.
+
+### Verification
+
+- 1,104 source tests and 1,104 installed-kernel regression tests passed.
+- 391 native browser checks passed across all 11 suites; source/evidence inspection valid and run passed.
+- All 28 research source checkouts and 128 notice files verified; Git-only population repeatability passed. No upstream software was executed.
+
+### Limitations
+
+- Zero actual model calls; real-model, independent professional and human acceptance remain open.
+- Pushed development source is not a main merge, deployment or release. New remote CI is not claimed; branch push is outside configured CI triggers.
+- Raw software artifacts remain local; committed receipt preserves hashes/counts. The earlier local checkpoint entry is retained as history.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-082: research source copies require explicit trust/discovery/fingerprint and completeness boundaries.
+- Discovery: EM-083: rejection traces need attributed, byte-safe raw evidence and escaped-credential protection.
+- Risk: Configuration or controlled HTTP success may be mistaken for actual-model/human acceptance; a captured source tree may be mistaken for an adopted dependency.
+- Architecture: Keep optional provider transport in the application host; ENDSTATE compiler/authority semantics unchanged. External source pins are provenance inputs, not runtime imports.
+- Roadmap decision: Owner-authorized DOC-07 and optional ES03-09 plus existing gate refinements; all original required acceptance remains.
+Registered discoveries: EM-019, EM-020, EM-031, EM-051, EM-054, EM-055, EM-072, EM-073, EM-077, EM-082, EM-083.
+
+Roadmap items: `DOC-07`, `ES03-09`, `B02-09`, `B02-12`, `B02-15`.
+
+Evidence: [docs/evidence/compatible-native-2026-10-16.json](docs/evidence/compatible-native-2026-10-16.json), [docs/evidence/research-copy-2026-10-16.json](docs/evidence/research-copy-2026-10-16.json), [docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md](docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md), [docs/v2/QWEN-SETUP.md](docs/v2/QWEN-SETUP.md).
+
+## 0.2.0-alpha.8 · Hosted Qwen API connection and preserved research sources
+
+2026-10-16 · `local_unreleased`
+
+Added explicit hosted OpenAI-compatible generation through existing review/compilation, and populated all28 inspected repositories as pinned source-only research checkouts.
+
+### Added
+
+- Server-configured hosted API/Qwen transport, UI/setup guide, unchanged-fixture wrapper and actual-journey provider option.
+- Pinned research Gitlinks, original notice inventory, Git-only restoration/verification and external-source test/fingerprint boundary.
+
+### Changed
+
+- Actual provider settings use secure environment fields; normal acceptance strips them and never infers. Existing HF/local routes and frozen generation requirements remain.
+
+### Fixed
+
+- Controlled rejected responses retain attributed bounded assistant text with byte-safe credential omission; unsupported output is never silently repaired.
+
+### Verification
+
+- 109 controlled transport,22 SQLite/HTTP lifecycle,4 CLI and36 acceptance-boundary tests passed in focused runs.
+- 22 native development browser checks passed; all28 source pins/notices/exceptions verified. Cumulative native acceptance is pending at this code checkpoint.
+
+### Limitations
+
+- Zero actual model calls; selected provider, spending/data scope, independent semantic evaluation and human acceptance remain open.
+- Model files/LFS payloads/nested dependencies are explicitly unmaterialized research exceptions; no upstream dependencies or software were run.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-082: research source copies require explicit trust/discovery/fingerprint and completeness boundaries.
+- Discovery: EM-083: rejection traces need attributed, byte-safe raw evidence and escaped-credential protection.
+- Risk: Configuration or controlled HTTP success may be mistaken for actual-model/human acceptance; a captured source tree may be mistaken for an adopted dependency.
+- Architecture: Keep optional provider transport in the application host; ENDSTATE compiler/authority semantics unchanged. External source pins are provenance inputs, not runtime imports.
+- Roadmap decision: Owner-authorized DOC-07 and optional ES03-09 plus existing gate refinements; all original required acceptance remains.
+Registered discoveries: EM-019, EM-020, EM-031, EM-051, EM-054, EM-055, EM-072, EM-073, EM-077, EM-082, EM-083.
+
+Roadmap items: `DOC-07`, `ES03-09`, `B02-09`, `B02-12`, `B02-15`, `ES03-05`.
+
+Evidence: [docs/evidence/compatible-native-2026-10-16.json](docs/evidence/compatible-native-2026-10-16.json), [docs/evidence/research-copy-2026-10-16.json](docs/evidence/research-copy-2026-10-16.json), [docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md](docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md), [docs/v2/QWEN-SETUP.md](docs/v2/QWEN-SETUP.md), [research/inventory.json](research/inventory.json).
+
+## 0.2.0-alpha.8 · Ruflo worker-harness assessment and architecture placement
+
+2026-10-16 · `pushed_unreleased`
+
+Assessed the owner-supplied Ruflo project as an optional coordination harness, preserving ENDSTATE outcome/evidence boundaries and identifying semantic-backend validation needs.
+
+### Added
+
+- Pinned source findings/manifest and candidate EM-081; worker-coordinator role in the proposed combined design.
+
+### Changed
+
+- Research register, canonical documentation-task evidence, handoff and emergence history updated additively.
+
+### Verification
+
+- Actual documentation/history/preservation check results are in the source-bound follow-up receipt.
+
+### Limitations
+
+- Source inspection only: no upstream tests, install, provider/model calls or predictive/professional/human acceptance.
+- No runtime task requirements/statuses, original PRDs/fixtures or application code changed.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A vector-shaped hash fallback does not establish semantic retrieval; actual agent execution remains separate from registration and task correctness.
+- Risk: A second coordinator can duplicate state and imply completed/validated work from status or consensus alone.
+- Architecture: Optional typed worker adapter; case revisions, source facts and human approvals remain authoritative in 8BALL.
+- Roadmap decision: candidate and existing_task refinements only; no runtime adoption or required scope promotion.
+Registered discoveries: EM-020, EM-031, EM-046, EM-051, EM-054, EM-055, EM-061, EM-075, EM-077, EM-078, EM-081.
+
+Roadmap items: `DOC-02`, `DOC-03`, `DOC-04`, `DOC-05`, `DOC-06`.
+
+Evidence: [docs/evidence/ruflo-research-2026-10-16.json](docs/evidence/ruflo-research-2026-10-16.json), [docs/research/github-2026-10-16/ruflo.md](docs/research/github-2026-10-16/ruflo.md), [docs/delivery/sessions/2026-10-16-evolution-research.md](docs/delivery/sessions/2026-10-16-evolution-research.md).
+
+## 0.2.0-alpha.8 · Tencent memory assessment and combined reference-case strategy
+
+2026-10-16 · `pushed_unreleased`
+
+Assessed the owner-supplied Tencent memory project and sharpened the combined design around one complete case, optional procedural memory and explicit scenario/decision contracts.
+
+### Added
+
+- Pinned Tencent source, contract/operations findings, candidate EM-080 and a six-responsibility architecture proposal.
+
+### Changed
+
+- Research register, plan, canonical documentation-task evidence and handoff updated additively.
+
+### Verification
+
+- Bounded source/configuration/licence inspection; current documentation/history/preservation checks recorded in the follow-up receipt.
+
+### Limitations
+
+- No upstream install/runtime test, inference, benchmark reproduction or independent/human acceptance.
+- All runtime task acceptance/status fields remain unchanged. Tencent is a candidate, not an imported feature.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: L2 scenario is a memory narrative; generated procedures, citation ancestry and profile scopes need host-owned review and invalidation contracts.
+- Risk: Memory consolidation or model choice confidence may be mistaken for factual proof, validated expertise or route authority.
+- Architecture: Keep canonical evidence/approval state in 8BALL and use optional scoped API adapters for derived memory.
+- Roadmap decision: new_candidate and existing_task refinements only; no required runtime promotion.
+Registered discoveries: EM-019, EM-020, EM-027, EM-046, EM-055, EM-061, EM-063, EM-075, EM-076, EM-077, EM-078, EM-080.
+
+Roadmap items: `DOC-02`, `DOC-03`, `DOC-04`, `DOC-05`, `DOC-06`.
+
+Evidence: [docs/evidence/tencent-memory-research-2026-10-16.json](docs/evidence/tencent-memory-research-2026-10-16.json), [docs/research/github-2026-10-16/tencent-memory.md](docs/research/github-2026-10-16/tencent-memory.md), [docs/delivery/sessions/2026-10-16-evolution-research.md](docs/delivery/sessions/2026-10-16-evolution-research.md).
+
+## 0.2.0-alpha.8 · Source-pinned evolution plan for scenarios, memory and decision support
+
+2026-10-16 · `pushed_unreleased`
+
+Owner-requested GitHub research maps 26 pinned repositories and 25 product capability families into a staged ENDSTATE/8BALL proposal, with a plain Zep explanation and bounded adoption experiments.
+
+### Added
+
+- Full evolution plan; pinned component register and six source/capability reports; query/source manifests; five candidate discoveries EM-075 through EM-079.
+
+### Changed
+
+- Linked the proposal into current entry points, handoff and existing roadmap/research registers; canonical runtime task requirements and statuses remain unchanged.
+
+### Verification
+
+- Documentation/history/ledger checks, focused documentation tests and source/requirement preservation are recorded with actual results in the session receipt.
+- Upstream source/manifests/licences inspected; no candidate installation, inference, interoperability, predictive or human acceptance test.
+
+### Limitations
+
+- Recommendations are proposals, not imported features. B02 stays 10/20 required verified; ES01 stays 5/5 internal.
+- Hosted model/provider identity, authorised test spending/transmission and independent/human review remain unresolved inputs for current V0.2 acceptance.
+- Research branch is unmerged; application runtime and original fixtures are unchanged. No release or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Domain action mappings, memory retraction contracts, aggregate experiment budgets, upstream licence/API differences and optimiser-status semantics need explicit adapter evaluation.
+- Risk: Combining frameworks can duplicate state and multiply cost while concealing absent calibration or independent acceptance.
+- Architecture: Keep ENDSTATE contracts and reviewed case records authoritative; compare optional source/memory/simulation/decision adapters against simpler baselines.
+- Roadmap decision: new_candidate and existing_task refinements only; proposed sequencing maps to existing milestones/Lab IDs without new required runtime scope.
+Registered discoveries: EM-020, EM-027, EM-046, EM-047, EM-051, EM-054, EM-061, EM-072, EM-075, EM-076, EM-077, EM-078, EM-079.
+
+Roadmap items: `DOC-02`, `DOC-03`, `DOC-04`, `DOC-05`, `DOC-06`.
+
+Evidence: [docs/evidence/evolution-research-2026-10-16.json](docs/evidence/evolution-research-2026-10-16.json), [docs/delivery/sessions/2026-10-16-evolution-research.md](docs/delivery/sessions/2026-10-16-evolution-research.md), [docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md](docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md), [docs/research/GITHUB-COMPONENTS-2026-10-16.md](docs/research/GITHUB-COMPONENTS-2026-10-16.md).
+
 ## 0.2.0-alpha.8 · Current 8BALL build consolidated and verified on main
 
 2026-10-15 · `pushed_unreleased`

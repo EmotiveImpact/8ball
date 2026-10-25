@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-16",
+  "kind": "bounded_source_research",
+  "branch": "feat/v02-compatible-provider-20261016",
+  "base_commit": "f9b33af1bf78d9828e4b7c7c43d26936669b122b",
+  "repository": "ruvnet/ruflo",
+  "source_commit": "1882006a02487590c8c66a7eec8d7504f6af33c3",
+  "remote_head_and_main_observed": "1882006a02487590c8c66a7eec8d7504f6af33c3",
+  "root_package": {
+    "name": "claude-flow",
+    "version": "3.56.10",
+    "license": "MIT",
+    "node": ">=20.0.0"
+  },
+  "checked_source_sha256": {
+    "README.md": "114e54cbe85cac51e0a7df96cb108cc859fba3520c5db87e3c8ffb6a5caa4e2d",
+    "package.json": "7eb5569802b11b09259117f6a6d4812af6cc8ff5c7d02f771c369cf368d89d22",
+    "v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts": "a186cb39b8348e623330d3ebfe955e38d5e50597b05220e481edbbe75827557e",
+    "v3/@claude-flow/cli/src/ruvector/agent-wasm.ts": "82cee577dc4daf0e0b92dd8efa5de7c6bf6e807722e9927bec0f5e4e2ebb67d6",
+    "v3/@claude-flow/cli/src/ruvector/q-learning-router.ts": "56a82eb8069d733792cbd516f3c1e13daae49ed147ac52ba8211e1d65457cb6f",
+    "v3/@claude-flow/cli/src/memory/embedding-policy.ts": "f020e94a04c7da2c082f4135bbbafb148e80d2a3957f17f1c4f8fd744ace0e2f",
+    "scripts/benchmark-multiagent.mjs": "b7ee2ad3b08d9d4b928b46ec7c36d4142be2cfc8de88343fccd5ee5116f285b1",
+    "docs/reviews/intelligence-system-audit-2026-05-29.md": "010a22955089ecf50147a52d26e9e675edf6449e97873ce32615ae72ae28345b",
+    "v3/@claude-flow/swarm/src/attention-coordinator.ts": "2ea7b44e1047323d3e15e31480d6aa62dc3f0916e3e8dfb3507a37822f276503",
+    "v3/@claude-flow/providers/src/openai-provider.ts": "824b92833ee3144fab39fa16225715f20a3251def61c2471ae42da9f5f995b9b",
+    "v3/@claude-flow/swarm/src/consensus/index.ts": "228e501fa9297e67768f1a1e81c31a9a7e0773cdcb524916f53597980af01a5b"
+  },
+  "owner_guide": "docs/research/github-2026-10-16/ruflo-owner-guide.md",
+  "findings": [
+    "Ruflo coordinates separately configured model/host access; it does not supply our missing free Qwen endpoint.",
+    "Keyless WASM echo, agent registration, actual provider execution, API-success feedback and task acceptance are distinct.",
+    "Worker-routing softmax confidence ranks worker assignments; it is not an independently calibrated business-outcome probability.",
+    "Eligible neural-routed failures may retry with another model; retain exact identity and aggregate attempted-call accounting.",
+    "An included multi-agent benchmark uses synthetic outputs and its real backend is explicitly unfinished.",
+    "Historical upstream audit includes subsequent remediations; inspected current Flash telemetry uses zero to label unmeasured performance.",
+    "Semantic retrieval needs the actual embedding backend; preserve the existing hash-fallback caveat.",
+    "Core gateway and separate OpenAI adapter append different URL suffixes; configuration conventions must be checked per component.",
+    "Consensus algorithms coordinate shared-state agreement; the named Paxos choice falls back to Raft, and no domain-outcome correctness follows."
+  ],
+  "application_code_changed": false,
+  "upstream_code_changed": false,
+  "upstream_code_executed": false,
+  "packages_installed": false,
+  "benchmarks_independently_reproduced": false,
+  "actual_model_calls": 0,
+  "independent_or_human_acceptance": false,
+  "discovery_ids": [
+    "EM-020",
+    "EM-055",
+    "EM-077",
+    "EM-081",
+    "EM-084"
+  ],
+  "limits": [
+    "Read-only bounded source review; not an exhaustive/security audit or working-model demonstration.",
+    "No independent replication of upstream performance claims. Historical audit defects and listed remediations must retain their dates/versions.",
+    "Previous cumulative native result belongs to ddfead7 and was not rerun for documentation-only work.",
+    "All original required scopes/statuses and frozen fixtures remain unchanged."
+  ]
+}

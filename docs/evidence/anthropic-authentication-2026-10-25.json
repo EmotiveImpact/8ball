@@ -1,0 +1,53 @@
+{
+  "kind": "unbilled_native_model_metadata_probe",
+  "started_at": "2026-10-25T13:02:46.776988+00:00",
+  "endpoint_host": "api.anthropic.com",
+  "requested_model": "claude-sonnet-4-6",
+  "request_method": "GET",
+  "request_path": "/v1/models/claude-sonnet-4-6",
+  "inference_requests": 0,
+  "response_body_retained": false,
+  "credentials_retained": false,
+  "http_status": 401,
+  "response_body_sha256": "c45373bf229cb995104faf4ddb7447d9466ab0f117e74c5f3760dc2969cb9a3b",
+  "status": "authentication_rejected",
+  "finished_at": "2026-10-25T13:02:46.996342+00:00",
+  "date": "2026-10-25",
+  "branch": "feat/v02-review-evidence-20261018",
+  "source_commit": "16b8fff43f5f0614846ac4b01db1ddbe40dcff4e",
+  "process_configuration": {
+    "configuration_state": "configured_not_tested",
+    "provider": "anthropic",
+    "endpoint_host": "api.anthropic.com",
+    "requested_model": "claude-sonnet-4-6",
+    "required_variable_presence": true
+  },
+  "managed_readiness": {
+    "observations_current": true,
+    "secret_state": "unknown",
+    "secret_name": "Qwen API key",
+    "secret_variable": "EIGHTBALL_API_KEY",
+    "saved_key_binding_reported": false,
+    "secret_allowed_domains": [
+      "dashscope-intl.aliyuncs.com"
+    ],
+    "required_destination": "api.anthropic.com",
+    "runtime_variable_states": "unknown",
+    "policy_file_type": "unrestricted",
+    "runtime_policy_state": "unknown"
+  },
+  "successful_model_responses": 0,
+  "frozen_generation_started": false,
+  "native_lookup_proves_compatibility": false,
+  "root_cause": "Unresolved;401 rejects this native model-metadata request. Managed secret has no saved binding and still declares former destination. Variable presence alone does not establish an injected working key.",
+  "required_owner_action": "Edit existing EIGHTBALL_API_KEY secret to allow api.anthropic.com, save private Anthropic key there, and Save/Publish. Verify actual secret binding before another request.",
+  "independent_professional_acceptance": false,
+  "human_acceptance": false,
+  "full_v02_accepted": false,
+  "limits": [
+    "401 is an observed HTTP outcome, not proof of its origin or precise credential-delivery cause. No response body/header/credential was retained.",
+    "Native GET model metadata and generic chat/completions use different protocols; successful native authentication would not establish compatibility response_format support.",
+    "No frozen fixture was transmitted or generated; no billed generation request was made.",
+    "Source/control review only; earlier native test counts remain historical for25ca5e2."
+  ]
+}

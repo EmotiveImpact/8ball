@@ -51,7 +51,8 @@ def main():
         proposal=Proposal(case_id=case.id,base_revision=0,provider='fixture',model='controlled-fixture',purpose='graph',
                          items=graph_items(case,objects,[],'browserfixture'),raw_output=trace,output_hash='fixture-only',latency_ms=0)
         store.save_proposal(proposal)
-        env={**os.environ,'EIGHTBALL_DB':db,'EIGHTBALL_TOKEN':TOKEN,'HF_TOKEN':'','EIGHTBALL_HF_MODEL':'','EIGHTBALL_HF_PROVIDER':''}
+        env={**os.environ,'EIGHTBALL_DB':db,'EIGHTBALL_TOKEN':TOKEN,'HF_TOKEN':'','EIGHTBALL_HF_MODEL':'','EIGHTBALL_HF_PROVIDER':'',
+             'EIGHTBALL_API_BASE_URL':'','EIGHTBALL_API_MODEL':'','EIGHTBALL_API_PROVIDER':'','EIGHTBALL_API_KEY':'','EIGHTBALL_API_ROUTING_PROVIDER':''}
         process=subprocess.Popen([sys.executable,'-m','eightball'],cwd=ROOT,env=env,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
         try:
             for _ in range(60):
@@ -80,6 +81,16 @@ def main():
                     page.screenshot(path=str(OUT/'8BALL-Black-Target-Review.png'),full_page=True)
                     page.locator('nav [data-tab=models]').click()
                     expect(page.locator('nav [data-tab=models]')).to_have_attribute('aria-current','page')
+                    hosted=page.locator('.provider-card').filter(has=page.get_by_role('heading',name='Hosted API / Qwen',exact=True))
+                    check('API connection status is accurately unconfigured','Not configured' in hosted.inner_text())
+                    check('API connection does not imply automatic calls','Disabled' in hosted.inner_text())
+                    page.locator('[data-action=api-setup]').click()
+                    expect(page.get_by_role('heading',name='Hosted API setup')).to_be_visible()
+                    check('API setup identifies secure server configuration','EIGHTBALL_API_KEY' in page.locator('.dialog').inner_text())
+                    check('API key is never collected in the browser',page.locator('.dialog input').count()==0)
+                    page.keyboard.press('Escape')
+                    expect(page.locator('.dialog')).to_have_count(0)
+                    check('API setup Escape restores logical focus',page.locator('[data-action=api-setup]').evaluate('(e)=>document.activeElement===e'))
                     hf=page.locator('.provider-card').filter(has=page.get_by_role('heading',name='Hugging Face',exact=True))
                     check('absent hosted credentials are accurately shown','Not configured' in hf.inner_text())
                     check('hosted setup does not imply paid calls','Disabled' in hf.inner_text())
@@ -89,6 +100,13 @@ def main():
                     page.keyboard.press('Escape')
                     expect(page.locator('.dialog')).to_have_count(0)
                     check('dialog Escape restores control focus',page.locator('[data-action=hosted-setup]').evaluate('(e)=>document.activeElement===e'))
+                    page.locator('nav [data-tab=review]').click()
+                    page.locator('main [data-action=propose-graph]').click()
+                    page.locator('form[data-form=analyse] [name=provider]').select_option('openai_compatible')
+                    check('API graph drafting is explicitly selectable',page.locator('form[data-form=analyse] [name=provider]').input_value()=='openai_compatible')
+                    check('API data transmission permission starts unchecked',not page.locator('form[data-form=analyse] [name=allow_external]').is_checked())
+                    page.keyboard.press('Escape')
+                    page.locator('nav [data-tab=models]').click()
                     page.locator('[data-action=check-runtime]').click()
                     expect(page.locator('.provider-card').filter(has=page.get_by_role('heading',name='Ollama',exact=True)).locator('.meta .badge')).not_to_contain_text('Not checked',timeout=10000)
                     check('runtime probe gives explicit checked result','may be stopped or not installed' in page.locator('main').inner_text() or 'listed locally' in page.locator('main').inner_text() or 'not listed' in page.locator('main').inner_text())
@@ -111,7 +129,7 @@ def main():
             try:process.wait(timeout=5)
             except subprocess.TimeoutExpired:process.kill()
     report={'checks_passed':len(checks),'checks':checks,'network':'ASGI bridge' if BRIDGE else 'native loopback HTTP',
-            'real_huggingface_inference':False,'proposal_source':'controlled fictional compiler fixture',
+            'real_huggingface_inference':False,'real_openai_compatible_inference':False,'proposal_source':'controlled fictional compiler fixture',
             'local_probe_only':True,'live_state_not_attested':True}
     (OUT/'development-browser-report.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps(report,indent=2))

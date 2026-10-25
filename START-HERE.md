@@ -1,3 +1,51 @@
+# Current owner request: consolidate the completed build
+
+Combined source `a9254e6087ef606d581d626bfcda9d7e555c857e` passed 1,267 source
+tests, 1,267 installed-engine tests and 391 native browser checks, plus both
+checkpoint GitHub CI workflows. [Verification receipt](docs/evidence/build-consolidation-native-2026-10-25.json).
+[PR4](https://github.com/EmotiveImpact/8ball/pull/4) records final-head CI and the
+owner-authorised merge. Start from current remote main once that PR is merged;
+older branch instructions below are historical. PR3 was closed because its exact
+head was already integrated. Actual-model and human acceptance remain open.
+
+Read [NEXT-BUILD.md](docs/delivery/NEXT-BUILD.md) for the next agent's executable
+software/model/lifecycle test procedure. [ADR0007](docs/decisions/0007-owner-build-consolidation.md)
+records the new explicit integration authority; [current session](docs/delivery/sessions/2026-10-25-build-consolidation.md)
+records actual verification and merge outcomes. All previous source and original
+acceptance gates remain. Earlier provider observations below are historical;
+do not repeat an unproved key-delivery diagnosis or treat coding-agent reviews
+as independent professional acceptance.
+
+# Historical provider preparation
+
+The owner selected Anthropic. [Exact secure setup fields](docs/v2/ANTHROPIC-SETUP.md) and [configuration/source receipt](docs/evidence/anthropic-setup-2026-10-18.json) distinguish prepared settings from active access. The existing EIGHTBALL_API_KEY secret needs its destination changed to api.anthropic.com and the key entered securely, then Save/Publish. Claude Sonnet 4.6 compatibility is unverified until actual responses; keep every original local gate. [Full sprint/ER review](docs/delivery/sessions/2026-10-18-anthropic-configuration.md). Application code is unchanged; earlier native results below belong to their exact tested source. All 98 discoveries and original task statuses remain preserved.
+
+---
+
+# Current development: source-stable evidence and prospective study records
+
+Verified code `25ca5e2dce4f28ec33d9b132cccabfa15b23683e` passed 1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites; source/artifact inspection valid before documentation-only final receipts. [Exact receipt](docs/evidence/review-evidence-native-2026-10-18.json).
+
+Continue `feat/v02-review-evidence-20261018` from `e513237f5b66c0689fa870e0d82873d8b71e4d8a`, preserving all earlier work. [Current sprint and full Emergence Review](docs/delivery/sessions/2026-10-18-review-evidence.md) records the restored environment, engineering changes and exact verification. [Optional private recording guide](docs/delivery/review/PROSPECTIVE-RECORDING.md) prepares genuine future studies without granting approval. The [canonical ledger](docs/delivery/progress.json) retains every required gate/status. Actual service/model/secure key are still missing; existing fictional-fixture US$5 permission does not need to be requested again. Owner review is at the end; independent qualified review remains distinct. No further main merge/release/deployment. Earlier source-bound results below remain historical.
+
+---
+
+## Current work: whole-system direction and evaluation readiness
+
+Continue `feat/v02-evaluation-readiness-20261016` from `0fed04b`, preserving every earlier fix and research source. Read [the owner's technical direction](docs/strategy/OWNER-TECHNICAL-DIRECTION-2026-10-16.md), [all-category source findings](docs/research/github-2026-10-16/whole-system-review.md), [actual-provider evidence guide](docs/v2/ACTUAL-PROVIDER-EVIDENCE.md) and [current sprint](docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md). The sprint fixes explicit-model identity and retains generation/lifecycle evidence; tested code `17a275c` passed 1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites. [Exact-source receipt](docs/evidence/whole-system-readiness-2026-10-16.json) records valid inspection and limits. B02 stays 10/20 and ES01 5/5 internally; no deferred runtime adoption or new model calls.
+
+## Latest owner research: understand Ruflo
+
+Read [the plain-English Ruflo investigation](docs/research/github-2026-10-16/ruflo-owner-guide.md) and [source-only handoff](docs/delivery/sessions/2026-10-16-ruflo-owner-review.md). This explains optional worker coordination, separately supplied model access and evidence limits. No runtime adoption or acceptance change; the verified development below is preserved.
+
+## Latest development: Qwen API transport and research source copies
+
+On `feat/v02-compatible-provider-20261016`, based on research checkpoint `c9fd384`, all 28 inspected source repositories are now populated under [research/external](research/README.md) at immutable pins. Tested code `ddfead7` passed 1,104 source tests, 1,104 installed-kernel tests and 391 native browser checks across 11 suites; [source-bound receipt](docs/evidence/compatible-native-2026-10-16.json). The [Qwen setup guide](docs/v2/QWEN-SETUP.md) explains secure hosted endpoint configuration. Read [the current sprint](docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md) and [handoff](docs/delivery/HANDOFF.md). This development branch includes all consolidated main/fixes and research proposals. Actual-model, independent/human V0.2 acceptance remains open; source copies adopt no deferred runtime. The owner authorises fictional model tests up to US$5 and expects their supplied endpoint to be free; confirm the service limits after receiving its public URL/model and secure key.
+
+## Latest research proposal, 16 October 2026
+
+For the owner's requested GitHub search and combined system plan, read [ENDSTATE evolution](docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md), [pinned component research](docs/research/GITHUB-COMPONENTS-2026-10-16.md) and [the session handoff](docs/delivery/sessions/2026-10-16-evolution-research.md). This is a documentation proposal on `docs/endstate-evolution-plan-20261016`, based on consolidated main `d7d36b8`; application behavior and acceptance gates are unchanged. The next engineering requirement remains actual-provider V0.2 evaluation.
+
 # Current consolidated build: 8BALL powered by ENDSTATE
 
 The latest application fixes and separate documentation are now consolidated in **main** under the owner's explicit instruction. GitHub PRs #1, #2 and #3 show Merged. The combined source passed 964 source tests, 964 installed-kernel tests and 384 native browser checks; see [the current receipt](docs/evidence/main-consolidation-native-2026-10-15.json). Read [the build overview](docs/delivery/BUILD-OVERVIEW.md), [current integration handoff](docs/delivery/HANDOFF.md), [ADR 0006](docs/decisions/0006-consolidated-development-main.md), and [the integration session](docs/delivery/sessions/2026-10-15-main-consolidation.md).

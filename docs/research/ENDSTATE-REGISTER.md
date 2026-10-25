@@ -45,3 +45,7 @@ Do not add the projects to runtime requirements simply to make them look include
 The uploaded ZIP variant has 19 files, 18 payload hashes in its manifest. All files are preserved unchanged in `docs/reference/endstate-handoff-2026-09-24/`; [context-manifest.json](../delivery/context-manifest.json) records every payload, archive checksum and preservation check. The earlier published 18-file variant remains on its own branch and in the existing master backup. A different file count is documented rather than silently called identical.
 
 Keep [all build discoveries](../delivery/EMERGENCE-REGISTER.md) separately from this external-research register. Product Emergent Insights is a third, case-scoped concept. Do not mix client-case hypotheses with developer research or software completion.
+
+## Fresh component research, 16 October 2026
+
+The owner requested a broader GitHub search and a full combination/evolution plan. [GITHUB-COMPONENTS-2026-10-16](GITHUB-COMPONENTS-2026-10-16.md) appends RS-14 through RS-35 and refreshes RS-02/03 without replacing the historical findings above. It includes 26 pinned repositories, source/licence/runtime findings, a 25-capability product map and retained rejected/deferred alternatives. The [proposed evolution plan](../strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md) maps these to the existing roadmap and Lab A–F. No new runtime adoption, required task, acceptance pass, paid inference or deployment follows from this research.

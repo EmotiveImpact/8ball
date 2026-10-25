@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-16",
+  "kind": "pinned_source_copy_verification",
+  "base_commit": "c9fd38438ba52e9320bc55b96132086bfe57ce6a",
+  "branch": "feat/v02-compatible-provider-20261016",
+  "source_copy_verified": true,
+  "inventory_path": "research/inventory.json",
+  "summary": {
+    "repository_count": 28,
+    "tracked_blob_count": 71419,
+    "materialized_blob_count": 71417,
+    "worktree_source_bytes": 2179495349,
+    "git_metadata_bytes_at_capture": 1033584336,
+    "preserved_license_notice_files": 128,
+    "omitted_model_file_count": 2,
+    "uninitialized_nested_submodule_count": 2,
+    "unhydrated_lfs_pointer_count": 51
+  },
+  "validation": "Git-only verification and population repeatability passed; no upstream runtime execution",
+  "source_only": true
+}

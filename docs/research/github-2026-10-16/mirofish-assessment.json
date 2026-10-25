@@ -1,0 +1,46 @@
+{
+  "observed_at_utc": "2026-10-16T06:35:09.364175+00:00",
+  "task": "Read-only GitHub swarm intelligence search and MiroFish fit assessment",
+  "mirofish_commit": "7657031ac01184afe2cb220f5ee3545573b5e843",
+  "search_queries": [
+    "swarm intelligence",
+    "multi agent social simulation",
+    "agent scenario simulation"
+  ],
+  "search_access": "Public GitHub HTML/raw and native Git; GitHub API unavailable (403)",
+  "application_source_changed": false,
+  "dependencies_installed": false,
+  "models_downloaded": false,
+  "inference_performed": false,
+  "accuracy_evaluated": false,
+  "candidate_not_adopted": true,
+  "comparison_revisions": {
+    "camel-ai/oasis": "bc805a19978a620bb400f4c644ce9d772ccbfc70",
+    "tsinghua-fib-lab/AgentSociety": "8cc5bb9a9c27d039ec5519375db9d73ccf508cba",
+    "langchain-ai/langgraph-swarm-py": "5442a15cdd0ed210589148900c9960c24c489d04",
+    "microsoft/autogen": "027ecf0a379bcc1d09956d46d12d44a3ad9cee14"
+  },
+  "findings": {
+    "mirofish_implemented": [
+      "LLM/source-to-graph preparation",
+      "Agent profiles and simulation configuration",
+      "OASIS-backed Twitter/Reddit simulated actions",
+      "Separate simulation IDs/logs and runtime progress",
+      "Post-run agent interviews and report generation"
+    ],
+    "mirofish_limits": [
+      "Current reviewed action/environment logic is social-platform-specific",
+      "Event parser initializes scheduled_events to an empty list; post-loop IPC is interview/batch_interview/close_env",
+      "No general ENDSTATE route dependency/authority/verification adapter found",
+      "No app-wide money/token budget enforcement or held-out prediction-calibration harness found in reviewed source",
+      "ReportAgent normally uses the configured LLM; it is not independent semantic validation"
+    ],
+    "requirements": [
+      "OpenAI-compatible model endpoint and credential",
+      "Zep Cloud credential; custom ZEP_API_URL explicitly rejected",
+      "Python>=3.11,<3.13, Flask/Vue, pinned CAMEL/OASIS/Zep stack",
+      "AGPL-3.0 licensing assessment before embedding"
+    ],
+    "recommended_fit": "Candidate isolated rehearsal service or OASIS-based adapter; retain ENDSTATE case snapshots/constraints and separately evaluate model/JEV judgements."
+  }
+}

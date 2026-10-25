@@ -12,18 +12,18 @@ export function analysisForm(graph=false){
     ['playbook','Explicit catalogue template · not AI'],
     ['ollama_staged','Local Ollama · target-bound ENDSTATE draft'],
     ['huggingface','Hugging Face · target-bound hosted draft'],
+    ['openai_compatible','Hosted API / Qwen · target-bound draft'],
     ['ollama','Local Ollama · legacy graph draft']
   ]:[['rules','Rules-based sentence capture · no model required'],['ollama','Local Ollama · structured extraction'],
-     ['huggingface','Hugging Face · hosted extraction'],['gliclass','GLiClass Edge · experimental classification'],['jev','Jev / TypeSafe · external classification']];
-  const hf=S.providers?.providers?.find(p=>p.id==='huggingface');
+     ['huggingface','Hugging Face · hosted extraction'],['openai_compatible','Hosted API / Qwen · extraction'],['gliclass','GLiClass Edge · experimental classification'],['jev','Jev / TypeSafe · external classification']];
   modal(graph?'Draft an outcome graph':'Structure selected sources',
     note(graph?'Define the destination, then review the proposed conditions and actions. Models cannot establish facts, grant authority or change the case.':'Source capture is available without a model. AI extraction creates proposals, never verified facts.')+
     `<form data-form="analyse" data-purpose="${graph?'graph':'extract'}" ${snapshot()}>
       ${select('Analysis provider','provider',providers)}
       ${graph?select('Catalogue template (template provider only)','playbook_id',S.plays.map(p=>[p.id,p.name])):''}
       ${sourceChoices()}
-      ${warning('Hosted processing is optional. Hugging Face is '+(hf?.configured?'configured but not live-validated.':'not configured. Add the key, model and provider on the server later.'),'neutral')}
-      ${check('For a hosted provider, I authorise sending the selected sources and relevant case context. Graph drafting includes the outcome, brief and existing condition names. Hugging Face also routes to the explicitly configured inference provider.','allow_external')}
+      ${warning('Hosted processing is optional. Configure your API or Hugging Face connection on the server. Configuration is not live model validation.','neutral')}
+      ${check('For a hosted provider, I authorise sending the selected sources and relevant case context. Graph drafting includes the outcome, brief and existing condition names. Routing services also send this to the explicitly configured inference provider.','allow_external')}
       ${submit('Create proposals for human review')}
     </form>`);
 }
@@ -40,9 +40,9 @@ export function editObject(kind,id){const c=S.current.case;const collections={ac
 export function questionProposalForm(){
   modal('Propose open questions',note('Models propose questions, not answers. The graph calculates their structural impact after human review.')+
     `<form data-form="analyse" data-purpose="questions" ${snapshot()}>
-      ${select('Provider','provider',[['ollama','Local Ollama'],['huggingface','Hugging Face · hosted']])}
+      ${select('Provider','provider',[['ollama','Local Ollama'],['huggingface','Hugging Face · hosted'],['openai_compatible','Hosted API / Qwen']])}
       ${sourceChoices()}
-      ${check('I authorise hosted processing of selected sources, the outcome, graph and existing questions when Hugging Face is selected.','allow_external')}
+      ${check('I authorise the selected hosted provider to process selected sources, the outcome, graph and existing questions.','allow_external')}
       ${submit('Propose questions for review')}
     </form>`);
 }

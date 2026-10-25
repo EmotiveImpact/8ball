@@ -66,6 +66,13 @@ case'hosted-setup':{
     note('Restart the local server after configuration. Configured means values are present, not that credentials or model quality have been verified. Each analysis still requires explicit transmission permission. No automatic model downloads or paid calls.'));
   return;
 }
+case'api-setup':{
+  modal('Hosted API setup',note('Your model service supplies an API base URL, exact model name and private key. Set them in the server environment or secure cloud settings, then restart 8BALL. This dialog does not collect or store a key.')+
+    '<pre class="code">EIGHTBALL_API_BASE_URL=&lt;HTTPS API base URL&gt;\nEIGHTBALL_API_MODEL=&lt;exact model name&gt;\nEIGHTBALL_API_PROVIDER=&lt;provider name&gt;\nEIGHTBALL_API_KEY=&lt;private key in secure settings&gt;</pre>'+
+    note('Choose Hosted API / Qwen when analysing sources or drafting a graph. Authorise the selected information for each request. Configuration only reports that settings are present; actual provider testing and plan review remain separate.')+
+    note('OpenRouter also requires an explicit EIGHTBALL_API_ROUTING_PROVIDER. Your developer can confirm endpoint compatibility before any billed test.'));
+  return;
+}
 case'legacy':{const cases=await api('/legacy');modal('Import an existing alpha case',note('The original snapshot and audit chain remain unchanged. V0.2 creates a new case with preserved lineage and clears old approvals.')+cases.map(c=>`<div class="row"><h3>${esc(c.title)}</h3>${button('Import into V0.2','import-legacy',false,`data-id="${esc(c.id)}"`)}</div>`).join('')+(!cases.length?note('No V0.1 cases exist in this database.'):''));return;}
 case'import-legacy':{const made=await api('/legacy/'+el.dataset.id+'/import',{});closeModal();await refreshCases();await requestCaseOpen(made.id);toast('Imported with original audit lineage. Legacy case unchanged.');return;}
 case'select-proposals':case'reject-proposals':{const form=document.querySelector(`form[data-id="${CSS.escape(el.dataset.id)}"]`);form.querySelectorAll('select[name^="choice_"]').forEach(s=>s.value=name==='select-proposals'?'accepted':'rejected');toast(name==='select-proposals'?'Selections changed. Inspect the objects before committing.':'All items set to reject. Commit to record that review.');return;}

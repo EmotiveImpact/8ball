@@ -1,0 +1,87 @@
+[
+  {
+    "query": "agent scenario simulation",
+    "url": "https://github.com/search?q=agent+scenario+simulation&type=repositories",
+    "candidates": [
+      "SCTY-Inc/mirofish-cli",
+      "proroklab/VectorizedMultiAgentSimulator",
+      "facebookresearch/meta-agents-research-environments",
+      "Yunfan-Wang/Scalable-Agentic-Market-Simulator",
+      "eqasim-org/eqasim-sao-paulo",
+      "jaromiru/NASimEmu",
+      "mathworks/adScenarioSimRefEx",
+      "angelomorgado/CARLA-GymDrive",
+      "sortedcord/omnia",
+      "urban-ai-institute/kra35-prismx-agentsumo"
+    ]
+  },
+  {
+    "query": "temporal knowledge graph memory",
+    "url": "https://github.com/search?q=temporal+knowledge+graph+memory&type=repositories",
+    "candidates": [
+      "clawdbrunner/openclaw-graphiti-memory",
+      "ardiannurcahya/open-graph-memory",
+      "Ardha-Eco-System/synapse",
+      "happycastle114/opencode-graphiti",
+      "aexy-io/graphzep",
+      "sanonone/kektordb",
+      "RobertoGongora/openclaw-graphiti-plugin",
+      "vbcherepanov/total-agent-memory",
+      "SteveTANTAN/MemoTime",
+      "yantrikos/yantrikdb"
+    ]
+  },
+  {
+    "query": "causal inference decision optimization",
+    "url": "https://github.com/search?q=causal+inference+decision+optimization&type=repositories",
+    "candidates": [
+      "evelyyyyynnnnn/4.0-Decision-Intelligence-Framework",
+      "sundeep-14/LLM-Powered-Dynamic-Pricing-Engine-with-Causal-Inference-for-Retail-and-E-Commerce",
+      "sahithimuppavaram/causal-inference-business-decisions",
+      "ShreyaBawankule/CausalLift-AI",
+      "Subhamnayak18/intelligent-marketing-decision-optimization",
+      "shivams786/Quantisphere-Production-Grade-Decision-Intelligence-Platform",
+      "txnzeel/nemo",
+      "Lineker98/causallift",
+      "crystal1361/DDA-Retention",
+      "bhattacharyaprafullit/Feature-Rollout-Decisions-using-AB-Testing-Uplift-Modeling"
+    ]
+  },
+  {
+    "query": "relationship based authorization",
+    "url": "https://github.com/search?q=relationship+based+authorization&type=repositories",
+    "candidates": [
+      "thepartly/gatehouse",
+      "evansims/openfga-laravel",
+      "evansims/openfga-php",
+      "dgigafox/zephyr",
+      "Laci556/RebaTS",
+      "alphaparkinc/genpark-rebac-relationship-authorization-policy-evaluator-skill",
+      "emir-gradient/relationship-roles",
+      "NovaVey/Relationship-Based-Authorization",
+      "inixiative/permissions",
+      "scor/openfga-php"
+    ]
+  },
+  {
+    "query": "llm evaluation human feedback",
+    "url": "https://github.com/search?q=llm+evaluation+human+feedback&type=repositories",
+    "candidates": [
+      "HardikaKhare/Human-feedback-LLM-evaluation",
+      "abdelaziz2003vvb/-LLM-Evaluation-Alignment-Pipeline-with-Human-Feedback",
+      "montdanial26/llm-evaluation-toolkit",
+      "Shekhar2298/LLM-Evaluation-Platform",
+      "rajan0860/llm-evaluation-platform",
+      "lucaslim2071-code/LLM-evaluation-dashboard",
+      "iiyyll01lin/domain-specific-llm-eval",
+      "deepanshugirsa1/human-data-eval-pipeline",
+      "DataScienceUIBK/RankArena",
+      "razayaseen5/llm-rlhf-evaluation-benchmark"
+    ]
+  },
+  {
+    "query": "simulatrex possible worlds",
+    "url": "https://github.com/search?q=simulatrex+possible+worlds&type=repositories",
+    "candidates": []
+  }
+]

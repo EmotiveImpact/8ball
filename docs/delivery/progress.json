@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-15",
+  "updated_on": "2026-10-25",
   "product": "8BALL",
   "engine": "ENDSTATE",
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
@@ -17,8 +17,72 @@
     "production_deployed": false,
     "standalone_endstate_package_released": false,
     "refresh_required_each_session": true,
-    "integration_authority": "docs/decisions/0006-consolidated-development-main.md",
-    "source_merged_not_release_accepted": true
+    "integration_authority": "docs/decisions/0007-owner-build-consolidation.md",
+    "source_merged_not_release_accepted": true,
+    "current_sprint": {
+      "branch": "integration/v02-complete-build-20261025",
+      "base_commit": "16b8fff43f5f0614846ac4b01db1ddbe40dcff4e",
+      "status_as_of": "2026-10-25",
+      "merged": false,
+      "tested_code_commit": "a9254e6087ef606d581d626bfcda9d7e555c857e",
+      "verification": "1267 source tests, 1267 installed-engine regressions and 391 native browser checks across 11 suites passed; inspection valid before receipt edits.",
+      "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
+      "remote_ci": "Both checkpoint PR workflows passed: 40199806937 and 40199807143. Final receipt-head CI and merge tracked in PR4."
+    },
+    "verified_sprint_history": [
+      {
+        "branch": "feat/v02-compatible-provider-20261016",
+        "tested_code_commit": "ddfead7fe2e44a01ec202d2196384c5dc2596c5b",
+        "tested_code_tree": "45f1695216d8afa720da22ba136cad29dfea14e5",
+        "base_commit": "c9fd38438ba52e9320bc55b96132086bfe57ce6a",
+        "status_as_of": "2026-10-16",
+        "merged": false,
+        "remote_ci": "No result claimed; push trigger excludes this branch and no PR opened."
+      },
+      {
+        "branch": "feat/v02-evaluation-readiness-20261016",
+        "base_commit": "0fed04b5e299f4a2e53050456559133c1231b088",
+        "tested_code_commit": "17a275c5a143d9721bcbf59113a66873be81d38d",
+        "tested_code_tree": "6394426d704f6abc010e11f8dbdfbafd58ab5ba4",
+        "status_as_of": "2026-10-16",
+        "merged": false,
+        "verification": "Local cumulative native passed; exact source/artifact inspection valid before final documentation edits.",
+        "evidence": "docs/evidence/whole-system-readiness-2026-10-16.json",
+        "remote_ci": "No result claimed; branch push is outside configured push triggers."
+      },
+      {
+        "branch": "feat/v02-review-evidence-20261018",
+        "base_commit": "e513237f5b66c0689fa870e0d82873d8b71e4d8a",
+        "status_as_of": "2026-10-18",
+        "merged": false,
+        "verification": "1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits.",
+        "evidence": "docs/evidence/review-evidence-native-2026-10-18.json",
+        "remote_ci": "API Forbidden; no current remote CI result claimed. New branch is outside configured push triggers.",
+        "tested_code_commit": "25ca5e2dce4f28ec33d9b132cccabfa15b23683e",
+        "tested_code_tree": "7f282146923e18634693ca3fa739b8d4bc41b494"
+      }
+    ],
+    "provider_configuration_preparation": {
+      "date": "2026-10-18",
+      "branch": "feat/v02-review-evidence-20261018",
+      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "endpoint_host": "api.anthropic.com",
+      "evidence": "docs/evidence/anthropic-setup-2026-10-18.json",
+      "live_compatibility_verified": false,
+      "active_secret_available": false,
+      "next_input": "Owner must edit existing EIGHTBALL_API_KEY allowed destination to api.anthropic.com, enter private Anthropic API key in settings, Save and Publish."
+    },
+    "integration_20261025": {
+      "branch": "integration/v02-complete-build-20261025",
+      "base_commit": "16b8fff43f5f0614846ac4b01db1ddbe40dcff4e",
+      "status": "native_and_checkpoint_ci_passed_final_merge_pending",
+      "handoff": "docs/delivery/NEXT-BUILD.md",
+      "tested_commit": "a9254e6087ef606d581d626bfcda9d7e555c857e",
+      "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
+      "pull_request": 4
+    }
   },
   "evidence": {
     "EV-APP": {
@@ -219,6 +283,65 @@
       "path": "docs/evidence/main-consolidation-native-2026-10-15.json",
       "result": "Owner-authorized main source integration confirmed; PRs1/2/3 observed Merged. Native source-bound run passed964 source,964 installed-kernel tests and384 browser checks. All74 discoveries, both histories/archives and original task acceptance unchanged. No model/human pass, release or deployment.",
       "code_commit": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f"
+    },
+    "EV-EVOLUTION-RESEARCH": {
+      "kind": "source_research_and_documentation_validation",
+      "path": "docs/evidence/evolution-research-2026-10-16.json",
+      "code_commit": "d7d36b842464d7ad0e974a59730a682f1739fccf",
+      "result": "26 pinned external repositories mapped to original product goals and proposed staged experiments. Source research and documentation validation only; no runtime, model, human or release acceptance."
+    },
+    "EV-TENCENT-MEMORY-RESEARCH": {
+      "kind": "bounded_source_research_and_documentation_validation",
+      "path": "docs/evidence/tencent-memory-research-2026-10-16.json",
+      "code_commit": "7309f54539f17b973511e940147a817958891e42",
+      "result": "Tencent memory candidate assessed and combined architecture sharpened. Source-only findings and documentation checks; no upstream runtime, model, independent/human acceptance or required-scope change."
+    },
+    "EV-RUFLO-RESEARCH": {
+      "kind": "bounded_source_research_and_documentation_validation",
+      "path": "docs/evidence/ruflo-research-2026-10-16.json",
+      "code_commit": "bf54f607bb0e13d0c6adfc0f59ee146e75be287b",
+      "result": "Ruflo coordination/execution/memory contracts assessed; candidate optional harness, no runtime adoption or model/professional/human acceptance."
+    },
+    "EV-RESEARCH-COPY": {
+      "kind": "pinned_source_copy_verification",
+      "path": "docs/evidence/research-copy-2026-10-16.json",
+      "result": "28 exact source checkouts, explicit model/LFS/nested exceptions and128 preserved licence/notice blobs verified; no runtime adoption."
+    },
+    "EV-COMPATIBLE-CODE": {
+      "kind": "controlled_transport_and_software_validation",
+      "path": "docs/evidence/compatible-native-2026-10-16.json",
+      "result": "Tested ddfead7: 1,104 source tests, 1,104 installed-kernel tests and 391 native checks across 11 suites passed; exact source/artifact inspection valid. No actual provider, semantic or human acceptance."
+    },
+    "EV-RUFLO-OWNER-REVIEW": {
+      "kind": "bounded_source_research",
+      "path": "docs/evidence/ruflo-owner-review-2026-10-16.json",
+      "result": "Current upstream pin rechecked; plain-English owner explanation distinguishes orchestration, free model access, confidence/feedback targets, mocked benchmarks and historical remediations. Source-only; no runtime acceptance."
+    },
+    "EV-WHOLE-SYSTEM-REVIEW": {
+      "kind": "bounded_source_investigation",
+      "path": "docs/research/github-2026-10-16/whole-system-review.md",
+      "result": "All 28 candidate dispositions and source-specific operating/evidence/dependency limits preserved; deferred runtime remains unadopted."
+    },
+    "EV-EVALUATION-READINESS": {
+      "kind": "controlled_software_verification",
+      "path": "docs/evidence/whole-system-readiness-2026-10-16.json",
+      "result": "1,171 source tests, 1,171 installed-kernel regressions and 391 native checks across all 11 suites passed; source/artifact inspection valid. No actual model or independent/human acceptance."
+    },
+    "EV-REVIEW-EVIDENCE-20261018": {
+      "kind": "controlled_software_verification",
+      "path": "docs/evidence/review-evidence-native-2026-10-18.json",
+      "result": "1,267 source tests, 1,267 installed-kernel regressions and 391 native browser checks across all 11 suites passed; exact-source/artifact inspection valid before final documentation edits. No actual-model, independent professional or human acceptance.",
+      "code_commit": "25ca5e2dce4f28ec33d9b132cccabfa15b23683e"
+    },
+    "EV-ANTHROPIC-SETUP": {
+      "kind": "configuration_and_source_inspection",
+      "path": "docs/evidence/anthropic-setup-2026-10-18.json",
+      "result": "Prepared Anthropic compatibility settings; 142 existing controlled transport/CLI tests passed and isolated format check made no requests. Live compatibility/account access remain unverified; owner must edit old secret destination and supply key securely."
+    },
+    "EV-OCT25-INTEGRATION": {
+      "kind": "integration_and_test_handoff",
+      "path": "docs/evidence/build-consolidation-native-2026-10-25.json",
+      "result": "1267 source + 1267 installed-engine + 391 native browser checks passed; exact inspection valid; both checkpoint CI workflows passed. PR3 closed as already integrated. No model/independent/human acceptance."
     }
   },
   "milestones": [
@@ -338,16 +461,19 @@
       "status": "verified",
       "required": true,
       "owner": "Codex",
-      "working_branch": "integration/v02-consolidated-20261015",
-      "base_commit": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
-      "updated_on": "2026-10-15",
+      "working_branch": "docs/endstate-evolution-plan-20261016",
+      "base_commit": "bf54f607bb0e13d0c6adfc0f59ee146e75be287b",
+      "updated_on": "2026-10-16",
       "code_paths": [],
       "depends_on": [],
       "acceptance": "Master PRD incorporates naming, reuse, living plans and unchanged original acceptance requirements. Original blob hash matches.",
       "evidence": [
         "EV-DECISION",
         "EV-ORIGINAL",
-        "EV-MAIN-CONSOLIDATION"
+        "EV-MAIN-CONSOLIDATION",
+        "EV-EVOLUTION-RESEARCH",
+        "EV-TENCENT-MEMORY-RESEARCH",
+        "EV-RUFLO-RESEARCH"
       ],
       "blockers": [],
       "next_action": "Use repository references instead of expecting chat access."
@@ -359,9 +485,9 @@
       "status": "verified",
       "required": true,
       "owner": "Codex",
-      "working_branch": "integration/v02-consolidated-20261015",
-      "base_commit": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
-      "updated_on": "2026-10-15",
+      "working_branch": "docs/endstate-evolution-plan-20261016",
+      "base_commit": "bf54f607bb0e13d0c6adfc0f59ee146e75be287b",
+      "updated_on": "2026-10-16",
       "code_paths": [
         "scripts/delivery.py"
       ],
@@ -372,7 +498,10 @@
       "acceptance": "Ledger validates; generated checklist is current; regression checks reject unsupported completion and broken IDs.",
       "evidence": [
         "EV-TRACKING",
-        "EV-MAIN-CONSOLIDATION"
+        "EV-MAIN-CONSOLIDATION",
+        "EV-EVOLUTION-RESEARCH",
+        "EV-TENCENT-MEMORY-RESEARCH",
+        "EV-RUFLO-RESEARCH"
       ],
       "blockers": [],
       "next_action": "Use this ledger and session protocol in both chat and Codex; keep the generated checklist in sync."
@@ -636,14 +765,19 @@
       "status": "blocked",
       "required": true,
       "owner": "Codex",
-      "working_branch": "fix/v02-provider-failure-evidence-20261015",
-      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
-      "updated_on": "2026-10-15",
+      "working_branch": "feat/v02-review-evidence-20261018",
+      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
+      "updated_on": "2026-10-18",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "evals/live_generation.py",
         "endstate/compilation.py",
-        "tests/test_endstate_compilation.py"
+        "tests/test_endstate_compilation.py",
+        "eightball/v2/compatible.py",
+        "evals/live_compatible.py",
+        "evals/live_huggingface.py",
+        "tests/test_hosted_eval_retention.py",
+        "docs/v2/ANTHROPIC-SETUP.md"
       ],
       "depends_on": [],
       "acceptance": "Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.",
@@ -655,13 +789,18 @@
         "EV-NATIVE-CLOSEOUT",
         "EV-QWEN-20260927",
         "EV-GENERATION-ROLE-CONTRACT",
-        "EV-PROVIDER-FAILURE-REVIEW"
+        "EV-PROVIDER-FAILURE-REVIEW",
+        "EV-COMPATIBLE-CODE",
+        "EV-EVALUATION-READINESS",
+        "EV-REVIEW-EVIDENCE-20261018",
+        "EV-ANTHROPIC-SETUP",
+        "EV-OCT25-INTEGRATION"
       ],
       "blockers": [
-        "Fresh selected-provider generation has not been rerun after prompt correction; local Ollama is unreachable and hosted model/provider/credential variables are unset. Provider selection and inference permission are pending.",
+        "Owner selected Anthropic, with prepared claude-sonnet-4-6 compatibility settings; account availability/pricing, active credentials/destination and real inference remain unverified. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, supply key securely and Save/Publish. Fictional fixtures up to US$5 remain authorised.",
         "Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate."
       ],
-      "next_action": "Select and authorise a provider/model, rerun all four unchanged generation fixtures with prompt endstate.draft.prompts.v2, then run the actual-provider native journey and obtain independent human quality labels. Preserve every failure; do not repair output or substitute catalogue plans."
+      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
     },
     {
       "id": "B02-10",
@@ -705,9 +844,9 @@
       "status": "partial",
       "required": true,
       "owner": "Codex",
-      "working_branch": "fix/v02-provider-failure-evidence-20261015",
-      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
-      "updated_on": "2026-10-15",
+      "working_branch": "feat/v02-review-evidence-20261018",
+      "base_commit": "e513237f5b66c0689fa870e0d82873d8b71e4d8a",
+      "updated_on": "2026-10-18",
       "code_paths": [
         "evals/live_generation.py",
         "evals/classification-cases.json",
@@ -717,7 +856,11 @@
         "evals/plan_review_bench.py",
         "evals/PLAN-QUALITY-GATE.md",
         "tests/test_plan_review.py",
-        "tests/browser_plan_review.py"
+        "tests/browser_plan_review.py",
+        "evals/review_readiness.py",
+        "tests/test_review_readiness.py",
+        "docs/delivery/review/protocol-v2.template.json",
+        "docs/delivery/review/dataset-manifest.template.json"
       ],
       "depends_on": [],
       "acceptance": "Expert-labelled held-out data and predeclared acceptance thresholds measure semantic errors, omissions, corrections, latency and abstention.",
@@ -725,12 +868,14 @@
         "EV-REMAINING",
         "EV-PLAN-REVIEW-LOCAL",
         "EV-NATIVE-CLOSEOUT",
-        "EV-PROVIDER-FAILURE-REVIEW"
+        "EV-PROVIDER-FAILURE-REVIEW",
+        "EV-EVALUATION-READINESS",
+        "EV-REVIEW-EVIDENCE-20261018"
       ],
       "blockers": [
         "Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed."
       ],
-      "next_action": "Use docs/delivery/review/protocol.template.json to obtain prospective owner/qualified reviewer approval and independently authored labels. Run authorized actual-provider comparisons only afterward; templates/native software acceptance are not semantic approval."
+      "next_action": "Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval."
     },
     {
       "id": "B02-12",
@@ -739,14 +884,16 @@
       "status": "blocked",
       "required": true,
       "owner": "Codex",
-      "working_branch": "fix/v02-provider-failure-evidence-20261015",
-      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
-      "updated_on": "2026-10-15",
+      "working_branch": "feat/v02-review-evidence-20261018",
+      "base_commit": "e513237f5b66c0689fa870e0d82873d8b71e4d8a",
+      "updated_on": "2026-10-18",
       "code_paths": [
         "tests/browser_v2.py",
         "evals/full_journey.py",
         "scripts/acceptance.py",
-        ".github/workflows/provider-journey.yml"
+        ".github/workflows/provider-journey.yml",
+        "evals/provider_lifecycle.py",
+        "tests/test_provider_lifecycle.py"
       ],
       "depends_on": [
         "B02-09",
@@ -761,12 +908,16 @@
         "EV-INTEGRATION-LOCAL",
         "EV-INTEGRATION-BLOCKED",
         "EV-NATIVE-CLOSEOUT",
-        "EV-PROVIDER-FAILURE-REVIEW"
+        "EV-PROVIDER-FAILURE-REVIEW",
+        "EV-COMPATIBLE-CODE",
+        "EV-EVALUATION-READINESS",
+        "EV-REVIEW-EVIDENCE-20261018",
+        "EV-OCT25-INTEGRATION"
       ],
       "blockers": [
         "Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey."
       ],
-      "next_action": "Run the actual-provider integration with authorised service/token and collect independent human review."
+      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
     },
     {
       "id": "B02-13",
@@ -848,13 +999,17 @@
       "status": "partial",
       "required": true,
       "owner": "Codex",
-      "working_branch": "fix/v02-provider-failure-evidence-20261015",
-      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
-      "updated_on": "2026-10-15",
+      "working_branch": "feat/v02-review-evidence-20261018",
+      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
+      "updated_on": "2026-10-18",
       "code_paths": [
         "eightball/v2/analysis_jobs.py",
         "web/v2/job-view.js",
-        "tests/test_analysis_jobs.py"
+        "tests/test_analysis_jobs.py",
+        "eightball/v2/compatible.py",
+        "tests/test_compatible_integration.py",
+        "evals/provider_lifecycle.py",
+        "tests/test_provider_lifecycle.py"
       ],
       "depends_on": [
         "ES03-04"
@@ -865,12 +1020,16 @@
         "EV-HF-BLACK-LOCAL",
         "EV-PLAN-STUDIO-LOCAL",
         "EV-NATIVE-CLOSEOUT",
-        "EV-PROVIDER-FAILURE-REVIEW"
+        "EV-PROVIDER-FAILURE-REVIEW",
+        "EV-COMPATIBLE-CODE",
+        "EV-EVALUATION-READINESS",
+        "EV-ANTHROPIC-SETUP",
+        "EV-OCT25-INTEGRATION"
       ],
       "blockers": [
         "Lifecycle behaviour with the selected real inference provider remains unverified."
       ],
-      "next_action": "Verify cancellation, stale results and runtime status with the actual selected provider; never recall already-billed work by implication."
+      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
     },
     {
       "id": "B02-16",
@@ -968,12 +1127,13 @@
       "acceptance": "All required V0.2 subparts have scoped evidence; reviews/gates pass; approval to integrate/release is recorded separately.",
       "evidence": [
         "EV-QWEN",
-        "EV-MAIN-CONSOLIDATION"
+        "EV-MAIN-CONSOLIDATION",
+        "EV-OCT25-INTEGRATION"
       ],
       "blockers": [
         "Real-model journey and developer-quality work remain unaccepted."
       ],
-      "next_action": "Source is integrated into main under explicit owner instruction ADR0006. Complete all unchanged real-model, independent professional and human acceptance gates before release acceptance; no deployment/tag is authorized."
+      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
     },
     {
       "id": "B03-01",
@@ -1523,10 +1683,10 @@
       "title": "Failure handling, model trace and governed provider selection",
       "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "Codex",
+      "working_branch": "feat/v02-review-evidence-20261018",
+      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
+      "updated_on": "2026-10-18",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "eightball/v2/store.py"
@@ -1536,10 +1696,14 @@
       "evidence": [
         "EV-APP",
         "EV-QWEN",
-        "EV-CLASSIFIER"
+        "EV-CLASSIFIER",
+        "EV-COMPATIBLE-CODE",
+        "EV-EVALUATION-READINESS",
+        "EV-REVIEW-EVIDENCE-20261018",
+        "EV-ANTHROPIC-SETUP"
       ],
       "blockers": [],
-      "next_action": "Extend existing fail-closed tests and preserve negative model results."
+      "next_action": "Retain new strict API transport traces and controlled failure evidence; evaluate the selected actual model and independent source/plan quality before closing the broader gate."
     },
     {
       "id": "ES04-01",
@@ -1690,10 +1854,10 @@
       "title": "Actual hosted-model comparison on preserved fixtures",
       "status": "blocked",
       "required": false,
-      "owner": "ChatGPT",
-      "working_branch": "work/hf-black-drafting",
-      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
-      "updated_on": "2026-09-23",
+      "owner": "Codex",
+      "working_branch": "feat/v02-evaluation-readiness-20261016",
+      "base_commit": "0fed04b5e299f4a2e53050456559133c1231b088",
+      "updated_on": "2026-10-16",
       "code_paths": [
         "evals/live_huggingface.py",
         "evals/generation-cases.json"
@@ -1703,7 +1867,8 @@
       ],
       "acceptance": "Authorised real HF requests record exact selected model/provider, outputs, same-fixture structural gate and human semantic review. No automatic or fictitious success.",
       "evidence": [
-        "EV-HF-BLACK-LOCAL"
+        "EV-HF-BLACK-LOCAL",
+        "EV-EVALUATION-READINESS"
       ],
       "blockers": [
         "No authorised HF token/model/provider configured; no real hosted inference performed."
@@ -1786,9 +1951,9 @@
       "status": "verified",
       "required": true,
       "owner": "Codex",
-      "working_branch": "integration/v02-consolidated-20261015",
-      "base_commit": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
-      "updated_on": "2026-10-15",
+      "working_branch": "docs/endstate-evolution-plan-20261016",
+      "base_commit": "bf54f607bb0e13d0c6adfc0f59ee146e75be287b",
+      "updated_on": "2026-10-16",
       "code_paths": [
         "scripts/changelog.py",
         "docs/delivery/changelog.json",
@@ -1798,7 +1963,10 @@
       "acceptance": "Every build adds a dated evidence-linked entry; generated CHANGELOG.md and in-app history share one source; base comparison detects missing entries or rewritten history.",
       "evidence": [
         "EV-PLAN-STUDIO-LOCAL",
-        "EV-MAIN-CONSOLIDATION"
+        "EV-MAIN-CONSOLIDATION",
+        "EV-EVOLUTION-RESEARCH",
+        "EV-TENCENT-MEMORY-RESEARCH",
+        "EV-RUFLO-RESEARCH"
       ],
       "blockers": [],
       "next_action": "Enforce a new immutable-history changelog entry in each following session and integration commit. Local documentation/API/render scope verified; no source publication or release implied."
@@ -1810,9 +1978,9 @@
       "status": "verified",
       "required": true,
       "owner": "Codex",
-      "working_branch": "integration/v02-consolidated-20261015",
-      "base_commit": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
-      "updated_on": "2026-10-15",
+      "working_branch": "docs/endstate-evolution-plan-20261016",
+      "base_commit": "bf54f607bb0e13d0c6adfc0f59ee146e75be287b",
+      "updated_on": "2026-10-16",
       "code_paths": [
         "docs/delivery/EMERGENCE-REVIEW.md",
         "scripts/changelog.py",
@@ -1825,7 +1993,10 @@
       "acceptance": "Every new build sprint explicitly records what emerged, its evidence level and roadmap disposition; new changelog entries cannot omit the emergence review.",
       "evidence": [
         "EV-EMERGENCE-REVIEW",
-        "EV-MAIN-CONSOLIDATION"
+        "EV-MAIN-CONSOLIDATION",
+        "EV-EVOLUTION-RESEARCH",
+        "EV-TENCENT-MEMORY-RESEARCH",
+        "EV-RUFLO-RESEARCH"
       ],
       "blockers": [],
       "next_action": "Run the Emergence Review at every substantive build handoff; only promote discoveries to required roadmap scope through an explicit ledger or decision update."
@@ -1837,9 +2008,9 @@
       "status": "verified",
       "required": true,
       "owner": "Codex",
-      "working_branch": "integration/v02-consolidated-20261015",
-      "base_commit": "486c85ec07a05c7af8b30b142d2ad19faf402e25",
-      "updated_on": "2026-10-15",
+      "working_branch": "feat/v02-evaluation-readiness-20261016",
+      "base_commit": "0fed04b5e299f4a2e53050456559133c1231b088",
+      "updated_on": "2026-10-16",
       "code_paths": [
         "scripts/emergence.py",
         "docs/delivery/emergence.json",
@@ -1852,7 +2023,12 @@
       "evidence": [
         "EV-EMERGENT-INSIGHTS-LOCAL",
         "EV-VISION-REVIEW",
-        "EV-MAIN-CONSOLIDATION"
+        "EV-MAIN-CONSOLIDATION",
+        "EV-EVOLUTION-RESEARCH",
+        "EV-TENCENT-MEMORY-RESEARCH",
+        "EV-RUFLO-RESEARCH",
+        "EV-RUFLO-OWNER-REVIEW",
+        "EV-WHOLE-SYSTEM-REVIEW"
       ],
       "blockers": [],
       "next_action": "Preserve all original discoveries and append review history. Use ADR 0004 and docs/vision for the strengthened direction; no optional candidate or delivery claim becomes verified without its own evidence."
@@ -2037,6 +2213,62 @@
       "evidence": [],
       "blockers": [],
       "next_action": "Retain as an owner-review candidate. Define metrics and lawful dataset handling before collecting additional client information; no measured benefit is claimed."
+    },
+    {
+      "id": "DOC-07",
+      "milestone": "DOC",
+      "title": "Preserve pinned upstream research source checkouts",
+      "status": "verified",
+      "required": true,
+      "owner": "Codex",
+      "working_branch": "feat/v02-compatible-provider-20261016",
+      "base_commit": "c9fd38438ba52e9320bc55b96132086bfe57ce6a",
+      "updated_on": "2026-10-16",
+      "code_paths": [
+        ".gitmodules",
+        "research/README.md",
+        "research/inventory.json",
+        "research/sources.py",
+        "research/AGENTS.md"
+      ],
+      "depends_on": [
+        "DOC-06"
+      ],
+      "acceptance": "All28 inspected repository pins are populated as source-only research checkouts with original licences, exact manifest identities, explicit model/LFS/nested exceptions and reproducible Git-only verification. No runtime adoption or upstream execution.",
+      "evidence": [
+        "EV-RESEARCH-COPY"
+      ],
+      "blockers": [],
+      "next_action": "Use the Git-only research helper for later restoration/verification; scope any upstream software installation or adaptation separately."
+    },
+    {
+      "id": "ES03-09",
+      "milestone": "ES03",
+      "title": "Opt-in OpenAI-compatible hosted endpoint contract",
+      "status": "verified",
+      "required": false,
+      "owner": "Codex",
+      "working_branch": "feat/v02-evaluation-readiness-20261016",
+      "base_commit": "0fed04b5e299f4a2e53050456559133c1231b088",
+      "updated_on": "2026-10-16",
+      "code_paths": [
+        "eightball/v2/compatible.py",
+        "tests/test_compatible_provider.py",
+        "tests/test_compatible_integration.py",
+        "tests/test_compatible_cli.py",
+        "evals/live_compatible.py",
+        "docs/v2/QWEN-SETUP.md"
+      ],
+      "depends_on": [
+        "ES03-06"
+      ],
+      "acceptance": "Controlled HTTP and native UI checks verify explicit server-owned endpoint/model/provider, permission, pinned routing, bounded strict responses/failure evidence, secrets protection, stage/cancellation/stale/restart guards and unchanged frozen-fixture harness. This transport scope does not claim actual inference or semantic/human acceptance.",
+      "evidence": [
+        "EV-COMPATIBLE-CODE",
+        "EV-EVALUATION-READINESS"
+      ],
+      "blockers": [],
+      "next_action": "Bounded software transport contract remains verified. Activate the actual selected endpoint/model and run unchanged generation plus matching lifecycle/native journey within authorised fictional-only scope and confirmed service limits; explicit :free support does not prove free availability or semantic quality."
     }
   ],
   "next_task_ids": [
