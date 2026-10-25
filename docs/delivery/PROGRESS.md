@@ -218,7 +218,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Next: Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval.
   - Branch/base: `feat/v02-review-evidence-20261018` / `e513237f5b66c0689fa870e0d82873d8b71e4d8a`.
   - Existing code: `evals/live_generation.py`, `evals/classification-cases.json`, `endstate/plan_review.py`, `eightball/v2/plan_review.py`, `web/v2/plan-review-view.js`, `evals/plan_review_bench.py`, `evals/PLAN-QUALITY-GATE.md`, `tests/test_plan_review.py`, `tests/browser_plan_review.py`, `evals/review_readiness.py`, `tests/test_review_readiness.py`, `docs/delivery/review/protocol-v2.template.json`, `docs/delivery/review/dataset-manifest.template.json`.
-  - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018` (registry below).
+  - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-REVIEW-REFRESH-RACE` (registry below).
   - Blocker: Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed.
 
 - [ ] **B02-12 Full twenty-step real-model V0.2 acceptance journey**
@@ -971,5 +971,11 @@ These references have specific scopes and may be historical. A reference to a de
 ### EV-EVENT-WORK
 
 - Kind: `controlled_durable_processing`.
-- Repository evidence: [docs/delivery/sessions/2026-10-25-endstate-processing.md](../../docs/delivery/sessions/2026-10-25-endstate-processing.md).
-- Result/scope: 18 focused inbox/lifecycle tests passed; cumulative validation pending. No worker daemon, model calls, external actions or case commits.
+- Repository evidence: [docs/evidence/endstate-processing-native-2026-10-25.json](../../docs/evidence/endstate-processing-native-2026-10-25.json).
+- Result/scope: 1309 source +1309 installed-engine +396 native browser checks passed; exact inspection valid and checkpoint CI green. Original failed Plan Review race retained and corrected with deterministic native coverage. No actual-model/independent/human acceptance.
+
+### EV-REVIEW-REFRESH-RACE
+
+- Kind: `native_regression_fix`.
+- Repository evidence: [docs/evidence/endstate-processing-native-2026-10-25.json](../../docs/evidence/endstate-processing-native-2026-10-25.json).
+- Result/scope: Retained local native failure; explicit stale-context recovery and deterministic in-flight revision-change coverage now pass.

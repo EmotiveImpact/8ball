@@ -4,6 +4,45 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Verify durable processing and corrected review recovery
+
+2026-10-25 · `local_unreleased`
+
+Record passing cumulative software evidence after retaining and fixing the observed Plan Review race.
+
+### Added
+
+- Source-bound passing receipt linked to the original failed run.
+
+### Changed
+
+- Canonical tracker and handoff record the next reviewed case-transaction boundary.
+
+### Verification
+
+- 1309 source and1309 installed-engine tests passed.
+- 396 native browser checks across11 suites passed.
+- Exact source/artifact inspection valid before receipt edits; both checkpoint CI workflows passed.
+
+### Limitations
+
+- No independent review or model/human acceptance.
+- Durable processing still requires actual transactional case integration.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Discarding stale data must also resolve pending user-interface states.
+- Risk: Intermittent refresh ordering can leave an inaccessible review despite green CI elsewhere.
+- Architecture: Bind completion/error handling to dialog ownership and revision; manual reopening only.
+- Roadmap decision: existing_task: preserve demonstrated failure and add deterministic native coverage.
+Registered discoveries: EM-102, EM-103.
+
+Roadmap items: `ES02-02`, `ES02-04`, `B02-11`.
+
+Evidence: [docs/evidence/endstate-processing-native-2026-10-25.json](docs/evidence/endstate-processing-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-processing.md](docs/delivery/sessions/2026-10-25-endstate-processing.md), [docs/evidence/endstate-processing-failed-2026-10-25.json](docs/evidence/endstate-processing-failed-2026-10-25.json).
+
 ## 0.2.0-alpha.8 · Resolve stale Plan Review loading after a case refresh
 
 2026-10-25 · `local_unreleased`

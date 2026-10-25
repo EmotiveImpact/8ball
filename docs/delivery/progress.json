@@ -21,12 +21,12 @@
     "source_merged_not_release_accepted": true,
     "current_sprint": {
       "branch": "feat/agency-authorisation-20261025",
-      "base_commit": "48e572e95be8b28d0b317d7bc8b3a18893a3ef76",
-      "tested_code_commit": "20400336bd5462733755001b42e991c05944e1d1",
+      "base_commit": "5f72a356790b0cd3f0a27e79ba1e9801f4a14937",
+      "tested_code_commit": "e95401aa289be03ab98810955e4fe02fdd8bbea2",
       "status_as_of": "2026-10-25",
       "merged": false,
-      "evidence": "docs/evidence/endstate-event-inbox-native-2026-10-25.json",
-      "verification": "1302 source /1302 installed-engine /394 native browser checks passed; checkpoint CI passed."
+      "evidence": "docs/evidence/endstate-processing-native-2026-10-25.json",
+      "verification": "1309 source /1309 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed."
     },
     "verified_sprint_history": [
       {
@@ -86,6 +86,15 @@
         "evidence": "docs/evidence/agency-api-overview-native-2026-10-25.json",
         "status_as_of": "2026-10-25",
         "merged": false
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "48e572e95be8b28d0b317d7bc8b3a18893a3ef76",
+        "tested_code_commit": "20400336bd5462733755001b42e991c05944e1d1",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-event-inbox-native-2026-10-25.json",
+        "verification": "1302 source /1302 installed-engine /394 native browser checks passed; checkpoint CI passed."
       }
     ],
     "provider_configuration_preparation": {
@@ -396,8 +405,13 @@
     },
     "EV-EVENT-WORK": {
       "kind": "controlled_durable_processing",
-      "path": "docs/delivery/sessions/2026-10-25-endstate-processing.md",
-      "result": "18 focused inbox/lifecycle tests passed; cumulative validation pending. No worker daemon, model calls, external actions or case commits."
+      "path": "docs/evidence/endstate-processing-native-2026-10-25.json",
+      "result": "1309 source +1309 installed-engine +396 native browser checks passed; exact inspection valid and checkpoint CI green. Original failed Plan Review race retained and corrected with deterministic native coverage. No actual-model/independent/human acceptance."
+    },
+    "EV-REVIEW-REFRESH-RACE": {
+      "kind": "native_regression_fix",
+      "path": "docs/evidence/endstate-processing-native-2026-10-25.json",
+      "result": "Retained local native failure; explicit stale-context recovery and deterministic in-flight revision-change coverage now pass."
     }
   },
   "milestones": [
@@ -926,7 +940,8 @@
         "EV-NATIVE-CLOSEOUT",
         "EV-PROVIDER-FAILURE-REVIEW",
         "EV-EVALUATION-READINESS",
-        "EV-REVIEW-EVIDENCE-20261018"
+        "EV-REVIEW-EVIDENCE-20261018",
+        "EV-REVIEW-REFRESH-RACE"
       ],
       "blockers": [
         "Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed."

@@ -1,3 +1,5 @@
+Latest verified ENDSTATE processing checkpoint: **1,309 source tests, 1,309 installed-engine regressions and 396 native browser checks passed**, with valid source inspection and green checkpoint CI. [Receipt](../evidence/endstate-processing-native-2026-10-25.json). Original failed Plan Review race is retained and fixed. Next: reviewed graph amendments committed atomically with current revision/permission checks and a durable consumption record. The full goal remains in progress.
+
 # Current ENDSTATE sprint: durable attempt lifecycle
 
 [Session and full emergence review](sessions/2026-10-25-endstate-processing.md). EventWork persists explicit scoped attempts, exclusive claims, bounded leases and terminal dispositions. Next implement reviewed consumption with actual transactional revision/permission checks and explicit worker/outbox integration. Both product statuses remain in PROGRESS.md; original V0.2 model/human and production gates remain open.

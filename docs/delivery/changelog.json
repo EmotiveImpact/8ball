@@ -3,6 +3,56 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-endstate-processing-verification",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Verify durable processing and corrected review recovery",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04",
+        "B02-11"
+      ],
+      "summary": "Record passing cumulative software evidence after retaining and fixing the observed Plan Review race.",
+      "added": [
+        "Source-bound passing receipt linked to the original failed run."
+      ],
+      "changed": [
+        "Canonical tracker and handoff record the next reviewed case-transaction boundary."
+      ],
+      "fixed": [],
+      "verification": [
+        "1309 source and1309 installed-engine tests passed.",
+        "396 native browser checks across11 suites passed.",
+        "Exact source/artifact inspection valid before receipt edits; both checkpoint CI workflows passed."
+      ],
+      "limitations": [
+        "No independent review or model/human acceptance.",
+        "Durable processing still requires actual transactional case integration."
+      ],
+      "evidence_paths": [
+        "docs/evidence/endstate-processing-native-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-processing.md",
+        "docs/evidence/endstate-processing-failed-2026-10-25.json"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Discarding stale data must also resolve pending user-interface states."
+        ],
+        "risks": [
+          "Intermittent refresh ordering can leave an inaccessible review despite green CI elsewhere."
+        ],
+        "architecture_implications": [
+          "Bind completion/error handling to dialog ownership and revision; manual reopening only."
+        ],
+        "roadmap_decision": "existing_task: preserve demonstrated failure and add deterministic native coverage.",
+        "insight_ids": [
+          "EM-102",
+          "EM-103"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-review-refresh-race",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",
