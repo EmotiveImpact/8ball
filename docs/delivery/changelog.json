@@ -3,6 +3,52 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-seven-lane-roadmap-partition",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8-roadmap-coordination",
+      "title": "Seven bounded roadmap ownership reservations",
+      "summary": "Partition existing requirements into seven disjoint engineering lanes on the requested inspected source base; no runtime code or product acceptance is delivered.",
+      "delivery": "pushed_unreleased",
+      "added": [
+        "Exact lane branches, requirements, ownership allowlists, current-authority router/service seam and reserved EM-113..252 discovery ranges; EM-253 records the coordination decision."
+      ],
+      "changed": [
+        "Canonical owner/branch/base/date and bounded next-action prefixes only; original task statuses, acceptance/required flags, evidence, dependencies and genuine blockers remain intact. Shared wiring and delivery-register integration stay serial and integration-owned."
+      ],
+      "fixed": [],
+      "verification": [
+        "Delivery, changelog and emergence validators passed against baca8ad9efa531e5f172058845852963d7d5234a; 67 tracking tests and 1356 full shell regressions passed. Python compilation, all 18 browser-module syntax checks and Git diff whitespace checks passed; prior task gates/history were preserved by explicit baseline comparison. Initial PATH-only Node failures and the corrected command are retained in the session receipt."
+      ],
+      "limitations": [
+        "Coordination only, not builder implementation, native/browser acceptance, actual inference, expert quality, production isolation, customer/legal acceptance, real pilot or release approval. Optional research/runtime and classifier work remains held; no PR/main/deployment changes."
+      ],
+      "task_ids": [
+        "DOC-03",
+        "DOC-06"
+      ],
+      "evidence_paths": [
+        "docs/delivery/ROADMAP-LANES.md",
+        "docs/delivery/progress.json",
+        "docs/delivery/sessions/2026-10-25-roadmap-partition.md",
+        "tests/test_delivery_tracking.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Existing ledger task paths share routers, authorisation, worker and delivery registers; task-ID assignment alone does not partition implementation or prevent discovery-ID collisions. A reproducible seven-lane plan needs disjoint owned paths, a current-authority service/registration seam, reserved EM ranges and serial integration of lane-local evidence fragments."
+        ],
+        "risks": [
+          "Task-path overlap, later source/evidence drift, parallel registry collisions and optional/professional scope overclaiming."
+        ],
+        "architecture_implications": [
+          "Use the real authenticated APIRouter registration seam with injected current-authority lane services; integration owns shared routers/state/nav/manifests and canonical delivery artifacts."
+        ],
+        "roadmap_decision": "decision_record for existing DOC-03/DOC-06 only; no new required task, implementation or acceptance promotion.",
+        "insight_ids": [
+          "EM-253"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-complete-result-retention",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",

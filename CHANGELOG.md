@@ -4,6 +4,42 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8-roadmap-coordination · Seven bounded roadmap ownership reservations
+
+2026-10-25 · `pushed_unreleased`
+
+Partition existing requirements into seven disjoint engineering lanes on the requested inspected source base; no runtime code or product acceptance is delivered.
+
+### Added
+
+- Exact lane branches, requirements, ownership allowlists, current-authority router/service seam and reserved EM-113..252 discovery ranges; EM-253 records the coordination decision.
+
+### Changed
+
+- Canonical owner/branch/base/date and bounded next-action prefixes only; original task statuses, acceptance/required flags, evidence, dependencies and genuine blockers remain intact. Shared wiring and delivery-register integration stay serial and integration-owned.
+
+### Verification
+
+- Delivery, changelog and emergence validators passed against baca8ad9efa531e5f172058845852963d7d5234a; 67 tracking tests and 1356 full shell regressions passed. Python compilation, all 18 browser-module syntax checks and Git diff whitespace checks passed; prior task gates/history were preserved by explicit baseline comparison. Initial PATH-only Node failures and the corrected command are retained in the session receipt.
+
+### Limitations
+
+- Coordination only, not builder implementation, native/browser acceptance, actual inference, expert quality, production isolation, customer/legal acceptance, real pilot or release approval. Optional research/runtime and classifier work remains held; no PR/main/deployment changes.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Existing ledger task paths share routers, authorisation, worker and delivery registers; task-ID assignment alone does not partition implementation or prevent discovery-ID collisions. A reproducible seven-lane plan needs disjoint owned paths, a current-authority service/registration seam, reserved EM ranges and serial integration of lane-local evidence fragments.
+- Risk: Task-path overlap, later source/evidence drift, parallel registry collisions and optional/professional scope overclaiming.
+- Architecture: Use the real authenticated APIRouter registration seam with injected current-authority lane services; integration owns shared routers/state/nav/manifests and canonical delivery artifacts.
+- Roadmap decision: decision_record for existing DOC-03/DOC-06 only; no new required task, implementation or acceptance promotion.
+Registered discoveries: EM-253.
+
+Roadmap items: `DOC-03`, `DOC-06`.
+
+Evidence: [docs/delivery/ROADMAP-LANES.md](docs/delivery/ROADMAP-LANES.md), [docs/delivery/progress.json](docs/delivery/progress.json), [docs/delivery/sessions/2026-10-25-roadmap-partition.md](docs/delivery/sessions/2026-10-25-roadmap-partition.md), [tests/test_delivery_tracking.py](tests/test_delivery_tracking.py).
+
 ## 0.2.0-alpha.8 · Retain complete structured processing output
 
 2026-10-25 · `local_unreleased`

@@ -1,3 +1,9 @@
+# Seven-lane coordination checkpoint, 25 October 2026
+
+The bounded plan branch is `devin/1792969169-roadmap-plan`, based on inspected `baca8ad9efa531e5f172058845852963d7d5234a`. Read [lane ownership and requirements](ROADMAP-LANES.md) before starting any of the seven reserved branches. Use the exact pushed plan commit supplied by the coordinator. Claims reserve ownership only: all original statuses/acceptance/required flags/evidence/blockers stay unchanged. EM-113..252 are builder reservations; EM-253 is the coordination decision. Common routers, state/services, navigation, manifests, acceptance runner and canonical delivery registers are integration-only; builders submit lane-local evidence/fragments. No optional implementation, actual inference, downloads, professional sign-off, real-client pilot, PR/main merge, release or deployment is authorised.
+
+This source baseline intentionally does not import the later agency documentation/evidence commit `2b1b465ebfa1b433c8f128b0478f6806dce9e2e7`; integration must reconcile it additively. Older paragraphs below are historical, not evidence that this plan implements features or passed native acceptance.
+
 # Current sprint: complete result retention; GitHub publication restored
 
 [Session](sessions/2026-10-25-complete-result-retention.md). Previous closeout `98ee073`, including screenshots and native evidence, is now pushed and confirmed remotely. Earlier publication-blocked text below is historical.

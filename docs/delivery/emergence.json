@@ -4019,6 +4019,37 @@
           "reason": "existing_task: consistent bounded retention without provider or semantic acceptance claims."
         }
       ]
+    },
+    {
+      "id": "EM-253",
+      "title": "Parallel task claims need explicit file and delivery-register ownership",
+      "first_seen": "2026-10-25",
+      "origin": "roadmap-partition-2026-10-25",
+      "evidence_level": "observed_in_build",
+      "observation": "Existing ledger task paths share routers, authorisation, worker and delivery registers; task-ID assignment alone does not partition implementation or prevent discovery-ID collisions. A reproducible seven-lane plan needs disjoint owned paths, a current-authority service/registration seam, reserved EM ranges and serial integration of lane-local evidence fragments.",
+      "product_implication": "Parallel builders can preserve the fixer app and exact acceptance gates only if shared wiring, optional holds and external/professional decisions are not mistaken for lane-owned implementation or passed acceptance.",
+      "evidence_paths": [
+        "docs/delivery/ROADMAP-LANES.md",
+        "docs/delivery/progress.json",
+        "eightball/api.py",
+        "eightball/v2/api.py",
+        "eightball/v2/event_api.py",
+        "docs/delivery/sessions/2026-10-25-roadmap-partition.md"
+      ],
+      "task_ids": [
+        "DOC-03",
+        "DOC-06"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "decision_record: owner requested bounded coordination, not implementation or a new backlog. Reserve EM-113..252 for builders; this coordination decision uses EM-253 outside those ranges. Preserve original task gates and optional holds; later upstream documentation/evidence needs additive integration, not attribution to this baseline. No product acceptance gate is linked or claimed."
+        }
+      ]
     }
   ]
 }

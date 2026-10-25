@@ -24,18 +24,18 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 ## Next work
 
-- **ES02-01: Normalised event and authority contract**. Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
-- **ES02-02: Durable ordered updates, idempotency and replay**. Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates.
-- **B03-01: Identity, organisations and matter-scoped authorisation**. Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
-- **B02-09: Reliable reviewed graph proposals for new situations**. Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
-- **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
-- **B02-11: Independent quality evaluation and production-model selection**. Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval.
-- **B02-12: Full twenty-step real-model V0.2 acceptance journey**. Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
-- **B02-15: Model progress/cancellation and accurate installation status**. Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
-- **B02-16: Complete accessibility and supported-environment validation**. Complete the recorded human accessibility and supported-platform review, not another UI feature. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
-- **B02-19: Black operator visual system and transparent intelligence controls**. Review the current black workspace without expanding scope; preserve passing native controls. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
-- **B02-20: Black relationship explorer with local focus, directed flow and records view**. Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
-- **B02-18: V0.2 acceptance and release decision**. Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
+- **ES02-01: Normalised event and authority contract**. Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
+- **ES02-02: Durable ordered updates, idempotency and replay**. Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates.
+- **B03-01: Identity, organisations and matter-scoped authorisation**. Coordination claim: identity; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
+- **B02-09: Reliable reviewed graph proposals for new situations**. Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
+- **B02-10: Robust source extraction, deadlines and entity reconciliation**. Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
+- **B02-11: Independent quality evaluation and production-model selection**. Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval.
+- **B02-12: Full twenty-step real-model V0.2 acceptance journey**. Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
+- **B02-15: Model progress/cancellation and accurate installation status**. Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
+- **B02-16: Complete accessibility and supported-environment validation**. Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Complete the recorded human accessibility and supported-platform review, not another UI feature. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
+- **B02-19: Black operator visual system and transparent intelligence controls**. Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Review the current black workspace without expanding scope; preserve passing native controls. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
+- **B02-20: Black relationship explorer with local focus, directed flow and records view**. Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
+- **B02-18: V0.2 acceptance and release decision**. Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
 
 ## Version summary
 
@@ -195,37 +195,37 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-APP`, `EV-UI` (registry below).
 
 - [ ] **B02-09 Reliable reviewed graph proposals for new situations**
-  - Status: `blocked`. Owner: Codex. Updated: 2026-10-18.
+  - Status: `blocked`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.
-  - Next: Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
-  - Branch/base: `feat/v02-review-evidence-20261018` / `12ffdadb2f094e8f31fbd60486b5f775894b32ec`.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`, `eightball/v2/compatible.py`, `evals/live_compatible.py`, `evals/live_huggingface.py`, `tests/test_hosted_eval_retention.py`, `docs/v2/ANTHROPIC-SETUP.md`.
   - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION` (registry below).
   - Blocker: Owner selected Anthropic, with prepared claude-sonnet-4-6 compatibility settings; account availability/pricing, active credentials/destination and real inference remain unverified. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, supply key securely and Save/Publish. Fictional fixtures up to US$5 remain authorised. Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate.
 
 - [ ] **B02-10 Robust source extraction, deadlines and entity reconciliation**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-15.
+  - Status: `partial`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Reviewed multi-source extraction preserves negation, uncertainty, identity and quoted support; date changes become explicit reviewed scheduling proposals.
-  - Next: Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
-  - Branch/base: `fix/v02-provider-failure-evidence-20261015` / `45f8794733df9635d8daf5146a37fb94af9e8e90`.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Existing code: `eightball/v2/intelligence.py`, `endstate/time_review.py`, `eightball/v2/grounding.py`, `web/v2/grounding-view.js`, `tests/test_time_review.py`, `tests/test_grounding.py`, `tests/browser_grounding.py`.
   - Evidence: `EV-QWEN`, `EV-REMAINING`, `EV-SOURCE-DESK-LOCAL`, `EV-SOURCE-CLARITY-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW` (registry below).
   - Blocker: Independent multi-source identity/date usefulness review remains outstanding. No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed.
 
 - [ ] **B02-11 Independent quality evaluation and production-model selection**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-18.
+  - Status: `partial`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Expert-labelled held-out data and predeclared acceptance thresholds measure semantic errors, omissions, corrections, latency and abstention.
-  - Next: Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval.
-  - Branch/base: `feat/v02-review-evidence-20261018` / `e513237f5b66c0689fa870e0d82873d8b71e4d8a`.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Existing code: `evals/live_generation.py`, `evals/classification-cases.json`, `endstate/plan_review.py`, `eightball/v2/plan_review.py`, `web/v2/plan-review-view.js`, `evals/plan_review_bench.py`, `evals/PLAN-QUALITY-GATE.md`, `tests/test_plan_review.py`, `tests/browser_plan_review.py`, `evals/review_readiness.py`, `tests/test_review_readiness.py`, `docs/delivery/review/protocol-v2.template.json`, `docs/delivery/review/dataset-manifest.template.json`.
   - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-REVIEW-REFRESH-RACE` (registry below).
   - Blocker: Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed.
 
 - [ ] **B02-12 Full twenty-step real-model V0.2 acceptance journey**
-  - Status: `blocked`. Owner: Codex. Updated: 2026-10-18.
+  - Status: `blocked`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Blank case -> real extraction -> mixed human review -> valid graph -> distinct routes -> new evidence/replan -> isolated refusal -> approval/completion -> reload/export, all native.
-  - Next: Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
-  - Branch/base: `feat/v02-review-evidence-20261018` / `e513237f5b66c0689fa870e0d82873d8b71e4d8a`.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B02-09`, `B02-10`, `B02-11`.
   - Existing code: `tests/browser_v2.py`, `evals/full_journey.py`, `scripts/acceptance.py`, `.github/workflows/provider-journey.yml`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`.
   - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-OCT25-INTEGRATION` (registry below).
@@ -240,29 +240,29 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-REMAINING`, `EV-PLAN-STUDIO-LOCAL`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
 
 - [ ] **B02-14 Source chunking, duplication and reviewer-safe object reconciliation**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-15.
+  - Status: `partial`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Longer sources retain exact provenance; duplicates and entity merges cannot rewrite observed meanings or lose attribution.
-  - Next: Complete professional source/reconciliation review; keep native original/excerpt/export and request-order regressions.
-  - Branch/base: `fix/v02-provider-failure-evidence-20261015` / `45f8794733df9635d8daf5146a37fb94af9e8e90`.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Complete professional source/reconciliation review; keep native original/excerpt/export and request-order regressions.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Existing code: `eightball/v2/source_contracts.py`, `eightball/v2/source_desk.py`, `eightball/v2/request_limits.py`, `web/v2/source-model.js`, `web/v2/source-view.js`, `tests/test_source_desk.py`, `tests/test_source_api.py`, `tests/browser_sources.py`, `endstate/time_review.py`, `eightball/v2/grounding.py`, `web/v2/grounding-view.js`, `tests/test_time_review.py`, `tests/test_grounding.py`, `tests/browser_grounding.py`, `tests/test_source_view_races.py`.
   - Evidence: `EV-REMAINING`, `EV-SOURCE-DESK-LOCAL`, `EV-SOURCE-CLARITY-LOCAL`, `EV-SOURCE-SEARCH-RACE`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW` (registry below).
   - Blocker: Independent multi-source identity/date usefulness review remains outstanding. No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed.
 
 - [ ] **B02-15 Model progress/cancellation and accurate installation status**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-18.
+  - Status: `partial`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: The UI reports actual runtime/weights/credential state and cancels work without stale commits. No silent large model download.
-  - Next: Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
-  - Branch/base: `feat/v02-review-evidence-20261018` / `12ffdadb2f094e8f31fbd60486b5f775894b32ec`.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES03-04`.
   - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`, `eightball/v2/compatible.py`, `tests/test_compatible_integration.py`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`.
   - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION` (registry below).
   - Blocker: Lifecycle behaviour with the selected real inference provider remains unverified.
 
 - [ ] **B02-16 Complete accessibility and supported-environment validation**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-15.
+  - Status: `partial`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Keyboard, screen reader, empty/error/loading states and supported browsers/platform startup paths pass an explicit review.
-  - Next: Complete the recorded human accessibility and supported-platform review, not another UI feature. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
-  - Branch/base: `fix/v02-provider-failure-evidence-20261015` / `45f8794733df9635d8daf5146a37fb94af9e8e90`.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Complete the recorded human accessibility and supported-platform review, not another UI feature. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Existing code: `tests/browser_accessibility.py`, `web/v2/ui.js`, `web/v2/app.js`, `web/v2/style.css`, `scripts/acceptance.py`.
   - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-SOURCE-SEARCH-RACE`, `EV-NATIVE-CLOSEOUT`, `EV-GRAPH-KEYBOARD-FOCUS`, `EV-PROVIDER-FAILURE-REVIEW` (registry below).
   - Blocker: Human screen-reader and supported-browser/OS review remains outstanding; Linux/Chromium native software tests passed.
@@ -277,48 +277,49 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-KERNEL` (registry below).
 
 - [ ] **B02-18 V0.2 acceptance and release decision**
-  - Status: `blocked`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `blocked`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: All required V0.2 subparts have scoped evidence; reviews/gates pass; approval to integrate/release is recorded separately.
-  - Next: Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B02-01`, `B02-02`, `B02-03`, `B02-04`, `B02-05`, `B02-06`, `B02-07`, `B02-08`, `B02-09`, `B02-10`, `B02-11`, `B02-12`, `B02-13`, `B02-14`, `B02-15`, `B02-16`, `B02-17`, `B02-19`, `B02-20`.
   - Evidence: `EV-QWEN`, `EV-MAIN-CONSOLIDATION`, `EV-OCT25-INTEGRATION` (registry below).
   - Blocker: Real-model journey and developer-quality work remain unaccepted.
 
 - [ ] **B02-19 Black operator visual system and transparent intelligence controls**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
+  - Status: `partial`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Black/graphite design, legible status labels, exact-target review, provider controls and mobile lock work across the existing native desktop/mobile workflow without losing evidence/approval functions.
-  - Next: Review the current black workspace without expanding scope; preserve passing native controls. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
-  - Branch/base: `feat/agency-authorisation-20261025` / `75fb95fd5c15f0f0d0b040d5b679de72f19e9ee6`.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Review the current black workspace without expanding scope; preserve passing native controls. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B02-07`.
   - Existing code: `web/v2/style.css`, `web/v2/views.js`, `web/v2/forms.js`, `tests/browser_development.py`.
   - Evidence: `EV-HF-BLACK-LOCAL`, `EV-GRAPH-EXPLORER-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-AGENCY-API` (registry below).
   - Blocker: Owner visual review and broader human accessibility acceptance remain outstanding.
 
 - [ ] **B02-20 Black relationship explorer with local focus, directed flow and records view**
-  - Status: `implemented`. Owner: Codex. Updated: 2026-10-15.
+  - Status: `implemented`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Explore actual case records using Connections, Outcome flow and Records; inspect source/history and exact logic; keyboard/mobile controls and view-only audit invariants pass, including native browser validation.
-  - Next: Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
-  - Branch/base: `fix/v02-provider-failure-evidence-20261015` / `45f8794733df9635d8daf5146a37fb94af9e8e90`.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B02-04`, `B02-07`, `B02-19`.
   - Existing code: `web/v2/graph-model.js`, `web/v2/graph-view.js`, `web/v2/views.js`, `web/v2/app.js`, `web/v2/style.css`, `tests/browser_v2.py`, `tests/browser_graph.py`, `tests/test_graph_explorer.py`, `scripts/design_preview.py`.
   - Evidence: `EV-GRAPH-EXPLORER-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-GRAPH-KEYBOARD-FOCUS`, `EV-PROVIDER-FAILURE-REVIEW` (registry below).
   - Blocker: Representative dense-case operator usability and broader accessibility review remain outstanding.
 
 - [ ] **B02-21 Evidence-linked Emergent Insights and review workspace** (optional, not a version gate)
-  - Status: `implemented`. Owner: ChatGPT. Updated: 2026-09-26.
+  - Status: `implemented`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Current/historical findings, explicit review and hypotheses, safe question promotion, stale-context handling, reload/export and native desktop/mobile acceptance without changing factual state.
-  - Next: Perform owner/fixer insight review without changing evidence/authority semantics.
-  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
+  - Next: Coordination claim: intelligence; optional_hold_no_implementation. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Perform owner/fixer insight review without changing evidence/authority semantics.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES02-05`, `B02-03`.
   - Existing code: `eightball/v2/insights.py`, `web/v2/insights-view.js`.
   - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
   - Blocker: Operator acceptance remains outstanding; the complete native insight journey now passes.
 
 - [ ] **B02-22 Operator usefulness and full Emergent Insights acceptance** (optional, not a version gate)
-  - Status: `not_started`. Owner: ChatGPT. Updated: 2026-09-24.
+  - Status: `not_started`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Owner/operator review of false positives, missed patterns, duplicate noise, thresholds and the complete native review journey before the feature is accepted.
-  - Next: Review false positives, missed findings, review burden and source interpretation with the owner/fixer; do not claim usefulness from code tests alone.
-  - Branch/base: `feat/emergent-insights-local` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Next: Coordination claim: intelligence; optional_hold_no_implementation. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Review false positives, missed findings, review burden and source interpretation with the owner/fixer; do not claim usefulness from code tests alone.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B02-21`.
   - Existing code: `docs/v2/EMERGENT-INSIGHTS.md`.
 
@@ -326,44 +327,49 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 ## 8BALL 0.3: Secure agency pilot
 
 - [ ] **B03-01 Identity, organisations and matter-scoped authorisation**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
+  - Status: `partial`. Owner: Devin / roadmap-identity. Updated: 2026-10-25.
   - Acceptance: Authenticated identities and cross-tenant/matter denial tests cover read, write, export, search and model inference.
-  - Next: Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
-  - Branch/base: `feat/agency-authorisation-20261025` / `825c8c3969f6cf723a188cc6ae16094aa15c9e7e`.
+  - Next: Coordination claim: identity; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
+  - Branch/base: `devin/1792969169-roadmap-identity` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Existing code: `eightball/authorisation.py`, `tests/test_authorisation.py`, `eightball/agency_access.py`, `tests/test_agency_access.py`, `eightball/v2/event_api.py`, `web/v2/event-review.js`, `tests/browser_event_review.py`.
   - Evidence: `EV-SECURITY`, `EV-AGENCY-POLICY`, `EV-AGENCY-API`, `EV-EVENT-API`, `EV-EVENT-REVIEW-UI` (registry below).
 
 - [ ] **B03-02 Encrypted evidence vault and retention controls**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `not_started`. Owner: Devin / roadmap-vault. Updated: 2026-10-25.
   - Acceptance: Immutable originals, hashes, upload quarantine/scanning, encryption, retention/hold/deletion and audited access are tested.
-  - Next: Implement without weakening source provenance.
+  - Next: Coordination claim: vault; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Implement without weakening source provenance.
+  - Branch/base: `devin/1792969169-roadmap-vault` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B03-01`.
   - Evidence: `EV-SECURITY` (registry below).
 
 - [ ] **B03-03 Scoped specialist collaboration and real client portal**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `not_started`. Owner: Devin / roadmap-collaboration. Updated: 2026-10-25.
   - Acceptance: Experts receive revocable matter/object grants; clients receive separately reviewed projections, never internal records by default.
-  - Next: Build authenticated views rather than relabelling the existing preview.
+  - Next: Coordination claim: collaboration; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Build authenticated views rather than relabelling the existing preview.
+  - Branch/base: `devin/1792969169-roadmap-collaboration` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B03-01`, `B03-02`.
   - Evidence: `EV-SECURITY` (registry below).
 
 - [ ] **B03-04 Authorised ingestion, event handling and notifications**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `not_started`. Owner: Devin / roadmap-events. Updated: 2026-10-25.
   - Acceptance: Actual source connectors, durable updates and notifications respect permissions, source review, ordering and retry limits.
-  - Next: Build one authorised connector through ENDSTATE event contracts.
+  - Next: Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Build one authorised connector through ENDSTATE event contracts.
+  - Branch/base: `devin/1792969169-roadmap-events` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B03-01`, `ES02-01`, `ES02-02`.
   - Evidence: `EV-SECURITY` (registry below).
 
 - [ ] **B03-05 Independent audit checkpoints, recovery and operational monitoring**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `not_started`. Owner: Devin / roadmap-operations. Updated: 2026-10-25.
   - Acceptance: Restore rehearsal, audit anchoring, revocation and operational incident tests pass without sensitive log leakage.
-  - Next: Set measurable service/recovery targets and test them.
+  - Next: Coordination claim: operations; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Set measurable service/recovery targets and test them.
+  - Branch/base: `devin/1792969169-roadmap-operations` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Evidence: `EV-SECURITY` (registry below).
 
 - [ ] **B03-06 Limited qualified-fixer pilot acceptance**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `not_started`. Owner: Devin / roadmap-operations. Updated: 2026-10-25.
   - Acceptance: Authorised pilot users validate usefulness, safety, corrections and confidentiality; critical findings closed before wider release.
-  - Next: Recruit/review pilot criteria only after data and access gates pass.
+  - Next: Coordination claim: operations; fictional_pilot_tooling_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Recruit/review pilot criteria only after data and access gates pass.
+  - Branch/base: `devin/1792969169-roadmap-operations` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B02-18`, `B03-01`, `B03-02`, `B03-03`, `B03-04`, `B03-05`.
 
 - [ ] **B03-07 Client mandate and human-selected course workflow** (optional, not a version gate)
@@ -380,43 +386,49 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 ## 8BALL 0.4: Professionally reviewed resolution intelligence
 
 - [ ] **B04-01 Professionally reviewed fixer and crisis playbooks**
-  - Status: `partial`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Specialists approve versioned patterns, assumptions, authority and confirmation criteria; examples are not presented as proven solutions.
-  - Next: Review existing starters with qualified operators.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Review existing starters with qualified operators.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Existing code: `eightball/v2/playbooks.py`.
   - Evidence: `EV-REMAINING` (registry below).
 
 - [ ] **B04-02 Governed precedent retrieval**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `not_started`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Permissioned, source-linked precedent is case/matter scoped; access revocation and leakage tests pass. No automatic training.
-  - Next: Agree governance and retention before indexing previous cases.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Agree governance and retention before indexing previous cases.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B03-01`, `B03-02`.
 
 - [ ] **B04-03 Measured operator benefit from richer resolution intelligence**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `not_started`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Held-out/pilot evidence shows useful questions and plans without unsupported causal or success-probability claims.
-  - Next: Benchmark against the accepted baseline with real professional review.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Benchmark against the accepted baseline with real professional review.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B03-06`, `B04-01`, `B04-02`.
 
 - [ ] **B04-04 Permissioned correction replay and operator-value evaluation** (optional, not a version gate)
-  - Status: `deferred`. Owner: unassigned. Updated: 2026-09-24.
+  - Status: `deferred`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: An approved evaluation protocol measures the cost and benefit of suggestions/repairs on representative cases. Corrections retain provenance, access and retention limits; no cross-client retrieval or model training occurs without separate permission.
-  - Next: Retain as an owner-review candidate. Define metrics and lawful dataset handling before collecting additional client information; no measured benefit is claimed.
+  - Next: Coordination claim: intelligence; optional_hold_no_implementation. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Retain as an owner-review candidate. Define metrics and lawful dataset handling before collecting additional client information; no measured benefit is claimed.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B03-01`, `B02-11`.
 
 
 ## 8BALL 1.0: Supported fixer product
 
 - [ ] **B10-01 Commercial onboarding, support and launch readiness**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `not_started`. Owner: Devin / roadmap-operations. Updated: 2026-10-25.
   - Acceptance: Customer onboarding, support, service terms, brand/licence clearance and operating ownership are ready for the accepted scope.
-  - Next: Define commercial acceptance with the product owner; no inferred public release.
+  - Next: Coordination claim: operations; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Define commercial acceptance with the product owner; no inferred public release.
+  - Branch/base: `devin/1792969169-roadmap-operations` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B03-06`.
 
 - [ ] **B10-02 8BALL V1 fixer production release**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `not_started`. Owner: Devin / roadmap-operations. Updated: 2026-10-25.
   - Acceptance: All advertised capabilities, security, accessibility, recovery, model policy and customer acceptance are evidenced for supported environments.
-  - Next: Record explicit release and deployment decisions after gates.
+  - Next: Coordination claim: operations; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Record explicit release and deployment decisions after gates.
+  - Branch/base: `devin/1792969169-roadmap-operations` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B10-01`, `B04-03`.
 
 
@@ -470,37 +482,37 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 ## ENDSTATE 0.2: Event-driven replanning
 
 - [ ] **ES02-01 Normalised event and authority contract**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
+  - Status: `partial`. Owner: Devin / roadmap-events. Updated: 2026-10-25.
   - Acceptance: Events carry source, version, occurrence/receipt time, matter scope and review status; incoming text never gets command authority.
-  - Next: Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
-  - Branch/base: `feat/agency-authorisation-20261025` / `48e572e95be8b28d0b317d7bc8b3a18893a3ef76`.
+  - Next: Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
+  - Branch/base: `devin/1792969169-roadmap-events` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES01-01`.
   - Existing code: `endstate/events.py`, `eightball/event_inbox.py`, `tests/test_event_inbox.py`.
   - Evidence: `EV-EVENT-INBOX` (registry below).
 
 - [ ] **ES02-02 Durable ordered updates, idempotency and replay**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
+  - Status: `partial`. Owner: Devin / roadmap-events. Updated: 2026-10-25.
   - Acceptance: Duplicate, delayed, reordered and retried events cannot corrupt state or revive expired permissions.
-  - Next: Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates.
-  - Branch/base: `feat/agency-authorisation-20261025` / `98ee073a1c5f25658aab915183c696c8b4099985`.
+  - Next: Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates.
+  - Branch/base: `devin/1792969169-roadmap-events` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES02-01`.
   - Existing code: `endstate/events.py`, `eightball/event_inbox.py`, `tests/test_event_inbox.py`, `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_outbox.py`.
   - Evidence: `EV-EVENT-INBOX`, `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-CASE-BINDING-GAP`, `EV-EVENT-RESULT-SIZE`, `EV-EVENT-RESULT-RETENTION` (registry below).
 
 - [ ] **ES02-03 Reviewed graph amendments and affected-route explanations**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
+  - Status: `partial`. Owner: Devin / roadmap-events. Updated: 2026-10-25.
   - Acceptance: New information can propose a graph/dependency change, but cannot remove restrictions until reviewed at the correct revision.
-  - Next: Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
-  - Branch/base: `feat/agency-authorisation-20261025` / `825c8c3969f6cf723a188cc6ae16094aa15c9e7e`.
+  - Next: Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
+  - Branch/base: `devin/1792969169-roadmap-events` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES02-01`, `ES01-02`.
   - Existing code: `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_api.py`, `tests/test_agency_access.py`, `web/v2/event-review.js`, `tests/browser_event_review.py`.
   - Evidence: `EV-EVENT-CONSUMPTION`, `EV-EVENT-API`, `EV-EVENT-CASE-BINDING-GAP`, `EV-EVENT-REVIEW-UI`, `EV-EVENT-REVIEW-CSP-FAILURE` (registry below).
 
 - [ ] **ES02-04 Freshness, cancellation and performance evidence**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
+  - Status: `partial`. Owner: Devin / roadmap-events. Updated: 2026-10-25.
   - Acceptance: Measured latencies include ingestion, inference and review; incremental replan results match full recomputation; cancelled/stale work cannot commit.
-  - Next: Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates.
-  - Branch/base: `feat/agency-authorisation-20261025` / `98ee073a1c5f25658aab915183c696c8b4099985`.
+  - Next: Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates.
+  - Branch/base: `devin/1792969169-roadmap-events` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES02-02`, `ES02-03`.
   - Existing code: `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_outbox.py`, `eightball/v2/event_api.py`, `tests/test_agency_access.py`, `web/v2/event-review.js`, `tests/browser_event_review.py`.
   - Evidence: `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-API`, `EV-EVENT-REVIEW-UI`, `EV-EVENT-RESULT-SIZE`, `EV-EVENT-RESULT-RETENTION` (registry below).
@@ -528,43 +540,45 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 ## ENDSTATE 0.3: Evaluated intelligence compilation
 
 - [ ] **ES03-01 Provider-independent reviewed outcome compiler**
-  - Status: `partial`. Owner: ChatGPT. Updated: 2026-10-15.
+  - Status: `partial`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Source interpretation, typed graph drafting and deterministic validation are clean interchangeable interfaces outside the product layer.
-  - Next: Validate the target-aware compiler on real providers without weakening acceptance; retain independent semantic review. This local change does not complete the compiler quality gate.
-  - Branch/base: `work/hf-black-drafting` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Validate the target-aware compiler on real providers without weakening acceptance; retain independent semantic review. This local change does not complete the compiler quality gate.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES01-01`.
   - Existing code: `eightball/v2/intelligence.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`.
   - Evidence: `EV-APP`, `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-GENERATION-ROLE-CONTRACT` (registry below).
 
 - [ ] **ES03-02 Shared real-model semantic acceptance**
-  - Status: `blocked`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `blocked`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Use B02-09/B02-11/B02-12 evidence for a valid, useful source-to-plan route, not just JSON or an HTTP response.
-  - Next: Resolve the 8BALL gate once and link the same evidence here.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Resolve the 8BALL gate once and link the same evidence here.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B02-09`, `B02-11`, `B02-12`.
   - Evidence: `EV-QWEN` (registry below).
   - Blocker: Failed real graph generation; no independent quality approval.
 
 - [ ] **ES03-03 Optional Jev live judgement integration** (optional, not a version gate)
-  - Status: `blocked`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `blocked`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: An authorised real TypeSafe key exercises bounded classifications; permission, output and quality checks are recorded with secrets excluded.
-  - Next: Configure through a secure runtime secret mechanism only when authorised.
+  - Next: Coordination claim: intelligence; optional_hold_no_implementation. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Configure through a secure runtime secret mechanism only when authorised.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Existing code: `eightball/providers.py`.
   - Evidence: `EV-QWEN` (registry below).
   - Blocker: No authorised TypeSafe credentials supplied for live evaluation.
 
 - [ ] **ES03-04 Local-model installation and live provider status**
-  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-23.
+  - Status: `partial`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Runtime, selected weights, version and connection status are actually detected; downloads are explicit and user-approved.
-  - Next: Retain truthful runtime/configuration status; complete setup/cancellation and actual-provider verification separately.
-  - Branch/base: `work/hf-black-drafting` / `824ca6421ff3100e1af596347f2d1247dde8f8dc`.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Retain truthful runtime/configuration status; complete setup/cancellation and actual-provider verification separately.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Existing code: `eightball/v2/runtime_status.py`, `eightball/v2/hosted.py`.
   - Evidence: `EV-HF-BLACK-LOCAL` (registry below).
 
 - [ ] **ES03-05 Failure handling, model trace and governed provider selection**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-18.
+  - Status: `partial`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Provider replacement, refusal, timeout, malformed output, prompt injection and trace retention satisfy shared gates with measured quality.
-  - Next: Retain new strict API transport traces and controlled failure evidence; evaluate the selected actual model and independent source/plan quality before closing the broader gate.
-  - Branch/base: `feat/v02-review-evidence-20261018` / `12ffdadb2f094e8f31fbd60486b5f775894b32ec`.
+  - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Retain new strict API transport traces and controlled failure evidence; evaluate the selected actual model and independent source/plan quality before closing the broader gate.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Existing code: `eightball/v2/intelligence.py`, `eightball/v2/store.py`.
   - Evidence: `EV-APP`, `EV-QWEN`, `EV-CLASSIFIER`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-ANTHROPIC-SETUP` (registry below).
 
@@ -578,19 +592,20 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-HF-BLACK-LOCAL` (registry below).
 
 - [ ] **ES03-07 Actual hosted-model comparison on preserved fixtures** (optional, not a version gate)
-  - Status: `blocked`. Owner: Codex. Updated: 2026-10-16.
+  - Status: `blocked`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Authorised real HF requests record exact selected model/provider, outputs, same-fixture structural gate and human semantic review. No automatic or fictitious success.
-  - Next: After explicit configuration, run the manual hosted harness without changing the original four inputs; then use independent labelled cases before model selection.
-  - Branch/base: `feat/v02-evaluation-readiness-20261016` / `0fed04b5e299f4a2e53050456559133c1231b088`.
+  - Next: Coordination claim: intelligence; optional_hold_no_implementation. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): After explicit configuration, run the manual hosted harness without changing the original four inputs; then use independent labelled cases before model selection.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES03-06`.
   - Existing code: `evals/live_huggingface.py`, `evals/generation-cases.json`.
   - Evidence: `EV-HF-BLACK-LOCAL`, `EV-EVALUATION-READINESS` (registry below).
   - Blocker: No authorised HF token/model/provider configured; no real hosted inference performed.
 
 - [ ] **ES03-08 Recover and reproduce reported human draft-repair implementation** (optional, not a version gate)
-  - Status: `blocked`. Owner: unassigned. Updated: 2026-09-24.
+  - Status: `blocked`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-25.
   - Acceptance: Recovered or rebuilt exact source preserves the original failure, human edits, source/base revision and separate pending-proposal review; reproduction, stale-state denial and native interaction pass. Assisted repair never satisfies the unassisted model gate.
-  - Next: Recover the exact later source/package or explicitly rebuild the bounded repair on the last verified source. Reproduce its actual tests before marking implemented; never relabel alpha.7 as the reported repair build.
+  - Next: Coordination claim: intelligence; optional_hold_no_implementation. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Recover the exact later source/package or explicitly rebuild the bounded repair on the last verified source. Reproduce its actual tests before marking implemented; never relabel alpha.7 as the reported repair build.
+  - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES03-01`, `B02-02`.
   - Evidence: `EV-DRAFT-RECOVERY-GAP` (registry below).
   - Blocker: The latest supplied repair handoff explicitly reports that no completed working tree was found. Only verified alpha.7 source was recovered in this review.
@@ -608,42 +623,48 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 ## ENDSTATE 0.4: Domain packs and integration interfaces
 
 - [ ] **ES04-01 Versioned domain-pack contract**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `not_started`. Owner: Devin / roadmap-domain-packs. Updated: 2026-10-25.
   - Acceptance: Domain packs supply vocabulary, object mappings, action catalogues, policies, confirmation rules, prompts and integrations without core forks.
-  - Next: Derive the contract from 8BALL and adjacent fixtures.
+  - Next: Coordination claim: domain-packs; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Derive the contract from 8BALL and adjacent fixtures.
+  - Branch/base: `devin/1792969169-roadmap-domain-packs` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES01-04`.
 
 - [ ] **ES04-02 8BALL domain pack on ENDSTATE**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `not_started`. Owner: Devin / roadmap-domain-packs. Updated: 2026-10-25.
   - Acceptance: Fixer terminology/playbooks/experience are product-owned and use the shared contracts; existing routes/data remain compatible.
-  - Next: Separate domain responsibilities only where real code supports the boundary.
+  - Next: Coordination claim: domain-packs; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Separate domain responsibilities only where real code supports the boundary.
+  - Branch/base: `devin/1792969169-roadmap-domain-packs` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES04-01`, `B02-17`.
 
 - [ ] **ES04-03 Adjacent-domain proof and commercial-lane gate**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `not_started`. Owner: Devin / roadmap-domain-packs. Updated: 2026-10-25.
   - Acceptance: Sales/support examples run on the same engine with their own evaluation/permissions; new product launches need explicit approval.
-  - Next: Demonstrate reuse before considering sales, service or social-client products.
+  - Next: Coordination claim: domain-packs; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Demonstrate reuse before considering sales, service or social-client products.
+  - Branch/base: `devin/1792969169-roadmap-domain-packs` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES04-01`.
 
 - [ ] **ES04-04 Decide and validate distribution interface**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `not_started`. Owner: Devin / roadmap-domain-packs. Updated: 2026-10-25.
   - Acceptance: SDK/API/MCP options have a justified scope, auth/version contracts and consumer tests; do not declare all three products shipped.
-  - Next: Choose the smallest actual integration need with the owner.
+  - Next: Coordination claim: domain-packs; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Choose the smallest actual integration need with the owner.
+  - Branch/base: `devin/1792969169-roadmap-domain-packs` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES04-02`, `ES04-03`.
 
 
 ## ENDSTATE 1.0: Supported reusable engine
 
 - [ ] **ES10-01 Compatibility, performance, licensing and support policy**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `not_started`. Owner: Devin / roadmap-domain-packs. Updated: 2026-10-25.
   - Acceptance: Supported engine consumers, migrations, limits, licences and operational ownership are documented and exercised.
-  - Next: Validate against real product/consumer requirements.
+  - Next: Coordination claim: domain-packs; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Validate against real product/consumer requirements.
+  - Branch/base: `devin/1792969169-roadmap-domain-packs` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES04-04`.
 
 - [ ] **ES10-02 ENDSTATE V1 release gate**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `not_started`. Owner: Devin / roadmap-domain-packs. Updated: 2026-10-25.
   - Acceptance: Reusable contracts and quality/support promises have evidence; independent release approval is recorded.
-  - Next: Do not block accepted 8BALL sales solely on a standalone-engine release.
+  - Next: Coordination claim: domain-packs; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Do not block accepted 8BALL sales solely on a standalone-engine release.
+  - Branch/base: `devin/1792969169-roadmap-domain-packs` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES10-01`, `ES03-02`, `ES02-04`.
 
 ## Evidence registry

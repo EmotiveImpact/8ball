@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **112 recorded discoveries.**
+Last review: 2026-10-25. **113 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -2039,3 +2039,20 @@ Character count and UTF-8 byte count differ for multilingual text. A character-o
 **Decision history:**
 
 - 2026-10-25 · adopted · Codex: existing_task: consistent bounded retention without provider or semantic acceptance claims.
+
+### [ ] EM-253: Parallel task claims need explicit file and delivery-register ownership
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** roadmap-partition-2026-10-25.
+
+Existing ledger task paths share routers, authorisation, worker and delivery registers; task-ID assignment alone does not partition implementation or prevent discovery-ID collisions. A reproducible seven-lane plan needs disjoint owned paths, a current-authority service/registration seam, reserved EM ranges and serial integration of lane-local evidence fragments.
+
+**Product implication:** Parallel builders can preserve the fixer app and exact acceptance gates only if shared wiring, optional holds and external/professional decisions are not mistaken for lane-owned implementation or passed acceptance.
+
+**Roadmap links:** `DOC-03` (verified), `DOC-06` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/ROADMAP-LANES.md`, `docs/delivery/progress.json`, `eightball/api.py`, `eightball/v2/api.py`, `eightball/v2/event_api.py`, `docs/delivery/sessions/2026-10-25-roadmap-partition.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin: decision_record: owner requested bounded coordination, not implementation or a new backlog. Reserve EM-113..252 for builders; this coordination decision uses EM-253 outside those ranges. Preserve original task gates and optional holds; later upstream documentation/evidence needs additive integration, not attribution to this baseline. No product acceptance gate is linked or claimed.
