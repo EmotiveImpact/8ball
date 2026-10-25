@@ -57,6 +57,20 @@
       "evidence_paths": ["web/v2/collaboration-view.js", "docs/delivery/lane-reports/collaboration.md"],
       "owner_review": "pending",
       "history": [{"date": "2026-10-25", "decision": "candidate", "by": "Devin engineering proposal", "reason": "Retain for owner/usability review; no participant study, native new-flow review or new mandatory roadmap task is authorized or claimed."}]
+    },
+    {
+      "id": "EM-177",
+      "title": "Checkout tests alone do not prove installed-kernel test portability",
+      "origin": "Collaboration isolated ENDSTATE wheel regression failure and repair",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "1393 checkout tests passed while two collaboration tests could not collect under the installed-kernel runner's isolated importlib mode because sibling fixture imports were unqualified. Package-qualified test imports then passed 37 focused tests in both modes and 1393 installed-wheel regressions.",
+      "product_implication": "Preserve installed-package verification alongside checkout tests for 8BALL/ENDSTATE work; distinguish a test portability repair from a kernel defect or broad acceptance. Keep the failed source-bound receipt rather than replacing it with later totals.",
+      "task_ids": ["B03-03"],
+      "acceptance_task_ids": ["B03-03"],
+      "evidence_paths": ["tests/test_collaboration_api.py", "tests/test_projection.py", "docs/delivery/lane-reports/collaboration.md"],
+      "owner_review": "pending",
+      "history": [{"date": "2026-10-25", "decision": "adopted", "by": "Devin engineering proposal", "reason": "Existing-task verification refinement, corrected within owned tests and proven by final offline wheel/native runner; no new required scope, production/platform portability or B03 acceptance claim."}]
     }
   ]
 }

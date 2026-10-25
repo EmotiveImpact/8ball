@@ -65,6 +65,11 @@ I/O, or open another database as a substitute:
    Generic READ/WRITE alone must not mean disclosure review, role management or
    client access. A collaboration grant supplements current host policy; it is
    not a new bearer or a grant of broad agency access.
+   Freshly reauthenticated request identity must equal the actor supplied to
+   this policy throughout the collaboration transaction; a replacement with
+   equally sufficient permissions still denies. `CurrentAuthority.transaction`
+   pins its own principal; when using only `require(..., db=db)`, preserve the
+   same actor-equality check in the host adapter, not just its permission result.
 2. `CaseObjects.binding(db, case_id, object_id|None) -> Binding`: server-owned
    organisation/matter/object binding, current case/object revision and exact
    referenced immutable source versions/hashes/vault revisions. IDs must never

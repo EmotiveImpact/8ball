@@ -33,6 +33,35 @@
         "roadmap_decision": "Existing-task B03-03 refinements only; EM-176 remains a candidate. No new required scope or global acceptance promotion.",
         "insight_ids": ["EM-173", "EM-174", "EM-175", "EM-176"]
       }
+    },
+    {
+      "id": "2026-10-25-collaboration-native-receipt-7e526575",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Collaboration checkpoint pushed with source-bound partial native results",
+      "summary": "Records the pushed engineering checkpoint and final native failures without converting component verification into B03-03 acceptance; preserves the earlier local checkpoint record.",
+      "delivery": "pushed_unreleased",
+      "added": [],
+      "changed": ["Documented final identity same-principal requirement for request-bound CurrentPolicy adapters; shared integration remains mandatory and default-deny."],
+      "fixed": ["Package-qualified sibling fixture imports now work in isolated installed-wheel importlib regressions."],
+      "verification": [
+        "Functional checkpoint 6537ccc29b5b4d2be141f69142b48602c472ecfd is pushed/remote-verified; native run 20261025T234326Z-658b2934 bound stable source SHA-256 f3396dfd0b005a035e90b8aa75a836de5600c5549079422d13acc819ac0a0af1.",
+        "1393 source and 1393 installed-wheel tests passed, 37 focused tests passed in default/importlib modes, compile/19 JavaScript/schema/structural/delivery/emergence checks passed; eleven existing native suites passed 379 checks.",
+        "Overall native run failed ONLY canonical changelog base guard and Studio line149 local-unreleased assertion against frozen pushed_unreleased state. Inspect valid=true, native_browser_verified=false, model_quality_approved=false, released=false. Earlier missing-Node/setuptools/test-import/accessibility failures retained in receipt."
+      ],
+      "limitations": [
+        "Tested fingerprint covers exact 6537ccc source, not later record-only changes or future integration. No native journey for the new opt-in collaboration mounts, global B03-03 acceptance, production portal, external send, live inference, independent review, merge or release.",
+        "Integrator must append canonical fragments, preserve truthful shipping history, resolve frozen Studio expectation and inject current actor/reviewer, same-DB case/vault/source-policy, route/body/cache and UI wiring before a new integrated acceptance run."
+      ],
+      "task_ids": ["B03-03"],
+      "evidence_paths": ["docs/v2/COLLABORATION.md", "docs/delivery/lane-reports/collaboration.md", "tests/test_collaboration_api.py", "tests/test_projection.py"],
+      "emergence_review": {
+        "discoveries": ["No new scope promoted: existing exact-recipient/digest/grant and source-transaction/client-authority refinements stand; isolated package verification exposed a test portability defect invisible in ordinary pytest."],
+        "risks": ["A valid failed native receipt is not acceptance; host actor replacement, shared-route broadening, unavailable source adapters and unmeasured disclosure-review burden remain explicit."],
+        "architecture_implications": ["Bind one current principal and same-DB source lifecycle to every final gate; retain current reviewer policy independently and rerun source-bound combined verification."],
+        "roadmap_decision": "B03-03 remains unaccepted. EM-173..175 existing-task refinements and EM-176 candidate retain their dispositions; EM-177 records test portability as an existing-task verification refinement, not a new required task.",
+        "insight_ids": ["EM-173", "EM-174", "EM-175", "EM-176", "EM-177"]
+      }
     }
   ]
 }
