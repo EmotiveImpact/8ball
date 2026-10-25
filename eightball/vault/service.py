@@ -138,7 +138,9 @@ class Vault:
                    (self._actor(identity), case_id, command_id, digest(request), object_id))
 
     def _bytes(self, db, row):
-        blob = db.execute('SELECT * FROM vault_blobs WHERE object_id=?', (row['id'],)).fetchone()
+        cursor = db.execute('SELECT * FROM vault_blobs WHERE object_id=?', (row['id'],))
+        cursor.row_factory = sqlite3.Row
+        blob = cursor.fetchone()
         if blob is None:
             raise IntegrityError('Original ciphertext is unavailable')
         try:
@@ -249,6 +251,10 @@ class Vault:
         if expected_sha256 != json.loads(row['descriptor'])['sha256']:
             raise Conflict('Original hash does not match the reviewed handle')
         self._bytes(db, row)
+        final_scope = self.authority.require(db, identity=identity, case_id=case_id, object_id=object_id,
+                                             permission=P.READ, now=self._now())
+        if final_scope != scope:
+            raise PermissionError('Scope changed during source verification')
         self._audit(db, identity=identity, case_id=case_id, object_id=object_id,
                     operation='source_gate', outcome='allowed', details={'revision': expected_revision})
         return self._handle(row)
