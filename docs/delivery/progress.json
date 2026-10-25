@@ -426,6 +426,11 @@
       "kind": "controlled_atomic_review",
       "path": "docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json",
       "result": "1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed. Public writes, worker/outbox, model and human acceptance remain unfinished."
+    },
+    "EV-EVENT-OUTBOX": {
+      "kind": "controlled_local_delivery",
+      "path": "docs/delivery/sessions/2026-10-25-endstate-outbox.md",
+      "result": "Local transactional notice delivery implemented; focused/native validation pending. No external send, daemon or human acceptance."
     }
   },
   "milestones": [
@@ -1624,7 +1629,7 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "feat/agency-authorisation-20261025",
-      "base_commit": "cbbe5eaa028bbb9c6427ac721570eaa67a402fad",
+      "base_commit": "e0ae9b081629239a16ce79e95628cf504227fbc6",
       "updated_on": "2026-10-25",
       "code_paths": [
         "endstate/events.py",
@@ -1633,7 +1638,8 @@
         "eightball/event_work.py",
         "tests/test_event_work.py",
         "eightball/v2/event_reviews.py",
-        "tests/test_event_reviews.py"
+        "tests/test_event_reviews.py",
+        "eightball/v2/event_outbox.py"
       ],
       "depends_on": [
         "ES02-01"
@@ -1642,10 +1648,11 @@
       "evidence": [
         "EV-EVENT-INBOX",
         "EV-EVENT-WORK",
-        "EV-EVENT-CONSUMPTION"
+        "EV-EVENT-CONSUMPTION",
+        "EV-EVENT-OUTBOX"
       ],
       "blockers": [],
-      "next_action": "Integrate explicit reviewed-event UI/API and durable worker/outbox around the tested local transaction; retain current identity/revision checks and prove cancellation, replay and full-versus-incremental replanning. Production database isolation and human/model gates remain separate."
+      "next_action": "Integrate explicit event-review UI/API and host worker dispatch. Local atomic outbox now retains per-reader delivery; actual daemon, production isolation, migration, measured replanning and original model/human gates remain unfinished."
     },
     {
       "id": "ES02-03",
@@ -1680,13 +1687,14 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "feat/agency-authorisation-20261025",
-      "base_commit": "cbbe5eaa028bbb9c6427ac721570eaa67a402fad",
+      "base_commit": "e0ae9b081629239a16ce79e95628cf504227fbc6",
       "updated_on": "2026-10-25",
       "code_paths": [
         "eightball/event_work.py",
         "tests/test_event_work.py",
         "eightball/v2/event_reviews.py",
-        "tests/test_event_reviews.py"
+        "tests/test_event_reviews.py",
+        "eightball/v2/event_outbox.py"
       ],
       "depends_on": [
         "ES02-02",
@@ -1695,10 +1703,11 @@
       "acceptance": "Measured latencies include ingestion, inference and review; incremental replan results match full recomputation; cancelled/stale work cannot commit.",
       "evidence": [
         "EV-EVENT-WORK",
-        "EV-EVENT-CONSUMPTION"
+        "EV-EVENT-CONSUMPTION",
+        "EV-EVENT-OUTBOX"
       ],
       "blockers": [],
-      "next_action": "Integrate explicit reviewed-event UI/API and durable worker/outbox around the tested local transaction; retain current identity/revision checks and prove cancellation, replay and full-versus-incremental replanning. Production database isolation and human/model gates remain separate."
+      "next_action": "Integrate explicit event-review UI/API and host worker dispatch. Local atomic outbox now retains per-reader delivery; actual daemon, production isolation, migration, measured replanning and original model/human gates remain unfinished."
     },
     {
       "id": "ES03-01",

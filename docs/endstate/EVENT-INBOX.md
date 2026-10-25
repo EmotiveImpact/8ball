@@ -38,3 +38,7 @@ or carry an old permission forward merely because an event is retried.
 The host `eightball.event_work.EventWork` now stores explicit attempts linked to scoped inbox records. It supports exclusive claim, bounded lease, retained output disposition, cancellation and interruption. Expiry never automatically reschedules an attempt. A fresh enqueue is an explicit new attempt and preserves the old record. Claim-token hashes stay private and are omitted from inspection output.
 
 Results can await review; they cannot mutate a case. Permission and revision observations are trusted host inputs, not proof of transaction-wide authorisation. The real worker/outbox, reviewed commit, transactional revalidation and performance gate remain unfinished.
+
+## Transactional local notice outbox
+
+`eightball.v2.event_outbox.EventOutbox` inserts a small reviewed-change notice in the same transaction as graph consumption. Trusted authenticated readers require current whole-matter READ grants to pull or acknowledge. The oldest unacknowledged case notice repeats until acknowledged; delivery is durable and independent for each reader. Acknowledgement never approves an action or modifies the case. Notices verify their metadata against the review record. No external sender, worker daemon, browser surface or historical backfill is installed. See [session](../delivery/sessions/2026-10-25-endstate-outbox.md).

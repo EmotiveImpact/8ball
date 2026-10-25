@@ -13,6 +13,7 @@ from ..event_work import EventWork
 from ..models import utcnow
 from ..store import Conflict, canonical, digest
 from .commands import Command, apply
+from .event_outbox import EventOutbox
 
 
 class EventReviews:
@@ -21,6 +22,7 @@ class EventReviews:
         # Grants, attempts and cases must share the transaction database.
         AccessRegistry(store.path)
         EventWork(store.path)
+        EventOutbox(store)
         with store.connection() as db:
             db.execute('''CREATE TABLE IF NOT EXISTS event_consumptions (
                 work_id TEXT PRIMARY KEY REFERENCES event_work(id),
@@ -93,6 +95,7 @@ class EventReviews:
                        (work_id, case_id, scope.organisation_id, scope.matter_id,
                         canonical(record), digest(record)))
             db.execute("UPDATE event_work SET state='committed',token_hash=NULL WHERE id=?", (work_id,))
+            EventOutbox.append(db, record)
             if not permits(reviewer, scope, Operation.WRITE, grants, now=utcnow()):
                 raise PermissionError('Write permission expired before commit')
             db.commit()

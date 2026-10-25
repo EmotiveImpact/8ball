@@ -25,7 +25,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 ## Next work
 
 - **ES02-01: Normalised event and authority contract**. Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
-- **ES02-02: Durable ordered updates, idempotency and replay**. Integrate explicit reviewed-event UI/API and durable worker/outbox around the tested local transaction; retain current identity/revision checks and prove cancellation, replay and full-versus-incremental replanning. Production database isolation and human/model gates remain separate.
+- **ES02-02: Durable ordered updates, idempotency and replay**. Integrate explicit event-review UI/API and host worker dispatch. Local atomic outbox now retains per-reader delivery; actual daemon, production isolation, migration, measured replanning and original model/human gates remain unfinished.
 - **B03-01: Identity, organisations and matter-scoped authorisation**. Implement browser OIDC/PKCE/MFA and account administration, PostgreSQL transaction/row enforcement and verified-actor mutations; current agency mode permits scoped read/history/export only.
 - **B02-09: Reliable reviewed graph proposals for new situations**. Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
 - **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
@@ -481,11 +481,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **ES02-02 Durable ordered updates, idempotency and replay**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Duplicate, delayed, reordered and retried events cannot corrupt state or revive expired permissions.
-  - Next: Integrate explicit reviewed-event UI/API and durable worker/outbox around the tested local transaction; retain current identity/revision checks and prove cancellation, replay and full-versus-incremental replanning. Production database isolation and human/model gates remain separate.
-  - Branch/base: `feat/agency-authorisation-20261025` / `cbbe5eaa028bbb9c6427ac721570eaa67a402fad`.
+  - Next: Integrate explicit event-review UI/API and host worker dispatch. Local atomic outbox now retains per-reader delivery; actual daemon, production isolation, migration, measured replanning and original model/human gates remain unfinished.
+  - Branch/base: `feat/agency-authorisation-20261025` / `e0ae9b081629239a16ce79e95628cf504227fbc6`.
   - Dependencies: `ES02-01`.
-  - Existing code: `endstate/events.py`, `eightball/event_inbox.py`, `tests/test_event_inbox.py`, `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`.
-  - Evidence: `EV-EVENT-INBOX`, `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION` (registry below).
+  - Existing code: `endstate/events.py`, `eightball/event_inbox.py`, `tests/test_event_inbox.py`, `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_outbox.py`.
+  - Evidence: `EV-EVENT-INBOX`, `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX` (registry below).
 
 - [ ] **ES02-03 Reviewed graph amendments and affected-route explanations**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
@@ -499,11 +499,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **ES02-04 Freshness, cancellation and performance evidence**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Measured latencies include ingestion, inference and review; incremental replan results match full recomputation; cancelled/stale work cannot commit.
-  - Next: Integrate explicit reviewed-event UI/API and durable worker/outbox around the tested local transaction; retain current identity/revision checks and prove cancellation, replay and full-versus-incremental replanning. Production database isolation and human/model gates remain separate.
-  - Branch/base: `feat/agency-authorisation-20261025` / `cbbe5eaa028bbb9c6427ac721570eaa67a402fad`.
+  - Next: Integrate explicit event-review UI/API and host worker dispatch. Local atomic outbox now retains per-reader delivery; actual daemon, production isolation, migration, measured replanning and original model/human gates remain unfinished.
+  - Branch/base: `feat/agency-authorisation-20261025` / `e0ae9b081629239a16ce79e95628cf504227fbc6`.
   - Dependencies: `ES02-02`, `ES02-03`.
-  - Existing code: `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`.
-  - Evidence: `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION` (registry below).
+  - Existing code: `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_outbox.py`.
+  - Evidence: `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX` (registry below).
 
 - [x] **ES02-05 Bounded structural emergence detectors and typed explanations** (optional, not a version gate)
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-24.
@@ -988,3 +988,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `controlled_atomic_review`.
 - Repository evidence: [docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json](../../docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json).
 - Result/scope: 1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed. Public writes, worker/outbox, model and human acceptance remain unfinished.
+
+### EV-EVENT-OUTBOX
+
+- Kind: `controlled_local_delivery`.
+- Repository evidence: [docs/delivery/sessions/2026-10-25-endstate-outbox.md](../../docs/delivery/sessions/2026-10-25-endstate-outbox.md).
+- Result/scope: Local transactional notice delivery implemented; focused/native validation pending. No external send, daemon or human acceptance.

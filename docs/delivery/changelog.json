@@ -3,6 +3,50 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-endstate-outbox",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Persist reviewed change notices with per-reader delivery",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04"
+      ],
+      "summary": "Create local notices atomically with reviewed graph commits and retain ordered, permission-checked delivery acknowledgements.",
+      "added": [
+        "Transactional outbox and per-reader restart-safe delivery.",
+        "Rollback, concurrency, ordering, revocation and tampering regressions."
+      ],
+      "changed": [],
+      "fixed": [],
+      "verification": [
+        "Focused and cumulative native validation pending."
+      ],
+      "limitations": [
+        "No daemon, browser integration, external delivery, PostgreSQL isolation or historical backfill.",
+        "No model or human acceptance."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-endstate-outbox.md",
+        "eightball/v2/event_outbox.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "A committed graph review can be lost to downstream readers if notice creation occurs after its transaction. Atomic creation plus independent durable per-reader acknowledgement survives restarts, but repeats remain possible and acknowledgement cannot carry execution authority."
+        ],
+        "risks": [
+          "Repeated delivery is expected until acknowledgement."
+        ],
+        "architecture_implications": [
+          "Case/review/outbox share one local transaction."
+        ],
+        "roadmap_decision": "existing_task: advance ES02 while preserving unfinished acceptance gates.",
+        "insight_ids": [
+          "EM-105"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-endstate-reviewed-consumption-verified",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",

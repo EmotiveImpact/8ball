@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **104 recorded discoveries.**
+Last review: 2026-10-25. **105 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1902,3 +1902,20 @@ A durable processing result alone cannot authorise a graph update. The explicit 
 **Decision history:**
 
 - 2026-10-25 · adopted · Codex: existing_task: atomic local reviewed consumption with provenance and unchanged semantic/human acceptance gates.
+
+### [ ] EM-105: Delivery acknowledgement is separate from review and action approval
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** ENDSTATE transactional local outbox.
+
+A committed graph review can be lost to downstream readers if notice creation occurs after its transaction. Atomic creation plus independent durable per-reader acknowledgement survives restarts, but repeats remain possible and acknowledgement cannot carry execution authority.
+
+**Product implication:** Persist a small case/revision notice in the same transaction. Recheck current read permissions on pull and acknowledgement; keep delivered, reviewed and approved states distinct.
+
+**Roadmap links:** `ES02-02` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-02`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-25-endstate-outbox.md`, `eightball/v2/event_outbox.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: local durable delivery foundation; external effects and production acceptance remain unimplemented.

@@ -3777,6 +3777,35 @@
           "reason": "existing_task: atomic local reviewed consumption with provenance and unchanged semantic/human acceptance gates."
         }
       ]
+    },
+    {
+      "id": "EM-105",
+      "title": "Delivery acknowledgement is separate from review and action approval",
+      "origin": "ENDSTATE transactional local outbox",
+      "first_seen": "2026-10-25",
+      "evidence_level": "observed_in_build",
+      "observation": "A committed graph review can be lost to downstream readers if notice creation occurs after its transaction. Atomic creation plus independent durable per-reader acknowledgement survives restarts, but repeats remain possible and acknowledgement cannot carry execution authority.",
+      "product_implication": "Persist a small case/revision notice in the same transaction. Recheck current read permissions on pull and acknowledgement; keep delivered, reviewed and approved states distinct.",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-02"
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-endstate-outbox.md",
+        "eightball/v2/event_outbox.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex",
+          "reason": "existing_task: local durable delivery foundation; external effects and production acceptance remain unimplemented."
+        }
+      ]
     }
   ]
 }
