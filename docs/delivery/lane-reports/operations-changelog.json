@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "2026-10-25-operations-2101512c",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8-operations-engineering",
+      "title": "Scoped operations journal and fictional recovery/readiness tooling",
+      "summary": "Add unmounted, current-authority incident/revocation services and offline signed checkpoint, sandbox restore and artifact/pilot tools; preserve all production, legal, independent and human gates.",
+      "delivery": "pushed_unreleased",
+      "added": [
+        "Opt-in scoped ops schema and relative agency routes with injected per-operation current authority, hash-linked history, exact revisions and actor/scope-bound idempotency.",
+        "Six-surface revocation observations rechecked at closure; ordered incident states, terminal cancellation, sanitized adapter failures and transactional rollback.",
+        "Maintained Ed25519 checkpoint verification and actual new-file SQLite backup/replay rehearsal preserving alpha import lineage, without source mutation or implicit retry.",
+        "Bounded source/environment/hash/freshness readiness artifact consumption and conservative fictional pilot analysis; CLIs, operations support/onboarding runbook and 82 tests."
+      ],
+      "changed": [],
+      "fixed": [],
+      "verification": [
+        "82 operations tests included in 1438 passing full source tests on functional source 7c80f5ef30466eefbbaede6c9d33a3fc9207c21c; Python compilation, 18 browser-module syntax checks and Git whitespace checks passed.",
+        "10/11 original native suites passed 352 checks; extra event-review passed 27 checks. Studio failed three times (including an exact committed-source rerun) at line149: truthful pushed-unreleased partition entry conflicts with hardcoded local-unreleased assertion. This is not complete native acceptance.",
+        "Canonical generated docs/checks passed unchanged; base-aware changelog check awaits central fragment append. Proposed JSON union schema/history checked separately, not installed into canonical ledgers. Initial missing-Node full-run failures and corrected PATH are retained in the receipt."
+      ],
+      "limitations": [
+        "No shared migration/router wiring, current production adapters, remote consistency, independent key/anchor custody, encrypted managed backup, retention or accepted operational SLOs. Whole-DB restore is host-only fictional rehearsal, not matter-filtered export.",
+        "No actual inference, real pilot, qualified-human/security/accessibility/legal/brand/customer acceptance, deployment/release authority, new research runtime, PR/main change or completion of B03-05/B03-06/B10-01/B10-02. Artifact consistency is not authenticated approval.",
+        "Studio native failure remains open for integration; retained reports are custom lane evidence, not a fabricated acceptance-runner success receipt."
+      ],
+      "task_ids": [
+        "B03-05",
+        "B03-06",
+        "B10-01",
+        "B10-02"
+      ],
+      "evidence_paths": [
+        "docs/operations/2026-10-25-operations-2101512c.md",
+        "docs/delivery/lane-reports/operations.md",
+        "docs/operations/README.md",
+        "docs/operations/verification-2101512c.json",
+        "tests/test_operations_journal.py",
+        "tests/test_operations_recovery.py",
+        "tests/test_operations_readiness.py",
+        "tests/test_pilot_tooling.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Signing/verifying real Ed25519 checkpoints rejects altered digest, scope, revision and key, but the tool cannot verify that key or checkpoint custody is independent of the database administrator.",
+          "The real SQLite backup/replay rehearsal verifies explicit case checkpoints including alpha import lineage, while copying every database byte; organisation/matter labels cannot turn that copy into a scoped export.",
+          "Transactional tests show missing/unavailable surface probes cannot establish denial, close must rerun all six surfaces, and adapter failure or post-command revocation rolls back. A local transaction cannot guarantee atomic remote vault/search/worker state.",
+          "A complete source-bound artifact matrix in tests remains evidence_supplied_pending_authentication with human_decisions_authenticated and release/deploy/real-pilot authority false, even when every claimed evidence kind is present.",
+          "Fictional protocol tests preserve failed and unknown observations, missing dimensions and critical/high blockers. Supplying a resolution digest removes an unresolved-reference gap but does not turn the original failed observation into pass.",
+          "Strict operation schemas and sanitized probe-exception tests exclude arbitrary source text and adapter exception details while preserving opaque IDs, category, revision and evidence digests. That exclusion alone does not show that an incident can be diagnosed adequately.",
+          "The native Studio suite failed twice at current build and limits visible: the frozen partition changelog says pushed unreleased, but the existing test also demands local unreleased although the running version substring is present."
+        ],
+        "risks": [
+          "External custody/authenticity and remote revocation races cannot be established by fixture callbacks or files.",
+          "Whole-database copying, support narrative leakage and historical pilot failures must not be hidden by scoped labels or a supplied digest.",
+          "Shipping metadata can block native acceptance independently of the running code; retain failures and exact source boundaries."
+        ],
+        "architecture_implications": [
+          "Keep operations in host-only modules outside ENDSTATE; inject same-transaction agency authority and safe probes, never local bearer fallback.",
+          "Use explicit independent trust/recovery infrastructure and authenticated human decisions before production/pilot/release claims."
+        ],
+        "roadmap_decision": "existing_task refinements for B03-05/B03-06/B10-01/B10-02; EM-199 retained integration decision. No new required task or accepted external gate.",
+        "insight_ids": [
+          "EM-193",
+          "EM-194",
+          "EM-195",
+          "EM-196",
+          "EM-197",
+          "EM-198",
+          "EM-199"
+        ]
+      }
+    }
+  ]
+}
