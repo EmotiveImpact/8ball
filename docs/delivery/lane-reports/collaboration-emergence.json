@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-10-25",
+  "items": [
+    {
+      "id": "EM-173",
+      "title": "A disclosure review binds the recipient and exact grant, not only content",
+      "origin": "Collaboration B03-03 implementation, session 7e526575ef714b7e8a85f6ef00ee7ca6",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "An otherwise reviewed projection can be misdirected or silently revived if recipient, object and immutable client-grant digest are not checked with the exact content digest; replacing a revoked grant must not repair the old review.",
+      "product_implication": "8BALL disclosure review must preserve exact recipient/grant/content scope separately from evidence state and action authority; keep revoked and withdrawn records terminal and auditable.",
+      "task_ids": ["B03-03"],
+      "acceptance_task_ids": ["B03-03"],
+      "evidence_paths": ["tests/test_projection.py", "eightball/projections/service.py", "docs/delivery/lane-reports/collaboration.md"],
+      "owner_review": "pending",
+      "history": [{"date": "2026-10-25", "decision": "adopted", "by": "Devin engineering proposal", "reason": "Existing-task B03-03 safety refinement demonstrated with controlled SQLite tests; no global acceptance or new required scope."}]
+    },
+    {
+      "id": "EM-174",
+      "title": "A safe source preview is not the final disclosure commit gate",
+      "origin": "Collaboration/vault same-transaction seam discussion and implementation",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Standalone safe metadata or source handles cannot authorize a projection mutation: source access, release state, revision, integrity and retention may change between preview and commit. The source gate and mutation/audit must share the same active write transaction.",
+      "product_implication": "Keep a fail-closed transaction-local vault gate in 8BALL integration; opaque handles are references, never bearer capabilities. Missing or different-database adapters deny rather than granting local bearer access.",
+      "task_ids": ["B03-03"],
+      "acceptance_task_ids": ["B03-03"],
+      "evidence_paths": ["eightball/collaboration/contracts.py", "tests/test_collaboration.py", "docs/v2/COLLABORATION.md"],
+      "owner_review": "pending",
+      "history": [{"date": "2026-10-25", "decision": "adopted", "by": "Devin engineering proposal", "reason": "Existing-task refinement with explicitly confirmed vault contract and controlled wrapper tests; actual shared identity/vault/case combination remains an integration gate."}]
+    },
+    {
+      "id": "EM-175",
+      "title": "Client source readiness checks must not create internal source read access",
+      "origin": "Projection client-read authority integration design",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Reusing a vault current-READ source gate under the client identity could require a broad internal grant merely to read curated projection content. Checking source lifecycle under the still-current independent reviewer, while separately checking the exact client projection grant, keeps those authorities distinct.",
+      "product_implication": "Allow clients only the separately reviewed content allowlist; deny after reviewer or source access revocation without exposing source handles, metadata or internal objects. Host role/route mappings still require negative integration tests.",
+      "task_ids": ["B03-03"],
+      "acceptance_task_ids": ["B03-03"],
+      "evidence_paths": ["tests/test_projection.py", "eightball/projections/service.py", "docs/v2/COLLABORATION.md"],
+      "owner_review": "pending",
+      "history": [{"date": "2026-10-25", "decision": "adopted", "by": "Devin engineering proposal", "reason": "Existing-task B03-03 distinction; controlled test denies client source authority while allowing only reviewed projection, not proof of production policy correctness."}]
+    },
+    {
+      "id": "EM-176",
+      "title": "Measure exact disclosure review and refresh recovery burden",
+      "origin": "Collaboration isolated UI and failure-recovery build review",
+      "first_seen": "2026-10-25",
+      "evidence_level": "operator_hypothesis",
+      "observation": "Exact recipient IDs, digests, separate review and explicit refresh after uncertain writes may prevent misdirected disclosure but also impose substantial manual review and recovery work; screen and passing-test counts do not show net operator benefit.",
+      "product_implication": "Evaluate fictional-user disclosure tasks with wrong-recipient prevention, correction rate, review time and stale-refresh recovery measures before expanding the interface or claiming customer value.",
+      "task_ids": ["B03-03"],
+      "acceptance_task_ids": [],
+      "evidence_paths": ["web/v2/collaboration-view.js", "docs/delivery/lane-reports/collaboration.md"],
+      "owner_review": "pending",
+      "history": [{"date": "2026-10-25", "decision": "candidate", "by": "Devin engineering proposal", "reason": "Retain for owner/usability review; no participant study, native new-flow review or new mandatory roadmap task is authorized or claimed."}]
+    }
+  ]
+}
