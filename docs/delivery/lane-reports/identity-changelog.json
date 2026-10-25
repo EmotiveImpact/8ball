@@ -7,7 +7,7 @@
       "version": "v0.2 alpha.13 identity engineering lane",
       "title": "Current identity transactions and pinned OIDC session seam",
       "summary": "Add fail-closed current identity/grant transactions and opt-in OIDC code/PKCE browser sessions without mounting shared routes or claiming production provider acceptance.",
-      "delivery": "local_unreleased",
+      "delivery": "pushed_unreleased",
       "added": [
         "CurrentAuthority reauthentication and same-database all-object/all-operation require/transaction services.",
         "Pinned public-client code/S256-PKCE exchange, one-use attempts, durable hashed opaque sessions and explicit local logout/revocation.",
@@ -23,6 +23,8 @@
         "Cancellation/expiry after provider exchange prevents session publication and no failed exchange is retried."
       ],
       "verification": [
+        "Final source-bound native runner on e9eefcda1aa5e446e7db96486b02ffbdc7d1b05d: 1422 source tests and 1422 actual installed-wheel regressions passed; compile/all JS/schema/structural/delivery/emergence checks passed.",
+        "Final native evidence is valid but overall failed: eleven suites/379 checks passed; frozen canonical base-changelog and Studio shipping-state assertion failures remain for central reconciliation. Exact report/source hashes and all results are in the identity receipt.",
         "101 focused authorisation/agency/identity/OIDC tests passed with one existing deprecation warning after final stability hardening.",
         "Earlier full suite passed 1420 tests before the final two stability tests; final executed full/native evidence is preserved in the identity lane receipt.",
         "First native run retained as failed: missing setuptools (installed afterward) and frozen Studio shipping-state assertion; eleven other native suites passed. No all-native pass is claimed."

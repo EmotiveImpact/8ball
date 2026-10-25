@@ -120,3 +120,62 @@ results, not an adopted canonical register or an upgraded task status.
 Python compilation of `eightball`/`endstate`, changed UI `node --check` and
 `git diff --check` passed. No configured pre-commit file or executable repository
 hook was found (only Git sample hooks); normal commit hooks are not bypassed.
+
+## Final executed verification and source binding
+
+- Tested implementation commit: `e9eefcda1aa5e446e7db96486b02ffbdc7d1b05d`.
+  It was pushed to the assigned branch and independently confirmed with
+  `git ls-remote origin refs/heads/devin/1792969169-roadmap-identity` before this
+  evidence-only follow-up was authored. No functional changes followed the test.
+- Final native run: `20261025T233523Z-77ff1c90`, executed with the copyable command
+  above, including `--base 56c9b79428a612dff11e2fae0219640d156032ff`.
+- Raw report: `artifacts/acceptance/20261025T233523Z-77ff1c90/report.json`.
+- Report file SHA-256: `f4047a7940488dd1bd98ef21cddf1d876474709294d11d95b251ada86a904315`.
+- Tested source manifest SHA-256: `2730d6c4cdf63a10c787b8f389d3e22c2052c20dc0a3a296bbff6d9ec2ff18d3`.
+- Source was unchanged throughout the run. `--inspect` afterward returned
+  `valid=true`, `run_status=failed`, `native_browser_verified=false`,
+  `model_quality_approved=false`, `released=false`. Valid evidence is not a pass
+  and is not a signed attestation.
+- Final receipt/changelog-proposal edits are documentation-only and change the
+  whole-tree manifest. The source-bound report remains evidence for the exact
+  implementation commit above, not a purported whole-tree pass on a later records
+  commit. The final handoff identifies that pushed records commit. Raw artifacts
+  remain on the builder VM and the report is delivered with the session handoff;
+  do not assume that another VM has them or that Git contains all raw logs.
+
+| Final check | Actual result |
+| --- | --- |
+| Source pytest/JUnit | **1422 passed, 0 failed/errors/skipped**; existing Starlette/AnyIO warning only. |
+| Actual installed ENDSTATE wheel regressions | **1422 tests, 0 failures/errors/skipped**; local offline package build/install passed, no package publication. |
+| Python compilation | Passed for eightball/endstate. |
+| All browser JavaScript syntax | Passed, including the new identity module. |
+| Delivery / emergence | Passed against the unchanged canonical partition; not adoption of the proposals. |
+| Base-relative canonical changelog | **Failed**: new lane entry is a fragment until central integration appends it. |
+| Structural fixtures / schema export / native probe | Passed; no real model inference or independent review. |
+| Native legacy / workspace / providers / connections | Passed: 27 / 54 / 22 / 42 checks. Provider suite uses controlled fixtures, not live inference. |
+| Native Studio | **Failed** at frozen line 149: top entry says pushed_unreleased, assertion requires local unreleased. Shared test/history not altered. |
+| Native sources / insights / grounding / plan_review | Passed: 39 / 40 / 26 / 35 checks. |
+| Native accessibility / courses / event_review | Passed: 36 / 31 / 27 checks. Automated accessibility is not human acceptance. |
+| Overall native acceptance | **Failed**, with the two retained canonical-changelog/Studio issues; **379 checks across eleven passed suites**, not an all-native pass. |
+
+The initially missing setuptools failure was repaired and the package step passed
+in the final run. Initial Node/Python/setup and allowed-hook experiments remain
+recorded above; none was relabelled as a successful run. Common router wiring,
+native identity UI, production provider/MFA/isolation and independent security
+acceptance are still unperformed. No release gate or canonical B03-01 status was
+upgraded. No paid call, automatic external action or model download occurred.
+
+### Final delivery arrangement
+
+The pushed implementation source is the exact commit above. This follow-up only
+records executed evidence and updates the lane changelog proposal to the actually
+observed pushed/unreleased state; it does not rewrite a historical canonical entry.
+After committing/pushing this record, the final session handoff supplies its exact
+remote-verified head (a commit cannot embed its own final hash). No functional work
+is left unpushed; only ignored local acceptance/package/scratch artifacts are
+outside Git. No PR was created/changed and no main merge/deploy/release occurred.
+
+Next action is central integration: consume the service contracts and fragment
+proposals, add the cross-lane negative checks listed above, reconcile the two
+retained shared acceptance issues, regenerate canonical documents, and run a full
+new-source native acceptance. Keep all production/model/human gates explicit.
