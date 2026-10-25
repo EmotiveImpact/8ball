@@ -37,3 +37,11 @@ What did this reveal? A lost acknowledgement leaves a possible successful commit
 | ER-15 | Reviewers can inspect, explain and commit an amendment without API scripting; usefulness and accessibility still require genuine user review. |
 
 Disposition: existing ES02/B03-01 implementation work. Native scripted account tokens are not OIDC-provider validation or human acceptance. No external sends, new application or deferred research runtime.
+
+## Integrated failure and next worker boundary
+
+The first integrated checkpoint a448ff7c6a356c2ed4506e81e3f54cb081353637 passed 1,346 source tests, 1,346 installed-engine tests and all preceding 396 native checks, then failed the new screenshot wait because string evaluation violates the unchanged CSP. Exact-source inspection remained valid for this failed run. CI 40212216822 failed identically; downloaded evidence confirms it. [Failure record](../../evidence/event-review-native-csp-failure-2026-10-25.json). A locator assertion replaces the evaluation. Its default 5-second timeout initially expired before the existing 6.5-second toast; the explicit deadline is now 10 seconds. Neither CSP, notification behaviour nor acceptance assertions were weakened (EM-111).
+
+A separate worker-boundary experiment found that the ordinary fictional graph serializes to 16,501 characters, exceeding EventWork's 12,000-character result limit. It was rejected without truncation and the attempt remained running. [Retained experiment](../../evidence/event-result-size-boundary-2026-10-25.json). Worker integration must retain complete output, within justified storage bounds or via an immutable artifact reference, before any claim of full source-to-plan delivery (EM-110). This does not invalidate the bounded-text UI journey; it remains an explicit unmet integration requirement.
+
+Additional Emergence Review: ER-04/09/12 require full structured-result retention and realistic output-size tests; ER-13/14 retain both failed runs and distinguish native software verification from the separate boundary experiment. ER-08 preserves CSP and uses assertions compatible with it. All remaining ER-01–15 findings above still apply.

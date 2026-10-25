@@ -463,7 +463,17 @@
     "EV-EVENT-REVIEW-UI": {
       "kind": "native_scoped_review_ui",
       "path": "docs/delivery/sessions/2026-10-25-endstate-review-ui.md",
-      "result": "27 standalone native checks passed; cumulative native verification pending. Development account token, not OIDC login or genuine human acceptance."
+      "result": "Standalone native 27 checks passed; integrated new suite then failed its CSP-incompatible screenshot wait. Failure preserved separately; corrected full validation pending."
+    },
+    "EV-EVENT-REVIEW-CSP-FAILURE": {
+      "kind": "native_failed",
+      "path": "docs/evidence/event-review-native-csp-failure-2026-10-25.json",
+      "result": "Native/CI screenshot wait failed unchanged CSP; locator/time deadline correction pending revalidation."
+    },
+    "EV-EVENT-RESULT-SIZE": {
+      "kind": "controlled_boundary_failure",
+      "path": "docs/evidence/event-result-size-boundary-2026-10-25.json",
+      "result": "Full fictional graph exceeds 12000-character result boundary; worker retention remains unfinished."
     }
   },
   "milestones": [
@@ -1688,10 +1698,11 @@
         "EV-EVENT-WORK",
         "EV-EVENT-CONSUMPTION",
         "EV-EVENT-OUTBOX",
-        "EV-EVENT-CASE-BINDING-GAP"
+        "EV-EVENT-CASE-BINDING-GAP",
+        "EV-EVENT-RESULT-SIZE"
       ],
       "blockers": [],
-      "next_action": "Integrate explicit event-review UI/API and host worker dispatch. Local atomic outbox now retains per-reader delivery; actual daemon, production isolation, migration, measured replanning and original model/human gates remain unfinished."
+      "next_action": "Retain full structured processing output before authenticated worker dispatch; then complete end-to-end latency/replanning evidence. Preserve actual OIDC, production isolation and independent/model/human gates."
     },
     {
       "id": "ES02-03",
@@ -1720,7 +1731,8 @@
         "EV-EVENT-CONSUMPTION",
         "EV-EVENT-API",
         "EV-EVENT-CASE-BINDING-GAP",
-        "EV-EVENT-REVIEW-UI"
+        "EV-EVENT-REVIEW-UI",
+        "EV-EVENT-REVIEW-CSP-FAILURE"
       ],
       "blockers": [],
       "next_action": "Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates."
@@ -1756,10 +1768,11 @@
         "EV-EVENT-CONSUMPTION",
         "EV-EVENT-OUTBOX",
         "EV-EVENT-API",
-        "EV-EVENT-REVIEW-UI"
+        "EV-EVENT-REVIEW-UI",
+        "EV-EVENT-RESULT-SIZE"
       ],
       "blockers": [],
-      "next_action": "Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates."
+      "next_action": "Retain full structured processing output before authenticated worker dispatch; then complete end-to-end latency/replanning evidence. Preserve actual OIDC, production isolation and independent/model/human gates."
     },
     {
       "id": "ES03-01",

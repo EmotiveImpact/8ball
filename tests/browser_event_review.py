@@ -1,7 +1,7 @@
 """Native signed-identity event review journey using fictional local records.
 No real identity provider, model inference or human acceptance is claimed.
 """
-import json,os,shutil,subprocess,sys,tempfile,time
+import json,os,re,shutil,subprocess,sys,tempfile,time
 from pathlib import Path
 from datetime import timedelta
 import httpx,jwt
@@ -77,7 +77,7 @@ uvicorn.run(make_app(s,'unused-local-token-with-32-characters',agency_access=a),
                     page.locator('[data-studio=commit]').click();expect(page.locator('#review-rationale')).to_be_focused()
                     check('commit requires reviewer rationale',page.locator('.dialog').count()==0)
                     page.locator('#review-rationale').fill('Checked the cost against the original fictional source.')
-                    page.wait_for_function("!document.querySelector('#toast').classList.contains('visible')")
+                    expect(page.locator('#toast')).not_to_have_class(re.compile('.*visible.*'),timeout=10000)
                     for width in (320,390,768):
                         page.set_viewport_size({'width':width,'height':1000})
                         check('editable review fits viewport '+str(width),page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'))

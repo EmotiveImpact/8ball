@@ -3924,6 +3924,66 @@
           "reason": "existing_task: improve review recovery and native evidence without relaxing acceptance."
         }
       ]
+    },
+    {
+      "id": "EM-110",
+      "title": "A structured plan already exceeds the provisional result-text cap",
+      "origin": "Native browser event review",
+      "first_seen": "2026-10-25",
+      "evidence_level": "observed_in_build",
+      "observation": "The fictional demo graph serializes to 16,501 characters. EventWork accepts at most 12,000 characters, so preserving the complete graph through that path failed without truncation and left the attempt running.",
+      "product_implication": "Before connecting the worker, retain complete provider output within justified bounds or immutable artifact references, and explicitly preserve oversized failure evidence.",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-02",
+        "ES02-04"
+      ],
+      "evidence_paths": [
+        "docs/evidence/event-result-size-boundary-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-review-ui.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex",
+          "reason": "existing_task: retain demonstrated integration boundaries and fix test harness without weakening acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-111",
+      "title": "Native test waits must honour both CSP and application timing",
+      "origin": "Native browser event review",
+      "first_seen": "2026-10-25",
+      "evidence_level": "observed_in_build",
+      "observation": "A screenshot wait using string evaluation failed under script-src self in both local native and GitHub CI runs. Its locator replacement first used a 5-second default despite a 6.5-second notification lifetime.",
+      "product_implication": "Keep CSP intact, assert with browser locator APIs and use a bounded deadline matching the real notification lifetime; preserve failed runs.",
+      "task_ids": [
+        "ES02-03",
+        "ES02-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-03",
+        "ES02-04"
+      ],
+      "evidence_paths": [
+        "docs/evidence/event-review-native-csp-failure-2026-10-25.json",
+        "docs/delivery/sessions/2026-10-25-endstate-review-ui.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex",
+          "reason": "existing_task: retain demonstrated integration boundaries and fix test harness without weakening acceptance."
+        }
+      ]
     }
   ]
 }

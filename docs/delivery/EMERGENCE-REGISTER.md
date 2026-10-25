@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **109 recorded discoveries.**
+Last review: 2026-10-25. **111 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1987,3 +1987,37 @@ The first native review run asserted Playwright disabled state on a fieldset. Th
 **Decision history:**
 
 - 2026-10-25 · adopted · Codex: existing_task: improve review recovery and native evidence without relaxing acceptance.
+
+### [ ] EM-110: A structured plan already exceeds the provisional result-text cap
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Native browser event review.
+
+The fictional demo graph serializes to 16,501 characters. EventWork accepts at most 12,000 characters, so preserving the complete graph through that path failed without truncation and left the attempt running.
+
+**Product implication:** Before connecting the worker, retain complete provider output within justified bounds or immutable artifact references, and explicitly preserve oversized failure evidence.
+
+**Roadmap links:** `ES02-02` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-02`, `ES02-04`.
+**Evidence / source record:** `docs/evidence/event-result-size-boundary-2026-10-25.json`, `docs/delivery/sessions/2026-10-25-endstate-review-ui.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: retain demonstrated integration boundaries and fix test harness without weakening acceptance.
+
+### [ ] EM-111: Native test waits must honour both CSP and application timing
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Native browser event review.
+
+A screenshot wait using string evaluation failed under script-src self in both local native and GitHub CI runs. Its locator replacement first used a 5-second default despite a 6.5-second notification lifetime.
+
+**Product implication:** Keep CSP intact, assert with browser locator APIs and use a bounded deadline matching the real notification lifetime; preserve failed runs.
+
+**Roadmap links:** `ES02-03` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-03`, `ES02-04`.
+**Evidence / source record:** `docs/evidence/event-review-native-csp-failure-2026-10-25.json`, `docs/delivery/sessions/2026-10-25-endstate-review-ui.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: retain demonstrated integration boundaries and fix test harness without weakening acceptance.

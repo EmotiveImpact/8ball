@@ -25,7 +25,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 ## Next work
 
 - **ES02-01: Normalised event and authority contract**. Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
-- **ES02-02: Durable ordered updates, idempotency and replay**. Integrate explicit event-review UI/API and host worker dispatch. Local atomic outbox now retains per-reader delivery; actual daemon, production isolation, migration, measured replanning and original model/human gates remain unfinished.
+- **ES02-02: Durable ordered updates, idempotency and replay**. Retain full structured processing output before authenticated worker dispatch; then complete end-to-end latency/replanning evidence. Preserve actual OIDC, production isolation and independent/model/human gates.
 - **B03-01: Identity, organisations and matter-scoped authorisation**. Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
 - **B02-09: Reliable reviewed graph proposals for new situations**. Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
 - **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
@@ -481,11 +481,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **ES02-02 Durable ordered updates, idempotency and replay**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Duplicate, delayed, reordered and retried events cannot corrupt state or revive expired permissions.
-  - Next: Integrate explicit event-review UI/API and host worker dispatch. Local atomic outbox now retains per-reader delivery; actual daemon, production isolation, migration, measured replanning and original model/human gates remain unfinished.
+  - Next: Retain full structured processing output before authenticated worker dispatch; then complete end-to-end latency/replanning evidence. Preserve actual OIDC, production isolation and independent/model/human gates.
   - Branch/base: `feat/agency-authorisation-20261025` / `f75dad585a86deb75b3e8703be70cbe042c49f7a`.
   - Dependencies: `ES02-01`.
   - Existing code: `endstate/events.py`, `eightball/event_inbox.py`, `tests/test_event_inbox.py`, `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_outbox.py`.
-  - Evidence: `EV-EVENT-INBOX`, `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-CASE-BINDING-GAP` (registry below).
+  - Evidence: `EV-EVENT-INBOX`, `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-CASE-BINDING-GAP`, `EV-EVENT-RESULT-SIZE` (registry below).
 
 - [ ] **ES02-03 Reviewed graph amendments and affected-route explanations**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
@@ -494,16 +494,16 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Branch/base: `feat/agency-authorisation-20261025` / `825c8c3969f6cf723a188cc6ae16094aa15c9e7e`.
   - Dependencies: `ES02-01`, `ES01-02`.
   - Existing code: `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_api.py`, `tests/test_agency_access.py`, `web/v2/event-review.js`, `tests/browser_event_review.py`.
-  - Evidence: `EV-EVENT-CONSUMPTION`, `EV-EVENT-API`, `EV-EVENT-CASE-BINDING-GAP`, `EV-EVENT-REVIEW-UI` (registry below).
+  - Evidence: `EV-EVENT-CONSUMPTION`, `EV-EVENT-API`, `EV-EVENT-CASE-BINDING-GAP`, `EV-EVENT-REVIEW-UI`, `EV-EVENT-REVIEW-CSP-FAILURE` (registry below).
 
 - [ ] **ES02-04 Freshness, cancellation and performance evidence**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Measured latencies include ingestion, inference and review; incremental replan results match full recomputation; cancelled/stale work cannot commit.
-  - Next: Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
+  - Next: Retain full structured processing output before authenticated worker dispatch; then complete end-to-end latency/replanning evidence. Preserve actual OIDC, production isolation and independent/model/human gates.
   - Branch/base: `feat/agency-authorisation-20261025` / `825c8c3969f6cf723a188cc6ae16094aa15c9e7e`.
   - Dependencies: `ES02-02`, `ES02-03`.
   - Existing code: `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_outbox.py`, `eightball/v2/event_api.py`, `tests/test_agency_access.py`, `web/v2/event-review.js`, `tests/browser_event_review.py`.
-  - Evidence: `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-API`, `EV-EVENT-REVIEW-UI` (registry below).
+  - Evidence: `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-API`, `EV-EVENT-REVIEW-UI`, `EV-EVENT-RESULT-SIZE` (registry below).
 
 - [x] **ES02-05 Bounded structural emergence detectors and typed explanations** (optional, not a version gate)
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-24.
@@ -1011,4 +1011,16 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `native_scoped_review_ui`.
 - Repository evidence: [docs/delivery/sessions/2026-10-25-endstate-review-ui.md](../../docs/delivery/sessions/2026-10-25-endstate-review-ui.md).
-- Result/scope: 27 standalone native checks passed; cumulative native verification pending. Development account token, not OIDC login or genuine human acceptance.
+- Result/scope: Standalone native 27 checks passed; integrated new suite then failed its CSP-incompatible screenshot wait. Failure preserved separately; corrected full validation pending.
+
+### EV-EVENT-REVIEW-CSP-FAILURE
+
+- Kind: `native_failed`.
+- Repository evidence: [docs/evidence/event-review-native-csp-failure-2026-10-25.json](../../docs/evidence/event-review-native-csp-failure-2026-10-25.json).
+- Result/scope: Native/CI screenshot wait failed unchanged CSP; locator/time deadline correction pending revalidation.
+
+### EV-EVENT-RESULT-SIZE
+
+- Kind: `controlled_boundary_failure`.
+- Repository evidence: [docs/evidence/event-result-size-boundary-2026-10-25.json](../../docs/evidence/event-result-size-boundary-2026-10-25.json).
+- Result/scope: Full fictional graph exceeds 12000-character result boundary; worker retention remains unfinished.

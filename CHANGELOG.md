@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Preserve native review failures and correct CSP-safe screenshot wait
+
+2026-10-25 · `local_unreleased`
+
+Retain integrated and standalone failures, correct only the screenshot wait, and record structured-output retention as unfinished worker work.
+
+### Added
+
+- Native/CI failure receipt and explicit result-size boundary experiment.
+
+### Changed
+
+- Screenshot wait uses a locator assertion and an explicit deadline beyond the existing notification lifetime.
+
+### Fixed
+
+- CSP-incompatible string evaluation in browser-test screenshot wait.
+
+### Verification
+
+- Prior source/package and original eleven native suites passed; new event-review suite failed. Corrected native rerun pending.
+
+### Limitations
+
+- Full provider-output retention exceeds the current work-result cap and remains unfinished.
+- Actual OIDC login, worker dispatch, production isolation and genuine model/human acceptance remain open.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Ordinary structured graphs exceed the provisional result cap.
+- Discovery: Native test waits must respect CSP and real notification lifetimes.
+- Risk: A green older suite cannot establish an uncovered integration requirement.
+- Architecture: Preserve full output before worker integration; keep CSP unchanged.
+- Roadmap decision: existing_task: correct test harness and retain the worker boundary as unfinished scope.
+Registered discoveries: EM-110, EM-111.
+
+Roadmap items: `B03-01`, `ES02-03`, `ES02-04`.
+
+Evidence: [docs/evidence/event-review-native-csp-failure-2026-10-25.json](docs/evidence/event-review-native-csp-failure-2026-10-25.json), [docs/evidence/event-result-size-boundary-2026-10-25.json](docs/evidence/event-result-size-boundary-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-review-ui.md](docs/delivery/sessions/2026-10-25-endstate-review-ui.md).
+
 ## 0.2.0-alpha.8 · Review incoming changes through the browser
 
 2026-10-25 · `local_unreleased`
