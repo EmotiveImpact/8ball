@@ -8,7 +8,7 @@ Continue `feat/agency-authorisation-20261025` ([draft PR5](https://github.com/Em
 
 The browser event-review page now shows original source/output and supports explicit Plan Studio amendments, preview, rationale, commit and change-notice acknowledgement. [Session](docs/delivery/sessions/2026-10-25-endstate-review-ui.md), [native verification](docs/evidence/endstate-review-ui-native-2026-10-25.json), [screenshot](docs/screenshots/8ball-event-review-2026-10-25.png).
 
-The code checkpoint was pushed, but final receipts/screenshots are local pending GitHub reconnection: API and Git authentication stopped working. Preserve local HEAD before any checkout. Push the closeout and inspect CI once access is restored.
+The code, final browser-review receipts and screenshots are now pushed through closeout `98ee073`. GitHub access recovered; earlier authentication-failure notes are historical. A complete-result retention correction is currently under verification; see the latest handoff.
 
 Next: complete structured-result retention before authenticated worker dispatch. The full product remains unfinished. Model evaluation, independent review, human acceptance and production readiness retain their original gates. Only [progress.json](docs/delivery/progress.json) carries editable task statuses.
 

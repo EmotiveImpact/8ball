@@ -54,3 +54,7 @@ New case-processing attempts pass `case_id` to `EventWork.enqueue`, which verifi
 ## Browser review
 
 The event detail response includes a token-free `/v2/event-review.html?case=...&work=...` link. Configured agency users can open the source/result, edit the current graph through the existing Plan Studio, preview, supply rationale and commit explicitly. The scoped preview endpoint is read-only. Account tokens stay in memory only; actual OIDC sign-in is unfinished. Read-only/stale states and unknown save outcomes cannot commit; refresh resolves uncertain outcomes without automatic replay. [Session](../delivery/sessions/2026-10-25-endstate-review-ui.md).
+
+## Complete bounded processing output
+
+`EventWork.finish` retains exact result text up to 500,000 UTF-8 bytes, matching the supported hosted response envelope. This replaces the provisional 12,000-character cap that rejected the ordinary full graph. Original output survives restart, review and export without truncation. Over-bound results fail without mutating the attempt; caller-owned transport failure evidence remains necessary. This does not authorise automatic inference or retries.

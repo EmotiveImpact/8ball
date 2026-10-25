@@ -25,7 +25,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 ## Next work
 
 - **ES02-01: Normalised event and authority contract**. Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
-- **ES02-02: Durable ordered updates, idempotency and replay**. Retain full structured processing output before authenticated worker dispatch; then complete end-to-end latency/replanning evidence. Preserve actual OIDC, production isolation and independent/model/human gates.
+- **ES02-02: Durable ordered updates, idempotency and replay**. Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates.
 - **B03-01: Identity, organisations and matter-scoped authorisation**. Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
 - **B02-09: Reliable reviewed graph proposals for new situations**. Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
 - **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
@@ -481,11 +481,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **ES02-02 Durable ordered updates, idempotency and replay**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Duplicate, delayed, reordered and retried events cannot corrupt state or revive expired permissions.
-  - Next: Retain full structured processing output before authenticated worker dispatch; then complete end-to-end latency/replanning evidence. Preserve actual OIDC, production isolation and independent/model/human gates.
-  - Branch/base: `feat/agency-authorisation-20261025` / `f75dad585a86deb75b3e8703be70cbe042c49f7a`.
+  - Next: Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates.
+  - Branch/base: `feat/agency-authorisation-20261025` / `98ee073a1c5f25658aab915183c696c8b4099985`.
   - Dependencies: `ES02-01`.
   - Existing code: `endstate/events.py`, `eightball/event_inbox.py`, `tests/test_event_inbox.py`, `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_outbox.py`.
-  - Evidence: `EV-EVENT-INBOX`, `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-CASE-BINDING-GAP`, `EV-EVENT-RESULT-SIZE` (registry below).
+  - Evidence: `EV-EVENT-INBOX`, `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-CASE-BINDING-GAP`, `EV-EVENT-RESULT-SIZE`, `EV-EVENT-RESULT-RETENTION` (registry below).
 
 - [ ] **ES02-03 Reviewed graph amendments and affected-route explanations**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
@@ -499,11 +499,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **ES02-04 Freshness, cancellation and performance evidence**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Measured latencies include ingestion, inference and review; incremental replan results match full recomputation; cancelled/stale work cannot commit.
-  - Next: Retain full structured processing output before authenticated worker dispatch; then complete end-to-end latency/replanning evidence. Preserve actual OIDC, production isolation and independent/model/human gates.
-  - Branch/base: `feat/agency-authorisation-20261025` / `825c8c3969f6cf723a188cc6ae16094aa15c9e7e`.
+  - Next: Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates.
+  - Branch/base: `feat/agency-authorisation-20261025` / `98ee073a1c5f25658aab915183c696c8b4099985`.
   - Dependencies: `ES02-02`, `ES02-03`.
   - Existing code: `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_outbox.py`, `eightball/v2/event_api.py`, `tests/test_agency_access.py`, `web/v2/event-review.js`, `tests/browser_event_review.py`.
-  - Evidence: `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-API`, `EV-EVENT-REVIEW-UI`, `EV-EVENT-RESULT-SIZE` (registry below).
+  - Evidence: `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-API`, `EV-EVENT-REVIEW-UI`, `EV-EVENT-RESULT-SIZE`, `EV-EVENT-RESULT-RETENTION` (registry below).
 
 - [x] **ES02-05 Bounded structural emergence detectors and typed explanations** (optional, not a version gate)
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-24.
@@ -1023,4 +1023,10 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `controlled_boundary_failure`.
 - Repository evidence: [docs/evidence/event-result-size-boundary-2026-10-25.json](../../docs/evidence/event-result-size-boundary-2026-10-25.json).
-- Result/scope: Full fictional graph exceeds 12000-character result boundary; worker retention remains unfinished.
+- Result/scope: Historical 12000-character rejection preserved. Bound corrected to 500000 UTF-8 bytes; focused restart/review/export tests passed. See EV-EVENT-RESULT-RETENTION.
+
+### EV-EVENT-RESULT-RETENTION
+
+- Kind: `controlled_full_result_retention`.
+- Repository evidence: [docs/delivery/sessions/2026-10-25-complete-result-retention.md](../../docs/delivery/sessions/2026-10-25-complete-result-retention.md).
+- Result/scope: 36 focused work/review tests passed; full native verification pending. Complete graph output retained at a 500000-byte UTF-8 bound.

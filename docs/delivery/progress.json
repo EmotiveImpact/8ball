@@ -28,8 +28,9 @@
       "evidence": "docs/evidence/endstate-review-ui-native-2026-10-25.json",
       "verification": "1346 source /1346 installed-engine /423 native browser checks across 12 suites passed; exact inspection valid. Corrected checkpoint CI unavailable after GitHub authentication failure.",
       "code_checkpoint_pushed": true,
-      "receipt_pushed": false,
-      "publication_blocker": "Both GitHub API authentication and Git remote authentication failed after the code checkpoint was pushed. Refresh/reconnect the environment GitHub connection, then push this branch."
+      "receipt_pushed": true,
+      "publication_blocker": null,
+      "publication_recovered_commit": "98ee073a1c5f25658aab915183c696c8b4099985"
     },
     "verified_sprint_history": [
       {
@@ -485,7 +486,12 @@
     "EV-EVENT-RESULT-SIZE": {
       "kind": "controlled_boundary_failure",
       "path": "docs/evidence/event-result-size-boundary-2026-10-25.json",
-      "result": "Full fictional graph exceeds 12000-character result boundary; worker retention remains unfinished."
+      "result": "Historical 12000-character rejection preserved. Bound corrected to 500000 UTF-8 bytes; focused restart/review/export tests passed. See EV-EVENT-RESULT-RETENTION."
+    },
+    "EV-EVENT-RESULT-RETENTION": {
+      "kind": "controlled_full_result_retention",
+      "path": "docs/delivery/sessions/2026-10-25-complete-result-retention.md",
+      "result": "36 focused work/review tests passed; full native verification pending. Complete graph output retained at a 500000-byte UTF-8 bound."
     }
   },
   "milestones": [
@@ -1689,7 +1695,7 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "feat/agency-authorisation-20261025",
-      "base_commit": "f75dad585a86deb75b3e8703be70cbe042c49f7a",
+      "base_commit": "98ee073a1c5f25658aab915183c696c8b4099985",
       "updated_on": "2026-10-25",
       "code_paths": [
         "endstate/events.py",
@@ -1711,10 +1717,11 @@
         "EV-EVENT-CONSUMPTION",
         "EV-EVENT-OUTBOX",
         "EV-EVENT-CASE-BINDING-GAP",
-        "EV-EVENT-RESULT-SIZE"
+        "EV-EVENT-RESULT-SIZE",
+        "EV-EVENT-RESULT-RETENTION"
       ],
       "blockers": [],
-      "next_action": "Retain full structured processing output before authenticated worker dispatch; then complete end-to-end latency/replanning evidence. Preserve actual OIDC, production isolation and independent/model/human gates."
+      "next_action": "Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates."
     },
     {
       "id": "ES02-03",
@@ -1757,7 +1764,7 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "feat/agency-authorisation-20261025",
-      "base_commit": "825c8c3969f6cf723a188cc6ae16094aa15c9e7e",
+      "base_commit": "98ee073a1c5f25658aab915183c696c8b4099985",
       "updated_on": "2026-10-25",
       "code_paths": [
         "eightball/event_work.py",
@@ -1781,10 +1788,11 @@
         "EV-EVENT-OUTBOX",
         "EV-EVENT-API",
         "EV-EVENT-REVIEW-UI",
-        "EV-EVENT-RESULT-SIZE"
+        "EV-EVENT-RESULT-SIZE",
+        "EV-EVENT-RESULT-RETENTION"
       ],
       "blockers": [],
-      "next_action": "Retain full structured processing output before authenticated worker dispatch; then complete end-to-end latency/replanning evidence. Preserve actual OIDC, production isolation and independent/model/human gates."
+      "next_action": "Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates."
     },
     {
       "id": "ES03-01",

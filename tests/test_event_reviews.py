@@ -309,3 +309,17 @@ def test_case_bound_enqueue_rejects_other_scope_and_unknown_case(review):
     registry.bind_case(other.id,Resource(organisation_id='other',matter_id='other'))
     for case_id in (other.id,'missing-case'):
         with pytest.raises(EventConflict):queue.enqueue(**SCOPE,sequence=1,base_revision=0,case_id=case_id)
+
+
+def test_complete_graph_output_survives_review_and_export(review):
+    store,case,reviews,_,queue,request=review
+    job=queue.enqueue(**SCOPE,sequence=1,base_revision=0,case_id=case.id)
+    token=queue.claim(job,**SCOPE)
+    raw=json.dumps(request['command'].payload['graph'],ensure_ascii=False)
+    assert len(raw)>12000
+    queue.finish(job,token,raw,**SCOPE,current_revision=0,permission_valid=True)
+    result=reviews.commit_graph(**(request|{'work_id':job}))
+    audit=store.audit(case.id)
+    assert audit['valid'] and result['original_result']==raw
+    assert audit['incoming_event_reviews']['records'][0]['original_result']==raw
+    assert EventWork(store.path).inspect(job,**SCOPE)['result']==raw

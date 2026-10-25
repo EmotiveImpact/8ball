@@ -12,6 +12,10 @@ from uuid import uuid4
 
 from .event_inbox import EventInbox, EventConflict
 
+# Match the supported hosted response envelope bound without importing a
+# provider adapter. Count actual UTF-8 bytes, never silently truncate output.
+MAX_RESULT_BYTES = 500_000
+
 
 class EventWork:
     def __init__(self, path, *, clock=None):
@@ -102,7 +106,7 @@ class EventWork:
 
     def finish(self, work_id, token, result, *, organisation_id, matter_id,
                current_revision, permission_valid):
-        if not isinstance(result, str) or not 1 <= len(result) <= 12000:
+        if not isinstance(result, str) or not result or len(result.encode('utf-8')) > MAX_RESULT_BYTES:
             raise ValueError('A bounded result text is required')
         if type(current_revision) is not int or current_revision < 0 or type(permission_valid) is not bool:
             raise ValueError('Explicit host revision and permission observations required')

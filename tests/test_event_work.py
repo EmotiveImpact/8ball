@@ -65,3 +65,27 @@ def test_wrong_scope_and_token_cannot_publish(work):
     with pytest.raises(KeyError):queue.inspect(job,organisation_id='other',matter_id='m')
     with pytest.raises(EventConflict):queue.finish(job,'wrong','Text',**SCOPE,current_revision=3,permission_valid=True)
     assert queue.inspect(job,**SCOPE)['state']=='running'
+
+
+def test_full_fictional_graph_survives_restart_without_truncation(work):
+    import json
+    from eightball.v2.playbooks import demo_case
+    queue,job,clock=work
+    raw=json.dumps(demo_case().graph.model_dump(mode='json'),ensure_ascii=False)
+    assert len(raw)>12000
+    token=queue.claim(job,**SCOPE)
+    assert queue.finish(job,token,raw,**SCOPE,current_revision=3,permission_valid=True)=='awaiting_review'
+    assert EventWork(queue.path,clock=lambda:clock[0]).inspect(job,**SCOPE)['result']==raw
+
+
+def test_result_bound_counts_utf8_bytes_and_rejects_without_mutation(work):
+    from eightball.event_work import MAX_RESULT_BYTES
+    queue,job,_=work;token=queue.claim(job,**SCOPE)
+    too_large='é'*(MAX_RESULT_BYTES//2)+'x'
+    assert len(too_large)<MAX_RESULT_BYTES
+    with pytest.raises(ValueError):queue.finish(job,token,too_large,**SCOPE,current_revision=3,permission_valid=True)
+    record=queue.inspect(job,**SCOPE)
+    assert record['state']=='running' and record['result'] is None
+    exact='é'*(MAX_RESULT_BYTES//2)
+    assert queue.finish(job,token,exact,**SCOPE,current_revision=3,permission_valid=True)=='awaiting_review'
+    assert queue.inspect(job,**SCOPE)['result']==exact

@@ -3952,6 +3952,12 @@
           "decision": "adopted",
           "by": "Codex",
           "reason": "existing_task: retain demonstrated integration boundaries and fix test harness without weakening acceptance."
+        },
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex",
+          "reason": "Existing output boundary corrected to supported 500000 UTF-8 bytes with exact retention tests; authenticated worker and actual-provider acceptance remain unfinished."
         }
       ]
     },
@@ -3982,6 +3988,35 @@
           "decision": "adopted",
           "by": "Codex",
           "reason": "existing_task: retain demonstrated integration boundaries and fix test harness without weakening acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-112",
+      "title": "Result capacity should count encoded bytes across the provider and queue boundary",
+      "origin": "Complete processing-result retention",
+      "first_seen": "2026-10-25",
+      "evidence_level": "observed_in_build",
+      "observation": "Character count and UTF-8 byte count differ for multilingual text. A character-only bound neither matches the provider envelope limit nor reliably bounds stored output. Exact and one-byte-over tests demonstrated the difference.",
+      "product_implication": "Use a justified byte limit, preserve exact original text and reject oversized results without mutating or silently repairing the attempt.",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-02"
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-complete-result-retention.md",
+        "tests/test_event_work.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex",
+          "reason": "existing_task: consistent bounded retention without provider or semantic acceptance claims."
         }
       ]
     }

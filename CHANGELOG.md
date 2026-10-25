@@ -4,6 +4,49 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Retain complete structured processing output
+
+2026-10-25 · `local_unreleased`
+
+Correct the provisional text cap so complete ordinary graph output survives processing, review and export without truncation.
+
+### Added
+
+- Full graph and UTF-8 byte-boundary regressions.
+
+### Changed
+
+- Result cap now matches the supported 500000-byte hosted response-envelope limit.
+- Previous final browser-review receipt and screenshots were pushed after GitHub access recovered.
+
+### Fixed
+
+- Ordinary fictional graph output exceeded the previous 12000-character result cap.
+
+### Verification
+
+- 36 focused work/review tests passed; cumulative native verification pending.
+- Remote branch confirmed previous closeout 98ee073 after successful push.
+
+### Limitations
+
+- Authenticated background dispatch and actual-model/independent/human acceptance remain unfinished.
+- Oversized transport failures still need separate raw provider evidence; no silent truncation or retries.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Character count and UTF-8 byte count differ for multilingual text. A character-only bound neither matches the provider envelope limit nor reliably bounds stored output. Exact and one-byte-over tests demonstrated the difference.
+- Risk: Capacity correction is not proof of model quality or complete worker integration.
+- Architecture: Provider-independent byte-bounded output retention and exact review/export lineage.
+- Roadmap decision: existing_task: correct ES02 retention and continue authenticated worker integration.
+Registered discoveries: EM-110, EM-112.
+
+Roadmap items: `ES02-02`, `ES02-04`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-complete-result-retention.md](docs/delivery/sessions/2026-10-25-complete-result-retention.md), [docs/evidence/event-result-size-boundary-2026-10-25.json](docs/evidence/event-result-size-boundary-2026-10-25.json).
+
 ## 0.2.0-alpha.8 · Verify browser event review across twelve native suites
 
 2026-10-25 · `local_unreleased`

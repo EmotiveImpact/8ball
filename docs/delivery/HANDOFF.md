@@ -1,3 +1,9 @@
+# Current sprint: complete result retention; GitHub publication restored
+
+[Session](sessions/2026-10-25-complete-result-retention.md). Previous closeout `98ee073`, including screenshots and native evidence, is now pushed and confirmed remotely. Earlier publication-blocked text below is historical.
+
+The queue now retains complete output up to the supported 500000-byte UTF-8 boundary, without truncation. Full graph restart/review/export and multibyte bounds are covered: 36 focused tests passed; full native verification follows. Next: authenticated host worker dispatch with provider evidence and current case/permission rechecks. Both products remain tracked in PROGRESS.md and BUILD-GOAL.md; no production/model/human acceptance is implied.
+
 # Latest verified checkpoint: browser event review; final publication blocked
 
 [Session and full emergence review](sessions/2026-10-25-endstate-review-ui.md), [native receipt](../evidence/endstate-review-ui-native-2026-10-25.json), [desktop screenshot](../screenshots/8ball-event-review-2026-10-25.png). Source `461d3f2cecfcd8c4a00da40a56f56763d0d4fc90` passed 1,346 source tests, 1,346 installed-engine regressions and 423 native browser checks across twelve suites, with valid exact-source inspection. Preserved failed native/CI runs are linked in the receipt; corrected-checkpoint CI is unverified because authentication failed.
