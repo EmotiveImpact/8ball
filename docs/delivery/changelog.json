@@ -3,6 +3,59 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-build-consolidation",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Owner-requested combined build and executable test handoff",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-09",
+        "B02-15",
+        "ES03-05",
+        "DOC-06"
+      ],
+      "summary": "Consolidate completed development and resolve stale PR bookkeeping under explicit owner authority; retain all model and human gates.",
+      "added": [
+        "ADR0007 and NEXT-BUILD.md with exact software/provider/lifecycle commands and independent/human review boundaries.",
+        "Preserved October25 authentication observation, without asserting an unproved root cause."
+      ],
+      "changed": [
+        "Integration branch contains all prior development; canonical next action is the prepared actual-provider test handoff."
+      ],
+      "fixed": [],
+      "verification": [
+        "Git ancestry confirms main is an ancestor of development and PR3 head already exists in main.",
+        "Fresh cumulative native verification pending at this checkpoint."
+      ],
+      "limitations": [
+        "No model generation, independent professional or human acceptance claimed.",
+        "No deployment, release tag or research runtime adoption."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-build-consolidation.md",
+        "docs/decisions/0007-owner-build-consolidation.md",
+        "docs/delivery/NEXT-BUILD.md",
+        "docs/evidence/anthropic-authentication-2026-10-25.json"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Existing source/evidence and secret-delivery findings apply; an open PR can already be integrated by ancestry."
+        ],
+        "risks": [
+          "Stale PR targets, uncertain authentication causes and generic UI errors can mislead the next agent."
+        ],
+        "architecture_implications": [
+          "Preserve all source, frozen gates and case authority while consolidating delivery."
+        ],
+        "roadmap_decision": "Existing-task integration under ADR0007; no required task/status changes.",
+        "insight_ids": [
+          "EM-051",
+          "EM-071",
+          "EM-098"
+        ]
+      }
+    },
+    {
       "id": "2026-10-18-anthropic-configuration",
       "date": "2026-10-18",
       "version": "0.2.0-alpha.8",

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-18",
+  "updated_on": "2026-10-25",
   "product": "8BALL",
   "engine": "ENDSTATE",
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
@@ -17,7 +17,7 @@
     "production_deployed": false,
     "standalone_endstate_package_released": false,
     "refresh_required_each_session": true,
-    "integration_authority": "docs/decisions/0006-consolidated-development-main.md",
+    "integration_authority": "docs/decisions/0007-owner-build-consolidation.md",
     "source_merged_not_release_accepted": true,
     "current_sprint": {
       "branch": "feat/v02-review-evidence-20261018",
@@ -63,6 +63,12 @@
       "live_compatibility_verified": false,
       "active_secret_available": false,
       "next_input": "Owner must edit existing EIGHTBALL_API_KEY allowed destination to api.anthropic.com, enter private Anthropic API key in settings, Save and Publish."
+    },
+    "integration_20261025": {
+      "branch": "integration/v02-complete-build-20261025",
+      "base_commit": "16b8fff43f5f0614846ac4b01db1ddbe40dcff4e",
+      "status": "native_verification_pending",
+      "handoff": "docs/delivery/NEXT-BUILD.md"
     }
   },
   "evidence": {
@@ -318,6 +324,11 @@
       "kind": "configuration_and_source_inspection",
       "path": "docs/evidence/anthropic-setup-2026-10-18.json",
       "result": "Prepared Anthropic compatibility settings; 142 existing controlled transport/CLI tests passed and isolated format check made no requests. Live compatibility/account access remain unverified; owner must edit old secret destination and supply key securely."
+    },
+    "EV-OCT25-INTEGRATION": {
+      "kind": "integration_and_test_handoff",
+      "path": "docs/delivery/sessions/2026-10-25-build-consolidation.md",
+      "result": "Owner-authorised integration preparation; fresh native verification pending. No real-model or independent/human acceptance."
     }
   },
   "milestones": [
@@ -769,13 +780,14 @@
         "EV-COMPATIBLE-CODE",
         "EV-EVALUATION-READINESS",
         "EV-REVIEW-EVIDENCE-20261018",
-        "EV-ANTHROPIC-SETUP"
+        "EV-ANTHROPIC-SETUP",
+        "EV-OCT25-INTEGRATION"
       ],
       "blockers": [
         "Owner selected Anthropic, with prepared claude-sonnet-4-6 compatibility settings; account availability/pricing, active credentials/destination and real inference remain unverified. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, supply key securely and Save/Publish. Fictional fixtures up to US$5 remain authorised.",
         "Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate."
       ],
-      "next_action": "Follow docs/v2/ANTHROPIC-SETUP.md: observe active key/destination/network settings, confirm model access/service limits within the existing fictional-only US$5 ceiling, then run unchanged generation fixtures. Preserve any compatibility rejection before deciding whether a native Messages adapter is needed; no repair/substitution or weakened local graph gate."
+      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
     },
     {
       "id": "B02-10",
@@ -886,12 +898,13 @@
         "EV-PROVIDER-FAILURE-REVIEW",
         "EV-COMPATIBLE-CODE",
         "EV-EVALUATION-READINESS",
-        "EV-REVIEW-EVIDENCE-20261018"
+        "EV-REVIEW-EVIDENCE-20261018",
+        "EV-OCT25-INTEGRATION"
       ],
       "blockers": [
         "Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey."
       ],
-      "next_action": "After the selected actual provider passes generation, run full_journey.py with openai_compatible and explicit inference/external flags, then genuine independent/human acceptance. Controlled HTTP/native tests are not this gate."
+      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
     },
     {
       "id": "B02-13",
@@ -997,12 +1010,13 @@
         "EV-PROVIDER-FAILURE-REVIEW",
         "EV-COMPATIBLE-CODE",
         "EV-EVALUATION-READINESS",
-        "EV-ANTHROPIC-SETUP"
+        "EV-ANTHROPIC-SETUP",
+        "EV-OCT25-INTEGRATION"
       ],
       "blockers": [
         "Lifecycle behaviour with the selected real inference provider remains unverified."
       ],
-      "next_action": "Activate owner-selected Anthropic configuration after editing the existing secret destination and entering key securely. Require successful current-source generation before opted-in lifecycle/native provider journey. Local admission is not remote cancellation; preserve races/omissions and genuine human scope."
+      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
     },
     {
       "id": "B02-16",
@@ -1100,12 +1114,13 @@
       "acceptance": "All required V0.2 subparts have scoped evidence; reviews/gates pass; approval to integrate/release is recorded separately.",
       "evidence": [
         "EV-QWEN",
-        "EV-MAIN-CONSOLIDATION"
+        "EV-MAIN-CONSOLIDATION",
+        "EV-OCT25-INTEGRATION"
       ],
       "blockers": [
         "Real-model journey and developer-quality work remain unaccepted."
       ],
-      "next_action": "Source is integrated into main under explicit owner instruction ADR0006. Complete all unchanged real-model, independent professional and human acceptance gates before release acceptance; no deployment/tag is authorized."
+      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
     },
     {
       "id": "B03-01",

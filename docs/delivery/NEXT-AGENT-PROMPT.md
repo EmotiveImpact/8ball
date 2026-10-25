@@ -1,4 +1,12 @@
-# Latest provider decision: Anthropic
+# Latest continuation
+
+Follow [NEXT-BUILD.md](NEXT-BUILD.md) on the consolidated current main. Inspect
+actual Git/PR state and preserve later work. It includes executable test commands,
+retained authentication uncertainty, provider alternatives and all unchanged
+independent/human acceptance gates. ADR0007 records the owner's latest merge
+authority; deployment and release acceptance remain separate.
+
+# Historical provider decision: Anthropic
 
 Read the latest START-HERE/HANDOFF first. Owner now selects Anthropic; use docs/v2/ANTHROPIC-SETUP.md and sessions/2026-10-18-anthropic-configuration.md rather than treating the older Qwen endpoint question as current. The existing key slot needs owner destination edit/key entry/Save-Publish. Format checks are not authentication or compatibility evidence; keep original frozen fixtures/local gates and all failed attempts. No actual model call has occurred on this configuration. All previous source and acceptance boundaries remain.
 

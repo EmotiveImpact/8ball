@@ -39,6 +39,12 @@ transport traces. Numbered exclusive checkpoints bracket each fixture. The
 current report within that run updates atomically; earlier runs and checkpoints
 are never replaced. Write failure prevents starting a subsequent fixture.
 
+`actual_hosted_requests` records a nonempty transport-attempt trace, including a
+denied or timed-out attempt. It does not establish successful remote inference.
+Inspect individual HTTP/status/served-model/returned-text records. The fixture
+runner continues after individual errors; check authentication before starting
+it to avoid a sequence of redundant denied requests.
+
 Current reports also record `source_checks`, `source_at_finish` and
 `source_unchanged_during_run`. Source is inspected before each fixture and final
 success. Observed drift or an inspection error is sticky, blocks later fixtures

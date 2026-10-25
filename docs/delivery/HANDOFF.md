@@ -1,4 +1,12 @@
-# Current configuration continuation: owner-selected Anthropic
+# Current handoff: combined development build
+
+Use [NEXT-BUILD.md](NEXT-BUILD.md), [integration session](sessions/2026-10-25-build-consolidation.md)
+and [ADR0007](../decisions/0007-owner-build-consolidation.md). Owner authorises
+this consolidation into main; model and human acceptance remain outstanding.
+The session/final receipt records actual tested source and PR outcomes. Preserve
+all prior work and never attach old native totals to a newer untested source.
+
+# Historical configuration continuation: owner-selected Anthropic
 
 Branch feat/v02-review-evidence-20261018, base `12ffdadb2f094e8f31fbd60486b5f775894b32ec`. [Setup guide](../v2/ANTHROPIC-SETUP.md), [receipt](../evidence/anthropic-setup-2026-10-18.json) and [full session/ER-01–15](sessions/2026-10-18-anthropic-configuration.md) give exact fields and current limits. Draft non-secret values are prepared, and api.anthropic.com was added to custom destinations; the old key slot cannot be retargeted automatically. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, enter key securely, Save and Publish. No duplicate requirement or key value was added.
 

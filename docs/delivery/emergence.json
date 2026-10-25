@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-18",
+  "updated_on": "2026-10-25",
   "required_prompts": [
     {
       "id": "ER-01",
@@ -1771,7 +1771,8 @@
         "docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md",
         "docs/research/github-2026-10-16/whole-system-review.md",
         "docs/delivery/sessions/2026-10-18-review-evidence.md",
-        "docs/delivery/sessions/2026-10-18-anthropic-configuration.md"
+        "docs/delivery/sessions/2026-10-18-anthropic-configuration.md",
+        "docs/delivery/sessions/2026-10-25-build-consolidation.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -1834,6 +1835,12 @@
           "decision": "adopted",
           "by": "Codex Anthropic preparation",
           "reason": "existing_task refinement: SDK-listed model identity, compatibility request formatting, allowed secret destination, active authentication and actual model quality remain separate. Official compatibility docs read was403; prepared configuration is not an inference result."
+        },
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex integration review",
+          "reason": "existing_task: preserve source and uncertain auth evidence, resolve already-integrated PR ancestry, prepare exact next-agent tests. A generic save rejection did not establish the earlier claimed field-specific cause. No acceptance promotion."
         }
       ]
     },
@@ -2567,7 +2574,8 @@
       "acceptance_task_ids": [],
       "evidence_paths": [
         "docs/delivery/sessions/2026-09-25-chosen-course-recovery.md",
-        "docs/delivery/sessions/2026-10-18-review-evidence.md"
+        "docs/delivery/sessions/2026-10-18-review-evidence.md",
+        "docs/delivery/sessions/2026-10-25-build-consolidation.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -2582,6 +2590,12 @@
           "decision": "adopted",
           "by": "Codex sprint review",
           "reason": "existing_task refinement: recovered newer pushed source from an older restored checkout; preserve source-bound run evidence and additive optional recording compatibility. Saved setup is not an active published environment. No acceptance promotion."
+        },
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex integration review",
+          "reason": "existing_task: preserve source and uncertain auth evidence, resolve already-integrated PR ancestry, prepare exact next-agent tests. A generic save rejection did not establish the earlier claimed field-specific cause. No acceptance promotion."
         }
       ]
     },
@@ -3567,7 +3581,8 @@
       "evidence_paths": [
         "docs/delivery/sessions/2026-10-18-anthropic-configuration.md",
         "docs/evidence/anthropic-setup-2026-10-18.json",
-        "docs/v2/ANTHROPIC-SETUP.md"
+        "docs/v2/ANTHROPIC-SETUP.md",
+        "docs/delivery/sessions/2026-10-25-build-consolidation.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -3576,6 +3591,12 @@
           "decision": "adopted",
           "by": "Codex configuration review",
           "reason": "existing_task: document the observed secret-rebinding restriction and exact owner step; no new required feature, model/professional/human acceptance or runtime research adoption."
+        },
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex integration review",
+          "reason": "existing_task: preserve source and uncertain auth evidence, resolve already-integrated PR ancestry, prepare exact next-agent tests. A generic save rejection did not establish the earlier claimed field-specific cause. No acceptance promotion."
         }
       ]
     }

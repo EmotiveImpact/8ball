@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-18. **98 recorded discoveries.**
+Last review: 2026-10-25. **98 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -922,7 +922,7 @@ Separate successful test reports could be retained while the working source cont
 
 **Roadmap links:** `B02-12` (blocked), `B02-16` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/evidence/generation-role-contract-2026-10-15.json`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`, `docs/research/github-2026-10-16/whole-system-review.md`, `docs/delivery/sessions/2026-10-18-review-evidence.md`, `docs/delivery/sessions/2026-10-18-anthropic-configuration.md`.
+**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-15-generation-role-contract.md`, `docs/evidence/generation-role-contract-2026-10-15.json`, `docs/delivery/sessions/2026-10-15-provider-failure-evidence.md`, `docs/delivery/sessions/2026-10-15-main-consolidation.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`, `docs/research/github-2026-10-16/whole-system-review.md`, `docs/delivery/sessions/2026-10-18-review-evidence.md`, `docs/delivery/sessions/2026-10-18-anthropic-configuration.md`, `docs/delivery/sessions/2026-10-25-build-consolidation.md`.
 
 **Decision history:**
 
@@ -936,6 +936,7 @@ Separate successful test reports could be retained while the working source cont
 - 2026-10-16 · adopted · Codex whole-system investigation: existing_task/candidate refinement: Unique model-run checkpoints and exact assistant text improve source/evidence recovery; partial and hard-kill gaps remain explicit. No deferred runtime or acceptance promotion.
 - 2026-10-18 · adopted · Codex sprint review: existing_task refinement: recovered newer pushed source from an older restored checkout; preserve source-bound run evidence and additive optional recording compatibility. Saved setup is not an active published environment. No acceptance promotion.
 - 2026-10-18 · adopted · Codex Anthropic preparation: existing_task refinement: SDK-listed model identity, compatibility request formatting, allowed secret destination, active authentication and actual model quality remain separate. Official compatibility docs read was403; prepared configuration is not an inference result.
+- 2026-10-25 · adopted · Codex integration review: existing_task: preserve source and uncertain auth evidence, resolve already-integrated PR ancestry, prepare exact next-agent tests. A generic save rejection did not establish the earlier claimed field-specific cause. No acceptance promotion.
 
 ### [ ] EM-052: A built distribution is not an installed-product test
 
@@ -1297,12 +1298,13 @@ The mounted alpha.7 archive and PRD overlay reproduced exactly; the interrupted 
 
 **Roadmap links:** `DOC-03` (verified), `DOC-04` (verified).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-09-25-chosen-course-recovery.md`, `docs/delivery/sessions/2026-10-18-review-evidence.md`.
+**Evidence / source record:** `docs/delivery/sessions/2026-09-25-chosen-course-recovery.md`, `docs/delivery/sessions/2026-10-18-review-evidence.md`, `docs/delivery/sessions/2026-10-25-build-consolidation.md`.
 
 **Decision history:**
 
 - 2026-09-25 · adopted · ChatGPT build review: Adopt in the bounded local implementation and reproducible delivery; wider secure/native/operator acceptance remains unverified.
 - 2026-10-18 · adopted · Codex sprint review: existing_task refinement: recovered newer pushed source from an older restored checkout; preserve source-bound run evidence and additive optional recording compatibility. Saved setup is not an active published environment. No acceptance promotion.
+- 2026-10-25 · adopted · Codex integration review: existing_task: preserve source and uncertain auth evidence, resolve already-integrated PR ancestry, prepare exact next-agent tests. A generic save rejection did not establish the earlier claimed field-specific cause. No acceptance promotion.
 
 ### [ ] EM-072: A handoff needs a current entry point and historical precedence
 
@@ -1792,8 +1794,9 @@ The existing generic API-key requirement was labelled Qwen and allowed only its 
 
 **Roadmap links:** `B02-09` (blocked), `B02-15` (partial), `ES03-05` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-18-anthropic-configuration.md`, `docs/evidence/anthropic-setup-2026-10-18.json`, `docs/v2/ANTHROPIC-SETUP.md`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-18-anthropic-configuration.md`, `docs/evidence/anthropic-setup-2026-10-18.json`, `docs/v2/ANTHROPIC-SETUP.md`, `docs/delivery/sessions/2026-10-25-build-consolidation.md`.
 
 **Decision history:**
 
 - 2026-10-18 · adopted · Codex configuration review: existing_task: document the observed secret-rebinding restriction and exact owner step; no new required feature, model/professional/human acceptance or runtime research adoption.
+- 2026-10-25 · adopted · Codex integration review: existing_task: preserve source and uncertain auth evidence, resolve already-integrated PR ancestry, prepare exact next-agent tests. A generic save rejection did not establish the earlier claimed field-specific cause. No acceptance promotion.

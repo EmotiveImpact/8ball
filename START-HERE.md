@@ -1,4 +1,14 @@
-# Current provider choice: Anthropic test preparation
+# Current owner request: consolidate the completed build
+
+Read [NEXT-BUILD.md](docs/delivery/NEXT-BUILD.md) for the next agent's executable
+software/model/lifecycle test procedure. [ADR0007](docs/decisions/0007-owner-build-consolidation.md)
+records the new explicit integration authority; [current session](docs/delivery/sessions/2026-10-25-build-consolidation.md)
+records actual verification and merge outcomes. All previous source and original
+acceptance gates remain. Earlier provider observations below are historical;
+do not repeat an unproved key-delivery diagnosis or treat coding-agent reviews
+as independent professional acceptance.
+
+# Historical provider preparation
 
 The owner selected Anthropic. [Exact secure setup fields](docs/v2/ANTHROPIC-SETUP.md) and [configuration/source receipt](docs/evidence/anthropic-setup-2026-10-18.json) distinguish prepared settings from active access. The existing EIGHTBALL_API_KEY secret needs its destination changed to api.anthropic.com and the key entered securely, then Save/Publish. Claude Sonnet 4.6 compatibility is unverified until actual responses; keep every original local gate. [Full sprint/ER review](docs/delivery/sessions/2026-10-18-anthropic-configuration.md). Application code is unchanged; earlier native results below belong to their exact tested source. All 98 discoveries and original task statuses remain preserved.
 

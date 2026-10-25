@@ -4,6 +4,45 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Owner-requested combined build and executable test handoff
+
+2026-10-25 · `local_unreleased`
+
+Consolidate completed development and resolve stale PR bookkeeping under explicit owner authority; retain all model and human gates.
+
+### Added
+
+- ADR0007 and NEXT-BUILD.md with exact software/provider/lifecycle commands and independent/human review boundaries.
+- Preserved October25 authentication observation, without asserting an unproved root cause.
+
+### Changed
+
+- Integration branch contains all prior development; canonical next action is the prepared actual-provider test handoff.
+
+### Verification
+
+- Git ancestry confirms main is an ancestor of development and PR3 head already exists in main.
+- Fresh cumulative native verification pending at this checkpoint.
+
+### Limitations
+
+- No model generation, independent professional or human acceptance claimed.
+- No deployment, release tag or research runtime adoption.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Existing source/evidence and secret-delivery findings apply; an open PR can already be integrated by ancestry.
+- Risk: Stale PR targets, uncertain authentication causes and generic UI errors can mislead the next agent.
+- Architecture: Preserve all source, frozen gates and case authority while consolidating delivery.
+- Roadmap decision: Existing-task integration under ADR0007; no required task/status changes.
+Registered discoveries: EM-051, EM-071, EM-098.
+
+Roadmap items: `B02-09`, `B02-15`, `ES03-05`, `DOC-06`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-build-consolidation.md](docs/delivery/sessions/2026-10-25-build-consolidation.md), [docs/decisions/0007-owner-build-consolidation.md](docs/decisions/0007-owner-build-consolidation.md), [docs/delivery/NEXT-BUILD.md](docs/delivery/NEXT-BUILD.md), [docs/evidence/anthropic-authentication-2026-10-25.json](docs/evidence/anthropic-authentication-2026-10-25.json).
+
 ## 0.2.0-alpha.8 · Anthropic test configuration and secure key-entry instructions
 
 2026-10-18 · `pushed_unreleased`
