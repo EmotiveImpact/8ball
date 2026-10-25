@@ -3,6 +3,53 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-endstate-reviewed-consumption",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Commit reviewed event graph amendments atomically",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "ES02-02",
+        "ES02-03",
+        "ES02-04"
+      ],
+      "summary": "Bind explicit reviewed graph changes to original events/results and current case revision/permission in a single local transaction.",
+      "added": [
+        "Local reviewed-consumption service and conditional case export records.",
+        "Tests for duplicate/concurrent consumption, stale revisions, scope/permission denial, rollback, expiry during calculation and provenance tampering."
+      ],
+      "changed": [
+        "ES02-03 now partial; existing graph validation, approval invalidation and change explanations are reused."
+      ],
+      "fixed": [],
+      "verification": [
+        "32 focused event/review/lifecycle tests passed; cumulative native validation pending."
+      ],
+      "limitations": [
+        "Authenticated reviewer identity is supplied by trusted host; public agency writes remain disabled.",
+        "No PostgreSQL tenant policies, automatic worker/outbox, live model or genuine human/independent acceptance."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md",
+        "eightball/v2/event_reviews.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Review provenance and permission must be bound to the actual transaction, not just the preceding processing attempt."
+        ],
+        "risks": [
+          "A grant can expire during calculation; a rehashed receipt alone must not substitute original results or explanations."
+        ],
+        "architecture_implications": [
+          "Single local database transaction, explicit review request hash, conditional case-chain-linked export and a final expiry check."
+        ],
+        "roadmap_decision": "existing_task: advance ES02-03 without exposing incomplete agency write routes or claiming production acceptance.",
+        "insight_ids": [
+          "EM-104"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-endstate-processing-verification",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",

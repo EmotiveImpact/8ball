@@ -1,3 +1,7 @@
+# Current ENDSTATE sprint: atomic reviewed graph consumption
+
+[Session](sessions/2026-10-25-endstate-reviewed-consumption.md). Current local host service verifies scoped write grants and exact case/attempt revisions, applies the existing graph command and records provenance/consumption atomically. Source/result and explicit reviewer edits survive case export. Next: explicit review UI/API, durable worker/outbox and measured replanning, preserving production/model/human gates.
+
 Latest verified ENDSTATE processing checkpoint: **1,309 source tests, 1,309 installed-engine regressions and 396 native browser checks passed**, with valid source inspection and green checkpoint CI. [Receipt](../evidence/endstate-processing-native-2026-10-25.json). Original failed Plan Review race is retained and fixed. Next: reviewed graph amendments committed atomically with current revision/permission checks and a durable consumption record. The full goal remains in progress.
 
 # Current ENDSTATE sprint: durable attempt lifecycle

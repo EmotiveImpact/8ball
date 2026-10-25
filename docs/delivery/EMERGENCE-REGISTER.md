@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **103 recorded discoveries.**
+Last review: 2026-10-25. **104 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -90,7 +90,7 @@ Useful plans include what would make the operator change course, not just the ne
 
 **Product implication:** Define versioned watch triggers, event authority and durable ordered updates before claiming real-time insight monitoring.
 
-**Roadmap links:** `ES02-01` (partial), `ES02-02` (partial), `ES02-03` (not_started), `ES02-06` (partial).
+**Roadmap links:** `ES02-01` (partial), `ES02-02` (partial), `ES02-03` (partial), `ES02-06` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/delivery/EMERGENCE-REVIEW.md`, `docs/decisions/0004-evidence-led-course-and-recovery.md`, `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`.
 
@@ -1885,3 +1885,20 @@ Case refresh changed the review snapshot while assessment was in flight. The sta
 **Decision history:**
 
 - 2026-10-25 · adopted · Codex: existing_task: fix observed race, add deterministic native coverage and preserve the failed receipt.
+
+### [ ] EM-104: Reviewed consumption must bind source, result, identity and case commit together
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** ENDSTATE reviewed graph transaction.
+
+A durable processing result alone cannot authorise a graph update. The explicit review must bind the original receipt and result, reviewer, rationale, command and exact revision, with permission checked inside the same write transaction and again before commit if calculation can outlive a grant.
+
+**Product implication:** Preserve source/result and explicit edits in a case-linked receipt. Reject stale, revoked, expired or cross-matter consumption; retain original export shape for cases without consumed events.
+
+**Roadmap links:** `ES02-02` (partial), `ES02-03` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-03`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md`, `eightball/v2/event_reviews.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: atomic local reviewed consumption with provenance and unchanged semantic/human acceptance gates.

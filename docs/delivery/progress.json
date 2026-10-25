@@ -412,6 +412,11 @@
       "kind": "native_regression_fix",
       "path": "docs/evidence/endstate-processing-native-2026-10-25.json",
       "result": "Retained local native failure; explicit stale-context recovery and deterministic in-flight revision-change coverage now pass."
+    },
+    "EV-EVENT-CONSUMPTION": {
+      "kind": "controlled_atomic_review",
+      "path": "docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md",
+      "result": "32 focused event/review/lifecycle tests passed; cumulative validation pending. No public write endpoint, worker daemon, actual model or human acceptance."
     }
   },
   "milestones": [
@@ -1610,14 +1615,16 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "feat/agency-authorisation-20261025",
-      "base_commit": "5f72a356790b0cd3f0a27e79ba1e9801f4a14937",
+      "base_commit": "cbbe5eaa028bbb9c6427ac721570eaa67a402fad",
       "updated_on": "2026-10-25",
       "code_paths": [
         "endstate/events.py",
         "eightball/event_inbox.py",
         "tests/test_event_inbox.py",
         "eightball/event_work.py",
-        "tests/test_event_work.py"
+        "tests/test_event_work.py",
+        "eightball/v2/event_reviews.py",
+        "tests/test_event_reviews.py"
       ],
       "depends_on": [
         "ES02-01"
@@ -1625,30 +1632,36 @@
       "acceptance": "Duplicate, delayed, reordered and retried events cannot corrupt state or revive expired permissions.",
       "evidence": [
         "EV-EVENT-INBOX",
-        "EV-EVENT-WORK"
+        "EV-EVENT-WORK",
+        "EV-EVENT-CONSUMPTION"
       ],
       "blockers": [],
-      "next_action": "Implement reviewed result consumption and revision/permission checks inside the actual case transaction; add explicit durable worker/outbox integration and measured full-versus-incremental replanning. No automatic retries or model calls."
+      "next_action": "Integrate explicit reviewed-event UI/API and durable worker/outbox around the tested local transaction; retain current identity/revision checks and prove cancellation, replay and full-versus-incremental replanning. Production database isolation and human/model gates remain separate."
     },
     {
       "id": "ES02-03",
       "milestone": "ES02",
       "title": "Reviewed graph amendments and affected-route explanations",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Codex",
+      "working_branch": "feat/agency-authorisation-20261025",
+      "base_commit": "cbbe5eaa028bbb9c6427ac721570eaa67a402fad",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "eightball/v2/event_reviews.py",
+        "tests/test_event_reviews.py"
+      ],
       "depends_on": [
         "ES02-01",
         "ES01-02"
       ],
       "acceptance": "New information can propose a graph/dependency change, but cannot remove restrictions until reviewed at the correct revision.",
-      "evidence": [],
+      "evidence": [
+        "EV-EVENT-CONSUMPTION"
+      ],
       "blockers": [],
-      "next_action": "Separate observed fact updates from catalogue/graph amendments."
+      "next_action": "Integrate explicit reviewed-event UI/API and durable worker/outbox around the tested local transaction; retain current identity/revision checks and prove cancellation, replay and full-versus-incremental replanning. Production database isolation and human/model gates remain separate."
     },
     {
       "id": "ES02-04",
@@ -1658,11 +1671,13 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "feat/agency-authorisation-20261025",
-      "base_commit": "5f72a356790b0cd3f0a27e79ba1e9801f4a14937",
+      "base_commit": "cbbe5eaa028bbb9c6427ac721570eaa67a402fad",
       "updated_on": "2026-10-25",
       "code_paths": [
         "eightball/event_work.py",
-        "tests/test_event_work.py"
+        "tests/test_event_work.py",
+        "eightball/v2/event_reviews.py",
+        "tests/test_event_reviews.py"
       ],
       "depends_on": [
         "ES02-02",
@@ -1670,10 +1685,11 @@
       ],
       "acceptance": "Measured latencies include ingestion, inference and review; incremental replan results match full recomputation; cancelled/stale work cannot commit.",
       "evidence": [
-        "EV-EVENT-WORK"
+        "EV-EVENT-WORK",
+        "EV-EVENT-CONSUMPTION"
       ],
       "blockers": [],
-      "next_action": "Implement reviewed result consumption and revision/permission checks inside the actual case transaction; add explicit durable worker/outbox integration and measured full-versus-incremental replanning. No automatic retries or model calls."
+      "next_action": "Integrate explicit reviewed-event UI/API and durable worker/outbox around the tested local transaction; retain current identity/revision checks and prove cancellation, replay and full-versus-incremental replanning. Production database isolation and human/model gates remain separate."
     },
     {
       "id": "ES03-01",

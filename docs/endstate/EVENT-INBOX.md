@@ -1,3 +1,7 @@
+## Current reviewed-consumption increment
+
+The local host service `eightball.v2.event_reviews.EventReviews` now commits explicit graph reviews atomically with current scope, permission and revision checks. It preserves source/result/reviewer provenance and links conditional exports to the case audit chain. Public agency writes, browser review integration, production database isolation and durable worker/outbox remain unfinished. The earlier sections below describe preceding checkpoints.
+
 # Incoming events and the host inbox
 
 `endstate.events.IncomingEvent` is the neutral, versioned input contract. It

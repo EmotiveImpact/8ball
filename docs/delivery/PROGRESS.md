@@ -25,7 +25,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 ## Next work
 
 - **ES02-01: Normalised event and authority contract**. Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
-- **ES02-02: Durable ordered updates, idempotency and replay**. Implement reviewed result consumption and revision/permission checks inside the actual case transaction; add explicit durable worker/outbox integration and measured full-versus-incremental replanning. No automatic retries or model calls.
+- **ES02-02: Durable ordered updates, idempotency and replay**. Integrate explicit reviewed-event UI/API and durable worker/outbox around the tested local transaction; retain current identity/revision checks and prove cancellation, replay and full-versus-incremental replanning. Production database isolation and human/model gates remain separate.
 - **B03-01: Identity, organisations and matter-scoped authorisation**. Implement browser OIDC/PKCE/MFA and account administration, PostgreSQL transaction/row enforcement and verified-actor mutations; current agency mode permits scoped read/history/export only.
 - **B02-09: Reliable reviewed graph proposals for new situations**. Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
 - **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
@@ -481,26 +481,29 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **ES02-02 Durable ordered updates, idempotency and replay**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Duplicate, delayed, reordered and retried events cannot corrupt state or revive expired permissions.
-  - Next: Implement reviewed result consumption and revision/permission checks inside the actual case transaction; add explicit durable worker/outbox integration and measured full-versus-incremental replanning. No automatic retries or model calls.
-  - Branch/base: `feat/agency-authorisation-20261025` / `5f72a356790b0cd3f0a27e79ba1e9801f4a14937`.
+  - Next: Integrate explicit reviewed-event UI/API and durable worker/outbox around the tested local transaction; retain current identity/revision checks and prove cancellation, replay and full-versus-incremental replanning. Production database isolation and human/model gates remain separate.
+  - Branch/base: `feat/agency-authorisation-20261025` / `cbbe5eaa028bbb9c6427ac721570eaa67a402fad`.
   - Dependencies: `ES02-01`.
-  - Existing code: `endstate/events.py`, `eightball/event_inbox.py`, `tests/test_event_inbox.py`, `eightball/event_work.py`, `tests/test_event_work.py`.
-  - Evidence: `EV-EVENT-INBOX`, `EV-EVENT-WORK` (registry below).
+  - Existing code: `endstate/events.py`, `eightball/event_inbox.py`, `tests/test_event_inbox.py`, `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`.
+  - Evidence: `EV-EVENT-INBOX`, `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION` (registry below).
 
 - [ ] **ES02-03 Reviewed graph amendments and affected-route explanations**
-  - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: New information can propose a graph/dependency change, but cannot remove restrictions until reviewed at the correct revision.
-  - Next: Separate observed fact updates from catalogue/graph amendments.
+  - Next: Integrate explicit reviewed-event UI/API and durable worker/outbox around the tested local transaction; retain current identity/revision checks and prove cancellation, replay and full-versus-incremental replanning. Production database isolation and human/model gates remain separate.
+  - Branch/base: `feat/agency-authorisation-20261025` / `cbbe5eaa028bbb9c6427ac721570eaa67a402fad`.
   - Dependencies: `ES02-01`, `ES01-02`.
+  - Existing code: `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`.
+  - Evidence: `EV-EVENT-CONSUMPTION` (registry below).
 
 - [ ] **ES02-04 Freshness, cancellation and performance evidence**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Measured latencies include ingestion, inference and review; incremental replan results match full recomputation; cancelled/stale work cannot commit.
-  - Next: Implement reviewed result consumption and revision/permission checks inside the actual case transaction; add explicit durable worker/outbox integration and measured full-versus-incremental replanning. No automatic retries or model calls.
-  - Branch/base: `feat/agency-authorisation-20261025` / `5f72a356790b0cd3f0a27e79ba1e9801f4a14937`.
+  - Next: Integrate explicit reviewed-event UI/API and durable worker/outbox around the tested local transaction; retain current identity/revision checks and prove cancellation, replay and full-versus-incremental replanning. Production database isolation and human/model gates remain separate.
+  - Branch/base: `feat/agency-authorisation-20261025` / `cbbe5eaa028bbb9c6427ac721570eaa67a402fad`.
   - Dependencies: `ES02-02`, `ES02-03`.
-  - Existing code: `eightball/event_work.py`, `tests/test_event_work.py`.
-  - Evidence: `EV-EVENT-WORK` (registry below).
+  - Existing code: `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`.
+  - Evidence: `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION` (registry below).
 
 - [x] **ES02-05 Bounded structural emergence detectors and typed explanations** (optional, not a version gate)
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-24.
@@ -979,3 +982,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `native_regression_fix`.
 - Repository evidence: [docs/evidence/endstate-processing-native-2026-10-25.json](../../docs/evidence/endstate-processing-native-2026-10-25.json).
 - Result/scope: Retained local native failure; explicit stale-context recovery and deterministic in-flight revision-change coverage now pass.
+
+### EV-EVENT-CONSUMPTION
+
+- Kind: `controlled_atomic_review`.
+- Repository evidence: [docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md](../../docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md).
+- Result/scope: 32 focused event/review/lifecycle tests passed; cumulative validation pending. No public write endpoint, worker daemon, actual model or human acceptance.

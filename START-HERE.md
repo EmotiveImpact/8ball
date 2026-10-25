@@ -1,3 +1,7 @@
+# Current ENDSTATE work: atomic reviewed graph consumption
+
+[Latest session](docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md), [standing goal](docs/delivery/BUILD-GOAL.md), [both trackers](docs/delivery/PROGRESS.md). Continue feat/agency-authorisation-20261025. The local service now binds explicit graph review, source/result provenance and current permission/revision into one case transaction. Next integrate the review surface and worker/outbox; original model/human/production gates remain open.
+
 # Current ENDSTATE work: durable processing attempts
 
 [Latest session](docs/delivery/sessions/2026-10-25-endstate-processing.md), [standing goal](docs/delivery/BUILD-GOAL.md), [both product trackers](docs/delivery/PROGRESS.md). Continue feat/agency-authorisation-20261025, preserving newer work. EventWork adds exclusive claims, cancellation, interruption and stale/denied result handling. Reviewed case commits and worker/outbox integration remain next; no automatic external execution or production acceptance.

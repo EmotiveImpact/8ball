@@ -4,6 +4,44 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Commit reviewed event graph amendments atomically
+
+2026-10-25 · `local_unreleased`
+
+Bind explicit reviewed graph changes to original events/results and current case revision/permission in a single local transaction.
+
+### Added
+
+- Local reviewed-consumption service and conditional case export records.
+- Tests for duplicate/concurrent consumption, stale revisions, scope/permission denial, rollback, expiry during calculation and provenance tampering.
+
+### Changed
+
+- ES02-03 now partial; existing graph validation, approval invalidation and change explanations are reused.
+
+### Verification
+
+- 32 focused event/review/lifecycle tests passed; cumulative native validation pending.
+
+### Limitations
+
+- Authenticated reviewer identity is supplied by trusted host; public agency writes remain disabled.
+- No PostgreSQL tenant policies, automatic worker/outbox, live model or genuine human/independent acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Review provenance and permission must be bound to the actual transaction, not just the preceding processing attempt.
+- Risk: A grant can expire during calculation; a rehashed receipt alone must not substitute original results or explanations.
+- Architecture: Single local database transaction, explicit review request hash, conditional case-chain-linked export and a final expiry check.
+- Roadmap decision: existing_task: advance ES02-03 without exposing incomplete agency write routes or claiming production acceptance.
+Registered discoveries: EM-104.
+
+Roadmap items: `ES02-02`, `ES02-03`, `ES02-04`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md](docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md), [eightball/v2/event_reviews.py](eightball/v2/event_reviews.py).
+
 ## 0.2.0-alpha.8 · Verify durable processing and corrected review recovery
 
 2026-10-25 · `local_unreleased`
