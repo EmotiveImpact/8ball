@@ -42,27 +42,37 @@ class EventInbox:
                             sequence=sequence, received_at=datetime.fromisoformat(received_at),
                             content_sha256=digest)
 
-    def append(self, event: IncomingEvent, *, organisation_id: str, matter_id: str) -> EventReceipt:
+    def append(self, event: IncomingEvent, *, organisation_id: str, matter_id: str,
+               _db=None) -> EventReceipt:
+        if _db is not None:
+            if not _db.in_transaction:
+                raise ValueError('An owning transaction is required')
+            return self._append(_db, event, organisation_id, matter_id)
+        with sqlite3.connect(self.path, timeout=10) as db:
+            db.execute('BEGIN IMMEDIATE')
+            return self._append(db, event, organisation_id, matter_id)
+
+    def _append(self, db, event, organisation_id, matter_id):
+        if not isinstance(event, IncomingEvent):
+            raise ValueError('A validated incoming event is required')
         if (event.organisation_id, event.matter_id) != (organisation_id, matter_id):
             raise EventConflict('Event does not match the authorised matter scope')
         body = _body(event)
         digest = sha256(body.encode()).hexdigest()
         key = (organisation_id, matter_id, event.source_id, event.event_id)
-        with sqlite3.connect(self.path, timeout=10) as db:
-            db.execute('BEGIN IMMEDIATE')
-            old = db.execute('''SELECT sequence,received_at,body,digest FROM incoming_events
+        old = db.execute('''SELECT sequence,received_at,body,digest FROM incoming_events
                 WHERE organisation_id=? AND matter_id=? AND source_id=? AND event_id=?''', key).fetchone()
-            if old:
-                receipt = self._receipt(old)
-                if old[2] != body:
-                    raise EventConflict('An existing event identity has different content')
-                return receipt
-            sequence = db.execute('''SELECT COALESCE(MAX(sequence),0)+1 FROM incoming_events
+        if old:
+            receipt = self._receipt(old)
+            if old[2] != body:
+                raise EventConflict('An existing event identity has different content')
+            return receipt
+        sequence = db.execute('''SELECT COALESCE(MAX(sequence),0)+1 FROM incoming_events
                 WHERE organisation_id=? AND matter_id=?''', key[:2]).fetchone()[0]
-            received = datetime.now(timezone.utc).isoformat()
-            db.execute('INSERT INTO incoming_events VALUES (?,?,?,?,?,?,?,?)',
+        received = datetime.now(timezone.utc).isoformat()
+        db.execute('INSERT INTO incoming_events VALUES (?,?,?,?,?,?,?,?)',
                        (*key, sequence, received, body, digest))
-            return self._receipt((sequence, received, body, digest))
+        return self._receipt((sequence, received, body, digest))
 
     def read(self, *, organisation_id: str, matter_id: str, after: int = 0,
              limit: int = 100) -> list[EventReceipt]:
