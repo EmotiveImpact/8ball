@@ -127,6 +127,23 @@ def test_shared_transaction_source_gate_is_current_and_rolls_back_with_mutation(
     other.close()
 
 
+def test_source_gate_rechecks_expiry_after_key_unwrap_before_return(env):
+    obj = scan(env, upload(env))
+    unwrap = env.keys.unwrap
+    def slow_unwrap(*args, **kwargs):
+        key = unwrap(*args, **kwargs)
+        env.now[0] += timedelta(days=61)
+        return key
+    env.keys.unwrap = slow_unwrap
+    with sqlite3.connect(env.path) as db:
+        db.execute('BEGIN IMMEDIATE')
+        with pytest.raises(PermissionError):
+            env.vault.require_source(db, identity=env.identity, case_id='case-1', object_id=obj['object_id'],
+                                     expected_revision=3, expected_sha256=obj['sha256'])
+        db.rollback()
+        assert not db.execute("SELECT record FROM vault_audit WHERE record LIKE '%source_gate%'").fetchall()
+
+
 @pytest.mark.parametrize('content', [b'', b'\xff', b'embedded\0binary', b'x'*(Vault.MAX_BYTES+1)])
 def test_rejects_unsafe_or_unbounded_uploads(env, content):
     with pytest.raises(ValueError):
