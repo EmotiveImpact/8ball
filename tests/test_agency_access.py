@@ -184,3 +184,18 @@ def test_event_api_not_enabled_by_local_operator_token(tmp_path):
     client=TestClient(make_app(LegacyStore(str(tmp_path/'local.db')),'operator-token-with-at-least-32-characters'))
     client.headers['Authorization']='Bearer operator-token-with-at-least-32-characters'
     assert client.get('/api/v2/cases/example/event-work/example').status_code==404
+
+
+def test_event_preview_is_scoped_read_only_and_revision_checked(events):
+    client,registry,store,own,other,work,body=events
+    path=f'/api/v2/cases/{own.id}/event-work/{work}'
+    before=store.audit(own.id)
+    registry.revoke('write')
+    view=client.get(path).json()
+    assert not view['can_review'] and view['review_url'].startswith('/v2/event-review.html?')
+    preview={'expected_revision':0,'graph':body['command']['payload']['graph']}
+    response=client.post(path+'/preview',json=preview)
+    assert response.status_code==200 and response.json()['persisted'] is False
+    assert response.json()['edits'] and store.audit(own.id)==before
+    assert client.post(path+'/preview',json=preview|{'expected_revision':1}).status_code==409
+    assert client.post(f'/api/v2/cases/{other.id}/event-work/{work}/preview',json=preview).status_code==403

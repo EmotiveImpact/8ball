@@ -3866,6 +3866,64 @@
           "reason": "existing_task: correct demonstrated lineage failure without inventing historical case ownership."
         }
       ]
+    },
+    {
+      "id": "EM-108",
+      "title": "A lost save acknowledgement requires outcome recovery, not automatic replay",
+      "origin": "Native browser event review",
+      "first_seen": "2026-10-25",
+      "evidence_level": "observed_in_build",
+      "observation": "The server can commit a reviewed amendment while the browser loses its acknowledgement. Retrying automatically would confuse mutation intent with network recovery. A controlled native test committed once, discarded the response and recovered the outcome through explicit refresh.",
+      "product_implication": "Disable editing while outcome is uncertain; retain original source/result and use deliberate refresh without repeating the mutation.",
+      "task_ids": [
+        "ES02-03",
+        "ES02-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-03"
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-endstate-review-ui.md",
+        "tests/browser_event_review.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex",
+          "reason": "existing_task: improve review recovery and native evidence without relaxing acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-109",
+      "title": "Disabled-state tests must inspect interactive controls",
+      "origin": "Native browser event review",
+      "first_seen": "2026-10-25",
+      "evidence_level": "observed_in_build",
+      "observation": "The first native review run asserted Playwright disabled state on a fieldset. The DOM had the disabled attribute, but that assertion did not verify its controls. Inspecting the actual rationale input and preview button accurately exercised read-only access.",
+      "product_implication": "Preserve the failed artifact and assert effective disabled state on real controls; do not remove permission checks to obtain a passing test.",
+      "task_ids": [
+        "ES02-03",
+        "ES02-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-03"
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-endstate-review-ui.md",
+        "docs/evidence/event-review-browser-first-failure-2026-10-25.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Codex",
+          "reason": "existing_task: improve review recovery and native evidence without relaxing acceptance."
+        }
+      ]
     }
   ]
 }

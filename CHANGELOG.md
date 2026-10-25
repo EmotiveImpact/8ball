@@ -4,6 +4,46 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Review incoming changes through the browser
+
+2026-10-25 · `local_unreleased`
+
+Show original source/output, author a reviewed amendment in Plan Studio, preview effects and commit explicitly with recoverable session handling.
+
+### Added
+
+- Case-scoped review page and permission-checked preview endpoint.
+- Twelfth native browser suite with original source, read-only, stale, lost acknowledgement and mobile checks.
+
+### Changed
+
+- Plan Studio can omit its separate live-review shortcut when embedded in event review.
+
+### Verification
+
+- 27 standalone native browser checks passed; full native validation pending.
+- Initial incorrect fieldset assertion is preserved and replaced with actual disabled-control assertions.
+
+### Limitations
+
+- Development account-token flow only; real OIDC sign-in and genuine human acceptance remain unfinished.
+- No authenticated worker dispatch, external send or production isolation.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Lost acknowledgement is an unknown outcome, not permission to retry.
+- Discovery: Disabled-state tests must inspect actual interactive descendants.
+- Risk: Late responses must not restore sensitive material after locking.
+- Architecture: Session epochs, explicit refresh, existing editor semantics and a case-scoped transactional preview.
+- Roadmap decision: existing_task: advance browser event review while retaining all production/model/human gates.
+Registered discoveries: EM-108, EM-109.
+
+Roadmap items: `B03-01`, `ES02-03`, `ES02-04`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-endstate-review-ui.md](docs/delivery/sessions/2026-10-25-endstate-review-ui.md), [docs/evidence/event-review-browser-first-failure-2026-10-25.json](docs/evidence/event-review-browser-first-failure-2026-10-25.json), [web/v2/event-review.js](web/v2/event-review.js).
+
 ## 0.2.0-alpha.8 · Verify authenticated event review and case-binding correction
 
 2026-10-25 · `local_unreleased`

@@ -3,6 +3,57 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-25-endstate-review-ui",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8",
+      "title": "Review incoming changes through the browser",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01",
+        "ES02-03",
+        "ES02-04"
+      ],
+      "summary": "Show original source/output, author a reviewed amendment in Plan Studio, preview effects and commit explicitly with recoverable session handling.",
+      "added": [
+        "Case-scoped review page and permission-checked preview endpoint.",
+        "Twelfth native browser suite with original source, read-only, stale, lost acknowledgement and mobile checks."
+      ],
+      "changed": [
+        "Plan Studio can omit its separate live-review shortcut when embedded in event review."
+      ],
+      "fixed": [],
+      "verification": [
+        "27 standalone native browser checks passed; full native validation pending.",
+        "Initial incorrect fieldset assertion is preserved and replaced with actual disabled-control assertions."
+      ],
+      "limitations": [
+        "Development account-token flow only; real OIDC sign-in and genuine human acceptance remain unfinished.",
+        "No authenticated worker dispatch, external send or production isolation."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-25-endstate-review-ui.md",
+        "docs/evidence/event-review-browser-first-failure-2026-10-25.json",
+        "web/v2/event-review.js"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Lost acknowledgement is an unknown outcome, not permission to retry.",
+          "Disabled-state tests must inspect actual interactive descendants."
+        ],
+        "risks": [
+          "Late responses must not restore sensitive material after locking."
+        ],
+        "architecture_implications": [
+          "Session epochs, explicit refresh, existing editor semantics and a case-scoped transactional preview."
+        ],
+        "roadmap_decision": "existing_task: advance browser event review while retaining all production/model/human gates.",
+        "insight_ids": [
+          "EM-108",
+          "EM-109"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-endstate-event-api-verified",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",

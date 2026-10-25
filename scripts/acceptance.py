@@ -40,6 +40,7 @@ BROWSER_SUITES=[
  ('plan_review','tests/browser_plan_review.py','browser-plan-review-report.json'),
  ('accessibility','tests/browser_accessibility.py','accessibility-browser-report.json'),
  ('courses','tests/browser_courses.py','browser-courses-report.json'),
+ ('event_review','tests/browser_event_review.py','browser-event-review-report.json'),
 ]
 EXCLUDE={'.git','.venv','__pycache__','.pytest_cache','artifacts','node_modules','build','dist','test-results'}
 EXTERNAL_RESEARCH=Path('research/external')

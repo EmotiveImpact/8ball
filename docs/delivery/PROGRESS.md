@@ -26,7 +26,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 - **ES02-01: Normalised event and authority contract**. Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes.
 - **ES02-02: Durable ordered updates, idempotency and replay**. Integrate explicit event-review UI/API and host worker dispatch. Local atomic outbox now retains per-reader delivery; actual daemon, production isolation, migration, measured replanning and original model/human gates remain unfinished.
-- **B03-01: Identity, organisations and matter-scoped authorisation**. Build the browser event-review surface and authenticated host worker dispatch around the current identity/revision-checked API; retain OIDC login, PostgreSQL isolation, migration, performance and original model/human gates.
+- **B03-01: Identity, organisations and matter-scoped authorisation**. Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
 - **B02-09: Reliable reviewed graph proposals for new situations**. Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
 - **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
 - **B02-11: Independent quality evaluation and production-model selection**. Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval.
@@ -328,10 +328,10 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **B03-01 Identity, organisations and matter-scoped authorisation**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Authenticated identities and cross-tenant/matter denial tests cover read, write, export, search and model inference.
-  - Next: Build the browser event-review surface and authenticated host worker dispatch around the current identity/revision-checked API; retain OIDC login, PostgreSQL isolation, migration, performance and original model/human gates.
-  - Branch/base: `feat/agency-authorisation-20261025` / `fd57f16dd66a1ce52a3f60144ddbeaf8fcfc117c`.
-  - Existing code: `eightball/authorisation.py`, `tests/test_authorisation.py`, `eightball/agency_access.py`, `tests/test_agency_access.py`, `eightball/v2/event_api.py`.
-  - Evidence: `EV-SECURITY`, `EV-AGENCY-POLICY`, `EV-AGENCY-API`, `EV-EVENT-API` (registry below).
+  - Next: Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
+  - Branch/base: `feat/agency-authorisation-20261025` / `825c8c3969f6cf723a188cc6ae16094aa15c9e7e`.
+  - Existing code: `eightball/authorisation.py`, `tests/test_authorisation.py`, `eightball/agency_access.py`, `tests/test_agency_access.py`, `eightball/v2/event_api.py`, `web/v2/event-review.js`, `tests/browser_event_review.py`.
+  - Evidence: `EV-SECURITY`, `EV-AGENCY-POLICY`, `EV-AGENCY-API`, `EV-EVENT-API`, `EV-EVENT-REVIEW-UI` (registry below).
 
 - [ ] **B03-02 Encrypted evidence vault and retention controls**
   - Status: `not_started`. Owner: unassigned. Updated: 2026-09-23.
@@ -490,20 +490,20 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **ES02-03 Reviewed graph amendments and affected-route explanations**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: New information can propose a graph/dependency change, but cannot remove restrictions until reviewed at the correct revision.
-  - Next: Build the browser event-review surface and authenticated host worker dispatch around the current identity/revision-checked API; retain OIDC login, PostgreSQL isolation, migration, performance and original model/human gates.
-  - Branch/base: `feat/agency-authorisation-20261025` / `f75dad585a86deb75b3e8703be70cbe042c49f7a`.
+  - Next: Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
+  - Branch/base: `feat/agency-authorisation-20261025` / `825c8c3969f6cf723a188cc6ae16094aa15c9e7e`.
   - Dependencies: `ES02-01`, `ES01-02`.
-  - Existing code: `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_api.py`, `tests/test_agency_access.py`.
-  - Evidence: `EV-EVENT-CONSUMPTION`, `EV-EVENT-API`, `EV-EVENT-CASE-BINDING-GAP` (registry below).
+  - Existing code: `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_api.py`, `tests/test_agency_access.py`, `web/v2/event-review.js`, `tests/browser_event_review.py`.
+  - Evidence: `EV-EVENT-CONSUMPTION`, `EV-EVENT-API`, `EV-EVENT-CASE-BINDING-GAP`, `EV-EVENT-REVIEW-UI` (registry below).
 
 - [ ] **ES02-04 Freshness, cancellation and performance evidence**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-25.
   - Acceptance: Measured latencies include ingestion, inference and review; incremental replan results match full recomputation; cancelled/stale work cannot commit.
-  - Next: Build the browser event-review surface and authenticated host worker dispatch around the current identity/revision-checked API; retain OIDC login, PostgreSQL isolation, migration, performance and original model/human gates.
-  - Branch/base: `feat/agency-authorisation-20261025` / `fd57f16dd66a1ce52a3f60144ddbeaf8fcfc117c`.
+  - Next: Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates.
+  - Branch/base: `feat/agency-authorisation-20261025` / `825c8c3969f6cf723a188cc6ae16094aa15c9e7e`.
   - Dependencies: `ES02-02`, `ES02-03`.
-  - Existing code: `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_outbox.py`, `eightball/v2/event_api.py`, `tests/test_agency_access.py`.
-  - Evidence: `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-API` (registry below).
+  - Existing code: `eightball/event_work.py`, `tests/test_event_work.py`, `eightball/v2/event_reviews.py`, `tests/test_event_reviews.py`, `eightball/v2/event_outbox.py`, `eightball/v2/event_api.py`, `tests/test_agency_access.py`, `web/v2/event-review.js`, `tests/browser_event_review.py`.
+  - Evidence: `EV-EVENT-WORK`, `EV-EVENT-CONSUMPTION`, `EV-EVENT-OUTBOX`, `EV-EVENT-API`, `EV-EVENT-REVIEW-UI` (registry below).
 
 - [x] **ES02-05 Bounded structural emergence detectors and typed explanations** (optional, not a version gate)
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-24.
@@ -1006,3 +1006,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `preserved_correctness_failure`.
 - Repository evidence: [docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json](../../docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json).
 - Result/scope: Failure preserved at f75dad5; corrected in cd4ec0c with four case-binding/migration tests and cumulative 1345 source /1345 installed /396 native checks. See EV-EVENT-API.
+
+### EV-EVENT-REVIEW-UI
+
+- Kind: `native_scoped_review_ui`.
+- Repository evidence: [docs/delivery/sessions/2026-10-25-endstate-review-ui.md](../../docs/delivery/sessions/2026-10-25-endstate-review-ui.md).
+- Result/scope: 27 standalone native checks passed; cumulative native verification pending. Development account token, not OIDC login or genuine human acceptance.

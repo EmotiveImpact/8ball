@@ -50,3 +50,7 @@ With agency mode configured against the same database as cases, `/api/v2/cases/{
 ## Case binding and historical migration
 
 New case-processing attempts pass `case_id` to `EventWork.enqueue`, which verifies the case belongs to the supplied matter. An event's matter and base revision alone cannot identify its case. Unbound generic/historical attempts remain retained, but new reviewed consumption rejects them. Migration adds a nullable case column without inferring ownership. Already committed historical review receipts retain their prior duplicate-acknowledgement and export behaviour. No automatic retry or backfill occurs.
+
+## Browser review
+
+The event detail response includes a token-free `/v2/event-review.html?case=...&work=...` link. Configured agency users can open the source/result, edit the current graph through the existing Plan Studio, preview, supply rationale and commit explicitly. The scoped preview endpoint is read-only. Account tokens stay in memory only; actual OIDC sign-in is unfinished. Read-only/stale states and unknown save outcomes cannot commit; refresh resolves uncertain outcomes without automatic replay. [Session](../delivery/sessions/2026-10-25-endstate-review-ui.md).

@@ -6,6 +6,7 @@ from .commands import Command
 from .contracts import Strict
 from .event_reviews import EventReviews
 from .event_outbox import EventOutbox
+from .authoring import GraphPreview
 
 
 class ReviewedGraph(Strict):
@@ -35,6 +36,11 @@ def register_event_routes(router: APIRouter, store):
         return call(request, lambda identity: reviews.commit_graph(
             case_id=case_id, work_id=work_id, reviewer=identity, command=body.command,
             rationale=body.rationale, require_read=True))
+
+    @router.post('/cases/{case_id}/event-work/{work_id}/preview')
+    def preview(request: Request, case_id: str, work_id: str, body: GraphPreview):
+        return call(request, lambda identity: reviews.preview(
+            case_id=case_id, work_id=work_id, reader=identity, request=body))
 
     @router.post('/cases/{case_id}/change-notices/pull')
     def pull(request: Request, case_id: str):

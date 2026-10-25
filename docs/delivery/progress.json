@@ -459,6 +459,11 @@
       "kind": "preserved_correctness_failure",
       "path": "docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json",
       "result": "Failure preserved at f75dad5; corrected in cd4ec0c with four case-binding/migration tests and cumulative 1345 source /1345 installed /396 native checks. See EV-EVENT-API."
+    },
+    "EV-EVENT-REVIEW-UI": {
+      "kind": "native_scoped_review_ui",
+      "path": "docs/delivery/sessions/2026-10-25-endstate-review-ui.md",
+      "result": "27 standalone native checks passed; cumulative native verification pending. Development account token, not OIDC login or genuine human acceptance."
     }
   },
   "milestones": [
@@ -1261,14 +1266,16 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "feat/agency-authorisation-20261025",
-      "base_commit": "fd57f16dd66a1ce52a3f60144ddbeaf8fcfc117c",
+      "base_commit": "825c8c3969f6cf723a188cc6ae16094aa15c9e7e",
       "updated_on": "2026-10-25",
       "code_paths": [
         "eightball/authorisation.py",
         "tests/test_authorisation.py",
         "eightball/agency_access.py",
         "tests/test_agency_access.py",
-        "eightball/v2/event_api.py"
+        "eightball/v2/event_api.py",
+        "web/v2/event-review.js",
+        "tests/browser_event_review.py"
       ],
       "depends_on": [],
       "acceptance": "Authenticated identities and cross-tenant/matter denial tests cover read, write, export, search and model inference.",
@@ -1276,10 +1283,11 @@
         "EV-SECURITY",
         "EV-AGENCY-POLICY",
         "EV-AGENCY-API",
-        "EV-EVENT-API"
+        "EV-EVENT-API",
+        "EV-EVENT-REVIEW-UI"
       ],
       "blockers": [],
-      "next_action": "Build the browser event-review surface and authenticated host worker dispatch around the current identity/revision-checked API; retain OIDC login, PostgreSQL isolation, migration, performance and original model/human gates."
+      "next_action": "Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates."
     },
     {
       "id": "B03-02",
@@ -1693,13 +1701,15 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "feat/agency-authorisation-20261025",
-      "base_commit": "f75dad585a86deb75b3e8703be70cbe042c49f7a",
+      "base_commit": "825c8c3969f6cf723a188cc6ae16094aa15c9e7e",
       "updated_on": "2026-10-25",
       "code_paths": [
         "eightball/v2/event_reviews.py",
         "tests/test_event_reviews.py",
         "eightball/v2/event_api.py",
-        "tests/test_agency_access.py"
+        "tests/test_agency_access.py",
+        "web/v2/event-review.js",
+        "tests/browser_event_review.py"
       ],
       "depends_on": [
         "ES02-01",
@@ -1709,10 +1719,11 @@
       "evidence": [
         "EV-EVENT-CONSUMPTION",
         "EV-EVENT-API",
-        "EV-EVENT-CASE-BINDING-GAP"
+        "EV-EVENT-CASE-BINDING-GAP",
+        "EV-EVENT-REVIEW-UI"
       ],
       "blockers": [],
-      "next_action": "Build the browser event-review surface and authenticated host worker dispatch around the current identity/revision-checked API; retain OIDC login, PostgreSQL isolation, migration, performance and original model/human gates."
+      "next_action": "Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates."
     },
     {
       "id": "ES02-04",
@@ -1722,7 +1733,7 @@
       "required": true,
       "owner": "Codex",
       "working_branch": "feat/agency-authorisation-20261025",
-      "base_commit": "fd57f16dd66a1ce52a3f60144ddbeaf8fcfc117c",
+      "base_commit": "825c8c3969f6cf723a188cc6ae16094aa15c9e7e",
       "updated_on": "2026-10-25",
       "code_paths": [
         "eightball/event_work.py",
@@ -1731,7 +1742,9 @@
         "tests/test_event_reviews.py",
         "eightball/v2/event_outbox.py",
         "eightball/v2/event_api.py",
-        "tests/test_agency_access.py"
+        "tests/test_agency_access.py",
+        "web/v2/event-review.js",
+        "tests/browser_event_review.py"
       ],
       "depends_on": [
         "ES02-02",
@@ -1742,10 +1755,11 @@
         "EV-EVENT-WORK",
         "EV-EVENT-CONSUMPTION",
         "EV-EVENT-OUTBOX",
-        "EV-EVENT-API"
+        "EV-EVENT-API",
+        "EV-EVENT-REVIEW-UI"
       ],
       "blockers": [],
-      "next_action": "Build the browser event-review surface and authenticated host worker dispatch around the current identity/revision-checked API; retain OIDC login, PostgreSQL isolation, migration, performance and original model/human gates."
+      "next_action": "Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates."
     },
     {
       "id": "ES03-01",

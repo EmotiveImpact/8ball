@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **107 recorded discoveries.**
+Last review: 2026-10-25. **109 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1953,3 +1953,37 @@ Two cases may share a matter and revision. An attempt storing only matter scope 
 **Decision history:**
 
 - 2026-10-25 · adopted · Codex: existing_task: correct demonstrated lineage failure without inventing historical case ownership.
+
+### [ ] EM-108: A lost save acknowledgement requires outcome recovery, not automatic replay
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Native browser event review.
+
+The server can commit a reviewed amendment while the browser loses its acknowledgement. Retrying automatically would confuse mutation intent with network recovery. A controlled native test committed once, discarded the response and recovered the outcome through explicit refresh.
+
+**Product implication:** Disable editing while outcome is uncertain; retain original source/result and use deliberate refresh without repeating the mutation.
+
+**Roadmap links:** `ES02-03` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-03`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-25-endstate-review-ui.md`, `tests/browser_event_review.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: improve review recovery and native evidence without relaxing acceptance.
+
+### [ ] EM-109: Disabled-state tests must inspect interactive controls
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Native browser event review.
+
+The first native review run asserted Playwright disabled state on a fieldset. The DOM had the disabled attribute, but that assertion did not verify its controls. Inspecting the actual rationale input and preview button accurately exercised read-only access.
+
+**Product implication:** Preserve the failed artifact and assert effective disabled state on real controls; do not remove permission checks to obtain a passing test.
+
+**Roadmap links:** `ES02-03` (partial), `ES02-04` (partial).
+**Completion scope:** `ES02-03`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-25-endstate-review-ui.md`, `docs/evidence/event-review-browser-first-failure-2026-10-25.json`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Codex: existing_task: improve review recovery and native evidence without relaxing acceptance.

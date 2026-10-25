@@ -84,6 +84,7 @@ class AgencyAccess:
             ('GET', '/api/v2/cases/{case_id}/export'): Operation.EXPORT,
             ('GET', '/api/v2/cases/{case_id}/event-work/{work_id}'): Operation.READ,
             ('POST', '/api/v2/cases/{case_id}/event-work/{work_id}/review'): Operation.WRITE,
+            ('POST', '/api/v2/cases/{case_id}/event-work/{work_id}/preview'): Operation.READ,
             ('POST', '/api/v2/cases/{case_id}/change-notices/pull'): Operation.READ,
             ('POST', '/api/v2/cases/{case_id}/change-notices/{notice_id}/acknowledge'): Operation.READ,
         }

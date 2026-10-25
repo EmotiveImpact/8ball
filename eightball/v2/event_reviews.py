@@ -4,6 +4,7 @@ The host must authenticate the reviewer before calling this service. It is not
 an HTTP endpoint or a replacement for production PostgreSQL tenant policies.
 """
 import json
+from urllib.parse import urlencode
 from endstate.events import EventReceipt
 
 from ..agency_access import AccessRegistry
@@ -14,6 +15,7 @@ from ..models import utcnow
 from ..store import Conflict, canonical, digest
 from .commands import Command, apply
 from .event_outbox import EventOutbox
+from .authoring import GraphPreview, preview_graph
 
 
 class EventReviews:
@@ -48,11 +50,30 @@ class EventReviews:
             if (receipt.event.organisation_id, receipt.event.matter_id) != scope:
                 raise Conflict('Incoming event scope is corrupt')
             case = self.store._get(db, case_id)
+            grants = tuple(Grant.model_validate_json(row['body']) for row in
+                           db.execute('SELECT body FROM agency_grants WHERE revoked=0'))
             result = dict(work_id=work_id, case_id=case_id, state=work['state'],
                           base_revision=work['base_revision'], current_revision=case.revision,
                           source_receipt=receipt.model_dump(mode='json'), original_result=work['result'],
                           reviewable=work['state']=='awaiting_review' and work['base_revision']==case.revision,
+                          can_review=permits(reader, Resource(organisation_id=scope[0], matter_id=scope[1]),
+                                             Operation.WRITE, grants, now=utcnow()),
+                          review_url='/v2/event-review.html?'+urlencode({'case':case_id,'work':work_id}),
                           command_authority=False)
+            EventOutbox._authorize(db, case_id, reader)
+            return result
+
+    def preview(self, *, work_id: str, case_id: str, reader: Identity, request: GraphPreview):
+        with self.store.connection() as db:
+            db.execute('BEGIN IMMEDIATE')
+            _, scope = EventOutbox._authorize(db, case_id, reader)
+            work = db.execute('''SELECT * FROM event_work WHERE id=? AND case_id=?
+                AND organisation_id=? AND matter_id=?''', (work_id, case_id, *scope)).fetchone()
+            if work is None:
+                raise KeyError('Processing attempt not found')
+            if work['state']!='awaiting_review' or work['base_revision']!=request.expected_revision:
+                raise Conflict('Attempt is not awaiting review at this revision')
+            result = preview_graph(self.store._get(db, case_id), request)
             EventOutbox._authorize(db, case_id, reader)
             return result
 

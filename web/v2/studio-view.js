@@ -51,12 +51,12 @@ function stPreviewPanel() {
     <h3>Changes to review</h3>${p.edits.map(e=>`<div class="st-diff"><span>${badge('reported',e.change)}</span><div><strong>${esc(e.title)}</strong><small>${esc(e.fields.join(', '))}</small></div></div>`).join('')||note('No graph changes.')}
     <h3>Draft route results</h3>${p.plan.routes.map(r=>`<div class="st-draft-route"><strong>${esc(r.title)}</strong>${badge(r.status)}<p>${r.provisional?'≥ ':''}${duration(r.minutes)} · ${gbp(r.total_cost)}</p><small>${r.evidence_gaps.length} evidence gaps · ${r.external_dependencies.length} external dependencies</small>${r.hard_breaches.length?note(r.hard_breaches.join('; ')):''}</div>`).join('')||note('No plan can be computed without mandatory objectives.')}`;
 }
-export function studioPage() {
+export function studioPage({showLiveReview=true}={}) {
   const c=S.current.case;
   if(!S.studio||S.studio.caseId!==c.id)S.studio=createStudioDraft(c);
   const d=S.studio,o=studioSelected(d),dirty=studioDirty(d),stale=d.baseRevision!==c.revision;
   return heading('PLAN STUDIO / HUMAN AUTHORING','Engineer the route.','Build explicit conditions, dependencies and contingencies. Preview first. Commit deliberately.',
-    `<button type="button" class="button" data-pr-action="open">Review live plan</button>`+stButton('Undo','undo',d.undo.length?'':'disabled')+stButton('Redo','redo',d.redo.length?'':'disabled')+
+    (showLiveReview?`<button type="button" class="button" data-pr-action="open">Review live plan</button>`:'')+stButton('Undo','undo',d.undo.length?'':'disabled')+stButton('Redo','redo',d.redo.length?'':'disabled')+
     stButton('Discard draft','discard',dirty?'':'disabled')+stButton(d.pending?'Calculating…':'Preview changes','preview',d.pending||stale?'disabled':'',true))+
     `<div class="st-statusbar"><span>${badge('reported','DRAFT · NOT LIVE')} Based on case revision ${d.baseRevision}</span><span>${dirty?'Unsaved changes':'No changes'}${stale?' · Case has changed; reload the draft':''}</span></div>`+
     (stale?warning('The live case changed while this draft was open. It cannot overwrite the newer revision. Export or inspect your changes, then discard and restart.'): '')+
