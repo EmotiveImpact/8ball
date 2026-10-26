@@ -137,3 +137,63 @@ Complete native/wheel verification, freeze this exact source and run the owner's
 bounded actual-provider set once. Retain all failures/missing stages, inspect the
 original and revised proposals against their source, and publish an evidence
 closeout without claiming real-world prediction or quality acceptance.
+
+## Source-bound software and first live attempt (append-only closeout)
+
+The preparation above was committed as `00cc0a76c3f895c0059d8efc3f1d7808e6246ed9`.
+Native run `20261026T123833Z-2dc89c7e` passed with source digest
+`04a36eccaa6854df2d6e6a6e7a643e9ed29bf701be7febafc31692db690cbac9`:
+2,336 source tests, 2,336 installed-wheel regressions, 24 JavaScript modules,
+Python compilation, structural/schema/document checks and 475 checks in 13 native
+browser suites. Inspection before closeout returned valid/passed/native verified,
+model quality false and release false. No inference occurred in that native run.
+
+The separate authorised live run froze protocol digest
+`477958c194ae2f1451739909bf2a28573f97247e1bcdc0aefa0e474a19275364` and kept exactly
+the same source. It **failed to complete the coordinated method**:
+
+| Proposer | Recorded calls | Result |
+| --- | ---: | --- |
+| GLM 5.3 uncensored | 1 | HTTP 200/exact served ID; JSON wrapped in Markdown fences, rejected without repair. No initial compiled proposal. |
+| DeepSeek V4.1 Flash | 1 | HTTP 200/exact served ID; `unsupported_response`, no initial compiled proposal. Exact cause cannot be determined from retained metadata. |
+| Sonnet 5.5 | 2 planning + 1 Jev | Valid initial two-route proposal. Jev returned all three choices, but its generic cost field was not recognised as an explicit integer nano-USD value; the panel stopped. No revision. |
+| Opus 5.5 | 0 | Not started after the incomplete Sonnet panel, per the frozen protocol. |
+
+Total: **five requests, zero revisions**, no retries/repairs/substitutions. Clef
+and GPT were not called. All three fictional case audits stayed unchanged; host
+results awaited review. Sonnet's aggregate usage was 5,534 input + 1,378 output
+tokens. Jev supplied `usage.cost=0.000035868`, not an explicit nano-USD field;
+`unknown_reported_cost` remained unknown. The report's zero **known normalized**
+specialist cost does not mean no charge. Planning charges/billing remain unverified.
+
+Jev selected `preserved` on the three bounded questions. This is one model's
+advisory view of Sonnet's original plan, not independent safety/quality acceptance
+or evidence of coordination benefit. No final synthesis or improved outcome was
+produced. The exact fixture/protocol, receipt fields, model text, validation
+failures and missing stages are retained in the compressed original record.
+
+Evidence: [summary and archive bindings](../../evidence/coordinated-evaluation-first-attempt-2026-10-26.json),
+[original live JSON records](../../evidence/coordinated-evaluation-first-attempt-2026-10-26.json.xz),
+[source-bound native report](../../evidence/coordinated-evaluation-software-passed-2026-10-26.json.xz).
+Archive text/hash equality was checked against the originals, and neither
+configured provider credential occurs in either retained archive. No SQLite
+database, private provider reasoning or arbitrary native envelope is published.
+
+### Additional emergence review
+
+EM-331: a failed envelope can lose the diagnostic metadata needed to understand
+its failure. DeepSeek's receipt has a body hash but no finish reason/usage/assistant
+shape; a hash cannot recover those omitted bytes. Preserve a narrowly allowlisted
+failure shape and token/stop metadata without hidden reasoning or unvalidated
+provider envelopes. This is an existing_task B02-11 integration follow-up, not
+permission to weaken response validation or invent the failed content.
+
+EM-327/330: a generic cost field needs a verified unit contract before conversion.
+Check the native provider documentation and normalisation offline; do not relabel
+unknown as zero or disable batch-wide stopping. GLM's explicit JSON-format failure
+is preserved as model noncompliance, not fixed by silently stripping fences.
+
+Next: inspect provider contracts and repair evidenced adapter/diagnostic gaps with
+offline tests first. A future live attempt must have its own source/protocol,
+preserve this failure and remain within the owner's bounded authorisation. This
+attempt is closed, not resumable. B02-11 remains partial; no merge or deployment.

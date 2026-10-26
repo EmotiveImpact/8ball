@@ -1,4 +1,17 @@
-# Latest preparation: frozen fictional coordinated evaluation
+# Latest evidence: first coordinated live attempt failed/partial
+
+See [evaluation closeout](sessions/2026-10-26-coordinated-evaluation.md#source-bound-software-and-first-live-attempt-append-only-closeout)
+and [bound evidence](../evidence/coordinated-evaluation-first-attempt-2026-10-26.json).
+Source `00cc0a7` passed 2,336 source + 2,336 wheel tests and 475 native browser
+checks. The separate frozen live diagnostic made five requests and produced no
+revision: GLM fenced JSON, DeepSeek unsupported envelope, Sonnet valid original
+but Jev generic cost unknown. Clef/GPT/Opus were not called after that stop.
+Case audits unchanged; no retry/repair, quality/prediction acceptance or deployment.
+Investigate verified cost-unit mapping and safe rejection metadata (EM-331) offline
+next. Preserve this failed record; no resume. Branch remains
+`devin/1792969169-roadmap-integrated`, B02-11 partial, no merge or release.
+
+# Previous preparation: frozen fictional coordinated evaluation
 
 See [evaluation continuation](sessions/2026-10-26-coordinated-evaluation.md), based
 on pushed `a3d65dd`. New fictional loading-bay fixture and opt-in real-host harness

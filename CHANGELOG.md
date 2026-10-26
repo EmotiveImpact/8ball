@@ -4,6 +4,49 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 coordinated diagnostic evidence · Retain first live coordinated-method failures and verified software source
+
+2026-10-26 · `local_unreleased`
+
+Bind native acceptance and a failed five-request fictional diagnostic to 00cc0a7 without rewriting the original protocol or treating partial results as coordination success.
+
+### Added
+
+- Exact original protocol/result/admission/receipt JSON archive with per-file hashes, plus compressed native report and summary bindings.
+- EM-331 rejected-envelope diagnostic gap and native cost-unit follow-up.
+
+### Changed
+
+- Retain original/panel/missing revision stages and all unstarted models; B02-11 remains partial.
+
+### Verification
+
+- 2336 source tests, 2336 installed-wheel regressions, 24 JavaScript modules and 475 native checks across 13 browser suites passed at 00cc0a7.
+- Exact-source native inspection valid/passed before closeout; source unchanged through the live diagnostic.
+- Live: GLM fenced JSON rejected, DeepSeek envelope rejected, Sonnet original compiled, Jev answers validated but cost unknown. Five requests total, no retries or case changes, zero revisions.
+- Exact archived text/hash equality checked; both configured credential values absent from retained evidence.
+
+### Limitations
+
+- Clef/GPT/Opus not called after frozen stop condition. No completed coordinated method, dedicated coordinated UI, model-quality ranking, independent review or predictive evidence.
+- DeepSeek failure cause not recoverable from its body hash. Planning charges and provider billing unverified; zero known normalized specialist cost is not zero charge.
+- Native acceptance binds implementation 00cc0a7, not future fixes. No merge, deployment, release or public SDK.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: An early envelope rejection can discard the diagnostic metadata needed to understand a real integration failure.
+- Risk: Unknown units must not become zero-cost claims; omitted bytes cannot be recovered from hashes.
+- Risk: Software contract tests do not predict actual model compliance with strict JSON or response envelopes.
+- Architecture: Keep provider-specific unit translation and bounded metadata retention in adapters, not inferred generic engine authority.
+- Roadmap decision: existing_task B02-11 offline adapter investigation; retain the failed first run and all remaining quality gates.
+Registered discoveries: EM-327, EM-330, EM-331.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-coordinated-evaluation.md](docs/delivery/sessions/2026-10-26-coordinated-evaluation.md), [docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json](docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json), [docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json.xz](docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json.xz), [docs/evidence/coordinated-evaluation-software-passed-2026-10-26.json.xz](docs/evidence/coordinated-evaluation-software-passed-2026-10-26.json.xz).
+
 ## 0.2.0-alpha.8 coordinated diagnostic preparation · Freeze fictional model-method evaluation without automatic retries
 
 2026-10-26 · `local_unreleased`

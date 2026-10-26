@@ -3,6 +3,60 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-coordinated-evaluation-first-attempt",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 coordinated diagnostic evidence",
+      "title": "Retain first live coordinated-method failures and verified software source",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-11"
+      ],
+      "summary": "Bind native acceptance and a failed five-request fictional diagnostic to 00cc0a7 without rewriting the original protocol or treating partial results as coordination success.",
+      "added": [
+        "Exact original protocol/result/admission/receipt JSON archive with per-file hashes, plus compressed native report and summary bindings.",
+        "EM-331 rejected-envelope diagnostic gap and native cost-unit follow-up."
+      ],
+      "changed": [
+        "Retain original/panel/missing revision stages and all unstarted models; B02-11 remains partial."
+      ],
+      "fixed": [],
+      "verification": [
+        "2336 source tests, 2336 installed-wheel regressions, 24 JavaScript modules and 475 native checks across 13 browser suites passed at 00cc0a7.",
+        "Exact-source native inspection valid/passed before closeout; source unchanged through the live diagnostic.",
+        "Live: GLM fenced JSON rejected, DeepSeek envelope rejected, Sonnet original compiled, Jev answers validated but cost unknown. Five requests total, no retries or case changes, zero revisions.",
+        "Exact archived text/hash equality checked; both configured credential values absent from retained evidence."
+      ],
+      "limitations": [
+        "Clef/GPT/Opus not called after frozen stop condition. No completed coordinated method, dedicated coordinated UI, model-quality ranking, independent review or predictive evidence.",
+        "DeepSeek failure cause not recoverable from its body hash. Planning charges and provider billing unverified; zero known normalized specialist cost is not zero charge.",
+        "Native acceptance binds implementation 00cc0a7, not future fixes. No merge, deployment, release or public SDK."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-coordinated-evaluation.md",
+        "docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json",
+        "docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json.xz",
+        "docs/evidence/coordinated-evaluation-software-passed-2026-10-26.json.xz"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "An early envelope rejection can discard the diagnostic metadata needed to understand a real integration failure."
+        ],
+        "risks": [
+          "Unknown units must not become zero-cost claims; omitted bytes cannot be recovered from hashes.",
+          "Software contract tests do not predict actual model compliance with strict JSON or response envelopes."
+        ],
+        "architecture_implications": [
+          "Keep provider-specific unit translation and bounded metadata retention in adapters, not inferred generic engine authority."
+        ],
+        "roadmap_decision": "existing_task B02-11 offline adapter investigation; retain the failed first run and all remaining quality gates.",
+        "insight_ids": [
+          "EM-327",
+          "EM-330",
+          "EM-331"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-coordinated-evaluation-preparation",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 coordinated diagnostic preparation",

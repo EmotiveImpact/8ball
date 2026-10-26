@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **230 recorded discoveries.**
+Last review: 2026-10-26. **231 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -4025,6 +4025,7 @@ Native decision replies include reported cost but planning replies may include o
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 explicit method/accounting disclosure; no new required scope or independent-quality acceptance.
 - 2026-10-26 · adopted · integration: existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval.
+- 2026-10-26 · adopted · integration: Observed first live diagnostic: Jev usage.cost was not explicit nano-USD, so panel and later proposers stopped with zero known normalized cost, not zero charge. Preserve failure and verify documented units offline, without disabling bounds or rerunning the frozen protocol.
 
 ### [ ] EM-328: A choice challenge is not a free-form rebuttal
 
@@ -4079,3 +4080,21 @@ A method can correctly stop on unknown reviewer cost while a surrounding model-c
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 controlled evaluation safeguards, not new required product scope, actual inference or independent quality approval.
+- 2026-10-26 · adopted · integration: Observed first live diagnostic: Jev usage.cost was not explicit nano-USD, so panel and later proposers stopped with zero known normalized cost, not zero charge. Preserve failure and verify documented units offline, without disabling bounds or rerunning the frozen protocol.
+
+### [ ] EM-331: Rejected provider responses still need safe diagnostic metadata
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** First live frozen coordinated evaluation at 00cc0a7.
+
+DeepSeek returned HTTP 200 but the planning adapter rejected its envelope before retaining stop/usage/assistant-shape metadata. The body hash remains, but cannot recover why it was unsupported. Native generic cost also lacked the explicit unit mapping accepted by coordination.
+
+**Product implication:** Retain narrowly allowlisted failure metadata without hidden reasoning or arbitrary provider envelopes. Verify the native cost-unit contract before normalisation; do not infer free use, invent omitted bytes, repair malformed model output or weaken stopping rules.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-evaluation.md`, `docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json`, `eightball/v2/compatible.py`, `endstate/intelligence/coordination.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 adapter investigation and bounded failure diagnostics; first run remains failed. No runtime fix or quality approval claimed.

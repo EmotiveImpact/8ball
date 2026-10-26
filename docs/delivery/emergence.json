@@ -7192,6 +7192,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "Observed first live diagnostic: Jev usage.cost was not explicit nano-USD, so panel and later proposers stopped with zero known normalized cost, not zero charge. Preserve failure and verify documented units offline, without disabling bounds or rerunning the frozen protocol."
         }
       ]
     },
@@ -7289,6 +7295,40 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11 controlled evaluation safeguards, not new required product scope, actual inference or independent quality approval."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "Observed first live diagnostic: Jev usage.cost was not explicit nano-USD, so panel and later proposers stopped with zero known normalized cost, not zero charge. Preserve failure and verify documented units offline, without disabling bounds or rerunning the frozen protocol."
+        }
+      ]
+    },
+    {
+      "id": "EM-331",
+      "title": "Rejected provider responses still need safe diagnostic metadata",
+      "origin": "First live frozen coordinated evaluation at 00cc0a7",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "DeepSeek returned HTTP 200 but the planning adapter rejected its envelope before retaining stop/usage/assistant-shape metadata. The body hash remains, but cannot recover why it was unsupported. Native generic cost also lacked the explicit unit mapping accepted by coordination.",
+      "product_implication": "Retain narrowly allowlisted failure metadata without hidden reasoning or arbitrary provider envelopes. Verify the native cost-unit contract before normalisation; do not infer free use, invent omitted bytes, repair malformed model output or weaken stopping rules.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-coordinated-evaluation.md",
+        "docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json",
+        "eightball/v2/compatible.py",
+        "endstate/intelligence/coordination.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 adapter investigation and bounded failure diagnostics; first run remains failed. No runtime fix or quality approval claimed."
         }
       ]
     }
