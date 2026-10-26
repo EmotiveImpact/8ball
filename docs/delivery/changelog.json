@@ -3,6 +3,50 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-visual-direction",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8",
+      "title": "Recommended visual direction: the quiet operations room",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "B02-16",
+        "B02-20"
+      ],
+      "summary": "Document an audit of the current black interface and a recommended next visual direction; no stylesheet or runtime change.",
+      "added": [
+        "docs/design/VISUAL-DIRECTION.md: current-state audit, palette, type, shape, component, export-theme and sequencing recommendations."
+      ],
+      "changed": [
+        "Black operator visual system now links to the recommended direction."
+      ],
+      "fixed": [],
+      "verification": [
+        "Delivery ledger, emergence register and changelog checks pass.",
+        "Current-state findings measured from web/v2/style.css and a render of scripts/design_preview.py."
+      ],
+      "limitations": [
+        "Recommendation only; owner adoption is not recorded.",
+        "No accessibility, visual or task status changes are claimed."
+      ],
+      "evidence_paths": [
+        "docs/design/VISUAL-DIRECTION.md",
+        "docs/v2/BLACK-VISUAL-SYSTEM.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "The stylesheet holds 331 distinct hard-coded colours against 11 tokens, and much reading text is 8 to 10px."
+        ],
+        "risks": [
+          "Token drift makes theming and accessibility fixes expensive; Inter is named but never loaded."
+        ],
+        "architecture_implications": [
+          "Consolidate colours, type and spacing into tokens before further visual work."
+        ],
+        "roadmap_decision": "Proposal for owner review under existing B02-16 and B02-20; no task or status changes.",
+        "insight_ids": []
+      }
+    },
+    {
       "id": "2026-10-25-build-verification",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",
