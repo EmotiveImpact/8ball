@@ -4,6 +4,46 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 comparison evidence closeout · Record source-bound software checks and two next-set model selections
+
+2026-10-26 · `pushed_unreleased`
+
+Preserve inconclusive diagnostic and clarify independent-panel versus swarm scope; queue the exact owner-selected GLM/DeepSeek variants without inference or default changes.
+
+### Added
+
+- Source-bound native verification receipt and full compressed report.
+- Catalogue-only receipt for glm-5.3-uncensored and deepseek-v4.1-flash; explicit GLM structured-output limitation.
+
+### Changed
+
+- Clarify next evaluation contracts and preserve all earlier results.
+
+### Verification
+
+- At cd9335f: 2152 source tests, 2152 installed-wheel regressions, 24 JS modules and 475 checks in 13 native browser suites passed. Source and artifact inspection matched.
+- Authenticated catalogue returned both exact model IDs; live inference remains untested.
+
+### Limitations
+
+- Historical recognition remains unresolved; no predictive-quality pass, model ranking, coordinated swarm demonstration, merge or deployment.
+- GLM catalogue does not support structured output; future prompt-only JSON must still pass strict local validation. Catalogue is not live availability or independent provenance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: The owner expected a coordinated system experiment, but this was an independent panel; model count is not evidence of coordination.
+- Discovery: An exact catalogue match can still lack the structured-output capability assumed by a generic adapter.
+- Risk: Misrepresenting a panel as the full product or silently weakening a response contract.
+- Architecture: Keep method identity and provider capability/validation contracts explicit.
+- Roadmap decision: existing_task B02-11 refinements only; no model-quality approval or new scope.
+Registered discoveries: EM-321, EM-322, EM-323, EM-324, EM-325, EM-326.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/evidence/historical-comparison-software-2026-10-26.json](docs/evidence/historical-comparison-software-2026-10-26.json), [docs/evidence/next-comparison-models-2026-10-26.json](docs/evidence/next-comparison-models-2026-10-26.json), [docs/v2/FORECAST-EVALUATION.md](docs/v2/FORECAST-EVALUATION.md), [docs/delivery/sessions/2026-10-26-historical-comparison.md](docs/delivery/sessions/2026-10-26-historical-comparison.md).
+
 ## 0.2.0-alpha.8 historical model comparison · Retain a corrected five-model historical diagnostic without selecting a winner
 
 2026-10-26 · `pushed_unreleased`

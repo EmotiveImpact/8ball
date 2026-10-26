@@ -3,6 +3,60 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-comparison-closeout-model-selection",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 comparison evidence closeout",
+      "title": "Record source-bound software checks and two next-set model selections",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "B02-11"
+      ],
+      "summary": "Preserve inconclusive diagnostic and clarify independent-panel versus swarm scope; queue the exact owner-selected GLM/DeepSeek variants without inference or default changes.",
+      "added": [
+        "Source-bound native verification receipt and full compressed report.",
+        "Catalogue-only receipt for glm-5.3-uncensored and deepseek-v4.1-flash; explicit GLM structured-output limitation."
+      ],
+      "changed": [
+        "Clarify next evaluation contracts and preserve all earlier results."
+      ],
+      "fixed": [],
+      "verification": [
+        "At cd9335f: 2152 source tests, 2152 installed-wheel regressions, 24 JS modules and 475 checks in 13 native browser suites passed. Source and artifact inspection matched.",
+        "Authenticated catalogue returned both exact model IDs; live inference remains untested."
+      ],
+      "limitations": [
+        "Historical recognition remains unresolved; no predictive-quality pass, model ranking, coordinated swarm demonstration, merge or deployment.",
+        "GLM catalogue does not support structured output; future prompt-only JSON must still pass strict local validation. Catalogue is not live availability or independent provenance."
+      ],
+      "evidence_paths": [
+        "docs/evidence/historical-comparison-software-2026-10-26.json",
+        "docs/evidence/next-comparison-models-2026-10-26.json",
+        "docs/v2/FORECAST-EVALUATION.md",
+        "docs/delivery/sessions/2026-10-26-historical-comparison.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "The owner expected a coordinated system experiment, but this was an independent panel; model count is not evidence of coordination.",
+          "An exact catalogue match can still lack the structured-output capability assumed by a generic adapter."
+        ],
+        "risks": [
+          "Misrepresenting a panel as the full product or silently weakening a response contract."
+        ],
+        "architecture_implications": [
+          "Keep method identity and provider capability/validation contracts explicit."
+        ],
+        "roadmap_decision": "existing_task B02-11 refinements only; no model-quality approval or new scope.",
+        "insight_ids": [
+          "EM-321",
+          "EM-322",
+          "EM-323",
+          "EM-324",
+          "EM-325",
+          "EM-326"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-historical-comparison",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 historical model comparison",

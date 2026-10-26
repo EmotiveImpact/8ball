@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **224 recorded discoveries.**
+Last review: 2026-10-26. **226 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -3967,3 +3967,37 @@ All five selected or described antitrust progress as the most useful next observ
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 evaluation refinement only; no acceptance or new product scope.
+
+### [ ] EM-325: Model count is not coordinated-system evidence
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Owner-requested comparison scope and model selection.
+
+The owner expected swarm intelligence; the five-model diagnostic was independent requests with no cross-challenge or synthesis. Passing transports and a panel do not exercise the intended coordinated planning loop.
+
+**Product implication:** Name the tested method and compare single-model, independent-panel and coordinated workflows on the same unseen tasks before claiming coordination adds value.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/evidence/next-comparison-models-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-historical-comparison.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 method/capability disclosure, no new required product scope or acceptance.
+
+### [ ] EM-326: Catalogue availability is not structured-output compatibility
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Owner-requested comparison scope and model selection.
+
+Authenticated catalogue lists glm-5.3-uncensored but reports supports_structured_output=false; DeepSeek Flash reports true. The public model page uses a qualified structured-output label. Neither was live-tested.
+
+**Product implication:** Declare prompt-only versus remotely constrained output before dispatch; preserve strict local validation and raw failures. Do not silently fallback, substitute variants or equate uncensored with quality.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/evidence/next-comparison-models-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-historical-comparison.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 method/capability disclosure, no new required product scope or acceptance.

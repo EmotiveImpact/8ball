@@ -7073,6 +7073,58 @@
           "reason": "existing_task B02-11 evaluation refinement only; no acceptance or new product scope."
         }
       ]
+    },
+    {
+      "id": "EM-325",
+      "title": "Model count is not coordinated-system evidence",
+      "origin": "Owner-requested comparison scope and model selection",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "The owner expected swarm intelligence; the five-model diagnostic was independent requests with no cross-challenge or synthesis. Passing transports and a panel do not exercise the intended coordinated planning loop.",
+      "product_implication": "Name the tested method and compare single-model, independent-panel and coordinated workflows on the same unseen tasks before claiming coordination adds value.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/evidence/next-comparison-models-2026-10-26.json",
+        "docs/delivery/sessions/2026-10-26-historical-comparison.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 method/capability disclosure, no new required product scope or acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-326",
+      "title": "Catalogue availability is not structured-output compatibility",
+      "origin": "Owner-requested comparison scope and model selection",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "Authenticated catalogue lists glm-5.3-uncensored but reports supports_structured_output=false; DeepSeek Flash reports true. The public model page uses a qualified structured-output label. Neither was live-tested.",
+      "product_implication": "Declare prompt-only versus remotely constrained output before dispatch; preserve strict local validation and raw failures. Do not silently fallback, substitute variants or equate uncensored with quality.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/evidence/next-comparison-models-2026-10-26.json",
+        "docs/delivery/sessions/2026-10-26-historical-comparison.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 method/capability disclosure, no new required product scope or acceptance."
+        }
+      ]
     }
   ]
 }

@@ -1,3 +1,13 @@
+# Owner-selected next comparison models — 26 October 2026
+
+The owner requested **GLM 5.3 uncensored** and **DeepSeek 4.1** in the next test set. Authenticated catalogue lookup lists exact IDs `glm-5.3-uncensored` and `deepseek-v4.1-flash`; the latter is the explicitly disclosed Flash variant, not an unnamed full-size model. Both use the Experiential gateway's `/v1/chat/completions` protocol, not the decision endpoints. These are additions to the next evaluation set, **not live-inference passes or production-model selections**. No new request on the recognised acquisition case is planned.
+
+The catalogue reports structured output for DeepSeek but **not GLM uncensored**. The next experimental harness must explicitly declare GLM's prompt-only JSON contract, retain the raw reply and apply the same strict local validator. Do not send an unsupported forced-schema option, silently retry without it, relax validation, or claim remote schema enforcement. No such live request or adapter change was made in this checkpoint. Provider documentation and catalogue capability labels differ; preserve that uncertainty until an explicit native request is tested. Provider route/fallback behavior must also be recorded, not inferred from a chosen model ID.
+
+The historical five-model run was separate requests with no shared findings, cross-challenge or synthesis. It is **not an end-to-end swarm test**. Any future coordinated evaluation must distinguish single-model baseline, independent panel, and coordinated challenge/revision, and use genuinely unseen outcomes to make predictive claims. A freshly authored synthetic exercise can test reasoning/planning mechanics, not real-world predictive accuracy. Model labels such as “uncensored” do not establish forecasting quality.
+
+See the [corrected comparison handoff](../delivery/sessions/2026-10-26-historical-comparison.md) and [catalogue-only receipt](../evidence/next-comparison-models-2026-10-26.json). No client data, route settings, billing controls or default model changed.
+
 # Forecast evaluation: measurement is not prediction
 
 The native planner calculates conditional routes. No empirical outcome predictor is currently wired into the app. The Jev/Clef/GPT fictional decision smoke establishes transport compatibility, not predictive skill. A model's choice confidence is not automatically a calibrated event probability.
