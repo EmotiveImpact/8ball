@@ -321,7 +321,7 @@ Required: `true`. Bounded mode: `engineering_only`.
 Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.
 
 Ledger prerequisites: none recorded.
-Preserved blockers: Owner selected Anthropic Sonnet 5.5, exact active catalogue ID claude-sonnet-5-5; session key authenticates catalogue access. Earlier Sonnet 4.6 fixtures all rejected HTTP400, exact cause unknown. Account credit and provider-enforced US$5 cap/no automatic top-up remain unverified; no further inference until confirmed. Catalogue listing is not successful inference or model quality. Persistent deployment settings are not changed by session configuration examples.; Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate..
+Preserved blockers: Native Sonnet frozen generation and actual-provider native journey now pass. Account cap absence explicitly accepted for bounded fictional tests; no cap is claimed. Independent semantic/reliability acceptance remains outstanding.; Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate..
 
 #### B02-10 — Robust source extraction, deadlines and entity reconciliation
 
@@ -348,7 +348,7 @@ Required: `true`. Bounded mode: `engineering_only`.
 Blank case -> real extraction -> mixed human review -> valid graph -> distinct routes -> new evidence/replan -> isolated refusal -> approval/completion -> reload/export, all native.
 
 Ledger prerequisites: B02-09, B02-10, B02-11.
-Preserved blockers: Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey..
+Preserved blockers: Actual-provider scripted native twenty-step journey now passes; genuinely human acceptance and independent quality remain unperformed. Scripted review and synthetic observations do not meet those gates..
 
 #### B02-14 — Source chunking, duplication and reviewer-safe object reconciliation
 

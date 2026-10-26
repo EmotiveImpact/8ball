@@ -61,6 +61,14 @@ Two new test setup defects were corrected: encode the lone surrogate as escaped
 JSON bytes, and use distinct success-criterion titles before testing coverage.
 Full source-bound native/wheel regression and publication will be appended.
 
+The first full native run at `839b567919d72b8a54bdc22c3052a43e579a0f6e`
+failed a delivery-document assertion: the lane instructions still copied obsolete
+blockers after the canonical ledger update. Source and installed-wheel tests each
+reported 2089 passed/1 failed; all 13 native browser suites passed. The exact
+canonical blocker text is now synchronized without changing lane ownership or
+acceptance. [Failed report and logs](../../evidence/sonnet-native-software-failed-2026-10-26.json.xz)
+are retained; fresh full acceptance follows. This is not a model/runtime defect.
+
 ## Emergence Review
 
 **EM-311 — transport success is separate from generation acceptance.** Observed
