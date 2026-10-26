@@ -3,6 +3,59 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-forecast-measurement",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 forecast measurement",
+      "title": "Measure forecasts without calling conditional plans predictions",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-11",
+        "ES01-05"
+      ],
+      "summary": "Provider-free scoring and an explicit missing-predictor diagnostic, not predictive-quality acceptance.",
+      "added": [
+        "Typed forecasts/resolutions, strict clocks/probabilities, abstention and missing outcomes, coverage-aware Brier scoring.",
+        "Six paired fictional worlds with separately read outcomes and immutable run outputs."
+      ],
+      "changed": [
+        "Internal wheel smoke exercises forecast measurement without provider/application dependencies."
+      ],
+      "fixed": [],
+      "verification": [
+        "34 new forecast tests;70 forecast/kernel and106 forecast/kernel/runner tests passed. Compilation passed.",
+        "Diagnostic executed:0/6 configured forecasts; no empirical prediction tested.",
+        "Initial full Pytest omitted installed Node from PATH:96 failed,1877 passed,6 skipped. Corrected native source cb56479a33145c14a0683baab751ac00fea18a64c6e9ff5841a541b2eed5be32 passed1979 source tests,1979 installed-wheel regressions and454 checks across13 native browser suites; source/evidence inspection passed before documentation-only closeout."
+      ],
+      "limitations": [
+        "Local at preparation; no merge/release/deployment or further inference.",
+        "No configured predictor, independent blinding, empirical calibration or predictive accuracy. Canonical acceptance statuses unchanged."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-forecast-measurement.md",
+        "docs/v2/FORECAST-EVALUATION.md",
+        "tests/test_forecasting.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Planning and transport success leave outcome prediction absent.",
+          "Absent forecasts/outcomes need null scores and explicit coverage.",
+          "Separate labels/hashes do not prove independent blinding."
+        ],
+        "risks": [
+          "Synthetic scores or choice confidence can be mistaken for empirical skill."
+        ],
+        "architecture_implications": [
+          "Pure ENDSTATE measurement; host permissions and factual observations remain separate."
+        ],
+        "roadmap_decision": "existing_task refinements and decision_record; no required scope or acceptance changes.",
+        "insight_ids": [
+          "EM-301",
+          "EM-302",
+          "EM-303"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-checkpoint-repair",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 verified checkpoint repair",

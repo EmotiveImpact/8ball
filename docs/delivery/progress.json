@@ -990,6 +990,11 @@
       "kind": "fictional_provider_smoke",
       "path": "docs/v2/DECISION-PROVIDERS.md",
       "result": "One validated native response each from Jev/Clef/GPT, conflicting choices retained; gateway-recorded total USD0.000008547. Not quality, hard-cap or production acceptance."
+    },
+    "EV-FORECAST-MEASUREMENT-20261026": {
+      "kind": "local_engineering",
+      "path": "docs/delivery/sessions/2026-10-26-forecast-measurement.md",
+      "result": "Typed scoring and six fictional worlds: zero configured forecasts; no predictive accuracy. Full native engineering acceptance passed:1979 source and installed-wheel regressions and454 browser checks. No status or model-quality promotion."
     }
   },
   "milestones": [
@@ -1523,7 +1528,8 @@
         "EV-REVIEW-EVIDENCE-20261018",
         "EV-REVIEW-REFRESH-RACE",
         "EV-NATIVE-REVIEW-20261026",
-        "EV-DECISION-SMOKE-20261026"
+        "EV-DECISION-SMOKE-20261026",
+        "EV-FORECAST-MEASUREMENT-20261026"
       ],
       "blockers": [
         "Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed."

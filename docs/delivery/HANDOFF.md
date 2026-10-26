@@ -1,3 +1,7 @@
+# Forecast measurement checkpoint — 26 October 2026
+
+[Latest handoff](sessions/2026-10-26-forecast-measurement.md): conditional planning works; no empirical event predictor is configured. Measurement contracts and the missing-predictor diagnostic passed full native acceptance (1979 source and installed-wheel tests, 454 browser checks); publication follows. Earlier repairs are pushed with passing software CI; automated review separately errored. Continue autonomously within existing authority/budget boundaries.
+
 # Owner-directed repair and publication checkpoint — 26 October 2026
 
 [Current repair handoff](sessions/2026-10-26-checkpoint-repair.md) records the OIDC fixture-clock fix, dialog-focus regression and exact passing native source (1,945 source tests, 1,945 installed regressions, 13 suites / 454 browser checks). The owner's “fix the issues” request authorizes updating the existing PR, not merging or deploying. Publication/check status comes from the [current PR head](https://github.com/EmotiveImpact/8ball/pull/6); earlier local-only entries below preserve their preparation state and do not override it.

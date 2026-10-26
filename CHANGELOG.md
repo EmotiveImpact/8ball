@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 forecast measurement · Measure forecasts without calling conditional plans predictions
+
+2026-10-26 · `local_unreleased`
+
+Provider-free scoring and an explicit missing-predictor diagnostic, not predictive-quality acceptance.
+
+### Added
+
+- Typed forecasts/resolutions, strict clocks/probabilities, abstention and missing outcomes, coverage-aware Brier scoring.
+- Six paired fictional worlds with separately read outcomes and immutable run outputs.
+
+### Changed
+
+- Internal wheel smoke exercises forecast measurement without provider/application dependencies.
+
+### Verification
+
+- 34 new forecast tests;70 forecast/kernel and106 forecast/kernel/runner tests passed. Compilation passed.
+- Diagnostic executed:0/6 configured forecasts; no empirical prediction tested.
+- Initial full Pytest omitted installed Node from PATH:96 failed,1877 passed,6 skipped. Corrected native source cb56479a33145c14a0683baab751ac00fea18a64c6e9ff5841a541b2eed5be32 passed1979 source tests,1979 installed-wheel regressions and454 checks across13 native browser suites; source/evidence inspection passed before documentation-only closeout.
+
+### Limitations
+
+- Local at preparation; no merge/release/deployment or further inference.
+- No configured predictor, independent blinding, empirical calibration or predictive accuracy. Canonical acceptance statuses unchanged.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Planning and transport success leave outcome prediction absent.
+- Discovery: Absent forecasts/outcomes need null scores and explicit coverage.
+- Discovery: Separate labels/hashes do not prove independent blinding.
+- Risk: Synthetic scores or choice confidence can be mistaken for empirical skill.
+- Architecture: Pure ENDSTATE measurement; host permissions and factual observations remain separate.
+- Roadmap decision: existing_task refinements and decision_record; no required scope or acceptance changes.
+Registered discoveries: EM-301, EM-302, EM-303.
+
+Roadmap items: `B02-11`, `ES01-05`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-forecast-measurement.md](docs/delivery/sessions/2026-10-26-forecast-measurement.md), [docs/v2/FORECAST-EVALUATION.md](docs/v2/FORECAST-EVALUATION.md), [tests/test_forecasting.py](tests/test_forecasting.py).
+
 ## 0.2.0-alpha.8 verified checkpoint repair · Repair test-clock and dialog-focus failures before publication
 
 2026-10-26 · `local_unreleased`

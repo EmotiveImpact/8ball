@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **200 recorded discoveries.**
+Last review: 2026-10-26. **203 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -3558,3 +3558,54 @@ The automated review for the earlier PR head reported errored, and no findings w
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: decision_record: no review or release gate is promoted by a service failure.
+
+### [ ] EM-301: Decision transport is not an event predictor
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Forecast readiness diagnostic.
+
+Six conditional routes contained no outcome probabilities. Working decision transports do not configure an empirical event predictor.
+
+**Product implication:** Keep measurement, missing capability and empirical acceptance separate.
+
+**Roadmap links:** `B02-11` (partial), `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-forecast-measurement.md`, `tests/test_forecasting.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task evaluation refinement and decision_record; no acceptance/status promotion.
+
+### [ ] EM-302: Missing forecasts must not manufacture perfect scores
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Forecast readiness diagnostic.
+
+Fully abstained evaluations need null scores. Missing outcomes are not false; same-subset baselines and coverage must be reported separately.
+
+**Product implication:** Keep measurement, missing capability and empirical acceptance separate.
+
+**Roadmap links:** `B02-11` (partial), `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-forecast-measurement.md`, `tests/test_forecasting.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task evaluation refinement and decision_record; no acceptance/status promotion.
+
+### [ ] EM-303: Separate labels do not prove independent blinding
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Forecast readiness diagnostic.
+
+The diagnostic reads separately stored labels after freezing forecasts, but its author created both. Paired hypothetical worlds do not establish representative predictive skill.
+
+**Product implication:** Keep measurement, missing capability and empirical acceptance separate.
+
+**Roadmap links:** `B02-11` (partial), `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-forecast-measurement.md`, `tests/test_forecasting.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task evaluation refinement and decision_record; no acceptance/status promotion.

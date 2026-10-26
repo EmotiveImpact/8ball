@@ -218,7 +218,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval.
   - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Existing code: `evals/live_generation.py`, `evals/classification-cases.json`, `endstate/plan_review.py`, `eightball/v2/plan_review.py`, `web/v2/plan-review-view.js`, `evals/plan_review_bench.py`, `evals/PLAN-QUALITY-GATE.md`, `tests/test_plan_review.py`, `tests/browser_plan_review.py`, `evals/review_readiness.py`, `tests/test_review_readiness.py`, `docs/delivery/review/protocol-v2.template.json`, `docs/delivery/review/dataset-manifest.template.json`.
-  - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-REVIEW-REFRESH-RACE`, `EV-NATIVE-REVIEW-20261026`, `EV-DECISION-SMOKE-20261026` (registry below).
+  - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-REVIEW-REFRESH-RACE`, `EV-NATIVE-REVIEW-20261026`, `EV-DECISION-SMOKE-20261026`, `EV-FORECAST-MEASUREMENT-20261026` (registry below).
   - Blocker: Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed.
 
 - [ ] **B02-12 Full twenty-step real-model V0.2 acceptance journey**
@@ -1179,3 +1179,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `fictional_provider_smoke`.
 - Repository evidence: [docs/v2/DECISION-PROVIDERS.md](../../docs/v2/DECISION-PROVIDERS.md).
 - Result/scope: One validated native response each from Jev/Clef/GPT, conflicting choices retained; gateway-recorded total USD0.000008547. Not quality, hard-cap or production acceptance.
+
+### EV-FORECAST-MEASUREMENT-20261026
+
+- Kind: `local_engineering`.
+- Repository evidence: [docs/delivery/sessions/2026-10-26-forecast-measurement.md](../../docs/delivery/sessions/2026-10-26-forecast-measurement.md).
+- Result/scope: Typed scoring and six fictional worlds: zero configured forecasts; no predictive accuracy. Full native engineering acceptance passed:1979 source and installed-wheel regressions and454 browser checks. No status or model-quality promotion.

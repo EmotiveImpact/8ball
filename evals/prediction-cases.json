@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "scope": "Paired fictional possible worlds, not a representative sample or empirical forecast benchmark.",
+  "as_of": "2026-10-01T09:00:00Z",
+  "horizon": "2026-10-02T09:00:00Z",
+  "cases": [
+    {"id": "supplier_a", "family": "supplier", "event": "The supplier confirms delivery before the horizon.", "known": "An order can be placed. Supplier availability and delivery time are unknown."},
+    {"id": "supplier_b", "family": "supplier", "event": "The supplier confirms delivery before the horizon.", "known": "An order can be placed. Supplier availability and delivery time are unknown."},
+    {"id": "proposal_a", "family": "proposal", "event": "The fictional client explicitly accepts the proposal before the horizon.", "known": "A proposal can be sent. No client response or acceptance is available."},
+    {"id": "proposal_b", "family": "proposal", "event": "The fictional client explicitly accepts the proposal before the horizon.", "known": "A proposal can be sent. No client response or acceptance is available."},
+    {"id": "repair_a", "family": "repair", "event": "An independent inspection confirms the repair before the horizon.", "known": "Repair work can be scheduled. The fault cause and inspection outcome remain unknown."},
+    {"id": "repair_b", "family": "repair", "event": "An independent inspection confirms the repair before the horizon.", "known": "Repair work can be scheduled. The fault cause and inspection outcome remain unknown."}
+  ]
+}

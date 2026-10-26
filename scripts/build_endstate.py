@@ -78,11 +78,19 @@ packet=project({'reference_hashes':{'case:summary':'0'*64},'private':'Fictional 
 assert packet['brief'] is None and 'Fictional private narrative' not in json.dumps(packet)
 q=ChoiceQuestion(id='review',instructions='Review only',criteria={'review':'Seek evidence','defer':'Defer review'})
 assert validate_choice({'type':'choice','choice':'review','confidence':1.0,'probabilities':{'review':1.0,'defer':0.0}},q)['choice']=='review'
+from endstate.forecasting import Forecast,Resolution,evaluate,forecast_digest
+f=Forecast(id='delivery',event='Delivery confirmed before tomorrow',as_of=now,horizon=now+timedelta(days=1),
+           input_sha256='0'*64,predictor='package_fixture',probability=0.5)
+o=Resolution(forecast_id=f.id,forecast_sha256=forecast_digest(f),value=False,available_at=now+timedelta(days=2),
+             source_reference='Synthetic package fixture',source_sha256='1'*64,basis='synthetic')
+evaluation=evaluate([f],[o],as_of=now+timedelta(days=2))
+assert evaluation['brier']==0.25 and not evaluation['predictive_quality_approved'] and not evaluation['facts_attested']
 import endstate
 assert pathlib.Path(endstate.__file__).resolve().is_relative_to(pathlib.Path(sys.argv[1]).resolve())
 print(json.dumps({'installed_outside_repository':True,'routes':len(r.plan['routes']),
  'input_unchanged':snapshot.observations==[],'approval_preserved':True,'roundtrip_exact':True,
  'scenario_replay':True,'restricted_packet':True,'typed_advisory_contract':True,
+ 'forecast_measurement_only':True,
  'forbidden_runtime_imports':[],'model_inference':False}))
 '''
         test=json.loads(run([sys.executable,'-I','-c',snippet,str(target)],temp))

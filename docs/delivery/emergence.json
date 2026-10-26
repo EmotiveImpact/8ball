@@ -6417,6 +6417,87 @@
           "reason": "decision_record: no review or release gate is promoted by a service failure."
         }
       ]
+    },
+    {
+      "id": "EM-301",
+      "title": "Decision transport is not an event predictor",
+      "origin": "Forecast readiness diagnostic",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "Six conditional routes contained no outcome probabilities. Working decision transports do not configure an empirical event predictor.",
+      "product_implication": "Keep measurement, missing capability and empirical acceptance separate.",
+      "task_ids": [
+        "B02-11",
+        "ES01-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-forecast-measurement.md",
+        "tests/test_forecasting.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task evaluation refinement and decision_record; no acceptance/status promotion."
+        }
+      ]
+    },
+    {
+      "id": "EM-302",
+      "title": "Missing forecasts must not manufacture perfect scores",
+      "origin": "Forecast readiness diagnostic",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "Fully abstained evaluations need null scores. Missing outcomes are not false; same-subset baselines and coverage must be reported separately.",
+      "product_implication": "Keep measurement, missing capability and empirical acceptance separate.",
+      "task_ids": [
+        "B02-11",
+        "ES01-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-forecast-measurement.md",
+        "tests/test_forecasting.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task evaluation refinement and decision_record; no acceptance/status promotion."
+        }
+      ]
+    },
+    {
+      "id": "EM-303",
+      "title": "Separate labels do not prove independent blinding",
+      "origin": "Forecast readiness diagnostic",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "The diagnostic reads separately stored labels after freezing forecasts, but its author created both. Paired hypothetical worlds do not establish representative predictive skill.",
+      "product_implication": "Keep measurement, missing capability and empirical acceptance separate.",
+      "task_ids": [
+        "B02-11",
+        "ES01-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-forecast-measurement.md",
+        "tests/test_forecasting.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task evaluation refinement and decision_record; no acceptance/status promotion."
+        }
+      ]
     }
   ]
 }
