@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **212 recorded discoveries.**
+Last review: 2026-10-26. **213 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -3763,3 +3763,20 @@ The live frame contained both requested success criteria but its quotes omitted 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task: bounded provider/prompt correction; no new required scope or independent/human/production acceptance.
+
+### [ ] EM-313: Partial provider counters are not complete usage totals
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Sonnet native actual-provider integration.
+
+Controlled native receipts with missing output omitted known cache use; absent cache fields could be presented as complete prompt usage. Five counterexamples reproduced the normalization error.
+
+**Product implication:** Unknown counts must remain unknown, and known input components must be aggregated independently of output completeness. This strengthens existing receipt honesty, not billing or quality acceptance.
+
+**Roadmap links:** `B02-09` (blocked).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-usage.md`, `docs/evidence/native-usage-regression-before-2026-10-26.log.xz`, `tests/test_compatible_provider.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task: B02-09 native adapter receipt correction; no scope expansion or customer-value claim.

@@ -6756,6 +6756,33 @@
           "reason": "existing_task: bounded provider/prompt correction; no new required scope or independent/human/production acceptance."
         }
       ]
+    },
+    {
+      "id": "EM-313",
+      "title": "Partial provider counters are not complete usage totals",
+      "origin": "Sonnet native actual-provider integration",
+      "first_seen": "2026-10-26",
+      "evidence_level": "supported_by_tests",
+      "observation": "Controlled native receipts with missing output omitted known cache use; absent cache fields could be presented as complete prompt usage. Five counterexamples reproduced the normalization error.",
+      "product_implication": "Unknown counts must remain unknown, and known input components must be aggregated independently of output completeness. This strengthens existing receipt honesty, not billing or quality acceptance.",
+      "task_ids": [
+        "B02-09"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-native-usage.md",
+        "docs/evidence/native-usage-regression-before-2026-10-26.log.xz",
+        "tests/test_compatible_provider.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task: B02-09 native adapter receipt correction; no scope expansion or customer-value claim."
+        }
+      ]
     }
   ]
 }

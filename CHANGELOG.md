@@ -4,6 +4,44 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 native usage completeness · Preserve unknown cache usage in normalized receipts
+
+2026-10-26 · `local_unreleased`
+
+Normalize prompt totals only when all native input components are known.
+
+### Changed
+
+- Keep supplied native counters while treating absent cache components as unknown.
+
+### Fixed
+
+- Do not undercount prompt tokens when output usage is missing, or label uncached input as a complete prompt total.
+
+### Verification
+
+- Expanded controlled regression: five failures and four passes before correction; retained failure log.
+- After correction: 308 controlled provider/integration/compiler/lifecycle tests passed; full native acceptance pending.
+
+### Limitations
+
+- No additional inference or billing verification. Earlier live receipts have all four components and unchanged estimates.
+- Historical live source hashes remain historical; independent quality, prediction, human acceptance and release are not established.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A partial meter reading is not a complete total.
+- Risk: Cross-provider normalization can silently drop known cache use or erase missingness.
+- Architecture: Require input component completeness independently of output usage; retain native counters.
+- Roadmap decision: existing_task B02-09 only; no new scope or acceptance status changes.
+Registered discoveries: EM-313.
+
+Roadmap items: `B02-09`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-native-usage.md](docs/delivery/sessions/2026-10-26-native-usage.md), [docs/evidence/native-usage-regression-before-2026-10-26.log.xz](docs/evidence/native-usage-regression-before-2026-10-26.log.xz), [tests/test_compatible_provider.py](tests/test_compatible_provider.py).
+
 ## 0.2.0-alpha.8 native Sonnet integration · Connect native Sonnet and verify the actual-provider journey
 
 2026-10-26 · `pushed_unreleased`

@@ -353,11 +353,13 @@ class CompatibleSession:
             raise HostedFailure('invalid_usage')
         call['provider_usage'] = counts
         tokens = {}
-        for native, common in (('input_tokens', 'prompt_tokens'), ('output_tokens', 'completion_tokens')):
-            if native in counts:
-                tokens[common] = counts[native]
-        if len(counts) == 4:
-            tokens['prompt_tokens'] += counts['cache_creation_input_tokens'] + counts['cache_read_input_tokens']
+        if 'output_tokens' in counts:
+            tokens['completion_tokens'] = counts['output_tokens']
+        # Native input_tokens excludes cache usage; absent components are unknown.
+        inputs = ('input_tokens', 'cache_creation_input_tokens', 'cache_read_input_tokens')
+        if all(key in counts for key in inputs):
+            tokens['prompt_tokens'] = sum(counts[key] for key in inputs)
+        if len(tokens) == 2:
             tokens['total_tokens'] = tokens['prompt_tokens'] + tokens['completion_tokens']
         blocks = envelope.get('content')
         if not isinstance(blocks, list) or not blocks:

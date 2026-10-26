@@ -3,6 +3,52 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-native-usage",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 native usage completeness",
+      "title": "Preserve unknown cache usage in normalized receipts",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-09"
+      ],
+      "summary": "Normalize prompt totals only when all native input components are known.",
+      "added": [],
+      "changed": [
+        "Keep supplied native counters while treating absent cache components as unknown."
+      ],
+      "fixed": [
+        "Do not undercount prompt tokens when output usage is missing, or label uncached input as a complete prompt total."
+      ],
+      "verification": [
+        "Expanded controlled regression: five failures and four passes before correction; retained failure log.",
+        "After correction: 308 controlled provider/integration/compiler/lifecycle tests passed; full native acceptance pending."
+      ],
+      "limitations": [
+        "No additional inference or billing verification. Earlier live receipts have all four components and unchanged estimates.",
+        "Historical live source hashes remain historical; independent quality, prediction, human acceptance and release are not established."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-native-usage.md",
+        "docs/evidence/native-usage-regression-before-2026-10-26.log.xz",
+        "tests/test_compatible_provider.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "A partial meter reading is not a complete total."
+        ],
+        "risks": [
+          "Cross-provider normalization can silently drop known cache use or erase missingness."
+        ],
+        "architecture_implications": [
+          "Require input component completeness independently of output usage; retain native counters."
+        ],
+        "roadmap_decision": "existing_task B02-09 only; no new scope or acceptance status changes.",
+        "insight_ids": [
+          "EM-313"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-sonnet-native",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 native Sonnet integration",

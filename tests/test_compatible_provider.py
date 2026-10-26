@@ -540,7 +540,14 @@ def test_native_rejections_keep_local_guards_and_do_not_retry(monkeypatch, field
 
 
 @pytest.mark.parametrize('usage,expected', [(None, {}), ({}, {}),
-    ({'input_tokens': 7}, {'prompt_tokens': 7})])
+    ({'input_tokens': 7}, {}),
+    ({'output_tokens': 5}, {'completion_tokens': 5}),
+    ({'input_tokens': 7, 'output_tokens': 5}, {'completion_tokens': 5}),
+    ({'input_tokens': 7, 'cache_creation_input_tokens': 3, 'output_tokens': 5}, {'completion_tokens': 5}),
+    ({'input_tokens': 7, 'cache_read_input_tokens': 4, 'output_tokens': 5}, {'completion_tokens': 5}),
+    ({'input_tokens': 7, 'cache_creation_input_tokens': 3, 'cache_read_input_tokens': 4}, {'prompt_tokens': 14}),
+    ({'input_tokens': 7, 'cache_creation_input_tokens': 3, 'cache_read_input_tokens': 4, 'output_tokens': 5},
+     {'prompt_tokens': 14, 'completion_tokens': 5, 'total_tokens': 19})])
 def test_native_missing_usage_is_not_free_usage(monkeypatch, usage, expected):
     configure(monkeypatch, 'https://api.anthropic.com/v1', 'anthropic')
     monkeypatch.setenv('EIGHTBALL_API_MODEL', 'claude-sonnet-5-5')
@@ -549,6 +556,7 @@ def test_native_missing_usage_is_not_free_usage(monkeypatch, usage, expected):
     session = CompatibleSession(allow_external=True, client=cl)
     session.generate(SCHEMA, 'Extract', {})
     assert session.receipt['calls'][0]['usage'] == expected
+    assert session.receipt['calls'][0]['provider_usage'] == (usage or {})
 
 
 @pytest.mark.parametrize('base,provider', [

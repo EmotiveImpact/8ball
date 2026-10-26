@@ -1042,6 +1042,11 @@
       "result": "Actual Sonnet four-fixture generation and scripted 20-step native journey passed; failed attempts retained. Exact software code 6ce6151 passed 2090 source + 2090 installed-wheel tests, 24 JS modules and all 13 native suites/474 checks; inspected before documentation closeout. Independent quality/human/production gates remain open.",
       "code_commit": "6ce61517d7dac347d98170b66274917f3f2e5006",
       "url": "https://github.com/EmotiveImpact/8ball/commit/6ce61517d7dac347d98170b66274917f3f2e5006"
+    },
+    "EV-NATIVE-USAGE-20261026": {
+      "kind": "controlled_http_tests",
+      "path": "docs/delivery/sessions/2026-10-26-native-usage.md",
+      "result": "Five controlled receipt regressions failed before correction; 308 focused tests passed after. No new model calls or change to historical live estimates. Full native software acceptance pending."
     }
   },
   "milestones": [
@@ -1503,7 +1508,8 @@
         "EV-ANTHROPIC-20261026",
         "EV-OCT25-INTEGRATION",
         "EV-DECISION-CONTRACTS-20261026",
-        "EV-SONNET-NATIVE-20261026"
+        "EV-SONNET-NATIVE-20261026",
+        "EV-NATIVE-USAGE-20261026"
       ],
       "blockers": [
         "Native Sonnet frozen generation and actual-provider native journey now pass. Account cap absence explicitly accepted for bounded fictional tests; no cap is claimed. Independent semantic/reliability acceptance remains outstanding.",

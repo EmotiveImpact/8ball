@@ -1,5 +1,7 @@
 # Native Sonnet integration — 26 October 2026
 
+**Current follow-up:** [native usage completeness](sessions/2026-10-26-native-usage.md) corrects partial cache accounting without new paid inference. Earlier actual-provider receipts remain bound to their original source.
+
 [Latest handoff](sessions/2026-10-26-sonnet-native.md) and
 [retained evidence](../evidence/sonnet-native-2026-10-26.json): direct native
 Sonnet 5.5 passes the frozen generation set and all 20 scripted actual-provider

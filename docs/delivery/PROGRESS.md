@@ -201,7 +201,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate. Latest integration: see sessions/2026-10-26-sonnet-native.md. Native actual-provider engineering now passes; retain independent protocol/held-out labels and human gates. Do not re-block this authorised test on dashboard login or assume a provider cap. No reserved lane owner/status/acceptance change.
   - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`, `eightball/v2/compatible.py`, `evals/live_compatible.py`, `evals/live_huggingface.py`, `tests/test_hosted_eval_retention.py`, `docs/v2/ANTHROPIC-SETUP.md`.
-  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-ANTHROPIC-SETUP`, `EV-ANTHROPIC-20261026`, `EV-OCT25-INTEGRATION`, `EV-DECISION-CONTRACTS-20261026`, `EV-SONNET-NATIVE-20261026` (registry below).
+  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-ANTHROPIC-SETUP`, `EV-ANTHROPIC-20261026`, `EV-OCT25-INTEGRATION`, `EV-DECISION-CONTRACTS-20261026`, `EV-SONNET-NATIVE-20261026`, `EV-NATIVE-USAGE-20261026` (registry below).
   - Blocker: Native Sonnet frozen generation and actual-provider native journey now pass. Account cap absence explicitly accepted for bounded fictional tests; no cap is claimed. Independent semantic/reliability acceptance remains outstanding. Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate.
 
 - [ ] **B02-10 Robust source extraction, deadlines and entity reconciliation**
@@ -1212,3 +1212,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Result/scope: Actual Sonnet four-fixture generation and scripted 20-step native journey passed; failed attempts retained. Exact software code 6ce6151 passed 2090 source + 2090 installed-wheel tests, 24 JS modules and all 13 native suites/474 checks; inspected before documentation closeout. Independent quality/human/production gates remain open.
 - Code revision: `6ce61517d7dac347d98170b66274917f3f2e5006`.
 - External record: [verification source](https://github.com/EmotiveImpact/8ball/commit/6ce61517d7dac347d98170b66274917f3f2e5006).
+
+### EV-NATIVE-USAGE-20261026
+
+- Kind: `controlled_http_tests`.
+- Repository evidence: [docs/delivery/sessions/2026-10-26-native-usage.md](../../docs/delivery/sessions/2026-10-26-native-usage.md).
+- Result/scope: Five controlled receipt regressions failed before correction; 308 focused tests passed after. No new model calls or change to historical live estimates. Full native software acceptance pending.
