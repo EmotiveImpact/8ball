@@ -1,3 +1,11 @@
+# Information-check loop checkpoint — 26 October 2026
+
+[Latest handoff](sessions/2026-10-26-information-loop.md) and [source-bound receipt](../evidence/information-loop-native-2026-10-26.json): saved challenges now expose structural check candidates, explicit linked case questions, current evidence support and separate observations, followed by explicit immutable rechecks. Exact pushed code `a7cc1d66e786eb027e32e2b0a63fb60c9cbfdde9` on `devin/1792969169-roadmap-integrated` passed 2,057 source tests, 2,057 installed-wheel regressions, 24 JavaScript modules and 474 checks in all 13 native suites. Source/artifact inspection matched before documentation-only closeout. [PR6](https://github.com/EmotiveImpact/8ball/pull/6) remains unmerged; current CI is separate. No automatic questions, observations, course selection or external actions; no inference or predictive-quality result.
+
+EM-310 (`existing_task`, B02-05/ES01-02): repeated reconsideration needs one stable information-check lineage, not duplicated questions or factual claims from answered/reviewed labels. Operator benefit and review burden remain unmeasured. All provider, independent/professional/human, production and owner gates remain open. Reserved lane ownership and optional holds are unchanged.
+
+## Previous retained specialist presentation
+
 # Retained specialist presentation checkpoint — 26 October 2026
 
 [Latest handoff](sessions/2026-10-26-specialist-presentation.md) and [receipt](../evidence/specialist-presentation-native-2026-10-26.json): the existing event review now displays reconstructed, source-bound specialist answers, missing responses and unresolved differences without a vote or apply action. Exact code `ba1fd41b546bb026a2032f57bfa575020b99f951` is pushed on `devin/1792969169-roadmap-integrated` to [PR6](https://github.com/EmotiveImpact/8ball/pull/6). It passed 2,038 source tests, 2,038 installed-wheel regressions, 24 JavaScript modules and 466 checks across 13 native suites. Source SHA256 `6c5fae226e273685efb9bdb75a3a98887ac991f94a6b55f6d53e822156655daf`; source/artifact inspection matched before this documentation-only closeout. No new inference, empirical predictive result, model-quality approval, merge or deployment. Current PR checks remain a separate record; the automated review service last errored without findings.

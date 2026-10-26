@@ -7,7 +7,7 @@
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 information-check loop",
       "title": "Connect retained uncertainty to explicit checks and reconsideration",
-      "delivery": "local_unreleased",
+      "delivery": "pushed_unreleased",
       "task_ids": [
         "B02-05",
         "ES01-02"
@@ -27,18 +27,19 @@
       ],
       "verification": [
         "275 focused rehearsal/packet/Plan Review/grounding/time-review/course regressions and 57 native Plan Review checks passed.",
-        "Full native source, installed-wheel and all browser acceptance pending on exact committed source."
+        "Exact a7cc1d6 native run passed:2057 source and2057 installed-wheel regressions,24 JavaScript modules,474 checks across13 native suites. Source/artifact bytes matched on inspection before documentation-only closeout; no inference."
       ],
       "limitations": [
         "Local operator only; agency check routes stay unavailable. No automatic sends, model calls, course selection or observations.",
         "Operator benefit, predictive skill, independent review, production and release remain unverified.",
-        "Changes local at preparation; existing PR6 will be updated without merge or deployment."
+        "Functional code pushed to existing PR6; no merge or deployment. Documentation-only closeout and current CI remain separately recorded."
       ],
       "evidence_paths": [
         "docs/delivery/sessions/2026-10-26-information-loop.md",
         "docs/v2/ASSUMPTION-CHALLENGE.md",
         "tests/test_rehearsal.py",
-        "tests/browser_plan_review.py"
+        "tests/browser_plan_review.py",
+        "docs/evidence/information-loop-native-2026-10-26.json"
       ],
       "emergence_review": {
         "discoveries": [

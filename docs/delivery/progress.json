@@ -1034,7 +1034,7 @@
     "EV-INFORMATION-LOOP-20261026": {
       "kind": "local_engineering",
       "path": "docs/delivery/sessions/2026-10-26-information-loop.md",
-      "result": "Bounded B02-05/ES01-02 information-loop integration. Focused native journey passes; exact-source full acceptance pending. No quality/predictive/production approval."
+      "result": "Exact a7cc1d6 native source/artifacts matched:2057 source tests,2057 installed-wheel regressions,24 JS modules,474 checks across13 native suites. Explicit questions and separate observations/rechecks only; no inference, predictive/quality/production approval."
     }
   },
   "milestones": [
@@ -1385,7 +1385,7 @@
         "EV-INFORMATION-LOOP-20261026"
       ],
       "blockers": [],
-      "next_action": "Connect future ingestion only through reviewed revisioned updates. Information-loop integration: complete exact-source verification in docs/delivery/sessions/2026-10-26-information-loop.md; independent operator benefit and agency disclosure remain separate."
+      "next_action": "Connect future ingestion only through reviewed revisioned updates. Information-loop integration: exact-source verification passed; see docs/delivery/sessions/2026-10-26-information-loop.md; independent operator benefit and agency disclosure remain separate."
     },
     {
       "id": "B02-06",
@@ -2222,7 +2222,7 @@
         "EV-INFORMATION-LOOP-20261026"
       ],
       "blockers": [],
-      "next_action": "Continue 8BALL through the shared kernel; do not duplicate the planner for another domain. Information-loop integration: complete exact-source verification in docs/delivery/sessions/2026-10-26-information-loop.md; independent operator benefit and agency disclosure remain separate."
+      "next_action": "Continue 8BALL through the shared kernel; do not duplicate the planner for another domain. Information-loop integration: exact-source verification passed; see docs/delivery/sessions/2026-10-26-information-loop.md; independent operator benefit and agency disclosure remain separate."
     },
     {
       "id": "ES01-03",

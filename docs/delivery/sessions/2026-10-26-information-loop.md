@@ -13,7 +13,7 @@ The v1 rehearsal contract, replay and existing source-free exports are unchanged
 ## Verification checkpoint
 
 - Focused rehearsal/packet tests passed (84 before additional stale/rollback/approval cases); 57 native Plan Review checks passed after the full question → evidence-backed answer → explicit recheck journey was added.
-- Early tests exposed incorrect fixture names: nonexistent `condition:paid`, invalid evidence state `reported`, a wrong contribution selector, and selecting oldest rather than newest history. They were corrected without weakening runtime validators. Failed outputs remain in the session; native failure artifacts remain at `artifacts/plan-review/` and `artifacts/information-loop-focused-2/`; passing runs are separate directories.
+- Early tests exposed incorrect fixture inputs: invalid evidence state `reported`, a wrong contribution selector, and selecting oldest rather than newest history. They were corrected without weakening runtime validators. Failed tracebacks remain in the session; native working directories `artifacts/plan-review/` and `artifacts/information-loop-focused-2/` are preserved, with passing runs in separate directories.
 - Latest focused regression, full source-bound native suite and installed-wheel acceptance are pending at this preparation checkpoint. Do not attach an earlier source hash/count to these changes.
 - No live inference, model-quality approval, predictive-quality result, operator-value measurement, merge, release or deployment.
 
@@ -28,3 +28,15 @@ ER-01–03: current revision and original brief are named separately; original c
 ## Next action and limitations
 
 Complete native source/wheel/browser acceptance, inspect exact-source/artifact hashes, update [PR #6](https://github.com/EmotiveImpact/8ball/pull/6) and settle CI without merging. Record final source, tests and unpushed state here afterward. Existing Sonnet billing/access preflight, empirical predictor, independent semantic/professional/human reviews, production and owner acceptance remain open; local engineering does not close them.
+
+## Verified source-bound closeout
+
+Functional commit `a7cc1d66e786eb027e32e2b0a63fb60c9cbfdde9`, tree `87b622b2ed1aa0051df9c4fe23f78199ae75022a`, is pushed to the existing PR6 branch. Native run `20261026T052956Z-8981bfc9` passed 2,057 source tests, 2,057 installed-wheel regressions, Python compilation, all 24 JavaScript modules and 474 checks in all 13 native suites (57 Plan Review checks). The expanded focused suite passed 275 tests. The existing AnyIO deprecation warning is retained; no test was skipped. Source SHA256 `1e847e1c7773745bad1f946039f79fb5ff2097349bdd200f565f5da47ddb5474` stayed unchanged during the run. `--inspect` confirmed exact source and artifact bytes before this documentation-only closeout. [Receipt](../../evidence/information-loop-native-2026-10-26.json).
+
+Software CI `progress` and `verify` passed on the functional commit. Devin Review reports `errored` for that exact commit and exposes no job ID or findings; prior retries are preserved separately. No gate was bypassed and this is not independent review acceptance. Current head CI after documentation publication is a separate PR record.
+
+Preparation statements above preserve chronology. Final closeout changes only evidence and delivery documents. The initial tracking-only invocation named nonexistent test modules and ran no tests; the corrected invocation uses `test_changelog.py`, `test_delivery_tracking.py` and `test_emergence_register.py`. No functional edits are uncommitted. Unpushed documentation is resolved by the closeout commit; verify the remote head rather than treating the old preparation status as current. No model inference, merge or deployment occurred.
+
+Documentation closeout: all 67 tracking/history regressions, generated delivery/changelog/emergence checks against the starting commit, and whitespace checks passed. The full native receipt remains bound to a7cc1d6, not retroactively to this later documentation tree.
+
+Next: retain this bounded loop and evaluate its actual usefulness with operators; continue original provider/model/independent/production gates without changing required acceptance. Sonnet remains held at the documented billing/access preflight. Predictive accuracy is not established by this implementation.

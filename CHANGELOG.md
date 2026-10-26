@@ -6,7 +6,7 @@ This is product history, not the case decision trail. A build entry is not evide
 
 ## 0.2.0-alpha.8 information-check loop · Connect retained uncertainty to explicit checks and reconsideration
 
-2026-10-26 · `local_unreleased`
+2026-10-26 · `pushed_unreleased`
 
 What to check next, explicit linked case questions, separate evidence-backed answers/observations and immutable current-case rechecks.
 
@@ -28,13 +28,13 @@ What to check next, explicit linked case questions, separate evidence-backed ans
 ### Verification
 
 - 275 focused rehearsal/packet/Plan Review/grounding/time-review/course regressions and 57 native Plan Review checks passed.
-- Full native source, installed-wheel and all browser acceptance pending on exact committed source.
+- Exact a7cc1d6 native run passed:2057 source and2057 installed-wheel regressions,24 JavaScript modules,474 checks across13 native suites. Source/artifact bytes matched on inspection before documentation-only closeout; no inference.
 
 ### Limitations
 
 - Local operator only; agency check routes stay unavailable. No automatic sends, model calls, course selection or observations.
 - Operator benefit, predictive skill, independent review, production and release remain unverified.
-- Changes local at preparation; existing PR6 will be updated without merge or deployment.
+- Functional code pushed to existing PR6; no merge or deployment. Documentation-only closeout and current CI remain separately recorded.
 
 ### Emergence review
 
@@ -49,7 +49,7 @@ Registered discoveries: EM-310.
 
 Roadmap items: `B02-05`, `ES01-02`.
 
-Evidence: [docs/delivery/sessions/2026-10-26-information-loop.md](docs/delivery/sessions/2026-10-26-information-loop.md), [docs/v2/ASSUMPTION-CHALLENGE.md](docs/v2/ASSUMPTION-CHALLENGE.md), [tests/test_rehearsal.py](tests/test_rehearsal.py), [tests/browser_plan_review.py](tests/browser_plan_review.py).
+Evidence: [docs/delivery/sessions/2026-10-26-information-loop.md](docs/delivery/sessions/2026-10-26-information-loop.md), [docs/v2/ASSUMPTION-CHALLENGE.md](docs/v2/ASSUMPTION-CHALLENGE.md), [tests/test_rehearsal.py](tests/test_rehearsal.py), [tests/browser_plan_review.py](tests/browser_plan_review.py), [docs/evidence/information-loop-native-2026-10-26.json](docs/evidence/information-loop-native-2026-10-26.json).
 
 ## 0.2.0-alpha.8 retained specialist comparison · Read retained specialist differences without decoding raw output
 
