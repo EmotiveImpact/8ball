@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **237 recorded discoveries.**
+Last review: 2026-10-26. **238 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -4167,13 +4167,14 @@ On the native-cost follow-up, every specialist answered with known reported cost
 
 **Roadmap links:** `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md`, `docs/evidence/coordinated-native-cost-live-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-draft-output-contract.md`, `endstate/compilation.py`, `tests/test_coordinated_planning.py`, `docs/evidence/draft-output-v4-software-2026-10-26.json`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md`, `docs/evidence/coordinated-native-cost-live-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-draft-output-contract.md`, `endstate/compilation.py`, `tests/test_coordinated_planning.py`, `docs/evidence/draft-output-v4-software-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-coordinated-draft-v4-live.md`, `docs/evidence/coordinated-draft-v4-live-2026-10-26.json`.
 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 evaluation/presentation boundary; no new required scope or semantic/human acceptance.
 - 2026-10-26 · adopted · integration: existing_task B02-11: v4 makes bare-object, unchanged length and enabling-work requirements explicit. 477 focused checks pass; retained failures remain rejected. Model compliance/quality still unverified.
 - 2026-10-26 · adopted · integration: existing_task B02-11: v4 source d85742d passes native/package acceptance (2455/2455 tests; 475 browser checks). Engineering acceptance does not show improved model compliance or plan sufficiency.
+- 2026-10-26 · adopted · integration: existing_task B02-11: one v4 Opus method completed and retains minority insufficiency, but Sonnet/GLM still failed and operational inspection/opening work needs independent scrutiny. Not broad compliance or semantic acceptance.
 
 ### [ ] EM-336: Prompt-only JSON compliance is per request, not guaranteed by a working endpoint
 
@@ -4186,13 +4187,14 @@ Opus returned fenced JSON from the native endpoint despite the JSON-only request
 
 **Roadmap links:** `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md`, `docs/evidence/coordinated-native-cost-live-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-draft-output-contract.md`, `endstate/compilation.py`, `tests/test_coordinated_planning.py`, `docs/evidence/draft-output-v4-software-2026-10-26.json`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md`, `docs/evidence/coordinated-native-cost-live-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-draft-output-contract.md`, `endstate/compilation.py`, `tests/test_coordinated_planning.py`, `docs/evidence/draft-output-v4-software-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-coordinated-draft-v4-live.md`, `docs/evidence/coordinated-draft-v4-live-2026-10-26.json`.
 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 evaluation/presentation boundary; no new required scope or semantic/human acceptance.
 - 2026-10-26 · adopted · integration: existing_task B02-11: v4 makes bare-object, unchanged length and enabling-work requirements explicit. 477 focused checks pass; retained failures remain rejected. Model compliance/quality still unverified.
 - 2026-10-26 · adopted · integration: existing_task B02-11: v4 source d85742d passes native/package acceptance (2455/2455 tests; 475 browser checks). Engineering acceptance does not show improved model compliance or plan sufficiency.
+- 2026-10-26 · adopted · integration: existing_task B02-11: one v4 Opus method completed and retains minority insufficiency, but Sonnet/GLM still failed and operational inspection/opening work needs independent scrutiny. Not broad compliance or semantic acceptance.
 
 ### [ ] EM-337: Choice-based agreement does not prove an operationally complete route
 
@@ -4205,10 +4207,28 @@ Jev and Clef marked all three requirements preserved, while GPT flagged prerequi
 
 **Roadmap links:** `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md`, `docs/evidence/coordinated-native-cost-live-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-draft-output-contract.md`, `endstate/compilation.py`, `tests/test_coordinated_planning.py`, `docs/evidence/draft-output-v4-software-2026-10-26.json`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md`, `docs/evidence/coordinated-native-cost-live-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-draft-output-contract.md`, `endstate/compilation.py`, `tests/test_coordinated_planning.py`, `docs/evidence/draft-output-v4-software-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-coordinated-draft-v4-live.md`, `docs/evidence/coordinated-draft-v4-live-2026-10-26.json`.
 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 evaluation/presentation boundary; no new required scope or semantic/human acceptance.
 - 2026-10-26 · adopted · integration: existing_task B02-11: v4 makes bare-object, unchanged length and enabling-work requirements explicit. 477 focused checks pass; retained failures remain rejected. Model compliance/quality still unverified.
 - 2026-10-26 · adopted · integration: existing_task B02-11: v4 source d85742d passes native/package acceptance (2455/2455 tests; 475 browser checks). Engineering acceptance does not show improved model compliance or plan sufficiency.
+- 2026-10-26 · adopted · integration: existing_task B02-11: one v4 Opus method completed and retains minority insufficiency, but Sonnet/GLM still failed and operational inspection/opening work needs independent scrutiny. Not broad compliance or semantic acceptance.
+
+### [ ] EM-338: An output-token ceiling does not guarantee any usable answer content
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Third frozen fictional coordinated diagnostic with draft v4.
+
+DeepSeek returned HTTP 200 with its selected model label, length stop, reported 4096 completion tokens and null assistant content. The strict adapter retained metadata and rejected the response; it did not fabricate an answer or automatically enlarge the allowance.
+
+**Product implication:** Show missing content, declared ceiling, stop reason and unknown billing separately. Counts do not establish hidden reasoning or physical upstream behavior. Any larger allowance or different generation policy needs a separate explicit, source-bound diagnostic rather than silent recovery.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-draft-v4-live.md`, `docs/evidence/coordinated-draft-v4-live-2026-10-26.json`, `eightball/v2/compatible.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 failure visibility and bounded provider evaluation; no automatic budget change, new required scope or acceptance promotion.

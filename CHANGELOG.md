@@ -4,6 +4,47 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 coordinated v4 diagnostic · Retain one complete Opus method and three failed proposer attempts
+
+2026-10-26 · `local_unreleased`
+
+A fresh frozen actual-provider set records ten requests with source/case audit unchanged. Opus reaches a distinct revision after three independent challenges; the overall set remains partial/failed.
+
+### Added
+
+- Exact UTF-8 protocol, pre-call plan, admission, transport and result archive with hashes and credential scan.
+- EM-338 records full reported output allowance with no usable DeepSeek content.
+
+### Changed
+
+- One actual coordinated method is now observed complete. Minority insufficiency remains unresolved; independent usefulness/quality is not established.
+
+### Verification
+
+- Ten actual hosted/native requests: Opus 7, Sonnet 1, GLM 1, DeepSeek 1. All case audit chains and source unchanged.
+- Specialists report 39585 nano-USD; planning unpriced. No retries, fallback, key correction, truncation, substitution or historical replay.
+
+### Limitations
+
+- Sonnet overlength confirmation; GLM overlength and misspelled required field; DeepSeek length stop with null content.
+- Explicit repair work now present in Opus output, but inspection/sign-off/authorisation/opening orchestration and timing still need independent review.
+- No native UI interaction, predictive/model-quality/operator-benefit/production/merge/deployment/release acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: One valid actual-provider revision can coexist with unresolved minority uncertainty and operational gaps.
+- Discovery: Full reported token allowance can yield no usable assistant answer.
+- Risk: Mistaking method completion for model quality, unanimity, achieved outcome or a proven prompt improvement.
+- Architecture: Preserve stages, receipts, failure metadata, source bindings and independent human authority; do not silently enlarge budget or repair output.
+- Roadmap decision: existing_task B02-11 evidence/presentation follow-up only; no new required scope.
+Registered discoveries: EM-335, EM-336, EM-337, EM-338.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-coordinated-draft-v4-live.md](docs/delivery/sessions/2026-10-26-coordinated-draft-v4-live.md), [docs/evidence/coordinated-draft-v4-live-2026-10-26.json](docs/evidence/coordinated-draft-v4-live-2026-10-26.json), [docs/evidence/coordinated-draft-v4-live-2026-10-26.json.xz](docs/evidence/coordinated-draft-v4-live-2026-10-26.json.xz).
+
 ## 0.2.0-alpha.8 draft prompt v4 verified · Bind native software acceptance to draft instruction source
 
 2026-10-26 · `local_unreleased`

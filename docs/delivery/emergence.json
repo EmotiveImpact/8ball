@@ -7474,7 +7474,9 @@
         "docs/delivery/sessions/2026-10-26-draft-output-contract.md",
         "endstate/compilation.py",
         "tests/test_coordinated_planning.py",
-        "docs/evidence/draft-output-v4-software-2026-10-26.json"
+        "docs/evidence/draft-output-v4-software-2026-10-26.json",
+        "docs/delivery/sessions/2026-10-26-coordinated-draft-v4-live.md",
+        "docs/evidence/coordinated-draft-v4-live-2026-10-26.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -7495,6 +7497,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11: v4 source d85742d passes native/package acceptance (2455/2455 tests; 475 browser checks). Engineering acceptance does not show improved model compliance or plan sufficiency."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11: one v4 Opus method completed and retains minority insufficiency, but Sonnet/GLM still failed and operational inspection/opening work needs independent scrutiny. Not broad compliance or semantic acceptance."
         }
       ]
     },
@@ -7516,7 +7524,9 @@
         "docs/delivery/sessions/2026-10-26-draft-output-contract.md",
         "endstate/compilation.py",
         "tests/test_coordinated_planning.py",
-        "docs/evidence/draft-output-v4-software-2026-10-26.json"
+        "docs/evidence/draft-output-v4-software-2026-10-26.json",
+        "docs/delivery/sessions/2026-10-26-coordinated-draft-v4-live.md",
+        "docs/evidence/coordinated-draft-v4-live-2026-10-26.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -7537,6 +7547,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11: v4 source d85742d passes native/package acceptance (2455/2455 tests; 475 browser checks). Engineering acceptance does not show improved model compliance or plan sufficiency."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11: one v4 Opus method completed and retains minority insufficiency, but Sonnet/GLM still failed and operational inspection/opening work needs independent scrutiny. Not broad compliance or semantic acceptance."
         }
       ]
     },
@@ -7558,7 +7574,9 @@
         "docs/delivery/sessions/2026-10-26-draft-output-contract.md",
         "endstate/compilation.py",
         "tests/test_coordinated_planning.py",
-        "docs/evidence/draft-output-v4-software-2026-10-26.json"
+        "docs/evidence/draft-output-v4-software-2026-10-26.json",
+        "docs/delivery/sessions/2026-10-26-coordinated-draft-v4-live.md",
+        "docs/evidence/coordinated-draft-v4-live-2026-10-26.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -7579,6 +7597,39 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11: v4 source d85742d passes native/package acceptance (2455/2455 tests; 475 browser checks). Engineering acceptance does not show improved model compliance or plan sufficiency."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11: one v4 Opus method completed and retains minority insufficiency, but Sonnet/GLM still failed and operational inspection/opening work needs independent scrutiny. Not broad compliance or semantic acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-338",
+      "title": "An output-token ceiling does not guarantee any usable answer content",
+      "origin": "Third frozen fictional coordinated diagnostic with draft v4",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "DeepSeek returned HTTP 200 with its selected model label, length stop, reported 4096 completion tokens and null assistant content. The strict adapter retained metadata and rejected the response; it did not fabricate an answer or automatically enlarge the allowance.",
+      "product_implication": "Show missing content, declared ceiling, stop reason and unknown billing separately. Counts do not establish hidden reasoning or physical upstream behavior. Any larger allowance or different generation policy needs a separate explicit, source-bound diagnostic rather than silent recovery.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-coordinated-draft-v4-live.md",
+        "docs/evidence/coordinated-draft-v4-live-2026-10-26.json",
+        "eightball/v2/compatible.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 failure visibility and bounded provider evaluation; no automatic budget change, new required scope or acceptance promotion."
         }
       ]
     }

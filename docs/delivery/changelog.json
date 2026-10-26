@@ -3,6 +3,58 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-coordinated-v4-live",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 coordinated v4 diagnostic",
+      "title": "Retain one complete Opus method and three failed proposer attempts",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-11"
+      ],
+      "summary": "A fresh frozen actual-provider set records ten requests with source/case audit unchanged. Opus reaches a distinct revision after three independent challenges; the overall set remains partial/failed.",
+      "added": [
+        "Exact UTF-8 protocol, pre-call plan, admission, transport and result archive with hashes and credential scan.",
+        "EM-338 records full reported output allowance with no usable DeepSeek content."
+      ],
+      "changed": [
+        "One actual coordinated method is now observed complete. Minority insufficiency remains unresolved; independent usefulness/quality is not established."
+      ],
+      "fixed": [],
+      "verification": [
+        "Ten actual hosted/native requests: Opus 7, Sonnet 1, GLM 1, DeepSeek 1. All case audit chains and source unchanged.",
+        "Specialists report 39585 nano-USD; planning unpriced. No retries, fallback, key correction, truncation, substitution or historical replay."
+      ],
+      "limitations": [
+        "Sonnet overlength confirmation; GLM overlength and misspelled required field; DeepSeek length stop with null content.",
+        "Explicit repair work now present in Opus output, but inspection/sign-off/authorisation/opening orchestration and timing still need independent review.",
+        "No native UI interaction, predictive/model-quality/operator-benefit/production/merge/deployment/release acceptance."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-coordinated-draft-v4-live.md",
+        "docs/evidence/coordinated-draft-v4-live-2026-10-26.json",
+        "docs/evidence/coordinated-draft-v4-live-2026-10-26.json.xz"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "One valid actual-provider revision can coexist with unresolved minority uncertainty and operational gaps.",
+          "Full reported token allowance can yield no usable assistant answer."
+        ],
+        "risks": [
+          "Mistaking method completion for model quality, unanimity, achieved outcome or a proven prompt improvement."
+        ],
+        "architecture_implications": [
+          "Preserve stages, receipts, failure metadata, source bindings and independent human authority; do not silently enlarge budget or repair output."
+        ],
+        "roadmap_decision": "existing_task B02-11 evidence/presentation follow-up only; no new required scope.",
+        "insight_ids": [
+          "EM-335",
+          "EM-336",
+          "EM-337",
+          "EM-338"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-draft-output-v4-native-verification",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 draft prompt v4 verified",

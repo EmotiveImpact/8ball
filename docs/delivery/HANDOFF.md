@@ -1,3 +1,11 @@
+# Current actual-provider checkpoint: one complete method, set partial
+
+Fresh v4 run on `5aacbca91c3909031aec974600e5ccaff15211f7`: 10 requests; Opus completed initial → three independent challenges → revision/synthesis. Clef minority insufficiency remains unresolved. Sonnet/GLM draft failures and DeepSeek null-content length stop retained. All case audits/source unchanged. Planning unpriced; 39,585 reported specialist nano-USD is not an invoice/cap. [Record](sessions/2026-10-26-coordinated-draft-v4-live.md), [bound receipt](../evidence/coordinated-draft-v4-live-2026-10-26.json).
+
+Runtime unchanged; prior native v4 acceptance remains bound to d85742d. This documentation/evidence starts local pending checks/commit/push on `devin/1792969169-roadmap-integrated`. Next read-only coordinated-result UI, no more inference needed. B02-11 partial, EM-335–338 retained; no semantic/predictive/human/production/merge/deployment/release approval. No protocol resume or historical replay.
+
+---
+
 # Current checkpoint: draft v4 software verified
 
 Runtime source `d85742d4d5d184bb7eba533ca594a94b02a96661` passes full native/package acceptance: 2,455 source tests, 2,455 installed regressions, 24 JS modules, 475 browser checks/13 native suites. Source/artifact inspection valid before this additive documentation. [Bound receipt](../evidence/draft-output-v4-software-2026-10-26.json). No new model calls; no live/semantic approval. B02-11 partial.
