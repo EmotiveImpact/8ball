@@ -7321,7 +7321,8 @@
         "docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json",
         "eightball/v2/compatible.py",
         "endstate/intelligence/coordination.py",
-        "docs/delivery/sessions/2026-10-26-provider-diagnostics.md"
+        "docs/delivery/sessions/2026-10-26-provider-diagnostics.md",
+        "docs/evidence/provider-diagnostics-software-2026-10-26.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -7336,6 +7337,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-09/B02-11: implement early allowlisted stop/counter/shape metadata; 463 controlled tests pass. No recovery of omitted original bytes, native cost conversion or live retest."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-09/B02-11 diagnostic projection passed full native acceptance at f22f967; original live omission remains unrecoverable."
         }
       ]
     },
@@ -7354,7 +7361,8 @@
       "evidence_paths": [
         "docs/delivery/sessions/2026-10-26-provider-diagnostics.md",
         "docs/v2/DECISION-PROVIDERS.md",
-        "endstate/intelligence/coordination.py"
+        "endstate/intelligence/coordination.py",
+        "docs/evidence/native-cost-receipt-read-2026-10-26.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -7363,6 +7371,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11 investigate documented per-request cost receipts rather than infer native units. No new mandatory product scope or cost conversion yet."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "Clarification after reading broader gateway funding contract: platform-funded usage.cost is documented USD; three read-only native smoke request lookups match exact IDs/models and earlier amounts. This supports scoped translation research, not generic unit inheritance, free BYOK use or implemented mapping. Retain original interpretation and closed live failure."
         }
       ]
     }

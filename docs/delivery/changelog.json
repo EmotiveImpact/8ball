@@ -3,6 +3,60 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-provider-diagnostics-verification",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 provider diagnostics evidence",
+      "title": "Bind rejected-response diagnostics to full native software acceptance",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-09",
+        "B02-11"
+      ],
+      "summary": "Retain the exact f22f967 software receipt and separate read-only native accounting observations; no further inference.",
+      "added": [
+        "Compressed source-bound native acceptance report, hashes and exact verification summary.",
+        "Safe record of three exact-ID/model usage lookups for earlier fictional native smoke requests."
+      ],
+      "changed": [
+        "Append verified software closeout and broader gateway funding-contract clarification without erasing prior evidence."
+      ],
+      "fixed": [],
+      "verification": [
+        "2355 source tests, 2355 installed-wheel regressions, 24 JavaScript modules and 475 native checks in 13 suites passed at f22f967.",
+        "Source/artifact inspection valid/passed before docs-only closeout; credential-value scan passed.",
+        "Three read-only gateway usage lookups HTTP200 with matching request IDs/models; no paid model call or price lookup."
+      ],
+      "limitations": [
+        "Generic native cost translation remains unimplemented; provider/funding/unknown-unit boundaries and decimal handling require controlled tests.",
+        "Earlier five-request coordinated run remains failed/partial, zero revisions. No retry, repair, fallback or substitute model.",
+        "No dedicated coordinated UI, quality/predictive acceptance, merge, deployment or release."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-provider-diagnostics.md",
+        "docs/evidence/provider-diagnostics-software-2026-10-26.json",
+        "docs/evidence/provider-diagnostics-software-passed-2026-10-26.json.xz",
+        "docs/evidence/native-cost-receipt-read-2026-10-26.json"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Safe diagnostic retention passes actual worker storage and full software acceptance.",
+          "Exact-request usage lookup and broader documented funding semantics offer evidence beyond a familiar field name."
+        ],
+        "risks": [
+          "Zero platform charges do not prove free upstream usage or known future prices.",
+          "Neither later receipts nor improved metadata repair an earlier failed run."
+        ],
+        "architecture_implications": [
+          "Keep provider-scoped normalization separate from generic engine cost authority; retain source amounts and avoid hidden network reads."
+        ],
+        "roadmap_decision": "existing_task B02-09/B02-11 diagnostics verified; next bounded accounting adapter, no acceptance promotion.",
+        "insight_ids": [
+          "EM-331",
+          "EM-332"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-provider-rejection-diagnostics",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 provider failure diagnostics",

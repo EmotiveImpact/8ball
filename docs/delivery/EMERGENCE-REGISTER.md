@@ -4093,12 +4093,13 @@ DeepSeek returned HTTP 200 but the planning adapter rejected its envelope before
 
 **Roadmap links:** `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-evaluation.md`, `docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json`, `eightball/v2/compatible.py`, `endstate/intelligence/coordination.py`, `docs/delivery/sessions/2026-10-26-provider-diagnostics.md`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-evaluation.md`, `docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json`, `eightball/v2/compatible.py`, `endstate/intelligence/coordination.py`, `docs/delivery/sessions/2026-10-26-provider-diagnostics.md`, `docs/evidence/provider-diagnostics-software-2026-10-26.json`.
 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 adapter investigation and bounded failure diagnostics; first run remains failed. No runtime fix or quality approval claimed.
 - 2026-10-26 · adopted · integration: existing_task B02-09/B02-11: implement early allowlisted stop/counter/shape metadata; 463 controlled tests pass. No recovery of omitted original bytes, native cost conversion or live retest.
+- 2026-10-26 · adopted · integration: existing_task B02-09/B02-11 diagnostic projection passed full native acceptance at f22f967; original live omission remains unrecoverable.
 
 ### [ ] EM-332: Protocol families do not inherit accounting contracts
 
@@ -4111,8 +4112,9 @@ Gateway docs specify USD for chat-family usage.cost but native decision schemas 
 
 **Roadmap links:** `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-26-provider-diagnostics.md`, `docs/v2/DECISION-PROVIDERS.md`, `endstate/intelligence/coordination.py`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-provider-diagnostics.md`, `docs/v2/DECISION-PROVIDERS.md`, `endstate/intelligence/coordination.py`, `docs/evidence/native-cost-receipt-read-2026-10-26.json`.
 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 investigate documented per-request cost receipts rather than infer native units. No new mandatory product scope or cost conversion yet.
+- 2026-10-26 · adopted · integration: Clarification after reading broader gateway funding contract: platform-funded usage.cost is documented USD; three read-only native smoke request lookups match exact IDs/models and earlier amounts. This supports scoped translation research, not generic unit inheritance, free BYOK use or implemented mapping. Retain original interpretation and closed live failure.

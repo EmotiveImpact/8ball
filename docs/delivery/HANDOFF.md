@@ -1,12 +1,21 @@
-# Latest local follow-up: safe rejected-provider diagnostics
+# Latest source-bound follow-up: safe rejected-provider diagnostics
 
 See [provider diagnostics](sessions/2026-10-26-provider-diagnostics.md): 463
 controlled tests pass for safe stop/counter/shape retention before rejection.
-Full source-bound native acceptance is pending at this preparation checkpoint.
+Full source-bound native acceptance passed at
+`f22f96735334d576a0e91757cd5f7363e3fa1f2e`: 2,355 source and installed-wheel
+tests, 24 JS modules and 475 checks across 13 native browser suites. The
+[receipt](../evidence/provider-diagnostics-software-2026-10-26.json) binds the
+exact compressed report; inspection passed before this docs-only closeout.
 No cost-unit conversion or new model calls; the first coordinated run below
 remains failed and cannot be repaired by later metadata changes. EM-331/EM-332
 track diagnostic retention and protocol-specific accounting. Branch unchanged,
 base `b43f056`; no merge, deployment or quality acceptance.
+Three read-only lookups matched old native smoke requests to settled costs,
+supporting provider-specific accounting investigation without new inference.
+See the appended evidence/limits in the session record. No runtime cost
+normalization or implicit extra HTTP lookup was added; next is the bounded
+cost adapter, then a separately frozen diagnostic, not resuming the old run.
 
 # Previous evidence: first coordinated live attempt failed/partial
 

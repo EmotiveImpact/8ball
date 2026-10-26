@@ -88,3 +88,42 @@ receipt path before a separately frozen diagnostic. Do not rerun the recognised
 historical case or resume the first coordinated protocol. A dedicated coordinated
 report UI and prospective/human quality acceptance remain unimplemented.
 No merge, deployment, public SDK release or prediction claim.
+
+## Verified software closeout
+
+Exact commit `f22f96735334d576a0e91757cd5f7363e3fa1f2e`, source SHA
+`f1b4aee839ec362d8898a11abb5f123f7399b4bd63236054a472f9d288c641be`,
+passed **2,355 source tests, 2,355 installed-wheel regressions, 24 JavaScript
+modules and 475 native checks across all 13 browser suites**. Source/artifact
+inspection returned valid/passed before this documentation-only closeout.
+See the [bound receipt](../../evidence/provider-diagnostics-software-2026-10-26.json)
+and its linked exact compressed report. Credential-value scans passed. This
+closes software verification for the diagnostic projection, not actual provider
+compliance, cost mapping or the earlier coordinated live test.
+
+## Follow-up accounting evidence — read-only, no inference
+
+A more complete reading of the same official cost API's **Credits & funding**
+section states that platform-funded requests report USD via `usage.cost`, whereas
+BYOK's zero platform charge excludes the upstream bill. This is broader than
+the chat-family examples initially inspected. Keep that distinction: the native
+response schema still does not declare the extension's unit by itself.
+
+Three single-pass, read-only `/api/v1/generation?id=...` lookups of the **previous
+standalone fictional native smoke requests**, not new model requests, returned
+HTTP 200 with exact matching request IDs and models. Jev's settled `total_cost`
+was USD 0.000008547, matching its retained inline amount and 8,547-nano-USD
+settled record; Clef and GPT returned zero platform cost. The
+[safe lookup record](../../evidence/native-cost-receipt-read-2026-10-26.json)
+retains hashed request bindings and selected fields, not full account responses.
+It is a local observed record, not a signed provider attestation. Zero platform
+cost is not evidence of free upstream use or known future pricing.
+
+**EM-332 clarification:** this supports investigating a narrowly provider-scoped
+translation using the documented funding semantics, not assuming every `cost`
+field is USD. Preserve raw amounts, funding flags and the normalization basis;
+unknown/BYOK/conflicting units must remain unknown, and decimal conversion must
+not silently round charges downward. No runtime normalization or implicit
+per-request billing lookup was added by this checkpoint. Extra runtime HTTP reads
+would require explicit request bounds and authority checks at their boundaries.
+The original coordinated failure remains closed, with no revision or retry.

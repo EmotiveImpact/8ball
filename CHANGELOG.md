@@ -4,6 +4,49 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 provider diagnostics evidence · Bind rejected-response diagnostics to full native software acceptance
+
+2026-10-26 · `local_unreleased`
+
+Retain the exact f22f967 software receipt and separate read-only native accounting observations; no further inference.
+
+### Added
+
+- Compressed source-bound native acceptance report, hashes and exact verification summary.
+- Safe record of three exact-ID/model usage lookups for earlier fictional native smoke requests.
+
+### Changed
+
+- Append verified software closeout and broader gateway funding-contract clarification without erasing prior evidence.
+
+### Verification
+
+- 2355 source tests, 2355 installed-wheel regressions, 24 JavaScript modules and 475 native checks in 13 suites passed at f22f967.
+- Source/artifact inspection valid/passed before docs-only closeout; credential-value scan passed.
+- Three read-only gateway usage lookups HTTP200 with matching request IDs/models; no paid model call or price lookup.
+
+### Limitations
+
+- Generic native cost translation remains unimplemented; provider/funding/unknown-unit boundaries and decimal handling require controlled tests.
+- Earlier five-request coordinated run remains failed/partial, zero revisions. No retry, repair, fallback or substitute model.
+- No dedicated coordinated UI, quality/predictive acceptance, merge, deployment or release.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Safe diagnostic retention passes actual worker storage and full software acceptance.
+- Discovery: Exact-request usage lookup and broader documented funding semantics offer evidence beyond a familiar field name.
+- Risk: Zero platform charges do not prove free upstream usage or known future prices.
+- Risk: Neither later receipts nor improved metadata repair an earlier failed run.
+- Architecture: Keep provider-scoped normalization separate from generic engine cost authority; retain source amounts and avoid hidden network reads.
+- Roadmap decision: existing_task B02-09/B02-11 diagnostics verified; next bounded accounting adapter, no acceptance promotion.
+Registered discoveries: EM-331, EM-332.
+
+Roadmap items: `B02-09`, `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-provider-diagnostics.md](docs/delivery/sessions/2026-10-26-provider-diagnostics.md), [docs/evidence/provider-diagnostics-software-2026-10-26.json](docs/evidence/provider-diagnostics-software-2026-10-26.json), [docs/evidence/provider-diagnostics-software-passed-2026-10-26.json.xz](docs/evidence/provider-diagnostics-software-passed-2026-10-26.json.xz), [docs/evidence/native-cost-receipt-read-2026-10-26.json](docs/evidence/native-cost-receipt-read-2026-10-26.json).
+
 ## 0.2.0-alpha.8 provider failure diagnostics · Keep safe provider diagnostics before rejecting unsupported output
 
 2026-10-26 · `local_unreleased`
