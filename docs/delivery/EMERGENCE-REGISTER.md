@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **213 recorded discoveries.**
+Last review: 2026-10-26. **215 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -3780,3 +3780,37 @@ Controlled native receipts with missing output omitted known cache use; absent c
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task: B02-09 native adapter receipt correction; no scope expansion or customer-value claim.
+
+### [ ] EM-314: Local lifecycle finality is not remote provider finality
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Selected Sonnet lifecycle experiment.
+
+Source-matched Sonnet configuration discarded cancelled, superseded and interrupted work without a second stage or proposal. Local admission and terminal states did not provide remote receipt, completion, cancellation or billing evidence.
+
+**Product implication:** Show the operator that local publication has stopped without saying the remote request or charge was recalled. Reuse the existing analysis-job/provenance contract; do not add a second cancellation system.
+
+**Roadmap links:** `B02-15` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-provider-lifecycle.md`, `docs/evidence/sonnet55-lifecycle-2026-10-26.json`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-15; sharpen evidence scope without changing its acceptance or the ENDSTATE authority model.
+
+### [ ] EM-315: Environment installation time can exhaust verification time
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** PR6 source-bound verification timeout.
+
+The 20-minute verify job spent most of its allowance installing Chromium OS dependencies and was cancelled after acceptance began. Completed checks are not a completed run.
+
+**Product implication:** Keep the same native gates and artifacts with a bounded 40-minute CI allowance. This is engineering infrastructure, not product quality or production-readiness evidence.
+
+**Roadmap links:** `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-provider-lifecycle.md`, `.github/workflows/ci.yml`, `docs/evidence/ci-verify-timeout-2026-10-26.log.xz`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task ES01-05; preserve every gate and prior failure rather than bypassing checks or claiming the timeout was a pass.

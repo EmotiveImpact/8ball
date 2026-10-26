@@ -1,3 +1,11 @@
+# Selected Sonnet lifecycle observations — 26 October 2026
+
+[Current handoff](sessions/2026-10-26-provider-lifecycle.md) and [retained evidence](../evidence/sonnet55-lifecycle-2026-10-26.json): fresh generation prerequisites and source-matched cancellation, supersession and owned-process restart observations passed at `a31283785f6ccc2a5c31b9b936a9da353dcfb3fe`. No proposal or second stage followed any intervention. Remote receipt/completion/cancellation/billing remain unknown; these are API/process observations, not actual-provider native-UI/human acceptance. B02-15 stays partial. All 29 checkpoints are retained; application runtime is unchanged. The CI allowance increases from 20 to 40 minutes without removing checks after a retained dependency-installation timeout. Full software verification and current PR checks remain separate.
+
+Next owner-authorised work: a masked historical forecast diagnostic with a pre-outcome information cutoff, fixed outcome/horizon and baseline. Renaming a known historical story is not protection against model memorisation or proof of predictive accuracy. No merge/deploy/release.
+
+## Previous native integration checkpoint
+
 # Native Sonnet integration — 26 October 2026
 
 **Current follow-up:** [native usage completeness](sessions/2026-10-26-native-usage.md) corrects partial cache accounting without new paid inference. Earlier actual-provider receipts remain bound to their original source.

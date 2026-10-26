@@ -366,7 +366,7 @@ Required: `true`. Bounded mode: `engineering_only`.
 The UI reports actual runtime/weights/credential state and cancels work without stale commits. No silent large model download.
 
 Ledger prerequisites: ES03-04.
-Preserved blockers: Lifecycle behaviour with the selected real inference provider remains unverified..
+Preserved blockers: Selected Sonnet API/process cancellation, supersession and restart observations pass; actual-provider native-UI lifecycle/installation-status acceptance remain unverified. Remote receipt, cancellation and billing are not established by local job states..
 
 #### B02-16 — Complete accessibility and supported-environment validation
 

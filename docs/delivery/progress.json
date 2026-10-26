@@ -1049,6 +1049,13 @@
       "result": "Five controlled failures retained before correction. Exact 08b1cde code passed 2096 source + 2096 installed-wheel tests, 24 JS modules, compilation and all 13 native suites / 474 checks. Inspected before documentation closeout. No additional model calls or change to prior complete usage estimates; independent gates remain open.",
       "code_commit": "08b1cde2bdf3fa091576b25b2484d45602c69d4b",
       "url": "https://github.com/EmotiveImpact/8ball/commit/08b1cde2bdf3fa091576b25b2484d45602c69d4b"
+    },
+    "EV-SONNET-LIFECYCLE-20261026": {
+      "kind": "real_model_evaluation",
+      "path": "docs/delivery/sessions/2026-10-26-provider-lifecycle.md",
+      "code_commit": "a31283785f6ccc2a5c31b9b936a9da353dcfb3fe",
+      "url": "https://github.com/EmotiveImpact/8ball/commit/a31283785f6ccc2a5c31b9b936a9da353dcfb3fe",
+      "result": "Five fresh Sonnet generation requests passed all four frozen fixtures; source-matched configured-provider lifecycle passed cancel, supersede and owned restart with three first-stage admissions and no publication, further stage or unintended mutation. Remote receipt/completion/billing unknown; no UI/human/semantic acceptance. Full software verification recorded separately."
     }
   },
   "milestones": [
@@ -1733,7 +1740,7 @@
       "owner": "Devin / roadmap-intelligence",
       "working_branch": "devin/1792969169-roadmap-intelligence",
       "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
-      "updated_on": "2026-10-25",
+      "updated_on": "2026-10-26",
       "code_paths": [
         "eightball/v2/analysis_jobs.py",
         "web/v2/job-view.js",
@@ -1763,12 +1770,13 @@
         "EV-LANE-INTELLIGENCE-20261026",
         "EV-INTEGRATION-ENGINEERING-20261026",
         "EV-NATIVE-REVIEW-20261026",
-        "EV-DECISION-SMOKE-20261026"
+        "EV-DECISION-SMOKE-20261026",
+        "EV-SONNET-LIFECYCLE-20261026"
       ],
       "blockers": [
-        "Lifecycle behaviour with the selected real inference provider remains unverified."
+        "Selected Sonnet API/process cancellation, supersession and restart observations pass; actual-provider native-UI lifecycle/installation-status acceptance remain unverified. Remote receipt, cancellation and billing are not established by local job states."
       ],
-      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately. Integration lifecycle checkpoint: retain the source-matched Sonnet API/process evidence and unknown remote states. Complete the remaining actual-provider native-UI lifecycle/installation-status review without treating software results as human or provider-side cancellation acceptance."
     },
     {
       "id": "B02-16",

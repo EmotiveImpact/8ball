@@ -4,6 +4,47 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 selected-provider lifecycle evidence · Retain Sonnet local lifecycle observations and allow bounded CI setup time
+
+2026-10-26 · `local_unreleased`
+
+Exercise cancellation, supersession and owned-process restart without confusing local finality with remote cancellation.
+
+### Added
+
+- Fresh source-matched generation prerequisite, all lifecycle checkpoints and unmodified final reports.
+
+### Changed
+
+- Clarify the remaining B02-15 scope while preserving partial status and lane ownership.
+- Raise verify timeout from 20 to 40 minutes after the retained Chromium dependency-installation timeout; all checks and security gates remain.
+
+### Verification
+
+- At a312837: five actual Sonnet generation requests passed four frozen fixtures. Source-matched cancel/stale/restart observations passed all eight checks each, with three local first-call admissions and no further stages or published proposals.
+- Focused and full native software verification is recorded in the source-bound closeout receipt.
+- Initial focused run: 323 passed and one delivery guard failed because the new checkpoint replaced reserved next-action lineage. Restore the full original coordination record and append the checkpoint; retain the failed output.
+
+### Limitations
+
+- Remote request receipt/completion/cancellation/billing remain unknown; no provider-side cancellation or zero-charge claim.
+- No actual-provider native-UI lifecycle, independent semantic/human/predictive/production acceptance. No application runtime change.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A locally final job can still have an unknown remote outcome.
+- Discovery: Setup can consume a CI allowance before verification finishes.
+- Risk: Do not confuse local cancellation with billing cancellation or partial CI steps with full acceptance.
+- Architecture: Retain existing local job finality, source-bound receipts and independent provider facts. No new engine subsystem.
+- Roadmap decision: existing_task B02-15 and ES01-05 only; no scope or acceptance promotion.
+Registered discoveries: EM-314, EM-315.
+
+Roadmap items: `B02-15`, `ES01-05`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-provider-lifecycle.md](docs/delivery/sessions/2026-10-26-provider-lifecycle.md), [docs/evidence/sonnet55-lifecycle-2026-10-26.json](docs/evidence/sonnet55-lifecycle-2026-10-26.json), [evals/provider_lifecycle.py](evals/provider_lifecycle.py), [docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz](docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz).
+
 ## 0.2.0-alpha.8 native usage completeness · Preserve unknown cache usage in normalized receipts
 
 2026-10-26 · `pushed_unreleased`

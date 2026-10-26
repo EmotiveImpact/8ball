@@ -6783,6 +6783,59 @@
           "reason": "existing_task: B02-09 native adapter receipt correction; no scope expansion or customer-value claim."
         }
       ]
+    },
+    {
+      "id": "EM-314",
+      "title": "Local lifecycle finality is not remote provider finality",
+      "origin": "Selected Sonnet lifecycle experiment",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "Source-matched Sonnet configuration discarded cancelled, superseded and interrupted work without a second stage or proposal. Local admission and terminal states did not provide remote receipt, completion, cancellation or billing evidence.",
+      "product_implication": "Show the operator that local publication has stopped without saying the remote request or charge was recalled. Reuse the existing analysis-job/provenance contract; do not add a second cancellation system.",
+      "task_ids": [
+        "B02-15"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-provider-lifecycle.md",
+        "docs/evidence/sonnet55-lifecycle-2026-10-26.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-15; sharpen evidence scope without changing its acceptance or the ENDSTATE authority model."
+        }
+      ]
+    },
+    {
+      "id": "EM-315",
+      "title": "Environment installation time can exhaust verification time",
+      "origin": "PR6 source-bound verification timeout",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "The 20-minute verify job spent most of its allowance installing Chromium OS dependencies and was cancelled after acceptance began. Completed checks are not a completed run.",
+      "product_implication": "Keep the same native gates and artifacts with a bounded 40-minute CI allowance. This is engineering infrastructure, not product quality or production-readiness evidence.",
+      "task_ids": [
+        "ES01-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-provider-lifecycle.md",
+        ".github/workflows/ci.yml",
+        "docs/evidence/ci-verify-timeout-2026-10-26.log.xz"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task ES01-05; preserve every gate and prior failure rather than bypassing checks or claiming the timeout was a pass."
+        }
+      ]
     }
   ]
 }
