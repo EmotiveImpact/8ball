@@ -6,7 +6,7 @@ This is product history, not the case decision trail. A build entry is not evide
 
 ## 0.2.0-alpha.8 · Recommended visual direction: the quiet operations room
 
-2026-10-26 · `pushed_unreleased`
+2026-10-26 · `local_unreleased`
 
 Document an audit of the current black interface and a recommended next visual direction; no stylesheet or runtime change.
 
