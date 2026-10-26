@@ -4131,11 +4131,12 @@ Normalizing an amount changes whether the next specialist request is permitted e
 
 **Roadmap links:** `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-cost-policy.md`, `eightball/v2/decision_models.py`, `tests/test_decision_models.py`, `tests/test_coordinated_planning.py`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-cost-policy.md`, `eightball/v2/decision_models.py`, `tests/test_decision_models.py`, `tests/test_coordinated_planning.py`, `docs/evidence/native-cost-policy-software-2026-10-26.json`.
 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 engineering boundary, controlled tests only; no new required product scope, live-call result or independent quality acceptance.
+- 2026-10-26 · adopted · integration: existing_task B02-11: exact 5780368 source passed 2445 source/installed tests and all 475 native checks. Accounting/authority boundaries verified; no inference, billing or independent quality acceptance.
 
 ### [ ] EM-334: Exact cost provenance cannot be recovered from rounded or conflicting fields
 
@@ -4148,8 +4149,9 @@ Binary JSON float parsing can turn an amount just below or above one nano-USD in
 
 **Roadmap links:** `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-cost-policy.md`, `eightball/v2/decision_models.py`, `tests/test_decision_models.py`, `tests/test_coordinated_planning.py`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-cost-policy.md`, `eightball/v2/decision_models.py`, `tests/test_decision_models.py`, `tests/test_coordinated_planning.py`, `docs/evidence/native-cost-policy-software-2026-10-26.json`.
 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 engineering boundary, controlled tests only; no new required product scope, live-call result or independent quality acceptance.
+- 2026-10-26 · adopted · integration: existing_task B02-11: exact 5780368 source passed 2445 source/installed tests and all 475 native checks. Accounting/authority boundaries verified; no inference, billing or independent quality acceptance.

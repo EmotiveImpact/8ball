@@ -94,3 +94,34 @@ archive the exact report, and publish additively to PR #6. Any further live
 diagnostic needs a new frozen source/protocol; the first five-request attempt
 stays closed and failed/partial. No recognised historical rerun. No merge,
 deployment, release or dedicated coordinated-report UI acceptance.
+
+## Source-bound closeout
+
+Exact implementation commit `5780368e5a90b117e035f7cec85e2af574275401`,
+source digest `e0c26a61184b66e1c08785f452a228978633f92c7635508406777e241463e16c`:
+**2,445 source tests, 2,445 installed-wheel regressions, 24 JavaScript modules,
+and all 475 native checks in 13 browser suites passed.** Compilation, structural
+fixtures, schemas and canonical delivery/history checks passed. The sole pytest
+warning is the existing Starlette/AnyIO deprecation, not a skipped or failed test.
+
+`--inspect` matched exact source and artifact bytes before this documentation
+closeout. The [receipt](../../evidence/native-cost-policy-software-2026-10-26.json)
+binds the compressed exact native report and records the source/coverage limits.
+Known credential values were absent from the retained report. No inference,
+provider-price read, bill lookup, merge, deployment or release occurred in this run.
+
+The implementation is committed locally; this documentation checkpoint is to be
+committed and published additively on the same branch. The earlier pending/native
+statements describe the preceding implementation checkpoint, not an unresolved
+software failure. A newly frozen fictional diagnostic is next; it must not resume
+the original attempt or be counted as independent prediction evidence. Human
+semantic/pilot/production gates remain open and B02-11 stays partial.
+
+### Emergence Review closeout
+
+EM-333/334 now have source-bound software coverage for cost-policy invalidation,
+original-number precision and conflicting amounts. This verifies the engineering
+boundary, not billing truth or operator benefit. A fixer-facing consequence is
+that an old processing grant can need review after an accounting-policy change;
+unknown cost remains visible rather than silently enabling another paid request.
+No further required scope is promoted by these passing checks.

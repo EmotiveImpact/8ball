@@ -4,6 +4,45 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 native cost evidence · Bind provider-scoped cost handling to full native software acceptance
+
+2026-10-26 · `local_unreleased`
+
+Archive exact 5780368 source-bound native/package evidence without retrofitting the first failed coordinated result.
+
+### Added
+
+- Compressed exact native acceptance report and hash-bound receipt.
+
+### Changed
+
+- Current cost-policy claim now links complete native/package verification; previous focused/pending records remain historical.
+
+### Verification
+
+- 2445 source tests, 2445 installed-wheel regressions, 24 JavaScript modules and 475 native checks in 13 suites passed at 5780368. Exact source/artifact inspection valid before documentation closeout; no model inference.
+- Known credential values absent from retained report; exact archive decompression checked.
+
+### Limitations
+
+- No model inference or price/billing read during this verification.
+- First coordinated live attempt remains partial/failed; a separate frozen diagnostic is still needed.
+- B02-11 partial; no independent quality, dedicated coordinated UI, merge/deployment/release.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Existing EM-333/334 now have source-bound acceptance evidence; no new required scope.
+- Risk: A known reported cost is not an invoice, guarantee of free use or provider spending cap.
+- Architecture: Preserve exact source/archive hashes and distinguish software acceptance from real provider completion or semantic quality.
+- Roadmap decision: existing_task B02-11 documentation/evidence closeout only; no status or reserved ownership promotion.
+Registered discoveries: EM-333, EM-334.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-native-cost-policy.md](docs/delivery/sessions/2026-10-26-native-cost-policy.md), [docs/evidence/native-cost-policy-software-2026-10-26.json](docs/evidence/native-cost-policy-software-2026-10-26.json).
+
 ## 0.2.0-alpha.8 native cost policy · Interpret native decision costs only within their verified funding contract
 
 2026-10-26 · `local_unreleased`

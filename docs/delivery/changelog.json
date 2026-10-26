@@ -3,6 +3,53 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-native-cost-verification",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 native cost evidence",
+      "title": "Bind provider-scoped cost handling to full native software acceptance",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-11"
+      ],
+      "summary": "Archive exact 5780368 source-bound native/package evidence without retrofitting the first failed coordinated result.",
+      "added": [
+        "Compressed exact native acceptance report and hash-bound receipt."
+      ],
+      "changed": [
+        "Current cost-policy claim now links complete native/package verification; previous focused/pending records remain historical."
+      ],
+      "fixed": [],
+      "verification": [
+        "2445 source tests, 2445 installed-wheel regressions, 24 JavaScript modules and 475 native checks in 13 suites passed at 5780368. Exact source/artifact inspection valid before documentation closeout; no model inference.",
+        "Known credential values absent from retained report; exact archive decompression checked."
+      ],
+      "limitations": [
+        "No model inference or price/billing read during this verification.",
+        "First coordinated live attempt remains partial/failed; a separate frozen diagnostic is still needed.",
+        "B02-11 partial; no independent quality, dedicated coordinated UI, merge/deployment/release."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-native-cost-policy.md",
+        "docs/evidence/native-cost-policy-software-2026-10-26.json"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Existing EM-333/334 now have source-bound acceptance evidence; no new required scope."
+        ],
+        "risks": [
+          "A known reported cost is not an invoice, guarantee of free use or provider spending cap."
+        ],
+        "architecture_implications": [
+          "Preserve exact source/archive hashes and distinguish software acceptance from real provider completion or semantic quality."
+        ],
+        "roadmap_decision": "existing_task B02-11 documentation/evidence closeout only; no status or reserved ownership promotion.",
+        "insight_ids": [
+          "EM-333",
+          "EM-334"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-native-cost-policy",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 native cost policy",
