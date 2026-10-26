@@ -155,3 +155,35 @@ does not establish operator value; no benefit or calibration measure was tested.
   Another renamed famous case is not a clean validation substitute. Recheck the
   retained protocol without inference using
   `python -m pytest -q tests/test_historical_replay.py tests/test_forecasting.py`.
+
+## Source-bound software closeout
+
+Exact code `3404d8272b576a0bcf6294393fe3a1aa77966823`, tree
+`1290eea5b77538d785f7c668bffa31cd609f7533`, passed **2,152 source tests,
+2,152 installed-wheel regressions, compilation/schema checks, 24 JavaScript
+modules and all 13 native browser suites / 475 checks**. There were no failed or
+skipped tests in this full run. Source SHA-256:
+`0fb46c8f13244036bcc41fa430ec98ace1d97ba9e9a21206c28fe1863f4036d5`.
+The source stayed unchanged during execution; `--inspect` matched source and
+artifacts before this documentation-only closeout. See the
+[verification receipt](../../evidence/historical-replay-software-2026-10-26.json).
+
+Command: `PATH=/home/ubuntu/.nvm/versions/node/v24.19.0/bin:$PATH .venv/bin/python scripts/acceptance.py --mode native --base 3ddaa2f42f88b0bdb8ad41212f454b01588e29b4`.
+Full report: `artifacts/acceptance/20261026T103008Z-7806f853/report.json`, also
+retained compressed in the repository. There is no separate configured Python
+linter or static type checker; compilation, strict schema/contract checks and
+all browser syntax checks passed. Before full acceptance, 153 focused
+forecast/protocol/delivery tests passed, with one dependency deprecation warning.
+
+No inference ran during software verification. These tests verify the later v2
+protocol, not predictive quality or another actual-model run. The original v1
+experiment and all its limitations remain unchanged. Software CI and automated
+review are separate: the preceding head had passing software CI and an errored
+review service with no findings; inspect the current PR head rather than treating
+that error as approval. The resulting closeout commit/publication is recorded on
+[PR #6](https://github.com/EmotiveImpact/8ball/pull/6); no merge/deploy/release.
+
+Closeout preparation initially searched the package's JSON summary for a plain
+Pytest text line, so its assertion stopped receipt creation and the changelog
+check then reported a missing receipt. The receipt was generated from the retained
+installed JUnit counts instead. The passing native run was not changed or rerun.

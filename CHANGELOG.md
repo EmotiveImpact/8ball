@@ -4,6 +4,42 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 historical replay software evidence · Retain exact-source software acceptance without promoting the historical result
+
+2026-10-26 · `pushed_unreleased`
+
+Publish the first diagnostic and later protocol as separate evidence levels; the historical forecast remains inconclusive.
+
+### Added
+
+- Source-bound native acceptance receipt and compressed full report for exact code 3404d8272b576a0bcf6294393fe3a1aa77966823.
+
+### Changed
+
+- Append publication/verification closeout without rewriting the preceding local diagnostic entry or actual provider output.
+
+### Verification
+
+- 2152 source tests, 2152 installed-wheel regressions, compilation/schema checks, 24 JS modules and all 13 native browser suites / 475 checks passed. Source unchanged and inspection matched before documentation-only closeout.
+
+### Limitations
+
+- No new inference; later v2 protocol tests do not improve the original recognised, source-imperfect v1 case. Predictive quality and independent human/production gates remain open. Review-service error is not approval; no merge or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-318 through EM-320 remain retained; this verification adds no new product finding.
+- Risk: Software success cannot remove recognition, input errors or hindsight contamination.
+- Architecture: Keep native measurement, experiment validity and case authority separate.
+- Roadmap decision: existing_task B02-11 only; no scope, acceptance or reserved owner change.
+Registered discoveries: EM-318, EM-319, EM-320.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-historical-replay.md](docs/delivery/sessions/2026-10-26-historical-replay.md), [docs/evidence/historical-replay-software-2026-10-26.json](docs/evidence/historical-replay-software-2026-10-26.json), [docs/evidence/historical-replay-software-passed-2026-10-26.json.xz](docs/evidence/historical-replay-software-passed-2026-10-26.json.xz).
+
 ## 0.2.0-alpha.8 historical forecast diagnostic · Retain an inconclusive masked historical forecast and harden the experiment protocol
 
 2026-10-26 · `local_unreleased`

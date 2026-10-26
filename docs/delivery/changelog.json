@@ -3,6 +3,28 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-historical-replay-software",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 historical replay software evidence",
+      "title": "Retain exact-source software acceptance without promoting the historical result",
+      "delivery": "pushed_unreleased",
+      "task_ids": ["B02-11"],
+      "summary": "Publish the first diagnostic and later protocol as separate evidence levels; the historical forecast remains inconclusive.",
+      "added": ["Source-bound native acceptance receipt and compressed full report for exact code 3404d8272b576a0bcf6294393fe3a1aa77966823."],
+      "changed": ["Append publication/verification closeout without rewriting the preceding local diagnostic entry or actual provider output."],
+      "fixed": [],
+      "verification": ["2152 source tests, 2152 installed-wheel regressions, compilation/schema checks, 24 JS modules and all 13 native browser suites / 475 checks passed. Source unchanged and inspection matched before documentation-only closeout."],
+      "limitations": ["No new inference; later v2 protocol tests do not improve the original recognised, source-imperfect v1 case. Predictive quality and independent human/production gates remain open. Review-service error is not approval; no merge or deployment."],
+      "evidence_paths": ["docs/delivery/sessions/2026-10-26-historical-replay.md", "docs/evidence/historical-replay-software-2026-10-26.json", "docs/evidence/historical-replay-software-passed-2026-10-26.json.xz"],
+      "emergence_review": {
+        "discoveries": ["EM-318 through EM-320 remain retained; this verification adds no new product finding."],
+        "risks": ["Software success cannot remove recognition, input errors or hindsight contamination."],
+        "architecture_implications": ["Keep native measurement, experiment validity and case authority separate."],
+        "roadmap_decision": "existing_task B02-11 only; no scope, acceptance or reserved owner change.",
+        "insight_ids": ["EM-318", "EM-319", "EM-320"]
+      }
+    },
+    {
       "id": "2026-10-26-historical-replay",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 historical forecast diagnostic",

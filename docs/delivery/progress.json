@@ -12,6 +12,10 @@
       "scope": "B02-11 public masked retrospective forecast diagnostic; no acceptance or reserved lane ownership change.",
       "evidence": "docs/delivery/sessions/2026-10-26-historical-replay.md",
       "result": "One actual Sonnet forecast scored mechanically, but recognition and source-summary errors make predictive validity inconclusive. Later v2 protocol is offline-tested only.",
+      "tested_code_commit": "3404d8272b576a0bcf6294393fe3a1aa77966823",
+      "source_sha256": "0fb46c8f13244036bcc41fa430ec98ace1d97ba9e9a21206c28fe1863f4036d5",
+      "software_receipt": "docs/evidence/historical-replay-software-2026-10-26.json",
+      "software_verification": "2152 source and installed-wheel tests, 24 JS modules and 475 native checks in 13 suites passed; exact inspection matched before documentation-only closeout. No inference or predictive-quality promotion.",
       "next_action": "Retain this invalid-for-quality diagnostic. Independently review source fidelity and define genuinely unseen outcomes, target population and an appropriate baseline before a predictive-quality study. No repeated inference on this case to improve its score."
     },
     "full_name": "EmotiveImpact/8ball",
