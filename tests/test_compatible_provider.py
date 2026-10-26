@@ -667,3 +667,91 @@ def test_native_configuration_is_frozen_and_truncated_usage_retained(monkeypatch
     call = session.receipt['calls'][0]
     assert call['provider_usage']['output_tokens'] == 10
     assert call['raw_content'] == '{"items": []}'
+
+
+@pytest.mark.parametrize('content,kind', [
+    (None, 'null'), ([], 'array'), ({'reasoning': 'private'}, 'object'),
+    (False, 'boolean'), (8, 'number'), (0.5, 'number')])
+def test_unsupported_content_retains_only_allowlisted_diagnostics(monkeypatch, content, kind):
+    configure(monkeypatch)
+    data = envelope()
+    data['choices'][0]['finish_reason'] = 'length'
+    data['choices'][0]['message'].update(content=content, reasoning_content='private',
+        private_field=TOKEN)
+    data['usage']['private_field'] = TOKEN
+    cl, requests = client(httpx.Response(200, json=data))
+    session = CompatibleSession(allow_external=True, client=cl)
+    with pytest.raises(HostedFailure, match='unsupported_response'):
+        session.generate(SCHEMA, 'Extract', {})
+    call = session.receipt['calls'][0]
+    assert len(requests) == 1 and call['status'] == 'failed'
+    assert call['provider_stop_reason'] == 'length'
+    assert call['provider_usage'] == dict(prompt_tokens=20, completion_tokens=10, total_tokens=30)
+    assert call['assistant_shape'] == dict(assistant_role=True, content_type=kind,
+        tool_calls_present=False, refusal_present=False)
+    assert call['raw_content_omitted'] == 'no_attested_assistant_content'
+    assert 'raw_content' not in call and 'usage' not in call
+    assert TOKEN not in json.dumps(session.receipt) and 'private' not in json.dumps(call)
+
+
+@pytest.mark.parametrize('usage', [None, [], {'prompt_tokens': True},
+    {'completion_tokens': -1}, {'total_tokens': '30'}])
+def test_malformed_rejection_metadata_never_creates_valid_usage(monkeypatch, usage):
+    configure(monkeypatch)
+    data = envelope(); data['usage'] = usage
+    data['choices'][0]['finish_reason'] = TOKEN
+    data['choices'][0]['message'] = {'role': TOKEN}
+    cl, requests = client(httpx.Response(200, json=data))
+    session = CompatibleSession(allow_external=True, client=cl)
+    with pytest.raises(HostedFailure, match='unsupported_response'):
+        session.generate(SCHEMA, 'Extract', {})
+    call = session.receipt['calls'][0]
+    assert len(requests) == 1 and 'provider_usage' not in call
+    assert 'provider_stop_reason' not in call and 'raw_content' not in call
+    assert call['assistant_shape']['content_type'] == 'missing'
+    assert not call['assistant_shape']['assistant_role'] and TOKEN not in json.dumps(call)
+
+
+@pytest.mark.parametrize('field', ['tool_calls', 'function_call', 'refusal'])
+def test_unsupported_tools_and_refusals_keep_only_presence_metadata(monkeypatch, field):
+    configure(monkeypatch)
+    data = envelope(); data['choices'][0]['message'][field] = {'private': TOKEN}
+    cl, requests = client(httpx.Response(200, json=data))
+    session = CompatibleSession(allow_external=True, client=cl)
+    with pytest.raises(HostedFailure, match='unsupported_response'):
+        session.generate(SCHEMA, 'Extract', {})
+    call = session.receipt['calls'][0]
+    assert len(requests) == 1 and call['provider_stop_reason'] == 'stop'
+    assert call['assistant_shape']['refusal_present'] == (field == 'refusal')
+    assert call['assistant_shape']['tool_calls_present'] == (field != 'refusal')
+    assert TOKEN not in json.dumps(call) and 'private' not in json.dumps(call)
+
+
+def test_fenced_json_keeps_failure_and_diagnostics_without_repair(monkeypatch):
+    configure(monkeypatch)
+    monkeypatch.setenv('EIGHTBALL_API_JSON_MODE', 'prompt_only')
+    data = envelope(); raw = '```json\n{"items": []}\n```'
+    data['choices'][0]['message']['content'] = raw
+    cl, requests = client(httpx.Response(200, json=data))
+    session = CompatibleSession(allow_external=True, client=cl)
+    with pytest.raises(HostedFailure, match='invalid_json'):
+        session.generate(SCHEMA, 'Extract', {})
+    call = session.receipt['calls'][0]
+    assert len(requests) == 1 and call['raw_content'] == raw
+    assert call['provider_stop_reason'] == 'stop' and call['provider_usage']['completion_tokens'] == 10
+    assert call['status'] == 'failed' and 'response_sha256' not in call
+
+
+def test_native_missing_text_preserves_stop_reason_not_thinking(monkeypatch):
+    configure(monkeypatch, 'https://api.anthropic.com/v1', 'anthropic')
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', 'claude-sonnet-5-5')
+    data = native_envelope(); data['stop_reason'] = 'max_tokens'
+    data['content'] = [{'type': 'thinking', 'thinking': 'private', 'signature': TOKEN}]
+    cl, requests = client(httpx.Response(200, json=data))
+    session = CompatibleSession(allow_external=True, client=cl)
+    with pytest.raises(HostedFailure, match='unsupported_response'):
+        session.generate(SCHEMA, 'Extract', {})
+    call = session.receipt['calls'][0]
+    assert len(requests) == 1 and call['provider_stop_reason'] == 'max_tokens'
+    assert call['provider_usage'] == data['usage'] and 'raw_content' not in call
+    assert TOKEN not in json.dumps(call) and 'private' not in json.dumps(call)

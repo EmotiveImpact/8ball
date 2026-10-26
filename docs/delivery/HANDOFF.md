@@ -1,4 +1,14 @@
-# Latest evidence: first coordinated live attempt failed/partial
+# Latest local follow-up: safe rejected-provider diagnostics
+
+See [provider diagnostics](sessions/2026-10-26-provider-diagnostics.md): 463
+controlled tests pass for safe stop/counter/shape retention before rejection.
+Full source-bound native acceptance is pending at this preparation checkpoint.
+No cost-unit conversion or new model calls; the first coordinated run below
+remains failed and cannot be repaired by later metadata changes. EM-331/EM-332
+track diagnostic retention and protocol-specific accounting. Branch unchanged,
+base `b43f056`; no merge, deployment or quality acceptance.
+
+# Previous evidence: first coordinated live attempt failed/partial
 
 See [evaluation closeout](sessions/2026-10-26-coordinated-evaluation.md#source-bound-software-and-first-live-attempt-append-only-closeout)
 and [bound evidence](../evidence/coordinated-evaluation-first-attempt-2026-10-26.json).

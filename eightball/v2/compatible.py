@@ -259,6 +259,8 @@ class CompatibleSession:
                 call['served_model'] = model
             if self._settings.protocol == 'anthropic_messages':
                 envelope = self._native_envelope(envelope, call)
+            else:
+                self._compatible_metadata(envelope, call)
             choices = envelope.get('choices')
             if not isinstance(choices, list) or len(choices) != 1:
                 raise HostedFailure('invalid_choices')
@@ -357,7 +359,37 @@ class CompatibleSession:
                 chunks.append(chunk)
             return b''.join(chunks)
 
+    def _compatible_metadata(self, envelope: dict, call: dict) -> None:
+        usage = envelope.get('usage')
+        if isinstance(usage, dict):
+            counts = {k: usage[k] for k in ('prompt_tokens', 'completion_tokens', 'total_tokens')
+                      if k in usage}
+            if all(type(n) is int and n >= 0 for n in counts.values()):
+                call['provider_usage'] = counts
+        choices = envelope.get('choices')
+        if not isinstance(choices, list) or len(choices) != 1 or not isinstance(choices[0], dict):
+            return
+        choice = choices[0]
+        stop = choice.get('finish_reason')
+        if stop in ('stop', 'length', 'tool_calls', 'function_call', 'content_filter'):
+            call['provider_stop_reason'] = stop
+        message = choice.get('message')
+        if not isinstance(message, dict):
+            return
+        types = {type(None): 'null', str: 'string', list: 'array', dict: 'object',
+                 bool: 'boolean', int: 'number', float: 'number'}
+        call['assistant_shape'] = {
+            'assistant_role': message.get('role') == 'assistant',
+            'content_type': types.get(type(message['content']), 'unknown') if 'content' in message else 'missing',
+            'tool_calls_present': bool(message.get('tool_calls') or message.get('function_call')),
+            'refusal_present': bool(message.get('refusal')),
+        }
+
     def _native_envelope(self, envelope: dict, call: dict) -> dict:
+        stop = envelope.get('stop_reason')
+        if stop in ('end_turn', 'max_tokens', 'stop_sequence', 'tool_use', 'pause_turn',
+                    'refusal', 'model_context_window_exceeded'):
+            call['provider_stop_reason'] = stop
         if envelope.get('type') != 'message' or envelope.get('role') != 'assistant':
             raise HostedFailure('unsupported_response')
         usage = envelope.get('usage')
@@ -392,10 +424,6 @@ class CompatibleSession:
                 raise HostedFailure('unsupported_response')
         if not texts:
             raise HostedFailure('unsupported_response')
-        stop = envelope.get('stop_reason')
-        if stop in ('end_turn', 'max_tokens', 'stop_sequence', 'tool_use', 'pause_turn',
-                    'refusal', 'model_context_window_exceeded'):
-            call['provider_stop_reason'] = stop
         return {'model': envelope.get('model'), 'usage': tokens,
                 'choices': [{'finish_reason': 'stop' if stop == 'end_turn' else 'incomplete',
                              'message': {'role': 'assistant', 'content': ''.join(texts)}}]}

@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **231 recorded discoveries.**
+Last review: 2026-10-26. **232 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -4093,8 +4093,26 @@ DeepSeek returned HTTP 200 but the planning adapter rejected its envelope before
 
 **Roadmap links:** `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-evaluation.md`, `docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json`, `eightball/v2/compatible.py`, `endstate/intelligence/coordination.py`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-evaluation.md`, `docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json`, `eightball/v2/compatible.py`, `endstate/intelligence/coordination.py`, `docs/delivery/sessions/2026-10-26-provider-diagnostics.md`.
 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 adapter investigation and bounded failure diagnostics; first run remains failed. No runtime fix or quality approval claimed.
+- 2026-10-26 · adopted · integration: existing_task B02-09/B02-11: implement early allowlisted stop/counter/shape metadata; 463 controlled tests pass. No recovery of omitted original bytes, native cost conversion or live retest.
+
+### [ ] EM-332: Protocol families do not inherit accounting contracts
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Native cost-unit investigation after the first coordinated diagnostic.
+
+Gateway docs specify USD for chat-family usage.cost but native decision schemas omit a cost contract; native TypeSafe docs describe token counts only. Familiar field names are not sufficient unit evidence.
+
+**Product implication:** Keep native cost unknown until units or a request-bound provider receipt are verified. Separate supplied diagnostic metadata from normalised accounting and actual billing; a zero known total is not free use.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-provider-diagnostics.md`, `docs/v2/DECISION-PROVIDERS.md`, `endstate/intelligence/coordination.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 investigate documented per-request cost receipts rather than infer native units. No new mandatory product scope or cost conversion yet.

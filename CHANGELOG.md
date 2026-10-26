@@ -4,6 +4,52 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 provider failure diagnostics · Keep safe provider diagnostics before rejecting unsupported output
+
+2026-10-26 · `local_unreleased`
+
+Preserve allowlisted stop/usage/shape evidence without making failed output valid or retaining hidden reasoning.
+
+### Added
+
+- Known compatible stop reasons, supplied integer token counts and boolean/type-only assistant shape in failed planning receipts.
+- Controlled malformed/fenced/native-thinking-only fixtures, including actual worker retention and unchanged case audits.
+
+### Changed
+
+- Retain Anthropic stop reason before missing-text rejection; native cache accounting and all output validation remain unchanged.
+
+### Fixed
+
+- Earlier compatible shape rejection discarded supplied stop/token metadata; native missing text discarded its stop reason.
+
+### Verification
+
+- 463 controlled provider/integration/method/specialist tests passed; Python compilation and whitespace passed.
+- Full source-bound native/wheel acceptance pending. No standalone static linter/type-checker configured.
+
+### Limitations
+
+- No new model calls, unit conversion, retry, fallback or repair. Original live failure remains closed and its DeepSeek cause unknown.
+- Native cost contract still unverified; zero known normalised cost is not zero charge.
+- No coordinated-report UI, independent quality/predictive acceptance, merge, deployment or release.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Strict failure must preserve safe diagnostic fields before rejection.
+- Discovery: A common cost field name does not transfer units between protocol families.
+- Risk: Raw envelope retention would expose hidden reasoning or arbitrary provider fields.
+- Risk: Overinterpreting diagnostics or omitted bytes would manufacture a cause for the earlier failure.
+- Architecture: Keep diagnostic projection in adapters and preserve all authority/validation boundaries; verify a request-bound native cost source separately.
+- Roadmap decision: existing_task B02-09/B02-11 diagnostics and cost-contract investigation; no acceptance promotion.
+Registered discoveries: EM-331, EM-332.
+
+Roadmap items: `B02-09`, `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-provider-diagnostics.md](docs/delivery/sessions/2026-10-26-provider-diagnostics.md), [eightball/v2/compatible.py](eightball/v2/compatible.py), [tests/test_compatible_provider.py](tests/test_compatible_provider.py), [tests/test_coordinated_evaluation.py](tests/test_coordinated_evaluation.py).
+
 ## 0.2.0-alpha.8 coordinated diagnostic evidence · Retain first live coordinated-method failures and verified software source
 
 2026-10-26 · `local_unreleased`

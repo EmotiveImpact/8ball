@@ -168,6 +168,35 @@ def test_authentication_failure_stops_later_models(diagnostic):
     assert report['stop_reason']=='planning_access_failed_no_later_methods'
 
 
+@pytest.mark.parametrize('model,stop,error', [
+    (GLM, 'stop', 'invalid_json'), (DEEPSEEK, 'length', 'unsupported_response'),
+    (SONNET, 'max_tokens', 'unsupported_response')])
+def test_rejection_diagnostics_survive_real_host_retention(diagnostic, model, stop, error):
+    d = diagnostic
+    def change(data):
+        if model == SONNET:
+            data['stop_reason'] = stop
+            data['content'] = [dict(type='thinking', thinking='private-hidden-reasoning')]
+        else:
+            data['choices'][0]['finish_reason'] = stop
+            data['choices'][0]['message'].update(reasoning_content='private-hidden-reasoning',
+                content='```json\n{}\n```' if model == GLM else None)
+        return data
+    d['transforms'][model] = change
+    path = d['freeze']([model])
+    report = d['run'](path)
+    assert report['recorded_provider_call_attempts'] == 1 == len(d['calls'])
+    row = report['results'][0]
+    assert row['case_audit_unchanged'] and row['work_state'] == 'awaiting_review'
+    assert not row['result']['initial'] and not row['result']['revision']
+    call = row['result']['planning_receipt']['calls'][0]
+    assert call['provider_stop_reason'] == stop and call['error_code'] == error
+    assert call['provider_usage'] and call['response_body_sha256']
+    saved = (path.parent/model/'transports.json').read_text()
+    assert json.loads(saved)['planning'][0]['calls'][0] == call
+    assert 'private-hidden-reasoning' not in saved and 'private-hidden-reasoning' not in json.dumps(report)
+
+
 def test_all_selected_credentials_are_preflighted_and_environment_restored(diagnostic, monkeypatch):
     d = diagnostic
     monkeypatch.setenv('EIGHTBALL_API_MODEL','original-configuration')

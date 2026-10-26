@@ -3,6 +3,61 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-provider-rejection-diagnostics",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 provider failure diagnostics",
+      "title": "Keep safe provider diagnostics before rejecting unsupported output",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-09",
+        "B02-11"
+      ],
+      "summary": "Preserve allowlisted stop/usage/shape evidence without making failed output valid or retaining hidden reasoning.",
+      "added": [
+        "Known compatible stop reasons, supplied integer token counts and boolean/type-only assistant shape in failed planning receipts.",
+        "Controlled malformed/fenced/native-thinking-only fixtures, including actual worker retention and unchanged case audits."
+      ],
+      "changed": [
+        "Retain Anthropic stop reason before missing-text rejection; native cache accounting and all output validation remain unchanged."
+      ],
+      "fixed": [
+        "Earlier compatible shape rejection discarded supplied stop/token metadata; native missing text discarded its stop reason."
+      ],
+      "verification": [
+        "463 controlled provider/integration/method/specialist tests passed; Python compilation and whitespace passed.",
+        "Full source-bound native/wheel acceptance pending. No standalone static linter/type-checker configured."
+      ],
+      "limitations": [
+        "No new model calls, unit conversion, retry, fallback or repair. Original live failure remains closed and its DeepSeek cause unknown.",
+        "Native cost contract still unverified; zero known normalised cost is not zero charge.",
+        "No coordinated-report UI, independent quality/predictive acceptance, merge, deployment or release."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-provider-diagnostics.md",
+        "eightball/v2/compatible.py",
+        "tests/test_compatible_provider.py",
+        "tests/test_coordinated_evaluation.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Strict failure must preserve safe diagnostic fields before rejection.",
+          "A common cost field name does not transfer units between protocol families."
+        ],
+        "risks": [
+          "Raw envelope retention would expose hidden reasoning or arbitrary provider fields.",
+          "Overinterpreting diagnostics or omitted bytes would manufacture a cause for the earlier failure."
+        ],
+        "architecture_implications": [
+          "Keep diagnostic projection in adapters and preserve all authority/validation boundaries; verify a request-bound native cost source separately."
+        ],
+        "roadmap_decision": "existing_task B02-09/B02-11 diagnostics and cost-contract investigation; no acceptance promotion.",
+        "insight_ids": [
+          "EM-331",
+          "EM-332"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-coordinated-evaluation-first-attempt",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 coordinated diagnostic evidence",

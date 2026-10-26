@@ -7320,7 +7320,8 @@
         "docs/delivery/sessions/2026-10-26-coordinated-evaluation.md",
         "docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json",
         "eightball/v2/compatible.py",
-        "endstate/intelligence/coordination.py"
+        "endstate/intelligence/coordination.py",
+        "docs/delivery/sessions/2026-10-26-provider-diagnostics.md"
       ],
       "owner_review": "pending",
       "history": [
@@ -7329,6 +7330,39 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11 adapter investigation and bounded failure diagnostics; first run remains failed. No runtime fix or quality approval claimed."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-09/B02-11: implement early allowlisted stop/counter/shape metadata; 463 controlled tests pass. No recovery of omitted original bytes, native cost conversion or live retest."
+        }
+      ]
+    },
+    {
+      "id": "EM-332",
+      "title": "Protocol families do not inherit accounting contracts",
+      "origin": "Native cost-unit investigation after the first coordinated diagnostic",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "Gateway docs specify USD for chat-family usage.cost but native decision schemas omit a cost contract; native TypeSafe docs describe token counts only. Familiar field names are not sufficient unit evidence.",
+      "product_implication": "Keep native cost unknown until units or a request-bound provider receipt are verified. Separate supplied diagnostic metadata from normalised accounting and actual billing; a zero known total is not free use.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-provider-diagnostics.md",
+        "docs/v2/DECISION-PROVIDERS.md",
+        "endstate/intelligence/coordination.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 investigate documented per-request cost receipts rather than infer native units. No new mandatory product scope or cost conversion yet."
         }
       ]
     }
