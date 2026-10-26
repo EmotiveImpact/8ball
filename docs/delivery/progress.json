@@ -1035,6 +1035,11 @@
       "kind": "local_engineering",
       "path": "docs/delivery/sessions/2026-10-26-information-loop.md",
       "result": "Exact a7cc1d6 native source/artifacts matched:2057 source tests,2057 installed-wheel regressions,24 JS modules,474 checks across13 native suites. Explicit questions and separate observations/rechecks only; no inference, predictive/quality/production approval."
+    },
+    "EV-SONNET-NATIVE-20261026": {
+      "kind": "real_model_evaluation",
+      "path": "docs/delivery/sessions/2026-10-26-sonnet-native.md",
+      "result": "Actual native Sonnet: frozen four-fixture gate and scripted 20-step native application journey passed; 375 focused controlled tests. Failed attempts retained. Independent quality/human/production gates remain open."
     }
   },
   "milestones": [
@@ -1466,7 +1471,7 @@
       "owner": "Devin / roadmap-intelligence",
       "working_branch": "devin/1792969169-roadmap-intelligence",
       "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
-      "updated_on": "2026-10-25",
+      "updated_on": "2026-10-26",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "evals/live_generation.py",
@@ -1495,13 +1500,14 @@
         "EV-ANTHROPIC-SETUP",
         "EV-ANTHROPIC-20261026",
         "EV-OCT25-INTEGRATION",
-        "EV-DECISION-CONTRACTS-20261026"
+        "EV-DECISION-CONTRACTS-20261026",
+        "EV-SONNET-NATIVE-20261026"
       ],
       "blockers": [
-        "Owner selected Anthropic Sonnet 5.5, exact active catalogue ID claude-sonnet-5-5; session key authenticates catalogue access. Earlier Sonnet 4.6 fixtures all rejected HTTP400, exact cause unknown. Account credit and provider-enforced US$5 cap/no automatic top-up remain unverified; no further inference until confirmed. Catalogue listing is not successful inference or model quality. Persistent deployment settings are not changed by session configuration examples.",
+        "Native Sonnet frozen generation and actual-provider native journey now pass. Account cap absence explicitly accepted for bounded fictional tests; no cap is claimed. Independent semantic/reliability acceptance remains outstanding.",
         "Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate."
       ],
-      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate. Integration provider follow-up: verify the Sonnet 5.5 request/configuration checkpoint with full source-bound native acceptance. Confirm account credits, effective pricing, provider-enforced US$5 cap and disabled automatic top-up before any further fictional inference. Preserve the failed Sonnet 4.6 report and every unchanged graph/independent semantic gate. See docs/delivery/sessions/2026-10-26-sonnet-55.md."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate. Latest integration: see sessions/2026-10-26-sonnet-native.md. Native actual-provider engineering now passes; retain independent protocol/held-out labels and human gates. Do not re-block this authorised test on dashboard login or assume a provider cap. No reserved lane owner/status/acceptance change."
     },
     {
       "id": "B02-10",
@@ -1577,12 +1583,13 @@
         "EV-DECISION-SMOKE-20261026",
         "EV-FORECAST-MEASUREMENT-20261026",
         "EV-SPECIALIST-WORKER-20261026",
-        "EV-SPECIALIST-PRESENTATION-20261026"
+        "EV-SPECIALIST-PRESENTATION-20261026",
+        "EV-SONNET-NATIVE-20261026"
       ],
       "blockers": [
         "Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed."
       ],
-      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval. Integration follow-up: verify the reviewed specialist worker checkpoint in docs/delivery/sessions/2026-10-26-specialist-worker.md; preserve partial status and all remaining gates. Read-only presentation follow-up: docs/delivery/sessions/2026-10-26-specialist-presentation.md. No acceptance status or reserved lane ownership change."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval. Integration follow-up: verify the reviewed specialist worker checkpoint in docs/delivery/sessions/2026-10-26-specialist-worker.md; preserve partial status and all remaining gates. Read-only presentation follow-up: docs/delivery/sessions/2026-10-26-specialist-presentation.md. No acceptance status or reserved lane ownership change. Latest integration: see sessions/2026-10-26-sonnet-native.md. Native actual-provider engineering now passes; retain independent protocol/held-out labels and human gates. Do not re-block this authorised test on dashboard login or assume a provider cap. No reserved lane owner/status/acceptance change."
     },
     {
       "id": "B02-12",
@@ -1593,7 +1600,7 @@
       "owner": "Devin / roadmap-intelligence",
       "working_branch": "devin/1792969169-roadmap-intelligence",
       "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
-      "updated_on": "2026-10-25",
+      "updated_on": "2026-10-26",
       "code_paths": [
         "tests/browser_v2.py",
         "evals/full_journey.py",
@@ -1621,12 +1628,13 @@
         "EV-REVIEW-EVIDENCE-20261018",
         "EV-OCT25-INTEGRATION",
         "EV-NATIVE-REVIEW-20261026",
-        "EV-DECISION-SMOKE-20261026"
+        "EV-DECISION-SMOKE-20261026",
+        "EV-SONNET-NATIVE-20261026"
       ],
       "blockers": [
-        "Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey."
+        "Actual-provider scripted native twenty-step journey now passes; genuinely human acceptance and independent quality remain unperformed. Scripted review and synthetic observations do not meet those gates."
       ],
-      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate. Latest integration: see sessions/2026-10-26-sonnet-native.md. Native actual-provider engineering now passes; retain independent protocol/held-out labels and human gates. Do not re-block this authorised test on dashboard login or assume a provider cap. No reserved lane owner/status/acceptance change."
     },
     {
       "id": "B02-13",

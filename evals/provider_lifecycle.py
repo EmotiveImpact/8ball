@@ -87,7 +87,7 @@ def matching_returned_calls(row, provider, configured):
     calls = transport['calls']
     served_model = proposal['model']
     routing = getattr(configured, 'routing_provider', None) or configured.provider
-    expected_transport = ('openai_compatible' if provider == 'openai_compatible'
+    expected_transport = (getattr(configured, 'protocol', 'openai_compatible') if provider == 'openai_compatible'
                           else 'huggingface_inference_providers')
     matches = (
         proposal['provider'] == provider and proposal['purpose'] == row['purpose']

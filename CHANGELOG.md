@@ -4,6 +4,50 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 native Sonnet integration · Connect native Sonnet and verify the actual-provider journey
+
+2026-10-26 · `local_unreleased`
+
+Native Anthropic Messages, truthful usage/protocol receipts and exact target-quote prompt guidance with unchanged local guards.
+
+### Added
+
+- Native text/usage parsing, exact model identity and protocol-matched lifecycle prerequisites.
+
+### Changed
+
+- Direct Anthropic uses Messages; all other hosts retain their existing transport. Prompt v3 explains existing lexical target coverage.
+
+### Fixed
+
+- Compatibility request rejection is avoided by selecting the verified native protocol, without an automatic fallback or weakening source/graph validation.
+
+### Verification
+
+- 375 focused controlled regressions passed.
+- Actual frozen Sonnet run passed all four fixtures (three conditional routes); actual-provider native journey passed all 20 scripted checks. Earlier HTTP400 and lexical-coverage failures retained.
+- Full source-bound native/wheel regression pending at this functional checkpoint.
+
+### Limitations
+
+- US$0.088500 known Sonnet usage-based estimate, not an invoice; rejected billing unknown. No account-wide cap or retries.
+- Live cancellation experiment not run. Independent semantic/predictive/professional/human/production acceptance, merge and deployment remain open.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Wire success does not establish proposal or semantic quality.
+- Discovery: Exact lexical coverage failure need not mean a missing semantic criterion.
+- Risk: Familiar fixtures do not measure held-out quality; mechanical constraints can reject otherwise meaningful output.
+- Architecture: Keep transport in the product adapter and version prompts without changing engine validation or authority.
+- Roadmap decision: Existing B02-09/B02-11/B02-12 only; preserve all independent acceptance and reserved lane ownership.
+Registered discoveries: EM-311, EM-312.
+
+Roadmap items: `B02-09`, `B02-11`, `B02-12`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-sonnet-native.md](docs/delivery/sessions/2026-10-26-sonnet-native.md), [docs/evidence/sonnet-native-2026-10-26.json](docs/evidence/sonnet-native-2026-10-26.json), [tests/test_compatible_provider.py](tests/test_compatible_provider.py), [tests/test_compatible_integration.py](tests/test_compatible_integration.py), [tests/test_endstate_compilation.py](tests/test_endstate_compilation.py).
+
 ## 0.2.0-alpha.8 information-check loop · Connect retained uncertainty to explicit checks and reconsideration
 
 2026-10-26 · `pushed_unreleased`

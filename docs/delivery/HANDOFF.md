@@ -1,3 +1,18 @@
+# Native Sonnet integration — 26 October 2026
+
+[Latest handoff](sessions/2026-10-26-sonnet-native.md) and
+[retained evidence](../evidence/sonnet-native-2026-10-26.json): direct native
+Sonnet 5.5 passes the frozen generation set and all 20 scripted actual-provider
+journey steps, including native reload/download. Earlier compatibility and
+lexical-coverage failures remain preserved. Known usage-based Sonnet estimate
+US$0.088500, not an invoice; rejected billing remains unknown. The owner explicitly
+accepted the uncapped account for bounded fictional tests; no dashboard login
+or claimed provider-enforced US$5 cap. Full software closeout/publication follows
+in that handoff. No independent quality, predictive, human, production, merge or
+deployment acceptance. EM-311/312 refine existing tasks; reserved owners remain.
+
+## Previous information-check checkpoint
+
 # Information-check loop checkpoint — 26 October 2026
 
 [Latest handoff](sessions/2026-10-26-information-loop.md) and [source-bound receipt](../evidence/information-loop-native-2026-10-26.json): saved challenges now expose structural check candidates, explicit linked case questions, current evidence support and separate observations, followed by explicit immutable rechecks. Exact pushed code `a7cc1d66e786eb027e32e2b0a63fb60c9cbfdde9` on `devin/1792969169-roadmap-integrated` passed 2,057 source tests, 2,057 installed-wheel regressions, 24 JavaScript modules and 474 checks in all 13 native suites. Source/artifact inspection matched before documentation-only closeout. [PR6](https://github.com/EmotiveImpact/8ball/pull/6) remains unmerged; current CI is separate. No automatic questions, observations, course selection or external actions; no inference or predictive-quality result.

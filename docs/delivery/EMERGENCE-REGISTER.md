@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **210 recorded discoveries.**
+Last review: 2026-10-26. **212 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -3729,3 +3729,37 @@ Rechecking an immutable brief can multiply the same unresolved question unless i
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task: owner requested the information-to-reconsideration loop. Reuse native questions and review contracts; do not promote optional watchers, forecasts or production acceptance. Operator benefit remains unmeasured.
+
+### [ ] EM-311: Transport success and generation acceptance are separate gates
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Sonnet native actual-provider integration.
+
+Native Sonnet inference succeeded after a compatibility rejection, but the first graph still failed local validation. Catalogue access and a working wire protocol do not establish valid proposals or quality.
+
+**Product implication:** Preserve exact protocol, prompt, source and output attribution. Local contract validity, independent semantic quality and human authority remain separate.
+
+**Roadmap links:** `B02-09` (blocked), `B02-12` (blocked).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-sonnet-native.md`, `docs/evidence/sonnet-native-2026-10-26.json`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task: bounded provider/prompt correction; no new required scope or independent/human/production acceptance.
+
+### [ ] EM-312: Lexical target coverage failure is not semantic omission
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Sonnet native actual-provider integration.
+
+The live frame contained both requested success criteria but its quotes omitted the connector and. A lexical coverage diagnostic alone does not prove a missing semantic criterion; versioned prompt guidance corrected the contract without weakening validation.
+
+**Product implication:** Preserve exact protocol, prompt, source and output attribution. Local contract validity, independent semantic quality and human authority remain separate.
+
+**Roadmap links:** `B02-09` (blocked), `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-sonnet-native.md`, `docs/evidence/sonnet-native-2026-10-26.json`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task: bounded provider/prompt correction; no new required scope or independent/human/production acceptance.

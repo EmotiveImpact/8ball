@@ -1,4 +1,4 @@
-"""Explicit, opt-in hosted OpenAI-compatible structured-output transport.
+"""Explicit hosted transport; direct Anthropic uses its native Messages API.
 
 Configuration is server-owned and frozen per analysis. URL checks constrain its
 format, not DNS resolution or remote trust: deployment egress and secret-host
@@ -68,6 +68,10 @@ class CompatibleSettings:
     endpoint_host: str
     routing_provider: str | None = None
 
+    @property
+    def protocol(self):
+        return 'anthropic_messages' if self.endpoint_host == 'api.anthropic.com' else 'openai_compatible'
+
 
 def _endpoint(base: str) -> tuple[str, str]:
     # Reject parser normalization, encoded path tricks and alternate literal IP
@@ -135,6 +139,10 @@ def settings() -> CompatibleSettings:
             raise HostedSetupRequired('OpenRouter requires EIGHTBALL_API_PROVIDER=openrouter and one explicit EIGHTBALL_API_ROUTING_PROVIDER; automatic provider routing is not enabled.')
     elif routing or provider == 'openrouter':
         raise HostedSetupRequired('EIGHTBALL_API_ROUTING_PROVIDER is only supported for the exact openrouter.ai endpoint.')
+    if host == 'api.anthropic.com':
+        if provider != 'anthropic' or endpoint != 'https://api.anthropic.com/v1/chat/completions':
+            raise HostedSetupRequired('Direct Anthropic requires provider anthropic and base https://api.anthropic.com/v1.')
+        endpoint = 'https://api.anthropic.com/v1/messages'
     return CompatibleSettings(token, model, provider, endpoint, host, routing or None)
 
 
@@ -155,7 +163,7 @@ def configuration_status() -> dict:
     status.update(configured=True, configuration_state='configured_not_tested',
                   model=configured.model, api_provider=configured.provider,
                   routing_provider=configured.routing_provider or configured.provider,
-                  endpoint_host=configured.endpoint_host)
+                  endpoint_host=configured.endpoint_host, protocol=configured.protocol)
     return status
 
 
@@ -170,7 +178,7 @@ class CompatibleSession:
 
     @property
     def receipt(self) -> dict:
-        return {'transport': 'openai_compatible', 'api_provider': self._settings.provider,
+        return {'transport': self._settings.protocol, 'api_provider': self._settings.provider,
                 'endpoint_host': self._settings.endpoint_host,
                 'requested_model': self._settings.model,
                 'routing_provider': self._settings.routing_provider or self._settings.provider,
@@ -192,8 +200,9 @@ class CompatibleSession:
             # another endpoint or silently retry with weaker output settings.
             payload['enable_thinking'] = False
         if self._settings.endpoint_host == 'api.anthropic.com':
-            # Sonnet 5.5 rejects sampling controls; earlier models allow omission.
-            payload.pop('temperature')
+            payload = {'model': self._settings.model, 'max_tokens': MAX_OUTPUT_TOKENS,
+                       'system': payload['messages'][0]['content'],
+                       'messages': payload['messages'][1:], 'output_config': {'effort': 'medium'}}
         if self._settings.routing_provider:
             payload['provider'] = {'order': [self._settings.routing_provider],
                                    'only': [self._settings.routing_provider],
@@ -210,6 +219,8 @@ class CompatibleSession:
         if self._settings.endpoint_host == 'api.anthropic.com':
             call['sampling_parameters'] = 'omitted'
             call['thinking'] = 'provider_default'
+            call['effort'] = 'medium'
+            call['remote_schema_enforcement'] = False
         self.calls.append(call)
         assistant_content = None
         try:
@@ -228,6 +239,8 @@ class CompatibleSession:
                            and self._settings.token not in model)
             if valid_model:
                 call['served_model'] = model
+            if self._settings.protocol == 'anthropic_messages':
+                envelope = self._native_envelope(envelope, call)
             choices = envelope.get('choices')
             if not isinstance(choices, list) or len(choices) != 1:
                 raise HostedFailure('invalid_choices')
@@ -254,6 +267,8 @@ class CompatibleSession:
                 raise HostedFailure('unsupported_response')
             if not valid_model:
                 raise HostedFailure('missing_model_identity')
+            if self._settings.protocol == 'anthropic_messages' and model != self._settings.model:
+                raise HostedFailure('unexpected_model_identity')
             if _contains_credential(assistant_content, self._settings.token):
                 raise HostedFailure('credential_in_response')
             output = json_object(assistant_content)
@@ -302,9 +317,13 @@ class CompatibleSession:
             call['raw_content'] = content
 
     def _request(self, client, body: bytes, call: dict) -> bytes:
+        headers = {'Authorization': 'Bearer ' + self._settings.token,
+                   'Content-Type': 'application/json', 'Accept': 'application/json'}
+        if self._settings.protocol == 'anthropic_messages':
+            headers.pop('Authorization')
+            headers.update({'x-api-key': self._settings.token, 'anthropic-version': '2023-06-01'})
         with client.stream('POST', self._settings.endpoint, content=body,
-                           headers={'Authorization': 'Bearer ' + self._settings.token,
-                                    'Content-Type': 'application/json', 'Accept': 'application/json'},
+                           headers=headers,
                            follow_redirects=False, timeout=httpx.Timeout(120, connect=10)) as response:
             call['http_status'] = response.status_code
             if response.status_code != 200:
@@ -319,3 +338,44 @@ class CompatibleSession:
                     raise HostedFailure('response_too_large')
                 chunks.append(chunk)
             return b''.join(chunks)
+
+    def _native_envelope(self, envelope: dict, call: dict) -> dict:
+        if envelope.get('type') != 'message' or envelope.get('role') != 'assistant':
+            raise HostedFailure('unsupported_response')
+        usage = envelope.get('usage')
+        if usage is None:
+            usage = {}
+        if not isinstance(usage, dict):
+            raise HostedFailure('invalid_usage')
+        counts = {k: usage[k] for k in ('input_tokens', 'output_tokens',
+                  'cache_creation_input_tokens', 'cache_read_input_tokens') if k in usage}
+        if any(type(n) is not int or n < 0 for n in counts.values()):
+            raise HostedFailure('invalid_usage')
+        call['provider_usage'] = counts
+        tokens = {}
+        for native, common in (('input_tokens', 'prompt_tokens'), ('output_tokens', 'completion_tokens')):
+            if native in counts:
+                tokens[common] = counts[native]
+        if len(counts) == 4:
+            tokens['prompt_tokens'] += counts['cache_creation_input_tokens'] + counts['cache_read_input_tokens']
+            tokens['total_tokens'] = tokens['prompt_tokens'] + tokens['completion_tokens']
+        blocks = envelope.get('content')
+        if not isinstance(blocks, list) or not blocks:
+            raise HostedFailure('unsupported_response')
+        texts = []
+        for block in blocks:
+            if not isinstance(block, dict):
+                raise HostedFailure('unsupported_response')
+            if block.get('type') == 'text' and isinstance(block.get('text'), str):
+                texts.append(block['text'])
+            elif block.get('type') not in ('thinking', 'redacted_thinking'):
+                raise HostedFailure('unsupported_response')
+        if not texts:
+            raise HostedFailure('unsupported_response')
+        stop = envelope.get('stop_reason')
+        if stop in ('end_turn', 'max_tokens', 'stop_sequence', 'tool_use', 'pause_turn',
+                    'refusal', 'model_context_window_exceeded'):
+            call['provider_stop_reason'] = stop
+        return {'model': envelope.get('model'), 'usage': tokens,
+                'choices': [{'finish_reason': 'stop' if stop == 'end_turn' else 'incomplete',
+                             'message': {'role': 'assistant', 'content': ''.join(texts)}}]}

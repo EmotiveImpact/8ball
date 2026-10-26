@@ -87,6 +87,32 @@ def controlled_provider(outputs=None, handler=None):
     return factory, calls
 
 
+@pytest.mark.parametrize('purpose', ['extract', 'graph'])
+def test_native_anthropic_uses_existing_unassisted_proposal_gate(monkeypatch, purpose):
+    monkeypatch.setenv('EIGHTBALL_API_BASE_URL', 'https://api.anthropic.com/v1')
+    monkeypatch.setenv('EIGHTBALL_API_PROVIDER', 'anthropic')
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', 'claude-sonnet-5-5')
+    case = fixture_case(); before = case.model_dump(mode='json')
+    outputs = ([{'items': [{'kind': 'claim', 'text': 'Supplier refused',
+                           'source': {'evidence_id': 'source', 'quote': case.evidence[0].text}}]}]
+               if purpose == 'extract' else [frame(), deepcopy(STAGED['routes'])])
+    def respond(req):
+        assert str(req.url) == 'https://api.anthropic.com/v1/messages'
+        return httpx.Response(200, json={'model': 'claude-sonnet-5-5', 'type': 'message',
+            'role': 'assistant', 'stop_reason': 'end_turn', 'content': [
+                {'type': 'thinking', 'thinking': '', 'signature': 'opaque'},
+                {'type': 'text', 'text': json.dumps(outputs.pop(0))}],
+            'usage': {'input_tokens': 30, 'output_tokens': 20}})
+    factory, calls = controlled_provider(handler=respond)
+    with factory() as cl:
+        proposal = propose(case, 'openai_compatible', purpose, ['source'], allow_external=True, client=cl)
+    assert case.model_dump(mode='json') == before
+    assert len(calls) == (2 if purpose == 'graph' else 1)
+    assert proposal.raw_output['transport']['transport'] == 'anthropic_messages'
+    assert all(i.kind not in ('observation', 'approval') for i in proposal.items)
+    assert all(i.object['approval_required'] for i in proposal.items if i.kind == 'action')
+
+
 def queued(tmp_path, outputs=None, handler=None):
     store = Store(str(tmp_path / 'compatible.db'))
     case = store.create(fixture_case(), fixture=True)
@@ -248,13 +274,21 @@ def test_two_stages_keep_the_same_explicit_configuration(monkeypatch):
 
 
 @pytest.mark.parametrize('stop', ['cancel', 'stale', 'restart'])
-def test_inflight_stage_one_stop_discards_output_and_never_sends_stage_two(tmp_path, stop):
+@pytest.mark.parametrize('native', [False, True])
+def test_inflight_stage_one_stop_discards_output_and_never_sends_stage_two(tmp_path, stop, native, monkeypatch):
+    if native:
+        monkeypatch.setenv('EIGHTBALL_API_BASE_URL', 'https://api.anthropic.com/v1')
+        monkeypatch.setenv('EIGHTBALL_API_PROVIDER', 'anthropic')
+        monkeypatch.setenv('EIGHTBALL_API_MODEL', 'claude-sonnet-5-5')
     entered, release = Event(), Event()
 
     def respond(req):
         entered.set()
         assert release.wait(5)
-        return httpx.Response(200, json=envelope(frame()))
+        result = ({'model': 'claude-sonnet-5-5', 'type': 'message', 'role': 'assistant',
+                   'stop_reason': 'end_turn', 'content': [{'type': 'text', 'text': json.dumps(frame())}]}
+                  if native else envelope(frame()))
+        return httpx.Response(200, json=result)
 
     store, case, manager, calls = queued(tmp_path, handler=respond)
     job = manager.submit(case.id, request(case, 'graph'))

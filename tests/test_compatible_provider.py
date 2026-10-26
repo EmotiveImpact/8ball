@@ -39,6 +39,14 @@ def envelope(output=None):
         'usage': {'prompt_tokens': 20, 'completion_tokens': 10, 'total_tokens': 30}}
 
 
+def native_envelope(model='claude-sonnet-5-5'):
+    return {'model': model, 'type': 'message', 'role': 'assistant', 'stop_reason': 'end_turn',
+            'content': [{'type': 'thinking', 'thinking': '', 'signature': 'opaque'},
+                        {'type': 'text', 'text': '{"items": []}'}],
+            'usage': {'input_tokens': 20, 'output_tokens': 10,
+                      'cache_creation_input_tokens': 0, 'cache_read_input_tokens': 0}}
+
+
 def client(response=None, handler=None):
     requests = []
     def handle(request):
@@ -151,17 +159,27 @@ def test_strict_request_auth_receipt_and_configuration_freeze(monkeypatch):
 def test_direct_anthropic_omits_sampling_without_increasing_limits(monkeypatch, model):
     configure(monkeypatch, 'https://api.anthropic.com/v1', 'anthropic')
     monkeypatch.setenv('EIGHTBALL_API_MODEL', model)
-    cl, requests = client()
+    cl, requests = client(httpx.Response(200, json=native_envelope(model)))
     session = CompatibleSession(allow_external=True, client=cl)
     session.generate(SCHEMA, 'Extract', {'sources': ['Fictional']})
     assert len(requests) == 1
     payload = json.loads(requests[0].content)
     assert payload['model'] == model and payload['max_tokens'] == 4096
     assert not {'temperature', 'top_p', 'top_k', 'thinking', 'provider'} & payload.keys()
-    assert payload['response_format']['json_schema']['strict'] is True
+    assert 'response_format' not in payload
+    assert payload['output_config'] == {'effort': 'medium'}
+    assert 'supplied schema' in payload['system']
+    assert str(requests[0].url) == 'https://api.anthropic.com/v1/messages'
+    assert requests[0].headers['x-api-key'] == TOKEN
+    assert requests[0].headers['anthropic-version'] == '2023-06-01'
+    assert 'Authorization' not in requests[0].headers
     call = session.receipt['calls'][0]
     assert call['sampling_parameters'] == 'omitted'
     assert call['thinking'] == 'provider_default'
+    assert call['remote_schema_enforcement'] is False
+    assert call['usage'] == {'prompt_tokens': 20, 'completion_tokens': 10, 'total_tokens': 30}
+    assert call['provider_stop_reason'] == 'end_turn'
+    assert session.receipt['transport'] == configuration_status()['protocol'] == 'anthropic_messages'
 
 
 def test_anthropic_model_name_does_not_change_other_endpoint_parameters(monkeypatch):
@@ -485,3 +503,76 @@ def test_request_and_streamed_response_limits(monkeypatch):
     session = CompatibleSession(allow_external=True, client=cl)
     with pytest.raises(HostedFailure, match='response_too_large'): session.generate({}, 'test', {})
     assert len(requests) == 1 and session.receipt['calls'][0]['error_code'] == 'response_too_large'
+
+
+@pytest.mark.parametrize('field,value,code', [
+    ('role', 'user', 'unsupported_response'),
+    ('type', 'other', 'unsupported_response'),
+    ('model', 'different-model', 'unexpected_model_identity'),
+    ('model', None, 'missing_model_identity'),
+    ('stop_reason', 'max_tokens', 'incomplete_or_refused'),
+    ('stop_reason', 'refusal', 'incomplete_or_refused'),
+    ('stop_reason', 'tool_use', 'incomplete_or_refused'),
+    ('stop_reason', None, 'incomplete_or_refused'),
+    ('content', [], 'unsupported_response'),
+    ('content', [{'type': 'thinking'}], 'unsupported_response'),
+    ('content', [{'type': 'tool_use', 'name': 'execute'}], 'unsupported_response'),
+    ('content', [{'type': 'text', 'text': 1}], 'unsupported_response'),
+    ('content', [{'type': 'text', 'text': '```json\n{}\n```'}], 'invalid_json'),
+    ('content', [{'type': 'text', 'text': json.dumps({'secret': TOKEN})}], 'credential_in_response'),
+    ('content', [{'type': 'text', 'text': '\ud800'}], 'invalid_json'),
+    ('usage', [], 'invalid_usage'),
+    ('usage', {'input_tokens': True}, 'invalid_usage'),
+    ('usage', {'output_tokens': -1}, 'invalid_usage'),
+    ('usage', {'cache_read_input_tokens': '0'}, 'invalid_usage'),
+])
+def test_native_rejections_keep_local_guards_and_do_not_retry(monkeypatch, field, value, code):
+    configure(monkeypatch, 'https://api.anthropic.com/v1', 'anthropic')
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', 'claude-sonnet-5-5')
+    data = native_envelope(); data[field] = value
+    cl, requests = client(httpx.Response(200, content=json.dumps(data).encode()))
+    session = CompatibleSession(allow_external=True, client=cl)
+    with pytest.raises(HostedFailure) as caught:
+        session.generate(SCHEMA, 'Extract', {})
+    assert caught.value.code == code and len(requests) == 1
+    assert TOKEN not in json.dumps(session.receipt)
+    json.dumps(session.receipt, ensure_ascii=False).encode()
+
+
+@pytest.mark.parametrize('usage,expected', [(None, {}), ({}, {}),
+    ({'input_tokens': 7}, {'prompt_tokens': 7})])
+def test_native_missing_usage_is_not_free_usage(monkeypatch, usage, expected):
+    configure(monkeypatch, 'https://api.anthropic.com/v1', 'anthropic')
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', 'claude-sonnet-5-5')
+    data = native_envelope(); data['usage'] = usage
+    cl, _ = client(httpx.Response(200, json=data))
+    session = CompatibleSession(allow_external=True, client=cl)
+    session.generate(SCHEMA, 'Extract', {})
+    assert session.receipt['calls'][0]['usage'] == expected
+
+
+@pytest.mark.parametrize('base,provider', [
+    ('https://api.anthropic.com/v2', 'anthropic'),
+    ('https://api.anthropic.com/v1', 'other'),
+    ('https://api.anthropic.com/v1/messages', 'anthropic')])
+def test_native_identity_and_path_are_exact_before_http(monkeypatch, base, provider):
+    configure(monkeypatch, base, provider)
+    cl, requests = client()
+    with pytest.raises(HostedSetupRequired):
+        CompatibleSession(allow_external=True, client=cl)
+    assert not requests
+
+
+def test_native_configuration_is_frozen_and_truncated_usage_retained(monkeypatch):
+    configure(monkeypatch, 'https://api.anthropic.com/v1', 'anthropic')
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', 'claude-sonnet-5-5')
+    data = native_envelope(); data['stop_reason'] = 'max_tokens'
+    cl, requests = client(httpx.Response(200, json=data))
+    session = CompatibleSession(allow_external=True, client=cl)
+    configure(monkeypatch)
+    with pytest.raises(HostedFailure, match='incomplete_or_refused'):
+        session.generate(SCHEMA, 'Extract', {})
+    assert str(requests[0].url) == 'https://api.anthropic.com/v1/messages'
+    call = session.receipt['calls'][0]
+    assert call['provider_usage']['output_tokens'] == 10
+    assert call['raw_content'] == '{"items": []}'

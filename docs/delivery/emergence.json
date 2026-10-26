@@ -6702,6 +6702,60 @@
           "reason": "existing_task: owner requested the information-to-reconsideration loop. Reuse native questions and review contracts; do not promote optional watchers, forecasts or production acceptance. Operator benefit remains unmeasured."
         }
       ]
+    },
+    {
+      "id": "EM-311",
+      "title": "Transport success and generation acceptance are separate gates",
+      "origin": "Sonnet native actual-provider integration",
+      "first_seen": "2026-10-26",
+      "evidence_level": "supported_by_tests",
+      "observation": "Native Sonnet inference succeeded after a compatibility rejection, but the first graph still failed local validation. Catalogue access and a working wire protocol do not establish valid proposals or quality.",
+      "product_implication": "Preserve exact protocol, prompt, source and output attribution. Local contract validity, independent semantic quality and human authority remain separate.",
+      "task_ids": [
+        "B02-09",
+        "B02-12"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-sonnet-native.md",
+        "docs/evidence/sonnet-native-2026-10-26.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task: bounded provider/prompt correction; no new required scope or independent/human/production acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-312",
+      "title": "Lexical target coverage failure is not semantic omission",
+      "origin": "Sonnet native actual-provider integration",
+      "first_seen": "2026-10-26",
+      "evidence_level": "supported_by_tests",
+      "observation": "The live frame contained both requested success criteria but its quotes omitted the connector and. A lexical coverage diagnostic alone does not prove a missing semantic criterion; versioned prompt guidance corrected the contract without weakening validation.",
+      "product_implication": "Preserve exact protocol, prompt, source and output attribution. Local contract validity, independent semantic quality and human authority remain separate.",
+      "task_ids": [
+        "B02-09",
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-sonnet-native.md",
+        "docs/evidence/sonnet-native-2026-10-26.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task: bounded provider/prompt correction; no new required scope or independent/human/production acceptance."
+        }
+      ]
     }
   ]
 }

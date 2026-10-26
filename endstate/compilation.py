@@ -19,7 +19,7 @@ from .contracts import (
 )
 
 COMPILER_VERSION = 'endstate.draft.v1'
-PROMPT_VERSION = 'endstate.draft.prompts.v2'
+PROMPT_VERSION = 'endstate.draft.prompts.v3'
 
 
 def _normal(value: str) -> str:
@@ -364,6 +364,7 @@ All times/costs are reviewable assumptions. external is true for actions requiri
 
 TARGET_PROMPT = """
 TARGET BINDING IS REQUIRED: target_bindings must associate EVERY success criterion with an exact quote from the outcome field. Together, these quotes must cover ALL of the human outcome; one complete quote may be used for an indivisible target. criterion_index is the zero-based position in success_criteria.
+Coverage is checked character by character for every letter and number, including connecting words such as "and", "or" and "if". When splitting quotes, retain those connecting words; quotes may overlap. Do not omit words merely because the criteria preserve their apparent meaning.
 Do not quote the brief or source facts as a target. For example a reported failure belongs to the starting situation, not to success. Readiness must be a route-neutral state BEFORE final verification and must not be the same as a success criterion.
 The original outcome remains unchanged. A statement of unavailability, a refusal or an investigation finding is not a successful replacement for the requested outcome. Use requires_existing=[] when existing_conditions is empty. Never invent an ID.
 """

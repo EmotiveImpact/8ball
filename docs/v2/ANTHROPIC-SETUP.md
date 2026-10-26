@@ -1,9 +1,42 @@
 # Test Anthropic from the cloud environment
 
 The owner selected Anthropic on 18 October 2026 and **Sonnet 5.5, not Opus** on
-26 October. The current app has a generic
-OpenAI-compatible hosted transport. These are **prepared compatibility-test
-settings**, not a successful Anthropic call or a native Messages adapter.
+26 October. Direct Anthropic now uses **native `/v1/messages`**, through the
+existing `openai_compatible` application provider slot. Other hosts retain their
+previous wire protocol; there is no model or protocol fallback.
+
+## Current live checkpoint — 26 October 2026
+
+The owner explicitly authorised bounded fictional testing despite the absence
+of an account spending cap, confirmed sufficient credit and automatic top-up
+off. US$5 is a test budget, **not** a verified provider-enforced limit. No account
+setting, persistent secret or deployment configuration was changed.
+
+One compatibility request returned HTTP 400; its exact cause remains unknown.
+A separate native probe succeeded. Native transport uses `x-api-key`,
+`anthropic-version: 2023-06-01`, medium effort and the unchanged 4096 output-token
+ceiling. Sampling controls are omitted. Text is validated locally; thinking and
+signatures are not proposal content. Tool calls, refusals, truncation, unexpected
+served models and invalid source/graph bindings fail closed. Remote JSON-schema
+enforcement is **not** claimed; the schema travels as prompt instructions.
+
+Three extraction fixtures passed. The first graph frame was rejected because
+its target quotes omitted `and`, even though both success criteria were present.
+Prompt v3 clarifies exact lexical coverage; no validator was weakened and no
+output was repaired. A fresh unchanged four-fixture run passed, including three
+conditional routes, followed by all 20 steps of the actual-provider application
+journey with native reload/download.
+
+Retained successful responses imply **US$0.088500** at the checked public rates
+of US$2/M input and US$10/M output tokens. This is a usage-based estimate, not an
+invoice; rejected-request billing is unknown, not assumed zero. No automatic
+retries. All examples are fictional; scripted reviews and observations occur in
+disposable test cases, not real cases.
+
+See [current handoff](../delivery/sessions/2026-10-26-sonnet-native.md) and
+[evidence index](../evidence/sonnet-native-2026-10-26.json). Independent semantic
+quality, prediction, human acceptance and production remain open. Historical
+observations below retain what was known before this checkpoint.
 
 ## What goes where
 
@@ -41,7 +74,7 @@ A draft save alone does not activate settings. The agent checks observed runtime
 readiness and restarts only its own application process when required. This
 neither deploys the application nor proves successful model access.
 
-## Current observations — 26 October 2026
+## Historical pre-inference observations — 26 October 2026
 
 The session-only key authenticated a read-only `GET /v1/models` request (HTTP
 200, complete list, no inference). It lists `claude-sonnet-5-5` as active.
@@ -105,7 +138,8 @@ No Anthropic SDK dependency or upstream runtime has been installed.
 ## After settings are active
 
 Follow [actual-provider evidence](ACTUAL-PROVIDER-EVIDENCE.md), using the existing
-`openai_compatible` transport and configured API-provider identity `anthropic`:
+`openai_compatible` application slot and configured API-provider identity
+`anthropic` (native Messages on the exact direct Anthropic host):
 
 ```sh
 .venv/bin/python evals/live_compatible.py --allow-hosted
@@ -113,8 +147,9 @@ Follow [actual-provider evidence](ACTUAL-PROVIDER-EVIDENCE.md), using the existi
 
 This is a deliberate real inference command, not a configuration check. Run it
 only after observing active credentials/network settings and confirming service
-limits, provider-enforced US$5 cap and disabled automatic top-up within the
-existing fictional-only authorisation. Preserve all raw
+limits and disabled automatic top-up within the existing fictional-only
+authorisation. The owner accepted the uncapped account for these bounded tests;
+do not claim a provider-enforced US$5 limit. Preserve all raw
 failures, requested/served identities, source/prompt/compiler versions and times.
 Generation makes up to five requests and never retries automatically.
 

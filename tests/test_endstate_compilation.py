@@ -255,6 +255,23 @@ def test_invalid_first_stage_never_runs_second_stage():
     assert len(calls)==1
 
 
+def test_target_quotes_keep_connectives_without_relaxing_coverage():
+    from endstate.compilation import GroundedOutcomeFrame, validate_frame, DraftValidationError, TARGET_PROMPT
+    outcome = 'Deliver supplies and record acceptance'
+    raw = deepcopy(FIXTURE['frame'])
+    raw['success_criteria'] = [deepcopy(raw['success_criteria'][0]) for _ in range(2)]
+    raw['success_criteria'][1]['title'] = 'Acceptance recorded'
+    raw['target_bindings'] = [
+        {'criterion_index': 0, 'target_quote': 'Deliver supplies'},
+        {'criterion_index': 1, 'target_quote': 'record acceptance'}]
+    with pytest.raises(DraftValidationError) as caught:
+        validate_frame(GroundedOutcomeFrame.model_validate(raw), outcome, [])
+    assert caught.value.code == 'incomplete_target_coverage'
+    raw['target_bindings'][1]['target_quote'] = 'and record acceptance'
+    validate_frame(GroundedOutcomeFrame.model_validate(raw), outcome, [])
+    assert 'connecting words' in TARGET_PROMPT and 'quotes may overlap' in TARGET_PROMPT
+
+
 def test_model_switch_between_stages_is_rejected():
     outputs=[(FIXTURE['frame'],'one'),(FIXTURE['routes'],'two')]
     with pytest.raises(DraftFailure,match='routes'):
