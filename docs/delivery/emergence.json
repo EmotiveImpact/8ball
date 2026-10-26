@@ -6863,6 +6863,33 @@
           "reason": "existing_task B02-15; repair synchronization against the real native API without sleeps, fabricated responses or weakened safety assertions."
         }
       ]
+    },
+    {
+      "id": "EM-317",
+      "title": "Full regression budgets must not inherit individual build-command limits",
+      "origin": "Installed-wheel acceptance timeout",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "The full source suite passed in 121.59 seconds; the installed-wheel suite still inherited a 120-second subprocess cap intended for individual build/install commands and timed out. All 475 native browser checks passed separately.",
+      "product_implication": "Give only the full installed regression process a bounded 600-second allowance; preserve build/install limits and fail on timeout or assertions without retry. Passing unrelated checks cannot make the interrupted suite pass.",
+      "task_ids": [
+        "ES01-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/evidence/sonnet55-lifecycle-software-package-timeout-2026-10-26.json.xz",
+        "scripts/build_endstate.py",
+        "tests/test_build_endstate.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task ES01-05; scale the suite allowance without reducing coverage or promoting an incomplete run."
+        }
+      ]
     }
   ]
 }

@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **216 recorded discoveries.**
+Last review: 2026-10-26. **217 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -3831,3 +3831,20 @@ The grounding test accepted the digit 2 from an unchanged deadline counter befor
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-15; repair synchronization against the real native API without sleeps, fabricated responses or weakened safety assertions.
+
+### [ ] EM-317: Full regression budgets must not inherit individual build-command limits
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Installed-wheel acceptance timeout.
+
+The full source suite passed in 121.59 seconds; the installed-wheel suite still inherited a 120-second subprocess cap intended for individual build/install commands and timed out. All 475 native browser checks passed separately.
+
+**Product implication:** Give only the full installed regression process a bounded 600-second allowance; preserve build/install limits and fail on timeout or assertions without retry. Passing unrelated checks cannot make the interrupted suite pass.
+
+**Roadmap links:** `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/evidence/sonnet55-lifecycle-software-package-timeout-2026-10-26.json.xz`, `scripts/build_endstate.py`, `tests/test_build_endstate.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task ES01-05; scale the suite allowance without reducing coverage or promoting an incomplete run.

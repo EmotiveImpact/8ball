@@ -22,6 +22,7 @@ Exercise cancellation, supersession and owned-process restart without confusing 
 ### Fixed
 
 - Source clarity native test waits for the reconsideration counter, not a pre-existing unrelated deadline count. Assertions, real HTTP and production code remain unchanged.
+- Keep 120-second build/install command limits but allow 600 seconds for the complete installed-wheel regression suite; timeout and assertion failures still fail without retry.
 
 ### Verification
 
@@ -30,6 +31,7 @@ Exercise cancellation, supersession and owned-process restart without confusing 
 - Initial focused run: 323 passed and one delivery guard failed because the new checkpoint replaced reserved next-action lineage. Restore the full original coordination record and append the checkpoint; retain the failed output.
 - Two failed full runs retained: unqualified invocation omitted the documented Node PATH; corrected invocation passed source/package checks but exposed an asynchronous grounding-test wait matching the wrong counter.
 - After the targeted wait correction: 74 source-clarity tests and 27 native browser checks passed. Full source-bound rerun follows.
+- A third source-stable native run passed 2,096 source tests and all 475 browser checks, but the installed suite exceeded its inherited 120-second command cap. Retained before correction; four new bounded-command/failure tests pass.
 
 ### Limitations
 
@@ -43,14 +45,15 @@ Exercise cancellation, supersession and owned-process restart without confusing 
 - Discovery: A locally final job can still have an unknown remote outcome.
 - Discovery: Setup can consume a CI allowance before verification finishes.
 - Discovery: A matching page-wide number is not evidence that a source refresh completed.
+- Discovery: A complete installed regression suite needs a different time allowance from an individual build command.
 - Risk: Do not confuse local cancellation with billing cancellation or partial CI steps with full acceptance.
 - Architecture: Retain existing local job finality, source-bound receipts and independent provider facts. No new engine subsystem.
 - Roadmap decision: existing_task B02-15 and ES01-05 only; no scope or acceptance promotion.
-Registered discoveries: EM-314, EM-315, EM-316.
+Registered discoveries: EM-314, EM-315, EM-316, EM-317.
 
 Roadmap items: `B02-15`, `ES01-05`.
 
-Evidence: [docs/delivery/sessions/2026-10-26-provider-lifecycle.md](docs/delivery/sessions/2026-10-26-provider-lifecycle.md), [docs/evidence/sonnet55-lifecycle-2026-10-26.json](docs/evidence/sonnet55-lifecycle-2026-10-26.json), [evals/provider_lifecycle.py](evals/provider_lifecycle.py), [docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz](docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz), [docs/evidence/sonnet55-lifecycle-software-missing-node-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-missing-node-2026-10-26.json.xz), [docs/evidence/sonnet55-lifecycle-software-stale-counter-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-stale-counter-2026-10-26.json.xz), [tests/browser_grounding.py](tests/browser_grounding.py).
+Evidence: [docs/delivery/sessions/2026-10-26-provider-lifecycle.md](docs/delivery/sessions/2026-10-26-provider-lifecycle.md), [docs/evidence/sonnet55-lifecycle-2026-10-26.json](docs/evidence/sonnet55-lifecycle-2026-10-26.json), [evals/provider_lifecycle.py](evals/provider_lifecycle.py), [docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz](docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz), [docs/evidence/sonnet55-lifecycle-software-missing-node-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-missing-node-2026-10-26.json.xz), [docs/evidence/sonnet55-lifecycle-software-stale-counter-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-stale-counter-2026-10-26.json.xz), [tests/browser_grounding.py](tests/browser_grounding.py), [docs/evidence/sonnet55-lifecycle-software-package-timeout-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-package-timeout-2026-10-26.json.xz), [scripts/build_endstate.py](scripts/build_endstate.py), [tests/test_build_endstate.py](tests/test_build_endstate.py).
 
 ## 0.2.0-alpha.8 native usage completeness · Preserve unknown cache usage in normalized receipts
 

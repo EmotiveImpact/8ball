@@ -45,3 +45,7 @@ Two inspected, source-stable runs at `440a199` failed. The first invocation omit
 The test now verifies the warning counter changes from 0 to 2 and waits for exactly two filtered records. No application runtime, response mocking, arbitrary sleeps, source/revision rules or assertions were weakened. The focused correction passed 74 Python checks and 27 native browser checks; full acceptance is rerunning. Use `PATH="/home/ubuntu/.nvm/versions/node/v24.19.0/bin:$PATH" .venv/bin/python scripts/acceptance.py --mode native --base a31283785f6ccc2a5c31b9b936a9da353dcfb3fe`. The existing blueprint already records this path; no new installation or blueprint change was necessary.
 
 **Emergence Review follow-up — EM-316:** freshness requires the specific changed state, not a coincidental page value. This is an existing-task verification correction, not new product scope or independent acceptance.
+
+### Installed-suite budget correction
+
+The third inspected run at `7e213d0` passed 2,096 source tests (121.59 seconds) and all 475 native browser checks. Installed-wheel regression alone timed out at its inherited 120-second build-command cap. The failed report/logs are retained as `sonnet55-lifecycle-software-package-timeout-2026-10-26`. Only the full installed regression call now gets 600 seconds; wheel build/install/smoke retain 120 seconds. Four tests confirm bounded defaults/override and failure/timeout propagation with no retry. **EM-317** records this verification-budget distinction. Full native acceptance is rerunning; no model calls are repeated.
