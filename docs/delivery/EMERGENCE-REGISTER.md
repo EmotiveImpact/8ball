@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **215 recorded discoveries.**
+Last review: 2026-10-26. **216 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -3814,3 +3814,20 @@ The 20-minute verify job spent most of its allowance installing Chromium OS depe
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task ES01-05; preserve every gate and prior failure rather than bypassing checks or claiming the timeout was a pass.
+
+### [ ] EM-316: Freshness needs the specific changed state, not a coincidental page value
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Native source-retraction acceptance failure.
+
+The grounding test accepted the digit 2 from an unchanged deadline counter before the asynchronous reconsideration counter changed from 0 to 2. Its premature attention-filter assertion failed with no browser runtime error.
+
+**Product implication:** Wait for the exact warning-state transition and preserve the failed native report. A generic visible number is not a fresh-data receipt; no model, authority or release gate changes.
+
+**Roadmap links:** `B02-15` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `tests/browser_grounding.py`, `docs/evidence/sonnet55-lifecycle-software-stale-counter-2026-10-26.json.xz`, `docs/delivery/sessions/2026-10-26-provider-lifecycle.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-15; repair synchronization against the real native API without sleeps, fabricated responses or weakened safety assertions.

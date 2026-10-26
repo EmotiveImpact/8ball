@@ -6836,6 +6836,33 @@
           "reason": "existing_task ES01-05; preserve every gate and prior failure rather than bypassing checks or claiming the timeout was a pass."
         }
       ]
+    },
+    {
+      "id": "EM-316",
+      "title": "Freshness needs the specific changed state, not a coincidental page value",
+      "origin": "Native source-retraction acceptance failure",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "The grounding test accepted the digit 2 from an unchanged deadline counter before the asynchronous reconsideration counter changed from 0 to 2. Its premature attention-filter assertion failed with no browser runtime error.",
+      "product_implication": "Wait for the exact warning-state transition and preserve the failed native report. A generic visible number is not a fresh-data receipt; no model, authority or release gate changes.",
+      "task_ids": [
+        "B02-15"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "tests/browser_grounding.py",
+        "docs/evidence/sonnet55-lifecycle-software-stale-counter-2026-10-26.json.xz",
+        "docs/delivery/sessions/2026-10-26-provider-lifecycle.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-15; repair synchronization against the real native API without sleeps, fabricated responses or weakened safety assertions."
+        }
+      ]
     }
   ]
 }

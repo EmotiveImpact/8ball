@@ -19,11 +19,17 @@ Exercise cancellation, supersession and owned-process restart without confusing 
 - Clarify the remaining B02-15 scope while preserving partial status and lane ownership.
 - Raise verify timeout from 20 to 40 minutes after the retained Chromium dependency-installation timeout; all checks and security gates remain.
 
+### Fixed
+
+- Source clarity native test waits for the reconsideration counter, not a pre-existing unrelated deadline count. Assertions, real HTTP and production code remain unchanged.
+
 ### Verification
 
 - At a312837: five actual Sonnet generation requests passed four frozen fixtures. Source-matched cancel/stale/restart observations passed all eight checks each, with three local first-call admissions and no further stages or published proposals.
 - Focused and full native software verification is recorded in the source-bound closeout receipt.
 - Initial focused run: 323 passed and one delivery guard failed because the new checkpoint replaced reserved next-action lineage. Restore the full original coordination record and append the checkpoint; retain the failed output.
+- Two failed full runs retained: unqualified invocation omitted the documented Node PATH; corrected invocation passed source/package checks but exposed an asynchronous grounding-test wait matching the wrong counter.
+- After the targeted wait correction: 74 source-clarity tests and 27 native browser checks passed. Full source-bound rerun follows.
 
 ### Limitations
 
@@ -36,14 +42,15 @@ Exercise cancellation, supersession and owned-process restart without confusing 
 
 - Discovery: A locally final job can still have an unknown remote outcome.
 - Discovery: Setup can consume a CI allowance before verification finishes.
+- Discovery: A matching page-wide number is not evidence that a source refresh completed.
 - Risk: Do not confuse local cancellation with billing cancellation or partial CI steps with full acceptance.
 - Architecture: Retain existing local job finality, source-bound receipts and independent provider facts. No new engine subsystem.
 - Roadmap decision: existing_task B02-15 and ES01-05 only; no scope or acceptance promotion.
-Registered discoveries: EM-314, EM-315.
+Registered discoveries: EM-314, EM-315, EM-316.
 
 Roadmap items: `B02-15`, `ES01-05`.
 
-Evidence: [docs/delivery/sessions/2026-10-26-provider-lifecycle.md](docs/delivery/sessions/2026-10-26-provider-lifecycle.md), [docs/evidence/sonnet55-lifecycle-2026-10-26.json](docs/evidence/sonnet55-lifecycle-2026-10-26.json), [evals/provider_lifecycle.py](evals/provider_lifecycle.py), [docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz](docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz).
+Evidence: [docs/delivery/sessions/2026-10-26-provider-lifecycle.md](docs/delivery/sessions/2026-10-26-provider-lifecycle.md), [docs/evidence/sonnet55-lifecycle-2026-10-26.json](docs/evidence/sonnet55-lifecycle-2026-10-26.json), [evals/provider_lifecycle.py](evals/provider_lifecycle.py), [docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz](docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz), [docs/evidence/sonnet55-lifecycle-software-missing-node-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-missing-node-2026-10-26.json.xz), [docs/evidence/sonnet55-lifecycle-software-stale-counter-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-stale-counter-2026-10-26.json.xz), [tests/browser_grounding.py](tests/browser_grounding.py).
 
 ## 0.2.0-alpha.8 native usage completeness · Preserve unknown cache usage in normalized receipts
 
