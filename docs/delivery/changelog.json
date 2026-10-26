@@ -3,6 +3,62 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-native-cost-policy",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 native cost policy",
+      "title": "Interpret native decision costs only within their verified funding contract",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-11"
+      ],
+      "summary": "Provider-scoped exact USD-to-nano conversion with retained original numbers, conflict/unknown handling and versioned worker authority.",
+      "added": [
+        "Bounded original numeric literal and body-hash retention alongside canonical response hashes.",
+        "Safe per-model accounting receipts in standalone and coordinated worker results."
+      ],
+      "changed": [
+        "Fixed Experiential native adapter maps only confirmed platform-funded USD to exact integer nano-USD.",
+        "Cost-policy versions participate in worker configuration checks; spec hashes remain separate."
+      ],
+      "fixed": [
+        "Contradictory pricing/funding/amounts remain unknown rather than selecting a convenient value.",
+        "Cost numeric overflow produces a controlled validation failure; fractional/hostile numeric literals never silently round to known costs."
+      ],
+      "verification": [
+        "616 focused native/worker/coordinated/compatible tests passed; compilation and whitespace checks passed.",
+        "Full source-bound native/package acceptance is next; all fixtures used controlled HTTP, not live inference."
+      ],
+      "limitations": [
+        "No extra billing HTTP lookup, new model request, original-run repair, automatic retry or model substitution.",
+        "Provider-reported amounts are not invoices, a guarantee of free use or an enforceable spending cap.",
+        "B02-11 partial; no dedicated coordinated UI, predictive/independent quality acceptance, merge/deployment/release."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-native-cost-policy.md",
+        "docs/evidence/native-cost-receipt-read-2026-10-26.json"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Accounting interpretation affects continuation authority independently of the request spec.",
+          "Original numeric precision and conflicting fields need their own retained provenance."
+        ],
+        "risks": [
+          "BYOK/platform zero can hide separate upstream cost.",
+          "Float parsing or conflicting fields could understate spend without visibly malformed data."
+        ],
+        "architecture_implications": [
+          "Keep provider unit semantics out of the generic engine and bind policy changes to current worker authority.",
+          "Use bounded exact source numbers, separate body/canonical hashes and explicit unknown outcomes."
+        ],
+        "roadmap_decision": "existing_task B02-11 bounded accounting follow-up; no acceptance or reserved ownership promotion.",
+        "insight_ids": [
+          "EM-332",
+          "EM-333",
+          "EM-334"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-provider-diagnostics-verification",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 provider diagnostics evidence",

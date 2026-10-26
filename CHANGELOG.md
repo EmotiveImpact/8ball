@@ -4,6 +4,55 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 native cost policy · Interpret native decision costs only within their verified funding contract
+
+2026-10-26 · `local_unreleased`
+
+Provider-scoped exact USD-to-nano conversion with retained original numbers, conflict/unknown handling and versioned worker authority.
+
+### Added
+
+- Bounded original numeric literal and body-hash retention alongside canonical response hashes.
+- Safe per-model accounting receipts in standalone and coordinated worker results.
+
+### Changed
+
+- Fixed Experiential native adapter maps only confirmed platform-funded USD to exact integer nano-USD.
+- Cost-policy versions participate in worker configuration checks; spec hashes remain separate.
+
+### Fixed
+
+- Contradictory pricing/funding/amounts remain unknown rather than selecting a convenient value.
+- Cost numeric overflow produces a controlled validation failure; fractional/hostile numeric literals never silently round to known costs.
+
+### Verification
+
+- 616 focused native/worker/coordinated/compatible tests passed; compilation and whitespace checks passed.
+- Full source-bound native/package acceptance is next; all fixtures used controlled HTTP, not live inference.
+
+### Limitations
+
+- No extra billing HTTP lookup, new model request, original-run repair, automatic retry or model substitution.
+- Provider-reported amounts are not invoices, a guarantee of free use or an enforceable spending cap.
+- B02-11 partial; no dedicated coordinated UI, predictive/independent quality acceptance, merge/deployment/release.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Accounting interpretation affects continuation authority independently of the request spec.
+- Discovery: Original numeric precision and conflicting fields need their own retained provenance.
+- Risk: BYOK/platform zero can hide separate upstream cost.
+- Risk: Float parsing or conflicting fields could understate spend without visibly malformed data.
+- Architecture: Keep provider unit semantics out of the generic engine and bind policy changes to current worker authority.
+- Architecture: Use bounded exact source numbers, separate body/canonical hashes and explicit unknown outcomes.
+- Roadmap decision: existing_task B02-11 bounded accounting follow-up; no acceptance or reserved ownership promotion.
+Registered discoveries: EM-332, EM-333, EM-334.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-native-cost-policy.md](docs/delivery/sessions/2026-10-26-native-cost-policy.md), [docs/evidence/native-cost-receipt-read-2026-10-26.json](docs/evidence/native-cost-receipt-read-2026-10-26.json).
+
 ## 0.2.0-alpha.8 provider diagnostics evidence · Bind rejected-response diagnostics to full native software acceptance
 
 2026-10-26 · `local_unreleased`

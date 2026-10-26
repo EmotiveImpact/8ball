@@ -6,7 +6,7 @@ from endstate.intelligence.coordination import Attempt, ReviewSpec, USAGE_FIELDS
 from endstate.intelligence.decisions import DecisionInput
 
 from ..store import digest
-from ..v2.decision_models import DecisionSession, MAX_REQUEST_BYTES, payload_for
+from ..v2.decision_models import COST_POLICY, DecisionSession, MAX_REQUEST_BYTES, payload_for
 
 
 class SpecialistReviewProcessor:
@@ -23,7 +23,7 @@ class SpecialistReviewProcessor:
     @property
     def configuration_sha256(self):
         spec = ReviewSpec.model_validate(self.spec.model_dump(mode='python'))
-        return digest(spec.model_dump(mode='json'))
+        return digest(dict(spec=spec.model_dump(mode='json'), cost_policy=COST_POLICY))
 
     def run(self, receipt, snapshot, checkpoint):
         report = self.compare(receipt.event.text, checkpoint)
@@ -42,7 +42,7 @@ class SpecialistReviewProcessor:
         checkpoint()
         own_deadline = self.timer() + spec.max_seconds
         deadline = own_deadline if deadline is None else min(own_deadline, deadline)
-        attempts, stop_reason = [], 'completed'
+        attempts, cost_receipts, stop_reason = [], [], 'completed'
         for request in requests:
             checkpoint()
             if self.timer() >= deadline:
@@ -81,6 +81,13 @@ class SpecialistReviewProcessor:
                 stop_reason = 'setup_or_provider_failed'
             checkpoint()
             attempts.append(attempt)
+            if 'cost_normalization' in session.receipt:
+                cost_receipts.append(dict(model=request.model,
+                    request_sha256=session.receipt.get('request_sha256'),
+                    response_sha256=session.receipt.get('response_sha256'),
+                    response_body_sha256=session.receipt.get('response_body_sha256'),
+                    policy=session.receipt.get('cost_policy'),
+                    normalization=session.receipt['cost_normalization']))
             if attempt.status == 'failed':
                 break
             if attempt.reported_cost_nano_usd is None:
@@ -96,5 +103,6 @@ class SpecialistReviewProcessor:
         report.update(stop_reason=stop_reason, input_sha256=digest(text),
                       spec_sha256=digest(spec.model_dump(mode='json')),
                       automatic_retries=False, automatic_fallback=False,
+                      cost_receipts=cost_receipts,
                       charge_status='provider_billing_not_verified')
         return report

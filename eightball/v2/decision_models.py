@@ -7,6 +7,8 @@ import json
 import math
 import os
 import re
+from decimal import Decimal, InvalidOperation
+from hashlib import sha256
 
 import httpx
 
@@ -17,6 +19,7 @@ from .hosted import HostedFailure, HostedSetupRequired, _hash, json_object
 ORIGIN = 'https://api.experientiallabs.ai'
 MAX_REQUEST_BYTES = 20000
 MAX_RESPONSE_BYTES = 128000
+COST_POLICY = 'experiential.native-platform-funded-usd.v1'
 
 
 def payload_for(request: DecisionInput):
@@ -70,11 +73,72 @@ def validate_response(request: DecisionInput, response):
     if 'total_tokens' in usage and usage['total_tokens'] != usage['input_tokens'] + usage['output_tokens']:
         raise ValueError('Inconsistent total usage')
     for key in ('cost','cost_nano_usd','estimated_cost_nano_usd'):
-        if key in usage and (type(usage[key]) not in (int,float) or not math.isfinite(usage[key]) or usage[key] < 0):
-            raise ValueError('Invalid reported cost')
+        if key in usage:
+            try:
+                valid = type(usage[key]) in (int,float) and math.isfinite(usage[key]) and usage[key] >= 0
+            except OverflowError:
+                valid = False
+            if not valid:
+                raise ValueError('Invalid reported cost')
     return {'requested_model':request.model,'served_model':model,'answers':normalized,'usage':usage,
             'facts_attested':False,'execution_authorized':False,'advisory_only':True,
             'notice':'Reported confidence is not a calibrated real-world success probability or independent evidence.'}
+
+
+def _cost_decimal_receipt(raw_cost):
+    if isinstance(raw_cost, str) and len(raw_cost) <= 64:
+        return {'source_cost_decimal':raw_cost}
+    return {'source_cost_decimal_omitted':'missing_or_numeric_literal_limit'}
+
+
+def _exact_nanos(raw_cost):
+    if not isinstance(raw_cost, str) or len(raw_cost) > 64:
+        return None
+    try:
+        amount = Decimal(raw_cost)
+    except InvalidOperation:
+        return None
+    if not amount.is_finite() or amount < 0 or abs(amount.as_tuple().exponent) > 400:
+        return None
+    numerator, denominator = amount.as_integer_ratio()
+    nanos, fraction = divmod(numerator * 1_000_000_000, denominator)
+    return None if fraction else nanos
+
+
+def _unknown_gateway_cost(usage, reason, raw_cost):
+    normalized = dict(usage)
+    normalized.pop('cost_nano_usd', None)
+    receipt = {'status':'unknown','reason':reason, **_cost_decimal_receipt(raw_cost)}
+    for field in ('cost','cost_nano_usd','is_byok','pricing_known'):
+        if field in usage and type(usage[field]) in (int,float,bool):
+            receipt['source_'+field] = usage[field]
+    return normalized, receipt
+
+
+def _gateway_usage(usage, raw_cost):
+    normalized = dict(usage)
+    if 'is_byok' in usage and usage['is_byok'] is not False:
+        return _unknown_gateway_cost(usage, 'funding_not_platform_confirmed', raw_cost)
+    if ('pricing_known' in usage and usage['pricing_known'] is not True):
+        return _unknown_gateway_cost(usage, 'pricing_unknown', raw_cost)
+    if any(key in usage and usage[key] != 'USD' for key in ('currency','cost_currency','cost_unit')):
+        return _unknown_gateway_cost(usage, 'conflicting_cost_unit', raw_cost)
+    if 'cost_nano_usd' in usage:
+        if type(usage['cost_nano_usd']) is int and 'cost' in usage and usage.get('is_byok') is False:
+            if _exact_nanos(raw_cost) != usage['cost_nano_usd']:
+                return _unknown_gateway_cost(usage, 'conflicting_cost_amounts', raw_cost)
+        return normalized, {'status':'explicit_field_preserved'}
+    if 'cost' not in usage:
+        return _unknown_gateway_cost(usage, 'missing_cost', raw_cost)
+    if usage.get('is_byok') is not False:
+        return _unknown_gateway_cost(usage, 'funding_not_platform_confirmed', raw_cost)
+    nanos = _exact_nanos(raw_cost)
+    if nanos is None:
+        return _unknown_gateway_cost(usage, 'not_exact_bounded_nano_usd', raw_cost)
+    normalized['cost_nano_usd'] = nanos
+    return normalized, {'status':'normalized','basis':COST_POLICY,
+        'source_cost_usd':usage['cost'],'source_is_byok':False,
+        'cost_nano_usd':nanos,'arithmetic':'exact_decimal_no_rounding', **_cost_decimal_receipt(raw_cost)}
 
 
 class DecisionSession:
@@ -86,7 +150,8 @@ class DecisionSession:
             raise HostedSetupRequired('Configure EXPERIENTIAL_API_KEY securely first')
         self._token, self._client, self._used = token, client, False
         self.receipt = {'inference_calls':0,'automatic_retries':False,'automatic_fallback':False,
-                        'gateway_fallback_verified':False,'charge_status':'not_started'}
+                        'gateway_fallback_verified':False,'charge_status':'not_started',
+                        'cost_policy':COST_POLICY}
         self.response = None
 
     def ask(self, request: DecisionInput):
@@ -115,10 +180,13 @@ class DecisionSession:
             text = raw.decode('utf-8')
             if _contains_credential(text,self._token):
                 raise HostedFailure('decision_credential_reflection')
+            self.receipt['response_body_sha256'] = sha256(raw).hexdigest()
             data = json_object(text)
             self.response = data
             self.receipt['response_sha256'] = _hash(data)
             result = validate_response(request,data)
+            raw_cost = json.loads(text, parse_float=str, parse_int=str)['usage'].get('cost')
+            result['usage'], self.receipt['cost_normalization'] = _gateway_usage(result['usage'], raw_cost)
             self.receipt.update({'status':'validated_advisory','served_model':result['served_model'],'usage':result['usage']})
             return result
         except (httpx.HTTPError,UnicodeError,ValueError,TypeError,KeyError,RecursionError) as exc:

@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **232 recorded discoveries.**
+Last review: 2026-10-26. **234 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -4118,3 +4118,38 @@ Gateway docs specify USD for chat-family usage.cost but native decision schemas 
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 investigate documented per-request cost receipts rather than infer native units. No new mandatory product scope or cost conversion yet.
 - 2026-10-26 · adopted · integration: Clarification after reading broader gateway funding contract: platform-funded usage.cost is documented USD; three read-only native smoke request lookups match exact IDs/models and earlier amounts. This supports scoped translation research, not generic unit inheritance, free BYOK use or implemented mapping. Retain original interpretation and closed live failure.
+- 2026-10-26 · adopted · integration: existing_task B02-11: implement only the fixed gateway platform-funded USD contract, explicit false BYOK flag, bounded exact arithmetic and retained source metadata. Generic engine cost stays unit-agnostic; unknowns and the first failed run remain preserved. Controlled checks pass; full native acceptance next.
+
+### [ ] EM-333: Accounting policy is part of reviewed worker authority
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Native decision cost adapter after the failed coordinated diagnostic.
+
+Normalizing an amount changes whether the next specialist request is permitted even when the model list and question spec are unchanged. A spec-only configuration hash cannot bind that interpretation.
+
+**Product implication:** Include the cost-policy version in standalone and coordinated worker fingerprints, and stop queued/in-flight work when it changes. Keep raw spec and full configuration hashes distinct.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-cost-policy.md`, `eightball/v2/decision_models.py`, `tests/test_decision_models.py`, `tests/test_coordinated_planning.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 engineering boundary, controlled tests only; no new required product scope, live-call result or independent quality acceptance.
+
+### [ ] EM-334: Exact cost provenance cannot be recovered from rounded or conflicting fields
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Native decision cost adapter after the failed coordinated diagnostic.
+
+Binary JSON float parsing can turn an amount just below or above one nano-USD into exactly one; Decimal(str(parsed_float)) cannot recover the lost digits. Confirmed USD and explicit nano fields can also disagree while each is individually valid.
+
+**Product implication:** Use bounded original numeric text and exact arithmetic, bind the original body separately from the canonical parsed response, and preserve conflicts as unknown instead of choosing a smaller bill. Retain numeric bounds against hostile exponents.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-cost-policy.md`, `eightball/v2/decision_models.py`, `tests/test_decision_models.py`, `tests/test_coordinated_planning.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 engineering boundary, controlled tests only; no new required product scope, live-call result or independent quality acceptance.

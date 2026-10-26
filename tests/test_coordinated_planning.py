@@ -238,6 +238,23 @@ def test_changed_queued_configuration_requires_review_before_http(coordinated, m
     assert not calls
 
 
+@pytest.mark.parametrize('at_call', [0, 1, 3, 5, 7])
+def test_cost_policy_change_invalidates_queued_or_inflight_authority(coordinated, monkeypatch, at_call):
+    d, processor, calls, after, _, _ = coordinated
+    original = processor.configuration_sha256
+    def mutate(count):
+        if count == at_call:
+            monkeypatch.setattr('eightball.event_workers.planning.COST_POLICY', 'changed_policy')
+    if at_call:
+        after[0] = mutate
+        assert process(d)['state'] == 'permission_denied'
+    else:
+        mutate(0)
+        with pytest.raises(EventConflict): process(d)
+    assert processor.configuration_sha256 != original and len(calls) == at_call
+    assert status(d)['work']['result'] is None
+
+
 @pytest.mark.parametrize('at_call', [3, 4, 5])
 @pytest.mark.parametrize('mode', ['cost_missing', 'cost_budget', 'invalid_answer'])
 def test_incomplete_specialist_panel_preserves_initial_and_stops_revision(coordinated, at_call, mode):

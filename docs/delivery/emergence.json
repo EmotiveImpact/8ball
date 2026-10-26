@@ -7377,6 +7377,68 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "Clarification after reading broader gateway funding contract: platform-funded usage.cost is documented USD; three read-only native smoke request lookups match exact IDs/models and earlier amounts. This supports scoped translation research, not generic unit inheritance, free BYOK use or implemented mapping. Retain original interpretation and closed live failure."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11: implement only the fixed gateway platform-funded USD contract, explicit false BYOK flag, bounded exact arithmetic and retained source metadata. Generic engine cost stays unit-agnostic; unknowns and the first failed run remain preserved. Controlled checks pass; full native acceptance next."
+        }
+      ]
+    },
+    {
+      "id": "EM-333",
+      "title": "Accounting policy is part of reviewed worker authority",
+      "origin": "Native decision cost adapter after the failed coordinated diagnostic",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "Normalizing an amount changes whether the next specialist request is permitted even when the model list and question spec are unchanged. A spec-only configuration hash cannot bind that interpretation.",
+      "product_implication": "Include the cost-policy version in standalone and coordinated worker fingerprints, and stop queued/in-flight work when it changes. Keep raw spec and full configuration hashes distinct.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-native-cost-policy.md",
+        "eightball/v2/decision_models.py",
+        "tests/test_decision_models.py",
+        "tests/test_coordinated_planning.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 engineering boundary, controlled tests only; no new required product scope, live-call result or independent quality acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-334",
+      "title": "Exact cost provenance cannot be recovered from rounded or conflicting fields",
+      "origin": "Native decision cost adapter after the failed coordinated diagnostic",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "Binary JSON float parsing can turn an amount just below or above one nano-USD into exactly one; Decimal(str(parsed_float)) cannot recover the lost digits. Confirmed USD and explicit nano fields can also disagree while each is individually valid.",
+      "product_implication": "Use bounded original numeric text and exact arithmetic, bind the original body separately from the canonical parsed response, and preserve conflicts as unknown instead of choosing a smaller bill. Retain numeric bounds against hostile exponents.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-native-cost-policy.md",
+        "eightball/v2/decision_models.py",
+        "tests/test_decision_models.py",
+        "tests/test_coordinated_planning.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 engineering boundary, controlled tests only; no new required product scope, live-call result or independent quality acceptance."
         }
       ]
     }

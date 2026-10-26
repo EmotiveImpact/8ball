@@ -10,7 +10,7 @@ from endstate.intelligence.planning import (CoordinatedPlanningSpec, Coordinatio
 
 from ..store import digest
 from ..v2.compatible import CompatibleSession, MAX_OUTPUT_TOKENS, settings
-from ..v2.decision_models import DecisionSession
+from ..v2.decision_models import COST_POLICY, DecisionSession
 from ..v2.hosted import HostedFailure, HostedSetupRequired
 from .specialists import SpecialistReviewProcessor
 
@@ -67,6 +67,7 @@ class CoordinatedPlanningProcessor:
         return digest(dict(version=VERSION, spec=spec.model_dump(mode='json'),
                            planning_settings=configuration,
                            specialist_credential=os.getenv('EXPERIENTIAL_API_KEY', '').strip(),
+                           specialist_cost_policy=COST_POLICY,
                            max_generation_calls=MAX_GENERATION_CALLS,
                            max_output_tokens_per_call=MAX_OUTPUT_TOKENS,
                            max_planning_receipt_bytes=MAX_PLANNING_RECEIPT_BYTES))

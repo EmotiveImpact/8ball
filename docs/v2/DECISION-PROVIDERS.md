@@ -1,3 +1,15 @@
+# Native cost interpretation — 26 October 2026 follow-up
+
+See the [bounded native cost policy](../delivery/sessions/2026-10-26-native-cost-policy.md).
+The fixed Experiential native adapter can translate platform-funded USD only with
+an explicit false BYOK flag and exact, bounded original-number arithmetic. Missing
+funding, fractional nanos, unpriced/BYOK or conflicting fields remain unknown.
+Raw amounts, original numeric text, body hash and policy basis survive retention;
+the accounting policy is included in worker configuration checks. No billing
+lookup or inference request is added. Generic engine code does not infer units.
+This is not a bill verification, free-use promise, live coordinated result or
+quality gate. Earlier checkpoints below remain historical evidence.
+
 # Live native smoke checkpoint — 26 October 2026
 
 Native transports are now implemented and three separately authorized single requests succeeded on the same fictional empty-project-name review fixture. This supersedes the earlier catalogue-only checkpoint below, which is retained as history. Clef and Jev use only `/v1/systemone`; GPT uses only `/v1/decisions`. No chat calls, automatic retry/fan-out/fallback, case access or execution occurred.

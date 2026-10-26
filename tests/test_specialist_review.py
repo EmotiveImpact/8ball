@@ -137,7 +137,7 @@ def test_native_specialists_use_only_reviewed_text_and_never_commit(specialists)
     assert all(a['usage'] == dict(input_tokens=10, output_tokens=5, cost_nano_usd=1) for a in r['attempts'])
     assert [c['model'] for c in calls] == MODELS
     assert all(c.get('state', c.get('input')) == d['event'].text for c in calls)
-    assert r['spec_sha256'] == processor.configuration_sha256
+    assert r['spec_sha256'] == digest(processor.spec.model_dump(mode='json'))
     assert r['receipt_sha256'] == digest(d['receipt'].model_dump(mode='json'))
     assert d['store'].audit(d['case'].id) == before
     assert d['store'].get(d['case'].id).revision == 0
@@ -149,8 +149,8 @@ def test_native_specialists_use_only_reviewed_text_and_never_commit(specialists)
 @pytest.mark.parametrize('change,expected', [
     ('cancel', 'cancelled'), ('revision', 'stale'), ('grant', 'permission_denied'),
     ('source_policy', 'permission_denied'), ('review', 'permission_denied'),
-    ('configuration', 'permission_denied'), ('lease', 'interrupted')])
-def test_each_call_checks_current_authority_and_discards_late_results(specialists, change, expected):
+    ('configuration', 'permission_denied'), ('cost_policy', 'permission_denied'), ('lease', 'interrupted')])
+def test_each_call_checks_current_authority_and_discards_late_results(specialists, monkeypatch, change, expected):
     d, processor, calls, after, _ = specialists
     def mutate():
         if change == 'cancel': d['service'].cancel(case_id=d['case'].id, identity=d['operator'], work_id=d['work_id'])
@@ -159,6 +159,7 @@ def test_each_call_checks_current_authority_and_discards_late_results(specialist
         if change == 'review':
             d['service'].revoke_source_review(case_id=d['case'].id, identity=d['operator'], review_id=d['source_review']['id'])
         if change == 'configuration': processor.spec.max_reported_cost_nano_usd += 1
+        if change == 'cost_policy': monkeypatch.setattr('eightball.event_workers.specialists.COST_POLICY', 'changed_policy')
         if change == 'lease': d['clock'][0] += timedelta(seconds=61)
         if change == 'revision':
             d['store'].change(d['case'].id, Command(event_id='concurrent', expected_revision=0,
@@ -199,6 +200,34 @@ def test_changed_configuration_requires_new_review_before_any_request(specialist
     processor.spec.models.reverse()
     with pytest.raises(EventConflict, match='configuration changed'): process(d)
     assert calls == [] and status(d)['work']['state'] == 'queued'
+
+
+def test_changed_cost_policy_requires_new_review_before_any_request(specialists, monkeypatch):
+    d, processor, calls, _, _ = specialists
+    original = processor.configuration_sha256
+    monkeypatch.setattr('eightball.event_workers.specialists.COST_POLICY', 'changed_policy')
+    assert processor.configuration_sha256 != original
+    with pytest.raises(EventConflict, match='configuration changed'): process(d)
+    assert calls == [] and status(d)['work']['state'] == 'queued'
+
+
+def test_native_cost_basis_survives_standalone_review_retention(specialists):
+    d, _, calls, _, transform = specialists
+    def change(value):
+        value['usage'].pop('cost_nano_usd')
+        value['usage'].update(cost=1e-9, is_byok=False)
+        return value
+    transform[0] = change
+    assert process(d)['state'] == 'awaiting_review'
+    r = report(d)
+    assert r['known_reported_cost_nano_usd'] == 3 and len(calls) == 3
+    assert len(r['cost_receipts']) == 3
+    for attempt, receipt in zip(r['attempts'], r['cost_receipts']):
+        assert receipt['model'] == attempt['model']
+        assert receipt['response_sha256'] == attempt['response_sha256']
+        assert receipt['normalization']['source_cost_usd'] == 1e-9
+        assert receipt['normalization']['source_is_byok'] is False
+        assert receipt['normalization']['cost_nano_usd'] == attempt['reported_cost_nano_usd'] == 1
 
 
 def test_time_stop_and_in_flight_non_recall(specialists):

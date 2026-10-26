@@ -168,6 +168,34 @@ def test_authentication_failure_stops_later_models(diagnostic):
     assert report['stop_reason']=='planning_access_failed_no_later_methods'
 
 
+@pytest.mark.parametrize('cost,extra,expected', [
+    (3.5868e-5, {'is_byok':False}, 'completed'),
+    (0, {'is_byok':False}, 'completed'),
+    (3.5868e-5, {}, 'unknown_reported_cost'),
+    (0, {'is_byok':True}, 'unknown_reported_cost'),
+    (0, {'is_byok':False, 'pricing_known':False}, 'unknown_reported_cost'),
+    (1e-10, {'is_byok':False}, 'unknown_reported_cost'),
+    (0.025, {'is_byok':False}, 'reported_cost_budget')])
+def test_native_cost_translation_reaches_bound_worker_budget(diagnostic, cost, extra, expected):
+    d = diagnostic
+    def change(data):
+        data['usage'].pop('cost_nano_usd')
+        data['usage'].update(cost=cost, **extra)
+        return data
+    for model in evaluation.REVIEWERS: d['transforms'][model] = change
+    report = d['run'](d['freeze']([SONNET]))
+    row = report['results'][0]; result = row['result']
+    assert row['case_audit_unchanged'] and row['work_state'] == 'awaiting_review'
+    assert result['challenges']['stop_reason'] == expected
+    assert bool(result['revision']) == (expected == 'completed')
+    assert report['recorded_provider_call_attempts'] == len(d['calls']) == (7 if expected == 'completed' else 3)
+    assert result['specialist_receipts'][0]['receipt']['cost_normalization']
+    if expected == 'completed':
+        assert report['known_specialist_cost_nano_usd'] == (107604 if cost else 0)
+    else:
+        assert not result['final_synthesis'] and result['initial']
+
+
 @pytest.mark.parametrize('model,stop,error', [
     (GLM, 'stop', 'invalid_json'), (DEEPSEEK, 'length', 'unsupported_response'),
     (SONNET, 'max_tokens', 'unsupported_response')])

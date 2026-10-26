@@ -1,4 +1,17 @@
-# Latest source-bound follow-up: safe rejected-provider diagnostics
+# Latest bounded follow-up: provider-scoped native cost policy
+
+See [native cost policy](sessions/2026-10-26-native-cost-policy.md), starting at
+pushed `d89bae3`. 616 focused tests, compilation and whitespace checks pass;
+full source-bound native/package verification is next. Generic cost conversion
+is restricted to confirmed platform-funded USD and exact bounded original-number
+arithmetic. Unknown/BYOK/conflicting fields stop the panel; raw amounts and hashes
+remain. Policy changes invalidate reviewed worker configurations. No extra HTTP
+calls, inference, retries, original-run repair or quality gate promotion.
+EM-332/333/334 capture provider accounting, configuration authority and precision.
+B02-11 remains partial. Local uncommitted at this checkpoint; next commit, full
+native inspection/archive and additive publication. No merge/deployment/release.
+
+# Previous source-bound follow-up: safe rejected-provider diagnostics
 
 See [provider diagnostics](sessions/2026-10-26-provider-diagnostics.md): 463
 controlled tests pass for safe stop/counter/shape retention before rejection.
