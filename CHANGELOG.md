@@ -36,7 +36,7 @@ Document an audit of the current black interface and a recommended next visual d
 - Risk: Token drift makes theming and accessibility fixes expensive; Inter is named but never loaded.
 - Architecture: Consolidate colours, type and spacing into tokens before further visual work.
 - Roadmap decision: Proposal for owner review under existing B02-16 and B02-20; no task or status changes.
-Registered discoveries: none identified.
+Registered discoveries: EM-024.
 
 Roadmap items: `B02-16`, `B02-20`.
 

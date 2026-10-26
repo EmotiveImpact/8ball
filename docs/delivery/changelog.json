@@ -43,7 +43,9 @@
           "Consolidate colours, type and spacing into tokens before further visual work."
         ],
         "roadmap_decision": "Proposal for owner review under existing B02-16 and B02-20; no task or status changes.",
-        "insight_ids": []
+        "insight_ids": [
+          "EM-024"
+        ]
       }
     },
     {
