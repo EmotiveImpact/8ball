@@ -12,8 +12,9 @@ from ..store import Conflict, canonical, digest
 
 
 class EventOutbox:
-    def __init__(self, store):
+    def __init__(self, store, *, current_identity=None):
         self.store = store
+        self.current_identity = current_identity
         AccessRegistry(store.path)
         with store.connection() as db:
             db.executescript('''
@@ -75,11 +76,19 @@ class EventOutbox:
             raise Conflict('Change notice metadata differs from its review')
         return dict(id=row['id'], **body)
 
+    def authorize(self, db, case_id, reader):
+        if self.current_identity is not None and self.current_identity() != reader:
+            raise PermissionError('Current reader changed')
+        result = self._authorize(db, case_id, reader)
+        if self.current_identity is not None and self.current_identity() != reader:
+            raise PermissionError('Current reader changed')
+        return result
+
     def pull(self, *, case_id, reader):
         """Return the oldest unacknowledged notice for this reader and case."""
         with self.store.connection() as db:
             db.execute('BEGIN IMMEDIATE')
-            reader_key, scope = self._authorize(db, case_id, reader)
+            reader_key, scope = self.authorize(db, case_id, reader)
             row = db.execute('''SELECT o.* FROM event_outbox o
                 LEFT JOIN event_notice_delivery d ON d.notice_id=o.id AND d.reader=?
                 WHERE o.case_id=? AND d.acknowledged_at IS NULL ORDER BY o.id LIMIT 1''',
@@ -89,7 +98,7 @@ class EventOutbox:
             notice = self._verified(db, row, scope)
             db.execute('INSERT OR IGNORE INTO event_notice_delivery VALUES (?,?,?,NULL)',
                        (row['id'], reader_key, utcnow().isoformat()))
-            self._authorize(db, case_id, reader)
+            self.authorize(db, case_id, reader)
             db.commit()
             return notice
 
@@ -97,7 +106,7 @@ class EventOutbox:
         """Acknowledge local delivery only; never approve a case action."""
         with self.store.connection() as db:
             db.execute('BEGIN IMMEDIATE')
-            reader_key, scope = self._authorize(db, case_id, reader)
+            reader_key, scope = self.authorize(db, case_id, reader)
             row = db.execute('SELECT * FROM event_outbox WHERE id=? AND case_id=?',
                              (notice_id, case_id)).fetchone()
             delivery = db.execute('SELECT 1 FROM event_notice_delivery WHERE notice_id=? AND reader=?',
@@ -107,5 +116,5 @@ class EventOutbox:
             self._verified(db, row, scope)
             db.execute('''UPDATE event_notice_delivery SET acknowledged_at=COALESCE(acknowledged_at,?)
                 WHERE notice_id=? AND reader=?''', (utcnow().isoformat(), notice_id, reader_key))
-            self._authorize(db, case_id, reader)
+            self.authorize(db, case_id, reader)
             db.commit()

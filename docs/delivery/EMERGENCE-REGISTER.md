@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **113 recorded discoveries.**
+Last review: 2026-10-26. **156 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -108,7 +108,7 @@ Many reviews and context switches can make a nominally quick route operationally
 
 **Product implication:** Measure real operator load before introducing scoring or optimisation.
 
-**Roadmap links:** `B04-03` (not_started), `B04-04` (deferred).
+**Roadmap links:** `B04-03` (partial), `B04-04` (deferred).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/delivery/EMERGENCE-REVIEW.md`, `docs/decisions/0004-evidence-led-course-and-recovery.md`, `docs/vision/8BALL.md`, `docs/vision/ENDSTATE.md`.
 
@@ -298,7 +298,7 @@ A question can distinguish competing explanations rather than immediately unlock
 
 **Product implication:** Investigate information-value models with explicit uncertainty and expert labels instead of a made-up score.
 
-**Roadmap links:** `B04-03` (not_started), `ES03-02` (blocked).
+**Roadmap links:** `B04-03` (partial), `ES03-02` (blocked).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/prompts/EMERGENT-INSIGHTS.md`.
 
@@ -497,7 +497,7 @@ Reusable technology does not make confidential client histories reusable by defa
 
 **Product implication:** Keep all case findings scoped; require an explicit governance and permission decision for precedent learning.
 
-**Roadmap links:** `B04-02` (not_started).
+**Roadmap links:** `B04-02` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/v2/PRODUCTION-SECURITY.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/whole-system-review.md`.
 
@@ -1120,7 +1120,7 @@ The cumulative workspace has more inspection and review surfaces. It is not yet 
 
 **Product implication:** Measure correct next decisions, missed dependencies, false alarms and correction/review burden. Prefer progressive disclosure in the existing room over more dashboards.
 
-**Roadmap links:** `B04-03` (not_started), `B02-22` (not_started), `B04-04` (deferred).
+**Roadmap links:** `B04-03` (partial), `B02-22` (not_started), `B04-04` (deferred).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/vision/8BALL.md`, `evals/PLAN-QUALITY-GATE.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/research/github-2026-10-16/whole-system-review.md`.
 
@@ -1158,7 +1158,7 @@ A preserved correction could reveal a missing dependency, changed meaning or exc
 
 **Product implication:** Explore permissioned, case-scoped correction replay for evaluation. Keep retention, confidentiality and dataset approval explicit; never silently train on client work.
 
-**Roadmap links:** `B04-04` (deferred), `B04-02` (not_started), `B02-11` (partial).
+**Roadmap links:** `B04-04` (deferred), `B04-02` (partial), `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/vision/ENDSTATE.md`, `docs/vision/8BALL.md`, `docs/research/github-2026-10-16/tencent-memory.md`.
 
@@ -1371,7 +1371,7 @@ MiroFish/OASIS source inspection shows Twitter/Reddit action spaces and simulati
 
 **Product implication:** Evaluate domain mapping and incremental useful-failure discovery against authored scenarios before adopting a simulator. Preserve broader possible-world ambition as research.
 
-**Roadmap links:** `ES03-01` (partial), `ES04-01` (not_started).
+**Roadmap links:** `ES03-01` (partial), `ES04-01` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/research/github-2026-10-16/whole-system-review.md`.
 
@@ -1391,7 +1391,7 @@ Graphiti library and companion server episode deletion follow different cleanup 
 
 **Product implication:** Keep canonical source retraction authoritative; test shared support, namespace separation, deletion/rebuild and case access before memory adoption.
 
-**Roadmap links:** `B03-02` (not_started), `B04-02` (not_started).
+**Roadmap links:** `B03-02` (partial), `B04-02` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/whole-system-review.md`.
 
@@ -1410,7 +1410,7 @@ Model costs multiply across cases, branches, actors, rounds, repeats, embeddings
 
 **Product implication:** Require an aggregate experiment budget and stop accounting, provider caps where available, attempted-call receipts and explicit retry/cancellation policy.
 
-**Roadmap links:** `ES03-05` (partial), `B03-04` (not_started).
+**Roadmap links:** `ES03-05` (partial), `B03-04` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/delivery/sessions/2026-10-16-compatible-provider-research-copy.md`, `docs/research/github-2026-10-16/ruflo-owner-guide.md`, `docs/research/github-2026-10-16/whole-system-review.md`.
 
@@ -1432,7 +1432,7 @@ Pinned research found Mesa 4.0 alpha API changes, Phoenix Elastic License 2.0, M
 
 **Product implication:** Keep source pins, stable release selection and dependency/licence review with each optional adapter; compare alternatives before stacking frameworks.
 
-**Roadmap links:** `ES04-04` (not_started), `DOC-06` (verified).
+**Roadmap links:** `ES04-04` (partial), `DOC-06` (verified).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/research/GITHUB-COMPONENTS-2026-10-16.md`, `docs/strategy/ENDSTATE-EVOLUTION-PLAN-2026-10-16.md`, `docs/research/github-2026-10-16/tencent-memory.md`, `docs/research/github-2026-10-16/ruflo.md`, `docs/research/github-2026-10-16/whole-system-review.md`.
 
@@ -1488,7 +1488,7 @@ The inspected Ruflo embedding policy permits a deterministic hash fallback when 
 
 **Product implication:** Optional retrieval adapters must expose active backend/degraded mode and pass task-relevant semantic fixtures; configure fail-closed behavior where semantic output is required before adopting the provider.
 
-**Roadmap links:** `B04-02` (not_started), `ES03-05` (partial).
+**Roadmap links:** `B04-02` (partial), `ES03-05` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/research/github-2026-10-16/ruflo.md`, `docs/research/github-2026-10-16/ruflo-owner-guide.md`, `docs/research/github-2026-10-16/whole-system-review.md`.
 
@@ -1618,7 +1618,7 @@ Pinned Docling reading-order code strips/joins/replaces cell text before assigni
 
 **Product implication:** Keep original-file hashes, derivative/version/page/bbox and exported-text mappings separate; require independent OCR/table/source review and visible partial results.
 
-**Roadmap links:** `B02-14` (partial), `B03-02` (not_started).
+**Roadmap links:** `B02-14` (partial), `B03-02` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/research/github-2026-10-16/whole-system-review.md`, `docs/evidence/whole-system-readiness-2026-10-16.json`, `docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md`.
 
@@ -1635,7 +1635,7 @@ Pinned Mem0 enables operation telemetry by default to us.i.posthog.com even when
 
 **Product implication:** Record all data exits and telemetry configuration before an isolated future pilot; local storage alone cannot establish no external transmission.
 
-**Roadmap links:** `B03-01` (partial), `B04-02` (not_started).
+**Roadmap links:** `B03-01` (partial), `B04-02` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
 **Evidence / source record:** `docs/research/github-2026-10-16/whole-system-review.md`, `docs/evidence/whole-system-readiness-2026-10-16.json`, `docs/delivery/sessions/2026-10-16-whole-system-evaluation-readiness.md`.
 
@@ -2056,3 +2056,736 @@ Existing ledger task paths share routers, authorisation, worker and delivery reg
 **Decision history:**
 
 - 2026-10-25 · adopted · Devin: decision_record: owner requested bounded coordination, not implementation or a new backlog. Reserve EM-113..252 for builders; this coordination decision uses EM-253 outside those ranges. Preserve original task gates and optional holds; later upstream documentation/evidence needs additive integration, not attribution to this baseline. No product acceptance gate is linked or claimed.
+
+### [ ] EM-173: A disclosure review binds the recipient and exact grant, not only content
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** Collaboration B03-03 implementation, session 7e526575ef714b7e8a85f6ef00ee7ca6.
+
+An otherwise reviewed projection can be misdirected or silently revived if recipient, object and immutable client-grant digest are not checked with the exact content digest; replacing a revoked grant must not repair the old review.
+
+**Product implication:** 8BALL disclosure review must preserve exact recipient/grant/content scope separately from evidence state and action authority; keep revoked and withdrawn records terminal and auditable.
+
+**Roadmap links:** `B03-03` (partial).
+**Completion scope:** `B03-03`.
+**Evidence / source record:** `tests/test_projection.py`, `eightball/projections/service.py`, `docs/delivery/lane-reports/collaboration.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin engineering proposal: Existing-task B03-03 safety refinement demonstrated with controlled SQLite tests; no global acceptance or new required scope.
+
+### [ ] EM-174: A safe source preview is not the final disclosure commit gate
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** Collaboration/vault same-transaction seam discussion and implementation.
+
+Standalone safe metadata or source handles cannot authorize a projection mutation: source access, release state, revision, integrity and retention may change between preview and commit. The source gate and mutation/audit must share the same active write transaction.
+
+**Product implication:** Keep a fail-closed transaction-local vault gate in 8BALL integration; opaque handles are references, never bearer capabilities. Missing or different-database adapters deny rather than granting local bearer access.
+
+**Roadmap links:** `B03-03` (partial).
+**Completion scope:** `B03-03`.
+**Evidence / source record:** `eightball/collaboration/contracts.py`, `tests/test_collaboration.py`, `docs/v2/COLLABORATION.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin engineering proposal: Existing-task refinement with explicitly confirmed vault contract and controlled wrapper tests; actual shared identity/vault/case combination remains an integration gate.
+
+### [ ] EM-175: Client source readiness checks must not create internal source read access
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** Projection client-read authority integration design.
+
+Reusing a vault current-READ source gate under the client identity could require a broad internal grant merely to read curated projection content. Checking source lifecycle under the still-current independent reviewer, while separately checking the exact client projection grant, keeps those authorities distinct.
+
+**Product implication:** Allow clients only the separately reviewed content allowlist; deny after reviewer or source access revocation without exposing source handles, metadata or internal objects. Host role/route mappings still require negative integration tests.
+
+**Roadmap links:** `B03-03` (partial).
+**Completion scope:** `B03-03`.
+**Evidence / source record:** `tests/test_projection.py`, `eightball/projections/service.py`, `docs/v2/COLLABORATION.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin engineering proposal: Existing-task B03-03 distinction; controlled test denies client source authority while allowing only reviewed projection, not proof of production policy correctness.
+
+### [ ] EM-176: Measure exact disclosure review and refresh recovery burden
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** operator_hypothesis.
+**First recorded:** 2026-10-25. **Origin:** Collaboration isolated UI and failure-recovery build review.
+
+Exact recipient IDs, digests, separate review and explicit refresh after uncertain writes may prevent misdirected disclosure but also impose substantial manual review and recovery work; screen and passing-test counts do not show net operator benefit.
+
+**Product implication:** Evaluate fictional-user disclosure tasks with wrong-recipient prevention, correction rate, review time and stale-refresh recovery measures before expanding the interface or claiming customer value.
+
+**Roadmap links:** `B03-03` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `web/v2/collaboration-view.js`, `docs/delivery/lane-reports/collaboration.md`.
+
+**Decision history:**
+
+- 2026-10-25 · candidate · Devin engineering proposal: Retain for owner/usability review; no participant study, native new-flow review or new mandatory roadmap task is authorized or claimed.
+
+### [ ] EM-177: Checkout tests alone do not prove installed-kernel test portability
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** Collaboration isolated ENDSTATE wheel regression failure and repair.
+
+1393 checkout tests passed while two collaboration tests could not collect under the installed-kernel runner's isolated importlib mode because sibling fixture imports were unqualified. Package-qualified test imports then passed 37 focused tests in both modes and 1393 installed-wheel regressions.
+
+**Product implication:** Preserve installed-package verification alongside checkout tests for 8BALL/ENDSTATE work; distinguish a test portability repair from a kernel defect or broad acceptance. Keep the failed source-bound receipt rather than replacing it with later totals.
+
+**Roadmap links:** `B03-03` (partial).
+**Completion scope:** `B03-03`.
+**Evidence / source record:** `tests/test_collaboration_api.py`, `tests/test_projection.py`, `docs/delivery/lane-reports/collaboration.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin engineering proposal: Existing-task verification refinement, corrected within owned tests and proven by final offline wheel/native runner; no new required scope, production/platform portability or B03 acceptance claim.
+
+### [ ] EM-213: Pack content identity is not current case authority
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** 2026-10-25-domain-packs-engineering.
+
+A canonical all-section pack digest can detect changes to prompts, policies and adapter declarations, but neither a digest nor a caller subject authenticates a consumer. The read-only consumer needs independently host-authenticated identity, current scoped grants and a fresh revision-bound snapshot; local bearer identity, cross-scope requests and post-read revocation are rejected in focused tests.
+
+**Product implication:** Keep pack review state host-owned and do not use a content pin or preview response as approval, publisher identity or a later commit/send/download ticket.
+
+**Roadmap links:** `ES04-01` (partial), `ES04-04` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `endstate/domain_packs/loader.py`, `endstate/domain_packs/consumer.py`, `tests/test_domain_packs.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin: existing_task / decision_record: bounded engineering and safe integration guidance under the linked existing tasks only. No new required scope, acceptance promotion, owner approval, public launch or release decision.
+
+### [ ] EM-214: Reusable policy templates must not pre-confirm a case
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** 2026-10-25-domain-packs-engineering.
+
+The support reuse fixture originally had confirmed policy state. A reusable pack must reject that state, while a live host snapshot may independently record manual policy review. Focused tests show that review alone still cannot satisfy an unobserved authority predicate, and that unrelated catalogue changes fail review matching.
+
+**Product implication:** Keep reusable hypotheses, human policy review, observed authority, action permission, completion and verified remedy outcome separate; never overlay a pack onto live state.
+
+**Roadmap links:** `ES04-01` (partial), `ES04-03` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `tests/fixtures/domain_packs/support.json`, `endstate/domain_packs/contracts.py`, `endstate/domain_packs/consumer.py`, `tests/test_domain_packs.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin: existing_task / decision_record: bounded engineering and safe integration guidance under the linked existing tasks only. No new required scope, acceptance promotion, owner approval, public launch or release decision.
+
+### [ ] EM-215: Passing source consumers do not establish packaged distribution
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** 2026-10-25-domain-packs-engineering.
+
+The frozen setuptools manifest lists only endstate. The internal wheel smoke passes but omits endstate.domain_packs; the actual installed-wheel regression run fails test collection with ModuleNotFoundError. Source-isolated reuse and 1415 source tests therefore do not prove this preview ships. No top-level LICENSE/LICENCE file or independent release approval was found/created in this checkpoint.
+
+**Product implication:** Integration must explicitly include the subpackage and rerun installed regressions, then separately settle licence/support/distribution and independent release approval; do not launch SDK/API/MCP from source-only evidence.
+
+**Roadmap links:** `ES04-04` (partial), `ES10-01` (partial), `ES10-02` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `pyproject.toml`, `docs/endstate/DOMAIN-PACKS.md`, `tests/test_domain_packs.py`, `docs/delivery/lane-reports/domain-packs.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin: existing_task / decision_record: bounded engineering and safe integration guidance under the linked existing tasks only. No new required scope, acceptance promotion, owner approval, public launch or release decision.
+
+### [ ] EM-113: Source-processing review and current source policy are independent gates
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** Events roadmap lane build at f749627f9f7456ddcc5744f22374c57f8c5e64be.
+
+A whole-matter grant and an explicit review of incoming text do not establish current object quarantine, retention or processing/egress permission. Revocation between preview or claim and consumption must still deny; missing policy cannot default to a local test adapter.
+
+**Product implication:** Keep explicit receipt/revision review separate from factual attestation and action authority. Wire current identity/vault/provider source policy transactionally before agency processing; make denial visible rather than weakening checks. Extra review/policy checks add integration and operator burden, but a permissive default would leak data.
+
+**Roadmap links:** `ES02-01` (partial), `ES02-02` (partial), `ES02-03` (partial), `B03-04` (partial).
+**Completion scope:** `ES02-01`, `ES02-02`, `ES02-03`, `B03-04`.
+**Evidence / source record:** `eightball/event_workers/service.py`, `eightball/v2/event_reviews.py`, `tests/test_event_dispatch.py`, `docs/delivery/lane-reports/events.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin / events engineering lane (not owner sign-off): Existing task refinement: mandatory fail-closed policy callback implemented and negatively tested; production adapter/native integration remains unaccepted, not a new required task.
+
+### [ ] EM-114: Uncertain event processing must retain disposition without automatic provider replay
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** Events roadmap lane build at f749627f9f7456ddcc5744f22374c57f8c5e64be.
+
+A durable claim may outlive cancellation, worker revocation, lease expiry or a failed result-storage transaction. A repeated processing request after such a failure could duplicate a paid or non-recallable call even though no reviewable result was persisted.
+
+**Product implication:** Claim and run-marker persistence precede one explicit call. Keep original bounded late output as inert trace where storage succeeds; do not publish stale/cancelled results, resume on restart or claim an external request was recalled. Storage failure can still prevent retaining raw output; operator inspection is preferable to invented success.
+
+**Roadmap links:** `ES02-02` (partial), `ES02-04` (partial), `B03-04` (partial).
+**Completion scope:** `ES02-02`, `ES02-04`, `B03-04`.
+**Evidence / source record:** `eightball/event_workers/service.py`, `eightball/event_work.py`, `tests/test_event_dispatch.py`, `docs/delivery/lane-reports/events.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin / events engineering lane (not owner sign-off): Existing task refinement: explicit attempt lifecycle, retained safe failure codes and no automatic re-execution implemented; paid/live provider and production crash/recovery acceptance stay open.
+
+### [ ] EM-115: Conservative replan reuse must retain explicit clocks and approval revisions
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** Events roadmap lane build at f749627f9f7456ddcc5744f22374c57f8c5e64be.
+
+Revision-only case changes can leave planning inputs unchanged, but action approvals depend on the exact revision and expiry. Reusing a result while omitting approval revision or as-of clock could revive expired or invalid authority.
+
+**Product implication:** Use detached bounded exact-input/clock caching with revision-only reuse only when approvals are absent, and full ENDSTATE fallback for all other changes. This gives a narrowly testable optimization without inventing a broad partial-graph algorithm; conservative fallback may offer little speedup on changing cases.
+
+**Roadmap links:** `ES02-04` (partial).
+**Completion scope:** `ES02-04`.
+**Evidence / source record:** `eightball/event_workers/replan.py`, `tests/test_event_replan.py`, `docs/delivery/lane-reports/events.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin / events engineering lane (not owner sign-off): Existing task refinement: conservative cache and exact full-response parity tested. General incremental-graph performance/production throughput remains an explicit limitation, not a passed gate.
+
+### [ ] EM-116: A bounded retry ceiling needs an explicit operator recovery policy
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** Events roadmap lane build at f749627f9f7456ddcc5744f22374c57f8c5e64be.
+
+Three retained explicit attempts prevent silent retry loops, but exhausting that ceiling leaves no in-place reset. An operator may need to distinguish an invalid source or withdrawn consent from an infrastructure incident without erasing history or forging a new success.
+
+**Product implication:** Evaluate a separately reviewed recovery workflow that preserves source, failure and billing/permission history, rather than adding unlimited resets or automatic retries. It could reduce operator friction, but may undermine budgets or encourage duplicate paid calls if policy is loose.
+
+**Roadmap links:** `ES02-02` (partial), `B03-04` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `eightball/event_workers/service.py`, `tests/test_event_dispatch.py`, `docs/delivery/lane-reports/events.md`.
+
+**Decision history:**
+
+- 2026-10-25 · deferred · Devin / events engineering lane (not owner sign-off): Candidate recovery UX/policy requires owner/provider-budget decisions and observed operator need. Current bounded attempts remain; no reset bypass or extra required scope implemented.
+
+### [ ] EM-117: Pre-commit local stage metrics are not combined provider or human latency evidence
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** Events roadmap lane build at f749627f9f7456ddcc5744f22374c57f8c5e64be.
+
+Local ingestion/processor/review timers can be retained on an atomic review record, but in-transaction durations stop before durability commit. Deterministic clocks in fixtures can verify instrumentation without measuring real inference or human review; mixed fixture and wall clocks yield incomparable waiting totals.
+
+**Product implication:** Label metric scope, keep unknown historical durations null and retain the limitation instead of treating a fast scripted fixture as product performance. Integrated monotonic/UTC instrumentation and separately authorized real-provider/operator measurements are still needed.
+
+**Roadmap links:** `ES02-04` (partial).
+**Completion scope:** `ES02-04`.
+**Evidence / source record:** `eightball/v2/event_reviews.py`, `eightball/event_workers/service.py`, `tests/test_event_dispatch.py`, `docs/delivery/lane-reports/events.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin / events engineering lane (not owner sign-off): Existing task refinement: local instrumentation and honest fictional timings retained; combined durability/provider/human and production latency gates remain open.
+
+### [ ] EM-133: Object authority is not aggregate matter authority
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** 2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d.
+
+Object-only grants and a subset of operations cannot authorize whole-case access or another object; every requested operation must be checked against every consumed object.
+
+**Product implication:** Keep aggregate projections explicit and require host object ownership/policy checks before any consumption.
+
+**Roadmap links:** `B03-01` (partial).
+**Completion scope:** `B03-01`.
+**Evidence / source record:** `docs/delivery/lane-reports/identity.md`, `docs/v2/AGENCY-ACCESS.md`, `tests/test_identity_authority.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin identity lane engineering proposal: existing_task: B03-01 bounded object/operation service implemented; no production integration claim.
+
+### [ ] EM-134: A stale WAL snapshot can retain revoked grants
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** 2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d.
+
+An active SQLite read transaction can retain pre-revocation grants; obtaining a writer reservation before authority reads makes that stale snapshot fail closed.
+
+**Product implication:** Do not let transaction-scoped authorization mean old snapshot authorization; accept contention denial rather than stale grant success.
+
+**Roadmap links:** `B03-01` (partial).
+**Completion scope:** `B03-01`.
+**Evidence / source record:** `docs/delivery/lane-reports/identity.md`, `docs/v2/AGENCY-ACCESS.md`, `tests/test_identity_authority.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin identity lane engineering proposal: existing_task: B03-01 same-database writer reservation and stale-WAL regression adopted; PostgreSQL remains separate.
+
+### [ ] EM-135: Two permitted principals still cannot exchange identity mid-transaction
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** 2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d.
+
+Rechecking only that some current principal has grants can permit a transaction to begin as one actor and end as another equally permitted actor.
+
+**Product implication:** Pin authenticated identity through the transaction so actor attribution survives reauthentication.
+
+**Roadmap links:** `B03-01` (partial).
+**Completion scope:** `B03-01`.
+**Evidence / source record:** `docs/delivery/lane-reports/identity.md`, `docs/v2/AGENCY-ACCESS.md`, `tests/test_identity_authority.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin identity lane engineering proposal: existing_task: B03-01 stable-principal transaction and rollback tests adopted.
+
+### [ ] EM-136: Login exchange and session publication have separate cancellation boundaries
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** 2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d.
+
+A login attempt consumed before provider exchange still needs cancellation and expiry checks before publishing the returned identity session.
+
+**Product implication:** Use one-use attempts, no uncertain exchange retry, and a post-exchange publication check; require a new explicit login after failure.
+
+**Roadmap links:** `B03-01` (partial).
+**Completion scope:** `B03-01`.
+**Evidence / source record:** `docs/delivery/lane-reports/identity.md`, `docs/v2/AGENCY-ACCESS.md`, `tests/test_oidc_login.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin identity lane engineering proposal: existing_task: B03-01 durable attempt states and post-exchange cancellation/expiry tests adopted.
+
+### [ ] EM-137: Local logout is not provider termination or matter authority withdrawal
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** 2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d.
+
+Revoking a local opaque session neither terminates a provider account/session nor withdraws independently issued API tokens or future sign-ins.
+
+**Product implication:** Keep local session, provider identity and current matter grants distinct in APIs and operator wording.
+
+**Roadmap links:** `B03-01` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/lane-reports/identity.md`, `docs/v2/AGENCY-ACCESS.md`, `tests/test_identity_authority.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin identity lane engineering proposal: decision_record: B03-01 logout response explicitly reports provider_session_ended=false; host must separately withdraw grants/account access.
+
+### [ ] EM-138: Offline identity fixtures cannot establish production provider or MFA trust
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** 2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d.
+
+Pinned signed-token fixtures exercise the local protocol but do not configure a real issuer, verify provider MFA/custody, establish distributed revocation or prove production row isolation.
+
+**Product implication:** Retain explicit provider, production isolation and independent security gates even after local identity tests pass.
+
+**Roadmap links:** `B03-01` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/lane-reports/identity.md`, `docs/v2/AGENCY-ACCESS.md`, `tests/test_identity_authority.py`.
+
+**Decision history:**
+
+- 2026-10-25 · deferred · Devin identity lane engineering proposal: existing_task: B03-01 production provider/MFA/PostgreSQL/key-custody/security-review acceptance remains external, not replaced by fixture results.
+
+### [ ] EM-139: Expired unused login-attempt retention needs an explicit host policy
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** operator_hypothesis.
+**First recorded:** 2026-10-25. **Origin:** 2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d.
+
+Unused expired login attempts can retain their verifier until an explicit cancellation or host retention action; this lane deliberately adds no background cleanup scan.
+
+**Product implication:** Review an explicit protected-store retention and account/session administration policy before deployment rather than silently running maintenance.
+
+**Roadmap links:** `B03-01` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/lane-reports/identity.md`, `docs/v2/AGENCY-ACCESS.md`, `tests/test_identity_authority.py`.
+
+**Decision history:**
+
+- 2026-10-25 · candidate · Devin identity lane engineering proposal: new_candidate: retain bounded host cleanup/admin review under B03-01 without adding a daemon, new required task or production acceptance claim.
+
+### [ ] EM-140: Frozen shipping-state fixtures can fail truthful native evidence
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** 2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d.
+
+The partition changelog top entry is pushed_unreleased while native Studio hardcodes local unreleased; the builder cannot safely rewrite frozen shipping history or a shared test just to get green.
+
+**Product implication:** Central integration must reconcile truthful shipping state and source-bound acceptance while preserving the failed experiment.
+
+**Roadmap links:** `B03-01` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/lane-reports/identity.md`, `docs/v2/AGENCY-ACCESS.md`, `tests/test_identity_authority.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin identity lane engineering proposal: decision_record: record failed Studio evidence and central reconciliation request; no shared test/history edit or native pass is claimed.
+
+### [ ] EM-233: Reference review must identify exact content without becoming fact or action authority
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** intelligence-lane-f3c5604865654b42ad08e573aa871c3e.
+
+A new playbook or precedent version cannot inherit review of an earlier draft; a review binds the current version and digest, while author identity and factual/action approval remain separate. Controlled tests reject self-review, stale digests and review inheritance.
+
+**Product implication:** Reusable patterns can be inspectable hypotheses without quietly approving case facts, selected courses or external actions.
+
+**Roadmap links:** `B04-01` (partial), `B04-02` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/lane-reports/intelligence.md`, `tests/test_learning_knowledge.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin: existing_task: implement exact-version review infrastructure only. Specialist qualifications, professional approval, plan application and real outcomes still require separate evidence.
+
+### [ ] EM-234: Withdrawal denial and terminal retirement need different source-access rules
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** intelligence-lane-f3c5604865654b42ad08e573aa871c3e.
+
+Controlled source retraction/change/revocation tests deny reference retrieval, review and payload-idempotency replay, including historical quotes. Retirement remains available after source withdrawal so safety removal is not blocked by the source it must stop exposing. Draft quotes remain at rest; denial is not secure erasure.
+
+**Product implication:** Current source eligibility belongs in a transaction-aware adapter. Managed retention and production deletion must not be claimed from local service filtering.
+
+**Roadmap links:** `B04-02` (partial), `B02-14` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/lane-reports/intelligence.md`, `tests/test_learning_knowledge.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin: existing_task: keep source access fail-closed and preserve terminal retirement; defer managed retention/deletion and actual vault-policy integration to their authorised owners.
+- 2026-10-25 · adopted · Devin: existing_task: final adapter/capacity checks require literal active=True, actual source text and a known nonnegative integer case revision, and permit terminal retirement beyond the normal journal cap. Truthy metadata and capacity limits must not bypass current policy or block safety removal. Controlled negative tests added; no broader source-policy/retention acceptance.
+
+### [ ] EM-235: A model inventory listing is not a loaded or quality-approved model
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** intelligence-lane-f3c5604865654b42ad08e573aa871c3e.
+
+Controlled runtime metadata tests distinguish exact configured weights and selected digest/size/detail fields from invalid or ambiguous inventory. Registry ports are not model tags. Invalid inventory remains unknown, and listed weights do not establish loaded state, inference or quality.
+
+**Product implication:** The fixer needs separate readouts for connection/runtime version, verified inventory, selected weights and unperformed quality/inference checks.
+
+**Roadmap links:** `B02-15` (partial), `ES03-04` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/lane-reports/intelligence.md`, `eightball/v2/runtime_status.py`, `tests/test_runtime_status.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin: existing_task: tighten read-only metadata contracts without model loading, silent downloads or actual-model acceptance; shared status-view wiring remains integration-owned.
+
+### [ ] EM-236: Nested engine contracts require an explicit distribution declaration as well as source tests
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** intelligence-lane-f3c5604865654b42ad08e573aa871c3e.
+
+The source-tree suite passes but the installed-wheel regression fails collection with ModuleNotFoundError for endstate.intelligence: the frozen root setuptools declaration includes only endstate. Source-tree success cannot prove distribution completeness.
+
+**Product implication:** ENDSTATE's neutral contracts must be packaged and recursively fingerprinted before an integrated distribution can rely on them.
+
+**Roadmap links:** `ES03-01` (partial), `B02-18` (blocked).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/lane-reports/intelligence.md`, `pyproject.toml`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin: decision_record: request integration-owned package allowlist/fingerprint changes and retain the failed wheel evidence. Do not edit a frozen manifest, skip the test or claim package acceptance.
+
+### [ ] EM-237: Inspectable precedent can increase review burden without proving operator benefit
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** operator_hypothesis.
+**First recorded:** 2026-10-25. **Origin:** intelligence-lane-f3c5604865654b42ad08e573aa871c3e.
+
+The implemented search is bounded lexical title/summary matching over scoped references; unreviewed precedent is excluded and empty results are scoped negatives. These deterministic checks do not show that more reference screens or reviews produce better decisions.
+
+**Product implication:** Measure sound-decision time, missed constraints, inappropriate reuse and correction burden with qualified human judgement before claiming useful learning or success probabilities.
+
+**Roadmap links:** `B04-03` (partial), `B04-01` (partial), `B04-02` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/lane-reports/intelligence.md`, `tests/test_learning_knowledge.py`.
+
+**Decision history:**
+
+- 2026-10-25 · deferred · Devin: existing_task: retain an owner-review hypothesis under B04-03, not a new required feature or optional B04-04 replay implementation. No human/pilot/value result is fabricated.
+
+### [ ] EM-238: Native shipping-state assertions can fail independently of functional app preservation
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** intelligence-lane-f3c5604865654b42ad08e573aa871c3e.
+
+The native Studio suite fails its current-build assertion at line 149 because it requires literal local unreleased while the frozen coordination changelog entry is pushed_unreleased. Eleven other native suites pass, but the complete native runner correctly remains failed.
+
+**Product implication:** Truthful shipping state, generated changelog content and native fixture expectations must be reconciled centrally without changing state labels merely to obtain green checks.
+
+**Roadmap links:** `B02-18` (blocked).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/lane-reports/intelligence.md`, `tests/browser_studio.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin: decision_record: retain the failed Studio/native result and ask integration to reconcile exact version/shipping semantics and rerun the complete source-bound runner; no broad native acceptance.
+
+### [ ] EM-193: Signed local audit bytes do not establish independent checkpoint custody
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** operations-2101512c.
+
+Signing/verifying real Ed25519 checkpoints rejects altered digest, scope, revision and key, but the tool cannot verify that key or checkpoint custody is independent of the database administrator.
+
+**Product implication:** Production audit claims require separately trusted key/checkpoint custody, rotation and external anchoring rather than an extra local hash.
+
+**Roadmap links:** `B03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `tests/test_operations_recovery.py`, `docs/operations/2026-10-25-operations-2101512c.md`, `docs/delivery/lane-reports/operations.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin: existing_task: keep the signed engineering seam in B03-05 and preserve independent custody/production acceptance as explicit external gates.
+
+### [ ] EM-194: A scoped audit checkpoint does not scope a whole-database restore
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** operations-2101512c.
+
+The real SQLite backup/replay rehearsal verifies explicit case checkpoints including alpha import lineage, while copying every database byte; organisation/matter labels cannot turn that copy into a scoped export.
+
+**Product implication:** Keep rehearsal host-only and fictional, require reviewed scope binding before signing, and never expose this implementation as a tenant-filtered recovery API.
+
+**Roadmap links:** `B03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `tests/test_operations_recovery.py`, `docs/operations/2026-10-25-operations-2101512c.md`, `docs/delivery/lane-reports/operations.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin: existing_task: implement explicit new-file rehearsal only; managed/tenant-safe production backup and restore remain separate acceptance gates.
+
+### [ ] EM-195: Current revocation observations are not remote revocation commands or atomicity
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** operations-2101512c.
+
+Transactional tests show missing/unavailable surface probes cannot establish denial, close must rerun all six surfaces, and adapter failure or post-command revocation rolls back. A local transaction cannot guarantee atomic remote vault/search/worker state.
+
+**Product implication:** Use fresh scoped probes and current authority, distinguish unavailable from denied, and require host-reviewed remote consistency rather than declaring a local journal entry globally revoked.
+
+**Roadmap links:** `B03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `tests/test_operations_journal.py`, `docs/operations/2026-10-25-operations-2101512c.md`, `docs/delivery/lane-reports/operations.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin: existing_task: retain fail-closed observations in B03-05 with explicit injection/remote-service gates; no cross-lane revocation command is invented.
+
+### [ ] EM-196: Digest-matching release artifacts do not authenticate their claimed human decisions
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** operations-2101512c.
+
+A complete source-bound artifact matrix in tests remains evidence_supplied_pending_authentication with human_decisions_authenticated and release/deploy/real-pilot authority false, even when every claimed evidence kind is present.
+
+**Product implication:** Onboarding, legal, owner and customer acceptance require their actual authorised humans; software consistency tooling may expose gaps but cannot sign off those gates.
+
+**Roadmap links:** `B10-01` (not_started), `B10-02` (not_started).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `tests/test_operations_readiness.py`, `docs/operations/2026-10-25-operations-2101512c.md`, `docs/delivery/lane-reports/operations.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin: existing_task: apply consistency-only evidence handling to existing B10-01/B10-02, preserving all human/legal/customer and release gates.
+
+### [ ] EM-197: A fictional resolution digest cannot erase the original failed pilot observation
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** operations-2101512c.
+
+Fictional protocol tests preserve failed and unknown observations, missing dimensions and critical/high blockers. Supplying a resolution digest removes an unresolved-reference gap but does not turn the original failed observation into pass.
+
+**Product implication:** Use an explicit later reviewed protocol/retest for closure rather than relabeling history; fictional complete observations never validate real qualified-fixer usefulness.
+
+**Roadmap links:** `B03-06` (not_started).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `tests/test_pilot_tooling.py`, `docs/operations/2026-10-25-operations-2101512c.md`, `docs/delivery/lane-reports/operations.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin: existing_task: build conservative fictional pilot tooling only, retaining real participants, protocol review and upstream acceptance prerequisites.
+
+### [ ] EM-198: Confidential support metadata needs a separately controlled diagnostic narrative
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** operations-2101512c.
+
+Strict operation schemas and sanitized probe-exception tests exclude arbitrary source text and adapter exception details while preserving opaque IDs, category, revision and evidence digests. That exclusion alone does not show that an incident can be diagnosed adequately.
+
+**Product implication:** Keep detailed support reports in separately authorised evidence storage and measure triage/correction burden with authorised operators; do not restore sensitive free text to operational logs for convenience.
+
+**Roadmap links:** `B10-01` (not_started).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `tests/test_operations_journal.py`, `docs/operations/2026-10-25-operations-2101512c.md`, `docs/delivery/lane-reports/operations.md`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin: existing_task: keep constrained metadata and document controlled support evidence handling. Diagnostic sufficiency remains an operator-evaluation hypothesis, not a new required product.
+
+### [ ] EM-199: Native current-build checks conflate shipping state with runtime version
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** operations-2101512c.
+
+The native Studio suite failed twice at current build and limits visible: the frozen partition changelog says pushed unreleased, but the existing test also demands local unreleased although the running version substring is present.
+
+**Product implication:** Reconcile truthful branch shipping state with runtime-version assertions during shared integration; do not fake a local-only changelog state merely to obtain green native acceptance.
+
+**Roadmap links:** `B10-02` (not_started).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/operations/verification-2101512c.json`, `docs/operations/2026-10-25-operations-2101512c.md`, `docs/delivery/lane-reports/operations.md`.
+
+**Decision history:**
+
+- 2026-10-25 · deferred · Devin: decision_record: preserve the exact shared-changelog native failure for integration, outside this builder's write ownership. No task acceptance or new required scope is promoted.
+- 2026-10-25 · deferred · Devin: Exact committed-source native rerun reproduced the same assertion a third time. All 12 suites were attempted with provider settings stripped and runtime/canonical source unchanged; 11 passed, Studio alone failed. Preserve this failure for shared integration, not a fabricated success.
+
+### [ ] EM-153: Vault controls need authority distinct from ordinary case WRITE
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd.
+
+The vault's existing WRITE grant cannot safely imply scan, lawful-hold, retention, local-deletion or audit powers. A separate current transactional control callback is required and missing control denies.
+
+**Product implication:** Under existing B03-02, integrate explicit least-privilege control authority with current B03-01 identity/session policy rather than exposing privileged controls through the local operator token.
+
+**Roadmap links:** `B03-02` (partial).
+**Completion scope:** `B03-02`.
+**Evidence / source record:** `docs/v2/VAULT.md`, `docs/delivery/lane-reports/vault.md`, `tests/test_vault.py`, `tests/test_vault_api.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin / roadmap-vault: existing_task: implemented fail-closed separate control seam and negative tests; no production role matrix, owner approval or broad gate is implied.
+
+### [ ] EM-154: A clean scan verdict is publishable only for its exact live attempt and vault revision
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd.
+
+Revocation, scan cancellation and hold/retention revision changes during scanning invalidate publication even when a scanner later reports clean. Interrupted scans must not automatically resume or repeat on command replay.
+
+**Product implication:** Keep scan claim, processing and release separate; recheck current authority and exact attempt/revision at publication, require explicit cancellation/restart and state that cancellation cannot recall bytes already supplied to a scanner.
+
+**Roadmap links:** `B03-02` (partial).
+**Completion scope:** `B03-02`.
+**Evidence / source record:** `docs/v2/VAULT.md`, `docs/delivery/lane-reports/vault.md`, `tests/test_vault.py`, `tests/test_vault_api.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin / roadmap-vault: existing_task: implemented revision-bound scan publication/cancel/restart/idempotency tests within B03-02; real scanner isolation and bounded adapter execution remain integration gates.
+
+### [ ] EM-155: Local ciphertext deletion is not proof of storage-wide or legal erasure
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd.
+
+Deleting a local encrypted blob can preserve an immutable descriptor and audited tombstone while leaving derived text, WAL/filesystem remnants, backups, replicas and provider retention outside its scope. Without current dependency clearance the vault must deny deletion.
+
+**Product implication:** Label deletion local_vault_ciphertext_only, enforce hold/retention plus same-transaction dependency guard and preserve independent erasure/recovery evidence as an existing B03-02 production gate.
+
+**Roadmap links:** `B03-02` (partial).
+**Completion scope:** `B03-02`.
+**Evidence / source record:** `docs/v2/VAULT.md`, `docs/delivery/lane-reports/vault.md`, `tests/test_vault.py`, `tests/test_vault_api.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin / roadmap-vault: existing_task: implemented guarded local deletion and exact scope labeling/tests, not a compliance-erasure or managed-backup claim; broader production proof remains open.
+
+### [ ] EM-156: Reviewed source handles are references, not future publication authority
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-25. **Origin:** Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd.
+
+A source handle returned before projection publication can become stale, revoked or unavailable. The final source gate must run on the caller's same-database transaction and verify current scope, exact revision/hash, clean release and authenticated ciphertext, with audit rolled back alongside the mutation.
+
+**Product implication:** Use Vault.require_source(db, identity=..., case_id=..., object_id=..., expected_revision=..., expected_sha256=...) immediately at final shared BEGIN IMMEDIATE commit/publish boundary; never authorize from a cached handle or separate connection.
+
+**Roadmap links:** `B03-02` (partial).
+**Completion scope:** `B03-02`.
+**Evidence / source record:** `docs/v2/VAULT.md`, `docs/delivery/lane-reports/vault.md`, `tests/test_vault.py`, `tests/test_vault_api.py`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin / roadmap-vault: existing_task: added safe metadata-only transaction gate and rollback/staleness/revocation/quarantine/ciphertext tests for B03-02 integration; collaboration wrapper agreement and cumulative integration tests remain separate.
+
+### [ ] EM-157: Content-envelope encryption and a local audit chain do not solve metadata custody
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd.
+
+AES-GCM protects original bytes and authenticates their descriptor, but filenames, scope metadata and audit identifiers remain outside the content envelope. SQLite triggers/hash chains do not protect against an administrator rewriting or truncating the database and chain.
+
+**Product implication:** Require explicit whole-storage protection, key custody, independent audit anchoring and recovery threat review before any production claim; do not relabel the local wrapper/audit chain as managed infrastructure.
+
+**Roadmap links:** `B03-02` (partial).
+**Completion scope:** `B03-02`.
+**Evidence / source record:** `docs/v2/VAULT.md`, `docs/delivery/lane-reports/vault.md`, `eightball/vault/crypto.py`, `eightball/vault/schema.sql`.
+
+**Decision history:**
+
+- 2026-10-25 · deferred · Devin / roadmap-vault: existing_task: preserve B03-02 production security/custody/recovery gates. No external infrastructure or independent security decision was authorized; bounded local implementation states these limits rather than inventing evidence.
+
+### [ ] EM-158: Uncertain vault command outcomes need an explicit refresh boundary
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-25. **Origin:** Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd.
+
+The isolated panel separates immutable original version from mutable vault revision and clears visible object data/disables mutations after an uncertain command outcome. Disposal/generation guards reject late responses; no automatic retry is performed. These are implemented safeguards, not browser or operator-value evidence.
+
+**Product implication:** Integrate the panel only with host-current agency auth and dispose on session/case change; measure correction burden and safe publication/deletion decisions after native and operator testing rather than treating screen or test counts as value.
+
+**Roadmap links:** `B03-02` (partial).
+**Completion scope:** `B03-02`.
+**Evidence / source record:** `docs/v2/VAULT.md`, `docs/delivery/lane-reports/vault.md`, `web/v2/vault-panel.js`.
+
+**Decision history:**
+
+- 2026-10-25 · adopted · Devin / roadmap-vault: existing_task: implemented a focused explicit-control UI seam under B03-02 without shared navigation changes; native/accessibility/real operator evidence remains unaccepted.
+
+### [ ] EM-254: Module seams need current transactional identity and source policy, not only module-level green tests
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Roadmap integration / 2026-10-26.
+
+Host integration exposed package omissions, UI lifecycle mismatch and post-claim identity exception mismatch. Corrected checks distinguish source, client disclosure, processing consent and current session.
+
+**Product implication:** Preserve explicit server-owned adapters and negative native/transactional tests. Do not mistake engineering totals for production/operator benefit.
+
+**Roadmap links:** `B03-01` (partial), `B03-03` (partial), `ES02-03` (partial).
+**Completion scope:** `B03-01`, `B03-03`, `ES02-03`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-roadmap-integration.md`, `docs/v2/AGENCY-HOST.md`, `tests/test_agency_host.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · Devin / roadmap-integrated: existing_task: bounded shared-host engineering and explicit decision to keep missing policy external gates open; no required scope or acceptance promotion.
+
+### [ ] EM-255: Transport envelopes are part of the supported original-size contract
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Roadmap integration / 2026-10-26.
+
+262144 bytes encode to about349528 base64 bytes before JSON overhead; the default300000-byte middleware rejected the advertised vault maximum. Exact-path cap400000 and actual/misdeclared/oversized tests reconcile it.
+
+**Product implication:** Keep narrowly scoped body limits and verify real transport bytes rather than only decoder limits.
+
+**Roadmap links:** `B03-02` (partial).
+**Completion scope:** `B03-02`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-roadmap-integration.md`, `docs/v2/AGENCY-HOST.md`, `tests/test_agency_host.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · Devin / roadmap-integrated: existing_task: bounded shared-host engineering and explicit decision to keep missing policy external gates open; no required scope or acceptance promotion.
+
+### [ ] EM-256: Missing production adapters must remain unavailable across the integrated desk
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Roadmap integration / 2026-10-26.
+
+The integrated host intentionally omits scanner, processing policy, dependent-copy deletion, processor and revocation probe implementations in JSON startup. Fictional seeded sessions/scanner/worker output exercise software controls only.
+
+**Product implication:** Expose safe unavailable states; retain all IdP,security,professional,provider,human,pilot and commercial gates instead of treating UI controls as acceptance.
+
+**Roadmap links:** `B03-02` (partial), `B03-05` (partial), `ES03-02` (blocked).
+**Completion scope:** `B03-02`, `B03-05`, `ES03-02`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-roadmap-integration.md`, `docs/v2/AGENCY-HOST.md`, `tests/test_agency_host.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · Devin / roadmap-integrated: existing_task: bounded shared-host engineering and explicit decision to keep missing policy external gates open; no required scope or acceptance promotion.

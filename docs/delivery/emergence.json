@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-25",
+  "updated_on": "2026-10-26",
   "required_prompts": [
     {
       "id": "ER-01",
@@ -25,7 +25,7 @@
     {
       "id": "ER-05",
       "scope": "situation",
-      "text": "Are we still working towards the client\u2019s explicit target and success criteria?"
+      "text": "Are we still working towards the client’s explicit target and success criteria?"
     },
     {
       "id": "ER-06",
@@ -75,7 +75,7 @@
     {
       "id": "ER-15",
       "scope": "both",
-      "text": "Does this improve the operator\u2019s next decision or merely increase reviews, alerts and screens? How would we measure the difference?"
+      "text": "Does this improve the operator’s next decision or merely increase reviews, alerts and screens? How would we measure the difference?"
     }
   ],
   "items": [
@@ -444,7 +444,7 @@
       "origin": "Accepted product discussion and build review",
       "first_seen": "2026-09-24",
       "evidence_level": "observed_in_build",
-      "observation": "Retraction or concentrated evidence dependencies can weaken a plan\u2019s evidential basis.",
+      "observation": "Retraction or concentrated evidence dependencies can weaken a plan’s evidential basis.",
       "product_implication": "Show one-record support clusters and invalidate earlier insight reviews when referenced content changes.",
       "task_ids": [
         "ES02-05",
@@ -620,7 +620,7 @@
     },
     {
       "id": "EM-018",
-      "title": "Outcome discovery must not rewrite the client\u2019s intent",
+      "title": "Outcome discovery must not rewrite the client’s intent",
       "origin": "Accepted product discussion and build review",
       "first_seen": "2026-09-24",
       "evidence_level": "operator_hypothesis",
@@ -902,7 +902,7 @@
       "first_seen": "2026-09-24",
       "evidence_level": "observed_in_build",
       "observation": "Several calculated routes can overlap and are not all the routes reality permits.",
-      "product_implication": "Label the candidate pool, truncation and caps. Avoid \u201cevery viable route\u201d and unsupported success percentages.",
+      "product_implication": "Label the candidate pool, truncation and caps. Avoid “every viable route” and unsupported success percentages.",
       "task_ids": [
         "ES02-05",
         "B02-21"
@@ -1237,7 +1237,7 @@
       "origin": "Accepted product discussion and build review",
       "first_seen": "2026-09-24",
       "evidence_level": "observed_in_build",
-      "observation": "An old response must not populate the newly selected client\u2019s insight panel.",
+      "observation": "An old response must not populate the newly selected client’s insight panel.",
       "product_implication": "Guard responses by case ID and session epoch, clear state on switching/locking, and test it.",
       "task_ids": [
         "B02-21"
@@ -4048,6 +4048,1260 @@
           "decision": "adopted",
           "by": "Devin",
           "reason": "decision_record: owner requested bounded coordination, not implementation or a new backlog. Reserve EM-113..252 for builders; this coordination decision uses EM-253 outside those ranges. Preserve original task gates and optional holds; later upstream documentation/evidence needs additive integration, not attribution to this baseline. No product acceptance gate is linked or claimed."
+        }
+      ]
+    },
+    {
+      "id": "EM-173",
+      "title": "A disclosure review binds the recipient and exact grant, not only content",
+      "origin": "Collaboration B03-03 implementation, session 7e526575ef714b7e8a85f6ef00ee7ca6",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "An otherwise reviewed projection can be misdirected or silently revived if recipient, object and immutable client-grant digest are not checked with the exact content digest; replacing a revoked grant must not repair the old review.",
+      "product_implication": "8BALL disclosure review must preserve exact recipient/grant/content scope separately from evidence state and action authority; keep revoked and withdrawn records terminal and auditable.",
+      "task_ids": [
+        "B03-03"
+      ],
+      "acceptance_task_ids": [
+        "B03-03"
+      ],
+      "evidence_paths": [
+        "tests/test_projection.py",
+        "eightball/projections/service.py",
+        "docs/delivery/lane-reports/collaboration.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin engineering proposal",
+          "reason": "Existing-task B03-03 safety refinement demonstrated with controlled SQLite tests; no global acceptance or new required scope."
+        }
+      ]
+    },
+    {
+      "id": "EM-174",
+      "title": "A safe source preview is not the final disclosure commit gate",
+      "origin": "Collaboration/vault same-transaction seam discussion and implementation",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Standalone safe metadata or source handles cannot authorize a projection mutation: source access, release state, revision, integrity and retention may change between preview and commit. The source gate and mutation/audit must share the same active write transaction.",
+      "product_implication": "Keep a fail-closed transaction-local vault gate in 8BALL integration; opaque handles are references, never bearer capabilities. Missing or different-database adapters deny rather than granting local bearer access.",
+      "task_ids": [
+        "B03-03"
+      ],
+      "acceptance_task_ids": [
+        "B03-03"
+      ],
+      "evidence_paths": [
+        "eightball/collaboration/contracts.py",
+        "tests/test_collaboration.py",
+        "docs/v2/COLLABORATION.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin engineering proposal",
+          "reason": "Existing-task refinement with explicitly confirmed vault contract and controlled wrapper tests; actual shared identity/vault/case combination remains an integration gate."
+        }
+      ]
+    },
+    {
+      "id": "EM-175",
+      "title": "Client source readiness checks must not create internal source read access",
+      "origin": "Projection client-read authority integration design",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Reusing a vault current-READ source gate under the client identity could require a broad internal grant merely to read curated projection content. Checking source lifecycle under the still-current independent reviewer, while separately checking the exact client projection grant, keeps those authorities distinct.",
+      "product_implication": "Allow clients only the separately reviewed content allowlist; deny after reviewer or source access revocation without exposing source handles, metadata or internal objects. Host role/route mappings still require negative integration tests.",
+      "task_ids": [
+        "B03-03"
+      ],
+      "acceptance_task_ids": [
+        "B03-03"
+      ],
+      "evidence_paths": [
+        "tests/test_projection.py",
+        "eightball/projections/service.py",
+        "docs/v2/COLLABORATION.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin engineering proposal",
+          "reason": "Existing-task B03-03 distinction; controlled test denies client source authority while allowing only reviewed projection, not proof of production policy correctness."
+        }
+      ]
+    },
+    {
+      "id": "EM-176",
+      "title": "Measure exact disclosure review and refresh recovery burden",
+      "origin": "Collaboration isolated UI and failure-recovery build review",
+      "first_seen": "2026-10-25",
+      "evidence_level": "operator_hypothesis",
+      "observation": "Exact recipient IDs, digests, separate review and explicit refresh after uncertain writes may prevent misdirected disclosure but also impose substantial manual review and recovery work; screen and passing-test counts do not show net operator benefit.",
+      "product_implication": "Evaluate fictional-user disclosure tasks with wrong-recipient prevention, correction rate, review time and stale-refresh recovery measures before expanding the interface or claiming customer value.",
+      "task_ids": [
+        "B03-03"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "web/v2/collaboration-view.js",
+        "docs/delivery/lane-reports/collaboration.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "candidate",
+          "by": "Devin engineering proposal",
+          "reason": "Retain for owner/usability review; no participant study, native new-flow review or new mandatory roadmap task is authorized or claimed."
+        }
+      ]
+    },
+    {
+      "id": "EM-177",
+      "title": "Checkout tests alone do not prove installed-kernel test portability",
+      "origin": "Collaboration isolated ENDSTATE wheel regression failure and repair",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "1393 checkout tests passed while two collaboration tests could not collect under the installed-kernel runner's isolated importlib mode because sibling fixture imports were unqualified. Package-qualified test imports then passed 37 focused tests in both modes and 1393 installed-wheel regressions.",
+      "product_implication": "Preserve installed-package verification alongside checkout tests for 8BALL/ENDSTATE work; distinguish a test portability repair from a kernel defect or broad acceptance. Keep the failed source-bound receipt rather than replacing it with later totals.",
+      "task_ids": [
+        "B03-03"
+      ],
+      "acceptance_task_ids": [
+        "B03-03"
+      ],
+      "evidence_paths": [
+        "tests/test_collaboration_api.py",
+        "tests/test_projection.py",
+        "docs/delivery/lane-reports/collaboration.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin engineering proposal",
+          "reason": "Existing-task verification refinement, corrected within owned tests and proven by final offline wheel/native runner; no new required scope, production/platform portability or B03 acceptance claim."
+        }
+      ]
+    },
+    {
+      "origin": "2026-10-25-domain-packs-engineering",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "id": "EM-213",
+      "title": "Pack content identity is not current case authority",
+      "observation": "A canonical all-section pack digest can detect changes to prompts, policies and adapter declarations, but neither a digest nor a caller subject authenticates a consumer. The read-only consumer needs independently host-authenticated identity, current scoped grants and a fresh revision-bound snapshot; local bearer identity, cross-scope requests and post-read revocation are rejected in focused tests.",
+      "product_implication": "Keep pack review state host-owned and do not use a content pin or preview response as approval, publisher identity or a later commit/send/download ticket.",
+      "task_ids": [
+        "ES04-01",
+        "ES04-04"
+      ],
+      "evidence_paths": [
+        "endstate/domain_packs/loader.py",
+        "endstate/domain_packs/consumer.py",
+        "tests/test_domain_packs.py"
+      ],
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task / decision_record: bounded engineering and safe integration guidance under the linked existing tasks only. No new required scope, acceptance promotion, owner approval, public launch or release decision."
+        }
+      ]
+    },
+    {
+      "origin": "2026-10-25-domain-packs-engineering",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "id": "EM-214",
+      "title": "Reusable policy templates must not pre-confirm a case",
+      "observation": "The support reuse fixture originally had confirmed policy state. A reusable pack must reject that state, while a live host snapshot may independently record manual policy review. Focused tests show that review alone still cannot satisfy an unobserved authority predicate, and that unrelated catalogue changes fail review matching.",
+      "product_implication": "Keep reusable hypotheses, human policy review, observed authority, action permission, completion and verified remedy outcome separate; never overlay a pack onto live state.",
+      "task_ids": [
+        "ES04-01",
+        "ES04-03"
+      ],
+      "evidence_paths": [
+        "tests/fixtures/domain_packs/support.json",
+        "endstate/domain_packs/contracts.py",
+        "endstate/domain_packs/consumer.py",
+        "tests/test_domain_packs.py"
+      ],
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task / decision_record: bounded engineering and safe integration guidance under the linked existing tasks only. No new required scope, acceptance promotion, owner approval, public launch or release decision."
+        }
+      ]
+    },
+    {
+      "origin": "2026-10-25-domain-packs-engineering",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "id": "EM-215",
+      "title": "Passing source consumers do not establish packaged distribution",
+      "observation": "The frozen setuptools manifest lists only endstate. The internal wheel smoke passes but omits endstate.domain_packs; the actual installed-wheel regression run fails test collection with ModuleNotFoundError. Source-isolated reuse and 1415 source tests therefore do not prove this preview ships. No top-level LICENSE/LICENCE file or independent release approval was found/created in this checkpoint.",
+      "product_implication": "Integration must explicitly include the subpackage and rerun installed regressions, then separately settle licence/support/distribution and independent release approval; do not launch SDK/API/MCP from source-only evidence.",
+      "task_ids": [
+        "ES04-04",
+        "ES10-01",
+        "ES10-02"
+      ],
+      "evidence_paths": [
+        "pyproject.toml",
+        "docs/endstate/DOMAIN-PACKS.md",
+        "tests/test_domain_packs.py",
+        "docs/delivery/lane-reports/domain-packs.md"
+      ],
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task / decision_record: bounded engineering and safe integration guidance under the linked existing tasks only. No new required scope, acceptance promotion, owner approval, public launch or release decision."
+        }
+      ]
+    },
+    {
+      "id": "EM-113",
+      "classification": "existing_task",
+      "title": "Source-processing review and current source policy are independent gates",
+      "origin": "Events roadmap lane build at f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "A whole-matter grant and an explicit review of incoming text do not establish current object quarantine, retention or processing/egress permission. Revocation between preview or claim and consumption must still deny; missing policy cannot default to a local test adapter.",
+      "product_implication": "Keep explicit receipt/revision review separate from factual attestation and action authority. Wire current identity/vault/provider source policy transactionally before agency processing; make denial visible rather than weakening checks. Extra review/policy checks add integration and operator burden, but a permissive default would leak data.",
+      "task_ids": [
+        "ES02-01",
+        "ES02-02",
+        "ES02-03",
+        "B03-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-01",
+        "ES02-02",
+        "ES02-03",
+        "B03-04"
+      ],
+      "evidence_paths": [
+        "eightball/event_workers/service.py",
+        "eightball/v2/event_reviews.py",
+        "tests/test_event_dispatch.py",
+        "docs/delivery/lane-reports/events.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / events engineering lane (not owner sign-off)",
+          "reason": "Existing task refinement: mandatory fail-closed policy callback implemented and negatively tested; production adapter/native integration remains unaccepted, not a new required task."
+        }
+      ]
+    },
+    {
+      "id": "EM-114",
+      "classification": "existing_task",
+      "title": "Uncertain event processing must retain disposition without automatic provider replay",
+      "origin": "Events roadmap lane build at f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "A durable claim may outlive cancellation, worker revocation, lease expiry or a failed result-storage transaction. A repeated processing request after such a failure could duplicate a paid or non-recallable call even though no reviewable result was persisted.",
+      "product_implication": "Claim and run-marker persistence precede one explicit call. Keep original bounded late output as inert trace where storage succeeds; do not publish stale/cancelled results, resume on restart or claim an external request was recalled. Storage failure can still prevent retaining raw output; operator inspection is preferable to invented success.",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04",
+        "B03-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-02",
+        "ES02-04",
+        "B03-04"
+      ],
+      "evidence_paths": [
+        "eightball/event_workers/service.py",
+        "eightball/event_work.py",
+        "tests/test_event_dispatch.py",
+        "docs/delivery/lane-reports/events.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / events engineering lane (not owner sign-off)",
+          "reason": "Existing task refinement: explicit attempt lifecycle, retained safe failure codes and no automatic re-execution implemented; paid/live provider and production crash/recovery acceptance stay open."
+        }
+      ]
+    },
+    {
+      "id": "EM-115",
+      "classification": "existing_task",
+      "title": "Conservative replan reuse must retain explicit clocks and approval revisions",
+      "origin": "Events roadmap lane build at f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Revision-only case changes can leave planning inputs unchanged, but action approvals depend on the exact revision and expiry. Reusing a result while omitting approval revision or as-of clock could revive expired or invalid authority.",
+      "product_implication": "Use detached bounded exact-input/clock caching with revision-only reuse only when approvals are absent, and full ENDSTATE fallback for all other changes. This gives a narrowly testable optimization without inventing a broad partial-graph algorithm; conservative fallback may offer little speedup on changing cases.",
+      "task_ids": [
+        "ES02-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-04"
+      ],
+      "evidence_paths": [
+        "eightball/event_workers/replan.py",
+        "tests/test_event_replan.py",
+        "docs/delivery/lane-reports/events.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / events engineering lane (not owner sign-off)",
+          "reason": "Existing task refinement: conservative cache and exact full-response parity tested. General incremental-graph performance/production throughput remains an explicit limitation, not a passed gate."
+        }
+      ]
+    },
+    {
+      "id": "EM-116",
+      "classification": "new_candidate",
+      "title": "A bounded retry ceiling needs an explicit operator recovery policy",
+      "origin": "Events roadmap lane build at f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Three retained explicit attempts prevent silent retry loops, but exhausting that ceiling leaves no in-place reset. An operator may need to distinguish an invalid source or withdrawn consent from an infrastructure incident without erasing history or forging a new success.",
+      "product_implication": "Evaluate a separately reviewed recovery workflow that preserves source, failure and billing/permission history, rather than adding unlimited resets or automatic retries. It could reduce operator friction, but may undermine budgets or encourage duplicate paid calls if policy is loose.",
+      "task_ids": [
+        "ES02-02",
+        "B03-04"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "eightball/event_workers/service.py",
+        "tests/test_event_dispatch.py",
+        "docs/delivery/lane-reports/events.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "deferred",
+          "by": "Devin / events engineering lane (not owner sign-off)",
+          "reason": "Candidate recovery UX/policy requires owner/provider-budget decisions and observed operator need. Current bounded attempts remain; no reset bypass or extra required scope implemented."
+        }
+      ]
+    },
+    {
+      "id": "EM-117",
+      "classification": "existing_task",
+      "title": "Pre-commit local stage metrics are not combined provider or human latency evidence",
+      "origin": "Events roadmap lane build at f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Local ingestion/processor/review timers can be retained on an atomic review record, but in-transaction durations stop before durability commit. Deterministic clocks in fixtures can verify instrumentation without measuring real inference or human review; mixed fixture and wall clocks yield incomparable waiting totals.",
+      "product_implication": "Label metric scope, keep unknown historical durations null and retain the limitation instead of treating a fast scripted fixture as product performance. Integrated monotonic/UTC instrumentation and separately authorized real-provider/operator measurements are still needed.",
+      "task_ids": [
+        "ES02-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-04"
+      ],
+      "evidence_paths": [
+        "eightball/v2/event_reviews.py",
+        "eightball/event_workers/service.py",
+        "tests/test_event_dispatch.py",
+        "docs/delivery/lane-reports/events.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / events engineering lane (not owner sign-off)",
+          "reason": "Existing task refinement: local instrumentation and honest fictional timings retained; combined durability/provider/human and production latency gates remain open."
+        }
+      ]
+    },
+    {
+      "id": "EM-133",
+      "title": "Object authority is not aggregate matter authority",
+      "origin": "2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Object-only grants and a subset of operations cannot authorize whole-case access or another object; every requested operation must be checked against every consumed object.",
+      "product_implication": "Keep aggregate projections explicit and require host object ownership/policy checks before any consumption.",
+      "task_ids": [
+        "B03-01"
+      ],
+      "acceptance_task_ids": [
+        "B03-01"
+      ],
+      "evidence_paths": [
+        "docs/delivery/lane-reports/identity.md",
+        "docs/v2/AGENCY-ACCESS.md",
+        "tests/test_identity_authority.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin identity lane engineering proposal",
+          "reason": "existing_task: B03-01 bounded object/operation service implemented; no production integration claim."
+        }
+      ]
+    },
+    {
+      "id": "EM-134",
+      "title": "A stale WAL snapshot can retain revoked grants",
+      "origin": "2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "An active SQLite read transaction can retain pre-revocation grants; obtaining a writer reservation before authority reads makes that stale snapshot fail closed.",
+      "product_implication": "Do not let transaction-scoped authorization mean old snapshot authorization; accept contention denial rather than stale grant success.",
+      "task_ids": [
+        "B03-01"
+      ],
+      "acceptance_task_ids": [
+        "B03-01"
+      ],
+      "evidence_paths": [
+        "docs/delivery/lane-reports/identity.md",
+        "docs/v2/AGENCY-ACCESS.md",
+        "tests/test_identity_authority.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin identity lane engineering proposal",
+          "reason": "existing_task: B03-01 same-database writer reservation and stale-WAL regression adopted; PostgreSQL remains separate."
+        }
+      ]
+    },
+    {
+      "id": "EM-135",
+      "title": "Two permitted principals still cannot exchange identity mid-transaction",
+      "origin": "2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Rechecking only that some current principal has grants can permit a transaction to begin as one actor and end as another equally permitted actor.",
+      "product_implication": "Pin authenticated identity through the transaction so actor attribution survives reauthentication.",
+      "task_ids": [
+        "B03-01"
+      ],
+      "acceptance_task_ids": [
+        "B03-01"
+      ],
+      "evidence_paths": [
+        "docs/delivery/lane-reports/identity.md",
+        "docs/v2/AGENCY-ACCESS.md",
+        "tests/test_identity_authority.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin identity lane engineering proposal",
+          "reason": "existing_task: B03-01 stable-principal transaction and rollback tests adopted."
+        }
+      ]
+    },
+    {
+      "id": "EM-136",
+      "title": "Login exchange and session publication have separate cancellation boundaries",
+      "origin": "2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "A login attempt consumed before provider exchange still needs cancellation and expiry checks before publishing the returned identity session.",
+      "product_implication": "Use one-use attempts, no uncertain exchange retry, and a post-exchange publication check; require a new explicit login after failure.",
+      "task_ids": [
+        "B03-01"
+      ],
+      "acceptance_task_ids": [
+        "B03-01"
+      ],
+      "evidence_paths": [
+        "docs/delivery/lane-reports/identity.md",
+        "docs/v2/AGENCY-ACCESS.md",
+        "tests/test_oidc_login.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin identity lane engineering proposal",
+          "reason": "existing_task: B03-01 durable attempt states and post-exchange cancellation/expiry tests adopted."
+        }
+      ]
+    },
+    {
+      "id": "EM-137",
+      "title": "Local logout is not provider termination or matter authority withdrawal",
+      "origin": "2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Revoking a local opaque session neither terminates a provider account/session nor withdraws independently issued API tokens or future sign-ins.",
+      "product_implication": "Keep local session, provider identity and current matter grants distinct in APIs and operator wording.",
+      "task_ids": [
+        "B03-01"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/lane-reports/identity.md",
+        "docs/v2/AGENCY-ACCESS.md",
+        "tests/test_identity_authority.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin identity lane engineering proposal",
+          "reason": "decision_record: B03-01 logout response explicitly reports provider_session_ended=false; host must separately withdraw grants/account access."
+        }
+      ]
+    },
+    {
+      "id": "EM-138",
+      "title": "Offline identity fixtures cannot establish production provider or MFA trust",
+      "origin": "2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d",
+      "first_seen": "2026-10-25",
+      "evidence_level": "observed_in_build",
+      "observation": "Pinned signed-token fixtures exercise the local protocol but do not configure a real issuer, verify provider MFA/custody, establish distributed revocation or prove production row isolation.",
+      "product_implication": "Retain explicit provider, production isolation and independent security gates even after local identity tests pass.",
+      "task_ids": [
+        "B03-01"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/lane-reports/identity.md",
+        "docs/v2/AGENCY-ACCESS.md",
+        "tests/test_identity_authority.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "deferred",
+          "by": "Devin identity lane engineering proposal",
+          "reason": "existing_task: B03-01 production provider/MFA/PostgreSQL/key-custody/security-review acceptance remains external, not replaced by fixture results."
+        }
+      ]
+    },
+    {
+      "id": "EM-139",
+      "title": "Expired unused login-attempt retention needs an explicit host policy",
+      "origin": "2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d",
+      "first_seen": "2026-10-25",
+      "evidence_level": "operator_hypothesis",
+      "observation": "Unused expired login attempts can retain their verifier until an explicit cancellation or host retention action; this lane deliberately adds no background cleanup scan.",
+      "product_implication": "Review an explicit protected-store retention and account/session administration policy before deployment rather than silently running maintenance.",
+      "task_ids": [
+        "B03-01"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/lane-reports/identity.md",
+        "docs/v2/AGENCY-ACCESS.md",
+        "tests/test_identity_authority.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "candidate",
+          "by": "Devin identity lane engineering proposal",
+          "reason": "new_candidate: retain bounded host cleanup/admin review under B03-01 without adding a daemon, new required task or production acceptance claim."
+        }
+      ]
+    },
+    {
+      "id": "EM-140",
+      "title": "Frozen shipping-state fixtures can fail truthful native evidence",
+      "origin": "2026-10-25 identity lane build and review; session d9478f50b2b844fcb292873f9d406d3d",
+      "first_seen": "2026-10-25",
+      "evidence_level": "observed_in_build",
+      "observation": "The partition changelog top entry is pushed_unreleased while native Studio hardcodes local unreleased; the builder cannot safely rewrite frozen shipping history or a shared test just to get green.",
+      "product_implication": "Central integration must reconcile truthful shipping state and source-bound acceptance while preserving the failed experiment.",
+      "task_ids": [
+        "B03-01"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/lane-reports/identity.md",
+        "docs/v2/AGENCY-ACCESS.md",
+        "tests/test_identity_authority.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin identity lane engineering proposal",
+          "reason": "decision_record: record failed Studio evidence and central reconciliation request; no shared test/history edit or native pass is claimed."
+        }
+      ]
+    },
+    {
+      "id": "EM-233",
+      "title": "Reference review must identify exact content without becoming fact or action authority",
+      "first_seen": "2026-10-25",
+      "origin": "intelligence-lane-f3c5604865654b42ad08e573aa871c3e",
+      "evidence_level": "supported_by_tests",
+      "observation": "A new playbook or precedent version cannot inherit review of an earlier draft; a review binds the current version and digest, while author identity and factual/action approval remain separate. Controlled tests reject self-review, stale digests and review inheritance.",
+      "product_implication": "Reusable patterns can be inspectable hypotheses without quietly approving case facts, selected courses or external actions.",
+      "evidence_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "tests/test_learning_knowledge.py"
+      ],
+      "task_ids": [
+        "B04-01",
+        "B04-02"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: implement exact-version review infrastructure only. Specialist qualifications, professional approval, plan application and real outcomes still require separate evidence."
+        }
+      ]
+    },
+    {
+      "id": "EM-234",
+      "title": "Withdrawal denial and terminal retirement need different source-access rules",
+      "first_seen": "2026-10-25",
+      "origin": "intelligence-lane-f3c5604865654b42ad08e573aa871c3e",
+      "evidence_level": "supported_by_tests",
+      "observation": "Controlled source retraction/change/revocation tests deny reference retrieval, review and payload-idempotency replay, including historical quotes. Retirement remains available after source withdrawal so safety removal is not blocked by the source it must stop exposing. Draft quotes remain at rest; denial is not secure erasure.",
+      "product_implication": "Current source eligibility belongs in a transaction-aware adapter. Managed retention and production deletion must not be claimed from local service filtering.",
+      "evidence_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "tests/test_learning_knowledge.py"
+      ],
+      "task_ids": [
+        "B04-02",
+        "B02-14"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: keep source access fail-closed and preserve terminal retirement; defer managed retention/deletion and actual vault-policy integration to their authorised owners."
+        },
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: final adapter/capacity checks require literal active=True, actual source text and a known nonnegative integer case revision, and permit terminal retirement beyond the normal journal cap. Truthy metadata and capacity limits must not bypass current policy or block safety removal. Controlled negative tests added; no broader source-policy/retention acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-235",
+      "title": "A model inventory listing is not a loaded or quality-approved model",
+      "first_seen": "2026-10-25",
+      "origin": "intelligence-lane-f3c5604865654b42ad08e573aa871c3e",
+      "evidence_level": "supported_by_tests",
+      "observation": "Controlled runtime metadata tests distinguish exact configured weights and selected digest/size/detail fields from invalid or ambiguous inventory. Registry ports are not model tags. Invalid inventory remains unknown, and listed weights do not establish loaded state, inference or quality.",
+      "product_implication": "The fixer needs separate readouts for connection/runtime version, verified inventory, selected weights and unperformed quality/inference checks.",
+      "evidence_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "eightball/v2/runtime_status.py",
+        "tests/test_runtime_status.py"
+      ],
+      "task_ids": [
+        "B02-15",
+        "ES03-04"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: tighten read-only metadata contracts without model loading, silent downloads or actual-model acceptance; shared status-view wiring remains integration-owned."
+        }
+      ]
+    },
+    {
+      "id": "EM-236",
+      "title": "Nested engine contracts require an explicit distribution declaration as well as source tests",
+      "first_seen": "2026-10-25",
+      "origin": "intelligence-lane-f3c5604865654b42ad08e573aa871c3e",
+      "evidence_level": "observed_in_build",
+      "observation": "The source-tree suite passes but the installed-wheel regression fails collection with ModuleNotFoundError for endstate.intelligence: the frozen root setuptools declaration includes only endstate. Source-tree success cannot prove distribution completeness.",
+      "product_implication": "ENDSTATE's neutral contracts must be packaged and recursively fingerprinted before an integrated distribution can rely on them.",
+      "evidence_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "pyproject.toml"
+      ],
+      "task_ids": [
+        "ES03-01",
+        "B02-18"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "decision_record: request integration-owned package allowlist/fingerprint changes and retain the failed wheel evidence. Do not edit a frozen manifest, skip the test or claim package acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-237",
+      "title": "Inspectable precedent can increase review burden without proving operator benefit",
+      "first_seen": "2026-10-25",
+      "origin": "intelligence-lane-f3c5604865654b42ad08e573aa871c3e",
+      "evidence_level": "operator_hypothesis",
+      "observation": "The implemented search is bounded lexical title/summary matching over scoped references; unreviewed precedent is excluded and empty results are scoped negatives. These deterministic checks do not show that more reference screens or reviews produce better decisions.",
+      "product_implication": "Measure sound-decision time, missed constraints, inappropriate reuse and correction burden with qualified human judgement before claiming useful learning or success probabilities.",
+      "evidence_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "tests/test_learning_knowledge.py"
+      ],
+      "task_ids": [
+        "B04-03",
+        "B04-01",
+        "B04-02"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "deferred",
+          "by": "Devin",
+          "reason": "existing_task: retain an owner-review hypothesis under B04-03, not a new required feature or optional B04-04 replay implementation. No human/pilot/value result is fabricated."
+        }
+      ]
+    },
+    {
+      "id": "EM-238",
+      "title": "Native shipping-state assertions can fail independently of functional app preservation",
+      "first_seen": "2026-10-25",
+      "origin": "intelligence-lane-f3c5604865654b42ad08e573aa871c3e",
+      "evidence_level": "observed_in_build",
+      "observation": "The native Studio suite fails its current-build assertion at line 149 because it requires literal local unreleased while the frozen coordination changelog entry is pushed_unreleased. Eleven other native suites pass, but the complete native runner correctly remains failed.",
+      "product_implication": "Truthful shipping state, generated changelog content and native fixture expectations must be reconciled centrally without changing state labels merely to obtain green checks.",
+      "evidence_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "tests/browser_studio.py"
+      ],
+      "task_ids": [
+        "B02-18"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "decision_record: retain the failed Studio/native result and ask integration to reconcile exact version/shipping semantics and rerun the complete source-bound runner; no broad native acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-193",
+      "title": "Signed local audit bytes do not establish independent checkpoint custody",
+      "first_seen": "2026-10-25",
+      "origin": "operations-2101512c",
+      "evidence_level": "supported_by_tests",
+      "observation": "Signing/verifying real Ed25519 checkpoints rejects altered digest, scope, revision and key, but the tool cannot verify that key or checkpoint custody is independent of the database administrator.",
+      "product_implication": "Production audit claims require separately trusted key/checkpoint custody, rotation and external anchoring rather than an extra local hash.",
+      "evidence_paths": [
+        "tests/test_operations_recovery.py",
+        "docs/operations/2026-10-25-operations-2101512c.md",
+        "docs/delivery/lane-reports/operations.md"
+      ],
+      "task_ids": [
+        "B03-05"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: keep the signed engineering seam in B03-05 and preserve independent custody/production acceptance as explicit external gates."
+        }
+      ]
+    },
+    {
+      "id": "EM-194",
+      "title": "A scoped audit checkpoint does not scope a whole-database restore",
+      "first_seen": "2026-10-25",
+      "origin": "operations-2101512c",
+      "evidence_level": "supported_by_tests",
+      "observation": "The real SQLite backup/replay rehearsal verifies explicit case checkpoints including alpha import lineage, while copying every database byte; organisation/matter labels cannot turn that copy into a scoped export.",
+      "product_implication": "Keep rehearsal host-only and fictional, require reviewed scope binding before signing, and never expose this implementation as a tenant-filtered recovery API.",
+      "evidence_paths": [
+        "tests/test_operations_recovery.py",
+        "docs/operations/2026-10-25-operations-2101512c.md",
+        "docs/delivery/lane-reports/operations.md"
+      ],
+      "task_ids": [
+        "B03-05"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: implement explicit new-file rehearsal only; managed/tenant-safe production backup and restore remain separate acceptance gates."
+        }
+      ]
+    },
+    {
+      "id": "EM-195",
+      "title": "Current revocation observations are not remote revocation commands or atomicity",
+      "first_seen": "2026-10-25",
+      "origin": "operations-2101512c",
+      "evidence_level": "supported_by_tests",
+      "observation": "Transactional tests show missing/unavailable surface probes cannot establish denial, close must rerun all six surfaces, and adapter failure or post-command revocation rolls back. A local transaction cannot guarantee atomic remote vault/search/worker state.",
+      "product_implication": "Use fresh scoped probes and current authority, distinguish unavailable from denied, and require host-reviewed remote consistency rather than declaring a local journal entry globally revoked.",
+      "evidence_paths": [
+        "tests/test_operations_journal.py",
+        "docs/operations/2026-10-25-operations-2101512c.md",
+        "docs/delivery/lane-reports/operations.md"
+      ],
+      "task_ids": [
+        "B03-05"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: retain fail-closed observations in B03-05 with explicit injection/remote-service gates; no cross-lane revocation command is invented."
+        }
+      ]
+    },
+    {
+      "id": "EM-196",
+      "title": "Digest-matching release artifacts do not authenticate their claimed human decisions",
+      "first_seen": "2026-10-25",
+      "origin": "operations-2101512c",
+      "evidence_level": "supported_by_tests",
+      "observation": "A complete source-bound artifact matrix in tests remains evidence_supplied_pending_authentication with human_decisions_authenticated and release/deploy/real-pilot authority false, even when every claimed evidence kind is present.",
+      "product_implication": "Onboarding, legal, owner and customer acceptance require their actual authorised humans; software consistency tooling may expose gaps but cannot sign off those gates.",
+      "evidence_paths": [
+        "tests/test_operations_readiness.py",
+        "docs/operations/2026-10-25-operations-2101512c.md",
+        "docs/delivery/lane-reports/operations.md"
+      ],
+      "task_ids": [
+        "B10-01",
+        "B10-02"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: apply consistency-only evidence handling to existing B10-01/B10-02, preserving all human/legal/customer and release gates."
+        }
+      ]
+    },
+    {
+      "id": "EM-197",
+      "title": "A fictional resolution digest cannot erase the original failed pilot observation",
+      "first_seen": "2026-10-25",
+      "origin": "operations-2101512c",
+      "evidence_level": "supported_by_tests",
+      "observation": "Fictional protocol tests preserve failed and unknown observations, missing dimensions and critical/high blockers. Supplying a resolution digest removes an unresolved-reference gap but does not turn the original failed observation into pass.",
+      "product_implication": "Use an explicit later reviewed protocol/retest for closure rather than relabeling history; fictional complete observations never validate real qualified-fixer usefulness.",
+      "evidence_paths": [
+        "tests/test_pilot_tooling.py",
+        "docs/operations/2026-10-25-operations-2101512c.md",
+        "docs/delivery/lane-reports/operations.md"
+      ],
+      "task_ids": [
+        "B03-06"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: build conservative fictional pilot tooling only, retaining real participants, protocol review and upstream acceptance prerequisites."
+        }
+      ]
+    },
+    {
+      "id": "EM-198",
+      "title": "Confidential support metadata needs a separately controlled diagnostic narrative",
+      "first_seen": "2026-10-25",
+      "origin": "operations-2101512c",
+      "evidence_level": "supported_by_tests",
+      "observation": "Strict operation schemas and sanitized probe-exception tests exclude arbitrary source text and adapter exception details while preserving opaque IDs, category, revision and evidence digests. That exclusion alone does not show that an incident can be diagnosed adequately.",
+      "product_implication": "Keep detailed support reports in separately authorised evidence storage and measure triage/correction burden with authorised operators; do not restore sensitive free text to operational logs for convenience.",
+      "evidence_paths": [
+        "tests/test_operations_journal.py",
+        "docs/operations/2026-10-25-operations-2101512c.md",
+        "docs/delivery/lane-reports/operations.md"
+      ],
+      "task_ids": [
+        "B10-01"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: keep constrained metadata and document controlled support evidence handling. Diagnostic sufficiency remains an operator-evaluation hypothesis, not a new required product."
+        }
+      ]
+    },
+    {
+      "id": "EM-199",
+      "title": "Native current-build checks conflate shipping state with runtime version",
+      "first_seen": "2026-10-25",
+      "origin": "operations-2101512c",
+      "evidence_level": "supported_by_tests",
+      "observation": "The native Studio suite failed twice at current build and limits visible: the frozen partition changelog says pushed unreleased, but the existing test also demands local unreleased although the running version substring is present.",
+      "product_implication": "Reconcile truthful branch shipping state with runtime-version assertions during shared integration; do not fake a local-only changelog state merely to obtain green native acceptance.",
+      "evidence_paths": [
+        "docs/operations/verification-2101512c.json",
+        "docs/operations/2026-10-25-operations-2101512c.md",
+        "docs/delivery/lane-reports/operations.md"
+      ],
+      "task_ids": [
+        "B10-02"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "deferred",
+          "by": "Devin",
+          "reason": "decision_record: preserve the exact shared-changelog native failure for integration, outside this builder's write ownership. No task acceptance or new required scope is promoted."
+        },
+        {
+          "date": "2026-10-25",
+          "decision": "deferred",
+          "by": "Devin",
+          "reason": "Exact committed-source native rerun reproduced the same assertion a third time. All 12 suites were attempted with provider settings stripped and runtime/canonical source unchanged; 11 passed, Studio alone failed. Preserve this failure for shared integration, not a fabricated success."
+        }
+      ]
+    },
+    {
+      "id": "EM-153",
+      "title": "Vault controls need authority distinct from ordinary case WRITE",
+      "evidence_level": "supported_by_tests",
+      "observation": "The vault's existing WRITE grant cannot safely imply scan, lawful-hold, retention, local-deletion or audit powers. A separate current transactional control callback is required and missing control denies.",
+      "product_implication": "Under existing B03-02, integrate explicit least-privilege control authority with current B03-01 identity/session policy rather than exposing privileged controls through the local operator token.",
+      "origin": "Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd",
+      "first_seen": "2026-10-25",
+      "task_ids": [
+        "B03-02"
+      ],
+      "acceptance_task_ids": [
+        "B03-02"
+      ],
+      "evidence_paths": [
+        "docs/v2/VAULT.md",
+        "docs/delivery/lane-reports/vault.md",
+        "tests/test_vault.py",
+        "tests/test_vault_api.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / roadmap-vault",
+          "reason": "existing_task: implemented fail-closed separate control seam and negative tests; no production role matrix, owner approval or broad gate is implied."
+        }
+      ]
+    },
+    {
+      "id": "EM-154",
+      "title": "A clean scan verdict is publishable only for its exact live attempt and vault revision",
+      "evidence_level": "supported_by_tests",
+      "observation": "Revocation, scan cancellation and hold/retention revision changes during scanning invalidate publication even when a scanner later reports clean. Interrupted scans must not automatically resume or repeat on command replay.",
+      "product_implication": "Keep scan claim, processing and release separate; recheck current authority and exact attempt/revision at publication, require explicit cancellation/restart and state that cancellation cannot recall bytes already supplied to a scanner.",
+      "origin": "Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd",
+      "first_seen": "2026-10-25",
+      "task_ids": [
+        "B03-02"
+      ],
+      "acceptance_task_ids": [
+        "B03-02"
+      ],
+      "evidence_paths": [
+        "docs/v2/VAULT.md",
+        "docs/delivery/lane-reports/vault.md",
+        "tests/test_vault.py",
+        "tests/test_vault_api.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / roadmap-vault",
+          "reason": "existing_task: implemented revision-bound scan publication/cancel/restart/idempotency tests within B03-02; real scanner isolation and bounded adapter execution remain integration gates."
+        }
+      ]
+    },
+    {
+      "id": "EM-155",
+      "title": "Local ciphertext deletion is not proof of storage-wide or legal erasure",
+      "evidence_level": "supported_by_tests",
+      "observation": "Deleting a local encrypted blob can preserve an immutable descriptor and audited tombstone while leaving derived text, WAL/filesystem remnants, backups, replicas and provider retention outside its scope. Without current dependency clearance the vault must deny deletion.",
+      "product_implication": "Label deletion local_vault_ciphertext_only, enforce hold/retention plus same-transaction dependency guard and preserve independent erasure/recovery evidence as an existing B03-02 production gate.",
+      "origin": "Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd",
+      "first_seen": "2026-10-25",
+      "task_ids": [
+        "B03-02"
+      ],
+      "acceptance_task_ids": [
+        "B03-02"
+      ],
+      "evidence_paths": [
+        "docs/v2/VAULT.md",
+        "docs/delivery/lane-reports/vault.md",
+        "tests/test_vault.py",
+        "tests/test_vault_api.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / roadmap-vault",
+          "reason": "existing_task: implemented guarded local deletion and exact scope labeling/tests, not a compliance-erasure or managed-backup claim; broader production proof remains open."
+        }
+      ]
+    },
+    {
+      "id": "EM-156",
+      "title": "Reviewed source handles are references, not future publication authority",
+      "evidence_level": "supported_by_tests",
+      "observation": "A source handle returned before projection publication can become stale, revoked or unavailable. The final source gate must run on the caller's same-database transaction and verify current scope, exact revision/hash, clean release and authenticated ciphertext, with audit rolled back alongside the mutation.",
+      "product_implication": "Use Vault.require_source(db, identity=..., case_id=..., object_id=..., expected_revision=..., expected_sha256=...) immediately at final shared BEGIN IMMEDIATE commit/publish boundary; never authorize from a cached handle or separate connection.",
+      "origin": "Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd",
+      "first_seen": "2026-10-25",
+      "task_ids": [
+        "B03-02"
+      ],
+      "acceptance_task_ids": [
+        "B03-02"
+      ],
+      "evidence_paths": [
+        "docs/v2/VAULT.md",
+        "docs/delivery/lane-reports/vault.md",
+        "tests/test_vault.py",
+        "tests/test_vault_api.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / roadmap-vault",
+          "reason": "existing_task: added safe metadata-only transaction gate and rollback/staleness/revocation/quarantine/ciphertext tests for B03-02 integration; collaboration wrapper agreement and cumulative integration tests remain separate."
+        }
+      ]
+    },
+    {
+      "id": "EM-157",
+      "title": "Content-envelope encryption and a local audit chain do not solve metadata custody",
+      "evidence_level": "observed_in_build",
+      "observation": "AES-GCM protects original bytes and authenticates their descriptor, but filenames, scope metadata and audit identifiers remain outside the content envelope. SQLite triggers/hash chains do not protect against an administrator rewriting or truncating the database and chain.",
+      "product_implication": "Require explicit whole-storage protection, key custody, independent audit anchoring and recovery threat review before any production claim; do not relabel the local wrapper/audit chain as managed infrastructure.",
+      "origin": "Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd",
+      "first_seen": "2026-10-25",
+      "task_ids": [
+        "B03-02"
+      ],
+      "acceptance_task_ids": [
+        "B03-02"
+      ],
+      "evidence_paths": [
+        "docs/v2/VAULT.md",
+        "docs/delivery/lane-reports/vault.md",
+        "eightball/vault/crypto.py",
+        "eightball/vault/schema.sql"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "deferred",
+          "by": "Devin / roadmap-vault",
+          "reason": "existing_task: preserve B03-02 production security/custody/recovery gates. No external infrastructure or independent security decision was authorized; bounded local implementation states these limits rather than inventing evidence."
+        }
+      ]
+    },
+    {
+      "id": "EM-158",
+      "title": "Uncertain vault command outcomes need an explicit refresh boundary",
+      "evidence_level": "observed_in_build",
+      "observation": "The isolated panel separates immutable original version from mutable vault revision and clears visible object data/disables mutations after an uncertain command outcome. Disposal/generation guards reject late responses; no automatic retry is performed. These are implemented safeguards, not browser or operator-value evidence.",
+      "product_implication": "Integrate the panel only with host-current agency auth and dispose on session/case change; measure correction burden and safe publication/deletion decisions after native and operator testing rather than treating screen or test counts as value.",
+      "origin": "Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd",
+      "first_seen": "2026-10-25",
+      "task_ids": [
+        "B03-02"
+      ],
+      "acceptance_task_ids": [
+        "B03-02"
+      ],
+      "evidence_paths": [
+        "docs/v2/VAULT.md",
+        "docs/delivery/lane-reports/vault.md",
+        "web/v2/vault-panel.js"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / roadmap-vault",
+          "reason": "existing_task: implemented a focused explicit-control UI seam under B03-02 without shared navigation changes; native/accessibility/real operator evidence remains unaccepted."
+        }
+      ]
+    },
+    {
+      "id": "EM-254",
+      "title": "Module seams need current transactional identity and source policy, not only module-level green tests",
+      "origin": "Roadmap integration / 2026-10-26",
+      "first_seen": "2026-10-26",
+      "evidence_level": "supported_by_tests",
+      "observation": "Host integration exposed package omissions, UI lifecycle mismatch and post-claim identity exception mismatch. Corrected checks distinguish source, client disclosure, processing consent and current session.",
+      "product_implication": "Preserve explicit server-owned adapters and negative native/transactional tests. Do not mistake engineering totals for production/operator benefit.",
+      "task_ids": [
+        "B03-01",
+        "B03-03",
+        "ES02-03"
+      ],
+      "acceptance_task_ids": [
+        "B03-01",
+        "B03-03",
+        "ES02-03"
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-roadmap-integration.md",
+        "docs/v2/AGENCY-HOST.md",
+        "tests/test_agency_host.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "Devin / roadmap-integrated",
+          "reason": "existing_task: bounded shared-host engineering and explicit decision to keep missing policy external gates open; no required scope or acceptance promotion."
+        }
+      ]
+    },
+    {
+      "id": "EM-255",
+      "title": "Transport envelopes are part of the supported original-size contract",
+      "origin": "Roadmap integration / 2026-10-26",
+      "first_seen": "2026-10-26",
+      "evidence_level": "supported_by_tests",
+      "observation": "262144 bytes encode to about349528 base64 bytes before JSON overhead; the default300000-byte middleware rejected the advertised vault maximum. Exact-path cap400000 and actual/misdeclared/oversized tests reconcile it.",
+      "product_implication": "Keep narrowly scoped body limits and verify real transport bytes rather than only decoder limits.",
+      "task_ids": [
+        "B03-02"
+      ],
+      "acceptance_task_ids": [
+        "B03-02"
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-roadmap-integration.md",
+        "docs/v2/AGENCY-HOST.md",
+        "tests/test_agency_host.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "Devin / roadmap-integrated",
+          "reason": "existing_task: bounded shared-host engineering and explicit decision to keep missing policy external gates open; no required scope or acceptance promotion."
+        }
+      ]
+    },
+    {
+      "id": "EM-256",
+      "title": "Missing production adapters must remain unavailable across the integrated desk",
+      "origin": "Roadmap integration / 2026-10-26",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "The integrated host intentionally omits scanner, processing policy, dependent-copy deletion, processor and revocation probe implementations in JSON startup. Fictional seeded sessions/scanner/worker output exercise software controls only.",
+      "product_implication": "Expose safe unavailable states; retain all IdP,security,professional,provider,human,pilot and commercial gates instead of treating UI controls as acceptance.",
+      "task_ids": [
+        "B03-02",
+        "B03-05",
+        "ES03-02"
+      ],
+      "acceptance_task_ids": [
+        "B03-02",
+        "B03-05",
+        "ES03-02"
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-roadmap-integration.md",
+        "docs/v2/AGENCY-HOST.md",
+        "tests/test_agency_host.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "Devin / roadmap-integrated",
+          "reason": "existing_task: bounded shared-host engineering and explicit decision to keep missing policy external gates open; no required scope or acceptance promotion."
         }
       ]
     }

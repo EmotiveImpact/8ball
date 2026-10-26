@@ -40,9 +40,15 @@ class Advice(Strict):
     allow_external: bool = Field(default=False, strict=True)
 
 
-def make_app(store: Store, token: str, *, agency_access=None) -> FastAPI:
+def make_app(store: Store, token: str, *, agency_access=None, agency_host=None) -> FastAPI:
     if len(token) < 32:
         raise ValueError('Use an operator token of at least 32 characters')
+    if agency_host is not None:
+        if Path(store.path).resolve() != Path(agency_host.path).resolve():
+            raise ValueError('Agency services must share the case/authority database')
+        if agency_access is not None and agency_access is not agency_host.access:
+            raise ValueError('Agency host/access must use the same authority')
+        agency_access = agency_host.access
     app = FastAPI(title='8BALL local alpha', version=__version__, docs_url=None, redoc_url=None, openapi_url=None)
     app.add_middleware(TrustedHostMiddleware, allowed_hosts=['127.0.0.1', 'localhost', 'testserver'])
 
@@ -196,7 +202,23 @@ def make_app(store: Store, token: str, *, agency_access=None) -> FastAPI:
         return JSONResponse({'detail': 'Invalid fields or references' if isinstance(exc,ValidationError) else str(exc)},status_code=422)
 
     # Event review transactions require the same durable registry as the cases.
-    agency_events = (agency_access is not None and
+    @app.get('/api/v2/agency-status')
+    def agency_status():
+        return agency_host.status() if agency_host is not None else {'configured': False, 'production_accepted': False}
+
+    @app.exception_handler(PermissionError)
+    async def permission_error(request, exc):
+        return JSONResponse({'detail': 'Access is not permitted'}, status_code=403)
+
+    if agency_host is not None:
+        app.include_router(agency_host.routes(authorised))
+    if agency_access is not None and agency_access.sessions is not None:
+        from fastapi import APIRouter
+        from .v2.identity_api import register_identity_routes
+        identity_routes = APIRouter(prefix='/api/v2')
+        register_identity_routes(identity_routes, agency_access.sessions)
+        app.include_router(identity_routes)
+    agency_events = (agency_host is None and agency_access is not None and
                      Path(agency_access.registry.path).resolve() == Path(store.path).resolve())
     v2_routes = v2_router(V2Store(store.path),store,authorised,agency_events=agency_events)
     app.state.analysis_jobs = v2_routes.analysis_jobs

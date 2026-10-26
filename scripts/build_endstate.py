@@ -30,6 +30,9 @@ def build(output:Path,regressions=False):
         wheel=wheels[0]
         with zipfile.ZipFile(wheel) as z:
             names=z.namelist()
+            expected = {str(p.relative_to(ROOT)) for p in (ROOT/'endstate').rglob('*.py')}
+            if not expected.issubset(names):
+                raise ValueError('Wheel omits kernel packages: ' + ', '.join(sorted(expected - set(names))))
             if any(not (n.startswith('endstate/') or '.dist-info/' in n) for n in names):
                 raise ValueError('Wheel contains files outside the kernel and its metadata')
             if any(n.endswith(('.db','.sqlite3','.zip','.gguf','.safetensors')) for n in names):
@@ -97,7 +100,7 @@ sys.exit(result)
         report={'schema_version':1,'status':'passed','distribution':'internal_alpha_only',
                 'python':sys.version.split()[0],'wheel':wheel.name,
                 'sha256':hashlib.sha256(wheel.read_bytes()).hexdigest(),'contents':names,
-                'kernel_sources':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'endstate').glob('*.py'))},
+                'kernel_sources':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'endstate').rglob('*.py'))},
                 'test':test,'installed_regressions':regression,'network_used':False,'published':False,
                 'limits':['Current installed Python and Pydantic only; other platforms require their own run.',
                           'Read-only calculation package; no hosted API, action execution or commercial support claim.']}

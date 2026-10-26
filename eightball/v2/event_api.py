@@ -73,9 +73,9 @@ def register_event_worker_routes(router: APIRouter, service):
         return invoke(request, service.status, case_id=case_id, work_id=work_id)
 
 
-def register_event_routes(router: APIRouter, store, *, source_policy=None):
-    reviews = EventReviews(store, source_policy=source_policy)
-    outbox = EventOutbox(store)
+def register_event_routes(router: APIRouter, store, *, source_policy=None, current_identity=None):
+    reviews = EventReviews(store, source_policy=source_policy, current_identity=current_identity)
+    outbox = EventOutbox(store, current_identity=current_identity)
 
     def call(request, operation, **kwargs):
         identity = getattr(request.state, 'agency_identity', None)

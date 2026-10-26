@@ -146,7 +146,8 @@ def main():
                     # Changelog is a separate product history, not another case event feed.
                     nav('changelog');expect(page.get_by_role('heading',name='The build, in the open.')).to_be_visible()
                     expect(page.locator('.changelog-entry').first).to_contain_text(VERSION)
-                    check('current build and limits visible',VERSION.lower() in page.locator('.changelog-entry').first.inner_text().lower() and 'local unreleased' in page.locator('.changelog-entry').first.inner_text().lower())
+                    shipping = json.loads((ROOT/'docs/delivery/changelog.json').read_text())['entries'][0]['delivery'].replace('_', ' ')
+                    check('current build and limits visible',VERSION.lower() in page.locator('.changelog-entry').first.inner_text().lower() and shipping in page.locator('.changelog-entry').first.inner_text().lower())
                     check('previous Plan Studio changelog retained','0.2.0-alpha.2' in page.locator('main').inner_text().lower())
                     page.screenshot(path=str(OUT/'8BALL-Changelog.png'),full_page=True)
                     for width in (1600,1024,390):

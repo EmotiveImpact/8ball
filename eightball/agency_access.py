@@ -143,6 +143,7 @@ class AgencyAccess:
         self.registry, self.issuer, self.audience = registry, issuer, audience
         self.public_key = public_key
         self.sessions = sessions
+        self.route_operations = {}
 
     def identity(self, bearer: str) -> Identity:
         try:
@@ -192,10 +193,14 @@ class AgencyAccess:
             ('POST', '/api/v2/cases/{case_id}/change-notices/{notice_id}/acknowledge'): Operation.READ,
         }
         route = request.scope.get('route')
+        operations.update(self.route_operations)
         operation = operations.get((request.method, getattr(route, 'path', '')))
         if not case_id or operation is None:
             raise HTTPException(403, 'Access is not permitted')
-        if not self.registry.allowed(authority.current_identity(), case_id, operation):
+        boundary = getattr(self, 'host_boundary', None)
+        if boundary is not None:
+            boundary(request, authority, operation)
+        elif not self.registry.allowed(authority.current_identity(), case_id, operation):
             raise HTTPException(403, 'Access is not permitted') from None
         request.state.agency_identity = authority.current_identity()
         request.state.agency_authority = authority

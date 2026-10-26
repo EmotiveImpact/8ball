@@ -7,7 +7,7 @@ from fastapi.testclient import TestClient
 import pytest
 
 from eightball.v2.vault_api import register_vault_routes
-from test_vault import env, upload, scan
+from tests.test_vault import env, upload, scan
 
 
 @pytest.fixture

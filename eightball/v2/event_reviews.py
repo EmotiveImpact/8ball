@@ -22,9 +22,10 @@ from .authoring import GraphPreview, preview_graph
 
 
 class EventReviews:
-    def __init__(self, store, *, source_policy=None):
+    def __init__(self, store, *, source_policy=None, current_identity=None):
         self.store = store
         self.source_policy = source_policy
+        self.outbox = EventOutbox(store, current_identity=current_identity)
         # Grants, attempts and cases must share the transaction database.
         AccessRegistry(store.path)
         EventWork(store.path)
@@ -40,7 +41,7 @@ class EventReviews:
         """Read original source and output at one current authorised snapshot."""
         with self.store.connection() as db:
             db.execute('BEGIN IMMEDIATE')
-            _, scope = EventOutbox._authorize(db, case_id, reader)
+            _, scope = self.outbox.authorize(db, case_id, reader)
             work = db.execute('SELECT * FROM event_work WHERE id=? AND organisation_id=? AND matter_id=? AND case_id=?',
                               (work_id, *scope, case_id)).fetchone()
             if work is None:
@@ -64,20 +65,21 @@ class EventReviews:
                            db.execute('SELECT body FROM agency_grants WHERE revoked=0'))
             result = dict(work_id=work_id, case_id=case_id, state=work['state'],
                           base_revision=work['base_revision'], current_revision=case.revision,
-                          source_receipt=receipt.model_dump(mode='json'), original_result=work['result'],
+                          source_receipt=receipt.model_dump(mode='json') if source_review_current else None,
+                          original_result=work['result'] if source_review_current else None,
                           reviewable=source_review_current and work['state']=='awaiting_review' and work['base_revision']==case.revision,
                           source_processing_review_current=source_review_current,
                           can_review=permits(reader, Resource(organisation_id=scope[0], matter_id=scope[1]),
                                              Operation.WRITE, grants, now=utcnow()),
                           review_url='/v2/event-review.html?'+urlencode({'case':case_id,'work':work_id}),
                           command_authority=False)
-            EventOutbox._authorize(db, case_id, reader)
+            self.outbox.authorize(db, case_id, reader)
             return result
 
     def preview(self, *, work_id: str, case_id: str, reader: Identity, request: GraphPreview):
         with self.store.connection() as db:
             db.execute('BEGIN IMMEDIATE')
-            _, scope = EventOutbox._authorize(db, case_id, reader)
+            _, scope = self.outbox.authorize(db, case_id, reader)
             work = db.execute('''SELECT * FROM event_work WHERE id=? AND case_id=?
                 AND organisation_id=? AND matter_id=?''', (work_id, case_id, *scope)).fetchone()
             if work is None:
@@ -92,7 +94,7 @@ class EventReviews:
             EventWorkerService.validate_consumption(db, work, EventInbox._receipt(tuple(row)),
                 identity=reader, source_policy=self.source_policy, now=utcnow())
             result = preview_graph(self.store._get(db, case_id), request)
-            EventOutbox._authorize(db, case_id, reader)
+            self.outbox.authorize(db, case_id, reader)
             return result
 
     def commit_graph(self, *, work_id: str, case_id: str, reviewer: Identity,
@@ -119,6 +121,8 @@ class EventReviews:
                 raise PermissionError('Current matter write permission is required')
             if require_read and not permits(reviewer, scope, Operation.READ, grants, now=now):
                 raise PermissionError('Current matter read permission is required')
+            if require_read:
+                self.outbox.authorize(db, case_id, reviewer)
             source_row = db.execute('''SELECT sequence,received_at,body,digest FROM incoming_events
                 WHERE organisation_id=? AND matter_id=? AND sequence=?''',
                 (scope.organisation_id, scope.matter_id, work['sequence'])).fetchone()
@@ -178,6 +182,8 @@ class EventReviews:
                 raise PermissionError('Write permission expired before commit')
             if require_read and not permits(reviewer, scope, Operation.READ, grants, now=commit_time):
                 raise PermissionError('Read permission expired before commit')
+            if require_read:
+                self.outbox.authorize(db, case_id, reviewer)
             db.commit()
             return record
 
