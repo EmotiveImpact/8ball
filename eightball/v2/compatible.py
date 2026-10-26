@@ -191,6 +191,9 @@ class CompatibleSession:
             # this bounded JSON-only contract. Never send this vendor option to
             # another endpoint or silently retry with weaker output settings.
             payload['enable_thinking'] = False
+        if self._settings.endpoint_host == 'api.anthropic.com':
+            # Sonnet 5.5 rejects sampling controls; earlier models allow omission.
+            payload.pop('temperature')
         if self._settings.routing_provider:
             payload['provider'] = {'order': [self._settings.routing_provider],
                                    'only': [self._settings.routing_provider],
@@ -204,6 +207,9 @@ class CompatibleSession:
                 'status': 'started'}
         if self._settings.endpoint_host in _DASHSCOPE_HOSTS:
             call['enable_thinking'] = False
+        if self._settings.endpoint_host == 'api.anthropic.com':
+            call['sampling_parameters'] = 'omitted'
+            call['thinking'] = 'provider_default'
         self.calls.append(call)
         assistant_content = None
         try:

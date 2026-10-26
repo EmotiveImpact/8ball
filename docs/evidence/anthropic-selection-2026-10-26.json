@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-10-26",
+  "source_before_change": "f4ecde62529fc5525220bba6afe4b0ae0c06b63b",
+  "selected_api_provider": "anthropic",
+  "selected_endpoint_host": "api.anthropic.com",
+  "selected_model": "claude-sonnet-5-5",
+  "selection_basis": "Owner explicitly selected Sonnet 5.5, not Opus.",
+  "catalogue_check": {
+    "method": "GET",
+    "endpoint": "https://api.anthropic.com/v1/models",
+    "http_status": 200,
+    "inference_performed": false,
+    "models_listed": 14,
+    "has_more": false,
+    "selected_model_listed": true,
+    "selected_model_lifecycle": "active"
+  },
+  "prior_failed_experiment": {
+    "run_id": "20261026T003351Z-463d49675d08",
+    "source_commit": "f4ecde62529fc5525220bba6afe4b0ae0c06b63b",
+    "source_sha256": "266995a03de3595ab8465cdf8a0f3bc7e2743e5a9930a682f54875e82df60888",
+    "requested_model": "claude-sonnet-4-6",
+    "transport": "openai_compatible",
+    "fixtures_rejected": 4,
+    "http_status": 400,
+    "diagnostic": "provider_rejected_request",
+    "precise_rejection_cause_retained": false,
+    "accepted_output": false,
+    "report_archive": "docs/evidence/anthropic-compatible-2026-10-26.json.xz",
+    "report_bytes": 150173,
+    "report_sha256": "d02440ab93ff3f0dc243c118d7278ae73a43f1d085a942f52790945842144635",
+    "archive_sha256": "c7ea400f7f3485d00c0e6f0799fbc628a03644115d0631f768aea2fbaee466b2"
+  },
+  "fixture_sha256": "6758c54a9e873bf2f67ced368555b871d9cf890b55b4df33762a035be1deaeb3",
+  "selected_model_inference_verified": false,
+  "account_credit_verified": false,
+  "provider_enforced_spending_cap_verified": false,
+  "automatic_top_up_disabled_verified": false,
+  "preflight_omission": "The earlier four rejected requests were attempted before confirming the provider-enforced spending cap and disabled automatic top-up. Do not repeat inference until those requirements are verified.",
+  "production_approved": false,
+  "independent_model_quality_approved": false,
+  "references": [
+    "https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
+    "https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide",
+    "https://platform.claude.com/docs/en/api/openai-sdk"
+  ]
+}

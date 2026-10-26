@@ -147,6 +147,46 @@ def test_strict_request_auth_receipt_and_configuration_freeze(monkeypatch):
     assert session.receipt['calls'][0]['status'] == 'response_received'
 
 
+@pytest.mark.parametrize('model', ['claude-sonnet-5-5', 'claude-sonnet-4-6'])
+def test_direct_anthropic_omits_sampling_without_increasing_limits(monkeypatch, model):
+    configure(monkeypatch, 'https://api.anthropic.com/v1', 'anthropic')
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', model)
+    cl, requests = client()
+    session = CompatibleSession(allow_external=True, client=cl)
+    session.generate(SCHEMA, 'Extract', {'sources': ['Fictional']})
+    assert len(requests) == 1
+    payload = json.loads(requests[0].content)
+    assert payload['model'] == model and payload['max_tokens'] == 4096
+    assert not {'temperature', 'top_p', 'top_k', 'thinking', 'provider'} & payload.keys()
+    assert payload['response_format']['json_schema']['strict'] is True
+    call = session.receipt['calls'][0]
+    assert call['sampling_parameters'] == 'omitted'
+    assert call['thinking'] == 'provider_default'
+
+
+def test_anthropic_model_name_does_not_change_other_endpoint_parameters(monkeypatch):
+    configure(monkeypatch)
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', 'claude-sonnet-5-5')
+    cl, requests = client()
+    session = CompatibleSession(allow_external=True, client=cl)
+    session.generate(SCHEMA, 'Extract', {})
+    assert json.loads(requests[0].content)['temperature'] == 0
+    assert 'sampling_parameters' not in session.receipt['calls'][0]
+
+
+def test_anthropic_rejection_does_not_retry_or_fall_back(monkeypatch):
+    configure(monkeypatch, 'https://api.anthropic.com/v1', 'anthropic')
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', 'claude-sonnet-5-5')
+    cl, requests = client(httpx.Response(400, json={'error': {'message': TOKEN}}))
+    session = CompatibleSession(allow_external=True, client=cl)
+    with pytest.raises(HostedFailure):
+        session.generate(SCHEMA, 'Extract', {})
+    assert len(requests) == 1
+    assert json.loads(requests[0].content)['model'] == 'claude-sonnet-5-5'
+    assert session.receipt['calls'][0]['http_status'] == 400
+    assert TOKEN not in json.dumps(session.receipt)
+
+
 def test_success_retains_exact_assistant_text_without_envelope_or_headers(monkeypatch):
     configure(monkeypatch)
     raw = ' \n{\r\n  "items" : ["café", "\\u00e9", "e\u0301", "雪"]\r\n}\t '

@@ -1,4 +1,18 @@
-# Current integrated native receipt — 26 October 2026
+# Current provider follow-up — 26 October 2026
+
+Owner selected **Sonnet 5.5, not Opus**. The account catalogue lists active
+`claude-sonnet-5-5`; configuration examples and direct Anthropic request handling
+are updated. [Provider handoff](sessions/2026-10-26-sonnet-55.md) and
+[selection/failed-run receipt](../evidence/anthropic-selection-2026-10-26.json).
+181 focused controlled tests passed; fresh full native acceptance follows this
+functional checkpoint. Earlier Sonnet 4.6 inference returned four HTTP 400s;
+exact cause unknown, failed report preserved. No successful inference exists.
+Further inference is held until provider-enforced US$5 cap/no automatic top-up
+and account credits are confirmed. This corrects the earlier missed preflight.
+The older native receipt below covers only its exact source, not these edits.
+Research remains source-only; no upstream runtime or swarm integration is claimed.
+
+# Previous integrated native receipt — 26 October 2026
 
 All seven functional lane histories are integrated on separate unmerged `devin/1792969169-roadmap-integrated`. Exact pushed source `05525c9826e476b7f9996f187190b87ef8e1f9ec` passed 1782 source tests,1782 installed-wheel regressions and13 native suites/439 browser checks. See [source-bound receipt](../evidence/roadmap-integration-native-2026-10-26.json) and [full handoff](sessions/2026-10-26-roadmap-integration.md). Inspection was valid on that exact source before later documentation-only receipt edits. Both failed and passing raw runs are retained separately; baseline receipts do not cover integrated code. No live inference,external quality/production/pilot acceptance,PR5 update,merge,release or deployment is claimed. Original local workflows and all optional holds remain. Missing production adapters fail closed. The canonical ledger remains the sole task-status source. Older checkpoints below are historical.
 

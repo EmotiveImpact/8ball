@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **157 recorded discoveries.**
+Last review: 2026-10-26. **159 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -2806,3 +2806,37 @@ First integrated native run passed 13 browser suites/439 checks,but source track
 **Decision history:**
 
 - 2026-10-26 · adopted · Devin / roadmap-integrated: existing_task: repair bounded integration verification contracts without weakening isolation,source manifests,production or human acceptance. No required scope or status promotion.
+
+### [ ] EM-258: A selected model upgrade also changes request semantics and usable output budget
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Sonnet 5.5 provider follow-up / 2026-10-26.
+
+Owner selected Sonnet 5.5 and the account catalogue lists it active. Official migration documentation rejects sampling controls and enables adaptive thinking by default; the existing transport sent temperature=0. The compatibility endpoint also documents response_format as ignored. Controlled tests now omit temperature only on direct Anthropic; there is no new-model inference evidence.
+
+**Product implication:** Treat model selection, protocol compatibility, account entitlement, output validation and independent usefulness as separate claims. Keep the fixed token ceiling, local validation and no retry/fallback; vendor request policy belongs outside the pure ENDSTATE kernel.
+
+**Roadmap links:** `B02-09` (blocked).
+**Completion scope:** `B02-09`.
+**Evidence / source record:** `docs/v2/ANTHROPIC-SETUP.md`, `docs/evidence/anthropic-selection-2026-10-26.json`, `tests/test_compatible_provider.py`, `docs/delivery/sessions/2026-10-26-sonnet-55.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · Devin / provider follow-up: existing_task: implement the owner's explicit Sonnet 5.5 selection and bounded request migration, without Opus substitution, native-adapter claim, new required scope or model acceptance.
+
+### [ ] EM-259: A fictional fixture authorisation and token ceiling do not establish an enforced spend cap
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Anthropic failed-run preflight review / 2026-10-26.
+
+Four Sonnet 4.6 requests were attempted before the repository-required provider-enforced US$5 cap and disabled automatic top-up were confirmed. All returned HTTP400; safe retained diagnostics omit the precise cause. A later model-catalogue HTTP200 does not establish credits, billing limits or successful inference. The omission was disclosed and further inference stopped.
+
+**Product implication:** Make billing preflight a separate explicit gate from credentials and model selection. Preserve failed receipts without attributing an unknown error to newer model rules. No automatic retry or budget increase; a future enforceable application spend ledger remains separate engineering.
+
+**Roadmap links:** `B02-09` (blocked).
+**Completion scope:** `B02-09`.
+**Evidence / source record:** `docs/evidence/anthropic-selection-2026-10-26.json`, `docs/evidence/anthropic-compatible-2026-10-26.json.xz`, `docs/delivery/sessions/2026-10-26-sonnet-55.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · Devin / provider follow-up: decision_record within existing B02-09: retain the omission/failure, hold further inference until required billing checks, and do not promote catalogue access or a token cap into model or cost acceptance.

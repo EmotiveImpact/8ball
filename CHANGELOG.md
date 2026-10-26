@@ -4,6 +4,50 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 Sonnet 5.5 configuration · Select Sonnet 5.5, preserve failed inference and migrate bounded request parameters
+
+2026-10-26 · `local_unreleased`
+
+Owner selected Sonnet 5.5, not Opus. Account catalogue lists claude-sonnet-5-5 active; no successful inference exists. Direct Anthropic requests omit unsupported sampling controls without raising limits or adding retries. Historical Sonnet 4.6 HTTP400 failures are retained exactly.
+
+### Added
+
+- Hash-addressed compressed original failed provider report and safe catalogue/selection receipt; recorded the missing billing-cap preflight and hold on further inference.
+
+### Changed
+
+- Opt-in Anthropic configuration examples select claude-sonnet-5-5. Direct Anthropic call receipts record omitted sampling and provider-default thinking; other endpoints retain their existing parameters.
+
+### Fixed
+
+- Avoid sending temperature to direct Anthropic models that reject sampling controls. This is not a diagnosis of the older Sonnet 4.6 failures.
+
+### Verification
+
+- 181 focused compatible transport/CLI/integration/retention tests passed in 3.44s with HTTP doubles; one existing Starlette/AnyIO deprecation warning.
+- Read-only catalogue GET HTTP200: 14 entries, no further page, selected Sonnet 5.5 active. No inference performed by that check. Full source-bound native acceptance follows this functional checkpoint.
+
+### Limitations
+
+- Configuration is opt-in, not a deployed/global environment update. Compatibility response_format is not remotely enforced; native Messages adapter is not implemented.
+- No Sonnet 5.5 generation, model quality or independent human/production acceptance. Earlier Sonnet 4.6 attempt failed all four fixtures; exact rejection cause unknown.
+- Provider-enforced US$5 cap, account credit and disabled automatic top-up remain unverified. No further inference until preflight is confirmed; no merge/release/deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A new model name also changes protocol and thinking/output-budget semantics; catalogue access cannot establish inference success.
+- Discovery: Fictional fixture permission and token ceilings did not establish the required provider-enforced spending cap; preserve the missed preflight explicitly.
+- Risk: Ignored schema requests and unverified billing limits can be mistaken for model/cost guarantees. Unknown older 400 causes must not be rewritten as a new-model incompatibility.
+- Architecture: Keep vendor protocol handling outside ENDSTATE, fixed limits/local validation and explicit external permission. Native Messages and dollar-denominated enforcement are separate work.
+- Roadmap decision: existing_task and decision_record under B02-09: bounded Sonnet selection/request migration, historical failed evidence and billing hold. No acceptance promotion or new required scope.
+Registered discoveries: EM-258, EM-259.
+
+Roadmap items: `B02-09`.
+
+Evidence: [docs/evidence/anthropic-selection-2026-10-26.json](docs/evidence/anthropic-selection-2026-10-26.json), [docs/evidence/anthropic-compatible-2026-10-26.json.xz](docs/evidence/anthropic-compatible-2026-10-26.json.xz), [docs/delivery/sessions/2026-10-26-sonnet-55.md](docs/delivery/sessions/2026-10-26-sonnet-55.md), [tests/test_compatible_provider.py](tests/test_compatible_provider.py).
+
 ## 0.2.0-alpha.8 integrated native receipt · Fresh exact-source native engineering acceptance for all seven lanes
 
 2026-10-26 · `pushed_unreleased`

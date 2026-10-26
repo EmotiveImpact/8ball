@@ -583,6 +583,13 @@
     "integration_branch": "devin/1792969169-roadmap-integrated"
   },
   "evidence": {
+    "EV-ANTHROPIC-20261026": {
+      "kind": "failed_real_model_evaluation_and_catalogue_selection",
+      "path": "docs/evidence/anthropic-selection-2026-10-26.json",
+      "code_commit": "f4ecde62529fc5525220bba6afe4b0ae0c06b63b",
+      "url": "https://github.com/EmotiveImpact/8ball/commit/f4ecde62529fc5525220bba6afe4b0ae0c06b63b",
+      "result": "Four Sonnet 4.6 fixtures rejected HTTP400; exact cause unknown. Later read-only catalogue lists owner-selected Sonnet 5.5 active. No successful inference or billing-cap verification. Further inference held; exact failed report retained. New request parameters have only controlled tests so far."
+    },
     "EV-APP": {
       "kind": "software_validation",
       "path": "docs/v2/VALIDATION.md",
@@ -1415,13 +1422,14 @@
         "EV-EVALUATION-READINESS",
         "EV-REVIEW-EVIDENCE-20261018",
         "EV-ANTHROPIC-SETUP",
+        "EV-ANTHROPIC-20261026",
         "EV-OCT25-INTEGRATION"
       ],
       "blockers": [
-        "Owner selected Anthropic, with prepared claude-sonnet-4-6 compatibility settings; account availability/pricing, active credentials/destination and real inference remain unverified. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, supply key securely and Save/Publish. Fictional fixtures up to US$5 remain authorised.",
+        "Owner selected Anthropic Sonnet 5.5, exact active catalogue ID claude-sonnet-5-5; session key authenticates catalogue access. Earlier Sonnet 4.6 fixtures all rejected HTTP400, exact cause unknown. Account credit and provider-enforced US$5 cap/no automatic top-up remain unverified; no further inference until confirmed. Catalogue listing is not successful inference or model quality. Persistent deployment settings are not changed by session configuration examples.",
         "Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate."
       ],
-      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
+      "next_action": "Integration provider follow-up: verify the Sonnet 5.5 request/configuration checkpoint with full source-bound native acceptance. Confirm account credits, effective pricing, provider-enforced US$5 cap and disabled automatic top-up before any further fictional inference. Preserve the failed Sonnet 4.6 report and every unchanged graph/independent semantic gate. See docs/delivery/sessions/2026-10-26-sonnet-55.md; prior builder claim is retained as history."
     },
     {
       "id": "B02-10",

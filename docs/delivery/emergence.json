@@ -5341,6 +5341,34 @@
           "reason": "existing_task: repair bounded integration verification contracts without weakening isolation,source manifests,production or human acceptance. No required scope or status promotion."
         }
       ]
+    },
+    {
+      "id": "EM-258",
+      "title": "A selected model upgrade also changes request semantics and usable output budget",
+      "origin": "Sonnet 5.5 provider follow-up / 2026-10-26",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "Owner selected Sonnet 5.5 and the account catalogue lists it active. Official migration documentation rejects sampling controls and enables adaptive thinking by default; the existing transport sent temperature=0. The compatibility endpoint also documents response_format as ignored. Controlled tests now omit temperature only on direct Anthropic; there is no new-model inference evidence.",
+      "product_implication": "Treat model selection, protocol compatibility, account entitlement, output validation and independent usefulness as separate claims. Keep the fixed token ceiling, local validation and no retry/fallback; vendor request policy belongs outside the pure ENDSTATE kernel.",
+      "task_ids": ["B02-09"],
+      "acceptance_task_ids": ["B02-09"],
+      "evidence_paths": ["docs/v2/ANTHROPIC-SETUP.md", "docs/evidence/anthropic-selection-2026-10-26.json", "tests/test_compatible_provider.py", "docs/delivery/sessions/2026-10-26-sonnet-55.md"],
+      "owner_review": "pending",
+      "history": [{"date": "2026-10-26", "decision": "adopted", "by": "Devin / provider follow-up", "reason": "existing_task: implement the owner's explicit Sonnet 5.5 selection and bounded request migration, without Opus substitution, native-adapter claim, new required scope or model acceptance."}]
+    },
+    {
+      "id": "EM-259",
+      "title": "A fictional fixture authorisation and token ceiling do not establish an enforced spend cap",
+      "origin": "Anthropic failed-run preflight review / 2026-10-26",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "Four Sonnet 4.6 requests were attempted before the repository-required provider-enforced US$5 cap and disabled automatic top-up were confirmed. All returned HTTP400; safe retained diagnostics omit the precise cause. A later model-catalogue HTTP200 does not establish credits, billing limits or successful inference. The omission was disclosed and further inference stopped.",
+      "product_implication": "Make billing preflight a separate explicit gate from credentials and model selection. Preserve failed receipts without attributing an unknown error to newer model rules. No automatic retry or budget increase; a future enforceable application spend ledger remains separate engineering.",
+      "task_ids": ["B02-09"],
+      "acceptance_task_ids": ["B02-09"],
+      "evidence_paths": ["docs/evidence/anthropic-selection-2026-10-26.json", "docs/evidence/anthropic-compatible-2026-10-26.json.xz", "docs/delivery/sessions/2026-10-26-sonnet-55.md"],
+      "owner_review": "pending",
+      "history": [{"date": "2026-10-26", "decision": "adopted", "by": "Devin / provider follow-up", "reason": "decision_record within existing B02-09: retain the omission/failure, hold further inference until required billing checks, and do not promote catalogue access or a token cap into model or cost acceptance."}]
     }
   ]
 }
