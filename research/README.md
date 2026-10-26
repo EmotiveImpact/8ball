@@ -1,27 +1,36 @@
 # Preserved external research sources
 
-This directory contains 28 public upstream repositories at the exact commits
+This directory contains 32 public upstream repositories at the exact commits
 inspected in the [research register](../docs/research/GITHUB-COMPONENTS-2026-10-16.md)
-and its source manifests. They are populated Git submodule checkouts under
+and the [four-project source manifest](../docs/research/github-2026-10-26/decision-projects-source-manifest.json).
+They are populated Git submodule checkouts under
 external/owner/repository, preserved for source inspection and comparison.
 They are research candidates; copying them does not adopt them as dependencies,
 run their software or complete any ENDSTATE/8BALL requirement.
 
 Read [the research trust boundary](AGENTS.md) before opening upstream instructions.
-[inventory.json](inventory.json) records all 28 pins, public URLs, input-manifest
+[inventory.json](inventory.json) records all 32 pins, public URLs, input-manifest
 hashes, license/notice paths and original Git blob hashes, source sizes, nested
 references and omitted model/LFS payloads.
 
-The source copy was verified against 71,419 tracked Git blobs: 71,417 are present,
+The inventory records 82,262 tracked Git blobs: 82,257 are materialized,
 including 51 Git LFS pointer files whose external payloads remain unhydrated.
-Two model files are deliberately omitted below. The preserved worktree contents
-total 2,179,495,349 bytes (about 2.03 GiB); captured Git metadata adds about
-0.96 GiB. Filesystem allocation can be larger. These sizes are local copy costs,
+Five model files are deliberately omitted below. Canonical source sizes
+total 3,868,172,672 bytes (about 3.60 GiB); captured Git metadata adds about
+1.44 GiB. Checkout line endings and filesystem allocation can differ. These sizes are local copy costs,
 not dependency requirements or application runtime costs.
 
-All 28 checkouts have their expected HEAD, clean worktrees and matching parent
-Gitlinks. All 128 identified license/notice files match their original Git blob
-hashes. No dependencies, models, services, tests, agent hooks or upstream
+The 2026-10-16 capture verified 28 checkouts. The additional four checkouts have
+their expected HEAD, clean worktrees and matching parent Gitlinks; all their
+materialized source matches its pin, allowing upstream-declared newline conversion
+for HighwayEnv's docs/make.bat. The inventory preserves 131 licence/notice hashes.
+Run the helper below to establish current verification, not a historical capture.
+The 26 October VM-wide check failed on five older checkouts: mem0 and Temporal
+have populated nested sources, Autogen has a hydrated LFS payload, and promptfoo
+and Ruflo lack the declared sparse omissions. These pre-existing bytes were
+preserved, not discarded. The four new snapshots passed; the complete archive
+is not currently certified against its inventory.
+No dependencies, models, services, tests, agent hooks or upstream
 lifecycle scripts were run. No additional environment project roots were added.
 
 ## Source exceptions
@@ -33,8 +42,11 @@ explicit model-file exceptions rather than every upstream payload materialized:
 |---|---|---|
 | promptfoo/promptfoo | test/fixtures/transformers/tiny-bert/onnx/model.onnx | Tracked model fixture; model copying was not authorized. |
 | ruvnet/ruflo | v3/@claude-flow/cli/assets/model-router/seed-router.fastgrnn.safetensors | Tracked router model weights; model copying was not authorized. |
+| richardcc/assault-ai-pilot | legacy_archive/checkpoints/ppo_US.pt | Tracked model weights; not materialized. |
+| richardcc/assault-ai-pilot | legacy_archive/checkpoints/ppo_US_phase01.pt | Tracked model weights; not materialized. |
+| richardcc/assault-ai-pilot | legacy_archive/checkpoints/ppo_US_phase01_HRL.pt | Tracked model weights; not materialized. |
 
-Sparse checkout omits exactly those two files. All other tracked source paths
+Sparse checkout omits exactly those five files. All other tracked source paths
 are present. The 51 unhydrated LFS pointers belong to microsoft/autogen; their
 payload object IDs and sizes are recorded individually in the inventory.
 
@@ -48,6 +60,15 @@ Nested submodules were not recursed into:
 Their Git references and upstream .gitmodules are preserved; their nested
 source contents are not copied. Dependency packages, generated distributions,
 model registries and external services are also outside this copy.
+
+## Four-project capture, 26 October 2026
+
+Loomio is AGPL-3.0 source; HighwayEnv and semantic-router have MIT licences.
+Assault's README badge is not a licence grant: no LICENSE/NOTICE was found at
+the pinned tree. Its upstream media, PDFs, archives and generated data remain
+unreviewed research material, not assets to extract, execute or ship in the product.
+No military/tactical optimization is part of the ENDSTATE adaptation scope.
+Concept reuse, literal code reuse and runtime adoption require separate decisions.
 
 ## Verify or restore
 
@@ -116,3 +137,7 @@ locations, not a claim that every project or dependency shares one license.
 | [temporalio/sdk-python](external/temporalio/sdk-python) | [346d4dcd0863](https://github.com/temporalio/sdk-python/tree/346d4dcd0863657c3a33283c952a296762059339) | [LICENSE](external/temporalio/sdk-python/LICENSE) |
 | [TencentCloud/TencentDB-Agent-Memory](external/TencentCloud/TencentDB-Agent-Memory) | [e9a82935b527](https://github.com/TencentCloud/TencentDB-Agent-Memory/tree/e9a82935b52741e0c798c75326e90b7144eb4d5f) | [LICENSE](external/TencentCloud/TencentDB-Agent-Memory/LICENSE) |
 | [tsinghua-fib-lab/AgentSociety](external/tsinghua-fib-lab/AgentSociety) | [8cc5bb9a9c27](https://github.com/tsinghua-fib-lab/AgentSociety/tree/8cc5bb9a9c27d039ec5519375db9d73ccf508cba) | [LICENSE](external/tsinghua-fib-lab/AgentSociety/LICENSE) |
+| [loomio/loomio](external/loomio/loomio) | [24380e2131c1](https://github.com/loomio/loomio/tree/24380e2131c1e43594a241814f3f460a9b0065f6) | [LICENSE.txt](external/loomio/loomio/LICENSE.txt), AGPL-3.0 |
+| [Farama-Foundation/HighwayEnv](external/Farama-Foundation/HighwayEnv) | [37c84a34cadc](https://github.com/Farama-Foundation/HighwayEnv/tree/37c84a34cadcbfc17d61acf5196a89c380a56943) | [LICENSE](external/Farama-Foundation/HighwayEnv/LICENSE), MIT |
+| [aurelio-labs/semantic-router](external/aurelio-labs/semantic-router) | [1fa1937e390f](https://github.com/aurelio-labs/semantic-router/tree/1fa1937e390fe57fb85ee3bbb8b3db593a4145db) | [LICENSE](external/aurelio-labs/semantic-router/LICENSE), MIT |
+| [richardcc/assault-ai-pilot](external/richardcc/assault-ai-pilot) | [0284a559d8bc](https://github.com/richardcc/assault-ai-pilot/tree/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9) | No licence file at this pin; badge alone is insufficient. |

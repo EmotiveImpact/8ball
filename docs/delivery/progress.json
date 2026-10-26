@@ -970,6 +970,26 @@
       "kind": "lane_software_validation",
       "path": "docs/delivery/lane-reports/vault.md",
       "result": "Preserved lane-local source/tests/failed experiments and external gates; not a combined-tree acceptance receipt."
+    },
+    "EV-FOUR-SOURCE-20261026": {
+      "kind": "source_inspection",
+      "path": "docs/research/github-2026-10-26/README.md",
+      "result": "Four new pins verified; native design recommendations and unrun experiments only. No upstream runtime/inference. Full32 verification blocked by five older VM discrepancies."
+    },
+    "EV-DECISION-CONTRACTS-20261026": {
+      "kind": "provider_contract_investigation",
+      "path": "docs/v2/DECISION-PROVIDERS.md",
+      "result": "Owner confirmed native non-chat Jev/Clef/GPT contracts; authenticated catalogue HTTP200 only. No inference, billing or model-quality acceptance."
+    },
+    "EV-NATIVE-REVIEW-20261026": {
+      "kind": "local_engineering",
+      "path": "docs/delivery/sessions/2026-10-26-native-review-and-decisions.md",
+      "result": "Bounded native review/packet implementation; focused tests and49 native Plan Review checks passed. Full source-bound acceptance is separate. No acceptance/status promotion."
+    },
+    "EV-DECISION-SMOKE-20261026": {
+      "kind": "fictional_provider_smoke",
+      "path": "docs/v2/DECISION-PROVIDERS.md",
+      "result": "One validated native response each from Jev/Clef/GPT, conflicting choices retained; gateway-recorded total USD0.000008547. Not quality, hard-cap or production acceptance."
     }
   },
   "milestones": [
@@ -1423,7 +1443,8 @@
         "EV-REVIEW-EVIDENCE-20261018",
         "EV-ANTHROPIC-SETUP",
         "EV-ANTHROPIC-20261026",
-        "EV-OCT25-INTEGRATION"
+        "EV-OCT25-INTEGRATION",
+        "EV-DECISION-CONTRACTS-20261026"
       ],
       "blockers": [
         "Owner selected Anthropic Sonnet 5.5, exact active catalogue ID claude-sonnet-5-5; session key authenticates catalogue access. Earlier Sonnet 4.6 fixtures all rejected HTTP400, exact cause unknown. Account credit and provider-enforced US$5 cap/no automatic top-up remain unverified; no further inference until confirmed. Catalogue listing is not successful inference or model quality. Persistent deployment settings are not changed by session configuration examples.",
@@ -1500,7 +1521,9 @@
         "EV-PROVIDER-FAILURE-REVIEW",
         "EV-EVALUATION-READINESS",
         "EV-REVIEW-EVIDENCE-20261018",
-        "EV-REVIEW-REFRESH-RACE"
+        "EV-REVIEW-REFRESH-RACE",
+        "EV-NATIVE-REVIEW-20261026",
+        "EV-DECISION-SMOKE-20261026"
       ],
       "blockers": [
         "Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed."
@@ -1542,7 +1565,9 @@
         "EV-COMPATIBLE-CODE",
         "EV-EVALUATION-READINESS",
         "EV-REVIEW-EVIDENCE-20261018",
-        "EV-OCT25-INTEGRATION"
+        "EV-OCT25-INTEGRATION",
+        "EV-NATIVE-REVIEW-20261026",
+        "EV-DECISION-SMOKE-20261026"
       ],
       "blockers": [
         "Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey."
@@ -1664,7 +1689,9 @@
         "EV-ANTHROPIC-SETUP",
         "EV-OCT25-INTEGRATION",
         "EV-LANE-INTELLIGENCE-20261026",
-        "EV-INTEGRATION-ENGINEERING-20261026"
+        "EV-INTEGRATION-ENGINEERING-20261026",
+        "EV-NATIVE-REVIEW-20261026",
+        "EV-DECISION-SMOKE-20261026"
       ],
       "blockers": [
         "Lifecycle behaviour with the selected real inference provider remains unverified."
@@ -2221,7 +2248,8 @@
         "EV-KERNEL",
         "EV-INTEGRATION-LOCAL",
         "EV-INTEGRATION-BLOCKED",
-        "EV-NATIVE-CLOSEOUT"
+        "EV-NATIVE-CLOSEOUT",
+        "EV-NATIVE-REVIEW-20261026"
       ],
       "blockers": [],
       "next_action": "Internal reusable-core compatibility scope verified. Maintain regression coverage; public SDK/commercial release and other platforms remain separate."
@@ -3016,7 +3044,8 @@
       "acceptance": "Versioned neutral input/output contracts distinguish candidate routes from a host-authorised course; changes to consulted sources, targets, guards, authority, estimates, clocks and resources produce traceable reconsideration results. Unknown scope requires review. Existing approval invalidation is preserved.",
       "evidence": [
         "EV-CHOSEN-COURSE-LOCAL",
-        "EV-NATIVE-CLOSEOUT"
+        "EV-NATIVE-CLOSEOUT",
+        "EV-FOUR-SOURCE-20261026"
       ],
       "blockers": [
         "Original durable event prerequisites remain unaccepted.",

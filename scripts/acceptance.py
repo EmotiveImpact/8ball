@@ -104,7 +104,7 @@ def selected_environment(mode):
     env=os.environ.copy()
     # Standard verification cannot accidentally use configured private providers
     # or an operator's own database. Tests create fictional disposable stores.
-    for key in ('HF_TOKEN','HUGGINGFACE_API_TOKEN','TYPESAFE_API_KEY','OPENAI_API_KEY',
+    for key in ('HF_TOKEN','HUGGINGFACE_API_TOKEN','TYPESAFE_API_KEY','OPENAI_API_KEY','ANTHROPIC_API_KEY','EXPERIENTIAL_API_KEY','EXPLABS_API_KEY',
                 'EIGHTBALL_API_KEY','EIGHTBALL_API_BASE_URL','EIGHTBALL_API_MODEL',
                 'EIGHTBALL_API_PROVIDER','EIGHTBALL_API_ROUTING_PROVIDER',
                 'EIGHTBALL_DB','EIGHTBALL_TOKEN','EIGHTBALL_AGENCY_CONFIG','EIGHTBALL_ARTIFACTS','EIGHTBALL_BROWSER_BRIDGE'):

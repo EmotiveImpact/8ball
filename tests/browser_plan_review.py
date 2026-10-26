@@ -106,12 +106,70 @@ def main():
                     check('recording judgement does not alter case revision or facts',after['case']==before['case'] and after['events']==before['events'])
                     check('review export preserves exact assessment and rubric',after['valid'] and len(after['plan_reviews']['records'][0]['judgements'])==6)
                     check('review cannot grant action approval',not store.get(case.id).approvals)
+                    tab('challenge');f=page.locator('[data-pr-form=challenge]')
+                    declarations={'r1_label':'Fictional supplier','r1_objective':'Keep lawful supply available.',
+                        'r1_boundary':'Only this declared case brief; no private stakeholder knowledge.',
+                        'r1_assumption':'Supply may remain available.', 'r1_objection':'Supplier refusal is possible, not observed.',
+                        'r1_question':'What confirmation would change this choice?',
+                        'r1_verification':'Obtain current source-backed consent through a separate authorised workflow.',
+                        'b1_title':'No remaining budget','b1_rationale':'Compare a declared adverse assumption.','b1_budget':'0'}
+                    for name,value in declarations.items():f.locator(f'[name={name}]').fill(value)
+                    for name,value in {'r1_kind':'archetype','r1_reference':'case:summary','r1_counter':'a1','b1_assumption':'a1'}.items():
+                        f.locator(f'[name={name}]').select_option(value)
+                    f.locator('[type=submit]').click();expect(page.locator('[data-challenge-result]')).to_be_visible()
+                    check('declared scenario comparison changes no live case or audit',store.audit(case.id)==after)
+                    check('challenge labels hypotheses and retains original objection','HYPOTHETICAL' in page.locator('[data-challenge-result]').inner_text() and declarations['r1_objection'] in page.locator('[data-challenge-result]').inner_text())
+                    review=page.locator('[data-pr-form=challenge-disposition]')
+                    review.locator('[name=status_o1]').select_option('retained_concern')
+                    review.locator('[name=rationale_o1]').fill('Retain this objection until direct confirmation exists.')
+                    review.locator('[name=outcome]').select_option('continue_review')
+                    review.locator('[name=reason]').fill('Continue review without treating this as consent or approval.')
+                    with page.expect_response(lambda r:r.url.endswith('/rehearsals/prepare')) as rejected:
+                        review.locator('[type=submit]').click()
+                    check('continuing review cannot silently drop an unresolved objection',rejected.value.status==422)
+                    review.locator('[name=ack_o1]').check()
+                    tab('findings');tab('challenge');review=page.locator('[data-pr-form=challenge-disposition]')
+                    check('unsubmitted disposition survives tab switching',review.locator('[name=status_o1]').input_value()=='retained_concern' and review.locator('[name=ack_o1]').is_checked())
+                    page.locator('[data-pr-action=challenge-save]').click()
+                    expect(page.get_by_text('Preview your operator disposition before saving this brief.',exact=True)).to_be_visible()
+                    check('saving refuses to ignore unpreviewed disposition edits','assumption_challenges' not in store.audit(case.id))
+                    review.locator('[type=submit]').click()
+                    expect(page.locator('[data-challenge-result]')).to_contain_text('Continue review without treating this as consent or approval.')
+                    page.locator('[data-pr-action=challenge-save]').click()
+                    expect(page.locator('[data-pr-form=challenge-packet]')).to_have_count(1)
+                    challenged=store.audit(case.id)
+                    saved=challenged['assumption_challenges']['records'][0]['brief']
+                    check('separate immutable brief preserves dissent and exact overlay',saved['coverage']['unresolved_objections']==['o1'] and saved['branches'][0]['manifest']['overlay']['budget']==0)
+                    check('saving a challenge changes no evidence, course, approvals or case event',challenged['case']==after['case'] and challenged['events']==after['events'])
+                    if not BRIDGE:
+                        packet_form=page.locator('[data-pr-form=challenge-packet]')
+                        with page.expect_download() as download:packet_form.locator('[type=submit]').click()
+                        full=json.loads(Path(download.value.path()).read_text())
+                        check('operator packet uses verified saved brief and no execution authority',full['brief']['brief_sha256']==saved['brief_sha256'] and not full['execution_authorized'] and not full['facts_attested'])
+                        packet_form.locator('[name=mode]').select_option('reference_index')
+                        packet_form.locator('[name=reference]').select_option('case:summary')
+                        with page.expect_download() as download:packet_form.locator('[type=submit]').click()
+                        restricted=json.loads(Path(download.value.path()).read_text())
+                        check('restricted packet omits all narrative and marks incomplete audit',restricted['brief'] is None and not restricted['complete_audit'] and restricted['omissions'] and declarations['r1_objection'] not in json.dumps(restricted) and case.summary not in json.dumps(restricted))
+                        check('restricted packet has only selected reference hash',restricted['references']==[{'reference':'case:summary','sha256':saved['reference_hashes']['case:summary']}])
+                        check('packet downloads do not write case or derived history',store.audit(case.id)==challenged)
+                    page.screenshot(path=str(OUT/'8BALL-Assumption-Challenge.png'),full_page=False)
                     # Later changes do not erase the earlier human review.
                     store.change(case.id,Command(event_id='later',expected_revision=0,kind='metadata',payload={'budget':6000}))
+                    if not BRIDGE:
+                        downloaded=[];page.on('download',lambda item:downloaded.append(item))
+                        with page.expect_response(lambda r:r.url.endswith('/rehearsals/packet')) as rejected:
+                            page.locator('[data-pr-form=challenge-packet] [type=submit]').click()
+                        check('server refuses stale packet even before browser refresh',rejected.value.status==409)
+                        expect(page.get_by_text('Case or challenge history changed; refresh before exporting',exact=True)).to_be_visible()
+                        check('stale packet request cannot download cached narrative',not downloaded)
                     page.keyboard.press('Escape');page.locator('[data-action=refresh]').click();expect(page.locator('.page-footer')).to_contain_text('CASE REV 1')
                     expect(page.locator('nav [data-tab=studio]')).to_have_attribute('aria-current','page')
                     page.locator('[data-pr-action=open]').click();page.locator('.pr-target').wait_for();tab('history')
                     check('old review is marked historical after case changes','case has changed since this review' in page.locator('.pr-history').inner_text())
+                    tab('challenge');page.locator('[data-pr-action=challenge-history]').click()
+                    expect(page.locator('.pr-history')).to_contain_text('Historical: case changed')
+                    check('historical brief prompts recheck rather than current export',page.locator('[data-pr-form=challenge-packet]').count()==0)
                     page.keyboard.press('Escape');nav('command');page.locator(f'[data-case="{other.id}"]').click();page.locator('[data-action=discard-open-case]').click();nav('studio')
                     page.locator('[data-pr-action=open]').click();page.locator('.pr-target').wait_for()
                     check('case switching does not leak preceding review or outcome','A different objective' in page.locator('.pr-target').inner_text() and case.desired_outcome not in page.locator('[data-pr-root]').inner_text())
@@ -120,7 +178,7 @@ def main():
                     page.keyboard.press('Escape');check('escape closes modal',page.locator('.dialog').count()==0)
                     check('no browser runtime errors',not errors)
                     report={'checks_passed':len(checks),'checks':checks,'network':'Explicit ASGI bridge' if BRIDGE else 'Native loopback HTTP',
-                       'real_api':True,'real_sqlite':True,'native_browser_http':not BRIDGE,'native_storage_downloads_tested':False,
+                       'real_api':True,'real_sqlite':True,'native_browser_http':not BRIDGE,'native_storage_downloads_tested':not BRIDGE,
                        'models_called':False,'independent_expert_review':False,'errors':errors}
                     (OUT/'browser-plan-review-report.json').write_text(json.dumps(report,indent=2))
                     print(json.dumps(report,indent=2))

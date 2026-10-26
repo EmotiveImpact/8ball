@@ -136,13 +136,14 @@ def test_failed_exchange_never_retries_after_restart(login):
 
 def test_expiry_logout_and_cancel_are_durable(login):
     service, start, _, calls = login
+    clock = service.clock
     args = start()
     now = service.clock()
     service.clock = lambda: now+301
     with pytest.raises(LoginDenied):
         service.complete(**args)
     assert not calls
-    service.clock = lambda: now
+    service.clock = clock
     args = start()
     service.cancel(args['browser'])
     with pytest.raises(LoginDenied):

@@ -200,7 +200,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate. Integration provider follow-up: verify the Sonnet 5.5 request/configuration checkpoint with full source-bound native acceptance. Confirm account credits, effective pricing, provider-enforced US$5 cap and disabled automatic top-up before any further fictional inference. Preserve the failed Sonnet 4.6 report and every unchanged graph/independent semantic gate. See docs/delivery/sessions/2026-10-26-sonnet-55.md.
   - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`, `eightball/v2/compatible.py`, `evals/live_compatible.py`, `evals/live_huggingface.py`, `tests/test_hosted_eval_retention.py`, `docs/v2/ANTHROPIC-SETUP.md`.
-  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-ANTHROPIC-SETUP`, `EV-ANTHROPIC-20261026`, `EV-OCT25-INTEGRATION` (registry below).
+  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-ANTHROPIC-SETUP`, `EV-ANTHROPIC-20261026`, `EV-OCT25-INTEGRATION`, `EV-DECISION-CONTRACTS-20261026` (registry below).
   - Blocker: Owner selected Anthropic Sonnet 5.5, exact active catalogue ID claude-sonnet-5-5; session key authenticates catalogue access. Earlier Sonnet 4.6 fixtures all rejected HTTP400, exact cause unknown. Account credit and provider-enforced US$5 cap/no automatic top-up remain unverified; no further inference until confirmed. Catalogue listing is not successful inference or model quality. Persistent deployment settings are not changed by session configuration examples. Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate.
 
 - [ ] **B02-10 Robust source extraction, deadlines and entity reconciliation**
@@ -218,7 +218,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval.
   - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Existing code: `evals/live_generation.py`, `evals/classification-cases.json`, `endstate/plan_review.py`, `eightball/v2/plan_review.py`, `web/v2/plan-review-view.js`, `evals/plan_review_bench.py`, `evals/PLAN-QUALITY-GATE.md`, `tests/test_plan_review.py`, `tests/browser_plan_review.py`, `evals/review_readiness.py`, `tests/test_review_readiness.py`, `docs/delivery/review/protocol-v2.template.json`, `docs/delivery/review/dataset-manifest.template.json`.
-  - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-REVIEW-REFRESH-RACE` (registry below).
+  - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-REVIEW-REFRESH-RACE`, `EV-NATIVE-REVIEW-20261026`, `EV-DECISION-SMOKE-20261026` (registry below).
   - Blocker: Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed.
 
 - [ ] **B02-12 Full twenty-step real-model V0.2 acceptance journey**
@@ -228,7 +228,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `B02-09`, `B02-10`, `B02-11`.
   - Existing code: `tests/browser_v2.py`, `evals/full_journey.py`, `scripts/acceptance.py`, `.github/workflows/provider-journey.yml`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`.
-  - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-OCT25-INTEGRATION` (registry below).
+  - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-OCT25-INTEGRATION`, `EV-NATIVE-REVIEW-20261026`, `EV-DECISION-SMOKE-20261026` (registry below).
   - Blocker: Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey.
 
 - [x] **B02-13 Guided nested graph authoring instead of JSON-only advanced editing**
@@ -255,7 +255,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES03-04`.
   - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`, `eightball/v2/compatible.py`, `tests/test_compatible_integration.py`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`, `docs/delivery/lane-reports/intelligence.md`, `eightball/agency_host.py`, `docs/v2/AGENCY-HOST.md`.
-  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION`, `EV-LANE-INTELLIGENCE-20261026`, `EV-INTEGRATION-ENGINEERING-20261026` (registry below).
+  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION`, `EV-LANE-INTELLIGENCE-20261026`, `EV-INTEGRATION-ENGINEERING-20261026`, `EV-NATIVE-REVIEW-20261026`, `EV-DECISION-SMOKE-20261026` (registry below).
   - Blocker: Lifecycle behaviour with the selected real inference provider remains unverified.
 
 - [ ] **B02-16 Complete accessibility and supported-environment validation**
@@ -491,7 +491,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Dependencies: `ES01-02`, `ES01-03`, `ES01-04`.
   - Existing code: `endstate/api.py`, `docs/endstate/CONTRACTS.md`, `tests/test_endstate_kernel.py`, `endstate/results.py`, `pyproject.toml`, `scripts/build_endstate.py`, `scripts/export_endstate_schemas.py`, `tests/test_endstate_results.py`.
-  - Evidence: `EV-KERNEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Evidence: `EV-KERNEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-NATIVE-REVIEW-20261026` (registry below).
 
 
 ## ENDSTATE 0.2: Event-driven replanning
@@ -548,7 +548,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Dependencies: `ES02-01`, `ES02-03`.
   - Existing code: `endstate/course.py`, `eightball/v2/courses.py`, `web/v2/course-view.js`, `tests/test_courses.py`, `tests/browser_courses.py`.
-  - Evidence: `EV-CHOSEN-COURSE-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Evidence: `EV-CHOSEN-COURSE-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-FOUR-SOURCE-20261026` (registry below).
   - Blocker: Original durable event prerequisites remain unaccepted. Independent operator acceptance remains outstanding; native local workflow passes.
 
 
@@ -1155,3 +1155,27 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `lane_software_validation`.
 - Repository evidence: [docs/delivery/lane-reports/vault.md](../../docs/delivery/lane-reports/vault.md).
 - Result/scope: Preserved lane-local source/tests/failed experiments and external gates; not a combined-tree acceptance receipt.
+
+### EV-FOUR-SOURCE-20261026
+
+- Kind: `source_inspection`.
+- Repository evidence: [docs/research/github-2026-10-26/README.md](../../docs/research/github-2026-10-26/README.md).
+- Result/scope: Four new pins verified; native design recommendations and unrun experiments only. No upstream runtime/inference. Full32 verification blocked by five older VM discrepancies.
+
+### EV-DECISION-CONTRACTS-20261026
+
+- Kind: `provider_contract_investigation`.
+- Repository evidence: [docs/v2/DECISION-PROVIDERS.md](../../docs/v2/DECISION-PROVIDERS.md).
+- Result/scope: Owner confirmed native non-chat Jev/Clef/GPT contracts; authenticated catalogue HTTP200 only. No inference, billing or model-quality acceptance.
+
+### EV-NATIVE-REVIEW-20261026
+
+- Kind: `local_engineering`.
+- Repository evidence: [docs/delivery/sessions/2026-10-26-native-review-and-decisions.md](../../docs/delivery/sessions/2026-10-26-native-review-and-decisions.md).
+- Result/scope: Bounded native review/packet implementation; focused tests and49 native Plan Review checks passed. Full source-bound acceptance is separate. No acceptance/status promotion.
+
+### EV-DECISION-SMOKE-20261026
+
+- Kind: `fictional_provider_smoke`.
+- Repository evidence: [docs/v2/DECISION-PROVIDERS.md](../../docs/v2/DECISION-PROVIDERS.md).
+- Result/scope: One validated native response each from Jev/Clef/GPT, conflicting choices retained; gateway-recorded total USD0.000008547. Not quality, hard-cap or production acceptance.

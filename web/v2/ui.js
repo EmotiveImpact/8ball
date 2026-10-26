@@ -26,7 +26,7 @@ export const provenance=p=>p?`${badge('reported',pretty(p.origin))}${p.reference
 export function saveFile(name,value,type='application/json'){const b=new Blob([type==='application/json'?JSON.stringify(value,null,2):value],{type});const u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);}
 let timer;
 export function toast(text,error=false){const el=$('#toast');el.setAttribute('role',error?'alert':'status');el.setAttribute('aria-live',error?'assertive':'polite');el.textContent=text;el.className='visible'+(error?' error':'');clearTimeout(timer);timer=setTimeout(()=>el.className='',6500);}
-let previousFocus,focusSelector='',modalFocusTimer,modalSerial=0;
+let previousFocus,focusSelector='',modalSerial=0;
 function modalOriginSelector(el){
  if(!(el instanceof Element))return '';
  if(el.id)return '#'+CSS.escape(el.id);
@@ -36,7 +36,7 @@ function modalOriginSelector(el){
 }
 export function focusWorkspace(){const target=document.querySelector('#main h1')??document.querySelector('#main');if(target){target.setAttribute('tabindex','-1');target.focus({preventScroll:true});}}
 export function closeModal(){
- const serial=++modalSerial;clearTimeout(modalFocusTimer);const hadModal=Boolean(document.querySelector('.dialog'));
+ const serial=++modalSerial;const hadModal=Boolean(document.querySelector('.dialog'));
  $('#modal').innerHTML='';$('#app').inert=false;
  const restore=()=>{if(serial!==modalSerial||document.querySelector('.dialog')||!hadModal)return;
   const target=previousFocus?.isConnected?previousFocus:focusSelector?document.querySelector(focusSelector):null;
@@ -45,9 +45,9 @@ export function closeModal(){
 }
 export function modal(title,body,wide=false){
  // A replacement inspector retains the original invoker, not a soon-detached
- // button inside the preceding dialog. Cancel pending focus from the old view.
+ // button inside the preceding dialog.
  if(!document.querySelector('.dialog')){previousFocus=document.activeElement;focusSelector=modalOriginSelector(previousFocus);}
- clearTimeout(modalFocusTimer);const serial=++modalSerial;$('#app').inert=true;
+ ++modalSerial;$('#app').inert=true;
  $('#modal').innerHTML=`<div class="backdrop"><section class="dialog ${wide?'wide':''}" role="dialog" aria-modal="true" aria-labelledby="eightball-dialog-title"><header><h2 id="eightball-dialog-title" tabindex="-1">${esc(title)}</h2><button type="button" data-action="close" class="icon-button" aria-label="Close dialog">${icon('close')}</button></header><div class="dialog-body">${body}</div></section></div>`;
- modalFocusTimer=setTimeout(()=>{if(serial===modalSerial)document.querySelector('#eightball-dialog-title')?.focus({preventScroll:true});},0);
+ document.querySelector('#eightball-dialog-title')?.focus({preventScroll:true});
 }

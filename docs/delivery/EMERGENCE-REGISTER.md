@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **159 recorded discoveries.**
+Last review: 2026-10-26. **200 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -2840,3 +2840,721 @@ Four Sonnet 4.6 requests were attempted before the repository-required provider-
 **Decision history:**
 
 - 2026-10-26 · adopted · Devin / provider follow-up: decision_record within existing B02-09: retain the omission/failure, hold further inference until required billing checks, and do not promote catalogue access or a token cap into model or cost acceptance.
+
+### [ ] EM-260: All three offered specialists are native typed decision models, not chat models
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Owner-supplied Jev and GPT examples use /v1/systemone and /v1/decisions. Clef public description says native non-chat /v1/systemone while its quickstart says chat. Owner confirmed all three are decision models. A read-only authenticated catalogue listed jev-latest, clef-flash and gpt-6-luna-decisions; no inference was made.
+
+**Product implication:** Keep Sonnet as general-purpose model. Prepare separate native typed contracts, explicit abstention and advisory-only output. Catalogue, billing, gateway routing, actual inference and purpose-specific independent quality remain distinct gates. Do not silently substitute the upstream GPT slug, bypass spending preflight or auto-execute an accept label.
+
+**Roadmap links:** `B02-09` (blocked).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/v2/DECISION-PROVIDERS.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · Devin / source synthesis: decision_record under existing provider work: preserve the owner-confirmed native protocol; not implemented inference or quality acceptance.
+
+### [ ] EM-261: Pinned archival copying is not a licence grant or a weight-free Git history
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Four exact pins preserve 10,843 tracked blobs, 10,840 materialized blobs and three omitted Assault checkpoint worktree files. Loomio has AGPL-3.0; HighwayEnv and semantic-router MIT; Assault has no licence file despite its README badge. Git object acquisition can include omitted blobs without loading or materializing them.
+
+**Product implication:** Keep source archives separate from application code/runtime. Original-expression native patterns are recommended; this source-informed process is not a certified clean room. Preserve MIT notices for any substantial copy; require scoped legal review for AGPL combinations and actual permission for unlicensed source, game/media/rulebook/data/model assets. No upstream execution or dependency adoption.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/decision-projects-source-manifest.json`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-262: loomio: Preserve distinct positions with reasons, not a single agreement score
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed source:** [Consent and consensus templates](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/config/poll_templates.yml#L236-L301) distinguish consent/objection from agree/abstain/disagree/block. [Reason validation](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/stance.rb#L245-L273) can require reasons specifically for disagreement/block; [Reason input](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/vue/src/components/poll/common/stance_reason.vue#L8-L38) selects a per-option prompt. Stances carry participant identity, poll association and versioned reasons: [stance model](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/stance.rb#L65-L88).
+
+**Product implication:** **Transferable benefit (hypothesis):** add a bounded objection/contribution view attached to an exact assumption, review criterion or course reference. Preserve the contributor's original wording, an explicit question or proposed remedy, and a separate operator disposition. Distinguish uncertainty about a claim from disagreement with a proposed course and from no response. A majority summary must not replace the minority text. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/loomio.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-263: loomio: Separate tally, closing, authored disposition and actual outcome
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed source:** [Outcome fields/history](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/outcome.rb#L57-L81) has a separate author, statement, optional poll option, latest flag and review date. [Outcome creation](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/services/outcome_service.rb#L31-L79) explicitly creates an authored record and marks older outcomes non-latest. [Outcome authority](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/ability/outcome.rb#L9-L16) permits specified people to create/update only when the poll is not active; it does not require a favourable tally. [Closing work](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/services/poll_service.rb#L481-L519) closes the poll and handles results/timeline work, not evidence of real-world success. [Outcome panel](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/vue/src/components/poll/common/outcome_panel.vue#L44-L60) displays author, statement and review due date.
+
+**Product implication:** **Transferable benefit (hypothesis):** a human disposition can explicitly state “proceed with unresolved objection”, “revise”, “ask for evidence” or “defer”, linking the unresolved contribution IDs and reasons. Keep the case's desired/evidenced outcome vocabulary separate from a deliberation's conclusion. A closure can remain historically visible without claiming that objections disappeared. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/loomio.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-264: loomio: Borrow visible change history, not Loomio's mutable-current-row semantics
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed source:** [Stance versioning/latest scopes](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/stance.rb#L71-L88) records selected fields through PaperTrail. [Stance update](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/services/stance_service.rb#L38-L83) creates a replacement only when option scores change and either comments exist or the previous update is older than 15 minutes; otherwise it updates the current stance. [Replacement construction](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/stance.rb#L129-L137) creates a new stance but does not itself establish a predecessor-hash chain. [Poll version fields](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/poll.rb#L252-L270) tracks selected poll fields; [Poll editing](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/services/poll_service.rb#L75-L104) mutates the poll under a lock. [Version retrieval](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/controllers/api/v1/versions_controller.rb#L1-L29) exposes authorised version lookup. These are useful history mechanisms, not the same guarantee as a case-bound immutable derived journal.
+
+**Product implication:** **Transferable benefit (hypothesis):** display a position's evolution and who changed it, but append every accepted substantive change natively with predecessor, case/assessment hash and rationale. Keep history distinct from the current projection. A case/proposal revision should make an old stance historical rather than silently count it as support for new content. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/loomio.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-265: loomio: Keep participation, access rights and execution authority separate
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed source:** [Membership](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/membership.rb#L19-L39) distinguishes active/pending/accepted/revoked membership and tracks selected changes. [Vote/export permissions](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/ability/poll.rb#L5-L27) requires login, non-deactivation, active poll, visibility, current group participation and an eligible voter record. [Stance rights](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/ability/stance.rb#L9-L42) separately gates editing one's latest stance, changing vote weight and redaction. [Locked update](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/services/stance_service.rb#L59-L68) reloads and rechecks authority under a topic lock. [Member removal](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/services/poll_service.rb#L462-L471) revokes relevant active-poll stances, optionally preserving cast votes.
+
+**Product implication:** **Transferable benefit (hypothesis):** if actual human collaboration is later authorised, model who was invited, who could contribute, who responded, whose grant later expired, and who can publish a disposition independently. Revocation can prevent new actions without erasing an attributed historical statement. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/loomio.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-266: loomio: Make participation denominators explicit; never convert them into confidence
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed source:** [Result calculation](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/services/poll_service.rb#L552-L601) separately computes score share and electorate share and evaluates option thresholds. [Quorum/weight calculations](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/poll.rb#L620-L676) distinguishes eligible voters or issued vote weight from votes cast. [Latest/decided/undecided scopes](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/stance.rb#L80-L91) separates no response from a cast response. Important edge: result calculation defines score percent as zero when total score is zero, so the consent template's “objections <= 0%” condition can be true with no votes; this is a threshold calculation, not evidence of human consent.
+
+**Product implication:** **Transferable benefit (hypothesis):** display counts such as “2 of 4 invited humans responded; 1 unresolved objection”, with exact population and time/revision. If only operator-authored hypothetical perspectives exist, label them contributions/viewpoints, not people surveyed. Distinguish “no objection recorded” from “consent recorded”. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/loomio.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-267: loomio: Independent-input rounds require a real server boundary; anonymity conflicts with attributed reasons
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed source:** [Result availability/visibility](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/poll.rb#L679-L687) explicitly says “until_vote” may send results to the client and is presentation-controlled, whereas “until_closed” is backend-enforced. [Visibility/anonymity invariants](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/poll.rb#L823-L859) prevents early result revelation/reopening in the relevant mode and requires anonymous polls to disable reasons. [Anonymous participation masking](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/poll.rb#L553-L601) separates masked voter relations from intentional unmasked access and limits participation visibility. [Export/electorate visibility](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/ability/poll.rb#L23-L34) authorises exports based on result availability.
+
+**Product implication:** **Transferable benefit (hypothesis):** a future separately authorised human-review round could collect reasons before revealing others' positions, reducing exposure to prior answers. It must remain distinct from evidence independence and preserve a reviewable identity/provenance policy. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/loomio.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · deferred · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-268: loomio: Export is a separate audit/privacy product, not just a convenient CSV
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed source:** [CSV exporter](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/extras/poll_exporter.rb#L42-L99) provides poll metadata, option results, current outcome, voter identifiers, membership title/delegate/weight, times and reasons. It exports `stances.latest`, not full stance/outcome version history. [Controller](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/controllers/polls_controller.rb#L8-L21) authorises the export before sending CSV/HTML/BLT. It is useful review material, not a self-contained immutable audit package.
+
+**Concrete source-level discrepancy:** CSV rows directly read `stance.reason` at line 93; the [latest scope](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/models/stance.rb#L80-L89) excludes revoked records but not redacted ones. By contrast, [API serializer](https://github.com/loomio/loomio/blob/24380e2131c1e43594a241814f3f460a9b0065f6/app/serializers/stance_serializer.rb#L65-L81) suppresses redacted reasons and related attachments/previews. No redaction guard appears in the inspected CSV path. **This is a source-observed policy mismatch, not a runtime-confirmed exposure or a complete security audit.**
+
+**Product implication:** **Transferable benefit (hypothesis):** offer a readable decision packet derived from the verified native journal: exact snapshot/version, original contributions, all dispositions and predecessors, missing participants, unresolved objections and authority/evidence disclaimers. Maintain an authorised complete audit and an explicitly labelled audience projection; neither should masquerade as the other. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/loomio.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-269: highwayenv: Explicit observation projections, separate from the full state and action contract
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed evidence.** [define_spaces](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/abstract.py#L156-L163) builds action and observation types separately. [ObservationType](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/observation.py#L31-L55) separates space declaration, observation generation and observer identity. [KinematicsObservation configuration and projection](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/observation.py#L175-L285) selects features, bounds vehicle count, normalizes/clips, orders/pads and optionally shuffles observations. These are simulator-owned projections, not truth acquisition.
+
+**Product implication:** **Transferable benefit — inference.** A future assumption-critique view can explicitly declare which case references, epistemic labels and fields are visible, keeping the complete snapshot separate from the bounded report/proposal. This makes information loss inspectable. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/highwayenv.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-270: highwayenv: Reproducible reset/replay manifests rather than a seed-only claim
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed evidence.** [reset](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/abstract.py#L221-L251) accepts seed/options, delegates seeding to Gymnasium, optionally changes config, rebuilds the scene and resets time/steps. [step and simulation cadence](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/abstract.py#L261-L319) distinguish policy decisions from simulation frames. [paired action tests](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/tests/envs/test_actions.py#L43-L67) reset variants with seed=0 and compare equivalent action trajectories.
+
+**Product implication:** **Transferable benefit — inference.** For derived comparisons, retain a replay envelope: snapshot hash/revision, as_of, contract/rule version, ordered overlay specifications, input references and output hash. Record a seed only if randomness actually exists; do not add randomness to a deterministic core merely to imitate an environment. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/highwayenv.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-271: highwayenv: Isolate scenario branches AND verify the exact changed set
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed evidence.** [deep-copy preprocessors](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/abstract.py#L380-L452) transform copied environments; [custom deepcopy](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/abstract.py#L457-L467) excludes viewer/video wrappers. However, [set_vehicle_field](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/abstract.py#L431-L437) iterates cloned vehicles while comparing identity with the original self.vehicle. Static inference: that guard does not exclude the cloned ego vehicle as its shape suggests. [set_preferred_lane](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/abstract.py#L414-L422) uses a truthiness guard, making lane 0 a no-op. These were not runtime-reproduced. The [preprocessor smoke test](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/tests/envs/test_env_preprocessors.py#L9-L26) resets after transformations, then checks observation/reward bounds; it does not assert transform targeting or persistence.
+
+**Product implication:** **Transferable benefit — inference.** Strengthen exact-target assertions, not just deep-copy assertions: allowlisted changes by stable ID, explicit zero-versus-omitted handling, independent baselines and declared approval removal. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/highwayenv.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-272: highwayenv: Keep bounded computation distinct from evidenced outcomes
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed evidence.** [step](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/abstract.py#L261-L287) returns terminated and truncated separately. In [HighwayEnv](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/highway_env.py#L141-L151), termination is collision/optional off-road status; truncation is elapsed duration. Important counterexample: [finite_mdp conversion](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/finite_mdp.py#L85-L97) combines collision and end-of-horizon in a single terminal array. The distinction can be lost in an adapter even when the outer API has it.
+
+**Product implication:** **Transferable benefit — inference.** Preserve separate fields for search exhaustion, hypothetical time cutoff, unresolved external waits and evidence-backed outcome state across every report/adapter. The UI must distinguish 'not found within this search' from 'false' and from 'verified complete'. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/highwayenv.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-273: highwayenv: Action catalogue, current eligibility and authority are different contracts
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed evidence.** [ActionType](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/action.py#L23-L70) separates space declaration, execution and available actions. [DiscreteMetaAction.get_available_actions](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/action.py#L264-L300) filters lane changes by reachability and speed changes by speed index. This is a physical eligibility projection, not permission or legal authority.
+
+**Product implication:** **Transferable benefit — inference.** Any scenario/action view should expose separate explanations for catalogue membership, structural eligibility, evidence sufficiency, human selection and authority. Reuse readiness and command validation rather than create a second eligibility engine. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/highwayenv.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-274: highwayenv: Preserve diagnostic dimensions; do not turn a reward into confidence
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed evidence.** [HighwayEnv reward calculation](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/highway_env.py#L100-L139) derives component rewards, then weights/normalizes them. [reward documentation](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/docs/rewards/index.md#L3-L12) explicitly avoids specifying every desirable driving behavior. [finite_mdp's description](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/finite_mdp.py#L20-L42) calls TTC cells collision probabilities under constant-speed/no-other-lane-change assumptions, while [the implementation](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/finite_mdp.py#L125-L161) assigns hard-coded 1 and 0.5 collision-point costs. No empirical calibration evidence was established by this inspection.
+
+**Product implication:** **Transferable benefit — inference.** Use dimension-level scenario deltas: hard breaches, evidence gaps, unknown waits, resources, costs and route membership, with exact assumptions and retained objections. Ranking is a preference presentation, not a factual or normative conclusion. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/highwayenv.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-275: highwayenv: Differential contract tests plus explicit fidelity labels
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed evidence.** [Gym API tests](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/tests/envs/test_gym.py#L49-L106) check API shape, observation-space membership, reset config and terminated/truncated behavior. [action tests](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/tests/envs/test_actions.py#L43-L67) compare seeded equivalent action configurations; [observation regressions](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/tests/envs/test_observations.py#L23-L64) check declared shape/space behavior. [timing tests](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/tests/envs/test_time.py#L18-L39) measure throughput, not semantic quality. [HighwayEnvFast](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/highway_env.py#L154-L182) changes frequency, scene size and collision checking; [simplify](https://github.com/Farama-Foundation/HighwayEnv/blob/37c84a34cadcbfc17d61acf5196a89c380a56943/highway_env/envs/common/abstract.py#L380-L395) removes distant vehicles with a stated intent to preserve optimal actions, not a proof of equivalence.
+
+**Product implication:** **Transferable benefit — inference.** Add focused differential tests across existing adapters/reports using the same snapshot, clock, sort order and engine version; record approximation/fidelity differences if any are later introduced. Preserve source-bound failure artifacts. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/highwayenv.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-276: semantic-router: Preserve a data-only advisory routing boundary; do not revive dynamic execution
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Recommendation: adapt native boundary; reject automatic tool/action execution.**
+
+- **Observed upstream:** [Route](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/route.py#L6-L28) holds names, utterances, descriptions, thresholds and metadata; [RouteChoice](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/schema.py#L43-L50) returns an optional name/confidence/calibrated flag. The [v1 migration guide explicitly removes dynamic routes, function schemas, direct Route calls, RouteChoice.function_call, LLM wrappers and function-call helpers](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/docs/user-guide/guides/migration-to-v1.md#L323-L332). Its [replacement example puts subsequent invocation in application code](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/docs/user-guide/guides/migration-to-v1.md#L351-L373). [DecisionRouter forms a choice question from route descriptions or up to five utterances](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/decision.py#L43-L72).
+
+**Product implication:** **Transferable benefit—inference:** a small task-label suggestion could help an operator choose an already supported analysis purpose or provider from an allowlisted catalogue. A native envelope could retain proposed purpose, alternatives, abstention reason, source IDs, snapshot hash/revision and router-policy version. Nothing should be imported into the deterministic kernel merely to obtain this envelope. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/semantic-router.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-277: semantic-router: Make abstention explicit, and retain stronger native response validation
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Recommendation: adapt native abstention semantics; do not replace the current adapter with the generic router unchecked.**
+
+- **Observed upstream:** [BaseRouter defaults its threshold to None](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/base.py#L74-L84). [_choose preserves raw-score ranking, accepts everything when no bar is set, and returns name=None only when no candidate passes](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/base.py#L112-L143). Per-call thresholds override route/router thresholds. [DecisionRouter._route_scores only checks for a probability dictionary, converts values with float, and fills missing route names with 0.0](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/decision.py#L59-L63); that function does not establish finite/range/sum/expected-key validity. [The calibrated flag can mean merely model.probabilistic, without fitting](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/base.py#L100-L110), via [the model flag assigned by DecisionRouter](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/decision.py#L37-L41).
+
+**Product implication:** **Transferable benefit—inference:** standardize an explicit no-match/manual-review result across optional providers, distinguishing raw similarity, provider-reported probability, empirical route-label calibration and unavailable/error. Policy should not let a caller silently lower safety thresholds. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/semantic-router.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-278: semantic-router: Borrow held-out routing evaluation, not “decision quality” probabilities
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Recommendation: adapt evaluation design natively; defer calibrated UI claims until domain-specific evidence exists.**
+
+- **Observed upstream:** [afit learns from the top raw score and whether its label is correct, including None labels for out-of-scope queries; FitReport ECE is calculated on that same fitting data](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/base.py#L150-L173). [Calibrator requires both correct and incorrect examples and supports Platt/isotonic maps](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/calibration.py#L1-L35). The [benchmark specifies CLINC150 intent routing and separate validation/test data](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/benchmarks/accuracy.py#L1-L16). Its [measurement code fits on validation, evaluates held-out test, measures in-scope accuracy, out-of-scope recall, ECE and a threshold curve, and tunes a threshold on validation](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/benchmarks/accuracy.py#L238-L271).
+
+**Product implication:** **Transferable benefit—inference:** evaluate a narrowly specified routing task using operator-labelled fictional examples, out-of-scope cases, ambiguity/negation and scenario-family-disjoint splits. Report accepted-route precision, coverage/abstention, OOS false acceptance, per-label errors, latency/cost and calibration provenance—not just aggregate accuracy. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/semantic-router.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-279: semantic-router: Adapt a budgeted cascade, but do not inherit composition's confidence semantics
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Recommendation: adapt a bounded native cascade only if useful; reject pooled scores as corroboration.**
+
+- **Observed upstream:** [Chain sends only unresolved queries to later routers](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/compose.py#L39-L64). However, its final child returns scores regardless of that child's bar (line 55); the eventual outer choice uses [BaseRouter's threshold logic](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/base.py#L112-L143) and [the first child's route catalogue exposed by Chain](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/compose.py#L23-L34). Thus the last child's threshold is not automatically the final abstention rule. [Merge asks every child concurrently, averages scores with weights, and treats missing route scores as zero](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/compose.py#L67-L112). Its calibrated flag is simply all(child.calibrated).
+
+**Product implication:** **Transferable benefit—inference:** deterministic eligibility checks first, an optional cheap local suggestion second, then at most an explicitly authorized bounded provider stage. The wrapper should impose one end-to-end call/cost/time budget, preserve each stage's provenance and dissent, and allow no result. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/semantic-router.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-280: semantic-router: Treat dense+sparse “hybrid” as retrieval scoring—not deterministic policy checking
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Recommendation: candidate component for bounded retrieval/triage experiments; reject it as an authority or evidence validator.**
+
+- **Observed upstream:** [IndexedRouter exposes alpha, top_k and mean/max/sum aggregation](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/indexed.py#L87-L109); [_query scales dense and sparse query components and aggregates returned utterance scores by route](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/indexed.py#L215-L238). [HybridLocalIndex adds dense and sparse similarity scores; it explicitly rejects route_filter](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/index/hybrid_local.py#L104-L133). This is not an exact-rule/semantic guardrail conjunction.
+
+**Product implication:** **Transferable benefit—inference:** sparse terms may complement semantic paraphrases when suggesting a bounded analysis category or retrieving relevant candidate excerpts. Exact current-revision, source-membership, identifier, permission and policy checks must remain separate native vetoes. Any future retrieval suggestion must retain original excerpt IDs and exact spans, not replace evidence with vectors. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/semantic-router.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · deferred · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-281: semantic-router: Make catalogue/calibrator changes explicit and snapshot-bound; avoid mutable shared-index policy
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Recommendation: adapt immutable provenance/invalidation; defer mutable remote route catalogues and automatic refitting.**
+
+- **Observed upstream:** [the index is IndexedRouter's source of routes; refresh updates its cache, but newly written index hits can affect queries immediately](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/indexed.py#L126-L175). An uncached route uses the router-wide threshold rather than its not-yet-loaded route threshold. [Adding a route with a fitted sparse encoder refits vocabulary and deletes/rebuilds the index](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/indexed.py#L196-L206). [add/remove invokes _refit; saved fitting queries are rescored, or calibration is dropped when they are unavailable](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/base.py#L178-L227). In contrast, [_fill/refresh only changes the cache](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/indexed.py#L144-L161), not the fitted calibrator.
+
+**Product implication:** **Transferable benefit—inference:** give a candidate router an immutable versioned manifest covering route labels/examples, encoder/model identity, index snapshot, scoring/threshold policy and calibrator plus labelled evaluation provenance. Bind every suggestion to this manifest and the live case hash/revision. Catalogue edits should produce a new reviewed version, not silently change existing outputs. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/semantic-router.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-282: semantic-router: Account for all egress and dependency surfaces—not only the final provider call
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Recommendation: adapt native egress receipts and explicit budgets; defer package/hosted-index adoption pending a demonstrated need and separate approvals.**
+
+- **Observed upstream:** [OpenAIEncoder sends docs to embeddings.create and may truncate first](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/encoders/openai.py#L102-L126). [PineconeRecord includes the original utterance in metadata even though its ID hashes that utterance](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/index/pinecone.py#L80-L115), then [upserts records](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/index/pinecone.py#L521-L536). [SystemOne posts state, model and questions; defaults include three retries and concurrency eight](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/decision_models/systemone.py#L20-L104). These are distinct disclosure/cost surfaces.
+- **Observed configuration/dependencies:** [from_config constructs encoders/indexes and supplies routes for upsert](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/config.py#L321-L355); [IndexedRouter construction builds and refreshes the index synchronously](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/routers/indexed.py#L117-L124). Thus loading is not merely reading inert settings. [FastEmbedEncoder constructs TextEmbedding](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/encoders/fastembed.py#L20-L53); actual model acquisition/offline behavior is in a dependency not audited here. [Core dependencies include several hosted-provider SDKs, with additional local/index/provider extras](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/pyproject.toml#L9-L74). API-key fields are excluded from [the SystemOne model representation/serialization](https://github.com/aurelio-labs/semantic-router/blob/1fa1937e390fe57fb85ee3bbb8b3db593a4145db/semantic_router/decision_models/systemone.py#L34-L53), which is useful but not consent or data minimization.
+
+**Product implication:** **Transferable benefit—inference:** an application-owned egress manifest should cover encoding of exemplars and queries, remote-index writes, decision requests, calibration/refit/evaluation and retries. Allowlisted destination/model, exact source scope, purpose, byte/token limits, retention assumptions and cancellation semantics must be explicit before any transmission. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/semantic-router.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-283: assault-ai-pilot: Observation/view separation: an important negative example
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed evidence:** The [README service table](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/README.md#L46-L53) advertises fog of war. However, the [observation adapter](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/agents/efficientzero_v2/core/adapter_voec.py#L70-L110) copies every snapshot unit, including identity, side, coordinates, health and alive state; the [simulator snapshot](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/voec_sim/core/simulator.py#L297-L350) is built from the state units. No observer-specific visibility or redaction is apparent at these boundaries. This does not prove that every UI exposes everything; it does mean this adapter is not evidence of an enforced partial-observation boundary.
+
+**Product implication:** **Transferable benefit:** use the observation object as a reminder to specify exactly which information a reviewer or future model may receive. Epistemic uncertainty and authorization redaction are different controls; hidden data must not merely be painted over in a UI. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/assault-ai-pilot.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-284: assault-ai-pilot: Replay: separate stored playback from deterministic recalculation
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed evidence:** The simple [Replay container](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/assault_sim/debug/replay.py#L1-L27) separates metadata, initial state and turns; [ReplayObserver](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/assault_sim/debug/replay_observer.py#L5-L63) groups different event types per turn. The [benchmark serialization test](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/assault_bench/tests/test_benchmark_replay_serialization.py#L12-L29) covers a payload containing schema version, episode index, seed and transitions—not deterministic re-execution.
+
+**Working-contract caveats:** [replay_writer](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/assault_sim/debug/replay_writer.py#L4-L33) permits fallback string serialization. [storage_v2](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/mlops/storage_v2.py#L11-L21) writes plain bytes under a .zst extension when compression fails. Its [manifest and row index](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/mlops/storage_v2.py#L60-L112) provide useful navigability, but those functions do not establish an immutable evidence chain or reproduction guarantee.
+
+**Product implication:** **Transferable benefit:** an event-grouped review timeline or evidence bundle over existing immutable records, clearly distinguishing recorded observations, proposed changes, hypothetical calculations, review decisions and execution events. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/assault-ai-pilot.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-285: assault-ai-pilot: Inspector UX: navigate relevant events, not every repeated snapshot
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed evidence:** The typed [HexInspectorData](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/assault_ai_ui/src/components/hex/HexInspectorPopup.tsx#L5-L32) and [conditional, viewport-bounded popup rendering](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/assault_ai_ui/src/components/hex/HexInspectorPopup.tsx#L89-L115) show a concrete contextual inspector. More transferable than its domain content is the test-specified distinction between activity and mere object presence: [replay-filter helper](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/mlops/tests/test_reporting_viewer_replay_filter.py#L4-L78) intentionally excludes board-state units from activity, while [navigation tests](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/mlops/tests/test_reporting_viewer_replay_filter.py#L122-L174) specify previous/next, filtered navigation and keyboard/playback reuse.
+
+**Evidence level:** the navigation helper is test-local and several tests assert generated HTML strings. This is an intended contract/example, not observed working UI behavior or accessibility validation; the active React viewer was not run.
+
+**Product implication:** **Transferable benefit:** a bounded “previous/next relevant change” control for an action, condition or source, exposing exact typed references, revision and whether the row is observed, inferred, hypothetical or merely reviewed. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/assault-ai-pilot.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-286: assault-ai-pilot: Per-field availability and provenance are more useful than a synthetic score
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed evidence:** [trace-row construction](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/assault_bench/episode_trace_row_builder.py#L202-L214) carries value/source/available information and preserves some missing values as None rather than zero. The [reporting contract](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/mlops/contracts_v2.py#L20-L61) recognizes nullable selected-value/source/availability fields. [Tests](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/mlops/tests/test_contracts_v2.py#L12-L46) cover a nullable value, wrong schema and a missing required field. The viewer tests explicitly expect [N/A distinct from false](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/mlops/tests/test_reporting_viewer_replay_filter.py#L95-L102).
+
+**Product implication:** **Transferable benefit:** consistent diagnostic envelopes/UI labels for unavailable versus zero, source-derived versus inferred, stale versus current, and checked versus not checked. Useful for truthful provider/evaluation status and incomplete plan diagnostics without introducing probabilities. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/assault-ai-pilot.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-287: assault-ai-pilot: Hierarchical decomposition is only a typed-interface analogy here
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed evidence:** The [hierarchical self-play test](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/agents/efficientzero_v2/tests/test_hierarchical_ezm_selfplay.py#L13-L74) uses a DummyAdapter; [its assertions](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/agents/efficientzero_v2/tests/test_hierarchical_ezm_selfplay.py#L80-L131) check manager/worker sample emission and target_map/mode_vector shape. This is not evidence of independent agents, useful human task decomposition or performance. The generic [plan-state normalizer](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/assault_sim/contracts/training_contracts.py#L31-L80) carries step IDs and budgets, but also defaults missing budget state to UNBOUNDED and coerces/clamps malformed numeric input.
+
+**Product implication:** **Transferable benefit:** only the narrow interface discipline—explicit parent/child intent, resource limits, progress ownership and typed references—for a future operator-reviewed decomposition. Human commitments remain separate from proposed contributions. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/assault-ai-pilot.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · deferred · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-288: assault-ai-pilot: Evaluation provenance: retain per-case failures and lineage, but never call it quality acceptance
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Static pinned-source observation, not an executed test: **Observed evidence:** The [evaluation manifest writer](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/mlops/storage_v2.py#L89-L112) records schema, evaluation/model/run/scenario IDs and episode indexes. The catalogue uses a [12-character SHA-1 configuration fingerprint](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/mlops/reporting/build_catalog.py#L24-L26) and attaches [parent-lineage roots and Git commit labels to histories](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/mlops/reporting/build_catalog.py#L524-L578). [Seed-level finalization](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/assault_bench/benchmark_finalize.py#L59-L106) rejects missing per-seed/side records. Only the completeness pattern, not the military metrics, is relevant. [Catalogue tests](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/mlops/tests/test_reporting_catalog.py#L6-L58) fabricate checkpoint text, manifests and a deadbeef commit tag; the [storage test](https://github.com/richardcc/assault-ai-pilot/blob/0284a559d8bc3c7a15dfb0bf4fa42278242d60e9/mlops/tests/test_storage_v2.py#L10-L33) asserts file/row structure. Neither is quality evidence.
+
+**Product implication:** **Transferable benefit:** extend native evidence navigation with explicit lineage of assessment inputs and per-case failure/missing-data drill-down; associate a provider/model/prompt only after exact identity is verified. Preserve independent reviewer provenance separately from shared-model ancestry. Existing overlap, limits, rejected/deferred implementation alternatives and unrun measurable experiments remain in the source review. No new authority, factual attestation or automatic execution follows.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/research/github-2026-10-26/assault-ai-pilot.md`, `docs/research/github-2026-10-26/synthesis.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-289: A pre-populated VM can violate an otherwise intact research-source manifest
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Four-project pinned source / provider contract review, 2026-10-26.
+
+Four new snapshots verify. Full 32-repository verification fails five older checkouts: mem0 and Temporal nested sources initialized, Autogen LFS payload hydrated, promptfoo and Ruflo sparse model omissions absent. Existing bytes predate this copy and were preserved, not discarded. Configured public Git origins also differ from globally rewritten proxy transport URLs.
+
+**Product implication:** Verify actual checkout invariants on every restored VM; do not assert historical source-only conditions still hold. Check the configured origin and exact pin. Preserve pre-existing bytes while reconciling the environment separately. No full-archive certification, upstream execution or model acceptance is implied.
+
+**Roadmap links:** Candidate only; no delivery commitment.
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `research/README.md`, `research/sources.py`, `tests/test_research_copy.py`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / source synthesis: new_candidate or existing-task refinement from static source inspection only. Detailed risks, declined alternatives and proposed experiments are retained in the linked review. No automatic required scope, dependency adoption, code reuse or acceptance promotion.
+
+### [ ] EM-290: Opposing advisory answers survive successful native transports
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Native review and decision-provider implementation, 26 October 2026.
+
+Jev and GPT requested review while Clef accepted the same fictional example with missing integration evidence. Valid native answers and provider scores do not establish semantic quality or independent corroboration.
+
+**Product implication:** Preserve disagreements and evaluate on genuinely independent cases before assigning specialist authority; no majority-to-fact rule.
+
+**Roadmap links:** `B02-11` (partial), `B02-15` (partial), `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-review-and-decisions.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · Devin / integration: existing_task bounded engineering refinement only; no scope, required flag or acceptance promotion.
+
+### [ ] EM-291: An event-route toggle is not an agency-mode security boundary
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Native review and decision-provider implementation, 26 October 2026.
+
+The first packet API test found local challenge routes registered with AgencyHost because agency_events was false there. A separate agency_mode guard now omits routes and blocks local-history agency export in both configurations.
+
+**Product implication:** Test every supported host configuration at the server boundary, not only UI visibility.
+
+**Roadmap links:** `B02-11` (partial), `B02-15` (partial), `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-review-and-decisions.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · Devin / integration: existing_task bounded engineering refinement only; no scope, required flag or acceptance promotion.
+
+### [ ] EM-292: A mutable permission set can erase evidence of revocation
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Native review and decision-provider implementation, 26 October 2026.
+
+Rechecking the same set object can miss a policy mutation. Packet scope is frozen before projection and compared again under a same-database immediate transaction.
+
+**Product implication:** Serialize case/history/policy changes locally and retain the downloaded-copy revocation limitation; distributed enforcement is not established.
+
+**Roadmap links:** `B02-11` (partial), `B02-15` (partial), `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-review-and-decisions.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · Devin / integration: existing_task bounded engineering refinement only; no scope, required flag or acceptance promotion.
+
+### [ ] EM-293: A saved brief pointer is not a complete decision audit
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Native review and decision-provider implementation, 26 October 2026.
+
+An initial nested predecessor lookup failed; histories now verify before projection and missing/corrupt ancestry fails closed. Both packet modes explicitly omit source documents and predecessor contents.
+
+**Product implication:** Retain lineage pointers and explicit omissions, never claim a latest or restricted view is a full audit.
+
+**Roadmap links:** `B02-11` (partial), `B02-15` (partial), `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-review-and-decisions.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · Devin / integration: existing_task bounded engineering refinement only; no scope, required flag or acceptance promotion.
+
+### [ ] EM-294: Unpreviewed operator edits must not silently save an older review
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Native review and decision-provider implementation, 26 October 2026.
+
+The UI could let a save serialize the previous prepared brief while newly typed disposition fields were ignored. Saving now requires previewing edits and tab changes preserve the unsubmitted values.
+
+**Product implication:** Tie saved reasoning to exactly what the operator reviewed, without transforming review labels into approvals.
+
+**Roadmap links:** `B02-11` (partial), `B02-15` (partial), `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-review-and-decisions.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · Devin / integration: existing_task bounded engineering refinement only; no scope, required flag or acceptance promotion.
+
+### [ ] EM-295: Nested reusable packages need the same import-boundary check
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Native review and decision-provider implementation, 26 October 2026.
+
+The kernel guard only walked top-level modules. It now checks nested intelligence/domain packages too, allowing pure standard-library copy/math and ENDSTATE imports but no application/runtime services.
+
+**Product implication:** Standalone wheel smoke exercises new primitives under blocked application/provider imports; packaging is not public SDK acceptance.
+
+**Roadmap links:** `B02-11` (partial), `B02-15` (partial), `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-review-and-decisions.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · Devin / integration: existing_task bounded engineering refinement only; no scope, required flag or acceptance promotion.
+
+### [ ] EM-296: A narrative-free reference index is not anonymised public data
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** operator_hypothesis.
+**First recorded:** 2026-10-26. **Origin:** Native review and decision-provider implementation, 26 October 2026.
+
+Even after all free text is removed, selected IDs/hashes and case/history metadata may identify or correlate sensitive records.
+
+**Product implication:** Keep the index internal and permission checked; public sharing or stronger de-identification requires separate design and review.
+
+**Roadmap links:** `B02-11` (partial), `B02-15` (partial), `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-review-and-decisions.md`.
+
+**Decision history:**
+
+- 2026-10-26 · deferred · Devin / integration: new_candidate or deferred concern, not an automatic required task or acceptance claim.
+
+### [ ] EM-297: A free-tier flag does not guarantee zero recorded cost
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Native review and decision-provider implementation, 26 October 2026.
+
+The key reported free tier while Jev recorded 8547 nano-USD. Clef/GPT recorded zero; the three-call total was USD 0.000008547. Gateway preflight did not atomically pin routing or verify a hard cap.
+
+**Product implication:** Keep exact per-request receipts and shared-budget accounting; no automatic fan-out or retries. Future coordinator budget reservations remain separate work.
+
+**Roadmap links:** `B02-11` (partial), `B02-15` (partial), `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-review-and-decisions.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · Devin / integration: new_candidate or deferred concern, not an automatic required task or acceptance claim.
+
+### [ ] EM-298: Deferred dialog focus can interrupt the first edit
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Native review full-acceptance failure, 26 October 2026.
+
+The full native run failed its empty-title validity assertion and retained a screenshot of an unintended original-title save. Dialog opening used a deferred zero-delay heading focus. A controlled regression releases delayed timers after focusing the first input; synchronous initial focus keeps the active edit intact. The corrected focused native suite passes37 checks.
+
+**Product implication:** Treat focus scheduling as data-entry behavior, not only an accessibility decoration. Preserve failed evidence and verify invalid input has actually been entered before asserting that a form rejects it. No human accessibility certification follows.
+
+**Roadmap links:** `B02-15` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-native-review-and-decisions.md`, `tests/browser_accessibility.py`, `web/v2/ui.js`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · Devin / integration: existing_task correction to dialog focus; no acceptance gate or required scope changed.
+
+### [ ] EM-299: Security fixtures must restore a shared clock domain
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Owner-directed checkpoint repair, 26 October 2026.
+
+The installed-wheel OIDC expiry test froze the service clock after a simulated expiry while the token signer used wall time. Crossing a second boundary rejected its own valid token. Restoring the original clock callable fixes the fixture without weakening authentication.
+
+**Product implication:** Keep simulated expiry and subsequent normal operations distinct; do not add validator leeway to hide a test-clock mismatch.
+
+**Roadmap links:** `B03-01` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-checkpoint-repair.md`, `tests/test_oidc_login.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task: restore the original test clock; retain strict token and authority validation.
+
+### [ ] EM-300: An errored review service is not a review verdict
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Owner-directed checkpoint repair, 26 October 2026.
+
+The automated review for the earlier PR head reported errored, and no findings were available. Passing local tests do not turn that missing review into an independent approval.
+
+**Product implication:** Track service availability, software checks and independent review separately; retain the failure and recheck the published source.
+
+**Roadmap links:** `B02-18` (blocked).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-checkpoint-repair.md`, `tests/test_oidc_login.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: decision_record: no review or release gate is promoted by a service failure.

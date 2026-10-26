@@ -4,6 +4,151 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 verified checkpoint repair · Repair test-clock and dialog-focus failures before publication
+
+2026-10-26 · `local_unreleased`
+
+Prepare the complete verified local checkpoint for the existing unmerged PR; retain failures and separate review-service errors from software correctness.
+
+### Changed
+
+- Retain the exact passing native source and prior failed experiments in the publication handoff.
+
+### Fixed
+
+- Restore the OIDC expiry test’s original clock rather than freezing time for later wall-clock-signed tokens.
+- Initial dialog focus is synchronous; a controlled regression prevents delayed focus stealing the first edit.
+
+### Verification
+
+- Native source52e3af995e132ce9c70b9d98ff0aecf9c0a30388ab3695d0f424a1eb63d0b92e passed1945 source tests,1945 installed regressions and13 native suites/454 checks; exact inspection valid before documentation closeout.
+- Focused OIDC suite rerun:29 passed. Full native checks on the published head remain required.
+
+### Limitations
+
+- Local at preparation; the current PR head and checks determine publication. No merge, release, deployment or further provider inference.
+- Review service previously errored without findings. Independent/model/professional/production gates remain open.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Mixed fixture clocks can reject otherwise valid tokens.
+- Discovery: Errored review services provide no correctness verdict.
+- Risk: Weakening token validation would hide the fixture defect. Missing review is not approval.
+- Architecture: No production authority or pure-engine boundary changes; separate fixture time and review evidence.
+- Roadmap decision: existing_task repair and decision_record; no status, required scope or acceptance criterion changes.
+Registered discoveries: EM-298, EM-299, EM-300.
+
+Roadmap items: `B03-01`, `B02-15`, `B02-18`, `ES01-05`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-checkpoint-repair.md](docs/delivery/sessions/2026-10-26-checkpoint-repair.md), [tests/test_oidc_login.py](tests/test_oidc_login.py), [tests/browser_accessibility.py](tests/browser_accessibility.py).
+
+## 0.2.0-alpha.8 local native-review checkpoint · Retain dissent, replay scenarios and export checked decision packets
+
+2026-10-26 · `local_unreleased`
+
+Extend ENDSTATE-native review capabilities and the8BALL local-operator workflow; add separately opt-in native decision transports without granting model authority.
+
+### Added
+
+- Attributed hypotheses, immutable dispositions and explicit unresolved-objection acknowledgement.
+- Exact-change scenario manifests and deterministic replay on neutral snapshots.
+- Verified saved-brief packets with server-owned permissions, stale/history guards and narrative-free restricted indices.
+- Bounded Jev/Clef/GPT native transports and three separately authorized fictional smoke receipts.
+
+### Changed
+
+- Internal wheel smoke and recursive import guards exercise the new provider-free primitives. Standard acceptance strips all selected provider credentials.
+- Native Plan Review regression covers actual packet downloads, retained edits and stale denial.
+
+### Fixed
+
+- Agency host/event routing distinction; frozen permission comparisons; nested predecessor lookup; saving unpreviewed disposition edits.
+- Initial modal focus is synchronous so a pending timer cannot interrupt the first edit.
+
+### Verification
+
+- 230 focused scenario/rehearsal/packet/kernel/domain/transport tests passed before the final strict-refusal follow-up.
+- 127 focused importlib-mode packet/transport/runner tests passed; native Plan Review passed49 checks.
+- 1945 source Python tests passed before documentation closeout.
+- Three native fictional answers validated; Jev/GPT selected review, Clef selected accept. Gateway recorded total USD0.000008547.
+- Final full source-bound native acceptance is a separate unique artifact; no full-run success is asserted in this pre-run checkpoint.
+- First full native run20261026T020659Z-5bbe5470 failed accessibility;1945 source tests, installed-wheel regression and12 browser suites/417 checks passed. Failed report inspected valid before repair. Corrected focused accessibility passes37 checks; fresh full acceptance follows.
+
+### Limitations
+
+- Local uncommitted work after4f31c6b; not included in PR6 yet. No merge, release, deployment, upstream runtime or public SDK.
+- No model swarm or named-person predictions; no independent quality/operator/production acceptance. Sonnet5.5 inference untested.
+- Packets are incomplete internal projections, not sharing authority. Agency packet routes remain disabled.
+- No provider hard-cap/top-up or atomic gateway routing guarantee. Five older research snapshot discrepancies remain preserved.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Opposing advisory answers survive successful native transports
+- Discovery: An event-route toggle is not an agency-mode security boundary
+- Discovery: A mutable permission set can erase evidence of revocation
+- Discovery: A saved brief pointer is not a complete decision audit
+- Discovery: Unpreviewed operator edits must not silently save an older review
+- Discovery: Nested reusable packages need the same import-boundary check
+- Discovery: A narrative-free reference index is not anonymised public data
+- Discovery: A free-tier flag does not guarantee zero recorded cost
+- Discovery: Deferred modal focus can interrupt early input, producing an unintended original-value save rather than an empty required-field submission.
+- Risk: Successful transports can disagree; a reference index is not anonymous; an event-mode switch is not the full authorization boundary.
+- Architecture: Reusable calculations and projections stay in ENDSTATE; authority, storage, transport and UI stay in8BALL.
+- Roadmap decision: existing_task engineering refinements plus visible deferred/candidate concerns; no status, required flag or acceptance criterion changed.
+Registered discoveries: EM-290, EM-291, EM-292, EM-293, EM-294, EM-295, EM-296, EM-297, EM-298.
+
+Roadmap items: `B02-11`, `B02-12`, `B02-15`, `ES01-05`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-native-review-and-decisions.md](docs/delivery/sessions/2026-10-26-native-review-and-decisions.md), [docs/v2/ASSUMPTION-CHALLENGE.md](docs/v2/ASSUMPTION-CHALLENGE.md), [docs/v2/DECISION-PROVIDERS.md](docs/v2/DECISION-PROVIDERS.md), [tests/test_decision_packet.py](tests/test_decision_packet.py), [tests/browser_plan_review.py](tests/browser_plan_review.py).
+
+## 0.2.0-alpha.8 research and contract checkpoint · Preserve four pinned source studies and native decision-model contracts
+
+2026-10-26 · `local_unreleased`
+
+Source-only research and recommendations, not four installed dependencies or accepted model specialists. Keeps original authority/evidence boundaries and optional task scopes unchanged.
+
+### Added
+
+- Four exact source Gitlinks, manifests, individual code/licence studies and a combined three-slice recommendation.
+- Owner-confirmed native Jev/Clef/GPT protocol investigation; read-only catalogue access only.
+
+### Changed
+
+- Research inventory now records 32 repositories with explicit omissions and five older VM discrepancies.
+
+### Fixed
+
+- Research helper checks configured origins rather than environment-rewritten proxy transport URLs; seven focused controlled tests cover the boundary.
+
+### Verification
+
+- Four new source snapshots and materialized blob identities verified; HighwayEnv batch-file newline normalization recorded.
+- Seven focused source-helper tests pass. Working-tree regression: 1793 passed, one dependency deprecation warning; Python compilation and all browser-module syntax checks pass. This working tree also includes unfinished rehearsal code; these totals are not source-bound feature or browser acceptance.
+- Full archive verification failed on five older snapshots; existing data retained. No upstream code, model, dependency or test was executed.
+
+### Limitations
+
+- No measured operator benefit, runtime dependency adoption, model inference, professional/human acceptance, merge, release or deployment. Native brief remains unfinished and needs dedicated coverage.
+- PR6 has a retained installed-wheel CI failure at the preceding pushed source; local logical-clock fixture fix is separate from this research checkpoint.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Retained dissent, exact-change replay checks, reference-focused history and truthful missing-input labels strengthen existing native capabilities; source/runtime/licence boundaries remain distinct.
+- Risk: Votes, rewards, similarity, class probabilities and shared-model agreement are not evidence or case-success probabilities. Export and privacy boundaries require server enforcement.
+- Architecture: Keep ENDSTATE typed and provider-free; 8BALL owns current authority, transport, persistence and operator interaction. Reuse existing Plan Review/Insights/Course seams instead of parallel engines.
+- Roadmap decision: Existing-task refinement and source-inspection candidates only; no task status, required flag, acceptance criterion or optional hold changed.
+Registered discoveries: EM-260, EM-261, EM-262, EM-263, EM-264, EM-265, EM-266, EM-267, EM-268, EM-269, EM-270, EM-271, EM-272, EM-273, EM-274, EM-275, EM-276, EM-277, EM-278, EM-279, EM-280, EM-281, EM-282, EM-283, EM-284, EM-285, EM-286, EM-287, EM-288, EM-289.
+
+Roadmap items: `B02-09`, `ES02-06`.
+
+Evidence: [docs/research/github-2026-10-26/README.md](docs/research/github-2026-10-26/README.md), [docs/research/github-2026-10-26/synthesis.md](docs/research/github-2026-10-26/synthesis.md), [docs/research/github-2026-10-26/decision-projects-source-manifest.json](docs/research/github-2026-10-26/decision-projects-source-manifest.json), [docs/v2/DECISION-PROVIDERS.md](docs/v2/DECISION-PROVIDERS.md), [tests/test_research_copy.py](tests/test_research_copy.py).
+
 ## 0.2.0-alpha.8 provider verification correction · Preserve the failed native provider checkpoint and repair tracking consistency
 
 2026-10-26 · `local_unreleased`

@@ -67,10 +67,22 @@ r=calculate(PlanRequest(snapshot=snapshot,as_of=now))
 assert len(r.plan['routes'])==2 and not r.plan['outcome_evidenced']
 assert r.plan['action_states']['a']['status']=='approval_required'
 assert PlanResponse.model_validate_json(r.model_dump_json()).model_dump(mode='json')==r.model_dump(mode='json')
+from endstate.scenarios import Scenario,compare,verify
+from endstate.decision_packet import Selection,project
+from endstate.intelligence.decisions import ChoiceQuestion,validate_choice
+before=snapshot.model_dump_json()
+comparison=compare(snapshot,Scenario(expected_revision=0,budget=0),now)
+assert verify(snapshot,comparison) and snapshot.model_dump_json()==before
+packet=project({'reference_hashes':{'case:summary':'0'*64},'private':'Fictional private narrative'},
+               Selection(mode='reference_index',references=['case:summary']),{'case:summary'})
+assert packet['brief'] is None and 'Fictional private narrative' not in json.dumps(packet)
+q=ChoiceQuestion(id='review',instructions='Review only',criteria={'review':'Seek evidence','defer':'Defer review'})
+assert validate_choice({'type':'choice','choice':'review','confidence':1.0,'probabilities':{'review':1.0,'defer':0.0}},q)['choice']=='review'
 import endstate
 assert pathlib.Path(endstate.__file__).resolve().is_relative_to(pathlib.Path(sys.argv[1]).resolve())
 print(json.dumps({'installed_outside_repository':True,'routes':len(r.plan['routes']),
  'input_unchanged':snapshot.observations==[],'approval_preserved':True,'roundtrip_exact':True,
+ 'scenario_replay':True,'restricted_packet':True,'typed_advisory_contract':True,
  'forbidden_runtime_imports':[],'model_inference':False}))
 '''
         test=json.loads(run([sys.executable,'-I','-c',snippet,str(target)],temp))

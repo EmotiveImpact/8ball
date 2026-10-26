@@ -127,7 +127,7 @@ def test_outputs_cannot_pollute_source(tmp_path):
 
 @pytest.mark.parametrize('mode',['native','code','bridge'])
 def test_standard_verification_removes_credentials_and_case_path(monkeypatch,mode):
-    private=('HF_TOKEN','TYPESAFE_API_KEY','OPENAI_API_KEY','EIGHTBALL_DB','EIGHTBALL_TOKEN',
+    private=('HF_TOKEN','TYPESAFE_API_KEY','OPENAI_API_KEY','ANTHROPIC_API_KEY','EXPERIENTIAL_API_KEY','EXPLABS_API_KEY','EIGHTBALL_DB','EIGHTBALL_TOKEN',
              'EIGHTBALL_API_KEY','EIGHTBALL_API_BASE_URL','EIGHTBALL_API_MODEL',
              'EIGHTBALL_API_PROVIDER','EIGHTBALL_API_ROUTING_PROVIDER')
     for k in private:

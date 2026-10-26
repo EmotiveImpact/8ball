@@ -1,3 +1,11 @@
+# Owner-directed repair and publication checkpoint — 26 October 2026
+
+[Current repair handoff](sessions/2026-10-26-checkpoint-repair.md) records the OIDC fixture-clock fix, dialog-focus regression and exact passing native source (1,945 source tests, 1,945 installed regressions, 13 suites / 454 browser checks). The owner's “fix the issues” request authorizes updating the existing PR, not merging or deploying. Publication/check status comes from the [current PR head](https://github.com/EmotiveImpact/8ball/pull/6); earlier local-only entries below preserve their preparation state and do not override it.
+
+# Local review and decision-provider checkpoint — 26 October 2026
+
+[Latest bounded handoff](sessions/2026-10-26-native-review-and-decisions.md): retained dissent, replayable scenarios, current-server packet checks and three authorized fictional native decision responses. These changes are local/uncommitted after `4f31c6b40141990d0863d9375f47a7ad51863dfc`, not yet in PR #6. Focused/native workflow evidence is recorded there; the final full source-bound run is separate. Sonnet 5.5 inference, independent quality, model coordination, production and release gates remain open. Earlier catalogue-only statements below are historical for Experiential, not a claim that no decision inference has occurred.
+
 # Current provider follow-up — 26 October 2026
 
 Owner selected **Sonnet 5.5, not Opus**. The account catalogue lists active

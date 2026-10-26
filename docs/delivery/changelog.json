@@ -3,25 +3,264 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-checkpoint-repair",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 verified checkpoint repair",
+      "title": "Repair test-clock and dialog-focus failures before publication",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-01",
+        "B02-15",
+        "B02-18",
+        "ES01-05"
+      ],
+      "summary": "Prepare the complete verified local checkpoint for the existing unmerged PR; retain failures and separate review-service errors from software correctness.",
+      "added": [],
+      "changed": [
+        "Retain the exact passing native source and prior failed experiments in the publication handoff."
+      ],
+      "fixed": [
+        "Restore the OIDC expiry test’s original clock rather than freezing time for later wall-clock-signed tokens.",
+        "Initial dialog focus is synchronous; a controlled regression prevents delayed focus stealing the first edit."
+      ],
+      "verification": [
+        "Native source52e3af995e132ce9c70b9d98ff0aecf9c0a30388ab3695d0f424a1eb63d0b92e passed1945 source tests,1945 installed regressions and13 native suites/454 checks; exact inspection valid before documentation closeout.",
+        "Focused OIDC suite rerun:29 passed. Full native checks on the published head remain required."
+      ],
+      "limitations": [
+        "Local at preparation; the current PR head and checks determine publication. No merge, release, deployment or further provider inference.",
+        "Review service previously errored without findings. Independent/model/professional/production gates remain open."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-checkpoint-repair.md",
+        "tests/test_oidc_login.py",
+        "tests/browser_accessibility.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Mixed fixture clocks can reject otherwise valid tokens.",
+          "Errored review services provide no correctness verdict."
+        ],
+        "risks": [
+          "Weakening token validation would hide the fixture defect. Missing review is not approval."
+        ],
+        "architecture_implications": [
+          "No production authority or pure-engine boundary changes; separate fixture time and review evidence."
+        ],
+        "roadmap_decision": "existing_task repair and decision_record; no status, required scope or acceptance criterion changes.",
+        "insight_ids": [
+          "EM-298",
+          "EM-299",
+          "EM-300"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-26-native-review-and-decisions",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 local native-review checkpoint",
+      "title": "Retain dissent, replay scenarios and export checked decision packets",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-11",
+        "B02-12",
+        "B02-15",
+        "ES01-05"
+      ],
+      "summary": "Extend ENDSTATE-native review capabilities and the8BALL local-operator workflow; add separately opt-in native decision transports without granting model authority.",
+      "added": [
+        "Attributed hypotheses, immutable dispositions and explicit unresolved-objection acknowledgement.",
+        "Exact-change scenario manifests and deterministic replay on neutral snapshots.",
+        "Verified saved-brief packets with server-owned permissions, stale/history guards and narrative-free restricted indices.",
+        "Bounded Jev/Clef/GPT native transports and three separately authorized fictional smoke receipts."
+      ],
+      "changed": [
+        "Internal wheel smoke and recursive import guards exercise the new provider-free primitives. Standard acceptance strips all selected provider credentials.",
+        "Native Plan Review regression covers actual packet downloads, retained edits and stale denial."
+      ],
+      "fixed": [
+        "Agency host/event routing distinction; frozen permission comparisons; nested predecessor lookup; saving unpreviewed disposition edits.",
+        "Initial modal focus is synchronous so a pending timer cannot interrupt the first edit."
+      ],
+      "verification": [
+        "230 focused scenario/rehearsal/packet/kernel/domain/transport tests passed before the final strict-refusal follow-up.",
+        "127 focused importlib-mode packet/transport/runner tests passed; native Plan Review passed49 checks.",
+        "1945 source Python tests passed before documentation closeout.",
+        "Three native fictional answers validated; Jev/GPT selected review, Clef selected accept. Gateway recorded total USD0.000008547.",
+        "Final full source-bound native acceptance is a separate unique artifact; no full-run success is asserted in this pre-run checkpoint.",
+        "First full native run20261026T020659Z-5bbe5470 failed accessibility;1945 source tests, installed-wheel regression and12 browser suites/417 checks passed. Failed report inspected valid before repair. Corrected focused accessibility passes37 checks; fresh full acceptance follows."
+      ],
+      "limitations": [
+        "Local uncommitted work after4f31c6b; not included in PR6 yet. No merge, release, deployment, upstream runtime or public SDK.",
+        "No model swarm or named-person predictions; no independent quality/operator/production acceptance. Sonnet5.5 inference untested.",
+        "Packets are incomplete internal projections, not sharing authority. Agency packet routes remain disabled.",
+        "No provider hard-cap/top-up or atomic gateway routing guarantee. Five older research snapshot discrepancies remain preserved."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-native-review-and-decisions.md",
+        "docs/v2/ASSUMPTION-CHALLENGE.md",
+        "docs/v2/DECISION-PROVIDERS.md",
+        "tests/test_decision_packet.py",
+        "tests/browser_plan_review.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Opposing advisory answers survive successful native transports",
+          "An event-route toggle is not an agency-mode security boundary",
+          "A mutable permission set can erase evidence of revocation",
+          "A saved brief pointer is not a complete decision audit",
+          "Unpreviewed operator edits must not silently save an older review",
+          "Nested reusable packages need the same import-boundary check",
+          "A narrative-free reference index is not anonymised public data",
+          "A free-tier flag does not guarantee zero recorded cost",
+          "Deferred modal focus can interrupt early input, producing an unintended original-value save rather than an empty required-field submission."
+        ],
+        "risks": [
+          "Successful transports can disagree; a reference index is not anonymous; an event-mode switch is not the full authorization boundary."
+        ],
+        "architecture_implications": [
+          "Reusable calculations and projections stay in ENDSTATE; authority, storage, transport and UI stay in8BALL."
+        ],
+        "roadmap_decision": "existing_task engineering refinements plus visible deferred/candidate concerns; no status, required flag or acceptance criterion changed.",
+        "insight_ids": [
+          "EM-290",
+          "EM-291",
+          "EM-292",
+          "EM-293",
+          "EM-294",
+          "EM-295",
+          "EM-296",
+          "EM-297",
+          "EM-298"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-26-four-project-source-review",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 research and contract checkpoint",
+      "title": "Preserve four pinned source studies and native decision-model contracts",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-09",
+        "ES02-06"
+      ],
+      "summary": "Source-only research and recommendations, not four installed dependencies or accepted model specialists. Keeps original authority/evidence boundaries and optional task scopes unchanged.",
+      "added": [
+        "Four exact source Gitlinks, manifests, individual code/licence studies and a combined three-slice recommendation.",
+        "Owner-confirmed native Jev/Clef/GPT protocol investigation; read-only catalogue access only."
+      ],
+      "changed": [
+        "Research inventory now records 32 repositories with explicit omissions and five older VM discrepancies."
+      ],
+      "fixed": [
+        "Research helper checks configured origins rather than environment-rewritten proxy transport URLs; seven focused controlled tests cover the boundary."
+      ],
+      "verification": [
+        "Four new source snapshots and materialized blob identities verified; HighwayEnv batch-file newline normalization recorded.",
+        "Seven focused source-helper tests pass. Working-tree regression: 1793 passed, one dependency deprecation warning; Python compilation and all browser-module syntax checks pass. This working tree also includes unfinished rehearsal code; these totals are not source-bound feature or browser acceptance.",
+        "Full archive verification failed on five older snapshots; existing data retained. No upstream code, model, dependency or test was executed."
+      ],
+      "limitations": [
+        "No measured operator benefit, runtime dependency adoption, model inference, professional/human acceptance, merge, release or deployment. Native brief remains unfinished and needs dedicated coverage.",
+        "PR6 has a retained installed-wheel CI failure at the preceding pushed source; local logical-clock fixture fix is separate from this research checkpoint."
+      ],
+      "evidence_paths": [
+        "docs/research/github-2026-10-26/README.md",
+        "docs/research/github-2026-10-26/synthesis.md",
+        "docs/research/github-2026-10-26/decision-projects-source-manifest.json",
+        "docs/v2/DECISION-PROVIDERS.md",
+        "tests/test_research_copy.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Retained dissent, exact-change replay checks, reference-focused history and truthful missing-input labels strengthen existing native capabilities; source/runtime/licence boundaries remain distinct."
+        ],
+        "risks": [
+          "Votes, rewards, similarity, class probabilities and shared-model agreement are not evidence or case-success probabilities. Export and privacy boundaries require server enforcement."
+        ],
+        "architecture_implications": [
+          "Keep ENDSTATE typed and provider-free; 8BALL owns current authority, transport, persistence and operator interaction. Reuse existing Plan Review/Insights/Course seams instead of parallel engines."
+        ],
+        "roadmap_decision": "Existing-task refinement and source-inspection candidates only; no task status, required flag, acceptance criterion or optional hold changed.",
+        "insight_ids": [
+          "EM-260",
+          "EM-261",
+          "EM-262",
+          "EM-263",
+          "EM-264",
+          "EM-265",
+          "EM-266",
+          "EM-267",
+          "EM-268",
+          "EM-269",
+          "EM-270",
+          "EM-271",
+          "EM-272",
+          "EM-273",
+          "EM-274",
+          "EM-275",
+          "EM-276",
+          "EM-277",
+          "EM-278",
+          "EM-279",
+          "EM-280",
+          "EM-281",
+          "EM-282",
+          "EM-283",
+          "EM-284",
+          "EM-285",
+          "EM-286",
+          "EM-287",
+          "EM-288",
+          "EM-289"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-provider-ledger-correction",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 provider verification correction",
       "title": "Preserve the failed native provider checkpoint and repair tracking consistency",
       "delivery": "local_unreleased",
-      "task_ids": ["B02-09"],
+      "task_ids": [
+        "B02-09"
+      ],
       "summary": "The first Sonnet configuration full run passed all native browsers but failed two source and installed tracking tests. Preserve its evidence and repair the missing reserved-claim prefix and stale derived blocker text, without changing tests or provider behavior.",
-      "added": ["Source-bound failed-run receipt; the original raw run remains retained."],
-      "changed": ["ROADMAP-LANES reflects the canonical B02-09 blockers; original builder ownership remains explicit."],
-      "fixed": ["Restored the intelligence coordination-claim prefix on the B02-09 next action."],
-      "verification": ["Run 20261026T004726Z-ff1767e8 on clean 83c04f3 failed: 1784/1786 source tests; installed regressions failed the same two tracking tests. All 13 native suites/439 checks passed, as did compile, JS, schemas and structural fixtures.", "Failed-run --inspect valid before edits. A fresh complete native run is required after the correction."],
-      "limitations": ["Not a passing full-run receipt, model inference or model quality result. Provider cap/credit/top-up and independent acceptance gates remain open. No merge, release or deployment."],
-      "evidence_paths": ["docs/evidence/sonnet-55-native-failed-2026-10-26.json", "docs/delivery/sessions/2026-10-26-sonnet-55.md"],
+      "added": [
+        "Source-bound failed-run receipt; the original raw run remains retained."
+      ],
+      "changed": [
+        "ROADMAP-LANES reflects the canonical B02-09 blockers; original builder ownership remains explicit."
+      ],
+      "fixed": [
+        "Restored the intelligence coordination-claim prefix on the B02-09 next action."
+      ],
+      "verification": [
+        "Run 20261026T004726Z-ff1767e8 on clean 83c04f3 failed: 1784/1786 source tests; installed regressions failed the same two tracking tests. All 13 native suites/439 checks passed, as did compile, JS, schemas and structural fixtures.",
+        "Failed-run --inspect valid before edits. A fresh complete native run is required after the correction."
+      ],
+      "limitations": [
+        "Not a passing full-run receipt, model inference or model quality result. Provider cap/credit/top-up and independent acceptance gates remain open. No merge, release or deployment."
+      ],
+      "evidence_paths": [
+        "docs/evidence/sonnet-55-native-failed-2026-10-26.json",
+        "docs/delivery/sessions/2026-10-26-sonnet-55.md"
+      ],
       "emergence_review": {
-        "discoveries": ["The existing EM-257 tracking boundary recurred: changing a task blocker requires updating its derived lane representation while preserving reserved ownership."],
-        "risks": ["Native browser success cannot mask source or installed-package tracking failures."],
-        "architecture_implications": ["Keep full source-bound checks and immutable failures; do not weaken the assertions or introduce a second editable status board."],
+        "discoveries": [
+          "The existing EM-257 tracking boundary recurred: changing a task blocker requires updating its derived lane representation while preserving reserved ownership."
+        ],
+        "risks": [
+          "Native browser success cannot mask source or installed-package tracking failures."
+        ],
+        "architecture_implications": [
+          "Keep full source-bound checks and immutable failures; do not weaken the assertions or introduce a second editable status board."
+        ],
         "roadmap_decision": "existing_task correction under B02-09; no scope or status promotion.",
-        "insight_ids": ["EM-257"]
+        "insight_ids": [
+          "EM-257"
+        ]
       }
     },
     {
@@ -30,20 +269,50 @@
       "version": "0.2.0-alpha.8 Sonnet 5.5 configuration",
       "title": "Select Sonnet 5.5, preserve failed inference and migrate bounded request parameters",
       "delivery": "local_unreleased",
-      "task_ids": ["B02-09"],
+      "task_ids": [
+        "B02-09"
+      ],
       "summary": "Owner selected Sonnet 5.5, not Opus. Account catalogue lists claude-sonnet-5-5 active; no successful inference exists. Direct Anthropic requests omit unsupported sampling controls without raising limits or adding retries. Historical Sonnet 4.6 HTTP400 failures are retained exactly.",
-      "added": ["Hash-addressed compressed original failed provider report and safe catalogue/selection receipt; recorded the missing billing-cap preflight and hold on further inference."],
-      "changed": ["Opt-in Anthropic configuration examples select claude-sonnet-5-5. Direct Anthropic call receipts record omitted sampling and provider-default thinking; other endpoints retain their existing parameters."],
-      "fixed": ["Avoid sending temperature to direct Anthropic models that reject sampling controls. This is not a diagnosis of the older Sonnet 4.6 failures."],
-      "verification": ["181 focused compatible transport/CLI/integration/retention tests passed in 3.44s with HTTP doubles; one existing Starlette/AnyIO deprecation warning.", "Read-only catalogue GET HTTP200: 14 entries, no further page, selected Sonnet 5.5 active. No inference performed by that check. Full source-bound native acceptance follows this functional checkpoint."],
-      "limitations": ["Configuration is opt-in, not a deployed/global environment update. Compatibility response_format is not remotely enforced; native Messages adapter is not implemented.", "No Sonnet 5.5 generation, model quality or independent human/production acceptance. Earlier Sonnet 4.6 attempt failed all four fixtures; exact rejection cause unknown.", "Provider-enforced US$5 cap, account credit and disabled automatic top-up remain unverified. No further inference until preflight is confirmed; no merge/release/deployment."],
-      "evidence_paths": ["docs/evidence/anthropic-selection-2026-10-26.json", "docs/evidence/anthropic-compatible-2026-10-26.json.xz", "docs/delivery/sessions/2026-10-26-sonnet-55.md", "tests/test_compatible_provider.py"],
+      "added": [
+        "Hash-addressed compressed original failed provider report and safe catalogue/selection receipt; recorded the missing billing-cap preflight and hold on further inference."
+      ],
+      "changed": [
+        "Opt-in Anthropic configuration examples select claude-sonnet-5-5. Direct Anthropic call receipts record omitted sampling and provider-default thinking; other endpoints retain their existing parameters."
+      ],
+      "fixed": [
+        "Avoid sending temperature to direct Anthropic models that reject sampling controls. This is not a diagnosis of the older Sonnet 4.6 failures."
+      ],
+      "verification": [
+        "181 focused compatible transport/CLI/integration/retention tests passed in 3.44s with HTTP doubles; one existing Starlette/AnyIO deprecation warning.",
+        "Read-only catalogue GET HTTP200: 14 entries, no further page, selected Sonnet 5.5 active. No inference performed by that check. Full source-bound native acceptance follows this functional checkpoint."
+      ],
+      "limitations": [
+        "Configuration is opt-in, not a deployed/global environment update. Compatibility response_format is not remotely enforced; native Messages adapter is not implemented.",
+        "No Sonnet 5.5 generation, model quality or independent human/production acceptance. Earlier Sonnet 4.6 attempt failed all four fixtures; exact rejection cause unknown.",
+        "Provider-enforced US$5 cap, account credit and disabled automatic top-up remain unverified. No further inference until preflight is confirmed; no merge/release/deployment."
+      ],
+      "evidence_paths": [
+        "docs/evidence/anthropic-selection-2026-10-26.json",
+        "docs/evidence/anthropic-compatible-2026-10-26.json.xz",
+        "docs/delivery/sessions/2026-10-26-sonnet-55.md",
+        "tests/test_compatible_provider.py"
+      ],
       "emergence_review": {
-        "discoveries": ["A new model name also changes protocol and thinking/output-budget semantics; catalogue access cannot establish inference success.", "Fictional fixture permission and token ceilings did not establish the required provider-enforced spending cap; preserve the missed preflight explicitly."],
-        "risks": ["Ignored schema requests and unverified billing limits can be mistaken for model/cost guarantees. Unknown older 400 causes must not be rewritten as a new-model incompatibility."],
-        "architecture_implications": ["Keep vendor protocol handling outside ENDSTATE, fixed limits/local validation and explicit external permission. Native Messages and dollar-denominated enforcement are separate work."],
+        "discoveries": [
+          "A new model name also changes protocol and thinking/output-budget semantics; catalogue access cannot establish inference success.",
+          "Fictional fixture permission and token ceilings did not establish the required provider-enforced spending cap; preserve the missed preflight explicitly."
+        ],
+        "risks": [
+          "Ignored schema requests and unverified billing limits can be mistaken for model/cost guarantees. Unknown older 400 causes must not be rewritten as a new-model incompatibility."
+        ],
+        "architecture_implications": [
+          "Keep vendor protocol handling outside ENDSTATE, fixed limits/local validation and explicit external permission. Native Messages and dollar-denominated enforcement are separate work."
+        ],
         "roadmap_decision": "existing_task and decision_record under B02-09: bounded Sonnet selection/request migration, historical failed evidence and billing hold. No acceptance promotion or new required scope.",
-        "insight_ids": ["EM-258", "EM-259"]
+        "insight_ids": [
+          "EM-258",
+          "EM-259"
+        ]
       }
     },
     {
@@ -3969,5 +4238,5 @@
       ]
     }
   ],
-  "updated_on": "2026-10-25"
+  "updated_on": "2026-10-26"
 }

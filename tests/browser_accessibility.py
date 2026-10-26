@@ -82,7 +82,21 @@ def main():
                     page.set_viewport_size({'width':1440,'height':1000})
                     page.screenshot(path=str(OUT/'8BALL-Integrated-Workspace.png'),full_page=True)
                     check('reduced motion is honoured',page.evaluate("matchMedia('(prefers-reduced-motion: reduce)').matches"))
-                    page.locator('[data-action=metadata]').click();f=page.locator('[data-form=metadata]');f.locator('[name=title]').fill('')
+                    page.evaluate('''() => {
+                     window.delayedModalFocus=[];window.originalTimeout=window.setTimeout;
+                     window.setTimeout=(fn,delay,...args)=>delay===0
+                       ? (window.delayedModalFocus.push(()=>fn(...args)),0)
+                       : window.originalTimeout(fn,delay,...args);
+                    }''')
+                    page.locator('[data-action=metadata]').click();f=page.locator('[data-form=metadata]')
+                    f.locator('[name=title]').focus()
+                    page.evaluate('''() => {
+                     window.setTimeout=window.originalTimeout;
+                     window.delayedModalFocus.forEach(fn=>fn());
+                    }''')
+                    expect(f.locator('[name=title]')).to_be_focused()
+                    check('opening a dialog cannot defer focus over an active edit',True)
+                    f.locator('[name=title]').fill('');expect(f.locator('[name=title]')).to_have_value('')
                     f.locator('[type=submit]').click();check('invalid required form remains open',page.locator('.dialog').count()==1)
                     check('invalid form did not alter case state',store.audit(case.id)==before)
                     check('native validity is exposed to assistive technology',f.locator('[name=title]').evaluate('(e)=>e.validity.valueMissing'))
