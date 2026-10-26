@@ -6899,11 +6899,23 @@
       "evidence_level": "observed_in_build",
       "observation": "Sonnet returned a 0.45 merger-completion probability and explicitly reported recollection of the masked transaction and outcome. The event failed, but the lower Brier loss cannot demonstrate independent prediction.",
       "product_implication": "Retain recognition beside scores and exclude the run from independent skill claims. A denial of recognition would not prove blindness either; genuinely unseen outcomes require a separate protocol.",
-      "task_ids": ["B02-11"],
+      "task_ids": [
+        "B02-11"
+      ],
       "acceptance_task_ids": [],
-      "evidence_paths": ["docs/evidence/historical-replay-forecast-2026-10-26.json", "docs/delivery/sessions/2026-10-26-historical-replay.md"],
+      "evidence_paths": [
+        "docs/evidence/historical-replay-forecast-2026-10-26.json",
+        "docs/delivery/sessions/2026-10-26-historical-replay.md"
+      ],
       "owner_review": "pending",
-      "history": [{"date": "2026-10-26", "decision": "adopted", "by": "integration", "reason": "existing_task B02-11; concrete follow-up to EM-303, not acceptance or a new required feature."}]
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11; concrete follow-up to EM-303, not acceptance or a new required feature."
+        }
+      ]
     },
     {
       "id": "EM-319",
@@ -6913,11 +6925,23 @@
       "evidence_level": "observed_in_build",
       "observation": "The author's masked summary mislabeled a fee denominator as equity value and narrowed the contractual extension condition. These errors remained in the actual input and are documented without rewriting or rerunning the result.",
       "product_implication": "Review source-summary fidelity before inference. Keep raw source hashes, original inputs and explicit errata; an accurate scorer cannot rescue an inaccurate historical reconstruction.",
-      "task_ids": ["B02-11"],
+      "task_ids": [
+        "B02-11"
+      ],
       "acceptance_task_ids": [],
-      "evidence_paths": ["docs/evidence/historical-replay-audit-2026-10-26.json", "evals/historical/rto-merger-2018.case.json"],
+      "evidence_paths": [
+        "docs/evidence/historical-replay-audit-2026-10-26.json",
+        "evals/historical/rto-merger-2018.case.json"
+      ],
       "owner_review": "pending",
-      "history": [{"date": "2026-10-26", "decision": "adopted", "by": "integration", "reason": "existing_task B02-11 source-fidelity refinement; preserve the failure and require independent review rather than silently correcting a benchmark."}]
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 source-fidelity refinement; preserve the failure and require independent review rather than silently correcting a benchmark."
+        }
+      ]
     },
     {
       "id": "EM-320",
@@ -6927,11 +6951,128 @@
       "evidence_level": "supported_by_tests",
       "observation": "The first wrapper had an overbroad preflight word filter, an incorrect receipt call, permissive probability coercion and no pre-request disk checkpoint. Only one actual response was received; its numeric probability and raw response remain unchanged. Later offline tests cover the wrapper boundaries directly.",
       "product_implication": "Require both opt-ins, selected-model binding, bounded input, durable checkpoints, strict answer types, safe failure retention and non-overwrite semantics in the experimental harness. Later fixes are not a retroactive live pass.",
-      "task_ids": ["B02-11"],
+      "task_ids": [
+        "B02-11"
+      ],
       "acceptance_task_ids": [],
-      "evidence_paths": ["evals/historical_replay.py", "tests/test_historical_replay.py", "docs/evidence/historical-replay-runner-v1-2026-10-26.py.xz"],
+      "evidence_paths": [
+        "evals/historical_replay.py",
+        "tests/test_historical_replay.py",
+        "docs/evidence/historical-replay-runner-v1-2026-10-26.py.xz"
+      ],
       "owner_review": "pending",
-      "history": [{"date": "2026-10-26", "decision": "adopted", "by": "integration", "reason": "existing_task B02-11 engineering hardening only; no extra inference, new subsystem or predictive-quality promotion."}]
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 engineering hardening only; no extra inference, new subsystem or predictive-quality promotion."
+        }
+      ]
+    },
+    {
+      "id": "EM-321",
+      "title": "A selected probability band is not provider confidence",
+      "origin": "Five-model corrected historical diagnostic",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "Jev selected the 80% event-probability option while reporting confidence 0.47 and option probability 0.54. These are three distinct quantities; only the predeclared option value was used as the event estimate.",
+      "product_implication": "Freeze the elicitation mapping and display coarse resolution explicitly. Keep API confidence and option distributions separate; test sensitivity to elicitation before comparing methods.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/evidence/historical-comparison-2026-10-26.json",
+        "docs/delivery/sessions/2026-10-26-historical-comparison.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 evaluation refinement only; no acceptance or new product scope."
+        }
+      ]
+    },
+    {
+      "id": "EM-322",
+      "title": "Valid forecasts can contain horizon and recollection errors",
+      "origin": "Five-model corrected historical diagnostic",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "Sonnet returned valid 55% JSON but treated closing within a first extension as still landing in 2018, while the extension ends March 2019. Its recognition note named a different financial partner. Both Claude responses assumed a premium absent from the masked input; Opus inferred regulatory risk from the fee and extension structure.",
+      "product_implication": "Evaluate explanations and time reasoning as well as schema/score. Preserve unsupported assumptions and counterexamples rather than repairing raw model answers.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/evidence/historical-comparison-2026-10-26.json",
+        "docs/delivery/sessions/2026-10-26-historical-comparison.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 evaluation refinement only; no acceptance or new product scope."
+        }
+      ]
+    },
+    {
+      "id": "EM-323",
+      "title": "A corrected rerun changes the experiment, not the original result",
+      "origin": "Five-model corrected historical diagnostic",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "On the new corrected HR-002 input, Sonnet gave 55% rather than original HR-001 45%; Opus gave 40%, Jev and GPT chose 80%, Clef chose 65%. All indicated recognition. Changed input, model, output format and sampling are confounded; one known event is not five independent trials.",
+      "product_implication": "Retain both manifests, report no winner and keep B02-11 partial. Next useful quality evidence needs prospectively locked or genuinely held-out cases with declared baselines.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/evidence/historical-comparison-2026-10-26.json",
+        "docs/delivery/sessions/2026-10-26-historical-comparison.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 evaluation refinement only; no acceptance or new product scope."
+        }
+      ]
+    },
+    {
+      "id": "EM-324",
+      "title": "Agreement about the next question does not validate its value",
+      "origin": "Five-model corrected historical diagnostic",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "All five selected or described antitrust progress as the most useful next observation despite different event estimates. No observation-acquisition or reforecast experiment was performed.",
+      "product_implication": "Treat question selection as advisory. Measure whether obtaining the answer improves later forecasts or operator decisions before claiming value. No new feature scope.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/evidence/historical-comparison-2026-10-26.json",
+        "docs/delivery/sessions/2026-10-26-historical-comparison.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 evaluation refinement only; no acceptance or new product scope."
+        }
+      ]
     }
   ]
 }

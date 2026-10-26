@@ -1081,6 +1081,11 @@
       "code_commit": "e3c92f05db73627d0c368aad919d00142fc85819",
       "url": "https://github.com/EmotiveImpact/8ball/commit/e3c92f05db73627d0c368aad919d00142fc85819",
       "result": "Exact e3c92f0 software passed 2100 source and installed-wheel tests, 24 JS modules and 475 native checks in 13 suites. All failed/partial runs retained. No model inference during software repair; actual-provider evidence retains its original source binding. Independent semantic, human, predictive and production gates remain open."
+    },
+    "EV-HISTORICAL-COMPARISON-20261026": {
+      "kind": "real_model_evaluation",
+      "path": "docs/delivery/sessions/2026-10-26-historical-comparison.md",
+      "result": "Five single actual native responses on corrected HR-002: Sonnet .55, Opus .40, Jev .80, Clef .65, GPT .80; decision estimates are selected coarse bands, not API confidence. All indicate recognition; inconclusive, not predictive-quality acceptance. Original HR-001 preserved. 149 focused tests passed; full native software checks separate."
     }
   },
   "milestones": [
@@ -1627,12 +1632,13 @@
         "EV-SPECIALIST-WORKER-20261026",
         "EV-SPECIALIST-PRESENTATION-20261026",
         "EV-SONNET-NATIVE-20261026",
-        "EV-HISTORICAL-REPLAY-20261026"
+        "EV-HISTORICAL-REPLAY-20261026",
+        "EV-HISTORICAL-COMPARISON-20261026"
       ],
       "blockers": [
         "Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed."
       ],
-      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval. Integration follow-up: verify the reviewed specialist worker checkpoint in docs/delivery/sessions/2026-10-26-specialist-worker.md; preserve partial status and all remaining gates. Read-only presentation follow-up: docs/delivery/sessions/2026-10-26-specialist-presentation.md. No acceptance status or reserved lane ownership change. Latest integration: see sessions/2026-10-26-sonnet-native.md. Native actual-provider engineering now passes; retain independent protocol/held-out labels and human gates. Do not re-block this authorised test on dashboard login or assume a provider cap. No reserved lane owner/status/acceptance change."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval. Integration follow-up: verify the reviewed specialist worker checkpoint in docs/delivery/sessions/2026-10-26-specialist-worker.md; preserve partial status and all remaining gates. Read-only presentation follow-up: docs/delivery/sessions/2026-10-26-specialist-presentation.md. No acceptance status or reserved lane ownership change. Latest integration: see sessions/2026-10-26-sonnet-native.md. Native actual-provider engineering now passes; retain independent protocol/held-out labels and human gates. Do not re-block this authorised test on dashboard login or assume a provider cap. No reserved lane owner/status/acceptance change. Corrected five-model diagnostic: sessions/2026-10-26-historical-comparison.md. All indicate recognition; stop reusing this transaction. Next predictive evidence requires prospective/held-out representative cases and declared baselines, not another rerun. No lane owner/status/acceptance change."
     },
     {
       "id": "B02-12",

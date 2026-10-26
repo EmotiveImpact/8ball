@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **220 recorded discoveries.**
+Last review: 2026-10-26. **224 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -3899,3 +3899,71 @@ The first wrapper had an overbroad preflight word filter, an incorrect receipt c
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 engineering hardening only; no extra inference, new subsystem or predictive-quality promotion.
+
+### [ ] EM-321: A selected probability band is not provider confidence
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Five-model corrected historical diagnostic.
+
+Jev selected the 80% event-probability option while reporting confidence 0.47 and option probability 0.54. These are three distinct quantities; only the predeclared option value was used as the event estimate.
+
+**Product implication:** Freeze the elicitation mapping and display coarse resolution explicitly. Keep API confidence and option distributions separate; test sensitivity to elicitation before comparing methods.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/evidence/historical-comparison-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-historical-comparison.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 evaluation refinement only; no acceptance or new product scope.
+
+### [ ] EM-322: Valid forecasts can contain horizon and recollection errors
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Five-model corrected historical diagnostic.
+
+Sonnet returned valid 55% JSON but treated closing within a first extension as still landing in 2018, while the extension ends March 2019. Its recognition note named a different financial partner. Both Claude responses assumed a premium absent from the masked input; Opus inferred regulatory risk from the fee and extension structure.
+
+**Product implication:** Evaluate explanations and time reasoning as well as schema/score. Preserve unsupported assumptions and counterexamples rather than repairing raw model answers.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/evidence/historical-comparison-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-historical-comparison.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 evaluation refinement only; no acceptance or new product scope.
+
+### [ ] EM-323: A corrected rerun changes the experiment, not the original result
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Five-model corrected historical diagnostic.
+
+On the new corrected HR-002 input, Sonnet gave 55% rather than original HR-001 45%; Opus gave 40%, Jev and GPT chose 80%, Clef chose 65%. All indicated recognition. Changed input, model, output format and sampling are confounded; one known event is not five independent trials.
+
+**Product implication:** Retain both manifests, report no winner and keep B02-11 partial. Next useful quality evidence needs prospectively locked or genuinely held-out cases with declared baselines.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/evidence/historical-comparison-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-historical-comparison.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 evaluation refinement only; no acceptance or new product scope.
+
+### [ ] EM-324: Agreement about the next question does not validate its value
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Five-model corrected historical diagnostic.
+
+All five selected or described antitrust progress as the most useful next observation despite different event estimates. No observation-acquisition or reforecast experiment was performed.
+
+**Product implication:** Treat question selection as advisory. Measure whether obtaining the answer improves later forecasts or operator decisions before claiming value. No new feature scope.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/evidence/historical-comparison-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-historical-comparison.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 evaluation refinement only; no acceptance or new product scope.

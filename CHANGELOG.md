@@ -4,6 +4,56 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 historical model comparison · Retain a corrected five-model historical diagnostic without selecting a winner
+
+2026-10-26 · `pushed_unreleased`
+
+One authorised native request each to Sonnet 5.5, Opus 5.5, Jev, Clef and GPT-6 Luna; all indicate recognition, so predictive quality remains unproved.
+
+### Added
+
+- Frozen HR-002, all five responses/receipts, source-bound separate scores and archived inference/scoring scripts.
+
+### Changed
+
+- Two source-summary corrections in a new case; original HR-001 remains unchanged. No default model or production code change.
+
+### Fixed
+
+- Separate post-inference scorer uses the actual outcome URL/hash and source_reference field; original frozen runner retained unchanged.
+
+### Verification
+
+- 149 focused forecasting, historical-runner and native-decision contract tests passed.
+- Offline selected-endpoint, all 8 band mappings, abstention, confidence separation, frozen hash and non-overwrite checks passed.
+- Archived inference script and separate resolution adapter compile. No application/runtime code changed.
+
+### Limitations
+
+- All five self-report recognition; recognition disclosure is not independent evidence of memory or blindness.
+- One known historical outcome; author knew it and chose the example. No calibration or ranking inference.
+- Claude estimates are continuous; native decision models explicitly select coarse probability points. Do not substitute reported choice confidence or choice probability.
+- Case HR-002 corrects two summaries. HR-001 remains unchanged; changed input, stochastic variation and format differences prevent attributing differences solely to model.
+- Read-only illustrative planning control is separate, not a complete merger model or tested end-to-end multi-agent application.
+- Full native software checks are separate from predictive evidence; no merge, release or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Jev selected the 80% event-probability option while reporting confidence 0.47 and option probability 0.54. These are three distinct quantities; only the predeclared option value was used as the event estimate.
+- Discovery: Sonnet returned valid 55% JSON but treated closing within a first extension as still landing in 2018, while the extension ends March 2019. Its recognition note named a different financial partner. Both Claude responses assumed a premium absent from the masked input; Opus inferred regulatory risk from the fee and extension structure.
+- Discovery: On the new corrected HR-002 input, Sonnet gave 55% rather than original HR-001 45%; Opus gave 40%, Jev and GPT chose 80%, Clef chose 65%. All indicated recognition. Changed input, model, output format and sampling are confounded; one known event is not five independent trials.
+- Discovery: All five selected or described antitrust progress as the most useful next observation despite different event estimates. No observation-acquisition or reforecast experiment was performed.
+- Risk: Recognition, hindsight, precision differences and plausible but erroneous reasons invalidate a predictive-quality win.
+- Architecture: Preserve event probabilities, choice confidence, question priority and action authority as distinct records.
+- Roadmap decision: existing_task B02-11 remains partial; preserve reserved lane owner/status and independent quality gates.
+Registered discoveries: EM-321, EM-322, EM-323, EM-324.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/evidence/historical-comparison-2026-10-26.json](docs/evidence/historical-comparison-2026-10-26.json), [docs/delivery/sessions/2026-10-26-historical-comparison.md](docs/delivery/sessions/2026-10-26-historical-comparison.md).
+
 ## 0.2.0-alpha.8 historical replay software evidence · Retain exact-source software acceptance without promoting the historical result
 
 2026-10-26 · `pushed_unreleased`

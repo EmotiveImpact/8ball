@@ -1,3 +1,7 @@
+# Latest checkpoint: corrected five-model historical diagnostic
+
+See [comparison handoff](sessions/2026-10-26-historical-comparison.md). All five indicated recognition; no predictive-quality win or model-default change. Original replay is preserved. The owner requested a stop to uninformative recognised-case evaluation; practical/prospective testing remains unstarted.
+
 # Historical prediction diagnostic — 26 October 2026
 
 [Current handoff and limitations](sessions/2026-10-26-historical-replay.md): one
