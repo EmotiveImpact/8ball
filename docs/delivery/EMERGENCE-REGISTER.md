@@ -3984,6 +3984,7 @@ The owner expected swarm intelligence; the five-model diagnostic was independent
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 method/capability disclosure, no new required product scope or acceptance.
+- 2026-10-26 · adopted · integration: Explicit server-owned prompt_only mode now passes 261 focused transport/application/acceptance checks without JSON repair or weaker local validators. Native regression, GLM/DeepSeek inference and coordinated-workflow validation remain separate; see sessions/2026-10-26-provider-json-mode.md. Original catalogue observation remains unchanged.
 
 ### [ ] EM-326: Catalogue availability is not structured-output compatibility
 

@@ -4,6 +4,43 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 explicit provider response contract · Support explicit prompt-only JSON without changing local validation
+
+2026-10-26 · `local_unreleased`
+
+Prepare the owner-selected GLM transport capability with an explicit frozen response mode, not a silent schema fallback.
+
+### Added
+
+- Server-owned EIGHTBALL_API_JSON_MODE selection, visible in configuration status and transport receipts.
+- Exact outbound request hashes and per-call response-contract metadata.
+
+### Changed
+
+- Standard acceptance strips the optional response setting along with provider credentials; compatible defaults and native Anthropic protocol remain unchanged.
+
+### Verification
+
+- 261 focused compatible transport, CLI, application and acceptance-runner checks passed; Python compilation and diff whitespace checks passed.
+
+### Limitations
+
+- No GLM or DeepSeek inference, coordinated-workflow acceptance, predictive-quality approval, merge or deployment. Full native regression is pending.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A selected provider's inability to force schema output can be represented explicitly without weakening the application's JSON, target-coverage or proposal validators.
+- Risk: Prompt-only output can still be malformed; provider-side enforcement is not claimed. Changing a response contract after rejection must not become an automatic retry.
+- Architecture: Keep response mode server-owned, frozen per session and hashed with each bounded request; disclose it independently of model quality.
+- Roadmap decision: existing_task B02-11 capability refinement, following EM-326; no acceptance, model-default or reserved lane ownership change.
+Registered discoveries: EM-326.
+
+Roadmap items: `B02-11`.
+
+Evidence: [eightball/v2/compatible.py](eightball/v2/compatible.py), [tests/test_compatible_provider.py](tests/test_compatible_provider.py), [tests/test_compatible_integration.py](tests/test_compatible_integration.py), [tests/test_acceptance_runner.py](tests/test_acceptance_runner.py), [docs/v2/QWEN-SETUP.md](docs/v2/QWEN-SETUP.md), [docs/delivery/sessions/2026-10-26-provider-json-mode.md](docs/delivery/sessions/2026-10-26-provider-json-mode.md).
+
 ## 0.2.0-alpha.8 comparison evidence closeout · Record source-bound software checks and two next-set model selections
 
 2026-10-26 · `pushed_unreleased`

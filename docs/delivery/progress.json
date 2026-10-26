@@ -621,6 +621,11 @@
     "integration_branch": "devin/1792969169-roadmap-integrated"
   },
   "evidence": {
+    "EV-PROVIDER-JSON-MODE-20261026": {
+      "kind": "test_report",
+      "path": "docs/delivery/sessions/2026-10-26-provider-json-mode.md",
+      "result": "261 focused compatible transport, application, CLI and acceptance-runner checks passed; compilation and diff checks passed. Explicit prompt_only preserves strict local validation and records the selected contract. Full native verification pending; initial direct source run used an incorrect Node path (96 failures, 2070 passes, 6 skips) and is retained in ignored artifacts/provider-json-mode-20261026/initial-path-failure.log. No actual new model inference, coordinated-method or predictive-quality claim."
+    },
     "EV-SPECIALIST-WORKER-20261026": {
       "kind": "local_engineering",
       "path": "docs/delivery/sessions/2026-10-26-specialist-worker.md",
@@ -1633,7 +1638,8 @@
         "EV-SPECIALIST-PRESENTATION-20261026",
         "EV-SONNET-NATIVE-20261026",
         "EV-HISTORICAL-REPLAY-20261026",
-        "EV-HISTORICAL-COMPARISON-20261026"
+        "EV-HISTORICAL-COMPARISON-20261026",
+        "EV-PROVIDER-JSON-MODE-20261026"
       ],
       "blockers": [
         "Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed."

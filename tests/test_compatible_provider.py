@@ -22,7 +22,7 @@ SCHEMA = {'type': 'object', 'properties': {'items': {
 @pytest.fixture(autouse=True)
 def isolated_configuration(monkeypatch):
     for key in ('EIGHTBALL_API_KEY', 'EIGHTBALL_API_BASE_URL', 'EIGHTBALL_API_MODEL',
-                'EIGHTBALL_API_PROVIDER', 'EIGHTBALL_API_ROUTING_PROVIDER'):
+                'EIGHTBALL_API_PROVIDER', 'EIGHTBALL_API_ROUTING_PROVIDER', 'EIGHTBALL_API_JSON_MODE'):
         monkeypatch.delenv(key, raising=False)
 
 
@@ -137,6 +137,7 @@ def test_strict_request_auth_receipt_and_configuration_freeze(monkeypatch):
     assert payload['model'] == MODEL and not payload['stream']
     assert payload['max_tokens'] == 4096 and payload['temperature'] == 0
     assert payload['response_format']['type'] == 'json_schema'
+    assert session.receipt['response_mode'] == configuration_status()['response_mode'] == 'json_schema'
     assert payload['response_format']['json_schema'] == {
         'name': 'endstate_proposal', 'strict': True, 'schema': strict_schema(SCHEMA)}
     assert 'enable_thinking' not in payload and 'provider' not in payload
@@ -180,6 +181,88 @@ def test_direct_anthropic_omits_sampling_without_increasing_limits(monkeypatch, 
     assert call['usage'] == {'prompt_tokens': 20, 'completion_tokens': 10, 'total_tokens': 30}
     assert call['provider_stop_reason'] == 'end_turn'
     assert session.receipt['transport'] == configuration_status()['protocol'] == 'anthropic_messages'
+
+
+@pytest.mark.parametrize('mode', ['auto', 'json', 'JSON_SCHEMA', 'false', 'none', 'repair'])
+def test_invalid_response_mode_never_sends_a_request(monkeypatch, mode):
+    configure(monkeypatch)
+    monkeypatch.setenv('EIGHTBALL_API_JSON_MODE', mode)
+    cl, requests = client()
+    with pytest.raises(HostedSetupRequired):
+        CompatibleSession(allow_external=True, client=cl)
+    assert not requests and not configuration_status()['configured']
+
+
+@pytest.mark.parametrize('mode', ['json_schema', 'prompt_only'])
+def test_response_mode_is_explicit_frozen_and_retained(monkeypatch, mode):
+    configure(monkeypatch)
+    monkeypatch.setenv('EIGHTBALL_API_JSON_MODE', mode)
+    assert configuration_status()['response_mode'] == mode
+    cl, requests = client()
+    session = CompatibleSession(allow_external=True, client=cl)
+    monkeypatch.setenv('EIGHTBALL_API_JSON_MODE', 'prompt_only' if mode == 'json_schema' else 'json_schema')
+    output, _ = session.generate(SCHEMA, 'Extract', {'sources': ['Fictional']})
+    assert output == {'items': []} and len(requests) == 1
+    payload = json.loads(requests[0].content)
+    assert ('response_format' in payload) == (mode == 'json_schema')
+    assert json.dumps(strict_schema(SCHEMA)) in payload['messages'][0]['content']
+    assert payload['max_tokens'] == 4096 and payload['temperature'] == 0
+    assert 'tools' not in payload and 'provider' not in payload
+    call = session.receipt['calls'][0]
+    assert call['response_mode'] == session.receipt['response_mode'] == mode
+    assert call['remote_schema_requested'] == (mode == 'json_schema')
+    assert call['request_sha256'] == sha256(requests[0].content).hexdigest()
+    if mode == 'prompt_only':
+        assert call['remote_schema_enforcement'] is False
+
+
+@pytest.mark.parametrize('content', ['```json\n{"items": []}\n```', 'Here is the answer: {"items": []}', '{"items": NaN}'])
+def test_prompt_only_does_not_repair_or_retry_invalid_json(monkeypatch, content):
+    configure(monkeypatch)
+    monkeypatch.setenv('EIGHTBALL_API_JSON_MODE', 'prompt_only')
+    body = envelope()
+    body['choices'][0]['message']['content'] = content
+    cl, requests = client(httpx.Response(200, json=body))
+    session = CompatibleSession(allow_external=True, client=cl)
+    with pytest.raises(HostedFailure):
+        session.generate(SCHEMA, 'Extract', {})
+    assert len(requests) == 1
+    assert session.receipt['calls'][0]['raw_content'] == content
+    assert session.receipt['calls'][0]['status'] == 'failed'
+
+
+@pytest.mark.parametrize('mode', ['json_schema', 'prompt_only'])
+def test_response_contract_never_changes_after_provider_rejection(monkeypatch, mode):
+    configure(monkeypatch)
+    monkeypatch.setenv('EIGHTBALL_API_JSON_MODE', mode)
+    cl, requests = client(httpx.Response(400, json={'error': {'message': TOKEN}}))
+    session = CompatibleSession(allow_external=True, client=cl)
+    with pytest.raises(HostedFailure):
+        session.generate(SCHEMA, 'Extract', {})
+    assert len(requests) == 1
+    assert session.receipt['response_mode'] == mode
+    assert TOKEN not in json.dumps(session.receipt)
+
+
+def test_native_schema_request_is_not_silently_downgraded(monkeypatch):
+    configure(monkeypatch, 'https://api.anthropic.com/v1', 'anthropic')
+    monkeypatch.setenv('EIGHTBALL_API_JSON_MODE', 'json_schema')
+    cl, requests = client()
+    with pytest.raises(HostedSetupRequired):
+        CompatibleSession(allow_external=True, client=cl)
+    assert not requests and not configuration_status()['configured']
+
+
+def test_native_prompt_only_can_be_explicit(monkeypatch):
+    configure(monkeypatch, 'https://api.anthropic.com/v1', 'anthropic')
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', 'claude-sonnet-5-5')
+    monkeypatch.setenv('EIGHTBALL_API_JSON_MODE', 'prompt_only')
+    cl, requests = client(httpx.Response(200, json=native_envelope()))
+    session = CompatibleSession(allow_external=True, client=cl)
+    session.generate(SCHEMA, 'Extract', {})
+    assert configuration_status()['response_mode'] == session.receipt['response_mode'] == 'prompt_only'
+    assert 'response_format' not in json.loads(requests[0].content)
+    assert not session.receipt['calls'][0]['remote_schema_requested']
 
 
 def test_anthropic_model_name_does_not_change_other_endpoint_parameters(monkeypatch):

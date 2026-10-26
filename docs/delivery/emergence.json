@@ -7096,7 +7096,13 @@
           "date": "2026-10-26",
           "decision": "adopted",
           "by": "integration",
-          "reason": "existing_task B02-11 method/capability disclosure, no new required product scope or acceptance."
+        "reason": "existing_task B02-11 method/capability disclosure, no new required product scope or acceptance."
+      },
+      {
+        "date": "2026-10-26",
+        "decision": "adopted",
+        "by": "integration",
+        "reason": "Explicit server-owned prompt_only mode now passes 261 focused transport/application/acceptance checks without JSON repair or weaker local validators. Native regression, GLM/DeepSeek inference and coordinated-workflow validation remain separate; see sessions/2026-10-26-provider-json-mode.md. Original catalogue observation remains unchanged."
         }
       ]
     },

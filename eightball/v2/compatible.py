@@ -67,10 +67,15 @@ class CompatibleSettings:
     endpoint: str
     endpoint_host: str
     routing_provider: str | None = None
+    json_mode: str | None = None
 
     @property
     def protocol(self):
         return 'anthropic_messages' if self.endpoint_host == 'api.anthropic.com' else 'openai_compatible'
+
+    @property
+    def response_mode(self):
+        return self.json_mode or ('prompt_only' if self.protocol == 'anthropic_messages' else 'json_schema')
 
 
 def _endpoint(base: str) -> tuple[str, str]:
@@ -143,7 +148,12 @@ def settings() -> CompatibleSettings:
         if provider != 'anthropic' or endpoint != 'https://api.anthropic.com/v1/chat/completions':
             raise HostedSetupRequired('Direct Anthropic requires provider anthropic and base https://api.anthropic.com/v1.')
         endpoint = 'https://api.anthropic.com/v1/messages'
-    return CompatibleSettings(token, model, provider, endpoint, host, routing or None)
+    mode = os.getenv('EIGHTBALL_API_JSON_MODE', '').strip() or None
+    if mode not in (None, 'json_schema', 'prompt_only'):
+        raise HostedSetupRequired('EIGHTBALL_API_JSON_MODE must be json_schema or prompt_only. No request was made.')
+    if host == 'api.anthropic.com' and mode == 'json_schema':
+        raise HostedSetupRequired('This native Anthropic adapter supports prompt_only JSON, not a forced remote schema. No request was made.')
+    return CompatibleSettings(token, model, provider, endpoint, host, routing or None, mode)
 
 
 def configuration_status() -> dict:
@@ -155,7 +165,7 @@ def configuration_status() -> dict:
     status = {'configured': False, 'configuration_state': 'not_configured' if missing else 'invalid_configuration',
               'missing_settings': missing, 'credentials_validated': False,
               'live_inference_verified': False, 'model': None, 'api_provider': None,
-              'routing_provider': None, 'endpoint_host': None}
+              'routing_provider': None, 'endpoint_host': None, 'response_mode': None}
     try:
         configured = settings()
     except HostedSetupRequired:
@@ -163,7 +173,8 @@ def configuration_status() -> dict:
     status.update(configured=True, configuration_state='configured_not_tested',
                   model=configured.model, api_provider=configured.provider,
                   routing_provider=configured.routing_provider or configured.provider,
-                  endpoint_host=configured.endpoint_host, protocol=configured.protocol)
+                  endpoint_host=configured.endpoint_host, protocol=configured.protocol,
+                  response_mode=configured.response_mode)
     return status
 
 
@@ -181,6 +192,7 @@ class CompatibleSession:
         return {'transport': self._settings.protocol, 'api_provider': self._settings.provider,
                 'endpoint_host': self._settings.endpoint_host,
                 'requested_model': self._settings.model,
+                'response_mode': self._settings.response_mode,
                 'routing_provider': self._settings.routing_provider or self._settings.provider,
                 'automatic_routing': False, 'explicit_operator_permission': True,
                 'calls': json.loads(json.dumps(self.calls, allow_nan=False))}
@@ -194,6 +206,8 @@ class CompatibleSession:
                    'messages': [
                        {'role': 'system', 'content': instructions + '\nReturn one JSON object matching the supplied schema. No tools, markdown or external actions.\n' + json.dumps(prepared)},
                        {'role': 'user', 'content': json.dumps(context, ensure_ascii=False, allow_nan=False)}]}
+        if self._settings.response_mode == 'prompt_only':
+            payload.pop('response_format')
         if self._settings.endpoint_host in _DASHSCOPE_HOSTS:
             # DashScope's non-streaming Qwen thinking mode is incompatible with
             # this bounded JSON-only contract. Never send this vendor option to
@@ -213,14 +227,18 @@ class CompatibleSession:
         started = time.perf_counter()
         call = {'input_sha256': _hash(context), 'schema_sha256': _hash(prepared),
                 'instructions_sha256': _hash(instructions), 'max_output_tokens': MAX_OUTPUT_TOKENS,
+                'request_sha256': sha256(body).hexdigest(),
+                'response_mode': self._settings.response_mode,
+                'remote_schema_requested': self._settings.response_mode == 'json_schema',
                 'status': 'started'}
+        if self._settings.response_mode == 'prompt_only':
+            call['remote_schema_enforcement'] = False
         if self._settings.endpoint_host in _DASHSCOPE_HOSTS:
             call['enable_thinking'] = False
         if self._settings.endpoint_host == 'api.anthropic.com':
             call['sampling_parameters'] = 'omitted'
             call['thinking'] = 'provider_default'
             call['effort'] = 'medium'
-            call['remote_schema_enforcement'] = False
         self.calls.append(call)
         assistant_content = None
         try:
