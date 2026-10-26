@@ -5,7 +5,8 @@
 B02-09/B02-11/B02-12 on `devin/1792969169-roadmap-integrated`, starting from
 `3c758b51389dcee5fdc02679136cfa98dce9db37`. Existing
 [PR #6](https://github.com/EmotiveImpact/8ball/pull/6), not merged or deployed.
-Functional checkpoint is local pending full native regression and publication.
+The preparation checkpoint below preceded native regression/publication;
+the final **Verified closeout** section records the completed software checks.
 
 Owner explicitly authorised bounded Sonnet 5.5 fictional tests within US$5,
 confirmed sufficient credit/top-up off, and accepted an uncapped account. No
@@ -99,3 +100,9 @@ approval and independently authored held-out labels are the next quality gate,
 not more repeats of familiar fixtures. A future paid lifecycle experiment needs
 a generation receipt matching its exact source. Prediction, production, release
 and deployment remain unaccepted.
+
+## Verified closeout
+
+Exact committed code `6ce61517d7dac347d98170b66274917f3f2e5006` (tree `f35ea675db1d586fe8276232026ad0f48bc9e36c`) passed **2,090 source tests, 2,090 installed-wheel regressions, 24 JavaScript module syntax checks, Python compilation and 474 checks in all 13 native browser suites**. Source SHA256 `0525fd1dee263cd7a00e4561790d16588c3f8c73317f2707388e00e3d7ac4cfc` stayed unchanged during the run. `--inspect` matched source and artifact bytes before this documentation-only closeout. [Receipt](../../evidence/sonnet-native-software-2026-10-26.json) retains exact bindings. The 67 tracking/changelog/emergence tests also passed after synchronizing copied blockers. The only warning is the existing Starlette/AnyIO deprecation.
+
+Runtime hashes in the actual-provider index match this accepted code; full-tree hashes differ for documented test/documentation changes. No additional inference was used for full software acceptance. Changes are to be pushed to the existing PR; its current head/CI are the publication authority. No local-only functional edits remain after that push. The review service previously errored without findings; software checks do not substitute for review approval.

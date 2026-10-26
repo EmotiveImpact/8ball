@@ -1209,4 +1209,6 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `real_model_evaluation`.
 - Repository evidence: [docs/delivery/sessions/2026-10-26-sonnet-native.md](../../docs/delivery/sessions/2026-10-26-sonnet-native.md).
-- Result/scope: Actual native Sonnet: frozen four-fixture gate and scripted 20-step native application journey passed; 375 focused controlled tests. Failed attempts retained. Independent quality/human/production gates remain open.
+- Result/scope: Actual Sonnet four-fixture generation and scripted 20-step native journey passed; failed attempts retained. Exact software code 6ce6151 passed 2090 source + 2090 installed-wheel tests, 24 JS modules and all 13 native suites/474 checks; inspected before documentation closeout. Independent quality/human/production gates remain open.
+- Code revision: `6ce61517d7dac347d98170b66274917f3f2e5006`.
+- External record: [verification source](https://github.com/EmotiveImpact/8ball/commit/6ce61517d7dac347d98170b66274917f3f2e5006).

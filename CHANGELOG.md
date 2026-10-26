@@ -6,7 +6,7 @@ This is product history, not the case decision trail. A build entry is not evide
 
 ## 0.2.0-alpha.8 native Sonnet integration · Connect native Sonnet and verify the actual-provider journey
 
-2026-10-26 · `local_unreleased`
+2026-10-26 · `pushed_unreleased`
 
 Native Anthropic Messages, truthful usage/protocol receipts and exact target-quote prompt guidance with unchanged local guards.
 
@@ -26,8 +26,8 @@ Native Anthropic Messages, truthful usage/protocol receipts and exact target-quo
 
 - 375 focused controlled regressions passed.
 - Actual frozen Sonnet run passed all four fixtures (three conditional routes); actual-provider native journey passed all 20 scripted checks. Earlier HTTP400 and lexical-coverage failures retained.
-- Full source-bound native/wheel regression pending at this functional checkpoint.
 - First native software run: 2089 passed/1 failed, also in installed wheel; stale copied lane blockers, not a runtime failure. All 13 browser suites passed. Failed report/logs retained and exact ledger text synchronized before rerun.
+- Exact code 6ce61517d7dac347d98170b66274917f3f2e5006: 2090 source tests, 2090 installed-wheel regressions, compilation, 24 JavaScript modules and 474 checks in all 13 native suites passed. Source/artifact inspection passed before documentation-only closeout; 67 tracking/history regressions also passed.
 
 ### Limitations
 
@@ -47,7 +47,7 @@ Registered discoveries: EM-311, EM-312.
 
 Roadmap items: `B02-09`, `B02-11`, `B02-12`.
 
-Evidence: [docs/delivery/sessions/2026-10-26-sonnet-native.md](docs/delivery/sessions/2026-10-26-sonnet-native.md), [docs/evidence/sonnet-native-2026-10-26.json](docs/evidence/sonnet-native-2026-10-26.json), [tests/test_compatible_provider.py](tests/test_compatible_provider.py), [tests/test_compatible_integration.py](tests/test_compatible_integration.py), [tests/test_endstate_compilation.py](tests/test_endstate_compilation.py), [docs/evidence/sonnet-native-software-failed-2026-10-26.json.xz](docs/evidence/sonnet-native-software-failed-2026-10-26.json.xz).
+Evidence: [docs/delivery/sessions/2026-10-26-sonnet-native.md](docs/delivery/sessions/2026-10-26-sonnet-native.md), [docs/evidence/sonnet-native-2026-10-26.json](docs/evidence/sonnet-native-2026-10-26.json), [tests/test_compatible_provider.py](tests/test_compatible_provider.py), [tests/test_compatible_integration.py](tests/test_compatible_integration.py), [tests/test_endstate_compilation.py](tests/test_endstate_compilation.py), [docs/evidence/sonnet-native-software-failed-2026-10-26.json.xz](docs/evidence/sonnet-native-software-failed-2026-10-26.json.xz), [docs/evidence/sonnet-native-software-2026-10-26.json](docs/evidence/sonnet-native-software-2026-10-26.json).
 
 ## 0.2.0-alpha.8 information-check loop · Connect retained uncertainty to explicit checks and reconsideration
 

@@ -7,7 +7,7 @@
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 native Sonnet integration",
       "title": "Connect native Sonnet and verify the actual-provider journey",
-      "delivery": "local_unreleased",
+      "delivery": "pushed_unreleased",
       "task_ids": [
         "B02-09",
         "B02-11",
@@ -26,8 +26,8 @@
       "verification": [
         "375 focused controlled regressions passed.",
         "Actual frozen Sonnet run passed all four fixtures (three conditional routes); actual-provider native journey passed all 20 scripted checks. Earlier HTTP400 and lexical-coverage failures retained.",
-        "Full source-bound native/wheel regression pending at this functional checkpoint.",
-        "First native software run: 2089 passed/1 failed, also in installed wheel; stale copied lane blockers, not a runtime failure. All 13 browser suites passed. Failed report/logs retained and exact ledger text synchronized before rerun."
+        "First native software run: 2089 passed/1 failed, also in installed wheel; stale copied lane blockers, not a runtime failure. All 13 browser suites passed. Failed report/logs retained and exact ledger text synchronized before rerun.",
+        "Exact code 6ce61517d7dac347d98170b66274917f3f2e5006: 2090 source tests, 2090 installed-wheel regressions, compilation, 24 JavaScript modules and 474 checks in all 13 native suites passed. Source/artifact inspection passed before documentation-only closeout; 67 tracking/history regressions also passed."
       ],
       "limitations": [
         "US$0.088500 known Sonnet usage-based estimate, not an invoice; rejected billing unknown. No account-wide cap or retries.",
@@ -39,7 +39,8 @@
         "tests/test_compatible_provider.py",
         "tests/test_compatible_integration.py",
         "tests/test_endstate_compilation.py",
-        "docs/evidence/sonnet-native-software-failed-2026-10-26.json.xz"
+        "docs/evidence/sonnet-native-software-failed-2026-10-26.json.xz",
+        "docs/evidence/sonnet-native-software-2026-10-26.json"
       ],
       "emergence_review": {
         "discoveries": [

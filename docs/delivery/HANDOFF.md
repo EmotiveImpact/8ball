@@ -7,8 +7,10 @@ journey steps, including native reload/download. Earlier compatibility and
 lexical-coverage failures remain preserved. Known usage-based Sonnet estimate
 US$0.088500, not an invoice; rejected billing remains unknown. The owner explicitly
 accepted the uncapped account for bounded fictional tests; no dashboard login
-or claimed provider-enforced US$5 cap. Full software closeout/publication follows
-in that handoff. No independent quality, predictive, human, production, merge or
+or claimed provider-enforced US$5 cap. Full software acceptance passed at
+`6ce61517d7dac347d98170b66274917f3f2e5006`: 2,090 source tests, 2,090 installed-wheel
+tests and 474 checks in 13 native suites. See that handoff for exact receipts and
+publication. No independent quality, predictive, human, production, merge or
 deployment acceptance. EM-311/312 refine existing tasks; reserved owners remain.
 
 ## Previous information-check checkpoint
