@@ -3,6 +3,28 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-provider-ledger-correction",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 provider verification correction",
+      "title": "Preserve the failed native provider checkpoint and repair tracking consistency",
+      "delivery": "local_unreleased",
+      "task_ids": ["B02-09"],
+      "summary": "The first Sonnet configuration full run passed all native browsers but failed two source and installed tracking tests. Preserve its evidence and repair the missing reserved-claim prefix and stale derived blocker text, without changing tests or provider behavior.",
+      "added": ["Source-bound failed-run receipt; the original raw run remains retained."],
+      "changed": ["ROADMAP-LANES reflects the canonical B02-09 blockers; original builder ownership remains explicit."],
+      "fixed": ["Restored the intelligence coordination-claim prefix on the B02-09 next action."],
+      "verification": ["Run 20261026T004726Z-ff1767e8 on clean 83c04f3 failed: 1784/1786 source tests; installed regressions failed the same two tracking tests. All 13 native suites/439 checks passed, as did compile, JS, schemas and structural fixtures.", "Failed-run --inspect valid before edits. A fresh complete native run is required after the correction."],
+      "limitations": ["Not a passing full-run receipt, model inference or model quality result. Provider cap/credit/top-up and independent acceptance gates remain open. No merge, release or deployment."],
+      "evidence_paths": ["docs/evidence/sonnet-55-native-failed-2026-10-26.json", "docs/delivery/sessions/2026-10-26-sonnet-55.md"],
+      "emergence_review": {
+        "discoveries": ["The existing EM-257 tracking boundary recurred: changing a task blocker requires updating its derived lane representation while preserving reserved ownership."],
+        "risks": ["Native browser success cannot mask source or installed-package tracking failures."],
+        "architecture_implications": ["Keep full source-bound checks and immutable failures; do not weaken the assertions or introduce a second editable status board."],
+        "roadmap_decision": "existing_task correction under B02-09; no scope or status promotion.",
+        "insight_ids": ["EM-257"]
+      }
+    },
+    {
       "id": "2026-10-26-sonnet-55-selection",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 Sonnet 5.5 configuration",

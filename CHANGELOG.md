@@ -4,6 +4,47 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 provider verification correction · Preserve the failed native provider checkpoint and repair tracking consistency
+
+2026-10-26 · `local_unreleased`
+
+The first Sonnet configuration full run passed all native browsers but failed two source and installed tracking tests. Preserve its evidence and repair the missing reserved-claim prefix and stale derived blocker text, without changing tests or provider behavior.
+
+### Added
+
+- Source-bound failed-run receipt; the original raw run remains retained.
+
+### Changed
+
+- ROADMAP-LANES reflects the canonical B02-09 blockers; original builder ownership remains explicit.
+
+### Fixed
+
+- Restored the intelligence coordination-claim prefix on the B02-09 next action.
+
+### Verification
+
+- Run 20261026T004726Z-ff1767e8 on clean 83c04f3 failed: 1784/1786 source tests; installed regressions failed the same two tracking tests. All 13 native suites/439 checks passed, as did compile, JS, schemas and structural fixtures.
+- Failed-run --inspect valid before edits. A fresh complete native run is required after the correction.
+
+### Limitations
+
+- Not a passing full-run receipt, model inference or model quality result. Provider cap/credit/top-up and independent acceptance gates remain open. No merge, release or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: The existing EM-257 tracking boundary recurred: changing a task blocker requires updating its derived lane representation while preserving reserved ownership.
+- Risk: Native browser success cannot mask source or installed-package tracking failures.
+- Architecture: Keep full source-bound checks and immutable failures; do not weaken the assertions or introduce a second editable status board.
+- Roadmap decision: existing_task correction under B02-09; no scope or status promotion.
+Registered discoveries: EM-257.
+
+Roadmap items: `B02-09`.
+
+Evidence: [docs/evidence/sonnet-55-native-failed-2026-10-26.json](docs/evidence/sonnet-55-native-failed-2026-10-26.json), [docs/delivery/sessions/2026-10-26-sonnet-55.md](docs/delivery/sessions/2026-10-26-sonnet-55.md).
+
 ## 0.2.0-alpha.8 Sonnet 5.5 configuration · Select Sonnet 5.5, preserve failed inference and migrate bounded request parameters
 
 2026-10-26 · `local_unreleased`
