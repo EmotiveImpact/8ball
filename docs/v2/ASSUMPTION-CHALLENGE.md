@@ -12,7 +12,21 @@ Preview your disposition and next-review decision. `continue_review` must explic
 
 Save a derived brief to its separate, immutable case-scoped journal. Saving binds case revision/hash, clock, content digest and history sequence, with a fifteen-minute write window. The limit is 100 briefs per case and 128 KiB per brief. Duplicate identical saves return the original; reused keys with altered content fail. Rechecks append a predecessor link while preserving original perspectives/contributions and clearing review dispositions for renewed consideration. Actual evidence enters only through existing source/observation workflows.
 
-## Two packet modes, no automatic sharing
+## Check → observe → reconsider (26 October 2026)
+
+Saved briefs now expose **What to check next**. ENDSTATE's provider-free `information_agenda` retains every declared assumption, objection and question, the original wording, verification requirement, counter-links, branch links and review disposition. Display order puts declared contested branches before other linked branches and other checks. These are structural links, not expected value of information, urgency, certainty or measured predictive power. An addressed objection stays visible and is not treated as verified.
+
+An operator explicitly supplies a question, responsible owner and reason to **Create linked case question**. Only this action writes to the case, using its existing validated command transaction. It clears action approvals, never sends anything and never creates an answer, observation, selected course or completed action. Exact current revision, saved brief digest, history sequence and calculation window are rechecked inside the transaction. Cross-case, stale, conflicting-idempotency and duplicate checks fail without partial writes.
+
+The question provenance records the originating saved brief and revision, original lineage-root brief and contribution ID. Original wording, verification text and reference hashes remain in those immutable briefs. A deterministic root/contribution key keeps subsequent rechecks linked to the same question, rather than spawning duplicates. No new question store, scheduler or model invocation is introduced. Full local audit retains the original briefs and existing question commands; the v1 rehearsal digest/replay contract and old source-free export shape are unchanged.
+
+Use **Review / record evidence-backed answer** to enter the existing answer workflow. An answer requires reviewed case evidence but does not attest a linked condition. Condition references expose the separate observation workflow. Current evidence-derived condition states remain unknown/true/false/disputed (or absent); no question answer is converted into truth. Retracted evidence makes the effective answer require evidence review while preserving its historical text. The live projection labels its current case revision separately from the saved brief revision; it is not persisted into or exported as part of the original brief.
+
+Finally, explicitly **Recheck these declarations against live case**, review the changed reference hashes and candidate comparisons, and save a new predecessor-linked brief. Dispositions need renewed consideration; no route is automatically selected. New information or an expired calculation window requires this recheck before creating further questions. Existing answers can be reviewed from historical briefs without representing their old assumptions as current facts.
+
+This extension remains local-operator-only. Both agency configurations omit the check endpoint with the other local rehearsal routes; it is not an authorised shared-case projection. Session locking/case switching clear Plan Review and its current projection. Production disclosure, independent operator benefit and predictive accuracy remain separate gates.
+
+## Packet disclosure remains separate
 
 Generate a packet only from a verified saved brief. The server checks the current case revision, exact saved brief, expiry, history sequence/head hash and current disclosure policy. It verifies case and derived histories and replays saved comparisons; missing/corrupt/cyclic predecessor history fails rather than producing a misleading partial audit.
 

@@ -156,6 +156,7 @@ def test_packets_and_local_history_unavailable_to_agency(tmp_path):
     f = make_fixture(tmp_path)
     paths = {r.path for r in f.app.routes}
     assert '/api/v2/cases/{case_id}/plan-reviews/rehearsals/packet' not in paths
+    assert '/api/v2/cases/{case_id}/plan-reviews/rehearsals/check' not in paths
     with TestClient(f.app,base_url='https://testserver') as client:
         client.cookies.set(SESSION_COOKIE,f.cookies['author'])
         path = f'/api/v2/cases/{f.case.id}/export'

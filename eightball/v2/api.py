@@ -118,7 +118,7 @@ def router(store:Store,legacy,authorised, *, agency_events=False, agency_mode=Fa
             except DisclosureDenied as exc:
                 raise HTTPException(403,str(exc)) from None
 
-        from .rehearsal import Rehearsals, Prepare as PrepareChallenge, Save as SaveChallenge
+        from .rehearsal import Rehearsals, Prepare as PrepareChallenge, Save as SaveChallenge, CreateCheck
         rehearsals = Rehearsals(store)
 
         @r.get('/cases/{case_id}/plan-reviews/rehearsals')
@@ -129,6 +129,9 @@ def router(store:Store,legacy,authorised, *, agency_events=False, agency_mode=Fa
 
         @r.post('/cases/{case_id}/plan-reviews/rehearsals/record')
         def challenge_record(case_id: str, body: SaveChallenge): return rehearsals.save(case_id, body)
+
+        @r.post('/cases/{case_id}/plan-reviews/rehearsals/check')
+        def challenge_check(case_id: str, body: CreateCheck): return rehearsals.create_check(case_id, body)
 
     from .insights import Insights, Scan, ReviewInsight, Hypothesis, InsightQuestion, RevisitHypothesis, TARGET_ALIGNMENT_RULE
     from endstate.insights import RULES

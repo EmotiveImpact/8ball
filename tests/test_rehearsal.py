@@ -7,12 +7,12 @@ from fastapi.testclient import TestClient
 from pydantic import ValidationError
 import pytest
 
-from endstate.rehearsal import Draft, coverage
+from endstate.rehearsal import Draft, coverage, information_agenda
 from eightball.api import make_app
 from eightball.store import Store as LegacyStore, Conflict, canonical, digest
 from eightball.v2.commands import Command
 from eightball.v2.playbooks import demo_case
-from eightball.v2.rehearsal import Prepare, Save, Rehearsals, export_rows, prepare, read_rows
+from eightball.v2.rehearsal import CreateCheck, Prepare, Save, Rehearsals, export_rows, prepare, read_rows
 from eightball.v2.store import Store
 
 NOW = datetime(2026, 10, 26, 9, 0, tzinfo=timezone.utc)
@@ -208,3 +208,161 @@ def test_authenticated_local_api_and_legacy_export_compatibility(env):
         assert client.get(path).json()['sequence'] == 1
         assert client.post(path+'/prepare',json={**draft(),'expected_revision':1}).status_code == 409
     assert store.get(case.id) == case
+
+
+def check_request(service, case, contribution='a1'):
+    saved, _ = save(service, case)
+    return CreateCheck(event_id='create-check', expected_revision=case.revision, expected_sequence=1,
+        brief_sha256=saved['record']['brief']['brief_sha256'], contribution_id=contribution,
+        question='Can the supplier confirm availability?', owner='Case lead', reason='Resolve a declared branch assumption.')
+
+
+def test_agenda_is_declared_structure_not_truth_or_value(env):
+    _, case, service = env
+    check_request(service, case)
+    agenda = service.view(case.id)['records'][0]['information_loop']
+    assert [i['contribution_id'] for i in agenda['items']] == ['a1', 'o1', 'q1']
+    assert [i['attention_basis'] for i in agenda['items']] == ['contested_branch', 'contested_branch', 'declared_check']
+    assert all(i['answer_state'] == 'not_created' for i in agenda['items'])
+    assert not agenda['facts_attested'] and not agenda['execution_authorised'] and not agenda['persisted']
+    assert information_agenda(Draft(run_id='empty'))['items'] == []
+    data = draft(); data['branches'] = [{k:v for k,v in b.items() if k != 'scenario'} for b in data['branches']]
+    data.pop('expected_revision')
+    original = information_agenda(Draft(**data))['items']
+    data['contributions'].reverse(); data['dispositions'] = [dict(contribution_id='a1',status='addressed_in_review',rationale='Discussed only.')]
+    again = information_agenda(Draft(**data))['items']
+    assert [i['contribution_id'] for i in again] == [i['contribution_id'] for i in original]
+    assert again[0]['review_disposition'] == 'addressed_in_review' and again[0]['counter_ids'] == ['o1']
+
+
+def test_check_is_explicit_atomic_idempotent_and_bound_to_saved_brief(env):
+    store, case, service = env
+    request = check_request(service, case)
+    before = store.audit(case.id)
+    service.view(case.id)
+    assert store.audit(case.id) == before
+    result = service.create_check(case.id, request)
+    updated = store.get(case.id)
+    assert updated.revision == 1 and len(updated.questions) == len(case.questions) + 1
+    assert updated.graph == case.graph and updated.observations == case.observations
+    question = next(q for q in updated.questions if q.id == result['question_id'])
+    assert question.status == 'open' and not question.answer and not question.evidence_ids
+    assert request.brief_sha256 in question.provenance.note
+    assert service.create_check(case.id, request)['duplicate']
+    assert store.get(case.id) == updated
+    request.question = 'Alter an already committed request'
+    with pytest.raises(Conflict): service.create_check(case.id, request)
+    assert store.audit(case.id)['valid']
+    assert store.audit(case.id)['assumption_challenges']['records'][0]['brief'] == before['assumption_challenges']['records'][0]['brief']
+
+
+@pytest.mark.parametrize('change', ['revision','sequence','hash','contribution','expired','future','cross_case','event_collision','case_changed','history_changed'])
+def test_check_rejects_invalid_context_without_changes(env, monkeypatch, change):
+    store, case, service = env
+    request = check_request(service, case)
+    if change == 'revision': request.expected_revision = 1
+    elif change == 'sequence': request.expected_sequence = 0
+    elif change == 'hash': request.brief_sha256 = 'f'*64
+    elif change == 'contribution': request.contribution_id = 'absent'
+    elif change == 'expired': monkeypatch.setattr('eightball.v2.rehearsal.utcnow', lambda: NOW+timedelta(minutes=16))
+    elif change == 'future': monkeypatch.setattr('eightball.v2.rehearsal.utcnow', lambda: NOW-timedelta(seconds=1))
+    elif change == 'cross_case': case = store.create(demo_case(NOW), fixture=True)
+    elif change == 'case_changed': store.change(case.id, Command(event_id='new-information',expected_revision=0,kind='metadata',payload={'summary':'New information changes context.'}))
+    elif change == 'history_changed': save(service, case, event_id='another-brief')
+    else:
+        store.change(case.id, Command(event_id=request.event_id, expected_revision=0, kind='metadata', payload={'budget':1}))
+    before = store.audit(case.id)
+    with pytest.raises((ValueError, Conflict)): service.create_check(case.id, request)
+    assert store.audit(case.id) == before
+
+
+def test_answer_retraction_and_recheck_preserve_distinct_states(env):
+    store, case, service = env
+    data = draft(); data['perspectives'][0]['permitted_references'] = ['condition:root']
+    for c in data['contributions']: c['references'] = ['condition:root']
+    saved, _ = save(service, case, data)
+    brief = saved['record']['brief']
+    request = CreateCheck(event_id='check', expected_revision=0, expected_sequence=1,
+        brief_sha256=brief['brief_sha256'], contribution_id='a1', question='Is the root cause established?', owner='Case lead', reason='Check before reconsidering.')
+    result = service.create_check(case.id, request)
+    source = next(e for e in case.evidence if e.status == 'reviewed')
+    store.change(case.id, Command(event_id='answer', expected_revision=1, kind='answer',
+        payload={'question_id':result['question_id'],'answer':'Reported root cause; verify separately.','evidence_ids':[source.id]}))
+    item = service.view(case.id)['records'][0]['information_loop']['items'][0]
+    assert item['answer_state'] == 'recorded_answer'
+    assert item['condition_states'] == [{'condition_id':'root','status':'unknown'}]
+    store.change(case.id, Command(event_id='observe', expected_revision=2, kind='observe',
+        payload={'condition_id':'root','evidence_id':source.id,'value':True,'rationale':'Separate reviewed observation.'}))
+    assert service.view(case.id)['records'][0]['information_loop']['items'][0]['condition_states'][0]['status'] == 'true'
+    store.change(case.id, Command(event_id='retract', expected_revision=3, kind='review_evidence',
+        payload={'evidence_id':source.id,'status':'retracted'}))
+    item = service.view(case.id)['records'][0]['information_loop']['items'][0]
+    assert item['answer_state'] == 'evidence_review_required' and item['question']['answer']
+    assert item['condition_states'][0]['status'] == 'unknown'
+    data.update(expected_revision=4, predecessor_sha256=brief['brief_sha256'])
+    data['branches'][0]['scenario']['expected_revision'] = 4
+    rechecked, _ = save(service, store.get(case.id), data, 'recheck')
+    rows = service.view(case.id)['records']
+    assert rows[1]['information_loop']['items'][0]['question']['id'] == result['question_id']
+    assert rows[0]['brief'] == brief and rows[1]['brief']['reconsideration']['changed_references']
+    request.event_id = 'duplicate-check'; request.expected_revision = 4; request.expected_sequence = 2
+    request.brief_sha256 = rechecked['record']['brief']['brief_sha256']
+    with pytest.raises(Conflict, match='already'): service.create_check(case.id, request)
+    assert store.audit(case.id)['valid']
+
+
+@pytest.mark.parametrize('field', ['question','owner','reason'])
+def test_check_requires_substantive_operator_input(env, field):
+    _, case, service = env
+    request = check_request(service, case).model_dump()
+    request[field] = '   '
+    with pytest.raises(ValidationError): CreateCheck(**request)
+
+
+def test_check_endpoint_requires_auth_and_preserves_legacy_export(env):
+    store, case, service = env
+    request = check_request(service, case)
+    with TestClient(make_app(LegacyStore(store.path), TOKEN)) as client:
+        path = f'/api/v2/cases/{case.id}/plan-reviews/rehearsals/check'
+        assert client.post(path,json=request.model_dump(mode='json')).status_code == 401
+        client.headers['Authorization'] = 'Bearer '+TOKEN
+        response = client.post(path,json=request.model_dump(mode='json'))
+        assert response.status_code == 200, response.text
+        assert client.post(path,json=request.model_dump(mode='json')).json()['duplicate']
+    assert store.audit(case.id)['valid']
+
+
+def test_creation_invalidates_approvals_and_unreviewed_answer_is_rejected(env):
+    from eightball.v2.contracts import Approval
+    store, _, service = env
+    case = demo_case(NOW)
+    case.approvals = [Approval(action_id='direct', revision=0, expires_at=NOW+timedelta(minutes=30), actor='fixture')]
+    case.evidence[0].status = 'unreviewed'
+    case = store.create(case, fixture=True)
+    request = check_request(service, case)
+    result = service.create_check(case.id, request)
+    assert not store.get(case.id).approvals
+    with pytest.raises(ValueError, match='reviewed evidence'):
+        store.change(case.id, Command(event_id='unsupported',expected_revision=1,kind='answer',
+            payload={'question_id':result['question_id'],'answer':'Hypothesis only','evidence_ids':[case.evidence[0].id]}))
+    assert store.get(case.id).revision == 1
+
+
+def test_check_transaction_rolls_back_and_bad_lineage_fails_closed(env, monkeypatch):
+    store, case, service = env
+    request = check_request(service, case)
+    before = store.audit(case.id)
+    persist = store._persist
+    def interrupted(*args, **kwargs):
+        persist(*args, **kwargs)
+        raise RuntimeError('Simulated write failure')
+    monkeypatch.setattr(store, '_persist', interrupted)
+    with pytest.raises(RuntimeError): service.create_check(case.id, request)
+    assert store.audit(case.id) == before
+    monkeypatch.setattr(store, '_persist', persist)
+    result = service.create_check(case.id, request)
+    updated = store.get(case.id)
+    question = next(q for q in updated.questions if q.id == result['question_id']).model_copy(deep=True)
+    question.provenance.note = '{}'
+    store.change(case.id, Command(event_id='edit',expected_revision=1,kind='upsert_object',payload={'kind':'question','object':question.model_dump(mode='json')}))
+    with pytest.raises(ValueError, match='provenance'): service.view(case.id)

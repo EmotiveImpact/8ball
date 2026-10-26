@@ -1,11 +1,13 @@
-"""Local, append-only assumption briefs; never case commands or model calls."""
+"""Immutable local briefs; only explicit linked-question creation changes a case."""
 from datetime import datetime, timedelta
 import json
 
 from pydantic import AwareDatetime, Field, model_validator
 
-from endstate.rehearsal import Branch, Draft, VERSION, changed_fields, coverage, validate_references
-from .contracts import Case, Identifier, Strict
+from endstate.rehearsal import Branch, Draft, VERSION, changed_fields, coverage, information_agenda, validate_references
+from endstate.state import condition_states
+from .contracts import Case, Identifier, Strict, Title, Question, Provenance
+from .commands import Command, apply
 from .plan_review import assessment, reference_catalogue, TTL_MINUTES
 from endstate.scenarios import Scenario, compare as compare_scenario
 from .planner import to_snapshot
@@ -42,6 +44,69 @@ class Save(Strict):
     as_of: AwareDatetime
     brief_sha256: Hash = Field(pattern=r'^[0-9a-f]{64}$')
     draft: Prepare
+
+
+class CreateCheck(Strict):
+    event_id: Identifier
+    expected_revision: int = Field(strict=True, ge=0)
+    expected_sequence: int = Field(strict=True, ge=0)
+    brief_sha256: str = Field(pattern=r'^[0-9a-f]{64}$')
+    contribution_id: Identifier
+    question: Title
+    owner: Title
+    reason: Title
+
+    @model_validator(mode='after')
+    def substantive(self):
+        if not all(value.strip() for value in (self.question, self.owner, self.reason)):
+            raise ValueError('A check needs a question, owner and reason')
+        return self
+
+
+def check_origin(brief, history, contribution_id):
+    known = {r['brief']['brief_sha256']: r['brief'] for r in history['records']}
+    root = brief
+    while root['draft']['predecessor_sha256'] is not None:
+        root = known[root['draft']['predecessor_sha256']]
+    binding = {'root_brief_sha256': root['brief_sha256'], 'contribution_id': contribution_id}
+    return 'q_check_' + digest(binding)[:32], binding
+
+
+def information_loop(case, brief, history, states):
+    draft = Prepare.model_validate(brief['draft'])
+    neutral = draft.model_dump(mode='python', include=set(Draft.model_fields))
+    neutral['branches'] = [b.model_dump(include=set(Branch.model_fields)) for b in draft.branches]
+    agenda = information_agenda(Draft.model_validate(neutral))
+    questions = {q.id: q for q in case.questions}
+    reviewed = {e.id for e in case.evidence if e.status == 'reviewed'}
+    for item in agenda['items']:
+        qid, binding = check_origin(brief, history, item['contribution_id'])
+        question = questions.get(qid)
+        origin = None
+        if question is not None:
+            try:
+                origin = json.loads(question.provenance.note)
+                if any(origin[k] != v for k, v in binding.items()):
+                    raise ValueError('Check binding differs')
+                creation = next(r['brief'] for r in history['records'] if r['brief']['brief_sha256'] == origin['brief_sha256'])
+                if (creation['case_revision'] != origin['case_revision'] or question.provenance.origin != 'operator'
+                        or check_origin(creation, history, item['contribution_id'])[0] != qid
+                        or not any(c['id'] == item['contribution_id'] for c in creation['draft']['contributions'])):
+                    raise ValueError('Check creation basis differs')
+            except (ValueError, TypeError, KeyError, StopIteration):
+                raise ValueError('Linked check provenance differs from its original brief') from None
+        item['origin'] = origin
+        supported = question is not None and question.status == 'answered' and bool(question.evidence_ids) and set(question.evidence_ids) <= reviewed
+        item['question'] = question.model_dump(mode='json') if question else None
+        item['answer_state'] = ('recorded_answer' if supported else 'evidence_review_required'
+                                if question and question.status == 'answered' else 'open' if question else 'not_created')
+        item['condition_states'] = [{'condition_id': ref.split(':', 1)[1],
+                                    'status': states.get(ref.split(':', 1)[1], {}).get('status', 'absent')}
+                                   for ref in item['references'] if ref.startswith('condition:')]
+    return {**agenda, 'case_revision': case.revision, 'brief_revision': brief['case_revision'],
+            'brief_sha256': brief['brief_sha256'], 'current_snapshot_sha256': digest(case.model_dump(mode='json')),
+            'persisted': False,
+            'answer_notice': 'A recorded answer is not a condition observation or proof that a hypothesis is true. Review sources and attest conditions separately, then explicitly recheck the saved brief. Retraction reopens effective answers without erasing history.'}
 
 
 def reference_hashes(case):
@@ -201,9 +266,55 @@ class Rehearsals:
             case, history = self._context(db, case_id)
             db.rollback()
         now = utcnow()
+        states = condition_states(case)
         return {**history, 'case_id': case_id, 'case_revision': case.revision, 'sequence': len(history['records']),
                 'records': [{**r, 'case_changed': r['brief']['snapshot_sha256'] != digest(case.model_dump(mode='json')),
+                             'information_loop': information_loop(case, r['brief'], history, states),
                              'time_expired': now > datetime.fromisoformat(r['brief']['expires_at'])} for r in history['records']]}
+
+    def create_check(self, case_id, request: CreateCheck):
+        request = CreateCheck.model_validate(request.model_dump(mode='python'))
+        request_hash = digest({'operation': 'create_assumption_check', **request.model_dump(mode='json')})
+        with self.store.connection() as db:
+            db.execute('BEGIN IMMEDIATE')
+            try:
+                case, history = self._context(db, case_id)
+                previous = db.execute('SELECT record FROM v2_events WHERE case_id=? AND event_id=?',
+                                      (case_id, request.event_id)).fetchone()
+                if previous:
+                    event = json.loads(previous['record'])
+                    if event['request_hash'] != request_hash:
+                        raise Conflict('Event ID already belongs to another request')
+                    db.rollback()
+                    return {'question_id': event['payload']['object']['id'], 'duplicate': True}
+                if case.revision != request.expected_revision or len(history['records']) != request.expected_sequence:
+                    raise Conflict('Case or challenge history changed; refresh before creating a check')
+                brief = next((r['brief'] for r in history['records'] if r['brief']['brief_sha256'] == request.brief_sha256), None)
+                now = utcnow()
+                if (brief is None or brief['snapshot_sha256'] != digest(case.model_dump(mode='json'))
+                        or not datetime.fromisoformat(brief['as_of']) <= now <= datetime.fromisoformat(brief['expires_at'])):
+                    raise Conflict('Save a current rechecked brief before creating a check')
+                contribution = next((c for c in brief['draft']['contributions'] if c['id'] == request.contribution_id), None)
+                if contribution is None:
+                    raise ValueError('Check must reference a contribution in this saved brief')
+                qid, binding = check_origin(brief, history, contribution['id'])
+                if any(q.id == qid for q in case.questions):
+                    raise Conflict('This declaration already has a linked check; review its existing question')
+                if case.revision >= 2000:
+                    raise ValueError('Local case event limit reached')
+                question = Question(id=qid, question=request.question, owner=request.owner, why=request.reason,
+                    condition_ids=[ref.split(':', 1)[1] for ref in contribution['references'] if ref.startswith('condition:')],
+                    provenance=Provenance(origin='operator', note=canonical({**binding,
+                        'brief_sha256': brief['brief_sha256'], 'case_revision': case.revision})))
+                command = Command(event_id=request.event_id, expected_revision=case.revision, kind='upsert_object',
+                                  payload={'kind': 'question', 'object': question.model_dump(mode='json')})
+                updated = apply(case, command, now=now)
+                self.store._persist(db, case, updated, command, 'local-operator', now, request_hash=request_hash)
+                db.commit()
+                return {'question_id': qid, 'duplicate': False}
+            except Exception:
+                db.rollback()
+                raise
 
     def prepare(self, case_id, request: Prepare):
         with self.store.connection() as db:

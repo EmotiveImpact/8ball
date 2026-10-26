@@ -3,6 +3,61 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-information-loop",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 information-check loop",
+      "title": "Connect retained uncertainty to explicit checks and reconsideration",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-05",
+        "ES01-02"
+      ],
+      "summary": "What to check next, explicit linked case questions, separate evidence-backed answers/observations and immutable current-case rechecks.",
+      "added": [
+        "ENDSTATE declared-structure information agenda; no invented information value or probability.",
+        "Explicit local question creation linked to the originating brief, revision and contribution; repeated rechecks reuse the same question.",
+        "Current answer-support and condition states beside saved review history, with existing evidence/observation controls."
+      ],
+      "changed": [
+        "Reuse existing case-command transactions; check creation invalidates approvals while viewing and rehearsal saving remain read-only.",
+        "Review tab switches preserve unsubmitted check fields. Existing v1 brief replay and source-free export remain unchanged."
+      ],
+      "fixed": [
+        "Reject stale/cross-case/expired/duplicate checks and roll back failed writes; never turn answered or addressed labels into facts."
+      ],
+      "verification": [
+        "275 focused rehearsal/packet/Plan Review/grounding/time-review/course regressions and 57 native Plan Review checks passed.",
+        "Full native source, installed-wheel and all browser acceptance pending on exact committed source."
+      ],
+      "limitations": [
+        "Local operator only; agency check routes stay unavailable. No automatic sends, model calls, course selection or observations.",
+        "Operator benefit, predictive skill, independent review, production and release remain unverified.",
+        "Changes local at preparation; existing PR6 will be updated without merge or deployment."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-information-loop.md",
+        "docs/v2/ASSUMPTION-CHALLENGE.md",
+        "tests/test_rehearsal.py",
+        "tests/browser_plan_review.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Repeated reconsideration needs stable check identity rather than duplicate questions.",
+          "Current evidence support must stay distinct from immutable recorded answers and review dispositions."
+        ],
+        "risks": [
+          "Display ordering can look like proven value of information; repeated reviews can add operator burden."
+        ],
+        "architecture_implications": [
+          "Reuse ENDSTATE declarations and existing case commands, adding a read-only current projection rather than another store or scheduler."
+        ],
+        "roadmap_decision": "Existing B02-05/ES01-02 refinement explicitly requested by owner; no optional durable-event scope or predictive gate promotion.",
+        "insight_ids": [
+          "EM-310"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-specialist-presentation",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 retained specialist comparison",

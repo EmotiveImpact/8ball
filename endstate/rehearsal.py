@@ -140,3 +140,27 @@ def changed_fields(before, after, path=()):
     if type(before) is not type(after) or before != after:
         return [{'path': list(path), 'before_present': True, 'after_present': True, 'before': before, 'after': after}]
     return []
+
+
+def information_agenda(draft: Draft):
+    """Declared structural links only, not expected value or predictive priority."""
+    draft = Draft.model_validate(draft.model_dump(mode='python'))
+    items = []
+    for contribution in draft.contributions:
+        counters = sorted({c.id for c in draft.contributions
+                           if contribution.id in c.counters} | set(contribution.counters))
+        related = {contribution.id, *counters}
+        branches = sorted(b.id for b in draft.branches if related & set(b.assumption_ids))
+        disposition = next((d.status for d in draft.dispositions
+                            if d.contribution_id == contribution.id), 'not_reviewed')
+        items.append({'contribution_id': contribution.id, 'kind': contribution.kind,
+                      'statement': contribution.text, 'verification_needed': contribution.verification_needed,
+                      'references': list(contribution.references), 'counter_ids': counters,
+                      'branch_ids': branches, 'review_disposition': disposition,
+                      'attention_basis': 'contested_branch' if branches and counters else
+                                         'branch_linked' if branches else 'declared_check'})
+    order = {'contested_branch': 0, 'branch_linked': 1, 'declared_check': 2}
+    items.sort(key=lambda item: (order[item['attention_basis']], -len(item['branch_ids']), item['contribution_id']))
+    return {'version': 'endstate.information-agenda.v1', 'items': items,
+            'coverage': coverage(draft), 'facts_attested': False, 'execution_authorised': False,
+            'notice': 'Declared counter-links and branch coverage determine display order, not value, urgency or probability. Every statement remains visible; addressed in review is not verified. No check is automatically selected or sent.'}

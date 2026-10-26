@@ -167,11 +167,12 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-APP`, `EV-UI` (registry below).
 
 - [x] **B02-05 Questions, What Changed and isolated What If**
-  - Status: `verified`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `verified`. Owner: Devin / integration. Updated: 2026-10-26.
   - Acceptance: Graph-impact questions and recorded revision deltas operate; hypothetical state changes leave the live case unchanged.
-  - Next: Connect future ingestion only through reviewed revisioned updates.
-  - Existing code: `eightball/v2/planner.py`, `eightball/v2/services.py`.
-  - Evidence: `EV-APP`, `EV-UI` (registry below).
+  - Next: Connect future ingestion only through reviewed revisioned updates. Information-loop integration: complete exact-source verification in docs/delivery/sessions/2026-10-26-information-loop.md; independent operator benefit and agency disclosure remain separate.
+  - Branch/base: `devin/1792969169-roadmap-integrated` / `585cb3193e3ff3771870e5917309b2b1e2416227`.
+  - Existing code: `eightball/v2/planner.py`, `eightball/v2/services.py`, `endstate/rehearsal.py`, `eightball/v2/rehearsal.py`, `web/v2/rehearsal-view.js`, `tests/test_rehearsal.py`, `tests/browser_plan_review.py`.
+  - Evidence: `EV-APP`, `EV-UI`, `EV-INFORMATION-LOOP-20261026` (registry below).
 
 - [x] **B02-06 Approvals, completion/effect separation, audit and legacy import**
   - Status: `verified`. Owner: unassigned. Updated: 2026-09-23.
@@ -460,11 +461,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [x] **ES01-02 Extract shared state, planning and explanation kernel**
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
   - Acceptance: 8BALL calls the extracted core; the core imports no 8BALL UI, named client or fixer playbook.
-  - Next: Continue 8BALL through the shared kernel; do not duplicate the planner for another domain.
+  - Next: Continue 8BALL through the shared kernel; do not duplicate the planner for another domain. Information-loop integration: complete exact-source verification in docs/delivery/sessions/2026-10-26-information-loop.md; independent operator benefit and agency disclosure remain separate.
   - Branch/base: `feat/situation-intelligence-v2` / `5e2098e9cb12251592eb3889ce7926798484699d`.
   - Dependencies: `ES01-01`.
   - Existing code: `endstate/state.py`, `endstate/planner.py`, `eightball/v2/planner.py`.
-  - Evidence: `EV-KERNEL` (registry below).
+  - Evidence: `EV-KERNEL`, `EV-INFORMATION-LOOP-20261026` (registry below).
 
 - [x] **ES01-03 Preserve storage, imports and audit lineage**
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
@@ -1197,3 +1198,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `local_engineering`.
 - Repository evidence: [docs/delivery/sessions/2026-10-26-specialist-presentation.md](../../docs/delivery/sessions/2026-10-26-specialist-presentation.md).
 - Result/scope: Exact ba1fd41 native source/artifacts matched:2038 source tests,2038 installed-wheel regressions,24 JS modules,466 checks across13 native suites. Read-only retained comparison only; no inference, quality approval, merge or release.
+
+### EV-INFORMATION-LOOP-20261026
+
+- Kind: `local_engineering`.
+- Repository evidence: [docs/delivery/sessions/2026-10-26-information-loop.md](../../docs/delivery/sessions/2026-10-26-information-loop.md).
+- Result/scope: Bounded B02-05/ES01-02 information-loop integration. Focused native journey passes; exact-source full acceptance pending. No quality/predictive/production approval.

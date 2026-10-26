@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **209 recorded discoveries.**
+Last review: 2026-10-26. **210 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -3712,3 +3712,20 @@ A stored aggregate can contradict its own retained model answers or case/input b
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task: fail-closed read-only projection in the existing event review. No new required product scope, model selection or quality acceptance.
+
+### [ ] EM-310: One information check needs stable lineage across repeated reconsideration
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Owner-directed check-observe-reconsider integration.
+
+Rechecking an immutable brief can multiply the same unresolved question unless its root declaration is stable. An answer can also remain historically recorded after its evidence is retracted; neither review disposition nor answer status establishes a condition.
+
+**Product implication:** Reuse the existing question/observation commands with a root-brief/contribution identity and a current, explicitly labelled projection. Keep review history immutable, preserve retracted support, and require separate operator reconsideration.
+
+**Roadmap links:** `B02-05` (verified), `ES01-02` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-information-loop.md`, `tests/test_rehearsal.py`, `tests/browser_plan_review.py`, `docs/v2/ASSUMPTION-CHALLENGE.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task: owner requested the information-to-reconsideration loop. Reuse native questions and review contracts; do not promote optional watchers, forecasts or production acceptance. Operator benefit remains unmeasured.

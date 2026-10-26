@@ -7,7 +7,7 @@ const prRoot=()=>document.querySelector('[data-pr-root]');
 const prStamp=()=>[S.epoch,S.current?.case.id,S.current?.case.revision].join(':');
 export function clearPlanReview(){prSerial++;prSession=null;if(prRoot())prRoot().innerHTML=warning('Case context changed. Reopen Plan Review.')+prButton('Reopen Plan Review','open');}
 const prValid=(seq,stamp)=>seq===prSerial&&stamp===prStamp()&&Boolean(prRoot());
-function prCollect(){const f=document.querySelector('[data-pr-form="judgements"]');if(f&&prSession)prSession.draft=Object.fromEntries(new FormData(f));const challenge=document.querySelector('[data-pr-form="challenge"]');if(challenge&&prSession)prSession.challengeValues=Object.fromEntries(new FormData(challenge));const review=document.querySelector('[data-pr-form="challenge-disposition"]');if(review&&prSession)prSession.challengeReviewValues=Object.fromEntries(new FormData(review));}
+function prCollect(){const f=document.querySelector('[data-pr-form="judgements"]');if(f&&prSession)prSession.draft=Object.fromEntries(new FormData(f));const challenge=document.querySelector('[data-pr-form="challenge"]');if(challenge&&prSession)prSession.challengeValues=Object.fromEntries(new FormData(challenge));const review=document.querySelector('[data-pr-form="challenge-disposition"]');if(review&&prSession)prSession.challengeReviewValues=Object.fromEntries(new FormData(review));if(prSession){prSession.checkValues??={};for(const form of document.querySelectorAll('[data-pr-form=challenge-check]'))prSession.checkValues[form.dataset.briefHash+':'+form.dataset.contributionId]=Object.fromEntries(new FormData(form));}}
 const prRefTitle=id=>prSession?.assessment.references.find(r=>r.id===id)?.title??id;
 function prExpression(e){if(e.op==='atom')return (e.value?'':'NOT ')+prRefTitle('condition:'+e.condition_id);return '('+e.args.map(prExpression).join(e.op==='all'?' AND ':' OR ')+')';}
 function prDiagnostics(a){const i=a.inspection;
@@ -64,6 +64,16 @@ export function bindPlanReview(services){prService=services;
  try{const act=el.dataset.prAction;if(act==='open'){await prOpen();return;}if(!prSession||prSession.stamp!==prStamp())throw new Error('Case context changed. Reopen Plan Review.');prCollect();if(act==='tab'){prSession.tab=el.dataset.prTab;prRender();}if(act==='history'){const session=prSession,seq=prSerial,stamp=prStamp();const history=await prService.api(`/cases/${session.case.id}/plan-reviews`);if(!prValid(seq,stamp))return;session.history=history;session.tab='history';prRender();}if(act==='export')saveFile('8BALL-Plan-Assessment.json',prSession.assessment);}catch(err){toast(err.message,true);}});
  document.addEventListener('submit',async e=>{const form=e.target;if(!form.dataset.prForm)return;e.preventDefault();const seq=prSerial,stamp=prStamp(),session=prSession;if(!session||session.stamp!==stamp){toast('Reopen the review against the current case.',true);return;}const submit=form.querySelector('[type=submit]');submit.disabled=true;
  try{const v=Object.fromEntries(new FormData(form)),a=session.assessment,base=`/cases/${a.case_id}/plan-reviews`;
+ if(form.dataset.prForm==='challenge-check'){
+  const history=session.challengeHistory;if(!history)throw new Error('Refresh challenge history first.');
+  await prService.api(base+'/rehearsals/check',{event_id:prId(),expected_revision:session.case.revision,expected_sequence:history.sequence,brief_sha256:form.dataset.briefHash,contribution_id:form.dataset.contributionId,question:v.question,owner:v.owner,reason:v.reason});
+  if(!prValid(seq,stamp))return;
+  const epoch=S.epoch;await prService.loadCase(session.case.id,S.tab);
+  if(seq!==prSerial||epoch!==S.epoch||S.current?.case.id!==session.case.id||!prRoot())return;
+  await prOpen();if(!prSession||prSession.case.id!==session.case.id)return;
+  prSession.tab='challenge';await prChallengeAction('challenge-history');
+  toast('Linked question created; action approvals cleared. Review evidence separately.');return;
+ }
  if(form.dataset.prForm==='challenge-packet'){
   const history=session.challengeHistory;if(!history)throw new Error('Refresh challenge history before exporting.');
   const packet=await prService.api(base+'/rehearsals/packet',{mode:v.mode,references:v.mode==='reference_index'?(v.reference?[v.reference]:[]):[],expected_revision:session.case.revision,expected_sequence:history.sequence,expected_head_sha256:history.head_hash,brief_sha256:form.dataset.briefHash});

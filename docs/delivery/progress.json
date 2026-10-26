@@ -1030,6 +1030,11 @@
       "kind": "local_engineering",
       "path": "docs/delivery/sessions/2026-10-26-specialist-presentation.md",
       "result": "Exact ba1fd41 native source/artifacts matched:2038 source tests,2038 installed-wheel regressions,24 JS modules,466 checks across13 native suites. Read-only retained comparison only; no inference, quality approval, merge or release."
+    },
+    "EV-INFORMATION-LOOP-20261026": {
+      "kind": "local_engineering",
+      "path": "docs/delivery/sessions/2026-10-26-information-loop.md",
+      "result": "Bounded B02-05/ES01-02 information-loop integration. Focused native journey passes; exact-source full acceptance pending. No quality/predictive/production approval."
     }
   },
   "milestones": [
@@ -1359,22 +1364,28 @@
       "title": "Questions, What Changed and isolated What If",
       "status": "verified",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "Devin / integration",
+      "working_branch": "devin/1792969169-roadmap-integrated",
+      "base_commit": "585cb3193e3ff3771870e5917309b2b1e2416227",
+      "updated_on": "2026-10-26",
       "code_paths": [
         "eightball/v2/planner.py",
-        "eightball/v2/services.py"
+        "eightball/v2/services.py",
+        "endstate/rehearsal.py",
+        "eightball/v2/rehearsal.py",
+        "web/v2/rehearsal-view.js",
+        "tests/test_rehearsal.py",
+        "tests/browser_plan_review.py"
       ],
       "depends_on": [],
       "acceptance": "Graph-impact questions and recorded revision deltas operate; hypothetical state changes leave the live case unchanged.",
       "evidence": [
         "EV-APP",
-        "EV-UI"
+        "EV-UI",
+        "EV-INFORMATION-LOOP-20261026"
       ],
       "blockers": [],
-      "next_action": "Connect future ingestion only through reviewed revisioned updates."
+      "next_action": "Connect future ingestion only through reviewed revisioned updates. Information-loop integration: complete exact-source verification in docs/delivery/sessions/2026-10-26-information-loop.md; independent operator benefit and agency disclosure remain separate."
     },
     {
       "id": "B02-06",
@@ -2207,10 +2218,11 @@
       ],
       "acceptance": "8BALL calls the extracted core; the core imports no 8BALL UI, named client or fixer playbook.",
       "evidence": [
-        "EV-KERNEL"
+        "EV-KERNEL",
+        "EV-INFORMATION-LOOP-20261026"
       ],
       "blockers": [],
-      "next_action": "Continue 8BALL through the shared kernel; do not duplicate the planner for another domain."
+      "next_action": "Continue 8BALL through the shared kernel; do not duplicate the planner for another domain. Information-loop integration: complete exact-source verification in docs/delivery/sessions/2026-10-26-information-loop.md; independent operator benefit and agency disclosure remain separate."
     },
     {
       "id": "ES01-03",

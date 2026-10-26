@@ -6673,6 +6673,35 @@
           "reason": "existing_task: fail-closed read-only projection in the existing event review. No new required product scope, model selection or quality acceptance."
         }
       ]
+    },
+    {
+      "id": "EM-310",
+      "title": "One information check needs stable lineage across repeated reconsideration",
+      "origin": "Owner-directed check-observe-reconsider integration",
+      "first_seen": "2026-10-26",
+      "evidence_level": "supported_by_tests",
+      "observation": "Rechecking an immutable brief can multiply the same unresolved question unless its root declaration is stable. An answer can also remain historically recorded after its evidence is retracted; neither review disposition nor answer status establishes a condition.",
+      "product_implication": "Reuse the existing question/observation commands with a root-brief/contribution identity and a current, explicitly labelled projection. Keep review history immutable, preserve retracted support, and require separate operator reconsideration.",
+      "task_ids": [
+        "B02-05",
+        "ES01-02"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-information-loop.md",
+        "tests/test_rehearsal.py",
+        "tests/browser_plan_review.py",
+        "docs/v2/ASSUMPTION-CHALLENGE.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task: owner requested the information-to-reconsideration loop. Reuse native questions and review contracts; do not promote optional watchers, forecasts or production acceptance. Operator benefit remains unmeasured."
+        }
+      ]
     }
   ]
 }

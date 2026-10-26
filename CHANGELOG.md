@@ -4,6 +4,53 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 information-check loop · Connect retained uncertainty to explicit checks and reconsideration
+
+2026-10-26 · `local_unreleased`
+
+What to check next, explicit linked case questions, separate evidence-backed answers/observations and immutable current-case rechecks.
+
+### Added
+
+- ENDSTATE declared-structure information agenda; no invented information value or probability.
+- Explicit local question creation linked to the originating brief, revision and contribution; repeated rechecks reuse the same question.
+- Current answer-support and condition states beside saved review history, with existing evidence/observation controls.
+
+### Changed
+
+- Reuse existing case-command transactions; check creation invalidates approvals while viewing and rehearsal saving remain read-only.
+- Review tab switches preserve unsubmitted check fields. Existing v1 brief replay and source-free export remain unchanged.
+
+### Fixed
+
+- Reject stale/cross-case/expired/duplicate checks and roll back failed writes; never turn answered or addressed labels into facts.
+
+### Verification
+
+- 275 focused rehearsal/packet/Plan Review/grounding/time-review/course regressions and 57 native Plan Review checks passed.
+- Full native source, installed-wheel and all browser acceptance pending on exact committed source.
+
+### Limitations
+
+- Local operator only; agency check routes stay unavailable. No automatic sends, model calls, course selection or observations.
+- Operator benefit, predictive skill, independent review, production and release remain unverified.
+- Changes local at preparation; existing PR6 will be updated without merge or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Repeated reconsideration needs stable check identity rather than duplicate questions.
+- Discovery: Current evidence support must stay distinct from immutable recorded answers and review dispositions.
+- Risk: Display ordering can look like proven value of information; repeated reviews can add operator burden.
+- Architecture: Reuse ENDSTATE declarations and existing case commands, adding a read-only current projection rather than another store or scheduler.
+- Roadmap decision: Existing B02-05/ES01-02 refinement explicitly requested by owner; no optional durable-event scope or predictive gate promotion.
+Registered discoveries: EM-310.
+
+Roadmap items: `B02-05`, `ES01-02`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-information-loop.md](docs/delivery/sessions/2026-10-26-information-loop.md), [docs/v2/ASSUMPTION-CHALLENGE.md](docs/v2/ASSUMPTION-CHALLENGE.md), [tests/test_rehearsal.py](tests/test_rehearsal.py), [tests/browser_plan_review.py](tests/browser_plan_review.py).
+
 ## 0.2.0-alpha.8 retained specialist comparison · Read retained specialist differences without decoding raw output
 
 2026-10-26 · `pushed_unreleased`
