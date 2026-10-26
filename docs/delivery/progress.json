@@ -621,6 +621,11 @@
     "integration_branch": "devin/1792969169-roadmap-integrated"
   },
   "evidence": {
+    "EV-PROVIDER-JSON-NATIVE-20261026": {
+      "kind": "native_software_acceptance",
+      "path": "docs/evidence/provider-json-mode-software-2026-10-26.json",
+      "result": "Exact source e1e7142 passed 2172 source tests, 2172 installed-wheel regressions, 24 JavaScript modules and 475 checks across 13 native browser suites; source/artifact inspection matched before documentation-only closeout. Initial incorrect-Node-path source failure retained. No GLM/DeepSeek inference or coordinated/predictive-quality claim."
+    },
     "EV-PROVIDER-JSON-MODE-20261026": {
       "kind": "test_report",
       "path": "docs/delivery/sessions/2026-10-26-provider-json-mode.md",
@@ -1639,7 +1644,8 @@
         "EV-SONNET-NATIVE-20261026",
         "EV-HISTORICAL-REPLAY-20261026",
         "EV-HISTORICAL-COMPARISON-20261026",
-        "EV-PROVIDER-JSON-MODE-20261026"
+        "EV-PROVIDER-JSON-MODE-20261026",
+        "EV-PROVIDER-JSON-NATIVE-20261026"
       ],
       "blockers": [
         "Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed."

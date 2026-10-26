@@ -62,9 +62,34 @@ statuses are unchanged.
 
 ## Next action
 
-Finish native software verification and retain a source-bound receipt. Then
-connect bounded propose → specialist challenge → revised proposal using native
+Native software verification is complete (checkpoint below). Next connect
+bounded propose → specialist challenge → revised proposal using native
 ENDSTATE compilation and current-authority worker checkpoints. Retain the initial
 proposal and every reviewer answer; do not use a majority vote or automatically
 commit a plan. The next frozen fictional inference diagnostic must include the
 exact selected GLM/DeepSeek variants and must not claim empirical prediction.
+
+## Source-bound verification checkpoint
+
+Functional commit `e1e714276cbdd400c76a121337c7f0cf0b17991d` passed native run
+`20261026T114121Z-9fa4e813`, source digest
+`b7ab9ea110242fc01f2cc339dcc4db2fc91dd75b7179e9c3334fac3ecf025c4a`:
+**2172 source tests, 2172 installed-wheel regressions, 24 JavaScript modules and
+475 checks across 13 native browser suites**. All guards and Python compilation
+passed. The source was unchanged during the run. `--inspect` returned valid=true
+before this documentation-only closeout; later documentation is not that tested
+snapshot. The [receipt](../../evidence/provider-json-mode-software-2026-10-26.json)
+binds the complete compressed report. Earlier path failure remains retained.
+
+This checkpoint and its documentation closeout are published on the existing
+branch/PR, not merged or deployed. No runtime work is omitted from that checkpoint.
+Remote `progress` and `verify` passed at preceding pushed head `b9b58dc`; current
+push checks must settle separately. Devin Review remained errored without a job
+ID or findings at that head and earlier heads; no review gate is bypassed.
+
+Emergence correction: the preparatory implementation history was appended to
+EM-325 instead of EM-326. Both original notes are retained; appended decisions
+explicitly correct the link. Passing provider-contract tests is not coordinated
+method evidence. B02-11 stays partial, including independent labels, prospective
+approval, held-out data and human acceptance. No live request was made in this
+slice and no new product scope was adopted.

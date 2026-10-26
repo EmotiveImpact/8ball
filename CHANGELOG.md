@@ -4,6 +4,46 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 provider contract verification · Retain native verification of explicit provider JSON contracts
+
+2026-10-26 · `pushed_unreleased`
+
+Retain exact-source software acceptance separately from the unfinished coordinated workflow and live GLM/DeepSeek diagnostics.
+
+### Added
+
+- Compressed native report and source-bound software receipt for e1e7142.
+
+### Changed
+
+- Append the native verification checkpoint without changing reserved lane owners or B02-11 partial status.
+
+### Fixed
+
+- Correct the discovery-history cross-link: prompt-only implementation belongs to EM-326, not coordinated-method evidence EM-325. Preserve the earlier note and append the correction.
+
+### Verification
+
+- 2172 source tests, 2172 installed-wheel regressions, 24 JavaScript modules and 475 checks across 13 native browser suites passed. Source/artifact inspection matched before this documentation-only closeout.
+
+### Limitations
+
+- Initial incorrect-Node-path failure remains retained. No new inference, coordinated-method acceptance, predictive-quality approval, merge, deployment or release. Remote review service remains errored without findings at the prior pushed checkpoint; no gate bypass.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: No new product finding beyond EM-326: full native checks preserve the explicit remote-versus-local validation distinction.
+- Risk: Passing software checks does not establish live provider compatibility or coordinated-planning value.
+- Architecture: Retain the exact tested source digest and preserve unknown costs and capability limits in the next bounded method.
+- Roadmap decision: existing_task B02-11 verification only; EM-325 coordination remains unimplemented. No new required scope or acceptance promotion.
+Registered discoveries: EM-325, EM-326.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/evidence/provider-json-mode-software-2026-10-26.json](docs/evidence/provider-json-mode-software-2026-10-26.json), [docs/evidence/provider-json-mode-software-passed-2026-10-26.json.xz](docs/evidence/provider-json-mode-software-passed-2026-10-26.json.xz), [docs/delivery/sessions/2026-10-26-provider-json-mode.md](docs/delivery/sessions/2026-10-26-provider-json-mode.md).
+
 ## 0.2.0-alpha.8 explicit provider response contract · Support explicit prompt-only JSON without changing local validation
 
 2026-10-26 · `local_unreleased`

@@ -3985,6 +3985,7 @@ The owner expected swarm intelligence; the five-model diagnostic was independent
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 method/capability disclosure, no new required product scope or acceptance.
 - 2026-10-26 · adopted · integration: Explicit server-owned prompt_only mode now passes 261 focused transport/application/acceptance checks without JSON repair or weaker local validators. Native regression, GLM/DeepSeek inference and coordinated-workflow validation remain separate; see sessions/2026-10-26-provider-json-mode.md. Original catalogue observation remains unchanged.
+- 2026-10-26 · adopted · integration: Cross-link correction: the preceding prompt-only implementation note belongs to EM-326 and is not coordinated-method evidence. EM-325 still requires a separate propose/challenge/revise implementation and method comparison; no acceptance promotion. The earlier note is retained, not erased.
 
 ### [ ] EM-326: Catalogue availability is not structured-output compatibility
 
@@ -4002,3 +4003,4 @@ Authenticated catalogue lists glm-5.3-uncensored but reports supports_structured
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 method/capability disclosure, no new required product scope or acceptance.
+- 2026-10-26 · adopted · integration: Explicit server-owned prompt_only mode implemented at e1e7142 with unchanged local validators. Full source-bound native acceptance passed 2172 source + 2172 installed tests, 24 JS modules and 475 browser checks. See sessions/2026-10-26-provider-json-mode.md and docs/evidence/provider-json-mode-software-2026-10-26.json. This corrects the earlier implementation note's placement under EM-325; no live GLM/DeepSeek inference or predictive approval.

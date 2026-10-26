@@ -1,16 +1,20 @@
-# Latest local preparation: explicit provider JSON contract
+# Latest checkpoint: explicit provider JSON contract
 
 [Current bounded continuation](sessions/2026-10-26-provider-json-mode.md) adds an
 explicit frozen prompt-only mode for the next owner-selected model set, preserving
 strict local JSON/proposal validation and all authority boundaries. Starting head
-is `b9b58dc`; 261 focused checks pass, full native verification is pending, and
-no new inference or coordinated-workflow demonstration is claimed. B02-11 remains
-partial. The next step is native verification, then bounded coordinated planning.
+is `b9b58dc`; 261 focused checks and full native verification at `e1e7142` pass:
+2172 source + 2172 installed tests, 24 JS modules and 475 native browser checks.
+The exact source/artifact inspection matched before documentation closeout. See
+[receipt](../evidence/provider-json-mode-software-2026-10-26.json). No new inference
+or coordinated-workflow demonstration is claimed. B02-11 remains partial. The
+checkpoint is on the existing PR; next is bounded coordinated planning, then the
+frozen fictional GLM/DeepSeek-inclusive diagnostic. No merge/deployment.
 
 The preceding historical closeout is pushed at `b9b58dc`: source-bound native
 acceptance at `cd9335f` passed 2152 source tests, 2152 installed-wheel regressions,
 24 JS modules and 475 native browser checks. Later catalogue/documentation guards
-passed 67 checks. PR #6 is unmerged; remote verify was pending and automated review
+passed 67 checks. PR #6 is unmerged; remote verify passed and automated review
 errored without findings. Neither is a predictive-quality approval.
 
 # Previous checkpoint: corrected five-model historical diagnostic

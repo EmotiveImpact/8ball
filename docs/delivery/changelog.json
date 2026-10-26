@@ -3,6 +3,28 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-provider-json-mode-native-verification",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 provider contract verification",
+      "title": "Retain native verification of explicit provider JSON contracts",
+      "delivery": "pushed_unreleased",
+      "task_ids": ["B02-11"],
+      "summary": "Retain exact-source software acceptance separately from the unfinished coordinated workflow and live GLM/DeepSeek diagnostics.",
+      "added": ["Compressed native report and source-bound software receipt for e1e7142."],
+      "changed": ["Append the native verification checkpoint without changing reserved lane owners or B02-11 partial status."],
+      "fixed": ["Correct the discovery-history cross-link: prompt-only implementation belongs to EM-326, not coordinated-method evidence EM-325. Preserve the earlier note and append the correction."],
+      "verification": ["2172 source tests, 2172 installed-wheel regressions, 24 JavaScript modules and 475 checks across 13 native browser suites passed. Source/artifact inspection matched before this documentation-only closeout."],
+      "limitations": ["Initial incorrect-Node-path failure remains retained. No new inference, coordinated-method acceptance, predictive-quality approval, merge, deployment or release. Remote review service remains errored without findings at the prior pushed checkpoint; no gate bypass."],
+      "evidence_paths": ["docs/evidence/provider-json-mode-software-2026-10-26.json", "docs/evidence/provider-json-mode-software-passed-2026-10-26.json.xz", "docs/delivery/sessions/2026-10-26-provider-json-mode.md"],
+      "emergence_review": {
+        "discoveries": ["No new product finding beyond EM-326: full native checks preserve the explicit remote-versus-local validation distinction."],
+        "risks": ["Passing software checks does not establish live provider compatibility or coordinated-planning value."],
+        "architecture_implications": ["Retain the exact tested source digest and preserve unknown costs and capability limits in the next bounded method."],
+        "roadmap_decision": "existing_task B02-11 verification only; EM-325 coordination remains unimplemented. No new required scope or acceptance promotion.",
+        "insight_ids": ["EM-325", "EM-326"]
+      }
+    },
+    {
       "id": "2026-10-26-explicit-provider-json-mode",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 explicit provider response contract",
