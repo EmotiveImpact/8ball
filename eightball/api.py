@@ -222,6 +222,8 @@ def make_app(store: Store, token: str, *, agency_access=None, agency_host=None) 
                      Path(agency_access.registry.path).resolve() == Path(store.path).resolve())
     v2_routes = v2_router(V2Store(store.path),store,authorised,agency_events=agency_events,agency_mode=agency_access is not None)
     app.state.analysis_jobs = v2_routes.analysis_jobs
+    if agency_host is not None:
+        agency_host.events.inference_slot = app.state.analysis_jobs.slot
     app.include_router(v2_routes)
     web = Path(__file__).resolve().parent.parent / 'web'
     app.mount('/v2', StaticFiles(directory=web / 'v2', html=True), name='v2-web')

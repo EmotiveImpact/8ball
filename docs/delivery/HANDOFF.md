@@ -1,3 +1,5 @@
+[Latest checkpoint](sessions/2026-10-26-specialist-worker.md): bounded specialist comparison is wired into the reviewed event worker, with explicit host configuration and per-call authority/lease checks. Focused mocked transport/integration tests pass; full native acceptance and publication are pending. No new inference or prediction-quality result.
+
 # Forecast measurement checkpoint — 26 October 2026
 
 [Latest handoff](sessions/2026-10-26-forecast-measurement.md): conditional planning works; no empirical event predictor is configured. Measurement contracts and the missing-predictor diagnostic passed full native acceptance (1979 source and installed-wheel tests, 454 browser checks); publication follows. Earlier repairs are pushed with passing software CI; automated review separately errored. Continue autonomously within existing authority/budget boundaries.

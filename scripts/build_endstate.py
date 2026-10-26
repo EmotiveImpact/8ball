@@ -85,12 +85,19 @@ o=Resolution(forecast_id=f.id,forecast_sha256=forecast_digest(f),value=False,ava
              source_reference='Synthetic package fixture',source_sha256='1'*64,basis='synthetic')
 evaluation=evaluate([f],[o],as_of=now+timedelta(days=2))
 assert evaluation['brier']==0.25 and not evaluation['predictive_quality_approved'] and not evaluation['facts_attested']
+from endstate.intelligence.coordination import ReviewSpec,summarize
+comparison=summarize(ReviewSpec(id='review',models=['jev-latest'],max_seconds=30,
+ max_reported_cost_nano_usd=100,questions=[dict(id='check',instructions='Missing evidence requires review.',
+ criteria={'review':'More review needed.','continue':'Continue human review, not approval.'})]),[])
+assert comparison['answered_models']==0 and comparison['questions'][0]['missing_models']==['jev-latest']
+assert not comparison['facts_attested'] and not comparison['execution_authorized']
 import endstate
 assert pathlib.Path(endstate.__file__).resolve().is_relative_to(pathlib.Path(sys.argv[1]).resolve())
 print(json.dumps({'installed_outside_repository':True,'routes':len(r.plan['routes']),
  'input_unchanged':snapshot.observations==[],'approval_preserved':True,'roundtrip_exact':True,
  'scenario_replay':True,'restricted_packet':True,'typed_advisory_contract':True,
  'forecast_measurement_only':True,
+ 'specialist_comparison_only':True,
  'forbidden_runtime_imports':[],'model_inference':False}))
 '''
         test=json.loads(run([sys.executable,'-I','-c',snippet,str(target)],temp))

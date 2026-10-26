@@ -20,18 +20,15 @@
     "integration_authority": "docs/decisions/0007-owner-build-consolidation.md",
     "source_merged_not_release_accepted": true,
     "current_sprint": {
+      "owner": "Devin / integration",
       "branch": "devin/1792969169-roadmap-integrated",
-      "base_commit": "56c9b79428a612dff11e2fae0219640d156032ff",
+      "base_commit": "a3e340275e0ecc810a80c2aa9299c06e1e19385d",
       "status_as_of": "2026-10-26",
       "merged": false,
-      "code_checkpoint_pushed": true,
-      "evidence": "docs/delivery/sessions/2026-10-26-roadmap-integration.md",
-      "verification": "Exact-source native run 20261026T002344Z-5641058a passed 1782 source tests,1782 installed-kernel regressions,13 native suites/439 checks; --inspect valid before later receipt edits. No external quality/production acceptance.",
-      "tested_commit": "05525c9826e476b7f9996f187190b87ef8e1f9ec",
-      "source_sha256": "343c07c778d854fecb94e37edb33f8275d2b94e81147c0537457acaafb7f663a",
-      "acceptance_receipt": "docs/evidence/roadmap-integration-native-2026-10-26.json",
-      "prior_failed_receipt": "docs/evidence/roadmap-integration-failed-2026-10-26.json",
-      "receipt_publication": "Containing documentation-only commit; handoff tooling verifies remote head. Tested code checkpoint already confirmed pushed."
+      "code_checkpoint_pushed": false,
+      "evidence": "docs/delivery/sessions/2026-10-26-specialist-worker.md",
+      "verification": "200 focused tests passed. First full native run retained a lane-ownership tracking failure; corrected acceptance pending.",
+      "prior_failed_report": "artifacts/acceptance/20261026T034101Z-00c70131/report.json"
     },
     "verified_sprint_history": [
       {
@@ -149,6 +146,20 @@
         "receipt_pushed": true,
         "publication_blocker": null,
         "publication_recovered_commit": "98ee073a1c5f25658aab915183c696c8b4099985"
+      },
+      {
+        "branch": "devin/1792969169-roadmap-integrated",
+        "base_commit": "56c9b79428a612dff11e2fae0219640d156032ff",
+        "status_as_of": "2026-10-26",
+        "merged": false,
+        "code_checkpoint_pushed": true,
+        "evidence": "docs/delivery/sessions/2026-10-26-roadmap-integration.md",
+        "verification": "Exact-source native run 20261026T002344Z-5641058a passed 1782 source tests,1782 installed-kernel regressions,13 native suites/439 checks; --inspect valid before later receipt edits. No external quality/production acceptance.",
+        "tested_commit": "05525c9826e476b7f9996f187190b87ef8e1f9ec",
+        "source_sha256": "343c07c778d854fecb94e37edb33f8275d2b94e81147c0537457acaafb7f663a",
+        "acceptance_receipt": "docs/evidence/roadmap-integration-native-2026-10-26.json",
+        "prior_failed_receipt": "docs/evidence/roadmap-integration-failed-2026-10-26.json",
+        "receipt_publication": "Containing documentation-only commit; handoff tooling verifies remote head. Tested code checkpoint already confirmed pushed."
       }
     ],
     "provider_configuration_preparation": {
@@ -583,6 +594,7 @@
     "integration_branch": "devin/1792969169-roadmap-integrated"
   },
   "evidence": {
+    "EV-SPECIALIST-WORKER-20261026": {"kind": "local_engineering", "path": "docs/delivery/sessions/2026-10-26-specialist-worker.md", "result": "200 focused tests pass; bounded mocked decision checks, not predictive or production acceptance. Full native acceptance pending."},
     "EV-ANTHROPIC-20261026": {
       "kind": "failed_real_model_evaluation_and_catalogue_selection",
       "path": "docs/evidence/anthropic-selection-2026-10-26.json",
@@ -1501,7 +1513,7 @@
       "owner": "Devin / roadmap-intelligence",
       "working_branch": "devin/1792969169-roadmap-intelligence",
       "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
-      "updated_on": "2026-10-25",
+      "updated_on": "2026-10-26",
       "code_paths": [
         "evals/live_generation.py",
         "evals/classification-cases.json",
@@ -1529,12 +1541,13 @@
         "EV-REVIEW-REFRESH-RACE",
         "EV-NATIVE-REVIEW-20261026",
         "EV-DECISION-SMOKE-20261026",
-        "EV-FORECAST-MEASUREMENT-20261026"
+        "EV-FORECAST-MEASUREMENT-20261026",
+        "EV-SPECIALIST-WORKER-20261026"
       ],
       "blockers": [
         "Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed."
       ],
-      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval. Integration follow-up: verify the reviewed specialist worker checkpoint in docs/delivery/sessions/2026-10-26-specialist-worker.md; preserve partial status and all remaining gates."
     },
     {
       "id": "B02-12",
@@ -1914,7 +1927,7 @@
       "owner": "Devin / roadmap-events",
       "working_branch": "devin/1792969169-roadmap-events",
       "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
-      "updated_on": "2026-10-25",
+      "updated_on": "2026-10-26",
       "code_paths": [
         "docs/delivery/lane-reports/events.md",
         "eightball/agency_host.py",
@@ -1929,10 +1942,11 @@
       "evidence": [
         "EV-SECURITY",
         "EV-LANE-EVENTS-20261026",
-        "EV-INTEGRATION-ENGINEERING-20261026"
+        "EV-INTEGRATION-ENGINEERING-20261026",
+        "EV-SPECIALIST-WORKER-20261026"
       ],
       "blockers": [],
-      "next_action": "Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Build one authorised connector through ENDSTATE event contracts. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
+      "next_action": "Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Build one authorised connector through ENDSTATE event contracts. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately. Integration follow-up: verify the reviewed specialist worker checkpoint in docs/delivery/sessions/2026-10-26-specialist-worker.md; preserve partial status and all remaining gates."
     },
     {
       "id": "B03-05",

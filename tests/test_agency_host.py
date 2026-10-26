@@ -41,6 +41,7 @@ def release(env, client, obj):
 
 
 def test_all_mounted_agency_routes_have_exact_reviewed_mapping(env):
+    assert env.host.events.inference_slot is env.app.state.analysis_jobs.slot
     for route in env.app.routes:
         path = getattr(route, 'path', '')
         if '/vault' in path or '/collaboration' in path or '/operations' in path or '/knowledge' in path or '/domain-packs' in path or '/agency-objects/' in path:

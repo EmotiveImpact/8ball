@@ -4,6 +4,55 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 bounded specialist worker · Connect explicit specialist comparisons to the reviewed event worker
+
+2026-10-26 · `local_unreleased`
+
+Opt-in reviewed-text advisory checks with per-call authority, configuration binding and a shared inference slot; not forecasting or semantic acceptance.
+
+### Added
+
+- Pure ENDSTATE review specifications and retained model differences/missing answers.
+- Explicit host processor over native single-use decision sessions, no retry or case commands.
+
+### Changed
+
+- Processing reviews bind models/questions/budgets; every call and publication rechecks authority and revision.
+- Agency event processing shares the existing local-analysis inference slot.
+
+### Fixed
+
+- Late configuration, source, permission, revision, cancellation and lease races suppress further calls and cooperative-result publication.
+
+### Verification
+
+- 204 focused specialist/dispatch/agency/transport/kernel tests passed with mocked HTTP and local database transactions; 67 tracking tests passed after correcting reserved lane ownership.
+- First native run retained:2021 source tests passed, lane-ownership tracking failed, installed-package regression failed on the same mismatch; all13 native browser suites passed. Corrected full acceptance pending. Compilation and whitespace checks passed.
+
+### Limitations
+
+- Local/unreleased at preparation; no new inference, charges, merge or deployment.
+- Host-configured seam, not dedicated operator controls or a finished model swarm.
+- Reported-cost stopping is not a hard billing cap; no calibrated predictor or model-quality acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A multi-model processor needs authority/revision/source/lease checks between calls and in the final transaction, not only around the entire pipeline.
+- Discovery: Changing models, questions or budgets after source review must invalidate processing admission.
+- Discovery: A provider response can omit costs or arrive after the budget is exceeded. Unknown cost must stop subsequent calls, never mean free.
+- Discovery: Independent event and local-analysis slots would permit extra parallel provider requests. The application now shares one slot.
+- Discovery: The reviewed worker retains a typed specialist report but does not yet offer dedicated model selection and readable comparison controls or measured operator benefit.
+- Risk: Overclaiming predictive skill, billing guarantees or operator benefit from software contracts.
+- Architecture: Pure comparison in ENDSTATE; source access and current lifecycle remain in the existing host.
+- Roadmap decision: Existing-task refinements and decision records; EM-308 remains a candidate without scope/status promotion.
+Registered discoveries: EM-304, EM-305, EM-306, EM-307, EM-308.
+
+Roadmap items: `B03-04`, `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-specialist-worker.md](docs/delivery/sessions/2026-10-26-specialist-worker.md), [tests/test_specialist_review.py](tests/test_specialist_review.py), [docs/v2/SPECIALIST-REVIEW.md](docs/v2/SPECIALIST-REVIEW.md).
+
 ## 0.2.0-alpha.8 forecast measurement · Measure forecasts without calling conditional plans predictions
 
 2026-10-26 · `local_unreleased`

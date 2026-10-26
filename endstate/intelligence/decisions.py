@@ -7,6 +7,7 @@ from pydantic import Field, model_validator
 from ..primitives import Identifier, Strict
 
 Text = Annotated[str, Field(min_length=1, max_length=1500, pattern=r'\S')]
+DecisionModel = Literal['jev-latest', 'clef-flash', 'gpt-6-luna-decisions']
 
 
 class ChoiceQuestion(Strict):
@@ -16,7 +17,7 @@ class ChoiceQuestion(Strict):
 
 
 class DecisionInput(Strict):
-    model: Literal['jev-latest', 'clef-flash', 'gpt-6-luna-decisions']
+    model: DecisionModel
     state: Annotated[str, Field(min_length=1, max_length=12000, pattern=r'\S')]
     questions: list[ChoiceQuestion] = Field(min_length=1, max_length=8)
 

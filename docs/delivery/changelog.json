@@ -3,6 +3,66 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-specialist-worker",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 bounded specialist worker",
+      "title": "Connect explicit specialist comparisons to the reviewed event worker",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B03-04",
+        "B02-11"
+      ],
+      "summary": "Opt-in reviewed-text advisory checks with per-call authority, configuration binding and a shared inference slot; not forecasting or semantic acceptance.",
+      "added": [
+        "Pure ENDSTATE review specifications and retained model differences/missing answers.",
+        "Explicit host processor over native single-use decision sessions, no retry or case commands."
+      ],
+      "changed": [
+        "Processing reviews bind models/questions/budgets; every call and publication rechecks authority and revision.",
+        "Agency event processing shares the existing local-analysis inference slot."
+      ],
+      "fixed": [
+        "Late configuration, source, permission, revision, cancellation and lease races suppress further calls and cooperative-result publication."
+      ],
+      "verification": [
+        "204 focused specialist/dispatch/agency/transport/kernel tests passed with mocked HTTP and local database transactions; 67 tracking tests passed after correcting reserved lane ownership.",
+        "First native run retained:2021 source tests passed, lane-ownership tracking failed, installed-package regression failed on the same mismatch; all13 native browser suites passed. Corrected full acceptance pending. Compilation and whitespace checks passed."
+      ],
+      "limitations": [
+        "Local/unreleased at preparation; no new inference, charges, merge or deployment.",
+        "Host-configured seam, not dedicated operator controls or a finished model swarm.",
+        "Reported-cost stopping is not a hard billing cap; no calibrated predictor or model-quality acceptance."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-specialist-worker.md",
+        "tests/test_specialist_review.py",
+        "docs/v2/SPECIALIST-REVIEW.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "A multi-model processor needs authority/revision/source/lease checks between calls and in the final transaction, not only around the entire pipeline.",
+          "Changing models, questions or budgets after source review must invalidate processing admission.",
+          "A provider response can omit costs or arrive after the budget is exceeded. Unknown cost must stop subsequent calls, never mean free.",
+          "Independent event and local-analysis slots would permit extra parallel provider requests. The application now shares one slot.",
+          "The reviewed worker retains a typed specialist report but does not yet offer dedicated model selection and readable comparison controls or measured operator benefit."
+        ],
+        "risks": [
+          "Overclaiming predictive skill, billing guarantees or operator benefit from software contracts."
+        ],
+        "architecture_implications": [
+          "Pure comparison in ENDSTATE; source access and current lifecycle remain in the existing host."
+        ],
+        "roadmap_decision": "Existing-task refinements and decision records; EM-308 remains a candidate without scope/status promotion.",
+        "insight_ids": [
+          "EM-304",
+          "EM-305",
+          "EM-306",
+          "EM-307",
+          "EM-308"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-forecast-measurement",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 forecast measurement",

@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **203 recorded discoveries.**
+Last review: 2026-10-26. **208 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -3609,3 +3609,88 @@ The diagnostic reads separately stored labels after freezing forecasts, but its 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task evaluation refinement and decision_record; no acceptance/status promotion.
+
+### [ ] EM-304: Authority checks must bracket every call and publication
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Bounded specialist worker integration.
+
+A multi-model processor needs authority/revision/source/lease checks between calls and in the final transaction, not only around the entire pipeline.
+
+**Product implication:** Preserve current authority, explicit scope and missing-result limitations; validate operator value separately.
+
+**Roadmap links:** `B03-04` (partial), `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-specialist-worker.md`, `tests/test_specialist_review.py`, `docs/v2/SPECIALIST-REVIEW.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task: current authority and stale-result refinements.
+
+### [ ] EM-305: Processing consent binds model configuration
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Bounded specialist worker integration.
+
+Changing models, questions or budgets after source review must invalidate processing admission.
+
+**Product implication:** Preserve current authority, explicit scope and missing-result limitations; validate operator value separately.
+
+**Roadmap links:** `B03-04` (partial), `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-specialist-worker.md`, `tests/test_specialist_review.py`, `docs/v2/SPECIALIST-REVIEW.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task: bind the reviewed configuration digest.
+
+### [ ] EM-306: Reported-cost stops are not billing caps
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Bounded specialist worker integration.
+
+A provider response can omit costs or arrive after the budget is exceeded. Unknown cost must stop subsequent calls, never mean free.
+
+**Product implication:** Preserve current authority, explicit scope and missing-result limitations; validate operator value separately.
+
+**Roadmap links:** `B03-04` (partial), `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-specialist-worker.md`, `tests/test_specialist_review.py`, `docs/v2/SPECIALIST-REVIEW.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: decision_record: retain uncertainty and disclose provider-side limits.
+
+### [ ] EM-307: Coordinators must share the existing inference slot
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Bounded specialist worker integration.
+
+Independent event and local-analysis slots would permit extra parallel provider requests. The application now shares one slot.
+
+**Product implication:** Preserve current authority, explicit scope and missing-result limitations; validate operator value separately.
+
+**Roadmap links:** `B03-04` (partial), `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-specialist-worker.md`, `tests/test_specialist_review.py`, `docs/v2/SPECIALIST-REVIEW.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task: bounded single-process coordination, no second scheduler.
+
+### [ ] EM-308: A typed report is not yet an operator comparison experience
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Bounded specialist worker integration.
+
+The reviewed worker retains a typed specialist report but does not yet offer dedicated model selection and readable comparison controls or measured operator benefit.
+
+**Product implication:** Preserve current authority, explicit scope and missing-result limitations; validate operator value separately.
+
+**Roadmap links:** `B03-04` (partial), `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-specialist-worker.md`, `tests/test_specialist_review.py`, `docs/v2/SPECIALIST-REVIEW.md`.
+
+**Decision history:**
+
+- 2026-10-26 · candidate · integration: new_candidate: operator controls and value evaluation; do not silently promote scope.

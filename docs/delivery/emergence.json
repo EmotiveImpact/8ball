@@ -6498,6 +6498,146 @@
           "reason": "existing_task evaluation refinement and decision_record; no acceptance/status promotion."
         }
       ]
+    },
+    {
+      "id": "EM-304",
+      "title": "Authority checks must bracket every call and publication",
+      "origin": "Bounded specialist worker integration",
+      "first_seen": "2026-10-26",
+      "evidence_level": "supported_by_tests",
+      "observation": "A multi-model processor needs authority/revision/source/lease checks between calls and in the final transaction, not only around the entire pipeline.",
+      "product_implication": "Preserve current authority, explicit scope and missing-result limitations; validate operator value separately.",
+      "task_ids": [
+        "B03-04",
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-specialist-worker.md",
+        "tests/test_specialist_review.py",
+        "docs/v2/SPECIALIST-REVIEW.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task: current authority and stale-result refinements."
+        }
+      ]
+    },
+    {
+      "id": "EM-305",
+      "title": "Processing consent binds model configuration",
+      "origin": "Bounded specialist worker integration",
+      "first_seen": "2026-10-26",
+      "evidence_level": "supported_by_tests",
+      "observation": "Changing models, questions or budgets after source review must invalidate processing admission.",
+      "product_implication": "Preserve current authority, explicit scope and missing-result limitations; validate operator value separately.",
+      "task_ids": [
+        "B03-04",
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-specialist-worker.md",
+        "tests/test_specialist_review.py",
+        "docs/v2/SPECIALIST-REVIEW.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task: bind the reviewed configuration digest."
+        }
+      ]
+    },
+    {
+      "id": "EM-306",
+      "title": "Reported-cost stops are not billing caps",
+      "origin": "Bounded specialist worker integration",
+      "first_seen": "2026-10-26",
+      "evidence_level": "supported_by_tests",
+      "observation": "A provider response can omit costs or arrive after the budget is exceeded. Unknown cost must stop subsequent calls, never mean free.",
+      "product_implication": "Preserve current authority, explicit scope and missing-result limitations; validate operator value separately.",
+      "task_ids": [
+        "B03-04",
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-specialist-worker.md",
+        "tests/test_specialist_review.py",
+        "docs/v2/SPECIALIST-REVIEW.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "decision_record: retain uncertainty and disclose provider-side limits."
+        }
+      ]
+    },
+    {
+      "id": "EM-307",
+      "title": "Coordinators must share the existing inference slot",
+      "origin": "Bounded specialist worker integration",
+      "first_seen": "2026-10-26",
+      "evidence_level": "supported_by_tests",
+      "observation": "Independent event and local-analysis slots would permit extra parallel provider requests. The application now shares one slot.",
+      "product_implication": "Preserve current authority, explicit scope and missing-result limitations; validate operator value separately.",
+      "task_ids": [
+        "B03-04",
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-specialist-worker.md",
+        "tests/test_specialist_review.py",
+        "docs/v2/SPECIALIST-REVIEW.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task: bounded single-process coordination, no second scheduler."
+        }
+      ]
+    },
+    {
+      "id": "EM-308",
+      "title": "A typed report is not yet an operator comparison experience",
+      "origin": "Bounded specialist worker integration",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "The reviewed worker retains a typed specialist report but does not yet offer dedicated model selection and readable comparison controls or measured operator benefit.",
+      "product_implication": "Preserve current authority, explicit scope and missing-result limitations; validate operator value separately.",
+      "task_ids": [
+        "B03-04",
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-specialist-worker.md",
+        "tests/test_specialist_review.py",
+        "docs/v2/SPECIALIST-REVIEW.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "candidate",
+          "by": "integration",
+          "reason": "new_candidate: operator controls and value evaluation; do not silently promote scope."
+        }
+      ]
     }
   ]
 }

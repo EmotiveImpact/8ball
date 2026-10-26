@@ -4,9 +4,12 @@ The host authenticates identities and deliberately invokes one named work item.
 The injected processor may only propose; this service has no action-send adapter.
 """
 from datetime import datetime, timezone
+from hashlib import sha256
 import json
+import secrets
+from threading import BoundedSemaphore
 from time import perf_counter
-from typing import Protocol
+from typing import Protocol, runtime_checkable
 from uuid import uuid4
 
 from endstate.events import EventReceipt, IncomingEvent
@@ -20,6 +23,21 @@ from ..store import canonical, digest
 class ProposalProcessor(Protocol):
     def __call__(self, receipt: EventReceipt, snapshot) -> str:
         """Return exact proposal text, never commands or observed effects."""
+
+
+@runtime_checkable
+class CooperativeProcessor(Protocol):
+    @property
+    def configuration_sha256(self) -> str:
+        """Bind the reviewed models, questions and budgets to this attempt."""
+
+    def run(self, receipt: EventReceipt, snapshot, checkpoint) -> str:
+        """Revalidate host authority before and after every bounded provider call."""
+
+
+class _ProcessingStopped(Exception):
+    def __init__(self, state):
+        self.state = state
 
 
 class SourcePolicy(Protocol):
@@ -39,11 +57,12 @@ class EventWorkerService:
 
     def __init__(self, store, *, processor: ProposalProcessor | None = None,
                  authority=current_authority, source_policy: SourcePolicy | None = None,
-                 clock=None, timer=perf_counter):
+                 clock=None, timer=perf_counter, inference_slot=None):
         self.store, self.processor, self.authority = store, processor, authority
         self.source_policy = source_policy
         self.clock = clock or (lambda: datetime.now(timezone.utc))
         self.timer = timer
+        self.inference_slot = inference_slot if inference_slot is not None else BoundedSemaphore(1)
         self.inbox = EventInbox(store.path)
         self.queue = EventWork(store.path, clock=self.clock)
         with self.queue._transaction() as db:
@@ -98,6 +117,23 @@ class EventWorkerService:
         if type(revision) is not int or case.revision != revision:
             raise EventConflict('Reload and review the current revision')
 
+    def _configuration_sha256(self):
+        if not isinstance(self.processor, CooperativeProcessor):
+            return None
+        try:
+            value = self.processor.configuration_sha256
+        except (ValueError, TypeError):
+            raise EventConflict('Processor configuration is no longer valid') from None
+        if not isinstance(value, str) or len(value) != 64 or any(c not in '0123456789abcdef' for c in value):
+            raise ValueError('Invalid cooperative processor configuration digest')
+        return value
+
+    def _processing_review(self, db, review_id, case_id, receipt, revision):
+        record = self._review(db, review_id, case_id, receipt, revision)
+        if record.get('processor_configuration_sha256') != self._configuration_sha256():
+            raise EventConflict('Processor configuration changed; review processing again')
+        return record
+
     def ingest(self, *, case_id, identity, event: IncomingEvent):
         """Explicit text connector: no URL fetch, path scan, inference or fact adoption."""
         start = self.timer()
@@ -124,6 +160,9 @@ class EventWorkerService:
                           receipt_sha256=receipt_sha256, reviewer=identity.model_dump(mode='json'),
                           rationale=rationale, reviewed_at=self.queue._now().isoformat(),
                           source_facts_verified=False, action_authorised=False)
+            configuration = self._configuration_sha256()
+            if configuration is not None:
+                record['processor_configuration_sha256'] = configuration
             review_id = uuid4().hex
             db.execute('INSERT INTO event_processing_reviews VALUES (?,?,?,?,?,?,0)',
                        (review_id, case_id, sequence, expected_revision, canonical(record), digest(record)))
@@ -183,7 +222,7 @@ class EventWorkerService:
             scope, case = self._context(db, case_id, identity, (Operation.READ, Operation.INFER))
             self._revision(case, expected_revision)
             receipt = self._receipt(db, scope, sequence)
-            self._review(db, review_id, case_id, receipt, expected_revision)
+            self._processing_review(db, review_id, case_id, receipt, expected_revision)
             self.require_source_policy(db, identity, case_id, receipt, self.source_policy, self.queue._now())
             request_hash = digest(dict(case_id=case_id, sequence=sequence, revision=expected_revision,
                                        review_id=review_id, requester=identity.model_dump(mode='json')))
@@ -221,47 +260,88 @@ class EventWorkerService:
         return row, request
 
     def process(self, *, case_id, work_id, worker: Identity, lease_seconds=60):
-        """One explicit invocation, one provider call, never a loop or automatic retry."""
+        """One explicit attempt; cooperative processors checkpoint every bounded call."""
         if self.processor is None:
             raise ValueError('An explicitly configured proposal processor is required')
+        cooperative = isinstance(self.processor, CooperativeProcessor)
         with self.queue._transaction() as db:
             scope, case = self._context(db, case_id, worker, (Operation.READ, Operation.INFER))
             row, request = self._work(db, case_id, scope, work_id)
             self._revision(case, row['base_revision'])
             receipt = self._receipt(db, scope, row['sequence'])
-            self._review(db, request['review_id'], case_id, receipt, case.revision)
+            self._processing_review(db, request['review_id'], case_id, receipt, case.revision)
             self.require_source_policy(db, worker, case_id, receipt, self.source_policy, self.queue._now())
             token = self.queue.claim(work_id, **scope, lease_seconds=lease_seconds, _db=db)
             db.execute('INSERT INTO event_dispatch_runs(work_id,worker_key,started_at) VALUES (?,?,?)',
                        (work_id, digest(worker.model_dump(mode='json')), self.queue._now().isoformat()))
             self._context(db, case_id, worker, (Operation.READ, Operation.INFER))
             self.require_source_policy(db, worker, case_id, receipt, self.source_policy, self.queue._now())
-        start = self.timer()
-        output, failure = None, None
+        start = None
+        def checkpoint():
+            with self.queue._transaction() as db:
+                try:
+                    current_scope, current = self._context(db, case_id, worker, (Operation.READ, Operation.INFER))
+                    if current_scope != scope:
+                        raise PermissionError('Processing scope changed')
+                    live, live_request = self._work(db, case_id, scope, work_id)
+                    self._processing_review(db, live_request['review_id'], case_id,
+                        self._receipt(db, scope, live['sequence']), live['base_revision'])
+                    self.validate_consumption(db, live, self._receipt(db, scope, live['sequence']),
+                        identity=worker, source_policy=self.source_policy, now=self.queue._now())
+                except (PermissionError, EventConflict):
+                    raise _ProcessingStopped('permission_denied') from None
+                if current.revision != live['base_revision']:
+                    raise _ProcessingStopped('stale')
+                if (live['state'] != 'running' or self.queue._now() >= datetime.fromisoformat(live['deadline'])
+                        or not isinstance(live['token_hash'], str)
+                        or not secrets.compare_digest(live['token_hash'], sha256(token.encode()).hexdigest())):
+                    raise _ProcessingStopped('interrupted')
+
+        output, failure, stopped, acquired = None, None, None, False
         try:
-            output = self.processor(receipt, case.model_copy(deep=True))
+            while not acquired:
+                checkpoint()
+                acquired = self.inference_slot.acquire(timeout=0.1)
+            checkpoint()
+            start = self.timer()
+            if cooperative:
+                checkpoint()
+                output = self.processor.run(receipt, case.model_copy(deep=True), checkpoint)
+                checkpoint()
+            else:
+                output = self.processor(receipt, case.model_copy(deep=True))
             if not isinstance(output, str) or not output.strip() or len(output.encode('utf-8')) > MAX_RESULT_BYTES:
                 output, failure = None, 'invalid_result'
+        except _ProcessingStopped as exc:
+            output, failure, stopped = None, 'host_checkpoint_stopped', exc.state
         except UnicodeError:
             output, failure = None, 'invalid_result'
         except Exception:
             # Provider exception messages can contain credentials or source bytes.
             output, failure = None, 'processor_failed'
-        elapsed = max(0, self.timer()-start)
+        finally:
+            if acquired:
+                self.inference_slot.release()
+        elapsed = max(0, self.timer()-start) if start is not None else 0
         with self.queue._transaction() as db:
             row, request = self._work(db, case_id, scope, work_id)
             current = self.store._get(db, case_id)
             permitted = True
             try:
                 self._context(db, case_id, worker, (Operation.READ, Operation.INFER))
+                self._processing_review(db, request['review_id'], case_id,
+                    self._receipt(db, scope, row['sequence']), row['base_revision'])
                 self.validate_consumption(db, row, self._receipt(db, scope, row['sequence']),
                     identity=worker, source_policy=self.source_policy, now=self.queue._now())
             except (PermissionError, EventConflict):
                 permitted = False
             state = self.queue.inspect(work_id, **scope, _db=db)['state']
+            if cooperative and (not permitted or current.revision != row['base_revision']):
+                output, failure = None, 'host_checkpoint_stopped'
+                stopped = 'permission_denied' if not permitted else 'stale'
             if state == 'running':
                 if failure:
-                    state = 'failed'
+                    state = stopped or 'failed'
                     db.execute('UPDATE event_work SET state=?,token_hash=NULL,finished_at=? WHERE id=?',
                                (state, self.queue._now().isoformat(), work_id))
                 else:
@@ -281,6 +361,9 @@ class EventWorkerService:
                     state = 'interrupted'
                 if state != 'awaiting_review':
                     db.execute('UPDATE event_work SET state=? WHERE id=?', (state, work_id))
+            if cooperative and state != 'awaiting_review':
+                db.execute('UPDATE event_work SET result=NULL WHERE id=?', (work_id,))
+                db.execute('UPDATE event_dispatch_runs SET output=NULL WHERE work_id=?', (work_id,))
             return dict(work_id=work_id, state=state, failure_code=failure, command_authority=False)
 
     def cancel(self, *, case_id, identity, work_id):
