@@ -1,4 +1,4 @@
-[Latest checkpoint](sessions/2026-10-26-specialist-worker.md): bounded specialist comparison is wired into the reviewed event worker, with explicit host configuration and per-call authority/lease checks. Focused mocked transport/integration tests pass; full native acceptance and publication are pending. No new inference or prediction-quality result.
+[Latest checkpoint](sessions/2026-10-26-specialist-worker.md): bounded specialist comparison is wired into the reviewed event worker, with explicit host configuration and per-call authority/lease checks. Exact code 33f0d8d passed 2,026 source tests, 2,026 installed-wheel regressions, 24 JavaScript modules and 454 checks in 13 native suites. Source/artifact inspection matched before documentation closeout. Publication/CI must be read from the current PR head. No new inference or prediction-quality result; no merge or deployment.
 
 # Forecast measurement checkpoint — 26 October 2026
 

@@ -26,7 +26,9 @@
       ],
       "verification": [
         "204 focused specialist/dispatch/agency/transport/kernel tests passed with mocked HTTP and local database transactions; 67 tracking tests passed after correcting reserved lane ownership.",
-        "First native run retained:2021 source tests passed, lane-ownership tracking failed, installed-package regression failed on the same mismatch; all13 native browser suites passed. Corrected full acceptance pending. Compilation and whitespace checks passed."
+        "First native run retained:2021 source tests passed, lane-ownership tracking failed, installed-package regression failed on the same mismatch; all13 native browser suites passed. Compilation and whitespace checks passed.",
+        "Final native run passed at 33f0d8d:2026 source tests,2026 installed-wheel regressions,24 JavaScript modules,13 browser suites/454 checks. Source remained unchanged and exact-source/artifact inspection matched before documentation-only closeout; prior failures retained.",
+        "Code checkpoint 33f0d8d confirmed pushed to the existing PR6 branch; this source-bound documentation closeout follows. CI is separate and not yet claimed for the new head."
       ],
       "limitations": [
         "Local/unreleased at preparation; no new inference, charges, merge or deployment.",

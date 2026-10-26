@@ -702,7 +702,7 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `local_engineering`.
 - Repository evidence: [docs/delivery/sessions/2026-10-26-specialist-worker.md](../../docs/delivery/sessions/2026-10-26-specialist-worker.md).
-- Result/scope: 200 focused tests pass; bounded mocked decision checks, not predictive or production acceptance. Full native acceptance pending.
+- Result/scope: 204 focused checks plus full native:2026 source,2026 installed-wheel,24 JavaScript modules,13 browser suites/454 checks. Exact-source inspection matched; no prediction-quality, production or release acceptance.
 
 ### EV-ANTHROPIC-20261026
 
