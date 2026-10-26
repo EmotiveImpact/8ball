@@ -6,7 +6,7 @@ This is product history, not the case decision trail. A build entry is not evide
 
 ## 0.2.0-alpha.8 selected-provider lifecycle evidence · Retain Sonnet local lifecycle observations and allow bounded CI setup time
 
-2026-10-26 · `local_unreleased`
+2026-10-26 · `pushed_unreleased`
 
 Exercise cancellation, supersession and owned-process restart without confusing local finality with remote cancellation.
 
@@ -33,6 +33,7 @@ Exercise cancellation, supersession and owned-process restart without confusing 
 - After the targeted wait correction: 74 source-clarity tests and 27 native browser checks passed. Full source-bound rerun follows.
 - A third source-stable native run passed 2,096 source tests and all 475 browser checks, but the installed suite exceeded its inherited 120-second command cap. Retained before correction; four new bounded-command/failure tests pass.
 - The first budget-fix verification was deliberately stopped after review found the enclosing package watchdog still used 180 seconds; its partial report is retained, not a pass. The enclosing bound is now 900 seconds.
+- Final exact e3c92f0 source passed 2100 source and 2100 installed-wheel tests, compilation, 24 JavaScript modules and all 13 native browser suites / 475 checks. Source/artifact inspection matched before documentation-only closeout. All earlier failures and the deliberately interrupted run remain retained.
 
 ### Limitations
 
@@ -54,7 +55,7 @@ Registered discoveries: EM-314, EM-315, EM-316, EM-317.
 
 Roadmap items: `B02-15`, `ES01-05`.
 
-Evidence: [docs/delivery/sessions/2026-10-26-provider-lifecycle.md](docs/delivery/sessions/2026-10-26-provider-lifecycle.md), [docs/evidence/sonnet55-lifecycle-2026-10-26.json](docs/evidence/sonnet55-lifecycle-2026-10-26.json), [evals/provider_lifecycle.py](evals/provider_lifecycle.py), [docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz](docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz), [docs/evidence/sonnet55-lifecycle-software-missing-node-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-missing-node-2026-10-26.json.xz), [docs/evidence/sonnet55-lifecycle-software-stale-counter-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-stale-counter-2026-10-26.json.xz), [tests/browser_grounding.py](tests/browser_grounding.py), [docs/evidence/sonnet55-lifecycle-software-package-timeout-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-package-timeout-2026-10-26.json.xz), [scripts/build_endstate.py](scripts/build_endstate.py), [tests/test_build_endstate.py](tests/test_build_endstate.py), [docs/evidence/sonnet55-lifecycle-software-interrupted-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-interrupted-2026-10-26.json.xz), [scripts/acceptance.py](scripts/acceptance.py).
+Evidence: [docs/delivery/sessions/2026-10-26-provider-lifecycle.md](docs/delivery/sessions/2026-10-26-provider-lifecycle.md), [docs/evidence/sonnet55-lifecycle-2026-10-26.json](docs/evidence/sonnet55-lifecycle-2026-10-26.json), [evals/provider_lifecycle.py](evals/provider_lifecycle.py), [docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz](docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz), [docs/evidence/sonnet55-lifecycle-software-missing-node-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-missing-node-2026-10-26.json.xz), [docs/evidence/sonnet55-lifecycle-software-stale-counter-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-stale-counter-2026-10-26.json.xz), [tests/browser_grounding.py](tests/browser_grounding.py), [docs/evidence/sonnet55-lifecycle-software-package-timeout-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-package-timeout-2026-10-26.json.xz), [scripts/build_endstate.py](scripts/build_endstate.py), [tests/test_build_endstate.py](tests/test_build_endstate.py), [docs/evidence/sonnet55-lifecycle-software-interrupted-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-interrupted-2026-10-26.json.xz), [scripts/acceptance.py](scripts/acceptance.py), [docs/evidence/sonnet55-lifecycle-software-2026-10-26.json](docs/evidence/sonnet55-lifecycle-software-2026-10-26.json).
 
 ## 0.2.0-alpha.8 native usage completeness · Preserve unknown cache usage in normalized receipts
 

@@ -7,7 +7,7 @@
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 selected-provider lifecycle evidence",
       "title": "Retain Sonnet local lifecycle observations and allow bounded CI setup time",
-      "delivery": "local_unreleased",
+      "delivery": "pushed_unreleased",
       "task_ids": [
         "B02-15",
         "ES01-05"
@@ -31,7 +31,8 @@
         "Two failed full runs retained: unqualified invocation omitted the documented Node PATH; corrected invocation passed source/package checks but exposed an asynchronous grounding-test wait matching the wrong counter.",
         "After the targeted wait correction: 74 source-clarity tests and 27 native browser checks passed. Full source-bound rerun follows.",
         "A third source-stable native run passed 2,096 source tests and all 475 browser checks, but the installed suite exceeded its inherited 120-second command cap. Retained before correction; four new bounded-command/failure tests pass.",
-        "The first budget-fix verification was deliberately stopped after review found the enclosing package watchdog still used 180 seconds; its partial report is retained, not a pass. The enclosing bound is now 900 seconds."
+        "The first budget-fix verification was deliberately stopped after review found the enclosing package watchdog still used 180 seconds; its partial report is retained, not a pass. The enclosing bound is now 900 seconds.",
+        "Final exact e3c92f0 source passed 2100 source and 2100 installed-wheel tests, compilation, 24 JavaScript modules and all 13 native browser suites / 475 checks. Source/artifact inspection matched before documentation-only closeout. All earlier failures and the deliberately interrupted run remain retained."
       ],
       "limitations": [
         "Remote request receipt/completion/cancellation/billing remain unknown; no provider-side cancellation or zero-charge claim.",
@@ -49,7 +50,8 @@
         "scripts/build_endstate.py",
         "tests/test_build_endstate.py",
         "docs/evidence/sonnet55-lifecycle-software-interrupted-2026-10-26.json.xz",
-        "scripts/acceptance.py"
+        "scripts/acceptance.py",
+        "docs/evidence/sonnet55-lifecycle-software-2026-10-26.json"
       ],
       "emergence_review": {
         "discoveries": [

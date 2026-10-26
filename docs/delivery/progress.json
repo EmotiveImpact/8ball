@@ -1056,6 +1056,13 @@
       "code_commit": "a31283785f6ccc2a5c31b9b936a9da353dcfb3fe",
       "url": "https://github.com/EmotiveImpact/8ball/commit/a31283785f6ccc2a5c31b9b936a9da353dcfb3fe",
       "result": "Five fresh Sonnet generation requests passed all four frozen fixtures; source-matched configured-provider lifecycle passed cancel, supersede and owned restart with three first-stage admissions and no publication, further stage or unintended mutation. Remote receipt/completion/billing unknown; no UI/human/semantic acceptance. Full software verification recorded separately."
+    },
+    "EV-LIFECYCLE-SOFTWARE-20261026": {
+      "kind": "native_browser",
+      "path": "docs/delivery/sessions/2026-10-26-provider-lifecycle.md",
+      "code_commit": "e3c92f05db73627d0c368aad919d00142fc85819",
+      "url": "https://github.com/EmotiveImpact/8ball/commit/e3c92f05db73627d0c368aad919d00142fc85819",
+      "result": "Exact e3c92f0 software passed 2100 source and installed-wheel tests, 24 JS modules and 475 native checks in 13 suites. All failed/partial runs retained. No model inference during software repair; actual-provider evidence retains its original source binding. Independent semantic, human, predictive and production gates remain open."
     }
   },
   "milestones": [
@@ -1771,7 +1778,8 @@
         "EV-INTEGRATION-ENGINEERING-20261026",
         "EV-NATIVE-REVIEW-20261026",
         "EV-DECISION-SMOKE-20261026",
-        "EV-SONNET-LIFECYCLE-20261026"
+        "EV-SONNET-LIFECYCLE-20261026",
+        "EV-LIFECYCLE-SOFTWARE-20261026"
       ],
       "blockers": [
         "Selected Sonnet API/process cancellation, supersession and restart observations pass; actual-provider native-UI lifecycle/installation-status acceptance remain unverified. Remote receipt, cancellation and billing are not established by local job states."
@@ -2332,7 +2340,8 @@
         "EV-INTEGRATION-LOCAL",
         "EV-INTEGRATION-BLOCKED",
         "EV-NATIVE-CLOSEOUT",
-        "EV-NATIVE-REVIEW-20261026"
+        "EV-NATIVE-REVIEW-20261026",
+        "EV-LIFECYCLE-SOFTWARE-20261026"
       ],
       "blockers": [],
       "next_action": "Internal reusable-core compatibility scope verified. Maintain regression coverage; public SDK/commercial release and other platforms remain separate."

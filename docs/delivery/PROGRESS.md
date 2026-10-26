@@ -256,7 +256,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES03-04`.
   - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`, `eightball/v2/compatible.py`, `tests/test_compatible_integration.py`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`, `docs/delivery/lane-reports/intelligence.md`, `eightball/agency_host.py`, `docs/v2/AGENCY-HOST.md`.
-  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION`, `EV-LANE-INTELLIGENCE-20261026`, `EV-INTEGRATION-ENGINEERING-20261026`, `EV-NATIVE-REVIEW-20261026`, `EV-DECISION-SMOKE-20261026`, `EV-SONNET-LIFECYCLE-20261026` (registry below).
+  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION`, `EV-LANE-INTELLIGENCE-20261026`, `EV-INTEGRATION-ENGINEERING-20261026`, `EV-NATIVE-REVIEW-20261026`, `EV-DECISION-SMOKE-20261026`, `EV-SONNET-LIFECYCLE-20261026`, `EV-LIFECYCLE-SOFTWARE-20261026` (registry below).
   - Blocker: Selected Sonnet API/process cancellation, supersession and restart observations pass; actual-provider native-UI lifecycle/installation-status acceptance remain unverified. Remote receipt, cancellation and billing are not established by local job states.
 
 - [ ] **B02-16 Complete accessibility and supported-environment validation**
@@ -492,7 +492,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
   - Dependencies: `ES01-02`, `ES01-03`, `ES01-04`.
   - Existing code: `endstate/api.py`, `docs/endstate/CONTRACTS.md`, `tests/test_endstate_kernel.py`, `endstate/results.py`, `pyproject.toml`, `scripts/build_endstate.py`, `scripts/export_endstate_schemas.py`, `tests/test_endstate_results.py`.
-  - Evidence: `EV-KERNEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-NATIVE-REVIEW-20261026` (registry below).
+  - Evidence: `EV-KERNEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-NATIVE-REVIEW-20261026`, `EV-LIFECYCLE-SOFTWARE-20261026` (registry below).
 
 
 ## ENDSTATE 0.2: Event-driven replanning
@@ -1228,3 +1228,11 @@ These references have specific scopes and may be historical. A reference to a de
 - Result/scope: Five fresh Sonnet generation requests passed all four frozen fixtures; source-matched configured-provider lifecycle passed cancel, supersede and owned restart with three first-stage admissions and no publication, further stage or unintended mutation. Remote receipt/completion/billing unknown; no UI/human/semantic acceptance. Full software verification recorded separately.
 - Code revision: `a31283785f6ccc2a5c31b9b936a9da353dcfb3fe`.
 - External record: [verification source](https://github.com/EmotiveImpact/8ball/commit/a31283785f6ccc2a5c31b9b936a9da353dcfb3fe).
+
+### EV-LIFECYCLE-SOFTWARE-20261026
+
+- Kind: `native_browser`.
+- Repository evidence: [docs/delivery/sessions/2026-10-26-provider-lifecycle.md](../../docs/delivery/sessions/2026-10-26-provider-lifecycle.md).
+- Result/scope: Exact e3c92f0 software passed 2100 source and installed-wheel tests, 24 JS modules and 475 native checks in 13 suites. All failed/partial runs retained. No model inference during software repair; actual-provider evidence retains its original source binding. Independent semantic, human, predictive and production gates remain open.
+- Code revision: `e3c92f05db73627d0c368aad919d00142fc85819`.
+- External record: [verification source](https://github.com/EmotiveImpact/8ball/commit/e3c92f05db73627d0c368aad919d00142fc85819).
