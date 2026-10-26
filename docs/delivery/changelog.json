@@ -3,6 +3,54 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-coordinated-result-ui-native",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 coordinated result source-bound verification",
+      "title": "Retain verified native and installed-engine evidence for coordinated results",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-11"
+      ],
+      "summary": "All source, installed-wheel and 13 native browser suites pass at the exact coordinated-result implementation; inspection confirms original source/evidence bindings.",
+      "added": [
+        "Compressed unchanged native report and bound receipt for 11e328c1eaa3ed6817cdb794e1878410b85a8de3."
+      ],
+      "changed": [
+        "Canonical next action and handoff distinguish implemented readable stages from independent quality and human acceptance."
+      ],
+      "fixed": [],
+      "verification": [
+        "2493 source tests and 2493 installed-wheel regressions, none skipped or failed.",
+        "24 JavaScript modules and 493 native checks across 13 suites, including 57 event-review checks.",
+        "Source/evidence inspection valid/passed before documentation closeout; credential-value scan passed."
+      ],
+      "limitations": [
+        "Exact verified source 11e328c1eaa3ed6817cdb794e1878410b85a8de3 only; this later documentation does not inherit an unperformed full software run.",
+        "No new inference, price check, retry, repair, fallback, historical replay or resumed protocol.",
+        "Not independent semantic quality, human accessibility, usefulness or production acceptance. No merge, deployment or release."
+      ],
+      "evidence_paths": [
+        "docs/evidence/coordinated-result-ui-native-2026-10-26.json",
+        "docs/evidence/coordinated-result-ui-native-passed-2026-10-26.json.xz",
+        "docs/delivery/sessions/2026-10-26-coordinated-result-ui.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-339 now has source-bound native coverage and offline actual-result checks; no additional discovery."
+        ],
+        "risks": [
+          "A fully readable result still does not resolve its objections or perform enabling work."
+        ],
+        "architecture_implications": [
+          "Keep original, challenge, revision, failures, raw source and authority boundaries distinct."
+        ],
+        "roadmap_decision": "existing_task B02-11; leave partial status and all human gates unchanged.",
+        "insight_ids": [
+          "EM-339"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-coordinated-result-ui",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 coordinated result presentation",

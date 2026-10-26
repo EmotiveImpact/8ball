@@ -1,3 +1,17 @@
+# Current verified checkpoint: coordinated results
+
+Branch `devin/1792969169-roadmap-integrated`; implementation `11e328c1eaa3ed6817cdb794e1878410b85a8de3`. Full native acceptance: 2,493 source tests, 2,493 installed-wheel regressions, 24 JS modules and 493 browser checks across 13 suites. Original report inspection valid/passed before this later documentation. [Receipt](../evidence/coordinated-result-ui-native-2026-10-26.json) · [scope and emergence](sessions/2026-10-26-coordinated-result-ui.md).
+
+Full original/challenge/revision/failure/synthesis inspection is read-only, with raw fallback and current access/source/revision boundaries. Offline projection of all four retained v4 live results passed; no new inference. B02-11 partial; no quality, production, merge/deployment/release approval. Earlier pending notes below are historical.
+
+Next: commit/push additive evidence, settle software CI and preserve the review-service error separately. The next meaningful acceptance needs independent operator/qualified review and an explicitly authorised outcome pilot; do not manufacture those human approvals.
+
+## Emergence Review
+
+EM-339: semantic JSON equality is not exact serialized challenge provenance. Checked raw JSON can recover object order without repairing malformed output or relaxing hashes. Existing-task B02-11 only; review burden/semantic quality remain unverified.
+
+---
+
 # Current local work: read-only coordinated results
 
 Base `69c482569bf17d558f4b730c4ad4d24ca8734213`, branch `devin/1792969169-roadmap-integrated`. Typed original/challenge/revision/failure/synthesis reader implemented; 294 focused checks, 57 native event-review checks and compilation/changed-JS syntax pass. Full native/package acceptance pending. [Record](sessions/2026-10-26-coordinated-result-ui.md). No new inference; B02-11 partial; no merge/deployment/release. EM-339 records semantic-vs-byte input integrity.

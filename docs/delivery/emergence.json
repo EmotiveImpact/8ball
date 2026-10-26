@@ -7648,7 +7648,8 @@
       "evidence_paths": [
         "docs/delivery/sessions/2026-10-26-coordinated-result-ui.md",
         "eightball/v2/coordinated_results.py",
-        "tests/test_coordinated_planning.py"
+        "tests/test_coordinated_planning.py",
+        "docs/evidence/coordinated-result-ui-native-2026-10-26.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -7657,6 +7658,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11 readable source-bound reports; no new required scope or acceptance gate promotion."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "Supported by source-bound native acceptance at 11e328c1eaa3ed6817cdb794e1878410b85a8de3 and offline reads of all four retained v4 results, including sorted serialization. Existing_task B02-11 only; no quality or production approval."
         }
       ]
     }

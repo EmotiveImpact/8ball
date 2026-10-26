@@ -62,3 +62,9 @@ Finish full native/package verification, bind evidence to exact source, then
 publish to PR #6. B02-11 remains partial. Independent quality/human review,
 production identity/storage/operations, merge, deployment and release remain
 unaccepted. No additional inference is required to complete this UI slice.
+
+## Native verification closeout
+
+Source `11e328c1eaa3ed6817cdb794e1878410b85a8de3`, manifest `9097753973b7d47e5a97e6b96d13924381eeb05ae73d5b1a117c6795ba4e0d10`, run `20261026T144252Z-f55eece5`: all checks passed. **2,493 source tests, 2,493 installed-wheel regressions, 24 JavaScript modules and 493 native browser checks across 13 suites**, including 57 event-review checks. No skipped or failed source/package tests. Exact source/artifact inspection returned valid/passed before this documentation closeout. The original compressed native report and bound receipt are in `docs/evidence/coordinated-result-ui-native-*`. No further inference, merge, deployment or release.
+
+The earlier pending verification note records its then-current state; the native run above supersedes it for this exact source only. The four actual retained v4 results are readable offline, including the complete Opus path and each other model's missing stages, not claimed new successful inference. B02-11 stays partial. Next: publish this checkpoint, settle remote software CI and retain the separate review-service failure state. Independent operator/semantic review and a specifically authorised outcome pilot remain separate human gates, not simulated by further automated tests.

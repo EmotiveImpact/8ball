@@ -4244,8 +4244,9 @@ Canonical retained reports reorder nested objects. The challenge hash binds seri
 
 **Roadmap links:** `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-result-ui.md`, `eightball/v2/coordinated_results.py`, `tests/test_coordinated_planning.py`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-result-ui.md`, `eightball/v2/coordinated_results.py`, `tests/test_coordinated_planning.py`, `docs/evidence/coordinated-result-ui-native-2026-10-26.json`.
 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 readable source-bound reports; no new required scope or acceptance gate promotion.
+- 2026-10-26 · adopted · integration: Supported by source-bound native acceptance at 11e328c1eaa3ed6817cdb794e1878410b85a8de3 and offline reads of all four retained v4 results, including sorted serialization. Existing_task B02-11 only; no quality or production approval.

@@ -4,6 +4,46 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 coordinated result source-bound verification · Retain verified native and installed-engine evidence for coordinated results
+
+2026-10-26 · `local_unreleased`
+
+All source, installed-wheel and 13 native browser suites pass at the exact coordinated-result implementation; inspection confirms original source/evidence bindings.
+
+### Added
+
+- Compressed unchanged native report and bound receipt for 11e328c1eaa3ed6817cdb794e1878410b85a8de3.
+
+### Changed
+
+- Canonical next action and handoff distinguish implemented readable stages from independent quality and human acceptance.
+
+### Verification
+
+- 2493 source tests and 2493 installed-wheel regressions, none skipped or failed.
+- 24 JavaScript modules and 493 native checks across 13 suites, including 57 event-review checks.
+- Source/evidence inspection valid/passed before documentation closeout; credential-value scan passed.
+
+### Limitations
+
+- Exact verified source 11e328c1eaa3ed6817cdb794e1878410b85a8de3 only; this later documentation does not inherit an unperformed full software run.
+- No new inference, price check, retry, repair, fallback, historical replay or resumed protocol.
+- Not independent semantic quality, human accessibility, usefulness or production acceptance. No merge, deployment or release.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-339 now has source-bound native coverage and offline actual-result checks; no additional discovery.
+- Risk: A fully readable result still does not resolve its objections or perform enabling work.
+- Architecture: Keep original, challenge, revision, failures, raw source and authority boundaries distinct.
+- Roadmap decision: existing_task B02-11; leave partial status and all human gates unchanged.
+Registered discoveries: EM-339.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/evidence/coordinated-result-ui-native-2026-10-26.json](docs/evidence/coordinated-result-ui-native-2026-10-26.json), [docs/evidence/coordinated-result-ui-native-passed-2026-10-26.json.xz](docs/evidence/coordinated-result-ui-native-passed-2026-10-26.json.xz), [docs/delivery/sessions/2026-10-26-coordinated-result-ui.md](docs/delivery/sessions/2026-10-26-coordinated-result-ui.md).
+
 ## 0.2.0-alpha.8 coordinated result presentation · Read original plans, independent challenges and separate revisions without applying them
 
 2026-10-26 · `local_unreleased`
