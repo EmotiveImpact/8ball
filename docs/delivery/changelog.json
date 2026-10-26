@@ -3,6 +3,55 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-coordinated-planning-verified",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 coordinated planning verification",
+      "title": "Retain source-bound native verification for bounded coordinated planning",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "B02-11"
+      ],
+      "summary": "Publish the verified propose/challenge/revise backend while keeping live inference, readable coordinated presentation and independent quality gates separate.",
+      "added": [
+        "Exact-source native receipt and compressed report for implementation 4e0f635; inspected before documentation-only closeout."
+      ],
+      "changed": [
+        "Update the canonical evidence and append emergence decisions without promoting B02-11 or altering reserved lane ownership."
+      ],
+      "fixed": [],
+      "verification": [
+        "2306 source tests and 2306 installed-wheel regressions passed; 24 JavaScript modules, Python compilation and every delivery guard passed.",
+        "475 checks passed across 13 native browser suites; source unchanged during run and evidence inspection valid. Final focused preparation had passed 260 method/tracking checks."
+      ],
+      "limitations": [
+        "No actual model calls, dedicated coordinated report UI, independent quality or empirical prediction evidence. B02-11 stays partial.",
+        "Planning cost remains unpriced under explicit finite call/token permission; decision cost does not cover planning. No merge, deployment, release or public SDK publication."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-coordinated-planning.md",
+        "docs/evidence/coordinated-planning-software-2026-10-26.json",
+        "docs/evidence/coordinated-planning-software-passed-2026-10-26.json.xz"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "No additional product discovery in verification; retain EM-325 and EM-327 through EM-329 with tested source bindings."
+        ],
+        "risks": [
+          "Engineering acceptance does not establish live compatibility, operator benefit or predictive quality."
+        ],
+        "architecture_implications": [
+          "Keep pure ENDSTATE coordination separate from reviewed host authority and explicitly limited provider retention."
+        ],
+        "roadmap_decision": "existing_task B02-11 verification only; next frozen fictional actual-provider diagnostic, no scope or acceptance promotion.",
+        "insight_ids": [
+          "EM-325",
+          "EM-327",
+          "EM-328",
+          "EM-329"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-coordinated-planning",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 coordinated planning",

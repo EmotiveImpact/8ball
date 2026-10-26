@@ -1,13 +1,15 @@
-# Latest local checkpoint: bounded coordinated planning
+# Latest checkpoint: verified bounded coordinated planning
 
 See [coordinated-planning continuation](sessions/2026-10-26-coordinated-planning.md).
 Starting at `df681c0`, the backend retains the original proposal, independent
 specialist panel and separate revision under existing current-authority worker
-checks. 260 focused method/tracking tests pass; full native/wheel checks and publication
-are pending. No live inference or dedicated coordinated presentation is claimed.
+checks. Exact functional commit `4e0f635` passed 2306 source tests, 2306
+installed-wheel regressions and 475 checks in 13 native browser suites; inspection
+matched source/evidence before documentation closeout. See the linked session
+record for the retained receipt. No live inference or dedicated coordinated presentation is claimed.
 Planning cost is explicitly unpriced under finite call/token permission, separate
-from the decision-only cost threshold. B02-11 stays partial. Next: exact-source
-verification, then the frozen fictional diagnostic including GLM and DeepSeek.
+from the decision-only cost threshold. B02-11 stays partial. Next: the frozen
+fictional diagnostic including GLM and DeepSeek on this unreleased PR branch.
 No historical rerun, merge, deployment or release.
 
 # Previous checkpoint: explicit provider JSON contract

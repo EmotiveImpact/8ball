@@ -4,6 +4,44 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 coordinated planning verification · Retain source-bound native verification for bounded coordinated planning
+
+2026-10-26 · `pushed_unreleased`
+
+Publish the verified propose/challenge/revise backend while keeping live inference, readable coordinated presentation and independent quality gates separate.
+
+### Added
+
+- Exact-source native receipt and compressed report for implementation 4e0f635; inspected before documentation-only closeout.
+
+### Changed
+
+- Update the canonical evidence and append emergence decisions without promoting B02-11 or altering reserved lane ownership.
+
+### Verification
+
+- 2306 source tests and 2306 installed-wheel regressions passed; 24 JavaScript modules, Python compilation and every delivery guard passed.
+- 475 checks passed across 13 native browser suites; source unchanged during run and evidence inspection valid. Final focused preparation had passed 260 method/tracking checks.
+
+### Limitations
+
+- No actual model calls, dedicated coordinated report UI, independent quality or empirical prediction evidence. B02-11 stays partial.
+- Planning cost remains unpriced under explicit finite call/token permission; decision cost does not cover planning. No merge, deployment, release or public SDK publication.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: No additional product discovery in verification; retain EM-325 and EM-327 through EM-329 with tested source bindings.
+- Risk: Engineering acceptance does not establish live compatibility, operator benefit or predictive quality.
+- Architecture: Keep pure ENDSTATE coordination separate from reviewed host authority and explicitly limited provider retention.
+- Roadmap decision: existing_task B02-11 verification only; next frozen fictional actual-provider diagnostic, no scope or acceptance promotion.
+Registered discoveries: EM-325, EM-327, EM-328, EM-329.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-coordinated-planning.md](docs/delivery/sessions/2026-10-26-coordinated-planning.md), [docs/evidence/coordinated-planning-software-2026-10-26.json](docs/evidence/coordinated-planning-software-2026-10-26.json), [docs/evidence/coordinated-planning-software-passed-2026-10-26.json.xz](docs/evidence/coordinated-planning-software-passed-2026-10-26.json.xz).
+
 ## 0.2.0-alpha.8 coordinated planning · Retain an original plan, independent challenges and a separate revision
 
 2026-10-26 · `local_unreleased`

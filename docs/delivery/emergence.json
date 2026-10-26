@@ -7115,6 +7115,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11 bounded single-proposer/independent-choice-challenge/revision backend is implemented locally with controlled tests. Retain original and revised proposals separately, no voting. Full native and actual-provider method diagnostics remain pending; no predictive quality or unrestricted swarm claim."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval."
         }
       ]
     },
@@ -7174,6 +7180,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11 explicit method/accounting disclosure; no new required scope or independent-quality acceptance."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval."
         }
       ]
     },
@@ -7201,6 +7213,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11 explicit method/accounting disclosure; no new required scope or independent-quality acceptance."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval."
         }
       ]
     },
@@ -7227,6 +7245,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11 bounded retention safeguards and disclosure; no new product scope or quality approval."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval."
         }
       ]
     }

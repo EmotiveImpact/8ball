@@ -1,0 +1,37 @@
+{
+  "version": "source-bound-software-receipt.v1",
+  "tested_commit": "4e0f635b21a26bdf3629ee0f652a23228dd84052",
+  "mode": "native",
+  "run_id": "20261026T120856Z-f7ca844d",
+  "source_sha256": "5812182a0bd4b809b5e5e87ee23655e2cb6af70a2920572eb283b3e324d3b98a",
+  "status": "passed",
+  "source_tests": {
+    "tests": 2306,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 2306
+  },
+  "installed_tests": {
+    "tests": 2306,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "javascript_modules": 24,
+  "native_browser_suites": 13,
+  "browser_checks": 475,
+  "source_unchanged_during_run": true,
+  "inspection": {
+    "valid": true,
+    "reason": "Source and local evidence bytes match; this is not a signed attestation",
+    "run_status": "passed",
+    "native_browser_verified": true,
+    "model_quality_approved": false,
+    "released": false
+  },
+  "report": "docs/evidence/coordinated-planning-software-passed-2026-10-26.json.xz",
+  "report_uncompressed_sha256": "edfc9d2c28ff438434dbe94da82e69d1f64fe2079621dd3d20f8b20147f8e57a",
+  "predictive_quality_approved": false,
+  "notice": "Exact snapshot inspected before documentation-only closeout. Bounded coordinated backend and controlled transports verified; no live inference, coordinated UI, independent plan-quality approval, empirical prediction, merge or deployment."
+}

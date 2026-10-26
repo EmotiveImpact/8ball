@@ -3987,6 +3987,7 @@ The owner expected swarm intelligence; the five-model diagnostic was independent
 - 2026-10-26 · adopted · integration: Explicit server-owned prompt_only mode now passes 261 focused transport/application/acceptance checks without JSON repair or weaker local validators. Native regression, GLM/DeepSeek inference and coordinated-workflow validation remain separate; see sessions/2026-10-26-provider-json-mode.md. Original catalogue observation remains unchanged.
 - 2026-10-26 · adopted · integration: Cross-link correction: the preceding prompt-only implementation note belongs to EM-326 and is not coordinated-method evidence. EM-325 still requires a separate propose/challenge/revise implementation and method comparison; no acceptance promotion. The earlier note is retained, not erased.
 - 2026-10-26 · adopted · integration: existing_task B02-11 bounded single-proposer/independent-choice-challenge/revision backend is implemented locally with controlled tests. Retain original and revised proposals separately, no voting. Full native and actual-provider method diagnostics remain pending; no predictive quality or unrestricted swarm claim.
+- 2026-10-26 · adopted · integration: existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval.
 
 ### [ ] EM-326: Catalogue availability is not structured-output compatibility
 
@@ -4022,6 +4023,7 @@ Native decision replies include reported cost but planning replies may include o
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 explicit method/accounting disclosure; no new required scope or independent-quality acceptance.
+- 2026-10-26 · adopted · integration: existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval.
 
 ### [ ] EM-328: A choice challenge is not a free-form rebuttal
 
@@ -4039,6 +4041,7 @@ The first coordinated method preserves every independent choice/distribution and
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 explicit method/accounting disclosure; no new required scope or independent-quality acceptance.
+- 2026-10-26 · adopted · integration: existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval.
 
 ### [ ] EM-329: Raw retention has protocol and byte boundaries
 
@@ -4056,3 +4059,4 @@ Copying whole native provider envelopes into a coordinated report can retain unr
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 bounded retention safeguards and disclosure; no new product scope or quality approval.
+- 2026-10-26 · adopted · integration: existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval.
