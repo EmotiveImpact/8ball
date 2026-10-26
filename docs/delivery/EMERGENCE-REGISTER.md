@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **226 recorded discoveries.**
+Last review: 2026-10-26. **229 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -3986,6 +3986,7 @@ The owner expected swarm intelligence; the five-model diagnostic was independent
 - 2026-10-26 · adopted · integration: existing_task B02-11 method/capability disclosure, no new required product scope or acceptance.
 - 2026-10-26 · adopted · integration: Explicit server-owned prompt_only mode now passes 261 focused transport/application/acceptance checks without JSON repair or weaker local validators. Native regression, GLM/DeepSeek inference and coordinated-workflow validation remain separate; see sessions/2026-10-26-provider-json-mode.md. Original catalogue observation remains unchanged.
 - 2026-10-26 · adopted · integration: Cross-link correction: the preceding prompt-only implementation note belongs to EM-326 and is not coordinated-method evidence. EM-325 still requires a separate propose/challenge/revise implementation and method comparison; no acceptance promotion. The earlier note is retained, not erased.
+- 2026-10-26 · adopted · integration: existing_task B02-11 bounded single-proposer/independent-choice-challenge/revision backend is implemented locally with controlled tests. Retain original and revised proposals separately, no voting. Full native and actual-provider method diagnostics remain pending; no predictive quality or unrestricted swarm claim.
 
 ### [ ] EM-326: Catalogue availability is not structured-output compatibility
 
@@ -4004,3 +4005,54 @@ Authenticated catalogue lists glm-5.3-uncensored but reports supports_structured
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 method/capability disclosure, no new required product scope or acceptance.
 - 2026-10-26 · adopted · integration: Explicit server-owned prompt_only mode implemented at e1e7142 with unchanged local validators. Full source-bound native acceptance passed 2172 source + 2172 installed tests, 24 JS modules and 475 browser checks. See sessions/2026-10-26-provider-json-mode.md and docs/evidence/provider-json-mode-software-2026-10-26.json. This corrects the earlier implementation note's placement under EM-325; no live GLM/DeepSeek inference or predictive approval.
+
+### [ ] EM-327: A specialist cost threshold does not price a mixed-protocol workflow
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Bounded coordinated-planning implementation.
+
+Native decision replies include reported cost but planning replies may include only token counts. Reusing the decision threshold for a four-generation coordination would misleadingly imply it covers every call.
+
+**Product implication:** Require explicit bounded unpriced-generation permission and disclose unknown planning charges separately; stop later decision calls and revision on unknown specialist cost. No provider hard cap or free inference claim.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-planning.md`, `docs/v2/SPECIALIST-REVIEW.md`, `tests/test_coordinated_planning.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 explicit method/accounting disclosure; no new required scope or independent-quality acceptance.
+
+### [ ] EM-328: A choice challenge is not a free-form rebuttal
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Bounded coordinated-planning implementation.
+
+The first coordinated method preserves every independent choice/distribution and exposes it to revision, but a predefined question catalogue constrains the objections each reviewer can express.
+
+**Product implication:** Name this bounded propose/challenge/revise method precisely. Evaluate question design and operator value before adding free-form debate or claiming unrestricted swarm intelligence.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-planning.md`, `docs/v2/SPECIALIST-REVIEW.md`, `tests/test_coordinated_planning.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 explicit method/accounting disclosure; no new required scope or independent-quality acceptance.
+
+### [ ] EM-329: Raw retention has protocol and byte boundaries
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Coordinated planning receipt review.
+
+Copying whole native provider envelopes into a coordinated report can retain unrequested fields or exceed the host result boundary. Planner assistant JSON and native choice answers have different safe retention shapes.
+
+**Product implication:** Preserve declared validated native answer shapes and complete envelope hashes, explicitly label omitted payloads, and stop later planning calls when its receipt budget is exceeded. A hash does not recover omitted bytes; do not request or retain private hidden reasoning.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-planning.md`, `tests/test_coordinated_planning.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 bounded retention safeguards and disclosure; no new product scope or quality approval.

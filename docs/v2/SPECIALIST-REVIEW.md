@@ -17,3 +17,71 @@ Completed/partial advisory reports are retained for the existing event review/st
 The incoming-change review now shows a read-only specialist comparison beside the preserved original output: each selected model's choice, missing or failed answers, unresolved differences, reported-cost uncertainty and request/response hashes. The server reconstructs the comparison using ENDSTATE's contracts and verifies the retained summary and receipt/input/spec/case/revision bindings before presenting it. Unknown versions, inconsistent summaries and invalid bindings do not get a typed presentation; original output is still retained for inspection. This is local integrity checking, not independent provider attestation. Historical results name their base revision, not the current case. All content shares the existing read/source-policy gate and is cleared on lock or detected revocation. Inspection makes no provider calls, casts no vote and cannot apply model answers to the graph.
 
 Tests cover exact reviewed-text isolation, differing model choices, invalid/missing answers, unknown costs, budget/time stops, no retry, source/grant/review/configuration/revision/cancellation/lease changes between calls, shared-slot waiting and final-transaction publication races. Legacy event-review behavior and old source-free exports remain under regression tests. Report hashes are local integrity references, not independent attestations or proof that a provider served a particular model.
+
+## Opt-in coordinated planning
+
+`endstate.intelligence.planning.coordinate` adds one bounded method, not an
+unrestricted swarm: one proposer makes a two-stage original draft; the configured
+decision specialists independently answer the same declared questions about that
+original; the same proposer sees **every** retained answer and makes a separate
+two-stage revision. Both drafts use the unchanged strict target-coverage checks,
+frame/route validation and deterministic compiler. The original proposal, panel
+and revision are separate records. `final_synthesis` points to the revised
+candidate for human review; it neither chooses a route nor claims objections
+resolved. An unchanged revision is permitted. There is no majority rule.
+
+The independent `SpecialistReviewProcessor` remains available as its own baseline.
+The new `CoordinatedPlanningProcessor` implements the same cooperative host
+interface and shared inference slot. The host constructs a
+`CoordinatedPlanningSpec` with an explicit human outcome, `ReviewSpec`, overall
+deadline of at most 600 seconds and
+`planning_cost_policy='explicit_unpriced_token_bound'`, then passes the processor
+to the existing agency host with `allow_external=True`. There is no default
+activation, new queue, client-supplied provider setting or model-selection UI.
+Configure an appropriate event-work lease explicitly (at most 600 seconds); the
+ordinary 60-second lease is **not** silently extended for a multistage attempt.
+
+Only the reviewed event text, the explicitly configured outcome and derived
+advisory proposal/answers are shared. Other snapshot content is never appended.
+The processing review binds the method, spec, validated server-owned provider
+settings (including credential rotation through an opaque digest), four maximum
+generation attempts and 4,096 maximum output tokens per generation request.
+The opaque digest also binds the specialist credential; rotation of either key
+requires fresh review. Generation uses a single frozen compatible/native session. Each served planning
+model ID must exactly equal the configured requested ID; no alias, substitution,
+repair or fallback is introduced. GLM still requires explicitly selected
+prompt-only mode; local draft validation is identical.
+
+**Budget scope matters:** the decision API's reported-cost threshold does not
+cover planning APIs, which report tokens but not verified charges. The unpriced
+planning policy is required, without a default, so the host must explicitly
+approve a finite call/token allowance before source-processing review. Reports
+label planning cost unknown and billing unverified; this is not a dollar cap or
+a claim that generation is free. Unknown decision cost, an exhausted decision
+threshold, failure or a missing answer stops before any revision. Deadlines
+prevent later calls, not remote processing or billing of an in-flight request.
+
+Every provider call is bracketed by current-authority checkpoints. Cancellation,
+changed permissions/source policy/configuration/revision or lease expiration
+prevents later calls and publication. Other failed/partial advisory results retain
+the original proposal, available traces and provider receipts; source-policy
+revocation does not grant permission to publish those bytes. Planner receipts
+include exact bounded raw assistant text and transport hashes where safe. A
+200,000-byte cumulative planning-receipt limit stops further requests; raw text
+that exceeds it is explicitly omitted, with hashes retained, not claimed recoverable.
+Native specialist receipts and original validated answer shapes are separate from
+the normalized panel. Unrequested envelope fields and unvalidated native payloads
+are not copied into storage or revision; their omission and envelope hash remain
+explicit. No private hidden reasoning is requested or retained. The existing
+500,000-byte host result limit still applies. An overlong derived
+specialist input fails without truncation; a valid original draft remains separate.
+
+The new report kind is `coordinated_planning`. Its original JSON can be inspected
+through the existing permission-gated event review, but **the readable specialist
+card is not a coordinated-report card**. No new presentation, automatic graph
+commit, observation, approval, action or course selection is included. The
+specialists supply bounded choice/distribution answers, not free-form rebuttals;
+question design limits what they can challenge. Controlled software checks do
+not establish better plans, predictive accuracy or operator usefulness. A frozen
+fictional single-model/panel/coordinated diagnostic and independent human-quality
+review remain distinct follow-ups.

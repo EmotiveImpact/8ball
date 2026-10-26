@@ -3,6 +3,59 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-coordinated-planning",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 coordinated planning",
+      "title": "Retain an original plan, independent challenges and a separate revision",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-11"
+      ],
+      "summary": "Add an opt-in bounded ENDSTATE propose/challenge/revise backend on the existing reviewed worker host, without selecting or committing a plan.",
+      "added": [
+        "Strict CoordinatedPlanningSpec and provider-neutral method; original, normalized challenges, revision and final synthesis reference remain separate.",
+        "Host adapter retains planner and native specialist receipts and reuses current-authority checkpoints before/after every provider call."
+      ],
+      "changed": [
+        "Reuse the independent specialist comparator without another queue; keep baseline behavior and protocols unchanged.",
+        "Bind method and server-owned planning configuration to source-processing review, with four maximum generation attempts and explicit unpriced token allowance.",
+        "Bound both provider credential rotations to review; retain declared native answers rather than unrequested envelope fields, and stop further generation when planning receipts exceed 200,000 bytes."
+      ],
+      "fixed": [],
+      "verification": [
+        "163 initial focused checks passed, then 259 expanded checks. The final focused rerun passed 260 checks (193 method/host/specialist and 67 delivery/history); compilation and diff checks passed. Full native/wheel verification remains pending."
+      ],
+      "limitations": [
+        "Backend opt-in only; no coordinated presentation or model-selection UI. Choice reviewers do not provide unrestricted free-form critique.",
+        "Decision cost threshold does not cover unknown planning charges or enforce provider billing; explicit finite generation allowance is required. No live calls, predictive or independent-quality approval, merge, deployment or release."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-coordinated-planning.md",
+        "docs/v2/SPECIALIST-REVIEW.md",
+        "tests/test_coordinated_planning.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "A coordinated method needs retained original/challenge/revision stages rather than more independent answers.",
+          "Mixed-protocol accounting and bounded choice questions limit what this first method can claim."
+        ],
+        "risks": [
+          "Unpriced planning cannot inherit a decision-only dollar budget; predefined questions can miss important objections.",
+          "Opaque hashes cannot replace omitted raw bytes; unrequested or unvalidated native envelope fields must not be represented as retained validated answers."
+        ],
+        "architecture_implications": [
+          "Keep pure ENDSTATE coordination distinct from host authority, transport and billing limits; preserve raw/normalized stages and dissent without voting."
+        ],
+        "roadmap_decision": "existing_task B02-11 engineering continuation; retain partial status, reserved lane ownership and all independent/prospective/held-out/human gates. No new required scope.",
+        "insight_ids": [
+          "EM-325",
+          "EM-327",
+          "EM-328",
+          "EM-329"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-provider-json-mode-native-verification",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 provider contract verification",

@@ -26,14 +26,22 @@ class SpecialistReviewProcessor:
         return digest(spec.model_dump(mode='json'))
 
     def run(self, receipt, snapshot, checkpoint):
+        report = self.compare(receipt.event.text, checkpoint)
+        report.update(kind='specialist_review', case_id=snapshot.id,
+                      base_revision=snapshot.revision,
+                      receipt_sha256=digest(receipt.model_dump(mode='json')))
+        return json.dumps(report, ensure_ascii=False, allow_nan=False)
+
+    def compare(self, text, checkpoint, *, deadline=None):
         spec = ReviewSpec.model_validate(self.spec.model_dump(mode='python'))
-        requests = [DecisionInput(model=model, state=receipt.event.text, questions=spec.questions)
+        requests = [DecisionInput(model=model, state=text, questions=spec.questions)
                     for model in spec.models]
         for request in requests:
             if len(json.dumps(payload_for(request)[1], ensure_ascii=False, allow_nan=False).encode()) > MAX_REQUEST_BYTES:
                 raise ValueError('Reviewed input exceeds the decision request boundary')
         checkpoint()
-        deadline = self.timer() + spec.max_seconds
+        own_deadline = self.timer() + spec.max_seconds
+        deadline = own_deadline if deadline is None else min(own_deadline, deadline)
         attempts, stop_reason = [], 'completed'
         for request in requests:
             checkpoint()
@@ -85,11 +93,8 @@ class SpecialistReviewProcessor:
         if self.timer() >= deadline:
             stop_reason = 'time_budget'
         report = summarize(spec, attempts)
-        report.update(kind='specialist_review', stop_reason=stop_reason,
-                      case_id=snapshot.id, base_revision=snapshot.revision,
-                      receipt_sha256=digest(receipt.model_dump(mode='json')),
-                      input_sha256=digest(receipt.event.text),
+        report.update(stop_reason=stop_reason, input_sha256=digest(text),
                       spec_sha256=digest(spec.model_dump(mode='json')),
                       automatic_retries=False, automatic_fallback=False,
                       charge_status='provider_billing_not_verified')
-        return json.dumps(report, ensure_ascii=False, allow_nan=False)
+        return report

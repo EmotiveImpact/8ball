@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 coordinated planning · Retain an original plan, independent challenges and a separate revision
+
+2026-10-26 · `local_unreleased`
+
+Add an opt-in bounded ENDSTATE propose/challenge/revise backend on the existing reviewed worker host, without selecting or committing a plan.
+
+### Added
+
+- Strict CoordinatedPlanningSpec and provider-neutral method; original, normalized challenges, revision and final synthesis reference remain separate.
+- Host adapter retains planner and native specialist receipts and reuses current-authority checkpoints before/after every provider call.
+
+### Changed
+
+- Reuse the independent specialist comparator without another queue; keep baseline behavior and protocols unchanged.
+- Bind method and server-owned planning configuration to source-processing review, with four maximum generation attempts and explicit unpriced token allowance.
+- Bound both provider credential rotations to review; retain declared native answers rather than unrequested envelope fields, and stop further generation when planning receipts exceed 200,000 bytes.
+
+### Verification
+
+- 163 initial focused checks passed, then 259 expanded checks. The final focused rerun passed 260 checks (193 method/host/specialist and 67 delivery/history); compilation and diff checks passed. Full native/wheel verification remains pending.
+
+### Limitations
+
+- Backend opt-in only; no coordinated presentation or model-selection UI. Choice reviewers do not provide unrestricted free-form critique.
+- Decision cost threshold does not cover unknown planning charges or enforce provider billing; explicit finite generation allowance is required. No live calls, predictive or independent-quality approval, merge, deployment or release.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A coordinated method needs retained original/challenge/revision stages rather than more independent answers.
+- Discovery: Mixed-protocol accounting and bounded choice questions limit what this first method can claim.
+- Risk: Unpriced planning cannot inherit a decision-only dollar budget; predefined questions can miss important objections.
+- Risk: Opaque hashes cannot replace omitted raw bytes; unrequested or unvalidated native envelope fields must not be represented as retained validated answers.
+- Architecture: Keep pure ENDSTATE coordination distinct from host authority, transport and billing limits; preserve raw/normalized stages and dissent without voting.
+- Roadmap decision: existing_task B02-11 engineering continuation; retain partial status, reserved lane ownership and all independent/prospective/held-out/human gates. No new required scope.
+Registered discoveries: EM-325, EM-327, EM-328, EM-329.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-coordinated-planning.md](docs/delivery/sessions/2026-10-26-coordinated-planning.md), [docs/v2/SPECIALIST-REVIEW.md](docs/v2/SPECIALIST-REVIEW.md), [tests/test_coordinated_planning.py](tests/test_coordinated_planning.py).
+
 ## 0.2.0-alpha.8 provider contract verification · Retain native verification of explicit provider JSON contracts
 
 2026-10-26 · `pushed_unreleased`

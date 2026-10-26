@@ -1,4 +1,16 @@
-# Latest checkpoint: explicit provider JSON contract
+# Latest local checkpoint: bounded coordinated planning
+
+See [coordinated-planning continuation](sessions/2026-10-26-coordinated-planning.md).
+Starting at `df681c0`, the backend retains the original proposal, independent
+specialist panel and separate revision under existing current-authority worker
+checks. 260 focused method/tracking tests pass; full native/wheel checks and publication
+are pending. No live inference or dedicated coordinated presentation is claimed.
+Planning cost is explicitly unpriced under finite call/token permission, separate
+from the decision-only cost threshold. B02-11 stays partial. Next: exact-source
+verification, then the frozen fictional diagnostic including GLM and DeepSeek.
+No historical rerun, merge, deployment or release.
+
+# Previous checkpoint: explicit provider JSON contract
 
 [Current bounded continuation](sessions/2026-10-26-provider-json-mode.md) adds an
 explicit frozen prompt-only mode for the next owner-selected model set, preserving
