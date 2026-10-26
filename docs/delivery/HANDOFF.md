@@ -1,4 +1,14 @@
-# Latest checkpoint: verified bounded coordinated planning
+# Latest preparation: frozen fictional coordinated evaluation
+
+See [evaluation continuation](sessions/2026-10-26-coordinated-evaluation.md), based
+on pushed `a3d65dd`. New fictional loading-bay fixture and opt-in real-host harness
+freeze model IDs, protocols and source; no retry/resume or continuation after an
+incomplete native panel. 30 dedicated/444 combined controlled tests pass.
+Full native/wheel verification and actual GLM/DeepSeek/Sonnet/Opus calls are next.
+No live result, independent quality, dedicated coordinated UI or prediction claim.
+EM-330 records batch-wide bounds; B02-11 remains partial. No merge/deployment.
+
+# Previous checkpoint: verified bounded coordinated planning
 
 See [coordinated-planning continuation](sessions/2026-10-26-coordinated-planning.md).
 Starting at `df681c0`, the backend retains the original proposal, independent

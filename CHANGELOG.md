@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 coordinated diagnostic preparation · Freeze fictional model-method evaluation without automatic retries
+
+2026-10-26 · `local_unreleased`
+
+Add an opt-in fictional real-host evaluation of original proposal, independent challenges and separate revision for exact GLM, DeepSeek, Sonnet and Opus profiles.
+
+### Added
+
+- Frozen input/profile/question/source manifest and exclusive no-resume admission.
+- Safe per-request receipt checkpoints and set-wide incomplete-challenge stopping.
+- New fictional loading-bay scenario and controlled harness tests.
+
+### Changed
+
+- Reuse existing host source review, permissions, configuration checks and explicit lease; restore provider environment afterward.
+
+### Verification
+
+- 30 dedicated harness tests and 444 combined method/provider/host tests passed; no real inference.
+- Python compilation and whitespace checks passed; full source-bound native/wheel run pending.
+
+### Limitations
+
+- Shared intermediate baselines are not independent experiments, free-form objections or a quality benchmark.
+- One fictional scenario has no empirical outcome label. No dedicated UI, predictive quality, independent labels, merge or deployment.
+- Planning charges remain unpriced under explicit bounded permission; decision thresholds can overshoot and are not a provider billing cap. Gateway upstream pinning/fallback is unverified.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: An evaluation batch needs a shared stop policy; bounded constituent methods alone do not prevent spending after an incomplete challenge.
+- Risk: Repeated admission, unknown-cost continuation or model substitution could defeat a declared protocol.
+- Risk: Reused intermediate baselines and model agreement cannot establish causal improvement or real-world prediction.
+- Architecture: Keep the opt-in evaluation harness outside the engine, reusing existing pure method and actual host boundaries.
+- Roadmap decision: existing_task B02-11 evaluation preparation only; preserve partial status and reserved lane ownership.
+Registered discoveries: EM-325, EM-328, EM-330.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-coordinated-evaluation.md](docs/delivery/sessions/2026-10-26-coordinated-evaluation.md), [evals/coordinated_planning.py](evals/coordinated_planning.py), [evals/coordinated-case.json](evals/coordinated-case.json), [tests/test_coordinated_evaluation.py](tests/test_coordinated_evaluation.py).
+
 ## 0.2.0-alpha.8 coordinated planning verification · Retain source-bound native verification for bounded coordinated planning
 
 2026-10-26 · `pushed_unreleased`

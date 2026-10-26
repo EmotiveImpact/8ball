@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **229 recorded discoveries.**
+Last review: 2026-10-26. **230 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -3988,6 +3988,7 @@ The owner expected swarm intelligence; the five-model diagnostic was independent
 - 2026-10-26 · adopted · integration: Cross-link correction: the preceding prompt-only implementation note belongs to EM-326 and is not coordinated-method evidence. EM-325 still requires a separate propose/challenge/revise implementation and method comparison; no acceptance promotion. The earlier note is retained, not erased.
 - 2026-10-26 · adopted · integration: existing_task B02-11 bounded single-proposer/independent-choice-challenge/revision backend is implemented locally with controlled tests. Retain original and revised proposals separately, no voting. Full native and actual-provider method diagnostics remain pending; no predictive quality or unrestricted swarm claim.
 - 2026-10-26 · adopted · integration: existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval.
+- 2026-10-26 · adopted · integration: existing_task B02-11 diagnostic preparation: retain original/panel/revision as reused stage baselines, not independent replications or proof of coordination benefit. Three bounded questions cannot express arbitrary objections; no live result or quality promotion.
 
 ### [ ] EM-326: Catalogue availability is not structured-output compatibility
 
@@ -4042,6 +4043,7 @@ The first coordinated method preserves every independent choice/distribution and
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 explicit method/accounting disclosure; no new required scope or independent-quality acceptance.
 - 2026-10-26 · adopted · integration: existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval.
+- 2026-10-26 · adopted · integration: existing_task B02-11 diagnostic preparation: retain original/panel/revision as reused stage baselines, not independent replications or proof of coordination benefit. Three bounded questions cannot express arbitrary objections; no live result or quality promotion.
 
 ### [ ] EM-329: Raw retention has protocol and byte boundaries
 
@@ -4060,3 +4062,20 @@ Copying whole native provider envelopes into a coordinated report can retain unr
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 bounded retention safeguards and disclosure; no new product scope or quality approval.
 - 2026-10-26 · adopted · integration: existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval.
+
+### [ ] EM-330: A bounded method does not automatically bound an evaluation batch
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Frozen coordinated evaluation harness.
+
+A method can correctly stop on unknown reviewer cost while a surrounding model-comparison loop starts another method and spends again. Repeating a frozen run after interruption can similarly evade its original bound.
+
+**Product implication:** Freeze the full requested set, retain missing methods, stop all remaining methods after an incomplete native challenge and refuse replay/resume of an admitted experiment. Record per-call receipts and distinguish requested token bounds from provider billing caps.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-evaluation.md`, `tests/test_coordinated_evaluation.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 controlled evaluation safeguards, not new required product scope, actual inference or independent quality approval.

@@ -7121,6 +7121,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 diagnostic preparation: retain original/panel/revision as reused stage baselines, not independent replications or proof of coordination benefit. Three bounded questions cannot express arbitrary objections; no live result or quality promotion."
         }
       ]
     },
@@ -7219,6 +7225,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 diagnostic preparation: retain original/panel/revision as reused stage baselines, not independent replications or proof of coordination benefit. Three bounded questions cannot express arbitrary objections; no live result or quality promotion."
         }
       ]
     },
@@ -7251,6 +7263,32 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11 verification: exact code 4e0f635 passed 2306 source and installed-wheel tests plus 475 native browser checks. Source inspection matched before documentation closeout. Engineering evidence only: explicit unpriced planning, bounded choice challenge and receipt omissions remain; no live coordinated test, operator UI or quality approval."
+        }
+      ]
+    },
+    {
+      "id": "EM-330",
+      "title": "A bounded method does not automatically bound an evaluation batch",
+      "origin": "Frozen coordinated evaluation harness",
+      "first_seen": "2026-10-26",
+      "evidence_level": "supported_by_tests",
+      "observation": "A method can correctly stop on unknown reviewer cost while a surrounding model-comparison loop starts another method and spends again. Repeating a frozen run after interruption can similarly evade its original bound.",
+      "product_implication": "Freeze the full requested set, retain missing methods, stop all remaining methods after an incomplete native challenge and refuse replay/resume of an admitted experiment. Record per-call receipts and distinguish requested token bounds from provider billing caps.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-coordinated-evaluation.md",
+        "tests/test_coordinated_evaluation.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 controlled evaluation safeguards, not new required product scope, actual inference or independent quality approval."
         }
       ]
     }

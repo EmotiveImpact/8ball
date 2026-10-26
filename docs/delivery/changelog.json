@@ -3,6 +3,59 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-coordinated-evaluation-preparation",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 coordinated diagnostic preparation",
+      "title": "Freeze fictional model-method evaluation without automatic retries",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-11"
+      ],
+      "summary": "Add an opt-in fictional real-host evaluation of original proposal, independent challenges and separate revision for exact GLM, DeepSeek, Sonnet and Opus profiles.",
+      "added": [
+        "Frozen input/profile/question/source manifest and exclusive no-resume admission.",
+        "Safe per-request receipt checkpoints and set-wide incomplete-challenge stopping.",
+        "New fictional loading-bay scenario and controlled harness tests."
+      ],
+      "changed": [
+        "Reuse existing host source review, permissions, configuration checks and explicit lease; restore provider environment afterward."
+      ],
+      "fixed": [],
+      "verification": [
+        "30 dedicated harness tests and 444 combined method/provider/host tests passed; no real inference.",
+        "Python compilation and whitespace checks passed; full source-bound native/wheel run pending."
+      ],
+      "limitations": [
+        "Shared intermediate baselines are not independent experiments, free-form objections or a quality benchmark.",
+        "One fictional scenario has no empirical outcome label. No dedicated UI, predictive quality, independent labels, merge or deployment.",
+        "Planning charges remain unpriced under explicit bounded permission; decision thresholds can overshoot and are not a provider billing cap. Gateway upstream pinning/fallback is unverified."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-coordinated-evaluation.md",
+        "evals/coordinated_planning.py",
+        "evals/coordinated-case.json",
+        "tests/test_coordinated_evaluation.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "An evaluation batch needs a shared stop policy; bounded constituent methods alone do not prevent spending after an incomplete challenge."
+        ],
+        "risks": [
+          "Repeated admission, unknown-cost continuation or model substitution could defeat a declared protocol.",
+          "Reused intermediate baselines and model agreement cannot establish causal improvement or real-world prediction."
+        ],
+        "architecture_implications": [
+          "Keep the opt-in evaluation harness outside the engine, reusing existing pure method and actual host boundaries."
+        ],
+        "roadmap_decision": "existing_task B02-11 evaluation preparation only; preserve partial status and reserved lane ownership.",
+        "insight_ids": [
+          "EM-325",
+          "EM-328",
+          "EM-330"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-coordinated-planning-verified",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 coordinated planning verification",
@@ -110,20 +163,45 @@
       "version": "0.2.0-alpha.8 provider contract verification",
       "title": "Retain native verification of explicit provider JSON contracts",
       "delivery": "pushed_unreleased",
-      "task_ids": ["B02-11"],
+      "task_ids": [
+        "B02-11"
+      ],
       "summary": "Retain exact-source software acceptance separately from the unfinished coordinated workflow and live GLM/DeepSeek diagnostics.",
-      "added": ["Compressed native report and source-bound software receipt for e1e7142."],
-      "changed": ["Append the native verification checkpoint without changing reserved lane owners or B02-11 partial status."],
-      "fixed": ["Correct the discovery-history cross-link: prompt-only implementation belongs to EM-326, not coordinated-method evidence EM-325. Preserve the earlier note and append the correction."],
-      "verification": ["2172 source tests, 2172 installed-wheel regressions, 24 JavaScript modules and 475 checks across 13 native browser suites passed. Source/artifact inspection matched before this documentation-only closeout."],
-      "limitations": ["Initial incorrect-Node-path failure remains retained. No new inference, coordinated-method acceptance, predictive-quality approval, merge, deployment or release. Remote review service remains errored without findings at the prior pushed checkpoint; no gate bypass."],
-      "evidence_paths": ["docs/evidence/provider-json-mode-software-2026-10-26.json", "docs/evidence/provider-json-mode-software-passed-2026-10-26.json.xz", "docs/delivery/sessions/2026-10-26-provider-json-mode.md"],
+      "added": [
+        "Compressed native report and source-bound software receipt for e1e7142."
+      ],
+      "changed": [
+        "Append the native verification checkpoint without changing reserved lane owners or B02-11 partial status."
+      ],
+      "fixed": [
+        "Correct the discovery-history cross-link: prompt-only implementation belongs to EM-326, not coordinated-method evidence EM-325. Preserve the earlier note and append the correction."
+      ],
+      "verification": [
+        "2172 source tests, 2172 installed-wheel regressions, 24 JavaScript modules and 475 checks across 13 native browser suites passed. Source/artifact inspection matched before this documentation-only closeout."
+      ],
+      "limitations": [
+        "Initial incorrect-Node-path failure remains retained. No new inference, coordinated-method acceptance, predictive-quality approval, merge, deployment or release. Remote review service remains errored without findings at the prior pushed checkpoint; no gate bypass."
+      ],
+      "evidence_paths": [
+        "docs/evidence/provider-json-mode-software-2026-10-26.json",
+        "docs/evidence/provider-json-mode-software-passed-2026-10-26.json.xz",
+        "docs/delivery/sessions/2026-10-26-provider-json-mode.md"
+      ],
       "emergence_review": {
-        "discoveries": ["No new product finding beyond EM-326: full native checks preserve the explicit remote-versus-local validation distinction."],
-        "risks": ["Passing software checks does not establish live provider compatibility or coordinated-planning value."],
-        "architecture_implications": ["Retain the exact tested source digest and preserve unknown costs and capability limits in the next bounded method."],
+        "discoveries": [
+          "No new product finding beyond EM-326: full native checks preserve the explicit remote-versus-local validation distinction."
+        ],
+        "risks": [
+          "Passing software checks does not establish live provider compatibility or coordinated-planning value."
+        ],
+        "architecture_implications": [
+          "Retain the exact tested source digest and preserve unknown costs and capability limits in the next bounded method."
+        ],
         "roadmap_decision": "existing_task B02-11 verification only; EM-325 coordination remains unimplemented. No new required scope or acceptance promotion.",
-        "insight_ids": ["EM-325", "EM-326"]
+        "insight_ids": [
+          "EM-325",
+          "EM-326"
+        ]
       }
     },
     {
@@ -132,20 +210,46 @@
       "version": "0.2.0-alpha.8 explicit provider response contract",
       "title": "Support explicit prompt-only JSON without changing local validation",
       "delivery": "local_unreleased",
-      "task_ids": ["B02-11"],
+      "task_ids": [
+        "B02-11"
+      ],
       "summary": "Prepare the owner-selected GLM transport capability with an explicit frozen response mode, not a silent schema fallback.",
-      "added": ["Server-owned EIGHTBALL_API_JSON_MODE selection, visible in configuration status and transport receipts.", "Exact outbound request hashes and per-call response-contract metadata."],
-      "changed": ["Standard acceptance strips the optional response setting along with provider credentials; compatible defaults and native Anthropic protocol remain unchanged."],
+      "added": [
+        "Server-owned EIGHTBALL_API_JSON_MODE selection, visible in configuration status and transport receipts.",
+        "Exact outbound request hashes and per-call response-contract metadata."
+      ],
+      "changed": [
+        "Standard acceptance strips the optional response setting along with provider credentials; compatible defaults and native Anthropic protocol remain unchanged."
+      ],
       "fixed": [],
-      "verification": ["261 focused compatible transport, CLI, application and acceptance-runner checks passed; Python compilation and diff whitespace checks passed."],
-      "limitations": ["No GLM or DeepSeek inference, coordinated-workflow acceptance, predictive-quality approval, merge or deployment. Full native regression is pending."],
-      "evidence_paths": ["eightball/v2/compatible.py", "tests/test_compatible_provider.py", "tests/test_compatible_integration.py", "tests/test_acceptance_runner.py", "docs/v2/QWEN-SETUP.md", "docs/delivery/sessions/2026-10-26-provider-json-mode.md"],
+      "verification": [
+        "261 focused compatible transport, CLI, application and acceptance-runner checks passed; Python compilation and diff whitespace checks passed."
+      ],
+      "limitations": [
+        "No GLM or DeepSeek inference, coordinated-workflow acceptance, predictive-quality approval, merge or deployment. Full native regression is pending."
+      ],
+      "evidence_paths": [
+        "eightball/v2/compatible.py",
+        "tests/test_compatible_provider.py",
+        "tests/test_compatible_integration.py",
+        "tests/test_acceptance_runner.py",
+        "docs/v2/QWEN-SETUP.md",
+        "docs/delivery/sessions/2026-10-26-provider-json-mode.md"
+      ],
       "emergence_review": {
-        "discoveries": ["A selected provider's inability to force schema output can be represented explicitly without weakening the application's JSON, target-coverage or proposal validators."],
-        "risks": ["Prompt-only output can still be malformed; provider-side enforcement is not claimed. Changing a response contract after rejection must not become an automatic retry."],
-        "architecture_implications": ["Keep response mode server-owned, frozen per session and hashed with each bounded request; disclose it independently of model quality."],
+        "discoveries": [
+          "A selected provider's inability to force schema output can be represented explicitly without weakening the application's JSON, target-coverage or proposal validators."
+        ],
+        "risks": [
+          "Prompt-only output can still be malformed; provider-side enforcement is not claimed. Changing a response contract after rejection must not become an automatic retry."
+        ],
+        "architecture_implications": [
+          "Keep response mode server-owned, frozen per session and hashed with each bounded request; disclose it independently of model quality."
+        ],
         "roadmap_decision": "existing_task B02-11 capability refinement, following EM-326; no acceptance, model-default or reserved lane ownership change.",
-        "insight_ids": ["EM-326"]
+        "insight_ids": [
+          "EM-326"
+        ]
       }
     },
     {
