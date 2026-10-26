@@ -6636,6 +6636,41 @@
           "decision": "candidate",
           "by": "integration",
           "reason": "new_candidate: operator controls and value evaluation; do not silently promote scope."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "candidate",
+          "by": "integration",
+          "reason": "existing_task: read-only retained comparison improves B03-04 without adding model-selection controls; the larger candidate and measured operator value remain unaccepted. See specialist-presentation session."
+        }
+      ]
+    },
+    {
+      "id": "EM-309",
+      "title": "A polished comparison must not trust duplicated summary fields",
+      "origin": "Retained specialist presentation",
+      "first_seen": "2026-10-26",
+      "evidence_level": "supported_by_tests",
+      "observation": "A stored aggregate can contradict its own retained model answers or case/input binding. Formatting that aggregate without reconstruction could hide disagreement behind a credible-looking comparison.",
+      "product_implication": "Reconstruct with ENDSTATE contracts and bind the exact retained source before projecting the comparison. Preserve original output and visibly withhold an invalid presentation; no new authority or inference.",
+      "task_ids": [
+        "B03-04",
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-specialist-presentation.md",
+        "tests/test_specialist_review.py",
+        "tests/browser_event_review.py",
+        "eightball/v2/event_reviews.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task: fail-closed read-only projection in the existing event review. No new required product scope, model selection or quality acceptance."
         }
       ]
     }

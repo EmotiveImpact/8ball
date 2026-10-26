@@ -4,6 +4,53 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 retained specialist comparison · Read retained specialist differences without decoding raw output
+
+2026-10-26 · `local_unreleased`
+
+Permission-scoped, read-only individual answers, missing responses and cost uncertainty in the existing incoming-change review.
+
+### Added
+
+- Validated specialist presentation with per-model choices, missing/failed answers, unresolved differences and historical revision labels.
+- Disclosure of request/response hashes, retained token usage and known versus unknown reported costs.
+
+### Changed
+
+- EventReviews reconstructs the summary through ENDSTATE contracts and checks exact source/spec/revision bindings before returning a presentation.
+- Existing lock, refresh and detected-revocation boundaries also clear the specialist comparison.
+
+### Fixed
+
+- Inconsistent/unknown-version reports do not receive a typed comparison; original output remains unchanged and inspectable.
+
+### Verification
+
+- 131 focused specialist/event-review/dispatch tests passed.
+- 39 native event-review browser checks passed, including inert hostile markup, no write on inspection, read-only permissions, partial/absent results, invalid summaries, stale revisions and narrow viewports.
+- Full exact-source native acceptance is pending at preparation; no real model inference performed.
+
+### Limitations
+
+- Local/unreleased at preparation; existing PR6 only, no merge or deployment.
+- Model selection remains host-configured. Independent review, model quality, empirical predictive skill and measurable operator value remain open.
+- Report hashes and cost fields are not independent provider attestations or billing guarantees.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A retained aggregate can contradict its individual answers; formatting alone can conceal disagreement.
+- Discovery: Readable results refine the existing workflow without establishing the value of larger model-selection controls.
+- Risk: A polished summary can create misplaced confidence or add review burden.
+- Architecture: Reuse ENDSTATE validation inside the authorised host projection; retain raw output and fail closed rather than creating another comparison algorithm.
+- Roadmap decision: Existing-task presentation refinement; EM-308 larger controls/value candidate stays unaccepted.
+Registered discoveries: EM-308, EM-309.
+
+Roadmap items: `B03-04`, `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-specialist-presentation.md](docs/delivery/sessions/2026-10-26-specialist-presentation.md), [docs/v2/SPECIALIST-REVIEW.md](docs/v2/SPECIALIST-REVIEW.md), [tests/test_specialist_review.py](tests/test_specialist_review.py), [tests/browser_event_review.py](tests/browser_event_review.py).
+
 ## 0.2.0-alpha.8 bounded specialist worker · Connect explicit specialist comparisons to the reviewed event worker
 
 2026-10-26 · `local_unreleased`

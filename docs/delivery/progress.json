@@ -20,6 +20,13 @@
     "integration_authority": "docs/decisions/0007-owner-build-consolidation.md",
     "source_merged_not_release_accepted": true,
     "current_sprint": {
+      "active_follow_up": {
+        "owner": "Devin / integration",
+        "branch": "devin/1792969169-roadmap-integrated",
+        "base_commit": "c13a3a023133b66f1bb32891aa2e739fec25b88a",
+        "scope": "Read-only retained specialist presentation in the existing event review; no model-selection controls or new inference.",
+        "evidence": "docs/delivery/sessions/2026-10-26-specialist-presentation.md"
+      },
       "owner": "Devin / integration",
       "branch": "devin/1792969169-roadmap-integrated",
       "base_commit": "a3e340275e0ecc810a80c2aa9299c06e1e19385d",
@@ -598,7 +605,11 @@
     "integration_branch": "devin/1792969169-roadmap-integrated"
   },
   "evidence": {
-    "EV-SPECIALIST-WORKER-20261026": {"kind": "local_engineering", "path": "docs/delivery/sessions/2026-10-26-specialist-worker.md", "result": "204 focused checks plus full native:2026 source,2026 installed-wheel,24 JavaScript modules,13 browser suites/454 checks. Exact-source inspection matched; no prediction-quality, production or release acceptance."},
+    "EV-SPECIALIST-WORKER-20261026": {
+      "kind": "local_engineering",
+      "path": "docs/delivery/sessions/2026-10-26-specialist-worker.md",
+      "result": "204 focused checks plus full native:2026 source,2026 installed-wheel,24 JavaScript modules,13 browser suites/454 checks. Exact-source inspection matched; no prediction-quality, production or release acceptance."
+    },
     "EV-ANTHROPIC-20261026": {
       "kind": "failed_real_model_evaluation_and_catalogue_selection",
       "path": "docs/evidence/anthropic-selection-2026-10-26.json",
@@ -1011,6 +1022,11 @@
       "kind": "local_engineering",
       "path": "docs/delivery/sessions/2026-10-26-forecast-measurement.md",
       "result": "Typed scoring and six fictional worlds: zero configured forecasts; no predictive accuracy. Full native engineering acceptance passed:1979 source and installed-wheel regressions and454 browser checks. No status or model-quality promotion."
+    },
+    "EV-SPECIALIST-PRESENTATION-20261026": {
+      "kind": "local_engineering",
+      "path": "docs/delivery/sessions/2026-10-26-specialist-presentation.md",
+      "result": "131 focused tests and 39 native event-review browser checks pass. Read-only retained comparisons, not new inference, decision authority or model-quality acceptance. Full native acceptance pending."
     }
   },
   "milestones": [
@@ -1546,12 +1562,13 @@
         "EV-NATIVE-REVIEW-20261026",
         "EV-DECISION-SMOKE-20261026",
         "EV-FORECAST-MEASUREMENT-20261026",
-        "EV-SPECIALIST-WORKER-20261026"
+        "EV-SPECIALIST-WORKER-20261026",
+        "EV-SPECIALIST-PRESENTATION-20261026"
       ],
       "blockers": [
         "Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed."
       ],
-      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval. Integration follow-up: verify the reviewed specialist worker checkpoint in docs/delivery/sessions/2026-10-26-specialist-worker.md; preserve partial status and all remaining gates."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval. Integration follow-up: verify the reviewed specialist worker checkpoint in docs/delivery/sessions/2026-10-26-specialist-worker.md; preserve partial status and all remaining gates. Read-only presentation follow-up: docs/delivery/sessions/2026-10-26-specialist-presentation.md. No acceptance status or reserved lane ownership change."
     },
     {
       "id": "B02-12",
@@ -1947,10 +1964,11 @@
         "EV-SECURITY",
         "EV-LANE-EVENTS-20261026",
         "EV-INTEGRATION-ENGINEERING-20261026",
-        "EV-SPECIALIST-WORKER-20261026"
+        "EV-SPECIALIST-WORKER-20261026",
+        "EV-SPECIALIST-PRESENTATION-20261026"
       ],
       "blockers": [],
-      "next_action": "Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Build one authorised connector through ENDSTATE event contracts. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately. Integration follow-up: verify the reviewed specialist worker checkpoint in docs/delivery/sessions/2026-10-26-specialist-worker.md; preserve partial status and all remaining gates."
+      "next_action": "Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Build one authorised connector through ENDSTATE event contracts. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately. Integration follow-up: verify the reviewed specialist worker checkpoint in docs/delivery/sessions/2026-10-26-specialist-worker.md; preserve partial status and all remaining gates. Read-only presentation follow-up: docs/delivery/sessions/2026-10-26-specialist-presentation.md. No acceptance status or reserved lane ownership change."
     },
     {
       "id": "B03-05",

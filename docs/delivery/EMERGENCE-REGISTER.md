@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **208 recorded discoveries.**
+Last review: 2026-10-26. **209 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -3694,3 +3694,21 @@ The reviewed worker retains a typed specialist report but does not yet offer ded
 **Decision history:**
 
 - 2026-10-26 · candidate · integration: new_candidate: operator controls and value evaluation; do not silently promote scope.
+- 2026-10-26 · candidate · integration: existing_task: read-only retained comparison improves B03-04 without adding model-selection controls; the larger candidate and measured operator value remain unaccepted. See specialist-presentation session.
+
+### [ ] EM-309: A polished comparison must not trust duplicated summary fields
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Retained specialist presentation.
+
+A stored aggregate can contradict its own retained model answers or case/input binding. Formatting that aggregate without reconstruction could hide disagreement behind a credible-looking comparison.
+
+**Product implication:** Reconstruct with ENDSTATE contracts and bind the exact retained source before projecting the comparison. Preserve original output and visibly withhold an invalid presentation; no new authority or inference.
+
+**Roadmap links:** `B03-04` (partial), `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-specialist-presentation.md`, `tests/test_specialist_review.py`, `tests/browser_event_review.py`, `eightball/v2/event_reviews.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task: fail-closed read-only projection in the existing event review. No new required product scope, model selection or quality acceptance.

@@ -8,11 +8,12 @@ from datetime import datetime
 from time import perf_counter
 from urllib.parse import urlencode
 from endstate.events import EventReceipt
+from endstate.intelligence.coordination import Attempt, ReviewSpec, VERSION, summarize
 
 from ..agency_access import AccessRegistry
 from ..authorisation import Grant, Identity, Operation, Resource, permits
 from ..event_inbox import EventInbox
-from ..event_work import EventWork
+from ..event_work import EventWork, MAX_RESULT_BYTES
 from ..event_workers.service import EventWorkerService
 from ..models import utcnow
 from ..store import Conflict, canonical, digest
@@ -73,8 +74,41 @@ class EventReviews:
                                              Operation.WRITE, grants, now=utcnow()),
                           review_url='/v2/event-review.html?'+urlencode({'case':case_id,'work':work_id}),
                           command_authority=False)
+            if source_review_current:
+                comparison = self._specialist_projection(work['result'], receipt, case_id, work['base_revision'])
+                if comparison is not None:
+                    result['specialist_review'] = comparison
             self.outbox.authorize(db, case_id, reader)
             return result
+
+    @staticmethod
+    def _specialist_projection(raw, receipt, case_id, revision):
+        if not isinstance(raw, str) or len(raw.encode('utf-8')) > MAX_RESULT_BYTES:
+            return None
+        recognized = False
+        try:
+            report = json.loads(raw)
+            if not isinstance(report, dict) or report.get('kind') != 'specialist_review':
+                return None
+            recognized = True
+            spec = ReviewSpec.model_validate(report['spec'])
+            summary = summarize(spec, [Attempt.model_validate(a) for a in report['attempts']])
+            binding = dict(version=VERSION, case_id=case_id, base_revision=revision,
+                           receipt_sha256=digest(receipt.model_dump(mode='json')),
+                           input_sha256=digest(receipt.event.text), spec_sha256=digest(spec.model_dump(mode='json')),
+                           automatic_retries=False, automatic_fallback=False,
+                           charge_status='provider_billing_not_verified')
+            expected = summary | binding
+            if digest({k: report.get(k) for k in expected}) != digest(expected):
+                raise ValueError('Retained specialist comparison differs from its answers or source')
+            if report.get('stop_reason') not in ('completed', 'time_budget', 'setup_or_provider_failed',
+                                                'unknown_reported_cost', 'reported_cost_budget'):
+                raise ValueError('Unknown specialist stop reason')
+            cost = summary['known_reported_cost_nano_usd']
+            return expected | dict(available=True, stop_reason=report['stop_reason'],
+                                   known_reported_cost_usd=f'{cost // 1_000_000_000}.{cost % 1_000_000_000:09d}')
+        except (ValueError, TypeError, KeyError, RecursionError):
+            return {'available': False} if recognized else None
 
     def preview(self, *, work_id: str, case_id: str, reader: Identity, request: GraphPreview):
         with self.store.connection() as db:

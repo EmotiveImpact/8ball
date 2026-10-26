@@ -286,3 +286,49 @@ def test_timeout_retains_request_digest_without_error_text_or_retry(specialists)
     assert result['attempts'][0]['request_started'] and result['attempts'][0]['request_sha256']
     assert result['unknown_cost_attempts'] == [MODELS[0]]
     assert 'fictional-secret-response-body' not in json.dumps(result)
+
+
+def test_retained_comparison_is_read_only_and_source_bound(specialists):
+    d, _, calls, _, _ = specialists
+    process(d)
+    before = d['store'].audit(d['case'].id)
+    raw = status(d)['work']['result']
+    view = d['reviews'].view(work_id=d['work_id'], case_id=d['case'].id, reader=d['worker'])
+    comparison = view['specialist_review']
+    assert comparison['available'] and comparison['questions'][0]['disagreement']
+    assert comparison['known_reported_cost_usd'] == '0.000000003'
+    assert not view['can_review'] and view['original_result'] == raw
+    assert comparison['attempts'] == json.loads(raw)['attempts']
+    assert d['store'].audit(d['case'].id) == before and len(calls) == 3
+
+
+@pytest.mark.parametrize('field,value', [('case_id', 'other-case'), ('base_revision', False),
+    ('receipt_sha256', '0'*64), ('input_sha256', '0'*64), ('spec_sha256', '0'*64),
+    ('version', 'endstate.specialist-review.v99'), ('facts_attested', True),
+    ('automatic_retries', True), ('answered_models', 0), ('stop_reason', 'approved')])
+def test_invalid_retained_comparison_does_not_gain_a_typed_presentation(specialists, field, value):
+    d, _, _, _, _ = specialists
+    process(d)
+    changed = report(d) | {field: value}
+    raw = json.dumps(changed)
+    with d['store'].connection() as db:
+        db.execute('UPDATE event_work SET result=? WHERE id=?', (raw, d['work_id']))
+        db.commit()
+    view = d['reviews'].view(work_id=d['work_id'], case_id=d['case'].id, reader=d['operator'])
+    assert view['specialist_review'] == {'available': False}
+    assert view['original_result'] == raw and d['store'].get(d['case'].id).revision == 0
+
+
+def test_stale_comparison_is_historical_and_source_revocation_withholds_it(specialists):
+    d, _, _, _, _ = specialists
+    process(d)
+    d['store'].change(d['case'].id, Command(event_id='after-review', expected_revision=0,
+        kind='metadata', payload={'budget': 3}))
+    view = d['reviews'].view(work_id=d['work_id'], case_id=d['case'].id, reader=d['operator'])
+    assert not view['reviewable'] and view['specialist_review']['base_revision'] == 0
+    assert view['current_revision'] == 1
+    d['service'].revoke_source_review(case_id=d['case'].id, identity=d['operator'],
+                                     review_id=d['source_review']['id'])
+    view = d['reviews'].view(work_id=d['work_id'], case_id=d['case'].id, reader=d['operator'])
+    assert 'specialist_review' not in view and view['original_result'] is None
+    assert view['source_receipt'] is None

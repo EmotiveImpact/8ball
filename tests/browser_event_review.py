@@ -20,6 +20,8 @@ from eightball.agency_access import AccessRegistry
 from eightball.authorisation import Grant,Identity,Operation,Resource
 from eightball.models import utcnow
 from endstate.events import IncomingEvent
+from endstate.intelligence.coordination import Attempt, ReviewSpec, summarize
+from eightball.store import digest
 OUT=Path(os.getenv('EIGHTBALL_ARTIFACTS',str(ROOT/'artifacts/event-review')));OUT.mkdir(parents=True,exist_ok=True)
 checks=[]
 def check(name,result):
@@ -37,13 +39,37 @@ def main():
         token=jwt.encode(dict(iss=identity.issuer,sub=identity.subject,aud='8ball',iat=utcnow(),exp=utcnow()+timedelta(minutes=15)),key,algorithm='RS256')
         def grant(name,op):registry.add_grant(name,Grant(identity=identity,resource=Resource(**scope),operations=frozenset({op}),valid_from=utcnow()-timedelta(minutes=1),expires_at=utcnow()+timedelta(hours=1)))
         grant('read',Operation.READ);grant('write',Operation.WRITE)
-        def make(sequence):
+        def comparison(receipt,case,mode='partial'):
+            models=['jev-latest','clef-flash','gpt-6-luna-decisions']
+            spec=ReviewSpec(id='fictional-comparison',models=models,max_seconds=30,max_reported_cost_nano_usd=10,
+                questions=[dict(id='review',instructions='Does this fictional proposal need more evidence?',
+                    criteria={'accept':'Continue review. <img src=x onerror="window.injected=true">',
+                              'review':'Missing evidence requires further review.'})])
+            attempts=[]
+            if mode!='empty':
+                for model,choice,cost in [(models[0],'review',1),(models[1],'accept',None)]:
+                    attempts.append(Attempt(model=model,status='answered',request_started=True,served_model=model,
+                        request_sha256='a'*64,response_sha256='b'*64,reported_cost_nano_usd=cost,
+                        usage={'input_tokens':10,'output_tokens':5,**({'cost_nano_usd':cost} if cost is not None else {})},
+                        answers={'review':dict(type='choice',choice=choice,confidence=.7,
+                            probabilities={k:.8 if k==choice else .2 for k in ('accept','review')})}))
+            result=summarize(spec,attempts)
+            result.update(kind='specialist_review',stop_reason='time_budget' if mode=='empty' else 'unknown_reported_cost',
+                case_id=case.id,base_revision=case.revision,receipt_sha256=digest(receipt.model_dump(mode='json')),
+                input_sha256=digest(receipt.event.text),spec_sha256=digest(spec.model_dump(mode='json')),
+                automatic_retries=False,automatic_fallback=False,charge_status='provider_billing_not_verified')
+            if mode=='invalid':result['questions'][0]['disagreement']=False
+            return json.dumps(result)
+        def make(sequence,output=None):
             case=store.create(demo_case(),fixture=True);registry.bind_case(case.id,Resource(**scope))
             receipt=EventInbox(db).append(IncomingEvent(**scope,source_id='fictional-source',source_version=str(sequence),event_id='event-'+str(sequence),kind='proposal_received',base_revision=0,text='Original fictional source <img src=x onerror="window.injected=true">'),**scope)
             queue=EventWork(db);work=queue.enqueue(**scope,sequence=receipt.sequence,base_revision=0,case_id=case.id)
-            claim=queue.claim(work,**scope);queue.finish(work,claim,'Suggested cost: 2222. This is unreviewed output.',**scope,current_revision=0,permission_valid=True)
+            claim=queue.claim(work,**scope);queue.finish(work,claim,output(receipt,case) if output else 'Suggested cost: 2222. This is unreviewed output.',**scope,current_revision=0,permission_valid=True)
             return case,work
         case,work=make(1);other,other_work=make(2);uncertain_case,uncertain_work=make(3)
+        specialist,specialist_work=make(4,comparison)
+        empty,empty_work=make(5,lambda receipt,case:comparison(receipt,case,'empty'))
+        invalid,invalid_work=make(6,lambda receipt,case:comparison(receipt,case,'invalid'))
         code='''import os,uvicorn
 from pathlib import Path
 from eightball.api import make_app
@@ -139,6 +165,37 @@ uvicorn.run(make_app(s,'unused-local-token-with-32-characters',agency_access=a),
                         check('review fits viewport '+str(width),page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'))
                     page.screenshot(path=str(OUT/'8BALL-Event-Review-Mobile.png'),full_page=True)
                     page.set_viewport_size({'width':1500,'height':1100});page.screenshot(path=str(OUT/'8BALL-Event-Review.png'),full_page=True)
+                    registry.revoke('write2');open_review(specialist,specialist_work);login()
+                    panel=page.locator('.specialist-comparison');expect(panel).to_be_visible()
+                    expect(panel).to_contain_text('2 of 3 selected models answered')
+                    expect(panel).to_contain_text('Different answers — unresolved')
+                    check('individual differences and a missing model stay visible',panel.locator('.specialist-answers li').count()==3 and 'No validated answer' in panel.inner_text())
+                    check('read-only users can inspect but not apply model choices',page.locator('#review-rationale').is_disabled() and panel.locator('button').count()==0)
+                    check('specialist criteria markup remains inert',panel.locator('img').count()==0 and page.evaluate('window.injected===undefined'))
+                    before=store.audit(specialist.id);writes=[]
+                    page.on('request',lambda req:writes.append(req.url) if req.method!='GET' else None)
+                    page.get_by_text('Request, cost and provenance details',exact=True).click()
+                    expect(panel).to_contain_text('Unknown reported cost: Clef Flash')
+                    expect(panel).to_contain_text('USD 0.000000001')
+                    expect(panel).to_contain_text('a'*64)
+                    check('retained hashes usage and cost uncertainty are inspectable','10 input tokens; 5 output tokens' in panel.inner_text() and 'Unknown does not mean free' in panel.inner_text())
+                    for width in (320,390,768):
+                        page.set_viewport_size({'width':width,'height':1100})
+                        check('expanded comparison fits viewport '+str(width),page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'))
+                    page.get_by_text('Request, cost and provenance details',exact=True).click()
+                    page.set_viewport_size({'width':390,'height':1000});page.screenshot(path=str(OUT/'8BALL-Specialist-Comparison-Mobile.png'),full_page=True)
+                    page.set_viewport_size({'width':1500,'height':1100});page.screenshot(path=str(OUT/'8BALL-Specialist-Comparison.png'),full_page=True)
+                    check('inspection makes no writes or case changes',writes==[] and store.audit(specialist.id)==before)
+                    store.change(specialist.id,Command(event_id='comparison-stale',expected_revision=0,kind='metadata',payload={'budget':555}))
+                    page.get_by_role('button',name='Refresh review').click();expect(panel).to_contain_text('Historical comparison for case revision 0; current revision 1')
+                    check('stale specialist result remains explicitly historical',page.locator('#review-rationale').is_disabled())
+                    open_review(empty,empty_work);login();expect(panel).to_contain_text('0 of 3 selected models answered')
+                    check('no responses are not agreement','No validated answers.' in panel.inner_text() and panel.locator('.specialist-answers strong').all_text_contents()==['No validated answer']*3)
+                    open_review(invalid,invalid_work);login();expect(page.locator('#app')).to_contain_text('Specialist comparison could not be validated')
+                    check('inconsistent comparison falls back to untouched original output',panel.count()==0 and '"disagreement": false' in page.get_by_label('Original processing output',exact=True).inner_text())
+                    open_review(specialist,specialist_work);login();registry.revoke('read2')
+                    page.get_by_role('button',name='Refresh review').click();expect(page.locator('#review-login')).to_be_visible()
+                    check('revocation clears specialist material as well as originals',panel.count()==0 and page.locator('.review-originals').count()==0)
                     check('no browser runtime errors',not errors)
                     report={'checks_passed':len(checks),'checks':checks,'network':'Native loopback HTTP','model_inference_tested':False,'independent_review_performed':False,'human_accessibility_tested':False,'errors':errors,'limits':['Test-generated signed JWTs, not actual OIDC browser sign-in.','Native automated review is not genuine human acceptance.']}
                     (OUT/'browser-event-review-report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
