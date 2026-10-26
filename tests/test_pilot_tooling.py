@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 import subprocess
 import sys
 
@@ -65,7 +66,7 @@ def test_real_participant_and_unlisted_or_duplicate_records_rejected():
 def test_pilot_cli_validates_actual_input_and_blocks_missing_dimensions(tmp_path):
     path = tmp_path / 'pilot.json'
     path.write_text(study([observation(outcome='fail')]).model_dump_json())
-    result = subprocess.run([sys.executable, 'scripts/operations/check.py', 'pilot', str(path)],
+    result = subprocess.run([sys.executable, str(Path(__file__).resolve().parents[1] / 'scripts/operations/check.py'), 'pilot', str(path)],
                              capture_output=True, text=True)
     assert result.returncode == 1
     assert json.loads(result.stdout)['unresolved_critical_or_high'] == ['fictional-observation']

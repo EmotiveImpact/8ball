@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta, timezone
 from hashlib import sha256
 import json
+from pathlib import Path
 import subprocess
 import sys
 
@@ -87,7 +88,7 @@ def test_duplicate_ids_do_not_inflate_coverage(tmp_path):
 def test_readiness_cli_blocks_without_evidence_and_sanitizes_invalid_input(tmp_path):
     path = tmp_path / 'manifest.json'
     path.write_text(json.dumps({'source_commit': COMMIT, 'environments': ['linux-chromium'], 'evidence': []}))
-    cmd = [sys.executable, 'scripts/operations/check.py', 'readiness', str(path), '--root', str(tmp_path)]
+    cmd = [sys.executable, str(Path(__file__).resolve().parents[1] / 'scripts/operations/check.py'), 'readiness', str(path), '--root', str(tmp_path)]
     result = subprocess.run(cmd, capture_output=True, text=True)
     assert result.returncode == 1
     assert json.loads(result.stdout)['status'] == 'blocked'

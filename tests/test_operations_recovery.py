@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta, timezone
 import json
 import os
+from pathlib import Path
 import sqlite3
 import subprocess
 import sys
@@ -193,7 +194,7 @@ def test_rehearsal_cli_with_real_key_and_offline_checkpoint(source, tmp_path):
                                                     serialization.PublicFormat.SubjectPublicKeyInfo))
     checkpoints = tmp_path / 'checkpoints.json'
     checkpoints.write_text(json.dumps([checkpoint.model_dump()]))
-    result = subprocess.run([sys.executable, 'scripts/operations/rehearse.py', '--source', str(path),
+    result = subprocess.run([sys.executable, str(Path(__file__).resolve().parents[1] / 'scripts/operations/rehearse.py'), '--source', str(path),
         '--sandbox', str(tmp_path / 'cli.sqlite'), '--checkpoints', str(checkpoints),
         '--trusted-public-key', str(public), '--maximum-age-seconds', '60', '--rto-seconds', '30',
         '--fictional-only'], capture_output=True, text=True)

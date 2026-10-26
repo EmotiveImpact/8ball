@@ -22,6 +22,12 @@ See [AGENCY-HOST](../../v2/AGENCY-HOST.md). Added explicit optional host/router/
 - Commands naming nonexistent test globs ran zero tests; they are setup mistakes, not passing or failing test evidence.
 - Full final native acceptance, installed-wheel regressions and exact `--inspect` are pending at this checkpoint. No failed run is relabelled as passing.
 
+### First complete integrated run — failed, retained
+
+On exact clean pushed `5dbd40fc4e7fe2d22fde8af6f49ddcae53135172`, native run `20261026T001616Z-38c61066` completed in about335s. All **13 native suites/439 checks** passed, including the new agency/session journey. Source tests passed1781/1782; installed-wheel regressions passed1778/1782. Other checks (compilation,delivery,changelog,emergence,JavaScript,structural benchmark,schemas,native transport probe) passed. Overall status is **failed**, not a partial pass relabelled as accepted. Source SHA256 `0ba1ad76445adaa05a70ed14e31d68eb67ba3fd1a4bec479a45331d7844a98e2` stayed unchanged during the run. `--inspect artifacts/acceptance/20261026T001616Z-38c61066/report.json` was valid on that exact source, with `run_status=failed`, `native_browser_verified=true`, `model_quality_approved=false`, `released=false`.
+
+The source failure correctly detected that the integrator had overwritten reserved builder owner/branch/base claims in the ledger. Restore those historical task claims, keeping current integration ownership in repository.current_sprint rather than weakening the test. Installed-wheel isolation additionally exposed three operations/readiness/recovery/pilot CLI tests relying on repository working directory; use file-relative absolute script paths without changing the isolated wheel runner. No production code change or gate relaxation is needed. The corrected checkpoint requires an entirely fresh full native run; this failed receipt cannot cover later source.
+
 ## Emergence Review — ER-01 through ER-15
 
 What did this sprint reveal that we had not properly seen, specified or understood before we built it?

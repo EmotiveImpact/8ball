@@ -4,6 +4,43 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 integration verification repair · Preserve lane claims and cwd-independent operational CLI verification
+
+2026-10-26 · `local_unreleased`
+
+First full integrated run retained as failed: all13 native suites/439 checks passed, but reserved task ownership and isolated CLI test paths needed correction. No production gate or installed-kernel isolation was weakened.
+
+### Changed
+
+- Restore original builder owner,branch and source-base claims; keep current integration checkpoint separately recorded.
+
+### Fixed
+
+- Operations readiness/recovery/pilot test CLIs use paths relative to their source files, not process working directory.
+
+### Verification
+
+- First full run:1781/1782 source tests;1778/1782 installed regressions;13 native suites/439 browser checks passed. Exact failed report inspection valid. Corrected full native run pending.
+- 69 focused tracking/operations/readiness/recovery/pilot tests passed after correction.
+
+### Limitations
+
+- No whole-run pass for5dbd40f. No provider inference or independent human/security/production acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Integrated full-source and installed-wheel runs expose tracking/isolation contradictions that focused lane totals cannot exclude.
+- Risk: A successful browser run is not an overall acceptance pass; failed evidence must remain source-bound and recoverable.
+- Architecture: Preserve original ownership history and run the installed kernel outside the checkout, while CLI paths resolve their real source files.
+- Roadmap decision: existing_task: repair integration-only verification mismatches, retain failed run and rerun full exact-source acceptance. No scope expansion or external gate promotion.
+Registered discoveries: EM-254.
+
+Roadmap items: `B03-05`, `B10-01`, `B10-02`, `B03-06`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-roadmap-integration.md](docs/delivery/sessions/2026-10-26-roadmap-integration.md), [tests/test_operations_readiness.py](tests/test_operations_readiness.py), [tests/test_operations_recovery.py](tests/test_operations_recovery.py), [tests/test_pilot_tooling.py](tests/test_pilot_tooling.py), [docs/evidence/roadmap-integration-failed-2026-10-26.json](docs/evidence/roadmap-integration-failed-2026-10-26.json).
+
 ## 0.2.0-alpha.8 engineering integration · Optional agency host and integrated roadmap controls
 
 2026-10-26 · `local_unreleased`
