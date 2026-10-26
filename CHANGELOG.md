@@ -4,6 +4,44 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Recommended visual direction: the quiet operations room
+
+2026-10-26 · `local_unreleased`
+
+Document an audit of the current black interface and a recommended next visual direction; no stylesheet or runtime change.
+
+### Added
+
+- docs/design/VISUAL-DIRECTION.md: current-state audit, palette, type, shape, component, export-theme and sequencing recommendations.
+
+### Changed
+
+- Black operator visual system now links to the recommended direction.
+
+### Verification
+
+- Delivery ledger, emergence register and changelog checks pass.
+- Current-state findings measured from web/v2/style.css and a render of scripts/design_preview.py.
+
+### Limitations
+
+- Recommendation only; owner adoption is not recorded.
+- No accessibility, visual or task status changes are claimed.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: The stylesheet holds 331 distinct hard-coded colours against 11 tokens, and much reading text is 8 to 10px.
+- Risk: Token drift makes theming and accessibility fixes expensive; Inter is named but never loaded.
+- Architecture: Consolidate colours, type and spacing into tokens before further visual work.
+- Roadmap decision: Proposal for owner review under existing B02-16 and B02-20; no task or status changes.
+Registered discoveries: EM-024.
+
+Roadmap items: `B02-16`, `B02-20`.
+
+Evidence: [docs/design/VISUAL-DIRECTION.md](docs/design/VISUAL-DIRECTION.md), [docs/v2/BLACK-VISUAL-SYSTEM.md](docs/v2/BLACK-VISUAL-SYSTEM.md).
+
 ## 0.2.0-alpha.8 · Combined build passes native verification and checkpoint CI
 
 2026-10-25 · `local_unreleased`

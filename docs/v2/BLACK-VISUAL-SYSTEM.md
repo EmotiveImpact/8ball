@@ -8,4 +8,6 @@ Maintain the target banner, operational map, Now rail, questions, decisions and 
 
 The local visual checks render actual source with the real API/SQLite through the existing explicit ASGI bridge. They do not establish native HTTP, downloads or cross-browser/accessibility acceptance. Current native CI is pending because the code could not be pushed. The full B02-16 accessibility scope remains incomplete.
 
+See [the recommended visual direction](../design/VISUAL-DIRECTION.md) for the next step of this system.
+
 The relationship explorer extends these tokens with a quiet near-black graph canvas, framed tools and a right-hand evidence inspector. Muted colours distinguish labelled record types; explicit state labels and shapes are always available. It avoids continuous decorative motion, fabricated connection strengths and data-like elements without case backing. See `GRAPH-EXPLORER.md`.
