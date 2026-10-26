@@ -179,6 +179,10 @@ def test_provider_independent_pipeline_calls_two_stages_and_retains_trace():
     assert rules['reserved_result_titles']==[FIXTURE['frame']['readiness']['title'],
                                              *[c['title'] for c in FIXTURE['frame']['success_criteria']]]
     assert 'reserved_result_titles' in calls[1][2]
+    for _, _, instructions in calls:
+        assert 'bare JSON object' in instructions and 'no Markdown fences' in instructions
+        assert 'maxLength' in instructions and 'not exact quotations or the human outcome' in instructions
+        assert 'enabling work' in instructions
     assert 'frame.verification' in calls[1][0]['$defs']['RouteDraft']['properties']['establish_readiness']['description']
     assert trace['prompt_version']==PROMPT_VERSION
     assert trace['frame']==FIXTURE['frame'] and trace['routes']==FIXTURE['routes']

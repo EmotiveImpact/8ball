@@ -4,6 +4,46 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 draft prompt v4 · Clarify strict draft output and enabling-work requirements
+
+2026-10-26 · `local_unreleased`
+
+Version clearer generation instructions after the second incomplete coordinated run, while retaining unchanged schema/authority gates and original failures.
+
+### Added
+
+- Explicit bare-object, maxLength and quotation-preservation guidance shared by frame/route and initial/revision prompts.
+- 180/181-character boundary tests and controlled offline replay of retained Sonnet/Opus generation failures.
+
+### Changed
+
+- Draft prompt version v4 clarifies that requests or records cannot replace enabling work for an operational outcome; unknown/refusal is not permission.
+
+### Verification
+
+- 477 focused compilation/coordination/evaluation/transport checks passed; compilation and whitespace checks passed.
+- Original failed outputs remain rejected without additional generation or repair.
+
+### Limitations
+
+- Stronger instructions do not prove better compliance or operationally sufficient plans.
+- Full native/package verification pending; no new inference, price read or billing lookup.
+- B02-11 partial; no dedicated coordinated UI, independent quality, merge/deployment/release.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Existing EM-335/336/337 refined without claiming passing software makes a valid revised plan or useful model.
+- Risk: Longer instructions may compete for attention; prompt presence and boundary tests are not semantic quality evidence.
+- Architecture: Version source-bound prompts, retain failed outputs and keep unchanged validators/human authority.
+- Roadmap decision: existing_task B02-11 prompt clarification; no scope or acceptance promotion.
+Registered discoveries: EM-335, EM-336, EM-337.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-draft-output-contract.md](docs/delivery/sessions/2026-10-26-draft-output-contract.md), [endstate/compilation.py](endstate/compilation.py), [tests/test_coordinated_planning.py](tests/test_coordinated_planning.py), [tests/test_endstate_compilation.py](tests/test_endstate_compilation.py).
+
 ## 0.2.0-alpha.8 native cost live diagnostic · Preserve complete specialist challenges and failed planning revisions
 
 2026-10-26 · `local_unreleased`

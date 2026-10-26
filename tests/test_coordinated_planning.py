@@ -2,6 +2,8 @@
 from copy import deepcopy
 from datetime import timedelta
 import json
+import lzma
+from pathlib import Path
 import sqlite3
 
 import httpx
@@ -41,6 +43,8 @@ def core_run(values=None, *, text='Fictional source: venue spares or local hire 
     calls, panels = [], []
     def generate(schema, instructions, context):
         calls.append(deepcopy(context))
+        assert 'bare JSON object' in instructions and 'no Markdown fences' in instructions
+        assert 'maxLength' in instructions and 'overlength values are rejected' in instructions
         if len(calls) >= 3:
             assert 'EVERY' in instructions
             context['review_context']['original_proposal']['frame']['verification']['title'] = 'Mutated copy'
@@ -85,6 +89,56 @@ def test_core_invalid_draft_stops_without_retry_or_silent_target_change(stage):
     assert result['failed_draft']['failed_stage'] == ('frame' if stage % 2 == 0 else 'routes')
     assert bool(panels) == (stage >= 2)
     assert bool(result['initial']) == (stage >= 2)
+
+
+@pytest.mark.parametrize('stage', [0, 2])
+@pytest.mark.parametrize('field', ['readiness', 'success_criteria'])
+@pytest.mark.parametrize('length', [180, 181])
+def test_confirmation_limits_are_identical_before_and_after_challenge(stage, field, length):
+    values = outputs()
+    criterion = values[stage][field] if field == 'readiness' else values[stage][field][0]
+    criterion['confirmation'] = 'x' * length
+    result, calls, panels = core_run(values)
+    if length == 180:
+        assert result['stop_reason'] == 'completed' and len(calls) == 4
+    else:
+        assert result['stop_reason'] == 'invalid_' + ('initial' if stage == 0 else 'revision') + '_draft'
+        assert len(calls) == stage + 1 and bool(panels) == (stage == 2)
+        assert result['failed_draft']['frame'] == values[stage]
+        assert result['failed_draft']['diagnostic']['fields'][0]['type'] == 'string_too_long'
+        assert result['revision'] is None and result['final_synthesis'] is None
+
+
+@pytest.mark.parametrize('index,expected_calls', [(0, 3), (1, 1)])
+def test_retained_native_cost_failures_are_not_repaired_by_prompt_changes(index, expected_calls):
+    path = Path(__file__).resolve().parents[1] / 'docs/evidence/coordinated-native-cost-live-2026-10-26.json.xz'
+    files = json.loads(lzma.decompress(path.read_bytes()))['files']
+    original = json.loads(files['report.json'])['results'][index]['result']
+    fixture = json.loads(files['protocol.json'])['protocol']['fixture']
+    retained_calls = original['planning_receipt']['calls']
+    calls = []
+
+    def generate(schema, instructions, context):
+        content = retained_calls[len(calls)]['raw_content']
+        calls.append(content)
+        return json.loads(content), original['planning_receipt']['requested_model']
+
+    def review(state, checkpoint):
+        panel = deepcopy(original['challenges'])
+        assert panel['input_sha256'] == fingerprint(state)
+        return panel
+
+    result = coordinate(CoordinatedPlanningSpec.model_validate(original['spec']),
+                        fixture['text'], 'offline-retained-content-replay', generate, review, lambda: None)
+    assert len(calls) == expected_calls
+    assert result['revision'] is None and result['final_synthesis'] is None
+    assert result['failed_draft']['failed_stage'] == 'frame'
+    if index == 0:
+        assert result['initial']['trace']['frame'] == original['initial']['trace']['frame']
+        assert result['failed_draft']['frame'] == original['failed_draft']['frame']
+        assert result['challenges'] == original['challenges']
+    else:
+        assert result['initial'] is None and result['challenges'] is None
 
 
 @pytest.mark.parametrize('field', ['unknown_cost', 'failed', 'missing', 'budget', 'summary', 'binding'])

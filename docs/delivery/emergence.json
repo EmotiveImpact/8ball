@@ -7470,7 +7470,10 @@
       "acceptance_task_ids": [],
       "evidence_paths": [
         "docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md",
-        "docs/evidence/coordinated-native-cost-live-2026-10-26.json"
+        "docs/evidence/coordinated-native-cost-live-2026-10-26.json",
+        "docs/delivery/sessions/2026-10-26-draft-output-contract.md",
+        "endstate/compilation.py",
+        "tests/test_coordinated_planning.py"
       ],
       "owner_review": "pending",
       "history": [
@@ -7479,6 +7482,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11 evaluation/presentation boundary; no new required scope or semantic/human acceptance."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11: v4 makes bare-object, unchanged length and enabling-work requirements explicit. 477 focused checks pass; retained failures remain rejected. Model compliance/quality still unverified."
         }
       ]
     },
@@ -7496,7 +7505,10 @@
       "acceptance_task_ids": [],
       "evidence_paths": [
         "docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md",
-        "docs/evidence/coordinated-native-cost-live-2026-10-26.json"
+        "docs/evidence/coordinated-native-cost-live-2026-10-26.json",
+        "docs/delivery/sessions/2026-10-26-draft-output-contract.md",
+        "endstate/compilation.py",
+        "tests/test_coordinated_planning.py"
       ],
       "owner_review": "pending",
       "history": [
@@ -7505,6 +7517,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11 evaluation/presentation boundary; no new required scope or semantic/human acceptance."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11: v4 makes bare-object, unchanged length and enabling-work requirements explicit. 477 focused checks pass; retained failures remain rejected. Model compliance/quality still unverified."
         }
       ]
     },
@@ -7522,7 +7540,10 @@
       "acceptance_task_ids": [],
       "evidence_paths": [
         "docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md",
-        "docs/evidence/coordinated-native-cost-live-2026-10-26.json"
+        "docs/evidence/coordinated-native-cost-live-2026-10-26.json",
+        "docs/delivery/sessions/2026-10-26-draft-output-contract.md",
+        "endstate/compilation.py",
+        "tests/test_coordinated_planning.py"
       ],
       "owner_review": "pending",
       "history": [
@@ -7531,6 +7552,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11 evaluation/presentation boundary; no new required scope or semantic/human acceptance."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11: v4 makes bare-object, unchanged length and enabling-work requirements explicit. 477 focused checks pass; retained failures remain rejected. Model compliance/quality still unverified."
         }
       ]
     }

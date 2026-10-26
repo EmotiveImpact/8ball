@@ -1,3 +1,16 @@
+# Current bounded follow-up: draft instructions v4
+
+From pushed `52e5c0d`: clearer bare JSON, length and enabling-work guidance;
+no validator/schema/authority relaxation. 477 focused checks, compilation and
+whitespace pass. Original overlength/fenced outputs remain rejected in controlled
+offline replay. No new model calls or independent quality approval.
+[Record](sessions/2026-10-26-draft-output-contract.md).
+Next commit, full native/package acceptance and source-bound evidence; then a
+separately frozen diagnostic and read-only coordinated-result UI. B02-11 partial.
+EM-335/336/337 refined; no merge/deployment/release. Local changes pending commit.
+
+---
+
 # Latest actual-provider checkpoint: incomplete native-cost follow-up
 
 Seven requests at pushed `bbcb8c4`: Sonnet initial plan and all three specialist
