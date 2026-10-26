@@ -3,6 +3,58 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-historical-replay",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 historical forecast diagnostic",
+      "title": "Retain an inconclusive masked historical forecast and harden the experiment protocol",
+      "delivery": "local_unreleased",
+      "task_ids": ["B02-11"],
+      "summary": "An actual forecast is measurable without being valid prediction evidence: preserve recognition, source-summary errors and the original output.",
+      "added": [
+        "Separate public historical case/outcome fixtures, exact original runner archive, raw response, source hashes, resolution and explicit retrospective audit.",
+        "A bounded two-phase experimental runner with input checkpoints, strict probability-or-abstention handling, no retries and non-overwriting resolutions."
+      ],
+      "changed": [
+        "Keep the original v1 experiment separate from the later v2 offline-hardened protocol and post-forecast conditional planning control."
+      ],
+      "fixed": [
+        "Remove the overbroad keyword preflight check and use the receipt property correctly; both original preflight failures made zero provider requests.",
+        "Reject coerced probabilities/recognition fields, retain interruption and failure checkpoints, bind case/input/answer before resolution, and avoid logging exception content."
+      ],
+      "verification": [
+        "One actual Sonnet 5.5 request returned p=0.45; observed=false gives Brier=0.2025 versus fixed-half=0.25. Model reported recognising the transaction and its outcome.",
+        "52 new offline protocol tests plus 34 existing forecast tests passed. Full native software acceptance follows as a separate source-bound checkpoint; no additional inference."
+      ],
+      "limitations": [
+        "Inconclusive for predictive skill: n=1, retrospective author-selected case, admitted recognition, no independent blinding, and two source-summary errors.",
+        "The first run was forecast-component integration, not the complete planning/challenge/review app flow. Later repairs and offline planning do not improve its result.",
+        "Known token estimates are not verified bills. No case evidence, action approval, gate promotion, merge or deployment."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-historical-replay.md",
+        "docs/evidence/historical-replay-audit-2026-10-26.json",
+        "docs/evidence/historical-replay-forecast-2026-10-26.json",
+        "docs/evidence/historical-replay-resolution-2026-10-26.json",
+        "docs/evidence/historical-replay-input-2026-10-26.json",
+        "docs/evidence/historical-replay-runner-v1-2026-10-26.py.xz",
+        "docs/evidence/historical-replay-sources-2026-10-26.json",
+        "docs/evidence/historical-replay-planning-control-2026-10-26.json",
+        "evals/historical_replay.py",
+        "tests/test_historical_replay.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Name masking did not establish blindness in this actual case.",
+          "Paraphrase can change a financial denominator or contractual condition.",
+          "Experiment wrappers need strict durable validation even when reusing a trusted provider transport."
+        ],
+        "risks": ["A lower score can coexist with an invalid experiment; never erase source errors or recognition."],
+        "architecture_implications": ["Reuse ENDSTATE measurement and the existing provider transport; keep experiment validity separate from numerical scoring and case authority."],
+        "roadmap_decision": "existing_task B02-11 refinement only; no scope, owner or acceptance promotion.",
+        "insight_ids": ["EM-318", "EM-319", "EM-320"]
+      }
+    },
+    {
       "id": "2026-10-26-provider-lifecycle",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 selected-provider lifecycle evidence",

@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **217 recorded discoveries.**
+Last review: 2026-10-26. **220 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -3848,3 +3848,54 @@ The full source suite passed in 121.59 seconds; the installed-wheel suite still 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task ES01-05; scale the suite allowance without reducing coverage or promoting an incomplete run.
+
+### [ ] EM-318: Renaming a historical case does not establish blindness
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Actual historical forecast diagnostic.
+
+Sonnet returned a 0.45 merger-completion probability and explicitly reported recollection of the masked transaction and outcome. The event failed, but the lower Brier loss cannot demonstrate independent prediction.
+
+**Product implication:** Retain recognition beside scores and exclude the run from independent skill claims. A denial of recognition would not prove blindness either; genuinely unseen outcomes require a separate protocol.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/evidence/historical-replay-forecast-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-historical-replay.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11; concrete follow-up to EM-303, not acceptance or a new required feature.
+
+### [ ] EM-319: De-identification must preserve economic units and contractual logic
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Historical input source audit.
+
+The author's masked summary mislabeled a fee denominator as equity value and narrowed the contractual extension condition. These errors remained in the actual input and are documented without rewriting or rerunning the result.
+
+**Product implication:** Review source-summary fidelity before inference. Keep raw source hashes, original inputs and explicit errata; an accurate scorer cannot rescue an inaccurate historical reconstruction.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/evidence/historical-replay-audit-2026-10-26.json`, `evals/historical/rto-merger-2018.case.json`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 source-fidelity refinement; preserve the failure and require independent review rather than silently correcting a benchmark.
+
+### [ ] EM-320: A strict transport does not make its experiment wrapper strict or durable
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-26. **Origin:** Historical replay protocol hardening.
+
+The first wrapper had an overbroad preflight word filter, an incorrect receipt call, permissive probability coercion and no pre-request disk checkpoint. Only one actual response was received; its numeric probability and raw response remain unchanged. Later offline tests cover the wrapper boundaries directly.
+
+**Product implication:** Require both opt-ins, selected-model binding, bounded input, durable checkpoints, strict answer types, safe failure retention and non-overwrite semantics in the experimental harness. Later fixes are not a retroactive live pass.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `evals/historical_replay.py`, `tests/test_historical_replay.py`, `docs/evidence/historical-replay-runner-v1-2026-10-26.py.xz`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 engineering hardening only; no extra inference, new subsystem or predictive-quality promotion.

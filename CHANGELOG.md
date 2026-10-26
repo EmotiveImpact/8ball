@@ -4,6 +4,53 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 historical forecast diagnostic · Retain an inconclusive masked historical forecast and harden the experiment protocol
+
+2026-10-26 · `local_unreleased`
+
+An actual forecast is measurable without being valid prediction evidence: preserve recognition, source-summary errors and the original output.
+
+### Added
+
+- Separate public historical case/outcome fixtures, exact original runner archive, raw response, source hashes, resolution and explicit retrospective audit.
+- A bounded two-phase experimental runner with input checkpoints, strict probability-or-abstention handling, no retries and non-overwriting resolutions.
+
+### Changed
+
+- Keep the original v1 experiment separate from the later v2 offline-hardened protocol and post-forecast conditional planning control.
+
+### Fixed
+
+- Remove the overbroad keyword preflight check and use the receipt property correctly; both original preflight failures made zero provider requests.
+- Reject coerced probabilities/recognition fields, retain interruption and failure checkpoints, bind case/input/answer before resolution, and avoid logging exception content.
+
+### Verification
+
+- One actual Sonnet 5.5 request returned p=0.45; observed=false gives Brier=0.2025 versus fixed-half=0.25. Model reported recognising the transaction and its outcome.
+- 52 new offline protocol tests plus 34 existing forecast tests passed. Full native software acceptance follows as a separate source-bound checkpoint; no additional inference.
+
+### Limitations
+
+- Inconclusive for predictive skill: n=1, retrospective author-selected case, admitted recognition, no independent blinding, and two source-summary errors.
+- The first run was forecast-component integration, not the complete planning/challenge/review app flow. Later repairs and offline planning do not improve its result.
+- Known token estimates are not verified bills. No case evidence, action approval, gate promotion, merge or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Name masking did not establish blindness in this actual case.
+- Discovery: Paraphrase can change a financial denominator or contractual condition.
+- Discovery: Experiment wrappers need strict durable validation even when reusing a trusted provider transport.
+- Risk: A lower score can coexist with an invalid experiment; never erase source errors or recognition.
+- Architecture: Reuse ENDSTATE measurement and the existing provider transport; keep experiment validity separate from numerical scoring and case authority.
+- Roadmap decision: existing_task B02-11 refinement only; no scope, owner or acceptance promotion.
+Registered discoveries: EM-318, EM-319, EM-320.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-historical-replay.md](docs/delivery/sessions/2026-10-26-historical-replay.md), [docs/evidence/historical-replay-audit-2026-10-26.json](docs/evidence/historical-replay-audit-2026-10-26.json), [docs/evidence/historical-replay-forecast-2026-10-26.json](docs/evidence/historical-replay-forecast-2026-10-26.json), [docs/evidence/historical-replay-resolution-2026-10-26.json](docs/evidence/historical-replay-resolution-2026-10-26.json), [docs/evidence/historical-replay-input-2026-10-26.json](docs/evidence/historical-replay-input-2026-10-26.json), [docs/evidence/historical-replay-runner-v1-2026-10-26.py.xz](docs/evidence/historical-replay-runner-v1-2026-10-26.py.xz), [docs/evidence/historical-replay-sources-2026-10-26.json](docs/evidence/historical-replay-sources-2026-10-26.json), [docs/evidence/historical-replay-planning-control-2026-10-26.json](docs/evidence/historical-replay-planning-control-2026-10-26.json), [evals/historical_replay.py](evals/historical_replay.py), [tests/test_historical_replay.py](tests/test_historical_replay.py).
+
 ## 0.2.0-alpha.8 selected-provider lifecycle evidence · Retain Sonnet local lifecycle observations and allow bounded CI setup time
 
 2026-10-26 · `pushed_unreleased`

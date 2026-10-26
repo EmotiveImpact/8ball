@@ -1,0 +1,79 @@
+{
+  "context": {
+    "as_of": "2018-06-18T23:59:59+00:00",
+    "horizon": "2018-12-31T23:59:59+00:00",
+    "event": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018.",
+    "case": {
+      "situation": "On 17 June 2018 a US-listed rent-to-own retailer (Company A) signed a definitive merger agreement to be acquired by an acquisition vehicle (Buyer B) formed by a private investment firm, with a financial-services firm committed as equity and debt participant. The deal was publicly announced the next day.",
+      "terms": [
+        "All-cash offer for every outstanding share; total transaction value approximately US$1.4 billion including debt (approximate).",
+        "Company A's board unanimously approved the agreement and resolved to recommend stockholder approval.",
+        "Buyer B delivered equity commitment letters and a limited guarantee from its sponsors; debt commitment letters were in place. The transaction is not subject to a financing condition.",
+        "Closing conditions: Company A stockholder approval; expiry or termination of the HSR antitrust waiting period and other antitrust approvals; no law or order prohibiting the merger; accuracy of representations and warranties; performance of covenants; no material adverse effect.",
+        "Outside (End) Date: 17 December 2018. If antitrust-related conditions are the only unsatisfied conditions on that date, either party may extend the End Date to 17 March 2019 by written notice given at or before 11:59 p.m. Eastern on 17 December 2018, and similarly again to 17 June 2019.",
+        "A reverse termination fee in the low hundreds of millions of US dollars (roughly 9% of equity value, approximate) is payable by Buyer B to Company A in specified termination circumstances, guaranteed by the sponsors.",
+        "A company termination fee is payable by Company A in specified circumstances, including a superior-proposal termination.",
+        "The parties publicly stated they expected the transaction to close by the end of 2018."
+      ],
+      "known_unknowns": [
+        "Whether and when the HSR waiting period will expire or a second request will be issued.",
+        "Whether stockholders will approve the merger.",
+        "Company A's operating performance between signing and closing and its effect on either party's willingness to close.",
+        "Whether either party will exercise, or fail to exercise, the End Date extension right."
+      ],
+      "instructions": "You are given only information available as of the cutoff. Produce a probability that the event occurs by the horizon, or an explicit abstention reason. State the assumptions your probability depends on and the single observation that would most change it. Say whether you believe you recognise the specific real transaction behind this masked description."
+    }
+  },
+  "instructions": "You are an advisory forecaster inside a decision-review tool. Use only the supplied case, as of its information cutoff. Give either a probability (0-1) that the stated event occurs by the horizon, or null with an explicit abstention_reason. Never give both. List the assumptions your number depends on and the single observation that would most change it. Report honestly whether you believe you recognise the specific real transaction; if so, still answer only from the supplied information. Your output is advice for human review, not evidence or a decision.",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "probability",
+      "abstention_reason",
+      "assumptions",
+      "most_informative_observation",
+      "recognises_real_case",
+      "recognition_note"
+    ],
+    "properties": {
+      "probability": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "minimum": 0,
+        "maximum": 1
+      },
+      "abstention_reason": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "maxLength": 1500
+      },
+      "assumptions": {
+        "type": "array",
+        "maxItems": 8,
+        "items": {
+          "type": "string",
+          "maxLength": 400
+        }
+      },
+      "most_informative_observation": {
+        "type": "string",
+        "maxLength": 600
+      },
+      "recognises_real_case": {
+        "type": "boolean"
+      },
+      "recognition_note": {
+        "type": "string",
+        "maxLength": 600
+      }
+    }
+  },
+  "context_sha256": "24d3c427aafbddec92933d04b7a42420dc0f15ff542e51aba9450fd742415e63",
+  "schema_sha256": "dc473fcd3000f219f0b211681a6a5dade6d21aef4dc14874cf9ee82017c81fea",
+  "reconstruction": "Reconstructed after the response from unchanged input/source; hashes match the original report. Not independently timestamped."
+}

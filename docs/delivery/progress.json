@@ -5,6 +5,15 @@
   "engine": "ENDSTATE",
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
   "repository": {
+    "historical_replay_checkpoint": {
+      "owner": "Devin / integration",
+      "branch": "devin/1792969169-roadmap-integrated",
+      "base_commit": "3ddaa2f42f88b0bdb8ad41212f454b01588e29b4",
+      "scope": "B02-11 public masked retrospective forecast diagnostic; no acceptance or reserved lane ownership change.",
+      "evidence": "docs/delivery/sessions/2026-10-26-historical-replay.md",
+      "result": "One actual Sonnet forecast scored mechanically, but recognition and source-summary errors make predictive validity inconclusive. Later v2 protocol is offline-tested only.",
+      "next_action": "Retain this invalid-for-quality diagnostic. Independently review source fidelity and define genuinely unseen outcomes, target population and an appropriate baseline before a predictive-quality study. No repeated inference on this case to improve its score."
+    },
     "full_name": "EmotiveImpact/8ball",
     "development_branch": "feat/agency-authorisation-20261025",
     "pull_request": 5,
@@ -1057,6 +1066,11 @@
       "url": "https://github.com/EmotiveImpact/8ball/commit/a31283785f6ccc2a5c31b9b936a9da353dcfb3fe",
       "result": "Five fresh Sonnet generation requests passed all four frozen fixtures; source-matched configured-provider lifecycle passed cancel, supersede and owned restart with three first-stage admissions and no publication, further stage or unintended mutation. Remote receipt/completion/billing unknown; no UI/human/semantic acceptance. Full software verification recorded separately."
     },
+    "EV-HISTORICAL-REPLAY-20261026": {
+      "kind": "real_model_evaluation",
+      "path": "docs/delivery/sessions/2026-10-26-historical-replay.md",
+      "result": "One masked actual Sonnet response: p=0.45, observed=false, Brier=0.2025 versus 0.25. Model admitted recognition; two source-summary errors retained. Inconclusive retrospective diagnostic, not independent prediction evidence. 52 offline protocol and 34 forecast tests pass; full software closeout remains separate."
+    },
     "EV-LIFECYCLE-SOFTWARE-20261026": {
       "kind": "native_browser",
       "path": "docs/delivery/sessions/2026-10-26-provider-lifecycle.md",
@@ -1608,7 +1622,8 @@
         "EV-FORECAST-MEASUREMENT-20261026",
         "EV-SPECIALIST-WORKER-20261026",
         "EV-SPECIALIST-PRESENTATION-20261026",
-        "EV-SONNET-NATIVE-20261026"
+        "EV-SONNET-NATIVE-20261026",
+        "EV-HISTORICAL-REPLAY-20261026"
       ],
       "blockers": [
         "Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed."

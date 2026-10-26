@@ -219,7 +219,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval. Integration follow-up: verify the reviewed specialist worker checkpoint in docs/delivery/sessions/2026-10-26-specialist-worker.md; preserve partial status and all remaining gates. Read-only presentation follow-up: docs/delivery/sessions/2026-10-26-specialist-presentation.md. No acceptance status or reserved lane ownership change. Latest integration: see sessions/2026-10-26-sonnet-native.md. Native actual-provider engineering now passes; retain independent protocol/held-out labels and human gates. Do not re-block this authorised test on dashboard login or assume a provider cap. No reserved lane owner/status/acceptance change.
   - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Existing code: `evals/live_generation.py`, `evals/classification-cases.json`, `endstate/plan_review.py`, `eightball/v2/plan_review.py`, `web/v2/plan-review-view.js`, `evals/plan_review_bench.py`, `evals/PLAN-QUALITY-GATE.md`, `tests/test_plan_review.py`, `tests/browser_plan_review.py`, `evals/review_readiness.py`, `tests/test_review_readiness.py`, `docs/delivery/review/protocol-v2.template.json`, `docs/delivery/review/dataset-manifest.template.json`.
-  - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-REVIEW-REFRESH-RACE`, `EV-NATIVE-REVIEW-20261026`, `EV-DECISION-SMOKE-20261026`, `EV-FORECAST-MEASUREMENT-20261026`, `EV-SPECIALIST-WORKER-20261026`, `EV-SPECIALIST-PRESENTATION-20261026`, `EV-SONNET-NATIVE-20261026` (registry below).
+  - Evidence: `EV-REMAINING`, `EV-PLAN-REVIEW-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-REVIEW-REFRESH-RACE`, `EV-NATIVE-REVIEW-20261026`, `EV-DECISION-SMOKE-20261026`, `EV-FORECAST-MEASUREMENT-20261026`, `EV-SPECIALIST-WORKER-20261026`, `EV-SPECIALIST-PRESENTATION-20261026`, `EV-SONNET-NATIVE-20261026`, `EV-HISTORICAL-REPLAY-20261026` (registry below).
   - Blocker: Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed.
 
 - [ ] **B02-12 Full twenty-step real-model V0.2 acceptance journey**
@@ -1228,6 +1228,12 @@ These references have specific scopes and may be historical. A reference to a de
 - Result/scope: Five fresh Sonnet generation requests passed all four frozen fixtures; source-matched configured-provider lifecycle passed cancel, supersede and owned restart with three first-stage admissions and no publication, further stage or unintended mutation. Remote receipt/completion/billing unknown; no UI/human/semantic acceptance. Full software verification recorded separately.
 - Code revision: `a31283785f6ccc2a5c31b9b936a9da353dcfb3fe`.
 - External record: [verification source](https://github.com/EmotiveImpact/8ball/commit/a31283785f6ccc2a5c31b9b936a9da353dcfb3fe).
+
+### EV-HISTORICAL-REPLAY-20261026
+
+- Kind: `real_model_evaluation`.
+- Repository evidence: [docs/delivery/sessions/2026-10-26-historical-replay.md](../../docs/delivery/sessions/2026-10-26-historical-replay.md).
+- Result/scope: One masked actual Sonnet response: p=0.45, observed=false, Brier=0.2025 versus 0.25. Model admitted recognition; two source-summary errors retained. Inconclusive retrospective diagnostic, not independent prediction evidence. 52 offline protocol and 34 forecast tests pass; full software closeout remains separate.
 
 ### EV-LIFECYCLE-SOFTWARE-20261026
 

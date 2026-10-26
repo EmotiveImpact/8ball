@@ -1,3 +1,16 @@
+# Historical prediction diagnostic — 26 October 2026
+
+[Current handoff and limitations](sessions/2026-10-26-historical-replay.md): one
+actual masked historical forecast assigned 45% completion probability; the deal
+failed. The model admitted recognition, and two author-introduced summary errors
+were found afterward. Brier 0.2025 vs fixed-half 0.25 is diagnostic arithmetic,
+**not predictive validation**. Original input, response, code and errata are
+retained. The hardened v2 protocol has offline tests only. B02-11 remains partial;
+no real case mutation, model substitution, rerun to improve the score, merge or
+deployment. See the source-bound closeout for current software verification.
+
+## Previous selected-provider lifecycle checkpoint
+
 # Selected Sonnet lifecycle observations — 26 October 2026
 
 [Current handoff](sessions/2026-10-26-provider-lifecycle.md) and [retained evidence](../evidence/sonnet55-lifecycle-2026-10-26.json): fresh generation prerequisites and source-matched cancellation, supersession and owned-process restart observations passed at `a31283785f6ccc2a5c31b9b936a9da353dcfb3fe`. No proposal or second stage followed any intervention. Remote receipt/completion/cancellation/billing remain unknown; these are API/process observations, not actual-provider native-UI/human acceptance. B02-15 stays partial. All 29 checkpoints are retained; application runtime is unchanged. The CI allowance increases from 20 to 40 minutes without removing checks after a retained dependency-installation timeout. Full software verification and current PR checks remain separate.

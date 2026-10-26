@@ -1,0 +1,81 @@
+{
+  "version": "historical-replay.v1",
+  "forecast_report": "artifacts/historical-replay-20261026/20261026T101756Z-0454d482/forecast-report.json",
+  "forecast_sha256": "f348a6bd6c817cb5cea5af25eab2d2afe4d1df602d81a27e644e795c62c6fd0d",
+  "resolution": {
+    "forecast_id": "HR-001",
+    "forecast_sha256": "f348a6bd6c817cb5cea5af25eab2d2afe4d1df602d81a27e644e795c62c6fd0d",
+    "value": false,
+    "available_at": "2019-04-22T00:00:00Z",
+    "source_reference": "Neither party delivered the End Date extension notice required by 11:59 p.m. Eastern on 17 December 2018. The company terminated the merger agreement on 18 December 2018 and demanded the US$126.5 million reverse termination fee. The buyer sued to enforce the agreement; on 14 March 2019 the Delaware Court of Chancery ruled the termination valid; on 22 April 2019 the parties announced a US$92.5 million settlement. The merger was never consummated.",
+    "source_sha256": "0839413b477d521f1574e2152320fd396df46e7754b3ee1f6b391ec49809ad2a",
+    "basis": "observed"
+  },
+  "resolution_bundle": {
+    "outcome_sha256": "81aab33c07f1baf75930a0d2e3c800972ccfef767088aebad0f0f07c27ab18a0",
+    "retrieved_sources": [
+      {
+        "id": "agreement",
+        "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518196340/d407444dex21.htm",
+        "sha256": "2bda533e5b8918682425098c143bb8476cb812eb0b28927964c2960f281ed7f1",
+        "retrieved": "2026-10-26"
+      },
+      {
+        "id": "filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518196340/d407444d8k.htm",
+        "sha256": "8b27cd56bb9be8b3c544b7c18e32ce92c9b31d64dd1c803b67c2b8afb426a915",
+        "retrieved": "2026-10-26"
+      },
+      {
+        "id": "announcement",
+        "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518196340/d407444dex991.htm",
+        "sha256": "6f499e9eeb07ecbd6cc8484f2f7312c2edfcf4389c655a1754cd1adf5b955643",
+        "retrieved": "2026-10-26"
+      },
+      {
+        "id": "outcome_termination",
+        "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312519116716/d734946dex991.htm",
+        "sha256": "1e6a61eb5602330c116b103252ef351ce955fae906e55971f90f8442fd6a8d75",
+        "retrieved": "2026-10-26"
+      }
+    ]
+  },
+  "evaluation": {
+    "version": "endstate.forecast-evaluation.v1",
+    "as_of": "2026-10-26T10:18:12.341796+00:00",
+    "basis": "observed",
+    "total": 1,
+    "predicted": 1,
+    "abstained": 0,
+    "coverage": 1.0,
+    "resolved": 1,
+    "unresolved": 0,
+    "scored": 1,
+    "brier": 0.2025,
+    "fixed_half_baseline_brier_same_subset": 0.25,
+    "fixed_half_baseline_brier_all_resolved": 0.25,
+    "rows": [
+      {
+        "id": "HR-001",
+        "forecast_sha256": "f348a6bd6c817cb5cea5af25eab2d2afe4d1df602d81a27e644e795c62c6fd0d",
+        "probability": 0.45,
+        "abstention_reason": null,
+        "resolved": true,
+        "value": false,
+        "source_reference": "Neither party delivered the End Date extension notice required by 11:59 p.m. Eastern on 17 December 2018. The company terminated the merger agreement on 18 December 2018 and demanded the US$126.5 million reverse termination fee. The buyer sued to enforce the agreement; on 14 March 2019 the Delaware Court of Chancery ruled the termination valid; on 22 April 2019 the parties announced a US$92.5 million settlement. The merger was never consummated.",
+        "source_sha256": "0839413b477d521f1574e2152320fd396df46e7754b3ee1f6b391ec49809ad2a",
+        "brier": 0.2025,
+        "fixed_half_baseline_brier": 0.25
+      }
+    ],
+    "facts_attested": false,
+    "execution_authorized": false,
+    "predictive_quality_approved": false,
+    "notice": "Lower Brier is better on resolved forecasts. Coverage and missing outcomes remain separate. A fixed 0.5 baseline is not a trained predictor. Caller-supplied outcome references are not independently verified; hashes bind bytes but do not prove input cutoff integrity, prospective registration or calibration."
+  },
+  "retrospective": true,
+  "held_out_validation": false,
+  "cases": 1,
+  "predictive_quality_approved": false,
+  "notice": "One retrospective masked case. Hindsight contamination, model recognition and sample size of one prevent any accuracy claim. Scores are diagnostic only."
+}

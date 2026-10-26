@@ -22,6 +22,33 @@ The real ENDSTATE planner returns a conditional route for each case, preserving 
 
 ## Before claiming predictive skill
 
+### Historical replay diagnostic (26 October 2026)
+
+The separate `evals/historical_replay.py` experiment uses the native application
+provider transport and these ENDSTATE scoring contracts; it is not an app
+forecasting endpoint or production feature. One actual Sonnet 5.5 response gave
+a masked 2018 acquisition a 0.45 completion probability. It did not complete:
+Brier 0.2025 against the fixed-half 0.25. **The model admitted recognising the
+transaction/outcome, and the author found two source-summary errors. This result
+is inconclusive, not predictive-quality evidence.** See the
+[retained report, errata and exact chronology](../delivery/sessions/2026-10-26-historical-replay.md).
+
+The initial v1 input and response remain unchanged. The later v2 runner has only
+offline protocol tests: both `--allow-inference` and `--allow-external` are
+required, the direct Anthropic model is pinned, requests are bounded and never
+retried, inputs are persisted before inference, and runs/resolutions cannot be
+overwritten. A simple author-created conditional planning control is explicitly
+not an event probability or a full historical model. The first actual response
+preceded that control; no later changes retroactively improve it.
+
+Outcome files stay separate; the v2 resolver also requires their `case_sha256`
+to match the exact frozen case. Only public authorised data may enter this
+experiment. No JSON schema or word blacklist can establish historical cutoff
+integrity or semantic fidelity. Require independent source review before a new
+quality study; a negative self-report of recognition is not proof of blindness.
+
+### Unfinished quality requirements
+
 1. Define the event, horizon, target population, outcome source and permissioned information cutoff before inference.
 2. Configure one explicit forecast-producing adapter; record its model/version, complete input/response hashes, budget, usage and missing outputs. Do not turn arbitrary choice confidence into outcome probability silently.
 3. Freeze forecasts before learning outcomes. Separate training/tuning from evaluation and use time-appropriate data. An old public event may already be in a model's training data, so retrospective results need that limitation.

@@ -6890,6 +6890,48 @@
           "reason": "existing_task ES01-05; scale the suite allowance without reducing coverage or promoting an incomplete run."
         }
       ]
+    },
+    {
+      "id": "EM-318",
+      "title": "Renaming a historical case does not establish blindness",
+      "origin": "Actual historical forecast diagnostic",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "Sonnet returned a 0.45 merger-completion probability and explicitly reported recollection of the masked transaction and outcome. The event failed, but the lower Brier loss cannot demonstrate independent prediction.",
+      "product_implication": "Retain recognition beside scores and exclude the run from independent skill claims. A denial of recognition would not prove blindness either; genuinely unseen outcomes require a separate protocol.",
+      "task_ids": ["B02-11"],
+      "acceptance_task_ids": [],
+      "evidence_paths": ["docs/evidence/historical-replay-forecast-2026-10-26.json", "docs/delivery/sessions/2026-10-26-historical-replay.md"],
+      "owner_review": "pending",
+      "history": [{"date": "2026-10-26", "decision": "adopted", "by": "integration", "reason": "existing_task B02-11; concrete follow-up to EM-303, not acceptance or a new required feature."}]
+    },
+    {
+      "id": "EM-319",
+      "title": "De-identification must preserve economic units and contractual logic",
+      "origin": "Historical input source audit",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "The author's masked summary mislabeled a fee denominator as equity value and narrowed the contractual extension condition. These errors remained in the actual input and are documented without rewriting or rerunning the result.",
+      "product_implication": "Review source-summary fidelity before inference. Keep raw source hashes, original inputs and explicit errata; an accurate scorer cannot rescue an inaccurate historical reconstruction.",
+      "task_ids": ["B02-11"],
+      "acceptance_task_ids": [],
+      "evidence_paths": ["docs/evidence/historical-replay-audit-2026-10-26.json", "evals/historical/rto-merger-2018.case.json"],
+      "owner_review": "pending",
+      "history": [{"date": "2026-10-26", "decision": "adopted", "by": "integration", "reason": "existing_task B02-11 source-fidelity refinement; preserve the failure and require independent review rather than silently correcting a benchmark."}]
+    },
+    {
+      "id": "EM-320",
+      "title": "A strict transport does not make its experiment wrapper strict or durable",
+      "origin": "Historical replay protocol hardening",
+      "first_seen": "2026-10-26",
+      "evidence_level": "supported_by_tests",
+      "observation": "The first wrapper had an overbroad preflight word filter, an incorrect receipt call, permissive probability coercion and no pre-request disk checkpoint. Only one actual response was received; its numeric probability and raw response remain unchanged. Later offline tests cover the wrapper boundaries directly.",
+      "product_implication": "Require both opt-ins, selected-model binding, bounded input, durable checkpoints, strict answer types, safe failure retention and non-overwrite semantics in the experimental harness. Later fixes are not a retroactive live pass.",
+      "task_ids": ["B02-11"],
+      "acceptance_task_ids": [],
+      "evidence_paths": ["evals/historical_replay.py", "tests/test_historical_replay.py", "docs/evidence/historical-replay-runner-v1-2026-10-26.py.xz"],
+      "owner_review": "pending",
+      "history": [{"date": "2026-10-26", "decision": "adopted", "by": "integration", "reason": "existing_task B02-11 engineering hardening only; no extra inference, new subsystem or predictive-quality promotion."}]
     }
   ]
 }
