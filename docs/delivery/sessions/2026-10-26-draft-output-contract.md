@@ -63,3 +63,9 @@ Touched runtime: compilation prompts only; tests and canonical delivery records
 alongside. Local uncommitted at this checkpoint; next commit, native/package
 acceptance, source-bound archive and additive publication. No source edits during
 acceptance or any later frozen inference run. No merge/deployment/release.
+
+## Native verification closeout
+
+Source `d85742d4d5d184bb7eba533ca594a94b02a96661`, manifest `b3ae11dad4350f3d99f87a17b791fa0283d04df22748be97aa825464972c16fc`, run `20261026T140753Z-e441dec1`: all checks passed. 2,455 source tests, 2,455 installed-wheel regressions, 24 JS modules and 475 native browser checks across 13 suites; no failed/skipped checks. Source/artifact inspection was valid before these documentation changes. The compressed original report and receipt are under `docs/evidence/draft-output-v4-software-*`. No new inference or quality/production/merge/release/deployment approval.
+
+Handoff: publish runtime plus this additive evidence; next freeze a fresh actual-provider protocol before inference, then build the dedicated read-only coordinated-result UI. Earlier failed protocols stay untouched. EM-335/336/337 still open as live/quality limitations, not acceptance wins.

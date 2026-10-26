@@ -4167,12 +4167,13 @@ On the native-cost follow-up, every specialist answered with known reported cost
 
 **Roadmap links:** `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md`, `docs/evidence/coordinated-native-cost-live-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-draft-output-contract.md`, `endstate/compilation.py`, `tests/test_coordinated_planning.py`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md`, `docs/evidence/coordinated-native-cost-live-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-draft-output-contract.md`, `endstate/compilation.py`, `tests/test_coordinated_planning.py`, `docs/evidence/draft-output-v4-software-2026-10-26.json`.
 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 evaluation/presentation boundary; no new required scope or semantic/human acceptance.
 - 2026-10-26 · adopted · integration: existing_task B02-11: v4 makes bare-object, unchanged length and enabling-work requirements explicit. 477 focused checks pass; retained failures remain rejected. Model compliance/quality still unverified.
+- 2026-10-26 · adopted · integration: existing_task B02-11: v4 source d85742d passes native/package acceptance (2455/2455 tests; 475 browser checks). Engineering acceptance does not show improved model compliance or plan sufficiency.
 
 ### [ ] EM-336: Prompt-only JSON compliance is per request, not guaranteed by a working endpoint
 
@@ -4185,12 +4186,13 @@ Opus returned fenced JSON from the native endpoint despite the JSON-only request
 
 **Roadmap links:** `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md`, `docs/evidence/coordinated-native-cost-live-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-draft-output-contract.md`, `endstate/compilation.py`, `tests/test_coordinated_planning.py`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md`, `docs/evidence/coordinated-native-cost-live-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-draft-output-contract.md`, `endstate/compilation.py`, `tests/test_coordinated_planning.py`, `docs/evidence/draft-output-v4-software-2026-10-26.json`.
 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 evaluation/presentation boundary; no new required scope or semantic/human acceptance.
 - 2026-10-26 · adopted · integration: existing_task B02-11: v4 makes bare-object, unchanged length and enabling-work requirements explicit. 477 focused checks pass; retained failures remain rejected. Model compliance/quality still unverified.
+- 2026-10-26 · adopted · integration: existing_task B02-11: v4 source d85742d passes native/package acceptance (2455/2455 tests; 475 browser checks). Engineering acceptance does not show improved model compliance or plan sufficiency.
 
 ### [ ] EM-337: Choice-based agreement does not prove an operationally complete route
 
@@ -4203,9 +4205,10 @@ Jev and Clef marked all three requirements preserved, while GPT flagged prerequi
 
 **Roadmap links:** `B02-11` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md`, `docs/evidence/coordinated-native-cost-live-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-draft-output-contract.md`, `endstate/compilation.py`, `tests/test_coordinated_planning.py`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md`, `docs/evidence/coordinated-native-cost-live-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-draft-output-contract.md`, `endstate/compilation.py`, `tests/test_coordinated_planning.py`, `docs/evidence/draft-output-v4-software-2026-10-26.json`.
 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 evaluation/presentation boundary; no new required scope or semantic/human acceptance.
 - 2026-10-26 · adopted · integration: existing_task B02-11: v4 makes bare-object, unchanged length and enabling-work requirements explicit. 477 focused checks pass; retained failures remain rejected. Model compliance/quality still unverified.
+- 2026-10-26 · adopted · integration: existing_task B02-11: v4 source d85742d passes native/package acceptance (2455/2455 tests; 475 browser checks). Engineering acceptance does not show improved model compliance or plan sufficiency.

@@ -7473,7 +7473,8 @@
         "docs/evidence/coordinated-native-cost-live-2026-10-26.json",
         "docs/delivery/sessions/2026-10-26-draft-output-contract.md",
         "endstate/compilation.py",
-        "tests/test_coordinated_planning.py"
+        "tests/test_coordinated_planning.py",
+        "docs/evidence/draft-output-v4-software-2026-10-26.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -7488,6 +7489,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11: v4 makes bare-object, unchanged length and enabling-work requirements explicit. 477 focused checks pass; retained failures remain rejected. Model compliance/quality still unverified."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11: v4 source d85742d passes native/package acceptance (2455/2455 tests; 475 browser checks). Engineering acceptance does not show improved model compliance or plan sufficiency."
         }
       ]
     },
@@ -7508,7 +7515,8 @@
         "docs/evidence/coordinated-native-cost-live-2026-10-26.json",
         "docs/delivery/sessions/2026-10-26-draft-output-contract.md",
         "endstate/compilation.py",
-        "tests/test_coordinated_planning.py"
+        "tests/test_coordinated_planning.py",
+        "docs/evidence/draft-output-v4-software-2026-10-26.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -7523,6 +7531,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11: v4 makes bare-object, unchanged length and enabling-work requirements explicit. 477 focused checks pass; retained failures remain rejected. Model compliance/quality still unverified."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11: v4 source d85742d passes native/package acceptance (2455/2455 tests; 475 browser checks). Engineering acceptance does not show improved model compliance or plan sufficiency."
         }
       ]
     },
@@ -7543,7 +7557,8 @@
         "docs/evidence/coordinated-native-cost-live-2026-10-26.json",
         "docs/delivery/sessions/2026-10-26-draft-output-contract.md",
         "endstate/compilation.py",
-        "tests/test_coordinated_planning.py"
+        "tests/test_coordinated_planning.py",
+        "docs/evidence/draft-output-v4-software-2026-10-26.json"
       ],
       "owner_review": "pending",
       "history": [
@@ -7558,6 +7573,12 @@
           "decision": "adopted",
           "by": "integration",
           "reason": "existing_task B02-11: v4 makes bare-object, unchanged length and enabling-work requirements explicit. 477 focused checks pass; retained failures remain rejected. Model compliance/quality still unverified."
+        },
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11: v4 source d85742d passes native/package acceptance (2455/2455 tests; 475 browser checks). Engineering acceptance does not show improved model compliance or plan sufficiency."
         }
       ]
     }

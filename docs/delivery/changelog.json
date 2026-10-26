@@ -3,6 +3,58 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-draft-output-v4-native-verification",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 draft prompt v4 verified",
+      "title": "Bind native software acceptance to draft instruction source",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-11"
+      ],
+      "summary": "Close software verification for d85742d without converting stronger instructions or retained failures into a model-quality claim.",
+      "added": [
+        "Compressed original native report plus source/artifact hash and credential-scan receipt."
+      ],
+      "changed": [
+        "Draft v4 software gate passed; actual-provider compliance, useful plans and coordinated UI remain separate unfinished checks."
+      ],
+      "fixed": [],
+      "verification": [
+        "2455 source tests and 2455 installed-wheel regressions passed; zero failures, errors or skipped tests.",
+        "24 browser modules checked and 475 checks across all 13 native suites passed.",
+        "Source/artifact inspection valid before this documentation-only closeout."
+      ],
+      "limitations": [
+        "Exact d85742d software source only, not later documentation or runtime changes.",
+        "Prompt compliance and operational sufficiency remain unverified; old failed outputs remain rejected.",
+        "Native artifacts stay in the ignored run directory; the compressed report preserves their hashes, not every binary artifact.",
+        "No new inference, price check, historical replay, retry, repair, substitution or original-protocol resume.",
+        "No independent quality, operator benefit, production, merge/deployment/release acceptance."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-draft-output-contract.md",
+        "docs/evidence/draft-output-v4-software-2026-10-26.json",
+        "docs/evidence/draft-output-v4-software-passed-2026-10-26.json.xz"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Existing EM-335/336/337 retained: native software correctness is not model compliance or operational usefulness."
+        ],
+        "risks": [
+          "Prompt clarification may still fail or distract; no new inference has tested it."
+        ],
+        "architecture_implications": [
+          "Bind acceptance to exact runtime bytes; later documentation does not retroactively change the checked source."
+        ],
+        "roadmap_decision": "existing_task B02-11 software verification only; no scope or gate promotion.",
+        "insight_ids": [
+          "EM-335",
+          "EM-336",
+          "EM-337"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-draft-output-v4",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 draft prompt v4",

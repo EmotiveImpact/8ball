@@ -1,0 +1,35 @@
+{
+  "scope": "Draft prompt v4 guidance, unchanged validation; offline software acceptance only.",
+  "source_commit": "d85742d4d5d184bb7eba533ca594a94b02a96661",
+  "source_sha256": "b3ae11dad4350f3d99f87a17b791fa0283d04df22748be97aa825464972c16fc",
+  "run_id": "20261026T140753Z-e441dec1",
+  "native_report_archive": "docs/evidence/draft-output-v4-software-passed-2026-10-26.json.xz",
+  "archive_sha256": "ebdfee31e7b3f0a47956b6dffada823fcf23d00c3e1736d0da00f6bdf546ba18",
+  "original_report_sha256": "0473877c53f587b5f19f10833b1b75715159f130f9cedc5cb27f7d353366ed58",
+  "inspection_before_documentation_closeout": {
+    "valid": true,
+    "run_status": "passed",
+    "reason": "Exact source and local artifact bytes matched; not a signed attestation"
+  },
+  "counts": {
+    "source_tests": 2455,
+    "installed_wheel_regressions": 2455,
+    "javascript_modules": 24,
+    "native_browser_checks": 475,
+    "native_browser_suites": 13
+  },
+  "credential_value_scan": "passed",
+  "model_inference_performed": false,
+  "native_browser_verified": true,
+  "model_quality_approved": false,
+  "predictive_quality_approved": false,
+  "merged": false,
+  "released": false,
+  "deployed": false,
+  "limits": [
+    "Exact d85742d software source only, not later documentation or runtime changes.",
+    "Prompt compliance and operational sufficiency remain unverified; old failed outputs remain rejected.",
+    "Native artifacts stay in the ignored run directory; the compressed report preserves their hashes, not every binary artifact.",
+    "No new inference, price check, historical replay, retry, repair, substitution or original-protocol resume."
+  ]
+}

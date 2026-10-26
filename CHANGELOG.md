@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 draft prompt v4 verified · Bind native software acceptance to draft instruction source
+
+2026-10-26 · `local_unreleased`
+
+Close software verification for d85742d without converting stronger instructions or retained failures into a model-quality claim.
+
+### Added
+
+- Compressed original native report plus source/artifact hash and credential-scan receipt.
+
+### Changed
+
+- Draft v4 software gate passed; actual-provider compliance, useful plans and coordinated UI remain separate unfinished checks.
+
+### Verification
+
+- 2455 source tests and 2455 installed-wheel regressions passed; zero failures, errors or skipped tests.
+- 24 browser modules checked and 475 checks across all 13 native suites passed.
+- Source/artifact inspection valid before this documentation-only closeout.
+
+### Limitations
+
+- Exact d85742d software source only, not later documentation or runtime changes.
+- Prompt compliance and operational sufficiency remain unverified; old failed outputs remain rejected.
+- Native artifacts stay in the ignored run directory; the compressed report preserves their hashes, not every binary artifact.
+- No new inference, price check, historical replay, retry, repair, substitution or original-protocol resume.
+- No independent quality, operator benefit, production, merge/deployment/release acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Existing EM-335/336/337 retained: native software correctness is not model compliance or operational usefulness.
+- Risk: Prompt clarification may still fail or distract; no new inference has tested it.
+- Architecture: Bind acceptance to exact runtime bytes; later documentation does not retroactively change the checked source.
+- Roadmap decision: existing_task B02-11 software verification only; no scope or gate promotion.
+Registered discoveries: EM-335, EM-336, EM-337.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-draft-output-contract.md](docs/delivery/sessions/2026-10-26-draft-output-contract.md), [docs/evidence/draft-output-v4-software-2026-10-26.json](docs/evidence/draft-output-v4-software-2026-10-26.json), [docs/evidence/draft-output-v4-software-passed-2026-10-26.json.xz](docs/evidence/draft-output-v4-software-passed-2026-10-26.json.xz).
+
 ## 0.2.0-alpha.8 draft prompt v4 · Clarify strict draft output and enabling-work requirements
 
 2026-10-26 · `local_unreleased`

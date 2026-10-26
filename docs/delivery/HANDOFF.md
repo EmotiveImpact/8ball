@@ -1,3 +1,11 @@
+# Current checkpoint: draft v4 software verified
+
+Runtime source `d85742d4d5d184bb7eba533ca594a94b02a96661` passes full native/package acceptance: 2,455 source tests, 2,455 installed regressions, 24 JS modules, 475 browser checks/13 native suites. Source/artifact inspection valid before this additive documentation. [Bound receipt](../evidence/draft-output-v4-software-2026-10-26.json). No new model calls; no live/semantic approval. B02-11 partial.
+
+Next push runtime/evidence, freeze a new diagnostic before any inference, then read-only coordinated-result UI. Branch `devin/1792969169-roadmap-integrated`; no merge/deployment/release. EM-335/336/337 refined, not resolved. This checkpoint becomes published only after the next successful push.
+
+---
+
 # Current bounded follow-up: draft instructions v4
 
 From pushed `52e5c0d`: clearer bare JSON, length and enabling-work guidance;
