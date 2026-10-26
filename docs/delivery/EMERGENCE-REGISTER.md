@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **156 recorded discoveries.**
+Last review: 2026-10-26. **157 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -2789,3 +2789,20 @@ The integrated host intentionally omits scanner, processing policy, dependent-co
 **Decision history:**
 
 - 2026-10-26 · adopted · Devin / roadmap-integrated: existing_task: bounded shared-host engineering and explicit decision to keep missing policy external gates open; no required scope or acceptance promotion.
+
+### [ ] EM-257: Full-source and installed-kernel regressions are independent verification contracts
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Roadmap integration / 2026-10-26.
+
+First integrated native run passed 13 browser suites/439 checks,but source tracking failed reserved ownership and installed-wheel tests exposed three cwd-relative operations CLI paths. Corrected claims/paths then passed 1782 source and1782 installed regressions in a fresh full native run.
+
+**Product implication:** Retain all failed exact-source runs; do not equate native browser success,focused totals or a later receipt with a complete source-bound whole-run pass. Preserve builder ownership separately from integration ownership.
+
+**Roadmap links:** `ES01-03` (verified), `B03-05` (partial), `B10-01` (not_started), `B10-02` (not_started), `B03-06` (not_started).
+**Completion scope:** `ES01-03`, `B03-05`, `B10-01`, `B10-02`, `B03-06`.
+**Evidence / source record:** `docs/evidence/roadmap-integration-failed-2026-10-26.json`, `docs/evidence/roadmap-integration-native-2026-10-26.json`, `docs/delivery/sessions/2026-10-26-roadmap-integration.md`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · Devin / roadmap-integrated: existing_task: repair bounded integration verification contracts without weakening isolation,source manifests,production or human acceptance. No required scope or status promotion.

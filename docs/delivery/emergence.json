@@ -5304,6 +5304,43 @@
           "reason": "existing_task: bounded shared-host engineering and explicit decision to keep missing policy external gates open; no required scope or acceptance promotion."
         }
       ]
+    },
+    {
+      "id": "EM-257",
+      "title": "Full-source and installed-kernel regressions are independent verification contracts",
+      "origin": "Roadmap integration / 2026-10-26",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "First integrated native run passed 13 browser suites/439 checks,but source tracking failed reserved ownership and installed-wheel tests exposed three cwd-relative operations CLI paths. Corrected claims/paths then passed 1782 source and1782 installed regressions in a fresh full native run.",
+      "product_implication": "Retain all failed exact-source runs; do not equate native browser success,focused totals or a later receipt with a complete source-bound whole-run pass. Preserve builder ownership separately from integration ownership.",
+      "task_ids": [
+        "ES01-03",
+        "B03-05",
+        "B10-01",
+        "B10-02",
+        "B03-06"
+      ],
+      "acceptance_task_ids": [
+        "ES01-03",
+        "B03-05",
+        "B10-01",
+        "B10-02",
+        "B03-06"
+      ],
+      "evidence_paths": [
+        "docs/evidence/roadmap-integration-failed-2026-10-26.json",
+        "docs/evidence/roadmap-integration-native-2026-10-26.json",
+        "docs/delivery/sessions/2026-10-26-roadmap-integration.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "Devin / roadmap-integrated",
+          "reason": "existing_task: repair bounded integration verification contracts without weakening isolation,source manifests,production or human acceptance. No required scope or status promotion."
+        }
+      ]
     }
   ]
 }

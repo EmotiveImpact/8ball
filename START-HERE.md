@@ -1,4 +1,8 @@
-# Current integration checkpoint — 26 October 2026
+# Current integrated native receipt — 26 October 2026
+
+All seven functional lane histories are integrated on separate unmerged `devin/1792969169-roadmap-integrated`. Exact pushed source `05525c9826e476b7f9996f187190b87ef8e1f9ec` passed 1782 source tests,1782 installed-wheel regressions and13 native suites/439 browser checks. See [source-bound receipt](docs/evidence/roadmap-integration-native-2026-10-26.json) and [full handoff](docs/delivery/sessions/2026-10-26-roadmap-integration.md). Inspection was valid on that exact source before later documentation-only receipt edits. Both failed and passing raw runs are retained separately; baseline receipts do not cover integrated code. No live inference,external quality/production/pilot acceptance,PR5 update,merge,release or deployment is claimed. Original local workflows and all optional holds remain. Missing production adapters fail closed. The canonical ledger remains the sole task-status source. Older checkpoints below are historical.
+
+# Historical integration checkpoint — 26 October 2026
 
 Separate unmerged branch `devin/1792969169-roadmap-integrated` integrates all seven lane heads. Read `docs/delivery/sessions/2026-10-26-roadmap-integration.md` and the optional agency host guide `docs/v2/AGENCY-HOST.md`. The older paragraphs below are preserved historical checkpoints, not instructions to modify PR5 or claim baseline receipts cover integrated code. Fresh full native/wheel acceptance and exact inspection are pending at this recoverable functional checkpoint. Production/provider/professional/human/real-client/commercial gates remain open; no release/deployment/merge is implied. Current statuses remain solely in progress.json.
 

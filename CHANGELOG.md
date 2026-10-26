@@ -4,6 +4,46 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 integrated native receipt · Fresh exact-source native engineering acceptance for all seven lanes
+
+2026-10-26 · `pushed_unreleased`
+
+Pushed source 05525c9 passed 1782 source tests,1782 installed-wheel regressions and13 native suites/439 checks. Source-bound inspection valid before this separate documentation receipt; previous full failed run retained. No model,production,human or release acceptance.
+
+### Added
+
+- Durable passing source/report/archive hashes and full retained failed/passing evidence bundle.
+
+### Changed
+
+- Current entry points and integration sprint evidence now point at the completed engineering run,not baseline or focused counts. Reserved builder task claims remain unchanged.
+
+### Verification
+
+- Native run 20261026T002344Z-5641058a on clean05525c9826e476b7f9996f187190b87ef8e1f9ec;1782/1782 source and installed regressions;all13 suites/439 native checks.
+- Python compilation,23 browser-module node checks,delivery/changelog/emergence validation,schemas and structural fixture benchmark passed.
+- --inspect valid before receipt edits;source stayed unchanged. No CI workflows target this devin branch: no remote-CI pass claimed.
+
+### Limitations
+
+- This receipt is later documentation,not part of its tested source hash. Exact earlier source and raw artifacts are required for inspection.
+- No paid/live inference,model quality,professional/human accessibility,real-client/pilot,production/security/commercial acceptance,merge,release or deployment.
+- Missing production adapters intentionally fail closed. Optional holds remain.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Full-source tracking and isolated installed-kernel execution are separate verification contracts; native UI green alone cannot excuse their failure.
+- Risk: Later receipt bytes must not be confused with tested source or external acceptance.
+- Architecture: Keep original lane claims and isolated wheel imports; file-relative subprocess CLI paths remove cwd assumptions.
+- Roadmap decision: existing_task: retain both failed and passing receipts and correct bounded verification mismatches. No new required scope or task promotion.
+Registered discoveries: EM-257.
+
+Roadmap items: `ES01-03`, `B03-05`, `B10-01`, `B10-02`, `B03-06`.
+
+Evidence: [docs/evidence/roadmap-integration-native-2026-10-26.json](docs/evidence/roadmap-integration-native-2026-10-26.json), [docs/evidence/roadmap-integration-failed-2026-10-26.json](docs/evidence/roadmap-integration-failed-2026-10-26.json), [docs/delivery/sessions/2026-10-26-roadmap-integration.md](docs/delivery/sessions/2026-10-26-roadmap-integration.md).
+
 ## 0.2.0-alpha.8 integration verification repair · Preserve lane claims and cwd-independent operational CLI verification
 
 2026-10-26 · `local_unreleased`
