@@ -7,7 +7,7 @@
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 native usage completeness",
       "title": "Preserve unknown cache usage in normalized receipts",
-      "delivery": "local_unreleased",
+      "delivery": "pushed_unreleased",
       "task_ids": [
         "B02-09"
       ],
@@ -21,7 +21,8 @@
       ],
       "verification": [
         "Expanded controlled regression: five failures and four passes before correction; retained failure log.",
-        "After correction: 308 controlled provider/integration/compiler/lifecycle tests passed; full native acceptance pending."
+        "After correction: 308 focused tests passed. Exact 08b1cde code passed 2096 source and 2096 installed-wheel tests, compilation, 24 JS modules, and 474 checks in 13 native browser suites; source/artifact inspection passed before documentation closeout.",
+        "Offline re-normalization of 12 retained native HTTP200 response receipts gives identical complete counts; not additional inference."
       ],
       "limitations": [
         "No additional inference or billing verification. Earlier live receipts have all four components and unchanged estimates.",
@@ -30,7 +31,8 @@
       "evidence_paths": [
         "docs/delivery/sessions/2026-10-26-native-usage.md",
         "docs/evidence/native-usage-regression-before-2026-10-26.log.xz",
-        "tests/test_compatible_provider.py"
+        "tests/test_compatible_provider.py",
+        "docs/evidence/native-usage-software-2026-10-26.json"
       ],
       "emergence_review": {
         "discoveries": [

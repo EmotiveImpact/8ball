@@ -6,7 +6,7 @@ This is product history, not the case decision trail. A build entry is not evide
 
 ## 0.2.0-alpha.8 native usage completeness · Preserve unknown cache usage in normalized receipts
 
-2026-10-26 · `local_unreleased`
+2026-10-26 · `pushed_unreleased`
 
 Normalize prompt totals only when all native input components are known.
 
@@ -21,7 +21,8 @@ Normalize prompt totals only when all native input components are known.
 ### Verification
 
 - Expanded controlled regression: five failures and four passes before correction; retained failure log.
-- After correction: 308 controlled provider/integration/compiler/lifecycle tests passed; full native acceptance pending.
+- After correction: 308 focused tests passed. Exact 08b1cde code passed 2096 source and 2096 installed-wheel tests, compilation, 24 JS modules, and 474 checks in 13 native browser suites; source/artifact inspection passed before documentation closeout.
+- Offline re-normalization of 12 retained native HTTP200 response receipts gives identical complete counts; not additional inference.
 
 ### Limitations
 
@@ -40,7 +41,7 @@ Registered discoveries: EM-313.
 
 Roadmap items: `B02-09`.
 
-Evidence: [docs/delivery/sessions/2026-10-26-native-usage.md](docs/delivery/sessions/2026-10-26-native-usage.md), [docs/evidence/native-usage-regression-before-2026-10-26.log.xz](docs/evidence/native-usage-regression-before-2026-10-26.log.xz), [tests/test_compatible_provider.py](tests/test_compatible_provider.py).
+Evidence: [docs/delivery/sessions/2026-10-26-native-usage.md](docs/delivery/sessions/2026-10-26-native-usage.md), [docs/evidence/native-usage-regression-before-2026-10-26.log.xz](docs/evidence/native-usage-regression-before-2026-10-26.log.xz), [tests/test_compatible_provider.py](tests/test_compatible_provider.py), [docs/evidence/native-usage-software-2026-10-26.json](docs/evidence/native-usage-software-2026-10-26.json).
 
 ## 0.2.0-alpha.8 native Sonnet integration · Connect native Sonnet and verify the actual-provider journey
 

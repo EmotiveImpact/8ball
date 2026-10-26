@@ -1217,4 +1217,6 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `controlled_http_tests`.
 - Repository evidence: [docs/delivery/sessions/2026-10-26-native-usage.md](../../docs/delivery/sessions/2026-10-26-native-usage.md).
-- Result/scope: Five controlled receipt regressions failed before correction; 308 focused tests passed after. No new model calls or change to historical live estimates. Full native software acceptance pending.
+- Result/scope: Five controlled failures retained before correction. Exact 08b1cde code passed 2096 source + 2096 installed-wheel tests, 24 JS modules, compilation and all 13 native suites / 474 checks. Inspected before documentation closeout. No additional model calls or change to prior complete usage estimates; independent gates remain open.
+- Code revision: `08b1cde2bdf3fa091576b25b2484d45602c69d4b`.
+- External record: [verification source](https://github.com/EmotiveImpact/8ball/commit/08b1cde2bdf3fa091576b25b2484d45602c69d4b).

@@ -1046,7 +1046,9 @@
     "EV-NATIVE-USAGE-20261026": {
       "kind": "controlled_http_tests",
       "path": "docs/delivery/sessions/2026-10-26-native-usage.md",
-      "result": "Five controlled receipt regressions failed before correction; 308 focused tests passed after. No new model calls or change to historical live estimates. Full native software acceptance pending."
+      "result": "Five controlled failures retained before correction. Exact 08b1cde code passed 2096 source + 2096 installed-wheel tests, 24 JS modules, compilation and all 13 native suites / 474 checks. Inspected before documentation closeout. No additional model calls or change to prior complete usage estimates; independent gates remain open.",
+      "code_commit": "08b1cde2bdf3fa091576b25b2484d45602c69d4b",
+      "url": "https://github.com/EmotiveImpact/8ball/commit/08b1cde2bdf3fa091576b25b2484d45602c69d4b"
     }
   },
   "milestones": [
