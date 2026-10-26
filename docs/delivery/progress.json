@@ -25,7 +25,10 @@
         "branch": "devin/1792969169-roadmap-integrated",
         "base_commit": "c13a3a023133b66f1bb32891aa2e739fec25b88a",
         "scope": "Read-only retained specialist presentation in the existing event review; no model-selection controls or new inference.",
-        "evidence": "docs/delivery/sessions/2026-10-26-specialist-presentation.md"
+        "evidence": "docs/delivery/sessions/2026-10-26-specialist-presentation.md",
+        "verified_code_commit": "ba1fd41b546bb026a2032f57bfa575020b99f951",
+        "source_sha256": "6c5fae226e273685efb9bdb75a3a98887ac991f94a6b55f6d53e822156655daf",
+        "receipt": "docs/evidence/specialist-presentation-native-2026-10-26.json"
       },
       "owner": "Devin / integration",
       "branch": "devin/1792969169-roadmap-integrated",
@@ -1026,7 +1029,7 @@
     "EV-SPECIALIST-PRESENTATION-20261026": {
       "kind": "local_engineering",
       "path": "docs/delivery/sessions/2026-10-26-specialist-presentation.md",
-      "result": "131 focused tests and 39 native event-review browser checks pass. Read-only retained comparisons, not new inference, decision authority or model-quality acceptance. Full native acceptance pending."
+      "result": "Exact ba1fd41 native source/artifacts matched:2038 source tests,2038 installed-wheel regressions,24 JS modules,466 checks across13 native suites. Read-only retained comparison only; no inference, quality approval, merge or release."
     }
   },
   "milestones": [

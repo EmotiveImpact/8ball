@@ -4,7 +4,20 @@ Owner: integration. Branch: devin/1792969169-roadmap-integrated. Base: c13a3a023
 
 EventReviews now reconstructs a comparison from strict ENDSTATE contracts, checks it against retained summary fields and exact receipt/input/spec/case/revision bindings, and projects only authorised material. Invalid recognized reports retain the original but do not get a typed comparison. Existing event review displays each model choice, disagreement, missing answers, unknown costs and integrity hashes without buttons to apply them. Stale results are labelled historical; locking/revocation clears them with the original source. Legacy output remains unchanged.
 
-131 focused specialist/event-review/dispatch tests and 39 native event-review browser checks pass. The browser covers read-only access, inert hostile markup, differing/missing/no answers, unknown costs, invalid-summary fallback, historical revision labels, revocation and narrow viewports. No inference was made. Full source-bound acceptance is still pending; these focused results are not model quality or production acceptance. The prior backend is pushed and verified separately at 33f0d8d with documentation closeout c13a3a0. Failed evidence remains preserved.
+131 focused specialist/event-review/dispatch tests and 39 native event-review browser checks pass. The browser covers read-only access, inert hostile markup, differing/missing/no answers, unknown costs, invalid-summary fallback, historical revision labels, revocation and narrow viewports. No inference was made. The prior backend is pushed and verified separately at 33f0d8d with documentation closeout c13a3a0. Failed evidence remains preserved.
+
+## Verified publication handoff
+
+- Session/environment: Devin, Linux, Python 3.12.13; B03-04/B02-11 existing-task refinement, no canonical status promotion.
+- Files/implementation: `eightball/v2/event_reviews.py`, `web/v2/event-review.{js,css}`, focused Python/native browser regressions, specialist documentation and canonical delivery/emergence records. Exact implementation `ba1fd41b546bb026a2032f57bfa575020b99f951` is pushed on the branch above to [PR6](https://github.com/EmotiveImpact/8ball/pull/6).
+- Command: `PATH="$PWD/.venv/bin:/home/ubuntu/.nvm/versions/node/v24.19.0/bin:$PATH" .venv/bin/python scripts/acceptance.py --mode native --base c13a3a023133b66f1bb32891aa2e739fec25b88a`.
+- Result: 2,038 source tests and 2,038 installed-wheel regressions, compile, 24 JavaScript modules, schemas, deterministic structural fixtures, all tracking/history checks and 466 checks across all 13 native suites passed. Run `20261026T040935Z-8643963a`; source SHA256 `6c5fae226e273685efb9bdb75a3a98887ac991f94a6b55f6d53e822156655daf`.
+- `.venv/bin/python scripts/acceptance.py --inspect artifacts/acceptance/20261026T040935Z-8643963a/report.json` returned valid/source-and-artifact match before documentation closeout. [Receipt](../../evidence/specialist-presentation-native-2026-10-26.json) preserves the exact tested tree, report hash and counts; not independent attestation. Documentation-only closeout uses generated/history guards rather than reassigning this source hash to a newer tree.
+- Real models called: none. Browser comparisons use declared fictional fixtures, not actual provider output. No model-quality, predictive-accuracy, independent/professional, human-accessibility or production acceptance.
+- Unverified/failed: successful Sonnet 5.5 inference, measured operator benefit, dedicated model-selection controls and all existing independent/production gates remain open. Automated review errored without findings on ba1fd41; it is not a review pass. Earlier failed native runs remain intact.
+- Unpushed state at preparation: only this evidence/ledger/handoff closeout; final pushed receipt commit goes in the PR record, not a self-referential commit. No functional changes after the tested source.
+- Next action: settle publication checks with `git_pr_checks` on PR6; inspect failed job IDs where available. Continue the existing actual-provider/independent-evaluation gates using their explicit fixture/budget approvals, not by promoting EM-308 or relabelling conditional planning as forecasting. Do not restart paid inference from ordinary acceptance.
+- Merge/deployment: neither authorised nor performed. No release.
 
 ## Emergence Review
 

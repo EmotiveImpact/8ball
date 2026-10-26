@@ -1196,4 +1196,4 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `local_engineering`.
 - Repository evidence: [docs/delivery/sessions/2026-10-26-specialist-presentation.md](../../docs/delivery/sessions/2026-10-26-specialist-presentation.md).
-- Result/scope: 131 focused tests and 39 native event-review browser checks pass. Read-only retained comparisons, not new inference, decision authority or model-quality acceptance. Full native acceptance pending.
+- Result/scope: Exact ba1fd41 native source/artifacts matched:2038 source tests,2038 installed-wheel regressions,24 JS modules,466 checks across13 native suites. Read-only retained comparison only; no inference, quality approval, merge or release.

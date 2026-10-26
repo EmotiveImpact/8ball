@@ -1,4 +1,14 @@
-[Latest checkpoint](sessions/2026-10-26-specialist-worker.md): bounded specialist comparison is wired into the reviewed event worker, with explicit host configuration and per-call authority/lease checks. Exact code 33f0d8d passed 2,026 source tests, 2,026 installed-wheel regressions, 24 JavaScript modules and 454 checks in 13 native suites. Source/artifact inspection matched before documentation closeout. Publication/CI must be read from the current PR head. No new inference or prediction-quality result; no merge or deployment.
+# Retained specialist presentation checkpoint — 26 October 2026
+
+[Latest handoff](sessions/2026-10-26-specialist-presentation.md) and [receipt](../evidence/specialist-presentation-native-2026-10-26.json): the existing event review now displays reconstructed, source-bound specialist answers, missing responses and unresolved differences without a vote or apply action. Exact code `ba1fd41b546bb026a2032f57bfa575020b99f951` is pushed on `devin/1792969169-roadmap-integrated` to [PR6](https://github.com/EmotiveImpact/8ball/pull/6). It passed 2,038 source tests, 2,038 installed-wheel regressions, 24 JavaScript modules and 466 checks across 13 native suites. Source SHA256 `6c5fae226e273685efb9bdb75a3a98887ac991f94a6b55f6d53e822156655daf`; source/artifact inspection matched before this documentation-only closeout. No new inference, empirical predictive result, model-quality approval, merge or deployment. Current PR checks remain a separate record; the automated review service last errored without findings.
+
+## Emergence Review
+
+EM-309 (`existing_task`, supported by tests): a retained aggregate can contradict individual answers. Reconstruct and bind before presentation, preserve raw material and visibly withhold inconsistent comparisons. EM-308's larger model-selection controls and measured operator-value candidate stay unaccepted; this readable projection does not silently add them to required scope. Full ER-01 through ER-15 and next-action/verification details are in the latest handoff. Reserved lane ownership, partial task statuses, previous evidence and all unfinished acceptance gates remain intact.
+
+## Previous specialist worker checkpoint
+
+[Prior checkpoint](sessions/2026-10-26-specialist-worker.md): bounded specialist comparison is wired into the reviewed event worker, with explicit host configuration and per-call authority/lease checks. Exact code 33f0d8d passed 2,026 source tests, 2,026 installed-wheel regressions, 24 JavaScript modules and 454 checks in 13 native suites. Source/artifact inspection matched before documentation closeout. Publication/CI must be read from the current PR head. No new inference or prediction-quality result; no merge or deployment.
 
 # Forecast measurement checkpoint — 26 October 2026
 
