@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **234 recorded discoveries.**
+Last review: 2026-10-26. **237 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -4155,3 +4155,54 @@ Binary JSON float parsing can turn an amount just below or above one nano-USD in
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 engineering boundary, controlled tests only; no new required product scope, live-call result or independent quality acceptance.
 - 2026-10-26 · adopted · integration: existing_task B02-11: exact 5780368 source passed 2445 source/installed tests and all 475 native checks. Accounting/authority boundaries verified; no inference, billing or independent quality acceptance.
+
+### [ ] EM-335: A completed specialist panel can still produce no valid revision
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Second frozen fictional coordinated-planning diagnostic.
+
+On the native-cost follow-up, every specialist answered with known reported cost, but Sonnet exceeded two confirmation-length limits during revision. Initial validity did not carry over to the new candidate.
+
+**Product implication:** Retain partial stages independently and make the same output limits explicit after challenge; never truncate a failed draft into an accepted one.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md`, `docs/evidence/coordinated-native-cost-live-2026-10-26.json`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 evaluation/presentation boundary; no new required scope or semantic/human acceptance.
+
+### [ ] EM-336: Prompt-only JSON compliance is per request, not guaranteed by a working endpoint
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Second frozen fictional coordinated-planning diagnostic.
+
+Opus returned fenced JSON from the native endpoint despite the JSON-only request, as GLM had on the earlier compatible attempt. Correct model identity and HTTP 200 did not establish draft validity.
+
+**Product implication:** Version explicit bare-object instructions and evaluate separately, while keeping strict parsing and original failures. No hidden stripping, repair or fallback.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md`, `docs/evidence/coordinated-native-cost-live-2026-10-26.json`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 evaluation/presentation boundary; no new required scope or semantic/human acceptance.
+
+### [ ] EM-337: Choice-based agreement does not prove an operationally complete route
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Second frozen fictional coordinated-planning diagnostic.
+
+Jev and Clef marked all three requirements preserved, while GPT flagged prerequisites. The initial routes principally request decisions/information and compile records, without an explicit repair operation. The choice protocol does not explain which omission GPT intended.
+
+**Product implication:** Keep minority answers and source-linked operator review. A structurally valid plan and positive labels do not demonstrate adequate world-changing work, safety, feasibility or achieved outcome.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md`, `docs/evidence/coordinated-native-cost-live-2026-10-26.json`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 evaluation/presentation boundary; no new required scope or semantic/human acceptance.

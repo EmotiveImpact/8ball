@@ -7455,6 +7455,84 @@
           "reason": "existing_task B02-11: exact 5780368 source passed 2445 source/installed tests and all 475 native checks. Accounting/authority boundaries verified; no inference, billing or independent quality acceptance."
         }
       ]
+    },
+    {
+      "id": "EM-335",
+      "title": "A completed specialist panel can still produce no valid revision",
+      "origin": "Second frozen fictional coordinated-planning diagnostic",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "On the native-cost follow-up, every specialist answered with known reported cost, but Sonnet exceeded two confirmation-length limits during revision. Initial validity did not carry over to the new candidate.",
+      "product_implication": "Retain partial stages independently and make the same output limits explicit after challenge; never truncate a failed draft into an accepted one.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md",
+        "docs/evidence/coordinated-native-cost-live-2026-10-26.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 evaluation/presentation boundary; no new required scope or semantic/human acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-336",
+      "title": "Prompt-only JSON compliance is per request, not guaranteed by a working endpoint",
+      "origin": "Second frozen fictional coordinated-planning diagnostic",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "Opus returned fenced JSON from the native endpoint despite the JSON-only request, as GLM had on the earlier compatible attempt. Correct model identity and HTTP 200 did not establish draft validity.",
+      "product_implication": "Version explicit bare-object instructions and evaluate separately, while keeping strict parsing and original failures. No hidden stripping, repair or fallback.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md",
+        "docs/evidence/coordinated-native-cost-live-2026-10-26.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 evaluation/presentation boundary; no new required scope or semantic/human acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-337",
+      "title": "Choice-based agreement does not prove an operationally complete route",
+      "origin": "Second frozen fictional coordinated-planning diagnostic",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "Jev and Clef marked all three requirements preserved, while GPT flagged prerequisites. The initial routes principally request decisions/information and compile records, without an explicit repair operation. The choice protocol does not explain which omission GPT intended.",
+      "product_implication": "Keep minority answers and source-linked operator review. A structurally valid plan and positive labels do not demonstrate adequate world-changing work, safety, feasibility or achieved outcome.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md",
+        "docs/evidence/coordinated-native-cost-live-2026-10-26.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 evaluation/presentation boundary; no new required scope or semantic/human acceptance."
+        }
+      ]
     }
   ]
 }

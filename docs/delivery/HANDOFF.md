@@ -1,3 +1,18 @@
+# Latest actual-provider checkpoint: incomplete native-cost follow-up
+
+Seven requests at pushed `bbcb8c4`: Sonnet initial plan and all three specialist
+reviews retained; revised frame exceeded two 180-character limits. Opus returned
+fenced JSON. No final synthesis. Reported specialist cost 37,926 nano-USD;
+planning unpriced. No retries, repairs, resumed protocols or case changes.
+[Record and next action](sessions/2026-10-26-coordinated-native-cost-live.md) ·
+[bound receipt/archive](../evidence/coordinated-native-cost-live-2026-10-26.json).
+B02-11 partial; no quality, UI, prediction, merge/deployment/release acceptance.
+Next: clearer versioned output instructions with strict rejection preserved,
+then read-only coordinated-result UI. EM-335/336/337 retained; no scope promotion.
+Documentation-only checkpoint pending commit/publication on the same branch.
+
+---
+
 # Latest verified follow-up: provider-scoped native cost policy
 
 See [native cost policy](sessions/2026-10-26-native-cost-policy.md), starting at

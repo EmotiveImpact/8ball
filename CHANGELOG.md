@@ -4,6 +4,46 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 native cost live diagnostic · Preserve complete specialist challenges and failed planning revisions
+
+2026-10-26 · `local_unreleased`
+
+Separately frozen Sonnet/Opus follow-up reached all three native reviewers, but remained incomplete. Preserve both new failures without repairing either prior protocol.
+
+### Added
+
+- Exact protocol/source/transport/report archive and bounded receipt for seven live requests.
+
+### Changed
+
+- B02-11 links initial Sonnet plan, minority prerequisite objection, overlength revision and Opus fenced response; status stays partial.
+
+### Verification
+
+- Recorded source unchanged and both case audit chains unchanged.
+- All 3 specialist costs normalized exactly; reported total 37926 nano-USD, not an invoice.
+- Exact archive round trip and known-credential-value scan passed.
+
+### Limitations
+
+- No valid revised candidate or final synthesis; no end-to-end coordinated success.
+- Planning charges remain unknown; no retries, repair, fallback, resumed protocol or historical rerun.
+- No independent quality, native UI, prediction, operator benefit, merge/deployment/release acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Complete panels can still fail revision limits; prompt-only output remains request-dependent; positive choice labels do not establish operational completeness.
+- Risk: Treating minority objections, invalid revisions or omitted work as resolved would overstate the outcome.
+- Architecture: Version clearer output instructions without changing validators; preserve original/challenge/failed-revision boundaries in future read-only UI.
+- Roadmap decision: existing_task B02-11 evidence and instruction/presentation follow-up only.
+Registered discoveries: EM-335, EM-336, EM-337.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md](docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md), [docs/evidence/coordinated-native-cost-live-2026-10-26.json](docs/evidence/coordinated-native-cost-live-2026-10-26.json).
+
 ## 0.2.0-alpha.8 native cost evidence · Bind provider-scoped cost handling to full native software acceptance
 
 2026-10-26 · `local_unreleased`
