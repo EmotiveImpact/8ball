@@ -3,6 +3,56 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-26-coordinated-result-ui",
+      "date": "2026-10-26",
+      "version": "0.2.0-alpha.8 coordinated result presentation",
+      "title": "Read original plans, independent challenges and separate revisions without applying them",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-11"
+      ],
+      "summary": "Read-only incoming-review presentation reconstructs valid drafts and comparisons, preserves failed/missing stages, and checks source/stage bindings before showing typed results.",
+      "added": [
+        "Coordinated original/challenge/revision/diagnostic/synthesis sections with exact target quotes, conditional proposed work, unresolved differences, costs and hashes.",
+        "Offline projection coverage for all four actual v4 results, malformed records and canonical key reordering; native read-only, stale and revocation tests."
+      ],
+      "changed": [
+        "Existing specialist rendering reused for independent challenges; answer distributions remain explicitly uncalibrated.",
+        "Shared namespace and challenge-input construction extracted without changing inference behavior."
+      ],
+      "fixed": [],
+      "verification": [
+        "294 focused Python checks passed; 57 native event-review browser checks passed.",
+        "Python compilation and changed JS syntax passed; full native/package acceptance pending."
+      ],
+      "limitations": [
+        "No new model inference, repair, retry, automatic action or case amendment.",
+        "Raw output retained when integrity cannot be reconstructed; hashes are not independent attestations.",
+        "No model-quality, human accessibility, operator benefit, production, merge/deployment/release approval."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-coordinated-result-ui.md",
+        "eightball/v2/coordinated_results.py",
+        "web/v2/event-review.js",
+        "tests/browser_event_review.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-339: canonical object ordering is not the original byte-bound challenge input."
+        ],
+        "risks": [
+          "A polished result could be mistaken for resolved objections, permission or operational sufficiency."
+        ],
+        "architecture_implications": [
+          "Recompile retained drafts and reconstruct comparisons locally; verify raw/semantic/input bindings; keep current authority and explicit human commands."
+        ],
+        "roadmap_decision": "existing_task B02-11 presentation only; keep acceptance partial.",
+        "insight_ids": [
+          "EM-339"
+        ]
+      }
+    },
+    {
       "id": "2026-10-26-coordinated-v4-live",
       "date": "2026-10-26",
       "version": "0.2.0-alpha.8 coordinated v4 diagnostic",

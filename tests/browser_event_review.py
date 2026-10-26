@@ -21,6 +21,10 @@ from eightball.authorisation import Grant,Identity,Operation,Resource
 from eightball.models import utcnow
 from endstate.events import IncomingEvent
 from endstate.intelligence.coordination import Attempt, ReviewSpec, summarize
+from endstate.intelligence.planning import coordinate
+from hashlib import sha256
+from tests.test_coordinated_planning import spec as coordination_spec, outputs
+from tests.test_specialist_review import attempt
 from eightball.store import digest
 OUT=Path(os.getenv('EIGHTBALL_ARTIFACTS',str(ROOT/'artifacts/event-review')));OUT.mkdir(parents=True,exist_ok=True)
 checks=[]
@@ -66,10 +70,41 @@ def main():
             queue=EventWork(db);work=queue.enqueue(**scope,sequence=receipt.sequence,base_revision=0,case_id=case.id)
             claim=queue.claim(work,**scope);queue.finish(work,claim,output(receipt,case) if output else 'Suggested cost: 2222. This is unreviewed output.',**scope,current_revision=0,permission_valid=True)
             return case,work
+        def coordinated_output(receipt,case,mode='completed'):
+            spec=coordination_spec();values=outputs();calls=[]
+            values[0]['approaches'][0]['rationale']+=' <img src=x onerror="window.injected=true">'
+            if mode=='failed':values[2]['readiness']['confirmation']='x'*181
+            if mode=='failed_initial':values[0]['readiness']['confirmation']='x'*181
+            def generate(*args):
+                value=values[len(calls)];raw=json.dumps(value)
+                calls.append(dict(raw_content=raw,raw_content_sha256=sha256(raw.encode()).hexdigest(),
+                    request_sha256='c'*64,response_sha256='d'*64,response_body_sha256='e'*64,
+                    served_model='native-browser-fixture',status='response_received',response_mode='prompt_only'))
+                return value,'native-browser-fixture'
+            def challenge(state,checkpoint):
+                attempts=([attempt(spec.review.models[0],cost=None)] if mode=='partial' else
+                    [attempt(m,c) for m,c in zip(spec.review.models,['review','accept','review'])])
+                return summarize(spec.review,attempts)|dict(input_sha256=digest(state),
+                    stop_reason='unknown_reported_cost' if mode=='partial' else 'completed')
+            result=coordinate(spec,receipt.event.text,'coord_'+digest(receipt.model_dump(mode='json'))[:32],generate,challenge,lambda:None)
+            result.update(kind='coordinated_planning',case_id=case.id,base_revision=case.revision,
+                receipt_sha256=digest(receipt.model_dump(mode='json')),spec_sha256=digest(spec.model_dump(mode='json')),
+                planning_receipt=dict(requested_model='native-browser-fixture',calls=calls),
+                specialist_receipts=[],max_output_tokens_per_planning_call=4096,
+                planning_cost_status='unknown_not_provider_reported',charge_status='provider_billing_not_verified')
+            if mode=='invalid':result['challenges']['questions'][0]['disagreement']=False
+            if mode=='invalid_hash':result['receipt_sha256']='f'*64
+            return json.dumps(result,sort_keys=True)
         case,work=make(1);other,other_work=make(2);uncertain_case,uncertain_work=make(3)
         specialist,specialist_work=make(4,comparison)
         empty,empty_work=make(5,lambda receipt,case:comparison(receipt,case,'empty'))
         invalid,invalid_work=make(6,lambda receipt,case:comparison(receipt,case,'invalid'))
+        coordinated,coordinated_work=make(7,coordinated_output)
+        partial_plan,partial_plan_work=make(8,lambda receipt,case:coordinated_output(receipt,case,'partial'))
+        failed_plan,failed_plan_work=make(9,lambda receipt,case:coordinated_output(receipt,case,'failed'))
+        invalid_plan,invalid_plan_work=make(10,lambda receipt,case:coordinated_output(receipt,case,'invalid'))
+        initial_failure,initial_failure_work=make(11,lambda receipt,case:coordinated_output(receipt,case,'failed_initial'))
+        invalid_hash,invalid_hash_work=make(12,lambda receipt,case:coordinated_output(receipt,case,'invalid_hash'))
         code='''import os,uvicorn
 from pathlib import Path
 from eightball.api import make_app
@@ -196,6 +231,46 @@ uvicorn.run(make_app(s,'unused-local-token-with-32-characters',agency_access=a),
                     open_review(specialist,specialist_work);login();registry.revoke('read2')
                     page.get_by_role('button',name='Refresh review').click();expect(page.locator('#review-login')).to_be_visible()
                     check('revocation clears specialist material as well as originals',panel.count()==0 and page.locator('.review-originals').count()==0)
+                    grant('read3',Operation.READ)
+                    open_review(coordinated,coordinated_work);login()
+                    result=page.locator('.coordinated-result');expect(result).to_be_visible()
+                    expect(result).to_contain_text('Method completed — quality not approved')
+                    expect(result).to_contain_text('Different answers — unresolved')
+                    check('coordinated originals challenges and revision stay separate',result.locator('.coordinated-proposal').count()==2 and result.locator('.specialist-answers li').count()==3)
+                    before=store.audit(coordinated.id);writes.clear()
+                    check('coordinated presentation has no action controls',result.locator('button,input,textarea').count()==0 and page.locator('#review-rationale').is_disabled())
+                    result.get_by_text('Planning source and transport details',exact=True).click()
+                    expect(result).to_contain_text('Planning cost is unknown, not free')
+                    expect(result).to_contain_text('c'*64)
+                    check('source and transport hashes and cost boundaries are visible',digest(coordination_spec().model_dump(mode='json')) in result.inner_text())
+                    result.locator('.coordinated-proposal details summary').first.focus();page.keyboard.press('Enter')
+                    check('keyboard reveals proposed actions without applying them',result.locator('.coordinated-proposal details').first.get_attribute('open') is not None)
+                    check('coordinated source and model markup remains inert',result.locator('img').count()==0 and page.evaluate('window.injected===undefined'))
+                    check('coordinated details have unique accessible ids',page.evaluate('new Set([...document.querySelectorAll("[id]")].map(e=>e.id)).size===document.querySelectorAll("[id]").length'))
+                    for width in (320,390,768):
+                        page.set_viewport_size({'width':width,'height':1100})
+                        check('expanded coordinated result fits viewport '+str(width),page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'))
+                    page.set_viewport_size({'width':390,'height':1000});page.screenshot(path=str(OUT/'8BALL-Coordinated-Result-Mobile.png'),full_page=True)
+                    page.set_viewport_size({'width':1500,'height':1100});page.screenshot(path=str(OUT/'8BALL-Coordinated-Result.png'),full_page=True)
+                    check('coordinated inspection performs no writes',writes==[] and store.audit(coordinated.id)==before)
+                    store.change(coordinated.id,Command(event_id='coordination-stale',expected_revision=0,kind='metadata',payload={'budget':444}))
+                    page.get_by_role('button',name='Refresh review').click();expect(result).to_contain_text('Historical result for case revision 0; current revision 1')
+                    check('coordinated stale result is historical not current',page.locator('#review-rationale').is_disabled())
+                    open_review(partial_plan,partial_plan_work);login();expect(result).to_contain_text('specialist_review_incomplete')
+                    expect(result).to_contain_text('1 of 3 selected models answered')
+                    check('incomplete panel does not invent revision or agreement','No validated candidate retained' in result.locator('.coordinated-proposal').nth(1).inner_text() and result.locator('.specialist-answers').inner_text().count('No validated answer')==2)
+                    open_review(failed_plan,failed_plan_work);login();expect(result).to_contain_text('invalid_revision_draft')
+                    check('rejected revision retains original challenge and diagnostic',result.locator('.coordinated-proposal').first.get_by_text('Conditional approaches',exact=True).count()==1 and result.locator('.coordinated-failure').count()==1 and 'string_too_long' in result.inner_text())
+                    open_review(invalid_plan,invalid_plan_work);login();expect(page.locator('#app')).to_contain_text('Coordinated result could not be validated')
+                    check('invalid coordinated summary leaves only original output',result.count()==0 and '"disagreement": false' in page.get_by_label('Original processing output',exact=True).inner_text())
+                    open_review(initial_failure,initial_failure_work);login();expect(result).to_contain_text('invalid_initial_draft')
+                    check('failed proposer invents neither original nor challenge',result.locator('.coordinated-proposal').first.inner_text().count('No validated candidate retained')==1 and 'No validated challenge panel retained' in result.inner_text() and result.locator('.specialist-comparison').count()==0)
+                    open_review(invalid_hash,invalid_hash_work);login();expect(page.locator('#app')).to_contain_text('Coordinated result could not be validated')
+                    check('invalid source hash withholds stages not raw result',result.count()==0 and 'f'*64 in page.get_by_label('Original processing output',exact=True).inner_text())
+                    open_review(coordinated,coordinated_work);login();page.get_by_role('button',name='Lock review').click()
+                    check('lock clears every coordinated stage',result.count()==0 and page.locator('.review-originals').count()==0)
+                    login();registry.revoke('read3');page.get_by_role('button',name='Refresh review').click();expect(page.locator('#review-login')).to_be_visible()
+                    check('revocation clears coordinated stages and raw output',result.count()==0 and page.locator('.review-originals').count()==0)
                     check('no browser runtime errors',not errors)
                     report={'checks_passed':len(checks),'checks':checks,'network':'Native loopback HTTP','model_inference_tested':False,'independent_review_performed':False,'human_accessibility_tested':False,'errors':errors,'limits':['Test-generated signed JWTs, not actual OIDC browser sign-in.','Native automated review is not genuine human acceptance.']}
                     (OUT/'browser-event-review-report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))

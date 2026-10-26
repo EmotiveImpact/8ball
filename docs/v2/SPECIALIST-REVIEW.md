@@ -85,3 +85,7 @@ question design limits what they can challenge. Controlled software checks do
 not establish better plans, predictive accuracy or operator usefulness. A frozen
 fictional single-model/panel/coordinated diagnostic and independent human-quality
 review remain distinct follow-ups.
+
+## Current read-only coordinated presentation
+
+The preceding backend-only presentation limitation is superseded by the coordinated result card in authenticated incoming-change review. It separately shows the original proposal, every independent choice/distribution, incomplete or failed stages, revision and advisory synthesis. It never applies a graph or authorises action. The server recompiles retained drafts, reconstructs comparisons and validates stage/source bindings; invalid summaries remain raw-only. Current read/source-policy gates and historical revision labels apply to every stage. Canonical serialization is handled using hash-checked raw provider JSON where available, not output repair. See [implementation and limitations](../delivery/sessions/2026-10-26-coordinated-result-ui.md). Native scripted verification is not independent quality or human acceptance.

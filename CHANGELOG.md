@@ -4,6 +4,47 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 coordinated result presentation · Read original plans, independent challenges and separate revisions without applying them
+
+2026-10-26 · `local_unreleased`
+
+Read-only incoming-review presentation reconstructs valid drafts and comparisons, preserves failed/missing stages, and checks source/stage bindings before showing typed results.
+
+### Added
+
+- Coordinated original/challenge/revision/diagnostic/synthesis sections with exact target quotes, conditional proposed work, unresolved differences, costs and hashes.
+- Offline projection coverage for all four actual v4 results, malformed records and canonical key reordering; native read-only, stale and revocation tests.
+
+### Changed
+
+- Existing specialist rendering reused for independent challenges; answer distributions remain explicitly uncalibrated.
+- Shared namespace and challenge-input construction extracted without changing inference behavior.
+
+### Verification
+
+- 294 focused Python checks passed; 57 native event-review browser checks passed.
+- Python compilation and changed JS syntax passed; full native/package acceptance pending.
+
+### Limitations
+
+- No new model inference, repair, retry, automatic action or case amendment.
+- Raw output retained when integrity cannot be reconstructed; hashes are not independent attestations.
+- No model-quality, human accessibility, operator benefit, production, merge/deployment/release approval.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-339: canonical object ordering is not the original byte-bound challenge input.
+- Risk: A polished result could be mistaken for resolved objections, permission or operational sufficiency.
+- Architecture: Recompile retained drafts and reconstruct comparisons locally; verify raw/semantic/input bindings; keep current authority and explicit human commands.
+- Roadmap decision: existing_task B02-11 presentation only; keep acceptance partial.
+Registered discoveries: EM-339.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-coordinated-result-ui.md](docs/delivery/sessions/2026-10-26-coordinated-result-ui.md), [eightball/v2/coordinated_results.py](eightball/v2/coordinated_results.py), [web/v2/event-review.js](web/v2/event-review.js), [tests/browser_event_review.py](tests/browser_event_review.py).
+
 ## 0.2.0-alpha.8 coordinated v4 diagnostic · Retain one complete Opus method and three failed proposer attempts
 
 2026-10-26 · `local_unreleased`

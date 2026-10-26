@@ -1,3 +1,11 @@
+# Current local work: read-only coordinated results
+
+Base `69c482569bf17d558f4b730c4ad4d24ca8734213`, branch `devin/1792969169-roadmap-integrated`. Typed original/challenge/revision/failure/synthesis reader implemented; 294 focused checks, 57 native event-review checks and compilation/changed-JS syntax pass. Full native/package acceptance pending. [Record](sessions/2026-10-26-coordinated-result-ui.md). No new inference; B02-11 partial; no merge/deployment/release. EM-339 records semantic-vs-byte input integrity.
+
+Next commit local source and run full native acceptance, inspect/bind evidence, publish PR #6. Older evidence remains tied only to its exact source.
+
+---
+
 # Current actual-provider checkpoint: one complete method, set partial
 
 Fresh v4 run on `5aacbca91c3909031aec974600e5ccaff15211f7`: 10 requests; Opus completed initial → three independent challenges → revision/synthesis. Clef minority insufficiency remains unresolved. Sonnet/GLM draft failures and DeepSeek null-content length stop retained. All case audits/source unchanged. Planning unpriced; 39,585 reported specialist nano-USD is not an invoice/cap. [Record](sessions/2026-10-26-coordinated-draft-v4-live.md), [bound receipt](../evidence/coordinated-draft-v4-live-2026-10-26.json).

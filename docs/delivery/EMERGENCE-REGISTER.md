@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **238 recorded discoveries.**
+Last review: 2026-10-26. **239 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -4232,3 +4232,20 @@ DeepSeek returned HTTP 200 with its selected model label, length stop, reported 
 **Decision history:**
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 failure visibility and bounded provider evaluation; no automatic budget change, new required scope or acceptance promotion.
+
+### [ ] EM-339: Semantic JSON equality is not byte-identical challenge provenance
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-26. **Origin:** Read-only coordinated-result reconstruction.
+
+Canonical retained reports reorder nested objects. The challenge hash binds serialized input, so reconstructing it solely from reordered trace objects rejects intact results. Verified raw provider JSON retains the original object order; semantic and raw hashes must both match before using it.
+
+**Product implication:** Use shared input construction and verified retained raw content without repairing output or relaxing bindings. Withhold typed presentation when exact provenance cannot be reconstructed; keep originals. This integrity check is not independent provider attestation.
+
+**Roadmap links:** `B02-11` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-26-coordinated-result-ui.md`, `eightball/v2/coordinated_results.py`, `tests/test_coordinated_planning.py`.
+
+**Decision history:**
+
+- 2026-10-26 · adopted · integration: existing_task B02-11 readable source-bound reports; no new required scope or acceptance gate promotion.

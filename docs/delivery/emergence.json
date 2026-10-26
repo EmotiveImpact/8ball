@@ -7632,6 +7632,33 @@
           "reason": "existing_task B02-11 failure visibility and bounded provider evaluation; no automatic budget change, new required scope or acceptance promotion."
         }
       ]
+    },
+    {
+      "id": "EM-339",
+      "title": "Semantic JSON equality is not byte-identical challenge provenance",
+      "origin": "Read-only coordinated-result reconstruction",
+      "first_seen": "2026-10-26",
+      "evidence_level": "observed_in_build",
+      "observation": "Canonical retained reports reorder nested objects. The challenge hash binds serialized input, so reconstructing it solely from reordered trace objects rejects intact results. Verified raw provider JSON retains the original object order; semantic and raw hashes must both match before using it.",
+      "product_implication": "Use shared input construction and verified retained raw content without repairing output or relaxing bindings. Withhold typed presentation when exact provenance cannot be reconstructed; keep originals. This integrity check is not independent provider attestation.",
+      "task_ids": [
+        "B02-11"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-26-coordinated-result-ui.md",
+        "eightball/v2/coordinated_results.py",
+        "tests/test_coordinated_planning.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-26",
+          "decision": "adopted",
+          "by": "integration",
+          "reason": "existing_task B02-11 readable source-bound reports; no new required scope or acceptance gate promotion."
+        }
+      ]
     }
   ]
 }

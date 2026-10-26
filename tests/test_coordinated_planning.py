@@ -231,6 +231,143 @@ def retained(d):
     return json.loads(status(d)['work']['result'])
 
 
+def presentation(d):
+    return d['reviews'].view(work_id=d['work_id'], case_id=d['case'].id, reader=d['operator'])
+
+
+def replace_result(d, value, **options):
+    raw = json.dumps(value, **options)
+    with d['store'].connection() as db:
+        db.execute('UPDATE event_work SET result=? WHERE id=?', (raw, d['work_id']))
+        db.commit()
+    return raw
+
+
+def test_coordinated_presentation_recompiles_read_only_even_after_key_sorting(coordinated):
+    d, _, calls, _, _, _ = coordinated
+    before = d['store'].audit(d['case'].id)
+    process(d)
+    original = retained(d)
+    for sorted_keys in (False, True):
+        raw = replace_result(d, original, sort_keys=sorted_keys)
+        view = presentation(d)
+        p = view['coordinated_planning']
+        assert p['available'] and p['initial']['frame'] == original['initial']['trace']['frame']
+        assert p['revision']['routes'] == original['revision']['trace']['routes']
+        assert p['challenges']['questions'][0]['disagreement']
+        assert p['final_synthesis']['selected_route'] is None
+        assert p['planning_cost_status'] == 'unknown_not_provider_reported'
+        assert len(p['planning_calls']) == 4 and all('raw_content' not in c for c in p['planning_calls'])
+        assert view['original_result'] == raw
+    assert d['store'].audit(d['case'].id) == before and len(calls) == 7
+
+
+@pytest.mark.parametrize('index', range(4))
+def test_actual_v4_reports_project_with_their_retained_receipts_offline(index):
+    from endstate.events import EventReceipt
+    from eightball.v2.coordinated_results import project_coordinated
+    path = Path(__file__).resolve().parents[1] / 'docs/evidence/coordinated-draft-v4-live-2026-10-26.json.xz'
+    files = json.loads(lzma.decompress(path.read_bytes()))['files']
+    row = json.loads(files['report.json'])['results'][index]
+    admission = json.loads(files[row['model']+'/admission.json'])
+    receipt = EventReceipt.model_validate(admission['receipt'])
+    result = row['result']
+    projected = project_coordinated(json.dumps(result, sort_keys=True), receipt, admission['case_id'], 0)
+    assert projected['available'] and projected['stop_reason'] == result['stop_reason']
+    assert bool(projected['initial']) == bool(projected['revision']) == (index == 1)
+    if index == 1:
+        assert projected['challenges']['questions'][0]['disagreement']
+        assert projected['challenges']['questions'][0]['choices']['clef-flash'] == 'insufficient'
+
+
+@pytest.mark.parametrize('path,value', [
+    (['version'], 'unknown'), (['base_revision'], False), (['case_id'], 'another-case'),
+    (['receipt_sha256'], '0'*64), (['input_sha256'], '0'*64), (['spec_sha256'], '0'*64),
+    (['facts_attested'], True), (['execution_authorized'], True), (['advisory_only'], False),
+    (['predictive_quality_approved'], True), (['automatic_retries'], True),
+    (['planning_cost_status'], 'free'), (['generation_attempts'], True),
+    (['stop_reason'], 'approved'), (['phase'], 'challenge'),
+    (['initial','compiled','graph','actions',0,'cost'], 987),
+    (['initial','trace','prompt_version'], 'unknown'),
+    (['initial','trace','frame','readiness','confirmation'], 'x'*181),
+    (['revision','model'], 'changed-model'),
+    (['challenges','input_sha256'], '0'*64), (['challenges','questions',0,'disagreement'], False),
+    (['challenges','answered_models'], 0), (['challenges','stop_reason'], 'time_budget'),
+    (['final_synthesis','objections_resolved'], True), (['final_synthesis','selected_route'], 'a-route'),
+    (['planning_receipt','calls',0,'raw_content_sha256'], '0'*64),
+    (['planning_receipt','calls',0,'raw_content'], '{}'),
+    (['planning_receipt','calls',0,'response_body_sha256'], 'not-a-hash'),
+])
+def test_coordinated_inconsistency_withholds_typed_stages_not_original(coordinated, path, value):
+    d, _, _, _, _, _ = coordinated
+    process(d)
+    changed = retained(d)
+    cursor = changed
+    for key in path[:-1]:
+        cursor = cursor[key]
+    cursor[path[-1]] = value
+    raw = replace_result(d, changed)
+    view = presentation(d)
+    assert view['coordinated_planning'] == {'available': False}
+    assert view['original_result'] == raw and d['store'].get(d['case'].id).revision == 0
+
+
+@pytest.mark.parametrize('at_call', [1, 6])
+def test_coordinated_failed_draft_keeps_other_stages_separate(coordinated, at_call):
+    d, _, calls, _, transform, _ = coordinated
+    def overlength(value, count, planning):
+        if count == at_call:
+            output = json.loads(value['choices'][0]['message']['content'])
+            output['readiness']['confirmation'] = 'x'*181
+            value['choices'][0]['message']['content'] = json.dumps(output)
+        return value
+    transform[0] = overlength
+    process(d)
+    p = presentation(d)['coordinated_planning']
+    assert p['available'] and p['failed_draft']['failed_stage'] == 'frame'
+    assert p['revision'] is None and p['final_synthesis'] is None
+    assert bool(p['initial']) == bool(p['challenges']) == (at_call == 6)
+    assert len(calls) == at_call
+
+
+def test_coordinated_unknown_cost_panel_is_readable_but_has_no_revision(coordinated):
+    d, _, calls, _, transform, _ = coordinated
+    def unknown(value, count, planning):
+        if count == 3:
+            value['usage'].pop('cost_nano_usd')
+        return value
+    transform[0] = unknown
+    process(d)
+    p = presentation(d)['coordinated_planning']
+    assert p['available'] and p['stop_reason'] == 'specialist_review_incomplete'
+    assert p['challenges']['unknown_cost_attempts'] == [MODELS[0]]
+    assert p['challenges']['not_started_models'] == MODELS[1:]
+    assert p['revision'] is None and len(calls) == 3
+
+
+def test_coordinated_late_deadline_preserves_revision_without_synthesis(coordinated):
+    d, processor, _, after, _, ticks = coordinated
+    after[0] = lambda count: ticks.__setitem__(0, processor.spec.max_seconds) if count == 7 else None
+    process(d)
+    p = presentation(d)['coordinated_planning']
+    assert p['available'] and p['stop_reason'] == 'time_budget'
+    assert p['revision'] and p['final_synthesis'] is None
+
+
+def test_coordinated_historical_revision_and_revocation_boundary(coordinated):
+    d, _, _, _, _, _ = coordinated
+    process(d)
+    d['store'].change(d['case'].id, Command(event_id='after-coordination', expected_revision=0,
+        kind='metadata', payload={'budget': 3}))
+    view = presentation(d)
+    assert view['coordinated_planning']['available']
+    assert view['coordinated_planning']['base_revision'] == 0 and view['current_revision'] == 1
+    assert not view['reviewable']
+    d['policy_state']['allowed'] = False
+    with pytest.raises(PermissionError):
+        presentation(d)
+
+
 def test_real_host_and_transports_preserve_the_full_advisory_method(coordinated):
     d, _, calls, _, _, _ = coordinated
     before = d['store'].audit(d['case'].id)

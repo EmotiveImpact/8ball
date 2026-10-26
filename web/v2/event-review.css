@@ -1,5 +1,12 @@
 .event-review .specialist-comparison{padding:22px;margin:24px 0;overflow-wrap:anywhere}
 .event-review .specialist-question{margin:24px 0}
+.event-review .coordinated-result{padding:22px;margin:24px 0;min-width:0;overflow-wrap:anywhere}
+.event-review .coordinated-result p{line-height:1.6;margin:12px 0}
+.event-review .coordinated-proposal,.event-review .coordinated-failure{margin:24px 0;padding-top:20px;border-top:1px solid var(--line)}
+.event-review .coordinated-result summary{cursor:pointer;padding:14px 0;font-weight:600}
+.event-review .coordinated-result ol{padding-left:22px}
+.event-review .coordinated-result li{margin:16px 0}
+.event-review .coordinated-result blockquote{border-left:2px solid var(--line);padding-left:12px;margin:12px 0}
 .event-review .specialist-answers{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:18px}
 .event-review .specialist-answers li{min-width:0;border:1px solid var(--line);border-radius:8px;padding:16px}
 .event-review .specialist-comparison p{line-height:1.6;margin:10px 0}

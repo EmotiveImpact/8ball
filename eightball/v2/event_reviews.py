@@ -20,6 +20,7 @@ from ..store import Conflict, canonical, digest
 from .commands import Command, apply
 from .event_outbox import EventOutbox
 from .authoring import GraphPreview, preview_graph
+from .coordinated_results import project_coordinated
 
 
 class EventReviews:
@@ -78,6 +79,9 @@ class EventReviews:
                 comparison = self._specialist_projection(work['result'], receipt, case_id, work['base_revision'])
                 if comparison is not None:
                     result['specialist_review'] = comparison
+                coordinated = project_coordinated(work['result'], receipt, case_id, work['base_revision'])
+                if coordinated is not None:
+                    result['coordinated_planning'] = coordinated
             self.outbox.authorize(db, case_id, reader)
             return result
 
