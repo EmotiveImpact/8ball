@@ -49,3 +49,5 @@ The test now verifies the warning counter changes from 0 to 2 and waits for exac
 ### Installed-suite budget correction
 
 The third inspected run at `7e213d0` passed 2,096 source tests (121.59 seconds) and all 475 native browser checks. Installed-wheel regression alone timed out at its inherited 120-second build-command cap. The failed report/logs are retained as `sonnet55-lifecycle-software-package-timeout-2026-10-26`. Only the full installed regression call now gets 600 seconds; wheel build/install/smoke retain 120 seconds. Four tests confirm bounded defaults/override and failure/timeout propagation with no retry. **EM-317** records this verification-budget distinction. Full native acceptance is rerunning; no model calls are repeated.
+
+The first budget-correction run was deliberately stopped when review found its enclosing package step still inherited 180 seconds. The unmodified partial report is retained as `sonnet55-lifecycle-software-interrupted-2026-10-26.json.xz` and is not a pass. The enclosing package step now has 900 seconds for build/install/smoke plus the 600-second regression; short command limits remain unchanged.

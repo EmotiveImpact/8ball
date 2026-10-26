@@ -22,7 +22,7 @@
       ],
       "fixed": [
         "Source clarity native test waits for the reconsideration counter, not a pre-existing unrelated deadline count. Assertions, real HTTP and production code remain unchanged.",
-        "Keep 120-second build/install command limits but allow 600 seconds for the complete installed-wheel regression suite; timeout and assertion failures still fail without retry."
+        "Keep 120-second build/install command limits but allow 600 seconds for the complete installed-wheel regression suite; timeout and assertion failures still fail without retry. The enclosing package step gets 900 seconds for packaging plus regression."
       ],
       "verification": [
         "At a312837: five actual Sonnet generation requests passed four frozen fixtures. Source-matched cancel/stale/restart observations passed all eight checks each, with three local first-call admissions and no further stages or published proposals.",
@@ -30,7 +30,8 @@
         "Initial focused run: 323 passed and one delivery guard failed because the new checkpoint replaced reserved next-action lineage. Restore the full original coordination record and append the checkpoint; retain the failed output.",
         "Two failed full runs retained: unqualified invocation omitted the documented Node PATH; corrected invocation passed source/package checks but exposed an asynchronous grounding-test wait matching the wrong counter.",
         "After the targeted wait correction: 74 source-clarity tests and 27 native browser checks passed. Full source-bound rerun follows.",
-        "A third source-stable native run passed 2,096 source tests and all 475 browser checks, but the installed suite exceeded its inherited 120-second command cap. Retained before correction; four new bounded-command/failure tests pass."
+        "A third source-stable native run passed 2,096 source tests and all 475 browser checks, but the installed suite exceeded its inherited 120-second command cap. Retained before correction; four new bounded-command/failure tests pass.",
+        "The first budget-fix verification was deliberately stopped after review found the enclosing package watchdog still used 180 seconds; its partial report is retained, not a pass. The enclosing bound is now 900 seconds."
       ],
       "limitations": [
         "Remote request receipt/completion/cancellation/billing remain unknown; no provider-side cancellation or zero-charge claim.",
@@ -46,7 +47,9 @@
         "tests/browser_grounding.py",
         "docs/evidence/sonnet55-lifecycle-software-package-timeout-2026-10-26.json.xz",
         "scripts/build_endstate.py",
-        "tests/test_build_endstate.py"
+        "tests/test_build_endstate.py",
+        "docs/evidence/sonnet55-lifecycle-software-interrupted-2026-10-26.json.xz",
+        "scripts/acceptance.py"
       ],
       "emergence_review": {
         "discoveries": [

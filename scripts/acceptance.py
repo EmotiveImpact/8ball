@@ -285,7 +285,7 @@ def run(mode='native',base=None,root_output=None):
         syntax=step('javascript',[sys.executable,'-c',
              "from pathlib import Path;import subprocess;files=[Path('web/app.js'),*sorted(Path('web/v2').glob('*.js'))];[subprocess.run(['node','--check',str(p)],check=True) for p in files];print(len(files),'modules checked')"])
         step('structural-fixtures',[sys.executable,'evals/plan_review_bench.py'])
-        step('endstate-package',[sys.executable,'scripts/build_endstate.py','--regressions','--output',str(out/'package')])
+        step('endstate-package',[sys.executable,'scripts/build_endstate.py','--regressions','--output',str(out/'package')],timeout=900)
         step('schemas',[sys.executable,'scripts/export_endstate_schemas.py','--output',str(out/'schemas')])
         if mode!='code':
             ensure_port_available()
