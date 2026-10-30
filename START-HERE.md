@@ -1,3 +1,11 @@
+# Evaluation reliability follow-up, 30 October 2026
+
+Draft [PR10](https://github.com/EmotiveImpact/8ball/pull/10) builds on merged security base `825ad66`; it is not merged or released. Tested code `db6c5b6` passed **1367 source tests, 1367 installed-engine regressions and 399 native browser checks across all eleven suites**, with valid exact-source/artifact inspection before receipt-only edits. [Source-bound receipt](docs/evidence/evaluation-reliability-2026-10-30.json); [session and complete Emergence Review](docs/delivery/sessions/2026-10-30-evaluation-reliability.md). The first installed-suite failure and its matching failed CI are retained.
+
+The patch repairs report classification/finalization, keeps portable application identity plus full checkout provenance, tests a real local process restart, adds explicitly selected native Anthropic Messages, and distinguishes invalid provider settings. No original gate is promoted. Actual model calls are zero: secure runtime key is missing, and the Cloudroom secure form is pending. After secure setup and budget confirmation, run the unchanged generation fixtures once before matching lifecycle/native journey and genuine independent/human acceptance. All previous source, fixtures and discoveries remain; deferred research and production work remain separate.
+
+---
+
 # Current owner request: consolidate the completed build
 
 Combined source `a9254e6087ef606d581d626bfcda9d7e555c857e` passed 1,267 source

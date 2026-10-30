@@ -1938,6 +1938,7 @@ A final source-inspection failure can overwrite interrupted/aborted status or pr
 - 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
 - 2026-10-30 · adopted · Codex implementation: Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate.
 - 2026-10-30 · adopted · Codex verification: A cleanup exception can also hide a pending interruption. Retain cleanup_error separately, preserve the original exception and checkpoint; add HTTP 401/402/429 fast-failure regressions.
+- 2026-10-30 · adopted · Codex native acceptance: Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance.
 
 ### [ ] EM-107: Portable source identity needs retained checkout observations
 
@@ -1956,6 +1957,7 @@ The declared research pins are application inputs, while checkout availability i
 
 - 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
 - 2026-10-30 · adopted · Codex implementation: Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate.
+- 2026-10-30 · adopted · Codex native acceptance: Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance.
 
 ### [ ] EM-108: Native provider schema support must be explicit
 
@@ -1974,6 +1976,7 @@ Anthropic documents that its compatibility layer ignores response_format; native
 
 - 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
 - 2026-10-30 · adopted · Codex implementation: Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate.
+- 2026-10-30 · adopted · Codex native acceptance: Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance.
 
 ### [ ] EM-109: Manager recreation is not process restart coverage
 
@@ -1993,6 +1996,7 @@ The existing lifecycle integration replaces the process with an in-process serve
 - 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
 - 2026-10-30 · adopted · Codex implementation: Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate.
 - 2026-10-30 · adopted · Codex verification: Real process/HTTP test passed. One overlapping focused/browser run hit the occupied-port guard; retain that failure and serialize subsequent checks, without stopping unrelated services.
+- 2026-10-30 · adopted · Codex native acceptance: Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance.
 
 ### [ ] EM-110: Invalid provider settings need a distinct operator state
 
@@ -2011,6 +2015,7 @@ The existing Intelligence card presents invalid configuration as not configured 
 
 - 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
 - 2026-10-30 · adopted · Codex implementation: Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate.
+- 2026-10-30 · adopted · Codex native acceptance: Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance.
 
 ### [ ] EM-111: IDE attachments are not portable application source
 
@@ -2028,6 +2033,7 @@ Cloudroom places conversation attachments inside .cloudroom in the checkout. The
 **Decision history:**
 
 - 2026-10-30 · adopted · Codex implementation: existing_task: exclude .cloudroom alongside existing virtualenv/generated-output exclusions; test that application files and research metadata remain fingerprinted.
+- 2026-10-30 · adopted · Codex native acceptance: Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance.
 
 ### [ ] EM-112: Source-test imports can fail under installed-package isolation
 
@@ -2045,3 +2051,4 @@ All 1367 source tests and 399 native browser checks passed, but the installed-wh
 **Decision history:**
 
 - 2026-10-30 · adopted · Codex verification: existing_task: make this test fixture self-contained, retain the failed source-bound run and preserve importlib isolation; rerun native acceptance.
+- 2026-10-30 · adopted · Codex native acceptance: Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance.

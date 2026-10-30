@@ -6,7 +6,7 @@ This is product history, not the case decision trail. A build entry is not evide
 
 ## 0.2.0-alpha.8 · Evaluation reliability and explicit Anthropic protocol
 
-2026-10-30 · `local_unreleased`
+2026-10-30 · `pushed_unreleased`
 
 Preserve failed/interrupted evaluation outcomes and source provenance, add real process-restart coverage and explicitly selected native Anthropic structured output, and distinguish invalid provider configuration.
 
@@ -29,12 +29,13 @@ Preserve failed/interrupted evaluation outcomes and source provenance, add real 
 
 ### Verification
 
-- Nine new reporting regressions failed against the original implementation before fixes; original failure log retained.
-- 24 native-protocol/process tests passed using controlled responses; no actual inference.
-- Expanded native Development browser journey passed, including real server reconfiguration and permission-reset checks.
-- Integrated native acceptance pending at this implementation checkpoint.
-- Final focused set passed 311 checks with one existing warning. Native Development journey passed 30 checks; three missing-key actual-provider preflights were blocked with zero model calls.
-- First integrated native run at dff9412 passed 1367 source tests and all 399 checks across eleven native browser suites, but installed regressions failed 1/1367 on a test-only import. Inspection valid/run_status=failed; failure retained and self-contained fixture correction prepared.
+- Nine new reporting regressions failed before repairs; exact original failure output is retained in the repository.
+- 311 focused checks passed with one existing warning; the native Development journey passed 30 checks, included in the cumulative browser total.
+- At db6c5b69f05cf3fabd3930dc22fd7e2df9af617a: 1367 source tests and 1367 installed-ENDSTATE regressions passed, with zero failures/errors/skips; all 399 checks across eleven native browser suites passed. All 21 integrated steps passed.
+- Native source/artifact inspection valid=true/run_status=passed before final documentation-only receipts; source stayed unchanged during the run. Python compilation, all 17 browser module syntax checks, delivery/history validators and 8/8 structural fixtures passed.
+- The first full native run and CI 41077459582 failed 1/1367 installed tests on a new test-only import; both retained and inspected against their exact source. The self-contained fixture passes isolated importlib mode (37 checks), followed by fresh full native acceptance.
+- Corrected code GitHub CI at receipt preparation: 41078253660 success, 41078253666 success. PR10 records receipt-head CI; no pending result is called passed.
+- Actual-provider generation/lifecycle/native-journey preflights were blocked by the missing secure runtime key (exit 2 each), with zero model calls.
 
 ### Limitations
 
@@ -48,6 +49,7 @@ Preserve failed/interrupted evaluation outcomes and source provenance, add real 
 
 - Discovery: Report outcome, evidence integrity, source identity and environment observations need separate handling.
 - Discovery: IDE conversation attachments were unintentionally part of source identity; real process recovery requires a real process/HTTP test.
+- Discovery: Source-suite success can conceal an import-mode-dependent test failure in installed-wheel verification; preserve isolation and the failed evidence.
 - Risk: A passing controlled contract does not establish paid-provider compatibility or semantic quality.
 - Architecture: Keep provider I/O and evaluation receipts in 8BALL; preserve ENDSTATE and all approval boundaries.
 - Roadmap decision: Existing-task repairs only; no acceptance status or required scope promotion.

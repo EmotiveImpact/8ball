@@ -1,3 +1,11 @@
+# Evaluation reliability follow-up, 30 October 2026
+
+Draft [PR10](https://github.com/EmotiveImpact/8ball/pull/10) builds on merged security base `825ad66`; it is not merged or released. Tested code `db6c5b6` passed **1367 source tests, 1367 installed-engine regressions and 399 native browser checks across all eleven suites**, with valid exact-source/artifact inspection before receipt-only edits. [Source-bound receipt](../evidence/evaluation-reliability-2026-10-30.json); [session and complete Emergence Review](sessions/2026-10-30-evaluation-reliability.md). The first installed-suite failure and its matching failed CI are retained.
+
+The patch repairs report classification/finalization, keeps portable application identity plus full checkout provenance, tests a real local process restart, adds explicitly selected native Anthropic Messages, and distinguishes invalid provider settings. No original gate is promoted. Actual model calls are zero: secure runtime key is missing, and the Cloudroom secure form is pending. After secure setup and budget confirmation, run the unchanged generation fixtures once before matching lifecycle/native journey and genuine independent/human acceptance. All previous source, fixtures and discoveries remain; deferred research and production work remain separate.
+
+---
+
 # Current security-fix handoff, 30 October 2026
 
 The three reviewed findings are fixed on `room/check-repo-with-three-sub-agents-pj2t`, based on `1038291bf219d04e7fe4a6a01c332d1ac277fdba`. Tested code `bb881f278eb24b97732382a83a6084a22d7e1983` passed **1,324 source tests, 1,324 installed-ENDSTATE regressions and all 391 checks across eleven native browser suites**. Exact-source/artifact inspection was valid/passed before final receipt-only edits. The independent security reviewer found no surviving bypass/regression in the three fixes. [Session and ER-01–15](sessions/2026-10-30-security-fixes.md), [receipt with retained failures](../evidence/security-fixes-2026-10-30.json), [draft PR8](https://github.com/EmotiveImpact/8ball/pull/8).
