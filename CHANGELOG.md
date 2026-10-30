@@ -4,6 +4,7 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+<<<<<<< HEAD
 ## 0.2.0-alpha.8 · Evaluation reliability and explicit Anthropic protocol
 
 2026-10-30 · `pushed_unreleased`
@@ -42,11 +43,43 @@ Preserve failed/interrupted evaluation outcomes and source provenance, add real 
 - Actual provider credentials are absent in the cloud and Mac login environments. Secure key request is separate; no actual model result is claimed.
 - Original actual-model, independent professional, human accessibility and release gates remain open.
 - Generic endpoint/model-name restrictions, Hugging Face proxy policy and deferred hosted-compression review remain explicit; no deployment or main merge.
+=======
+## 0.2.0-alpha.8 · Nested prerequisite courses remain readable
+
+2026-10-30 · `pushed_unreleased`
+
+Reassess selected nested prerequisite branches without exceeding expression child limits or changing their meaning.
+
+### Added
+
+- Course boundary regressions for 8, 9, 16 and 63 signed prerequisites, exact OR-branch retention, and persisted lifecycle behavior.
+
+### Changed
+
+- Recorded signed requirements are grouped into bounded AND nodes inside the read-only course calculation.
+
+### Fixed
+
+- A successfully selected valid nested course could return HTTP 422 on subsequent inspection.
+
+### Verification
+
+- Original four regression failures and passing 8-child control retained as exact emitted output in the evidence JSON.
+- 137 focused course/kernel/result checks and 37 native Chosen Course checks passed; these overlap the integrated totals.
+- 1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites passed; all 21 acceptance steps passed. Exact-source/artifact inspection valid before final receipt edits.
+- Tested code 84994b3b4aeca1f925bd63cbe74ceb945e91ad1c; source and artifact inspection valid/passed before final receipt-only edits. PR9 records final-head CI and merge.
+
+### Limitations
+
+- Optional B03-07/ES02-06 remain partial with their original prerequisites and independent/operator acceptance.
+- No model inference, production deployment or release. Hosted-compression candidate EM-103 is unchanged.
+>>>>>>> origin/main
 
 ### Emergence review
 
 **What did this sprint reveal that we had not properly seen before?**
 
+<<<<<<< HEAD
 - Discovery: Report outcome, evidence integrity, source identity and environment observations need separate handling.
 - Discovery: IDE conversation attachments were unintentionally part of source identity; real process recovery requires a real process/HTTP test.
 - Discovery: Source-suite success can conceal an import-mode-dependent test failure in installed-wheel verification; preserve isolation and the failed evidence.
@@ -58,6 +91,17 @@ Registered discoveries: EM-106, EM-107, EM-108, EM-109, EM-110, EM-111, EM-112.
 Roadmap items: `B02-09`, `B02-12`, `B02-15`, `ES03-09`, `DOC-07`.
 
 Evidence: [docs/delivery/sessions/2026-10-30-evaluation-reliability.md](docs/delivery/sessions/2026-10-30-evaluation-reliability.md), [docs/evidence/evaluation-reliability-2026-10-30.json](docs/evidence/evaluation-reliability-2026-10-30.json).
+=======
+- Discovery: EM-102: flattening a valid nested expression violated an internal child limit; bounds must survive internal transformations.
+- Risk: Grouping must retain every selected true/false requirement and must never choose a different OR branch.
+- Architecture: Keep bounded regrouping in ENDSTATE course calculation; no schema or authority change.
+- Roadmap decision: Existing-task correction authorized by the owner under B03-07/ES02-06. Preserve original optional acceptance gates and all earlier failed evidence.
+Registered discoveries: EM-102.
+
+Roadmap items: `B03-07`, `ES02-06`.
+
+Evidence: [docs/delivery/sessions/2026-10-30-course-prerequisites.md](docs/delivery/sessions/2026-10-30-course-prerequisites.md), [docs/evidence/course-prerequisites-2026-10-30.json](docs/evidence/course-prerequisites-2026-10-30.json).
+>>>>>>> origin/main
 
 ## 0.2.0-alpha.8 · Static-path, provider-response and legacy-lineage safeguards
 

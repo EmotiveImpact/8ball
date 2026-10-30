@@ -8,10 +8,10 @@ Last status review: 2026-10-30.
 
 ## Checkpoint and release boundary
 
-- Active integration branch: `room/check-repo-with-three-sub-agents-pj2t`; PR #8.
-- Inspected application baseline: `bb881f278eb24b97732382a83a6084a22d7e1983`.
+- Active integration branch: `fix/nested-course-prerequisites-20261030`; PR #9.
+- Inspected application baseline: `84994b3b4aeca1f925bd63cbe74ceb945e91ad1c`.
 - This is a dated snapshot. Refresh the branch, PR and CI at the start of every session.
-- At inspection: draft PR = `true`; merged = `false`; production deployed = `false`.
+- At inspection: draft PR = `false`; merged = `false`; production deployed = `false`.
 - Standalone ENDSTATE package released = `false`.
 
 ## Checkbox meaning
@@ -362,13 +362,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Dependencies: `B02-18`, `B03-01`, `B03-02`, `B03-03`, `B03-04`, `B03-05`.
 
 - [ ] **B03-07 Client mandate and human-selected course workflow** (optional, not a version gate)
-  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-26.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Owner-approved mandate and selected-course records preserve target, scope, dependencies and human rationale; change explanations prompt reconsideration without granting approvals, altering facts or silently switching the chosen course. Native/operator acceptance required.
-  - Next: Preserve existing local course work; defer remaining optional expansion under the owner freeze.
-  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
+  - Next: EM-102 correction passes fresh native/installed acceptance; integrate PR9 after green CI under owner authorization. Retain the original optional mandate/identity/event prerequisites and independent operator acceptance; no broader completion claimed.
+  - Branch/base: `fix/nested-course-prerequisites-20261030` / `825ad6668c2c7d128da367476fe16cb8d214b837`.
   - Dependencies: `B03-01`, `ES02-06`.
   - Existing code: `endstate/course.py`, `eightball/v2/courses.py`, `web/v2/course-view.js`, `tests/test_courses.py`, `tests/browser_courses.py`.
-  - Evidence: `EV-CHOSEN-COURSE-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Evidence: `EV-CHOSEN-COURSE-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-COURSE-NESTED` (registry below).
   - Blocker: Secure identity/full mandate and durable event prerequisites remain unaccepted. Independent operator acceptance remains outstanding; native local workflow passes.
 
 
@@ -498,13 +498,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL` (registry below).
 
 - [ ] **ES02-06 Selected-course and bounded reconsideration contracts** (optional, not a version gate)
-  - Status: `partial`. Owner: ChatGPT. Updated: 2026-09-26.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Versioned neutral input/output contracts distinguish candidate routes from a host-authorised course; changes to consulted sources, targets, guards, authority, estimates, clocks and resources produce traceable reconsideration results. Unknown scope requires review. Existing approval invalidation is preserved.
-  - Next: Preserve bounded local calculations; defer optional durable-event expansion under the owner freeze.
-  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
+  - Next: EM-102 correction passes fresh native/installed acceptance; integrate PR9 after green CI under owner authorization. Retain the original optional mandate/identity/event prerequisites and independent operator acceptance; no broader completion claimed.
+  - Branch/base: `fix/nested-course-prerequisites-20261030` / `825ad6668c2c7d128da367476fe16cb8d214b837`.
   - Dependencies: `ES02-01`, `ES02-03`.
   - Existing code: `endstate/course.py`, `eightball/v2/courses.py`, `web/v2/course-view.js`, `tests/test_courses.py`, `tests/browser_courses.py`.
-  - Evidence: `EV-CHOSEN-COURSE-LOCAL`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Evidence: `EV-CHOSEN-COURSE-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-COURSE-NESTED` (registry below).
   - Blocker: Original durable event prerequisites remain unaccepted. Independent operator acceptance remains outstanding; native local workflow passes.
 
 
@@ -949,3 +949,10 @@ These references have specific scopes and may be historical. A reference to a de
 - Repository evidence: [docs/evidence/evaluation-reliability-2026-10-30.json](../../docs/evidence/evaluation-reliability-2026-10-30.json).
 - Result/scope: 1367 source tests, 1367 installed-engine regressions and 399 checks across all eleven native browser suites passed; exact source/artifact inspection valid before receipt-only edits. Actual model calls zero; secure key absent.
 - Code revision: `db6c5b69f05cf3fabd3930dc22fd7e2df9af617a`.
+
+### EV-COURSE-NESTED
+
+- Kind: `reproduced_failure_and_bounded_course_regression`.
+- Repository evidence: [docs/evidence/course-prerequisites-2026-10-30.json](../../docs/evidence/course-prerequisites-2026-10-30.json).
+- Result/scope: 1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites passed; all 21 acceptance steps passed. Exact-source/artifact inspection valid before final receipt edits.
+- Code revision: `84994b3b4aeca1f925bd63cbe74ceb945e91ad1c`.

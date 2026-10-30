@@ -403,6 +403,14 @@
     "original_prd_git_blob": "cdaa878bcfdee65a62e2096eae085af64a5377c6",
     "canonical_fixture_sha256": "6758c54a9e873bf2f67ced368555b871d9cf890b55b4df33762a035be1deaeb3",
     "kernel_and_dependencies_changed": false,
-    "acceptance_gates_promoted": false
+    "acceptance_gates_promoted": false,
+    "scope": "Evaluation repair at db6c5b6. The later integration also preserves the separately merged main course-kernel correction; its new source needs separate verification."
+  },
+  "main_integration": {
+    "main_commit": "bab6fa8bb83d78d324fa0f0935a09d33e2bdcda6",
+    "reason": "Main advanced during final handoff; reconcile PR10 canonical-document conflicts and preserve merged PR9 course fix.",
+    "prior_tested_commit": "db6c5b69f05cf3fabd3930dc22fd7e2df9af617a",
+    "combined_acceptance": "pending",
+    "pr10_merged": false
   }
 }

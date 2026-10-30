@@ -6,6 +6,12 @@ The patch repairs report classification/finalization, keeps portable application
 
 ---
 
+# Current nested-course correction, 30 October 2026
+
+PR8 is already merged into main at `825ad6668c2c7d128da367476fe16cb8d214b837`; its three security fixes are integrated. The owner then instructed fixing all remaining reported issues and merging. This follow-up addresses EM-102 only on `fix/nested-course-prerequisites-20261030`, from that main commit. Selected nested signed prerequisites now stay within expression bounds without dropping requirements or changing OR choice. Original four regression failures are retained. Tested code `84994b3b4aeca1f925bd63cbe74ceb945e91ad1c` passed **1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites**, including 37 course checks. All 21 acceptance steps and exact-source/artifact inspection passed before final receipt-only edits. [PR9](https://github.com/EmotiveImpact/8ball/pull/9) records final-head CI and owner-authorized integration. [Session and full ER review](sessions/2026-10-30-course-prerequisites.md), [receipt](../evidence/course-prerequisites-2026-10-30.json).
+
+B03-07/ES02-06 remain optional and partial; original model, human/independent, identity and durable-event gates remain open. No deployment, release or model call. Older pending-merge text below describes its original checkpoint, not current PR8 state.
+
 # Current security-fix handoff, 30 October 2026
 
 The three reviewed findings are fixed on `room/check-repo-with-three-sub-agents-pj2t`, based on `1038291bf219d04e7fe4a6a01c332d1ac277fdba`. Tested code `bb881f278eb24b97732382a83a6084a22d7e1983` passed **1,324 source tests, 1,324 installed-ENDSTATE regressions and all 391 checks across eleven native browser suites**. Exact-source/artifact inspection was valid/passed before final receipt-only edits. The independent security reviewer found no surviving bypass/regression in the three fixes. [Session and ER-01–15](sessions/2026-10-30-security-fixes.md), [receipt with retained failures](../evidence/security-fixes-2026-10-30.json), [draft PR8](https://github.com/EmotiveImpact/8ball/pull/8).
