@@ -26,8 +26,10 @@
       "pull_request": 10,
       "status_as_of": "2026-10-30",
       "merged": false,
-      "verification": "Earlier db6c5b6 and upstream course receipts are preserved. Reconciled main integration requires fresh native acceptance; no old totals are attached to the combined source.",
-      "evidence": "docs/evidence/evaluation-reliability-2026-10-30.json"
+      "verification": "Combined main bab6fa8 plus evaluation repair: 1372 source tests, 1372 isolated installed-engine regressions and 405 checks across eleven native browser suites passed; local and CI artifacts inspected valid before receipt-only edits. Zero actual model calls; secure key absent.",
+      "evidence": "docs/evidence/evaluation-reliability-2026-10-30.json",
+      "tested_code_commit": "e4979caeaf5f81088802da43737afc2e1c170983",
+      "remote_ci": "Both integrated-code workflows passed on e4979ca: 41080312320 and 41080312008. PR10 tracks receipt-head CI; draft, unmerged, unreleased."
     },
     "verified_sprint_history": [
       {
@@ -441,8 +443,8 @@
     "EV-EVAL-RELIABILITY": {
       "kind": "software_validation",
       "path": "docs/evidence/evaluation-reliability-2026-10-30.json",
-      "result": "1367 source tests, 1367 installed-engine regressions and 399 checks across all eleven native browser suites passed; exact source/artifact inspection valid before receipt-only edits. Actual model calls zero; secure key absent.",
-      "code_commit": "db6c5b69f05cf3fabd3930dc22fd7e2df9af617a"
+      "result": "Combined main bab6fa8 plus evaluation repair: 1372 source tests, 1372 isolated installed-engine regressions and 405 checks across eleven native browser suites passed; local and CI artifacts inspected valid before receipt-only edits. Zero actual model calls; secure key absent.",
+      "code_commit": "e4979caeaf5f81088802da43737afc2e1c170983"
     },
     "EV-COURSE-NESTED": {
       "kind": "reproduced_failure_and_bounded_course_regression",

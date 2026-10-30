@@ -2071,3 +2071,4 @@ The fully inspected db6c5b6 native and CI pass completed before main merged the 
 **Decision history:**
 
 - 2026-10-30 · adopted · Codex integration: existing_task: merge current main into the working branch, preserve both ledgers/receipts and rerun complete native acceptance. No main merge, new feature scope or deployment.
+- 2026-10-30 · adopted · Codex combined native acceptance: Reconciled source e4979ca incorporates main bab6fa8; 1372 source tests, 1372 installed-engine regressions and 405 native browser checks passed locally and in CI. Both reports match the exact manifest and inspect valid. Earlier passes/failures/abort remain preserved; no actual inference or human acceptance.

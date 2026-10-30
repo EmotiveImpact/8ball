@@ -19,7 +19,7 @@ Preserve failed/interrupted evaluation outcomes and source provenance, add real 
 
 - Version-2 research-bearing manifests retain full checkout fingerprints and separately identify application bytes plus declared pins. Legacy receipts remain exact-only.
 - Native Intelligence/analysis controls distinguish absent, invalid and configured-but-untested providers; processing permission resets when reopened.
-- Reconciled newly merged main course-prerequisite work and its canonical ledger/history without dropping either source or evidence; fresh combined-source acceptance pending.
+- Reconciled newly merged main course-prerequisite work and its canonical ledger/history without dropping either source or evidence; combined-source acceptance is separately evidenced at e4979ca.
 
 ### Fixed
 
@@ -39,6 +39,7 @@ Preserve failed/interrupted evaluation outcomes and source provenance, add real 
 - Actual-provider generation/lifecycle/native-journey preflights were blocked by the missing secure runtime key (exit 2 each), with zero model calls.
 - Main advanced to bab6fa8bb83d78d324fa0f0935a09d33e2bdcda6 while final receipts were being pushed. The earlier db6c5b6 pass remains exact-source evidence; a new integrated native run is required.
 - The first main-reconciliation attempt failed changelog ordering before cumulative verification. Its owned run was aborted and retained as incomplete, then canonical main entry order and generated Markdown were corrected. No pass is claimed for b2a666e.
+- Final combined main bab6fa8 + repair at e4979ca: 1372 source tests, 1372 installed-ENDSTATE regressions, and all 405 checks across eleven native browser suites passed. All 21 steps passed. Local and downloaded CI 41080312320 artifacts have the same source manifest and valid passed inspections; documentation CI 41080312008 passed. Receipt-only head CI is tracked in PR10.
 
 ### Limitations
 

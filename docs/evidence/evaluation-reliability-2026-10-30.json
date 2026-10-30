@@ -310,6 +310,264 @@
         "sha256": "3a855f70abe4f1ecf14e67d7008c7788524ce60567afdb870d97f7290dd23922",
         "published": false
       }
+    },
+    {
+      "tested_commit": "e4979caeaf5f81088802da43737afc2e1c170983",
+      "report_path": "artifacts/acceptance/20261030T152338Z-39ae0330/report.json",
+      "report_sha256": "ad312f722ac7b6d043eb3bd216009716c215b46e226ac0886d38f6e2019cd812",
+      "mode": "native",
+      "status": "passed",
+      "source_sha256": "55f9483cc1593fbe2e14cc48b72f238afb1f4f4fd703a9314abdc4995e6f901a",
+      "application_sha256": "572c395bcc80b98aa4edbfb1cc3578e4a73433a27cda1708bbbb2366d098e35e",
+      "source_unchanged_during_run": true,
+      "source_unit_counts": {
+        "tests": 1372,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 1372
+      },
+      "installed_counts": {
+        "tests": 1372,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "browser_checks_passed": 405,
+      "native_browser_verified": true,
+      "browser_suites": [
+        {
+          "name": "browser-legacy",
+          "status": "passed",
+          "checks": 27,
+          "transport": "real loopback HTTP"
+        },
+        {
+          "name": "browser-workspace",
+          "status": "passed",
+          "checks": 51,
+          "transport": "Native loopback HTTP"
+        },
+        {
+          "name": "browser-providers",
+          "status": "passed",
+          "checks": 30,
+          "transport": "native loopback HTTP"
+        },
+        {
+          "name": "browser-connections",
+          "status": "passed",
+          "checks": 42,
+          "transport": "Native loopback HTTP"
+        },
+        {
+          "name": "browser-studio",
+          "status": "passed",
+          "checks": 44,
+          "transport": "native loopback HTTP"
+        },
+        {
+          "name": "browser-sources",
+          "status": "passed",
+          "checks": 39,
+          "transport": "native HTTP"
+        },
+        {
+          "name": "browser-insights",
+          "status": "passed",
+          "checks": 40,
+          "transport": "Native loopback HTTP"
+        },
+        {
+          "name": "browser-grounding",
+          "status": "passed",
+          "checks": 26,
+          "transport": "Native loopback HTTP"
+        },
+        {
+          "name": "browser-plan_review",
+          "status": "passed",
+          "checks": 33,
+          "transport": "Native loopback HTTP"
+        },
+        {
+          "name": "browser-accessibility",
+          "status": "passed",
+          "checks": 36,
+          "transport": "Native loopback HTTP"
+        },
+        {
+          "name": "browser-courses",
+          "status": "passed",
+          "checks": 37,
+          "transport": "Native loopback HTTP"
+        }
+      ],
+      "checks": [
+        {
+          "name": "unit",
+          "status": "passed",
+          "seconds": 90.426,
+          "log": "unit.log",
+          "log_sha256": "4b453818d196e995b44ed3b64f084f5173b10e4f8c038decb20fbd2f88fca219"
+        },
+        {
+          "name": "compile",
+          "status": "passed",
+          "seconds": 0.064,
+          "log": "compile.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "delivery",
+          "status": "passed",
+          "seconds": 0.064,
+          "log": "delivery.log",
+          "log_sha256": "fefe956c184759ad8742da10315ebcbca9fe011b8eeb189ffb340a7ba879b9c8"
+        },
+        {
+          "name": "changelog",
+          "status": "passed",
+          "seconds": 0.114,
+          "log": "changelog.log",
+          "log_sha256": "785aafb6145fc3aeaf6ac6d3cb8b1c4953b61a3da44ee0414bebdfab0bde3346"
+        },
+        {
+          "name": "emergence",
+          "status": "passed",
+          "seconds": 0.064,
+          "log": "emergence.log",
+          "log_sha256": "3efa0a354578ef4af42bd0d3645b42b785374334cb52c2bb87c75bb1c31fc7ea"
+        },
+        {
+          "name": "javascript",
+          "status": "passed",
+          "seconds": 0.415,
+          "log": "javascript.log",
+          "log_sha256": "a27dfbc74601818b54a78cb1fb28ad33592becda98e14364d704618b924435db"
+        },
+        {
+          "name": "structural-fixtures",
+          "status": "passed",
+          "seconds": 0.164,
+          "log": "structural-fixtures.log",
+          "log_sha256": "19b8e45a1ecfe06c682f77f215f71cc4b7393f2ab6eb9c64ce12ef20ccf4b523"
+        },
+        {
+          "name": "endstate-package",
+          "status": "passed",
+          "seconds": 91.085,
+          "log": "endstate-package.log",
+          "log_sha256": "7abaa16397a148e7f6fc6d6382c030cd0a1e35132794e0be3e8a4762a9d941dd"
+        },
+        {
+          "name": "schemas",
+          "status": "passed",
+          "seconds": 0.215,
+          "log": "schemas.log",
+          "log_sha256": "5b8823aec02e34ac50831b922ef0cfb0e797c419ba65a3cf3c0c321060894ca9"
+        },
+        {
+          "name": "native-probe",
+          "status": "passed",
+          "seconds": 1.116,
+          "log": "native-probe.log",
+          "log_sha256": "e69db6d68c42feb9fd8a957b61a643b13f194f21b682799f7d304d76461fc052"
+        },
+        {
+          "name": "browser-legacy",
+          "status": "passed",
+          "seconds": 4.422,
+          "log": "browser-legacy.log",
+          "log_sha256": "94c2883f65c987a82030799dbaea28fba6ac571ecfc694c6014d17adfdb3a74c"
+        },
+        {
+          "name": "browser-workspace",
+          "status": "passed",
+          "seconds": 11.485,
+          "log": "browser-workspace.log",
+          "log_sha256": "5eac9de08313d577028e5da9cb98a2bbde5d4c0de98f323665ccfcd2bc5c704a"
+        },
+        {
+          "name": "browser-providers",
+          "status": "passed",
+          "seconds": 11.786,
+          "log": "browser-providers.log",
+          "log_sha256": "702fe6fb4baf7594b83e35946dc5b00771c0bd98c5a8173f101b18400c67fc96"
+        },
+        {
+          "name": "browser-connections",
+          "status": "passed",
+          "seconds": 5.475,
+          "log": "browser-connections.log",
+          "log_sha256": "0c4679f2d072bd26ab8695865901e899d2ae674b6314e4a1fded2e8eddba69cd"
+        },
+        {
+          "name": "browser-studio",
+          "status": "passed",
+          "seconds": 10.885,
+          "log": "browser-studio.log",
+          "log_sha256": "458e2d912f7a9896da88e136e6aeba62970b56186a432d1509f53a09b1471797"
+        },
+        {
+          "name": "browser-sources",
+          "status": "passed",
+          "seconds": 20.3,
+          "log": "browser-sources.log",
+          "log_sha256": "e502fab903e77171c5852d8f068306c9e2f4085d3c2d4a70237ed82e1c8cff20"
+        },
+        {
+          "name": "browser-insights",
+          "status": "passed",
+          "seconds": 26.812,
+          "log": "browser-insights.log",
+          "log_sha256": "1fe8c50d6a0c1bd8078ca9fe5f81a08570682dd5455ca2eaf661c7a20ce748e2"
+        },
+        {
+          "name": "browser-grounding",
+          "status": "passed",
+          "seconds": 26.713,
+          "log": "browser-grounding.log",
+          "log_sha256": "26798c44acad67ffd787ece4299a433f67fa806a9e282ba610bc7f77ff60992b"
+        },
+        {
+          "name": "browser-plan_review",
+          "status": "passed",
+          "seconds": 5.273,
+          "log": "browser-plan_review.log",
+          "log_sha256": "aeb55d35d2437d7604ebf5cf8b1c37ae389f5286e1616b9f803bd250cc82561c"
+        },
+        {
+          "name": "browser-accessibility",
+          "status": "passed",
+          "seconds": 5.022,
+          "log": "browser-accessibility.log",
+          "log_sha256": "1694bba70004e2b415b4a645d054f81605243be6dfce93d642b3fa47a1013e1d"
+        },
+        {
+          "name": "browser-courses",
+          "status": "passed",
+          "seconds": 14.537,
+          "log": "browser-courses.log",
+          "log_sha256": "6022612478601d49fb13c722c459367b5056677e9c520c84b81547c9eb2853d5"
+        }
+      ],
+      "inspection": {
+        "valid": true,
+        "reason": "Application source, declared pins and local evidence match; this is not a signed attestation",
+        "checkout_observations_match": true,
+        "recorded_source_sha256": "55f9483cc1593fbe2e14cc48b72f238afb1f4f4fd703a9314abdc4995e6f901a",
+        "current_source_sha256": "55f9483cc1593fbe2e14cc48b72f238afb1f4f4fd703a9314abdc4995e6f901a",
+        "run_status": "passed",
+        "native_browser_verified": true,
+        "model_quality_approved": false,
+        "released": false
+      },
+      "internal_wheel": {
+        "filename": "endstate_engine-0.1.0a2-py3-none-any.whl",
+        "sha256": "808c7dd60dfcf12f3c79b69fedbce8bab513c0aa61f8c8846dfb4d7effb9e03c",
+        "published": false
+      }
     }
   ],
   "live_provider": {
@@ -396,9 +654,52 @@
         "model_quality_approved": false,
         "released": false
       }
+    },
+    "integrated_code_runs": [
+      {
+        "run_id": 41080312320,
+        "url": "https://github.com/EmotiveImpact/8ball/actions/runs/41080312320",
+        "conclusion": "success",
+        "headSha": "e4979caeaf5f81088802da43737afc2e1c170983",
+        "status": "completed"
+      },
+      {
+        "run_id": 41080312008,
+        "url": "https://github.com/EmotiveImpact/8ball/actions/runs/41080312008",
+        "conclusion": "success",
+        "headSha": "e4979caeaf5f81088802da43737afc2e1c170983",
+        "status": "completed"
+      }
+    ],
+    "integrated_native_artifact": {
+      "run_id": 41080312320,
+      "report_path": "artifacts/evaluation-reliability/ci-41080312320/acceptance/20261030T152412Z-9d0481a1/report.json",
+      "report_sha256": "11d1ad25286c9412e452dd5841f9f598b723467e18a0ce8743c358f0bdc06bf8",
+      "status": "passed",
+      "same_manifest_as_local_passed_run": true,
+      "source_sha256": "55f9483cc1593fbe2e14cc48b72f238afb1f4f4fd703a9314abdc4995e6f901a",
+      "source_unit_counts": {
+        "tests": 1372,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 1372
+      },
+      "browser_checks_passed": 405,
+      "inspection": {
+        "valid": true,
+        "reason": "Application source, declared pins and local evidence match; this is not a signed attestation",
+        "checkout_observations_match": true,
+        "recorded_source_sha256": "55f9483cc1593fbe2e14cc48b72f238afb1f4f4fd703a9314abdc4995e6f901a",
+        "current_source_sha256": "55f9483cc1593fbe2e14cc48b72f238afb1f4f4fd703a9314abdc4995e6f901a",
+        "run_status": "passed",
+        "native_browser_verified": true,
+        "model_quality_approved": false,
+        "released": false
+      }
     }
   },
-  "final_receipt_boundary": "Final handoff/ledger/history edits follow this exact tested commit and change documentation/evidence only. Reconstruct the tested commit for raw acceptance inspection. Final pushed receipt head is recorded in the PR handoff comment.",
+  "final_receipt_boundary": "The latest combined-source pass belongs to e4979ca, incorporating main bab6fa8. Final receipt/ledger/history edits change documentation/evidence only; their final pushed head is in the PR handoff comment. Reconstruct e4979ca for raw-source inspection.",
   "preserved_invariants": {
     "original_prd_git_blob": "cdaa878bcfdee65a62e2096eae085af64a5377c6",
     "canonical_fixture_sha256": "6758c54a9e873bf2f67ced368555b871d9cf890b55b4df33762a035be1deaeb3",
@@ -410,7 +711,7 @@
     "main_commit": "bab6fa8bb83d78d324fa0f0935a09d33e2bdcda6",
     "reason": "Main advanced during final handoff; reconcile PR10 canonical-document conflicts and preserve merged PR9 course fix.",
     "prior_tested_commit": "db6c5b69f05cf3fabd3930dc22fd7e2df9af617a",
-    "combined_acceptance": "pending",
+    "combined_acceptance": "passed",
     "pr10_merged": false,
     "aborted_attempt": {
       "commit": "b2a666e",
@@ -419,6 +720,10 @@
       "last_acceptance_report_complete": false,
       "pass_claimed": false,
       "evidence": "artifacts/evaluation-reliability/integration-orchestration-abort.json"
-    }
-  }
+    },
+    "tested_commit": "e4979caeaf5f81088802da43737afc2e1c170983",
+    "source_sha256": "55f9483cc1593fbe2e14cc48b72f238afb1f4f4fd703a9314abdc4995e6f901a",
+    "main_changes_preserved": true
+  },
+  "latest_tested_commit": "e4979caeaf5f81088802da43737afc2e1c170983"
 }

@@ -1,3 +1,11 @@
+# Combined current-main repair verified, 30 October 2026
+
+Draft [PR10](https://github.com/EmotiveImpact/8ball/pull/10) now includes merged main `bab6fa8` and remains unmerged/unreleased. Latest tested source `e4979ca` passed **1372 source tests, 1372 installed-engine regressions and 405 native browser checks across all eleven suites**, locally and in GitHub CI. Both source/artifact inspections are valid with the same manifest. [Exact receipt](docs/evidence/evaluation-reliability-2026-10-30.json); [complete handoff and Emergence Review](docs/delivery/sessions/2026-10-30-evaluation-reliability.md). The earlier db6c5b6 pass, original failed regressions, package-isolation failure, and aborted reconciliation attempt remain retained as separate source-bound evidence.
+
+The evaluation reliability/native Anthropic/configuration repair and main's nested-course fix are preserved together. All original acceptance gates and research boundaries remain. Actual model calls are zero; secure key submission is pending. Next is the unchanged fictional generation gate with explicit native settings and existing US$5 budget, then matching lifecycle/native journey and genuine independent/human reviews. Earlier counts and branch notes below describe their own historical checkpoints.
+
+---
+
 # Evaluation reliability follow-up, 30 October 2026
 
 Draft [PR10](https://github.com/EmotiveImpact/8ball/pull/10) builds on merged security base `825ad66`; it is not merged or released. Tested code `db6c5b6` passed **1367 source tests, 1367 installed-engine regressions and 399 native browser checks across all eleven suites**, with valid exact-source/artifact inspection before receipt-only edits. [Source-bound receipt](docs/evidence/evaluation-reliability-2026-10-30.json); [session and complete Emergence Review](docs/delivery/sessions/2026-10-30-evaluation-reliability.md). The first installed-suite failure and its matching failed CI are retained.

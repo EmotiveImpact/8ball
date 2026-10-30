@@ -947,8 +947,8 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `software_validation`.
 - Repository evidence: [docs/evidence/evaluation-reliability-2026-10-30.json](../../docs/evidence/evaluation-reliability-2026-10-30.json).
-- Result/scope: 1367 source tests, 1367 installed-engine regressions and 399 checks across all eleven native browser suites passed; exact source/artifact inspection valid before receipt-only edits. Actual model calls zero; secure key absent.
-- Code revision: `db6c5b69f05cf3fabd3930dc22fd7e2df9af617a`.
+- Result/scope: Combined main bab6fa8 plus evaluation repair: 1372 source tests, 1372 isolated installed-engine regressions and 405 checks across eleven native browser suites passed; local and CI artifacts inspected valid before receipt-only edits. Zero actual model calls; secure key absent.
+- Code revision: `e4979caeaf5f81088802da43737afc2e1c170983`.
 
 ### EV-COURSE-NESTED
 
