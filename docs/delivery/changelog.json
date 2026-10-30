@@ -3,6 +3,56 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-30-nested-course-prerequisites",
+      "date": "2026-10-30",
+      "version": "0.2.0-alpha.8",
+      "title": "Nested prerequisite courses remain readable",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "B03-07",
+        "ES02-06"
+      ],
+      "summary": "Reassess selected nested prerequisite branches without exceeding expression child limits or changing their meaning.",
+      "added": [
+        "Course boundary regressions for 8, 9, 16 and 63 signed prerequisites, exact OR-branch retention, and persisted lifecycle behavior."
+      ],
+      "changed": [
+        "Recorded signed requirements are grouped into bounded AND nodes inside the read-only course calculation."
+      ],
+      "fixed": [
+        "A successfully selected valid nested course could return HTTP 422 on subsequent inspection."
+      ],
+      "verification": [
+        "Original four regression failures and passing 8-child control retained as exact emitted output in the evidence JSON.",
+        "137 focused course/kernel/result checks and 37 native Chosen Course checks passed; these overlap the integrated totals.",
+        "1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites passed; all 21 acceptance steps passed. Exact-source/artifact inspection valid before final receipt edits.",
+        "Tested code 84994b3b4aeca1f925bd63cbe74ceb945e91ad1c; source and artifact inspection valid/passed before final receipt-only edits. PR9 records final-head CI and merge."
+      ],
+      "limitations": [
+        "Optional B03-07/ES02-06 remain partial with their original prerequisites and independent/operator acceptance.",
+        "No model inference, production deployment or release. Hosted-compression candidate EM-103 is unchanged."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-course-prerequisites.md",
+        "docs/evidence/course-prerequisites-2026-10-30.json"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-102: flattening a valid nested expression violated an internal child limit; bounds must survive internal transformations."
+        ],
+        "risks": [
+          "Grouping must retain every selected true/false requirement and must never choose a different OR branch."
+        ],
+        "architecture_implications": [
+          "Keep bounded regrouping in ENDSTATE course calculation; no schema or authority change."
+        ],
+        "roadmap_decision": "Existing-task correction authorized by the owner under B03-07/ES02-06. Preserve original optional acceptance gates and all earlier failed evidence.",
+        "insight_ids": [
+          "EM-102"
+        ]
+      }
+    },
+    {
       "id": "2026-10-30-security-boundaries",
       "date": "2026-10-30",
       "version": "0.2.0-alpha.8",
@@ -505,7 +555,7 @@
       ],
       "summary": "Added an owner-readable source investigation of Ruflo worker coordination, model access, confidence and evidence limits. Application behavior and acceptance gates are unchanged.",
       "added": [
-        "Plain-English owner guide, pinned-source receipt and complete ER-01–15 handoff.",
+        "Plain-English owner guide, pinned-source receipt and complete ER-01\u201315 handoff.",
         "EM-084 preserves the prediction target behind worker-routing confidence; prior findings receive additive evidence."
       ],
       "changed": [
@@ -1636,7 +1686,7 @@
         "ES03-08",
         "B04-04"
       ],
-      "summary": "Documentation-only refinement: 8BALL becomes the fixer’s live situation room around an explicit mandate and human-selected course; ENDSTATE remains a neutral planning and reconsideration engine. No runtime completion or new required scope is implied.",
+      "summary": "Documentation-only refinement: 8BALL becomes the fixer\u2019s live situation room around an explicit mandate and human-selected course; ENDSTATE remains a neutral planning and reconsideration engine. No runtime completion or new required scope is implied.",
       "added": [
         "Separate 8BALL and ENDSTATE vision documents, ADR 0004 and proposed course/coverage/recovery acceptance scenarios.",
         "Ten new discoveries retained alongside all 55 originals; five additional end-of-sprint review prompts.",
@@ -1647,7 +1697,7 @@
         "Earlier fallback/watch/attention/recoverability discoveries have appended dispositions rather than rewritten observations."
       ],
       "fixed": [
-        "The latest handoff’s missing Draft Repair source is explicitly separated from the recovered alpha.7 implementation; later narrated test totals are not attached to the earlier source.",
+        "The latest handoff\u2019s missing Draft Repair source is explicitly separated from the recovered alpha.7 implementation; later narrated test totals are not attached to the earlier source.",
         "No-path wording now identifies the supplied catalogue and search bounds rather than implying global impossibility.",
         "The review protocol now permits additional passes while requiring the original ten and preserving recorded prompt text/order. Seven regression checks cover safe extension and denied rewrites."
       ],
@@ -1917,7 +1967,7 @@
           "The bounded calendar-day interpreter deliberately cannot decide what next business day or end of day means for every organisation, location or agreement."
         ],
         "risks": [
-          "Shared names, exact quotations and schema validation do not prove identity, authority or the source’s intended date.",
+          "Shared names, exact quotations and schema validation do not prove identity, authority or the source\u2019s intended date.",
           "Withdrawing evidence should prompt reconsideration, not silently remove adopted operational commitments."
         ],
         "architecture_implications": [
@@ -2138,7 +2188,7 @@
         "Guided nested AND/OR and explicit-false authoring, guards, intended effects, verification criteria, resources, decision gates and response contingencies.",
         "Read-only amendment preview with route differences, historical protections, undo/redo, discard and a separate revision-checked commit.",
         "Persistent local analysis status with bounded queue, stage counts, cancellation, stale-result rejection and restart interruption.",
-        "In-app What’s new and a generated root CHANGELOG.md. Every future build must update the shared changelog and delivery ledger.",
+        "In-app What\u2019s new and a generated root CHANGELOG.md. Every future build must update the shared changelog and delivery ledger.",
         "Desktop authoring columns scroll independently; smaller screens keep a responsive stacked layout."
       ],
       "changed": [

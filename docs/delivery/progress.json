@@ -6,13 +6,13 @@
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
   "repository": {
     "full_name": "EmotiveImpact/8ball",
-    "development_branch": "room/check-repo-with-three-sub-agents-pj2t",
-    "pull_request": 8,
-    "inspected_code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
-    "inspected_code_tree": "ff87fcc6740cf020e5aa7a73648578206cdb3be2",
-    "main_at_inspection": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+    "development_branch": "fix/nested-course-prerequisites-20261030",
+    "pull_request": 9,
+    "inspected_code_commit": "84994b3b4aeca1f925bd63cbe74ceb945e91ad1c",
+    "inspected_code_tree": "4431b6cf745108c0722a35a82c22523b63b9651d",
+    "main_at_inspection": "825ad6668c2c7d128da367476fe16cb8d214b837",
     "status_as_of": "2026-10-30",
-    "pr_draft": true,
+    "pr_draft": false,
     "merged": false,
     "production_deployed": false,
     "standalone_endstate_package_released": false,
@@ -20,25 +20,22 @@
     "integration_authority": "docs/decisions/0007-owner-build-consolidation.md",
     "source_merged_not_release_accepted": true,
     "current_sprint": {
-      "branch": "room/check-repo-with-three-sub-agents-pj2t",
-      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
-      "status_as_of": "2026-10-30",
+      "branch": "fix/nested-course-prerequisites-20261030",
+      "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
       "owner": "Codex",
+      "status_as_of": "2026-10-30",
       "task_ids": [
-        "B01-02",
-        "B02-15",
-        "ES01-03",
-        "B01-03",
-        "ES01-05",
-        "DOC-04"
+        "B03-07",
+        "ES02-06"
       ],
-      "objective": "Fix the three validated local-workspace security findings without changing dependencies, provider permissions or original acceptance gates.",
+      "objective": "Correct EM-102 nested Chosen Course prerequisite reassessment only; preserve selected signed branches and original optional acceptance gates.",
       "merged": false,
-      "verification": "1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.",
-      "remote_ci": "Both code-checkpoint CI workflows passed. Initial receipt-head CI 41035068063 failed only on Studio hardcoded delivery label; corrected native Studio passed44. Authoritative final cumulative CI: PR8.",
-      "evidence": "docs/evidence/security-fixes-2026-10-30.json",
-      "tested_code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
-      "tested_code_tree": "ff87fcc6740cf020e5aa7a73648578206cdb3be2"
+      "verification": "1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites passed; all 21 acceptance steps passed. Exact-source/artifact inspection valid before final receipt edits.",
+      "merge_authority": "Owner instruction on 2026-10-30: fix all issues then merge.",
+      "tested_code_commit": "84994b3b4aeca1f925bd63cbe74ceb945e91ad1c",
+      "tested_code_tree": "4431b6cf745108c0722a35a82c22523b63b9651d",
+      "evidence": "docs/evidence/course-prerequisites-2026-10-30.json",
+      "remote_ci": "PR9 final-head checks pending after receipt push; merge authorized once checks pass."
     },
     "verified_sprint_history": [
       {
@@ -81,6 +78,27 @@
         "verification": "1267 source tests, 1267 installed-engine regressions and 391 native browser checks across 11 suites passed; inspection valid before receipt edits.",
         "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
         "remote_ci": "Both checkpoint PR workflows passed: 40199806937 and 40199807143. Final receipt-head CI and merge tracked in PR4."
+      },
+      {
+        "branch": "room/check-repo-with-three-sub-agents-pj2t",
+        "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+        "status_as_of": "2026-10-30",
+        "owner": "Codex",
+        "task_ids": [
+          "B01-02",
+          "B02-15",
+          "ES01-03",
+          "B01-03",
+          "ES01-05",
+          "DOC-04"
+        ],
+        "objective": "Fix the three validated local-workspace security findings without changing dependencies, provider permissions or original acceptance gates.",
+        "merged": false,
+        "verification": "1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.",
+        "remote_ci": "Both code-checkpoint CI workflows passed. Initial receipt-head CI 41035068063 failed only on Studio hardcoded delivery label; corrected native Studio passed44. Authoritative final cumulative CI: PR8.",
+        "evidence": "docs/evidence/security-fixes-2026-10-30.json",
+        "tested_code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
+        "tested_code_tree": "ff87fcc6740cf020e5aa7a73648578206cdb3be2"
       }
     ],
     "provider_configuration_preparation": {
@@ -114,8 +132,25 @@
         "status_as_of": "2026-10-15",
         "pr_draft": false,
         "merged": true
+      },
+      {
+        "development_branch": "room/check-repo-with-three-sub-agents-pj2t",
+        "pull_request": 8,
+        "inspected_code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
+        "inspected_code_tree": "ff87fcc6740cf020e5aa7a73648578206cdb3be2",
+        "main_at_inspection": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+        "status_as_of": "2026-10-30",
+        "pr_draft": true,
+        "merged": false
       }
-    ]
+    ],
+    "security_integration_20261030": {
+      "pull_request": 8,
+      "merged": true,
+      "merge_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "verified_head": "8f166df96efaf1baa808d9934392e1472ae67f88",
+      "all_pr_checks_passed": true
+    }
   },
   "evidence": {
     "EV-APP": {
@@ -381,6 +416,12 @@
       "path": "docs/evidence/security-fixes-2026-10-30.json",
       "result": "1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.",
       "code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983"
+    },
+    "EV-COURSE-NESTED": {
+      "kind": "reproduced_failure_and_bounded_course_regression",
+      "path": "docs/evidence/course-prerequisites-2026-10-30.json",
+      "result": "1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites passed; all 21 acceptance steps passed. Exact-source/artifact inspection valid before final receipt edits.",
+      "code_commit": "84994b3b4aeca1f925bd63cbe74ceb945e91ad1c"
     }
   },
   "milestones": [
@@ -2166,10 +2207,10 @@
       "title": "Client mandate and human-selected course workflow",
       "status": "partial",
       "required": false,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
-      "updated_on": "2026-09-26",
+      "owner": "Codex",
+      "working_branch": "fix/nested-course-prerequisites-20261030",
+      "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "endstate/course.py",
         "eightball/v2/courses.py",
@@ -2184,13 +2225,14 @@
       "acceptance": "Owner-approved mandate and selected-course records preserve target, scope, dependencies and human rationale; change explanations prompt reconsideration without granting approvals, altering facts or silently switching the chosen course. Native/operator acceptance required.",
       "evidence": [
         "EV-CHOSEN-COURSE-LOCAL",
-        "EV-NATIVE-CLOSEOUT"
+        "EV-NATIVE-CLOSEOUT",
+        "EV-COURSE-NESTED"
       ],
       "blockers": [
         "Secure identity/full mandate and durable event prerequisites remain unaccepted.",
         "Independent operator acceptance remains outstanding; native local workflow passes."
       ],
-      "next_action": "Preserve existing local course work; defer remaining optional expansion under the owner freeze."
+      "next_action": "EM-102 correction passes fresh native/installed acceptance; integrate PR9 after green CI under owner authorization. Retain the original optional mandate/identity/event prerequisites and independent operator acceptance; no broader completion claimed."
     },
     {
       "id": "ES02-06",
@@ -2198,10 +2240,10 @@
       "title": "Selected-course and bounded reconsideration contracts",
       "status": "partial",
       "required": false,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
-      "updated_on": "2026-09-26",
+      "owner": "Codex",
+      "working_branch": "fix/nested-course-prerequisites-20261030",
+      "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "endstate/course.py",
         "eightball/v2/courses.py",
@@ -2216,13 +2258,14 @@
       "acceptance": "Versioned neutral input/output contracts distinguish candidate routes from a host-authorised course; changes to consulted sources, targets, guards, authority, estimates, clocks and resources produce traceable reconsideration results. Unknown scope requires review. Existing approval invalidation is preserved.",
       "evidence": [
         "EV-CHOSEN-COURSE-LOCAL",
-        "EV-NATIVE-CLOSEOUT"
+        "EV-NATIVE-CLOSEOUT",
+        "EV-COURSE-NESTED"
       ],
       "blockers": [
         "Original durable event prerequisites remain unaccepted.",
         "Independent operator acceptance remains outstanding; native local workflow passes."
       ],
-      "next_action": "Preserve bounded local calculations; defer optional durable-event expansion under the owner freeze."
+      "next_action": "EM-102 correction passes fresh native/installed acceptance; integrate PR9 after green CI under owner authorization. Retain the original optional mandate/identity/event prerequisites and independent operator acceptance; no broader completion claimed."
     },
     {
       "id": "ES03-08",
