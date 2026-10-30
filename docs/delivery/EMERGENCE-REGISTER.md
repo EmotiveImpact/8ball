@@ -1854,7 +1854,7 @@ A concurrent authenticated legacy edit between audit() and get() produced an imp
 
 ### [ ] EM-102: Flattened course prerequisites can exceed the expression child limit
 
-**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
 **First recorded:** 2026-10-30. **Origin:** Three-part security review and focused remediation.
 
 The report-only domain review reproduced a valid nested nine-prerequisite graph whose selection persisted successfully but whose next Chosen Course read returned 422 when assessment flattened prerequisites into one conjunction.
@@ -1863,11 +1863,12 @@ The report-only domain review reproduced a valid nested nine-prerequisite graph 
 
 **Roadmap links:** `B03-07` (partial), `ES02-06` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `docs/evidence/security-fixes-2026-10-30.json`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `docs/evidence/security-fixes-2026-10-30.json`, `docs/delivery/sessions/2026-10-30-course-prerequisites.md`, `docs/evidence/course-prerequisites-2026-10-30.json`, `docs/evidence/course-prerequisites-before-fix-2026-10-30.txt`.
 
 **Decision history:**
 
 - 2026-10-30 · deferred · Codex security remediation: new_candidate: retain the authenticated functional defect for a separate bounded fix; no required gate or accepted scope is changed.
+- 2026-10-30 · adopted · Owner instruction; Codex implementation: Owner requested fixing all reported issues then merging. Adopt only the bounded existing-course correction under B03-07/ES02-06: group every selected signed prerequisite within unchanged expression limits. Broader optional identity/mandate/event acceptance stays partial.
 
 ### [ ] EM-103: Streaming response caps also need a content-decoding boundary
 

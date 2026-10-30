@@ -25,7 +25,7 @@
     {
       "id": "ER-05",
       "scope": "situation",
-      "text": "Are we still working towards the client’s explicit target and success criteria?"
+      "text": "Are we still working towards the client\u2019s explicit target and success criteria?"
     },
     {
       "id": "ER-06",
@@ -75,7 +75,7 @@
     {
       "id": "ER-15",
       "scope": "both",
-      "text": "Does this improve the operator’s next decision or merely increase reviews, alerts and screens? How would we measure the difference?"
+      "text": "Does this improve the operator\u2019s next decision or merely increase reviews, alerts and screens? How would we measure the difference?"
     }
   ],
   "items": [
@@ -444,7 +444,7 @@
       "origin": "Accepted product discussion and build review",
       "first_seen": "2026-09-24",
       "evidence_level": "observed_in_build",
-      "observation": "Retraction or concentrated evidence dependencies can weaken a plan’s evidential basis.",
+      "observation": "Retraction or concentrated evidence dependencies can weaken a plan\u2019s evidential basis.",
       "product_implication": "Show one-record support clusters and invalidate earlier insight reviews when referenced content changes.",
       "task_ids": [
         "ES02-05",
@@ -620,7 +620,7 @@
     },
     {
       "id": "EM-018",
-      "title": "Outcome discovery must not rewrite the client’s intent",
+      "title": "Outcome discovery must not rewrite the client\u2019s intent",
       "origin": "Accepted product discussion and build review",
       "first_seen": "2026-09-24",
       "evidence_level": "operator_hypothesis",
@@ -902,7 +902,7 @@
       "first_seen": "2026-09-24",
       "evidence_level": "observed_in_build",
       "observation": "Several calculated routes can overlap and are not all the routes reality permits.",
-      "product_implication": "Label the candidate pool, truncation and caps. Avoid “every viable route” and unsupported success percentages.",
+      "product_implication": "Label the candidate pool, truncation and caps. Avoid \u201cevery viable route\u201d and unsupported success percentages.",
       "task_ids": [
         "ES02-05",
         "B02-21"
@@ -1237,7 +1237,7 @@
       "origin": "Accepted product discussion and build review",
       "first_seen": "2026-09-24",
       "evidence_level": "observed_in_build",
-      "observation": "An old response must not populate the newly selected client’s insight panel.",
+      "observation": "An old response must not populate the newly selected client\u2019s insight panel.",
       "product_implication": "Guard responses by case ID and session epoch, clear state on switching/locking, and test it.",
       "task_ids": [
         "B02-21"
@@ -3694,7 +3694,10 @@
       "acceptance_task_ids": [],
       "evidence_paths": [
         "docs/delivery/sessions/2026-10-30-security-fixes.md",
-        "docs/evidence/security-fixes-2026-10-30.json"
+        "docs/evidence/security-fixes-2026-10-30.json",
+        "docs/delivery/sessions/2026-10-30-course-prerequisites.md",
+        "docs/evidence/course-prerequisites-2026-10-30.json",
+        "docs/evidence/course-prerequisites-before-fix-2026-10-30.txt"
       ],
       "owner_review": "pending",
       "history": [
@@ -3703,6 +3706,12 @@
           "decision": "deferred",
           "by": "Codex security remediation",
           "reason": "new_candidate: retain the authenticated functional defect for a separate bounded fix; no required gate or accepted scope is changed."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Owner instruction; Codex implementation",
+          "reason": "Owner requested fixing all reported issues then merging. Adopt only the bounded existing-course correction under B03-07/ES02-06: group every selected signed prerequisite within unchanged expression limits. Broader optional identity/mandate/event acceptance stays partial."
         }
       ]
     },

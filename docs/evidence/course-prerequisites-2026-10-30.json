@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "scope": "EM-102 bounded nested signed prerequisite reassessment; no new course authority.",
+  "branch": "fix/nested-course-prerequisites-20261030",
+  "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+  "prior_security_integration": {
+    "pull_request": 8,
+    "merge_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+    "observed_state": "MERGED"
+  },
+  "before_fix": {
+    "code_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+    "test_paths": [
+      "tests/test_courses.py"
+    ],
+    "command": "python -m pytest -q -p no:cacheprovider tests/test_courses.py -k nested_course",
+    "failures": 4,
+    "passes": 1,
+    "deselected": 64,
+    "observed": "Counts 9, 16 and 63 fail expression child validation; authenticated persisted course read returns HTTP 422.",
+    "log_path": "docs/evidence/course-prerequisites-before-fix-2026-10-30.txt",
+    "log_sha256": "b461564207b8725f3d0cba3b63783bc950575870a2f3c63131996bcbefdca8db"
+  },
+  "focused_after_fix": {
+    "command": "python -m pytest -q -p no:cacheprovider tests/test_courses.py tests/test_endstate_kernel.py tests/test_endstate_results.py",
+    "passed": 137,
+    "failures": 0,
+    "seconds": 13.88,
+    "warnings": [
+      "Existing Starlette/AnyIO test-client deprecation warning."
+    ]
+  },
+  "native_acceptance": {
+    "status": "pending"
+  },
+  "inference_calls": 0,
+  "production_deployed": false,
+  "released": false,
+  "limitations": [
+    "B03-07 and ES02-06 remain optional and partial with their original independent/operator/identity/event gates.",
+    "Hosted compression review EM-103 remains an unverified deferred candidate; this patch makes no transport changes.",
+    "Earlier native counts remain tied to their own source; the follow-up needs fresh integrated acceptance."
+  ],
+  "focused_native_courses": {
+    "checks_passed": 37,
+    "network": "Native loopback HTTP",
+    "model_calls": 0,
+    "errors": [],
+    "scope": "Original native journey plus nine-prerequisite selection, inspection, reload, lifecycle and authority preservation."
+  }
+}

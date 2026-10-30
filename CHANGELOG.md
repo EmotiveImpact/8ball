@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Nested prerequisite courses remain readable
+
+2026-10-30 · `local_unreleased`
+
+Reassess selected nested prerequisite branches without exceeding expression child limits or changing their meaning.
+
+### Added
+
+- Course boundary regressions for 8, 9, 16 and 63 signed prerequisites, exact OR-branch retention, and persisted lifecycle behavior.
+
+### Changed
+
+- Recorded signed requirements are grouped into bounded AND nodes inside the read-only course calculation.
+
+### Fixed
+
+- A successfully selected valid nested course could return HTTP 422 on subsequent inspection.
+
+### Verification
+
+- Original four regression failures and passing 8-child control retained.
+- 137 focused course/kernel/result checks passed; cumulative native acceptance pending.
+
+### Limitations
+
+- Optional B03-07/ES02-06 remain partial with their original prerequisites and independent/operator acceptance.
+- No model inference, production deployment or release. Hosted-compression candidate EM-103 is unchanged.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-102: flattening a valid nested expression violated an internal child limit; bounds must survive internal transformations.
+- Risk: Grouping must retain every selected true/false requirement and must never choose a different OR branch.
+- Architecture: Keep bounded regrouping in ENDSTATE course calculation; no schema or authority change.
+- Roadmap decision: Existing-task correction authorized by the owner under B03-07/ES02-06. Preserve original optional acceptance gates and all earlier failed evidence.
+Registered discoveries: EM-102.
+
+Roadmap items: `B03-07`, `ES02-06`.
+
+Evidence: [docs/delivery/sessions/2026-10-30-course-prerequisites.md](docs/delivery/sessions/2026-10-30-course-prerequisites.md), [docs/evidence/course-prerequisites-2026-10-30.json](docs/evidence/course-prerequisites-2026-10-30.json).
+
 ## 0.2.0-alpha.8 · Static-path, provider-response and legacy-lineage safeguards
 
 2026-10-30 · `pushed_unreleased`
