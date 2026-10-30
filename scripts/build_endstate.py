@@ -12,8 +12,8 @@ import zipfile
 ROOT=Path(__file__).resolve().parents[1]
 
 
-def run(args,cwd,env=None):
-    result=subprocess.run(args,cwd=cwd,env=env,text=True,capture_output=True,timeout=120)
+def run(args,cwd,env=None,*,timeout=120):
+    result=subprocess.run(args,cwd=cwd,env=env,text=True,capture_output=True,timeout=timeout)
     if result.returncode:
         raise RuntimeError('Offline package command failed: '+(result.stdout+'\n'+result.stderr)[-4000:])
     return result.stdout
@@ -86,7 +86,9 @@ result=pytest.main([str(root/'tests'),'-q','--import-mode=importlib','--junitxml
 assert pathlib.Path(endstate.__file__).resolve().is_relative_to(target.resolve())
 sys.exit(result)
 """
-            log=run([sys.executable,'-I','-c',code,str(ROOT),str(target),str(output.resolve())],temp)
+            # The complete suite can exceed the offline build-command deadline.
+            # Keep it bounded within the acceptance runner's 300-second step.
+            log=run([sys.executable,'-I','-c',code,str(ROOT),str(target),str(output.resolve())],temp,timeout=240)
             (output/'installed-regressions.log').write_text(log)
             import xml.etree.ElementTree as ET
             suites=list(ET.parse(output/'installed-junit.xml').getroot().findall('testsuite'))

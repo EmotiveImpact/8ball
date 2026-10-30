@@ -11,7 +11,9 @@
       "task_ids": [
         "B01-02",
         "B02-15",
-        "ES01-03"
+        "ES01-03",
+        "B01-03",
+        "ES01-05"
       ],
       "summary": "Reject unsafe Windows static URLs before filesystem resolution, bound provider response accumulation and import the exact verified legacy snapshot.",
       "added": [
@@ -23,10 +25,12 @@
       "fixed": [
         "Windows UNC/drive-qualified static request paths reaching filesystem resolution.",
         "Jev and legacy/V2 Ollama response limits enforced only after whole-body buffering.",
-        "Legacy imports mixing a new source snapshot with older verified lineage."
+        "Legacy imports mixing a new source snapshot with older verified lineage.",
+        "An installed-package test watchdog shorter than the complete suite runtime on the cloud ARM environment."
       ],
       "verification": [
-        "250 focused tests passed with one existing test-library deprecation warning; full native acceptance and final patch review pending at this preparation checkpoint."
+        "250 focused tests passed. First native run: 1324 source tests and all 391 browser checks passed; packaging failed because pip was absent. After pip installation, the unchanged installed-suite watchdog timed out at 120 seconds; retained as failed evidence.",
+        "The package regression deadline is now 240 seconds inside the existing 300-second acceptance step. A fresh complete native run is pending."
       ],
       "limitations": [
         "Application path mitigation preserves current dependencies; the pinned Starlette version remains upstream-affected.",
@@ -54,7 +58,8 @@
           "EM-100",
           "EM-101",
           "EM-102",
-          "EM-103"
+          "EM-103",
+          "EM-104"
         ]
       }
     },

@@ -3734,6 +3734,34 @@
           "reason": "new_candidate: retain the untested sibling transport hypothesis separately from the three reported fixes. No hosted-runtime change, live inference or new required acceptance scope."
         }
       ]
+    },
+    {
+      "id": "EM-104",
+      "title": "The installed-package regression budget must cover the complete suite",
+      "origin": "Full native verification of the security patch",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "The full 1324-test source run passed in 158.56 seconds on this ARM cloud environment. After installing missing pip, the installed-package regression subprocess hit its fixed 120-second deadline. That deadline was shared with short offline build commands despite the full acceptance step allowing 300 seconds.",
+      "product_implication": "Keep build commands bounded at 120 seconds and give only the complete installed regression suite a 240-second deadline within the existing outer gate; preserve every test and failed run.",
+      "task_ids": [
+        "B01-03",
+        "ES01-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "scripts/build_endstate.py",
+        "docs/evidence/security-fixes-2026-10-30.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex verification",
+          "reason": "existing_task: reconcile nested verification deadlines with observed full-suite runtime; no test, assertion, native journey or product limit is removed."
+        }
+      ]
     }
   ]
 }

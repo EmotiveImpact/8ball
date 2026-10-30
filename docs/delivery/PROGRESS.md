@@ -939,4 +939,4 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `controlled_security_regression_and_native_receipt`.
 - Repository evidence: [docs/evidence/security-fixes-2026-10-30.json](../../docs/evidence/security-fixes-2026-10-30.json).
-- Result/scope: 250 focused tests passed; native acceptance and final review pending. No release or actual-model acceptance.
+- Result/scope: Independent patch review passed. First native run: 1324 source tests / 391 browser checks passed; packaging failed (missing pip). Installed retry timed out at 120s; fresh native run pending after environment/runner corrections.

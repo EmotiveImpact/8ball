@@ -2,7 +2,7 @@
   "date": "2026-10-30",
   "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
   "branch": "room/check-repo-with-three-sub-agents-pj2t",
-  "status": "focused_passed_native_pending",
+  "status": "fresh_native_pending_after_environment_and_watchdog_corrections",
   "focused_tests": {
     "passed": 250,
     "warnings": 1
@@ -18,5 +18,27 @@
     "The three affected adapters request identity encoding and reject encoded responses before body reads. Providers ignoring this negotiation fail closed; unchanged hosted transports need separate compressed-chunk review (EM-103).",
     "Actual-model, independent professional, human and V0.2 release acceptance remain open.",
     "The separate nested-prerequisite Chosen Course defect is deferred as EM-102."
+  ],
+  "failed_attempts": [
+    {
+      "kind": "native_acceptance",
+      "tested_code_commit": "4c943c640442af32aaf45e359748a73c8b333b2d",
+      "path": "artifacts/acceptance/20261030T091939Z-f8811f70/report.json",
+      "source_sha256": "4644531f50bd7454596d4b4a16c543d966d5976b9b883d995896e525b6a8edde",
+      "status": "failed",
+      "source_tests_passed": 1324,
+      "native_browser_checks_passed": 391,
+      "reason": "No module named pip during offline wheel build.",
+      "inspection_before_receipt_edits": {
+        "valid": true,
+        "run_status": "failed"
+      }
+    },
+    {
+      "kind": "installed_package_retry",
+      "path": "artifacts/security-package-check",
+      "status": "failed",
+      "reason": "Complete installed regression subprocess exceeded its 120-second watchdog after pip was installed."
+    }
   ]
 }

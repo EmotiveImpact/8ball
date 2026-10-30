@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-30. **103 recorded discoveries.**
+Last review: 2026-10-30. **104 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1885,3 +1885,20 @@ HTTPX decompresses response chunks before iter_bytes yields them. Identity negot
 **Decision history:**
 
 - 2026-10-30 · deferred · Codex security remediation: new_candidate: retain the untested sibling transport hypothesis separately from the three reported fixes. No hosted-runtime change, live inference or new required acceptance scope.
+
+### [ ] EM-104: The installed-package regression budget must cover the complete suite
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Full native verification of the security patch.
+
+The full 1324-test source run passed in 158.56 seconds on this ARM cloud environment. After installing missing pip, the installed-package regression subprocess hit its fixed 120-second deadline. That deadline was shared with short offline build commands despite the full acceptance step allowing 300 seconds.
+
+**Product implication:** Keep build commands bounded at 120 seconds and give only the complete installed regression suite a 240-second deadline within the existing outer gate; preserve every test and failed run.
+
+**Roadmap links:** `B01-03` (verified), `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `scripts/build_endstate.py`, `docs/evidence/security-fixes-2026-10-30.json`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex verification: existing_task: reconcile nested verification deadlines with observed full-suite runtime; no test, assertion, native journey or product limit is removed.

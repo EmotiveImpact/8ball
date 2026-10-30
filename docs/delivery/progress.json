@@ -27,11 +27,13 @@
       "task_ids": [
         "B01-02",
         "B02-15",
-        "ES01-03"
+        "ES01-03",
+        "B01-03",
+        "ES01-05"
       ],
       "objective": "Fix the three validated local-workspace security findings without changing dependencies, provider permissions or original acceptance gates.",
       "merged": false,
-      "verification": "250 focused tests passed; full native acceptance and final review pending.",
+      "verification": "Independent patch review passed. First native run: 1324 source tests / 391 browser checks passed; packaging failed (missing pip). Installed retry timed out at 120s; fresh native run pending after environment/runner corrections.",
       "remote_ci": "No PR or current CI result yet.",
       "evidence": "docs/evidence/security-fixes-2026-10-30.json"
     },
@@ -362,7 +364,7 @@
     "EV-SECURITY-FIXES": {
       "kind": "controlled_security_regression_and_native_receipt",
       "path": "docs/evidence/security-fixes-2026-10-30.json",
-      "result": "250 focused tests passed; native acceptance and final review pending. No release or actual-model acceptance."
+      "result": "Independent patch review passed. First native run: 1324 source tests / 391 browser checks passed; packaging failed (missing pip). Installed retry timed out at 120s; fresh native run pending after environment/runner corrections."
     }
   },
   "milestones": [

@@ -23,10 +23,12 @@ Reject unsafe Windows static URLs before filesystem resolution, bound provider r
 - Windows UNC/drive-qualified static request paths reaching filesystem resolution.
 - Jev and legacy/V2 Ollama response limits enforced only after whole-body buffering.
 - Legacy imports mixing a new source snapshot with older verified lineage.
+- An installed-package test watchdog shorter than the complete suite runtime on the cloud ARM environment.
 
 ### Verification
 
-- 250 focused tests passed with one existing test-library deprecation warning; full native acceptance and final patch review pending at this preparation checkpoint.
+- 250 focused tests passed. First native run: 1324 source tests and all 391 browser checks passed; packaging failed because pip was absent. After pip installation, the unchanged installed-suite watchdog timed out at 120 seconds; retained as failed evidence.
+- The package regression deadline is now 240 seconds inside the existing 300-second acceptance step. A fresh complete native run is pending.
 
 ### Limitations
 
@@ -43,9 +45,9 @@ Reject unsafe Windows static URLs before filesystem resolution, bound provider r
 - Risk: Streaming must retain cancellation/recording behavior; a separate nested-course defect remains outside these three fixes.
 - Architecture: Keep HTTP/platform and provider I/O guards in 8BALL; retain the ENDSTATE calculation boundary and exact source lineage.
 - Roadmap decision: Existing-task fixes under B01-02/B02-15/ES01-03. EM-102 is deferred; no original required flag/status or acceptance gate changes.
-Registered discoveries: EM-099, EM-100, EM-101, EM-102, EM-103.
+Registered discoveries: EM-099, EM-100, EM-101, EM-102, EM-103, EM-104.
 
-Roadmap items: `B01-02`, `B02-15`, `ES01-03`.
+Roadmap items: `B01-02`, `B02-15`, `ES01-03`, `B01-03`, `ES01-05`.
 
 Evidence: [docs/delivery/sessions/2026-10-30-security-fixes.md](docs/delivery/sessions/2026-10-30-security-fixes.md), [docs/evidence/security-fixes-2026-10-30.json](docs/evidence/security-fixes-2026-10-30.json).
 
