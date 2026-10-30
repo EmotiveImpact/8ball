@@ -21,8 +21,8 @@
     "full_name": "EmotiveImpact/8ball",
     "development_branch": "devin/1792969169-roadmap-integrated",
     "pull_request": 6,
-    "inspected_code_commit": "5e30dd2a73dad88ec37c3a28266df426e32fd254",
-    "inspected_code_tree": "98f436d4af3a2250fe1693b74e961128cc7abf64",
+    "inspected_code_commit": "c0b4d63798bd762218e2125e3d2dd4dca5816820",
+    "inspected_code_tree": "ae0702e86891bb9b3be3da30b550c664a1e5c40b",
     "main_at_inspection": "825ad6668c2c7d128da367476fe16cb8d214b837",
     "status_as_of": "2026-10-30",
     "pr_draft": false,
@@ -40,8 +40,11 @@
       "merged": false,
       "objective": "Preserve both security and coordinated-planning source and audit histories; verify cumulative native and installed-package behavior.",
       "evidence": "docs/delivery/sessions/2026-10-30-cumulative-integration.md",
-      "verification": "Pending for the integrated source; prior evidence remains source-bound.",
-      "incoming_main": "825ad6668c2c7d128da367476fe16cb8d214b837"
+      "verification": "Exact-source native passed: 2561 source tests, 2561 installed-wheel regressions, 24 JS modules and 493 native checks across thirteen suites; inspection valid before additive documentation. No acceptance promotion.",
+      "incoming_main": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "tested_code_commit": "c0b4d63798bd762218e2125e3d2dd4dca5816820",
+      "source_sha256": "d0f35d3798440415a43ae1cdabffd7ae04c70825c9b6994676250b490c9f62eb",
+      "receipt": "docs/evidence/cumulative-native-2026-10-30.json"
     },
     "verified_sprint_history": [
       {

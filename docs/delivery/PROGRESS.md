@@ -11,7 +11,7 @@ Build objective and completion criteria: [BUILD-GOAL.md](BUILD-GOAL.md). The sec
 ## Checkpoint and release boundary
 
 - Active integration branch: `devin/1792969169-roadmap-integrated`; PR #6.
-- Inspected application baseline: `5e30dd2a73dad88ec37c3a28266df426e32fd254`.
+- Inspected application baseline: `c0b4d63798bd762218e2125e3d2dd4dca5816820`.
 - This is a dated snapshot. Refresh the branch, PR and CI at the start of every session.
 - At inspection: draft PR = `false`; merged = `false`; production deployed = `false`.
 - Standalone ENDSTATE package released = `false`.

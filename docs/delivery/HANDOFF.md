@@ -1,12 +1,12 @@
 # Current cumulative source integration, 30 October 2026
 
-Branch `devin/1792969169-roadmap-integrated`, base `5e30dd2a73dad88ec37c3a28266df426e32fd254`; incoming main `825ad6668c2c7d128da367476fe16cb8d214b837`. Security fixes and coordinated-planning/result work are retained together. Full integrated verification is pending; earlier counts below belong only to their original sources. [Current scope and verification](sessions/2026-10-30-cumulative-integration.md).
+Branch `devin/1792969169-roadmap-integrated`, tested integration `c0b4d63798bd762218e2125e3d2dd4dca5816820`; incoming main `825ad6668c2c7d128da367476fe16cb8d214b837`. Security fixes and coordinated-planning/result work are retained together. Exact-source native acceptance passed: 2,561 source tests, 2,561 installed-wheel regressions, 24 JS modules and all 493 checks across thirteen native browser suites. Source/artifact inspection valid before this later additive documentation. [Current scope and verification](sessions/2026-10-30-cumulative-integration.md), [bound receipt](../evidence/cumulative-native-2026-10-30.json). Earlier counts below belong only to their original sources.
 
 ## Emergence Review
 
 EM-347 records independent ID allocation on parallel branches. The imported security discoveries formerly named EM-099–105 at the incoming main commit are EM-340–346 here, with exact original records, source commit and hash retained in `emergence.json` id_relocations and displayed in `EMERGENCE-REGISTER.md`. Historical changelog entries and receipts remain unchanged. No task status or acceptance gate is promoted.
 
-Next: complete focused/history guards, full native/package acceptance and exact source/artifact inspection, then commit/push this bounded checkpoint. Do not merge the PR into main, deploy, run inference or treat software checks as independent human/product acceptance.
+Next: commit/push the additive verification records and settle final-head remote software CI. Both parent histories pass their guards. Do not merge the PR into main, deploy, run inference or treat software checks as independent human/product acceptance.
 
 ## Historical main-parent security checkpoint (not cumulative verification)
 

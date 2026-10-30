@@ -39,10 +39,23 @@ integrated tree.
 
 ## Verification
 
-Pending: focused regression and relocation-tamper checks; changelog and emergence
-history guards against **both** parents; generated delivery checks; full native
-acceptance, source tests, installed-wheel regressions, Python compilation,
-browser JavaScript checks, all thirteen browser suites and report inspection.
+Verified source: `c0b4d63798bd762218e2125e3d2dd4dca5816820`, fingerprint
+`d0f35d3798440415a43ae1cdabffd7ae04c70825c9b6994676250b490c9f62eb`.
+179 focused regression and relocation-tamper checks passed. Changelog and
+emergence history guards pass against **both** parents; generated delivery is
+current. Full native acceptance passed: 2,561 source tests, 2,561 installed-wheel
+regressions, 24 JavaScript modules and all 493 browser checks across thirteen
+suites. Python compilation, structural review fixtures, wheel isolation and
+schema generation also passed. No source changed during that run. Exact local
+source/artifact inspection was valid/passed before this additive documentation.
+
+[Bound receipt](../../evidence/cumulative-native-2026-10-30.json) and its
+compressed unchanged original report retain hashes and source boundaries.
+Binary browser artifacts remain in the ignored local acceptance directory.
+The initial focused invocation used system Python, which lacked pytest;
+the documented existing `.venv/bin/python` was then used. No installation,
+test removal, extra inference or environment-policy change was needed.
+This later receipt/documentation does not inherit an unperformed full local run.
 
 ## Emergence Review
 
@@ -69,7 +82,6 @@ No additional product finding or required task was identified by these passes.
 ## Handoff boundary
 
 No new inference, paid retry, automatic action, merge into main, deployment,
-release or human acceptance is authorised. Next: verify this exact cumulative
-source, inspect its retained evidence, publish a non-rewritten branch checkpoint
-and settle remote software CI. Independent quality, operator acceptance and
-production gates remain open.
+release or human acceptance is authorised. Next: publish the non-rewritten
+branch checkpoint and settle final-head remote software CI. Independent quality,
+operator acceptance and production gates remain open.

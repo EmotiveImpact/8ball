@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 cumulative native verification · Retain source-bound native evidence for the cumulative integration
+
+2026-10-30 · `local_unreleased`
+
+Retain the unchanged original native acceptance report and a receipt bound to the exact security-plus-coordination integration source.
+
+### Added
+
+- Compressed unchanged native report and source-bound verification receipt for c0b4d63798bd762218e2125e3d2dd4dca5816820.
+
+### Changed
+
+- Current handoff and canonical checkpoint distinguish verified integration source from this later documentation and unfinished human/model/production gates.
+
+### Verification
+
+- 2561 source tests, 2561 installed-wheel regressions, 24 JavaScript modules and 493 native checks across thirteen suites passed.
+- 179 focused checks passed; exact source/artifact inspection valid before documentation closeout; history guards pass against both parents.
+- Staged credential-value scan passed; no values printed.
+
+### Limitations
+
+- Exact tested integration c0b4d63798bd762218e2125e3d2dd4dca5816820 only, not a full local rerun of later documentation.
+- Compressed unchanged report retains binary artifact hashes, not those binaries; exact local inspection passed before documentation closeout.
+- Both parents retain original changelog entries, all evidence and discovery observations; seven incoming ID collisions use explicit source-qualified relocations.
+- No new inference, paid retry, authority changes, main merge, deployment or release.
+- Independent semantic quality, human accessibility, operator benefit and production readiness remain separate open gates.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-347 now has focused tamper and both-parent preservation coverage; no additional discovery identified.
+- Risk: Software integration does not resolve deferred security hypotheses, independent quality, operator acceptance or production gates.
+- Architecture: Retain source-qualified relocation provenance without rewriting either parent changelog.
+- Roadmap decision: existing_task DOC-06; no acceptance promotion or new required product task.
+Registered discoveries: EM-347.
+
+Roadmap items: `DOC-06`, `B02-11`, `B02-15`, `ES01-05`.
+
+Evidence: [docs/evidence/cumulative-native-2026-10-30.json](docs/evidence/cumulative-native-2026-10-30.json), [docs/evidence/cumulative-native-passed-2026-10-30.json.xz](docs/evidence/cumulative-native-passed-2026-10-30.json.xz), [docs/delivery/sessions/2026-10-30-cumulative-integration.md](docs/delivery/sessions/2026-10-30-cumulative-integration.md).
+
 ## 0.2.0-alpha.8 cumulative source integration · Retain security safeguards alongside coordinated planning
 
 2026-10-30 · `local_unreleased`

@@ -3,6 +3,59 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-30-cumulative-native-evidence",
+      "date": "2026-10-30",
+      "version": "0.2.0-alpha.8 cumulative native verification",
+      "title": "Retain source-bound native evidence for the cumulative integration",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "DOC-06",
+        "B02-11",
+        "B02-15",
+        "ES01-05"
+      ],
+      "summary": "Retain the unchanged original native acceptance report and a receipt bound to the exact security-plus-coordination integration source.",
+      "added": [
+        "Compressed unchanged native report and source-bound verification receipt for c0b4d63798bd762218e2125e3d2dd4dca5816820."
+      ],
+      "changed": [
+        "Current handoff and canonical checkpoint distinguish verified integration source from this later documentation and unfinished human/model/production gates."
+      ],
+      "fixed": [],
+      "verification": [
+        "2561 source tests, 2561 installed-wheel regressions, 24 JavaScript modules and 493 native checks across thirteen suites passed.",
+        "179 focused checks passed; exact source/artifact inspection valid before documentation closeout; history guards pass against both parents.",
+        "Staged credential-value scan passed; no values printed."
+      ],
+      "limitations": [
+        "Exact tested integration c0b4d63798bd762218e2125e3d2dd4dca5816820 only, not a full local rerun of later documentation.",
+        "Compressed unchanged report retains binary artifact hashes, not those binaries; exact local inspection passed before documentation closeout.",
+        "Both parents retain original changelog entries, all evidence and discovery observations; seven incoming ID collisions use explicit source-qualified relocations.",
+        "No new inference, paid retry, authority changes, main merge, deployment or release.",
+        "Independent semantic quality, human accessibility, operator benefit and production readiness remain separate open gates."
+      ],
+      "evidence_paths": [
+        "docs/evidence/cumulative-native-2026-10-30.json",
+        "docs/evidence/cumulative-native-passed-2026-10-30.json.xz",
+        "docs/delivery/sessions/2026-10-30-cumulative-integration.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-347 now has focused tamper and both-parent preservation coverage; no additional discovery identified."
+        ],
+        "risks": [
+          "Software integration does not resolve deferred security hypotheses, independent quality, operator acceptance or production gates."
+        ],
+        "architecture_implications": [
+          "Retain source-qualified relocation provenance without rewriting either parent changelog."
+        ],
+        "roadmap_decision": "existing_task DOC-06; no acceptance promotion or new required product task.",
+        "insight_ids": [
+          "EM-347"
+        ]
+      }
+    },
+    {
       "id": "2026-10-30-cumulative-integration",
       "date": "2026-10-30",
       "version": "0.2.0-alpha.8 cumulative source integration",
