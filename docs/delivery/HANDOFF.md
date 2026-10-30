@@ -1,3 +1,24 @@
+# Current cumulative source integration, 30 October 2026
+
+Branch `devin/1792969169-roadmap-integrated`, base `5e30dd2a73dad88ec37c3a28266df426e32fd254`; incoming main `825ad6668c2c7d128da367476fe16cb8d214b837`. Security fixes and coordinated-planning/result work are retained together. Full integrated verification is pending; earlier counts below belong only to their original sources. [Current scope and verification](sessions/2026-10-30-cumulative-integration.md).
+
+## Emergence Review
+
+EM-347 records independent ID allocation on parallel branches. The imported security discoveries formerly named EM-099–105 at the incoming main commit are EM-340–346 here, with exact original records, source commit and hash retained in `emergence.json` id_relocations and displayed in `EMERGENCE-REGISTER.md`. Historical changelog entries and receipts remain unchanged. No task status or acceptance gate is promoted.
+
+Next: complete focused/history guards, full native/package acceptance and exact source/artifact inspection, then commit/push this bounded checkpoint. Do not merge the PR into main, deploy, run inference or treat software checks as independent human/product acceptance.
+
+## Historical main-parent security checkpoint (not cumulative verification)
+
+# Current security-fix handoff, 30 October 2026
+
+The three reviewed findings are fixed on `room/check-repo-with-three-sub-agents-pj2t`, based on `1038291bf219d04e7fe4a6a01c332d1ac277fdba`. Tested code `bb881f278eb24b97732382a83a6084a22d7e1983` passed **1,324 source tests, 1,324 installed-ENDSTATE regressions and all 391 checks across eleven native browser suites**. Exact-source/artifact inspection was valid/passed before final receipt-only edits. The independent security reviewer found no surviving bypass/regression in the three fixes. [Session and ER-01–15](sessions/2026-10-30-security-fixes.md), [receipt with retained failures](../evidence/security-fixes-2026-10-30.json), [draft PR8](https://github.com/EmotiveImpact/8ball/pull/8).
+
+Both code-checkpoint CI workflows passed. An initial receipt-head CI failed only on Studio’s obsolete local-delivery assertion; the corrected exact canonical-state check passed all 44 native Studio checks. PR8 tracks final cumulative CI. The first native attempt lacked pip and the installed retry hit a 120-second watchdog; both are retained. Only the installed full-suite deadline is now 240 seconds within the existing 300-second acceptance step. EM-099–105 preserve all discoveries, including deferred course and hosted-compression candidates. Original model, independent/human and release gates remain. Await explicit owner merge authorization; no live inference, deployment or acceptance promotion.
+
+
+---
+
 # Current verified checkpoint: coordinated results
 
 Branch `devin/1792969169-roadmap-integrated`; implementation `11e328c1eaa3ed6817cdb794e1878410b85a8de3`. Full native acceptance: 2,493 source tests, 2,493 installed-wheel regressions, 24 JS modules and 493 browser checks across 13 suites. Original report inspection valid/passed before this later documentation. [Receipt](../evidence/coordinated-result-ui-native-2026-10-26.json) · [scope and emergence](sessions/2026-10-26-coordinated-result-ui.md).

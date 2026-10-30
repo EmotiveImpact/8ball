@@ -107,3 +107,46 @@ def test_original_review_pass_cannot_disappear_even_without_git_comparison():
 def test_new_review_pass_requires_stable_identifier():
  d=data();d['required_prompts'].append({'id':'random','scope':'build','text':'Fixture'})
  with pytest.raises(ValueError,match='Invalid review prompt'):checker.validate(d)
+
+
+def test_explicit_collision_receipts_preserve_both_original_records():
+ d=data();targets=checker.relocation_targets(d)
+ assert len(targets)==7
+ for receipt in d['id_relocations']:
+  original=receipt['original'];after=targets[tuple(original[k] for k in checker.IMMUTABLE)]
+  assert after==dict(original,id=receipt['canonical_id'])
+  assert receipt['source_commit'] in checker.render(d)
+
+
+@pytest.mark.parametrize('mutation',[
+ lambda d:d['id_relocations'][0]['original'].update(observation='Rewritten source'),
+ lambda d:d['id_relocations'][0].update(source_commit='not-a-commit'),
+ lambda d:d['id_relocations'][0].update(original_sha256='0'*64),
+ lambda d:d['id_relocations'][0].update(canonical_id='EM-099'),
+ lambda d:d['id_relocations'].append(deepcopy(d['id_relocations'][0])),
+ lambda d:next(i for i in d['items'] if i['id']=='EM-340').update(observation='Erase imported text'),
+ lambda d:next(i for i in d['items'] if i['id']=='EM-340').update(history=[]),
+ lambda d:next(i for i in d['items'] if i['id']=='EM-340').update(evidence_paths=[]),
+])
+def test_collision_receipts_cannot_hide_text_history_or_evidence_loss(mutation):
+ d=data();mutation(d)
+ with pytest.raises(ValueError):checker.relocation_targets(d)
+
+
+def test_history_guard_resolves_original_parent_ids_only_through_explicit_receipts(tmp_path):
+ d=baseline(tmp_path)
+ original=deepcopy(d['id_relocations'][0]['original'])
+ # Reproduce the incoming parent's original ID instead of the branch's collision.
+ p=tmp_path/checker.SOURCE;parent=deepcopy(d);parent['id_relocations']=[]
+ parent['items']=[original if i['id']==original['id'] else i for i in parent['items'] if i['id']!='EM-340']
+ p.write_text(json.dumps(parent))
+ subprocess.run(['git','add','.'],cwd=tmp_path,check=True)
+ subprocess.run(['git','commit','-qm','incoming parent fixture'],cwd=tmp_path,check=True)
+ checker.check_base(d,'HEAD',tmp_path)
+ d['id_relocations']=[]
+ with pytest.raises(ValueError,match='immutable'):checker.check_base(d,'HEAD',tmp_path)
+
+
+def test_collision_receipt_history_is_append_only(tmp_path):
+ d=baseline(tmp_path);d['id_relocations'][0]['reason']='Silently replace the reason'
+ with pytest.raises(ValueError,match='relocation history'):checker.check_base(d,'HEAD',tmp_path)

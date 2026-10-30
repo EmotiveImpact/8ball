@@ -2,7 +2,7 @@
 
 > Generated from `docs/delivery/progress.json`. Edit the ledger, then run `python scripts/delivery.py --write`. Do not maintain a second set of statuses here.
 
-Last status review: 2026-10-26.
+Last status review: 2026-10-30.
 
 **8BALL is the fixer product. ENDSTATE is the reusable engine underneath it.**
 
@@ -10,10 +10,10 @@ Build objective and completion criteria: [BUILD-GOAL.md](BUILD-GOAL.md). The sec
 
 ## Checkpoint and release boundary
 
-- Active integration branch: `feat/agency-authorisation-20261025`; PR #5.
-- Inspected application baseline: `48e572e95be8b28d0b317d7bc8b3a18893a3ef76`.
+- Active integration branch: `devin/1792969169-roadmap-integrated`; PR #6.
+- Inspected application baseline: `5e30dd2a73dad88ec37c3a28266df426e32fd254`.
 - This is a dated snapshot. Refresh the branch, PR and CI at the start of every session.
-- At inspection: draft PR = `true`; merged = `false`; production deployed = `false`.
+- At inspection: draft PR = `false`; merged = `false`; production deployed = `false`.
 - Standalone ENDSTATE package released = `false`.
 
 ## Checkbox meaning
@@ -78,12 +78,12 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-TRACKING`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH`, `EV-RUFLO-RESEARCH` (registry below).
 
 - [x] **DOC-04 Mandatory changelog and in-app product history**
-  - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
+  - Status: `verified`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Every build adds a dated evidence-linked entry; generated CHANGELOG.md and in-app history share one source; base comparison detects missing entries or rewritten history.
   - Next: Enforce a new immutable-history changelog entry in each following session and integration commit. Local documentation/API/render scope verified; no source publication or release implied.
-  - Branch/base: `docs/endstate-evolution-plan-20261016` / `bf54f607bb0e13d0c6adfc0f59ee146e75be287b`.
-  - Existing code: `scripts/changelog.py`, `docs/delivery/changelog.json`, `web/v2/changelog-view.js`.
-  - Evidence: `EV-PLAN-STUDIO-LOCAL`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH`, `EV-RUFLO-RESEARCH` (registry below).
+  - Branch/base: `room/check-repo-with-three-sub-agents-pj2t` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
+  - Existing code: `scripts/changelog.py`, `docs/delivery/changelog.json`, `web/v2/changelog-view.js`, `tests/browser_studio.py`.
+  - Evidence: `EV-PLAN-STUDIO-LOCAL`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH`, `EV-RUFLO-RESEARCH`, `EV-SECURITY-FIXES` (registry below).
 
 - [x] **DOC-05 Mandatory end-of-sprint emergence review**
   - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
@@ -123,17 +123,19 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-V01` (registry below).
 
 - [x] **B01-02 Local workspace, persistence, scenarios and exports**
-  - Status: `verified`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `verified`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Original local browser workflow persists cases and exports actual audit records with isolated scenarios.
   - Next: Keep the legacy UI/data path available or migrate with verified lineage.
-  - Existing code: `web/app.js`, `eightball/store.py`, `tests/browser_smoke.py`.
-  - Evidence: `EV-V01` (registry below).
+  - Branch/base: `room/check-repo-with-three-sub-agents-pj2t` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
+  - Existing code: `web/app.js`, `eightball/store.py`, `tests/browser_smoke.py`, `eightball/api.py`, `tests/test_security_regressions.py`.
+  - Evidence: `EV-V01`, `EV-SECURITY-FIXES` (registry below).
 
 - [x] **B01-03 Reproducible alpha acceptance evidence**
-  - Status: `verified`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `verified`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Original 86 backend and 27 native browser results are recorded with exact code scope.
   - Next: Merge/release only through a separate explicit decision.
-  - Evidence: `EV-V01` (registry below).
+  - Branch/base: `room/check-repo-with-three-sub-agents-pj2t` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
+  - Evidence: `EV-V01`, `EV-SECURITY-FIXES` (registry below).
 
 
 ## 8BALL 0.2: Reviewed situation intelligence
@@ -250,13 +252,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Blocker: Independent multi-source identity/date usefulness review remains outstanding. No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed.
 
 - [ ] **B02-15 Model progress/cancellation and accurate installation status**
-  - Status: `partial`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-26.
+  - Status: `partial`. Owner: Devin / roadmap-intelligence. Updated: 2026-10-30.
   - Acceptance: The UI reports actual runtime/weights/credential state and cancels work without stale commits. No silent large model download.
   - Next: Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately. Integration lifecycle checkpoint: retain the source-matched Sonnet API/process evidence and unknown remote states. Complete the remaining actual-provider native-UI lifecycle/installation-status review without treating software results as human or provider-side cancellation acceptance.
   - Branch/base: `devin/1792969169-roadmap-intelligence` / `baca8ad9efa531e5f172058845852963d7d5234a`.
   - Dependencies: `ES03-04`.
-  - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`, `eightball/v2/compatible.py`, `tests/test_compatible_integration.py`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`, `docs/delivery/lane-reports/intelligence.md`, `eightball/agency_host.py`, `docs/v2/AGENCY-HOST.md`.
-  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION`, `EV-LANE-INTELLIGENCE-20261026`, `EV-INTEGRATION-ENGINEERING-20261026`, `EV-NATIVE-REVIEW-20261026`, `EV-DECISION-SMOKE-20261026`, `EV-SONNET-LIFECYCLE-20261026`, `EV-LIFECYCLE-SOFTWARE-20261026` (registry below).
+  - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`, `eightball/v2/compatible.py`, `tests/test_compatible_integration.py`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`, `docs/delivery/lane-reports/intelligence.md`, `eightball/agency_host.py`, `docs/v2/AGENCY-HOST.md`, `eightball/providers.py`, `eightball/v2/intelligence.py`, `evals/live_generation.py`, `tests/test_security_regressions.py`.
+  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION`, `EV-LANE-INTELLIGENCE-20261026`, `EV-INTEGRATION-ENGINEERING-20261026`, `EV-NATIVE-REVIEW-20261026`, `EV-DECISION-SMOKE-20261026`, `EV-SONNET-LIFECYCLE-20261026`, `EV-LIFECYCLE-SOFTWARE-20261026`, `EV-SECURITY-FIXES` (registry below).
   - Blocker: Selected Sonnet API/process cancellation, supersession and restart observations pass; actual-provider native-UI lifecycle/installation-status acceptance remain unverified. Remote receipt, cancellation and billing are not established by local job states.
 
 - [ ] **B02-16 Complete accessibility and supported-environment validation**
@@ -468,13 +470,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-KERNEL`, `EV-INFORMATION-LOOP-20261026` (registry below).
 
 - [x] **ES01-03 Preserve storage, imports and audit lineage**
-  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
+  - Status: `verified`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Old data, imports and event meanings remain readable; migrations preserve observations and expiring approval behaviour.
   - Next: Keep frozen pre-extraction records and wire schemas as regression gates; do not regenerate expected results to hide changes.
-  - Branch/base: `feat/situation-intelligence-v2` / `5e2098e9cb12251592eb3889ce7926798484699d`.
+  - Branch/base: `room/check-repo-with-three-sub-agents-pj2t` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
   - Dependencies: `ES01-01`.
-  - Existing code: `eightball/models.py`, `eightball/v2/contracts.py`, `tests/test_endstate_kernel.py`, `tests/fixtures/endstate/pre_extraction.json.xz`.
-  - Evidence: `EV-KERNEL` (registry below).
+  - Existing code: `eightball/models.py`, `eightball/v2/contracts.py`, `tests/test_endstate_kernel.py`, `tests/fixtures/endstate/pre_extraction.json.xz`, `eightball/v2/services.py`, `tests/test_security_regressions.py`.
+  - Evidence: `EV-KERNEL`, `EV-SECURITY-FIXES` (registry below).
 
 - [x] **ES01-04 Prove reuse through neutral, sales and support fixtures**
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
@@ -486,13 +488,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-KERNEL` (registry below).
 
 - [x] **ES01-05 Reusable core acceptance**
-  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-26.
+  - Status: `verified`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Current 8BALL suites and cross-domain fixtures pass on the proposed shared package; version compatibility is explicit.
   - Next: Internal reusable-core compatibility scope verified. Maintain regression coverage; public SDK/commercial release and other platforms remain separate.
-  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
+  - Branch/base: `room/check-repo-with-three-sub-agents-pj2t` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
   - Dependencies: `ES01-02`, `ES01-03`, `ES01-04`.
   - Existing code: `endstate/api.py`, `docs/endstate/CONTRACTS.md`, `tests/test_endstate_kernel.py`, `endstate/results.py`, `pyproject.toml`, `scripts/build_endstate.py`, `scripts/export_endstate_schemas.py`, `tests/test_endstate_results.py`.
-  - Evidence: `EV-KERNEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-NATIVE-REVIEW-20261026`, `EV-LIFECYCLE-SOFTWARE-20261026` (registry below).
+  - Evidence: `EV-KERNEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-NATIVE-REVIEW-20261026`, `EV-LIFECYCLE-SOFTWARE-20261026`, `EV-SECURITY-FIXES` (registry below).
 
 
 ## ENDSTATE 0.2: Event-driven replanning
@@ -1332,3 +1334,10 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `controlled_native_ui`.
 - Repository evidence: [docs/evidence/coordinated-result-ui-native-2026-10-26.json](../../docs/evidence/coordinated-result-ui-native-2026-10-26.json).
 - Result/scope: Source 11e328c1eaa3ed6817cdb794e1878410b85a8de3: 2493 source + 2493 wheel tests and 493 native checks; inspected valid/passed. No inference, model-quality or release approval.
+
+### EV-SECURITY-FIXES
+
+- Kind: `controlled_security_regression_and_native_receipt`.
+- Repository evidence: [docs/evidence/security-fixes-2026-10-30.json](../../docs/evidence/security-fixes-2026-10-30.json).
+- Result/scope: 1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.
+- Code revision: `bb881f278eb24b97732382a83a6084a22d7e1983`.

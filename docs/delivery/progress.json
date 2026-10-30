@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-26",
+  "updated_on": "2026-10-30",
   "product": "8BALL",
   "engine": "ENDSTATE",
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
@@ -19,13 +19,13 @@
       "next_action": "Retain this invalid-for-quality diagnostic. Independently review source fidelity and define genuinely unseen outcomes, target population and an appropriate baseline before a predictive-quality study. No repeated inference on this case to improve its score."
     },
     "full_name": "EmotiveImpact/8ball",
-    "development_branch": "feat/agency-authorisation-20261025",
-    "pull_request": 5,
-    "inspected_code_commit": "48e572e95be8b28d0b317d7bc8b3a18893a3ef76",
-    "inspected_code_tree": "9b98e9f70d4d29fc32a75e125a1ab6a054040e88",
-    "main_at_inspection": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
-    "status_as_of": "2026-10-25",
-    "pr_draft": true,
+    "development_branch": "devin/1792969169-roadmap-integrated",
+    "pull_request": 6,
+    "inspected_code_commit": "5e30dd2a73dad88ec37c3a28266df426e32fd254",
+    "inspected_code_tree": "98f436d4af3a2250fe1693b74e961128cc7abf64",
+    "main_at_inspection": "825ad6668c2c7d128da367476fe16cb8d214b837",
+    "status_as_of": "2026-10-30",
+    "pr_draft": false,
     "merged": false,
     "production_deployed": false,
     "standalone_endstate_package_released": false,
@@ -33,89 +33,15 @@
     "integration_authority": "docs/decisions/0007-owner-build-consolidation.md",
     "source_merged_not_release_accepted": true,
     "current_sprint": {
-      "active_follow_up": {
-        "owner": "Devin / integration",
-        "branch": "devin/1792969169-roadmap-integrated",
-        "base_commit": "c13a3a023133b66f1bb32891aa2e739fec25b88a",
-        "scope": "Read-only retained specialist presentation in the existing event review; no model-selection controls or new inference.",
-        "evidence": "docs/delivery/sessions/2026-10-26-specialist-presentation.md",
-        "verified_code_commit": "ba1fd41b546bb026a2032f57bfa575020b99f951",
-        "source_sha256": "6c5fae226e273685efb9bdb75a3a98887ac991f94a6b55f6d53e822156655daf",
-        "receipt": "docs/evidence/specialist-presentation-native-2026-10-26.json"
-      },
       "owner": "Devin / integration",
       "branch": "devin/1792969169-roadmap-integrated",
-      "base_commit": "a3e340275e0ecc810a80c2aa9299c06e1e19385d",
-      "status_as_of": "2026-10-26",
+      "base_commit": "5e30dd2a73dad88ec37c3a28266df426e32fd254",
+      "status_as_of": "2026-10-30",
       "merged": false,
-      "code_checkpoint_pushed": true,
-      "evidence": "docs/delivery/sessions/2026-10-26-specialist-worker.md",
-      "verification": "Exact-source native acceptance passed:2026 source tests,2026 installed-wheel regressions,24 JavaScript modules,13 suites/454 native checks. Source/artifact inspection matched before documentation closeout; no model-quality or release acceptance.",
-      "tested_commit": "33f0d8ddeac558d19d5b8fcf3995978a21cf08b9",
-      "source_sha256": "39c4d15a98f315ef6190b6b72b6de319a51fcdd83ba37d4a506fe9f662013cb7",
-      "acceptance_receipt": "docs/evidence/specialist-worker-native-2026-10-26.json",
-      "prior_failed_receipt": "docs/evidence/specialist-worker-failed-2026-10-26.json",
-      "prior_failed_report": "artifacts/acceptance/20261026T034101Z-00c70131/report.json",
-      "provider_rejection_diagnostics": {
-        "owner": "Devin / integration",
-        "branch": "devin/1792969169-roadmap-integrated",
-        "base_commit": "b43f0560547be82ee4368a675d815ef82d5be4ad",
-        "scope": "B02-09/B02-11 narrow diagnostic retention; no cost-unit conversion, inference, authority or reserved-lane change.",
-        "evidence": "docs/delivery/sessions/2026-10-26-provider-diagnostics.md",
-        "verification": "2355 source tests, 2355 installed-wheel regressions, 24 JavaScript modules and 475 native checks in 13 suites passed at f22f967. Exact inspection valid before documentation closeout; no model inference.",
-        "tested_commit": "f22f96735334d576a0e91757cd5f7363e3fa1f2e",
-        "source_sha256": "f1b4aee839ec362d8898a11abb5f123f7399b4bd63236054a472f9d288c641be",
-        "receipt": "docs/evidence/provider-diagnostics-software-2026-10-26.json"
-      },
-      "native_cost_policy": {
-        "owner": "Devin / integration",
-        "branch": "devin/1792969169-roadmap-integrated",
-        "base_commit": "d89bae35b09207c174135ef0bb237611b73ebe5d",
-        "scope": "B02-11 provider-scoped native USD normalization, original numeric provenance and versioned worker authority. No inference, reserved-lane or quality/status change.",
-        "evidence": "docs/delivery/sessions/2026-10-26-native-cost-policy.md",
-        "verification": "2445 source tests, 2445 installed-wheel regressions, 24 JavaScript modules and 475 native checks in 13 suites passed at 5780368. Exact source/artifact inspection valid before documentation closeout; no model inference.",
-        "tested_commit": "5780368e5a90b117e035f7cec85e2af574275401",
-        "source_sha256": "e0c26a61184b66e1c08785f452a228978633f92c7635508406777e241463e16c",
-        "receipt": "docs/evidence/native-cost-policy-software-2026-10-26.json"
-      },
-      "coordinated_native_cost_live": {
-        "source_commit": "bbcb8c4234fc94b1b02301037030500aefc5d0e6",
-        "status": "partial_or_failed",
-        "recorded_requests": 7,
-        "receipt": "docs/evidence/coordinated-native-cost-live-2026-10-26.json",
-        "next_action": "Preserve this second failed protocol, strengthen output-contract instructions without weakening validation, then build read-only coordinated-result presentation. No resumed protocol or historical rerun."
-      },
-      "draft_output_contract": {
-        "prompt_version": "endstate.draft.prompts.v4",
-        "base_commit": "52e5c0d",
-        "verification": "2455 source tests, 2455 installed-wheel regressions, 24 JS modules and 475 native browser checks across 13 suites passed; source/artifact inspection valid. No inference or model-quality approval.",
-        "record": "docs/delivery/sessions/2026-10-26-draft-output-contract.md",
-        "status": "native_software_passed_live_unverified",
-        "source_commit": "d85742d4d5d184bb7eba533ca594a94b02a96661",
-        "source_sha256": "b3ae11dad4350f3d99f87a17b791fa0283d04df22748be97aa825464972c16fc",
-        "run_id": "20261026T140753Z-e441dec1"
-      },
-      "coordinated_draft_v4_live": {
-        "source_commit": "5aacbca91c3909031aec974600e5ccaff15211f7",
-        "source_sha256": "94ad75c09d0d19f165f272860ecec1db1ed00d040b07081fa4a232d1e7242d16",
-        "protocol_sha256": "31fcb19a64159f1d79988337631aa8d4d5b25bfd1cb2a90cccc3782b616e2eed",
-        "status": "partial_or_failed",
-        "recorded_requests": 10,
-        "completed_methods": [
-          "claude-opus-5-5"
-        ],
-        "known_specialist_cost_nano_usd": 39585,
-        "evidence": "docs/evidence/coordinated-draft-v4-live-2026-10-26.json",
-        "next": "Read-only coordinated presentation; no more inference needed. No semantic/predictive acceptance."
-      },
-      "coordinated_result_ui": {
-        "base_commit": "69c482569bf17d558f4b730c4ad4d24ca8734213",
-        "status": "native_verified_publication_pending",
-        "verification": "2493 source tests, 2493 installed-wheel regressions, 24 JS modules and 493 checks in 13 native browser suites passed; source/evidence inspection valid before documentation closeout.",
-        "record": "docs/delivery/sessions/2026-10-26-coordinated-result-ui.md",
-        "source_commit": "11e328c1eaa3ed6817cdb794e1878410b85a8de3",
-        "source_sha256": "9097753973b7d47e5a97e6b96d13924381eeb05ae73d5b1a117c6795ba4e0d10"
-      }
+      "objective": "Preserve both security and coordinated-planning source and audit histories; verify cumulative native and installed-package behavior.",
+      "evidence": "docs/delivery/sessions/2026-10-30-cumulative-integration.md",
+      "verification": "Pending for the integrated source; prior evidence remains source-bound.",
+      "incoming_main": "825ad6668c2c7d128da367476fe16cb8d214b837"
     },
     "verified_sprint_history": [
       {
@@ -247,6 +173,27 @@
         "acceptance_receipt": "docs/evidence/roadmap-integration-native-2026-10-26.json",
         "prior_failed_receipt": "docs/evidence/roadmap-integration-failed-2026-10-26.json",
         "receipt_publication": "Containing documentation-only commit; handoff tooling verifies remote head. Tested code checkpoint already confirmed pushed."
+      },
+      {
+        "branch": "room/check-repo-with-three-sub-agents-pj2t",
+        "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+        "status_as_of": "2026-10-30",
+        "owner": "Codex",
+        "task_ids": [
+          "B01-02",
+          "B02-15",
+          "ES01-03",
+          "B01-03",
+          "ES01-05",
+          "DOC-04"
+        ],
+        "objective": "Fix the three validated local-workspace security findings without changing dependencies, provider permissions or original acceptance gates.",
+        "merged": false,
+        "verification": "1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.",
+        "remote_ci": "Both code-checkpoint CI workflows passed. Initial receipt-head CI 41035068063 failed only on Studio hardcoded delivery label; corrected native Studio passed44. Authoritative final cumulative CI: PR8.",
+        "evidence": "docs/evidence/security-fixes-2026-10-30.json",
+        "tested_code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
+        "tested_code_tree": "ff87fcc6740cf020e5aa7a73648578206cdb3be2"
       }
     ],
     "provider_configuration_preparation": {
@@ -277,6 +224,16 @@
         "pull_request": 2,
         "inspected_code_commit": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
         "status_as_of": "2026-10-15",
+        "merged": true
+      },
+      {
+        "development_branch": "main",
+        "pull_request": 2,
+        "inspected_code_commit": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
+        "inspected_code_tree": "16f9791603f6663ebaacfaca53152cb3bef09c87",
+        "main_at_inspection": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
+        "status_as_of": "2026-10-15",
+        "pr_draft": false,
         "merged": true
       }
     ],
@@ -678,7 +635,92 @@
         }
       ]
     },
-    "integration_branch": "devin/1792969169-roadmap-integrated"
+    "integration_branch": "devin/1792969169-roadmap-integrated",
+    "prior_integration_checkpoint": {
+      "active_follow_up": {
+        "owner": "Devin / integration",
+        "branch": "devin/1792969169-roadmap-integrated",
+        "base_commit": "c13a3a023133b66f1bb32891aa2e739fec25b88a",
+        "scope": "Read-only retained specialist presentation in the existing event review; no model-selection controls or new inference.",
+        "evidence": "docs/delivery/sessions/2026-10-26-specialist-presentation.md",
+        "verified_code_commit": "ba1fd41b546bb026a2032f57bfa575020b99f951",
+        "source_sha256": "6c5fae226e273685efb9bdb75a3a98887ac991f94a6b55f6d53e822156655daf",
+        "receipt": "docs/evidence/specialist-presentation-native-2026-10-26.json"
+      },
+      "owner": "Devin / integration",
+      "branch": "devin/1792969169-roadmap-integrated",
+      "base_commit": "a3e340275e0ecc810a80c2aa9299c06e1e19385d",
+      "status_as_of": "2026-10-26",
+      "merged": false,
+      "code_checkpoint_pushed": true,
+      "evidence": "docs/delivery/sessions/2026-10-26-specialist-worker.md",
+      "verification": "Exact-source native acceptance passed:2026 source tests,2026 installed-wheel regressions,24 JavaScript modules,13 suites/454 native checks. Source/artifact inspection matched before documentation closeout; no model-quality or release acceptance.",
+      "tested_commit": "33f0d8ddeac558d19d5b8fcf3995978a21cf08b9",
+      "source_sha256": "39c4d15a98f315ef6190b6b72b6de319a51fcdd83ba37d4a506fe9f662013cb7",
+      "acceptance_receipt": "docs/evidence/specialist-worker-native-2026-10-26.json",
+      "prior_failed_receipt": "docs/evidence/specialist-worker-failed-2026-10-26.json",
+      "prior_failed_report": "artifacts/acceptance/20261026T034101Z-00c70131/report.json",
+      "provider_rejection_diagnostics": {
+        "owner": "Devin / integration",
+        "branch": "devin/1792969169-roadmap-integrated",
+        "base_commit": "b43f0560547be82ee4368a675d815ef82d5be4ad",
+        "scope": "B02-09/B02-11 narrow diagnostic retention; no cost-unit conversion, inference, authority or reserved-lane change.",
+        "evidence": "docs/delivery/sessions/2026-10-26-provider-diagnostics.md",
+        "verification": "2355 source tests, 2355 installed-wheel regressions, 24 JavaScript modules and 475 native checks in 13 suites passed at f22f967. Exact inspection valid before documentation closeout; no model inference.",
+        "tested_commit": "f22f96735334d576a0e91757cd5f7363e3fa1f2e",
+        "source_sha256": "f1b4aee839ec362d8898a11abb5f123f7399b4bd63236054a472f9d288c641be",
+        "receipt": "docs/evidence/provider-diagnostics-software-2026-10-26.json"
+      },
+      "native_cost_policy": {
+        "owner": "Devin / integration",
+        "branch": "devin/1792969169-roadmap-integrated",
+        "base_commit": "d89bae35b09207c174135ef0bb237611b73ebe5d",
+        "scope": "B02-11 provider-scoped native USD normalization, original numeric provenance and versioned worker authority. No inference, reserved-lane or quality/status change.",
+        "evidence": "docs/delivery/sessions/2026-10-26-native-cost-policy.md",
+        "verification": "2445 source tests, 2445 installed-wheel regressions, 24 JavaScript modules and 475 native checks in 13 suites passed at 5780368. Exact source/artifact inspection valid before documentation closeout; no model inference.",
+        "tested_commit": "5780368e5a90b117e035f7cec85e2af574275401",
+        "source_sha256": "e0c26a61184b66e1c08785f452a228978633f92c7635508406777e241463e16c",
+        "receipt": "docs/evidence/native-cost-policy-software-2026-10-26.json"
+      },
+      "coordinated_native_cost_live": {
+        "source_commit": "bbcb8c4234fc94b1b02301037030500aefc5d0e6",
+        "status": "partial_or_failed",
+        "recorded_requests": 7,
+        "receipt": "docs/evidence/coordinated-native-cost-live-2026-10-26.json",
+        "next_action": "Preserve this second failed protocol, strengthen output-contract instructions without weakening validation, then build read-only coordinated-result presentation. No resumed protocol or historical rerun."
+      },
+      "draft_output_contract": {
+        "prompt_version": "endstate.draft.prompts.v4",
+        "base_commit": "52e5c0d",
+        "verification": "2455 source tests, 2455 installed-wheel regressions, 24 JS modules and 475 native browser checks across 13 suites passed; source/artifact inspection valid. No inference or model-quality approval.",
+        "record": "docs/delivery/sessions/2026-10-26-draft-output-contract.md",
+        "status": "native_software_passed_live_unverified",
+        "source_commit": "d85742d4d5d184bb7eba533ca594a94b02a96661",
+        "source_sha256": "b3ae11dad4350f3d99f87a17b791fa0283d04df22748be97aa825464972c16fc",
+        "run_id": "20261026T140753Z-e441dec1"
+      },
+      "coordinated_draft_v4_live": {
+        "source_commit": "5aacbca91c3909031aec974600e5ccaff15211f7",
+        "source_sha256": "94ad75c09d0d19f165f272860ecec1db1ed00d040b07081fa4a232d1e7242d16",
+        "protocol_sha256": "31fcb19a64159f1d79988337631aa8d4d5b25bfd1cb2a90cccc3782b616e2eed",
+        "status": "partial_or_failed",
+        "recorded_requests": 10,
+        "completed_methods": [
+          "claude-opus-5-5"
+        ],
+        "known_specialist_cost_nano_usd": 39585,
+        "evidence": "docs/evidence/coordinated-draft-v4-live-2026-10-26.json",
+        "next": "Read-only coordinated presentation; no more inference needed. No semantic/predictive acceptance."
+      },
+      "coordinated_result_ui": {
+        "base_commit": "69c482569bf17d558f4b730c4ad4d24ca8734213",
+        "status": "native_verified_publication_pending",
+        "verification": "2493 source tests, 2493 installed-wheel regressions, 24 JS modules and 493 checks in 13 native browser suites passed; source/evidence inspection valid before documentation closeout.",
+        "record": "docs/delivery/sessions/2026-10-26-coordinated-result-ui.md",
+        "source_commit": "11e328c1eaa3ed6817cdb794e1878410b85a8de3",
+        "source_sha256": "9097753973b7d47e5a97e6b96d13924381eeb05ae73d5b1a117c6795ba4e0d10"
+      }
+    }
   },
   "evidence": {
     "EV-PROVIDER-JSON-NATIVE-20261026": {
@@ -1216,6 +1258,12 @@
       "kind": "controlled_native_ui",
       "path": "docs/evidence/coordinated-result-ui-native-2026-10-26.json",
       "result": "Source 11e328c1eaa3ed6817cdb794e1878410b85a8de3: 2493 source + 2493 wheel tests and 493 native checks; inspected valid/passed. No inference, model-quality or release approval."
+    },
+    "EV-SECURITY-FIXES": {
+      "kind": "controlled_security_regression_and_native_receipt",
+      "path": "docs/evidence/security-fixes-2026-10-30.json",
+      "result": "1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.",
+      "code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983"
     }
   },
   "milestones": [
@@ -1409,19 +1457,22 @@
       "title": "Local workspace, persistence, scenarios and exports",
       "status": "verified",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "Codex",
+      "working_branch": "room/check-repo-with-three-sub-agents-pj2t",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "web/app.js",
         "eightball/store.py",
-        "tests/browser_smoke.py"
+        "tests/browser_smoke.py",
+        "eightball/api.py",
+        "tests/test_security_regressions.py"
       ],
       "depends_on": [],
       "acceptance": "Original local browser workflow persists cases and exports actual audit records with isolated scenarios.",
       "evidence": [
-        "EV-V01"
+        "EV-V01",
+        "EV-SECURITY-FIXES"
       ],
       "blockers": [],
       "next_action": "Keep the legacy UI/data path available or migrate with verified lineage."
@@ -1432,15 +1483,16 @@
       "title": "Reproducible alpha acceptance evidence",
       "status": "verified",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "Codex",
+      "working_branch": "room/check-repo-with-three-sub-agents-pj2t",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "updated_on": "2026-10-30",
       "code_paths": [],
       "depends_on": [],
       "acceptance": "Original 86 backend and 27 native browser results are recorded with exact code scope.",
       "evidence": [
-        "EV-V01"
+        "EV-V01",
+        "EV-SECURITY-FIXES"
       ],
       "blockers": [],
       "next_action": "Merge/release only through a separate explicit decision."
@@ -1917,7 +1969,7 @@
       "owner": "Devin / roadmap-intelligence",
       "working_branch": "devin/1792969169-roadmap-intelligence",
       "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
-      "updated_on": "2026-10-26",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "eightball/v2/analysis_jobs.py",
         "web/v2/job-view.js",
@@ -1928,7 +1980,11 @@
         "tests/test_provider_lifecycle.py",
         "docs/delivery/lane-reports/intelligence.md",
         "eightball/agency_host.py",
-        "docs/v2/AGENCY-HOST.md"
+        "docs/v2/AGENCY-HOST.md",
+        "eightball/providers.py",
+        "eightball/v2/intelligence.py",
+        "evals/live_generation.py",
+        "tests/test_security_regressions.py"
       ],
       "depends_on": [
         "ES03-04"
@@ -1949,7 +2005,8 @@
         "EV-NATIVE-REVIEW-20261026",
         "EV-DECISION-SMOKE-20261026",
         "EV-SONNET-LIFECYCLE-20261026",
-        "EV-LIFECYCLE-SOFTWARE-20261026"
+        "EV-LIFECYCLE-SOFTWARE-20261026",
+        "EV-SECURITY-FIXES"
       ],
       "blockers": [
         "Selected Sonnet API/process cancellation, supersession and restart observations pass; actual-provider native-UI lifecycle/installation-status acceptance remain unverified. Remote receipt, cancellation and billing are not established by local job states."
@@ -2434,22 +2491,25 @@
       "title": "Preserve storage, imports and audit lineage",
       "status": "verified",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "5e2098e9cb12251592eb3889ce7926798484699d",
-      "updated_on": "2026-09-23",
+      "owner": "Codex",
+      "working_branch": "room/check-repo-with-three-sub-agents-pj2t",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "eightball/models.py",
         "eightball/v2/contracts.py",
         "tests/test_endstate_kernel.py",
-        "tests/fixtures/endstate/pre_extraction.json.xz"
+        "tests/fixtures/endstate/pre_extraction.json.xz",
+        "eightball/v2/services.py",
+        "tests/test_security_regressions.py"
       ],
       "depends_on": [
         "ES01-01"
       ],
       "acceptance": "Old data, imports and event meanings remain readable; migrations preserve observations and expiring approval behaviour.",
       "evidence": [
-        "EV-KERNEL"
+        "EV-KERNEL",
+        "EV-SECURITY-FIXES"
       ],
       "blockers": [],
       "next_action": "Keep frozen pre-extraction records and wire schemas as regression gates; do not regenerate expected results to hide changes."
@@ -2485,10 +2545,10 @@
       "title": "Reusable core acceptance",
       "status": "verified",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
-      "updated_on": "2026-09-26",
+      "owner": "Codex",
+      "working_branch": "room/check-repo-with-three-sub-agents-pj2t",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "endstate/api.py",
         "docs/endstate/CONTRACTS.md",
@@ -2511,7 +2571,8 @@
         "EV-INTEGRATION-BLOCKED",
         "EV-NATIVE-CLOSEOUT",
         "EV-NATIVE-REVIEW-20261026",
-        "EV-LIFECYCLE-SOFTWARE-20261026"
+        "EV-LIFECYCLE-SOFTWARE-20261026",
+        "EV-SECURITY-FIXES"
       ],
       "blockers": [],
       "next_action": "Internal reusable-core compatibility scope verified. Maintain regression coverage; public SDK/commercial release and other platforms remain separate."
@@ -3095,13 +3156,14 @@
       "status": "verified",
       "required": true,
       "owner": "Codex",
-      "working_branch": "docs/endstate-evolution-plan-20261016",
-      "base_commit": "bf54f607bb0e13d0c6adfc0f59ee146e75be287b",
-      "updated_on": "2026-10-16",
+      "working_branch": "room/check-repo-with-three-sub-agents-pj2t",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "scripts/changelog.py",
         "docs/delivery/changelog.json",
-        "web/v2/changelog-view.js"
+        "web/v2/changelog-view.js",
+        "tests/browser_studio.py"
       ],
       "depends_on": [],
       "acceptance": "Every build adds a dated evidence-linked entry; generated CHANGELOG.md and in-app history share one source; base comparison detects missing entries or rewritten history.",
@@ -3110,7 +3172,8 @@
         "EV-MAIN-CONSOLIDATION",
         "EV-EVOLUTION-RESEARCH",
         "EV-TENCENT-MEMORY-RESEARCH",
-        "EV-RUFLO-RESEARCH"
+        "EV-RUFLO-RESEARCH",
+        "EV-SECURITY-FIXES"
       ],
       "blockers": [],
       "next_action": "Enforce a new immutable-history changelog entry in each following session and integration commit. Local documentation/API/render scope verified; no source publication or release implied."

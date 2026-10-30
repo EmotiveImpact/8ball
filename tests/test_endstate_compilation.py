@@ -242,7 +242,7 @@ def test_generation_runner_retains_versions_and_raw_responses_on_replayed_failur
             raw=deepcopy(record['raw_responses'][len(self.responses)])
             self.responses.append(raw)
             return httpx.Response(200,json=raw)
-        def post(self,*args,**kwargs):return self.client.post(*args,**kwargs)
+        def stream(self,*args,**kwargs):return self.client.stream(*args,**kwargs)
     monkeypatch.setattr(live_generation,'Recorder',ReplayRecorder)
     monkeypatch.setenv('EIGHTBALL_GRAPH_PROVIDER','ollama_staged')
     result=live_generation.run_one(record['title'],record['source'],'graph',record['desired_outcome'])

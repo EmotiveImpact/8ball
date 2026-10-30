@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-26",
+  "updated_on": "2026-10-30",
   "required_prompts": [
     {
       "id": "ER-01",
@@ -7666,6 +7666,459 @@
           "reason": "Supported by source-bound native acceptance at 11e328c1eaa3ed6817cdb794e1878410b85a8de3 and offline reads of all four retained v4 results, including sorted serialization. Existing_task B02-11 only; no quality or production approval."
         }
       ]
+    },
+    {
+      "id": "EM-340",
+      "title": "Filesystem resolution can have side effects before static containment checks",
+      "origin": "Three-part security review and focused remediation",
+      "first_seen": "2026-10-30",
+      "evidence_level": "supported_by_tests",
+      "observation": "On Windows, an unauthenticated URL containing a UNC path can reach realpath before StaticFiles checks directory containment. Simulated Windows requests reached a resolution sentinel; rejecting decoded backslashes and drive-qualified URL components blocks that path before I/O.",
+      "product_implication": "Guard application HTTP paths before OS interpretation; keep normal nested assets and symlink containment.",
+      "task_ids": [
+        "B01-02"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "docs/evidence/security-fixes-2026-10-30.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex security remediation",
+          "reason": "existing_task: close the current local application path without forcing an incompatible framework upgrade."
+        }
+      ]
+    },
+    {
+      "id": "EM-341",
+      "title": "A response limit after eager HTTP buffering is not a memory bound",
+      "origin": "Three-part security review and focused remediation",
+      "first_seen": "2026-10-30",
+      "evidence_level": "supported_by_tests",
+      "observation": "Three model adapters buffered an entire 2 MiB controlled response before applying their smaller byte limits. Moving to streaming also requires preserving queued cancellation and evaluation response recording.",
+      "product_implication": "Enforce existing decoded-byte limits while reading; distinguish whole-body buffering from per-chunk decompression and retain bounded evaluation evidence.",
+      "task_ids": [
+        "B02-15"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "docs/evidence/security-fixes-2026-10-30.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex security remediation",
+          "reason": "existing_task: fix provider response accumulation and preserve lifecycle/recording contracts without changing quotas or model permissions."
+        }
+      ]
+    },
+    {
+      "id": "EM-342",
+      "title": "Valid audit chains can still describe different migration snapshots",
+      "origin": "Three-part security review and focused remediation",
+      "first_seen": "2026-10-30",
+      "evidence_level": "supported_by_tests",
+      "observation": "A concurrent authenticated legacy edit between audit() and get() produced an imported budget of 123 with retained lineage budget 7000 while both chains validated.",
+      "product_implication": "Build imports from the exact verified source snapshot; validity of separate chains does not prove correspondence.",
+      "task_ids": [
+        "ES01-03",
+        "B01-02"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "docs/evidence/security-fixes-2026-10-30.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex security remediation",
+          "reason": "existing_task: preserve migration lineage from one audited legacy snapshot, retaining existing conversion and idempotency."
+        }
+      ]
+    },
+    {
+      "id": "EM-343",
+      "title": "Flattened course prerequisites can exceed the expression child limit",
+      "origin": "Three-part security review and focused remediation",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "The report-only domain review reproduced a valid nested nine-prerequisite graph whose selection persisted successfully but whose next Chosen Course read returned 422 when assessment flattened prerequisites into one conjunction.",
+      "product_implication": "Preserve bounded nested signed prerequisites in a separate course correction; this security patch must not silently claim the defect fixed.",
+      "task_ids": [
+        "B03-07",
+        "ES02-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "docs/evidence/security-fixes-2026-10-30.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "deferred",
+          "by": "Codex security remediation",
+          "reason": "new_candidate: retain the authenticated functional defect for a separate bounded fix; no required gate or accepted scope is changed."
+        }
+      ]
+    },
+    {
+      "id": "EM-344",
+      "title": "Streaming response caps also need a content-decoding boundary",
+      "origin": "Security remediation of provider response accumulation",
+      "first_seen": "2026-10-30",
+      "evidence_level": "operator_hypothesis",
+      "observation": "HTTPX decompresses response chunks before iter_bytes yields them. Identity negotiation with early rejection closes this representation gap in the three patched adapters; the separately implemented hosted transports retain their earlier decoded-stream checks and have not been tested against compressed-expansion inputs in this sprint.",
+      "product_implication": "Do not equate incremental accumulation limits with a strict memory ceiling for every transport. Review the unchanged hosted compression paths separately before claiming that broader property.",
+      "task_ids": [
+        "B02-15",
+        "ES03-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "eightball/providers.py",
+        "eightball/v2/hosted.py",
+        "eightball/v2/compatible.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "deferred",
+          "by": "Codex security remediation",
+          "reason": "new_candidate: retain the untested sibling transport hypothesis separately from the three reported fixes. No hosted-runtime change, live inference or new required acceptance scope."
+        }
+      ]
+    },
+    {
+      "id": "EM-345",
+      "title": "The installed-package regression budget must cover the complete suite",
+      "origin": "Full native verification of the security patch",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "The full 1324-test source run passed in 158.56 seconds on this ARM cloud environment. After installing missing pip, the installed-package regression subprocess hit its fixed 120-second deadline. That deadline was shared with short offline build commands despite the full acceptance step allowing 300 seconds.",
+      "product_implication": "Keep build commands bounded at 120 seconds and give only the complete installed regression suite a 240-second deadline within the existing outer gate; preserve every test and failed run.",
+      "task_ids": [
+        "B01-03",
+        "ES01-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "scripts/build_endstate.py",
+        "docs/evidence/security-fixes-2026-10-30.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex verification",
+          "reason": "existing_task: reconcile nested verification deadlines with observed full-suite runtime; no test, assertion, native journey or product limit is removed."
+        }
+      ]
+    },
+    {
+      "id": "EM-346",
+      "title": "Native verification must follow the canonical delivery state",
+      "origin": "Final receipt-head CI for the security patch",
+      "first_seen": "2026-10-30",
+      "evidence_level": "supported_by_tests",
+      "observation": "After the new changelog entry was truthfully marked pushed_unreleased, the Plan Studio native journey failed because it hardcoded local unreleased. The app correctly displayed pushed unreleased; the failure reproduced locally with no page errors. Exact canonical version/title/delivery checks and an explicit visible-limits check passed all 44 native Studio checks.",
+      "product_implication": "Keep built, pushed and released distinct in both product records and native assertions; do not falsify delivery metadata or remove the browser check to obtain green CI.",
+      "task_ids": [
+        "DOC-04",
+        "B02-13"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "tests/browser_studio.py",
+        "docs/evidence/security-fixes-2026-10-30.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex native verification",
+          "reason": "existing_task: verify the exact canonical delivery badge, version/title and visible limits, preserving the complete native journey and truthful pushed state."
+        }
+      ]
+    },
+    {
+      "id": "EM-347",
+      "title": "Parallel append-only registers need source-qualified collision provenance",
+      "origin": "Cumulative security and coordinated-planning integration",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "The two branches independently assigned EM-099 through EM-105 to different discoveries. Choosing either side would erase original observations; reusing one unqualified ID would misattribute historical evidence.",
+      "product_implication": "Retain both original records, histories and evidence. Preserve historical changelog entries unchanged and expose explicit source-qualified relocations for imported records; never treat ID equality alone as content identity.",
+      "task_ids": [
+        "DOC-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-cumulative-integration.md",
+        "scripts/emergence.py",
+        "tests/test_emergence_register.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Devin integration",
+          "reason": "existing_task DOC-06: retain both branches with explicit, checked collision provenance; no new product scope or acceptance promotion."
+        }
+      ]
+    }
+  ],
+  "id_relocations": [
+    {
+      "source_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "original": {
+        "id": "EM-099",
+        "title": "Filesystem resolution can have side effects before static containment checks",
+        "origin": "Three-part security review and focused remediation",
+        "first_seen": "2026-10-30",
+        "evidence_level": "supported_by_tests",
+        "observation": "On Windows, an unauthenticated URL containing a UNC path can reach realpath before StaticFiles checks directory containment. Simulated Windows requests reached a resolution sentinel; rejecting decoded backslashes and drive-qualified URL components blocks that path before I/O.",
+        "product_implication": "Guard application HTTP paths before OS interpretation; keep normal nested assets and symlink containment.",
+        "task_ids": [
+          "B01-02"
+        ],
+        "acceptance_task_ids": [],
+        "evidence_paths": [
+          "docs/delivery/sessions/2026-10-30-security-fixes.md",
+          "docs/evidence/security-fixes-2026-10-30.json"
+        ],
+        "owner_review": "pending",
+        "history": [
+          {
+            "date": "2026-10-30",
+            "decision": "adopted",
+            "by": "Codex security remediation",
+            "reason": "existing_task: close the current local application path without forcing an incompatible framework upgrade."
+          }
+        ]
+      },
+      "original_sha256": "35803e2fec8c9959959f34efe446f7937bf1bdc5edd482d8181afb4dbb166c9e",
+      "canonical_id": "EM-340",
+      "reason": "Parallel branches independently allocated the same ID after their shared base; preserve both original records and source-qualified historical references."
+    },
+    {
+      "source_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "original": {
+        "id": "EM-100",
+        "title": "A response limit after eager HTTP buffering is not a memory bound",
+        "origin": "Three-part security review and focused remediation",
+        "first_seen": "2026-10-30",
+        "evidence_level": "supported_by_tests",
+        "observation": "Three model adapters buffered an entire 2 MiB controlled response before applying their smaller byte limits. Moving to streaming also requires preserving queued cancellation and evaluation response recording.",
+        "product_implication": "Enforce existing decoded-byte limits while reading; distinguish whole-body buffering from per-chunk decompression and retain bounded evaluation evidence.",
+        "task_ids": [
+          "B02-15"
+        ],
+        "acceptance_task_ids": [],
+        "evidence_paths": [
+          "docs/delivery/sessions/2026-10-30-security-fixes.md",
+          "docs/evidence/security-fixes-2026-10-30.json"
+        ],
+        "owner_review": "pending",
+        "history": [
+          {
+            "date": "2026-10-30",
+            "decision": "adopted",
+            "by": "Codex security remediation",
+            "reason": "existing_task: fix provider response accumulation and preserve lifecycle/recording contracts without changing quotas or model permissions."
+          }
+        ]
+      },
+      "original_sha256": "47a59427ba2a8a304c746cd1d35cfd5dc5f630b2a1e66f6ed5ab4f2a33feebf7",
+      "canonical_id": "EM-341",
+      "reason": "Parallel branches independently allocated the same ID after their shared base; preserve both original records and source-qualified historical references."
+    },
+    {
+      "source_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "original": {
+        "id": "EM-101",
+        "title": "Valid audit chains can still describe different migration snapshots",
+        "origin": "Three-part security review and focused remediation",
+        "first_seen": "2026-10-30",
+        "evidence_level": "supported_by_tests",
+        "observation": "A concurrent authenticated legacy edit between audit() and get() produced an imported budget of 123 with retained lineage budget 7000 while both chains validated.",
+        "product_implication": "Build imports from the exact verified source snapshot; validity of separate chains does not prove correspondence.",
+        "task_ids": [
+          "ES01-03",
+          "B01-02"
+        ],
+        "acceptance_task_ids": [],
+        "evidence_paths": [
+          "docs/delivery/sessions/2026-10-30-security-fixes.md",
+          "docs/evidence/security-fixes-2026-10-30.json"
+        ],
+        "owner_review": "pending",
+        "history": [
+          {
+            "date": "2026-10-30",
+            "decision": "adopted",
+            "by": "Codex security remediation",
+            "reason": "existing_task: preserve migration lineage from one audited legacy snapshot, retaining existing conversion and idempotency."
+          }
+        ]
+      },
+      "original_sha256": "de71fccc730858321bb50e5e14944f0851b7166de2ab5b2ea4a005b4e7916507",
+      "canonical_id": "EM-342",
+      "reason": "Parallel branches independently allocated the same ID after their shared base; preserve both original records and source-qualified historical references."
+    },
+    {
+      "source_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "original": {
+        "id": "EM-102",
+        "title": "Flattened course prerequisites can exceed the expression child limit",
+        "origin": "Three-part security review and focused remediation",
+        "first_seen": "2026-10-30",
+        "evidence_level": "observed_in_build",
+        "observation": "The report-only domain review reproduced a valid nested nine-prerequisite graph whose selection persisted successfully but whose next Chosen Course read returned 422 when assessment flattened prerequisites into one conjunction.",
+        "product_implication": "Preserve bounded nested signed prerequisites in a separate course correction; this security patch must not silently claim the defect fixed.",
+        "task_ids": [
+          "B03-07",
+          "ES02-06"
+        ],
+        "acceptance_task_ids": [],
+        "evidence_paths": [
+          "docs/delivery/sessions/2026-10-30-security-fixes.md",
+          "docs/evidence/security-fixes-2026-10-30.json"
+        ],
+        "owner_review": "pending",
+        "history": [
+          {
+            "date": "2026-10-30",
+            "decision": "deferred",
+            "by": "Codex security remediation",
+            "reason": "new_candidate: retain the authenticated functional defect for a separate bounded fix; no required gate or accepted scope is changed."
+          }
+        ]
+      },
+      "original_sha256": "b39eed8f33df3152fe2b23235079614d21291fc8ff4d3fd96630ca83afb3e81d",
+      "canonical_id": "EM-343",
+      "reason": "Parallel branches independently allocated the same ID after their shared base; preserve both original records and source-qualified historical references."
+    },
+    {
+      "source_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "original": {
+        "id": "EM-103",
+        "title": "Streaming response caps also need a content-decoding boundary",
+        "origin": "Security remediation of provider response accumulation",
+        "first_seen": "2026-10-30",
+        "evidence_level": "operator_hypothesis",
+        "observation": "HTTPX decompresses response chunks before iter_bytes yields them. Identity negotiation with early rejection closes this representation gap in the three patched adapters; the separately implemented hosted transports retain their earlier decoded-stream checks and have not been tested against compressed-expansion inputs in this sprint.",
+        "product_implication": "Do not equate incremental accumulation limits with a strict memory ceiling for every transport. Review the unchanged hosted compression paths separately before claiming that broader property.",
+        "task_ids": [
+          "B02-15",
+          "ES03-05"
+        ],
+        "acceptance_task_ids": [],
+        "evidence_paths": [
+          "docs/delivery/sessions/2026-10-30-security-fixes.md",
+          "eightball/providers.py",
+          "eightball/v2/hosted.py",
+          "eightball/v2/compatible.py"
+        ],
+        "owner_review": "pending",
+        "history": [
+          {
+            "date": "2026-10-30",
+            "decision": "deferred",
+            "by": "Codex security remediation",
+            "reason": "new_candidate: retain the untested sibling transport hypothesis separately from the three reported fixes. No hosted-runtime change, live inference or new required acceptance scope."
+          }
+        ]
+      },
+      "original_sha256": "164cd337aa1dd21f03be7ef1490843fbfd19b21f5186a259da89df2ba34d7609",
+      "canonical_id": "EM-344",
+      "reason": "Parallel branches independently allocated the same ID after their shared base; preserve both original records and source-qualified historical references."
+    },
+    {
+      "source_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "original": {
+        "id": "EM-104",
+        "title": "The installed-package regression budget must cover the complete suite",
+        "origin": "Full native verification of the security patch",
+        "first_seen": "2026-10-30",
+        "evidence_level": "observed_in_build",
+        "observation": "The full 1324-test source run passed in 158.56 seconds on this ARM cloud environment. After installing missing pip, the installed-package regression subprocess hit its fixed 120-second deadline. That deadline was shared with short offline build commands despite the full acceptance step allowing 300 seconds.",
+        "product_implication": "Keep build commands bounded at 120 seconds and give only the complete installed regression suite a 240-second deadline within the existing outer gate; preserve every test and failed run.",
+        "task_ids": [
+          "B01-03",
+          "ES01-05"
+        ],
+        "acceptance_task_ids": [],
+        "evidence_paths": [
+          "docs/delivery/sessions/2026-10-30-security-fixes.md",
+          "scripts/build_endstate.py",
+          "docs/evidence/security-fixes-2026-10-30.json"
+        ],
+        "owner_review": "pending",
+        "history": [
+          {
+            "date": "2026-10-30",
+            "decision": "adopted",
+            "by": "Codex verification",
+            "reason": "existing_task: reconcile nested verification deadlines with observed full-suite runtime; no test, assertion, native journey or product limit is removed."
+          }
+        ]
+      },
+      "original_sha256": "cbcd3ab360e22d58134e264801e883c8e00503a8d425bce490d8fd52e501286d",
+      "canonical_id": "EM-345",
+      "reason": "Parallel branches independently allocated the same ID after their shared base; preserve both original records and source-qualified historical references."
+    },
+    {
+      "source_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "original": {
+        "id": "EM-105",
+        "title": "Native verification must follow the canonical delivery state",
+        "origin": "Final receipt-head CI for the security patch",
+        "first_seen": "2026-10-30",
+        "evidence_level": "supported_by_tests",
+        "observation": "After the new changelog entry was truthfully marked pushed_unreleased, the Plan Studio native journey failed because it hardcoded local unreleased. The app correctly displayed pushed unreleased; the failure reproduced locally with no page errors. Exact canonical version/title/delivery checks and an explicit visible-limits check passed all 44 native Studio checks.",
+        "product_implication": "Keep built, pushed and released distinct in both product records and native assertions; do not falsify delivery metadata or remove the browser check to obtain green CI.",
+        "task_ids": [
+          "DOC-04",
+          "B02-13"
+        ],
+        "acceptance_task_ids": [],
+        "evidence_paths": [
+          "docs/delivery/sessions/2026-10-30-security-fixes.md",
+          "tests/browser_studio.py",
+          "docs/evidence/security-fixes-2026-10-30.json"
+        ],
+        "owner_review": "pending",
+        "history": [
+          {
+            "date": "2026-10-30",
+            "decision": "adopted",
+            "by": "Codex native verification",
+            "reason": "existing_task: verify the exact canonical delivery badge, version/title and visible limits, preserving the complete native journey and truthful pushed state."
+          }
+        ]
+      },
+      "original_sha256": "f084c4e6a5024ff4cb49cc11ff25694797c27b8563c34e30532a9cf9ea6cea6d",
+      "canonical_id": "EM-346",
+      "reason": "Parallel branches independently allocated the same ID after their shared base; preserve both original records and source-qualified historical references."
     }
   ]
 }

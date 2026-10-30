@@ -175,6 +175,30 @@ def test_stream_checks_each_chunk_and_never_leaks_headers(setup):
     assert 'secret-fixture' not in json.dumps(m.list(c.id));controlled.close()
 
 
+@pytest.mark.parametrize('provider', ['jev','legacy','v2'])
+def test_provider_streaming_preserves_job_cancellation(setup,monkeypatch,provider):
+    from eightball.providers import jev_classify, ollama_extract
+    from eightball.v2.intelligence import ollama_json
+    monkeypatch.setenv('TYPESAFE_API_KEY','fixture-only')
+    store,c,m=setup;j=m.submit(c.id,request(c));closed=[]
+    class Stream(httpx.SyncByteStream):
+        def __iter__(self):
+            yield b'{'
+            m.cancel(c.id,j['id'])
+            yield b'}'
+        def close(self):closed.append(True)
+    def factory(**kwargs):return httpx.Client(transport=httpx.MockTransport(lambda r:httpx.Response(200,stream=Stream())))
+    controlled=ControlledClient(m,j['id'],factory)
+    try:
+        with pytest.raises(JobStopped):
+            if provider=='jev':jev_classify('Fixture',allow_external=True,client=controlled)
+            elif provider=='legacy':ollama_extract('Fixture',[],client=controlled)
+            else:ollama_json({},'Fixture',{},client=controlled)
+        assert closed and not store.proposals(c.id)
+        assert m.get(c.id,j['id'])['status']=='cancelled'
+    finally:controlled.close()
+
+
 def test_launch_worker_admission_does_not_lose_jobs(tmp_path):
     store=Store(str(tmp_path/'s.db'));c=store.create(demo_case(),fixture=True)
     m=AnalysisJobs(store,runner=lambda case,*a,**k:job_proposal(case))

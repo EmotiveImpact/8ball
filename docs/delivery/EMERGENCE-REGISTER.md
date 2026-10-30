@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-26. **239 recorded discoveries.**
+Last review: 2026-10-30. **247 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -25,6 +25,18 @@ Last review: 2026-10-26. **239 recorded discoveries.**
 - **ER-13 (both):** When analysis fails, what safe recovery is available, who contributed the correction, and is the original failure still recorded?
 - **ER-14 (build):** Can the exact implementation and evidence for every delivery claim be recovered, or must that claim remain reported-only?
 - **ER-15 (both):** Does this improve the operator’s next decision or merely increase reviews, alerts and screens? How would we measure the difference?
+
+## Source-qualified ID collisions
+
+Historical IDs in the named source remain unchanged there. Use these canonical IDs for the imported discoveries; both original records and their decision histories are retained.
+
+- `EM-099` at `825ad6668c2c7d128da367476fe16cb8d214b837` → `EM-340`: Filesystem resolution can have side effects before static containment checks.
+- `EM-100` at `825ad6668c2c7d128da367476fe16cb8d214b837` → `EM-341`: A response limit after eager HTTP buffering is not a memory bound.
+- `EM-101` at `825ad6668c2c7d128da367476fe16cb8d214b837` → `EM-342`: Valid audit chains can still describe different migration snapshots.
+- `EM-102` at `825ad6668c2c7d128da367476fe16cb8d214b837` → `EM-343`: Flattened course prerequisites can exceed the expression child limit.
+- `EM-103` at `825ad6668c2c7d128da367476fe16cb8d214b837` → `EM-344`: Streaming response caps also need a content-decoding boundary.
+- `EM-104` at `825ad6668c2c7d128da367476fe16cb8d214b837` → `EM-345`: The installed-package regression budget must cover the complete suite.
+- `EM-105` at `825ad6668c2c7d128da367476fe16cb8d214b837` → `EM-346`: Native verification must follow the canonical delivery state.
 
 ## Complete owner-review register
 
@@ -4250,3 +4262,139 @@ Canonical retained reports reorder nested objects. The challenge hash binds seri
 
 - 2026-10-26 · adopted · integration: existing_task B02-11 readable source-bound reports; no new required scope or acceptance gate promotion.
 - 2026-10-26 · adopted · integration: Supported by source-bound native acceptance at 11e328c1eaa3ed6817cdb794e1878410b85a8de3 and offline reads of all four retained v4 results, including sorted serialization. Existing_task B02-11 only; no quality or production approval.
+
+### [ ] EM-340: Filesystem resolution can have side effects before static containment checks
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-30. **Origin:** Three-part security review and focused remediation.
+
+On Windows, an unauthenticated URL containing a UNC path can reach realpath before StaticFiles checks directory containment. Simulated Windows requests reached a resolution sentinel; rejecting decoded backslashes and drive-qualified URL components blocks that path before I/O.
+
+**Product implication:** Guard application HTTP paths before OS interpretation; keep normal nested assets and symlink containment.
+
+**Roadmap links:** `B01-02` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `docs/evidence/security-fixes-2026-10-30.json`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex security remediation: existing_task: close the current local application path without forcing an incompatible framework upgrade.
+
+### [ ] EM-341: A response limit after eager HTTP buffering is not a memory bound
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-30. **Origin:** Three-part security review and focused remediation.
+
+Three model adapters buffered an entire 2 MiB controlled response before applying their smaller byte limits. Moving to streaming also requires preserving queued cancellation and evaluation response recording.
+
+**Product implication:** Enforce existing decoded-byte limits while reading; distinguish whole-body buffering from per-chunk decompression and retain bounded evaluation evidence.
+
+**Roadmap links:** `B02-15` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `docs/evidence/security-fixes-2026-10-30.json`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex security remediation: existing_task: fix provider response accumulation and preserve lifecycle/recording contracts without changing quotas or model permissions.
+
+### [ ] EM-342: Valid audit chains can still describe different migration snapshots
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-30. **Origin:** Three-part security review and focused remediation.
+
+A concurrent authenticated legacy edit between audit() and get() produced an imported budget of 123 with retained lineage budget 7000 while both chains validated.
+
+**Product implication:** Build imports from the exact verified source snapshot; validity of separate chains does not prove correspondence.
+
+**Roadmap links:** `ES01-03` (verified), `B01-02` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `docs/evidence/security-fixes-2026-10-30.json`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex security remediation: existing_task: preserve migration lineage from one audited legacy snapshot, retaining existing conversion and idempotency.
+
+### [ ] EM-343: Flattened course prerequisites can exceed the expression child limit
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Three-part security review and focused remediation.
+
+The report-only domain review reproduced a valid nested nine-prerequisite graph whose selection persisted successfully but whose next Chosen Course read returned 422 when assessment flattened prerequisites into one conjunction.
+
+**Product implication:** Preserve bounded nested signed prerequisites in a separate course correction; this security patch must not silently claim the defect fixed.
+
+**Roadmap links:** `B03-07` (partial), `ES02-06` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `docs/evidence/security-fixes-2026-10-30.json`.
+
+**Decision history:**
+
+- 2026-10-30 · deferred · Codex security remediation: new_candidate: retain the authenticated functional defect for a separate bounded fix; no required gate or accepted scope is changed.
+
+### [ ] EM-344: Streaming response caps also need a content-decoding boundary
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** operator_hypothesis.
+**First recorded:** 2026-10-30. **Origin:** Security remediation of provider response accumulation.
+
+HTTPX decompresses response chunks before iter_bytes yields them. Identity negotiation with early rejection closes this representation gap in the three patched adapters; the separately implemented hosted transports retain their earlier decoded-stream checks and have not been tested against compressed-expansion inputs in this sprint.
+
+**Product implication:** Do not equate incremental accumulation limits with a strict memory ceiling for every transport. Review the unchanged hosted compression paths separately before claiming that broader property.
+
+**Roadmap links:** `B02-15` (partial), `ES03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `eightball/providers.py`, `eightball/v2/hosted.py`, `eightball/v2/compatible.py`.
+
+**Decision history:**
+
+- 2026-10-30 · deferred · Codex security remediation: new_candidate: retain the untested sibling transport hypothesis separately from the three reported fixes. No hosted-runtime change, live inference or new required acceptance scope.
+
+### [ ] EM-345: The installed-package regression budget must cover the complete suite
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Full native verification of the security patch.
+
+The full 1324-test source run passed in 158.56 seconds on this ARM cloud environment. After installing missing pip, the installed-package regression subprocess hit its fixed 120-second deadline. That deadline was shared with short offline build commands despite the full acceptance step allowing 300 seconds.
+
+**Product implication:** Keep build commands bounded at 120 seconds and give only the complete installed regression suite a 240-second deadline within the existing outer gate; preserve every test and failed run.
+
+**Roadmap links:** `B01-03` (verified), `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `scripts/build_endstate.py`, `docs/evidence/security-fixes-2026-10-30.json`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex verification: existing_task: reconcile nested verification deadlines with observed full-suite runtime; no test, assertion, native journey or product limit is removed.
+
+### [ ] EM-346: Native verification must follow the canonical delivery state
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-30. **Origin:** Final receipt-head CI for the security patch.
+
+After the new changelog entry was truthfully marked pushed_unreleased, the Plan Studio native journey failed because it hardcoded local unreleased. The app correctly displayed pushed unreleased; the failure reproduced locally with no page errors. Exact canonical version/title/delivery checks and an explicit visible-limits check passed all 44 native Studio checks.
+
+**Product implication:** Keep built, pushed and released distinct in both product records and native assertions; do not falsify delivery metadata or remove the browser check to obtain green CI.
+
+**Roadmap links:** `DOC-04` (verified), `B02-13` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `tests/browser_studio.py`, `docs/evidence/security-fixes-2026-10-30.json`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex native verification: existing_task: verify the exact canonical delivery badge, version/title and visible limits, preserving the complete native journey and truthful pushed state.
+
+### [ ] EM-347: Parallel append-only registers need source-qualified collision provenance
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Cumulative security and coordinated-planning integration.
+
+The two branches independently assigned EM-099 through EM-105 to different discoveries. Choosing either side would erase original observations; reusing one unqualified ID would misattribute historical evidence.
+
+**Product implication:** Retain both original records, histories and evidence. Preserve historical changelog entries unchanged and expose explicit source-qualified relocations for imported records; never treat ID equality alone as content identity.
+
+**Roadmap links:** `DOC-06` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-cumulative-integration.md`, `scripts/emergence.py`, `tests/test_emergence_register.py`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Devin integration: existing_task DOC-06: retain both branches with explicit, checked collision provenance; no new product scope or acceptance promotion.
