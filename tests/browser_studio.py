@@ -145,8 +145,12 @@ def main():
                     check('cancel never modifies case facts',store.get(c.id).revision==2)
                     # Changelog is a separate product history, not another case event feed.
                     nav('changelog');expect(page.get_by_role('heading',name='The build, in the open.')).to_be_visible()
-                    expect(page.locator('.changelog-entry').first).to_contain_text(VERSION)
-                    check('current build and limits visible',VERSION.lower() in page.locator('.changelog-entry').first.inner_text().lower() and 'local unreleased' in page.locator('.changelog-entry').first.inner_text().lower())
+                    latest=json.loads((ROOT/'docs/delivery/changelog.json').read_text())['entries'][0]
+                    current_entry=page.locator('.changelog-entry').first
+                    expect(current_entry.locator('header .kicker')).to_contain_text(VERSION)
+                    expect(current_entry.locator('header h2')).to_have_text(latest['title'])
+                    expect(current_entry.locator('header .badge')).to_have_text(latest['delivery'].replace('_',' '))
+                    check('current build and limits visible',current_entry.locator('.changelog-proof').is_visible())
                     check('previous Plan Studio changelog retained','0.2.0-alpha.2' in page.locator('main').inner_text().lower())
                     page.screenshot(path=str(OUT/'8BALL-Changelog.png'),full_page=True)
                     for width in (1600,1024,390):

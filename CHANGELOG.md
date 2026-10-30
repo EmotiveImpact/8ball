@@ -17,6 +17,7 @@ Reject unsafe Windows static URLs before filesystem resolution, bound provider r
 ### Changed
 
 - Local evaluation recording supports bounded streaming without an eager fallback.
+- The native Studio journey verifies the canonical changelog title/version/delivery and visible limits instead of hardcoding local-only delivery.
 
 ### Fixed
 
@@ -32,6 +33,7 @@ Reject unsafe Windows static URLs before filesystem resolution, bound provider r
 - Native source/artifact inspection valid/passed at bb881f278eb24b97732382a83a6084a22d7e1983 before final receipt-only edits.
 - 250 focused tests and independent bypass/regression review passed; original triggers no longer reproduce and legitimate controls remain.
 - Both checkpoint CI workflows passed. Earlier missing-pip and 120-second installed-watchdog failures are preserved in the receipt; PR8 records final-head CI.
+- Receipt-head CI 41035068063 passed both 1324-test code suites and ten browser suites, but Studio failed on a stale local-delivery expectation; failure reproduced locally. The corrected full native Studio journey passed all 44 checks. PR8 records final-head cumulative CI.
 
 ### Limitations
 
@@ -48,9 +50,9 @@ Reject unsafe Windows static URLs before filesystem resolution, bound provider r
 - Risk: Streaming must retain cancellation/recording behavior; a separate nested-course defect remains outside these three fixes.
 - Architecture: Keep HTTP/platform and provider I/O guards in 8BALL; retain the ENDSTATE calculation boundary and exact source lineage.
 - Roadmap decision: Existing-task fixes under B01-02/B02-15/ES01-03. EM-102 is deferred; no original required flag/status or acceptance gate changes.
-Registered discoveries: EM-099, EM-100, EM-101, EM-102, EM-103, EM-104.
+Registered discoveries: EM-099, EM-100, EM-101, EM-102, EM-103, EM-104, EM-105.
 
-Roadmap items: `B01-02`, `B02-15`, `ES01-03`, `B01-03`, `ES01-05`.
+Roadmap items: `B01-02`, `B02-15`, `ES01-03`, `B01-03`, `ES01-05`, `DOC-04`.
 
 Evidence: [docs/delivery/sessions/2026-10-30-security-fixes.md](docs/delivery/sessions/2026-10-30-security-fixes.md), [docs/evidence/security-fixes-2026-10-30.json](docs/evidence/security-fixes-2026-10-30.json).
 

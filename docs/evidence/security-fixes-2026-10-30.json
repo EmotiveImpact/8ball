@@ -168,6 +168,21 @@
       "path": "artifacts/security-package-check",
       "status": "failed",
       "reason": "Complete installed regression subprocess exceeded its 120-second watchdog after pip was installed."
+    },
+    {
+      "kind": "receipt_head_ci",
+      "tested_commit": "5040812fb62e252919e75eda11f978100fd2727f",
+      "workflow_run": 41035068063,
+      "artifact_id": 12968376245,
+      "artifact": "integrated-acceptance-evidence",
+      "downloaded_report": "/tmp/8ball-ci-41035068063/acceptance/20261030T094026Z-6b9e7ece/report.json",
+      "source_sha256": "493786374efad0066a3d7f4f864013711101256a51aff7c09167eb4d4acc47f1",
+      "source_unchanged_during_run": true,
+      "source_tests_passed": 1324,
+      "installed_regressions_passed": 1324,
+      "only_failed_check": "browser-studio",
+      "reason": "Native Studio check required local unreleased although canonical and displayed delivery were correctly pushed unreleased.",
+      "local_reproduction": "/tmp/8ball-studio-before-fix/failure.html"
     }
   ],
   "tested_code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
@@ -204,5 +219,19 @@
   },
   "pull_request": 8,
   "merged": false,
-  "released": false
+  "released": false,
+  "studio_verification_correction": {
+    "native_checks_passed": 44,
+    "report": "/tmp/8ball-studio-after-fix/studio-browser-report.json",
+    "network": "native loopback HTTP",
+    "assertions": [
+      "exact canonical title",
+      "current version in header",
+      "exact canonical delivery badge",
+      "visible verification and limits"
+    ],
+    "application_runtime_changed": false,
+    "model_inference_tested": false,
+    "final_cumulative_ci": "Authoritative final head and full cumulative result are recorded in PR8."
+  }
 }

@@ -3762,6 +3762,34 @@
           "reason": "existing_task: reconcile nested verification deadlines with observed full-suite runtime; no test, assertion, native journey or product limit is removed."
         }
       ]
+    },
+    {
+      "id": "EM-105",
+      "title": "Native verification must follow the canonical delivery state",
+      "origin": "Final receipt-head CI for the security patch",
+      "first_seen": "2026-10-30",
+      "evidence_level": "supported_by_tests",
+      "observation": "After the new changelog entry was truthfully marked pushed_unreleased, the Plan Studio native journey failed because it hardcoded local unreleased. The app correctly displayed pushed unreleased; the failure reproduced locally with no page errors. Exact canonical version/title/delivery checks and an explicit visible-limits check passed all 44 native Studio checks.",
+      "product_implication": "Keep built, pushed and released distinct in both product records and native assertions; do not falsify delivery metadata or remove the browser check to obtain green CI.",
+      "task_ids": [
+        "DOC-04",
+        "B02-13"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "tests/browser_studio.py",
+        "docs/evidence/security-fixes-2026-10-30.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex native verification",
+          "reason": "existing_task: verify the exact canonical delivery badge, version/title and visible limits, preserving the complete native journey and truthful pushed state."
+        }
+      ]
     }
   ]
 }

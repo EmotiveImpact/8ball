@@ -29,12 +29,13 @@
         "B02-15",
         "ES01-03",
         "B01-03",
-        "ES01-05"
+        "ES01-05",
+        "DOC-04"
       ],
       "objective": "Fix the three validated local-workspace security findings without changing dependencies, provider permissions or original acceptance gates.",
       "merged": false,
       "verification": "1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.",
-      "remote_ci": "Both checkpoint PR8 workflows passed (41033947448, 41033947388). Final receipt-head CI is authoritative in PR8.",
+      "remote_ci": "Both code-checkpoint CI workflows passed. Initial receipt-head CI 41035068063 failed only on Studio hardcoded delivery label; corrected native Studio passed44. Authoritative final cumulative CI: PR8.",
       "evidence": "docs/evidence/security-fixes-2026-10-30.json",
       "tested_code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
       "tested_code_tree": "ff87fcc6740cf020e5aa7a73648578206cdb3be2"
@@ -2002,13 +2003,14 @@
       "status": "verified",
       "required": true,
       "owner": "Codex",
-      "working_branch": "docs/endstate-evolution-plan-20261016",
-      "base_commit": "bf54f607bb0e13d0c6adfc0f59ee146e75be287b",
-      "updated_on": "2026-10-16",
+      "working_branch": "room/check-repo-with-three-sub-agents-pj2t",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "scripts/changelog.py",
         "docs/delivery/changelog.json",
-        "web/v2/changelog-view.js"
+        "web/v2/changelog-view.js",
+        "tests/browser_studio.py"
       ],
       "depends_on": [],
       "acceptance": "Every build adds a dated evidence-linked entry; generated CHANGELOG.md and in-app history share one source; base comparison detects missing entries or rewritten history.",
@@ -2017,7 +2019,8 @@
         "EV-MAIN-CONSOLIDATION",
         "EV-EVOLUTION-RESEARCH",
         "EV-TENCENT-MEMORY-RESEARCH",
-        "EV-RUFLO-RESEARCH"
+        "EV-RUFLO-RESEARCH",
+        "EV-SECURITY-FIXES"
       ],
       "blockers": [],
       "next_action": "Enforce a new immutable-history changelog entry in each following session and integration commit. Local documentation/API/render scope verified; no source publication or release implied."

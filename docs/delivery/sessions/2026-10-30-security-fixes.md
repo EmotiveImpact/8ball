@@ -32,6 +32,8 @@ What remains unverified or failed: native Windows/SMB exploitation is not perfor
 
 Task status changes: no original required flag, acceptance criterion or task status is promoted. Current sprint ownership and evidence are updated in `progress.json` only.
 
+Receipt-head CI `41035068063` at `5040812` passed both 1,324-test code suites and ten browser suites, but Studio failed on a stale `local unreleased` expectation after the record correctly became `pushed_unreleased`. Downloaded failed evidence is retained under `/tmp/8ball-ci-41035068063`; the failure reproduced locally under `/tmp/8ball-studio-before-fix`. The corrected assertion verifies the exact canonical badge, version/title and visible limits; the full native Studio journey passed **44 checks** under `/tmp/8ball-studio-after-fix`. Application runtime code is unchanged. PR8 is the authoritative final-head cumulative CI record.
+
 ## Emergence Review
 
 What did this sprint reveal that we had not properly seen, specified or understood before we built it?
@@ -50,6 +52,8 @@ ER-11: no course selection, reconsideration or action authority semantics were c
 - **EM-103, operator_hypothesis, new_candidate/deferred:** unchanged hosted transports require a separate compressed-expansion review. This sprint closes that representation path only in the three affected legacy/local adapters.
 
 - **EM-104, observed_in_build, existing_task:** the installed suite watchdog was shorter than the measured complete source suite runtime; align bounded nested test budgets while preserving all checks.
+
+- **EM-105, supported_by_tests, existing_task:** the native delivery assertion must follow canonical pushed/released state instead of demanding a local-only label. Preserve the real browser journey and strengthen its exact-state check.
 
 Emergence evidence level / roadmap disposition: EM-099–101 refine existing B01-02/B02-15/ES01-03 work; EM-102 is a deferred candidate within B03-07/ES02-06. No new required scope or release gate was added. Owner review remains pending.
 

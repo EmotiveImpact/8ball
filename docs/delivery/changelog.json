@@ -13,14 +13,16 @@
         "B02-15",
         "ES01-03",
         "B01-03",
-        "ES01-05"
+        "ES01-05",
+        "DOC-04"
       ],
       "summary": "Reject unsafe Windows static URLs before filesystem resolution, bound provider response accumulation and import the exact verified legacy snapshot.",
       "added": [
         "Controlled security regressions for both static mounts, provider streams/cancellation and concurrent legacy import."
       ],
       "changed": [
-        "Local evaluation recording supports bounded streaming without an eager fallback."
+        "Local evaluation recording supports bounded streaming without an eager fallback.",
+        "The native Studio journey verifies the canonical changelog title/version/delivery and visible limits instead of hardcoding local-only delivery."
       ],
       "fixed": [
         "Windows UNC/drive-qualified static request paths reaching filesystem resolution.",
@@ -33,7 +35,8 @@
         "391 checks passed across all eleven native browser suites; all 21 integrated acceptance steps passed.",
         "Native source/artifact inspection valid/passed at bb881f278eb24b97732382a83a6084a22d7e1983 before final receipt-only edits.",
         "250 focused tests and independent bypass/regression review passed; original triggers no longer reproduce and legitimate controls remain.",
-        "Both checkpoint CI workflows passed. Earlier missing-pip and 120-second installed-watchdog failures are preserved in the receipt; PR8 records final-head CI."
+        "Both checkpoint CI workflows passed. Earlier missing-pip and 120-second installed-watchdog failures are preserved in the receipt; PR8 records final-head CI.",
+        "Receipt-head CI 41035068063 passed both 1324-test code suites and ten browser suites, but Studio failed on a stale local-delivery expectation; failure reproduced locally. The corrected full native Studio journey passed all 44 checks. PR8 records final-head cumulative CI."
       ],
       "limitations": [
         "Application path mitigation preserves current dependencies; the pinned Starlette version remains upstream-affected.",
@@ -62,7 +65,8 @@
           "EM-101",
           "EM-102",
           "EM-103",
-          "EM-104"
+          "EM-104",
+          "EM-105"
         ]
       }
     },

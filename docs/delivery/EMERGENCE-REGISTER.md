@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-30. **104 recorded discoveries.**
+Last review: 2026-10-30. **105 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1902,3 +1902,20 @@ The full 1324-test source run passed in 158.56 seconds on this ARM cloud environ
 **Decision history:**
 
 - 2026-10-30 · adopted · Codex verification: existing_task: reconcile nested verification deadlines with observed full-suite runtime; no test, assertion, native journey or product limit is removed.
+
+### [ ] EM-105: Native verification must follow the canonical delivery state
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-30. **Origin:** Final receipt-head CI for the security patch.
+
+After the new changelog entry was truthfully marked pushed_unreleased, the Plan Studio native journey failed because it hardcoded local unreleased. The app correctly displayed pushed unreleased; the failure reproduced locally with no page errors. Exact canonical version/title/delivery checks and an explicit visible-limits check passed all 44 native Studio checks.
+
+**Product implication:** Keep built, pushed and released distinct in both product records and native assertions; do not falsify delivery metadata or remove the browser check to obtain green CI.
+
+**Roadmap links:** `DOC-04` (verified), `B02-13` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `tests/browser_studio.py`, `docs/evidence/security-fixes-2026-10-30.json`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex native verification: existing_task: verify the exact canonical delivery badge, version/title and visible limits, preserving the complete native journey and truthful pushed state.

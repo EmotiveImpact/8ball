@@ -73,12 +73,12 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-TRACKING`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH`, `EV-RUFLO-RESEARCH` (registry below).
 
 - [x] **DOC-04 Mandatory changelog and in-app product history**
-  - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
+  - Status: `verified`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Every build adds a dated evidence-linked entry; generated CHANGELOG.md and in-app history share one source; base comparison detects missing entries or rewritten history.
   - Next: Enforce a new immutable-history changelog entry in each following session and integration commit. Local documentation/API/render scope verified; no source publication or release implied.
-  - Branch/base: `docs/endstate-evolution-plan-20261016` / `bf54f607bb0e13d0c6adfc0f59ee146e75be287b`.
-  - Existing code: `scripts/changelog.py`, `docs/delivery/changelog.json`, `web/v2/changelog-view.js`.
-  - Evidence: `EV-PLAN-STUDIO-LOCAL`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH`, `EV-RUFLO-RESEARCH` (registry below).
+  - Branch/base: `room/check-repo-with-three-sub-agents-pj2t` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
+  - Existing code: `scripts/changelog.py`, `docs/delivery/changelog.json`, `web/v2/changelog-view.js`, `tests/browser_studio.py`.
+  - Evidence: `EV-PLAN-STUDIO-LOCAL`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH`, `EV-RUFLO-RESEARCH`, `EV-SECURITY-FIXES` (registry below).
 
 - [x] **DOC-05 Mandatory end-of-sprint emergence review**
   - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
