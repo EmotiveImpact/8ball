@@ -19,8 +19,9 @@
     "passes": 1,
     "deselected": 64,
     "observed": "Counts 9, 16 and 63 fail expression child validation; authenticated persisted course read returns HTTP 422.",
-    "log_path": "docs/evidence/course-prerequisites-before-fix-2026-10-30.txt",
-    "log_sha256": "b461564207b8725f3d0cba3b63783bc950575870a2f3c63131996bcbefdca8db"
+    "log_path": "docs/evidence/course-prerequisites-before-fix-2026-10-30.json",
+    "log_sha256": "528111cb336a0932f6c9cd4b0e05bbe3f506e05a19d7829c572583641f1d5afd",
+    "raw_output_sha256": "b461564207b8725f3d0cba3b63783bc950575870a2f3c63131996bcbefdca8db"
   },
   "focused_after_fix": {
     "command": "python -m pytest -q -p no:cacheprovider tests/test_courses.py tests/test_endstate_kernel.py tests/test_endstate_results.py",
@@ -32,7 +33,213 @@
     ]
   },
   "native_acceptance": {
-    "status": "pending"
+    "status": "passed",
+    "mode": "native",
+    "run_id": "20261030T145814Z-c11c3025",
+    "report_path": "artifacts/acceptance/20261030T145814Z-c11c3025/report.json",
+    "report_sha256": "645721f6664316077c871ce1d90ebdf58b683b4e3c086b4abe40db625a190011",
+    "source_sha256": "0b6cfdc07a5f8535bafd775a71efb3262b1980efaa07f9b6130429c53306bd67",
+    "source_unchanged_during_run": true,
+    "source_tests": 1329,
+    "installed_tests": {
+      "tests": 1329,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 1329
+    },
+    "browser_checks_passed": 397,
+    "inspection": {
+      "valid": true,
+      "reason": "Source and local evidence bytes match; this is not a signed attestation",
+      "run_status": "passed",
+      "native_browser_verified": true,
+      "model_quality_approved": false,
+      "released": false
+    },
+    "checks": [
+      {
+        "name": "unit",
+        "status": "passed",
+        "log_sha256": "6ea831dfb330605981971b5e816416dc1fd52415578556cbf63dbf8f7fa5e98e",
+        "counts": {
+          "tests": 1329,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "passed": 1329
+        }
+      },
+      {
+        "name": "compile",
+        "status": "passed",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "delivery",
+        "status": "passed",
+        "log_sha256": "fefe956c184759ad8742da10315ebcbca9fe011b8eeb189ffb340a7ba879b9c8"
+      },
+      {
+        "name": "changelog",
+        "status": "passed",
+        "log_sha256": "1cd2a5972a7a9e4cc0464d7cdb1b25d8f91ae1cde9cf29ebc9cc1d14b84b77e7"
+      },
+      {
+        "name": "emergence",
+        "status": "passed",
+        "log_sha256": "40512671aed11cf377f05b1af725910cf95abc657372bdbc232c93f982d32ec0"
+      },
+      {
+        "name": "javascript",
+        "status": "passed",
+        "log_sha256": "a27dfbc74601818b54a78cb1fb28ad33592becda98e14364d704618b924435db"
+      },
+      {
+        "name": "structural-fixtures",
+        "status": "passed",
+        "log_sha256": "19b8e45a1ecfe06c682f77f215f71cc4b7393f2ab6eb9c64ce12ef20ccf4b523"
+      },
+      {
+        "name": "endstate-package",
+        "status": "passed",
+        "log_sha256": "f237391b9608787d7a41551969861ce1f4c954a8036b45e380994b10dde7c1e8"
+      },
+      {
+        "name": "schemas",
+        "status": "passed",
+        "log_sha256": "5b8823aec02e34ac50831b922ef0cfb0e797c419ba65a3cf3c0c321060894ca9"
+      },
+      {
+        "name": "native-probe",
+        "status": "passed",
+        "log_sha256": "e69db6d68c42feb9fd8a957b61a643b13f194f21b682799f7d304d76461fc052"
+      },
+      {
+        "name": "browser-legacy",
+        "status": "passed",
+        "log_sha256": "94c2883f65c987a82030799dbaea28fba6ac571ecfc694c6014d17adfdb3a74c",
+        "report": "browser-legacy/browser-report.json",
+        "browser": {
+          "count": 27,
+          "transport": "real loopback HTTP",
+          "sha256": "c553e60bb97ef58196ee5bee1f4fde22203273a6f5bade21c2d298c2faa549c6"
+        }
+      },
+      {
+        "name": "browser-workspace",
+        "status": "passed",
+        "log_sha256": "5eac9de08313d577028e5da9cb98a2bbde5d4c0de98f323665ccfcd2bc5c704a",
+        "report": "browser-workspace/browser-v2-report.json",
+        "browser": {
+          "count": 51,
+          "transport": "Native loopback HTTP",
+          "sha256": "ccffe9c582d516f163d069f2775e97a7621f5a1306531aea130afa6908e6945f"
+        }
+      },
+      {
+        "name": "browser-providers",
+        "status": "passed",
+        "log_sha256": "6e40ca17878fdcbd8b2fd2b1ab5754ee92840a85a6a242cd93198b119d4c34b5",
+        "report": "browser-providers/development-browser-report.json",
+        "browser": {
+          "count": 22,
+          "transport": "native loopback HTTP",
+          "sha256": "6e40ca17878fdcbd8b2fd2b1ab5754ee92840a85a6a242cd93198b119d4c34b5"
+        }
+      },
+      {
+        "name": "browser-connections",
+        "status": "passed",
+        "log_sha256": "0c4679f2d072bd26ab8695865901e899d2ae674b6314e4a1fded2e8eddba69cd",
+        "report": "browser-connections/browser-graph-report.json",
+        "browser": {
+          "count": 42,
+          "transport": "Native loopback HTTP",
+          "sha256": "c0f21b9d6f57e53711802c0eeedae5647da1b4a0195eef504a797f16ce41f39c"
+        }
+      },
+      {
+        "name": "browser-studio",
+        "status": "passed",
+        "log_sha256": "458e2d912f7a9896da88e136e6aeba62970b56186a432d1509f53a09b1471797",
+        "report": "browser-studio/studio-browser-report.json",
+        "browser": {
+          "count": 44,
+          "transport": "native loopback HTTP",
+          "sha256": "458e2d912f7a9896da88e136e6aeba62970b56186a432d1509f53a09b1471797"
+        }
+      },
+      {
+        "name": "browser-sources",
+        "status": "passed",
+        "log_sha256": "e502fab903e77171c5852d8f068306c9e2f4085d3c2d4a70237ed82e1c8cff20",
+        "report": "browser-sources/source-browser-report.json",
+        "browser": {
+          "count": 39,
+          "transport": "native HTTP",
+          "sha256": "4abf02bc619f78c83f5133f848ceb2ef4cdb5b7810dbf8d8e9b8c93dcc93df27"
+        }
+      },
+      {
+        "name": "browser-insights",
+        "status": "passed",
+        "log_sha256": "1fe8c50d6a0c1bd8078ca9fe5f81a08570682dd5455ca2eaf661c7a20ce748e2",
+        "report": "browser-insights/insights-browser-report.json",
+        "browser": {
+          "count": 40,
+          "transport": "Native loopback HTTP",
+          "sha256": "05a47f8e44b3e856cc19ad85bc4f2154835e5c6fed34788232f11969f304a952"
+        }
+      },
+      {
+        "name": "browser-grounding",
+        "status": "passed",
+        "log_sha256": "26798c44acad67ffd787ece4299a433f67fa806a9e282ba610bc7f77ff60992b",
+        "report": "browser-grounding/browser-grounding-report.json",
+        "browser": {
+          "count": 26,
+          "transport": "Native loopback HTTP",
+          "sha256": "4c0acde1ff3c693ac7714a556d7292a02bd4b8363b5c48091ee8ca5640153c35"
+        }
+      },
+      {
+        "name": "browser-plan_review",
+        "status": "passed",
+        "log_sha256": "aeb55d35d2437d7604ebf5cf8b1c37ae389f5286e1616b9f803bd250cc82561c",
+        "report": "browser-plan_review/browser-plan-review-report.json",
+        "browser": {
+          "count": 33,
+          "transport": "Native loopback HTTP",
+          "sha256": "31e729ac5f4c7d638401be1211f9c255e08603623812b4b85ebd08a8516bf1aa"
+        }
+      },
+      {
+        "name": "browser-accessibility",
+        "status": "passed",
+        "log_sha256": "1694bba70004e2b415b4a645d054f81605243be6dfce93d642b3fa47a1013e1d",
+        "report": "browser-accessibility/accessibility-browser-report.json",
+        "browser": {
+          "count": 36,
+          "transport": "Native loopback HTTP",
+          "sha256": "1694bba70004e2b415b4a645d054f81605243be6dfce93d642b3fa47a1013e1d"
+        }
+      },
+      {
+        "name": "browser-courses",
+        "status": "passed",
+        "log_sha256": "6022612478601d49fb13c722c459367b5056677e9c520c84b81547c9eb2853d5",
+        "report": "browser-courses/browser-courses-report.json",
+        "browser": {
+          "count": 37,
+          "transport": "Native loopback HTTP",
+          "sha256": "cddb9cb87d5d124be8132f12718bc3805a066f514876a4f42b66c83f0f57aafb"
+        }
+      }
+    ],
+    "wheel_hashes": {
+      "package/endstate_engine-0.1.0a2-py3-none-any.whl": "7d27f8378cd214970717b2b952f43ce0a5345b065fa30a8961227f2a4b772dbf"
+    }
   },
   "inference_calls": 0,
   "production_deployed": false,
@@ -40,7 +247,7 @@
   "limitations": [
     "B03-07 and ES02-06 remain optional and partial with their original independent/operator/identity/event gates.",
     "Hosted compression review EM-103 remains an unverified deferred candidate; this patch makes no transport changes.",
-    "Earlier native counts remain tied to their own source; the follow-up needs fresh integrated acceptance."
+    "Local native results belong to the exact tested code commit and source hash above. Final receipt-only edits change the overall source fingerprint; PR9 supplies final-head remote CI and merge evidence."
   ],
   "focused_native_courses": {
     "checks_passed": 37,
@@ -48,5 +255,14 @@
     "model_calls": 0,
     "errors": [],
     "scope": "Original native journey plus nine-prerequisite selection, inspection, reload, lifecycle and authority preservation."
+  },
+  "tested_code_commit": "84994b3b4aeca1f925bd63cbe74ceb945e91ad1c",
+  "tested_code_tree": "4431b6cf745108c0722a35a82c22523b63b9651d",
+  "pull_request": 9,
+  "delivery": "pushed_unreleased",
+  "receipt_guards": {
+    "passed": 60,
+    "failures": 0,
+    "scope": "Delivery/changelog/emergence regression tests after final receipt edits; canonical generation and base-preservation checks passed."
   }
 }

@@ -6,7 +6,7 @@ This is product history, not the case decision trail. A build entry is not evide
 
 ## 0.2.0-alpha.8 · Nested prerequisite courses remain readable
 
-2026-10-30 · `local_unreleased`
+2026-10-30 · `pushed_unreleased`
 
 Reassess selected nested prerequisite branches without exceeding expression child limits or changing their meaning.
 
@@ -24,8 +24,10 @@ Reassess selected nested prerequisite branches without exceeding expression chil
 
 ### Verification
 
-- Original four regression failures and passing 8-child control retained.
-- 137 focused course/kernel/result checks passed; cumulative native acceptance pending.
+- Original four regression failures and passing 8-child control retained as exact emitted output in the evidence JSON.
+- 137 focused course/kernel/result checks and 37 native Chosen Course checks passed; these overlap the integrated totals.
+- 1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites passed; all 21 acceptance steps passed. Exact-source/artifact inspection valid before final receipt edits.
+- Tested code 84994b3b4aeca1f925bd63cbe74ceb945e91ad1c; source and artifact inspection valid/passed before final receipt-only edits. PR9 records final-head CI and merge.
 
 ### Limitations
 

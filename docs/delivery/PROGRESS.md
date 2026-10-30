@@ -8,8 +8,8 @@ Last status review: 2026-10-30.
 
 ## Checkpoint and release boundary
 
-- Active integration branch: `fix/nested-course-prerequisites-20261030`; PR #None.
-- Inspected application baseline: `825ad6668c2c7d128da367476fe16cb8d214b837`.
+- Active integration branch: `fix/nested-course-prerequisites-20261030`; PR #9.
+- Inspected application baseline: `84994b3b4aeca1f925bd63cbe74ceb945e91ad1c`.
 - This is a dated snapshot. Refresh the branch, PR and CI at the start of every session.
 - At inspection: draft PR = `false`; merged = `false`; production deployed = `false`.
 - Standalone ENDSTATE package released = `false`.
@@ -364,7 +364,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **B03-07 Client mandate and human-selected course workflow** (optional, not a version gate)
   - Status: `partial`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Owner-approved mandate and selected-course records preserve target, scope, dependencies and human rationale; change explanations prompt reconsideration without granting approvals, altering facts or silently switching the chosen course. Native/operator acceptance required.
-  - Next: Fix EM-102 nested prerequisite reassessment; run focused, installed-kernel and all native browser checks. Retain broader optional mandate/durable-event blockers.
+  - Next: EM-102 correction passes fresh native/installed acceptance; integrate PR9 after green CI under owner authorization. Retain the original optional mandate/identity/event prerequisites and independent operator acceptance; no broader completion claimed.
   - Branch/base: `fix/nested-course-prerequisites-20261030` / `825ad6668c2c7d128da367476fe16cb8d214b837`.
   - Dependencies: `B03-01`, `ES02-06`.
   - Existing code: `endstate/course.py`, `eightball/v2/courses.py`, `web/v2/course-view.js`, `tests/test_courses.py`, `tests/browser_courses.py`.
@@ -500,7 +500,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **ES02-06 Selected-course and bounded reconsideration contracts** (optional, not a version gate)
   - Status: `partial`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Versioned neutral input/output contracts distinguish candidate routes from a host-authorised course; changes to consulted sources, targets, guards, authority, estimates, clocks and resources produce traceable reconsideration results. Unknown scope requires review. Existing approval invalidation is preserved.
-  - Next: Fix EM-102 nested prerequisite reassessment; run focused, installed-kernel and all native browser checks. Retain broader optional mandate/durable-event blockers.
+  - Next: EM-102 correction passes fresh native/installed acceptance; integrate PR9 after green CI under owner authorization. Retain the original optional mandate/identity/event prerequisites and independent operator acceptance; no broader completion claimed.
   - Branch/base: `fix/nested-course-prerequisites-20261030` / `825ad6668c2c7d128da367476fe16cb8d214b837`.
   - Dependencies: `ES02-01`, `ES02-03`.
   - Existing code: `endstate/course.py`, `eightball/v2/courses.py`, `web/v2/course-view.js`, `tests/test_courses.py`, `tests/browser_courses.py`.
@@ -947,4 +947,5 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `reproduced_failure_and_bounded_course_regression`.
 - Repository evidence: [docs/evidence/course-prerequisites-2026-10-30.json](../../docs/evidence/course-prerequisites-2026-10-30.json).
-- Result/scope: Original four nested-course regression failures retained; 137 focused course/kernel/result checks passed. Fresh cumulative native acceptance pending.
+- Result/scope: 1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites passed; all 21 acceptance steps passed. Exact-source/artifact inspection valid before final receipt edits.
+- Code revision: `84994b3b4aeca1f925bd63cbe74ceb945e91ad1c`.

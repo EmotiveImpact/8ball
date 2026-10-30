@@ -1863,12 +1863,13 @@ The report-only domain review reproduced a valid nested nine-prerequisite graph 
 
 **Roadmap links:** `B03-07` (partial), `ES02-06` (partial).
 **Completion scope:** No scoped completion gate yet; do not tick this idea off.
-**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `docs/evidence/security-fixes-2026-10-30.json`, `docs/delivery/sessions/2026-10-30-course-prerequisites.md`, `docs/evidence/course-prerequisites-2026-10-30.json`, `docs/evidence/course-prerequisites-before-fix-2026-10-30.txt`.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `docs/evidence/security-fixes-2026-10-30.json`, `docs/delivery/sessions/2026-10-30-course-prerequisites.md`, `docs/evidence/course-prerequisites-2026-10-30.json`, `docs/evidence/course-prerequisites-before-fix-2026-10-30.json`.
 
 **Decision history:**
 
 - 2026-10-30 · deferred · Codex security remediation: new_candidate: retain the authenticated functional defect for a separate bounded fix; no required gate or accepted scope is changed.
 - 2026-10-30 · adopted · Owner instruction; Codex implementation: Owner requested fixing all reported issues then merging. Adopt only the bounded existing-course correction under B03-07/ES02-06: group every selected signed prerequisite within unchanged expression limits. Broader optional identity/mandate/event acceptance stays partial.
+- 2026-10-30 · adopted · Codex source-bound verification: Bounded correction verified: 1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites passed; all 21 acceptance steps passed. Exact-source/artifact inspection valid before final receipt edits. Original failed evidence and broader optional acceptance gates remain; PR9 records final-head CI and owner-authorized merge.
 
 ### [ ] EM-103: Streaming response caps also need a content-decoding boundary
 
