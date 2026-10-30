@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-30. **105 recorded discoveries.**
+Last review: 2026-10-30. **110 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1919,3 +1919,88 @@ After the new changelog entry was truthfully marked pushed_unreleased, the Plan 
 **Decision history:**
 
 - 2026-10-30 · adopted · Codex native verification: existing_task: verify the exact canonical delivery badge, version/title and visible limits, preserving the complete native journey and truthful pushed state.
+
+### [ ] EM-106: Execution outcome and evidence integrity are separate
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint.
+
+A final source-inspection failure can overwrite interrupted/aborted status or prevent the final lifecycle checkpoint; fast failed jobs are currently labelled inconclusive.
+
+**Product implication:** Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.
+
+**Roadmap links:** `B02-09` (blocked), `B02-15` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-evaluation-reliability.md`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
+
+### [ ] EM-107: Portable source identity needs retained checkout observations
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint.
+
+The declared research pins are application inputs, while checkout availability is environment evidence; using one equality check for both blocks matching generation reports across fresh clones.
+
+**Product implication:** Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.
+
+**Roadmap links:** `B02-12` (blocked), `DOC-07` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-evaluation-reliability.md`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
+
+### [ ] EM-108: Native provider schema support must be explicit
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint.
+
+Anthropic documents that its compatibility layer ignores response_format; native Messages structured output uses output_config.format and a supported schema subset.
+
+**Product implication:** Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.
+
+**Roadmap links:** `B02-09` (blocked), `ES03-09` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-evaluation-reliability.md`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
+
+### [ ] EM-109: Manager recreation is not process restart coverage
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint.
+
+The existing lifecycle integration replaces the process with an in-process server and has no actual process/HTTP interruption regression.
+
+**Product implication:** Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.
+
+**Roadmap links:** `B02-12` (blocked), `B02-15` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-evaluation-reliability.md`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
+
+### [ ] EM-110: Invalid provider settings need a distinct operator state
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint.
+
+The existing Intelligence card presents invalid configuration as not configured and the analysis form hides Hugging Face presence.
+
+**Product implication:** Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.
+
+**Roadmap links:** `B02-15` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-evaluation-reliability.md`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.

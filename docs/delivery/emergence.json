@@ -3790,6 +3790,135 @@
           "reason": "existing_task: verify the exact canonical delivery badge, version/title and visible limits, preserving the complete native journey and truthful pushed state."
         }
       ]
+    },
+    {
+      "id": "EM-106",
+      "title": "Execution outcome and evidence integrity are separate",
+      "origin": "Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "A final source-inspection failure can overwrite interrupted/aborted status or prevent the final lifecycle checkpoint; fast failed jobs are currently labelled inconclusive.",
+      "product_implication": "Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.",
+      "task_ids": [
+        "B02-09",
+        "B02-15"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex under owner get-it-done instruction",
+          "reason": "existing_task: bounded repair within existing task scope; validation pending."
+        }
+      ]
+    },
+    {
+      "id": "EM-107",
+      "title": "Portable source identity needs retained checkout observations",
+      "origin": "Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "The declared research pins are application inputs, while checkout availability is environment evidence; using one equality check for both blocks matching generation reports across fresh clones.",
+      "product_implication": "Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.",
+      "task_ids": [
+        "B02-12",
+        "DOC-07"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex under owner get-it-done instruction",
+          "reason": "existing_task: bounded repair within existing task scope; validation pending."
+        }
+      ]
+    },
+    {
+      "id": "EM-108",
+      "title": "Native provider schema support must be explicit",
+      "origin": "Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "Anthropic documents that its compatibility layer ignores response_format; native Messages structured output uses output_config.format and a supported schema subset.",
+      "product_implication": "Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.",
+      "task_ids": [
+        "B02-09",
+        "ES03-09"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex under owner get-it-done instruction",
+          "reason": "existing_task: bounded repair within existing task scope; validation pending."
+        }
+      ]
+    },
+    {
+      "id": "EM-109",
+      "title": "Manager recreation is not process restart coverage",
+      "origin": "Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "The existing lifecycle integration replaces the process with an in-process server and has no actual process/HTTP interruption regression.",
+      "product_implication": "Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.",
+      "task_ids": [
+        "B02-12",
+        "B02-15"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex under owner get-it-done instruction",
+          "reason": "existing_task: bounded repair within existing task scope; validation pending."
+        }
+      ]
+    },
+    {
+      "id": "EM-110",
+      "title": "Invalid provider settings need a distinct operator state",
+      "origin": "Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "The existing Intelligence card presents invalid configuration as not configured and the analysis form hides Hugging Face presence.",
+      "product_implication": "Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.",
+      "task_ids": [
+        "B02-15"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex under owner get-it-done instruction",
+          "reason": "existing_task: bounded repair within existing task scope; validation pending."
+        }
+      ]
     }
   ]
 }

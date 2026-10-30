@@ -4,6 +4,38 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Evaluation reliability and explicit Anthropic protocol
+
+2026-10-30 · `local_unreleased`
+
+Bounded follow-up to the merged development review; implementation and verification pending at the claim checkpoint.
+
+### Changed
+
+- Recorded bounded task ownership, current security-fix base and all review discoveries before implementation.
+
+### Verification
+
+- Claim checkpoint only; no new software pass or live inference claimed.
+
+### Limitations
+
+- Actual model, independent/human and release gates remain open; active hosted settings absent.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Report outcome, evidence integrity, source identity and environment observations need separate handling.
+- Risk: A passing controlled contract does not establish paid-provider compatibility or semantic quality.
+- Architecture: Keep provider I/O and evaluation receipts in 8BALL; preserve ENDSTATE and all approval boundaries.
+- Roadmap decision: Existing-task repairs only; no acceptance status or required scope promotion.
+Registered discoveries: EM-106, EM-107, EM-108, EM-109, EM-110.
+
+Roadmap items: `B02-09`, `B02-12`, `B02-15`, `ES03-09`, `DOC-07`.
+
+Evidence: [docs/delivery/sessions/2026-10-30-evaluation-reliability.md](docs/delivery/sessions/2026-10-30-evaluation-reliability.md).
+
 ## 0.2.0-alpha.8 · Static-path, provider-response and legacy-lineage safeguards
 
 2026-10-30 · `pushed_unreleased`

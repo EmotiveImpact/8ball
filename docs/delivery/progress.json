@@ -20,25 +20,12 @@
     "integration_authority": "docs/decisions/0007-owner-build-consolidation.md",
     "source_merged_not_release_accepted": true,
     "current_sprint": {
-      "branch": "room/check-repo-with-three-sub-agents-pj2t",
-      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "branch": "room/review-last-commit-1038291-frrj",
+      "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
       "status_as_of": "2026-10-30",
-      "owner": "Codex",
-      "task_ids": [
-        "B01-02",
-        "B02-15",
-        "ES01-03",
-        "B01-03",
-        "ES01-05",
-        "DOC-04"
-      ],
-      "objective": "Fix the three validated local-workspace security findings without changing dependencies, provider permissions or original acceptance gates.",
       "merged": false,
-      "verification": "1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.",
-      "remote_ci": "Both code-checkpoint CI workflows passed. Initial receipt-head CI 41035068063 failed only on Studio hardcoded delivery label; corrected native Studio passed44. Authoritative final cumulative CI: PR8.",
-      "evidence": "docs/evidence/security-fixes-2026-10-30.json",
-      "tested_code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
-      "tested_code_tree": "ff87fcc6740cf020e5aa7a73648578206cdb3be2"
+      "verification": "Claimed; verification pending. No current test totals claimed.",
+      "evidence": "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
     },
     "verified_sprint_history": [
       {
@@ -808,9 +795,9 @@
       "status": "blocked",
       "required": true,
       "owner": "Codex",
-      "working_branch": "feat/v02-review-evidence-20261018",
-      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
-      "updated_on": "2026-10-18",
+      "working_branch": "room/review-last-commit-1038291-frrj",
+      "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "evals/live_generation.py",
@@ -843,7 +830,7 @@
         "Owner selected Anthropic, with prepared claude-sonnet-4-6 compatibility settings; account availability/pricing, active credentials/destination and real inference remain unverified. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, supply key securely and Save/Publish. Fictional fixtures up to US$5 remain authorised.",
         "Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate."
       ],
-      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
+      "next_action": "Complete the bounded evaluation-reliability/protocol repair and native acceptance; actual provider and independent/human evidence remain separate. See docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
     },
     {
       "id": "B02-10",
@@ -927,9 +914,9 @@
       "status": "blocked",
       "required": true,
       "owner": "Codex",
-      "working_branch": "feat/v02-review-evidence-20261018",
-      "base_commit": "e513237f5b66c0689fa870e0d82873d8b71e4d8a",
-      "updated_on": "2026-10-18",
+      "working_branch": "room/review-last-commit-1038291-frrj",
+      "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "tests/browser_v2.py",
         "evals/full_journey.py",
@@ -960,7 +947,7 @@
       "blockers": [
         "Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey."
       ],
-      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
+      "next_action": "Complete the bounded evaluation-reliability/protocol repair and native acceptance; actual provider and independent/human evidence remain separate. See docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
     },
     {
       "id": "B02-13",
@@ -1042,8 +1029,8 @@
       "status": "partial",
       "required": true,
       "owner": "Codex",
-      "working_branch": "room/check-repo-with-three-sub-agents-pj2t",
-      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "working_branch": "room/review-last-commit-1038291-frrj",
+      "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
       "updated_on": "2026-10-30",
       "code_paths": [
         "eightball/v2/analysis_jobs.py",
@@ -1077,7 +1064,7 @@
       "blockers": [
         "Lifecycle behaviour with the selected real inference provider remains unverified."
       ],
-      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
+      "next_action": "Complete the bounded evaluation-reliability/protocol repair and native acceptance; actual provider and independent/human evidence remain separate. See docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
     },
     {
       "id": "B02-16",
@@ -2275,9 +2262,9 @@
       "status": "verified",
       "required": true,
       "owner": "Codex",
-      "working_branch": "feat/v02-compatible-provider-20261016",
-      "base_commit": "c9fd38438ba52e9320bc55b96132086bfe57ce6a",
-      "updated_on": "2026-10-16",
+      "working_branch": "room/review-last-commit-1038291-frrj",
+      "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "updated_on": "2026-10-30",
       "code_paths": [
         ".gitmodules",
         "research/README.md",
@@ -2293,7 +2280,7 @@
         "EV-RESEARCH-COPY"
       ],
       "blockers": [],
-      "next_action": "Use the Git-only research helper for later restoration/verification; scope any upstream software installation or adaptation separately."
+      "next_action": "Complete the bounded evaluation-reliability/protocol repair and native acceptance; actual provider and independent/human evidence remain separate. See docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
     },
     {
       "id": "ES03-09",
@@ -2302,9 +2289,9 @@
       "status": "verified",
       "required": false,
       "owner": "Codex",
-      "working_branch": "feat/v02-evaluation-readiness-20261016",
-      "base_commit": "0fed04b5e299f4a2e53050456559133c1231b088",
-      "updated_on": "2026-10-16",
+      "working_branch": "room/review-last-commit-1038291-frrj",
+      "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "eightball/v2/compatible.py",
         "tests/test_compatible_provider.py",
@@ -2322,7 +2309,7 @@
         "EV-EVALUATION-READINESS"
       ],
       "blockers": [],
-      "next_action": "Bounded software transport contract remains verified. Activate the actual selected endpoint/model and run unchanged generation plus matching lifecycle/native journey within authorised fictional-only scope and confirmed service limits; explicit :free support does not prove free availability or semantic quality."
+      "next_action": "Complete the bounded evaluation-reliability/protocol repair and native acceptance; actual provider and independent/human evidence remain separate. See docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
     }
   ],
   "next_task_ids": [

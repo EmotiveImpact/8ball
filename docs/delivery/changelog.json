@@ -3,6 +3,54 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-30-evaluation-reliability",
+      "date": "2026-10-30",
+      "version": "0.2.0-alpha.8",
+      "title": "Evaluation reliability and explicit Anthropic protocol",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B02-09",
+        "B02-12",
+        "B02-15",
+        "ES03-09",
+        "DOC-07"
+      ],
+      "summary": "Bounded follow-up to the merged development review; implementation and verification pending at the claim checkpoint.",
+      "added": [],
+      "changed": [
+        "Recorded bounded task ownership, current security-fix base and all review discoveries before implementation."
+      ],
+      "fixed": [],
+      "verification": [
+        "Claim checkpoint only; no new software pass or live inference claimed."
+      ],
+      "limitations": [
+        "Actual model, independent/human and release gates remain open; active hosted settings absent."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Report outcome, evidence integrity, source identity and environment observations need separate handling."
+        ],
+        "risks": [
+          "A passing controlled contract does not establish paid-provider compatibility or semantic quality."
+        ],
+        "architecture_implications": [
+          "Keep provider I/O and evaluation receipts in 8BALL; preserve ENDSTATE and all approval boundaries."
+        ],
+        "roadmap_decision": "Existing-task repairs only; no acceptance status or required scope promotion.",
+        "insight_ids": [
+          "EM-106",
+          "EM-107",
+          "EM-108",
+          "EM-109",
+          "EM-110"
+        ]
+      }
+    },
+    {
       "id": "2026-10-30-security-boundaries",
       "date": "2026-10-30",
       "version": "0.2.0-alpha.8",
