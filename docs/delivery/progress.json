@@ -20,22 +20,16 @@
     "integration_authority": "docs/decisions/0007-owner-build-consolidation.md",
     "source_merged_not_release_accepted": true,
     "current_sprint": {
-      "branch": "fix/nested-course-prerequisites-20261030",
+      "branch": "room/review-last-commit-1038291-frrj",
       "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
-      "owner": "Codex",
+      "integration_base_commit": "bab6fa8bb83d78d324fa0f0935a09d33e2bdcda6",
+      "pull_request": 10,
       "status_as_of": "2026-10-30",
-      "task_ids": [
-        "B03-07",
-        "ES02-06"
-      ],
-      "objective": "Correct EM-102 nested Chosen Course prerequisite reassessment only; preserve selected signed branches and original optional acceptance gates.",
       "merged": false,
-      "verification": "1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites passed; all 21 acceptance steps passed. Exact-source/artifact inspection valid before final receipt edits.",
-      "merge_authority": "Owner instruction on 2026-10-30: fix all issues then merge.",
-      "tested_code_commit": "84994b3b4aeca1f925bd63cbe74ceb945e91ad1c",
-      "tested_code_tree": "4431b6cf745108c0722a35a82c22523b63b9651d",
-      "evidence": "docs/evidence/course-prerequisites-2026-10-30.json",
-      "remote_ci": "PR9 final-head checks pending after receipt push; merge authorized once checks pass."
+      "verification": "Combined main bab6fa8 plus evaluation repair: 1372 source tests, 1372 isolated installed-engine regressions and 405 checks across eleven native browser suites passed; local and CI artifacts inspected valid before receipt-only edits. Zero actual model calls; secure key absent.",
+      "evidence": "docs/evidence/evaluation-reliability-2026-10-30.json",
+      "tested_code_commit": "e4979caeaf5f81088802da43737afc2e1c170983",
+      "remote_ci": "Both integrated-code workflows passed on e4979ca: 41080312320 and 41080312008. PR10 tracks receipt-head CI; draft, unmerged, unreleased."
     },
     "verified_sprint_history": [
       {
@@ -99,6 +93,35 @@
         "evidence": "docs/evidence/security-fixes-2026-10-30.json",
         "tested_code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
         "tested_code_tree": "ff87fcc6740cf020e5aa7a73648578206cdb3be2"
+      },
+      {
+        "branch": "room/review-last-commit-1038291-frrj",
+        "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+        "status_as_of": "2026-10-30",
+        "merged": false,
+        "verification": "1367 source tests, 1367 installed-engine regressions and 399 checks across all eleven native browser suites passed; exact source/artifact inspection valid before receipt-only edits. Actual model calls zero; secure key absent.",
+        "evidence": "docs/evidence/evaluation-reliability-2026-10-30.json",
+        "tested_code_commit": "db6c5b69f05cf3fabd3930dc22fd7e2df9af617a",
+        "pull_request": 10,
+        "remote_ci": "Corrected code CI: 41078253660 success, 41078253666 success. PR10 is draft; receipt-head CI tracked there."
+      },
+      {
+        "branch": "fix/nested-course-prerequisites-20261030",
+        "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+        "owner": "Codex",
+        "status_as_of": "2026-10-30",
+        "task_ids": [
+          "B03-07",
+          "ES02-06"
+        ],
+        "objective": "Correct EM-102 nested Chosen Course prerequisite reassessment only; preserve selected signed branches and original optional acceptance gates.",
+        "merged": false,
+        "verification": "1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites passed; all 21 acceptance steps passed. Exact-source/artifact inspection valid before final receipt edits.",
+        "merge_authority": "Owner instruction on 2026-10-30: fix all issues then merge.",
+        "tested_code_commit": "84994b3b4aeca1f925bd63cbe74ceb945e91ad1c",
+        "tested_code_tree": "4431b6cf745108c0722a35a82c22523b63b9651d",
+        "evidence": "docs/evidence/course-prerequisites-2026-10-30.json",
+        "remote_ci": "PR9 final-head checks pending after receipt push; merge authorized once checks pass."
       }
     ],
     "provider_configuration_preparation": {
@@ -416,6 +439,12 @@
       "path": "docs/evidence/security-fixes-2026-10-30.json",
       "result": "1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.",
       "code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983"
+    },
+    "EV-EVAL-RELIABILITY": {
+      "kind": "software_validation",
+      "path": "docs/evidence/evaluation-reliability-2026-10-30.json",
+      "result": "Combined main bab6fa8 plus evaluation repair: 1372 source tests, 1372 isolated installed-engine regressions and 405 checks across eleven native browser suites passed; local and CI artifacts inspected valid before receipt-only edits. Zero actual model calls; secure key absent.",
+      "code_commit": "e4979caeaf5f81088802da43737afc2e1c170983"
     },
     "EV-COURSE-NESTED": {
       "kind": "reproduced_failure_and_bounded_course_regression",
@@ -849,9 +878,9 @@
       "status": "blocked",
       "required": true,
       "owner": "Codex",
-      "working_branch": "feat/v02-review-evidence-20261018",
-      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
-      "updated_on": "2026-10-18",
+      "working_branch": "room/review-last-commit-1038291-frrj",
+      "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "evals/live_generation.py",
@@ -878,13 +907,14 @@
         "EV-EVALUATION-READINESS",
         "EV-REVIEW-EVIDENCE-20261018",
         "EV-ANTHROPIC-SETUP",
-        "EV-OCT25-INTEGRATION"
+        "EV-OCT25-INTEGRATION",
+        "EV-EVAL-RELIABILITY"
       ],
       "blockers": [
-        "Owner selected Anthropic, with prepared claude-sonnet-4-6 compatibility settings; account availability/pricing, active credentials/destination and real inference remain unverified. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, supply key securely and Save/Publish. Fictional fixtures up to US$5 remain authorised.",
+        "Owner-selected native Anthropic transport passes controlled software checks, but this runtime has no secure active EIGHTBALL_API_KEY. Cloudroom secure request is pending; actual authentication/account availability, unchanged frozen-fixture generation and independent quality remain unverified. Fictional-only total US$5 permission remains.",
         "Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate."
       ],
-      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
+      "next_action": "Supply the key through the existing Cloudroom secure form, activate the exact native Anthropic settings in docs/v2/ANTHROPIC-SETUP.md, confirm remaining budget, and run unchanged evals/live_compatible.py --allow-hosted once; retain every failure without repair or retry."
     },
     {
       "id": "B02-10",
@@ -968,16 +998,17 @@
       "status": "blocked",
       "required": true,
       "owner": "Codex",
-      "working_branch": "feat/v02-review-evidence-20261018",
-      "base_commit": "e513237f5b66c0689fa870e0d82873d8b71e4d8a",
-      "updated_on": "2026-10-18",
+      "working_branch": "room/review-last-commit-1038291-frrj",
+      "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "tests/browser_v2.py",
         "evals/full_journey.py",
         "scripts/acceptance.py",
         ".github/workflows/provider-journey.yml",
         "evals/provider_lifecycle.py",
-        "tests/test_provider_lifecycle.py"
+        "tests/test_provider_lifecycle.py",
+        "tests/test_acceptance_runner.py"
       ],
       "depends_on": [
         "B02-09",
@@ -996,12 +1027,13 @@
         "EV-COMPATIBLE-CODE",
         "EV-EVALUATION-READINESS",
         "EV-REVIEW-EVIDENCE-20261018",
-        "EV-OCT25-INTEGRATION"
+        "EV-OCT25-INTEGRATION",
+        "EV-EVAL-RELIABILITY"
       ],
       "blockers": [
         "Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey."
       ],
-      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
+      "next_action": "After a matching successful actual generation receipt, run lifecycle and native full_journey commands in docs/delivery/NEXT-BUILD.md, then obtain genuine independent/human acceptance. Controlled/native software results do not close this scope."
     },
     {
       "id": "B02-13",
@@ -1083,8 +1115,8 @@
       "status": "partial",
       "required": true,
       "owner": "Codex",
-      "working_branch": "room/check-repo-with-three-sub-agents-pj2t",
-      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "working_branch": "room/review-last-commit-1038291-frrj",
+      "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
       "updated_on": "2026-10-30",
       "code_paths": [
         "eightball/v2/analysis_jobs.py",
@@ -1113,12 +1145,13 @@
         "EV-EVALUATION-READINESS",
         "EV-ANTHROPIC-SETUP",
         "EV-OCT25-INTEGRATION",
-        "EV-SECURITY-FIXES"
+        "EV-SECURITY-FIXES",
+        "EV-EVAL-RELIABILITY"
       ],
       "blockers": [
         "Lifecycle behaviour with the selected real inference provider remains unverified."
       ],
-      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
+      "next_action": "Preserve the passing real-process local restart/configuration/permission-reset regressions. After matching successful generation and secure selected-provider access, run actual hosted cancel/stale/restart observations without automatic retries or claiming remote recall."
     },
     {
       "id": "B02-16",
@@ -2318,9 +2351,9 @@
       "status": "verified",
       "required": true,
       "owner": "Codex",
-      "working_branch": "feat/v02-compatible-provider-20261016",
-      "base_commit": "c9fd38438ba52e9320bc55b96132086bfe57ce6a",
-      "updated_on": "2026-10-16",
+      "working_branch": "room/review-last-commit-1038291-frrj",
+      "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "updated_on": "2026-10-30",
       "code_paths": [
         ".gitmodules",
         "research/README.md",
@@ -2333,10 +2366,11 @@
       ],
       "acceptance": "All28 inspected repository pins are populated as source-only research checkouts with original licences, exact manifest identities, explicit model/LFS/nested exceptions and reproducible Git-only verification. No runtime adoption or upstream execution.",
       "evidence": [
-        "EV-RESEARCH-COPY"
+        "EV-RESEARCH-COPY",
+        "EV-EVAL-RELIABILITY"
       ],
       "blockers": [],
-      "next_action": "Use the Git-only research helper for later restoration/verification; scope any upstream software installation or adaptation separately."
+      "next_action": "Preserve declared pins and original checkout observations. Version-2 receipt matching allows only absent-versus-pinned checkout availability; legacy receipts stay exact. Use the Git-only helper for separately needed restoration; no upstream runtime adoption."
     },
     {
       "id": "ES03-09",
@@ -2345,16 +2379,18 @@
       "status": "verified",
       "required": false,
       "owner": "Codex",
-      "working_branch": "feat/v02-evaluation-readiness-20261016",
-      "base_commit": "0fed04b5e299f4a2e53050456559133c1231b088",
-      "updated_on": "2026-10-16",
+      "working_branch": "room/review-last-commit-1038291-frrj",
+      "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "eightball/v2/compatible.py",
         "tests/test_compatible_provider.py",
         "tests/test_compatible_integration.py",
         "tests/test_compatible_cli.py",
         "evals/live_compatible.py",
-        "docs/v2/QWEN-SETUP.md"
+        "docs/v2/QWEN-SETUP.md",
+        "tests/test_anthropic_protocol.py",
+        "docs/v2/ANTHROPIC-SETUP.md"
       ],
       "depends_on": [
         "ES03-06"
@@ -2362,10 +2398,11 @@
       "acceptance": "Controlled HTTP and native UI checks verify explicit server-owned endpoint/model/provider, permission, pinned routing, bounded strict responses/failure evidence, secrets protection, stage/cancellation/stale/restart guards and unchanged frozen-fixture harness. This transport scope does not claim actual inference or semantic/human acceptance.",
       "evidence": [
         "EV-COMPATIBLE-CODE",
-        "EV-EVALUATION-READINESS"
+        "EV-EVALUATION-READINESS",
+        "EV-EVAL-RELIABILITY"
       ],
       "blockers": [],
-      "next_action": "Bounded software transport contract remains verified. Activate the actual selected endpoint/model and run unchanged generation plus matching lifecycle/native journey within authorised fictional-only scope and confirmed service limits; explicit :free support does not prove free availability or semantic quality."
+      "next_action": "Controlled transport and native software checks pass, including explicitly selected native Anthropic Messages. Real provider authentication/inference remains blocked on secure key; run the unchanged generation/lifecycle/journey procedure within existing fictional-only US$5 authorization."
     }
   ],
   "next_task_ids": [

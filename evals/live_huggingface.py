@@ -40,14 +40,14 @@ class SourceEvidenceInvalid(ValueError):
     """A fixed safe diagnostic: source inspection must not expose local paths."""
 
 
-def inspect_source(report, point):
+def inspect_source(report, point, *, inspector=None):
     """Bind every admitted fixture and the final receipt to one source tree.
 
     A later successful inspection cannot erase an earlier drift or inspection
     failure. Completed provider responses remain in the same failed receipt.
     """
     try:
-        current=source_manifest()
+        current=(inspector or source_manifest)()
     except Exception as exc:
         report['source_unchanged_during_run']=False
         report['source_checks'].append({'point':point,'status':'inspection_failed',
@@ -136,6 +136,7 @@ def main(argv=None, *, default_provider='huggingface'):
                           'A hard kill retains the last checkpoint; an in-flight response may not be recoverable.']}
     if args.provider=='openai_compatible':
         report['endpoint_host']=configured.endpoint_host
+        report['api_protocol']=configured.api_protocol
     report_name='huggingface-report.json' if args.provider=='huggingface' else 'compatible-report.json'
     checkpoint(report,directory,report_name)
     print('Report: '+str(directory/report_name),flush=True)
@@ -212,7 +213,10 @@ def main(argv=None, *, default_provider='huggingface'):
         try:
             inspect_source(report,'finish')
         except SourceEvidenceInvalid as exc:
-            report.update(status='failed',reason=str(exc))
+            report['source_integrity_error']=str(exc)
+            if report['status'] not in ('interrupted','aborted'):
+                report['status']='failed'
+                report.setdefault('reason',str(exc))
         report['finished_at']=utcnow().isoformat()
         checkpoint(report,directory,report_name)
     return 0 if report['status']=='passed' else 1

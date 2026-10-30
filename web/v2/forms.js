@@ -1,4 +1,4 @@
-import {S,esc,field,select,textarea,options,localDate,modal,warning,note,button,expr,gbp,duration,date,badge,ctitle,provenance} from './ui.js';
+import {S,esc,field,select,textarea,options,localDate,modal,warning,note,button,expr,gbp,duration,date,badge,ctitle,provenance,providerConfigurationLabel} from './ui.js';
 export const snapshot=()=>`data-case-id="${esc(S.current?.case.id??'')}" data-revision="${S.current?.case.revision??0}"`;
 const submit=(text)=>`<div class="form-actions"><button type="submit" class="button primary">${text}</button></div>`;
 const check=(label,name,checked=false)=>`<label class="check"><input type="checkbox" name="${esc(name)}" ${checked?'checked':''}><span>${esc(label)}</span></label>`;
@@ -22,6 +22,7 @@ export function analysisForm(graph=false){
       ${select('Analysis provider','provider',providers)}
       ${graph?select('Catalogue template (template provider only)','playbook_id',S.plays.map(p=>[p.id,p.name])):''}
       ${sourceChoices()}
+      ${note('Hosted API: '+providerConfigurationLabel(S.providers?.providers?.find(p=>p.id==='openai_compatible'))+'. Hugging Face: '+providerConfigurationLabel(S.providers?.providers?.find(p=>p.id==='huggingface'))+'.')}
       ${warning('Hosted processing is optional. Configure your API or Hugging Face connection on the server. Configuration is not live model validation.','neutral')}
       ${check('For a hosted provider, I authorise sending the selected sources and relevant case context. Graph drafting includes the outcome, brief and existing condition names. Routing services also send this to the explicitly configured inference provider.','allow_external')}
       ${submit('Create proposals for human review')}

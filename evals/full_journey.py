@@ -57,7 +57,8 @@ def preflight(provider,allow_inference=False,allow_external=False):
         try:cfg=compatible_settings()
         except HostedSetupRequired as exc:raise SetupBlocked(str(exc)) from None
         return {'provider':provider,'model':cfg.model,'inference_provider':cfg.provider,
-                'endpoint_host':cfg.endpoint_host,'credentials':'configured_not_authenticated'}
+                'endpoint_host':cfg.endpoint_host,'api_protocol':cfg.api_protocol,
+                'credentials':'configured_not_authenticated'}
     if provider!='ollama_staged':raise SetupBlocked('Choose staged Ollama, Hugging Face or the configured hosted API')
     local=local_status()
     if local['runtime']!='running' or local['model_present'] is not True:

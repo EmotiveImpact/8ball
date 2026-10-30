@@ -1,3 +1,54 @@
+# Native Anthropic Messages: 30 October 2026
+
+The owner-authorized follow-up adds an explicitly selected native protocol to the
+existing hosted analysis provider. Set these non-secret values on the server:
+
+```text
+EIGHTBALL_API_BASE_URL=https://api.anthropic.com/v1
+EIGHTBALL_API_MODEL=claude-sonnet-4-6
+EIGHTBALL_API_PROVIDER=anthropic
+EIGHTBALL_API_PROTOCOL=anthropic_messages
+```
+
+Supply `EIGHTBALL_API_KEY` only through secure server settings. In Cloudroom use
+its secure secrets form, never chat or a repository file. Leave routing unset.
+The native protocol accepts only this direct host/base/provider combination.
+The existing UI/CLI provider ID remains `openai_compatible` for compatibility;
+status, preflight and returned receipts identify `api_protocol=anthropic_messages`.
+No configuration silently changes protocol. Unset `EIGHTBALL_API_PROTOCOL`
+retains `/chat/completions`; changing protocol requires new matching generation
+evidence before lifecycle tests.
+
+The [official compatibility documentation](https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/openai-sdk)
+confirms that `response_format` is ignored. The native path instead sends
+`output_config.format` to `/v1/messages` with `x-api-key` and
+`anthropic-version: 2023-06-01`, as described in
+[structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs).
+Unsupported wire-schema bounds move into descriptions; the original complete
+schema remains in the prompt, its hash is retained separately, and original
+Pydantic/source/compiler checks still enforce every local constraint. This is
+transport translation, not output repair or a relaxed acceptance gate.
+
+Native responses must contain exactly one text block and finish with `end_turn`.
+Tools, extra blocks, refusal, truncation, malformed JSON and invalid proposals
+fail without retries. Original text, protocol, native stop reason, wire/original
+schema hashes and normalized token counts are retained. Requests negotiate
+identity encoding and reject encoded responses before decompression. Existing
+proxy/CA behavior and permission/revision checks remain. No new dependency.
+
+Software contracts are verified with controlled responses; this is not observed
+Anthropic inference. Account access/model availability/pricing and actual frozen
+fixtures remain separate prerequisites. The existing fictional-only US$5 ceiling
+still applies to the entire generation/lifecycle/journey sequence. No model was
+called merely to build or check this adapter. See the
+[current session](../delivery/sessions/2026-10-30-evaluation-reliability.md).
+
+## Historical compatibility preparation
+
+The original configuration observations below are retained as history.
+
+---
+
 # Test Anthropic from the cloud environment
 
 The owner selected Anthropic on 18 October 2026. The current app has a generic

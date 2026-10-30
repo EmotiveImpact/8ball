@@ -67,6 +67,7 @@ class CompatibleSettings:
     endpoint: str
     endpoint_host: str
     routing_provider: str | None = None
+    api_protocol: str = 'openai_compatible'
 
 
 def _endpoint(base: str) -> tuple[str, str]:
@@ -135,7 +136,15 @@ def settings() -> CompatibleSettings:
             raise HostedSetupRequired('OpenRouter requires EIGHTBALL_API_PROVIDER=openrouter and one explicit EIGHTBALL_API_ROUTING_PROVIDER; automatic provider routing is not enabled.')
     elif routing or provider == 'openrouter':
         raise HostedSetupRequired('EIGHTBALL_API_ROUTING_PROVIDER is only supported for the exact openrouter.ai endpoint.')
-    return CompatibleSettings(token, model, provider, endpoint, host, routing or None)
+    protocol = os.getenv('EIGHTBALL_API_PROTOCOL', 'openai_compatible').strip()
+    if protocol not in ('openai_compatible', 'anthropic_messages'):
+        raise HostedSetupRequired('EIGHTBALL_API_PROTOCOL must be openai_compatible or anthropic_messages.')
+    if protocol == 'anthropic_messages':
+        if (provider != 'anthropic' or endpoint != 'https://api.anthropic.com/v1/chat/completions'
+                or routing):
+            raise HostedSetupRequired('Native Anthropic Messages requires provider anthropic and https://api.anthropic.com/v1, without routing.')
+        endpoint = 'https://api.anthropic.com/v1/messages'
+    return CompatibleSettings(token, model, provider, endpoint, host, routing or None, protocol)
 
 
 def configuration_status() -> dict:
@@ -147,7 +156,7 @@ def configuration_status() -> dict:
     status = {'configured': False, 'configuration_state': 'not_configured' if missing else 'invalid_configuration',
               'missing_settings': missing, 'credentials_validated': False,
               'live_inference_verified': False, 'model': None, 'api_provider': None,
-              'routing_provider': None, 'endpoint_host': None}
+              'routing_provider': None, 'endpoint_host': None, 'api_protocol': None}
     try:
         configured = settings()
     except HostedSetupRequired:
@@ -155,8 +164,62 @@ def configuration_status() -> dict:
     status.update(configured=True, configuration_state='configured_not_tested',
                   model=configured.model, api_provider=configured.provider,
                   routing_provider=configured.routing_provider or configured.provider,
-                  endpoint_host=configured.endpoint_host)
+                  endpoint_host=configured.endpoint_host, api_protocol=configured.api_protocol)
     return status
+
+
+def anthropic_schema(prepared: dict) -> dict:
+    """Translate the wire schema; retain every original local validation gate.
+
+    Anthropic's subset omits numeric/string/array bounds. Preserve them in field
+    descriptions and the original schema in the prompt. Never repair responses.
+    """
+    result = json.loads(json.dumps(prepared, allow_nan=False))
+    unsupported = {'minimum', 'maximum', 'exclusiveMinimum', 'exclusiveMaximum',
+                   'multipleOf', 'minLength', 'maxLength', 'maxItems', 'uniqueItems',
+                   'minProperties', 'maxProperties'}
+    def visit(node):
+        if not isinstance(node, dict):
+            return
+        constraints = {key: node.pop(key) for key in sorted(unsupported) if key in node}
+        if node.get('minItems', 0) not in (0, 1):
+            constraints['minItems'] = node.pop('minItems')
+        if constraints:
+            node['description'] = (node.get('description', '') + '\nLocal validation constraints: '
+                                   + json.dumps(constraints, sort_keys=True)).strip()
+        for key in ('properties', '$defs', 'definitions'):
+            for child in node.get(key, {}).values():
+                visit(child)
+        for key in ('items', 'not', 'additionalProperties'):
+            visit(node.get(key))
+        for key in ('anyOf', 'allOf', 'oneOf', 'prefixItems'):
+            for child in node.get(key, []):
+                visit(child)
+    visit(result)
+    return result
+
+
+def anthropic_completion(envelope: dict, call: dict) -> dict:
+    """Read one native text block without dropping tools, refusals or prose."""
+    blocks = envelope.get('content')
+    if (envelope.get('type') != 'message' or envelope.get('role') != 'assistant'
+            or not isinstance(blocks, list) or len(blocks) != 1
+            or not isinstance(blocks[0], dict) or blocks[0].get('type') != 'text'
+            or not isinstance(blocks[0].get('text'), str) or blocks[0].get('citations')):
+        raise HostedFailure('unsupported_response')
+    stop = envelope.get('stop_reason')
+    if stop in ('end_turn', 'max_tokens', 'refusal', 'tool_use', 'pause_turn', 'stop_sequence'):
+        call['native_stop_reason'] = stop
+    usage = envelope.get('usage')
+    if not isinstance(usage, dict):
+        raise HostedFailure('invalid_usage')
+    tokens = {key: usage.get(key) for key in ('input_tokens', 'output_tokens')}
+    if any(type(n) is not int or n < 0 for n in tokens.values()):
+        raise HostedFailure('invalid_usage')
+    return {'model': envelope.get('model'), 'choices': [{'finish_reason': 'stop' if stop == 'end_turn' else 'incomplete',
+                'message': {'role': 'assistant', 'content': blocks[0]['text']}}],
+            'usage': {'prompt_tokens': tokens['input_tokens'], 'completion_tokens': tokens['output_tokens'],
+                      'total_tokens': sum(tokens.values())}}
 
 
 class CompatibleSession:
@@ -171,6 +234,7 @@ class CompatibleSession:
     @property
     def receipt(self) -> dict:
         return {'transport': 'openai_compatible', 'api_provider': self._settings.provider,
+                'api_protocol': self._settings.api_protocol,
                 'endpoint_host': self._settings.endpoint_host,
                 'requested_model': self._settings.model,
                 'routing_provider': self._settings.routing_provider or self._settings.provider,
@@ -195,6 +259,11 @@ class CompatibleSession:
             payload['provider'] = {'order': [self._settings.routing_provider],
                                    'only': [self._settings.routing_provider],
                                    'allow_fallbacks': False, 'require_parameters': True}
+        if self._settings.api_protocol == 'anthropic_messages':
+            payload = {'model': self._settings.model, 'stream': False,
+                'max_tokens': MAX_OUTPUT_TOKENS, 'system': payload['messages'][0]['content'],
+                'messages': [payload['messages'][1]],
+                'output_config': {'format': {'type': 'json_schema', 'schema': anthropic_schema(prepared)}}}
         body = json.dumps(payload, ensure_ascii=False, allow_nan=False).encode()
         if len(body) > MAX_REQUEST_BYTES:
             raise HostedSetupRequired('Selected context and schema exceed the hosted request limit. No request was made.')
@@ -204,6 +273,10 @@ class CompatibleSession:
                 'status': 'started'}
         if self._settings.endpoint_host in _DASHSCOPE_HOSTS:
             call['enable_thinking'] = False
+        if self._settings.api_protocol == 'anthropic_messages':
+            call.update(api_protocol='anthropic_messages',
+                wire_schema_sha256=_hash(payload['output_config']['format']['schema']),
+                local_schema_validation_required=True)
         self.calls.append(call)
         assistant_content = None
         try:
@@ -217,6 +290,8 @@ class CompatibleSession:
             call.update(response_body_sha256=sha256(content).hexdigest(),
                         response_body_bytes=len(content))
             envelope = json_object(content)
+            if self._settings.api_protocol == 'anthropic_messages':
+                envelope = anthropic_completion(envelope, call)
             model = envelope.get('model')
             valid_model = (isinstance(model, str) and _SERVED_MODEL.fullmatch(model)
                            and self._settings.token not in model)
@@ -296,15 +371,23 @@ class CompatibleSession:
             call['raw_content'] = content
 
     def _request(self, client, body: bytes, call: dict) -> bytes:
+        headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        if self._settings.api_protocol == 'anthropic_messages':
+            headers.update({'x-api-key': self._settings.token, 'anthropic-version': '2023-06-01',
+                            'Accept-Encoding': 'identity'})
+        else:
+            headers['Authorization'] = 'Bearer ' + self._settings.token
         with client.stream('POST', self._settings.endpoint, content=body,
-                           headers={'Authorization': 'Bearer ' + self._settings.token,
-                                    'Content-Type': 'application/json', 'Accept': 'application/json'},
+                           headers=headers,
                            follow_redirects=False, timeout=httpx.Timeout(120, connect=10)) as response:
             call['http_status'] = response.status_code
             if response.status_code != 200:
                 code = {401: 'authentication_failed', 403: 'permission_denied', 402: 'billing_required',
                         429: 'rate_limited'}.get(response.status_code, 'provider_rejected_request')
                 raise HostedFailure(code)  # Never read/store/echo an error body.
+            if (self._settings.api_protocol == 'anthropic_messages'
+                    and response.headers.get('content-encoding', 'identity').strip().lower() != 'identity'):
+                raise HostedFailure('unsupported_response_encoding')
             chunks = []
             size = 0
             for chunk in response.iter_bytes():

@@ -42,18 +42,22 @@ The user authorises fictional repository fixtures only, with a total US$5 ceilin
 Check service pricing/limits for the whole generation/lifecycle/journey sequence;
 there is no application dollar ledger and cancellation cannot recall a request.
 
-The prepared direct Anthropic compatibility settings are:
+For the explicitly selected native Anthropic structured-output path, use:
 
 ```text
 EIGHTBALL_API_BASE_URL=https://api.anthropic.com/v1
 EIGHTBALL_API_MODEL=claude-sonnet-4-6
 EIGHTBALL_API_PROVIDER=anthropic
+EIGHTBALL_API_PROTOCOL=anthropic_messages
 ```
 
 The private value belongs in EIGHTBALL_API_KEY; its destination must permit
 api.anthropic.com. See ../v2/ANTHROPIC-SETUP.md for the full guide. Runtime
-readiness and an actual compatible response are separate. Native Messages and
-generic completion APIs differ. The October25 native model metadata request
+readiness and an actual provider response are separate. The explicit protocol
+selects native Messages; leaving it unset preserves generic completions.
+Anthropic ignores compatibility `response_format`, so do not assume enforcement
+on that old path. The setup guide records the native wire-schema/local-validation
+boundary and current evidence limits. The October25 native model metadata request
 received401; this does not identify its origin/cause or test chat/completions.
 Later configuration observations changed; do not treat that old receipt as a
 current diagnosis. Generic HTTP-secret UI save failures did not identify a field;

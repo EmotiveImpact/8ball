@@ -105,6 +105,12 @@ def main():
                     page.locator('form[data-form=analyse] [name=provider]').select_option('openai_compatible')
                     check('API graph drafting is explicitly selectable',page.locator('form[data-form=analyse] [name=provider]').input_value()=='openai_compatible')
                     check('API data transmission permission starts unchecked',not page.locator('form[data-form=analyse] [name=allow_external]').is_checked())
+                    check('analysis form shows both hosted configuration states','Hosted API: Not configured. Hugging Face: Not configured.' in page.locator('.dialog').inner_text())
+                    page.locator('form[data-form=analyse] [name=allow_external]').check()
+                    check('operator can deliberately tick processing permission',page.locator('form[data-form=analyse] [name=allow_external]').is_checked())
+                    page.keyboard.press('Escape')
+                    page.locator('main [data-action=propose-graph]').click()
+                    check('reopened analysis does not inherit prior processing permission',not page.locator('form[data-form=analyse] [name=allow_external]').is_checked())
                     page.keyboard.press('Escape')
                     page.locator('nav [data-tab=models]').click()
                     page.locator('[data-action=check-runtime]').click()
@@ -118,6 +124,43 @@ def main():
                         expect(page.locator('.topbar [data-action=logout]')).to_be_visible()
                         check(f'workspace lock visible at {width}px',True)
                     page.screenshot(path=str(OUT/'8BALL-Black-Intelligence-Mobile.png'),full_page=True)
+                    # Reconfigure/restart only our real server. This tests the
+                    # actual invalid-status API/UI path, without mocked status.
+                    process.terminate()
+                    process.wait(timeout=5)
+                    env.update(EIGHTBALL_API_BASE_URL='http://invalid.example/v1',
+                        EIGHTBALL_API_PROVIDER='anthropic',EIGHTBALL_API_MODEL='claude-sonnet-4-6',
+                        EIGHTBALL_API_KEY='fictional_configuration_test_key',EIGHTBALL_API_PROTOCOL='anthropic_messages',
+                        HF_TOKEN='fictional_configuration_test_key',EIGHTBALL_HF_MODEL='invalid-model',
+                        EIGHTBALL_HF_PROVIDER='controlled-provider')
+                    if BRIDGE:
+                        for key in ('EIGHTBALL_API_BASE_URL','EIGHTBALL_API_PROVIDER','EIGHTBALL_API_MODEL',
+                                    'EIGHTBALL_API_KEY','EIGHTBALL_API_PROTOCOL','HF_TOKEN',
+                                    'EIGHTBALL_HF_MODEL','EIGHTBALL_HF_PROVIDER'):
+                            os.environ[key]=env[key]
+                    process=subprocess.Popen([sys.executable,'-m','eightball'],cwd=ROOT,env=env,
+                        stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+                    for _ in range(60):
+                        try:
+                            if httpx.get('http://127.0.0.1:8048/api/health',timeout=1,trust_env=False).status_code==200:break
+                        except httpx.HTTPError:pass
+                        time.sleep(.1)
+                    else:raise RuntimeError('Reconfigured local server unavailable')
+                    page.set_viewport_size({'width':1512,'height':1050})
+                    page.reload()
+                    page.locator('nav [data-tab=models]').click()
+                    for name in ('Hosted API / Qwen','Hugging Face'):
+                        card=page.locator('.provider-card').filter(has=page.get_by_role('heading',name=name,exact=True))
+                        expect(card.locator('.meta .badge')).to_have_text('Invalid configuration')
+                        check(name+' distinguishes invalid settings from absent settings',True)
+                    check('invalid hosted settings explain the safe next step','Review the server URL' in page.locator('main').inner_text())
+                    page.screenshot(path=str(OUT/'8BALL-Invalid-Provider-Configuration.png'),full_page=True)
+                    page.locator('nav [data-tab=review]').click()
+                    page.locator('main [data-action=propose-graph]').click()
+                    check('analysis form shows both invalid configuration states','Hosted API: Invalid configuration. Hugging Face: Invalid configuration.' in page.locator('.dialog').inner_text())
+                    check('invalid settings never preauthorise processing',not page.locator('form[data-form=analyse] [name=allow_external]').is_checked())
+                    page.keyboard.press('Escape')
+                    page.set_viewport_size({'width':390,'height':844})
                     page.locator('.topbar [data-action=logout]').click()
                     expect(page.locator('form[data-form=login]')).to_be_visible()
                     check('mobile lock clears the active workspace',page.locator('nav').count()==0)

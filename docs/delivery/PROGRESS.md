@@ -22,11 +22,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 
 ## Next work
 
-- **B02-09: Reliable reviewed graph proposals for new situations**. Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
+- **B02-09: Reliable reviewed graph proposals for new situations**. Supply the key through the existing Cloudroom secure form, activate the exact native Anthropic settings in docs/v2/ANTHROPIC-SETUP.md, confirm remaining budget, and run unchanged evals/live_compatible.py --allow-hosted once; retain every failure without repair or retry.
 - **B02-10: Robust source extraction, deadlines and entity reconciliation**. Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries.
 - **B02-11: Independent quality evaluation and production-model selection**. Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval.
-- **B02-12: Full twenty-step real-model V0.2 acceptance journey**. Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
-- **B02-15: Model progress/cancellation and accurate installation status**. Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
+- **B02-12: Full twenty-step real-model V0.2 acceptance journey**. After a matching successful actual generation receipt, run lifecycle and native full_journey commands in docs/delivery/NEXT-BUILD.md, then obtain genuine independent/human acceptance. Controlled/native software results do not close this scope.
+- **B02-15: Model progress/cancellation and accurate installation status**. Preserve the passing real-process local restart/configuration/permission-reset regressions. After matching successful generation and secure selected-provider access, run actual hosted cancel/stale/restart observations without automatic retries or claiming remote recall.
 - **B02-16: Complete accessibility and supported-environment validation**. Complete the recorded human accessibility and supported-platform review, not another UI feature. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
 - **B02-19: Black operator visual system and transparent intelligence controls**. Review the current black workspace without expanding scope; preserve passing native controls. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
 - **B02-20: Black relationship explorer with local focus, directed flow and records view**. Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations.
@@ -99,13 +99,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-EMERGENT-INSIGHTS-LOCAL`, `EV-VISION-REVIEW`, `EV-MAIN-CONSOLIDATION`, `EV-EVOLUTION-RESEARCH`, `EV-TENCENT-MEMORY-RESEARCH`, `EV-RUFLO-RESEARCH`, `EV-RUFLO-OWNER-REVIEW`, `EV-WHOLE-SYSTEM-REVIEW` (registry below).
 
 - [x] **DOC-07 Preserve pinned upstream research source checkouts**
-  - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
+  - Status: `verified`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: All28 inspected repository pins are populated as source-only research checkouts with original licences, exact manifest identities, explicit model/LFS/nested exceptions and reproducible Git-only verification. No runtime adoption or upstream execution.
-  - Next: Use the Git-only research helper for later restoration/verification; scope any upstream software installation or adaptation separately.
-  - Branch/base: `feat/v02-compatible-provider-20261016` / `c9fd38438ba52e9320bc55b96132086bfe57ce6a`.
+  - Next: Preserve declared pins and original checkout observations. Version-2 receipt matching allows only absent-versus-pinned checkout availability; legacy receipts stay exact. Use the Git-only helper for separately needed restoration; no upstream runtime adoption.
+  - Branch/base: `room/review-last-commit-1038291-frrj` / `825ad6668c2c7d128da367476fe16cb8d214b837`.
   - Dependencies: `DOC-06`.
   - Existing code: `.gitmodules`, `research/README.md`, `research/inventory.json`, `research/sources.py`, `research/AGENTS.md`.
-  - Evidence: `EV-RESEARCH-COPY` (registry below).
+  - Evidence: `EV-RESEARCH-COPY`, `EV-EVAL-RELIABILITY` (registry below).
 
 
 ## 8BALL 0.1: Local outcome-planning foundation
@@ -192,13 +192,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-APP`, `EV-UI` (registry below).
 
 - [ ] **B02-09 Reliable reviewed graph proposals for new situations**
-  - Status: `blocked`. Owner: Codex. Updated: 2026-10-18.
+  - Status: `blocked`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.
-  - Next: Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
-  - Branch/base: `feat/v02-review-evidence-20261018` / `12ffdadb2f094e8f31fbd60486b5f775894b32ec`.
+  - Next: Supply the key through the existing Cloudroom secure form, activate the exact native Anthropic settings in docs/v2/ANTHROPIC-SETUP.md, confirm remaining budget, and run unchanged evals/live_compatible.py --allow-hosted once; retain every failure without repair or retry.
+  - Branch/base: `room/review-last-commit-1038291-frrj` / `825ad6668c2c7d128da367476fe16cb8d214b837`.
   - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`, `eightball/v2/compatible.py`, `evals/live_compatible.py`, `evals/live_huggingface.py`, `tests/test_hosted_eval_retention.py`, `docs/v2/ANTHROPIC-SETUP.md`.
-  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION` (registry below).
-  - Blocker: Owner selected Anthropic, with prepared claude-sonnet-4-6 compatibility settings; account availability/pricing, active credentials/destination and real inference remain unverified. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, supply key securely and Save/Publish. Fictional fixtures up to US$5 remain authorised. Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate.
+  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION`, `EV-EVAL-RELIABILITY` (registry below).
+  - Blocker: Owner-selected native Anthropic transport passes controlled software checks, but this runtime has no secure active EIGHTBALL_API_KEY. Cloudroom secure request is pending; actual authentication/account availability, unchanged frozen-fixture generation and independent quality remain unverified. Fictional-only total US$5 permission remains. Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate.
 
 - [ ] **B02-10 Robust source extraction, deadlines and entity reconciliation**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-15.
@@ -219,13 +219,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Blocker: Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed.
 
 - [ ] **B02-12 Full twenty-step real-model V0.2 acceptance journey**
-  - Status: `blocked`. Owner: Codex. Updated: 2026-10-18.
+  - Status: `blocked`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Blank case -> real extraction -> mixed human review -> valid graph -> distinct routes -> new evidence/replan -> isolated refusal -> approval/completion -> reload/export, all native.
-  - Next: Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
-  - Branch/base: `feat/v02-review-evidence-20261018` / `e513237f5b66c0689fa870e0d82873d8b71e4d8a`.
+  - Next: After a matching successful actual generation receipt, run lifecycle and native full_journey commands in docs/delivery/NEXT-BUILD.md, then obtain genuine independent/human acceptance. Controlled/native software results do not close this scope.
+  - Branch/base: `room/review-last-commit-1038291-frrj` / `825ad6668c2c7d128da367476fe16cb8d214b837`.
   - Dependencies: `B02-09`, `B02-10`, `B02-11`.
-  - Existing code: `tests/browser_v2.py`, `evals/full_journey.py`, `scripts/acceptance.py`, `.github/workflows/provider-journey.yml`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`.
-  - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-OCT25-INTEGRATION` (registry below).
+  - Existing code: `tests/browser_v2.py`, `evals/full_journey.py`, `scripts/acceptance.py`, `.github/workflows/provider-journey.yml`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`, `tests/test_acceptance_runner.py`.
+  - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-OCT25-INTEGRATION`, `EV-EVAL-RELIABILITY` (registry below).
   - Blocker: Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey.
 
 - [x] **B02-13 Guided nested graph authoring instead of JSON-only advanced editing**
@@ -248,11 +248,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
 - [ ] **B02-15 Model progress/cancellation and accurate installation status**
   - Status: `partial`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: The UI reports actual runtime/weights/credential state and cancels work without stale commits. No silent large model download.
-  - Next: Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
-  - Branch/base: `room/check-repo-with-three-sub-agents-pj2t` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
+  - Next: Preserve the passing real-process local restart/configuration/permission-reset regressions. After matching successful generation and secure selected-provider access, run actual hosted cancel/stale/restart observations without automatic retries or claiming remote recall.
+  - Branch/base: `room/review-last-commit-1038291-frrj` / `825ad6668c2c7d128da367476fe16cb8d214b837`.
   - Dependencies: `ES03-04`.
   - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`, `eightball/v2/compatible.py`, `tests/test_compatible_integration.py`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`, `eightball/providers.py`, `eightball/v2/intelligence.py`, `evals/live_generation.py`, `tests/test_security_regressions.py`.
-  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION`, `EV-SECURITY-FIXES` (registry below).
+  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION`, `EV-SECURITY-FIXES`, `EV-EVAL-RELIABILITY` (registry below).
   - Blocker: Lifecycle behaviour with the selected real inference provider remains unverified.
 
 - [ ] **B02-16 Complete accessibility and supported-environment validation**
@@ -579,13 +579,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Blocker: The latest supplied repair handoff explicitly reports that no completed working tree was found. Only verified alpha.7 source was recovered in this review.
 
 - [x] **ES03-09 Opt-in OpenAI-compatible hosted endpoint contract** (optional, not a version gate)
-  - Status: `verified`. Owner: Codex. Updated: 2026-10-16.
+  - Status: `verified`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Controlled HTTP and native UI checks verify explicit server-owned endpoint/model/provider, permission, pinned routing, bounded strict responses/failure evidence, secrets protection, stage/cancellation/stale/restart guards and unchanged frozen-fixture harness. This transport scope does not claim actual inference or semantic/human acceptance.
-  - Next: Bounded software transport contract remains verified. Activate the actual selected endpoint/model and run unchanged generation plus matching lifecycle/native journey within authorised fictional-only scope and confirmed service limits; explicit :free support does not prove free availability or semantic quality.
-  - Branch/base: `feat/v02-evaluation-readiness-20261016` / `0fed04b5e299f4a2e53050456559133c1231b088`.
+  - Next: Controlled transport and native software checks pass, including explicitly selected native Anthropic Messages. Real provider authentication/inference remains blocked on secure key; run the unchanged generation/lifecycle/journey procedure within existing fictional-only US$5 authorization.
+  - Branch/base: `room/review-last-commit-1038291-frrj` / `825ad6668c2c7d128da367476fe16cb8d214b837`.
   - Dependencies: `ES03-06`.
-  - Existing code: `eightball/v2/compatible.py`, `tests/test_compatible_provider.py`, `tests/test_compatible_integration.py`, `tests/test_compatible_cli.py`, `evals/live_compatible.py`, `docs/v2/QWEN-SETUP.md`.
-  - Evidence: `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS` (registry below).
+  - Existing code: `eightball/v2/compatible.py`, `tests/test_compatible_provider.py`, `tests/test_compatible_integration.py`, `tests/test_compatible_cli.py`, `evals/live_compatible.py`, `docs/v2/QWEN-SETUP.md`, `tests/test_anthropic_protocol.py`, `docs/v2/ANTHROPIC-SETUP.md`.
+  - Evidence: `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-EVAL-RELIABILITY` (registry below).
 
 
 ## ENDSTATE 0.4: Domain packs and integration interfaces
@@ -942,6 +942,13 @@ These references have specific scopes and may be historical. A reference to a de
 - Repository evidence: [docs/evidence/security-fixes-2026-10-30.json](../../docs/evidence/security-fixes-2026-10-30.json).
 - Result/scope: 1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.
 - Code revision: `bb881f278eb24b97732382a83a6084a22d7e1983`.
+
+### EV-EVAL-RELIABILITY
+
+- Kind: `software_validation`.
+- Repository evidence: [docs/evidence/evaluation-reliability-2026-10-30.json](../../docs/evidence/evaluation-reliability-2026-10-30.json).
+- Result/scope: Combined main bab6fa8 plus evaluation repair: 1372 source tests, 1372 isolated installed-engine regressions and 405 checks across eleven native browser suites passed; local and CI artifacts inspected valid before receipt-only edits. Zero actual model calls; secure key absent.
+- Code revision: `e4979caeaf5f81088802da43737afc2e1c170983`.
 
 ### EV-COURSE-NESTED
 

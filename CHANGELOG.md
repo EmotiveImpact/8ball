@@ -4,6 +4,65 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Evaluation reliability and explicit Anthropic protocol
+
+2026-10-30 · `pushed_unreleased`
+
+Preserve failed/interrupted evaluation outcomes and source provenance, add real process-restart coverage and explicitly selected native Anthropic structured output, and distinguish invalid provider configuration.
+
+### Added
+
+- Opt-in native Anthropic Messages protocol with original local schema/source/compiler validation and exact bounded response retention.
+- Real owned-process/HTTP/SQLite restart regression; protocol and source-portability regressions.
+
+### Changed
+
+- Version-2 research-bearing manifests retain full checkout fingerprints and separately identify application bytes plus declared pins. Legacy receipts remain exact-only.
+- Native Intelligence/analysis controls distinguish absent, invalid and configured-but-untested providers; processing permission resets when reopened.
+- Reconciled newly merged main course-prerequisite work and its canonical ledger/history without dropping either source or evidence; combined-source acceptance is separately evidenced at e4979ca.
+
+### Fixed
+
+- Fast failed analysis misreported as an inconclusive timing race.
+- Final source errors overwriting interruption/abort status or skipping the final lifecycle checkpoint.
+- IDE attachments and pinned-checkout availability preventing portable matching source evidence.
+- A new test helper import that failed installed-wheel isolation despite passing from the source checkout.
+
+### Verification
+
+- Nine new reporting regressions failed before repairs; exact original failure output is retained in the repository.
+- 311 focused checks passed with one existing warning; the native Development journey passed 30 checks, included in the cumulative browser total.
+- At db6c5b69f05cf3fabd3930dc22fd7e2df9af617a: 1367 source tests and 1367 installed-ENDSTATE regressions passed, with zero failures/errors/skips; all 399 checks across eleven native browser suites passed. All 21 integrated steps passed.
+- Native source/artifact inspection valid=true/run_status=passed before final documentation-only receipts; source stayed unchanged during the run. Python compilation, all 17 browser module syntax checks, delivery/history validators and 8/8 structural fixtures passed.
+- The first full native run and CI 41077459582 failed 1/1367 installed tests on a new test-only import; both retained and inspected against their exact source. The self-contained fixture passes isolated importlib mode (37 checks), followed by fresh full native acceptance.
+- Corrected code GitHub CI at receipt preparation: 41078253660 success, 41078253666 success. PR10 records receipt-head CI; no pending result is called passed.
+- Actual-provider generation/lifecycle/native-journey preflights were blocked by the missing secure runtime key (exit 2 each), with zero model calls.
+- Main advanced to bab6fa8bb83d78d324fa0f0935a09d33e2bdcda6 while final receipts were being pushed. The earlier db6c5b6 pass remains exact-source evidence; a new integrated native run is required.
+- The first main-reconciliation attempt failed changelog ordering before cumulative verification. Its owned run was aborted and retained as incomplete, then canonical main entry order and generated Markdown were corrected. No pass is claimed for b2a666e.
+- Final combined main bab6fa8 + repair at e4979ca: 1372 source tests, 1372 installed-ENDSTATE regressions, and all 405 checks across eleven native browser suites passed. All 21 steps passed. Local and downloaded CI 41080312320 artifacts have the same source manifest and valid passed inspections; documentation CI 41080312008 passed. Receipt-only head CI is tracked in PR10.
+
+### Limitations
+
+- Actual provider credentials are absent in the cloud and Mac login environments. Secure key request is separate; no actual model result is claimed.
+- Original actual-model, independent professional, human accessibility and release gates remain open.
+- Generic endpoint/model-name restrictions, Hugging Face proxy policy and deferred hosted-compression review remain explicit; no deployment or main merge.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Report outcome, evidence integrity, source identity and environment observations need separate handling.
+- Discovery: IDE conversation attachments were unintentionally part of source identity; real process recovery requires a real process/HTTP test.
+- Discovery: Source-suite success can conceal an import-mode-dependent test failure in installed-wheel verification; preserve isolation and the failed evidence.
+- Risk: A passing controlled contract does not establish paid-provider compatibility or semantic quality.
+- Architecture: Keep provider I/O and evaluation receipts in 8BALL; preserve ENDSTATE and all approval boundaries.
+- Roadmap decision: Existing-task repairs only; no acceptance status or required scope promotion.
+Registered discoveries: EM-106, EM-107, EM-108, EM-109, EM-110, EM-111, EM-112, EM-113.
+
+Roadmap items: `B02-09`, `B02-12`, `B02-15`, `ES03-09`, `DOC-07`.
+
+Evidence: [docs/delivery/sessions/2026-10-30-evaluation-reliability.md](docs/delivery/sessions/2026-10-30-evaluation-reliability.md), [docs/evidence/evaluation-reliability-2026-10-30.json](docs/evidence/evaluation-reliability-2026-10-30.json).
+
 ## 0.2.0-alpha.8 · Nested prerequisite courses remain readable
 
 2026-10-30 · `pushed_unreleased`

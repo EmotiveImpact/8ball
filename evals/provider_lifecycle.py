@@ -31,14 +31,14 @@ from eightball.models import utcnow
 from eightball.v2.compatible import settings as compatible_settings
 from eightball.v2.hosted import settings as hosted_settings
 from evals.full_journey import API, SetupBlocked, preflight
-from evals.live_huggingface import FIXTURES_SHA256
-from scripts.acceptance import ensure_port_available, output_directory, source_manifest
+from evals.live_huggingface import FIXTURES_SHA256, SourceEvidenceInvalid, inspect_source
+from scripts.acceptance import ensure_port_available, output_directory, source_manifest, matching_source
 
 SCENARIOS = ('cancel', 'stale', 'restart')
 ACTIVE = {'queued', 'running'}
 EXPECTED = {'cancel': 'cancelled', 'stale': 'superseded', 'restart': 'interrupted'}
 REPORT_NAME = 'lifecycle-report.json'
-VERSION = 'provider-lifecycle.v1'
+VERSION = 'provider-lifecycle.v2'
 
 
 class LifecycleFailure(ValueError):
@@ -104,7 +104,11 @@ def matching_returned_calls(row, provider, configured):
     )
     if provider == 'openai_compatible':
         matches = (matches and transport['endpoint_host'] == configured.endpoint_host
-                   and transport['api_provider'] == configured.provider)
+                   and transport['api_provider'] == configured.provider
+                   and transport.get('api_protocol', 'openai_compatible') == configured.api_protocol)
+        if configured.api_protocol == 'anthropic_messages':
+            matches = matches and all(call.get('api_protocol') == 'anthropic_messages'
+                                      and call.get('native_stop_reason') == 'end_turn' for call in calls)
     return matches
 
 
@@ -128,8 +132,8 @@ def generation_prerequisite(path, provider, configured, source, fixtures):
             and report['complete'] is True and report['structural_gate_passed'] is True
             and report['actual_hosted_requests'] is True
             and report['provider'] == provider and report['requested_model'] == configured.model
-            and report['routing_provider'] == routing and report['source'] == source
-            and report['source_unchanged_during_run'] is True and report['source_at_finish'] == source
+            and report['routing_provider'] == routing and matching_source(report['source'], source)
+            and report['source_unchanged_during_run'] is True and report['source_at_finish'] == report['source']
             and report['fixture_sha256'] == FIXTURES_SHA256
             and report['planned_fixtures'] == report['completed_fixtures'] == len(rows) == len(fixtures)
             and all(row['status'] == 'valid_proposal' and row['live_state_unchanged'] is True
@@ -141,12 +145,14 @@ def generation_prerequisite(path, provider, configured, source, fixtures):
             and graph['all_actions_need_approval'] is True and graph['exact_human_outcome_preserved'] is True
         )
         if provider == 'openai_compatible':
-            expected = expected and report['endpoint_host'] == configured.endpoint_host
+            expected = (expected and report['endpoint_host'] == configured.endpoint_host
+                        and report.get('api_protocol', 'openai_compatible') == configured.api_protocol)
         if not expected:
             raise ValueError()
     except (OSError, ValueError, TypeError, KeyError, StopIteration, RecursionError):
         raise SetupBlocked('Generation prerequisite is absent, malformed, incomplete, failed or does not match this source, fixture and provider configuration. No request was started.') from None
     return {'report_sha256': sha256(raw).hexdigest(), 'status': 'matching_local_report',
+            'checkout_observations_match': report['source'] == source,
             'independent_approval': False, 'cryptographically_signed': False}
 
 
@@ -239,13 +245,17 @@ def exercise(server, scenario, provider, allow_external, fixture, trial, save, t
         job = api.read(path)
         _record_job(trial, job, save)
     if job['status'] not in ACTIVE or job['calls_started'] != 1:
-        trial.update(status='not_exercised', reason='The job finished or advanced beyond its first admitted call before intervention; no automatic retry.')
+        failed = job['status'] == 'failed'
+        trial.update(status='failed' if failed else 'not_exercised',
+            reason='Analysis failed before intervention; no automatic retry.' if failed else
+                   'The job finished or advanced beyond its first admitted call before intervention; no automatic retry.')
+        trial['final_job'] = deepcopy(job)
         trial['available_proposals'] = api.read(base + '/proposals')
         trial['after_case'] = api.read(base)['case']
         trial['after_case_sha256'] = digest(trial['after_case'])
         trial['response_evidence_status'] = 'Only the available proposals contain returned transport evidence; literal successful HTTP bodies are not archived by this runner.'
         save()
-        return not job['worker_active']
+        return not failed and not job['worker_active']
 
     trial['intervention'] = {'at': utcnow().isoformat(), 'kind': scenario,
         'trigger': 'first_application_call_admission_observed',
@@ -297,8 +307,10 @@ def exercise(server, scenario, provider, allow_external, fixture, trial, save, t
                  after_case=after_case, expected_case=expected_case,
                  after_case_sha256=digest(after_case), expected_case_sha256=digest(expected_case),
                  after_proposals_sha256=digest(proposals), observation_interval_seconds=.25)
-    if (trial.get('status') == 'not_exercised'
-            or (not expected_status_seen and later['status'] in ('succeeded', 'failed'))):
+    if later['status'] == 'failed':
+        trial.update(status='failed', reason='Analysis failed during the intervention; no automatic retry.')
+    elif (trial.get('status') == 'not_exercised'
+            or (not expected_status_seen and later['status'] == 'succeeded')):
         trial.update(status='not_exercised', reason='Job finished before the intervention could suppress publication; no automatic retry.')
     else:
         checks = {'expected_terminal_status': later['status'] == EXPECTED[scenario],
@@ -315,7 +327,7 @@ def exercise(server, scenario, provider, allow_external, fixture, trial, save, t
         'reason': 'Analysis jobs publish no proposal for cancelled, superseded or interrupted work; application admission does not prove remote receipt.',
         'remote_completion': 'unknown', 'remote_billing': 'unknown'}
     save()
-    return True
+    return trial['status'] != 'failed'
 
 
 def run(provider, *, allow_inference=False, allow_external=False,
@@ -326,13 +338,15 @@ def run(provider, *, allow_inference=False, allow_external=False,
     directory.mkdir(parents=True, exist_ok=False)
     report = {'schema_version': 1, 'runner_version': VERSION, 'run_id': directory.name,
         'started_at': utcnow().isoformat(), 'status': 'running', 'complete': False,
-        'source': source_manifest(), 'provider': provider, 'scenarios': [],
+        'source': source_manifest(), 'source_at_finish': None,
+        'source_unchanged_during_run': None, 'source_checks': [],
+        'provider': provider, 'scenarios': [],
         'automatic_retry': False, 'substitute_outputs': False, 'actual_remote_receipt_verified': False,
         'remote_completion': 'unknown', 'remote_billing': 'unknown',
         'native_browser_verified': False, 'independent_expert_review': False,
         'full_prd_acceptance': False, 'production_approved': False,
         'limits': ['Interventions follow application call admission; remote receipt is unverified.',
-                  'A fast completion is NOT_EXERCISED, never retried automatically.',
+                  'A fast success is NOT_EXERCISED; an observed failure is FAILED. Neither is retried automatically.',
                   'Discarded or killed responses may be unavailable; no fabricated trace or served model.',
                   'No provider-side cancellation guarantee or human/model-quality acceptance.',
                   'Lifecycle checks are application-process/HTTP observations, not native UI acceptance.']}
@@ -369,6 +383,7 @@ def run(provider, *, allow_inference=False, allow_external=False,
                 if server.api.read('/cases') != []:
                     raise LifecycleFailure('Disposable application unexpectedly contained cases.')
                 for scenario in SCENARIOS:
+                    inspect_source(report, 'before_trial_' + scenario, inspector=source_manifest)
                     trial = {'scenario': scenario, 'status': 'running', 'started_at': utcnow().isoformat(),
                         'requests_submitted': 0, 'job_snapshots': [], 'max_application_calls_admitted': 0,
                         'response_evidence_status': 'No returned model receipt has been captured; application snapshots do not establish remote receipt.'}
@@ -385,8 +400,15 @@ def run(provider, *, allow_inference=False, allow_external=False,
                     report['status'] = ('failed' if 'failed' in statuses else
                                         'inconclusive' if 'not_exercised' in statuses else 'passed')
                 report['complete'] = len(report['scenarios']) == len(SCENARIOS)
+                inspect_source(report, 'before_result', inspector=source_manifest)
             finally:
-                server.stop()
+                pending_error = sys.exc_info()[0]
+                try:
+                    server.stop()
+                except Exception as exc:
+                    report['cleanup_error'] = {'error_type': type(exc).__name__}
+                    if pending_error is None:
+                        raise LifecycleFailure('Owned application cleanup failed.') from None
     except SetupBlocked as exc:
         report.update(status='blocked', reason=str(exc))
     except BaseException as exc:
@@ -400,9 +422,13 @@ def run(provider, *, allow_inference=False, allow_external=False,
     finally:
         if signal_installed:
             signal.signal(signal.SIGTERM, previous_signal)
-        report['source_unchanged_during_run'] = report['source'] == source_manifest()
-        if not report['source_unchanged_during_run']:
-            report.update(status='failed', reason='Source changed during the lifecycle run.')
+        try:
+            inspect_source(report, 'finish', inspector=source_manifest)
+        except SourceEvidenceInvalid as exc:
+            report['source_integrity_error'] = str(exc)
+            if report['status'] not in ('interrupted', 'aborted'):
+                report['status'] = 'failed'
+                report.setdefault('reason', str(exc))
         report['finished_at'] = utcnow().isoformat()
         report['application_calls_admitted_observed'] = sum(t['max_application_calls_admitted'] for t in report['scenarios'])
         save()

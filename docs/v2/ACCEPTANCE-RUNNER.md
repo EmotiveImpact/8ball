@@ -1,3 +1,28 @@
+# Portable application identity with retained environment evidence
+
+Research-bearing manifests now identify version 2. `sha256` continues to bind all
+application files, metadata, declared Gitlink pins and observed checkout commits.
+`application_sha256` separately binds the same files and declared pins, regardless
+of whether pinned research checkouts are populated. Neither field is a signature.
+Cloudroom's `.cloudroom/` attachments/runtime metadata are excluded like `.venv/`
+and generated artifacts; application files and research metadata remain bound.
+
+Within any run, full manifests must remain identical. Across machines, `--inspect`
+and the lifecycle prerequisite permit only version-2 checkout-availability
+changes whose populated commits equal their declared pins. They recompute both
+fingerprints, retain the original receipt unchanged, and report whether checkout
+observations match. Changed source, changed pins, a populated wrong commit,
+malformed hashes or different start/finish observations remain invalid. Legacy
+manifests still require exact equality; no historical report is rewritten.
+
+The real-process restart regression uses an owned application process, real
+loopback HTTP, SQLite and a delayed local Ollama-protocol fixture. It proves local
+recovery/discard behavior, not remote hosted cancellation, actual inference or
+native browser acceptance. All eleven native browser suites remain mandatory.
+Ordinary acceptance also strips `EIGHTBALL_API_PROTOCOL` and all hosted settings.
+
+---
+
 # Evaluation evidence update, 16 October 2026
 
 Read [actual-provider evidence](ACTUAL-PROVIDER-EVIDENCE.md) for unique checkpointed hosted-fixture reports and the opt-in application lifecycle runner. Controlled software checks do not complete actual-model or human acceptance. Ordinary native acceptance still strips provider settings and makes no model calls. Historical fixed report paths below describe older runner versions.

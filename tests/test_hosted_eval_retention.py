@@ -69,6 +69,10 @@ def successful_requests(monkeypatch):
         state.requests.append(request)
         output=responses.pop(0)
         state.on_response()
+        if request.url.path.endswith('/messages'):
+            return httpx.Response(200,json={'type':'message','role':'assistant','model':'controlled-served-model',
+                'content':[{'type':'text','text':json.dumps(output)}], 'stop_reason':'end_turn',
+                'usage':{'input_tokens':20,'output_tokens':10}})
         return httpx.Response(200,json={'model':'controlled-served-model',
             'choices':[{'index':0,'finish_reason':'stop','message':{'role':'assistant',
                 'content':json.dumps(output)}}]})
@@ -76,6 +80,20 @@ def successful_requests(monkeypatch):
         monkeypatch.setattr(runner,'propose',lambda case,provider,purpose,sources,**kwargs:
                             actual_propose(case,provider,purpose,sources,client=client,**kwargs))
         yield state
+
+
+def test_native_generation_keeps_original_fixtures_and_exact_protocol_evidence(tmp_path,monkeypatch,successful_requests):
+    monkeypatch.setenv('EIGHTBALL_API_BASE_URL','https://api.anthropic.com/v1')
+    monkeypatch.setenv('EIGHTBALL_API_PROVIDER','anthropic')
+    monkeypatch.setenv('EIGHTBALL_API_PROTOCOL','anthropic_messages')
+    assert run(tmp_path)==0
+    report=json.loads(report_files(tmp_path)[0].read_text())
+    assert report['api_protocol']=='anthropic_messages'
+    assert report['fixture_sha256']==runner.FIXTURES_SHA256
+    assert len(successful_requests.requests)==5 and report['structural_gate_passed']
+    assert all(call['api_protocol']=='anthropic_messages' and call['native_stop_reason']=='end_turn'
+        for row in report['results'] for call in row['proposal']['raw_output']['transport']['calls'])
+    assert not report['production_approved'] and not report['independent_semantic_benchmark']
 
 
 @pytest.mark.parametrize('provider,name',[
@@ -193,6 +211,27 @@ def test_keyboard_interrupt_keeps_completed_raw_evidence_and_stops_future_calls(
     monkeypatch.setattr(runner,'propose',rejected)
     assert run(tmp_path)==1
     assert all(p.read_bytes()==raw for p,raw in before.items())
+
+
+@pytest.mark.parametrize('error', [KeyboardInterrupt, SystemExit, GeneratorExit])
+@pytest.mark.parametrize('source_error', [False, True])
+def test_final_source_failure_preserves_interruption_or_abort(tmp_path,monkeypatch,error,source_error):
+    def interrupted(*args, **kwargs):
+        def inspect():
+            if source_error:
+                raise OSError('private source path')
+            return {'sha256':'changed','files':{}}
+        monkeypatch.setattr(runner,'source_manifest',inspect)
+        raise error()
+    monkeypatch.setattr(runner,'propose',interrupted)
+    with pytest.raises(error):run(tmp_path)
+    report=json.loads(report_files(tmp_path)[0].read_text())
+    assert report['status']==('aborted' if error is GeneratorExit else 'interrupted')
+    assert report['source_unchanged_during_run'] is False
+    assert report['source_checks'][-1]['status']==('inspection_failed' if source_error else 'changed')
+    assert report['interruption']['error_type']==error.__name__
+    assert report['completed_fixtures']==0 and report['started_fixtures']==1
+    assert 'private source path' not in report_files(tmp_path)[0].read_text()
 
 
 @pytest.mark.parametrize('signum',[signal.SIGTERM,signal.SIGKILL])

@@ -1,0 +1,267 @@
+FFFFFFFFF                                                                [100%]
+=================================== FAILURES ===================================
+____________ test_fast_provider_failure_is_failed_and_never_retried ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-cloudroom-agent/pytest-3/test_fast_provider_failure_is_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0xe2fb93d9bce0>
+
+    def test_fast_provider_failure_is_failed_and_never_retried(tmp_path, monkeypatch):
+        server_type = controlled_server(monkeypatch, fast=True)
+        report, _ = lifecycle.run('openai_compatible', allow_inference=True,
+            allow_external=True, generation_report=generation_report(tmp_path), output=tmp_path / 'runs')
+>       assert report['status'] == 'failed' and not report['complete']
+E       AssertionError: assert ('inconclusive' == 'failed'
+E         
+E         - failed
+E         + inconclusive)
+
+tests/test_provider_lifecycle.py:360: AssertionError
+___ test_final_inspection_error_saves_receipt_without_erasing_outcome[False] ___
+
+tmp_path = PosixPath('/tmp/pytest-of-cloudroom-agent/pytest-3/test_final_inspection_error_sa0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0xe2fb93d9be10>
+interrupted = False
+
+    @pytest.mark.parametrize('interrupted', [False, True])
+    def test_final_inspection_error_saves_receipt_without_erasing_outcome(tmp_path, monkeypatch, interrupted):
+        server_type = controlled_server(monkeypatch)
+        original_stop = server_type.stop
+        def stop(self):
+            original_stop(self)
+            def broken():
+                raise OSError('private path and ' + KEY)
+            monkeypatch.setattr(lifecycle, 'source_manifest', broken)
+        monkeypatch.setattr(server_type, 'stop', stop)
+        if interrupted:
+            def interrupt(*args, **kwargs):
+                raise KeyboardInterrupt()
+            monkeypatch.setattr(lifecycle, 'exercise', interrupt)
+>       report, path = lifecycle.run('openai_compatible', allow_inference=True,
+            allow_external=True, generation_report=generation_report(tmp_path), output=tmp_path / 'runs')
+
+tests/test_provider_lifecycle.py:381: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+evals/provider_lifecycle.py:403: in run
+    report['source_unchanged_during_run'] = report['source'] == source_manifest()
+                                                                ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def broken():
+>       raise OSError('private path and ' + KEY)
+E       OSError: private path and fictional_lifecycle_key_never_a_real_secret
+
+tests/test_provider_lifecycle.py:374: OSError
+___ test_final_inspection_error_saves_receipt_without_erasing_outcome[True] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-cloudroom-agent/pytest-3/test_final_inspection_error_sa1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0xe2fb93b7bd10>
+interrupted = True
+
+    @pytest.mark.parametrize('interrupted', [False, True])
+    def test_final_inspection_error_saves_receipt_without_erasing_outcome(tmp_path, monkeypatch, interrupted):
+        server_type = controlled_server(monkeypatch)
+        original_stop = server_type.stop
+        def stop(self):
+            original_stop(self)
+            def broken():
+                raise OSError('private path and ' + KEY)
+            monkeypatch.setattr(lifecycle, 'source_manifest', broken)
+        monkeypatch.setattr(server_type, 'stop', stop)
+        if interrupted:
+            def interrupt(*args, **kwargs):
+                raise KeyboardInterrupt()
+            monkeypatch.setattr(lifecycle, 'exercise', interrupt)
+>       report, path = lifecycle.run('openai_compatible', allow_inference=True,
+            allow_external=True, generation_report=generation_report(tmp_path), output=tmp_path / 'runs')
+
+tests/test_provider_lifecycle.py:381: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+evals/provider_lifecycle.py:403: in run
+    report['source_unchanged_during_run'] = report['source'] == source_manifest()
+                                                                ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def broken():
+>       raise OSError('private path and ' + KEY)
+E       OSError: private path and fictional_lifecycle_key_never_a_real_secret
+
+tests/test_provider_lifecycle.py:374: OSError
+_ test_final_source_failure_preserves_interruption_or_abort[False-KeyboardInterrupt] _
+
+tmp_path = PosixPath('/tmp/pytest-of-cloudroom-agent/pytest-3/test_final_source_failure_pres0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0xe2fb938b0e20>
+error = <class 'KeyboardInterrupt'>, source_error = False
+
+    @pytest.mark.parametrize('error', [KeyboardInterrupt, SystemExit, GeneratorExit])
+    @pytest.mark.parametrize('source_error', [False, True])
+    def test_final_source_failure_preserves_interruption_or_abort(tmp_path,monkeypatch,error,source_error):
+        def interrupted(*args, **kwargs):
+            def inspect():
+                if source_error:
+                    raise OSError('private source path')
+                return {'sha256':'changed','files':{}}
+            monkeypatch.setattr(runner,'source_manifest',inspect)
+            raise error()
+        monkeypatch.setattr(runner,'propose',interrupted)
+        with pytest.raises(error):run(tmp_path)
+        report=json.loads(report_files(tmp_path)[0].read_text())
+>       assert report['status']==('aborted' if error is GeneratorExit else 'interrupted')
+E       AssertionError: assert 'failed' == 'interrupted'
+E         
+E         - interrupted
+E         + failed
+
+tests/test_hosted_eval_retention.py:211: AssertionError
+----------------------------- Captured stdout call -----------------------------
+Report: /tmp/pytest-of-cloudroom-agent/pytest-3/test_final_source_failure_pres0/20261030T145149Z-8d67ed2a0c88/compatible-report.json
+_ test_final_source_failure_preserves_interruption_or_abort[False-SystemExit] __
+
+tmp_path = PosixPath('/tmp/pytest-of-cloudroom-agent/pytest-3/test_final_source_failure_pres1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0xe2fb938b1260>
+error = <class 'SystemExit'>, source_error = False
+
+    @pytest.mark.parametrize('error', [KeyboardInterrupt, SystemExit, GeneratorExit])
+    @pytest.mark.parametrize('source_error', [False, True])
+    def test_final_source_failure_preserves_interruption_or_abort(tmp_path,monkeypatch,error,source_error):
+        def interrupted(*args, **kwargs):
+            def inspect():
+                if source_error:
+                    raise OSError('private source path')
+                return {'sha256':'changed','files':{}}
+            monkeypatch.setattr(runner,'source_manifest',inspect)
+            raise error()
+        monkeypatch.setattr(runner,'propose',interrupted)
+        with pytest.raises(error):run(tmp_path)
+        report=json.loads(report_files(tmp_path)[0].read_text())
+>       assert report['status']==('aborted' if error is GeneratorExit else 'interrupted')
+E       AssertionError: assert 'failed' == 'interrupted'
+E         
+E         - interrupted
+E         + failed
+
+tests/test_hosted_eval_retention.py:211: AssertionError
+----------------------------- Captured stdout call -----------------------------
+Report: /tmp/pytest-of-cloudroom-agent/pytest-3/test_final_source_failure_pres1/20261030T145149Z-1ed5f622b18f/compatible-report.json
+_ test_final_source_failure_preserves_interruption_or_abort[False-GeneratorExit] _
+
+tmp_path = PosixPath('/tmp/pytest-of-cloudroom-agent/pytest-3/test_final_source_failure_pres2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0xe2fb93910e50>
+error = <class 'GeneratorExit'>, source_error = False
+
+    @pytest.mark.parametrize('error', [KeyboardInterrupt, SystemExit, GeneratorExit])
+    @pytest.mark.parametrize('source_error', [False, True])
+    def test_final_source_failure_preserves_interruption_or_abort(tmp_path,monkeypatch,error,source_error):
+        def interrupted(*args, **kwargs):
+            def inspect():
+                if source_error:
+                    raise OSError('private source path')
+                return {'sha256':'changed','files':{}}
+            monkeypatch.setattr(runner,'source_manifest',inspect)
+            raise error()
+        monkeypatch.setattr(runner,'propose',interrupted)
+        with pytest.raises(error):run(tmp_path)
+        report=json.loads(report_files(tmp_path)[0].read_text())
+>       assert report['status']==('aborted' if error is GeneratorExit else 'interrupted')
+E       AssertionError: assert 'failed' == 'aborted'
+E         
+E         - aborted
+E         + failed
+
+tests/test_hosted_eval_retention.py:211: AssertionError
+----------------------------- Captured stdout call -----------------------------
+Report: /tmp/pytest-of-cloudroom-agent/pytest-3/test_final_source_failure_pres2/20261030T145149Z-3f2b1351fdf2/compatible-report.json
+_ test_final_source_failure_preserves_interruption_or_abort[True-KeyboardInterrupt] _
+
+tmp_path = PosixPath('/tmp/pytest-of-cloudroom-agent/pytest-3/test_final_source_failure_pres3')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0xe2fb93911d50>
+error = <class 'KeyboardInterrupt'>, source_error = True
+
+    @pytest.mark.parametrize('error', [KeyboardInterrupt, SystemExit, GeneratorExit])
+    @pytest.mark.parametrize('source_error', [False, True])
+    def test_final_source_failure_preserves_interruption_or_abort(tmp_path,monkeypatch,error,source_error):
+        def interrupted(*args, **kwargs):
+            def inspect():
+                if source_error:
+                    raise OSError('private source path')
+                return {'sha256':'changed','files':{}}
+            monkeypatch.setattr(runner,'source_manifest',inspect)
+            raise error()
+        monkeypatch.setattr(runner,'propose',interrupted)
+        with pytest.raises(error):run(tmp_path)
+        report=json.loads(report_files(tmp_path)[0].read_text())
+>       assert report['status']==('aborted' if error is GeneratorExit else 'interrupted')
+E       AssertionError: assert 'failed' == 'interrupted'
+E         
+E         - interrupted
+E         + failed
+
+tests/test_hosted_eval_retention.py:211: AssertionError
+----------------------------- Captured stdout call -----------------------------
+Report: /tmp/pytest-of-cloudroom-agent/pytest-3/test_final_source_failure_pres3/20261030T145149Z-4c1a7f15d385/compatible-report.json
+__ test_final_source_failure_preserves_interruption_or_abort[True-SystemExit] __
+
+tmp_path = PosixPath('/tmp/pytest-of-cloudroom-agent/pytest-3/test_final_source_failure_pres4')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0xe2fb9388a4e0>
+error = <class 'SystemExit'>, source_error = True
+
+    @pytest.mark.parametrize('error', [KeyboardInterrupt, SystemExit, GeneratorExit])
+    @pytest.mark.parametrize('source_error', [False, True])
+    def test_final_source_failure_preserves_interruption_or_abort(tmp_path,monkeypatch,error,source_error):
+        def interrupted(*args, **kwargs):
+            def inspect():
+                if source_error:
+                    raise OSError('private source path')
+                return {'sha256':'changed','files':{}}
+            monkeypatch.setattr(runner,'source_manifest',inspect)
+            raise error()
+        monkeypatch.setattr(runner,'propose',interrupted)
+        with pytest.raises(error):run(tmp_path)
+        report=json.loads(report_files(tmp_path)[0].read_text())
+>       assert report['status']==('aborted' if error is GeneratorExit else 'interrupted')
+E       AssertionError: assert 'failed' == 'interrupted'
+E         
+E         - interrupted
+E         + failed
+
+tests/test_hosted_eval_retention.py:211: AssertionError
+----------------------------- Captured stdout call -----------------------------
+Report: /tmp/pytest-of-cloudroom-agent/pytest-3/test_final_source_failure_pres4/20261030T145149Z-bc6e67b89363/compatible-report.json
+_ test_final_source_failure_preserves_interruption_or_abort[True-GeneratorExit] _
+
+tmp_path = PosixPath('/tmp/pytest-of-cloudroom-agent/pytest-3/test_final_source_failure_pres5')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0xe2fb93d0be30>
+error = <class 'GeneratorExit'>, source_error = True
+
+    @pytest.mark.parametrize('error', [KeyboardInterrupt, SystemExit, GeneratorExit])
+    @pytest.mark.parametrize('source_error', [False, True])
+    def test_final_source_failure_preserves_interruption_or_abort(tmp_path,monkeypatch,error,source_error):
+        def interrupted(*args, **kwargs):
+            def inspect():
+                if source_error:
+                    raise OSError('private source path')
+                return {'sha256':'changed','files':{}}
+            monkeypatch.setattr(runner,'source_manifest',inspect)
+            raise error()
+        monkeypatch.setattr(runner,'propose',interrupted)
+        with pytest.raises(error):run(tmp_path)
+        report=json.loads(report_files(tmp_path)[0].read_text())
+>       assert report['status']==('aborted' if error is GeneratorExit else 'interrupted')
+E       AssertionError: assert 'failed' == 'aborted'
+E         
+E         - aborted
+E         + failed
+
+tests/test_hosted_eval_retention.py:211: AssertionError
+----------------------------- Captured stdout call -----------------------------
+Report: /tmp/pytest-of-cloudroom-agent/pytest-3/test_final_source_failure_pres5/20261030T145149Z-51b942ad4eb2/compatible-report.json
+=========================== short test summary info ============================
+FAILED tests/test_provider_lifecycle.py::test_fast_provider_failure_is_failed_and_never_retried
+FAILED tests/test_provider_lifecycle.py::test_final_inspection_error_saves_receipt_without_erasing_outcome[False]
+FAILED tests/test_provider_lifecycle.py::test_final_inspection_error_saves_receipt_without_erasing_outcome[True]
+FAILED tests/test_hosted_eval_retention.py::test_final_source_failure_preserves_interruption_or_abort[False-KeyboardInterrupt]
+FAILED tests/test_hosted_eval_retention.py::test_final_source_failure_preserves_interruption_or_abort[False-SystemExit]
+FAILED tests/test_hosted_eval_retention.py::test_final_source_failure_preserves_interruption_or_abort[False-GeneratorExit]
+FAILED tests/test_hosted_eval_retention.py::test_final_source_failure_preserves_interruption_or_abort[True-KeyboardInterrupt]
+FAILED tests/test_hosted_eval_retention.py::test_final_source_failure_preserves_interruption_or_abort[True-SystemExit]
+FAILED tests/test_hosted_eval_retention.py::test_final_source_failure_preserves_interruption_or_abort[True-GeneratorExit]
+9 failed in 2.63s

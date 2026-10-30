@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-30. **105 recorded discoveries.**
+Last review: 2026-10-30. **113 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1921,3 +1921,154 @@ After the new changelog entry was truthfully marked pushed_unreleased, the Plan 
 **Decision history:**
 
 - 2026-10-30 · adopted · Codex native verification: existing_task: verify the exact canonical delivery badge, version/title and visible limits, preserving the complete native journey and truthful pushed state.
+
+### [ ] EM-106: Execution outcome and evidence integrity are separate
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint.
+
+A final source-inspection failure can overwrite interrupted/aborted status or prevent the final lifecycle checkpoint; fast failed jobs are currently labelled inconclusive.
+
+**Product implication:** Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.
+
+**Roadmap links:** `B02-09` (blocked), `B02-15` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-evaluation-reliability.md`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
+- 2026-10-30 · adopted · Codex implementation: Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate.
+- 2026-10-30 · adopted · Codex verification: A cleanup exception can also hide a pending interruption. Retain cleanup_error separately, preserve the original exception and checkpoint; add HTTP 401/402/429 fast-failure regressions.
+- 2026-10-30 · adopted · Codex native acceptance: Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance.
+
+### [ ] EM-107: Portable source identity needs retained checkout observations
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint.
+
+The declared research pins are application inputs, while checkout availability is environment evidence; using one equality check for both blocks matching generation reports across fresh clones.
+
+**Product implication:** Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.
+
+**Roadmap links:** `B02-12` (blocked), `DOC-07` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-evaluation-reliability.md`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
+- 2026-10-30 · adopted · Codex implementation: Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate.
+- 2026-10-30 · adopted · Codex native acceptance: Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance.
+
+### [ ] EM-108: Native provider schema support must be explicit
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint.
+
+Anthropic documents that its compatibility layer ignores response_format; native Messages structured output uses output_config.format and a supported schema subset.
+
+**Product implication:** Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.
+
+**Roadmap links:** `B02-09` (blocked), `ES03-09` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-evaluation-reliability.md`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
+- 2026-10-30 · adopted · Codex implementation: Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate.
+- 2026-10-30 · adopted · Codex native acceptance: Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance.
+
+### [ ] EM-109: Manager recreation is not process restart coverage
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint.
+
+The existing lifecycle integration replaces the process with an in-process server and has no actual process/HTTP interruption regression.
+
+**Product implication:** Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.
+
+**Roadmap links:** `B02-12` (blocked), `B02-15` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-evaluation-reliability.md`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
+- 2026-10-30 · adopted · Codex implementation: Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate.
+- 2026-10-30 · adopted · Codex verification: Real process/HTTP test passed. One overlapping focused/browser run hit the occupied-port guard; retain that failure and serialize subsequent checks, without stopping unrelated services.
+- 2026-10-30 · adopted · Codex native acceptance: Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance.
+
+### [ ] EM-110: Invalid provider settings need a distinct operator state
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint.
+
+The existing Intelligence card presents invalid configuration as not configured and the analysis form hides Hugging Face presence.
+
+**Product implication:** Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.
+
+**Roadmap links:** `B02-15` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-evaluation-reliability.md`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
+- 2026-10-30 · adopted · Codex implementation: Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate.
+- 2026-10-30 · adopted · Codex native acceptance: Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance.
+
+### [ ] EM-111: IDE attachments are not portable application source
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Source-manifest inspection during the evaluation-reliability sprint.
+
+Cloudroom places conversation attachments inside .cloudroom in the checkout. The old all-file source scan included this machine-specific material, so identical Git source could differ even with identical research checkout state.
+
+**Product implication:** Exclude the IDE metadata directory from application identity while continuing to bind uncommitted application bytes and research metadata. Never hash a chat attachment as if it were a runtime dependency.
+
+**Roadmap links:** `B02-12` (blocked), `DOC-07` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-30-evaluation-reliability.md`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex implementation: existing_task: exclude .cloudroom alongside existing virtualenv/generated-output exclusions; test that application files and research metadata remain fingerprinted.
+- 2026-10-30 · adopted · Codex native acceptance: Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance.
+
+### [ ] EM-112: Source-test imports can fail under installed-package isolation
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** First integrated native acceptance of the evaluation-reliability sprint.
+
+All 1367 source tests and 399 native browser checks passed, but the installed-wheel regression suite failed one new test: a short-name import of another test module is unavailable under isolated Python and pytest importlib mode.
+
+**Product implication:** Keep test fixtures self-contained or in explicit importable helpers. Preserve installed-wheel isolation and rerun the full gate; do not treat source-suite success as distribution acceptance.
+
+**Roadmap links:** `B02-12` (blocked), `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/evidence/evaluation-reliability-2026-10-30.json`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-30-evaluation-reliability.md`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex verification: existing_task: make this test fixture self-contained, retain the failed source-bound run and preserve importlib isolation; rerun native acceptance.
+- 2026-10-30 · adopted · Codex native acceptance: Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance.
+
+### [ ] EM-113: A passing checkpoint must not be attributed to a later main integration
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Main advanced during the evaluation-reliability handoff.
+
+The fully inspected db6c5b6 native and CI pass completed before main merged the separate Chosen Course correction at bab6fa8. Canonical delivery documents then conflicted; the combined source includes additional kernel/tests and needs its own acceptance evidence.
+
+**Product implication:** Retain both source-bound receipts, reconcile canonical records without dropping discoveries or changing accepted scope, and verify the combined source before handoff. A prior pass is not a pass of the later integration.
+
+**Roadmap links:** `DOC-03` (verified), `B02-12` (blocked).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-evaluation-reliability.md`, `docs/evidence/evaluation-reliability-2026-10-30.json`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex integration: existing_task: merge current main into the working branch, preserve both ledgers/receipts and rerun complete native acceptance. No main merge, new feature scope or deployment.
+- 2026-10-30 · adopted · Codex combined native acceptance: Reconciled source e4979ca incorporates main bab6fa8; 1372 source tests, 1372 installed-engine regressions and 405 native browser checks passed locally and in CI. Both reports match the exact manifest and inspect valid. Earlier passes/failures/abort remain preserved; no actual inference or human acceptance.

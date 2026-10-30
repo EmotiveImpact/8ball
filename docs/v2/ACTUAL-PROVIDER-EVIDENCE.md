@@ -1,3 +1,26 @@
+# Evaluation reliability follow-up, 30 October 2026
+
+An observed failed analysis is `failed` even if it finishes before an intervention.
+The lifecycle runner stops further trials after that failure. A fast successful
+analysis stays `not_exercised`/`inconclusive`; neither is retried automatically.
+Final source-inspection failure is separate evidence: it invalidates integrity,
+records a sanitized diagnostic and still checkpoints the report. It does not
+replace `interrupted` or `aborted` with a generic failure. Lifecycle source checks
+also bracket each trial. Interrupted remote requests may still finish/be billed.
+
+Native Anthropic protocol/configuration must match the generation receipt and
+both returned graph stages before lifecycle admission. No compatibility report
+can stand in for native Messages evidence. Version-2 application identities allow
+matching declared-pin checkouts to be absent on another machine while preserving
+both full checkout manifests. See [acceptance details](ACCEPTANCE-RUNNER.md).
+
+The original fixtures/hash, failed experiments, compiler gates and independent
+quality/human requirements remain. The source-bound
+[session receipt](../delivery/sessions/2026-10-30-evaluation-reliability.md)
+distinguishes controlled software results from any actual provider experiment.
+
+---
+
 # Actual-provider evidence: retained experiments and lifecycle trials
 
 Read with [Qwen setup](QWEN-SETUP.md), [acceptance runner](ACCEPTANCE-RUNNER.md)

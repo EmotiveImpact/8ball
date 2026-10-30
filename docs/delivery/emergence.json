@@ -25,7 +25,7 @@
     {
       "id": "ER-05",
       "scope": "situation",
-      "text": "Are we still working towards the client\u2019s explicit target and success criteria?"
+      "text": "Are we still working towards the client’s explicit target and success criteria?"
     },
     {
       "id": "ER-06",
@@ -75,7 +75,7 @@
     {
       "id": "ER-15",
       "scope": "both",
-      "text": "Does this improve the operator\u2019s next decision or merely increase reviews, alerts and screens? How would we measure the difference?"
+      "text": "Does this improve the operator’s next decision or merely increase reviews, alerts and screens? How would we measure the difference?"
     }
   ],
   "items": [
@@ -444,7 +444,7 @@
       "origin": "Accepted product discussion and build review",
       "first_seen": "2026-09-24",
       "evidence_level": "observed_in_build",
-      "observation": "Retraction or concentrated evidence dependencies can weaken a plan\u2019s evidential basis.",
+      "observation": "Retraction or concentrated evidence dependencies can weaken a plan’s evidential basis.",
       "product_implication": "Show one-record support clusters and invalidate earlier insight reviews when referenced content changes.",
       "task_ids": [
         "ES02-05",
@@ -620,7 +620,7 @@
     },
     {
       "id": "EM-018",
-      "title": "Outcome discovery must not rewrite the client\u2019s intent",
+      "title": "Outcome discovery must not rewrite the client’s intent",
       "origin": "Accepted product discussion and build review",
       "first_seen": "2026-09-24",
       "evidence_level": "operator_hypothesis",
@@ -902,7 +902,7 @@
       "first_seen": "2026-09-24",
       "evidence_level": "observed_in_build",
       "observation": "Several calculated routes can overlap and are not all the routes reality permits.",
-      "product_implication": "Label the candidate pool, truncation and caps. Avoid \u201cevery viable route\u201d and unsupported success percentages.",
+      "product_implication": "Label the candidate pool, truncation and caps. Avoid “every viable route” and unsupported success percentages.",
       "task_ids": [
         "ES02-05",
         "B02-21"
@@ -1237,7 +1237,7 @@
       "origin": "Accepted product discussion and build review",
       "first_seen": "2026-09-24",
       "evidence_level": "observed_in_build",
-      "observation": "An old response must not populate the newly selected client\u2019s insight panel.",
+      "observation": "An old response must not populate the newly selected client’s insight panel.",
       "product_implication": "Guard responses by case ID and session epoch, clear state on switching/locking, and test it.",
       "task_ids": [
         "B02-21"
@@ -3803,6 +3803,308 @@
           "decision": "adopted",
           "by": "Codex native verification",
           "reason": "existing_task: verify the exact canonical delivery badge, version/title and visible limits, preserving the complete native journey and truthful pushed state."
+        }
+      ]
+    },
+    {
+      "id": "EM-106",
+      "title": "Execution outcome and evidence integrity are separate",
+      "origin": "Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "A final source-inspection failure can overwrite interrupted/aborted status or prevent the final lifecycle checkpoint; fast failed jobs are currently labelled inconclusive.",
+      "product_implication": "Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.",
+      "task_ids": [
+        "B02-09",
+        "B02-15"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex under owner get-it-done instruction",
+          "reason": "existing_task: bounded repair within existing task scope; validation pending."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex implementation",
+          "reason": "Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex verification",
+          "reason": "A cleanup exception can also hide a pending interruption. Retain cleanup_error separately, preserve the original exception and checkpoint; add HTTP 401/402/429 fast-failure regressions."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex native acceptance",
+          "reason": "Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-107",
+      "title": "Portable source identity needs retained checkout observations",
+      "origin": "Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "The declared research pins are application inputs, while checkout availability is environment evidence; using one equality check for both blocks matching generation reports across fresh clones.",
+      "product_implication": "Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.",
+      "task_ids": [
+        "B02-12",
+        "DOC-07"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex under owner get-it-done instruction",
+          "reason": "existing_task: bounded repair within existing task scope; validation pending."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex implementation",
+          "reason": "Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex native acceptance",
+          "reason": "Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-108",
+      "title": "Native provider schema support must be explicit",
+      "origin": "Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "Anthropic documents that its compatibility layer ignores response_format; native Messages structured output uses output_config.format and a supported schema subset.",
+      "product_implication": "Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.",
+      "task_ids": [
+        "B02-09",
+        "ES03-09"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex under owner get-it-done instruction",
+          "reason": "existing_task: bounded repair within existing task scope; validation pending."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex implementation",
+          "reason": "Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex native acceptance",
+          "reason": "Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-109",
+      "title": "Manager recreation is not process restart coverage",
+      "origin": "Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "The existing lifecycle integration replaces the process with an in-process server and has no actual process/HTTP interruption regression.",
+      "product_implication": "Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.",
+      "task_ids": [
+        "B02-12",
+        "B02-15"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex under owner get-it-done instruction",
+          "reason": "existing_task: bounded repair within existing task scope; validation pending."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex implementation",
+          "reason": "Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex verification",
+          "reason": "Real process/HTTP test passed. One overlapping focused/browser run hit the occupied-port guard; retain that failure and serialize subsequent checks, without stopping unrelated services."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex native acceptance",
+          "reason": "Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-110",
+      "title": "Invalid provider settings need a distinct operator state",
+      "origin": "Owner-authorized follow-up to merge review at 1038291; evaluation reliability sprint",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "The existing Intelligence card presents invalid configuration as not configured and the analysis form hides Hugging Face presence.",
+      "product_implication": "Improve bounded development evidence without claiming actual inference, independent judgement, action authority or release acceptance.",
+      "task_ids": [
+        "B02-15"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex under owner get-it-done instruction",
+          "reason": "existing_task: bounded repair within existing task scope; validation pending."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex implementation",
+          "reason": "Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex native acceptance",
+          "reason": "Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-111",
+      "title": "IDE attachments are not portable application source",
+      "origin": "Source-manifest inspection during the evaluation-reliability sprint",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "Cloudroom places conversation attachments inside .cloudroom in the checkout. The old all-file source scan included this machine-specific material, so identical Git source could differ even with identical research checkout state.",
+      "product_implication": "Exclude the IDE metadata directory from application identity while continuing to bind uncommitted application bytes and research metadata. Never hash a chat attachment as if it were a runtime dependency.",
+      "task_ids": [
+        "B02-12",
+        "DOC-07"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "scripts/acceptance.py",
+        "tests/test_acceptance_runner.py",
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex implementation",
+          "reason": "existing_task: exclude .cloudroom alongside existing virtualenv/generated-output exclusions; test that application files and research metadata remain fingerprinted."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex native acceptance",
+          "reason": "Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-112",
+      "title": "Source-test imports can fail under installed-package isolation",
+      "origin": "First integrated native acceptance of the evaluation-reliability sprint",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "All 1367 source tests and 399 native browser checks passed, but the installed-wheel regression suite failed one new test: a short-name import of another test module is unavailable under isolated Python and pytest importlib mode.",
+      "product_implication": "Keep test fixtures self-contained or in explicit importable helpers. Preserve installed-wheel isolation and rerun the full gate; do not treat source-suite success as distribution acceptance.",
+      "task_ids": [
+        "B02-12",
+        "ES01-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/evidence/evaluation-reliability-2026-10-30.json",
+        "tests/test_acceptance_runner.py",
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex verification",
+          "reason": "existing_task: make this test fixture self-contained, retain the failed source-bound run and preserve importlib isolation; rerun native acceptance."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex native acceptance",
+          "reason": "Existing-task software evidence: 1367 source tests, 1367 isolated installed-engine regressions and 399 checks across eleven native browser suites passed at db6c5b6; source/artifact inspection valid. No actual-provider or independent/human acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-113",
+      "title": "A passing checkpoint must not be attributed to a later main integration",
+      "origin": "Main advanced during the evaluation-reliability handoff",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "The fully inspected db6c5b6 native and CI pass completed before main merged the separate Chosen Course correction at bab6fa8. Canonical delivery documents then conflicted; the combined source includes additional kernel/tests and needs its own acceptance evidence.",
+      "product_implication": "Retain both source-bound receipts, reconcile canonical records without dropping discoveries or changing accepted scope, and verify the combined source before handoff. A prior pass is not a pass of the later integration.",
+      "task_ids": [
+        "DOC-03",
+        "B02-12"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md",
+        "docs/evidence/evaluation-reliability-2026-10-30.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex integration",
+          "reason": "existing_task: merge current main into the working branch, preserve both ledgers/receipts and rerun complete native acceptance. No main merge, new feature scope or deployment."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex combined native acceptance",
+          "reason": "Reconciled source e4979ca incorporates main bab6fa8; 1372 source tests, 1372 installed-engine regressions and 405 native browser checks passed locally and in CI. Both reports match the exact manifest and inspect valid. Earlier passes/failures/abort remain preserved; no actual inference or human acceptance."
         }
       ]
     }

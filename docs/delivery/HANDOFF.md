@@ -1,3 +1,19 @@
+# Combined current-main repair verified, 30 October 2026
+
+Draft [PR10](https://github.com/EmotiveImpact/8ball/pull/10) now includes merged main `bab6fa8` and remains unmerged/unreleased. Latest tested source `e4979ca` passed **1372 source tests, 1372 installed-engine regressions and 405 native browser checks across all eleven suites**, locally and in GitHub CI. Both source/artifact inspections are valid with the same manifest. [Exact receipt](../evidence/evaluation-reliability-2026-10-30.json); [complete handoff and Emergence Review](sessions/2026-10-30-evaluation-reliability.md). The earlier db6c5b6 pass, original failed regressions, package-isolation failure, and aborted reconciliation attempt remain retained as separate source-bound evidence.
+
+The evaluation reliability/native Anthropic/configuration repair and main's nested-course fix are preserved together. All original acceptance gates and research boundaries remain. Actual model calls are zero; secure key submission is pending. Next is the unchanged fictional generation gate with explicit native settings and existing US$5 budget, then matching lifecycle/native journey and genuine independent/human reviews. Earlier counts and branch notes below describe their own historical checkpoints.
+
+---
+
+# Evaluation reliability follow-up, 30 October 2026
+
+Draft [PR10](https://github.com/EmotiveImpact/8ball/pull/10) builds on merged security base `825ad66`; it is not merged or released. Tested code `db6c5b6` passed **1367 source tests, 1367 installed-engine regressions and 399 native browser checks across all eleven suites**, with valid exact-source/artifact inspection before receipt-only edits. [Source-bound receipt](../evidence/evaluation-reliability-2026-10-30.json); [session and complete Emergence Review](sessions/2026-10-30-evaluation-reliability.md). The first installed-suite failure and its matching failed CI are retained.
+
+The patch repairs report classification/finalization, keeps portable application identity plus full checkout provenance, tests a real local process restart, adds explicitly selected native Anthropic Messages, and distinguishes invalid provider settings. No original gate is promoted. Actual model calls are zero: secure runtime key is missing, and the Cloudroom secure form is pending. After secure setup and budget confirmation, run the unchanged generation fixtures once before matching lifecycle/native journey and genuine independent/human acceptance. All previous source, fixtures and discoveries remain; deferred research and production work remain separate.
+
+---
+
 # Current nested-course correction, 30 October 2026
 
 PR8 is already merged into main at `825ad6668c2c7d128da367476fe16cb8d214b837`; its three security fixes are integrated. The owner then instructed fixing all remaining reported issues and merging. This follow-up addresses EM-102 only on `fix/nested-course-prerequisites-20261030`, from that main commit. Selected nested signed prerequisites now stay within expression bounds without dropping requirements or changing OR choice. Original four regression failures are retained. Tested code `84994b3b4aeca1f925bd63cbe74ceb945e91ad1c` passed **1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites**, including 37 course checks. All 21 acceptance steps and exact-source/artifact inspection passed before final receipt-only edits. [PR9](https://github.com/EmotiveImpact/8ball/pull/9) records final-head CI and owner-authorized integration. [Session and full ER review](sessions/2026-10-30-course-prerequisites.md), [receipt](../evidence/course-prerequisites-2026-10-30.json).

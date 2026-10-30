@@ -3,6 +3,81 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-30-evaluation-reliability",
+      "date": "2026-10-30",
+      "version": "0.2.0-alpha.8",
+      "title": "Evaluation reliability and explicit Anthropic protocol",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "B02-09",
+        "B02-12",
+        "B02-15",
+        "ES03-09",
+        "DOC-07"
+      ],
+      "summary": "Preserve failed/interrupted evaluation outcomes and source provenance, add real process-restart coverage and explicitly selected native Anthropic structured output, and distinguish invalid provider configuration.",
+      "added": [
+        "Opt-in native Anthropic Messages protocol with original local schema/source/compiler validation and exact bounded response retention.",
+        "Real owned-process/HTTP/SQLite restart regression; protocol and source-portability regressions."
+      ],
+      "changed": [
+        "Version-2 research-bearing manifests retain full checkout fingerprints and separately identify application bytes plus declared pins. Legacy receipts remain exact-only.",
+        "Native Intelligence/analysis controls distinguish absent, invalid and configured-but-untested providers; processing permission resets when reopened.",
+        "Reconciled newly merged main course-prerequisite work and its canonical ledger/history without dropping either source or evidence; combined-source acceptance is separately evidenced at e4979ca."
+      ],
+      "fixed": [
+        "Fast failed analysis misreported as an inconclusive timing race.",
+        "Final source errors overwriting interruption/abort status or skipping the final lifecycle checkpoint.",
+        "IDE attachments and pinned-checkout availability preventing portable matching source evidence.",
+        "A new test helper import that failed installed-wheel isolation despite passing from the source checkout."
+      ],
+      "verification": [
+        "Nine new reporting regressions failed before repairs; exact original failure output is retained in the repository.",
+        "311 focused checks passed with one existing warning; the native Development journey passed 30 checks, included in the cumulative browser total.",
+        "At db6c5b69f05cf3fabd3930dc22fd7e2df9af617a: 1367 source tests and 1367 installed-ENDSTATE regressions passed, with zero failures/errors/skips; all 399 checks across eleven native browser suites passed. All 21 integrated steps passed.",
+        "Native source/artifact inspection valid=true/run_status=passed before final documentation-only receipts; source stayed unchanged during the run. Python compilation, all 17 browser module syntax checks, delivery/history validators and 8/8 structural fixtures passed.",
+        "The first full native run and CI 41077459582 failed 1/1367 installed tests on a new test-only import; both retained and inspected against their exact source. The self-contained fixture passes isolated importlib mode (37 checks), followed by fresh full native acceptance.",
+        "Corrected code GitHub CI at receipt preparation: 41078253660 success, 41078253666 success. PR10 records receipt-head CI; no pending result is called passed.",
+        "Actual-provider generation/lifecycle/native-journey preflights were blocked by the missing secure runtime key (exit 2 each), with zero model calls.",
+        "Main advanced to bab6fa8bb83d78d324fa0f0935a09d33e2bdcda6 while final receipts were being pushed. The earlier db6c5b6 pass remains exact-source evidence; a new integrated native run is required.",
+        "The first main-reconciliation attempt failed changelog ordering before cumulative verification. Its owned run was aborted and retained as incomplete, then canonical main entry order and generated Markdown were corrected. No pass is claimed for b2a666e.",
+        "Final combined main bab6fa8 + repair at e4979ca: 1372 source tests, 1372 installed-ENDSTATE regressions, and all 405 checks across eleven native browser suites passed. All 21 steps passed. Local and downloaded CI 41080312320 artifacts have the same source manifest and valid passed inspections; documentation CI 41080312008 passed. Receipt-only head CI is tracked in PR10."
+      ],
+      "limitations": [
+        "Actual provider credentials are absent in the cloud and Mac login environments. Secure key request is separate; no actual model result is claimed.",
+        "Original actual-model, independent professional, human accessibility and release gates remain open.",
+        "Generic endpoint/model-name restrictions, Hugging Face proxy policy and deferred hosted-compression review remain explicit; no deployment or main merge."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md",
+        "docs/evidence/evaluation-reliability-2026-10-30.json"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Report outcome, evidence integrity, source identity and environment observations need separate handling.",
+          "IDE conversation attachments were unintentionally part of source identity; real process recovery requires a real process/HTTP test.",
+          "Source-suite success can conceal an import-mode-dependent test failure in installed-wheel verification; preserve isolation and the failed evidence."
+        ],
+        "risks": [
+          "A passing controlled contract does not establish paid-provider compatibility or semantic quality."
+        ],
+        "architecture_implications": [
+          "Keep provider I/O and evaluation receipts in 8BALL; preserve ENDSTATE and all approval boundaries."
+        ],
+        "roadmap_decision": "Existing-task repairs only; no acceptance status or required scope promotion.",
+        "insight_ids": [
+          "EM-106",
+          "EM-107",
+          "EM-108",
+          "EM-109",
+          "EM-110",
+          "EM-111",
+          "EM-112",
+          "EM-113"
+        ]
+      }
+    },
+    {
       "id": "2026-10-30-nested-course-prerequisites",
       "date": "2026-10-30",
       "version": "0.2.0-alpha.8",
@@ -555,7 +630,7 @@
       ],
       "summary": "Added an owner-readable source investigation of Ruflo worker coordination, model access, confidence and evidence limits. Application behavior and acceptance gates are unchanged.",
       "added": [
-        "Plain-English owner guide, pinned-source receipt and complete ER-01\u201315 handoff.",
+        "Plain-English owner guide, pinned-source receipt and complete ER-01–15 handoff.",
         "EM-084 preserves the prediction target behind worker-routing confidence; prior findings receive additive evidence."
       ],
       "changed": [
@@ -1686,7 +1761,7 @@
         "ES03-08",
         "B04-04"
       ],
-      "summary": "Documentation-only refinement: 8BALL becomes the fixer\u2019s live situation room around an explicit mandate and human-selected course; ENDSTATE remains a neutral planning and reconsideration engine. No runtime completion or new required scope is implied.",
+      "summary": "Documentation-only refinement: 8BALL becomes the fixer’s live situation room around an explicit mandate and human-selected course; ENDSTATE remains a neutral planning and reconsideration engine. No runtime completion or new required scope is implied.",
       "added": [
         "Separate 8BALL and ENDSTATE vision documents, ADR 0004 and proposed course/coverage/recovery acceptance scenarios.",
         "Ten new discoveries retained alongside all 55 originals; five additional end-of-sprint review prompts.",
@@ -1697,7 +1772,7 @@
         "Earlier fallback/watch/attention/recoverability discoveries have appended dispositions rather than rewritten observations."
       ],
       "fixed": [
-        "The latest handoff\u2019s missing Draft Repair source is explicitly separated from the recovered alpha.7 implementation; later narrated test totals are not attached to the earlier source.",
+        "The latest handoff’s missing Draft Repair source is explicitly separated from the recovered alpha.7 implementation; later narrated test totals are not attached to the earlier source.",
         "No-path wording now identifies the supplied catalogue and search bounds rather than implying global impossibility.",
         "The review protocol now permits additional passes while requiring the original ten and preserving recorded prompt text/order. Seven regression checks cover safe extension and denied rewrites."
       ],
@@ -1967,7 +2042,7 @@
           "The bounded calendar-day interpreter deliberately cannot decide what next business day or end of day means for every organisation, location or agreement."
         ],
         "risks": [
-          "Shared names, exact quotations and schema validation do not prove identity, authority or the source\u2019s intended date.",
+          "Shared names, exact quotations and schema validation do not prove identity, authority or the source’s intended date.",
           "Withdrawing evidence should prompt reconsideration, not silently remove adopted operational commitments."
         ],
         "architecture_implications": [
@@ -2188,7 +2263,7 @@
         "Guided nested AND/OR and explicit-false authoring, guards, intended effects, verification criteria, resources, decision gates and response contingencies.",
         "Read-only amendment preview with route differences, historical protections, undo/redo, discard and a separate revision-checked commit.",
         "Persistent local analysis status with bounded queue, stage counts, cancellation, stale-result rejection and restart interruption.",
-        "In-app What\u2019s new and a generated root CHANGELOG.md. Every future build must update the shared changelog and delivery ledger.",
+        "In-app What’s new and a generated root CHANGELOG.md. Every future build must update the shared changelog and delivery ledger.",
         "Desktop authoring columns scroll independently; smaller screens keep a responsive stacked layout."
       ],
       "changed": [

@@ -59,6 +59,10 @@ def generation_report(tmp_path, *, provider='openai_compatible', **changes):
                                        for i in range(len(frame['success_criteria']))]
             responses = [frame, deepcopy(STAGED['routes'])]
         def respond(request):
+            if getattr(configured, 'api_protocol', None) == 'anthropic_messages':
+                return httpx.Response(200, json={'type':'message','role':'assistant','model':'controlled-served-model',
+                    'content':[{'type':'text','text':json.dumps(responses.pop(0))}],
+                    'stop_reason':'end_turn','usage':{'input_tokens':20,'output_tokens':10}})
             return httpx.Response(200, json={'model': 'controlled-served-model',
                 'choices': [{'index': 0, 'finish_reason': 'stop', 'message': {'role': 'assistant',
                     'content': json.dumps(responses.pop(0))}}]})
@@ -86,7 +90,9 @@ def generation_report(tmp_path, *, provider='openai_compatible', **changes):
         'fixture_sha256': lifecycle.FIXTURES_SHA256,
         'planned_fixtures': len(rows), 'completed_fixtures': len(rows), 'results': rows,
         'structural_gate_passed': True, 'actual_hosted_requests': True}
-    if provider == 'openai_compatible': report['endpoint_host'] = configured.endpoint_host
+    if provider == 'openai_compatible':
+        report['endpoint_host'] = configured.endpoint_host
+        report['api_protocol'] = configured.api_protocol
     report.update(changes)
     path = tmp_path / 'generation.json'
     path.write_text(json.dumps(report))
@@ -149,6 +155,8 @@ class ControlledAPI:
 class ControlledServer:
     instances = []
     fast = False
+    fast_success = False
+    http_failure = None
     stuck = False
 
     def __init__(self, database):
@@ -167,16 +175,20 @@ class ControlledServer:
             self.calls.append(request)
             self.entered.set()
             assert self.release.wait(5)
+            if self.http_failure is not None:
+                return httpx.Response(self.http_failure, text='Unread controlled provider error')
             # A fast trial is deliberately a one-call validation failure. It
             # demonstrates that failure is not retried or relabelled lifecycle
             # success. Normal trials stop before parsing this actual envelope.
             frame = deepcopy(STAGED['frame'])
-            frame['target_bindings'] = [{'criterion_index': 0, 'target_quote': self.current_case.desired_outcome}]
-            if self.fast:
+            frame['target_bindings'] = [{'criterion_index': i, 'target_quote': self.current_case.desired_outcome}
+                                       for i in range(len(frame['success_criteria']))]
+            if self.fast and not self.fast_success:
                 frame['verification']['requires_existing'] = ['not-an-existing-condition']
+            output = STAGED['routes'] if self.fast_success and len(self.calls) % 2 == 0 else frame
             return httpx.Response(200, json={'model': 'controlled-served-model',
                 'choices': [{'finish_reason': 'stop', 'message': {'role': 'assistant',
-                    'content': json.dumps(frame)}}], 'usage': {'total_tokens': len(self.calls)}})
+                    'content': json.dumps(output)}}], 'usage': {'total_tokens': len(self.calls)}})
         return httpx.Client(transport=httpx.MockTransport(respond), **kwargs)
 
     def start(self):
@@ -353,15 +365,78 @@ def test_all_lifecycle_outcomes_use_real_jobs_without_publication_or_second_call
     assert json.loads(snapshots[-1].read_text()) == report
 
 
-def test_fast_provider_completion_is_inconclusive_and_never_retried(tmp_path, monkeypatch):
+def test_fast_provider_failure_is_failed_and_never_retried(tmp_path, monkeypatch):
     server_type = controlled_server(monkeypatch, fast=True)
     report, _ = lifecycle.run('openai_compatible', allow_inference=True,
         allow_external=True, generation_report=generation_report(tmp_path), output=tmp_path / 'runs')
-    assert report['status'] == 'inconclusive' and report['complete']
-    assert all(trial['status'] == 'not_exercised' for trial in report['scenarios'])
-    assert server_type.instances[0].submissions == len(server_type.instances[0].calls) == 3
+    assert report['status'] == 'failed' and not report['complete']
+    assert report['scenarios'][0]['status'] == 'failed'
+    assert server_type.instances[0].submissions == len(server_type.instances[0].calls) == 1
     assert server_type.instances[0].restarts == 0
     assert all(trial['available_proposals'][0]['status'] == 'failed' for trial in report['scenarios'])
+
+
+def test_fast_provider_success_remains_inconclusive_without_automatic_retry(tmp_path, monkeypatch):
+    server_type = controlled_server(monkeypatch, fast=True, fast_success=True)
+    report, _ = lifecycle.run('openai_compatible', allow_inference=True,
+        allow_external=True, generation_report=generation_report(tmp_path), output=tmp_path / 'runs')
+    assert report['status'] == 'inconclusive' and report['complete']
+    assert all(t['status'] == 'not_exercised' and 'intervention' not in t for t in report['scenarios'])
+    assert server_type.instances[0].submissions == 3 and len(server_type.instances[0].calls) == 6
+    assert all(t['final_job']['status'] == 'succeeded' for t in report['scenarios'])
+
+
+@pytest.mark.parametrize('status',[401,402,429])
+def test_fast_provider_http_failure_stops_lifecycle_as_failed(tmp_path,monkeypatch,status):
+    server_type=controlled_server(monkeypatch,fast=True,http_failure=status)
+    report,_=lifecycle.run('openai_compatible',allow_inference=True,allow_external=True,
+        generation_report=generation_report(tmp_path),output=tmp_path/'runs')
+    assert report['status']=='failed' and not report['complete']
+    assert len(report['scenarios'])==server_type.instances[0].submissions==len(server_type.instances[0].calls)==1
+    assert report['scenarios'][0]['available_proposals'][0]['status']=='failed'
+
+
+@pytest.mark.parametrize('interrupted',[False,True])
+def test_cleanup_failure_does_not_hide_an_interruption_and_still_saves(tmp_path,monkeypatch,interrupted):
+    server_type=controlled_server(monkeypatch)
+    original=server_type.stop
+    def stop(self):
+        original(self)
+        raise OSError('Private cleanup detail '+KEY)
+    monkeypatch.setattr(server_type,'stop',stop)
+    if interrupted:
+        def interrupt(*args,**kwargs):raise KeyboardInterrupt()
+        monkeypatch.setattr(lifecycle,'exercise',interrupt)
+    report,path=lifecycle.run('openai_compatible',allow_inference=True,allow_external=True,
+        generation_report=generation_report(tmp_path),output=tmp_path/'runs')
+    assert report['status']==('interrupted' if interrupted else 'failed')
+    assert report['cleanup_error']=={'error_type':'OSError'}
+    assert report['finished_at'] and json.loads(path.read_text())==report
+    assert KEY not in path.read_text() and 'Private cleanup detail' not in path.read_text()
+
+
+@pytest.mark.parametrize('interrupted', [False, True])
+def test_final_inspection_error_saves_receipt_without_erasing_outcome(tmp_path, monkeypatch, interrupted):
+    server_type = controlled_server(monkeypatch)
+    original_stop = server_type.stop
+    def stop(self):
+        original_stop(self)
+        def broken():
+            raise OSError('private path and ' + KEY)
+        monkeypatch.setattr(lifecycle, 'source_manifest', broken)
+    monkeypatch.setattr(server_type, 'stop', stop)
+    if interrupted:
+        def interrupt(*args, **kwargs):
+            raise KeyboardInterrupt()
+        monkeypatch.setattr(lifecycle, 'exercise', interrupt)
+    report, path = lifecycle.run('openai_compatible', allow_inference=True,
+        allow_external=True, generation_report=generation_report(tmp_path), output=tmp_path / 'runs')
+    assert report['status'] == ('interrupted' if interrupted else 'failed')
+    assert report['source_unchanged_during_run'] is False
+    assert report['source_at_finish'] is None
+    assert report['source_checks'][-1]['status'] == 'inspection_failed'
+    assert report['finished_at'] and json.loads(path.read_text()) == report
+    assert 'private path' not in path.read_text() and KEY not in path.read_text()
 
 
 @pytest.mark.parametrize('corruption', ['extra_call', 'late_success', 'case_mutation'])
@@ -421,7 +496,7 @@ def test_current_report_and_numbered_snapshots_do_not_overwrite_prior_attempts(t
     _, second = lifecycle.run('openai_compatible', allow_inference=True,
         allow_external=True, generation_report=path, output=tmp_path / 'runs')
     assert first != second and first.read_bytes() == previous
-    assert sum(server.submissions for server in server_type.instances) == 6
+    assert sum(server.submissions for server in server_type.instances) == 2
 
 
 def test_arbitrary_failure_message_cannot_reflect_key_into_report(tmp_path, monkeypatch):
@@ -546,3 +621,131 @@ def test_cli_without_opt_in_does_not_start_model_and_records_blocked(tmp_path):
     report = json.loads(files[0].read_text())
     assert report['application_calls_admitted_observed'] == 0 and report['scenarios'] == []
     assert KEY not in files[0].read_text()
+
+
+
+def test_real_owned_process_restart_over_loopback_http_does_not_resume_or_publish(tmp_path, monkeypatch):
+    """Real Popen/HTTP/SQLite; loopback Ollama fixture, not actual inference."""
+    from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+    import time
+    from scripts.acceptance import selected_environment
+
+    entered, release, returned = Event(), Event(), Event()
+    requests = []
+    class Handler(BaseHTTPRequestHandler):
+        def log_message(self, *args):
+            pass
+        def do_POST(self):
+            assert self.path == '/api/chat'
+            requests.append(json.loads(self.rfile.read(int(self.headers['Content-Length']))))
+            entered.set()
+            if not release.wait(20):
+                return
+            raw = json.dumps({'model':'controlled-loopback-model', 'done':True,
+                'message':{'role':'assistant','content':'{}'}}).encode()
+            try:
+                self.send_response(200)
+                self.send_header('Content-Type','application/json')
+                self.send_header('Content-Length',str(len(raw)))
+                self.end_headers()
+                self.wfile.write(raw)
+            except (BrokenPipeError, ConnectionResetError):
+                pass  # The killed consumer cannot accept a late fixture result.
+            finally:
+                returned.set()
+
+    # Fixed local-provider address is the actual application contract. Never
+    # reuse or stop a service that already owns either application/provider port.
+    provider = ThreadingHTTPServer(('127.0.0.1',11434), Handler)
+    provider_thread = Thread(target=provider.serve_forever, daemon=True)
+    server = lifecycle.OwnedServer(tmp_path/'real-restart.sqlite3')
+    server.env = {**selected_environment('code'), 'EIGHTBALL_DB':str(tmp_path/'real-restart.sqlite3'),
+                  'EIGHTBALL_TOKEN':server.token, 'EIGHTBALL_OLLAMA_MODEL':'controlled-loopback-model'}
+    processes = []
+    restart = server.restart
+    def restart_after_remote_arrival():
+        assert entered.wait(5), 'Controlled HTTP request never arrived'
+        processes.append(server.process)
+        code = restart()
+        processes.append(server.process)
+        release.set()
+        return code
+    monkeypatch.setattr(server,'restart',restart_after_remote_arrival)
+    provider_thread.start()
+    try:
+        server.start()
+        assert server.api.read('/cases') == []
+        trial = {'status':'running','job_snapshots':[],'max_application_calls_admitted':0}
+        fixture = next(row for row in FIXTURES if row[2]=='graph')
+        assert lifecycle.exercise(server,'restart','ollama_staged',False,fixture,trial,lambda:None,15)
+        assert trial['status']=='passed' and all(trial['checks'].values())
+        assert processes[0].pid != processes[1].pid
+        assert processes[0].poll() is not None and processes[1].poll() is None
+        assert returned.wait(5) and len(requests)==1
+        assert requests[0]['model']=='controlled-loopback-model'
+        assert trial['final_job']['status']=='interrupted'
+        assert trial['final_job']['calls_started']==1 and trial['final_job']['calls_completed']==0
+        assert trial['after_case']==trial['before_case'] and trial['available_proposals']==[]
+        # Reload over real HTTP after the late response. No resumed work or
+        # second stage may appear, and original case audit must still verify.
+        time.sleep(.1)
+        base='/cases/'+trial['case_id']
+        assert server.api.read(base+'/analysis-jobs/'+trial['job_id'])['status']=='interrupted'
+        assert server.api.read(base+'/proposals')==[] and len(requests)==1
+        assert server.api.read(base+'/export')['valid'] is True
+    finally:
+        release.set()
+        server.stop()
+        provider.shutdown()
+        provider.server_close()
+        provider_thread.join(5)
+    assert not provider_thread.is_alive()
+    assert all(process.poll() is not None for process in processes)
+
+
+def portable_source(checkout):
+    from scripts.acceptance import application_digest, digest
+    files = {'app.py': 'a'*64}
+    links = {'research/external/fixture': {'index_commit':'b'*40, 'checkout_commit':checkout}}
+    return {'manifest_version':2, 'files':files, 'research_gitlinks':links,
+        'application_sha256':application_digest(files,links),
+        'sha256':digest(json.dumps({'files':files,'research_gitlinks':links},sort_keys=True,separators=(',',':')).encode())}
+
+
+def test_generation_receipt_can_cross_pinned_checkout_availability_without_rewriting_it(tmp_path):
+    recorded = portable_source('b'*40)
+    current = portable_source(None)
+    path = generation_report(tmp_path, source=recorded, source_at_finish=recorded)
+    before = path.read_bytes()
+    result = lifecycle.generation_prerequisite(path,'openai_compatible',lifecycle.compatible_settings(),current,FIXTURES)
+    assert not result['checkout_observations_match']
+    assert path.read_bytes() == before
+    for invalid in (portable_source('c'*40), {**current,'application_sha256':'forged'}):
+        with pytest.raises(lifecycle.SetupBlocked):
+            lifecycle.generation_prerequisite(path,'openai_compatible',lifecycle.compatible_settings(),invalid,FIXTURES)
+    mismatched = json.loads(before);mismatched['source_at_finish'] = current
+    path.write_text(json.dumps(mismatched))
+    with pytest.raises(lifecycle.SetupBlocked):
+        lifecycle.generation_prerequisite(path,'openai_compatible',lifecycle.compatible_settings(),current,FIXTURES)
+
+
+def test_native_protocol_cannot_reuse_a_compatibility_generation_receipt(tmp_path,monkeypatch):
+    monkeypatch.setenv('EIGHTBALL_API_BASE_URL','https://api.anthropic.com/v1')
+    monkeypatch.setenv('EIGHTBALL_API_PROVIDER','anthropic')
+    path = generation_report(tmp_path)
+    monkeypatch.setenv('EIGHTBALL_API_PROTOCOL','anthropic_messages')
+    with pytest.raises(lifecycle.SetupBlocked):
+        lifecycle.generation_prerequisite(path,'openai_compatible',lifecycle.compatible_settings(),SOURCE,FIXTURES)
+
+
+def test_native_generation_prerequisite_requires_native_receipts_on_both_graph_stages(tmp_path,monkeypatch):
+    monkeypatch.setenv('EIGHTBALL_API_BASE_URL','https://api.anthropic.com/v1')
+    monkeypatch.setenv('EIGHTBALL_API_PROVIDER','anthropic')
+    monkeypatch.setenv('EIGHTBALL_API_PROTOCOL','anthropic_messages')
+    path = generation_report(tmp_path)
+    assert lifecycle.generation_prerequisite(path,'openai_compatible',lifecycle.compatible_settings(),SOURCE,FIXTURES)
+    report = json.loads(path.read_text())
+    report['results'][-1]['proposal']['raw_output']['transport']['calls'][1]['native_stop_reason'] = 'max_tokens'
+    path.write_text(json.dumps(report))
+    with pytest.raises(lifecycle.SetupBlocked):
+        lifecycle.generation_prerequisite(path,'openai_compatible',lifecycle.compatible_settings(),SOURCE,FIXTURES)
