@@ -8,29 +8,48 @@ This is product history, not the case decision trail. A build entry is not evide
 
 2026-10-30 · `local_unreleased`
 
-Bounded follow-up to the merged development review; implementation and verification pending at the claim checkpoint.
+Preserve failed/interrupted evaluation outcomes and source provenance, add real process-restart coverage and explicitly selected native Anthropic structured output, and distinguish invalid provider configuration.
+
+### Added
+
+- Opt-in native Anthropic Messages protocol with original local schema/source/compiler validation and exact bounded response retention.
+- Real owned-process/HTTP/SQLite restart regression; protocol and source-portability regressions.
 
 ### Changed
 
-- Recorded bounded task ownership, current security-fix base and all review discoveries before implementation.
+- Version-2 research-bearing manifests retain full checkout fingerprints and separately identify application bytes plus declared pins. Legacy receipts remain exact-only.
+- Native Intelligence/analysis controls distinguish absent, invalid and configured-but-untested providers; processing permission resets when reopened.
+
+### Fixed
+
+- Fast failed analysis misreported as an inconclusive timing race.
+- Final source errors overwriting interruption/abort status or skipping the final lifecycle checkpoint.
+- IDE attachments and pinned-checkout availability preventing portable matching source evidence.
 
 ### Verification
 
-- Claim checkpoint only; no new software pass or live inference claimed.
+- Nine new reporting regressions failed against the original implementation before fixes; original failure log retained.
+- 24 native-protocol/process tests passed using controlled responses; no actual inference.
+- Expanded native Development browser journey passed, including real server reconfiguration and permission-reset checks.
+- Integrated native acceptance pending at this implementation checkpoint.
+- Final focused set passed 311 checks with one existing warning. Native Development journey passed 30 checks; three missing-key actual-provider preflights were blocked with zero model calls.
 
 ### Limitations
 
-- Actual model, independent/human and release gates remain open; active hosted settings absent.
+- Actual provider credentials are absent in the cloud and Mac login environments. Secure key request is separate; no actual model result is claimed.
+- Original actual-model, independent professional, human accessibility and release gates remain open.
+- Generic endpoint/model-name restrictions, Hugging Face proxy policy and deferred hosted-compression review remain explicit; no deployment or main merge.
 
 ### Emergence review
 
 **What did this sprint reveal that we had not properly seen before?**
 
 - Discovery: Report outcome, evidence integrity, source identity and environment observations need separate handling.
+- Discovery: IDE conversation attachments were unintentionally part of source identity; real process recovery requires a real process/HTTP test.
 - Risk: A passing controlled contract does not establish paid-provider compatibility or semantic quality.
 - Architecture: Keep provider I/O and evaluation receipts in 8BALL; preserve ENDSTATE and all approval boundaries.
 - Roadmap decision: Existing-task repairs only; no acceptance status or required scope promotion.
-Registered discoveries: EM-106, EM-107, EM-108, EM-109, EM-110.
+Registered discoveries: EM-106, EM-107, EM-108, EM-109, EM-110, EM-111.
 
 Roadmap items: `B02-09`, `B02-12`, `B02-15`, `ES03-09`, `DOC-07`.
 

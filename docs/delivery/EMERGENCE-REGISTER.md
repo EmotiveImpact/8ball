@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-30. **110 recorded discoveries.**
+Last review: 2026-10-30. **111 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1936,6 +1936,8 @@ A final source-inspection failure can overwrite interrupted/aborted status or pr
 **Decision history:**
 
 - 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
+- 2026-10-30 · adopted · Codex implementation: Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate.
+- 2026-10-30 · adopted · Codex verification: A cleanup exception can also hide a pending interruption. Retain cleanup_error separately, preserve the original exception and checkpoint; add HTTP 401/402/429 fast-failure regressions.
 
 ### [ ] EM-107: Portable source identity needs retained checkout observations
 
@@ -1953,6 +1955,7 @@ The declared research pins are application inputs, while checkout availability i
 **Decision history:**
 
 - 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
+- 2026-10-30 · adopted · Codex implementation: Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate.
 
 ### [ ] EM-108: Native provider schema support must be explicit
 
@@ -1970,6 +1973,7 @@ Anthropic documents that its compatibility layer ignores response_format; native
 **Decision history:**
 
 - 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
+- 2026-10-30 · adopted · Codex implementation: Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate.
 
 ### [ ] EM-109: Manager recreation is not process restart coverage
 
@@ -1987,6 +1991,8 @@ The existing lifecycle integration replaces the process with an in-process serve
 **Decision history:**
 
 - 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
+- 2026-10-30 · adopted · Codex implementation: Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate.
+- 2026-10-30 · adopted · Codex verification: Real process/HTTP test passed. One overlapping focused/browser run hit the occupied-port guard; retain that failure and serialize subsequent checks, without stopping unrelated services.
 
 ### [ ] EM-110: Invalid provider settings need a distinct operator state
 
@@ -2004,3 +2010,21 @@ The existing Intelligence card presents invalid configuration as not configured 
 **Decision history:**
 
 - 2026-10-30 · adopted · Codex under owner get-it-done instruction: existing_task: bounded repair within existing task scope; validation pending.
+- 2026-10-30 · adopted · Codex implementation: Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate.
+
+### [ ] EM-111: IDE attachments are not portable application source
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Source-manifest inspection during the evaluation-reliability sprint.
+
+Cloudroom places conversation attachments inside .cloudroom in the checkout. The old all-file source scan included this machine-specific material, so identical Git source could differ even with identical research checkout state.
+
+**Product implication:** Exclude the IDE metadata directory from application identity while continuing to bind uncommitted application bytes and research metadata. Never hash a chat attachment as if it were a runtime dependency.
+
+**Roadmap links:** `B02-12` (blocked), `DOC-07` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `scripts/acceptance.py`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-30-evaluation-reliability.md`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex implementation: existing_task: exclude .cloudroom alongside existing virtualenv/generated-output exclusions; test that application files and research metadata remain fingerprinted.

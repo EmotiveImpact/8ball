@@ -15,24 +15,39 @@
         "ES03-09",
         "DOC-07"
       ],
-      "summary": "Bounded follow-up to the merged development review; implementation and verification pending at the claim checkpoint.",
-      "added": [],
-      "changed": [
-        "Recorded bounded task ownership, current security-fix base and all review discoveries before implementation."
+      "summary": "Preserve failed/interrupted evaluation outcomes and source provenance, add real process-restart coverage and explicitly selected native Anthropic structured output, and distinguish invalid provider configuration.",
+      "added": [
+        "Opt-in native Anthropic Messages protocol with original local schema/source/compiler validation and exact bounded response retention.",
+        "Real owned-process/HTTP/SQLite restart regression; protocol and source-portability regressions."
       ],
-      "fixed": [],
+      "changed": [
+        "Version-2 research-bearing manifests retain full checkout fingerprints and separately identify application bytes plus declared pins. Legacy receipts remain exact-only.",
+        "Native Intelligence/analysis controls distinguish absent, invalid and configured-but-untested providers; processing permission resets when reopened."
+      ],
+      "fixed": [
+        "Fast failed analysis misreported as an inconclusive timing race.",
+        "Final source errors overwriting interruption/abort status or skipping the final lifecycle checkpoint.",
+        "IDE attachments and pinned-checkout availability preventing portable matching source evidence."
+      ],
       "verification": [
-        "Claim checkpoint only; no new software pass or live inference claimed."
+        "Nine new reporting regressions failed against the original implementation before fixes; original failure log retained.",
+        "24 native-protocol/process tests passed using controlled responses; no actual inference.",
+        "Expanded native Development browser journey passed, including real server reconfiguration and permission-reset checks.",
+        "Integrated native acceptance pending at this implementation checkpoint.",
+        "Final focused set passed 311 checks with one existing warning. Native Development journey passed 30 checks; three missing-key actual-provider preflights were blocked with zero model calls."
       ],
       "limitations": [
-        "Actual model, independent/human and release gates remain open; active hosted settings absent."
+        "Actual provider credentials are absent in the cloud and Mac login environments. Secure key request is separate; no actual model result is claimed.",
+        "Original actual-model, independent professional, human accessibility and release gates remain open.",
+        "Generic endpoint/model-name restrictions, Hugging Face proxy policy and deferred hosted-compression review remain explicit; no deployment or main merge."
       ],
       "evidence_paths": [
         "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
       ],
       "emergence_review": {
         "discoveries": [
-          "Report outcome, evidence integrity, source identity and environment observations need separate handling."
+          "Report outcome, evidence integrity, source identity and environment observations need separate handling.",
+          "IDE conversation attachments were unintentionally part of source identity; real process recovery requires a real process/HTTP test."
         ],
         "risks": [
           "A passing controlled contract does not establish paid-provider compatibility or semantic quality."
@@ -46,7 +61,8 @@
           "EM-107",
           "EM-108",
           "EM-109",
-          "EM-110"
+          "EM-110",
+          "EM-111"
         ]
       }
     },

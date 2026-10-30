@@ -41,7 +41,7 @@ BROWSER_SUITES=[
  ('accessibility','tests/browser_accessibility.py','accessibility-browser-report.json'),
  ('courses','tests/browser_courses.py','browser-courses-report.json'),
 ]
-EXCLUDE={'.git','.venv','__pycache__','.pytest_cache','artifacts','node_modules','build','dist','test-results'}
+EXCLUDE={'.git','.venv','.cloudroom','__pycache__','.pytest_cache','artifacts','node_modules','build','dist','test-results'}
 EXTERNAL_RESEARCH=Path('research/external')
 
 
@@ -94,8 +94,42 @@ def source_manifest(root:Path=ROOT):
     # Preserve the original manifest shape/hash for source without research pins.
     payload={'files':files,'research_gitlinks':links} if links else files
     result={'sha256':digest(json.dumps(payload,sort_keys=True,separators=(',',':')).encode()),'files':files}
-    if links:result['research_gitlinks']=links
+    if links:
+        result['research_gitlinks']=links
+        result['manifest_version']=2
+        result['application_sha256']=application_digest(files,links)
     return result
+
+
+def application_digest(files,links):
+    """Application bytes and declared research pins, not checkout availability."""
+    payload={'files':files,'research_pins':{name:link['index_commit'] for name,link in links.items()}}
+    return digest(json.dumps(payload,sort_keys=True,separators=(',',':')).encode())
+
+
+def matching_source(recorded,current):
+    """Allow only v2 pinned-checkout availability differences across machines.
+
+    Full fingerprints/checkout observations are retained. Legacy receipts still
+    require exact equality. Within a run, callers continue to compare the entire
+    manifest so even a checkout availability change invalidates stability.
+    """
+    if recorded==current:return True
+    try:
+        for manifest in (recorded,current):
+            if not isinstance(manifest,dict):return False
+            if manifest['manifest_version']!=2:return False
+            links=manifest['research_gitlinks']
+            if not isinstance(links,dict) or not isinstance(manifest['files'],dict):return False
+            if any(not isinstance(link,dict) for link in links.values()):return False
+            if not links or any(link['checkout_commit'] not in (None,link['index_commit'])
+                                for link in links.values()):return False
+            payload={'files':manifest['files'],'research_gitlinks':links}
+            if manifest['sha256']!=digest(json.dumps(payload,sort_keys=True,separators=(',',':')).encode()):return False
+            if manifest['application_sha256']!=application_digest(manifest['files'],links):return False
+        return (recorded['files']==current['files']
+                and recorded['application_sha256']==current['application_sha256'])
+    except (KeyError,TypeError,ValueError):return False
 
 
 def selected_environment(mode):
@@ -104,7 +138,7 @@ def selected_environment(mode):
     # or an operator's own database. Tests create fictional disposable stores.
     for key in ('HF_TOKEN','HUGGINGFACE_API_TOKEN','TYPESAFE_API_KEY','OPENAI_API_KEY',
                 'EIGHTBALL_API_KEY','EIGHTBALL_API_BASE_URL','EIGHTBALL_API_MODEL',
-                'EIGHTBALL_API_PROVIDER','EIGHTBALL_API_ROUTING_PROVIDER',
+                'EIGHTBALL_API_PROVIDER','EIGHTBALL_API_ROUTING_PROVIDER','EIGHTBALL_API_PROTOCOL',
                 'EIGHTBALL_DB','EIGHTBALL_TOKEN','EIGHTBALL_ARTIFACTS','EIGHTBALL_BROWSER_BRIDGE'):
         env.pop(key,None)
     if mode=='bridge':env['EIGHTBALL_BROWSER_BRIDGE']='1'
@@ -219,7 +253,7 @@ def inspect(report:dict,root:Path=ROOT,artifact_root:Path|None=None):
     if report.get('schema_version')!=1 or report.get('complete') is not True:
         return invalid('Verification was not completed')
     current=source_manifest(root)
-    if current!=report.get('source') or report.get('source_unchanged_during_run') is not True:
+    if not matching_source(report.get('source'),current) or report.get('source_unchanged_during_run') is not True:
         return invalid('Source changed or its manifest does not match')
     mode=report.get('mode');checks=report.get('checks',[])
     required={'unit','compile','delivery','changelog','emergence','javascript','structural-fixtures','endstate-package','schemas'}
@@ -251,7 +285,9 @@ def inspect(report:dict,root:Path=ROOT,artifact_root:Path|None=None):
         if junit_counts(artifact_root/'junit.xml')!=next(c for c in checks if c['name']=='unit').get('counts'):
             return invalid('Code-test count disagrees with JUnit evidence')
     except (OSError,ValueError,KeyError,StopIteration,ET.ParseError):return invalid('Verification evidence could not be validated')
-    return {'valid':True,'reason':'Source and local evidence bytes match; this is not a signed attestation',
+    return {'valid':True,'reason':'Application source, declared pins and local evidence match; this is not a signed attestation',
+            'checkout_observations_match':current==report['source'],
+            'recorded_source_sha256':report['source']['sha256'],'current_source_sha256':current['sha256'],
             'run_status':expected,'native_browser_verified':native,'model_quality_approved':False,'released':False}
 
 

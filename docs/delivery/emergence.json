@@ -3814,6 +3814,18 @@
           "decision": "adopted",
           "by": "Codex under owner get-it-done instruction",
           "reason": "existing_task: bounded repair within existing task scope; validation pending."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex implementation",
+          "reason": "Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex verification",
+          "reason": "A cleanup exception can also hide a pending interruption. Retain cleanup_error separately, preserve the original exception and checkpoint; add HTTP 401/402/429 fast-failure regressions."
         }
       ]
     },
@@ -3840,6 +3852,12 @@
           "decision": "adopted",
           "by": "Codex under owner get-it-done instruction",
           "reason": "existing_task: bounded repair within existing task scope; validation pending."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex implementation",
+          "reason": "Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate."
         }
       ]
     },
@@ -3866,6 +3884,12 @@
           "decision": "adopted",
           "by": "Codex under owner get-it-done instruction",
           "reason": "existing_task: bounded repair within existing task scope; validation pending."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex implementation",
+          "reason": "Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate."
         }
       ]
     },
@@ -3892,6 +3916,18 @@
           "decision": "adopted",
           "by": "Codex under owner get-it-done instruction",
           "reason": "existing_task: bounded repair within existing task scope; validation pending."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex implementation",
+          "reason": "Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex verification",
+          "reason": "Real process/HTTP test passed. One overlapping focused/browser run hit the occupied-port guard; retain that failure and serialize subsequent checks, without stopping unrelated services."
         }
       ]
     },
@@ -3917,6 +3953,40 @@
           "decision": "adopted",
           "by": "Codex under owner get-it-done instruction",
           "reason": "existing_task: bounded repair within existing task scope; validation pending."
+        },
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex implementation",
+          "reason": "Existing-task implementation and focused controlled/native checks recorded in the sprint session. Original observation is retained. Integrated acceptance and actual-provider evidence remain separate."
+        }
+      ]
+    },
+    {
+      "id": "EM-111",
+      "title": "IDE attachments are not portable application source",
+      "origin": "Source-manifest inspection during the evaluation-reliability sprint",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "Cloudroom places conversation attachments inside .cloudroom in the checkout. The old all-file source scan included this machine-specific material, so identical Git source could differ even with identical research checkout state.",
+      "product_implication": "Exclude the IDE metadata directory from application identity while continuing to bind uncommitted application bytes and research metadata. Never hash a chat attachment as if it were a runtime dependency.",
+      "task_ids": [
+        "B02-12",
+        "DOC-07"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "scripts/acceptance.py",
+        "tests/test_acceptance_runner.py",
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex implementation",
+          "reason": "existing_task: exclude .cloudroom alongside existing virtualenv/generated-output exclusions; test that application files and research metadata remain fingerprinted."
         }
       ]
     }

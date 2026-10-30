@@ -24,7 +24,7 @@
       "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
       "status_as_of": "2026-10-30",
       "merged": false,
-      "verification": "Claimed; verification pending. No current test totals claimed.",
+      "verification": "311 focused checks passed; native Development journey passed 30 checks; integrated native acceptance pending. Actual-model preflights blocked by missing secure runtime key with zero calls.",
       "evidence": "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
     },
     "verified_sprint_history": [
@@ -368,6 +368,11 @@
       "path": "docs/evidence/security-fixes-2026-10-30.json",
       "result": "1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.",
       "code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983"
+    },
+    "EV-EVAL-RELIABILITY": {
+      "kind": "software_validation",
+      "path": "docs/delivery/sessions/2026-10-30-evaluation-reliability.md",
+      "result": "Bounded reporting/provenance/protocol repairs: 311 focused checks and 30 native Development checks passed; cumulative native evidence pending. No actual inference or independent/human acceptance."
     }
   },
   "milestones": [
@@ -824,7 +829,8 @@
         "EV-EVALUATION-READINESS",
         "EV-REVIEW-EVIDENCE-20261018",
         "EV-ANTHROPIC-SETUP",
-        "EV-OCT25-INTEGRATION"
+        "EV-OCT25-INTEGRATION",
+        "EV-EVAL-RELIABILITY"
       ],
       "blockers": [
         "Owner selected Anthropic, with prepared claude-sonnet-4-6 compatibility settings; account availability/pricing, active credentials/destination and real inference remain unverified. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, supply key securely and Save/Publish. Fictional fixtures up to US$5 remain authorised.",
@@ -942,7 +948,8 @@
         "EV-COMPATIBLE-CODE",
         "EV-EVALUATION-READINESS",
         "EV-REVIEW-EVIDENCE-20261018",
-        "EV-OCT25-INTEGRATION"
+        "EV-OCT25-INTEGRATION",
+        "EV-EVAL-RELIABILITY"
       ],
       "blockers": [
         "Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey."
@@ -1059,7 +1066,8 @@
         "EV-EVALUATION-READINESS",
         "EV-ANTHROPIC-SETUP",
         "EV-OCT25-INTEGRATION",
-        "EV-SECURITY-FIXES"
+        "EV-SECURITY-FIXES",
+        "EV-EVAL-RELIABILITY"
       ],
       "blockers": [
         "Lifecycle behaviour with the selected real inference provider remains unverified."
@@ -2277,7 +2285,8 @@
       ],
       "acceptance": "All28 inspected repository pins are populated as source-only research checkouts with original licences, exact manifest identities, explicit model/LFS/nested exceptions and reproducible Git-only verification. No runtime adoption or upstream execution.",
       "evidence": [
-        "EV-RESEARCH-COPY"
+        "EV-RESEARCH-COPY",
+        "EV-EVAL-RELIABILITY"
       ],
       "blockers": [],
       "next_action": "Complete the bounded evaluation-reliability/protocol repair and native acceptance; actual provider and independent/human evidence remain separate. See docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
@@ -2306,7 +2315,8 @@
       "acceptance": "Controlled HTTP and native UI checks verify explicit server-owned endpoint/model/provider, permission, pinned routing, bounded strict responses/failure evidence, secrets protection, stage/cancellation/stale/restart guards and unchanged frozen-fixture harness. This transport scope does not claim actual inference or semantic/human acceptance.",
       "evidence": [
         "EV-COMPATIBLE-CODE",
-        "EV-EVALUATION-READINESS"
+        "EV-EVALUATION-READINESS",
+        "EV-EVAL-RELIABILITY"
       ],
       "blockers": [],
       "next_action": "Complete the bounded evaluation-reliability/protocol repair and native acceptance; actual provider and independent/human evidence remain separate. See docs/delivery/sessions/2026-10-30-evaluation-reliability.md"

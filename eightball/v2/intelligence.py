@@ -420,7 +420,7 @@ def provider_status():
         {'id':'huggingface','name':'Hugging Face','kind':'hosted_generation',**configuration_status(),
          'note':'Optional hosted analysis. Requires a server token, explicit model/provider and permission for each request. No model is downloaded; configured does not mean live-tested.'},
         {'id':'openai_compatible','name':'Hosted API / Qwen','kind':'hosted_generation',**compatible_status(),
-         'note':'Optional OpenAI-compatible endpoint. Configure the API URL, exact model, provider and private key on the server. Explicit processing permission is required; configured does not mean live-tested.'},
+         'note':'Optional hosted endpoint with explicitly selected OpenAI-compatible or native Anthropic Messages protocol. Configure the URL, exact model, provider and private key on the server. Processing permission is required; configured does not mean live-tested.'},
         {'id':'gliclass','name':'GLiClass Edge','kind':'local_classification','configured':None,'note':'Experimental only. Initial 30-case configuration: 20% raw top-one accuracy and 100% abstention; not production-approved. Cached weights required.'},
         {'id':'jev','name':'Jev / TypeSafe','kind':'external_judgement','configured':bool(os.getenv('TYPESAFE_API_KEY')),
          'note':'Explicit permission required to transmit selected evidence. No automatic sends.'}]}

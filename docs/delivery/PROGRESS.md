@@ -105,7 +105,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Branch/base: `room/review-last-commit-1038291-frrj` / `825ad6668c2c7d128da367476fe16cb8d214b837`.
   - Dependencies: `DOC-06`.
   - Existing code: `.gitmodules`, `research/README.md`, `research/inventory.json`, `research/sources.py`, `research/AGENTS.md`.
-  - Evidence: `EV-RESEARCH-COPY` (registry below).
+  - Evidence: `EV-RESEARCH-COPY`, `EV-EVAL-RELIABILITY` (registry below).
 
 
 ## 8BALL 0.1: Local outcome-planning foundation
@@ -197,7 +197,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Next: Complete the bounded evaluation-reliability/protocol repair and native acceptance; actual provider and independent/human evidence remain separate. See docs/delivery/sessions/2026-10-30-evaluation-reliability.md
   - Branch/base: `room/review-last-commit-1038291-frrj` / `825ad6668c2c7d128da367476fe16cb8d214b837`.
   - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`, `eightball/v2/compatible.py`, `evals/live_compatible.py`, `evals/live_huggingface.py`, `tests/test_hosted_eval_retention.py`, `docs/v2/ANTHROPIC-SETUP.md`.
-  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION` (registry below).
+  - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION`, `EV-EVAL-RELIABILITY` (registry below).
   - Blocker: Owner selected Anthropic, with prepared claude-sonnet-4-6 compatibility settings; account availability/pricing, active credentials/destination and real inference remain unverified. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, supply key securely and Save/Publish. Fictional fixtures up to US$5 remain authorised. Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate.
 
 - [ ] **B02-10 Robust source extraction, deadlines and entity reconciliation**
@@ -225,7 +225,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Branch/base: `room/review-last-commit-1038291-frrj` / `825ad6668c2c7d128da367476fe16cb8d214b837`.
   - Dependencies: `B02-09`, `B02-10`, `B02-11`.
   - Existing code: `tests/browser_v2.py`, `evals/full_journey.py`, `scripts/acceptance.py`, `.github/workflows/provider-journey.yml`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`.
-  - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-OCT25-INTEGRATION` (registry below).
+  - Evidence: `EV-QWEN`, `EV-UI`, `EV-STAGED-MODEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-OCT25-INTEGRATION`, `EV-EVAL-RELIABILITY` (registry below).
   - Blocker: Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey.
 
 - [x] **B02-13 Guided nested graph authoring instead of JSON-only advanced editing**
@@ -252,7 +252,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Branch/base: `room/review-last-commit-1038291-frrj` / `825ad6668c2c7d128da367476fe16cb8d214b837`.
   - Dependencies: `ES03-04`.
   - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`, `eightball/v2/compatible.py`, `tests/test_compatible_integration.py`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`, `eightball/providers.py`, `eightball/v2/intelligence.py`, `evals/live_generation.py`, `tests/test_security_regressions.py`.
-  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION`, `EV-SECURITY-FIXES` (registry below).
+  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION`, `EV-SECURITY-FIXES`, `EV-EVAL-RELIABILITY` (registry below).
   - Blocker: Lifecycle behaviour with the selected real inference provider remains unverified.
 
 - [ ] **B02-16 Complete accessibility and supported-environment validation**
@@ -585,7 +585,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Branch/base: `room/review-last-commit-1038291-frrj` / `825ad6668c2c7d128da367476fe16cb8d214b837`.
   - Dependencies: `ES03-06`.
   - Existing code: `eightball/v2/compatible.py`, `tests/test_compatible_provider.py`, `tests/test_compatible_integration.py`, `tests/test_compatible_cli.py`, `evals/live_compatible.py`, `docs/v2/QWEN-SETUP.md`.
-  - Evidence: `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS` (registry below).
+  - Evidence: `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-EVAL-RELIABILITY` (registry below).
 
 
 ## ENDSTATE 0.4: Domain packs and integration interfaces
@@ -942,3 +942,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Repository evidence: [docs/evidence/security-fixes-2026-10-30.json](../../docs/evidence/security-fixes-2026-10-30.json).
 - Result/scope: 1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.
 - Code revision: `bb881f278eb24b97732382a83a6084a22d7e1983`.
+
+### EV-EVAL-RELIABILITY
+
+- Kind: `software_validation`.
+- Repository evidence: [docs/delivery/sessions/2026-10-30-evaluation-reliability.md](../../docs/delivery/sessions/2026-10-30-evaluation-reliability.md).
+- Result/scope: Bounded reporting/provenance/protocol repairs: 311 focused checks and 30 native Development checks passed; cumulative native evidence pending. No actual inference or independent/human acceptance.

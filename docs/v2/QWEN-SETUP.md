@@ -1,3 +1,22 @@
+# Protocol and supported configuration boundary, 30 October 2026
+
+Existing endpoint configurations retain the OpenAI-compatible protocol unless
+`EIGHTBALL_API_PROTOCOL` is explicitly set. For direct Anthropic native structured
+output, use the exact fields in [ANTHROPIC-SETUP.md](ANTHROPIC-SETUP.md); never
+silently route a Qwen/OpenRouter configuration to another provider.
+
+The generic transport deliberately accepts a bounded subset of model IDs and
+public-style HTTPS endpoints. Arbitrary `:`/`@` model suffixes, hostname labels
+such as `private`, and URL query parameters (including Azure `api-version`) remain
+unsupported; the sole suffix exception is the explicitly pinned OpenRouter
+`:free` catalogue entry. This patch documents those limits rather than relaxing
+endpoint/routing checks. Deployment egress and credential-host policy still own
+DNS trust. Hosted API/native Messages inherit managed proxy and CA settings;
+Hugging Face retains its separate transport policy. No deployment-policy change
+or broad hosted-compression fix is claimed.
+
+---
+
 For the owner-selected Anthropic test connection, use [Anthropic setup](ANTHROPIC-SETUP.md). The Qwen guide below remains available for a later explicitly chosen Qwen service.
 
 # Connect a hosted Qwen model: beginner setup

@@ -34,6 +34,7 @@ def test_manifest_excludes_secrets_and_generated_output(tmp_path):
     write(tmp_path/'.env.example','DOCUMENTATION=only');write(tmp_path/'artifacts/run/report.json','{}')
     write(tmp_path/'build/file','generated');write(tmp_path/'thing.egg-info/a','generated')
     write(tmp_path/'__pycache__/a.pyc','generated');write(tmp_path/'client.sqlite3','private')
+    write(tmp_path/'.cloudroom/attachments/history.md','machine-specific IDE data')
     assert set(a.source_manifest(tmp_path)['files'])=={'code.py','.env.example'}
 
 
@@ -87,21 +88,33 @@ def test_manifest_binds_research_gitlink_pin_and_checkout_head(tmp_path):
     first=git(vendor,'rev-parse','HEAD')
     git(root,'update-index','--add','--cacheinfo',f'160000,{first},research/external/vendor')
     before=a.source_manifest(root)
+    assert before['manifest_version']==2
     assert before['research_gitlinks']=={'research/external/vendor':{'index_commit':first,'checkout_commit':first}}
     write(vendor/'upstream.py','second\n');git(vendor,'add','upstream.py')
     git(vendor,'-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','-qm','second')
     second=git(vendor,'rev-parse','HEAD')
     drifted=a.source_manifest(root)
     assert drifted['sha256']!=before['sha256']
+    assert drifted['application_sha256']==before['application_sha256']
+    assert not a.matching_source(before,drifted)
     assert drifted['research_gitlinks']['research/external/vendor']=={'index_commit':first,'checkout_commit':second}
     git(root,'update-index','--cacheinfo',f'160000,{second},research/external/vendor')
-    assert a.source_manifest(root)['sha256']!=drifted['sha256']
+    pinned=a.source_manifest(root)
+    assert pinned['sha256']!=drifted['sha256']
+    assert pinned['application_sha256']!=before['application_sha256']
     # Uninitialized checkouts still retain their declared pin without looking up
     # the containing application's HEAD as if it were the vendor's HEAD.
     import shutil
     shutil.rmtree(vendor/'.git')
     uninitialized=a.source_manifest(root)
     assert uninitialized['research_gitlinks']['research/external/vendor']=={'index_commit':second,'checkout_commit':None}
+    assert uninitialized['sha256']!=pinned['sha256']
+    assert uninitialized['application_sha256']==pinned['application_sha256']
+    assert a.matching_source(pinned,uninitialized) and a.matching_source(uninitialized,pinned)
+    corrupted=deepcopy(uninitialized);corrupted['application_sha256']='forged'
+    assert not a.matching_source(pinned,corrupted)
+    legacy=deepcopy(pinned);legacy.pop('manifest_version');legacy.pop('application_sha256')
+    assert a.matching_source(legacy,legacy) and not a.matching_source(legacy,uninitialized)
 
 
 @pytest.mark.parametrize('explicit_root',[False,True])
@@ -129,7 +142,7 @@ def test_outputs_cannot_pollute_source(tmp_path):
 def test_standard_verification_removes_credentials_and_case_path(monkeypatch,mode):
     private=('HF_TOKEN','TYPESAFE_API_KEY','OPENAI_API_KEY','EIGHTBALL_DB','EIGHTBALL_TOKEN',
              'EIGHTBALL_API_KEY','EIGHTBALL_API_BASE_URL','EIGHTBALL_API_MODEL',
-             'EIGHTBALL_API_PROVIDER','EIGHTBALL_API_ROUTING_PROVIDER')
+             'EIGHTBALL_API_PROVIDER','EIGHTBALL_API_ROUTING_PROVIDER','EIGHTBALL_API_PROTOCOL')
     for k in private:
         monkeypatch.setenv(k,'not-a-real-secret')
     monkeypatch.setenv('EIGHTBALL_BROWSER_BRIDGE','1')
@@ -275,3 +288,21 @@ def test_journey_report_preserves_actual_queue_rejection_after_disposable_databa
     failure=retained['provider_proposals'][0]
     assert failure['status']=='failed' and failure['model']=='controlled-model' and failure['latency_ms']>=0
     assert failure['raw_output']['prompt_version']==PROMPT_VERSION and failure['raw_output']['extraction']==raw
+
+
+def test_inspection_allows_only_v2_pinned_checkout_availability_and_reports_difference(tmp_path,monkeypatch):
+    from test_provider_lifecycle import portable_source
+    root, artifacts, report = fixture_report(tmp_path)
+    report['source'] = portable_source('b'*40)
+    before = deepcopy(report)
+    monkeypatch.setattr(a,'source_manifest',lambda root:portable_source(None))
+    inspected = a.inspect(report,root,artifacts)
+    assert inspected['valid'] and not inspected['checkout_observations_match']
+    assert inspected['recorded_source_sha256'] != inspected['current_source_sha256']
+    assert report == before
+    monkeypatch.setattr(a,'source_manifest',lambda root:portable_source('c'*40))
+    assert not a.inspect(report,root,artifacts)['valid']
+    legacy = deepcopy(report['source']);legacy.pop('manifest_version');legacy.pop('application_sha256')
+    report['source'] = legacy
+    monkeypatch.setattr(a,'source_manifest',lambda root:portable_source(None))
+    assert not a.inspect(report,root,artifacts)['valid']
