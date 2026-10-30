@@ -8,10 +8,10 @@ Last status review: 2026-10-30.
 
 ## Checkpoint and release boundary
 
-- Active integration branch: `main`; PR #2.
-- Inspected application baseline: `6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f`.
+- Active integration branch: `room/check-repo-with-three-sub-agents-pj2t`; PR #8.
+- Inspected application baseline: `bb881f278eb24b97732382a83a6084a22d7e1983`.
 - This is a dated snapshot. Refresh the branch, PR and CI at the start of every session.
-- At inspection: draft PR = `false`; merged = `true`; production deployed = `false`.
+- At inspection: draft PR = `true`; merged = `false`; production deployed = `false`.
 - Standalone ENDSTATE package released = `false`.
 
 ## Checkbox meaning
@@ -126,10 +126,11 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-V01`, `EV-SECURITY-FIXES` (registry below).
 
 - [x] **B01-03 Reproducible alpha acceptance evidence**
-  - Status: `verified`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `verified`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Original 86 backend and 27 native browser results are recorded with exact code scope.
   - Next: Merge/release only through a separate explicit decision.
-  - Evidence: `EV-V01` (registry below).
+  - Branch/base: `room/check-repo-with-three-sub-agents-pj2t` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
+  - Evidence: `EV-V01`, `EV-SECURITY-FIXES` (registry below).
 
 
 ## 8BALL 0.2: Reviewed situation intelligence
@@ -452,13 +453,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-KERNEL` (registry below).
 
 - [x] **ES01-05 Reusable core acceptance**
-  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-26.
+  - Status: `verified`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Current 8BALL suites and cross-domain fixtures pass on the proposed shared package; version compatibility is explicit.
   - Next: Internal reusable-core compatibility scope verified. Maintain regression coverage; public SDK/commercial release and other platforms remain separate.
-  - Branch/base: `feat/situation-intelligence-v2` / `14c57907d26ea914e372e544bba4b0bd3988f5dc`.
+  - Branch/base: `room/check-repo-with-three-sub-agents-pj2t` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
   - Dependencies: `ES01-02`, `ES01-03`, `ES01-04`.
   - Existing code: `endstate/api.py`, `docs/endstate/CONTRACTS.md`, `tests/test_endstate_kernel.py`, `endstate/results.py`, `pyproject.toml`, `scripts/build_endstate.py`, `scripts/export_endstate_schemas.py`, `tests/test_endstate_results.py`.
-  - Evidence: `EV-KERNEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT` (registry below).
+  - Evidence: `EV-KERNEL`, `EV-INTEGRATION-LOCAL`, `EV-INTEGRATION-BLOCKED`, `EV-NATIVE-CLOSEOUT`, `EV-SECURITY-FIXES` (registry below).
 
 
 ## ENDSTATE 0.2: Event-driven replanning
@@ -939,4 +940,5 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `controlled_security_regression_and_native_receipt`.
 - Repository evidence: [docs/evidence/security-fixes-2026-10-30.json](../../docs/evidence/security-fixes-2026-10-30.json).
-- Result/scope: Independent patch review passed. First native run: 1324 source tests / 391 browser checks passed; packaging failed (missing pip). Installed retry timed out at 120s; fresh native run pending after environment/runner corrections.
+- Result/scope: 1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.
+- Code revision: `bb881f278eb24b97732382a83a6084a22d7e1983`.

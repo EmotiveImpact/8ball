@@ -7,7 +7,7 @@
       "date": "2026-10-30",
       "version": "0.2.0-alpha.8",
       "title": "Static-path, provider-response and legacy-lineage safeguards",
-      "delivery": "local_unreleased",
+      "delivery": "pushed_unreleased",
       "task_ids": [
         "B01-02",
         "B02-15",
@@ -29,8 +29,11 @@
         "An installed-package test watchdog shorter than the complete suite runtime on the cloud ARM environment."
       ],
       "verification": [
-        "250 focused tests passed. First native run: 1324 source tests and all 391 browser checks passed; packaging failed because pip was absent. After pip installation, the unchanged installed-suite watchdog timed out at 120 seconds; retained as failed evidence.",
-        "The package regression deadline is now 240 seconds inside the existing 300-second acceptance step. A fresh complete native run is pending."
+        "1324 source tests and 1324 installed-ENDSTATE regressions passed, with no failures/errors/skips.",
+        "391 checks passed across all eleven native browser suites; all 21 integrated acceptance steps passed.",
+        "Native source/artifact inspection valid/passed at bb881f278eb24b97732382a83a6084a22d7e1983 before final receipt-only edits.",
+        "250 focused tests and independent bypass/regression review passed; original triggers no longer reproduce and legitimate controls remain.",
+        "Both checkpoint CI workflows passed. Earlier missing-pip and 120-second installed-watchdog failures are preserved in the receipt; PR8 records final-head CI."
       ],
       "limitations": [
         "Application path mitigation preserves current dependencies; the pinned Starlette version remains upstream-affected.",

@@ -6,14 +6,14 @@
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
   "repository": {
     "full_name": "EmotiveImpact/8ball",
-    "development_branch": "main",
-    "pull_request": 2,
-    "inspected_code_commit": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
-    "inspected_code_tree": "16f9791603f6663ebaacfaca53152cb3bef09c87",
-    "main_at_inspection": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
-    "status_as_of": "2026-10-15",
-    "pr_draft": false,
-    "merged": true,
+    "development_branch": "room/check-repo-with-three-sub-agents-pj2t",
+    "pull_request": 8,
+    "inspected_code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
+    "inspected_code_tree": "ff87fcc6740cf020e5aa7a73648578206cdb3be2",
+    "main_at_inspection": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+    "status_as_of": "2026-10-30",
+    "pr_draft": true,
+    "merged": false,
     "production_deployed": false,
     "standalone_endstate_package_released": false,
     "refresh_required_each_session": true,
@@ -33,9 +33,11 @@
       ],
       "objective": "Fix the three validated local-workspace security findings without changing dependencies, provider permissions or original acceptance gates.",
       "merged": false,
-      "verification": "Independent patch review passed. First native run: 1324 source tests / 391 browser checks passed; packaging failed (missing pip). Installed retry timed out at 120s; fresh native run pending after environment/runner corrections.",
-      "remote_ci": "No PR or current CI result yet.",
-      "evidence": "docs/evidence/security-fixes-2026-10-30.json"
+      "verification": "1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.",
+      "remote_ci": "Both checkpoint PR8 workflows passed (41033947448, 41033947388). Final receipt-head CI is authoritative in PR8.",
+      "evidence": "docs/evidence/security-fixes-2026-10-30.json",
+      "tested_code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
+      "tested_code_tree": "ff87fcc6740cf020e5aa7a73648578206cdb3be2"
     },
     "verified_sprint_history": [
       {
@@ -100,7 +102,19 @@
       "tested_commit": "a9254e6087ef606d581d626bfcda9d7e555c857e",
       "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
       "pull_request": 4
-    }
+    },
+    "inspection_history": [
+      {
+        "development_branch": "main",
+        "pull_request": 2,
+        "inspected_code_commit": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
+        "inspected_code_tree": "16f9791603f6663ebaacfaca53152cb3bef09c87",
+        "main_at_inspection": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
+        "status_as_of": "2026-10-15",
+        "pr_draft": false,
+        "merged": true
+      }
+    ]
   },
   "evidence": {
     "EV-APP": {
@@ -364,7 +378,8 @@
     "EV-SECURITY-FIXES": {
       "kind": "controlled_security_regression_and_native_receipt",
       "path": "docs/evidence/security-fixes-2026-10-30.json",
-      "result": "Independent patch review passed. First native run: 1324 source tests / 391 browser checks passed; packaging failed (missing pip). Installed retry timed out at 120s; fresh native run pending after environment/runner corrections."
+      "result": "1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.",
+      "code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983"
     }
   },
   "milestones": [
@@ -584,15 +599,16 @@
       "title": "Reproducible alpha acceptance evidence",
       "status": "verified",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "Codex",
+      "working_branch": "room/check-repo-with-three-sub-agents-pj2t",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "updated_on": "2026-10-30",
       "code_paths": [],
       "depends_on": [],
       "acceptance": "Original 86 backend and 27 native browser results are recorded with exact code scope.",
       "evidence": [
-        "EV-V01"
+        "EV-V01",
+        "EV-SECURITY-FIXES"
       ],
       "blockers": [],
       "next_action": "Merge/release only through a separate explicit decision."
@@ -1504,10 +1520,10 @@
       "title": "Reusable core acceptance",
       "status": "verified",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
-      "updated_on": "2026-09-26",
+      "owner": "Codex",
+      "working_branch": "room/check-repo-with-three-sub-agents-pj2t",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "endstate/api.py",
         "docs/endstate/CONTRACTS.md",
@@ -1528,7 +1544,8 @@
         "EV-KERNEL",
         "EV-INTEGRATION-LOCAL",
         "EV-INTEGRATION-BLOCKED",
-        "EV-NATIVE-CLOSEOUT"
+        "EV-NATIVE-CLOSEOUT",
+        "EV-SECURITY-FIXES"
       ],
       "blockers": [],
       "next_action": "Internal reusable-core compatibility scope verified. Maintain regression coverage; public SDK/commercial release and other platforms remain separate."

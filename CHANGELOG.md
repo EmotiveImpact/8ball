@@ -6,7 +6,7 @@ This is product history, not the case decision trail. A build entry is not evide
 
 ## 0.2.0-alpha.8 · Static-path, provider-response and legacy-lineage safeguards
 
-2026-10-30 · `local_unreleased`
+2026-10-30 · `pushed_unreleased`
 
 Reject unsafe Windows static URLs before filesystem resolution, bound provider response accumulation and import the exact verified legacy snapshot.
 
@@ -27,8 +27,11 @@ Reject unsafe Windows static URLs before filesystem resolution, bound provider r
 
 ### Verification
 
-- 250 focused tests passed. First native run: 1324 source tests and all 391 browser checks passed; packaging failed because pip was absent. After pip installation, the unchanged installed-suite watchdog timed out at 120 seconds; retained as failed evidence.
-- The package regression deadline is now 240 seconds inside the existing 300-second acceptance step. A fresh complete native run is pending.
+- 1324 source tests and 1324 installed-ENDSTATE regressions passed, with no failures/errors/skips.
+- 391 checks passed across all eleven native browser suites; all 21 integrated acceptance steps passed.
+- Native source/artifact inspection valid/passed at bb881f278eb24b97732382a83a6084a22d7e1983 before final receipt-only edits.
+- 250 focused tests and independent bypass/regression review passed; original triggers no longer reproduce and legitimate controls remain.
+- Both checkpoint CI workflows passed. Earlier missing-pip and 120-second installed-watchdog failures are preserved in the receipt; PR8 records final-head CI.
 
 ### Limitations
 
