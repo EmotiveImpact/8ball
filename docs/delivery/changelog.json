@@ -39,7 +39,8 @@
         "The first full native run and CI 41077459582 failed 1/1367 installed tests on a new test-only import; both retained and inspected against their exact source. The self-contained fixture passes isolated importlib mode (37 checks), followed by fresh full native acceptance.",
         "Corrected code GitHub CI at receipt preparation: 41078253660 success, 41078253666 success. PR10 records receipt-head CI; no pending result is called passed.",
         "Actual-provider generation/lifecycle/native-journey preflights were blocked by the missing secure runtime key (exit 2 each), with zero model calls.",
-        "Main advanced to bab6fa8bb83d78d324fa0f0935a09d33e2bdcda6 while final receipts were being pushed. The earlier db6c5b6 pass remains exact-source evidence; a new integrated native run is required."
+        "Main advanced to bab6fa8bb83d78d324fa0f0935a09d33e2bdcda6 while final receipts were being pushed. The earlier db6c5b6 pass remains exact-source evidence; a new integrated native run is required.",
+        "The first main-reconciliation attempt failed changelog ordering before cumulative verification. Its owned run was aborted and retained as incomplete, then canonical main entry order and generated Markdown were corrected. No pass is claimed for b2a666e."
       ],
       "limitations": [
         "Actual provider credentials are absent in the cloud and Mac login environments. Secure key request is separate; no actual model result is claimed.",
@@ -72,6 +73,56 @@
           "EM-111",
           "EM-112",
           "EM-113"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-30-nested-course-prerequisites",
+      "date": "2026-10-30",
+      "version": "0.2.0-alpha.8",
+      "title": "Nested prerequisite courses remain readable",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "B03-07",
+        "ES02-06"
+      ],
+      "summary": "Reassess selected nested prerequisite branches without exceeding expression child limits or changing their meaning.",
+      "added": [
+        "Course boundary regressions for 8, 9, 16 and 63 signed prerequisites, exact OR-branch retention, and persisted lifecycle behavior."
+      ],
+      "changed": [
+        "Recorded signed requirements are grouped into bounded AND nodes inside the read-only course calculation."
+      ],
+      "fixed": [
+        "A successfully selected valid nested course could return HTTP 422 on subsequent inspection."
+      ],
+      "verification": [
+        "Original four regression failures and passing 8-child control retained as exact emitted output in the evidence JSON.",
+        "137 focused course/kernel/result checks and 37 native Chosen Course checks passed; these overlap the integrated totals.",
+        "1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites passed; all 21 acceptance steps passed. Exact-source/artifact inspection valid before final receipt edits.",
+        "Tested code 84994b3b4aeca1f925bd63cbe74ceb945e91ad1c; source and artifact inspection valid/passed before final receipt-only edits. PR9 records final-head CI and merge."
+      ],
+      "limitations": [
+        "Optional B03-07/ES02-06 remain partial with their original prerequisites and independent/operator acceptance.",
+        "No model inference, production deployment or release. Hosted-compression candidate EM-103 is unchanged."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-course-prerequisites.md",
+        "docs/evidence/course-prerequisites-2026-10-30.json"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-102: flattening a valid nested expression violated an internal child limit; bounds must survive internal transformations."
+        ],
+        "risks": [
+          "Grouping must retain every selected true/false requirement and must never choose a different OR branch."
+        ],
+        "architecture_implications": [
+          "Keep bounded regrouping in ENDSTATE course calculation; no schema or authority change."
+        ],
+        "roadmap_decision": "Existing-task correction authorized by the owner under B03-07/ES02-06. Preserve original optional acceptance gates and all earlier failed evidence.",
+        "insight_ids": [
+          "EM-102"
         ]
       }
     },
@@ -2290,56 +2341,6 @@
       "evidence_paths": [
         "docs/evidence/hf-black-local-verification.json"
       ]
-    },
-    {
-      "id": "2026-10-30-nested-course-prerequisites",
-      "date": "2026-10-30",
-      "version": "0.2.0-alpha.8",
-      "title": "Nested prerequisite courses remain readable",
-      "delivery": "pushed_unreleased",
-      "task_ids": [
-        "B03-07",
-        "ES02-06"
-      ],
-      "summary": "Reassess selected nested prerequisite branches without exceeding expression child limits or changing their meaning.",
-      "added": [
-        "Course boundary regressions for 8, 9, 16 and 63 signed prerequisites, exact OR-branch retention, and persisted lifecycle behavior."
-      ],
-      "changed": [
-        "Recorded signed requirements are grouped into bounded AND nodes inside the read-only course calculation."
-      ],
-      "fixed": [
-        "A successfully selected valid nested course could return HTTP 422 on subsequent inspection."
-      ],
-      "verification": [
-        "Original four regression failures and passing 8-child control retained as exact emitted output in the evidence JSON.",
-        "137 focused course/kernel/result checks and 37 native Chosen Course checks passed; these overlap the integrated totals.",
-        "1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites passed; all 21 acceptance steps passed. Exact-source/artifact inspection valid before final receipt edits.",
-        "Tested code 84994b3b4aeca1f925bd63cbe74ceb945e91ad1c; source and artifact inspection valid/passed before final receipt-only edits. PR9 records final-head CI and merge."
-      ],
-      "limitations": [
-        "Optional B03-07/ES02-06 remain partial with their original prerequisites and independent/operator acceptance.",
-        "No model inference, production deployment or release. Hosted-compression candidate EM-103 is unchanged."
-      ],
-      "evidence_paths": [
-        "docs/delivery/sessions/2026-10-30-course-prerequisites.md",
-        "docs/evidence/course-prerequisites-2026-10-30.json"
-      ],
-      "emergence_review": {
-        "discoveries": [
-          "EM-102: flattening a valid nested expression violated an internal child limit; bounds must survive internal transformations."
-        ],
-        "risks": [
-          "Grouping must retain every selected true/false requirement and must never choose a different OR branch."
-        ],
-        "architecture_implications": [
-          "Keep bounded regrouping in ENDSTATE course calculation; no schema or authority change."
-        ],
-        "roadmap_decision": "Existing-task correction authorized by the owner under B03-07/ES02-06. Preserve original optional acceptance gates and all earlier failed evidence.",
-        "insight_ids": [
-          "EM-102"
-        ]
-      }
     }
   ]
 }

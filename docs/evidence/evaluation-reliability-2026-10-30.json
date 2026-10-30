@@ -411,6 +411,14 @@
     "reason": "Main advanced during final handoff; reconcile PR10 canonical-document conflicts and preserve merged PR9 course fix.",
     "prior_tested_commit": "db6c5b69f05cf3fabd3930dc22fd7e2df9af617a",
     "combined_acceptance": "pending",
-    "pr10_merged": false
+    "pr10_merged": false,
+    "aborted_attempt": {
+      "commit": "b2a666e",
+      "status": "aborted",
+      "cause": "Changelog ordering failed validation; generated Markdown was not regenerated successfully. Correct ordering and regenerate before a fresh run.",
+      "last_acceptance_report_complete": false,
+      "pass_claimed": false,
+      "evidence": "artifacts/evaluation-reliability/integration-orchestration-abort.json"
+    }
   }
 }
