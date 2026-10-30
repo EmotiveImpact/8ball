@@ -77,7 +77,9 @@ def situation_map(case:Case,result:dict,view='outcome'):
 def migrate_legacy(store:Store,legacy:LegacyStore,legacy_id):
     export=legacy.audit(legacy_id)
     if not export['valid']:raise ValueError('Legacy audit must verify before migration')
-    old=legacy.get(legacy_id)
+    # The imported state and retained lineage must describe one audited snapshot.
+    from ..models import Situation
+    old=Situation.model_validate(export['case'])
     prov=Provenance(origin='legacy',note='Imported from V0.1; original audit preserved in lineage.')
     graph=Graph(conditions=[Condition(**c.model_dump(),provenance=prov) for c in old.graph.conditions],
                 actions=[Action(id=a.id,title=a.title,owner=a.owner,purpose=a.purpose,requires=all_of(*a.requires),

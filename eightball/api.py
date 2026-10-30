@@ -1,5 +1,6 @@
 """Single-operator, loopback-only alpha API. Do not deploy as an agency SaaS."""
 import hmac
+import ntpath
 from pathlib import Path
 from typing import Literal
 from fastapi import FastAPI, HTTPException, Request, Depends
@@ -15,6 +16,15 @@ from .engine import plan, difference
 from .seed import create_case
 from .providers import jev_classify, gliclass_classify, ollama_extract, ProviderUnavailable
 from .v2.request_limits import BoundedRequestBody, body_limit
+
+
+class LocalStaticFiles(StaticFiles):
+    def get_path(self, scope):
+        # Reject Windows path resets before normalization or filesystem I/O.
+        path = scope['path']
+        if '\\' in path or any(ntpath.splitdrive(part)[0] for part in path.split('/')):
+            raise HTTPException(404, 'Not Found')
+        return super().get_path(scope)
 
 
 class Intake(Strict):
@@ -197,7 +207,7 @@ def make_app(store: Store, token: str) -> FastAPI:
     app.state.analysis_jobs = v2_routes.analysis_jobs
     app.include_router(v2_routes)
     web = Path(__file__).resolve().parent.parent / 'web'
-    app.mount('/v2', StaticFiles(directory=web / 'v2', html=True), name='v2-web')
-    app.mount('/', StaticFiles(directory=web, html=True), name='web')
+    app.mount('/v2', LocalStaticFiles(directory=web / 'v2', html=True), name='v2-web')
+    app.mount('/', LocalStaticFiles(directory=web, html=True), name='web')
     app.add_middleware(BoundedRequestBody)
     return app

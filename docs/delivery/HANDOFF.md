@@ -1,3 +1,9 @@
+# Current security-fix handoff, 30 October 2026
+
+The three reviewed findings are fixed on `room/check-repo-with-three-sub-agents-pj2t`, based on `1038291bf219d04e7fe4a6a01c332d1ac277fdba`. Tested code `bb881f278eb24b97732382a83a6084a22d7e1983` passed **1,324 source tests, 1,324 installed-ENDSTATE regressions and all 391 checks across eleven native browser suites**. Exact-source/artifact inspection was valid/passed before final receipt-only edits. The independent security reviewer found no surviving bypass/regression in the three fixes. [Session and ER-01–15](sessions/2026-10-30-security-fixes.md), [receipt with retained failures](../evidence/security-fixes-2026-10-30.json), [draft PR8](https://github.com/EmotiveImpact/8ball/pull/8).
+
+Both code-checkpoint CI workflows passed. An initial receipt-head CI failed only on Studio’s obsolete local-delivery assertion; the corrected exact canonical-state check passed all 44 native Studio checks. PR8 tracks final cumulative CI. The first native attempt lacked pip and the installed retry hit a 120-second watchdog; both are retained. Only the installed full-suite deadline is now 240 seconds within the existing 300-second acceptance step. EM-099–105 preserve all discoveries, including deferred course and hosted-compression candidates. Original model, independent/human and release gates remain. Await explicit owner merge authorization; no live inference, deployment or acceptance promotion.
+
 # Current handoff: combined development build
 
 Current cumulative software verification passed on `a9254e6087ef606d581d626bfcda9d7e555c857e`:

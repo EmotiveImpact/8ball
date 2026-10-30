@@ -3,6 +3,74 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-30-security-boundaries",
+      "date": "2026-10-30",
+      "version": "0.2.0-alpha.8",
+      "title": "Static-path, provider-response and legacy-lineage safeguards",
+      "delivery": "pushed_unreleased",
+      "task_ids": [
+        "B01-02",
+        "B02-15",
+        "ES01-03",
+        "B01-03",
+        "ES01-05",
+        "DOC-04"
+      ],
+      "summary": "Reject unsafe Windows static URLs before filesystem resolution, bound provider response accumulation and import the exact verified legacy snapshot.",
+      "added": [
+        "Controlled security regressions for both static mounts, provider streams/cancellation and concurrent legacy import."
+      ],
+      "changed": [
+        "Local evaluation recording supports bounded streaming without an eager fallback.",
+        "The native Studio journey verifies the canonical changelog title/version/delivery and visible limits instead of hardcoding local-only delivery."
+      ],
+      "fixed": [
+        "Windows UNC/drive-qualified static request paths reaching filesystem resolution.",
+        "Jev and legacy/V2 Ollama response limits enforced only after whole-body buffering.",
+        "Legacy imports mixing a new source snapshot with older verified lineage.",
+        "An installed-package test watchdog shorter than the complete suite runtime on the cloud ARM environment."
+      ],
+      "verification": [
+        "1324 source tests and 1324 installed-ENDSTATE regressions passed, with no failures/errors/skips.",
+        "391 checks passed across all eleven native browser suites; all 21 integrated acceptance steps passed.",
+        "Native source/artifact inspection valid/passed at bb881f278eb24b97732382a83a6084a22d7e1983 before final receipt-only edits.",
+        "250 focused tests and independent bypass/regression review passed; original triggers no longer reproduce and legitimate controls remain.",
+        "Both checkpoint CI workflows passed. Earlier missing-pip and 120-second installed-watchdog failures are preserved in the receipt; PR8 records final-head CI.",
+        "Receipt-head CI 41035068063 passed both 1324-test code suites and ten browser suites, but Studio failed on a stale local-delivery expectation; failure reproduced locally. The corrected full native Studio journey passed all 44 checks. PR8 records final-head cumulative CI."
+      ],
+      "limitations": [
+        "Application path mitigation preserves current dependencies; the pinned Starlette version remains upstream-affected.",
+        "Windows path operations are simulated; no native Windows/SMB exploit or live inference.",
+        "The three adapters require negotiated identity responses; encoded responses fail closed before decompression. Hosted-transport compression review is deferred as EM-103.",
+        "Original actual-model, independent/human and release gates remain open; EM-102 course defect is deferred."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "docs/evidence/security-fixes-2026-10-30.json"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Filesystem resolution can have side effects before containment checks; eager response limits and separately valid audit snapshots leave distinct boundary gaps."
+        ],
+        "risks": [
+          "Streaming must retain cancellation/recording behavior; a separate nested-course defect remains outside these three fixes."
+        ],
+        "architecture_implications": [
+          "Keep HTTP/platform and provider I/O guards in 8BALL; retain the ENDSTATE calculation boundary and exact source lineage."
+        ],
+        "roadmap_decision": "Existing-task fixes under B01-02/B02-15/ES01-03. EM-102 is deferred; no original required flag/status or acceptance gate changes.",
+        "insight_ids": [
+          "EM-099",
+          "EM-100",
+          "EM-101",
+          "EM-102",
+          "EM-103",
+          "EM-104",
+          "EM-105"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-build-verification",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",

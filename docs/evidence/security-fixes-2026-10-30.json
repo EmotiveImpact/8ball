@@ -1,0 +1,237 @@
+{
+  "date": "2026-10-30",
+  "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+  "branch": "room/check-repo-with-three-sub-agents-pj2t",
+  "status": "passed",
+  "focused_tests": {
+    "passed": 250,
+    "warnings": 1
+  },
+  "python_compilation": "passed",
+  "native_acceptance": {
+    "mode": "native",
+    "run_id": "20261030T092917Z-265de974",
+    "status": "passed",
+    "report": "artifacts/acceptance/20261030T092917Z-265de974/report.json",
+    "report_sha256": "e6a225002a516e2657a1376b482ecd399fcc4b57ef572d66923620248d9a3f14",
+    "source_unchanged_during_run": true,
+    "source_tests": {
+      "tests": 1324,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 1324
+    },
+    "installed_regressions": {
+      "tests": 1324,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "browser_checks_passed": 391,
+    "browser_suites": 11,
+    "checks": [
+      {
+        "name": "unit",
+        "status": "passed",
+        "seconds": 150.617
+      },
+      {
+        "name": "compile",
+        "status": "passed",
+        "seconds": 0.032
+      },
+      {
+        "name": "delivery",
+        "status": "passed",
+        "seconds": 0.064
+      },
+      {
+        "name": "changelog",
+        "status": "passed",
+        "seconds": 0.114
+      },
+      {
+        "name": "emergence",
+        "status": "passed",
+        "seconds": 0.064
+      },
+      {
+        "name": "javascript",
+        "status": "passed",
+        "seconds": 0.365
+      },
+      {
+        "name": "structural-fixtures",
+        "status": "passed",
+        "seconds": 0.164
+      },
+      {
+        "name": "endstate-package",
+        "status": "passed",
+        "seconds": 171.651
+      },
+      {
+        "name": "schemas",
+        "status": "passed",
+        "seconds": 0.264
+      },
+      {
+        "name": "native-probe",
+        "status": "passed",
+        "seconds": 1.166
+      },
+      {
+        "name": "browser-legacy",
+        "status": "passed",
+        "seconds": 4.672
+      },
+      {
+        "name": "browser-workspace",
+        "status": "passed",
+        "seconds": 12.636
+      },
+      {
+        "name": "browser-providers",
+        "status": "passed",
+        "seconds": 10.583
+      },
+      {
+        "name": "browser-connections",
+        "status": "passed",
+        "seconds": 5.934
+      },
+      {
+        "name": "browser-studio",
+        "status": "passed",
+        "seconds": 11.685
+      },
+      {
+        "name": "browser-sources",
+        "status": "passed",
+        "seconds": 21.148
+      },
+      {
+        "name": "browser-insights",
+        "status": "passed",
+        "seconds": 27.412
+      },
+      {
+        "name": "browser-grounding",
+        "status": "passed",
+        "seconds": 27.462
+      },
+      {
+        "name": "browser-plan_review",
+        "status": "passed",
+        "seconds": 5.676
+      },
+      {
+        "name": "browser-accessibility",
+        "status": "passed",
+        "seconds": 5.423
+      },
+      {
+        "name": "browser-courses",
+        "status": "passed",
+        "seconds": 13.687
+      }
+    ]
+  },
+  "actual_model_requests": false,
+  "native_windows_exploitation": false,
+  "production_approved": false,
+  "limitations": [
+    "Windows path behavior is simulated; no SMB connection or credential transmission is attempted.",
+    "Application path guarding mitigates the exposed Windows static-file path; the pinned dependency remains upstream-affected.",
+    "The three affected adapters request identity encoding and reject encoded responses before body reads. Providers ignoring this negotiation fail closed; unchanged hosted transports need separate compressed-chunk review (EM-103).",
+    "Actual-model, independent professional, human and V0.2 release acceptance remain open.",
+    "The separate nested-prerequisite Chosen Course defect is deferred as EM-102."
+  ],
+  "failed_attempts": [
+    {
+      "kind": "native_acceptance",
+      "tested_code_commit": "4c943c640442af32aaf45e359748a73c8b333b2d",
+      "path": "artifacts/acceptance/20261030T091939Z-f8811f70/report.json",
+      "source_sha256": "4644531f50bd7454596d4b4a16c543d966d5976b9b883d995896e525b6a8edde",
+      "status": "failed",
+      "source_tests_passed": 1324,
+      "native_browser_checks_passed": 391,
+      "reason": "No module named pip during offline wheel build.",
+      "inspection_before_receipt_edits": {
+        "valid": true,
+        "run_status": "failed"
+      }
+    },
+    {
+      "kind": "installed_package_retry",
+      "path": "artifacts/security-package-check",
+      "status": "failed",
+      "reason": "Complete installed regression subprocess exceeded its 120-second watchdog after pip was installed."
+    },
+    {
+      "kind": "receipt_head_ci",
+      "tested_commit": "5040812fb62e252919e75eda11f978100fd2727f",
+      "workflow_run": 41035068063,
+      "artifact_id": 12968376245,
+      "artifact": "integrated-acceptance-evidence",
+      "downloaded_report": "/tmp/8ball-ci-41035068063/acceptance/20261030T094026Z-6b9e7ece/report.json",
+      "source_sha256": "493786374efad0066a3d7f4f864013711101256a51aff7c09167eb4d4acc47f1",
+      "source_unchanged_during_run": true,
+      "source_tests_passed": 1324,
+      "installed_regressions_passed": 1324,
+      "only_failed_check": "browser-studio",
+      "reason": "Native Studio check required local unreleased although canonical and displayed delivery were correctly pushed unreleased.",
+      "local_reproduction": "/tmp/8ball-studio-before-fix/failure.html"
+    }
+  ],
+  "tested_code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
+  "tested_code_tree": "ff87fcc6740cf020e5aa7a73648578206cdb3be2",
+  "source_sha256": "aae8d051a83ca999c4fd2fad2a2572ac892300465ec82b880b05bfc3f145e042",
+  "inspection_before_final_receipt_edits": {
+    "valid": true,
+    "run_status": "passed",
+    "native_browser_verified": true
+  },
+  "package": {
+    "wheel": "endstate_engine-0.1.0a2-py3-none-any.whl",
+    "sha256": "93cb8a69796bad631a6e43e83055c6644718caae00727c3c2ca20036a7dd03f2",
+    "published": false
+  },
+  "independent_patch_review": {
+    "commit": "4c943c640442af32aaf45e359748a73c8b333b2d",
+    "findings": "No concrete surviving bypass or regression in the three requested fixes.",
+    "focused_tests_passed": 57,
+    "evaluator_probes": [
+      "success",
+      "oversize",
+      "timeout",
+      "compressed-response rejection"
+    ],
+    "security_code_unchanged_since_review": true
+  },
+  "checkpoint_ci": {
+    "commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
+    "validation_run": 41033947448,
+    "delivery_run": 41033947388,
+    "conclusion": "success",
+    "final_receipt_head_ci": "See PR8 for the authoritative latest head/checks."
+  },
+  "pull_request": 8,
+  "merged": false,
+  "released": false,
+  "studio_verification_correction": {
+    "native_checks_passed": 44,
+    "report": "/tmp/8ball-studio-after-fix/studio-browser-report.json",
+    "network": "native loopback HTTP",
+    "assertions": [
+      "exact canonical title",
+      "current version in header",
+      "exact canonical delivery badge",
+      "visible verification and limits"
+    ],
+    "application_runtime_changed": false,
+    "model_inference_tested": false,
+    "final_cumulative_ci": "Authoritative final head and full cumulative result are recorded in PR8."
+  }
+}

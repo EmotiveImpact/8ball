@@ -14,7 +14,7 @@ from .contracts import *
 from .playbooks import get_playbook
 from .commands import merge_object
 from ..store import digest
-from ..providers import jev_classify, gliclass_classify, ProviderUnavailable
+from ..providers import jev_classify, gliclass_classify, ProviderUnavailable, bounded_post_json
 from endstate.compilation import DraftRequest, draft_outcome, DraftFailure
 from .hosted import HuggingFaceSession, HostedFailure, HostedSetupRequired, settings as hosted_settings, configuration_status
 from .compatible import CompatibleSession, settings as compatible_settings, configuration_status as compatible_status
@@ -192,10 +192,7 @@ def ollama_json(schema:dict,system:str,context:dict,client=None):
                          {'role':'user','content':json.dumps(context,ensure_ascii=False)}],
              'options':{'temperature':0,'num_ctx':16384,'num_predict':6000},'keep_alive':'5m'}
     def run(c):
-        r=c.post('http://127.0.0.1:11434/api/chat',json=payload,timeout=180)
-        r.raise_for_status()
-        if len(r.content)>500000:raise ValueError('Model response exceeds limit')
-        body=r.json()
+        body=bounded_post_json(c,'http://127.0.0.1:11434/api/chat',limit=500000,json=payload,timeout=180)
         if body.get('done') is not True or body.get('done_reason')=='length':
             raise ValueError('Model response did not finish')
         return json.loads(body['message']['content']),body.get('model',model)

@@ -3,6 +3,7 @@ The workflow starts a pinned runtime and downloads the public model explicitly.
 No case database, private source material or credentials are used.
 """
 from pathlib import Path
+from contextlib import contextmanager
 from datetime import timedelta
 import hashlib,json,os,sys,time
 import httpx
@@ -17,11 +18,22 @@ OUT=ROOT/'artifacts/generation';OUT.mkdir(parents=True,exist_ok=True)
 
 class Recorder:
     def __init__(self):self.client=httpx.Client(follow_redirects=False,trust_env=False);self.responses=[]
-    def post(self,url,**kwargs):
-        response=self.client.post(url,**kwargs)
-        try:self.responses.append(response.json())
-        except ValueError:self.responses.append({'unreadable_response':True})
-        return response
+    @contextmanager
+    def stream(self,*args,**kwargs):
+        with self.client.stream(*args,**kwargs) as response:
+            raw=bytearray();complete=False
+            original=response.iter_bytes
+            def recorded_bytes(*a,**kw):
+                nonlocal complete
+                for chunk in original(*a,**kw):
+                    if len(raw)+len(chunk)<=500000:raw.extend(chunk)
+                    yield chunk
+                complete=True
+            response.iter_bytes=recorded_bytes
+            try:yield response
+            finally:
+                try:self.responses.append(json.loads(raw) if complete else {'unreadable_response':True})
+                except ValueError:self.responses.append({'unreadable_response':True})
 
 
 def run_one(title,text,purpose,desired):
