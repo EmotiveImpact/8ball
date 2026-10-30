@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-25",
+  "updated_on": "2026-10-30",
   "product": "8BALL",
   "engine": "ENDSTATE",
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
@@ -20,14 +20,20 @@
     "integration_authority": "docs/decisions/0007-owner-build-consolidation.md",
     "source_merged_not_release_accepted": true,
     "current_sprint": {
-      "branch": "integration/v02-complete-build-20261025",
-      "base_commit": "16b8fff43f5f0614846ac4b01db1ddbe40dcff4e",
-      "status_as_of": "2026-10-25",
+      "branch": "room/check-repo-with-three-sub-agents-pj2t",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "status_as_of": "2026-10-30",
+      "owner": "Codex",
+      "task_ids": [
+        "B01-02",
+        "B02-15",
+        "ES01-03"
+      ],
+      "objective": "Fix the three validated local-workspace security findings without changing dependencies, provider permissions or original acceptance gates.",
       "merged": false,
-      "tested_code_commit": "a9254e6087ef606d581d626bfcda9d7e555c857e",
-      "verification": "1267 source tests, 1267 installed-engine regressions and 391 native browser checks across 11 suites passed; inspection valid before receipt edits.",
-      "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
-      "remote_ci": "Both checkpoint PR workflows passed: 40199806937 and 40199807143. Final receipt-head CI and merge tracked in PR4."
+      "verification": "250 focused tests passed; full native acceptance and final review pending.",
+      "remote_ci": "No PR or current CI result yet.",
+      "evidence": "docs/evidence/security-fixes-2026-10-30.json"
     },
     "verified_sprint_history": [
       {
@@ -60,6 +66,16 @@
         "remote_ci": "API Forbidden; no current remote CI result claimed. New branch is outside configured push triggers.",
         "tested_code_commit": "25ca5e2dce4f28ec33d9b132cccabfa15b23683e",
         "tested_code_tree": "7f282146923e18634693ca3fa739b8d4bc41b494"
+      },
+      {
+        "branch": "integration/v02-complete-build-20261025",
+        "base_commit": "16b8fff43f5f0614846ac4b01db1ddbe40dcff4e",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "tested_code_commit": "a9254e6087ef606d581d626bfcda9d7e555c857e",
+        "verification": "1267 source tests, 1267 installed-engine regressions and 391 native browser checks across 11 suites passed; inspection valid before receipt edits.",
+        "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
+        "remote_ci": "Both checkpoint PR workflows passed: 40199806937 and 40199807143. Final receipt-head CI and merge tracked in PR4."
       }
     ],
     "provider_configuration_preparation": {
@@ -342,6 +358,11 @@
       "kind": "integration_and_test_handoff",
       "path": "docs/evidence/build-consolidation-native-2026-10-25.json",
       "result": "1267 source + 1267 installed-engine + 391 native browser checks passed; exact inspection valid; both checkpoint CI workflows passed. PR3 closed as already integrated. No model/independent/human acceptance."
+    },
+    "EV-SECURITY-FIXES": {
+      "kind": "controlled_security_regression_and_native_receipt",
+      "path": "docs/evidence/security-fixes-2026-10-30.json",
+      "result": "250 focused tests passed; native acceptance and final review pending. No release or actual-model acceptance."
     }
   },
   "milestones": [
@@ -535,19 +556,22 @@
       "title": "Local workspace, persistence, scenarios and exports",
       "status": "verified",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "Codex",
+      "working_branch": "room/check-repo-with-three-sub-agents-pj2t",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "web/app.js",
         "eightball/store.py",
-        "tests/browser_smoke.py"
+        "tests/browser_smoke.py",
+        "eightball/api.py",
+        "tests/test_security_regressions.py"
       ],
       "depends_on": [],
       "acceptance": "Original local browser workflow persists cases and exports actual audit records with isolated scenarios.",
       "evidence": [
-        "EV-V01"
+        "EV-V01",
+        "EV-SECURITY-FIXES"
       ],
       "blockers": [],
       "next_action": "Keep the legacy UI/data path available or migrate with verified lineage."
@@ -999,9 +1023,9 @@
       "status": "partial",
       "required": true,
       "owner": "Codex",
-      "working_branch": "feat/v02-review-evidence-20261018",
-      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
-      "updated_on": "2026-10-18",
+      "working_branch": "room/check-repo-with-three-sub-agents-pj2t",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "eightball/v2/analysis_jobs.py",
         "web/v2/job-view.js",
@@ -1009,7 +1033,11 @@
         "eightball/v2/compatible.py",
         "tests/test_compatible_integration.py",
         "evals/provider_lifecycle.py",
-        "tests/test_provider_lifecycle.py"
+        "tests/test_provider_lifecycle.py",
+        "eightball/providers.py",
+        "eightball/v2/intelligence.py",
+        "evals/live_generation.py",
+        "tests/test_security_regressions.py"
       ],
       "depends_on": [
         "ES03-04"
@@ -1024,7 +1052,8 @@
         "EV-COMPATIBLE-CODE",
         "EV-EVALUATION-READINESS",
         "EV-ANTHROPIC-SETUP",
-        "EV-OCT25-INTEGRATION"
+        "EV-OCT25-INTEGRATION",
+        "EV-SECURITY-FIXES"
       ],
       "blockers": [
         "Lifecycle behaviour with the selected real inference provider remains unverified."
@@ -1419,22 +1448,25 @@
       "title": "Preserve storage, imports and audit lineage",
       "status": "verified",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "5e2098e9cb12251592eb3889ce7926798484699d",
-      "updated_on": "2026-09-23",
+      "owner": "Codex",
+      "working_branch": "room/check-repo-with-three-sub-agents-pj2t",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "eightball/models.py",
         "eightball/v2/contracts.py",
         "tests/test_endstate_kernel.py",
-        "tests/fixtures/endstate/pre_extraction.json.xz"
+        "tests/fixtures/endstate/pre_extraction.json.xz",
+        "eightball/v2/services.py",
+        "tests/test_security_regressions.py"
       ],
       "depends_on": [
         "ES01-01"
       ],
       "acceptance": "Old data, imports and event meanings remain readable; migrations preserve observations and expiring approval behaviour.",
       "evidence": [
-        "EV-KERNEL"
+        "EV-KERNEL",
+        "EV-SECURITY-FIXES"
       ],
       "blockers": [],
       "next_action": "Keep frozen pre-extraction records and wire schemas as regression gates; do not regenerate expected results to hide changes."

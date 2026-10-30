@@ -2,7 +2,7 @@
 
 > Generated from `docs/delivery/progress.json`. Edit the ledger, then run `python scripts/delivery.py --write`. Do not maintain a second set of statuses here.
 
-Last status review: 2026-10-25.
+Last status review: 2026-10-30.
 
 **8BALL is the fixer product. ENDSTATE is the reusable engine underneath it.**
 
@@ -118,11 +118,12 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-V01` (registry below).
 
 - [x] **B01-02 Local workspace, persistence, scenarios and exports**
-  - Status: `verified`. Owner: unassigned. Updated: 2026-09-23.
+  - Status: `verified`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Original local browser workflow persists cases and exports actual audit records with isolated scenarios.
   - Next: Keep the legacy UI/data path available or migrate with verified lineage.
-  - Existing code: `web/app.js`, `eightball/store.py`, `tests/browser_smoke.py`.
-  - Evidence: `EV-V01` (registry below).
+  - Branch/base: `room/check-repo-with-three-sub-agents-pj2t` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
+  - Existing code: `web/app.js`, `eightball/store.py`, `tests/browser_smoke.py`, `eightball/api.py`, `tests/test_security_regressions.py`.
+  - Evidence: `EV-V01`, `EV-SECURITY-FIXES` (registry below).
 
 - [x] **B01-03 Reproducible alpha acceptance evidence**
   - Status: `verified`. Owner: unassigned. Updated: 2026-09-23.
@@ -244,13 +245,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Blocker: Independent multi-source identity/date usefulness review remains outstanding. No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed.
 
 - [ ] **B02-15 Model progress/cancellation and accurate installation status**
-  - Status: `partial`. Owner: Codex. Updated: 2026-10-18.
+  - Status: `partial`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: The UI reports actual runtime/weights/credential state and cancels work without stale commits. No silent large model download.
   - Next: Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
-  - Branch/base: `feat/v02-review-evidence-20261018` / `12ffdadb2f094e8f31fbd60486b5f775894b32ec`.
+  - Branch/base: `room/check-repo-with-three-sub-agents-pj2t` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
   - Dependencies: `ES03-04`.
-  - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`, `eightball/v2/compatible.py`, `tests/test_compatible_integration.py`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`.
-  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION` (registry below).
+  - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`, `eightball/v2/compatible.py`, `tests/test_compatible_integration.py`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`, `eightball/providers.py`, `eightball/v2/intelligence.py`, `evals/live_generation.py`, `tests/test_security_regressions.py`.
+  - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION`, `EV-SECURITY-FIXES` (registry below).
   - Blocker: Lifecycle behaviour with the selected real inference provider remains unverified.
 
 - [ ] **B02-16 Complete accessibility and supported-environment validation**
@@ -433,13 +434,13 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Evidence: `EV-KERNEL` (registry below).
 
 - [x] **ES01-03 Preserve storage, imports and audit lineage**
-  - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
+  - Status: `verified`. Owner: Codex. Updated: 2026-10-30.
   - Acceptance: Old data, imports and event meanings remain readable; migrations preserve observations and expiring approval behaviour.
   - Next: Keep frozen pre-extraction records and wire schemas as regression gates; do not regenerate expected results to hide changes.
-  - Branch/base: `feat/situation-intelligence-v2` / `5e2098e9cb12251592eb3889ce7926798484699d`.
+  - Branch/base: `room/check-repo-with-three-sub-agents-pj2t` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
   - Dependencies: `ES01-01`.
-  - Existing code: `eightball/models.py`, `eightball/v2/contracts.py`, `tests/test_endstate_kernel.py`, `tests/fixtures/endstate/pre_extraction.json.xz`.
-  - Evidence: `EV-KERNEL` (registry below).
+  - Existing code: `eightball/models.py`, `eightball/v2/contracts.py`, `tests/test_endstate_kernel.py`, `tests/fixtures/endstate/pre_extraction.json.xz`, `eightball/v2/services.py`, `tests/test_security_regressions.py`.
+  - Evidence: `EV-KERNEL`, `EV-SECURITY-FIXES` (registry below).
 
 - [x] **ES01-04 Prove reuse through neutral, sales and support fixtures**
   - Status: `verified`. Owner: ChatGPT. Updated: 2026-09-23.
@@ -933,3 +934,9 @@ These references have specific scopes and may be historical. A reference to a de
 - Kind: `integration_and_test_handoff`.
 - Repository evidence: [docs/evidence/build-consolidation-native-2026-10-25.json](../../docs/evidence/build-consolidation-native-2026-10-25.json).
 - Result/scope: 1267 source + 1267 installed-engine + 391 native browser checks passed; exact inspection valid; both checkpoint CI workflows passed. PR3 closed as already integrated. No model/independent/human acceptance.
+
+### EV-SECURITY-FIXES
+
+- Kind: `controlled_security_regression_and_native_receipt`.
+- Repository evidence: [docs/evidence/security-fixes-2026-10-30.json](../../docs/evidence/security-fixes-2026-10-30.json).
+- Result/scope: 250 focused tests passed; native acceptance and final review pending. No release or actual-model acceptance.

@@ -1,3 +1,7 @@
+# Current security-fix checkpoint, 30 October 2026
+
+Three reviewed findings have scoped application patches on `room/check-repo-with-three-sub-agents-pj2t`, based on `1038291bf219d04e7fe4a6a01c332d1ac277fdba`: Windows static paths, provider response accumulation and legacy-import snapshot lineage. See [the session](sessions/2026-10-30-security-fixes.md) and [receipt](../evidence/security-fixes-2026-10-30.json). Focused 250 tests and compilation passed; final review and full native acceptance are pending at this preparation checkpoint. No merge, live inference, deployment or acceptance promotion. EM-099–102 preserve all discoveries, including the separate deferred course defect.
+
 # Current handoff: combined development build
 
 Current cumulative software verification passed on `a9254e6087ef606d581d626bfcda9d7e555c857e`:

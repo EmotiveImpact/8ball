@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-25",
+  "updated_on": "2026-10-30",
   "required_prompts": [
     {
       "id": "ER-01",
@@ -3597,6 +3597,141 @@
           "decision": "adopted",
           "by": "Codex integration review",
           "reason": "existing_task: preserve source and uncertain auth evidence, resolve already-integrated PR ancestry, prepare exact next-agent tests. A generic save rejection did not establish the earlier claimed field-specific cause. No acceptance promotion."
+        }
+      ]
+    },
+    {
+      "id": "EM-099",
+      "title": "Filesystem resolution can have side effects before static containment checks",
+      "origin": "Three-part security review and focused remediation",
+      "first_seen": "2026-10-30",
+      "evidence_level": "supported_by_tests",
+      "observation": "On Windows, an unauthenticated URL containing a UNC path can reach realpath before StaticFiles checks directory containment. Simulated Windows requests reached a resolution sentinel; rejecting decoded backslashes and drive-qualified URL components blocks that path before I/O.",
+      "product_implication": "Guard application HTTP paths before OS interpretation; keep normal nested assets and symlink containment.",
+      "task_ids": [
+        "B01-02"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "docs/evidence/security-fixes-2026-10-30.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex security remediation",
+          "reason": "existing_task: close the current local application path without forcing an incompatible framework upgrade."
+        }
+      ]
+    },
+    {
+      "id": "EM-100",
+      "title": "A response limit after eager HTTP buffering is not a memory bound",
+      "origin": "Three-part security review and focused remediation",
+      "first_seen": "2026-10-30",
+      "evidence_level": "supported_by_tests",
+      "observation": "Three model adapters buffered an entire 2 MiB controlled response before applying their smaller byte limits. Moving to streaming also requires preserving queued cancellation and evaluation response recording.",
+      "product_implication": "Enforce existing decoded-byte limits while reading; distinguish whole-body buffering from per-chunk decompression and retain bounded evaluation evidence.",
+      "task_ids": [
+        "B02-15"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "docs/evidence/security-fixes-2026-10-30.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex security remediation",
+          "reason": "existing_task: fix provider response accumulation and preserve lifecycle/recording contracts without changing quotas or model permissions."
+        }
+      ]
+    },
+    {
+      "id": "EM-101",
+      "title": "Valid audit chains can still describe different migration snapshots",
+      "origin": "Three-part security review and focused remediation",
+      "first_seen": "2026-10-30",
+      "evidence_level": "supported_by_tests",
+      "observation": "A concurrent authenticated legacy edit between audit() and get() produced an imported budget of 123 with retained lineage budget 7000 while both chains validated.",
+      "product_implication": "Build imports from the exact verified source snapshot; validity of separate chains does not prove correspondence.",
+      "task_ids": [
+        "ES01-03",
+        "B01-02"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "docs/evidence/security-fixes-2026-10-30.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex security remediation",
+          "reason": "existing_task: preserve migration lineage from one audited legacy snapshot, retaining existing conversion and idempotency."
+        }
+      ]
+    },
+    {
+      "id": "EM-102",
+      "title": "Flattened course prerequisites can exceed the expression child limit",
+      "origin": "Three-part security review and focused remediation",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "The report-only domain review reproduced a valid nested nine-prerequisite graph whose selection persisted successfully but whose next Chosen Course read returned 422 when assessment flattened prerequisites into one conjunction.",
+      "product_implication": "Preserve bounded nested signed prerequisites in a separate course correction; this security patch must not silently claim the defect fixed.",
+      "task_ids": [
+        "B03-07",
+        "ES02-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "docs/evidence/security-fixes-2026-10-30.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "deferred",
+          "by": "Codex security remediation",
+          "reason": "new_candidate: retain the authenticated functional defect for a separate bounded fix; no required gate or accepted scope is changed."
+        }
+      ]
+    },
+    {
+      "id": "EM-103",
+      "title": "Streaming response caps also need a content-decoding boundary",
+      "origin": "Security remediation of provider response accumulation",
+      "first_seen": "2026-10-30",
+      "evidence_level": "operator_hypothesis",
+      "observation": "HTTPX decompresses response chunks before iter_bytes yields them. Identity negotiation with early rejection closes this representation gap in the three patched adapters; the separately implemented hosted transports retain their earlier decoded-stream checks and have not been tested against compressed-expansion inputs in this sprint.",
+      "product_implication": "Do not equate incremental accumulation limits with a strict memory ceiling for every transport. Review the unchanged hosted compression paths separately before claiming that broader property.",
+      "task_ids": [
+        "B02-15",
+        "ES03-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "eightball/providers.py",
+        "eightball/v2/hosted.py",
+        "eightball/v2/compatible.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "deferred",
+          "by": "Codex security remediation",
+          "reason": "new_candidate: retain the untested sibling transport hypothesis separately from the three reported fixes. No hosted-runtime change, live inference or new required acceptance scope."
         }
       ]
     }

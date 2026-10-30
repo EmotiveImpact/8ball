@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **98 recorded discoveries.**
+Last review: 2026-10-30. **103 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1800,3 +1800,88 @@ The existing generic API-key requirement was labelled Qwen and allowed only its 
 
 - 2026-10-18 · adopted · Codex configuration review: existing_task: document the observed secret-rebinding restriction and exact owner step; no new required feature, model/professional/human acceptance or runtime research adoption.
 - 2026-10-25 · adopted · Codex integration review: existing_task: preserve source and uncertain auth evidence, resolve already-integrated PR ancestry, prepare exact next-agent tests. A generic save rejection did not establish the earlier claimed field-specific cause. No acceptance promotion.
+
+### [ ] EM-099: Filesystem resolution can have side effects before static containment checks
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-30. **Origin:** Three-part security review and focused remediation.
+
+On Windows, an unauthenticated URL containing a UNC path can reach realpath before StaticFiles checks directory containment. Simulated Windows requests reached a resolution sentinel; rejecting decoded backslashes and drive-qualified URL components blocks that path before I/O.
+
+**Product implication:** Guard application HTTP paths before OS interpretation; keep normal nested assets and symlink containment.
+
+**Roadmap links:** `B01-02` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `docs/evidence/security-fixes-2026-10-30.json`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex security remediation: existing_task: close the current local application path without forcing an incompatible framework upgrade.
+
+### [ ] EM-100: A response limit after eager HTTP buffering is not a memory bound
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-30. **Origin:** Three-part security review and focused remediation.
+
+Three model adapters buffered an entire 2 MiB controlled response before applying their smaller byte limits. Moving to streaming also requires preserving queued cancellation and evaluation response recording.
+
+**Product implication:** Enforce existing decoded-byte limits while reading; distinguish whole-body buffering from per-chunk decompression and retain bounded evaluation evidence.
+
+**Roadmap links:** `B02-15` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `docs/evidence/security-fixes-2026-10-30.json`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex security remediation: existing_task: fix provider response accumulation and preserve lifecycle/recording contracts without changing quotas or model permissions.
+
+### [ ] EM-101: Valid audit chains can still describe different migration snapshots
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-30. **Origin:** Three-part security review and focused remediation.
+
+A concurrent authenticated legacy edit between audit() and get() produced an imported budget of 123 with retained lineage budget 7000 while both chains validated.
+
+**Product implication:** Build imports from the exact verified source snapshot; validity of separate chains does not prove correspondence.
+
+**Roadmap links:** `ES01-03` (verified), `B01-02` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `docs/evidence/security-fixes-2026-10-30.json`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex security remediation: existing_task: preserve migration lineage from one audited legacy snapshot, retaining existing conversion and idempotency.
+
+### [ ] EM-102: Flattened course prerequisites can exceed the expression child limit
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Three-part security review and focused remediation.
+
+The report-only domain review reproduced a valid nested nine-prerequisite graph whose selection persisted successfully but whose next Chosen Course read returned 422 when assessment flattened prerequisites into one conjunction.
+
+**Product implication:** Preserve bounded nested signed prerequisites in a separate course correction; this security patch must not silently claim the defect fixed.
+
+**Roadmap links:** `B03-07` (partial), `ES02-06` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `docs/evidence/security-fixes-2026-10-30.json`.
+
+**Decision history:**
+
+- 2026-10-30 · deferred · Codex security remediation: new_candidate: retain the authenticated functional defect for a separate bounded fix; no required gate or accepted scope is changed.
+
+### [ ] EM-103: Streaming response caps also need a content-decoding boundary
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** operator_hypothesis.
+**First recorded:** 2026-10-30. **Origin:** Security remediation of provider response accumulation.
+
+HTTPX decompresses response chunks before iter_bytes yields them. Identity negotiation with early rejection closes this representation gap in the three patched adapters; the separately implemented hosted transports retain their earlier decoded-stream checks and have not been tested against compressed-expansion inputs in this sprint.
+
+**Product implication:** Do not equate incremental accumulation limits with a strict memory ceiling for every transport. Review the unchanged hosted compression paths separately before claiming that broader property.
+
+**Roadmap links:** `B02-15` (partial), `ES03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-10-30-security-fixes.md`, `eightball/providers.py`, `eightball/v2/hosted.py`, `eightball/v2/compatible.py`.
+
+**Decision history:**
+
+- 2026-10-30 · deferred · Codex security remediation: new_candidate: retain the untested sibling transport hypothesis separately from the three reported fixes. No hosted-runtime change, live inference or new required acceptance scope.

@@ -3,6 +3,62 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-10-30-security-boundaries",
+      "date": "2026-10-30",
+      "version": "0.2.0-alpha.8",
+      "title": "Static-path, provider-response and legacy-lineage safeguards",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B01-02",
+        "B02-15",
+        "ES01-03"
+      ],
+      "summary": "Reject unsafe Windows static URLs before filesystem resolution, bound provider response accumulation and import the exact verified legacy snapshot.",
+      "added": [
+        "Controlled security regressions for both static mounts, provider streams/cancellation and concurrent legacy import."
+      ],
+      "changed": [
+        "Local evaluation recording supports bounded streaming without an eager fallback."
+      ],
+      "fixed": [
+        "Windows UNC/drive-qualified static request paths reaching filesystem resolution.",
+        "Jev and legacy/V2 Ollama response limits enforced only after whole-body buffering.",
+        "Legacy imports mixing a new source snapshot with older verified lineage."
+      ],
+      "verification": [
+        "250 focused tests passed with one existing test-library deprecation warning; full native acceptance and final patch review pending at this preparation checkpoint."
+      ],
+      "limitations": [
+        "Application path mitigation preserves current dependencies; the pinned Starlette version remains upstream-affected.",
+        "Windows path operations are simulated; no native Windows/SMB exploit or live inference.",
+        "The three adapters require negotiated identity responses; encoded responses fail closed before decompression. Hosted-transport compression review is deferred as EM-103.",
+        "Original actual-model, independent/human and release gates remain open; EM-102 course defect is deferred."
+      ],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-10-30-security-fixes.md",
+        "docs/evidence/security-fixes-2026-10-30.json"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Filesystem resolution can have side effects before containment checks; eager response limits and separately valid audit snapshots leave distinct boundary gaps."
+        ],
+        "risks": [
+          "Streaming must retain cancellation/recording behavior; a separate nested-course defect remains outside these three fixes."
+        ],
+        "architecture_implications": [
+          "Keep HTTP/platform and provider I/O guards in 8BALL; retain the ENDSTATE calculation boundary and exact source lineage."
+        ],
+        "roadmap_decision": "Existing-task fixes under B01-02/B02-15/ES01-03. EM-102 is deferred; no original required flag/status or acceptance gate changes.",
+        "insight_ids": [
+          "EM-099",
+          "EM-100",
+          "EM-101",
+          "EM-102",
+          "EM-103"
+        ]
+      }
+    },
+    {
       "id": "2026-10-25-build-verification",
       "date": "2026-10-25",
       "version": "0.2.0-alpha.8",

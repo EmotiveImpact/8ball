@@ -4,6 +4,51 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Static-path, provider-response and legacy-lineage safeguards
+
+2026-10-30 · `local_unreleased`
+
+Reject unsafe Windows static URLs before filesystem resolution, bound provider response accumulation and import the exact verified legacy snapshot.
+
+### Added
+
+- Controlled security regressions for both static mounts, provider streams/cancellation and concurrent legacy import.
+
+### Changed
+
+- Local evaluation recording supports bounded streaming without an eager fallback.
+
+### Fixed
+
+- Windows UNC/drive-qualified static request paths reaching filesystem resolution.
+- Jev and legacy/V2 Ollama response limits enforced only after whole-body buffering.
+- Legacy imports mixing a new source snapshot with older verified lineage.
+
+### Verification
+
+- 250 focused tests passed with one existing test-library deprecation warning; full native acceptance and final patch review pending at this preparation checkpoint.
+
+### Limitations
+
+- Application path mitigation preserves current dependencies; the pinned Starlette version remains upstream-affected.
+- Windows path operations are simulated; no native Windows/SMB exploit or live inference.
+- The three adapters require negotiated identity responses; encoded responses fail closed before decompression. Hosted-transport compression review is deferred as EM-103.
+- Original actual-model, independent/human and release gates remain open; EM-102 course defect is deferred.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Filesystem resolution can have side effects before containment checks; eager response limits and separately valid audit snapshots leave distinct boundary gaps.
+- Risk: Streaming must retain cancellation/recording behavior; a separate nested-course defect remains outside these three fixes.
+- Architecture: Keep HTTP/platform and provider I/O guards in 8BALL; retain the ENDSTATE calculation boundary and exact source lineage.
+- Roadmap decision: Existing-task fixes under B01-02/B02-15/ES01-03. EM-102 is deferred; no original required flag/status or acceptance gate changes.
+Registered discoveries: EM-099, EM-100, EM-101, EM-102, EM-103.
+
+Roadmap items: `B01-02`, `B02-15`, `ES01-03`.
+
+Evidence: [docs/delivery/sessions/2026-10-30-security-fixes.md](docs/delivery/sessions/2026-10-30-security-fixes.md), [docs/evidence/security-fixes-2026-10-30.json](docs/evidence/security-fixes-2026-10-30.json).
+
 ## 0.2.0-alpha.8 · Combined build passes native verification and checkpoint CI
 
 2026-10-25 · `local_unreleased`

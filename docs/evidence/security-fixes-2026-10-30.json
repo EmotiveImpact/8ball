@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-30",
+  "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+  "branch": "room/check-repo-with-three-sub-agents-pj2t",
+  "status": "focused_passed_native_pending",
+  "focused_tests": {
+    "passed": 250,
+    "warnings": 1
+  },
+  "python_compilation": "passed",
+  "native_acceptance": "pending",
+  "actual_model_requests": false,
+  "native_windows_exploitation": false,
+  "production_approved": false,
+  "limitations": [
+    "Windows path behavior is simulated; no SMB connection or credential transmission is attempted.",
+    "Application path guarding mitigates the exposed Windows static-file path; the pinned dependency remains upstream-affected.",
+    "The three affected adapters request identity encoding and reject encoded responses before body reads. Providers ignoring this negotiation fail closed; unchanged hosted transports need separate compressed-chunk review (EM-103).",
+    "Actual-model, independent professional, human and V0.2 release acceptance remain open.",
+    "The separate nested-prerequisite Chosen Course defect is deferred as EM-102."
+  ]
+}
