@@ -291,7 +291,14 @@ def test_journey_report_preserves_actual_queue_rejection_after_disposable_databa
 
 
 def test_inspection_allows_only_v2_pinned_checkout_availability_and_reports_difference(tmp_path,monkeypatch):
-    from test_provider_lifecycle import portable_source
+    # Keep the fixture self-contained: the installed-wheel suite deliberately
+    # uses isolated Python and pytest's importlib mode, without a tests/ path.
+    def portable_source(checkout):
+        files={'app.py':'a'*64}
+        links={'research/external/fixture':{'index_commit':'b'*40,'checkout_commit':checkout}}
+        return {'manifest_version':2,'files':files,'research_gitlinks':links,
+            'application_sha256':a.application_digest(files,links),
+            'sha256':a.digest(json.dumps({'files':files,'research_gitlinks':links},sort_keys=True,separators=(',',':')).encode())}
     root, artifacts, report = fixture_report(tmp_path)
     report['source'] = portable_source('b'*40)
     before = deepcopy(report)

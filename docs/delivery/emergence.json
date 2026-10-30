@@ -3989,6 +3989,34 @@
           "reason": "existing_task: exclude .cloudroom alongside existing virtualenv/generated-output exclusions; test that application files and research metadata remain fingerprinted."
         }
       ]
+    },
+    {
+      "id": "EM-112",
+      "title": "Source-test imports can fail under installed-package isolation",
+      "origin": "First integrated native acceptance of the evaluation-reliability sprint",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "All 1367 source tests and 399 native browser checks passed, but the installed-wheel regression suite failed one new test: a short-name import of another test module is unavailable under isolated Python and pytest importlib mode.",
+      "product_implication": "Keep test fixtures self-contained or in explicit importable helpers. Preserve installed-wheel isolation and rerun the full gate; do not treat source-suite success as distribution acceptance.",
+      "task_ids": [
+        "B02-12",
+        "ES01-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/evidence/evaluation-reliability-2026-10-30.json",
+        "tests/test_acceptance_runner.py",
+        "docs/delivery/sessions/2026-10-30-evaluation-reliability.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Codex verification",
+          "reason": "existing_task: make this test fixture self-contained, retain the failed source-bound run and preserve importlib isolation; rerun native acceptance."
+        }
+      ]
     }
   ]
 }

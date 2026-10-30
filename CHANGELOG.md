@@ -25,6 +25,7 @@ Preserve failed/interrupted evaluation outcomes and source provenance, add real 
 - Fast failed analysis misreported as an inconclusive timing race.
 - Final source errors overwriting interruption/abort status or skipping the final lifecycle checkpoint.
 - IDE attachments and pinned-checkout availability preventing portable matching source evidence.
+- A new test helper import that failed installed-wheel isolation despite passing from the source checkout.
 
 ### Verification
 
@@ -33,6 +34,7 @@ Preserve failed/interrupted evaluation outcomes and source provenance, add real 
 - Expanded native Development browser journey passed, including real server reconfiguration and permission-reset checks.
 - Integrated native acceptance pending at this implementation checkpoint.
 - Final focused set passed 311 checks with one existing warning. Native Development journey passed 30 checks; three missing-key actual-provider preflights were blocked with zero model calls.
+- First integrated native run at dff9412 passed 1367 source tests and all 399 checks across eleven native browser suites, but installed regressions failed 1/1367 on a test-only import. Inspection valid/run_status=failed; failure retained and self-contained fixture correction prepared.
 
 ### Limitations
 
@@ -49,11 +51,11 @@ Preserve failed/interrupted evaluation outcomes and source provenance, add real 
 - Risk: A passing controlled contract does not establish paid-provider compatibility or semantic quality.
 - Architecture: Keep provider I/O and evaluation receipts in 8BALL; preserve ENDSTATE and all approval boundaries.
 - Roadmap decision: Existing-task repairs only; no acceptance status or required scope promotion.
-Registered discoveries: EM-106, EM-107, EM-108, EM-109, EM-110, EM-111.
+Registered discoveries: EM-106, EM-107, EM-108, EM-109, EM-110, EM-111, EM-112.
 
 Roadmap items: `B02-09`, `B02-12`, `B02-15`, `ES03-09`, `DOC-07`.
 
-Evidence: [docs/delivery/sessions/2026-10-30-evaluation-reliability.md](docs/delivery/sessions/2026-10-30-evaluation-reliability.md).
+Evidence: [docs/delivery/sessions/2026-10-30-evaluation-reliability.md](docs/delivery/sessions/2026-10-30-evaluation-reliability.md), [docs/evidence/evaluation-reliability-2026-10-30.json](docs/evidence/evaluation-reliability-2026-10-30.json).
 
 ## 0.2.0-alpha.8 · Static-path, provider-response and legacy-lineage safeguards
 

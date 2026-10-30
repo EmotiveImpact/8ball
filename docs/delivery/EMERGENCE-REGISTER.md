@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-30. **111 recorded discoveries.**
+Last review: 2026-10-30. **112 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -2028,3 +2028,20 @@ Cloudroom places conversation attachments inside .cloudroom in the checkout. The
 **Decision history:**
 
 - 2026-10-30 · adopted · Codex implementation: existing_task: exclude .cloudroom alongside existing virtualenv/generated-output exclusions; test that application files and research metadata remain fingerprinted.
+
+### [ ] EM-112: Source-test imports can fail under installed-package isolation
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** First integrated native acceptance of the evaluation-reliability sprint.
+
+All 1367 source tests and 399 native browser checks passed, but the installed-wheel regression suite failed one new test: a short-name import of another test module is unavailable under isolated Python and pytest importlib mode.
+
+**Product implication:** Keep test fixtures self-contained or in explicit importable helpers. Preserve installed-wheel isolation and rerun the full gate; do not treat source-suite success as distribution acceptance.
+
+**Roadmap links:** `B02-12` (blocked), `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/evidence/evaluation-reliability-2026-10-30.json`, `tests/test_acceptance_runner.py`, `docs/delivery/sessions/2026-10-30-evaluation-reliability.md`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Codex verification: existing_task: make this test fixture self-contained, retain the failed source-bound run and preserve importlib isolation; rerun native acceptance.

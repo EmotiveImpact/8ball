@@ -1,0 +1,73 @@
+{
+  "kind": "evaluation_reliability_software_receipt",
+  "date": "2026-10-30",
+  "base_commit": "825ad6668c2c7d128da367476fe16cb8d214b837",
+  "actual_model_calls": 0,
+  "independent_semantic_evaluation": false,
+  "human_acceptance": false,
+  "merged": false,
+  "released": false,
+  "production_deployed": false,
+  "original_regression_evidence": {
+    "path": "docs/evidence/evaluation-reliability-before-fix-2026-10-30.txt",
+    "sha256": "908f69d4234337945b64196e41018787b1dd4a6dd3e0c14f7a39633e71a26ca3",
+    "result": "9 reporting regressions failed before repairs; runtime code still matched base 825ad66, with uncommitted regression tests. No overall source manifest captured for this initial focused reproduction."
+  },
+  "acceptance_runs": [
+    {
+      "tested_commit": "dff941239833c2c769995464bf26624a3e4e458a",
+      "report_path": "artifacts/acceptance/20261030T150343Z-03eef63f/report.json",
+      "report_sha256": "09ea77c0bafd30e270933c7f17fcfaf8b9ec9b5a5baa35098cc7b9e37463a5c0",
+      "mode": "native",
+      "status": "failed",
+      "source_sha256": "550d8e631036d628b1bdb3c654c421fdab3fdcb71f4be03c51737238475b1f88",
+      "application_sha256": "f0072a685db8b6c8e6dfa4d7dae4c35178cbceac2f8ca92bb5c56cbe4ac423bf",
+      "source_unchanged_during_run": true,
+      "source_unit_counts": {
+        "tests": 1367,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 1367
+      },
+      "installed_counts": {
+        "tests": 1367,
+        "passed": 1366,
+        "failures": 1,
+        "errors": 0,
+        "skipped": 0
+      },
+      "browser_checks_passed": 399,
+      "native_browser_verified": true,
+      "failed_step": "endstate-package",
+      "failure": "New test imported another test module by short name; isolated pytest importlib mode raised ModuleNotFoundError. Kernel build succeeded.",
+      "inspection": {
+        "valid": true,
+        "reason": "Application source, declared pins and local evidence match; this is not a signed attestation",
+        "checkout_observations_match": true,
+        "recorded_source_sha256": "550d8e631036d628b1bdb3c654c421fdab3fdcb71f4be03c51737238475b1f88",
+        "current_source_sha256": "550d8e631036d628b1bdb3c654c421fdab3fdcb71f4be03c51737238475b1f88",
+        "run_status": "failed",
+        "native_browser_verified": true,
+        "model_quality_approved": false,
+        "released": false
+      }
+    }
+  ],
+  "live_provider": {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-6",
+    "api_protocol": "anthropic_messages",
+    "status": "blocked",
+    "reason": "No secure active runtime key. Cloudroom secure request pending; no credential values inspected.",
+    "generation_exit_code": 2,
+    "lifecycle_exit_code": 2,
+    "native_journey_exit_code": 2,
+    "actual_model_calls": 0,
+    "evidence_path": "artifacts/evaluation-reliability/blocked-preflight.json"
+  },
+  "limitations": [
+    "Controlled HTTP/process and native Chromium checks are software evidence, not live inference, independent review, human accessibility or V0.2 acceptance.",
+    "Raw acceptance artifacts remain local in this cloud checkout; the original before-fix log and source-bound summary are version controlled."
+  ]
+}
