@@ -2,8 +2,9 @@
 
 Run the unchanged frozen generation gate first and supply its matching report.
 Each trial makes one explicit graph request. Interventions follow APPLICATION
-CALL ADMISSION, not confirmed remote receipt. A fast result is inconclusive and
-is never retried. This does not exercise remote cancellation or human acceptance.
+CALL ADMISSION, not confirmed remote receipt. A fast successful result is
+inconclusive; a failed provider job fails the run and stops further trials.
+Neither is retried. This does not exercise remote cancellation or human acceptance.
 No model downloads, substitute outputs, provider hooks or automatic retries exist.
 """
 from __future__ import annotations
@@ -47,6 +48,11 @@ class LifecycleFailure(ValueError):
 
 class EvaluationInterrupted(BaseException):
     pass
+
+
+PROVIDER_FAILED = ('The provider job failed before the intervention took effect. This is a '
+                   'provider or output failure, not a timing race; no automatic retry and no '
+                   'further paid trials.')
 
 
 def digest(value):
@@ -239,13 +245,17 @@ def exercise(server, scenario, provider, allow_external, fixture, trial, save, t
         job = api.read(path)
         _record_job(trial, job, save)
     if job['status'] not in ACTIVE or job['calls_started'] != 1:
-        trial.update(status='not_exercised', reason='The job finished or advanced beyond its first admitted call before intervention; no automatic retry.')
+        failed = job['status'] == 'failed'
+        if failed:
+            trial.update(status='failed', reason=PROVIDER_FAILED)
+        else:
+            trial.update(status='not_exercised', reason='The job finished or advanced beyond its first admitted call before intervention; no automatic retry.')
         trial['available_proposals'] = api.read(base + '/proposals')
         trial['after_case'] = api.read(base)['case']
         trial['after_case_sha256'] = digest(trial['after_case'])
         trial['response_evidence_status'] = 'Only the available proposals contain returned transport evidence; literal successful HTTP bodies are not archived by this runner.'
         save()
-        return not job['worker_active']
+        return not failed and not job['worker_active']
 
     trial['intervention'] = {'at': utcnow().isoformat(), 'kind': scenario,
         'trigger': 'first_application_call_admission_observed',
@@ -297,8 +307,11 @@ def exercise(server, scenario, provider, allow_external, fixture, trial, save, t
                  after_case=after_case, expected_case=expected_case,
                  after_case_sha256=digest(after_case), expected_case_sha256=digest(expected_case),
                  after_proposals_sha256=digest(proposals), observation_interval_seconds=.25)
-    if (trial.get('status') == 'not_exercised'
-            or (not expected_status_seen and later['status'] in ('succeeded', 'failed'))):
+    provider_failed = not expected_status_seen and later['status'] == 'failed'
+    if provider_failed:
+        trial.update(status='failed', reason=PROVIDER_FAILED)
+    elif (trial.get('status') == 'not_exercised'
+            or (not expected_status_seen and later['status'] == 'succeeded')):
         trial.update(status='not_exercised', reason='Job finished before the intervention could suppress publication; no automatic retry.')
     else:
         checks = {'expected_terminal_status': later['status'] == EXPECTED[scenario],
@@ -315,7 +328,7 @@ def exercise(server, scenario, provider, allow_external, fixture, trial, save, t
         'reason': 'Analysis jobs publish no proposal for cancelled, superseded or interrupted work; application admission does not prove remote receipt.',
         'remote_completion': 'unknown', 'remote_billing': 'unknown'}
     save()
-    return True
+    return not provider_failed
 
 
 def run(provider, *, allow_inference=False, allow_external=False,
@@ -332,7 +345,7 @@ def run(provider, *, allow_inference=False, allow_external=False,
         'native_browser_verified': False, 'independent_expert_review': False,
         'full_prd_acceptance': False, 'production_approved': False,
         'limits': ['Interventions follow application call admission; remote receipt is unverified.',
-                  'A fast completion is NOT_EXERCISED, never retried automatically.',
+                  'A fast successful completion is NOT_EXERCISED; a failed provider job fails the run. Neither is retried.',
                   'Discarded or killed responses may be unavailable; no fabricated trace or served model.',
                   'No provider-side cancellation guarantee or human/model-quality acceptance.',
                   'Lifecycle checks are application-process/HTTP observations, not native UI acceptance.']}
@@ -400,9 +413,18 @@ def run(provider, *, allow_inference=False, allow_external=False,
     finally:
         if signal_installed:
             signal.signal(signal.SIGTERM, previous_signal)
-        report['source_unchanged_during_run'] = report['source'] == source_manifest()
+        # A failed final inspection must not mask the original outcome, skip the
+        # last checkpoint or relabel an interrupted run as an ordinary failure.
+        try:
+            report['source_unchanged_during_run'] = report['source'] == source_manifest()
+            problem = 'Source changed during the lifecycle run.'
+        except Exception as exc:
+            report['source_unchanged_during_run'] = False
+            problem = 'Final source inspection failed: ' + type(exc).__name__
         if not report['source_unchanged_during_run']:
-            report.update(status='failed', reason='Source changed during the lifecycle run.')
+            report['source_problem'] = problem
+            if report['status'] != 'interrupted':
+                report.update(status='failed', reason=problem)
         report['finished_at'] = utcnow().isoformat()
         report['application_calls_admitted_observed'] = sum(t['max_application_calls_admitted'] for t in report['scenarios'])
         save()

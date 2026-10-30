@@ -319,3 +319,19 @@ def test_source_inspection_error_fails_closed_without_losing_returned_evidence(t
     if after_last_response:
         assert report['structural_gate_passed'] is True
         assert report['results'][-1]['proposal']['raw_output']['transport']['calls'][-1]['raw_content']
+
+
+def test_failed_final_source_inspection_keeps_interrupted_status(tmp_path,monkeypatch):
+    inspections=[]
+    def inspect():
+        inspections.append(True)
+        if len(inspections)>2:raise OSError('final inspection unavailable')
+        return {'sha256':'initial','files':{}}
+    def interrupted(*args,**kwargs):raise KeyboardInterrupt()
+    monkeypatch.setattr(runner,'source_manifest',inspect)
+    monkeypatch.setattr(runner,'propose',interrupted)
+    with pytest.raises(KeyboardInterrupt):run(tmp_path)
+    report=json.loads(report_files(tmp_path)[0].read_text())
+    assert report['status']=='interrupted' and report['interruption']['error_type']=='KeyboardInterrupt'
+    assert not report['source_unchanged_during_run'] and report['source_at_finish'] is None
+    assert report['source_checks'][-1]=={'point':'finish','status':'inspection_failed','error_type':'OSError'}

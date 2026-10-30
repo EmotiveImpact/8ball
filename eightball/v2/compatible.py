@@ -31,7 +31,13 @@ _DNS_ALIASES = ('nip.io', 'sslip.io', 'localtest.me', 'lvh.me')
 _DASHSCOPE_HOSTS = {'dashscope.aliyuncs.com', 'dashscope-intl.aliyuncs.com',
                     'dashscope-us.aliyuncs.com'}
 _MODEL = re.compile(r'[A-Za-z0-9][A-Za-z0-9._/-]{0,179}')
-_SERVED_MODEL = re.compile(r'[A-Za-z0-9][A-Za-z0-9._:/@-]{0,179}')
+# Other gateways use version tags such as qwen3:8b, vendor.model-v1:0 or
+# model@20250514. OpenRouter-like hosts keep the strict form: their suffixes
+# select routing variants, which are never treated as version tags elsewhere.
+_TAGGED_MODEL = re.compile(r'[A-Za-z0-9][A-Za-z0-9._:/@-]{0,179}')
+_ROUTING_TAGS = _AUTOMATIC | {'free', 'nitro', 'floor', 'online', 'exacto', 'beta',
+                              'extended', 'thinking'}
+_SERVED_MODEL = _TAGGED_MODEL
 
 
 def _contains_credential(content: str, token: str) -> bool:
@@ -120,10 +126,13 @@ def settings() -> CompatibleSettings:
     # unlike its openrouter/free router. Do not generalize this exception to
     # other hosts or routing suffixes such as :nitro.
     catalog_model = model.removesuffix(':free') if host == 'openrouter.ai' else model
-    if (len(model) > 180 or not _MODEL.fullmatch(catalog_model)
+    pattern = _MODEL if 'openrouter' in host else _TAGGED_MODEL
+    name, *tags = re.split(r'[:@]', catalog_model)
+    if (len(model) > 180 or not pattern.fullmatch(catalog_model)
             or any(part in {'', '.', '..'} for part in catalog_model.split('/'))
+            or name.lower() in _AUTOMATIC
+            or any(not tag or tag.lower() in _ROUTING_TAGS for tag in tags)
             or (catalog_model != model and catalog_model.count('/') != 1)
-            or catalog_model.lower() in _AUTOMATIC
             or catalog_model.lower() in {'openrouter/auto', 'openrouter/free'}):
         raise HostedSetupRequired('EIGHTBALL_API_MODEL must be one explicit model identifier, without a URL or automatic routing suffix.')
     if provider in _AUTOMATIC or not re.fullmatch(r'[a-z][a-z0-9-]{0,63}', provider):
@@ -150,7 +159,10 @@ def configuration_status() -> dict:
               'routing_provider': None, 'endpoint_host': None}
     try:
         configured = settings()
-    except HostedSetupRequired:
+    except HostedSetupRequired as exc:
+        # Fixed validation text only; it never contains configured values.
+        if not missing:
+            status['configuration_error'] = str(exc)
         return status
     status.update(configured=True, configuration_state='configured_not_tested',
                   model=configured.model, api_provider=configured.provider,

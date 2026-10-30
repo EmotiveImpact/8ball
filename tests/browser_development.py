@@ -51,7 +51,9 @@ def main():
         proposal=Proposal(case_id=case.id,base_revision=0,provider='fixture',model='controlled-fixture',purpose='graph',
                          items=graph_items(case,objects,[],'browserfixture'),raw_output=trace,output_hash='fixture-only',latency_ms=0)
         store.save_proposal(proposal)
-        env={**os.environ,'EIGHTBALL_DB':db,'EIGHTBALL_TOKEN':TOKEN,'HF_TOKEN':'','EIGHTBALL_HF_MODEL':'','EIGHTBALL_HF_PROVIDER':'',
+        # Hosted API settings are absent; Hugging Face settings are present but
+        # locally invalid. Neither can make a request.
+        env={**os.environ,'EIGHTBALL_DB':db,'EIGHTBALL_TOKEN':TOKEN,'HF_TOKEN':'fictional_invalid_setup_fixture','EIGHTBALL_HF_MODEL':'https://not-a-model','EIGHTBALL_HF_PROVIDER':'fixture-provider',
              'EIGHTBALL_API_BASE_URL':'','EIGHTBALL_API_MODEL':'','EIGHTBALL_API_PROVIDER':'','EIGHTBALL_API_KEY':'','EIGHTBALL_API_ROUTING_PROVIDER':''}
         process=subprocess.Popen([sys.executable,'-m','eightball'],cwd=ROOT,env=env,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
         try:
@@ -92,7 +94,9 @@ def main():
                     expect(page.locator('.dialog')).to_have_count(0)
                     check('API setup Escape restores logical focus',page.locator('[data-action=api-setup]').evaluate('(e)=>document.activeElement===e'))
                     hf=page.locator('.provider-card').filter(has=page.get_by_role('heading',name='Hugging Face',exact=True))
-                    check('absent hosted credentials are accurately shown','Not configured' in hf.inner_text())
+                    check('invalid hosted settings are distinguished from absent settings','Settings invalid' in hf.inner_text() and 'Not configured' not in hf.inner_text())
+                    check('invalid hosted settings explain the fixed validation reason','Setup issue: EIGHTBALL_HF_MODEL must be an explicit' in hf.inner_text())
+                    check('invalid hosted settings never echo configured values','not-a-model' not in hf.inner_text() and 'fictional_invalid_setup_fixture' not in page.content())
                     check('hosted setup does not imply paid calls','Disabled' in hf.inner_text())
                     page.locator('[data-action=hosted-setup]').click()
                     expect(page.get_by_role('heading',name='Hugging Face setup')).to_be_visible()
@@ -104,6 +108,7 @@ def main():
                     page.locator('main [data-action=propose-graph]').click()
                     page.locator('form[data-form=analyse] [name=provider]').select_option('openai_compatible')
                     check('API graph drafting is explicitly selectable',page.locator('form[data-form=analyse] [name=provider]').input_value()=='openai_compatible')
+                    check('analysis form reports both hosted configuration states','Hosted API: Not configured' in page.locator('.dialog').inner_text() and 'Hugging Face: Settings invalid' in page.locator('.dialog').inner_text())
                     check('API data transmission permission starts unchecked',not page.locator('form[data-form=analyse] [name=allow_external]').is_checked())
                     page.keyboard.press('Escape')
                     page.locator('nav [data-tab=models]').click()

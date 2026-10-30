@@ -67,6 +67,30 @@ If the actual service demonstrates an incompatibility, retain the failure and
 implement a separately verified native adapter without changing acceptance.
 No Anthropic SDK dependency or upstream runtime has been installed.
 
+## Documented compatibility limits, read 30 October 2026
+
+The [official compatibility page](https://platform.claude.com/docs/en/api/openai-sdk)
+was readable on 30 October 2026. It documents, without any actual call:
+
+- `response_format` is **ignored**. Our strict JSON schema is therefore not
+  enforced by the service; conformance relies only on the system instruction
+  and the existing local JSON/schema/graph gates. Fenced or prose-wrapped JSON
+  fails as `invalid_json` and is never repaired. Expect this risk before paying.
+- `temperature` 0 is accepted for `claude-sonnet-4-6`. Claude 4.7 and later
+  models return HTTP 400 for any value below 1, so switching the configured
+  model to a newer Claude family fails before inference with the current
+  transport. Do not change the transport's temperature to pass; that is a
+  separate, verified change.
+- Personal or service-account keys not scoped to a workspace need an
+  `anthropic-workspace-id` header, which this transport does not send. Use a
+  workspace-scoped key.
+- Anthropic describes the layer as intended for testing, not production; native
+  structured outputs require the Messages API. A native adapter remains a
+  separately scoped task.
+
+Documentation is not an Anthropic response. Only the first authorised actual
+run establishes compatibility.
+
 ## After settings are active
 
 Follow [actual-provider evidence](ACTUAL-PROVIDER-EVIDENCE.md), using the existing

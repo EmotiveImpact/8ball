@@ -65,6 +65,10 @@ not authenticated/tested support. If explicitly selected, use provider identity
 experiential-labs and a securely supplied key scoped to api.experientiallabs.ai.
 Do not silently switch from the selected provider or assume schema support.
 
+Anthropic's compatibility page (read 30 October 2026) says `response_format` is
+ignored, so schema conformance depends on the prompt and local gates only; see
+ANTHROPIC-SETUP.md for the temperature and workspace-key limits before paying.
+
 Run the unchanged fixtures once after usable access is established:
 
 ```sh
@@ -86,8 +90,13 @@ Only after matching successful generation:
 EIGHTBALL_BROWSER=/usr/bin/chromium .venv/bin/python evals/full_journey.py --provider openai_compatible --allow-inference --allow-external --transport native
 ```
 
-Lifecycle races can admit additional calls. Fast races are inconclusive and
-discarded responses/billing may be unknown; do not automatically retry.
+Run generation and lifecycle in the same checkout without changing source or
+research submodule checkout state; the source identity includes checked-out
+research pins, so a report from another checkout is correctly rejected.
+
+Lifecycle races can admit additional calls. A fast successful job is
+inconclusive; a failed provider job fails the run and stops further trials.
+Discarded responses/billing may be unknown; do not automatically retry.
 
 ## Genuine acceptance and continuity
 

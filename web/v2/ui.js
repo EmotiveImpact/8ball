@@ -22,6 +22,9 @@ export const options=objects=>objects.map(x=>[x.id,x.title??x.name??x.question])
 export const heading=(k,t,p,buttons='')=>`<div class="page-heading"><div><span class="kicker">${esc(k)}</span><h1>${esc(t)}</h1><p>${esc(p)}</p></div><div class="toolbar">${buttons}</div></div>`;
 export const empty=(title,text,actions='')=>`<section class="panel empty"><span class="empty-symbol">${icon('room')}</span><h2>${esc(title)}</h2><p>${esc(text)}</p><div class="toolbar">${actions}</div></section>`;
 export const warning=(text,tone='')=>`<div class="notice ${esc(tone)}">${esc(text)}</div>`;
+// Hosted provider configuration: present, rejected by local validation, or absent. Never live validation.
+export const hostedState=p=>p?.configured?['reported','Configured · not tested']:p?.configuration_state==='invalid_configuration'?['pending','Settings invalid · not used']:['unknown','Not configured'];
+export const hostedIssue=p=>p?.configuration_error?note('Setup issue: '+p.configuration_error):'';
 export const provenance=p=>p?`${badge('reported',pretty(p.origin))}${p.references?.map(s=>`<blockquote>${esc(s.quote)}<small>${esc(s.evidence_id)} · characters ${s.start}–${s.end}</small></blockquote>`).join('')??''}${p.note?note(p.note):''}`:'';
 export function saveFile(name,value,type='application/json'){const b=new Blob([type==='application/json'?JSON.stringify(value,null,2):value],{type});const u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);}
 let timer;

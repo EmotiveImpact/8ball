@@ -4,6 +4,51 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 · Review fixes: truthful lifecycle failures and clearer hosted setup
+
+2026-10-30 · `local_unreleased`
+
+Fix findings from an independent review of merge 1038291 and document Anthropic compatibility limits before the paid test.
+
+### Added
+
+- Hosted provider cards and the analysis form distinguish invalid settings from absent settings and show the fixed validation reason.
+- Anthropic compatibility limits (ignored response_format, temperature on Claude 4.7+, workspace keys) recorded before spending.
+
+### Changed
+
+- Generic hosted API accepts explicit version tags such as qwen3:8b or model@20250514 outside OpenRouter-like hosts; routing words stay rejected.
+
+### Fixed
+
+- A provider job that fails before intervention is a failed lifecycle trial and stops further paid trials, instead of an inconclusive race.
+- A failed final source inspection no longer relabels an interrupted run as failed or masks the lifecycle runner's original error and last checkpoint.
+
+### Verification
+
+- 1282 source tests and 394 native browser checks across all eleven suites passed; inspection valid.
+- Native run status failed only because installed-engine regressions exceeded the 120 s limit under host load; a separate longer-timeout rerun passed 1282/1282.
+
+### Limitations
+
+- No actual inference or paid request. Anthropic limits come from official documentation, not a response.
+- Proxy policy (EM-102) and transport duplication (EM-103) are recorded, not changed.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Outcome labels could hide a dead provider; the selected Anthropic route ignores the strict schema; evidence identity depends on research checkout state.
+- Risk: The first paid Anthropic run may fail as invalid_json; generic API keys follow environment proxies.
+- Risk: The fixed 120 s installed-engine timeout now fails native acceptance on a loaded host.
+- Architecture: Keep strict local gates; a native Messages adapter is a candidate only after demonstrated failure; consolidate transports later.
+- Roadmap decision: Existing-task fixes under B02-15/ES03-05; no new required task or status change.
+Registered discoveries: EM-099, EM-100, EM-101, EM-102, EM-103, EM-104.
+
+Roadmap items: `B02-09`, `B02-15`, `ES03-05`.
+
+Evidence: [docs/evidence/review-fixes-native-2026-10-30.json](docs/evidence/review-fixes-native-2026-10-30.json), [docs/delivery/sessions/2026-10-30-review-fixes.md](docs/delivery/sessions/2026-10-30-review-fixes.md), [docs/v2/ANTHROPIC-SETUP.md](docs/v2/ANTHROPIC-SETUP.md), [docs/delivery/NEXT-BUILD.md](docs/delivery/NEXT-BUILD.md).
+
 ## 0.2.0-alpha.8 · Combined build passes native verification and checkpoint CI
 
 2026-10-25 · `local_unreleased`

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-25",
+  "updated_on": "2026-10-30",
   "required_prompts": [
     {
       "id": "ER-01",
@@ -3597,6 +3597,170 @@
           "decision": "adopted",
           "by": "Codex integration review",
           "reason": "existing_task: preserve source and uncertain auth evidence, resolve already-integrated PR ancestry, prepare exact next-agent tests. A generic save rejection did not establish the earlier claimed field-specific cause. No acceptance promotion."
+        }
+      ]
+    },
+    {
+      "id": "EM-099",
+      "title": "A failed provider job was recorded as an inconclusive timing race",
+      "origin": "Independent coding-agent review of merge 1038291",
+      "first_seen": "2026-10-30",
+      "evidence_level": "supported_by_tests",
+      "observation": "The lifecycle runner labelled any job that finished before intervention as not_exercised, including jobs that failed. A revoked key, rate limit or invalid output after a passing generation gate would make the whole run inconclusive (exit 2, same as blocked) and still submit the remaining paid trials. A test asserted that behaviour.",
+      "product_implication": "Classify evaluation outcomes by what happened, not only by timing. A failed provider job is a failed trial that stops further paid requests; only a fast successful job is an inconclusive race.",
+      "task_ids": [
+        "B02-15",
+        "ES03-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "evals/provider_lifecycle.py",
+        "tests/test_provider_lifecycle.py",
+        "docs/delivery/sessions/2026-10-30-review-fixes.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "adopted",
+          "by": "Claude Code review-fix session",
+          "reason": "existing_task: bounded fix inside B02-15/ES03-05 lifecycle evidence; no acceptance status change."
+        }
+      ]
+    },
+    {
+      "id": "EM-100",
+      "title": "Anthropic's compatibility endpoint ignores the strict response schema",
+      "origin": "Independent coding-agent review of merge 1038291; official documentation read 2026-10-30",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "Anthropic's OpenAI-compatibility page lists response_format as ignored, rejects temperature below 1 on Claude 4.7 and later, and needs a workspace header for unscoped keys. The prepared claude-sonnet-4-6 test therefore relies on the prompt alone for JSON shape; the transport correctly refuses to repair fenced or prose output.",
+      "product_implication": "Expect possible invalid_json failures in the first paid run and retain them. If they occur, a separately verified native Messages adapter with structured outputs is the candidate fix, not response repair or weaker gates.",
+      "task_ids": [
+        "B02-09",
+        "ES03-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/v2/ANTHROPIC-SETUP.md",
+        "docs/delivery/NEXT-BUILD.md",
+        "docs/delivery/sessions/2026-10-30-review-fixes.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "candidate",
+          "by": "Claude Code review-fix session",
+          "reason": "Documented the risk before spending. A native adapter is not adopted until an actual run demonstrates the failure; no scope change."
+        }
+      ]
+    },
+    {
+      "id": "EM-101",
+      "title": "Source identity depends on research checkout state",
+      "origin": "Independent coding-agent review of merge 1038291",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "The acceptance source hash includes each research submodule's checked-out commit. Identical application source hashes differently with and without the 28 checkouts, so a generation report from one environment is rejected by lifecycle or inspect in another. This follows the explicit AGENTS.md rule to fingerprint checked-out pins.",
+      "product_implication": "Run generation, lifecycle and inspection in the same checkout. Any change to treat an absent checkout as equivalent to its pin needs an owner decision because it weakens an explicit evidence rule.",
+      "task_ids": [
+        "B02-09",
+        "B02-15"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "scripts/acceptance.py",
+        "docs/delivery/NEXT-BUILD.md",
+        "docs/delivery/sessions/2026-10-30-review-fixes.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "deferred",
+          "by": "Claude Code review-fix session",
+          "reason": "Kept the required fingerprint; documented the same-checkout procedure. Owner decision needed before any normalisation."
+        }
+      ]
+    },
+    {
+      "id": "EM-102",
+      "title": "Hosted providers follow different proxy and CA policies",
+      "origin": "Independent coding-agent review of merge 1038291",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "The generic hosted API transport inherits HTTPS_PROXY and SSL_CERT_FILE from the environment, while the Hugging Face transport does not. An intercepting proxy trusted through a custom CA can therefore see the generic API key. The behaviour is documented as managed proxy support but no explicit decision covers the difference.",
+      "product_implication": "Decide one deliberate policy for hosted credentials and proxies, with a production-security review, before agency use.",
+      "task_ids": [
+        "ES03-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "eightball/v2/compatible.py",
+        "eightball/v2/analysis_jobs.py",
+        "docs/delivery/sessions/2026-10-30-review-fixes.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "candidate",
+          "by": "Claude Code review-fix session",
+          "reason": "Security policy choice for the owner; the cloud test environment needs the managed proxy. No code change."
+        }
+      ]
+    },
+    {
+      "id": "EM-103",
+      "title": "Two hosted transports duplicate request and evidence code",
+      "origin": "Independent coding-agent review of merge 1038291",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "CompatibleSession.generate largely copies HuggingFaceSession, and the two have drifted: only the generic transport checks the served model name and screens output for the configured key. Evaluation runners also duplicate checkpoint and signal handling.",
+      "product_implication": "Extract a shared transport core after the first actual-provider run, so evidence safeguards apply equally to both providers. Not worth the risk before the paid test.",
+      "task_ids": [
+        "ES03-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "eightball/v2/compatible.py",
+        "eightball/v2/hosted.py",
+        "docs/delivery/sessions/2026-10-30-review-fixes.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "deferred",
+          "by": "Claude Code review-fix session",
+          "reason": "Refactor deferred until after actual-provider evidence; no scope change."
+        }
+      ]
+    },
+    {
+      "id": "EM-104",
+      "title": "Installed-engine regression timeout is too tight for loaded hosts",
+      "origin": "Native acceptance on 2026-10-30",
+      "first_seen": "2026-10-30",
+      "evidence_level": "observed_in_build",
+      "observation": "scripts/build_endstate.py runs the full 1282-test suite against the installed wheel with a fixed 120-second subprocess limit. On a loaded 4-CPU sandbox it took 145 s and failed native acceptance although every test passed; an unloaded sandbox took about 70 s.",
+      "product_implication": "Acceptance can fail for host speed rather than code. Decide a deliberate limit (or a configurable one recorded in the report) rather than editing it to obtain green runs.",
+      "task_ids": [
+        "ES01-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "scripts/build_endstate.py",
+        "docs/evidence/review-fixes-native-2026-10-30.json"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-30",
+          "decision": "candidate",
+          "by": "Claude Code review-fix session",
+          "reason": "Not changed in this sprint, to avoid altering a gate just to pass; reported with the failed run."
         }
       ]
     }

@@ -1,3 +1,17 @@
+# Current handoff: review fixes on consolidated main
+
+Branch `room/start-a-claude-code-sub-agent-to-review-n4qh`, base `1038291` (main
+after PR4). An independent review of that merge found no high-severity defects.
+This sprint fixes its confirmed findings: failed lifecycle provider jobs now
+fail and stop further paid trials (EM-099), interrupted evidence keeps its
+status, invalid hosted settings show a fixed reason, and tagged model names work
+outside OpenRouter. Anthropic's compatibility layer ignores `response_format`
+(EM-100); read [ANTHROPIC-SETUP](../v2/ANTHROPIC-SETUP.md) before the paid run.
+[Session, verification and ER-01–15](sessions/2026-10-30-review-fixes.md).
+No inference, release, deployment or main merge. Task statuses unchanged.
+
+---
+
 # Current handoff: combined development build
 
 Current cumulative software verification passed on `a9254e6087ef606d581d626bfcda9d7e555c857e`:

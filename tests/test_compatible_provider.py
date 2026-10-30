@@ -445,3 +445,33 @@ def test_request_and_streamed_response_limits(monkeypatch):
     session = CompatibleSession(allow_external=True, client=cl)
     with pytest.raises(HostedFailure, match='response_too_large'): session.generate({}, 'test', {})
     assert len(requests) == 1 and session.receipt['calls'][0]['error_code'] == 'response_too_large'
+
+
+@pytest.mark.parametrize('model', ['qwen3:8b', 'anthropic.claude-v1:0', 'vendor/model@20250514'])
+def test_tagged_model_identifiers_are_explicit_outside_openrouter(monkeypatch, model):
+    configure(monkeypatch); monkeypatch.setenv('EIGHTBALL_API_MODEL', model)
+    assert settings().model == model and configuration_status()['configured']
+
+
+@pytest.mark.parametrize('model', ['qwen3:auto', 'model@default', 'model:', '@model', 'qwen3:8b@', 'auto:8b', 'qwen/model:free'])
+def test_tagged_model_identifiers_still_reject_routing_words_and_empty_tags(monkeypatch, model):
+    configure(monkeypatch); monkeypatch.setenv('EIGHTBALL_API_MODEL', model)
+    with pytest.raises(HostedSetupRequired): settings()
+
+
+def test_openrouter_keeps_strict_untagged_catalog_identifiers(monkeypatch):
+    configure(monkeypatch, 'https://openrouter.ai/api/v1', 'openrouter')
+    monkeypatch.setenv('EIGHTBALL_API_ROUTING_PROVIDER', 'Alibaba')
+    for model in ('qwen/qwen3:nitro', 'qwen/qwen3@20250514'):
+        monkeypatch.setenv('EIGHTBALL_API_MODEL', model)
+        with pytest.raises(HostedSetupRequired): settings()
+
+
+def test_invalid_configuration_reports_fixed_reason_without_values(monkeypatch):
+    configure(monkeypatch, 'http://private-value.example/v1')
+    status = configuration_status()
+    assert status['configuration_state'] == 'invalid_configuration' and not status['configured']
+    assert status['configuration_error'].startswith('Choose a hosted HTTPS DNS endpoint')
+    assert 'private-value' not in json.dumps(status) and TOKEN not in json.dumps(status)
+    monkeypatch.delenv('EIGHTBALL_API_KEY')
+    assert 'configuration_error' not in configuration_status()

@@ -212,7 +212,9 @@ def main(argv=None, *, default_provider='huggingface'):
         try:
             inspect_source(report,'finish')
         except SourceEvidenceInvalid as exc:
-            report.update(status='failed',reason=str(exc))
+            # Keep an interrupted/aborted status; source_checks records the failure.
+            if report['status'] not in ('interrupted','aborted'):report['status']='failed'
+            report.setdefault('reason',str(exc))
         report['finished_at']=utcnow().isoformat()
         checkpoint(report,directory,report_name)
     return 0 if report['status']=='passed' else 1

@@ -97,8 +97,10 @@ their response/served-model receipt may be unavailable; that reason is recorded.
 
 Exercised trials require the expected terminal state, no proposal/unintended
 case mutation, only the first admitted stage and no later observed work. Fast
-results winning the race are **not_exercised**, making the run inconclusive;
-there is no automatic repeat. Timeouts stop further trials. Cleanup terminates
+successful results winning the race are **not_exercised**, making the run
+inconclusive; there is no automatic repeat. A provider job that fails before the
+intervention takes effect is a **failed** trial, not a timing race; it and
+timeouts stop further paid trials. Cleanup terminates
 only the owned process, even if client close fails. The recorded post-terminal
 observation interval is bounded and is not continuous monitoring.
 

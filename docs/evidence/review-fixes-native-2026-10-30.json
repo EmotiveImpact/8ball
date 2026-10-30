@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+  "tested_source": "uncommitted working tree on room/start-a-claude-code-sub-agent-to-review-n4qh; committed unchanged except documentation-only receipt edits",
+  "run_id": "20261030T091427Z-8431ded8",
+  "source_sha256": "32062567da795d6da3cedf72052d2fcf666e1671a1cb65716167d0113df5e62f",
+  "report_sha256": "340844624c094281501a976ca0630b796fe50e533f743819345f1adad12ab073",
+  "mode": "native",
+  "status": "failed",
+  "source_tests": {
+    "passed": 1282,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "native_browser_checks": 394,
+  "checks": [
+    {
+      "name": "unit",
+      "status": "passed",
+      "seconds": 167.391
+    },
+    {
+      "name": "compile",
+      "status": "passed",
+      "seconds": 0.064
+    },
+    {
+      "name": "delivery",
+      "status": "passed",
+      "seconds": 0.064
+    },
+    {
+      "name": "changelog",
+      "status": "passed",
+      "seconds": 0.114
+    },
+    {
+      "name": "emergence",
+      "status": "passed",
+      "seconds": 0.064
+    },
+    {
+      "name": "javascript",
+      "status": "passed",
+      "seconds": 0.365
+    },
+    {
+      "name": "structural-fixtures",
+      "status": "passed",
+      "seconds": 0.164
+    },
+    {
+      "name": "endstate-package",
+      "status": "failed",
+      "seconds": 122.165
+    },
+    {
+      "name": "schemas",
+      "status": "passed",
+      "seconds": 0.214
+    },
+    {
+      "name": "native-probe",
+      "status": "passed",
+      "seconds": 1.116
+    },
+    {
+      "name": "browser-legacy",
+      "status": "passed",
+      "seconds": 4.272
+    },
+    {
+      "name": "browser-workspace",
+      "status": "passed",
+      "seconds": 11.535
+    },
+    {
+      "name": "browser-providers",
+      "status": "passed",
+      "seconds": 10.231
+    },
+    {
+      "name": "browser-connections",
+      "status": "passed",
+      "seconds": 5.523
+    },
+    {
+      "name": "browser-studio",
+      "status": "passed",
+      "seconds": 10.883
+    },
+    {
+      "name": "browser-sources",
+      "status": "passed",
+      "seconds": 20.349
+    },
+    {
+      "name": "browser-insights",
+      "status": "passed",
+      "seconds": 27.258
+    },
+    {
+      "name": "browser-grounding",
+      "status": "passed",
+      "seconds": 27.257
+    },
+    {
+      "name": "browser-plan_review",
+      "status": "passed",
+      "seconds": 5.472
+    },
+    {
+      "name": "browser-accessibility",
+      "status": "passed",
+      "seconds": 5.122
+    },
+    {
+      "name": "browser-courses",
+      "status": "passed",
+      "seconds": 13.138
+    }
+  ],
+  "failure": {
+    "check": "endstate-package",
+    "cause": "Installed-engine regression subprocess exceeded the fixed 120-second limit under host load (load average about 11-12 on 4 CPUs; the same unit suite took 167 s here versus about 70 s in an unloaded sandbox)."
+  },
+  "separate_rerun": {
+    "command": "scripts/build_endstate.py --regressions with the subprocess timeout raised to 900 s at runtime only; source unchanged",
+    "installed_engine_tests": {
+      "passed": 1282,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "seconds": 145.22,
+    "status": "passed",
+    "counts_as_acceptance_run": false
+  },
+  "inspect": {
+    "valid": true,
+    "reason": "Source and local evidence bytes match; this is not a signed attestation"
+  },
+  "limits": [
+    "The acceptance run status is failed because of the package timeout; the separate rerun is supporting evidence, not a substitute native result.",
+    "No model inference, independent professional or human acceptance.",
+    "No remote CI, release, deployment or main merge."
+  ]
+}

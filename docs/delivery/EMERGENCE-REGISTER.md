@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-10-25. **98 recorded discoveries.**
+Last review: 2026-10-30. **104 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -1800,3 +1800,105 @@ The existing generic API-key requirement was labelled Qwen and allowed only its 
 
 - 2026-10-18 · adopted · Codex configuration review: existing_task: document the observed secret-rebinding restriction and exact owner step; no new required feature, model/professional/human acceptance or runtime research adoption.
 - 2026-10-25 · adopted · Codex integration review: existing_task: preserve source and uncertain auth evidence, resolve already-integrated PR ancestry, prepare exact next-agent tests. A generic save rejection did not establish the earlier claimed field-specific cause. No acceptance promotion.
+
+### [ ] EM-099: A failed provider job was recorded as an inconclusive timing race
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-10-30. **Origin:** Independent coding-agent review of merge 1038291.
+
+The lifecycle runner labelled any job that finished before intervention as not_exercised, including jobs that failed. A revoked key, rate limit or invalid output after a passing generation gate would make the whole run inconclusive (exit 2, same as blocked) and still submit the remaining paid trials. A test asserted that behaviour.
+
+**Product implication:** Classify evaluation outcomes by what happened, not only by timing. A failed provider job is a failed trial that stops further paid requests; only a fast successful job is an inconclusive race.
+
+**Roadmap links:** `B02-15` (partial), `ES03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`, `docs/delivery/sessions/2026-10-30-review-fixes.md`.
+
+**Decision history:**
+
+- 2026-10-30 · adopted · Claude Code review-fix session: existing_task: bounded fix inside B02-15/ES03-05 lifecycle evidence; no acceptance status change.
+
+### [ ] EM-100: Anthropic's compatibility endpoint ignores the strict response schema
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Independent coding-agent review of merge 1038291; official documentation read 2026-10-30.
+
+Anthropic's OpenAI-compatibility page lists response_format as ignored, rejects temperature below 1 on Claude 4.7 and later, and needs a workspace header for unscoped keys. The prepared claude-sonnet-4-6 test therefore relies on the prompt alone for JSON shape; the transport correctly refuses to repair fenced or prose output.
+
+**Product implication:** Expect possible invalid_json failures in the first paid run and retain them. If they occur, a separately verified native Messages adapter with structured outputs is the candidate fix, not response repair or weaker gates.
+
+**Roadmap links:** `B02-09` (blocked), `ES03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/v2/ANTHROPIC-SETUP.md`, `docs/delivery/NEXT-BUILD.md`, `docs/delivery/sessions/2026-10-30-review-fixes.md`.
+
+**Decision history:**
+
+- 2026-10-30 · candidate · Claude Code review-fix session: Documented the risk before spending. A native adapter is not adopted until an actual run demonstrates the failure; no scope change.
+
+### [ ] EM-101: Source identity depends on research checkout state
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Independent coding-agent review of merge 1038291.
+
+The acceptance source hash includes each research submodule's checked-out commit. Identical application source hashes differently with and without the 28 checkouts, so a generation report from one environment is rejected by lifecycle or inspect in another. This follows the explicit AGENTS.md rule to fingerprint checked-out pins.
+
+**Product implication:** Run generation, lifecycle and inspection in the same checkout. Any change to treat an absent checkout as equivalent to its pin needs an owner decision because it weakens an explicit evidence rule.
+
+**Roadmap links:** `B02-09` (blocked), `B02-15` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `scripts/acceptance.py`, `docs/delivery/NEXT-BUILD.md`, `docs/delivery/sessions/2026-10-30-review-fixes.md`.
+
+**Decision history:**
+
+- 2026-10-30 · deferred · Claude Code review-fix session: Kept the required fingerprint; documented the same-checkout procedure. Owner decision needed before any normalisation.
+
+### [ ] EM-102: Hosted providers follow different proxy and CA policies
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Independent coding-agent review of merge 1038291.
+
+The generic hosted API transport inherits HTTPS_PROXY and SSL_CERT_FILE from the environment, while the Hugging Face transport does not. An intercepting proxy trusted through a custom CA can therefore see the generic API key. The behaviour is documented as managed proxy support but no explicit decision covers the difference.
+
+**Product implication:** Decide one deliberate policy for hosted credentials and proxies, with a production-security review, before agency use.
+
+**Roadmap links:** `ES03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `eightball/v2/compatible.py`, `eightball/v2/analysis_jobs.py`, `docs/delivery/sessions/2026-10-30-review-fixes.md`.
+
+**Decision history:**
+
+- 2026-10-30 · candidate · Claude Code review-fix session: Security policy choice for the owner; the cloud test environment needs the managed proxy. No code change.
+
+### [ ] EM-103: Two hosted transports duplicate request and evidence code
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Independent coding-agent review of merge 1038291.
+
+CompatibleSession.generate largely copies HuggingFaceSession, and the two have drifted: only the generic transport checks the served model name and screens output for the configured key. Evaluation runners also duplicate checkpoint and signal handling.
+
+**Product implication:** Extract a shared transport core after the first actual-provider run, so evidence safeguards apply equally to both providers. Not worth the risk before the paid test.
+
+**Roadmap links:** `ES03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `eightball/v2/compatible.py`, `eightball/v2/hosted.py`, `docs/delivery/sessions/2026-10-30-review-fixes.md`.
+
+**Decision history:**
+
+- 2026-10-30 · deferred · Claude Code review-fix session: Refactor deferred until after actual-provider evidence; no scope change.
+
+### [ ] EM-104: Installed-engine regression timeout is too tight for loaded hosts
+
+**Disposition:** candidate. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-10-30. **Origin:** Native acceptance on 2026-10-30.
+
+scripts/build_endstate.py runs the full 1282-test suite against the installed wheel with a fixed 120-second subprocess limit. On a loaded 4-CPU sandbox it took 145 s and failed native acceptance although every test passed; an unloaded sandbox took about 70 s.
+
+**Product implication:** Acceptance can fail for host speed rather than code. Decide a deliberate limit (or a configurable one recorded in the report) rather than editing it to obtain green runs.
+
+**Roadmap links:** `ES01-05` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `scripts/build_endstate.py`, `docs/evidence/review-fixes-native-2026-10-30.json`.
+
+**Decision history:**
+
+- 2026-10-30 · candidate · Claude Code review-fix session: Not changed in this sprint, to avoid altering a gate just to pass; reported with the failed run.

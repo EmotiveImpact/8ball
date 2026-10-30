@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-25",
+  "updated_on": "2026-10-30",
   "product": "8BALL",
   "engine": "ENDSTATE",
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
@@ -20,14 +20,13 @@
     "integration_authority": "docs/decisions/0007-owner-build-consolidation.md",
     "source_merged_not_release_accepted": true,
     "current_sprint": {
-      "branch": "integration/v02-complete-build-20261025",
-      "base_commit": "16b8fff43f5f0614846ac4b01db1ddbe40dcff4e",
-      "status_as_of": "2026-10-25",
+      "branch": "room/start-a-claude-code-sub-agent-to-review-n4qh",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "status_as_of": "2026-10-30",
       "merged": false,
-      "tested_code_commit": "a9254e6087ef606d581d626bfcda9d7e555c857e",
-      "verification": "1267 source tests, 1267 installed-engine regressions and 391 native browser checks across 11 suites passed; inspection valid before receipt edits.",
-      "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
-      "remote_ci": "Both checkpoint PR workflows passed: 40199806937 and 40199807143. Final receipt-head CI and merge tracked in PR4."
+      "verification": "1282 source tests and 394 native checks passed; native run status failed on installed-engine timeout under load; separate rerun passed.",
+      "evidence": "docs/evidence/review-fixes-native-2026-10-30.json",
+      "remote_ci": "Not yet run; pushed development branch only."
     },
     "verified_sprint_history": [
       {
@@ -60,6 +59,16 @@
         "remote_ci": "API Forbidden; no current remote CI result claimed. New branch is outside configured push triggers.",
         "tested_code_commit": "25ca5e2dce4f28ec33d9b132cccabfa15b23683e",
         "tested_code_tree": "7f282146923e18634693ca3fa739b8d4bc41b494"
+      },
+      {
+        "branch": "integration/v02-complete-build-20261025",
+        "base_commit": "16b8fff43f5f0614846ac4b01db1ddbe40dcff4e",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "tested_code_commit": "a9254e6087ef606d581d626bfcda9d7e555c857e",
+        "verification": "1267 source tests, 1267 installed-engine regressions and 391 native browser checks across 11 suites passed; inspection valid before receipt edits.",
+        "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
+        "remote_ci": "Both checkpoint PR workflows passed: 40199806937 and 40199807143. Final receipt-head CI and merge tracked in PR4."
       }
     ],
     "provider_configuration_preparation": {
@@ -342,6 +351,11 @@
       "kind": "integration_and_test_handoff",
       "path": "docs/evidence/build-consolidation-native-2026-10-25.json",
       "result": "1267 source + 1267 installed-engine + 391 native browser checks passed; exact inspection valid; both checkpoint CI workflows passed. PR3 closed as already integrated. No model/independent/human acceptance."
+    },
+    "EV-REVIEW-FIXES-20261030": {
+      "kind": "review_fix_verification",
+      "path": "docs/evidence/review-fixes-native-2026-10-30.json",
+      "result": "1282 source tests + 394 native browser checks passed; native run failed only on the 120 s installed-engine timeout under host load; separate rerun 1282/1282 passed. No model/independent/human acceptance."
     }
   },
   "milestones": [
@@ -764,10 +778,10 @@
       "title": "Reliable reviewed graph proposals for new situations",
       "status": "blocked",
       "required": true,
-      "owner": "Codex",
-      "working_branch": "feat/v02-review-evidence-20261018",
-      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
-      "updated_on": "2026-10-18",
+      "owner": "Claude Code",
+      "working_branch": "room/start-a-claude-code-sub-agent-to-review-n4qh",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "evals/live_generation.py",
@@ -794,7 +808,8 @@
         "EV-EVALUATION-READINESS",
         "EV-REVIEW-EVIDENCE-20261018",
         "EV-ANTHROPIC-SETUP",
-        "EV-OCT25-INTEGRATION"
+        "EV-OCT25-INTEGRATION",
+        "EV-REVIEW-FIXES-20261030"
       ],
       "blockers": [
         "Owner selected Anthropic, with prepared claude-sonnet-4-6 compatibility settings; account availability/pricing, active credentials/destination and real inference remain unverified. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, supply key securely and Save/Publish. Fictional fixtures up to US$5 remain authorised.",
@@ -998,10 +1013,10 @@
       "title": "Model progress/cancellation and accurate installation status",
       "status": "partial",
       "required": true,
-      "owner": "Codex",
-      "working_branch": "feat/v02-review-evidence-20261018",
-      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
-      "updated_on": "2026-10-18",
+      "owner": "Claude Code",
+      "working_branch": "room/start-a-claude-code-sub-agent-to-review-n4qh",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "eightball/v2/analysis_jobs.py",
         "web/v2/job-view.js",
@@ -1009,7 +1024,10 @@
         "eightball/v2/compatible.py",
         "tests/test_compatible_integration.py",
         "evals/provider_lifecycle.py",
-        "tests/test_provider_lifecycle.py"
+        "tests/test_provider_lifecycle.py",
+        "web/v2/views.js",
+        "web/v2/forms.js",
+        "eightball/v2/hosted.py"
       ],
       "depends_on": [
         "ES03-04"
@@ -1024,7 +1042,8 @@
         "EV-COMPATIBLE-CODE",
         "EV-EVALUATION-READINESS",
         "EV-ANTHROPIC-SETUP",
-        "EV-OCT25-INTEGRATION"
+        "EV-OCT25-INTEGRATION",
+        "EV-REVIEW-FIXES-20261030"
       ],
       "blockers": [
         "Lifecycle behaviour with the selected real inference provider remains unverified."
@@ -1683,10 +1702,10 @@
       "title": "Failure handling, model trace and governed provider selection",
       "status": "partial",
       "required": true,
-      "owner": "Codex",
-      "working_branch": "feat/v02-review-evidence-20261018",
-      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
-      "updated_on": "2026-10-18",
+      "owner": "Claude Code",
+      "working_branch": "room/start-a-claude-code-sub-agent-to-review-n4qh",
+      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "updated_on": "2026-10-30",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "eightball/v2/store.py"
@@ -1700,7 +1719,8 @@
         "EV-COMPATIBLE-CODE",
         "EV-EVALUATION-READINESS",
         "EV-REVIEW-EVIDENCE-20261018",
-        "EV-ANTHROPIC-SETUP"
+        "EV-ANTHROPIC-SETUP",
+        "EV-REVIEW-FIXES-20261030"
       ],
       "blockers": [],
       "next_action": "Retain new strict API transport traces and controlled failure evidence; evaluate the selected actual model and independent source/plan quality before closing the broader gate."

@@ -149,6 +149,7 @@ class ControlledAPI:
 class ControlledServer:
     instances = []
     fast = False
+    fast_valid = False
     stuck = False
 
     def __init__(self, database):
@@ -171,12 +172,15 @@ class ControlledServer:
             # demonstrates that failure is not retried or relabelled lifecycle
             # success. Normal trials stop before parsing this actual envelope.
             frame = deepcopy(STAGED['frame'])
-            frame['target_bindings'] = [{'criterion_index': 0, 'target_quote': self.current_case.desired_outcome}]
-            if self.fast:
+            frame['target_bindings'] = [{'criterion_index': i, 'target_quote': self.current_case.desired_outcome}
+                                        for i in range(len(frame['success_criteria']) if self.fast_valid else 1)]
+            if self.fast and not self.fast_valid:
                 frame['verification']['requires_existing'] = ['not-an-existing-condition']
+            # A fast valid trial completes both graph stages before observation.
+            content = STAGED['routes'] if self.fast_valid and len(self.calls) % 2 == 0 else frame
             return httpx.Response(200, json={'model': 'controlled-served-model',
                 'choices': [{'finish_reason': 'stop', 'message': {'role': 'assistant',
-                    'content': json.dumps(frame)}}], 'usage': {'total_tokens': len(self.calls)}})
+                    'content': json.dumps(content)}}], 'usage': {'total_tokens': len(self.calls)}})
         return httpx.Client(transport=httpx.MockTransport(respond), **kwargs)
 
     def start(self):
@@ -353,15 +357,45 @@ def test_all_lifecycle_outcomes_use_real_jobs_without_publication_or_second_call
     assert json.loads(snapshots[-1].read_text()) == report
 
 
-def test_fast_provider_completion_is_inconclusive_and_never_retried(tmp_path, monkeypatch):
-    server_type = controlled_server(monkeypatch, fast=True)
+def test_fast_successful_completion_is_inconclusive_and_never_retried(tmp_path, monkeypatch):
+    server_type = controlled_server(monkeypatch, fast=True, fast_valid=True)
     report, _ = lifecycle.run('openai_compatible', allow_inference=True,
         allow_external=True, generation_report=generation_report(tmp_path), output=tmp_path / 'runs')
     assert report['status'] == 'inconclusive' and report['complete']
     assert all(trial['status'] == 'not_exercised' for trial in report['scenarios'])
-    assert server_type.instances[0].submissions == len(server_type.instances[0].calls) == 3
-    assert server_type.instances[0].restarts == 0
-    assert all(trial['available_proposals'][0]['status'] == 'failed' for trial in report['scenarios'])
+    server = server_type.instances[0]
+    assert server.submissions == 3 and len(server.calls) == 6 and server.restarts == 0
+    assert all(trial['available_proposals'][0]['status'] != 'failed' for trial in report['scenarios'])
+
+
+def test_fast_provider_failure_fails_and_stops_further_paid_trials(tmp_path, monkeypatch):
+    server_type = controlled_server(monkeypatch, fast=True)
+    report, _ = lifecycle.run('openai_compatible', allow_inference=True,
+        allow_external=True, generation_report=generation_report(tmp_path), output=tmp_path / 'runs')
+    assert report['status'] == 'failed' and not report['complete']
+    assert [trial['status'] for trial in report['scenarios']] == ['failed']
+    assert report['scenarios'][0]['reason'] == lifecycle.PROVIDER_FAILED
+    assert server_type.instances[0].submissions == len(server_type.instances[0].calls) == 1
+    assert report['scenarios'][0]['available_proposals'][0]['status'] == 'failed'
+
+
+def test_failed_final_source_inspection_is_saved_without_masking_interrupt(tmp_path, monkeypatch):
+    server_type = controlled_server(monkeypatch)
+    original = ControlledAPI.post
+    def interrupted(self, path, body):
+        result = original(self, path, body)
+        if path.endswith('/cancel'):
+            def broken():
+                raise OSError('final inspection unavailable')
+            monkeypatch.setattr(lifecycle, 'source_manifest', broken)
+            raise KeyboardInterrupt()
+        return result
+    monkeypatch.setattr(ControlledAPI, 'post', interrupted)
+    report, path = lifecycle.run('openai_compatible', allow_inference=True,
+        allow_external=True, generation_report=generation_report(tmp_path), output=tmp_path / 'runs')
+    assert report['status'] == 'interrupted' and not report['source_unchanged_during_run']
+    assert report['source_problem'] == 'Final source inspection failed: OSError'
+    assert json.loads(path.read_text()) == report and 'finished_at' in report
 
 
 @pytest.mark.parametrize('corruption', ['extra_call', 'late_success', 'case_mutation'])
@@ -413,7 +447,7 @@ def test_trial_timeout_cancels_and_stops_remaining_trials_without_retry(tmp_path
 
 
 def test_current_report_and_numbered_snapshots_do_not_overwrite_prior_attempts(tmp_path, monkeypatch):
-    server_type = controlled_server(monkeypatch, fast=True)
+    server_type = controlled_server(monkeypatch, fast=True, fast_valid=True)
     path = generation_report(tmp_path)
     _, first = lifecycle.run('openai_compatible', allow_inference=True,
         allow_external=True, generation_report=path, output=tmp_path / 'runs')
@@ -459,7 +493,7 @@ def test_interrupt_preserves_active_snapshot_and_does_not_retry(tmp_path, monkey
 
 
 def test_changed_source_invalidates_lifecycle_evidence(tmp_path, monkeypatch):
-    server_type = controlled_server(monkeypatch, fast=True)
+    server_type = controlled_server(monkeypatch, fast=True, fast_valid=True)
     original_stop = server_type.stop
     def changed_stop(self):
         result = original_stop(self)
@@ -469,6 +503,7 @@ def test_changed_source_invalidates_lifecycle_evidence(tmp_path, monkeypatch):
     report, _ = lifecycle.run('openai_compatible', allow_inference=True,
         allow_external=True, generation_report=generation_report(tmp_path), output=tmp_path / 'runs')
     assert report['status'] == 'failed' and not report['source_unchanged_during_run']
+    assert report['reason'] == report['source_problem'] == 'Source changed during the lifecycle run.'
 
 
 def test_owned_server_restarts_only_its_process_and_same_disposable_database(tmp_path, monkeypatch):

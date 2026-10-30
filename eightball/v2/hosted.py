@@ -67,10 +67,14 @@ def configuration_status() -> dict:
                if not os.getenv(name, '').strip()]
     try:
         configured = settings()
-    except HostedSetupRequired:
-        return {'configured': False, 'configuration_state': 'not_configured' if missing else 'invalid_configuration',
-                'missing_settings': missing, 'credentials_validated': False,
-                'live_inference_verified': False, 'model': None, 'routing_provider': None}
+    except HostedSetupRequired as exc:
+        status = {'configured': False, 'configuration_state': 'not_configured' if missing else 'invalid_configuration',
+                  'missing_settings': missing, 'credentials_validated': False,
+                  'live_inference_verified': False, 'model': None, 'routing_provider': None}
+        if not missing:
+            # Fixed validation text only; it never contains configured values.
+            status['configuration_error'] = str(exc)
+        return status
     return {'configured': True, 'configuration_state': 'configured_not_tested',
             'missing_settings': [], 'credentials_validated': False,
             'live_inference_verified': False, 'model': configured.model,
