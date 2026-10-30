@@ -15,6 +15,10 @@
     {
       "path": "docs/research/github-2026-10-16/ruflo-source-manifest.json",
       "sha256": "c18cf0bdc90b698f85c8a4a9fb5987360ff25b889153e71aa9f6af895100ba17"
+    },
+    {
+      "path": "docs/research/github-2026-10-26/decision-projects-source-manifest.json",
+      "sha256": "0e3ad47b359e71855beeb84fb950e2c42d70929b7e9e9dadb13e9610d891d9f5"
     }
   ],
   "policy": {
@@ -27,13 +31,13 @@
     "environment_project_roots_added": false
   },
   "summary": {
-    "repository_count": 28,
-    "tracked_blob_count": 71419,
-    "materialized_blob_count": 71417,
-    "worktree_source_bytes": 2179495349,
-    "git_metadata_bytes_at_capture": 1033584336,
-    "preserved_license_notice_files": 128,
-    "omitted_model_file_count": 2,
+    "repository_count": 32,
+    "tracked_blob_count": 82262,
+    "materialized_blob_count": 82257,
+    "worktree_source_bytes": 3868172672,
+    "git_metadata_bytes_at_capture": 1549196196,
+    "preserved_license_notice_files": 131,
+    "omitted_model_file_count": 5,
     "uninitialized_nested_submodule_count": 2,
     "unhydrated_lfs_pointer_count": 51
   },
@@ -1878,6 +1882,174 @@
       "nested_submodules": [],
       "lfs_pointer_files": [],
       "lfs_attribute_paths": []
+    },
+    {
+      "repository": "loomio/loomio",
+      "url": "https://github.com/loomio/loomio.git",
+      "commit": "24380e2131c1e43594a241814f3f460a9b0065f6",
+      "path": "research/external/loomio/loomio",
+      "source_manifest": "docs/research/github-2026-10-26/decision-projects-source-manifest.json",
+      "tracked_blob_count": 5204,
+      "materialized_blob_count": 5204,
+      "worktree_source_bytes": 73824550,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE.txt"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE.txt",
+          "mode": "100644",
+          "git_blob": "dba13ed2ddf783ee8118c6a581dbf75305f816a3"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "worktree_eol_normalized_paths": [],
+      "lfs_attribute_paths": [
+        "test/fixtures/files/email_feedback/.gitattributes"
+      ],
+      "git_metadata_bytes_at_capture": 56091953,
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true,
+        "all_materialized_source_matches_git_with_declared_eol_normalization": true
+      }
+    },
+    {
+      "repository": "Farama-Foundation/HighwayEnv",
+      "url": "https://github.com/Farama-Foundation/HighwayEnv.git",
+      "commit": "37c84a34cadcbfc17d61acf5196a89c380a56943",
+      "path": "research/external/Farama-Foundation/HighwayEnv",
+      "source_manifest": "docs/research/github-2026-10-26/decision-projects-source-manifest.json",
+      "tracked_blob_count": 193,
+      "materialized_blob_count": 193,
+      "worktree_source_bytes": 33282397,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "e70c7fa61af2acddcf24856d857e98eac2ffb0c2"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "worktree_eol_normalized_paths": [
+        "docs/make.bat"
+      ],
+      "lfs_attribute_paths": [
+        ".gitattributes"
+      ],
+      "git_metadata_bytes_at_capture": 28466061,
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true,
+        "all_materialized_source_matches_git_with_declared_eol_normalization": true
+      }
+    },
+    {
+      "repository": "aurelio-labs/semantic-router",
+      "url": "https://github.com/aurelio-labs/semantic-router.git",
+      "commit": "1fa1937e390fe57fb85ee3bbb8b3db593a4145db",
+      "path": "research/external/aurelio-labs/semantic-router",
+      "source_manifest": "docs/research/github-2026-10-26/decision-projects-source-manifest.json",
+      "tracked_blob_count": 196,
+      "materialized_blob_count": 196,
+      "worktree_source_bytes": 3492280,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [
+        "LICENSE"
+      ],
+      "license_notices": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "9e9a49ad4d110e6205cf87c16cedba991f5eacf9"
+        }
+      ],
+      "omitted_model_files": [],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "worktree_eol_normalized_paths": [],
+      "lfs_attribute_paths": [],
+      "git_metadata_bytes_at_capture": 1491774,
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true,
+        "all_materialized_source_matches_git_with_declared_eol_normalization": true
+      }
+    },
+    {
+      "repository": "richardcc/assault-ai-pilot",
+      "url": "https://github.com/richardcc/assault-ai-pilot.git",
+      "commit": "0284a559d8bc3c7a15dfb0bf4fa42278242d60e9",
+      "path": "research/external/richardcc/assault-ai-pilot",
+      "source_manifest": "docs/research/github-2026-10-26/decision-projects-source-manifest.json",
+      "tracked_blob_count": 5250,
+      "materialized_blob_count": 5247,
+      "worktree_source_bytes": 1578078096,
+      "tracked_symlink_count": 0,
+      "root_license_notice_paths": [],
+      "license_notices": [],
+      "omitted_model_files": [
+        {
+          "path": "legacy_archive/checkpoints/ppo_US.pt",
+          "git_blob": "d39791062c034dd1e6065fcd05bacaed5d1a94e3",
+          "reason": "Tracked model-weight artifact intentionally not materialized"
+        },
+        {
+          "path": "legacy_archive/checkpoints/ppo_US_phase01.pt",
+          "git_blob": "c357293e060b0041751d2aaea0c0070a51614142",
+          "reason": "Tracked model-weight artifact intentionally not materialized"
+        },
+        {
+          "path": "legacy_archive/checkpoints/ppo_US_phase01_HRL.pt",
+          "git_blob": "fe2b9fe670a0ee877b42388bb38120e3d78e9fd2",
+          "reason": "Tracked model-weight artifact intentionally not materialized"
+        }
+      ],
+      "nested_submodules": [],
+      "lfs_pointer_files": [],
+      "worktree_eol_normalized_paths": [],
+      "lfs_attribute_paths": [],
+      "git_metadata_bytes_at_capture": 429562072,
+      "verification": {
+        "populated": true,
+        "head_matches_pin": true,
+        "parent_gitlink_matches_pin": true,
+        "worktree_clean": true,
+        "all_non_omitted_tracked_source_present": true,
+        "license_notice_git_blobs_match": true,
+        "all_materialized_source_matches_git_with_declared_eol_normalization": true
+      }
     }
-  ]
+  ],
+  "additional_capture": {
+    "captured_on": "2026-10-26",
+    "application_base_commit": "4f31c6b40141990d0863d9375f47a7ad51863dfc",
+    "repositories": [
+      "loomio/loomio",
+      "Farama-Foundation/HighwayEnv",
+      "aurelio-labs/semantic-router",
+      "richardcc/assault-ai-pilot"
+    ]
+  }
 }

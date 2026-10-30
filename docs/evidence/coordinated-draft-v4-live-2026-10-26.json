@@ -1,0 +1,141 @@
+{
+  "status": "partial_or_failed",
+  "source_commit": "5aacbca91c3909031aec974600e5ccaff15211f7",
+  "source_sha256": "94ad75c09d0d19f165f272860ecec1db1ed00d040b07081fa4a232d1e7242d16",
+  "protocol_sha256": "31fcb19a64159f1d79988337631aa8d4d5b25bfd1cb2a90cccc3782b616e2eed",
+  "archive": "docs/evidence/coordinated-draft-v4-live-2026-10-26.json.xz",
+  "archive_sha256": "e378d805127013ee1f7e67aef82a29ccac32009a68e3d9f1bea54cacfe660b62",
+  "file_sha256": {
+    "claude-opus-5-5/admission.json": "87df4aa671e170be937e4992eccfe0a2eb56656162bdbdcfb84048b447b70f29",
+    "claude-opus-5-5/transports.json": "d9373df0504da7c884c7f43f43a8ce33aec710049f93109b8dc634bbf5427e3a",
+    "claude-sonnet-5-5/admission.json": "7272e3b3c767feae11d93a33ea289fb9da6dad61b9145dce6080f93d67f8b017",
+    "claude-sonnet-5-5/transports.json": "467d1f936a894539694193ed90773b4a4b08738dc42ca6dab23f6b959699c55a",
+    "deepseek-v4.1-flash/admission.json": "356c23e8416ea9f92511a2badd3aeea3580401d7c86ba418d88bfdfe390b9d82",
+    "deepseek-v4.1-flash/transports.json": "7feff4011e5c44619376ac9dadf3e8e7152ef8dd365d1680c530eb4fe76df854",
+    "glm-5.3-uncensored/admission.json": "5d3f792bac62410aa1e525f0e51be354dae858a48109da58f757896669f63f4a",
+    "glm-5.3-uncensored/transports.json": "066d7aa155e1c20eba077f3e34f4ea66e20c6bbce5c7942ea8b0145a534c09a9",
+    "precall-plan.md": "00222beb6c1d6c13d96aac5db14d18144f69abd07664bac3e2a838e82c6fe024",
+    "protocol.json": "e18a330a72f3843d96eff2cac6b524f06eb17d76c64e8aab6fe7548457a65cfc",
+    "report.json": "d103ae965c0133d7f077dd10ddcbedb48ccc2c37212d134f6e5889b9c7090ff0",
+    "started.json": "38bf662611d4a7b057749c69911ed07ae59329812dd711fb51a90dfce286a0db"
+  },
+  "recorded_provider_call_attempts": 10,
+  "known_specialist_cost_nano_usd": 39585,
+  "charge_status": "Provider-reported usage only; planning unpriced; billing unverified.",
+  "results": [
+    {
+      "model": "claude-sonnet-5-5",
+      "planning_requests": 1,
+      "specialist_requests": 0,
+      "phase": "initial",
+      "stop_reason": "invalid_initial_draft",
+      "case_audit_unchanged": true,
+      "initial_retained": false,
+      "revision_retained": false,
+      "failed_draft_retained": true,
+      "final_synthesis_retained": false,
+      "generation_diagnostic": {
+        "code": "invalid_draft_shape",
+        "fields": [
+          {
+            "path": [
+              "success_criteria",
+              0,
+              "confirmation"
+            ],
+            "type": "string_too_long"
+          }
+        ]
+      },
+      "input_tokens": 2836,
+      "output_tokens": 652
+    },
+    {
+      "model": "claude-opus-5-5",
+      "planning_requests": 4,
+      "specialist_requests": 3,
+      "phase": "revision",
+      "stop_reason": "completed",
+      "case_audit_unchanged": true,
+      "initial_retained": true,
+      "revision_retained": true,
+      "failed_draft_retained": false,
+      "final_synthesis_retained": true,
+      "generation_diagnostic": null,
+      "input_tokens": 26527,
+      "output_tokens": 6769
+    },
+    {
+      "model": "glm-5.3-uncensored",
+      "planning_requests": 1,
+      "specialist_requests": 0,
+      "phase": "initial",
+      "stop_reason": "invalid_initial_draft",
+      "case_audit_unchanged": true,
+      "initial_retained": false,
+      "revision_retained": false,
+      "failed_draft_retained": true,
+      "final_synthesis_retained": false,
+      "generation_diagnostic": {
+        "code": "invalid_draft_shape",
+        "fields": [
+          {
+            "path": [
+              "readiness",
+              "confirmation"
+            ],
+            "type": "string_too_long"
+          },
+          {
+            "path": [
+              "approaches",
+              1,
+              "rationale"
+            ],
+            "type": "missing"
+          },
+          {
+            "path": [
+              "approaches",
+              1,
+              "rationation"
+            ],
+            "type": "extra_forbidden"
+          }
+        ]
+      },
+      "input_tokens": 1783,
+      "output_tokens": 1574
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "planning_requests": 1,
+      "specialist_requests": 0,
+      "phase": "initial",
+      "stop_reason": "planning_provider_failed",
+      "case_audit_unchanged": true,
+      "initial_retained": false,
+      "revision_retained": false,
+      "failed_draft_retained": true,
+      "final_synthesis_retained": false,
+      "generation_diagnostic": {
+        "code": "draft_validation_failed",
+        "path": "/frame"
+      },
+      "input_tokens": 1871,
+      "output_tokens": 4096
+    }
+  ],
+  "completed_methods": [
+    "claude-opus-5-5"
+  ],
+  "model_quality_approved": false,
+  "predictive_quality_approved": false,
+  "native_ui_tested": false,
+  "execution_authorized": false,
+  "facts_attested": false,
+  "credential_value_scan": "passed",
+  "automatic_retries": false,
+  "automatic_fallback": false,
+  "resumed_original_protocol": false
+}

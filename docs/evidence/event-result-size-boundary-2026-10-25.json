@@ -1,0 +1,10 @@
+{
+  "source_commit": "a448ff7c6a356c2ed4506e81e3f54cb081353637",
+  "fictional_graph_characters": 16501,
+  "raw_sha256": "4ae41ba53dd549cfa4d63381815c0bf35d58158ec743466cfbe632202591c23f",
+  "result": "rejected_without_truncation",
+  "error": "A bounded result text is required",
+  "retained_work_state": "running",
+  "limitation": "Processing output boundary is 12000 characters; a full ordinary fictional graph already exceeds it. Worker integration must preserve full output or an explicit artifact reference.",
+  "model_inference_performed": false
+}

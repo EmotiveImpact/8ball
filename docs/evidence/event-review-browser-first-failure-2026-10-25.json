@@ -1,0 +1,17 @@
+{
+  "status": "failed",
+  "kind": "standalone_native_test_assertion",
+  "base_commit": "825c8c3969f6cf723a188cc6ae16094aa15c9e7e",
+  "working_tree": "Uncommitted review UI prototype; exact source manifest was not captured for this standalone run.",
+  "failure": "Playwright is_disabled() on the fieldset did not establish the disabled state of its interactive descendants.",
+  "observed": "Retained HTML shows disabled fieldset and disabled controls. Journey had already committed reviewed amendment and acknowledged a notice.",
+  "correction": "Assert disabled state of the actual rationale input and preview button. No application permission check or acceptance assertion removed.",
+  "artifacts": {
+    "artifacts/event-review-first/failure.png": "f2f048bbd10b5e5bf1c3d21beb0e575a6bcbcb386fa628fc27cf33509012f1bb",
+    "artifacts/event-review-first/failure.html": "270c48ce7e613064f890dae2d54c75bc9674ec4d093b0872b4d6ae92dc76fe9a"
+  },
+  "raw_artifacts_committed": false,
+  "subsequent_standalone_native_checks": 27,
+  "model_inference_performed": false,
+  "human_acceptance": false
+}

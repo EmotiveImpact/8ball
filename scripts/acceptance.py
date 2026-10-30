@@ -40,6 +40,8 @@ BROWSER_SUITES=[
  ('plan_review','tests/browser_plan_review.py','browser-plan-review-report.json'),
  ('accessibility','tests/browser_accessibility.py','accessibility-browser-report.json'),
  ('courses','tests/browser_courses.py','browser-courses-report.json'),
+ ('event_review','tests/browser_event_review.py','browser-event-review-report.json'),
+ ('agency','tests/browser_agency.py','browser-agency-report.json'),
 ]
 EXCLUDE={'.git','.venv','__pycache__','.pytest_cache','artifacts','node_modules','build','dist','test-results'}
 EXTERNAL_RESEARCH=Path('research/external')
@@ -102,10 +104,10 @@ def selected_environment(mode):
     env=os.environ.copy()
     # Standard verification cannot accidentally use configured private providers
     # or an operator's own database. Tests create fictional disposable stores.
-    for key in ('HF_TOKEN','HUGGINGFACE_API_TOKEN','TYPESAFE_API_KEY','OPENAI_API_KEY',
+    for key in ('HF_TOKEN','HUGGINGFACE_API_TOKEN','TYPESAFE_API_KEY','OPENAI_API_KEY','ANTHROPIC_API_KEY','EXPERIENTIAL_API_KEY','EXPLABS_API_KEY',
                 'EIGHTBALL_API_KEY','EIGHTBALL_API_BASE_URL','EIGHTBALL_API_MODEL',
-                'EIGHTBALL_API_PROVIDER','EIGHTBALL_API_ROUTING_PROVIDER',
-                'EIGHTBALL_DB','EIGHTBALL_TOKEN','EIGHTBALL_ARTIFACTS','EIGHTBALL_BROWSER_BRIDGE'):
+                'EIGHTBALL_API_PROVIDER','EIGHTBALL_API_ROUTING_PROVIDER','EIGHTBALL_API_JSON_MODE',
+                'EIGHTBALL_DB','EIGHTBALL_TOKEN','EIGHTBALL_AGENCY_CONFIG','EIGHTBALL_ARTIFACTS','EIGHTBALL_BROWSER_BRIDGE'):
         env.pop(key,None)
     if mode=='bridge':env['EIGHTBALL_BROWSER_BRIDGE']='1'
     env['PYTHONDONTWRITEBYTECODE']='1'
@@ -283,7 +285,7 @@ def run(mode='native',base=None,root_output=None):
         syntax=step('javascript',[sys.executable,'-c',
              "from pathlib import Path;import subprocess;files=[Path('web/app.js'),*sorted(Path('web/v2').glob('*.js'))];[subprocess.run(['node','--check',str(p)],check=True) for p in files];print(len(files),'modules checked')"])
         step('structural-fixtures',[sys.executable,'evals/plan_review_bench.py'])
-        step('endstate-package',[sys.executable,'scripts/build_endstate.py','--regressions','--output',str(out/'package')])
+        step('endstate-package',[sys.executable,'scripts/build_endstate.py','--regressions','--output',str(out/'package')],timeout=900)
         step('schemas',[sys.executable,'scripts/export_endstate_schemas.py','--output',str(out/'schemas')])
         if mode!='code':
             ensure_port_available()

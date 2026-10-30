@@ -1,0 +1,381 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "tested_commit": "a31283785f6ccc2a5c31b9b936a9da353dcfb3fe",
+  "branch": "devin/1792969169-roadmap-integrated",
+  "source_sha256": "49eb0908664241b4b4150f49bff4a2a9dc9e18b3ea2f2f09004e17e83c73540d",
+  "provider": "anthropic",
+  "model": "claude-sonnet-5-5",
+  "protocol": "anthropic_messages",
+  "generation_status": "passed",
+  "generation_requests": 5,
+  "lifecycle_status": "passed",
+  "application_calls_admitted_observed": 3,
+  "scenarios": {
+    "cancel": {
+      "status": "passed",
+      "checks": {
+        "expected_terminal_status": true,
+        "worker_inactive": true,
+        "no_proposal_id": true,
+        "no_published_proposal": true,
+        "no_unintended_case_mutation": true,
+        "only_first_call_admitted": true,
+        "no_later_call_observed": true,
+        "status_stable": true
+      }
+    },
+    "stale": {
+      "status": "passed",
+      "checks": {
+        "expected_terminal_status": true,
+        "worker_inactive": true,
+        "no_proposal_id": true,
+        "no_published_proposal": true,
+        "no_unintended_case_mutation": true,
+        "only_first_call_admitted": true,
+        "no_later_call_observed": true,
+        "status_stable": true
+      }
+    },
+    "restart": {
+      "status": "passed",
+      "checks": {
+        "expected_terminal_status": true,
+        "worker_inactive": true,
+        "no_proposal_id": true,
+        "no_published_proposal": true,
+        "no_unintended_case_mutation": true,
+        "only_first_call_admitted": true,
+        "no_later_call_observed": true,
+        "status_stable": true
+      }
+    }
+  },
+  "source_unchanged_during_lifecycle": true,
+  "actual_remote_receipt_verified": false,
+  "remote_completion": "unknown",
+  "remote_cancellation": "unknown",
+  "lifecycle_billing": "unknown",
+  "new_generation_usage_estimate_usd": "0.035328",
+  "known_sonnet_usage_estimate_usd": "0.123828",
+  "known_decision_reported_cost_usd": "0.000008547",
+  "budget_usd": "5",
+  "prior_rejected_request_billing": "unknown",
+  "actual_invoice_verified": false,
+  "provider_enforced_cap_verified": false,
+  "automatic_retries": false,
+  "provider_substitution": false,
+  "application_runtime_changes": false,
+  "independent_quality_approved": false,
+  "predictive_accuracy_approved": false,
+  "human_acceptance": false,
+  "production_approved": false,
+  "released": false,
+  "reports": [
+    {
+      "kind": "generation",
+      "path": "docs/evidence/sonnet55-lifecycle-generation-2026-10-26.json.xz",
+      "raw_sha256": "f0f1fa6706fcfff85ebd0e7b4717089764a3d47dbabb36be73bedb839818c783",
+      "compressed_sha256": "329c4c5bf0012ba682f9f24e3fc6bceb97f3073a009bb2865e9ba984d40c7a2b"
+    },
+    {
+      "kind": "lifecycle",
+      "path": "docs/evidence/sonnet55-lifecycle-run-2026-10-26.json.xz",
+      "raw_sha256": "048a115ba6b8e809fb9435b8722cb9cfa44fe648e1596f372ef60cc103631645",
+      "compressed_sha256": "eb4a335f55bfb40a3f6db2e45ffd06a3b676d57b683ad2d705dcb59be2c1f7c6"
+    },
+    {
+      "kind": "preflight",
+      "path": "docs/evidence/sonnet55-lifecycle-preflight-2026-10-26.json.xz",
+      "raw_sha256": "e44dde74a7778299309bfe44f51715ad0511e47016ba6d0d567a0dc9666b247f",
+      "compressed_sha256": "10194c6aa4cbf86ab042e192a2936860417e5192e6ccf7ab3e24f5a0b8a1f44e"
+    },
+    {
+      "kind": "checkpoints",
+      "path": "docs/evidence/sonnet55-lifecycle-checkpoints-2026-10-26.tar.xz",
+      "raw_sha256": "c68018eff7f6da963f58254c0f737eb4ce2bab5c69904caf06b37947baac2d6c",
+      "compressed_sha256": "e1d8572ffe7d7d78164e3408d3276c4eba254f15acf98b3832ae0f37b46048c2"
+    },
+    {
+      "kind": "prior-ci-timeout",
+      "path": "docs/evidence/ci-verify-timeout-2026-10-26.log.xz",
+      "raw_sha256": "c1380add8c3f2c824a4ad1c4bf4cf4ef0a7705d61b4aae9cb332644c33fc3bd1",
+      "compressed_sha256": "a357adfb6cf4c614e7a747b330b68ce5876cde9658025680c562101aae80763a"
+    }
+  ],
+  "checkpoints": [
+    {
+      "path": "checkpoints/000001.json",
+      "sha256": "00f0192696e80b794b0c2c56a09773a64027ac3f81c0d42c057b3a898c86caf8"
+    },
+    {
+      "path": "checkpoints/000002.json",
+      "sha256": "3ada63a10814acdd04e3d66e908e89bc717c6b4f39ae67eee8abc35e9f6fe06b"
+    },
+    {
+      "path": "checkpoints/000003.json",
+      "sha256": "5bf088fae8922b510039c5e655dfe14e66fa4fa3289d57f72d57ea49619c63fb"
+    },
+    {
+      "path": "checkpoints/000004.json",
+      "sha256": "2414ba9d627307366146cba97bb3e88738f7952f715eeea33f9e5d67a18e3759"
+    },
+    {
+      "path": "checkpoints/000005.json",
+      "sha256": "4a8abd880fbc189e27a172f25132c6e1992696a1369cf2b026afbc0b52482719"
+    },
+    {
+      "path": "checkpoints/000006.json",
+      "sha256": "1c05df0ce16226650c67a0b56018b3e00e0a80c3c86260386cb023f5fcba7396"
+    },
+    {
+      "path": "checkpoints/000007.json",
+      "sha256": "a562769ac1f8e3e7b982c7527683f4e640fa289696fa92d053b8d86dfa2ceba5"
+    },
+    {
+      "path": "checkpoints/000008.json",
+      "sha256": "603e7e969a770e9ffb3a7c9f69d16dc5d5d1998ffd4e5731546d43c5d2499ba6"
+    },
+    {
+      "path": "checkpoints/000009.json",
+      "sha256": "5ae3cc1127c795072ab6fb27c5cc642d1d82e0ec2b4469a75f4a5602079f91a1"
+    },
+    {
+      "path": "checkpoints/000010.json",
+      "sha256": "b250b9c02b96b0ebfb93a0898b617b366f928b1133ad94143079d5584733e279"
+    },
+    {
+      "path": "checkpoints/000011.json",
+      "sha256": "3cdc719d3ae99074f3865bc18c2e6540c4f47a098f1a390f3bb56e8aca9e9d24"
+    },
+    {
+      "path": "checkpoints/000012.json",
+      "sha256": "48e7d6668d85353ed2f61d0d42f70803efaa3d01562ddcd5e145854e8349667c"
+    },
+    {
+      "path": "checkpoints/000013.json",
+      "sha256": "90b10f933b8345cae48115b34b2e9ff177ce4442dec966c7ae908687566d299b"
+    },
+    {
+      "path": "checkpoints/000014.json",
+      "sha256": "a61c3b0718c9406d58ff22502c2341f16c4c932d3a8921fb1476d81e33de8a0a"
+    },
+    {
+      "path": "checkpoints/000015.json",
+      "sha256": "425c8c40fad3d4f298c1951c182190e433286824963c3253ace5db85281fd155"
+    },
+    {
+      "path": "checkpoints/000016.json",
+      "sha256": "e9dccae50157c1566b99a3f7b2defe0012d70042fc5af062fd960b3155f6c3ee"
+    },
+    {
+      "path": "checkpoints/000017.json",
+      "sha256": "6bdb68906e0f587806744bc46d7b0bc3e0204fe48cae4b636988d71dfd13a14d"
+    },
+    {
+      "path": "checkpoints/000018.json",
+      "sha256": "40d26f17ccb649ffd4b9658c080055ee7109cab3c9b3d0653030a59642838454"
+    },
+    {
+      "path": "checkpoints/000019.json",
+      "sha256": "12176a510ab3e8509f43a66e0fa6b6cad48d2243bc61b1fdee264f19b77cc429"
+    },
+    {
+      "path": "checkpoints/000020.json",
+      "sha256": "5f26e0dc826db8b3e281b8c5613b030ffd474649641cbdb61f5e3dfe0a591877"
+    },
+    {
+      "path": "checkpoints/000021.json",
+      "sha256": "e83268aab1b0390010d49e54422a88820e3f45718802429c0c461e71f9e9bca8"
+    },
+    {
+      "path": "checkpoints/000022.json",
+      "sha256": "2301dbf0f199c220f428810d3443ded2ccf4e2936d115efffb0d2755d6dc9f8d"
+    },
+    {
+      "path": "checkpoints/000023.json",
+      "sha256": "73293e5a59b23033b058cf84859845254ca364cc2f680e6aa197903c29bf12a7"
+    },
+    {
+      "path": "checkpoints/000024.json",
+      "sha256": "05ecc11c5eb44e0821d49b5bec63c2b9a3e516ee23843ef1c53f3dfb53b86948"
+    },
+    {
+      "path": "checkpoints/000025.json",
+      "sha256": "fe1e9dcc830791d25ac5415ef032ef69df5ca8a240c96a19b988c9798baee5b8"
+    },
+    {
+      "path": "checkpoints/000026.json",
+      "sha256": "b8f732e9e93276f19bbb8628ff9b0a79b9c1d228156d4cfc3a7268c64720ff50"
+    },
+    {
+      "path": "checkpoints/000027.json",
+      "sha256": "13c1b1a82e10262d9c817ab1f0f79aeb800fb2ac7b0ab5a531127868e5496622"
+    },
+    {
+      "path": "checkpoints/000028.json",
+      "sha256": "4f8e82514425d15bcdc422664b83f9f25d16c72509b108119a32e3aa694335cc"
+    },
+    {
+      "path": "checkpoints/000029.json",
+      "sha256": "048a115ba6b8e809fb9435b8722cb9cfa44fe648e1596f372ef60cc103631645"
+    }
+  ],
+  "runtime_sha256": {
+    "eightball/__init__.py": "04b223262bdc53e1c55c8fd5b71c21f236a3ceddd3d695820f6d782d6e808a79",
+    "eightball/__main__.py": "303441bf50e50d083b92ec1c251629498feab225d37d62fe095d0ceaf095104b",
+    "eightball/agency_access.py": "0f7513e99c9d2535abb88e54d731d96ac62755f69640e795b8b237ea164bccac",
+    "eightball/agency_host.py": "3f560667314dd1e1c553fd46c88bbe69209e9b65430f92f1d82bba9cb1b88dc3",
+    "eightball/api.py": "e951fc5cc718a7066429f8d14564f91b5ac203f974ed06f0e732015f78b36a8d",
+    "eightball/authorisation.py": "86b3593b9adbe86da6b09fbfff12c7dfd280865e0c39cc836b6f25474f2fbead",
+    "eightball/collaboration/__init__.py": "d14694005cc95fba71da31aaf422811e73510a31ac13c15f5426e36a88a70324",
+    "eightball/collaboration/contracts.py": "9e036d0ff2d7f654d3870576f41055bb3d138975ddbdf69e4eb10384f7ec4597",
+    "eightball/collaboration/service.py": "26c75d29af078f66c5f56fa753f347f005b5896bbbdf01f4020b0996ebfcfb03",
+    "eightball/commands.py": "e8de23e000334eef722148142a05cbe2ea1cbb9735e57a4cc0a1f7f55f365ad2",
+    "eightball/engine.py": "1aa5ba044199cc7a43e68b7b8f33fcd43190ac4381921d1366e6be1ea686062a",
+    "eightball/event_inbox.py": "3afe1b6fed875d483f8b8d4b92d9e7e3171b15f8a252425ad2899090f2869a3b",
+    "eightball/event_work.py": "af44d58083e34015cda341aaa7ddb7b12c84ab0ccb050d7158940f5300c6ff34",
+    "eightball/event_workers/__init__.py": "55025f4cfff6458372b59bcf1b7905f839d0871a58c343d90883a1c342bca789",
+    "eightball/event_workers/replan.py": "04983bc322a367f7cdb340179d0659144350e94ec017d227c0f3cc7aaa4bd1cc",
+    "eightball/event_workers/service.py": "6eb1e09c20ace2b4d5f4b48a59ed5097d16285ea6de92728a04ad5b1acd51cdb",
+    "eightball/event_workers/specialists.py": "c8dfc886185ca6af4e061e98d5e6853881f89c4212757a31765cbf92c7618e7d",
+    "eightball/intelligence/__init__.py": "e048ead84a75a5662c0cb06c2be1fb99143fc921dd989e4ada2083c80af6a585",
+    "eightball/intelligence/api.py": "ee1f9654df06ec9568c969bce936322e5b58108275f7cac006496ac2abf71994",
+    "eightball/intelligence/knowledge.py": "2bd0fa8e4a1dc215fde669a2ed42dffad82a73e2b1942fc7a2cba90571a0ddf5",
+    "eightball/models.py": "16da393837dbe3faaeab75096dd14e8de0688e7547109506df8f9de4e15b9628",
+    "eightball/oidc/__init__.py": "da18202733c662929560fa2a320638a3dfaedd3f362d91d7e4b1efa65bc9491a",
+    "eightball/oidc/login.py": "f40962e24a5d111c0fe9b4855c9fa280885ef89958b0447bbff2a6513e1f9d8d",
+    "eightball/operations/__init__.py": "55cecad2a62ff921a650a5886d52fbe4c4991846ade052983ffb3957a3b1b0e1",
+    "eightball/operations/api.py": "c685a94cff3c7fb5286e76fd548f380879467bdeff4cb1e247e9e195c4f257ed",
+    "eightball/operations/contracts.py": "94f550ba43a7e249cf5091c2182f0d91540a33e63f9237be4dc8ded1cec3c156",
+    "eightball/operations/journal.py": "c95bcf954b5484b879b0ccf1c1d2608c39a33a9a3c63b508ea6782ed0bcfa61b",
+    "eightball/operations/readiness.py": "a15eb327118526136050ae4eade6442a6dec6a43b4c69db3d7b4009f5e8ad731",
+    "eightball/operations/recovery.py": "a8448464d6912e5e32213ce183f421d6be7db89cf7797449ad43b82b37ee4997",
+    "eightball/projections/__init__.py": "3146659f77005563b4fc8a1e57f19f9e158bc74d2c4c23664b54966ef2af15c1",
+    "eightball/projections/service.py": "2dfca878fef2681b3eb1db40ff100c79e7ac0c7bdbc3c9581185f6b4ca7f05c3",
+    "eightball/providers.py": "8a7f85ce179ed6d3da476b854c14b4d5a8ed204d95d6e82e70ccb2f52943f81b",
+    "eightball/seed.py": "74f2db634b38198c94aebace2d1f077baa9e66586e78fa3cfb237b639bbc6cb0",
+    "eightball/store.py": "b48c3eef6812383bf1181babb180be2d55826f5e60eb12bf1f8cfb431739eed4",
+    "eightball/v2/__init__.py": "eb4cbb2dfc6380cd25907033ed3e70b99623efc533f5215d345d58f5f428be19",
+    "eightball/v2/analysis_jobs.py": "d6a7b0bf684956397e310257a5503e5afa7df12335fcfa5948e0381d378acb32",
+    "eightball/v2/api.py": "82d237e3d65beb8fbb3ba96d64b019ae4b3add0d1eeed8d8a0a1f4f7ca470f71",
+    "eightball/v2/authoring.py": "214f385a479a8d51c9616b06090dec467e05748c5ea11bf638412bcfaeacda47",
+    "eightball/v2/collaboration_api.py": "2c35a87e647f340b58d83a195f3afe12b74077e94aa7d682d325dedfd6f393f7",
+    "eightball/v2/commands.py": "acfe7d7c021a994a9f8907e9ec67ab9be7a4039fe0ea9769e2c34a9fd0dadf85",
+    "eightball/v2/compatible.py": "50b3797a8e17759773109ef608247ac5bf00a3f73ac21482a7ab5c2eaf85bb7d",
+    "eightball/v2/contracts.py": "a96566afd918496558787d13befb2cd21482e33ab1df3c9f6c751bb910f98190",
+    "eightball/v2/courses.py": "769f600121d48ff9748767725709a89d081655fe62181466457f66ad6d6ab9d0",
+    "eightball/v2/decision_models.py": "cd676727ba65cc28a6752a786f2411107ba5b9ce700f12201e9ea7415ecdda0e",
+    "eightball/v2/decision_packet.py": "5263b62572890e4e6ea6c6c65f9a3ba7d4747afe1c4524530f103558f28f4544",
+    "eightball/v2/event_api.py": "f71ee1f61d6bbbbcf71c427fa1f0082cd29c701a8e346b17708c8c8c9d09c21f",
+    "eightball/v2/event_outbox.py": "d8b28a205f229e59091de72f8a0f07ec9cf58a4feff5b289169d2134d2490b58",
+    "eightball/v2/event_reviews.py": "f1ea1278628178a1ac70f913786c9db1338a4ebc4186a3f7e0f67b094466672f",
+    "eightball/v2/grounding.py": "ad8899a881da5777a383a5db5d8d00153a4593a90537844756b1b611ce8cc483",
+    "eightball/v2/hosted.py": "9846301f22030a4478ee2d549eaed80f473836114819e76ca8a7bbed3d6d789f",
+    "eightball/v2/identity_api.py": "54109899298705d1d6f59ec72fb0438b966c4be05a0efbff58bf1cd1e16070ad",
+    "eightball/v2/insights.py": "e47f4bcbba6ea0e686a42832c5d945c74360726a54c063556f3ecf7ec6d9e007",
+    "eightball/v2/intelligence.py": "2c5063363d113e8fccbfa8facbf0cb2a4a02b7d853c1fcc346a1e9dbb9ff3c71",
+    "eightball/v2/plan_review.py": "5fe9eef4793c56dbd4a8f00f6a7f02e92b3254a0cd26264251a88cdf49840eeb",
+    "eightball/v2/planner.py": "22156b40d88a5a39a03a70096ce04163fb0fa906bb2ce3d3f2f904d19a59f722",
+    "eightball/v2/playbooks.py": "7baf2fccc73c35c07403cff830b01d72195231ac256d2a89d7d5a30c8fabf877",
+    "eightball/v2/rehearsal.py": "719844551de7defa02b23a93d73b7d895f10fea5c713875cdfe53890a9993bbe",
+    "eightball/v2/request_limits.py": "9ed2919ec20181b643396dba891f1ecfb5bd7ecfa1ff1236152e597d2973bbe6",
+    "eightball/v2/runtime_status.py": "2e6f3289b27f3a52a3374eb9ae7cae421e32a374328790702e7bb7e4f3b1da48",
+    "eightball/v2/services.py": "6891f52bb722486745030618ffc58ade77bdb9fa336a0e363b9a4510467a1c16",
+    "eightball/v2/source_contracts.py": "387f3ac1cfe33f4ded583045108876227f548db7574032448ba796622b8b550e",
+    "eightball/v2/source_desk.py": "61cb1b8d231a41954765a42b0e27a3bfdfeed8cf0b5c60ffb98cdbede5ae5bbd",
+    "eightball/v2/store.py": "04a1264c9785f31e962472ce39af24ddf77cf3af11004ee7472fa35d48d84b8a",
+    "eightball/v2/vault_api.py": "3c663c262a7dd74ac1224213a83322915e2d0f82221698b9133b603ceaac6456",
+    "eightball/vault/__init__.py": "1dfdf6698e25cfd0cc5905997bfef2d7edb8f6011323422a3fcdabf32ab36b56",
+    "eightball/vault/authority.py": "7a45632283ad8d95d149c992f4908e3474b035f4fd7dfad039183db7fed09cb7",
+    "eightball/vault/contracts.py": "08c97c484f321e475df1484229a7a53ccead4c4b9e67b00e64e86167b5e85370",
+    "eightball/vault/crypto.py": "7be8c810874162023ef25340c513ed0a03e84c57a029a04acccd88774d65f219",
+    "eightball/vault/service.py": "9c86d7844e68f03a0b8e5e4f0d2bbbcd3d7fce3f5e3def019666d76f6d6188be",
+    "eightball/vault/sources.py": "13aee56afe49588b9b77451036f54ee8c714a8098615d811fd436ac57523e700",
+    "endstate/__init__.py": "de970a3284c3b7fc71fe43fc0c7fdffbb82563fa2d5f976ade364a982bceec97",
+    "endstate/api.py": "47b030bd5ffe41c42f405ac730c76a9f47946534467c55a4ab89ce6c20bb0fbf",
+    "endstate/compilation.py": "d97663b8e7d5024e09e4de0fce7bfdfc1c631db38acd9c836df1add1cd7a1bc6",
+    "endstate/contracts.py": "c3dacf83ad06897afff9eb58e8702106ca2ed64022802042c02b2292be495210",
+    "endstate/course.py": "f2e467907ae8239040d76ba3ce514fdfe877119779065dd08ef457f1ffce3b7b",
+    "endstate/decision_packet.py": "22161df432e95bb16442d0789abc9b2cee2aa6abbaaf96feacadecdcc2ac2e8e",
+    "endstate/domain_packs/__init__.py": "c4ec0211b3a75f062c11884825c2aa44fc2f00a4191bfe7abc6ee7475cb6ab76",
+    "endstate/domain_packs/consumer.py": "949483547e9a97b1f1106214137d80929c53b84a0626ed59ba99599b2c919446",
+    "endstate/domain_packs/contracts.py": "25e9404206403fe418f4d1646626854b9520b77d6d18541015ca8fc068d7fcf1",
+    "endstate/domain_packs/loader.py": "0425929f00731ba32d6681d4562df97a0f590b6c233cd0e6fdf1bbbfd353e661",
+    "endstate/events.py": "2d168c797e206fc362eb46145242baed2983a81f52e0af6d9a0ad07223e23c20",
+    "endstate/forecasting.py": "37fc60f53e9f012143a06342164e48128d30512163e260ca74eb4a2115c2bb78",
+    "endstate/insights.py": "abcd35776929ac2cbd75cc4a971890e738afdacb4c2e58aedf3f86121c48c9e6",
+    "endstate/intelligence/__init__.py": "7fd0695e2b32eeb97c58b1781d3e4f71bc610f5a08c718ad306a5e152cbcdcd4",
+    "endstate/intelligence/coordination.py": "74834c0f24e1c484b6ea8cc18cc1c98c06e1e03c4573a475a96d337065929315",
+    "endstate/intelligence/decisions.py": "55e7335a92cbbc64f102cb3858793ed88b0cff94ed109054a0146a9f983767fb",
+    "endstate/intelligence/knowledge.py": "a90e429777687956211d6980bdc2f25198830650ab4f21edc394b16c881426b3",
+    "endstate/plan_review.py": "a2dc5fdbb315f082c21bd1435c97a2243dc144bfdb4abc2520ee99431742a610",
+    "endstate/planner.py": "d336b88d0dee3876a2d4222245a7fb6b65c1798f107e9c93c1a8ed6e418b4cb4",
+    "endstate/primitives.py": "b7f1b71c6ab9773008dea32bcf2bf66b0ee5c5054207fa0da9ce4cfcc4162b20",
+    "endstate/rehearsal.py": "bb623fa373d03342fab95a3d71da91628e41312e7091067a6eefb26fdc49652a",
+    "endstate/results.py": "1603d317ec067d2073405d57ac6a7a39e16c38045d3f9d58ca961a0d0be8dbe4",
+    "endstate/scenarios.py": "a542fc3fded5af73d27778eba5e58cce20b4f7fdd4660da3a87eebf3176e0517",
+    "endstate/state.py": "14d41583dde950b0b8361e4f3c2059d74a0d82740eedf0872ea0120b6c68c7a0",
+    "endstate/time_review.py": "1f2a5e43a02d471b7ce11162bc3a88a3ff11ad55f527781e83b1588edd8aee58",
+    "evals/classification-cases.json": "12873b9cf726001a89eadd5d6e47727ed6ca738ccd3a33ffc833d7a692e8d5fc",
+    "evals/full_journey.py": "68f4f5646279e8fd1c4221dcd9dd2e4b7d1e7e8cecb5ff4e69f84519380387b5",
+    "evals/generation-cases.json": "2529e648df174aaeb560c9282d928bac483707ef366cb69e7eef2091b3f8dbd1",
+    "evals/live_compatible.py": "57dbf47ac615fd65c2ed5898b932e75740647ebf84a8e7727823a21e62aa025d",
+    "evals/live_decisions.py": "c334b45c0073a0c1a2fdc46450c2ee4ec6371234cd8c91cae572d008effbb2ef",
+    "evals/live_generation.py": "d47fc94a7a3610f7ab6fd1492d096613765454f602112cca8c97f5be9dee4251",
+    "evals/live_huggingface.py": "6c2a069042a863fdb4b2833abf14be32001381e5bf4a10cb1fe99798f1244459",
+    "evals/live_models.py": "b5d735692123cef36be7214cc9358cb45ddb5ceafcc7ed06d995a962df8312c0",
+    "evals/plan-review-cases.json": "5570e37895622e04bf4f9c226032b14e7ac8ff17a92df954f8f2d84d9adf9bee",
+    "evals/plan_review_bench.py": "89bbd62e0af1db303c304d393628596a3150cd281df1ab8aa28512663359e44c",
+    "evals/prediction-cases.json": "9ee8f18f51a8cac7ad7aca04fb41b26731ef9d908f8ed9015a5b0f2627c7bf54",
+    "evals/prediction-outcomes.json": "3dd4f3783a65a7a42df04a0e0abcbf64ae9125c21cf8a072655e18b944bfee2c",
+    "evals/prediction_bench.py": "dd25b7d91aea9259880e974c2d9e5ce86a3b7babe12aa1c13e1a339d70071094",
+    "evals/provider_lifecycle.py": "994b6b52bc534e9f9163f8f4f4e6eb13342e102ee51f1e92444cec57c037b95c",
+    "evals/review_readiness.py": "2340fb93f66f625541adf2a53e2730a1a337b9235ec0cb5c662d1e306440f839",
+    "web/app.js": "0bdc807f147ce937bdfb8c3e8c1b69644064edea4a56bbcdbd8d0f38738785b3",
+    "web/index.html": "7ae43e2317393485e42082c7e3760e97321b9de74b7fb8891e61e019420a77cf",
+    "web/style.css": "ffb73d1da0d1dd7c092e09723edc5cd33cc07eea26cef050df7fa2b04940effb",
+    "web/v2/agency.css": "aa0858bfa681d48a5c906ad82b821f5e3b9d4e93a3abf10ac8922b83b9f9ba4f",
+    "web/v2/agency.html": "6ecceb2ca518ea787b1b7d3a04a437939250904ae958f22d39d452398fc4fd50",
+    "web/v2/agency.js": "9c5a694215fb0223d90c0189542b70b157b4e584509263845ddea0b83995c1d2",
+    "web/v2/app.js": "8fa587107e006d87732e65169e007b5cad5e8e852bdbdc91647f2e26e9a81409",
+    "web/v2/changelog-view.js": "72a1fae22fe89e508241117fbbc51976fe133fa789650eae36682c1e21d8eddf",
+    "web/v2/collaboration-view.css": "2b3c3c810f06d75e41ea278c31df357ece0e480891f7bb525383a1d48f7f243e",
+    "web/v2/collaboration-view.js": "e3a61b1396908606c5de6fa5eac2f68a44df25ca0588bbcdd10e2d6d45ad0334",
+    "web/v2/course-view.js": "173921ef9c861aa1be8b7b5cd94412d1db12a1f1d7181d90397dca17723dd37c",
+    "web/v2/event-review.css": "c5277f2cfd9e5b944aee19fafbba4f7c6f12a18c9de7f9859a72f3747b91a3fa",
+    "web/v2/event-review.html": "13f6bfcf3c114b84569b5cb6207d74b100fff022b50f1ba88fbfa1ff700e11d7",
+    "web/v2/event-review.js": "8fec73460616ab60eef45aa3bcaad802fff40f5ac9146d022d8fd4b0b7c266a5",
+    "web/v2/forms.js": "6937327589c47961157e71043a52b4cd6438d3816c4a71091d71d1d3720f260a",
+    "web/v2/graph-model.js": "d7c446d6fbf9580f37a0d8a26441d9ed0cf7b21f223b635e046300581c12c637",
+    "web/v2/graph-view.js": "627884b7d1750ed7b01aca67a1334c6852991ddfcc6539044e56b3c091e5e379",
+    "web/v2/grounding-view.js": "e8785c2e97b6e0ab14511f029cacea96e24e4caf31b96c62b5bef756e2a89aee",
+    "web/v2/identity-access.js": "1489107494098c10af1712a26a8cb95fbda21ba2c1822e313a454e9d10bbd816",
+    "web/v2/index.html": "f9b8e3e2f38821a40d80cd1d82949e03771f98098ce7dc86bcc5fd4e8824110f",
+    "web/v2/insights-view.js": "98d761e2f181b12a3ff64c66e0707a18d3059ab1903fd30f97787cc513eb9070",
+    "web/v2/intelligence-knowledge.css": "be42c101e59646e98d6c002ec59b70e0d7d2da7ea0514c67ec975fd32a6c4cd9",
+    "web/v2/intelligence-knowledge.js": "50ecdc41ee8f711dafb270c3d354c8e24c84f3559ff9deba41eab7236db5d800",
+    "web/v2/job-view.js": "57b3eadda38f3a59c70a2ebc0088f60ec4981c306f7e8c78b311db695a43c3f4",
+    "web/v2/plan-review-view.js": "2db2eab848fa59878fe92e7c4540f4516625f68a245370dfd635fd3b9f133390",
+    "web/v2/rehearsal-view.js": "d11e852c79b0df8cc76895bd59d927f492dcdfd3ddf96dcdd290d715e11b2c3b",
+    "web/v2/source-model.js": "e2a9b93175b2621119910235bad75fbaef65bd5ac4e57b61f52862296bfee80c",
+    "web/v2/source-view.js": "a27398af549b761f961fb4257cfc12fa83b8a3954bb8ba809fccf2b7f642b1ea",
+    "web/v2/studio-model.js": "9015b0ac6cb587aa9bbad2bde3a5378ca10da9314525f3550dcbea160f256b1a",
+    "web/v2/studio-view.js": "e21a872deebd424710d3a2d067d5d664a1d9da5ae294ef6f1934aa6c1193fb92",
+    "web/v2/style.css": "b9f8940dfd4f9ee13c3f418cde283bfbdae188e8e3fa2e9921c2e15af3e53e55",
+    "web/v2/ui.js": "f1c35f1a8b87be0efa220e832c318054871c74c1011a22fbf0654b58d9008267",
+    "web/v2/vault-panel.css": "5dcd1d5e51cdc6c6e5d75d422456fc3dddea0b51819bdf7ecd8f740d93a86df6",
+    "web/v2/vault-panel.js": "895926fa6a5d5b9e6e80998933a3ed749b4c1b9b77f3eb975cc233ce2fd189ff",
+    "web/v2/views.js": "d3a5a02b359a40683712363e5fe755587178aad8d71fa46531dec10f7f3acee7"
+  },
+  "notes": [
+    "Interventions follow first local call admission, not proof that a remote request arrived.",
+    "Each worker became inactive, published no proposal, admitted no second stage and preserved the expected case snapshot.",
+    "The restart terminated only the owned disposable app; no interrupted job resumed.",
+    "No mocked provider, patched output, automatic retry, model substitution or validation change.",
+    "API/process lifecycle observations are not actual-provider native-UI or independent human acceptance.",
+    "B02-15 remains partial for the remaining lifecycle UI/review scope; unrelated quality gates stay open.",
+    "The previous CI job exhausted its 20-minute allowance after slow Chromium OS-package installation; a bounded 40-minute allowance preserves all steps and gates. Its success is not assumed."
+  ]
+}

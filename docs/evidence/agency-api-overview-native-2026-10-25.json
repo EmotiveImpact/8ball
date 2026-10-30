@@ -1,0 +1,27 @@
+{
+  "tested_commit": "7fbb34ac346e5e884a7f0dc52908e38be514c4de",
+  "source_sha256": "c275b39bb8fd688148100e6e3978e6281c70c65c6460ed11f988d5758c0e740e",
+  "report_sha256": "8476d811ecaea3e16020b7c2215f43da11157bf1e2d6230c4a3c18f6a174300b",
+  "run_id": "20261025T143839Z-609076a1",
+  "source_tests": 1291,
+  "installed_engine_tests": 1291,
+  "native_browser_checks": 394,
+  "native_suites": 11,
+  "status": "passed",
+  "inspection_valid_before_final_edits": true,
+  "source_unchanged_during_run": true,
+  "checkpoint_ci": [
+    40203256823,
+    40203256857
+  ],
+  "checkpoint_ci_conclusion": "success",
+  "final_ui_change": "Unknown count labelled explicitly and disputed count shown separately; 54 native workspace checks plus node syntax check passed afterward. Final-head cumulative CI is separate.",
+  "interrupted_attempt": {
+    "run_id": "20261025T143801Z-f1e3e17b",
+    "reason": "Stopped after delivery guard rejected abbreviated ledger base commit; corrected to full SHA and reran. Not a passing result."
+  },
+  "raw_artifacts_committed": false,
+  "model_inference_performed": false,
+  "production_security_accepted": false,
+  "human_acceptance_performed": false
+}

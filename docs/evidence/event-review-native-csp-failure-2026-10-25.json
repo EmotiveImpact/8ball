@@ -1,0 +1,36 @@
+{
+  "tested_commit": "a448ff7c6a356c2ed4506e81e3f54cb081353637",
+  "run_id": "20261025T163258Z-906c1fce",
+  "source_sha256": "4832b6e99189cdbc0ca33b86a4b029d393229b2f84ed2ba9b048d179d91c040b",
+  "report_sha256": "088b3a54a514d078167f9fb1b27eef6331639fdb42f63900b3bb417817612b5d",
+  "status": "failed",
+  "inspection_valid_before_edits": true,
+  "source_tests": 1346,
+  "installed_engine_tests": 1346,
+  "preceding_native_checks": 396,
+  "failed_suite": "browser-event_review",
+  "error": "Screenshot wait_for_function string evaluation violated unchanged script-src self CSP.",
+  "checkpoint_ci": [
+    40212216822,
+    40212216823
+  ],
+  "checkpoint_ci_conclusions": [
+    "failure",
+    "success"
+  ],
+  "raw_artifacts": "artifacts/acceptance/20261025T163258Z-906c1fce",
+  "raw_artifacts_committed": false,
+  "correction": "Replace screenshot wait with locator class assertion. Do not weaken CSP or omit the new browser suite.",
+  "model_inference_performed": false,
+  "human_acceptance": false,
+  "ci_failure_log_sha256": "96e8313719c8f4d30b5be19a6160e08eb86734be754d36b14ef9c0b64e836426",
+  "ci_failure_matches_local": true,
+  "correction_followup": {
+    "status": "failed_standalone_assertion",
+    "reason": "Locator assertion default timeout was 5000ms; notification lifetime is 6500ms. Set explicit 10000ms deadline without changing notification behaviour or assertion.",
+    "artifacts": {
+      "artifacts/event-review-csp-corrected/failure.png": "0edc923fbcfcf19f6f586d9f5c2de7423009312c8edd3da1d26d73796c06891d",
+      "artifacts/event-review-csp-corrected/failure.html": "a8a3af95553b2a93059c9fa63c01e09c6fd6a43f9673103d87cfa2239a9d7c7c"
+    }
+  }
+}

@@ -71,8 +71,11 @@ class Search(Strict):
 SORT=Literal['fewest_unknowns','fastest','lowest_cost','fewest_external','least_irreversible','operator_risk']
 
 
-def router(store:Store,legacy,authorised):
+def router(store:Store,legacy,authorised, *, agency_events=False, agency_mode=False):
     r=APIRouter(prefix='/api/v2',dependencies=[Depends(authorised)])
+    if agency_events:
+        from .event_api import register_event_routes
+        register_event_routes(r, store)
     model_slot=BoundedSemaphore(1)
     jobs=AnalysisJobs(store, model_slot)
     r.analysis_jobs=jobs
@@ -103,6 +106,32 @@ def router(store:Store,legacy,authorised):
 
     @r.post('/cases/{case_id}/plan-reviews/record')
     def plan_review_record(case_id:str,body:SaveReview):return plan_reviews.save(case_id,body)
+
+    if not agency_mode and not agency_events:
+        from .decision_packet import DecisionPackets, Request as PacketRequest, local_operator_scope, DisclosureDenied
+        packets = DecisionPackets(store, policy=local_operator_scope)
+
+        @r.post('/cases/{case_id}/plan-reviews/rehearsals/packet')
+        def challenge_packet(case_id:str, body:PacketRequest):
+            try:
+                return packets.read(case_id,body)
+            except DisclosureDenied as exc:
+                raise HTTPException(403,str(exc)) from None
+
+        from .rehearsal import Rehearsals, Prepare as PrepareChallenge, Save as SaveChallenge, CreateCheck
+        rehearsals = Rehearsals(store)
+
+        @r.get('/cases/{case_id}/plan-reviews/rehearsals')
+        def challenge_history(case_id: str): return rehearsals.view(case_id)
+
+        @r.post('/cases/{case_id}/plan-reviews/rehearsals/prepare')
+        def challenge_prepare(case_id: str, body: PrepareChallenge): return rehearsals.prepare(case_id, body)
+
+        @r.post('/cases/{case_id}/plan-reviews/rehearsals/record')
+        def challenge_record(case_id: str, body: SaveChallenge): return rehearsals.save(case_id, body)
+
+        @r.post('/cases/{case_id}/plan-reviews/rehearsals/check')
+        def challenge_check(case_id: str, body: CreateCheck): return rehearsals.create_check(case_id, body)
 
     from .insights import Insights, Scan, ReviewInsight, Hypothesis, InsightQuestion, RevisitHypothesis, TARGET_ALIGNMENT_RULE
     from endstate.insights import RULES
@@ -253,7 +282,11 @@ def router(store:Store,legacy,authorised):
     def history(case_id:str):return store.history(case_id)
 
     @r.get('/cases/{case_id}/export')
-    def export(case_id:str):return store.audit(case_id)
+    def export(case_id:str):
+        result=store.audit(case_id)
+        if (agency_mode or agency_events) and result.get('assumption_challenges'):
+            raise HTTPException(403,'Local challenge history is not authorised for agency export')
+        return result
 
     @r.get('/cases/{case_id}/client-brief')
     def brief(case_id:str):return client_brief(store.get(case_id))

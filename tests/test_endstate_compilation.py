@@ -179,6 +179,10 @@ def test_provider_independent_pipeline_calls_two_stages_and_retains_trace():
     assert rules['reserved_result_titles']==[FIXTURE['frame']['readiness']['title'],
                                              *[c['title'] for c in FIXTURE['frame']['success_criteria']]]
     assert 'reserved_result_titles' in calls[1][2]
+    for _, _, instructions in calls:
+        assert 'bare JSON object' in instructions and 'no Markdown fences' in instructions
+        assert 'maxLength' in instructions and 'not exact quotations or the human outcome' in instructions
+        assert 'enabling work' in instructions
     assert 'frame.verification' in calls[1][0]['$defs']['RouteDraft']['properties']['establish_readiness']['description']
     assert trace['prompt_version']==PROMPT_VERSION
     assert trace['frame']==FIXTURE['frame'] and trace['routes']==FIXTURE['routes']
@@ -253,6 +257,23 @@ def test_invalid_first_stage_never_runs_second_stage():
     def provider(*_):calls.append(True);return {'readiness':{}},'mock'
     with pytest.raises(DraftFailure):draft_outcome({'namespace':'test','outcome':OUTCOME,'brief':'Fictional case'},provider)
     assert len(calls)==1
+
+
+def test_target_quotes_keep_connectives_without_relaxing_coverage():
+    from endstate.compilation import GroundedOutcomeFrame, validate_frame, DraftValidationError, TARGET_PROMPT
+    outcome = 'Deliver supplies and record acceptance'
+    raw = deepcopy(FIXTURE['frame'])
+    raw['success_criteria'] = [deepcopy(raw['success_criteria'][0]) for _ in range(2)]
+    raw['success_criteria'][1]['title'] = 'Acceptance recorded'
+    raw['target_bindings'] = [
+        {'criterion_index': 0, 'target_quote': 'Deliver supplies'},
+        {'criterion_index': 1, 'target_quote': 'record acceptance'}]
+    with pytest.raises(DraftValidationError) as caught:
+        validate_frame(GroundedOutcomeFrame.model_validate(raw), outcome, [])
+    assert caught.value.code == 'incomplete_target_coverage'
+    raw['target_bindings'][1]['target_quote'] = 'and record acceptance'
+    validate_frame(GroundedOutcomeFrame.model_validate(raw), outcome, [])
+    assert 'connecting words' in TARGET_PROMPT and 'quotes may overlap' in TARGET_PROMPT
 
 
 def test_model_switch_between_stages_is_rejected():

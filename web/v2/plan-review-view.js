@@ -1,12 +1,13 @@
 import {S,esc,pretty,icon,field,select,textarea,warning,note,badge,modal,toast,saveFile,date,duration,gbp} from './ui.js';
+import {challengeDraft,challengeView,challengeReview} from './rehearsal-view.js';
 let prService=null,prSession=null,prSerial=0;
 const prButton=(label,action,extra='')=>`<button type="button" class="button" data-pr-action="${action}" ${extra}>${label}</button>`;
 const prId=()=>crypto.randomUUID?.()??Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('');
 const prRoot=()=>document.querySelector('[data-pr-root]');
 const prStamp=()=>[S.epoch,S.current?.case.id,S.current?.case.revision].join(':');
-export function clearPlanReview(){prSerial++;prSession=null;}
+export function clearPlanReview(){prSerial++;prSession=null;if(prRoot())prRoot().innerHTML=warning('Case context changed. Reopen Plan Review.')+prButton('Reopen Plan Review','open');}
 const prValid=(seq,stamp)=>seq===prSerial&&stamp===prStamp()&&Boolean(prRoot());
-function prCollect(){const f=document.querySelector('[data-pr-form="judgements"]');if(f&&prSession)prSession.draft=Object.fromEntries(new FormData(f));}
+function prCollect(){const f=document.querySelector('[data-pr-form="judgements"]');if(f&&prSession)prSession.draft=Object.fromEntries(new FormData(f));const challenge=document.querySelector('[data-pr-form="challenge"]');if(challenge&&prSession)prSession.challengeValues=Object.fromEntries(new FormData(challenge));const review=document.querySelector('[data-pr-form="challenge-disposition"]');if(review&&prSession)prSession.challengeReviewValues=Object.fromEntries(new FormData(review));if(prSession){prSession.checkValues??={};for(const form of document.querySelectorAll('[data-pr-form=challenge-check]'))prSession.checkValues[form.dataset.briefHash+':'+form.dataset.contributionId]=Object.fromEntries(new FormData(form));}}
 const prRefTitle=id=>prSession?.assessment.references.find(r=>r.id===id)?.title??id;
 function prExpression(e){if(e.op==='atom')return (e.value?'':'NOT ')+prRefTitle('condition:'+e.condition_id);return '('+e.args.map(prExpression).join(e.op==='all'?' AND ':' OR ')+')';}
 function prDiagnostics(a){const i=a.inspection;
@@ -28,16 +29,58 @@ function prJudgements(a){const values=prSession.draft;return warning('This recor
 function prHistory(){const rows=prSession.history.records;return rows.length?rows.slice().reverse().map(r=>`<section class="pr-history"><div class="meta"><span class="kicker">REVIEW ${r.sequence} · CASE REV ${r.case_revision}</span>${badge('reported',pretty(r.disposition))}</div><h3>${esc(r.assessment.requested_outcome)}</h3><p>${date(r.recorded_at)} · ${esc(r.actor)}</p>${r.case_changed?warning('The case has changed since this review. It remains historical, not current.','neutral'):r.time_expired?note('The calculation window has elapsed. Recalculate before relying on time-sensitive estimates.'):note('Matches the current case snapshot. Not an action approval.')}<details><summary>Read recorded judgements and findings</summary>${r.judgements.map(j=>`<div class="row"><div><h3>${esc(pretty(j.criterion))}: ${esc(pretty(j.verdict))}</h3><p>${esc(j.rationale)}</p><small>${j.references.map(esc).join(' · ')}</small></div></div>`).join('')}<p class="note">${r.assessment.inspection.flags.length} structural findings preserved. No finding was cleared by this review.</p></details></section>`).join(''):note('No plan reviews recorded. Reading or running scenario checks does not create a saved review.');}
 function prRender(){if(!prRoot()||!prSession)return;const a=prSession.assessment;
  prRoot().innerHTML=`<div class="pr-topline"><span>${badge('reported','LIVE CASE REVIEW')} Revision ${a.case_revision} · ${date(a.inspection.as_of)}</span><span>${prButton('Export assessment','export')}${prButton('Saved reviews','history')}</span></div><p class="note">${esc(a.notice)}</p><div class="pr-tabs" role="group" aria-label="Plan review sections">${[['findings','Plan checks'],['scenarios','Scenario checks'],['human','Human review'],['history','Review history']].map(([id,t])=>`<button type="button" data-pr-action="tab" data-pr-tab="${id}" aria-pressed="${prSession.tab===id}">${t}</button>`).join('')}</div><div class="pr-content">${prSession.tab==='findings'?prDiagnostics(a):prSession.tab==='scenarios'?prStress(a):prSession.tab==='human'?prJudgements(a):prHistory()}</div><p class="note">ENDSTATE ${esc(a.inspection.contract_version)} · New review recording expires after 15 minutes. ${a.inspection.baseline.search_truncated?'Search was truncated.':''}</p>`;
+ prRoot().querySelector('.pr-tabs').insertAdjacentHTML('beforeend',`<button type="button" data-pr-action="tab" data-pr-tab="challenge" aria-pressed="${prSession.tab==='challenge'}">Assumption challenge</button>`);
+ if(prSession.tab==='challenge')prRoot().querySelector('.pr-content').innerHTML=challengeView(prSession,a.references);
+}
+async function prChallengeAction(act,el){
+ const session=prSession,seq=prSerial,stamp=prStamp();
+ if(!session||session.stamp!==stamp)throw new Error('Case context changed. Reopen Plan Review.');
+ const base=`/cases/${session.case.id}/plan-reviews/rehearsals`;
+ if(act==='challenge-new'){session.challengeResult=null;session.challengeSaved=false;session.challengeReviewValues=null;prRender();return;}
+ if(act==='challenge-save'){
+  const result=session.challengeResult;if(!result)throw new Error('Prepare a challenge first.');
+  if(session.challengeReviewValues&&JSON.stringify(challengeReview(session.challengeReviewValues,result.brief))!==JSON.stringify(result.brief.draft))throw new Error('Preview your operator disposition before saving this brief.');
+  const saved=await prService.api(base+'/record',{event_id:session.challengeEventId,expected_sequence:result.sequence,as_of:result.brief.as_of,brief_sha256:result.brief.brief_sha256,draft:result.brief.draft});
+  if(!prValid(seq,stamp))return;session.challengeSaved=saved.artifact_persisted;
+  const history=await prService.api(base);if(!prValid(seq,stamp))return;session.challengeHistory=history;prRender();return;
+ }
+ if(act==='challenge-recheck'){
+  const row=session.challengeHistory?.records.find(r=>r.brief.brief_sha256===el.dataset.briefHash);if(!row)throw new Error('Refresh the challenge history.');
+  const draft=structuredClone(row.brief.draft);draft.expected_revision=session.case.revision;draft.predecessor_sha256=row.brief.brief_sha256;draft.run_id=prId();draft.dispositions=[];draft.operator_decision=null;for(const branch of draft.branches)branch.scenario.expected_revision=session.case.revision;
+  const result=await prService.api(base+'/prepare',draft);if(!prValid(seq,stamp))return;
+  session.challengeResult=result;session.challengeReviewValues=null;session.challengeSaved=false;session.challengeEventId=prId();prRender();return;
+ }
+ const history=await prService.api(base);if(!prValid(seq,stamp))return;session.challengeHistory=history;prRender();
 }
 async function prOpen(){const seq=++prSerial,stamp=prStamp();prSession=null;modal('Plan Review',`<div data-pr-root class="pr-review"><p class="note" role="status">Inspecting the live graph and recorded evidence…</p></div>`,true);
- try{const c=structuredClone(S.current.case),base=`/cases/${c.id}/plan-reviews`;const [data,history]=await Promise.all([prService.api(base+'/assess',{expected_revision:c.revision,scenarios:[]}),prService.api(base)]);if(!prValid(seq,stamp))return;prSession={assessment:data.assessment,sequence:data.sequence,history,case:c,tab:'findings',draft:{},stamp};prRender();}catch(e){if(prValid(seq,stamp))prRoot().innerHTML=warning(e.message);}
+ const root=prRoot(),ownsDialog=()=>seq===prSerial&&root===prRoot();
+ const stale=()=>{if(ownsDialog())root.innerHTML=warning('Case context changed. Reopen Plan Review.')+prButton('Reopen Plan Review','open');};
+ try{const c=structuredClone(S.current.case),base=`/cases/${c.id}/plan-reviews`;const [data,history]=await Promise.all([prService.api(base+'/assess',{expected_revision:c.revision,scenarios:[]}),prService.api(base)]);if(!prValid(seq,stamp)){stale();return;}prSession={assessment:data.assessment,sequence:data.sequence,history,case:c,tab:'findings',draft:{},stamp};prRender();}catch(e){if(ownsDialog()){if(stamp!==prStamp())stale();else root.innerHTML=warning(e.message);}}
 }
 export function bindPlanReview(services){prService=services;
  document.addEventListener('change',e=>{if(!e.target.matches('[data-pr-form=judgements] select[name^=ref_]')||!prSession)return;prCollect();const criterion=e.target.name.slice(4),target=document.querySelector(`[data-pr-reference="${criterion}"]`);if(target)target.innerHTML=prReferencePreview(e.target.value);});
  document.addEventListener('click',async e=>{const el=e.target.closest('[data-pr-action]');if(!el)return;
+ if(el.dataset.prAction.startsWith('challenge-')){if(el.disabled)return;el.disabled=true;try{prCollect();await prChallengeAction(el.dataset.prAction,el);}catch(err){toast(err.message,true);}finally{if(el.isConnected)el.disabled=false;}return;}
  try{const act=el.dataset.prAction;if(act==='open'){await prOpen();return;}if(!prSession||prSession.stamp!==prStamp())throw new Error('Case context changed. Reopen Plan Review.');prCollect();if(act==='tab'){prSession.tab=el.dataset.prTab;prRender();}if(act==='history'){const session=prSession,seq=prSerial,stamp=prStamp();const history=await prService.api(`/cases/${session.case.id}/plan-reviews`);if(!prValid(seq,stamp))return;session.history=history;session.tab='history';prRender();}if(act==='export')saveFile('8BALL-Plan-Assessment.json',prSession.assessment);}catch(err){toast(err.message,true);}});
  document.addEventListener('submit',async e=>{const form=e.target;if(!form.dataset.prForm)return;e.preventDefault();const seq=prSerial,stamp=prStamp(),session=prSession;if(!session||session.stamp!==stamp){toast('Reopen the review against the current case.',true);return;}const submit=form.querySelector('[type=submit]');submit.disabled=true;
  try{const v=Object.fromEntries(new FormData(form)),a=session.assessment,base=`/cases/${a.case_id}/plan-reviews`;
+ if(form.dataset.prForm==='challenge-check'){
+  const history=session.challengeHistory;if(!history)throw new Error('Refresh challenge history first.');
+  await prService.api(base+'/rehearsals/check',{event_id:prId(),expected_revision:session.case.revision,expected_sequence:history.sequence,brief_sha256:form.dataset.briefHash,contribution_id:form.dataset.contributionId,question:v.question,owner:v.owner,reason:v.reason});
+  if(!prValid(seq,stamp))return;
+  const epoch=S.epoch;await prService.loadCase(session.case.id,S.tab);
+  if(seq!==prSerial||epoch!==S.epoch||S.current?.case.id!==session.case.id||!prRoot())return;
+  await prOpen();if(!prSession||prSession.case.id!==session.case.id)return;
+  prSession.tab='challenge';await prChallengeAction('challenge-history');
+  toast('Linked question created; action approvals cleared. Review evidence separately.');return;
+ }
+ if(form.dataset.prForm==='challenge-packet'){
+  const history=session.challengeHistory;if(!history)throw new Error('Refresh challenge history before exporting.');
+  const packet=await prService.api(base+'/rehearsals/packet',{mode:v.mode,references:v.mode==='reference_index'?(v.reference?[v.reference]:[]):[],expected_revision:session.case.revision,expected_sequence:history.sequence,expected_head_sha256:history.head_hash,brief_sha256:form.dataset.briefHash});
+  if(!prValid(seq,stamp))return;saveFile(`8BALL-Decision-Packet-${v.mode}.json`,packet);toast('Packet generated after current server checks. It is not a complete audit or permission to share.');return;
+ }
+ if(form.dataset.prForm==='challenge-disposition'){const draft=challengeReview(v,session.challengeResult.brief);session.challengeReviewValues=v;const result=await prService.api(base+'/rehearsals/prepare',draft);if(!prValid(seq,stamp))return;session.challengeResult=result;session.challengeReviewValues=null;session.challengeSaved=false;session.challengeEventId=prId();prRender();return;}
+ if(form.dataset.prForm==='challenge'){prCollect();const draft=challengeDraft(v,session.case.revision,prId());const result=await prService.api(base+'/rehearsals/prepare',draft);if(!prValid(seq,stamp))return;session.challengeResult=result;session.challengeReviewValues=null;session.challengeSaved=false;session.challengeEventId=prId();prRender();return;}
  if(form.dataset.prForm==='scenarios'){const scenarios=[];if(v.action)scenarios.push({kind:'remove_action',action_id:v.action});if(v.budget!=='')scenarios.push({kind:'budget',amount:Number(v.budget)});if(v.minutes!=='')scenarios.push({kind:'elapsed',minutes:Number(v.minutes)});if(!scenarios.length)throw new Error('Choose at least one hypothetical change.');const data=await prService.api(base+'/assess',{expected_revision:a.case_revision,scenarios});if(!prValid(seq,stamp))return;session.assessment=data.assessment;session.sequence=data.sequence;session.draft={};prRender();toast('Checks calculated. The live case is unchanged.');}
  else{prCollect();const judgements=a.rubric.map(r=>({criterion:r.id,verdict:v[`verdict_${r.id}`],rationale:v[`reason_${r.id}`],references:v[`ref_${r.id}`]?[v[`ref_${r.id}`]]:[]}));await prService.api(base+'/record',{event_id:prId(),expected_revision:a.case_revision,expected_sequence:session.sequence,as_of:a.inspection.as_of,assessment_sha256:a.assessment_sha256,scenarios:a.inspection.scenarios.map(s=>s.assumption),judgements});if(!prValid(seq,stamp))return;session.history=await prService.api(base);if(!prValid(seq,stamp))return;session.sequence=session.history.sequence;session.draft={};session.tab='history';prRender();toast('Review recorded. No facts or action approvals changed.');}
  }catch(err){toast(err.message,true);}finally{if(submit.isConnected)submit.disabled=false;}});

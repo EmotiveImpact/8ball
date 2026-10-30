@@ -27,8 +27,16 @@ The international example is
 different URLs. Use your provider's URL; omit `/chat/completions`, which 8BALL
 appends. This build accepts hosted HTTPS DNS endpoints on port 443.
 
-The model must support JSON-schema structured responses. Availability and
-compatibility need an actual test. You can share the exact model name and public
+By default the model must support JSON-schema structured responses. An explicit
+server setting `EIGHTBALL_API_JSON_MODE=prompt_only` instead sends the same schema
+in the prompt without requesting provider-side schema enforcement. This is for
+a selected provider/model that lacks that capability, not automatic fallback:
+the application still rejects malformed JSON and invalid proposals, with no
+repair or retry. The default `json_schema` contract is unchanged; native Anthropic
+keeps its existing prompt-only protocol. The selected mode is frozen per session
+and retained in status/receipts. Neither mode guarantees semantic accuracy.
+
+Availability and compatibility need an actual test. You can share the exact model name and public
 API URL in chat. **Never paste the private API key into chat.**
 
 Check billing settings; there is no assumed free quota. A token limit does not
@@ -47,6 +55,7 @@ differs.
 | `EIGHTBALL_API_BASE_URL` | The HTTPS API base URL |
 | `EIGHTBALL_API_MODEL` | The exact model identifier |
 | `EIGHTBALL_API_PROVIDER` | Provider identity, e.g. `alibaba-model-studio` |
+| `EIGHTBALL_API_JSON_MODE` (optional) | `json_schema` (compatible default) or explicit `prompt_only`; native Anthropic defaults to `prompt_only` |
 
 The secret's allowed destination must match the API hostname. The proposed
 draft uses `dashscope-intl.aliyuncs.com`. Tell the agent the public URL if it

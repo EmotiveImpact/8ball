@@ -1,0 +1,14 @@
+{
+  "version": "endstate.historical-replay.v1",
+  "case_id": "HR-001",
+  "value": false,
+  "available_at": "2019-04-22T00:00:00+00:00",
+  "summary": "Neither party delivered the End Date extension notice required by 11:59 p.m. Eastern on 17 December 2018. The company terminated the merger agreement on 18 December 2018 and demanded the US$126.5 million reverse termination fee. The buyer sued to enforce the agreement; on 14 March 2019 the Delaware Court of Chancery ruled the termination valid; on 22 April 2019 the parties announced a US$92.5 million settlement. The merger was never consummated.",
+  "sources": [
+    {"role": "pre_cutoff_agreement", "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518196340/d407444dex21.htm", "published": "2018-06-18"},
+    {"role": "pre_cutoff_filing", "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518196340/d407444d8k.htm", "published": "2018-06-18"},
+    {"role": "pre_cutoff_announcement", "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518196340/d407444dex991.htm", "published": "2018-06-18"},
+    {"role": "outcome", "url": "https://investor.upbound.com/news-releases/news-release-details/delaware-court-chancery-determines-rent-center-validly/", "published": "2019-03-14"},
+    {"role": "outcome", "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312519116716/d734946dex991.htm", "published": "2019-04-22"}
+  ]
+}

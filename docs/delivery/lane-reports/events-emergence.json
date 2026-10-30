@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-10-25",
+  "lane": "events",
+  "integration_instruction": "Append these unique items by ID to canonical emergence.json; retain existing required_prompts/items/histories unchanged, then regenerate centrally. This is a lane fragment, not the canonical register.",
+  "items": [
+    {
+      "id": "EM-113",
+      "classification": "existing_task",
+      "title": "Source-processing review and current source policy are independent gates",
+      "origin": "Events roadmap lane build at f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "A whole-matter grant and an explicit review of incoming text do not establish current object quarantine, retention or processing/egress permission. Revocation between preview or claim and consumption must still deny; missing policy cannot default to a local test adapter.",
+      "product_implication": "Keep explicit receipt/revision review separate from factual attestation and action authority. Wire current identity/vault/provider source policy transactionally before agency processing; make denial visible rather than weakening checks. Extra review/policy checks add integration and operator burden, but a permissive default would leak data.",
+      "task_ids": [
+        "ES02-01",
+        "ES02-02",
+        "ES02-03",
+        "B03-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-01",
+        "ES02-02",
+        "ES02-03",
+        "B03-04"
+      ],
+      "evidence_paths": [
+        "eightball/event_workers/service.py",
+        "eightball/v2/event_reviews.py",
+        "tests/test_event_dispatch.py",
+        "docs/delivery/lane-reports/events.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / events engineering lane (not owner sign-off)",
+          "reason": "Existing task refinement: mandatory fail-closed policy callback implemented and negatively tested; production adapter/native integration remains unaccepted, not a new required task."
+        }
+      ]
+    },
+    {
+      "id": "EM-114",
+      "classification": "existing_task",
+      "title": "Uncertain event processing must retain disposition without automatic provider replay",
+      "origin": "Events roadmap lane build at f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "A durable claim may outlive cancellation, worker revocation, lease expiry or a failed result-storage transaction. A repeated processing request after such a failure could duplicate a paid or non-recallable call even though no reviewable result was persisted.",
+      "product_implication": "Claim and run-marker persistence precede one explicit call. Keep original bounded late output as inert trace where storage succeeds; do not publish stale/cancelled results, resume on restart or claim an external request was recalled. Storage failure can still prevent retaining raw output; operator inspection is preferable to invented success.",
+      "task_ids": [
+        "ES02-02",
+        "ES02-04",
+        "B03-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-02",
+        "ES02-04",
+        "B03-04"
+      ],
+      "evidence_paths": [
+        "eightball/event_workers/service.py",
+        "eightball/event_work.py",
+        "tests/test_event_dispatch.py",
+        "docs/delivery/lane-reports/events.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / events engineering lane (not owner sign-off)",
+          "reason": "Existing task refinement: explicit attempt lifecycle, retained safe failure codes and no automatic re-execution implemented; paid/live provider and production crash/recovery acceptance stay open."
+        }
+      ]
+    },
+    {
+      "id": "EM-115",
+      "classification": "existing_task",
+      "title": "Conservative replan reuse must retain explicit clocks and approval revisions",
+      "origin": "Events roadmap lane build at f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Revision-only case changes can leave planning inputs unchanged, but action approvals depend on the exact revision and expiry. Reusing a result while omitting approval revision or as-of clock could revive expired or invalid authority.",
+      "product_implication": "Use detached bounded exact-input/clock caching with revision-only reuse only when approvals are absent, and full ENDSTATE fallback for all other changes. This gives a narrowly testable optimization without inventing a broad partial-graph algorithm; conservative fallback may offer little speedup on changing cases.",
+      "task_ids": [
+        "ES02-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-04"
+      ],
+      "evidence_paths": [
+        "eightball/event_workers/replan.py",
+        "tests/test_event_replan.py",
+        "docs/delivery/lane-reports/events.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / events engineering lane (not owner sign-off)",
+          "reason": "Existing task refinement: conservative cache and exact full-response parity tested. General incremental-graph performance/production throughput remains an explicit limitation, not a passed gate."
+        }
+      ]
+    },
+    {
+      "id": "EM-116",
+      "classification": "new_candidate",
+      "title": "A bounded retry ceiling needs an explicit operator recovery policy",
+      "origin": "Events roadmap lane build at f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Three retained explicit attempts prevent silent retry loops, but exhausting that ceiling leaves no in-place reset. An operator may need to distinguish an invalid source or withdrawn consent from an infrastructure incident without erasing history or forging a new success.",
+      "product_implication": "Evaluate a separately reviewed recovery workflow that preserves source, failure and billing/permission history, rather than adding unlimited resets or automatic retries. It could reduce operator friction, but may undermine budgets or encourage duplicate paid calls if policy is loose.",
+      "task_ids": [
+        "ES02-02",
+        "B03-04"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "eightball/event_workers/service.py",
+        "tests/test_event_dispatch.py",
+        "docs/delivery/lane-reports/events.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "deferred",
+          "by": "Devin / events engineering lane (not owner sign-off)",
+          "reason": "Candidate recovery UX/policy requires owner/provider-budget decisions and observed operator need. Current bounded attempts remain; no reset bypass or extra required scope implemented."
+        }
+      ]
+    },
+    {
+      "id": "EM-117",
+      "classification": "existing_task",
+      "title": "Pre-commit local stage metrics are not combined provider or human latency evidence",
+      "origin": "Events roadmap lane build at f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "first_seen": "2026-10-25",
+      "evidence_level": "supported_by_tests",
+      "observation": "Local ingestion/processor/review timers can be retained on an atomic review record, but in-transaction durations stop before durability commit. Deterministic clocks in fixtures can verify instrumentation without measuring real inference or human review; mixed fixture and wall clocks yield incomparable waiting totals.",
+      "product_implication": "Label metric scope, keep unknown historical durations null and retain the limitation instead of treating a fast scripted fixture as product performance. Integrated monotonic/UTC instrumentation and separately authorized real-provider/operator measurements are still needed.",
+      "task_ids": [
+        "ES02-04"
+      ],
+      "acceptance_task_ids": [
+        "ES02-04"
+      ],
+      "evidence_paths": [
+        "eightball/v2/event_reviews.py",
+        "eightball/event_workers/service.py",
+        "tests/test_event_dispatch.py",
+        "docs/delivery/lane-reports/events.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / events engineering lane (not owner sign-off)",
+          "reason": "Existing task refinement: local instrumentation and honest fictional timings retained; combined durability/provider/human and production latency gates remain open."
+        }
+      ]
+    }
+  ]
+}

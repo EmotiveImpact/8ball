@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "2026-10-25-intelligence-knowledge-f3c56048",
+      "date": "2026-10-25",
+      "version": "0.2.0-alpha.8 intelligence checkpoint",
+      "title": "Exact-version reviewed hypotheses and scoped source-linked references",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "B04-01",
+        "B04-02",
+        "B04-03",
+        "B02-14",
+        "B02-15",
+        "ES03-01",
+        "ES03-04",
+        "B02-18"
+      ],
+      "summary": "Adds bounded neutral knowledge contracts, injected transactional reference services and explicit route/UI seams without mounting shared application paths or changing any acceptance status.",
+      "added": [
+        "Exact source hash/Unicode-offset support and immutable version/digest-bound review, terminal retirement, scoped lexical search and history.",
+        "Registerable API and isolated graphite review/search component with explicit context/API adapters; existing starter drafts remain unvalidated hypotheses.",
+        "Fictional revocation/isolation/stale-revision/rollback/concurrency/restart/idempotency and fake-DOM component tests."
+      ],
+      "changed": [
+        "Runtime inventory validation and exact configured-weight digest/size/details allowlists; unreachable/ambiguous remains unknown, not false."
+      ],
+      "fixed": [
+        "New reference versions cannot inherit prior review; changed or withdrawn source access cannot be recovered through idempotent replay."
+      ],
+      "verification": [
+        "Final source-tree pytest: 1427 passed, 0 failed/errors/skips, one Starlette/AnyIO deprecation warning. Final changed service/runtime/UI focus: 71 passed, including six Node/fake-DOM component tests.",
+        "Python compilation, all browser JavaScript syntax, schema export and structural plan-review bench 8/8 passed.",
+        "Final native runner 20261025T233752Z-c6a9eb2a: overall FAILED. 379 checks in 11 native suites passed; Studio assertion failed. Source unchanged during run; source SHA-256 75f3bcec64c6dc76bd7b9de8b71ec19486188160148f6004f1c8715451b04f97. Earlier failed run retained separately; final adapter/capacity hardening rerun without changing any shared gate.",
+        "Installed-wheel regressions FAILED: frozen package allowlist omits endstate.intelligence. Base-aware changelog FAILED pending central fragment merge. Existing generated-register checks passed."
+      ],
+      "limitations": [
+        "At receipt creation this branch's changes were local; exact committed/pushed head is returned separately after remote verification. No merge, PR change, release or deployment.",
+        "Shared routing, current identity/vault/source eligibility adapters, schema migration, navigation and package manifest remain integration-owned and unmodified.",
+        "New component has six Node/fake-DOM checks, not native UI/human accessibility acceptance. Current native suites cover existing-app preservation only.",
+        "No model download/inference, professional approval, held-out semantic evaluation, pilot/value measurement, production tenant/retention security approval or optional runtime work.",
+        "Journal quotes remain at rest after withdrawal; output denial is not secure erasure. Search is bounded lexical case/matter-scoped reference lookup, not semantic learning or outcome proof."
+      ],
+      "evidence_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "tests/test_learning_knowledge.py",
+        "tests/test_learning_knowledge_ui.py",
+        "tests/test_runtime_status.py"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-233: Reference review must identify exact content without becoming fact or action authority.",
+          "EM-234: Withdrawal denial and terminal retirement need different source-access rules.",
+          "EM-235: A model inventory listing is not a loaded or quality-approved model.",
+          "EM-236: Nested engine contracts require an explicit distribution declaration as well as source tests.",
+          "EM-237: Inspectable precedent can increase review burden without proving operator benefit.",
+          "EM-238: Native shipping-state assertions can fail independently of functional app preservation."
+        ],
+        "risks": [
+          "Source support is not truth or expertise; replay/review cannot revive revoked permission.",
+          "Incomplete package declaration, missing transactional policy adapters and uncertain-write retries can undermine a source-tree-only claim.",
+          "Review burden may exceed value; local quote retention is not managed deletion."
+        ],
+        "architecture_implications": [
+          "Keep ENDSTATE contracts free of service imports; identity/source storage/API policy stay injected in 8BALL.",
+          "Central integration must explicitly include the nested package and scoped route/UI/policy adapters, merge register fragments and run exact-tree acceptance."
+        ],
+        "roadmap_decision": "Existing-task engineering and explicit integration requests only. No new required task, acceptance promotion, optional-hold implementation or release permission. EM-237 remains an unmeasured operator hypothesis; owner review of all six findings is pending.",
+        "insight_ids": [
+          "EM-233",
+          "EM-234",
+          "EM-235",
+          "EM-236",
+          "EM-237",
+          "EM-238"
+        ]
+      }
+    }
+  ]
+}

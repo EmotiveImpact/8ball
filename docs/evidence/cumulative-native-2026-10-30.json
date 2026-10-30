@@ -1,0 +1,37 @@
+{
+  "scope": "Cumulative security safeguards, coordinated planning/results and append-only collision provenance; software/native checks only.",
+  "source_commit": "c0b4d63798bd762218e2125e3d2dd4dca5816820",
+  "source_sha256": "d0f35d3798440415a43ae1cdabffd7ae04c70825c9b6994676250b490c9f62eb",
+  "run_id": "20261030T142611Z-d7977e69",
+  "native_report_archive": "docs/evidence/cumulative-native-passed-2026-10-30.json.xz",
+  "archive_sha256": "158be95dc7bddf39786002222aa324539bc2c4f978a42a509b828af77f653090",
+  "original_report_sha256": "16ae9239511afe33a4cd94bc8b9d480507a532a2d710201cce5a492a105e5380",
+  "inspection_before_documentation_closeout": {
+    "valid": true,
+    "run_status": "passed",
+    "reason": "Exact source and local evidence bytes matched before later documentation; not a signed attestation."
+  },
+  "counts": {
+    "source_tests": 2561,
+    "installed_wheel_regressions": 2561,
+    "javascript_modules": 24,
+    "native_browser_checks": 493,
+    "native_browser_suites": 13,
+    "focused_checks": 179
+  },
+  "credential_value_scan": "passed",
+  "model_inference_performed": false,
+  "native_browser_verified": true,
+  "model_quality_approved": false,
+  "predictive_quality_approved": false,
+  "merged": false,
+  "released": false,
+  "deployed": false,
+  "limits": [
+    "Exact tested integration c0b4d63798bd762218e2125e3d2dd4dca5816820 only, not a full local rerun of later documentation.",
+    "Compressed unchanged report retains binary artifact hashes, not those binaries; exact local inspection passed before documentation closeout.",
+    "Both parents retain original changelog entries, all evidence and discovery observations; seven incoming ID collisions use explicit source-qualified relocations.",
+    "No new inference, paid retry, authority changes, main merge, deployment or release.",
+    "Independent semantic quality, human accessibility, operator benefit and production readiness remain separate open gates."
+  ]
+}

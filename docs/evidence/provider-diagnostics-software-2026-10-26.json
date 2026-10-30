@@ -1,0 +1,34 @@
+{
+  "scope": "Offline provider rejection diagnostics; no live model test or quality acceptance.",
+  "source_commit": "f22f96735334d576a0e91757cd5f7363e3fa1f2e",
+  "source_sha256": "f1b4aee839ec362d8898a11abb5f123f7399b4bd63236054a472f9d288c641be",
+  "run_id": "20261026T130803Z-bd888567",
+  "native_report_archive": "docs/evidence/provider-diagnostics-software-passed-2026-10-26.json.xz",
+  "archive_sha256": "b5d6bbb38f7935273f98e40b56be62505a49499e2944f6026b668eaf3c9a69e5",
+  "original_report_sha256": "5f7c0cae1320d8ba7b6ce681bfc804146bd5f84b5aa4b3c2698e8dc2e08ec29e",
+  "inspection_before_documentation_closeout": {
+    "valid": true,
+    "run_status": "passed",
+    "reason": "Source and local evidence bytes matched; not a signed attestation"
+  },
+  "counts": {
+    "source_tests": 2355,
+    "installed_wheel_regressions": 2355,
+    "javascript_modules": 24,
+    "native_browser_checks": 475,
+    "native_browser_suites": 13
+  },
+  "credential_value_scan": "passed",
+  "model_inference_performed": false,
+  "native_browser_verified": true,
+  "model_quality_approved": false,
+  "predictive_quality_approved": false,
+  "merged": false,
+  "released": false,
+  "deployed": false,
+  "limits": [
+    "Exact native report binds f22f967, not later fixes.",
+    "First five-request coordinated live run remains failed/partial; original DeepSeek failure cause is unknown.",
+    "Generic native cost normalisation not implemented. Three read-only old-request usage lookups are separate from inference."
+  ]
+}

@@ -46,6 +46,10 @@ class Store(LegacyStore):
                 case_id TEXT NOT NULL REFERENCES v2_cases(id), event_id TEXT NOT NULL,
                 sequence INTEGER NOT NULL, record TEXT NOT NULL, hash TEXT NOT NULL,
                 PRIMARY KEY(case_id,event_id), UNIQUE(case_id,sequence));
+            CREATE TABLE IF NOT EXISTS v2_rehearsals(
+                case_id TEXT NOT NULL REFERENCES v2_cases(id), event_id TEXT NOT NULL,
+                sequence INTEGER NOT NULL, record TEXT NOT NULL, hash TEXT NOT NULL,
+                PRIMARY KEY(case_id,event_id), UNIQUE(case_id,sequence));
             CREATE TABLE IF NOT EXISTS v2_course_events(
                 case_id TEXT NOT NULL REFERENCES v2_cases(id), event_id TEXT NOT NULL,
                 sequence INTEGER NOT NULL, record TEXT NOT NULL, hash TEXT NOT NULL,
@@ -220,8 +224,12 @@ class Store(LegacyStore):
             except (ValueError, KeyError, TypeError): grounding_rows=[]; grounding_error=True
             from .plan_review import read_journal, export_journal
             review_rows = read_journal(db,case_id)
+            from .rehearsal import read_rows as rehearsal_rows, export_rows as export_rehearsals
+            challenge_rows = rehearsal_rows(db,case_id)
             from .courses import read_rows, export_courses
             course_rows = read_rows(db,case_id)
+            from .event_reviews import read_consumptions, export_consumptions
+            consumption_rows = read_consumptions(db,case_id)
             lineage=db.execute('SELECT source_export FROM v2_lineage WHERE case_id=?',(case_id,)).fetchone()
             db.rollback()
         previous=None;valid=True;events=[];replay=None
@@ -253,6 +261,14 @@ class Store(LegacyStore):
         if review_export is not None:
             extras['plan_reviews'] = review_export
             valid = valid and review_export['valid']
+        challenge_export = export_rehearsals(challenge_rows,case_id,events)
+        if challenge_export is not None:
+            extras['assumption_challenges'] = challenge_export
+            valid = valid and challenge_export['valid']
+        consumption_export = export_consumptions(consumption_rows,case_id,events)
+        if consumption_export is not None:
+            extras['incoming_event_reviews'] = consumption_export
+            valid = valid and consumption_export['valid']
         return {**extras,'format':'eightball-case-v2' ,'valid':valid,'head_hash':previous,'case':case.model_dump(mode='json'),
                 'events':events,'model_runs':traces,'legacy_lineage':json.loads(lineage['source_export']) if lineage else None,
                 'replay_matches_snapshot':bool(replay==case),'audit_scope':'Application hash chain and snapshot replay; not independently anchored or administrator-proof'}

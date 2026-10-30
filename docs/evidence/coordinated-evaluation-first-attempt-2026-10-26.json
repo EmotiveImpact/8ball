@@ -1,0 +1,83 @@
+{
+  "source_commit": "00cc0a76c3f895c0059d8efc3f1d7808e6246ed9",
+  "source_sha256": "04a36eccaa6854df2d6e6a6e7a643e9ed29bf701be7febafc31692db690cbac9",
+  "native_run": "20261026T123833Z-2dc89c7e",
+  "native_status": "passed",
+  "native_inspected_valid_before_closeout": true,
+  "source_tests_passed": 2336,
+  "installed_wheel_regressions_passed": 2336,
+  "native_browser_checks_passed": 475,
+  "native_browser_suites": 13,
+  "javascript_modules_checked": 24,
+  "protocol_sha256": "477958c194ae2f1451739909bf2a28573f97247e1bcdc0aefa0e474a19275364",
+  "live_status": "partial_or_failed",
+  "recorded_provider_call_attempts": 5,
+  "source_unchanged_during_live_run": true,
+  "revisions_produced": 0,
+  "models": [
+    {
+      "id": "glm-5.3-uncensored",
+      "calls": 1,
+      "status": "initial_failed",
+      "http_status": 200,
+      "failure": "invalid_json",
+      "observed_detail": "Assistant content wrapped in Markdown JSON fences; no repair applied."
+    },
+    {
+      "id": "deepseek-v4.1-flash",
+      "calls": 1,
+      "status": "initial_failed",
+      "http_status": 200,
+      "failure": "unsupported_response",
+      "observed_detail": "Envelope rejected; no retained assistant text/finish reason/usage. Exact cause unverified; envelope bytes are hashed but not recoverable from the hash."
+    },
+    {
+      "id": "claude-sonnet-5-5",
+      "calls": 2,
+      "status": "initial_proposal_validated_revision_not_attempted",
+      "input_tokens": 5534,
+      "output_tokens": 1378,
+      "reviewer": {
+        "id": "jev-latest",
+        "calls": 1,
+        "status": "validated_advisory",
+        "answers": "preserved on all three criteria",
+        "usage_cost": 3.5868e-05,
+        "reported_cost_nano_usd": null,
+        "panel_stop_reason": "unknown_reported_cost",
+        "unstarted_reviewers": [
+          "clef-flash",
+          "gpt-6-luna-decisions"
+        ]
+      }
+    },
+    {
+      "id": "claude-opus-5-5",
+      "calls": 0,
+      "status": "not_started_after_incomplete_panel"
+    }
+  ],
+  "case_audits_unchanged": true,
+  "known_normalized_specialist_cost_nano_usd": 0,
+  "zero_known_cost_is_not_zero_charge": true,
+  "planning_charge_status": "unknown_not_provider_reported",
+  "provider_billing_verified": false,
+  "automatic_retry": false,
+  "automatic_repair": false,
+  "automatic_substitution": false,
+  "independent_quality_approved": false,
+  "predictive_quality_approved": false,
+  "merged": false,
+  "deployed": false,
+  "released": false,
+  "archives": {
+    "docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json.xz": {
+      "sha256": "5287bbb069934efacdedd86582a87be720d52d7ceb832056f7a01eb2994d5a77",
+      "bytes": 37660
+    },
+    "docs/evidence/coordinated-evaluation-software-passed-2026-10-26.json.xz": {
+      "sha256": "d029c92dcd91a4e1027e0cf97bd8d14bdc4d19a0d522014b802a3583d96dae44",
+      "bytes": 35372
+    }
+  }
+}

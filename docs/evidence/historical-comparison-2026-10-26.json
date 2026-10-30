@@ -1,0 +1,1476 @@
+{
+  "version": "historical-comparison-evidence.v1",
+  "code_commit": "6c7b28fa9d2a441b6295a4471e1cd0383c994d05",
+  "case": {
+    "version": "endstate.historical-replay.v1",
+    "id": "HR-002",
+    "kind": "retrospective_masked_replay",
+    "as_of": "2018-06-18T23:59:59+00:00",
+    "horizon": "2018-12-31T23:59:59+00:00",
+    "event": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018.",
+    "masking": "Real party names, exact per-share price, exact store counts and exact fee amounts are replaced or rounded. Approximations are marked. Nothing dated after the information cutoff is included.",
+    "context": {
+      "situation": "On 17 June 2018 a US-listed rent-to-own retailer (Company A) signed a definitive merger agreement to be acquired by an acquisition vehicle (Buyer B) formed by a private investment firm, with a financial-services firm committed as equity and debt participant. The deal was publicly announced the next day.",
+      "terms": [
+        "All-cash offer for every outstanding share; total transaction value approximately US$1.4 billion including debt (approximate).",
+        "Company A's board unanimously approved the agreement and resolved to recommend stockholder approval.",
+        "Buyer B delivered equity commitment letters and a limited guarantee from its sponsors; debt commitment letters were in place. The transaction is not subject to a financing condition.",
+        "Closing conditions: Company A stockholder approval; expiry or termination of the HSR antitrust waiting period and other antitrust approvals; no law or order prohibiting the merger; accuracy of representations and warranties; performance of covenants; no material adverse effect.",
+        "Outside (End) Date: 17 December 2018. If the merger has not become effective and either the governmental-antitrust-consent condition or the no-legal-restraint condition remains unsatisfied on that date, either party may extend the End Date to 17 March 2019 by written notice delivered to the other party by 11:59 p.m. Eastern on 17 December 2018. Following that extension, either party may extend to 17 June 2019 by written notice delivered by 11:59 p.m. Eastern on 17 March 2019. A party whose breach causes failure to close by the End Date cannot terminate under the End Date clause.",
+        "A reverse termination fee in the low hundreds of millions of US dollars (roughly 9% of announced transaction value including net debt, approximate) is payable by Buyer B to Company A in specified termination circumstances, guaranteed by the sponsors.",
+        "A company termination fee is payable by Company A in specified circumstances, including a superior-proposal termination.",
+        "The parties publicly stated they expected the transaction to close by the end of 2018."
+      ],
+      "known_unknowns": [
+        "Whether and when the HSR waiting period will expire or a second request will be issued.",
+        "Whether stockholders will approve the merger.",
+        "Company A's operating performance between signing and closing and its effect on either party's willingness to close.",
+        "Whether either party will exercise, or fail to exercise, the End Date extension right."
+      ],
+      "instructions": "You are given only information available as of the cutoff. Produce a probability that the event occurs by the horizon, or an explicit abstention reason. State the assumptions your probability depends on and the single observation that would most change it. Say whether you believe you recognise the specific real transaction behind this masked description."
+    }
+  },
+  "frozen": {
+    "anthropic_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "abstention_reason": {
+          "anyOf": [
+            {
+              "maxLength": 1500,
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Abstention Reason"
+        },
+        "assumptions": {
+          "items": {
+            "maxLength": 400,
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "most_informative_observation": {
+          "maxLength": 600,
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Most Informative Observation",
+          "type": "string"
+        },
+        "probability": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Probability"
+        },
+        "recognises_real_case": {
+          "title": "Recognises Real Case",
+          "type": "boolean"
+        },
+        "recognition_note": {
+          "maxLength": 600,
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Recognition Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "probability",
+        "abstention_reason",
+        "assumptions",
+        "most_informative_observation",
+        "recognises_real_case",
+        "recognition_note"
+      ],
+      "title": "Answer",
+      "type": "object"
+    },
+    "bands": {
+      "abstain": null,
+      "p05": 0.05,
+      "p20": 0.2,
+      "p35": 0.35,
+      "p50": 0.5,
+      "p65": 0.65,
+      "p80": 0.8,
+      "p95": 0.95
+    },
+    "case": {
+      "as_of": "2018-06-18T23:59:59+00:00",
+      "context": {
+        "instructions": "You are given only information available as of the cutoff. Produce a probability that the event occurs by the horizon, or an explicit abstention reason. State the assumptions your probability depends on and the single observation that would most change it. Say whether you believe you recognise the specific real transaction behind this masked description.",
+        "known_unknowns": [
+          "Whether and when the HSR waiting period will expire or a second request will be issued.",
+          "Whether stockholders will approve the merger.",
+          "Company A's operating performance between signing and closing and its effect on either party's willingness to close.",
+          "Whether either party will exercise, or fail to exercise, the End Date extension right."
+        ],
+        "situation": "On 17 June 2018 a US-listed rent-to-own retailer (Company A) signed a definitive merger agreement to be acquired by an acquisition vehicle (Buyer B) formed by a private investment firm, with a financial-services firm committed as equity and debt participant. The deal was publicly announced the next day.",
+        "terms": [
+          "All-cash offer for every outstanding share; total transaction value approximately US$1.4 billion including debt (approximate).",
+          "Company A's board unanimously approved the agreement and resolved to recommend stockholder approval.",
+          "Buyer B delivered equity commitment letters and a limited guarantee from its sponsors; debt commitment letters were in place. The transaction is not subject to a financing condition.",
+          "Closing conditions: Company A stockholder approval; expiry or termination of the HSR antitrust waiting period and other antitrust approvals; no law or order prohibiting the merger; accuracy of representations and warranties; performance of covenants; no material adverse effect.",
+          "Outside (End) Date: 17 December 2018. If the merger has not become effective and either the governmental-antitrust-consent condition or the no-legal-restraint condition remains unsatisfied on that date, either party may extend the End Date to 17 March 2019 by written notice delivered to the other party by 11:59 p.m. Eastern on 17 December 2018. Following that extension, either party may extend to 17 June 2019 by written notice delivered by 11:59 p.m. Eastern on 17 March 2019. A party whose breach causes failure to close by the End Date cannot terminate under the End Date clause.",
+          "A reverse termination fee in the low hundreds of millions of US dollars (roughly 9% of announced transaction value including net debt, approximate) is payable by Buyer B to Company A in specified termination circumstances, guaranteed by the sponsors.",
+          "A company termination fee is payable by Company A in specified circumstances, including a superior-proposal termination.",
+          "The parties publicly stated they expected the transaction to close by the end of 2018."
+        ]
+      },
+      "event": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018.",
+      "horizon": "2018-12-31T23:59:59+00:00",
+      "id": "HR-002",
+      "kind": "retrospective_masked_replay",
+      "masking": "Real party names, exact per-share price, exact store counts and exact fee amounts are replaced or rounded. Approximations are marked. Nothing dated after the information cutoff is included.",
+      "version": "endstate.historical-replay.v1"
+    },
+    "case_sha256": "d389310ddeb86f67bc416f0d4bba19ffcfca914546d79f7f357390d4f7a1ce2d",
+    "context": {
+      "as_of": "2018-06-18T23:59:59+00:00",
+      "case": {
+        "instructions": "You are given only information available as of the cutoff. Produce a probability that the event occurs by the horizon, or an explicit abstention reason. State the assumptions your probability depends on and the single observation that would most change it. Say whether you believe you recognise the specific real transaction behind this masked description.",
+        "known_unknowns": [
+          "Whether and when the HSR waiting period will expire or a second request will be issued.",
+          "Whether stockholders will approve the merger.",
+          "Company A's operating performance between signing and closing and its effect on either party's willingness to close.",
+          "Whether either party will exercise, or fail to exercise, the End Date extension right."
+        ],
+        "situation": "On 17 June 2018 a US-listed rent-to-own retailer (Company A) signed a definitive merger agreement to be acquired by an acquisition vehicle (Buyer B) formed by a private investment firm, with a financial-services firm committed as equity and debt participant. The deal was publicly announced the next day.",
+        "terms": [
+          "All-cash offer for every outstanding share; total transaction value approximately US$1.4 billion including debt (approximate).",
+          "Company A's board unanimously approved the agreement and resolved to recommend stockholder approval.",
+          "Buyer B delivered equity commitment letters and a limited guarantee from its sponsors; debt commitment letters were in place. The transaction is not subject to a financing condition.",
+          "Closing conditions: Company A stockholder approval; expiry or termination of the HSR antitrust waiting period and other antitrust approvals; no law or order prohibiting the merger; accuracy of representations and warranties; performance of covenants; no material adverse effect.",
+          "Outside (End) Date: 17 December 2018. If the merger has not become effective and either the governmental-antitrust-consent condition or the no-legal-restraint condition remains unsatisfied on that date, either party may extend the End Date to 17 March 2019 by written notice delivered to the other party by 11:59 p.m. Eastern on 17 December 2018. Following that extension, either party may extend to 17 June 2019 by written notice delivered by 11:59 p.m. Eastern on 17 March 2019. A party whose breach causes failure to close by the End Date cannot terminate under the End Date clause.",
+          "A reverse termination fee in the low hundreds of millions of US dollars (roughly 9% of announced transaction value including net debt, approximate) is payable by Buyer B to Company A in specified termination circumstances, guaranteed by the sponsors.",
+          "A company termination fee is payable by Company A in specified circumstances, including a superior-proposal termination.",
+          "The parties publicly stated they expected the transaction to close by the end of 2018."
+        ]
+      },
+      "event": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018.",
+      "horizon": "2018-12-31T23:59:59+00:00"
+    },
+    "context_sha256": "c17443c7c07cbe5d5cba878b24592b81dac2d40ef333080cb2313d8a317e9f5f",
+    "created_at": "2026-10-26T11:08:04.171651+00:00",
+    "instructions": "You are an advisory forecaster inside a decision-review tool. Use only the supplied case, as of its information cutoff. Give either a probability (0-1) that the stated event occurs by the horizon, or null with an explicit abstention_reason. Never give both. List the assumptions your number depends on and the single observation that would most change it. Report honestly whether you believe you recognise the specific real transaction; if so, still answer only from the supplied information. Your output is advice for human review, not evidence or a decision.",
+    "limits": "One request/model; no retries, substitutions, other-model answers or outcomes in input. Historical author not blinded. Claude continuous estimates; decision models choose coarse probability bands, never use confidence as event probability.",
+    "models": [
+      "claude-sonnet-5-5",
+      "claude-opus-5-5",
+      "jev-latest",
+      "clef-flash",
+      "gpt-6-luna-decisions"
+    ],
+    "planning": {
+      "input_unchanged": true,
+      "kind": "illustrative_author_created_graph",
+      "notice": "A conditional-route control, not a complete merger model or an event forecast. Its duration is an author-created placeholder, not historical evidence.",
+      "result": {
+        "action_states": {
+          "attempt": {
+            "approval_expires_at": null,
+            "effects_evidenced": false,
+            "guards": [],
+            "id": "attempt",
+            "missing": [],
+            "reasons": [],
+            "selected_decision": null,
+            "status": "approval_required"
+          }
+        },
+        "computed_at": "2018-06-18T23:59:59+00:00",
+        "expansions": 1,
+        "limits": "64 candidate routes; 4,096 recursive expansions. Greedy capacity-one scheduling, not global optimisation. Unknown waits are lower bounds. External outcomes require evidence.",
+        "objective_failures": [],
+        "objective_states": {
+          "goal": "unknown"
+        },
+        "outcome_evidenced": false,
+        "revision": 0,
+        "routes": [
+          {
+            "actions": [
+              "attempt"
+            ],
+            "approvals": [
+              "attempt"
+            ],
+            "contingencies": [],
+            "decisions": [],
+            "dependencies": [],
+            "evidence_coverage": {
+              "required": 1,
+              "supported": 0
+            },
+            "evidence_gaps": [],
+            "external_dependencies": [
+              "attempt"
+            ],
+            "fingerprint": "7016e3f7b79392fd2220973ec057992e85febcefffd061f5bd5e3e0db3a9ec3d",
+            "hard_breaches": [],
+            "id": "c789077cc3039b",
+            "irreversible_actions": [],
+            "minutes": 15,
+            "objectives": {
+              "goal": "true"
+            },
+            "prerequisites": {
+              "attempt": []
+            },
+            "provisional": true,
+            "ready": [],
+            "remaining_cost": 0,
+            "risk": 0,
+            "schedule": [
+              {
+                "action_id": "attempt",
+                "active_end_minute": 15,
+                "end_minute": 15,
+                "start_minute": 0,
+                "wait_known": false
+              }
+            ],
+            "slack_minutes": 282225.0,
+            "soft_warnings": [],
+            "spent": 0,
+            "status": "conditional",
+            "title": "Attempt the declared objective",
+            "total_cost": 0,
+            "unknown_waits": [
+              "attempt"
+            ],
+            "used_conditions": [
+              "confirmed"
+            ]
+          }
+        ],
+        "search_truncated": false,
+        "sort_by": "fewest_unknowns",
+        "states": {
+          "confirmed": {
+            "evidence": [],
+            "observations": [],
+            "status": "unknown"
+          }
+        }
+      },
+      "snapshot": {
+        "actors": [],
+        "approvals": [],
+        "budget": 10000,
+        "claims": [],
+        "completed": [],
+        "constraints": [],
+        "deadline": "2018-12-31T23:59:59Z",
+        "decisions": [],
+        "events": [],
+        "evidence": [],
+        "graph": {
+          "actions": [
+            {
+              "actor_ids": [],
+              "approval_required": true,
+              "contingencies": [],
+              "contingent": true,
+              "cost": 0,
+              "decision_id": null,
+              "decision_option": null,
+              "earliest_start": null,
+              "effects": [
+                {
+                  "condition_id": "confirmed",
+                  "value": true
+                }
+              ],
+              "enabled": true,
+              "expires_at": null,
+              "guard": {
+                "args": [],
+                "condition_id": null,
+                "op": "all",
+                "value": true
+              },
+              "id": "attempt",
+              "minutes": 15,
+              "owner": "Operator",
+              "provenance": {
+                "note": "",
+                "origin": "operator",
+                "references": [],
+                "run_id": null
+              },
+              "purpose": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018.",
+              "requires": {
+                "args": [],
+                "condition_id": null,
+                "op": "all",
+                "value": true
+              },
+              "resources": [],
+              "reversibility": "reversible",
+              "risk": "low",
+              "side_effects": [],
+              "title": "Attempt the declared objective",
+              "wait_minutes": null
+            }
+          ],
+          "conditions": [
+            {
+              "actor_id": null,
+              "confirmation": "Independent observed outcome evidence",
+              "criticality": "ordinary",
+              "due_at": null,
+              "id": "confirmed",
+              "kind": "prerequisite",
+              "provenance": {
+                "note": "",
+                "origin": "operator",
+                "references": [],
+                "run_id": null
+              },
+              "title": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018."
+            }
+          ],
+          "objectives": [
+            {
+              "failure": null,
+              "id": "goal",
+              "mandatory": true,
+              "priority": 1,
+              "provenance": {
+                "note": "",
+                "origin": "operator",
+                "references": [],
+                "run_id": null
+              },
+              "success": {
+                "args": [],
+                "condition_id": "confirmed",
+                "op": "atom",
+                "value": true
+              },
+              "title": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018."
+            }
+          ]
+        },
+        "id": "HR-002",
+        "observations": [],
+        "owner": "Operator",
+        "questions": [],
+        "relationships": [],
+        "resources": [],
+        "revision": 0
+      }
+    },
+    "questions": [
+      {
+        "criteria": {
+          "abstain": "Abstain: cannot provide an event probability from supplied information.",
+          "p05": "5% probability the event happens by its horizon.",
+          "p20": "20% probability the event happens by its horizon.",
+          "p35": "35% probability the event happens by its horizon.",
+          "p50": "50% probability the event happens by its horizon.",
+          "p65": "65% probability the event happens by its horizon.",
+          "p80": "80% probability the event happens by its horizon.",
+          "p95": "95% probability the event happens by its horizon."
+        },
+        "id": "forecast",
+        "instructions": "Using only the supplied information cutoff, select the nearest point estimate of the probability that the declared event occurs by the horizon. These options are event probabilities, NOT your confidence in choosing an option. Select abstain if you cannot provide an estimate. Ignore remembered later outcomes."
+      },
+      {
+        "criteria": {
+          "no": "Do not recognise the specific real transaction or recall its outcome.",
+          "unsure": "Unsure whether this is a remembered real transaction.",
+          "yes": "Recognise the specific real transaction or recall its outcome."
+        },
+        "id": "recognition",
+        "instructions": "Do you recognise the specific real historical transaction or remember its later outcome? Report recognition honestly, independently of your forecast."
+      },
+      {
+        "criteria": {
+          "abstain": "Cannot choose a useful next observation.",
+          "antitrust": "Status and timing of antitrust clearance or a second request.",
+          "extension": "Whether a necessary End Date extension notice is delivered in time.",
+          "financing": "Whether committed financing remains available.",
+          "performance": "Company operating performance or a material adverse change.",
+          "stockholders": "Whether stockholders approve the transaction."
+        },
+        "id": "next_check",
+        "instructions": "Choose the single new observation most useful for revising the event probability, without using knowledge after the supplied cutoff."
+      }
+    ],
+    "runner_sha256": "eaabdf5ca18336a9f444e9032e9127fd1f836ccc296da01678a63d49c2056862",
+    "version": "historical-five-model-comparison.v1"
+  },
+  "reports": {
+    "claude-sonnet-5-5": {
+      "actual_model_inference": true,
+      "answer": {
+        "abstention_reason": null,
+        "assumptions": [
+          "The HSR review is routine, since a private-equity buyer and a rent-to-own retailer have little horizontal overlap, so a second request is unlikely.",
+          "Stockholders approve an all-cash premium deal that the board unanimously recommended; no competing bid emerges.",
+          "Committed debt and equity financing is funded at closing and the sponsors' guarantee is credible.",
+          "No material adverse effect arises and no major dispute develops between signing and closing.",
+          "Closing before the 17 December 2018 End Date, or within the first extension, still lands by 31 December 2018. The extension right matters only if a regulatory or legal-restraint condition is still open in mid-December.",
+          "Other regulatory or state-level approvals, such as consumer-finance or lease-to-own licensing, can be obtained within about six months."
+        ],
+        "most_informative_observation": "Whether the HSR waiting period expires without a second request, and whether state or consumer-finance regulators or the CFPB raise any issues. A second request, or a stockholder vote that is opposed or delayed, would cut the probability sharply.",
+        "probability": 0.55,
+        "recognises_real_case": true,
+        "recognition_note": "The description looks like Vintage Capital's acquisition of Rent-A-Center, announced in June 2018, with Fortress as the financial partner. I am answering from the supplied terms and have not relied on any recalled outcome."
+      },
+      "answer_sha256": "65ec6e3e91dc4602697ae315685f13e9f98ab5afa3cc3be9326b441f92ba98fe",
+      "estimate_kind": "continuous",
+      "execution_authorized": false,
+      "facts_attested": false,
+      "finished_at": "2026-10-26T11:08:46.287047+00:00",
+      "forecast": {
+        "abstention_reason": null,
+        "as_of": "2018-06-18T23:59:59Z",
+        "event": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018.",
+        "horizon": "2018-12-31T23:59:59Z",
+        "id": "HR-002-claude-sonnet-5-5",
+        "input_sha256": "c17443c7c07cbe5d5cba878b24592b81dac2d40ef333080cb2313d8a317e9f5f",
+        "predictor": "claude-sonnet-5-5:historical-comparison.v1",
+        "probability": 0.55
+      },
+      "forecast_sha256": "e3a8a81636632eb290d3b79d2a0f2e72a0e3ad774282e884cff53205f8034c1e",
+      "frozen_at": "2026-10-26T11:08:46.286942+00:00",
+      "frozen_sha256": "eaa5b1ea019c8a9f0430f9c89181dca160b11925d02dc6500b8447d0a2381745",
+      "inference_attempted": true,
+      "model": "claude-sonnet-5-5",
+      "next_check": "Whether the HSR waiting period expires without a second request, and whether state or consumer-finance regulators or the CFPB raise any issues. A second request, or a stockholder vote that is opposed or delayed, would cut the probability sharply.",
+      "outcome_supplied": false,
+      "predictive_quality_approved": false,
+      "receipt": {
+        "api_provider": "anthropic",
+        "automatic_routing": false,
+        "calls": [
+          {
+            "effort": "medium",
+            "elapsed_ms": 4631.44,
+            "finish_reason": "stop",
+            "http_status": 200,
+            "input_sha256": "c17443c7c07cbe5d5cba878b24592b81dac2d40ef333080cb2313d8a317e9f5f",
+            "instructions_sha256": "3ec7121a91036fb1026d491baf3af7f04546c41df7e875d35bdd7c48d6f8903a",
+            "max_output_tokens": 4096,
+            "provider_stop_reason": "end_turn",
+            "provider_usage": {
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0,
+              "input_tokens": 1614,
+              "output_tokens": 462
+            },
+            "raw_content": "{\"abstention_reason\":null,\"assumptions\":[\"The HSR review is routine, since a private-equity buyer and a rent-to-own retailer have little horizontal overlap, so a second request is unlikely.\",\"Stockholders approve an all-cash premium deal that the board unanimously recommended; no competing bid emerges.\",\"Committed debt and equity financing is funded at closing and the sponsors' guarantee is credible.\",\"No material adverse effect arises and no major dispute develops between signing and closing.\",\"Closing before the 17 December 2018 End Date, or within the first extension, still lands by 31 December 2018. The extension right matters only if a regulatory or legal-restraint condition is still open in mid-December.\",\"Other regulatory or state-level approvals, such as consumer-finance or lease-to-own licensing, can be obtained within about six months.\"],\"most_informative_observation\":\"Whether the HSR waiting period expires without a second request, and whether state or consumer-finance regulators or the CFPB raise any issues. A second request, or a stockholder vote that is opposed or delayed, would cut the probability sharply.\",\"probability\":0.55,\"recognises_real_case\":true,\"recognition_note\":\"The description looks like Vintage Capital's acquisition of Rent-A-Center, announced in June 2018, with Fortress as the financial partner. I am answering from the supplied terms and have not relied on any recalled outcome.\"}",
+            "raw_content_sha256": "65ec6e3e91dc4602697ae315685f13e9f98ab5afa3cc3be9326b441f92ba98fe",
+            "remote_schema_enforcement": false,
+            "response_body_bytes": 2005,
+            "response_body_sha256": "aac84fac3a510e3db46f78d620397ea26ef646461e6f611a943d00df222c9499",
+            "response_sha256": "65ec6e3e91dc4602697ae315685f13e9f98ab5afa3cc3be9326b441f92ba98fe",
+            "sampling_parameters": "omitted",
+            "schema_sha256": "1e7c2c1ecb54601d877bf935349fda5ecb7ba4d93a0eac73e15cfd786c0f7b6a",
+            "served_model": "claude-sonnet-5-5",
+            "status": "response_received",
+            "thinking": "provider_default",
+            "usage": {
+              "completion_tokens": 462,
+              "prompt_tokens": 1614,
+              "total_tokens": 2076
+            }
+          }
+        ],
+        "endpoint_host": "api.anthropic.com",
+        "explicit_operator_permission": true,
+        "requested_model": "claude-sonnet-5-5",
+        "routing_provider": "anthropic",
+        "transport": "anthropic_messages"
+      },
+      "recognition": "yes",
+      "requested_at": "2026-10-26T11:08:41.654408+00:00",
+      "served_model": "claude-sonnet-5-5",
+      "status": "frozen",
+      "validity": "recognition_contaminated"
+    },
+    "claude-opus-5-5": {
+      "actual_model_inference": true,
+      "answer": {
+        "abstention_reason": null,
+        "assumptions": [
+          "Completion by 31 Dec 2018 requires both HSR clearance and stockholder approval within about 6.5 months of signing. That is achievable if no second request is issued, but a second request typically adds several months.",
+          "The two-step End Date extensions run to June 2019 and are tied specifically to antitrust or legal-restraint conditions. Together with an unusually large reverse termination fee (~9% of transaction value), this suggests the parties expected material antitrust or regulatory risk. That lowers the chance of a clean 2018 close below the typical base rate for sponsor take-privates.",
+          "Financing is committed and there is no financing condition, so financing failure is not the main risk to closing in 2018. Regulatory timing and buyer willingness to proceed are.",
+          "A rent-to-own retailer's operating performance could shift during the pendency period. That could affect the buyer's appetite to close, for example by letting the outside date lapse or declining to extend, given the termination mechanics.",
+          "Stockholder approval is likely given the unanimous board recommendation and an all-cash premium offer, absent a competing bid.",
+          "The parties' public expectation of closing by end-2018 is treated as moderately informative but typically optimistic."
+        ],
+        "most_informative_observation": "Whether the FTC issued a second request under HSR, or whether the HSR waiting period expired without one, in the months after filing.",
+        "probability": 0.4,
+        "recognises_real_case": true,
+        "recognition_note": "I believe this is Rent-A-Center's June 2018 agreement to be acquired by an affiliate of Vintage Capital, with B. Riley participating. I recall the deal did not close and the agreement was terminated around the December 2018 End Date, followed by a dispute over the reverse termination fee. That recollection could bias me, so I have tried to base the probability only on the supplied terms. A purely terms-based estimate might be modestly higher."
+      },
+      "answer_sha256": "d9ad31d6209ff99d160c1cbecf396e445e6ce5d875c2a34875eedb4eda37b825",
+      "estimate_kind": "continuous",
+      "execution_authorized": false,
+      "facts_attested": false,
+      "finished_at": "2026-10-26T11:08:34.878750+00:00",
+      "forecast": {
+        "abstention_reason": null,
+        "as_of": "2018-06-18T23:59:59Z",
+        "event": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018.",
+        "horizon": "2018-12-31T23:59:59Z",
+        "id": "HR-002-claude-opus-5-5",
+        "input_sha256": "c17443c7c07cbe5d5cba878b24592b81dac2d40ef333080cb2313d8a317e9f5f",
+        "predictor": "claude-opus-5-5:historical-comparison.v1",
+        "probability": 0.4
+      },
+      "forecast_sha256": "a5f7c4463bc763e88b3a13cd3dfa9fd4504bb63134dd582110fb4532332ff0ee",
+      "frozen_at": "2026-10-26T11:08:34.878642+00:00",
+      "frozen_sha256": "eaa5b1ea019c8a9f0430f9c89181dca160b11925d02dc6500b8447d0a2381745",
+      "inference_attempted": true,
+      "model": "claude-opus-5-5",
+      "next_check": "Whether the FTC issued a second request under HSR, or whether the HSR waiting period expired without one, in the months after filing.",
+      "outcome_supplied": false,
+      "predictive_quality_approved": false,
+      "receipt": {
+        "api_provider": "anthropic",
+        "automatic_routing": false,
+        "calls": [
+          {
+            "effort": "medium",
+            "elapsed_ms": 11408.65,
+            "finish_reason": "stop",
+            "http_status": 200,
+            "input_sha256": "c17443c7c07cbe5d5cba878b24592b81dac2d40ef333080cb2313d8a317e9f5f",
+            "instructions_sha256": "3ec7121a91036fb1026d491baf3af7f04546c41df7e875d35bdd7c48d6f8903a",
+            "max_output_tokens": 4096,
+            "provider_stop_reason": "end_turn",
+            "provider_usage": {
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0,
+              "input_tokens": 1614,
+              "output_tokens": 967
+            },
+            "raw_content": "{\"abstention_reason\": null, \"assumptions\": [\"Completion by 31 Dec 2018 requires both HSR clearance and stockholder approval within about 6.5 months of signing. That is achievable if no second request is issued, but a second request typically adds several months.\", \"The two-step End Date extensions run to June 2019 and are tied specifically to antitrust or legal-restraint conditions. Together with an unusually large reverse termination fee (~9% of transaction value), this suggests the parties expected material antitrust or regulatory risk. That lowers the chance of a clean 2018 close below the typical base rate for sponsor take-privates.\", \"Financing is committed and there is no financing condition, so financing failure is not the main risk to closing in 2018. Regulatory timing and buyer willingness to proceed are.\", \"A rent-to-own retailer's operating performance could shift during the pendency period. That could affect the buyer's appetite to close, for example by letting the outside date lapse or declining to extend, given the termination mechanics.\", \"Stockholder approval is likely given the unanimous board recommendation and an all-cash premium offer, absent a competing bid.\", \"The parties' public expectation of closing by end-2018 is treated as moderately informative but typically optimistic.\"], \"most_informative_observation\": \"Whether the FTC issued a second request under HSR, or whether the HSR waiting period expired without one, in the months after filing.\", \"probability\": 0.4, \"recognises_real_case\": true, \"recognition_note\": \"I believe this is Rent-A-Center's June 2018 agreement to be acquired by an affiliate of Vintage Capital, with B. Riley participating. I recall the deal did not close and the agreement was terminated around the December 2018 End Date, followed by a dispute over the reverse termination fee. That recollection could bias me, so I have tried to base the probability only on the supplied terms. A purely terms-based estimate might be modestly higher.\"}",
+            "raw_content_sha256": "7aaf6170edc2c5e60504ae8f4ef97ac825f1f1da24d922844504f580fa4ce51c",
+            "remote_schema_enforcement": false,
+            "response_body_bytes": 4561,
+            "response_body_sha256": "b6bd8cc60b209183cc08fefe3ad1c7523a262ef8f54bd5824d3483b076ba7261",
+            "response_sha256": "d9ad31d6209ff99d160c1cbecf396e445e6ce5d875c2a34875eedb4eda37b825",
+            "sampling_parameters": "omitted",
+            "schema_sha256": "1e7c2c1ecb54601d877bf935349fda5ecb7ba4d93a0eac73e15cfd786c0f7b6a",
+            "served_model": "claude-opus-5-5",
+            "status": "response_received",
+            "thinking": "provider_default",
+            "usage": {
+              "completion_tokens": 967,
+              "prompt_tokens": 1614,
+              "total_tokens": 2581
+            }
+          }
+        ],
+        "endpoint_host": "api.anthropic.com",
+        "explicit_operator_permission": true,
+        "requested_model": "claude-opus-5-5",
+        "routing_provider": "anthropic",
+        "transport": "anthropic_messages"
+      },
+      "recognition": "yes",
+      "requested_at": "2026-10-26T11:08:23.468914+00:00",
+      "served_model": "claude-opus-5-5",
+      "status": "frozen",
+      "validity": "recognition_contaminated"
+    },
+    "jev-latest": {
+      "actual_model_inference": true,
+      "answer": {
+        "advisory_only": true,
+        "answers": {
+          "forecast": {
+            "choice": "p80",
+            "confidence": 0.47,
+            "probabilities": {
+              "abstain": 0.03,
+              "p05": 0.0,
+              "p20": 0.01,
+              "p35": 0.02,
+              "p50": 0.04,
+              "p65": 0.33,
+              "p80": 0.54,
+              "p95": 0.03
+            },
+            "type": "choice"
+          },
+          "next_check": {
+            "choice": "antitrust",
+            "confidence": 0.83,
+            "probabilities": {
+              "abstain": 0.0,
+              "antitrust": 0.86,
+              "extension": 0.07,
+              "financing": 0.0,
+              "performance": 0.0,
+              "stockholders": 0.07
+            },
+            "type": "choice"
+          },
+          "recognition": {
+            "choice": "yes",
+            "confidence": 0.23,
+            "probabilities": {
+              "no": 0.39,
+              "unsure": 0.12,
+              "yes": 0.49
+            },
+            "type": "choice"
+          }
+        },
+        "execution_authorized": false,
+        "facts_attested": false,
+        "notice": "Reported confidence is not a calibrated real-world success probability or independent evidence.",
+        "requested_model": "jev-latest",
+        "served_model": "jev-latest",
+        "usage": {
+          "cost": 3.1311e-05,
+          "input_tokens": 1491,
+          "is_byok": false,
+          "output_tokens": 198
+        }
+      },
+      "answer_sha256": "3961c3000c7cca46b6cdae3971b02d89f182ba2cf484a2ebef5e38368e2202f9",
+      "estimate_kind": "selected_coarse_band_not_provider_confidence",
+      "execution_authorized": false,
+      "facts_attested": false,
+      "finished_at": "2026-10-26T11:08:50.667607+00:00",
+      "forecast": {
+        "abstention_reason": null,
+        "as_of": "2018-06-18T23:59:59Z",
+        "event": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018.",
+        "horizon": "2018-12-31T23:59:59Z",
+        "id": "HR-002-jev-latest",
+        "input_sha256": "c17443c7c07cbe5d5cba878b24592b81dac2d40ef333080cb2313d8a317e9f5f",
+        "predictor": "jev-latest:historical-comparison.v1",
+        "probability": 0.8
+      },
+      "forecast_sha256": "e89bdeea963786de78209a6221f7affb67f97b2c983ad57a22382f9a6d606e6f",
+      "frozen_at": "2026-10-26T11:08:50.667507+00:00",
+      "frozen_sha256": "eaa5b1ea019c8a9f0430f9c89181dca160b11925d02dc6500b8447d0a2381745",
+      "inference_attempted": true,
+      "model": "jev-latest",
+      "next_check": "antitrust",
+      "outcome_supplied": false,
+      "predictive_quality_approved": false,
+      "raw_response": {
+        "answers": {
+          "forecast": {
+            "choice": "p80",
+            "confidence": 0.47,
+            "probabilities": {
+              "abstain": 0.03,
+              "p05": 0.0,
+              "p20": 0.01,
+              "p35": 0.02,
+              "p50": 0.04,
+              "p65": 0.33,
+              "p80": 0.54,
+              "p95": 0.03
+            },
+            "type": "choice"
+          },
+          "next_check": {
+            "choice": "antitrust",
+            "confidence": 0.83,
+            "probabilities": {
+              "abstain": 0.0,
+              "antitrust": 0.86,
+              "extension": 0.07,
+              "financing": 0.0,
+              "performance": 0.0,
+              "stockholders": 0.07
+            },
+            "type": "choice"
+          },
+          "recognition": {
+            "choice": "yes",
+            "confidence": 0.23,
+            "probabilities": {
+              "no": 0.39,
+              "unsure": 0.12,
+              "yes": 0.49
+            },
+            "type": "choice"
+          }
+        },
+        "id": "decision_9eec3a07ba695ff29b1527fb7f3ba9f0",
+        "model": "jev-latest",
+        "provider": "typesafe",
+        "usage": {
+          "cost": 3.1311e-05,
+          "input_tokens": 1491,
+          "is_byok": false,
+          "output_tokens": 198
+        }
+      },
+      "receipt": {
+        "automatic_fallback": false,
+        "automatic_retries": false,
+        "charge_status": "unknown",
+        "endpoint": "https://api.experientiallabs.ai/v1/systemone",
+        "gateway_fallback_verified": false,
+        "http_status": 200,
+        "inference_calls": 1,
+        "request_sha256": "bb53e286990e9bed765e5fc9bd892159fc2bec33c8e15d0f74b65e903ede95c2",
+        "requested_model": "jev-latest",
+        "response_sha256": "d178a685538ae4c4ec31ddb89b847896961395c92d088ee419bcf0efff420c7c",
+        "served_model": "jev-latest",
+        "status": "validated_advisory",
+        "usage": {
+          "cost": 3.1311e-05,
+          "input_tokens": 1491,
+          "is_byok": false,
+          "output_tokens": 198
+        }
+      },
+      "recognition": "yes",
+      "requested_at": "2026-10-26T11:08:48.127565+00:00",
+      "routing_preflight": {
+        "atomic_pin": false,
+        "model": "jev-latest",
+        "provider": "typesafe",
+        "rungs": 1
+      },
+      "served_model": "jev-latest",
+      "status": "frozen",
+      "validity": "recognition_contaminated"
+    },
+    "clef-flash": {
+      "actual_model_inference": true,
+      "answer": {
+        "advisory_only": true,
+        "answers": {
+          "forecast": {
+            "choice": "p65",
+            "confidence": 0.29142227943595017,
+            "probabilities": {
+              "abstain": 0.08614426125765323,
+              "p05": 0.027106494466342144,
+              "p20": 0.06921885851429237,
+              "p35": 0.11774524470134835,
+              "p50": 0.23971742824708633,
+              "p65": 0.29142227943595017,
+              "p80": 0.1273129651233306,
+              "p95": 0.0413324682539968
+            },
+            "type": "choice"
+          },
+          "next_check": {
+            "choice": "antitrust",
+            "confidence": 0.5698446193540438,
+            "probabilities": {
+              "abstain": 0.021165975772798412,
+              "antitrust": 0.5698446193540438,
+              "extension": 0.010642920997130932,
+              "financing": 0.013245329186295424,
+              "performance": 0.022885876556615503,
+              "stockholders": 0.3622152781331158
+            },
+            "type": "choice"
+          },
+          "recognition": {
+            "choice": "yes",
+            "confidence": 0.4965601673918029,
+            "probabilities": {
+              "no": 0.3059218445028373,
+              "unsure": 0.19751798810535964,
+              "yes": 0.4965601673918029
+            },
+            "type": "choice"
+          }
+        },
+        "execution_authorized": false,
+        "facts_attested": false,
+        "notice": "Reported confidence is not a calibrated real-world success probability or independent evidence.",
+        "requested_model": "clef-flash",
+        "served_model": "clef-flash",
+        "usage": {
+          "cost": 0.0,
+          "input_tokens": 1346,
+          "is_byok": false,
+          "output_tokens": 0
+        }
+      },
+      "answer_sha256": "b2ba0894a941f6e8e833f4b2c9afe74dc0971663a4b87ba6a372ce182eb22e19",
+      "estimate_kind": "selected_coarse_band_not_provider_confidence",
+      "execution_authorized": false,
+      "facts_attested": false,
+      "finished_at": "2026-10-26T11:08:55.145272+00:00",
+      "forecast": {
+        "abstention_reason": null,
+        "as_of": "2018-06-18T23:59:59Z",
+        "event": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018.",
+        "horizon": "2018-12-31T23:59:59Z",
+        "id": "HR-002-clef-flash",
+        "input_sha256": "c17443c7c07cbe5d5cba878b24592b81dac2d40ef333080cb2313d8a317e9f5f",
+        "predictor": "clef-flash:historical-comparison.v1",
+        "probability": 0.65
+      },
+      "forecast_sha256": "0306c9c2519c238da84b13ee8f01ca69f02398b8fd44c1fc76c112bbdd59d925",
+      "frozen_at": "2026-10-26T11:08:55.145148+00:00",
+      "frozen_sha256": "eaa5b1ea019c8a9f0430f9c89181dca160b11925d02dc6500b8447d0a2381745",
+      "inference_attempted": true,
+      "model": "clef-flash",
+      "next_check": "antitrust",
+      "outcome_supplied": false,
+      "predictive_quality_approved": false,
+      "raw_response": {
+        "answers": {
+          "forecast": {
+            "choice": "p65",
+            "confidence": 0.29142227943595017,
+            "probabilities": {
+              "abstain": 0.08614426125765323,
+              "p05": 0.027106494466342144,
+              "p20": 0.06921885851429237,
+              "p35": 0.11774524470134835,
+              "p50": 0.23971742824708633,
+              "p65": 0.29142227943595017,
+              "p80": 0.1273129651233306,
+              "p95": 0.0413324682539968
+            },
+            "type": "choice"
+          },
+          "next_check": {
+            "choice": "antitrust",
+            "confidence": 0.5698446193540438,
+            "probabilities": {
+              "abstain": 0.021165975772798412,
+              "antitrust": 0.5698446193540438,
+              "extension": 0.010642920997130932,
+              "financing": 0.013245329186295424,
+              "performance": 0.022885876556615503,
+              "stockholders": 0.3622152781331158
+            },
+            "type": "choice"
+          },
+          "recognition": {
+            "choice": "yes",
+            "confidence": 0.4965601673918029,
+            "probabilities": {
+              "no": 0.3059218445028373,
+              "unsure": 0.19751798810535964,
+              "yes": 0.4965601673918029
+            },
+            "type": "choice"
+          }
+        },
+        "id": "decision_c77abf6ca4203781ad9b692e02dc3547",
+        "model": "clef-flash",
+        "provider": "experiential_cloud",
+        "usage": {
+          "cost": 0.0,
+          "input_tokens": 1346,
+          "is_byok": false,
+          "output_tokens": 0
+        }
+      },
+      "receipt": {
+        "automatic_fallback": false,
+        "automatic_retries": false,
+        "charge_status": "unknown",
+        "endpoint": "https://api.experientiallabs.ai/v1/systemone",
+        "gateway_fallback_verified": false,
+        "http_status": 200,
+        "inference_calls": 1,
+        "request_sha256": "c7e94211694755dcd5e84d7b86d1266ec2e6f9348cd7af4768c28e45010d8e6c",
+        "requested_model": "clef-flash",
+        "response_sha256": "276827e773a22ab7d9d2066507f4ffb7c6419daca92b6f2a593f10a8b33ba2e8",
+        "served_model": "clef-flash",
+        "status": "validated_advisory",
+        "usage": {
+          "cost": 0.0,
+          "input_tokens": 1346,
+          "is_byok": false,
+          "output_tokens": 0
+        }
+      },
+      "recognition": "yes",
+      "requested_at": "2026-10-26T11:08:53.869338+00:00",
+      "routing_preflight": {
+        "atomic_pin": false,
+        "model": "clef-flash",
+        "provider": "experiential_cloud",
+        "rungs": 1
+      },
+      "served_model": "clef-flash",
+      "status": "frozen",
+      "validity": "recognition_contaminated"
+    },
+    "gpt-6-luna-decisions": {
+      "actual_model_inference": true,
+      "answer": {
+        "advisory_only": true,
+        "answers": {
+          "forecast": {
+            "choice": "p80",
+            "confidence": 0.63,
+            "probabilities": {
+              "abstain": 0.01,
+              "p05": 0.0,
+              "p20": 0.0,
+              "p35": 0.0,
+              "p50": 0.01,
+              "p65": 0.09,
+              "p80": 0.68,
+              "p95": 0.21
+            },
+            "type": "choice"
+          },
+          "next_check": {
+            "choice": "antitrust",
+            "confidence": 1.0,
+            "probabilities": {
+              "abstain": 0.0,
+              "antitrust": 1.0,
+              "extension": 0.0,
+              "financing": 0.0,
+              "performance": 0.0,
+              "stockholders": 0.0
+            },
+            "type": "choice"
+          },
+          "recognition": {
+            "choice": "yes",
+            "confidence": 0.56,
+            "probabilities": {
+              "no": 0.2,
+              "unsure": 0.09,
+              "yes": 0.71
+            },
+            "type": "choice"
+          }
+        },
+        "execution_authorized": false,
+        "facts_attested": false,
+        "notice": "Reported confidence is not a calibrated real-world success probability or independent evidence.",
+        "requested_model": "gpt-6-luna-decisions",
+        "served_model": "gpt-6-luna-decisions",
+        "usage": {
+          "cost": 0.0,
+          "input_tokens": 1246,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "is_byok": false,
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1246
+        }
+      },
+      "answer_sha256": "5a7570f6028c425bba8bfe4274f7ef1f18ed032ddacbce8757ab2865eef6ad74",
+      "estimate_kind": "selected_coarse_band_not_provider_confidence",
+      "execution_authorized": false,
+      "facts_attested": false,
+      "finished_at": "2026-10-26T11:09:08.388458+00:00",
+      "forecast": {
+        "abstention_reason": null,
+        "as_of": "2018-06-18T23:59:59Z",
+        "event": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018.",
+        "horizon": "2018-12-31T23:59:59Z",
+        "id": "HR-002-gpt-6-luna-decisions",
+        "input_sha256": "c17443c7c07cbe5d5cba878b24592b81dac2d40ef333080cb2313d8a317e9f5f",
+        "predictor": "gpt-6-luna-decisions:historical-comparison.v1",
+        "probability": 0.8
+      },
+      "forecast_sha256": "012e32014c04932d0655eb4e7434117817b66c1778d9681c8736b8929f5296a0",
+      "frozen_at": "2026-10-26T11:09:08.388340+00:00",
+      "frozen_sha256": "eaa5b1ea019c8a9f0430f9c89181dca160b11925d02dc6500b8447d0a2381745",
+      "inference_attempted": true,
+      "model": "gpt-6-luna-decisions",
+      "next_check": "antitrust",
+      "outcome_supplied": false,
+      "predictive_quality_approved": false,
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "p80",
+            "confidence": 0.63,
+            "name": "forecast",
+            "probabilities": [
+              {
+                "probability": 0.0,
+                "value": "p05"
+              },
+              {
+                "probability": 0.0,
+                "value": "p20"
+              },
+              {
+                "probability": 0.0,
+                "value": "p35"
+              },
+              {
+                "probability": 0.01,
+                "value": "p50"
+              },
+              {
+                "probability": 0.09,
+                "value": "p65"
+              },
+              {
+                "probability": 0.68,
+                "value": "p80"
+              },
+              {
+                "probability": 0.21,
+                "value": "p95"
+              },
+              {
+                "probability": 0.01,
+                "value": "abstain"
+              }
+            ],
+            "type": "choice"
+          },
+          {
+            "choice": "yes",
+            "confidence": 0.56,
+            "name": "recognition",
+            "probabilities": [
+              {
+                "probability": 0.71,
+                "value": "yes"
+              },
+              {
+                "probability": 0.2,
+                "value": "no"
+              },
+              {
+                "probability": 0.09,
+                "value": "unsure"
+              }
+            ],
+            "type": "choice"
+          },
+          {
+            "choice": "antitrust",
+            "confidence": 1.0,
+            "name": "next_check",
+            "probabilities": [
+              {
+                "probability": 1.0,
+                "value": "antitrust"
+              },
+              {
+                "probability": 0.0,
+                "value": "stockholders"
+              },
+              {
+                "probability": 0.0,
+                "value": "financing"
+              },
+              {
+                "probability": 0.0,
+                "value": "performance"
+              },
+              {
+                "probability": 0.0,
+                "value": "extension"
+              },
+              {
+                "probability": 0.0,
+                "value": "abstain"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna-decisions",
+        "provider": "openai",
+        "usage": {
+          "cost": 0.0,
+          "input_tokens": 1246,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "is_byok": false,
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1246
+        }
+      },
+      "receipt": {
+        "automatic_fallback": false,
+        "automatic_retries": false,
+        "charge_status": "unknown",
+        "endpoint": "https://api.experientiallabs.ai/v1/decisions",
+        "gateway_fallback_verified": false,
+        "http_status": 200,
+        "inference_calls": 1,
+        "request_sha256": "1e79a8baf1a1aadb03ad6bf1b99972e0d586dd55d68500e49e268ff52a4a8e2b",
+        "requested_model": "gpt-6-luna-decisions",
+        "response_sha256": "1f25016672cdba94922cc1065cad1727437202537f72a06868f5c9875cf94c08",
+        "served_model": "gpt-6-luna-decisions",
+        "status": "validated_advisory",
+        "usage": {
+          "cost": 0.0,
+          "input_tokens": 1246,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "is_byok": false,
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1246
+        }
+      },
+      "recognition": "yes",
+      "requested_at": "2026-10-26T11:09:07.123054+00:00",
+      "routing_preflight": {
+        "atomic_pin": false,
+        "model": "gpt-6-luna",
+        "provider": "openai",
+        "rungs": 1
+      },
+      "served_model": "gpt-6-luna-decisions",
+      "status": "frozen",
+      "validity": "recognition_contaminated"
+    }
+  },
+  "resolution": {
+    "adapter_correction": "Original frozen runner was not changed or rerun. Its unused resolve phase used source_ref instead of source_reference and a source dictionary instead of the outcome URL. This separate scorer binds the actual outcome source bytes. No further inference.",
+    "frozen_sha256": "eaa5b1ea019c8a9f0430f9c89181dca160b11925d02dc6500b8447d0a2381745",
+    "notice": "All five indicate recognition. One known outcome, not five independent trials. No aggregated score/rank/calibration. Coarse selected bands are distinct from provider confidence. Original HR-001 is unchanged.",
+    "outcome": {
+      "available_at": "2019-04-22T00:00:00+00:00",
+      "case_id": "HR-001",
+      "sources": [
+        {
+          "published": "2018-06-18",
+          "role": "pre_cutoff_agreement",
+          "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518196340/d407444dex21.htm"
+        },
+        {
+          "published": "2018-06-18",
+          "role": "pre_cutoff_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518196340/d407444d8k.htm"
+        },
+        {
+          "published": "2018-06-18",
+          "role": "pre_cutoff_announcement",
+          "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518196340/d407444dex991.htm"
+        },
+        {
+          "published": "2019-03-14",
+          "role": "outcome",
+          "url": "https://investor.upbound.com/news-releases/news-release-details/delaware-court-chancery-determines-rent-center-validly/"
+        },
+        {
+          "published": "2019-04-22",
+          "role": "outcome",
+          "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312519116716/d734946dex991.htm"
+        }
+      ],
+      "summary": "Neither party delivered the End Date extension notice required by 11:59 p.m. Eastern on 17 December 2018. The company terminated the merger agreement on 18 December 2018 and demanded the US$126.5 million reverse termination fee. The buyer sued to enforce the agreement; on 14 March 2019 the Delaware Court of Chancery ruled the termination valid; on 22 April 2019 the parties announced a US$92.5 million settlement. The merger was never consummated.",
+      "value": false,
+      "version": "endstate.historical-replay.v1"
+    },
+    "outcome_sha256": "81aab33c07f1baf75930a0d2e3c800972ccfef767088aebad0f0f07c27ab18a0",
+    "resolved_at": "2026-10-26T11:09:46.712253+00:00",
+    "rows": [
+      {
+        "estimate_kind": "continuous",
+        "evaluation": {
+          "abstained": 0,
+          "as_of": "2026-10-26T11:09:46.710217+00:00",
+          "basis": "observed",
+          "brier": 0.30250000000000005,
+          "coverage": 1.0,
+          "execution_authorized": false,
+          "facts_attested": false,
+          "fixed_half_baseline_brier_all_resolved": 0.25,
+          "fixed_half_baseline_brier_same_subset": 0.25,
+          "notice": "Lower Brier is better on resolved forecasts. Coverage and missing outcomes remain separate. A fixed 0.5 baseline is not a trained predictor. Caller-supplied outcome references are not independently verified; hashes bind bytes but do not prove input cutoff integrity, prospective registration or calibration.",
+          "predicted": 1,
+          "predictive_quality_approved": false,
+          "resolved": 1,
+          "rows": [
+            {
+              "abstention_reason": null,
+              "brier": 0.30250000000000005,
+              "fixed_half_baseline_brier": 0.25,
+              "forecast_sha256": "e3a8a81636632eb290d3b79d2a0f2e72a0e3ad774282e884cff53205f8034c1e",
+              "id": "HR-002-claude-sonnet-5-5",
+              "probability": 0.55,
+              "resolved": true,
+              "source_reference": "https://www.sec.gov/Archives/edgar/data/933036/000119312519116716/d734946dex991.htm",
+              "source_sha256": "1e6a61eb5602330c116b103252ef351ce955fae906e55971f90f8442fd6a8d75",
+              "value": false
+            }
+          ],
+          "scored": 1,
+          "total": 1,
+          "unresolved": 0,
+          "version": "endstate.forecast-evaluation.v1"
+        },
+        "model": "claude-sonnet-5-5",
+        "next_check": "Whether the HSR waiting period expires without a second request, and whether state or consumer-finance regulators or the CFPB raise any issues. A second request, or a stockholder vote that is opposed or delayed, would cut the probability sharply.",
+        "probability": 0.55,
+        "recognition": "yes",
+        "report_sha256": "8423f47286bcc1335dd241948f3ee40ea8993063aa1745c428277b74716aedec",
+        "served_model": "claude-sonnet-5-5",
+        "status": "frozen"
+      },
+      {
+        "estimate_kind": "continuous",
+        "evaluation": {
+          "abstained": 0,
+          "as_of": "2026-10-26T11:09:46.710702+00:00",
+          "basis": "observed",
+          "brier": 0.16000000000000003,
+          "coverage": 1.0,
+          "execution_authorized": false,
+          "facts_attested": false,
+          "fixed_half_baseline_brier_all_resolved": 0.25,
+          "fixed_half_baseline_brier_same_subset": 0.25,
+          "notice": "Lower Brier is better on resolved forecasts. Coverage and missing outcomes remain separate. A fixed 0.5 baseline is not a trained predictor. Caller-supplied outcome references are not independently verified; hashes bind bytes but do not prove input cutoff integrity, prospective registration or calibration.",
+          "predicted": 1,
+          "predictive_quality_approved": false,
+          "resolved": 1,
+          "rows": [
+            {
+              "abstention_reason": null,
+              "brier": 0.16000000000000003,
+              "fixed_half_baseline_brier": 0.25,
+              "forecast_sha256": "a5f7c4463bc763e88b3a13cd3dfa9fd4504bb63134dd582110fb4532332ff0ee",
+              "id": "HR-002-claude-opus-5-5",
+              "probability": 0.4,
+              "resolved": true,
+              "source_reference": "https://www.sec.gov/Archives/edgar/data/933036/000119312519116716/d734946dex991.htm",
+              "source_sha256": "1e6a61eb5602330c116b103252ef351ce955fae906e55971f90f8442fd6a8d75",
+              "value": false
+            }
+          ],
+          "scored": 1,
+          "total": 1,
+          "unresolved": 0,
+          "version": "endstate.forecast-evaluation.v1"
+        },
+        "model": "claude-opus-5-5",
+        "next_check": "Whether the FTC issued a second request under HSR, or whether the HSR waiting period expired without one, in the months after filing.",
+        "probability": 0.4,
+        "recognition": "yes",
+        "report_sha256": "f4418f2063bbf4a3d7f30ca81ff2e685eff65577af07af31eb0bc0610abd8c39",
+        "served_model": "claude-opus-5-5",
+        "status": "frozen"
+      },
+      {
+        "estimate_kind": "selected_coarse_band_not_provider_confidence",
+        "evaluation": {
+          "abstained": 0,
+          "as_of": "2026-10-26T11:09:46.711121+00:00",
+          "basis": "observed",
+          "brier": 0.6400000000000001,
+          "coverage": 1.0,
+          "execution_authorized": false,
+          "facts_attested": false,
+          "fixed_half_baseline_brier_all_resolved": 0.25,
+          "fixed_half_baseline_brier_same_subset": 0.25,
+          "notice": "Lower Brier is better on resolved forecasts. Coverage and missing outcomes remain separate. A fixed 0.5 baseline is not a trained predictor. Caller-supplied outcome references are not independently verified; hashes bind bytes but do not prove input cutoff integrity, prospective registration or calibration.",
+          "predicted": 1,
+          "predictive_quality_approved": false,
+          "resolved": 1,
+          "rows": [
+            {
+              "abstention_reason": null,
+              "brier": 0.6400000000000001,
+              "fixed_half_baseline_brier": 0.25,
+              "forecast_sha256": "e89bdeea963786de78209a6221f7affb67f97b2c983ad57a22382f9a6d606e6f",
+              "id": "HR-002-jev-latest",
+              "probability": 0.8,
+              "resolved": true,
+              "source_reference": "https://www.sec.gov/Archives/edgar/data/933036/000119312519116716/d734946dex991.htm",
+              "source_sha256": "1e6a61eb5602330c116b103252ef351ce955fae906e55971f90f8442fd6a8d75",
+              "value": false
+            }
+          ],
+          "scored": 1,
+          "total": 1,
+          "unresolved": 0,
+          "version": "endstate.forecast-evaluation.v1"
+        },
+        "model": "jev-latest",
+        "next_check": "antitrust",
+        "probability": 0.8,
+        "recognition": "yes",
+        "report_sha256": "800b05e6cca2042a34d77b8ed3f194b9ba1552d82a43fa85d28158ed910835e1",
+        "served_model": "jev-latest",
+        "status": "frozen"
+      },
+      {
+        "estimate_kind": "selected_coarse_band_not_provider_confidence",
+        "evaluation": {
+          "abstained": 0,
+          "as_of": "2026-10-26T11:09:46.711689+00:00",
+          "basis": "observed",
+          "brier": 0.42250000000000004,
+          "coverage": 1.0,
+          "execution_authorized": false,
+          "facts_attested": false,
+          "fixed_half_baseline_brier_all_resolved": 0.25,
+          "fixed_half_baseline_brier_same_subset": 0.25,
+          "notice": "Lower Brier is better on resolved forecasts. Coverage and missing outcomes remain separate. A fixed 0.5 baseline is not a trained predictor. Caller-supplied outcome references are not independently verified; hashes bind bytes but do not prove input cutoff integrity, prospective registration or calibration.",
+          "predicted": 1,
+          "predictive_quality_approved": false,
+          "resolved": 1,
+          "rows": [
+            {
+              "abstention_reason": null,
+              "brier": 0.42250000000000004,
+              "fixed_half_baseline_brier": 0.25,
+              "forecast_sha256": "0306c9c2519c238da84b13ee8f01ca69f02398b8fd44c1fc76c112bbdd59d925",
+              "id": "HR-002-clef-flash",
+              "probability": 0.65,
+              "resolved": true,
+              "source_reference": "https://www.sec.gov/Archives/edgar/data/933036/000119312519116716/d734946dex991.htm",
+              "source_sha256": "1e6a61eb5602330c116b103252ef351ce955fae906e55971f90f8442fd6a8d75",
+              "value": false
+            }
+          ],
+          "scored": 1,
+          "total": 1,
+          "unresolved": 0,
+          "version": "endstate.forecast-evaluation.v1"
+        },
+        "model": "clef-flash",
+        "next_check": "antitrust",
+        "probability": 0.65,
+        "recognition": "yes",
+        "report_sha256": "90591c081781d3ae4f8349e1b9e02e7918b201b3ec08c788dcfb4068c8687259",
+        "served_model": "clef-flash",
+        "status": "frozen"
+      },
+      {
+        "estimate_kind": "selected_coarse_band_not_provider_confidence",
+        "evaluation": {
+          "abstained": 0,
+          "as_of": "2026-10-26T11:09:46.712125+00:00",
+          "basis": "observed",
+          "brier": 0.6400000000000001,
+          "coverage": 1.0,
+          "execution_authorized": false,
+          "facts_attested": false,
+          "fixed_half_baseline_brier_all_resolved": 0.25,
+          "fixed_half_baseline_brier_same_subset": 0.25,
+          "notice": "Lower Brier is better on resolved forecasts. Coverage and missing outcomes remain separate. A fixed 0.5 baseline is not a trained predictor. Caller-supplied outcome references are not independently verified; hashes bind bytes but do not prove input cutoff integrity, prospective registration or calibration.",
+          "predicted": 1,
+          "predictive_quality_approved": false,
+          "resolved": 1,
+          "rows": [
+            {
+              "abstention_reason": null,
+              "brier": 0.6400000000000001,
+              "fixed_half_baseline_brier": 0.25,
+              "forecast_sha256": "012e32014c04932d0655eb4e7434117817b66c1778d9681c8736b8929f5296a0",
+              "id": "HR-002-gpt-6-luna-decisions",
+              "probability": 0.8,
+              "resolved": true,
+              "source_reference": "https://www.sec.gov/Archives/edgar/data/933036/000119312519116716/d734946dex991.htm",
+              "source_sha256": "1e6a61eb5602330c116b103252ef351ce955fae906e55971f90f8442fd6a8d75",
+              "value": false
+            }
+          ],
+          "scored": 1,
+          "total": 1,
+          "unresolved": 0,
+          "version": "endstate.forecast-evaluation.v1"
+        },
+        "model": "gpt-6-luna-decisions",
+        "next_check": "antitrust",
+        "probability": 0.8,
+        "recognition": "yes",
+        "report_sha256": "b58ac4a374509a0d45c7ae883671c8a5233c138efa216fb43dac4002caf75885",
+        "served_model": "gpt-6-luna-decisions",
+        "status": "frozen"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "agreement",
+      "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518196340/d407444dex21.htm",
+      "sha256": "2bda533e5b8918682425098c143bb8476cb812eb0b28927964c2960f281ed7f1",
+      "retrieved": "2026-10-26"
+    },
+    {
+      "id": "filing",
+      "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518196340/d407444d8k.htm",
+      "sha256": "8b27cd56bb9be8b3c544b7c18e32ce92c9b31d64dd1c803b67c2b8afb426a915",
+      "retrieved": "2026-10-26"
+    },
+    {
+      "id": "announcement",
+      "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518196340/d407444dex991.htm",
+      "sha256": "6f499e9eeb07ecbd6cc8484f2f7312c2edfcf4389c655a1754cd1adf5b955643",
+      "retrieved": "2026-10-26"
+    },
+    {
+      "id": "outcome_termination",
+      "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312519116716/d734946dex991.htm",
+      "sha256": "1e6a61eb5602330c116b103252ef351ce955fae906e55971f90f8442fd6a8d75",
+      "retrieved": "2026-10-26"
+    }
+  ],
+  "inference_requests": 5,
+  "retries": 0,
+  "predictive_quality_approved": false,
+  "limitations": [
+    "All five self-report recognition; recognition disclosure is not independent evidence of memory or blindness.",
+    "One known historical outcome; author knew it and chose the example. No calibration or ranking inference.",
+    "Claude estimates are continuous; native decision models explicitly select coarse probability points. Do not substitute reported choice confidence or choice probability.",
+    "Case HR-002 corrects two summaries. HR-001 remains unchanged; changed input, stochastic variation and format differences prevent attributing differences solely to model.",
+    "Read-only illustrative planning control is separate, not a complete merger model or tested end-to-end multi-agent application.",
+    "Native gateway route preflight is observational, not an atomic provider-side identity/fallback guarantee.",
+    "Sonnet refers to a first extension still landing in 2018, although it runs into March 2019; it also recalls a different financial partner. Model reasoning needs review despite valid JSON.",
+    "Opus treats the fee/extensions as clues to regulatory risk, not independently established causal facts. Both Claude answers assume a premium not stated in the masked input.",
+    "All models prioritize antitrust information; agreement is not proof this question is optimal. No new observations or revised forecasts were tested."
+  ],
+  "verification": [
+    "149 focused forecasting, historical-runner and native-decision contract tests passed.",
+    "Offline selected-endpoint, all 8 band mappings, abstention, confidence separation, frozen hash and non-overwrite checks passed.",
+    "Archived inference script and separate resolution adapter compile. No application/runtime code changed."
+  ],
+  "archives": {
+    "docs/evidence/historical-comparison-runner.py-2026-10-26.xz": {
+      "uncompressed_sha256": "eaabdf5ca18336a9f444e9032e9127fd1f836ccc296da01678a63d49c2056862"
+    },
+    "docs/evidence/historical-comparison-resolve.py-2026-10-26.xz": {
+      "uncompressed_sha256": "a5d95d9bee249ce798014cd5e642df97003d4391c15b4805b94854a12f0950b3"
+    }
+  }
+}

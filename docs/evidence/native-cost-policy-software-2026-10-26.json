@@ -1,0 +1,35 @@
+{
+  "scope": "Provider-scoped native cost handling; offline software acceptance, no new inference or quality approval.",
+  "source_commit": "5780368e5a90b117e035f7cec85e2af574275401",
+  "source_sha256": "e0c26a61184b66e1c08785f452a228978633f92c7635508406777e241463e16c",
+  "run_id": "20261026T134200Z-ea8e82ff",
+  "native_report_archive": "docs/evidence/native-cost-policy-software-passed-2026-10-26.json.xz",
+  "archive_sha256": "546e4510bfa3c190c2a634499b7f14202e4bc7a0108f9651e11d6c9d0587e253",
+  "original_report_sha256": "e4963308cb2e19908f2572912e22f708f216acfe582b1391e64f916ec075a4e1",
+  "inspection_before_documentation_closeout": {
+    "valid": true,
+    "run_status": "passed",
+    "reason": "Source and local evidence bytes matched; not a signed attestation"
+  },
+  "counts": {
+    "source_tests": 2445,
+    "installed_wheel_regressions": 2445,
+    "javascript_modules": 24,
+    "native_browser_checks": 475,
+    "native_browser_suites": 13
+  },
+  "credential_value_scan": "passed",
+  "model_inference_performed": false,
+  "native_browser_verified": true,
+  "model_quality_approved": false,
+  "predictive_quality_approved": false,
+  "merged": false,
+  "released": false,
+  "deployed": false,
+  "limits": [
+    "Report binds exact 5780368 source, not later documentation or code edits.",
+    "First five-request coordinated attempt remains failed/partial; no retroactive cost repair or new live result.",
+    "Only fixed native gateway routes and confirmed platform-funded USD are normalized; BYOK, unknown/conflicting amounts or imprecise literals stay unknown.",
+    "Reported costs and body/canonical hashes are not invoices, upstream attestation or a provider hard cap."
+  ]
+}

@@ -74,6 +74,13 @@ def main():
                     expect(page.locator('nav [data-tab=room]')).to_have_attribute('aria-current','page')
                     check('fictional situation opens against real case store',page.get_by_role('heading',name='Northstar account recovery').is_visible())
                     page.screenshot(path=str(OUT/'8BALL-V2-Situation-Room.png'),full_page=True)
+                    check('plain-language situation overview is visible', page.get_by_role('heading',name='The situation at a glance').is_visible())
+                    disclosure=page.locator('.room-map-disclosure')
+                    check('overview graph starts collapsed',not disclosure.evaluate('(el)=>el.open'))
+                    disclosure.locator('summary').focus()
+                    page.keyboard.press('Enter')
+                    check('overview graph expands by keyboard',disclosure.evaluate('(el)=>el.open'))
+                    page.keyboard.press('Enter')
                     tabs=['command','room','review','map','routes','actions','questions','decisions','people','evidence','timeline','changes','scenario','audit','brief','playbooks','models']
                     for width in [1512,390]:
                         page.set_viewport_size({'width':width,'height':1050 if width==1512 else 844})

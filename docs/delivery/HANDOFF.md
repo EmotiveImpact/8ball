@@ -1,8 +1,343 @@
+# Current cumulative source integration, 30 October 2026
+
+Branch `devin/1792969169-roadmap-integrated`, tested integration `c0b4d63798bd762218e2125e3d2dd4dca5816820`; incoming main `825ad6668c2c7d128da367476fe16cb8d214b837`. Security fixes and coordinated-planning/result work are retained together. Exact-source native acceptance passed: 2,561 source tests, 2,561 installed-wheel regressions, 24 JS modules and all 493 checks across thirteen native browser suites. Source/artifact inspection valid before this later additive documentation. [Current scope and verification](sessions/2026-10-30-cumulative-integration.md), [bound receipt](../evidence/cumulative-native-2026-10-30.json). Earlier counts below belong only to their original sources.
+
+## Emergence Review
+
+EM-347 records independent ID allocation on parallel branches. The imported security discoveries formerly named EM-099–105 at the incoming main commit are EM-340–346 here, with exact original records, source commit and hash retained in `emergence.json` id_relocations and displayed in `EMERGENCE-REGISTER.md`. Historical changelog entries and receipts remain unchanged. No task status or acceptance gate is promoted.
+
+Next: commit/push the additive verification records and settle final-head remote software CI. Both parent histories pass their guards. Do not merge the PR into main, deploy, run inference or treat software checks as independent human/product acceptance.
+
+## Historical main-parent security checkpoint (not cumulative verification)
+
 # Current security-fix handoff, 30 October 2026
 
 The three reviewed findings are fixed on `room/check-repo-with-three-sub-agents-pj2t`, based on `1038291bf219d04e7fe4a6a01c332d1ac277fdba`. Tested code `bb881f278eb24b97732382a83a6084a22d7e1983` passed **1,324 source tests, 1,324 installed-ENDSTATE regressions and all 391 checks across eleven native browser suites**. Exact-source/artifact inspection was valid/passed before final receipt-only edits. The independent security reviewer found no surviving bypass/regression in the three fixes. [Session and ER-01–15](sessions/2026-10-30-security-fixes.md), [receipt with retained failures](../evidence/security-fixes-2026-10-30.json), [draft PR8](https://github.com/EmotiveImpact/8ball/pull/8).
 
 Both code-checkpoint CI workflows passed. An initial receipt-head CI failed only on Studio’s obsolete local-delivery assertion; the corrected exact canonical-state check passed all 44 native Studio checks. PR8 tracks final cumulative CI. The first native attempt lacked pip and the installed retry hit a 120-second watchdog; both are retained. Only the installed full-suite deadline is now 240 seconds within the existing 300-second acceptance step. EM-099–105 preserve all discoveries, including deferred course and hosted-compression candidates. Original model, independent/human and release gates remain. Await explicit owner merge authorization; no live inference, deployment or acceptance promotion.
+
+
+---
+
+# Current verified checkpoint: coordinated results
+
+Branch `devin/1792969169-roadmap-integrated`; implementation `11e328c1eaa3ed6817cdb794e1878410b85a8de3`. Full native acceptance: 2,493 source tests, 2,493 installed-wheel regressions, 24 JS modules and 493 browser checks across 13 suites. Original report inspection valid/passed before this later documentation. [Receipt](../evidence/coordinated-result-ui-native-2026-10-26.json) · [scope and emergence](sessions/2026-10-26-coordinated-result-ui.md).
+
+Full original/challenge/revision/failure/synthesis inspection is read-only, with raw fallback and current access/source/revision boundaries. Offline projection of all four retained v4 live results passed; no new inference. B02-11 partial; no quality, production, merge/deployment/release approval. Earlier pending notes below are historical.
+
+Next: commit/push additive evidence, settle software CI and preserve the review-service error separately. The next meaningful acceptance needs independent operator/qualified review and an explicitly authorised outcome pilot; do not manufacture those human approvals.
+
+## Emergence Review
+
+EM-339: semantic JSON equality is not exact serialized challenge provenance. Checked raw JSON can recover object order without repairing malformed output or relaxing hashes. Existing-task B02-11 only; review burden/semantic quality remain unverified.
+
+---
+
+# Current local work: read-only coordinated results
+
+Base `69c482569bf17d558f4b730c4ad4d24ca8734213`, branch `devin/1792969169-roadmap-integrated`. Typed original/challenge/revision/failure/synthesis reader implemented; 294 focused checks, 57 native event-review checks and compilation/changed-JS syntax pass. Full native/package acceptance pending. [Record](sessions/2026-10-26-coordinated-result-ui.md). No new inference; B02-11 partial; no merge/deployment/release. EM-339 records semantic-vs-byte input integrity.
+
+Next commit local source and run full native acceptance, inspect/bind evidence, publish PR #6. Older evidence remains tied only to its exact source.
+
+---
+
+# Current actual-provider checkpoint: one complete method, set partial
+
+Fresh v4 run on `5aacbca91c3909031aec974600e5ccaff15211f7`: 10 requests; Opus completed initial → three independent challenges → revision/synthesis. Clef minority insufficiency remains unresolved. Sonnet/GLM draft failures and DeepSeek null-content length stop retained. All case audits/source unchanged. Planning unpriced; 39,585 reported specialist nano-USD is not an invoice/cap. [Record](sessions/2026-10-26-coordinated-draft-v4-live.md), [bound receipt](../evidence/coordinated-draft-v4-live-2026-10-26.json).
+
+Runtime unchanged; prior native v4 acceptance remains bound to d85742d. This documentation/evidence starts local pending checks/commit/push on `devin/1792969169-roadmap-integrated`. Next read-only coordinated-result UI, no more inference needed. B02-11 partial, EM-335–338 retained; no semantic/predictive/human/production/merge/deployment/release approval. No protocol resume or historical replay.
+
+---
+
+# Current checkpoint: draft v4 software verified
+
+Runtime source `d85742d4d5d184bb7eba533ca594a94b02a96661` passes full native/package acceptance: 2,455 source tests, 2,455 installed regressions, 24 JS modules, 475 browser checks/13 native suites. Source/artifact inspection valid before this additive documentation. [Bound receipt](../evidence/draft-output-v4-software-2026-10-26.json). No new model calls; no live/semantic approval. B02-11 partial.
+
+Next push runtime/evidence, freeze a new diagnostic before any inference, then read-only coordinated-result UI. Branch `devin/1792969169-roadmap-integrated`; no merge/deployment/release. EM-335/336/337 refined, not resolved. This checkpoint becomes published only after the next successful push.
+
+---
+
+# Current bounded follow-up: draft instructions v4
+
+From pushed `52e5c0d`: clearer bare JSON, length and enabling-work guidance;
+no validator/schema/authority relaxation. 477 focused checks, compilation and
+whitespace pass. Original overlength/fenced outputs remain rejected in controlled
+offline replay. No new model calls or independent quality approval.
+[Record](sessions/2026-10-26-draft-output-contract.md).
+Next commit, full native/package acceptance and source-bound evidence; then a
+separately frozen diagnostic and read-only coordinated-result UI. B02-11 partial.
+EM-335/336/337 refined; no merge/deployment/release. Local changes pending commit.
+
+---
+
+# Latest actual-provider checkpoint: incomplete native-cost follow-up
+
+Seven requests at pushed `bbcb8c4`: Sonnet initial plan and all three specialist
+reviews retained; revised frame exceeded two 180-character limits. Opus returned
+fenced JSON. No final synthesis. Reported specialist cost 37,926 nano-USD;
+planning unpriced. No retries, repairs, resumed protocols or case changes.
+[Record and next action](sessions/2026-10-26-coordinated-native-cost-live.md) ·
+[bound receipt/archive](../evidence/coordinated-native-cost-live-2026-10-26.json).
+B02-11 partial; no quality, UI, prediction, merge/deployment/release acceptance.
+Next: clearer versioned output instructions with strict rejection preserved,
+then read-only coordinated-result UI. EM-335/336/337 retained; no scope promotion.
+Documentation-only checkpoint pending commit/publication on the same branch.
+
+---
+
+# Latest verified follow-up: provider-scoped native cost policy
+
+See [native cost policy](sessions/2026-10-26-native-cost-policy.md), starting at
+pushed `d89bae3`. Implementation `5780368` passed 2,445 source tests, 2,445
+installed-wheel regressions, 24 JS modules and 475 native checks in 13 suites.
+Exact source/artifact inspection passed before this documentation closeout;
+[bound receipt](../evidence/native-cost-policy-software-2026-10-26.json).
+Generic cost conversion
+is restricted to confirmed platform-funded USD and exact bounded original-number
+arithmetic. Unknown/BYOK/conflicting fields stop the panel; raw amounts and hashes
+remain. Policy changes invalidate reviewed worker configurations. No extra HTTP
+calls, inference, retries, original-run repair or quality gate promotion.
+EM-332/333/334 capture provider accounting, configuration authority and precision.
+B02-11 remains partial. Implementation committed locally; documentation closeout
+and additive publication next, then a separately frozen fictional diagnostic.
+No resume of the first failed run or recognised historical rerun. No merge/deployment/release.
+
+# Previous source-bound follow-up: safe rejected-provider diagnostics
+
+See [provider diagnostics](sessions/2026-10-26-provider-diagnostics.md): 463
+controlled tests pass for safe stop/counter/shape retention before rejection.
+Full source-bound native acceptance passed at
+`f22f96735334d576a0e91757cd5f7363e3fa1f2e`: 2,355 source and installed-wheel
+tests, 24 JS modules and 475 checks across 13 native browser suites. The
+[receipt](../evidence/provider-diagnostics-software-2026-10-26.json) binds the
+exact compressed report; inspection passed before this docs-only closeout.
+No cost-unit conversion or new model calls; the first coordinated run below
+remains failed and cannot be repaired by later metadata changes. EM-331/EM-332
+track diagnostic retention and protocol-specific accounting. Branch unchanged,
+base `b43f056`; no merge, deployment or quality acceptance.
+Three read-only lookups matched old native smoke requests to settled costs,
+supporting provider-specific accounting investigation without new inference.
+See the appended evidence/limits in the session record. No runtime cost
+normalization or implicit extra HTTP lookup was added; next is the bounded
+cost adapter, then a separately frozen diagnostic, not resuming the old run.
+
+# Previous evidence: first coordinated live attempt failed/partial
+
+See [evaluation closeout](sessions/2026-10-26-coordinated-evaluation.md#source-bound-software-and-first-live-attempt-append-only-closeout)
+and [bound evidence](../evidence/coordinated-evaluation-first-attempt-2026-10-26.json).
+Source `00cc0a7` passed 2,336 source + 2,336 wheel tests and 475 native browser
+checks. The separate frozen live diagnostic made five requests and produced no
+revision: GLM fenced JSON, DeepSeek unsupported envelope, Sonnet valid original
+but Jev generic cost unknown. Clef/GPT/Opus were not called after that stop.
+Case audits unchanged; no retry/repair, quality/prediction acceptance or deployment.
+Investigate verified cost-unit mapping and safe rejection metadata (EM-331) offline
+next. Preserve this failed record; no resume. Branch remains
+`devin/1792969169-roadmap-integrated`, B02-11 partial, no merge or release.
+
+# Previous preparation: frozen fictional coordinated evaluation
+
+See [evaluation continuation](sessions/2026-10-26-coordinated-evaluation.md), based
+on pushed `a3d65dd`. New fictional loading-bay fixture and opt-in real-host harness
+freeze model IDs, protocols and source; no retry/resume or continuation after an
+incomplete native panel. 30 dedicated/444 combined controlled tests pass.
+Full native/wheel verification and actual GLM/DeepSeek/Sonnet/Opus calls are next.
+No live result, independent quality, dedicated coordinated UI or prediction claim.
+EM-330 records batch-wide bounds; B02-11 remains partial. No merge/deployment.
+
+# Previous checkpoint: verified bounded coordinated planning
+
+See [coordinated-planning continuation](sessions/2026-10-26-coordinated-planning.md).
+Starting at `df681c0`, the backend retains the original proposal, independent
+specialist panel and separate revision under existing current-authority worker
+checks. Exact functional commit `4e0f635` passed 2306 source tests, 2306
+installed-wheel regressions and 475 checks in 13 native browser suites; inspection
+matched source/evidence before documentation closeout. See the linked session
+record for the retained receipt. No live inference or dedicated coordinated presentation is claimed.
+Planning cost is explicitly unpriced under finite call/token permission, separate
+from the decision-only cost threshold. B02-11 stays partial. Next: the frozen
+fictional diagnostic including GLM and DeepSeek on this unreleased PR branch.
+No historical rerun, merge, deployment or release.
+
+# Previous checkpoint: explicit provider JSON contract
+
+[Current bounded continuation](sessions/2026-10-26-provider-json-mode.md) adds an
+explicit frozen prompt-only mode for the next owner-selected model set, preserving
+strict local JSON/proposal validation and all authority boundaries. Starting head
+is `b9b58dc`; 261 focused checks and full native verification at `e1e7142` pass:
+2172 source + 2172 installed tests, 24 JS modules and 475 native browser checks.
+The exact source/artifact inspection matched before documentation closeout. See
+[receipt](../evidence/provider-json-mode-software-2026-10-26.json). No new inference
+or coordinated-workflow demonstration is claimed. B02-11 remains partial. The
+checkpoint is on the existing PR; next is bounded coordinated planning, then the
+frozen fictional GLM/DeepSeek-inclusive diagnostic. No merge/deployment.
+
+The preceding historical closeout is pushed at `b9b58dc`: source-bound native
+acceptance at `cd9335f` passed 2152 source tests, 2152 installed-wheel regressions,
+24 JS modules and 475 native browser checks. Later catalogue/documentation guards
+passed 67 checks. PR #6 is unmerged; remote verify passed and automated review
+errored without findings. Neither is a predictive-quality approval.
+
+# Previous checkpoint: corrected five-model historical diagnostic
+
+See [comparison handoff](sessions/2026-10-26-historical-comparison.md). All five indicated recognition; no predictive-quality win or model-default change. Original replay is preserved. The owner requested a stop to uninformative recognised-case evaluation; practical/prospective testing remains unstarted.
+
+# Historical prediction diagnostic — 26 October 2026
+
+[Current handoff and limitations](sessions/2026-10-26-historical-replay.md): one
+actual masked historical forecast assigned 45% completion probability; the deal
+failed. The model admitted recognition, and two author-introduced summary errors
+were found afterward. Brier 0.2025 vs fixed-half 0.25 is diagnostic arithmetic,
+**not predictive validation**. Original input, response, code and errata are
+retained. The hardened v2 protocol has offline tests only. B02-11 remains partial;
+no real case mutation, model substitution, rerun to improve the score, merge or
+deployment. See the source-bound closeout for current software verification.
+
+## Previous selected-provider lifecycle checkpoint
+
+# Selected Sonnet lifecycle observations — 26 October 2026
+
+[Current handoff](sessions/2026-10-26-provider-lifecycle.md) and [retained evidence](../evidence/sonnet55-lifecycle-2026-10-26.json): fresh generation prerequisites and source-matched cancellation, supersession and owned-process restart observations passed at `a31283785f6ccc2a5c31b9b936a9da353dcfb3fe`. No proposal or second stage followed any intervention. Remote receipt/completion/cancellation/billing remain unknown; these are API/process observations, not actual-provider native-UI/human acceptance. B02-15 stays partial. All 29 checkpoints are retained; application runtime is unchanged. The CI allowance increases from 20 to 40 minutes without removing checks after a retained dependency-installation timeout. Full software verification and current PR checks remain separate.
+
+Next owner-authorised work: a masked historical forecast diagnostic with a pre-outcome information cutoff, fixed outcome/horizon and baseline. Renaming a known historical story is not protection against model memorisation or proof of predictive accuracy. No merge/deploy/release.
+
+## Previous native integration checkpoint
+
+# Native Sonnet integration — 26 October 2026
+
+**Current follow-up:** [native usage completeness](sessions/2026-10-26-native-usage.md) corrects partial cache accounting without new paid inference. Earlier actual-provider receipts remain bound to their original source.
+
+[Latest handoff](sessions/2026-10-26-sonnet-native.md) and
+[retained evidence](../evidence/sonnet-native-2026-10-26.json): direct native
+Sonnet 5.5 passes the frozen generation set and all 20 scripted actual-provider
+journey steps, including native reload/download. Earlier compatibility and
+lexical-coverage failures remain preserved. Known usage-based Sonnet estimate
+US$0.088500, not an invoice; rejected billing remains unknown. The owner explicitly
+accepted the uncapped account for bounded fictional tests; no dashboard login
+or claimed provider-enforced US$5 cap. Full software acceptance passed at
+`6ce61517d7dac347d98170b66274917f3f2e5006`: 2,090 source tests, 2,090 installed-wheel
+tests and 474 checks in 13 native suites. See that handoff for exact receipts and
+publication. No independent quality, predictive, human, production, merge or
+deployment acceptance. EM-311/312 refine existing tasks; reserved owners remain.
+
+## Previous information-check checkpoint
+
+# Information-check loop checkpoint — 26 October 2026
+
+[Latest handoff](sessions/2026-10-26-information-loop.md) and [source-bound receipt](../evidence/information-loop-native-2026-10-26.json): saved challenges now expose structural check candidates, explicit linked case questions, current evidence support and separate observations, followed by explicit immutable rechecks. Exact pushed code `a7cc1d66e786eb027e32e2b0a63fb60c9cbfdde9` on `devin/1792969169-roadmap-integrated` passed 2,057 source tests, 2,057 installed-wheel regressions, 24 JavaScript modules and 474 checks in all 13 native suites. Source/artifact inspection matched before documentation-only closeout. [PR6](https://github.com/EmotiveImpact/8ball/pull/6) remains unmerged; current CI is separate. No automatic questions, observations, course selection or external actions; no inference or predictive-quality result.
+
+EM-310 (`existing_task`, B02-05/ES01-02): repeated reconsideration needs one stable information-check lineage, not duplicated questions or factual claims from answered/reviewed labels. Operator benefit and review burden remain unmeasured. All provider, independent/professional/human, production and owner gates remain open. Reserved lane ownership and optional holds are unchanged.
+
+## Previous retained specialist presentation
+
+# Retained specialist presentation checkpoint — 26 October 2026
+
+[Latest handoff](sessions/2026-10-26-specialist-presentation.md) and [receipt](../evidence/specialist-presentation-native-2026-10-26.json): the existing event review now displays reconstructed, source-bound specialist answers, missing responses and unresolved differences without a vote or apply action. Exact code `ba1fd41b546bb026a2032f57bfa575020b99f951` is pushed on `devin/1792969169-roadmap-integrated` to [PR6](https://github.com/EmotiveImpact/8ball/pull/6). It passed 2,038 source tests, 2,038 installed-wheel regressions, 24 JavaScript modules and 466 checks across 13 native suites. Source SHA256 `6c5fae226e273685efb9bdb75a3a98887ac991f94a6b55f6d53e822156655daf`; source/artifact inspection matched before this documentation-only closeout. No new inference, empirical predictive result, model-quality approval, merge or deployment. Current PR checks remain a separate record; the automated review service last errored without findings.
+
+## Emergence Review
+
+EM-309 (`existing_task`, supported by tests): a retained aggregate can contradict individual answers. Reconstruct and bind before presentation, preserve raw material and visibly withhold inconsistent comparisons. EM-308's larger model-selection controls and measured operator-value candidate stay unaccepted; this readable projection does not silently add them to required scope. Full ER-01 through ER-15 and next-action/verification details are in the latest handoff. Reserved lane ownership, partial task statuses, previous evidence and all unfinished acceptance gates remain intact.
+
+## Previous specialist worker checkpoint
+
+[Prior checkpoint](sessions/2026-10-26-specialist-worker.md): bounded specialist comparison is wired into the reviewed event worker, with explicit host configuration and per-call authority/lease checks. Exact code 33f0d8d passed 2,026 source tests, 2,026 installed-wheel regressions, 24 JavaScript modules and 454 checks in 13 native suites. Source/artifact inspection matched before documentation closeout. Publication/CI must be read from the current PR head. No new inference or prediction-quality result; no merge or deployment.
+
+# Forecast measurement checkpoint — 26 October 2026
+
+[Latest handoff](sessions/2026-10-26-forecast-measurement.md): conditional planning works; no empirical event predictor is configured. Measurement contracts and the missing-predictor diagnostic passed full native acceptance (1979 source and installed-wheel tests, 454 browser checks); publication follows. Earlier repairs are pushed with passing software CI; automated review separately errored. Continue autonomously within existing authority/budget boundaries.
+
+# Owner-directed repair and publication checkpoint — 26 October 2026
+
+[Current repair handoff](sessions/2026-10-26-checkpoint-repair.md) records the OIDC fixture-clock fix, dialog-focus regression and exact passing native source (1,945 source tests, 1,945 installed regressions, 13 suites / 454 browser checks). The owner's “fix the issues” request authorizes updating the existing PR, not merging or deploying. Publication/check status comes from the [current PR head](https://github.com/EmotiveImpact/8ball/pull/6); earlier local-only entries below preserve their preparation state and do not override it.
+
+# Local review and decision-provider checkpoint — 26 October 2026
+
+[Latest bounded handoff](sessions/2026-10-26-native-review-and-decisions.md): retained dissent, replayable scenarios, current-server packet checks and three authorized fictional native decision responses. These changes are local/uncommitted after `4f31c6b40141990d0863d9375f47a7ad51863dfc`, not yet in PR #6. Focused/native workflow evidence is recorded there; the final full source-bound run is separate. Sonnet 5.5 inference, independent quality, model coordination, production and release gates remain open. Earlier catalogue-only statements below are historical for Experiential, not a claim that no decision inference has occurred.
+
+# Current provider follow-up — 26 October 2026
+
+Owner selected **Sonnet 5.5, not Opus**. The account catalogue lists active
+`claude-sonnet-5-5`; configuration examples and direct Anthropic request handling
+are updated. [Provider handoff](sessions/2026-10-26-sonnet-55.md) and
+[selection/failed-run receipt](../evidence/anthropic-selection-2026-10-26.json).
+181 focused controlled tests passed; fresh full native acceptance follows this
+functional checkpoint. Earlier Sonnet 4.6 inference returned four HTTP 400s;
+exact cause unknown, failed report preserved. No successful inference exists.
+Further inference is held until provider-enforced US$5 cap/no automatic top-up
+and account credits are confirmed. This corrects the earlier missed preflight.
+The older native receipt below covers only its exact source, not these edits.
+Research remains source-only; no upstream runtime or swarm integration is claimed.
+
+# Previous integrated native receipt — 26 October 2026
+
+All seven functional lane histories are integrated on separate unmerged `devin/1792969169-roadmap-integrated`. Exact pushed source `05525c9826e476b7f9996f187190b87ef8e1f9ec` passed 1782 source tests,1782 installed-wheel regressions and13 native suites/439 browser checks. See [source-bound receipt](../evidence/roadmap-integration-native-2026-10-26.json) and [full handoff](sessions/2026-10-26-roadmap-integration.md). Inspection was valid on that exact source before later documentation-only receipt edits. Both failed and passing raw runs are retained separately; baseline receipts do not cover integrated code. No live inference,external quality/production/pilot acceptance,PR5 update,merge,release or deployment is claimed. Original local workflows and all optional holds remain. Missing production adapters fail closed. The canonical ledger remains the sole task-status source. Older checkpoints below are historical.
+
+# Historical integration checkpoint — 26 October 2026
+
+Separate unmerged branch `devin/1792969169-roadmap-integrated` integrates all seven lane heads. Read [integration session](sessions/2026-10-26-roadmap-integration.md) and the optional agency host guide `docs/v2/AGENCY-HOST.md`. The older paragraphs below are preserved historical checkpoints, not instructions to modify PR5 or claim baseline receipts cover integrated code. Fresh full native/wheel acceptance and exact inspection are pending at this recoverable functional checkpoint. Production/provider/professional/human/real-client/commercial gates remain open; no release/deployment/merge is implied. Current statuses remain solely in progress.json.
+
+# Seven-lane coordination checkpoint, 25 October 2026
+
+The bounded plan branch is `devin/1792969169-roadmap-plan`, based on inspected `baca8ad9efa531e5f172058845852963d7d5234a`. Read [lane ownership and requirements](ROADMAP-LANES.md) before starting any of the seven reserved branches. Use the exact pushed plan commit supplied by the coordinator. Claims reserve ownership only: all original statuses/acceptance/required flags/evidence/blockers stay unchanged. EM-113..252 are builder reservations; EM-253 is the coordination decision. Common routers, state/services, navigation, manifests, acceptance runner and canonical delivery registers are integration-only; builders submit lane-local evidence/fragments. No optional implementation, actual inference, downloads, professional sign-off, real-client pilot, PR/main merge, release or deployment is authorised.
+
+This source baseline intentionally does not import the later agency documentation/evidence commit `2b1b465ebfa1b433c8f128b0478f6806dce9e2e7`; integration must reconcile it additively. Older paragraphs below are historical, not evidence that this plan implements features or passed native acceptance.
+
+# Current sprint: complete result retention; GitHub publication restored
+
+[Session](sessions/2026-10-25-complete-result-retention.md). Previous closeout `98ee073`, including screenshots and native evidence, is now pushed and confirmed remotely. Earlier publication-blocked text below is historical.
+
+The queue now retains complete output up to the supported 500000-byte UTF-8 boundary, without truncation. Full graph restart/review/export and multibyte bounds are covered: 36 focused tests passed; full native verification follows. Next: authenticated host worker dispatch with provider evidence and current case/permission rechecks. Both products remain tracked in PROGRESS.md and BUILD-GOAL.md; no production/model/human acceptance is implied.
+
+# Latest verified checkpoint: browser event review; final publication blocked
+
+[Session and full emergence review](sessions/2026-10-25-endstate-review-ui.md), [native receipt](../evidence/endstate-review-ui-native-2026-10-25.json), [desktop screenshot](../screenshots/8ball-event-review-2026-10-25.png). Source `461d3f2cecfcd8c4a00da40a56f56763d0d4fc90` passed 1,346 source tests, 1,346 installed-engine regressions and 423 native browser checks across twelve suites, with valid exact-source inspection. Preserved failed native/CI runs are linked in the receipt; corrected-checkpoint CI is unverified because authentication failed.
+
+The code checkpoint was pushed to draft PR5 branch feat/agency-authorisation-20261025. Final documentation/screenshots are committed locally and remain unpushed. GitHub API returns 401 Bad credentials and Git cannot authenticate. Refresh/reconnect the environment GitHub connection, preserve local HEAD, push the branch, inspect CI and update PR5. No force push, main merge, release or deployment.
+
+The scoped browser page shows original source/output, reuses Plan Studio, previews without writes and commits explicit amendments with rationale. Read-only/stale/locked/uncertain-save states fail closed. It uses configured account tokens in memory; actual OIDC sign-in and genuine human acceptance remain unfinished.
+
+Next engineering task: fix the demonstrated full-result retention boundary (16,501-character fictional graph exceeds 12,000-character work cap) before authenticated worker dispatch, then measure full end-to-end event/replanning performance. The standing BUILD-GOAL remains in progress; PROGRESS.md is the sole generated task tracker for both products. Earlier entries below are historical.
+
+# Latest verified checkpoint: authenticated event review with case binding
+
+[Session and emergence review](sessions/2026-10-25-endstate-event-api.md), [corrected native receipt](../evidence/endstate-event-api-native-2026-10-25.json), [preserved uncovered failure](../evidence/endstate-event-api-case-binding-gap-2026-10-25.json). Source `cd4ec0c9613c959688c701f293edcdc2dd986fd3` passed 1,345 source tests, 1,345 installed-engine regressions and 396 native browser checks; exact inspection and checkpoint CI passed.
+
+Shared-registry agency mode exposes explicit event read/review and local notice pull/acknowledgement. JWT identity is server-bound; review rechecks READ and WRITE in the transaction. New case attempts carry explicit case binding. Historical unbound attempts remain retained but cannot produce new case changes.
+
+Continue draft PR5 branch feat/agency-authorisation-20261025. Next: event-review browser UI and authenticated worker dispatch. Real OIDC login, PostgreSQL isolation, migration/performance, model and genuine human acceptance remain unfinished. See BUILD-GOAL.md and the sole canonical PROGRESS.md tracker. Older checkpoints below are historical.
+
+# Latest verified checkpoint: transactional local change outbox
+
+[Session and emergence review](sessions/2026-10-25-endstate-outbox.md), [receipt](../evidence/endstate-outbox-native-2026-10-25.json). Source `49f5e04fe8f4f122818c09343aba030338a26347` passed 1,331 source tests, 1,331 installed-engine regressions and 396 native browser checks; exact inspection and checkpoint CI passed. Reviewed case changes now create durable notices atomically, with ordered per-reader delivery and current READ checks at pull/acknowledgement.
+
+Continue draft PR5 branch feat/agency-authorisation-20261025. Next: explicit event review UI/API and authenticated host worker dispatch. Local outbox delivery is not an external sender, production tenant guarantee or human acceptance. Both product statuses remain in PROGRESS.md; the full BUILD-GOAL.md remains in progress. Earlier checkpoints below are historical.
+
+# Latest verified checkpoint: reviewed event consumption
+
+1,323 source tests, 1,323 installed-engine regressions and 396 native browser checks passed on `87c5322c23ebe7a3fc062ce15985a3d82d84eea2`; exact inspection and checkpoint CI passed. [Receipt](../evidence/endstate-reviewed-consumption-native-2026-10-25.json), [session](sessions/2026-10-25-endstate-reviewed-consumption.md), [standing goal](BUILD-GOAL.md). Continue PR5 branch feat/agency-authorisation-20261025. Next: explicit review UI/API and durable worker/outbox. Original model, human and production gates remain open. Earlier checkpoints below are historical.
+
+# Current ENDSTATE sprint: atomic reviewed graph consumption
+
+[Session](sessions/2026-10-25-endstate-reviewed-consumption.md). Current local host service verifies scoped write grants and exact case/attempt revisions, applies the existing graph command and records provenance/consumption atomically. Source/result and explicit reviewer edits survive case export. Next: explicit review UI/API, durable worker/outbox and measured replanning, preserving production/model/human gates.
+
+Latest verified ENDSTATE processing checkpoint: **1,309 source tests, 1,309 installed-engine regressions and 396 native browser checks passed**, with valid source inspection and green checkpoint CI. [Receipt](../evidence/endstate-processing-native-2026-10-25.json). Original failed Plan Review race is retained and fixed. Next: reviewed graph amendments committed atomically with current revision/permission checks and a durable consumption record. The full goal remains in progress.
+
+# Current ENDSTATE sprint: durable attempt lifecycle
+
+[Session and full emergence review](sessions/2026-10-25-endstate-processing.md). EventWork persists explicit scoped attempts, exclusive claims, bounded leases and terminal dispositions. Next implement reviewed consumption with actual transactional revision/permission checks and explicit worker/outbox integration. Both product statuses remain in PROGRESS.md; original V0.2 model/human and production gates remain open.
+
+Verified event-inbox checkpoint:1302 source tests,1302 installed-engine regressions and394 native browser checks passed, with valid exact-source inspection and green checkpoint CI. [Receipt](../evidence/endstate-event-inbox-native-2026-10-25.json).
+
+# Current execution: ENDSTATE events and both product trackers
+
+[Standing goal](BUILD-GOAL.md), [canonical status](PROGRESS.md), [latest sprint](sessions/2026-10-25-endstate-event-inbox.md). ENDSTATE now has pending event/receipt contracts and a durable scoped host inbox with duplicate/conflict/restart handling. Next: reviewed consumption, durable workers/outbox and revision/permission checks. 8BALL continues with browser sign-in, account administration and database/worker enforcement; its other remaining milestones are listed in the same ledger. Keep all original model/human/production gates open until evidenced.
+
+# Latest sprint: agency API reads and simpler Situation Room
+
+[Full session](sessions/2026-10-25-agency-api-overview.md) and [receipt](../evidence/agency-api-overview-native-2026-10-25.json) record1291 source/1291 installed-engine/394 native checks on7fbb34a, checkpoint CI and54 subsequent workspace checks after uncertainty wording correction. Continue current development branch feat/agency-authorisation-20261025. Implement browser OIDC, account administration, PostgreSQL access transactions and actor-bound writes/workers next. Current agency surface is read/history/export only. Preserve all broader roadmap and model/human acceptance gates.
+
+# Current sprint: agency permission foundation
+
+The owner selected full-product roadmap engineering beyond V0.2. Continue `feat/agency-authorisation-20261025`; [session](sessions/2026-10-25-agency-authorisation.md) records scope and full emergence review. 1280 source, 1280 installed-engine and 391 native browser checks passed. Next: verified OIDC identity, durable scoped grants and complete request/worker/database enforcement for B03-01. The current local API still uses its single-operator token; this component does not make it multi-tenant or production-ready. All V0.2 acceptance gates remain.
 
 # Current handoff: combined development build
 

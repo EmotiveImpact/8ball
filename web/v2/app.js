@@ -91,6 +91,6 @@ bindGrounding({api,render,refreshCases});
 bindInsights({api,render,refreshCases});
 render();if(token)start().catch(err=>toast(err.message,true));
 
-bindPlanReview({api,render});
+bindPlanReview({api,render,loadCase});
 
 bindCourse({api,render});

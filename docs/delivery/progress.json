@@ -5,14 +5,27 @@
   "engine": "ENDSTATE",
   "policy": "8BALL is the fixer product first. ENDSTATE is its reusable engine. A checked subpart is scoped verification, not merger, release, deployment or universal model quality.",
   "repository": {
+    "historical_replay_checkpoint": {
+      "owner": "Devin / integration",
+      "branch": "devin/1792969169-roadmap-integrated",
+      "base_commit": "3ddaa2f42f88b0bdb8ad41212f454b01588e29b4",
+      "scope": "B02-11 public masked retrospective forecast diagnostic; no acceptance or reserved lane ownership change.",
+      "evidence": "docs/delivery/sessions/2026-10-26-historical-replay.md",
+      "result": "One actual Sonnet forecast scored mechanically, but recognition and source-summary errors make predictive validity inconclusive. Later v2 protocol is offline-tested only.",
+      "tested_code_commit": "3404d8272b576a0bcf6294393fe3a1aa77966823",
+      "source_sha256": "0fb46c8f13244036bcc41fa430ec98ace1d97ba9e9a21206c28fe1863f4036d5",
+      "software_receipt": "docs/evidence/historical-replay-software-2026-10-26.json",
+      "software_verification": "2152 source and installed-wheel tests, 24 JS modules and 475 native checks in 13 suites passed; exact inspection matched before documentation-only closeout. No inference or predictive-quality promotion.",
+      "next_action": "Retain this invalid-for-quality diagnostic. Independently review source fidelity and define genuinely unseen outcomes, target population and an appropriate baseline before a predictive-quality study. No repeated inference on this case to improve its score."
+    },
     "full_name": "EmotiveImpact/8ball",
-    "development_branch": "room/check-repo-with-three-sub-agents-pj2t",
-    "pull_request": 8,
-    "inspected_code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
-    "inspected_code_tree": "ff87fcc6740cf020e5aa7a73648578206cdb3be2",
-    "main_at_inspection": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+    "development_branch": "devin/1792969169-roadmap-integrated",
+    "pull_request": 6,
+    "inspected_code_commit": "c0b4d63798bd762218e2125e3d2dd4dca5816820",
+    "inspected_code_tree": "ae0702e86891bb9b3be3da30b550c664a1e5c40b",
+    "main_at_inspection": "825ad6668c2c7d128da367476fe16cb8d214b837",
     "status_as_of": "2026-10-30",
-    "pr_draft": true,
+    "pr_draft": false,
     "merged": false,
     "production_deployed": false,
     "standalone_endstate_package_released": false,
@@ -20,25 +33,18 @@
     "integration_authority": "docs/decisions/0007-owner-build-consolidation.md",
     "source_merged_not_release_accepted": true,
     "current_sprint": {
-      "branch": "room/check-repo-with-three-sub-agents-pj2t",
-      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "owner": "Devin / integration",
+      "branch": "devin/1792969169-roadmap-integrated",
+      "base_commit": "5e30dd2a73dad88ec37c3a28266df426e32fd254",
       "status_as_of": "2026-10-30",
-      "owner": "Codex",
-      "task_ids": [
-        "B01-02",
-        "B02-15",
-        "ES01-03",
-        "B01-03",
-        "ES01-05",
-        "DOC-04"
-      ],
-      "objective": "Fix the three validated local-workspace security findings without changing dependencies, provider permissions or original acceptance gates.",
       "merged": false,
-      "verification": "1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.",
-      "remote_ci": "Both code-checkpoint CI workflows passed. Initial receipt-head CI 41035068063 failed only on Studio hardcoded delivery label; corrected native Studio passed44. Authoritative final cumulative CI: PR8.",
-      "evidence": "docs/evidence/security-fixes-2026-10-30.json",
-      "tested_code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
-      "tested_code_tree": "ff87fcc6740cf020e5aa7a73648578206cdb3be2"
+      "objective": "Preserve both security and coordinated-planning source and audit histories; verify cumulative native and installed-package behavior.",
+      "evidence": "docs/delivery/sessions/2026-10-30-cumulative-integration.md",
+      "verification": "Exact-source native passed: 2561 source tests, 2561 installed-wheel regressions, 24 JS modules and 493 native checks across thirteen suites; inspection valid before additive documentation. No acceptance promotion.",
+      "incoming_main": "825ad6668c2c7d128da367476fe16cb8d214b837",
+      "tested_code_commit": "c0b4d63798bd762218e2125e3d2dd4dca5816820",
+      "source_sha256": "d0f35d3798440415a43ae1cdabffd7ae04c70825c9b6994676250b490c9f62eb",
+      "receipt": "docs/evidence/cumulative-native-2026-10-30.json"
     },
     "verified_sprint_history": [
       {
@@ -81,6 +87,116 @@
         "verification": "1267 source tests, 1267 installed-engine regressions and 391 native browser checks across 11 suites passed; inspection valid before receipt edits.",
         "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
         "remote_ci": "Both checkpoint PR workflows passed: 40199806937 and 40199807143. Final receipt-head CI and merge tracked in PR4."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+        "tested_code_commit": "a5d82bdacafc0d898660ce3ba4a5183a8d7240c3",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/agency-authorisation-native-2026-10-25.json",
+        "verification": "1280 source / 1280 installed-engine / 391 native browser checks passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "75fb95fd5c15f0f0d0b040d5b679de72f19e9ee6",
+        "tested_code_commit": "7fbb34ac346e5e884a7f0dc52908e38be514c4de",
+        "evidence": "docs/evidence/agency-api-overview-native-2026-10-25.json",
+        "status_as_of": "2026-10-25",
+        "merged": false
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "48e572e95be8b28d0b317d7bc8b3a18893a3ef76",
+        "tested_code_commit": "20400336bd5462733755001b42e991c05944e1d1",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-event-inbox-native-2026-10-25.json",
+        "verification": "1302 source /1302 installed-engine /394 native browser checks passed; checkpoint CI passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "5f72a356790b0cd3f0a27e79ba1e9801f4a14937",
+        "tested_code_commit": "e95401aa289be03ab98810955e4fe02fdd8bbea2",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-processing-native-2026-10-25.json",
+        "verification": "1309 source /1309 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "cbbe5eaa028bbb9c6427ac721570eaa67a402fad",
+        "tested_code_commit": "87c5322c23ebe7a3fc062ce15985a3d82d84eea2",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json",
+        "verification": "1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "e0ae9b081629239a16ce79e95628cf504227fbc6",
+        "tested_code_commit": "49f5e04fe8f4f122818c09343aba030338a26347",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-outbox-native-2026-10-25.json",
+        "verification": "1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "fd57f16dd66a1ce52a3f60144ddbeaf8fcfc117c",
+        "tested_code_commit": "cd4ec0c9613c959688c701f293edcdc2dd986fd3",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-event-api-native-2026-10-25.json",
+        "verification": "1345 source /1345 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed."
+      },
+      {
+        "branch": "feat/agency-authorisation-20261025",
+        "base_commit": "825c8c3969f6cf723a188cc6ae16094aa15c9e7e",
+        "tested_code_commit": "461d3f2cecfcd8c4a00da40a56f56763d0d4fc90",
+        "status_as_of": "2026-10-25",
+        "merged": false,
+        "evidence": "docs/evidence/endstate-review-ui-native-2026-10-25.json",
+        "verification": "1346 source /1346 installed-engine /423 native browser checks across 12 suites passed; exact inspection valid. Corrected checkpoint CI unavailable after GitHub authentication failure.",
+        "code_checkpoint_pushed": true,
+        "receipt_pushed": true,
+        "publication_blocker": null,
+        "publication_recovered_commit": "98ee073a1c5f25658aab915183c696c8b4099985"
+      },
+      {
+        "branch": "devin/1792969169-roadmap-integrated",
+        "base_commit": "56c9b79428a612dff11e2fae0219640d156032ff",
+        "status_as_of": "2026-10-26",
+        "merged": false,
+        "code_checkpoint_pushed": true,
+        "evidence": "docs/delivery/sessions/2026-10-26-roadmap-integration.md",
+        "verification": "Exact-source native run 20261026T002344Z-5641058a passed 1782 source tests,1782 installed-kernel regressions,13 native suites/439 checks; --inspect valid before later receipt edits. No external quality/production acceptance.",
+        "tested_commit": "05525c9826e476b7f9996f187190b87ef8e1f9ec",
+        "source_sha256": "343c07c778d854fecb94e37edb33f8275d2b94e81147c0537457acaafb7f663a",
+        "acceptance_receipt": "docs/evidence/roadmap-integration-native-2026-10-26.json",
+        "prior_failed_receipt": "docs/evidence/roadmap-integration-failed-2026-10-26.json",
+        "receipt_publication": "Containing documentation-only commit; handoff tooling verifies remote head. Tested code checkpoint already confirmed pushed."
+      },
+      {
+        "branch": "room/check-repo-with-three-sub-agents-pj2t",
+        "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+        "status_as_of": "2026-10-30",
+        "owner": "Codex",
+        "task_ids": [
+          "B01-02",
+          "B02-15",
+          "ES01-03",
+          "B01-03",
+          "ES01-05",
+          "DOC-04"
+        ],
+        "objective": "Fix the three validated local-workspace security findings without changing dependencies, provider permissions or original acceptance gates.",
+        "merged": false,
+        "verification": "1324 source tests, 1324 installed-ENDSTATE regressions and 391 native browser checks across all eleven suites passed; source/artifact inspection valid before final receipt-only edits.",
+        "remote_ci": "Both code-checkpoint CI workflows passed. Initial receipt-head CI 41035068063 failed only on Studio hardcoded delivery label; corrected native Studio passed44. Authoritative final cumulative CI: PR8.",
+        "evidence": "docs/evidence/security-fixes-2026-10-30.json",
+        "tested_code_commit": "bb881f278eb24b97732382a83a6084a22d7e1983",
+        "tested_code_tree": "ff87fcc6740cf020e5aa7a73648578206cdb3be2"
       }
     ],
     "provider_configuration_preparation": {
@@ -98,13 +214,21 @@
     "integration_20261025": {
       "branch": "integration/v02-complete-build-20261025",
       "base_commit": "16b8fff43f5f0614846ac4b01db1ddbe40dcff4e",
-      "status": "native_and_checkpoint_ci_passed_final_merge_pending",
+      "status": "merged",
       "handoff": "docs/delivery/NEXT-BUILD.md",
       "tested_commit": "a9254e6087ef606d581d626bfcda9d7e555c857e",
       "evidence": "docs/evidence/build-consolidation-native-2026-10-25.json",
-      "pull_request": 4
+      "pull_request": 4,
+      "merge_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba"
     },
     "inspection_history": [
+      {
+        "development_branch": "main",
+        "pull_request": 2,
+        "inspected_code_commit": "6b57a4503c9e88b4aa97f36b4a24d36ecd82d31f",
+        "status_as_of": "2026-10-15",
+        "merged": true
+      },
       {
         "development_branch": "main",
         "pull_request": 2,
@@ -115,9 +239,515 @@
         "pr_draft": false,
         "merged": true
       }
-    ]
+    ],
+    "roadmap_partition": {
+      "schema_version": 1,
+      "source_base": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "source_emergence_max": 112,
+      "source_ledger_sha256": "1a43ce7b0aece8f7e623b3f47d52d86cf62bd6096e99cdd9a0570ce3ab8a146b",
+      "plan_branch": "devin/1792969169-roadmap-plan",
+      "task_status_policy": "Ownership reservation only; all pre-existing task statuses, acceptance, required flags, evidence, dependencies and blockers unchanged.",
+      "integration_paths": [
+        "eightball/api.py",
+        "eightball/v2/api.py",
+        "eightball/v2/store.py",
+        "eightball/v2/services.py",
+        "eightball/v2/commands.py",
+        "eightball/v2/contracts.py",
+        "endstate/contracts.py",
+        "endstate/api.py",
+        "pyproject.toml",
+        "endstate/pyproject.toml",
+        "requirements*.txt",
+        "**/package.json",
+        "**/package-lock.json",
+        "**/*lock*",
+        "scripts/acceptance.py",
+        "scripts/delivery.py",
+        "scripts/changelog.py",
+        "scripts/emergence.py",
+        "web/v2/app.js",
+        "web/v2/index.html",
+        "web/v2/style.css",
+        "docs/delivery/progress.json",
+        "docs/delivery/PROGRESS.md",
+        "docs/delivery/changelog.json",
+        "CHANGELOG.md",
+        "docs/delivery/emergence.json",
+        "docs/delivery/EMERGENCE-REGISTER.md",
+        "docs/delivery/ROADMAP-LANES.md",
+        "tests/test_delivery_tracking.py",
+        "tests/test_changelog.py",
+        "tests/test_emergence_register.py"
+      ],
+      "frozen_paths": [
+        "evals/generation-cases.json",
+        "docs/reference/8BALL-V0.2-ASTRA-PRD.md",
+        "research/**"
+      ],
+      "unassigned_optional_holds": [
+        "B03-07",
+        "ES02-06"
+      ],
+      "lanes": [
+        {
+          "lane": "events",
+          "task_ids": [
+            "ES02-01",
+            "ES02-02",
+            "ES02-03",
+            "ES02-04",
+            "B03-04"
+          ],
+          "scope": "Bounded event envelopes, durable inbox/work queue, current-authority worker dispatch, reviewed graph impact and notification/connector tooling. No implicit external sends, permission revival or approval bypass. Reserved discoveries: EM-113..EM-132 (20 IDs; reserved, not findings).",
+          "owned_paths": [
+            "endstate/events.py",
+            "eightball/event_inbox.py",
+            "eightball/event_work.py",
+            "eightball/v2/event_api.py",
+            "eightball/v2/event_reviews.py",
+            "eightball/v2/event_outbox.py",
+            "eightball/event_workers/**",
+            "web/v2/event-review.*",
+            "web/v2/event-*.js",
+            "web/v2/event-*.html",
+            "tests/test_event*.py",
+            "tests/browser_event_review.py",
+            "docs/endstate/EVENT-INBOX.md",
+            "docs/delivery/lane-reports/events.md",
+            "docs/delivery/lane-reports/events-emergence.json",
+            "docs/delivery/lane-reports/events-changelog.json"
+          ],
+          "dependencies": "Identity supplies authenticated worker identity/current-grant authorisation; intelligence supplies provider/proposal services. Keep source/receipt ordering, cancellation, revision and reviewed consumption checks. Integration wires registration and measures combined ingestion/inference/review latency.",
+          "branch": "devin/1792969169-roadmap-events",
+          "owner": "Devin / roadmap-events",
+          "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+          "emergence_ids": [
+            "EM-113",
+            "EM-132"
+          ],
+          "task_modes": {
+            "ES02-01": "engineering_only",
+            "ES02-02": "engineering_only",
+            "ES02-03": "engineering_only",
+            "ES02-04": "engineering_only",
+            "B03-04": "engineering_only"
+          },
+          "report_path": "docs/delivery/lane-reports/events.md",
+          "emergence_fragment_path": "docs/delivery/lane-reports/events-emergence.json",
+          "changelog_fragment_path": "docs/delivery/lane-reports/events-changelog.json",
+          "acceptance": "Every assigned task retains its exact ledger acceptance and required flag; see the task requirements below. Identity supplies authenticated worker identity/current-grant authorisation; intelligence supplies provider/proposal services. Keep source/receipt ordering, cancellation, revision and reviewed consumption checks. Integration wires registration and measures combined ingestion/inference/review latency."
+        },
+        {
+          "lane": "identity",
+          "task_ids": [
+            "B03-01"
+          ],
+          "scope": "Agency access/authorisation, OIDC login/session contracts, revocation and matter/operation denial coverage. No production identity-provider configuration or credentials presumed. Reserved discoveries: EM-133..EM-152 (20 IDs; reserved, not findings).",
+          "owned_paths": [
+            "eightball/agency_access.py",
+            "eightball/authorisation.py",
+            "eightball/oidc/**",
+            "eightball/v2/identity_api.py",
+            "web/v2/identity-*",
+            "tests/test_agency_access.py",
+            "tests/test_authorisation.py",
+            "tests/test_identity*.py",
+            "tests/test_oidc*.py",
+            "docs/v2/AGENCY-ACCESS.md",
+            "docs/delivery/lane-reports/identity.md",
+            "docs/delivery/lane-reports/identity-emergence.json",
+            "docs/delivery/lane-reports/identity-changelog.json"
+          ],
+          "dependencies": "Expose a fail-closed current identity/grant service to every lane; use the existing Operation/Identity/Resource/Grant boundary. Provider credentials, independent security review and production isolation remain external gates; integration owns middleware/common router attachment.",
+          "branch": "devin/1792969169-roadmap-identity",
+          "owner": "Devin / roadmap-identity",
+          "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+          "emergence_ids": [
+            "EM-133",
+            "EM-152"
+          ],
+          "task_modes": {
+            "B03-01": "engineering_only"
+          },
+          "report_path": "docs/delivery/lane-reports/identity.md",
+          "emergence_fragment_path": "docs/delivery/lane-reports/identity-emergence.json",
+          "changelog_fragment_path": "docs/delivery/lane-reports/identity-changelog.json",
+          "acceptance": "Every assigned task retains its exact ledger acceptance and required flag; see the task requirements below. Expose a fail-closed current identity/grant service to every lane; use the existing Operation/Identity/Resource/Grant boundary. Provider credentials, independent security review and production isolation remain external gates; integration owns middleware/common router attachment."
+        },
+        {
+          "lane": "vault",
+          "task_ids": [
+            "B03-02"
+          ],
+          "scope": "New immutable-original vault/quarantine/scan/hash, encryption/retention/hold/deletion and audited-access services plus isolated router/UI modules. Existing source provenance remains compatible; no real client material. Reserved discoveries: EM-153..EM-172 (20 IDs; reserved, not findings).",
+          "owned_paths": [
+            "eightball/vault/**",
+            "eightball/v2/vault_api.py",
+            "web/v2/vault-*",
+            "tests/test_vault*.py",
+            "docs/v2/VAULT.md",
+            "docs/delivery/lane-reports/vault.md",
+            "docs/delivery/lane-reports/vault-emergence.json",
+            "docs/delivery/lane-reports/vault-changelog.json"
+          ],
+          "dependencies": "Consume identity current-grant contracts; expose versioned source handles/hash/provenance adapters without editing Source Desk/store/common routers. Integration connects persistence/source adapters; production key management, scanner and recovery evidence are not assumed.",
+          "branch": "devin/1792969169-roadmap-vault",
+          "owner": "Devin / roadmap-vault",
+          "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+          "emergence_ids": [
+            "EM-153",
+            "EM-172"
+          ],
+          "task_modes": {
+            "B03-02": "engineering_only"
+          },
+          "report_path": "docs/delivery/lane-reports/vault.md",
+          "emergence_fragment_path": "docs/delivery/lane-reports/vault-emergence.json",
+          "changelog_fragment_path": "docs/delivery/lane-reports/vault-changelog.json",
+          "acceptance": "Every assigned task retains its exact ledger acceptance and required flag; see the task requirements below. Consume identity current-grant contracts; expose versioned source handles/hash/provenance adapters without editing Source Desk/store/common routers. Integration connects persistence/source adapters; production key management, scanner and recovery evidence are not assumed."
+        },
+        {
+          "lane": "collaboration",
+          "task_ids": [
+            "B03-03"
+          ],
+          "scope": "New revocable expert grants and separately reviewed client projections, collaboration router/UI and isolation tests. Internal records are never a default client view; no sharing/send by implication. Reserved discoveries: EM-173..EM-192 (20 IDs; reserved, not findings).",
+          "owned_paths": [
+            "eightball/collaboration/**",
+            "eightball/projections/**",
+            "eightball/v2/collaboration_api.py",
+            "web/v2/collaboration-*",
+            "tests/test_collaboration*.py",
+            "tests/test_projection*.py",
+            "docs/v2/COLLABORATION.md",
+            "docs/delivery/lane-reports/collaboration.md",
+            "docs/delivery/lane-reports/collaboration-emergence.json",
+            "docs/delivery/lane-reports/collaboration-changelog.json"
+          ],
+          "dependencies": "Consume identity current-grant service and vault opaque source handles; projection review must bind exact object/matter/revision and revocation. Integration supplies case read/service adapter and navigation. No new secure portal/deployment claim.",
+          "branch": "devin/1792969169-roadmap-collaboration",
+          "owner": "Devin / roadmap-collaboration",
+          "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+          "emergence_ids": [
+            "EM-173",
+            "EM-192"
+          ],
+          "task_modes": {
+            "B03-03": "engineering_only"
+          },
+          "report_path": "docs/delivery/lane-reports/collaboration.md",
+          "emergence_fragment_path": "docs/delivery/lane-reports/collaboration-emergence.json",
+          "changelog_fragment_path": "docs/delivery/lane-reports/collaboration-changelog.json",
+          "acceptance": "Every assigned task retains its exact ledger acceptance and required flag; see the task requirements below. Consume identity current-grant service and vault opaque source handles; projection review must bind exact object/matter/revision and revocation. Integration supplies case read/service adapter and navigation. No new secure portal/deployment claim."
+        },
+        {
+          "lane": "operations",
+          "task_ids": [
+            "B03-05",
+            "B10-01",
+            "B10-02",
+            "B03-06"
+          ],
+          "scope": "New restore/audit/incident/revocation and onboarding/support/release-readiness tooling. B03-06 is fictional pilot preparation/tooling only; B10 deliverables do not confer legal, brand, customer or professional acceptance. Reserved discoveries: EM-193..EM-212 (20 IDs; reserved, not findings).",
+          "owned_paths": [
+            "eightball/operations/**",
+            "scripts/operations/**",
+            "docs/operations/**",
+            "tests/test_operations*.py",
+            "tests/test_pilot_tooling*.py",
+            "docs/delivery/lane-reports/operations.md",
+            "docs/delivery/lane-reports/operations-emergence.json",
+            "docs/delivery/lane-reports/operations-changelog.json"
+          ],
+          "dependencies": "Identity/vault/collaboration/events furnish recovery and revocation service contracts. Consume evidence from all lanes without editing the acceptance runner. Real pilot participants, legal/brand/licence clearance, operating owner, customer acceptance and release/deploy authorisation remain external gates.",
+          "branch": "devin/1792969169-roadmap-operations",
+          "owner": "Devin / roadmap-operations",
+          "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+          "emergence_ids": [
+            "EM-193",
+            "EM-212"
+          ],
+          "task_modes": {
+            "B03-05": "engineering_only",
+            "B10-01": "engineering_only",
+            "B10-02": "engineering_only",
+            "B03-06": "fictional_pilot_tooling_only"
+          },
+          "report_path": "docs/delivery/lane-reports/operations.md",
+          "emergence_fragment_path": "docs/delivery/lane-reports/operations-emergence.json",
+          "changelog_fragment_path": "docs/delivery/lane-reports/operations-changelog.json",
+          "acceptance": "Every assigned task retains its exact ledger acceptance and required flag; see the task requirements below. Identity/vault/collaboration/events furnish recovery and revocation service contracts. Consume evidence from all lanes without editing the acceptance runner. Real pilot participants, legal/brand/licence clearance, operating owner, customer acceptance and release/deploy authorisation remain external gates."
+        },
+        {
+          "lane": "domain-packs",
+          "task_ids": [
+            "ES04-01",
+            "ES04-02",
+            "ES04-03",
+            "ES04-04",
+            "ES10-01",
+            "ES10-02"
+          ],
+          "scope": "New ENDSTATE domain-pack schemas/loader contracts, fixer/neutral/sales/support fictional fixtures and consumer/version/migration tooling. Demonstrate reuse without core forks; no second application, public SDK/API/MCP launch or independent ENDSTATE release. Reserved discoveries: EM-213..EM-232 (20 IDs; reserved, not findings).",
+          "owned_paths": [
+            "endstate/domain_packs/**",
+            "tests/fixtures/domain_packs/**",
+            "tests/test_domain_pack*.py",
+            "docs/endstate/DOMAIN-PACKS.md",
+            "docs/delivery/lane-reports/domain-packs.md",
+            "docs/delivery/lane-reports/domain-packs-emergence.json",
+            "docs/delivery/lane-reports/domain-packs-changelog.json"
+          ],
+          "dependencies": "Use existing engine contracts and keep endstate free of eightball imports. Intelligence supplies fixer playbook adapter inputs. Integration approves any shared contract/manifests or API exposure. Distribution, licence/support commitments and independent release approval remain gated.",
+          "branch": "devin/1792969169-roadmap-domain-packs",
+          "owner": "Devin / roadmap-domain-packs",
+          "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+          "emergence_ids": [
+            "EM-213",
+            "EM-232"
+          ],
+          "task_modes": {
+            "ES04-01": "engineering_only",
+            "ES04-02": "engineering_only",
+            "ES04-03": "engineering_only",
+            "ES04-04": "engineering_only",
+            "ES10-01": "engineering_only",
+            "ES10-02": "engineering_only"
+          },
+          "report_path": "docs/delivery/lane-reports/domain-packs.md",
+          "emergence_fragment_path": "docs/delivery/lane-reports/domain-packs-emergence.json",
+          "changelog_fragment_path": "docs/delivery/lane-reports/domain-packs-changelog.json",
+          "acceptance": "Every assigned task retains its exact ledger acceptance and required flag; see the task requirements below. Use existing engine contracts and keep endstate free of eightball imports. Intelligence supplies fixer playbook adapter inputs. Integration approves any shared contract/manifests or API exposure. Distribution, licence/support commitments and independent release approval remain gated."
+        },
+        {
+          "lane": "intelligence",
+          "task_ids": [
+            "B02-09",
+            "B02-10",
+            "B02-11",
+            "B02-12",
+            "B02-14",
+            "B02-15",
+            "B02-16",
+            "B02-18",
+            "B02-19",
+            "B02-20",
+            "B02-21",
+            "B02-22",
+            "ES03-01",
+            "ES03-02",
+            "ES03-03",
+            "ES03-04",
+            "ES03-05",
+            "ES03-07",
+            "ES03-08",
+            "B04-01",
+            "B04-02",
+            "B04-03",
+            "B04-04"
+          ],
+          "scope": "Unfinished source interpretation, graph compilation, provider/runtime, source clarity, evaluation/quality/review/UX and intelligence/playbook tooling within existing contracts. Optional tasks are explicit holds, not automatic implementation; no worker/auth/common-router ownership or actual inference/model downloads. Reserved discoveries: EM-233..EM-252 (20 IDs; reserved, not findings).",
+          "owned_paths": [
+            "eightball/v2/intelligence.py",
+            "eightball/v2/analysis_jobs.py",
+            "eightball/v2/runtime_status.py",
+            "eightball/v2/hosted.py",
+            "eightball/v2/compatible.py",
+            "eightball/v2/grounding.py",
+            "eightball/v2/source_desk.py",
+            "eightball/v2/source_contracts.py",
+            "eightball/v2/playbooks.py",
+            "eightball/v2/plan_review.py",
+            "eightball/v2/insights.py",
+            "endstate/compilation.py",
+            "endstate/time_review.py",
+            "endstate/plan_review.py",
+            "endstate/insights.py",
+            "web/v2/job-view.js",
+            "web/v2/source-model.js",
+            "web/v2/source-view.js",
+            "web/v2/grounding-view.js",
+            "web/v2/plan-review-view.js",
+            "web/v2/insights-view.js",
+            "web/v2/graph-model.js",
+            "web/v2/graph-view.js",
+            "evals/**",
+            "tests/test_intelligence*.py",
+            "tests/test_analysis_jobs.py",
+            "tests/test_runtime_status.py",
+            "tests/test_hosted_and_grounding.py",
+            "tests/test_hosted_eval_retention.py",
+            "tests/test_compatible*.py",
+            "tests/test_provider*.py",
+            "tests/test_grounding.py",
+            "tests/test_time_review.py",
+            "tests/test_source_desk.py",
+            "tests/test_source_view_races.py",
+            "tests/test_plan_review.py",
+            "tests/test_insight*.py",
+            "tests/test_playbooks.py",
+            "tests/test_endstate_compilation.py",
+            "tests/test_graph_explorer.py",
+            "docs/delivery/lane-reports/intelligence.md",
+            "docs/delivery/lane-reports/intelligence-emergence.json",
+            "docs/delivery/lane-reports/intelligence-changelog.json",
+            "eightball/intelligence/**",
+            "endstate/intelligence/**",
+            "web/v2/intelligence-*",
+            "tests/test_evaluation*.py",
+            "tests/test_learning*.py"
+          ],
+          "dependencies": "Events owns dispatch/inbox/worker; identity owns auth. Consume source-handle/domain-pack contracts via adapters; integration owns common state/command/router/nav changes and full acceptance. Actual-model B02-09/B02-12/ES03-02, expert-labelled B02-11, human accessibility/security and release gates remain open. Optional live classifiers/research/rebuild candidates stay held.",
+          "branch": "devin/1792969169-roadmap-intelligence",
+          "owner": "Devin / roadmap-intelligence",
+          "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+          "emergence_ids": [
+            "EM-233",
+            "EM-252"
+          ],
+          "task_modes": {
+            "B02-09": "engineering_only",
+            "B02-10": "engineering_only",
+            "B02-11": "engineering_only",
+            "B02-12": "engineering_only",
+            "B02-14": "engineering_only",
+            "B02-15": "engineering_only",
+            "B02-16": "engineering_only",
+            "B02-18": "engineering_only",
+            "B02-19": "engineering_only",
+            "B02-20": "engineering_only",
+            "B02-21": "optional_hold_no_implementation",
+            "B02-22": "optional_hold_no_implementation",
+            "ES03-01": "engineering_only",
+            "ES03-02": "engineering_only",
+            "ES03-03": "optional_hold_no_implementation",
+            "ES03-04": "engineering_only",
+            "ES03-05": "engineering_only",
+            "ES03-07": "optional_hold_no_implementation",
+            "ES03-08": "optional_hold_no_implementation",
+            "B04-01": "engineering_only",
+            "B04-02": "engineering_only",
+            "B04-03": "engineering_only",
+            "B04-04": "optional_hold_no_implementation"
+          },
+          "report_path": "docs/delivery/lane-reports/intelligence.md",
+          "emergence_fragment_path": "docs/delivery/lane-reports/intelligence-emergence.json",
+          "changelog_fragment_path": "docs/delivery/lane-reports/intelligence-changelog.json",
+          "acceptance": "Every assigned task retains its exact ledger acceptance and required flag; see the task requirements below. Events owns dispatch/inbox/worker; identity owns auth. Consume source-handle/domain-pack contracts via adapters; integration owns common state/command/router/nav changes and full acceptance. Actual-model B02-09/B02-12/ES03-02, expert-labelled B02-11, human accessibility/security and release gates remain open. Optional live classifiers/research/rebuild candidates stay held."
+        }
+      ]
+    },
+    "integration_branch": "devin/1792969169-roadmap-integrated",
+    "prior_integration_checkpoint": {
+      "active_follow_up": {
+        "owner": "Devin / integration",
+        "branch": "devin/1792969169-roadmap-integrated",
+        "base_commit": "c13a3a023133b66f1bb32891aa2e739fec25b88a",
+        "scope": "Read-only retained specialist presentation in the existing event review; no model-selection controls or new inference.",
+        "evidence": "docs/delivery/sessions/2026-10-26-specialist-presentation.md",
+        "verified_code_commit": "ba1fd41b546bb026a2032f57bfa575020b99f951",
+        "source_sha256": "6c5fae226e273685efb9bdb75a3a98887ac991f94a6b55f6d53e822156655daf",
+        "receipt": "docs/evidence/specialist-presentation-native-2026-10-26.json"
+      },
+      "owner": "Devin / integration",
+      "branch": "devin/1792969169-roadmap-integrated",
+      "base_commit": "a3e340275e0ecc810a80c2aa9299c06e1e19385d",
+      "status_as_of": "2026-10-26",
+      "merged": false,
+      "code_checkpoint_pushed": true,
+      "evidence": "docs/delivery/sessions/2026-10-26-specialist-worker.md",
+      "verification": "Exact-source native acceptance passed:2026 source tests,2026 installed-wheel regressions,24 JavaScript modules,13 suites/454 native checks. Source/artifact inspection matched before documentation closeout; no model-quality or release acceptance.",
+      "tested_commit": "33f0d8ddeac558d19d5b8fcf3995978a21cf08b9",
+      "source_sha256": "39c4d15a98f315ef6190b6b72b6de319a51fcdd83ba37d4a506fe9f662013cb7",
+      "acceptance_receipt": "docs/evidence/specialist-worker-native-2026-10-26.json",
+      "prior_failed_receipt": "docs/evidence/specialist-worker-failed-2026-10-26.json",
+      "prior_failed_report": "artifacts/acceptance/20261026T034101Z-00c70131/report.json",
+      "provider_rejection_diagnostics": {
+        "owner": "Devin / integration",
+        "branch": "devin/1792969169-roadmap-integrated",
+        "base_commit": "b43f0560547be82ee4368a675d815ef82d5be4ad",
+        "scope": "B02-09/B02-11 narrow diagnostic retention; no cost-unit conversion, inference, authority or reserved-lane change.",
+        "evidence": "docs/delivery/sessions/2026-10-26-provider-diagnostics.md",
+        "verification": "2355 source tests, 2355 installed-wheel regressions, 24 JavaScript modules and 475 native checks in 13 suites passed at f22f967. Exact inspection valid before documentation closeout; no model inference.",
+        "tested_commit": "f22f96735334d576a0e91757cd5f7363e3fa1f2e",
+        "source_sha256": "f1b4aee839ec362d8898a11abb5f123f7399b4bd63236054a472f9d288c641be",
+        "receipt": "docs/evidence/provider-diagnostics-software-2026-10-26.json"
+      },
+      "native_cost_policy": {
+        "owner": "Devin / integration",
+        "branch": "devin/1792969169-roadmap-integrated",
+        "base_commit": "d89bae35b09207c174135ef0bb237611b73ebe5d",
+        "scope": "B02-11 provider-scoped native USD normalization, original numeric provenance and versioned worker authority. No inference, reserved-lane or quality/status change.",
+        "evidence": "docs/delivery/sessions/2026-10-26-native-cost-policy.md",
+        "verification": "2445 source tests, 2445 installed-wheel regressions, 24 JavaScript modules and 475 native checks in 13 suites passed at 5780368. Exact source/artifact inspection valid before documentation closeout; no model inference.",
+        "tested_commit": "5780368e5a90b117e035f7cec85e2af574275401",
+        "source_sha256": "e0c26a61184b66e1c08785f452a228978633f92c7635508406777e241463e16c",
+        "receipt": "docs/evidence/native-cost-policy-software-2026-10-26.json"
+      },
+      "coordinated_native_cost_live": {
+        "source_commit": "bbcb8c4234fc94b1b02301037030500aefc5d0e6",
+        "status": "partial_or_failed",
+        "recorded_requests": 7,
+        "receipt": "docs/evidence/coordinated-native-cost-live-2026-10-26.json",
+        "next_action": "Preserve this second failed protocol, strengthen output-contract instructions without weakening validation, then build read-only coordinated-result presentation. No resumed protocol or historical rerun."
+      },
+      "draft_output_contract": {
+        "prompt_version": "endstate.draft.prompts.v4",
+        "base_commit": "52e5c0d",
+        "verification": "2455 source tests, 2455 installed-wheel regressions, 24 JS modules and 475 native browser checks across 13 suites passed; source/artifact inspection valid. No inference or model-quality approval.",
+        "record": "docs/delivery/sessions/2026-10-26-draft-output-contract.md",
+        "status": "native_software_passed_live_unverified",
+        "source_commit": "d85742d4d5d184bb7eba533ca594a94b02a96661",
+        "source_sha256": "b3ae11dad4350f3d99f87a17b791fa0283d04df22748be97aa825464972c16fc",
+        "run_id": "20261026T140753Z-e441dec1"
+      },
+      "coordinated_draft_v4_live": {
+        "source_commit": "5aacbca91c3909031aec974600e5ccaff15211f7",
+        "source_sha256": "94ad75c09d0d19f165f272860ecec1db1ed00d040b07081fa4a232d1e7242d16",
+        "protocol_sha256": "31fcb19a64159f1d79988337631aa8d4d5b25bfd1cb2a90cccc3782b616e2eed",
+        "status": "partial_or_failed",
+        "recorded_requests": 10,
+        "completed_methods": [
+          "claude-opus-5-5"
+        ],
+        "known_specialist_cost_nano_usd": 39585,
+        "evidence": "docs/evidence/coordinated-draft-v4-live-2026-10-26.json",
+        "next": "Read-only coordinated presentation; no more inference needed. No semantic/predictive acceptance."
+      },
+      "coordinated_result_ui": {
+        "base_commit": "69c482569bf17d558f4b730c4ad4d24ca8734213",
+        "status": "native_verified_publication_pending",
+        "verification": "2493 source tests, 2493 installed-wheel regressions, 24 JS modules and 493 checks in 13 native browser suites passed; source/evidence inspection valid before documentation closeout.",
+        "record": "docs/delivery/sessions/2026-10-26-coordinated-result-ui.md",
+        "source_commit": "11e328c1eaa3ed6817cdb794e1878410b85a8de3",
+        "source_sha256": "9097753973b7d47e5a97e6b96d13924381eeb05ae73d5b1a117c6795ba4e0d10"
+      }
+    }
   },
   "evidence": {
+    "EV-PROVIDER-JSON-NATIVE-20261026": {
+      "kind": "native_software_acceptance",
+      "path": "docs/evidence/provider-json-mode-software-2026-10-26.json",
+      "result": "Exact source e1e7142 passed 2172 source tests, 2172 installed-wheel regressions, 24 JavaScript modules and 475 checks across 13 native browser suites; source/artifact inspection matched before documentation-only closeout. Initial incorrect-Node-path source failure retained. No GLM/DeepSeek inference or coordinated/predictive-quality claim."
+    },
+    "EV-PROVIDER-JSON-MODE-20261026": {
+      "kind": "test_report",
+      "path": "docs/delivery/sessions/2026-10-26-provider-json-mode.md",
+      "result": "261 focused compatible transport, application, CLI and acceptance-runner checks passed; compilation and diff checks passed. Explicit prompt_only preserves strict local validation and records the selected contract. Full native verification pending; initial direct source run used an incorrect Node path (96 failures, 2070 passes, 6 skips) and is retained in ignored artifacts/provider-json-mode-20261026/initial-path-failure.log. No actual new model inference, coordinated-method or predictive-quality claim."
+    },
+    "EV-SPECIALIST-WORKER-20261026": {
+      "kind": "local_engineering",
+      "path": "docs/delivery/sessions/2026-10-26-specialist-worker.md",
+      "result": "204 focused checks plus full native:2026 source,2026 installed-wheel,24 JavaScript modules,13 browser suites/454 checks. Exact-source inspection matched; no prediction-quality, production or release acceptance."
+    },
+    "EV-ANTHROPIC-20261026": {
+      "kind": "failed_real_model_evaluation_and_catalogue_selection",
+      "path": "docs/evidence/anthropic-selection-2026-10-26.json",
+      "code_commit": "f4ecde62529fc5525220bba6afe4b0ae0c06b63b",
+      "url": "https://github.com/EmotiveImpact/8ball/commit/f4ecde62529fc5525220bba6afe4b0ae0c06b63b",
+      "result": "Four Sonnet 4.6 fixtures rejected HTTP400; exact cause unknown. Later read-only catalogue lists owner-selected Sonnet 5.5 active. No successful inference or billing-cap verification. Further inference held; exact failed report retained. New request parameters have only controlled tests so far."
+    },
     "EV-APP": {
       "kind": "software_validation",
       "path": "docs/v2/VALIDATION.md",
@@ -375,6 +1005,262 @@
       "kind": "integration_and_test_handoff",
       "path": "docs/evidence/build-consolidation-native-2026-10-25.json",
       "result": "1267 source + 1267 installed-engine + 391 native browser checks passed; exact inspection valid; both checkpoint CI workflows passed. PR3 closed as already integrated. No model/independent/human acceptance."
+    },
+    "EV-AGENCY-POLICY": {
+      "kind": "controlled_policy_tests",
+      "path": "docs/evidence/agency-authorisation-native-2026-10-25.json",
+      "result": "1280 source tests, 1280 installed-engine regressions and 391 native browser checks passed; source inspection valid. Policy only, not integrated production enforcement."
+    },
+    "EV-AGENCY-API": {
+      "kind": "controlled_api_and_browser",
+      "path": "docs/evidence/agency-api-overview-native-2026-10-25.json",
+      "result": "1291 source +1291 installed-engine +394 native browser checks and checkpoint CI passed. Final uncertainty wording passed54 native workspace checks. Agency boundary remains read-only and pre-production."
+    },
+    "EV-EVENT-INBOX": {
+      "kind": "controlled_event_persistence",
+      "path": "docs/evidence/endstate-event-inbox-native-2026-10-25.json",
+      "result": "1302 source tests,1302 installed-engine regressions and394 native browser checks passed; exact inspection valid and both checkpoint CI runs passed. Incoming events remain pending, with no live worker or case mutation."
+    },
+    "EV-EVENT-WORK": {
+      "kind": "controlled_durable_processing",
+      "path": "docs/evidence/endstate-processing-native-2026-10-25.json",
+      "result": "1309 source +1309 installed-engine +396 native browser checks passed; exact inspection valid and checkpoint CI green. Original failed Plan Review race retained and corrected with deterministic native coverage. No actual-model/independent/human acceptance."
+    },
+    "EV-REVIEW-REFRESH-RACE": {
+      "kind": "native_regression_fix",
+      "path": "docs/evidence/endstate-processing-native-2026-10-25.json",
+      "result": "Retained local native failure; explicit stale-context recovery and deterministic in-flight revision-change coverage now pass."
+    },
+    "EV-EVENT-CONSUMPTION": {
+      "kind": "controlled_atomic_review",
+      "path": "docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json",
+      "result": "1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed. Public writes, worker/outbox, model and human acceptance remain unfinished."
+    },
+    "EV-EVENT-OUTBOX": {
+      "kind": "controlled_local_delivery",
+      "path": "docs/evidence/endstate-outbox-native-2026-10-25.json",
+      "result": "1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed. Local pull-based delivery only; daemon/browser/production/model/human gates remain unfinished."
+    },
+    "EV-EVENT-API": {
+      "kind": "controlled_authenticated_api",
+      "path": "docs/evidence/endstate-event-api-native-2026-10-25.json",
+      "result": "1345 source /1345 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed. Includes explicit case binding; no browser login/review, worker dispatch or production/model/human acceptance."
+    },
+    "EV-EVENT-CASE-BINDING-GAP": {
+      "kind": "preserved_correctness_failure",
+      "path": "docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json",
+      "result": "Failure preserved at f75dad5; corrected in cd4ec0c with four case-binding/migration tests and cumulative 1345 source /1345 installed /396 native checks. See EV-EVENT-API."
+    },
+    "EV-EVENT-REVIEW-UI": {
+      "kind": "native_scoped_review_ui",
+      "path": "docs/evidence/endstate-review-ui-native-2026-10-25.json",
+      "result": "1346 source /1346 installed-engine /423 native browser checks across 12 suites passed; exact inspection valid. Corrected checkpoint CI unavailable after GitHub authentication failure. Browser review implemented for configured account tokens; not genuine human or OIDC acceptance."
+    },
+    "EV-EVENT-REVIEW-CSP-FAILURE": {
+      "kind": "native_failed",
+      "path": "docs/evidence/event-review-native-csp-failure-2026-10-25.json",
+      "result": "Failed native/CI runs preserved. CSP-safe locator assertion with explicit deadline passes corrected full 1346 source /1346 installed /423 native run; see EV-EVENT-REVIEW-UI."
+    },
+    "EV-EVENT-RESULT-SIZE": {
+      "kind": "controlled_boundary_failure",
+      "path": "docs/evidence/event-result-size-boundary-2026-10-25.json",
+      "result": "Historical 12000-character rejection preserved. Bound corrected to 500000 UTF-8 bytes; focused restart/review/export tests passed. See EV-EVENT-RESULT-RETENTION."
+    },
+    "EV-EVENT-RESULT-RETENTION": {
+      "kind": "controlled_full_result_retention",
+      "path": "docs/delivery/sessions/2026-10-25-complete-result-retention.md",
+      "result": "36 focused work/review tests passed; full native verification pending. Complete graph output retained at a 500000-byte UTF-8 bound."
+    },
+    "EV-INTEGRATION-ENGINEERING-20261026": {
+      "kind": "software_validation",
+      "path": "docs/delivery/sessions/2026-10-26-roadmap-integration.md",
+      "result": "Shared host, controls and transaction-local identity/source adapters; partial engineering only. No broad acceptance statuses promoted. Final native acceptance pending."
+    },
+    "EV-LANE-COLLABORATION-20261026": {
+      "kind": "lane_software_validation",
+      "path": "docs/delivery/lane-reports/collaboration.md",
+      "result": "Preserved lane-local source/tests/failed experiments and external gates; not a combined-tree acceptance receipt."
+    },
+    "EV-LANE-DOMAIN-PACKS-20261026": {
+      "kind": "lane_software_validation",
+      "path": "docs/delivery/lane-reports/domain-packs.md",
+      "result": "Preserved lane-local source/tests/failed experiments and external gates; not a combined-tree acceptance receipt."
+    },
+    "EV-LANE-EVENTS-20261026": {
+      "kind": "lane_software_validation",
+      "path": "docs/delivery/lane-reports/events.md",
+      "result": "Preserved lane-local source/tests/failed experiments and external gates; not a combined-tree acceptance receipt."
+    },
+    "EV-EVENTS-DISPATCH-20261025": {
+      "kind": "software_validation",
+      "path": "docs/delivery/lane-reports/events.md",
+      "code_commit": "f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "result": "1410 full/101 focused tests passed; current grant/source-policy, cross-scope, stale/revocation/cancellation/restart/idempotency/rollback behavior only. No real provider/native/production acceptance."
+    },
+    "EV-EVENTS-REPLAN-20261025": {
+      "kind": "software_validation",
+      "path": "tests/test_event_replan.py",
+      "code_commit": "f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "result": "Complete typed-response parity for exact-input reuse and full fallback; clock, approval revision, graph/budget/completion/sort/snapshot and detached cache cases. Not general incremental performance proof."
+    },
+    "EV-EVENTS-FROZEN-CHANGELOG-20261025": {
+      "kind": "software_validation",
+      "path": "docs/delivery/lane-reports/events.md",
+      "code_commit": "f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "result": "Expected base-relative canonical changelog failure retained: Changed build needs a new changelog entry. Partition freezes canonical tracking; validate/merge lane fragments centrally."
+    },
+    "EV-LANE-IDENTITY-20261026": {
+      "kind": "lane_software_validation",
+      "path": "docs/delivery/lane-reports/identity.md",
+      "result": "Preserved lane-local source/tests/failed experiments and external gates; not a combined-tree acceptance receipt."
+    },
+    "EV-LANE-INTELLIGENCE-20261026": {
+      "kind": "lane_software_validation",
+      "path": "docs/delivery/lane-reports/intelligence.md",
+      "result": "Preserved lane-local source/tests/failed experiments and external gates; not a combined-tree acceptance receipt."
+    },
+    "EV-LANE-OPERATIONS-20261026": {
+      "kind": "lane_software_validation",
+      "path": "docs/delivery/lane-reports/operations.md",
+      "result": "Preserved lane-local source/tests/failed experiments and external gates; not a combined-tree acceptance receipt."
+    },
+    "EV-LANE-VAULT-20261026": {
+      "kind": "lane_software_validation",
+      "path": "docs/delivery/lane-reports/vault.md",
+      "result": "Preserved lane-local source/tests/failed experiments and external gates; not a combined-tree acceptance receipt."
+    },
+    "EV-FOUR-SOURCE-20261026": {
+      "kind": "source_inspection",
+      "path": "docs/research/github-2026-10-26/README.md",
+      "result": "Four new pins verified; native design recommendations and unrun experiments only. No upstream runtime/inference. Full32 verification blocked by five older VM discrepancies."
+    },
+    "EV-DECISION-CONTRACTS-20261026": {
+      "kind": "provider_contract_investigation",
+      "path": "docs/v2/DECISION-PROVIDERS.md",
+      "result": "Owner confirmed native non-chat Jev/Clef/GPT contracts; authenticated catalogue HTTP200 only. No inference, billing or model-quality acceptance."
+    },
+    "EV-NATIVE-REVIEW-20261026": {
+      "kind": "local_engineering",
+      "path": "docs/delivery/sessions/2026-10-26-native-review-and-decisions.md",
+      "result": "Bounded native review/packet implementation; focused tests and49 native Plan Review checks passed. Full source-bound acceptance is separate. No acceptance/status promotion."
+    },
+    "EV-DECISION-SMOKE-20261026": {
+      "kind": "fictional_provider_smoke",
+      "path": "docs/v2/DECISION-PROVIDERS.md",
+      "result": "One validated native response each from Jev/Clef/GPT, conflicting choices retained; gateway-recorded total USD0.000008547. Not quality, hard-cap or production acceptance."
+    },
+    "EV-FORECAST-MEASUREMENT-20261026": {
+      "kind": "local_engineering",
+      "path": "docs/delivery/sessions/2026-10-26-forecast-measurement.md",
+      "result": "Typed scoring and six fictional worlds: zero configured forecasts; no predictive accuracy. Full native engineering acceptance passed:1979 source and installed-wheel regressions and454 browser checks. No status or model-quality promotion."
+    },
+    "EV-SPECIALIST-PRESENTATION-20261026": {
+      "kind": "local_engineering",
+      "path": "docs/delivery/sessions/2026-10-26-specialist-presentation.md",
+      "result": "Exact ba1fd41 native source/artifacts matched:2038 source tests,2038 installed-wheel regressions,24 JS modules,466 checks across13 native suites. Read-only retained comparison only; no inference, quality approval, merge or release."
+    },
+    "EV-INFORMATION-LOOP-20261026": {
+      "kind": "local_engineering",
+      "path": "docs/delivery/sessions/2026-10-26-information-loop.md",
+      "result": "Exact a7cc1d6 native source/artifacts matched:2057 source tests,2057 installed-wheel regressions,24 JS modules,474 checks across13 native suites. Explicit questions and separate observations/rechecks only; no inference, predictive/quality/production approval."
+    },
+    "EV-SONNET-NATIVE-20261026": {
+      "kind": "real_model_evaluation",
+      "path": "docs/delivery/sessions/2026-10-26-sonnet-native.md",
+      "result": "Actual Sonnet four-fixture generation and scripted 20-step native journey passed; failed attempts retained. Exact software code 6ce6151 passed 2090 source + 2090 installed-wheel tests, 24 JS modules and all 13 native suites/474 checks; inspected before documentation closeout. Independent quality/human/production gates remain open.",
+      "code_commit": "6ce61517d7dac347d98170b66274917f3f2e5006",
+      "url": "https://github.com/EmotiveImpact/8ball/commit/6ce61517d7dac347d98170b66274917f3f2e5006"
+    },
+    "EV-NATIVE-USAGE-20261026": {
+      "kind": "controlled_http_tests",
+      "path": "docs/delivery/sessions/2026-10-26-native-usage.md",
+      "result": "Five controlled failures retained before correction. Exact 08b1cde code passed 2096 source + 2096 installed-wheel tests, 24 JS modules, compilation and all 13 native suites / 474 checks. Inspected before documentation closeout. No additional model calls or change to prior complete usage estimates; independent gates remain open.",
+      "code_commit": "08b1cde2bdf3fa091576b25b2484d45602c69d4b",
+      "url": "https://github.com/EmotiveImpact/8ball/commit/08b1cde2bdf3fa091576b25b2484d45602c69d4b"
+    },
+    "EV-SONNET-LIFECYCLE-20261026": {
+      "kind": "real_model_evaluation",
+      "path": "docs/delivery/sessions/2026-10-26-provider-lifecycle.md",
+      "code_commit": "a31283785f6ccc2a5c31b9b936a9da353dcfb3fe",
+      "url": "https://github.com/EmotiveImpact/8ball/commit/a31283785f6ccc2a5c31b9b936a9da353dcfb3fe",
+      "result": "Five fresh Sonnet generation requests passed all four frozen fixtures; source-matched configured-provider lifecycle passed cancel, supersede and owned restart with three first-stage admissions and no publication, further stage or unintended mutation. Remote receipt/completion/billing unknown; no UI/human/semantic acceptance. Full software verification recorded separately."
+    },
+    "EV-HISTORICAL-REPLAY-20261026": {
+      "kind": "real_model_evaluation",
+      "path": "docs/delivery/sessions/2026-10-26-historical-replay.md",
+      "result": "One masked actual Sonnet response: p=0.45, observed=false, Brier=0.2025 versus 0.25. Model admitted recognition; two source-summary errors retained. Inconclusive retrospective diagnostic, not independent prediction evidence. 52 offline protocol and 34 forecast tests pass; full software closeout remains separate."
+    },
+    "EV-LIFECYCLE-SOFTWARE-20261026": {
+      "kind": "native_browser",
+      "path": "docs/delivery/sessions/2026-10-26-provider-lifecycle.md",
+      "code_commit": "e3c92f05db73627d0c368aad919d00142fc85819",
+      "url": "https://github.com/EmotiveImpact/8ball/commit/e3c92f05db73627d0c368aad919d00142fc85819",
+      "result": "Exact e3c92f0 software passed 2100 source and installed-wheel tests, 24 JS modules and 475 native checks in 13 suites. All failed/partial runs retained. No model inference during software repair; actual-provider evidence retains its original source binding. Independent semantic, human, predictive and production gates remain open."
+    },
+    "EV-HISTORICAL-COMPARISON-20261026": {
+      "kind": "real_model_evaluation",
+      "path": "docs/delivery/sessions/2026-10-26-historical-comparison.md",
+      "result": "Five single actual native responses on corrected HR-002: Sonnet .55, Opus .40, Jev .80, Clef .65, GPT .80; decision estimates are selected coarse bands, not API confidence. All indicate recognition; inconclusive, not predictive-quality acceptance. Original HR-001 preserved. 149 focused tests passed; full native software checks separate. Exact-source native software acceptance at cd9335f passed 2152 source + 2152 installed tests and 475 browser checks. Next-set GLM uncensored/DeepSeek Flash are catalogue-only; not a coordinated swarm test."
+    },
+    "EV-COORDINATED-PLANNING-20261026": {
+      "kind": "local_engineering",
+      "path": "docs/delivery/sessions/2026-10-26-coordinated-planning.md",
+      "result": "163 controlled-method/HTTP/SQLite host checks passed; original proposal, full independent panel and separate revision remain advisory. Every provider boundary rejects changed authority/configuration/credential/revision/lease. Planning cost is explicitly unpriced under finite call/token permission; unknown specialist cost stops revision. Full native/wheel verification pending; no new inference, prediction, quality or release claim."
+    },
+    "EV-COORDINATED-NATIVE-20261026": {
+      "kind": "local_native",
+      "path": "docs/evidence/coordinated-planning-software-2026-10-26.json",
+      "result": "4e0f635 / 5812182a0bd4b809b5e5e87ee23655e2cb6af70a2920572eb283b3e324d3b98a: 2306 source + 2306 installed-wheel tests, 24 JS modules and 475 checks in 13 native browser suites passed. Exact source/evidence inspected valid before docs closeout. No live inference, UI projection, predictive quality, merge or deployment."
+    },
+    "EV-COORDINATED-EVAL-PREP-20261026": {
+      "kind": "controlled_software_verification",
+      "path": "docs/delivery/sessions/2026-10-26-coordinated-evaluation.md",
+      "result": "Frozen fictional method diagnostic harness: 30 dedicated/444 combined controlled provider+real-host tests passed; exact model/mode/source binding, no replay, set-wide stopping and per-call safe receipt checkpoints. Full native and live experiment pending; no quality or prediction claim."
+    },
+    "EV-COORDINATED-EVAL-FIRST-20261026": {
+      "kind": "failed_real_model_evaluation",
+      "path": "docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json",
+      "result": "00cc0a7 native passed: 2336 source/2336 wheel tests and 475 native browser checks. Separate frozen live run: 5 requests, zero revisions; GLM fenced JSON, DeepSeek unsupported response, Sonnet initial valid/Jev cost unknown. Clef/GPT/Opus not called. All failures retained, no case mutation or quality/prediction claim."
+    },
+    "EV-PROVIDER-DIAGNOSTICS-20261026": {
+      "kind": "native_software_acceptance",
+      "path": "docs/evidence/provider-diagnostics-software-2026-10-26.json",
+      "result": "2355 source tests, 2355 installed-wheel regressions, 24 JavaScript modules and 475 native checks in 13 suites passed at f22f967. Safe failure projection only. No cost normalisation, live retry or quality acceptance."
+    },
+    "EV-NATIVE-COST-POLICY-20261026": {
+      "kind": "controlled_tests",
+      "path": "docs/delivery/sessions/2026-10-26-native-cost-policy.md",
+      "result": "616 focused controlled checks passed; fixed provider/funding units, no rounding, original response/body hashes, conflicting costs and queued/in-flight policy checks. No live call or quality approval."
+    },
+    "EV-NATIVE-COST-VERIFIED-20261026": {
+      "kind": "native_software_acceptance",
+      "path": "docs/evidence/native-cost-policy-software-2026-10-26.json",
+      "result": "2445 source tests, 2445 installed-wheel regressions, 24 JavaScript modules and 475 native checks in 13 suites passed at 5780368. Exact source/artifact inspection valid before documentation closeout; no model inference. Confirmed funding/USD only; raw precision and contradictory fields remain explicit. No original-run repair or quality promotion."
+    },
+    "EV-COORD-NATIVE-COST-LIVE-20261026": {
+      "kind": "actual_provider_evaluation",
+      "path": "docs/evidence/coordinated-native-cost-live-2026-10-26.json",
+      "result": "Incomplete: Sonnet initial+all 3 specialists retained; revision overlength rejected. Opus fenced JSON rejected. 7 requests, 37926 reported specialist nano-USD; no final synthesis, case mutation or quality approval."
+    },
+    "EV-DRAFT-OUTPUT-V4-20261026": {
+      "kind": "controlled_tests",
+      "path": "docs/delivery/sessions/2026-10-26-draft-output-contract.md",
+      "result": "Stronger bare-object/length/enabling-work instructions; unchanged validators. 477 focused checks pass, including offline retention/rejection of real failed outputs. No inference or semantic acceptance."
+    },
+    "EV-DRAFT-OUTPUT-NATIVE-20261026": {
+      "kind": "native_acceptance",
+      "path": "docs/evidence/draft-output-v4-software-2026-10-26.json",
+      "result": "Exact d85742d source; 2455 source/2455 installed tests, 24 JS modules and 475 checks/13 native suites passed. No live inference or semantic acceptance."
+    },
+    "EV-COORDINATED-V4-LIVE-20261026": {
+      "kind": "actual_provider_diagnostic",
+      "path": "docs/evidence/coordinated-draft-v4-live-2026-10-26.json",
+      "result": "10 actual requests: Opus completed original, three challenges and revision; Sonnet/GLM draft invalid, DeepSeek null-content length stop. All cases/source unchanged. Partial set, no repair/retry/quality approval."
+    },
+    "EV-COORDINATED-UI-20261026": {
+      "kind": "controlled_native_ui",
+      "path": "docs/evidence/coordinated-result-ui-native-2026-10-26.json",
+      "result": "Source 11e328c1eaa3ed6817cdb794e1878410b85a8de3: 2493 source + 2493 wheel tests and 493 native checks; inspected valid/passed. No inference, model-quality or release approval."
     },
     "EV-SECURITY-FIXES": {
       "kind": "controlled_security_regression_and_native_receipt",
@@ -714,22 +1600,28 @@
       "title": "Questions, What Changed and isolated What If",
       "status": "verified",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "Devin / integration",
+      "working_branch": "devin/1792969169-roadmap-integrated",
+      "base_commit": "585cb3193e3ff3771870e5917309b2b1e2416227",
+      "updated_on": "2026-10-26",
       "code_paths": [
         "eightball/v2/planner.py",
-        "eightball/v2/services.py"
+        "eightball/v2/services.py",
+        "endstate/rehearsal.py",
+        "eightball/v2/rehearsal.py",
+        "web/v2/rehearsal-view.js",
+        "tests/test_rehearsal.py",
+        "tests/browser_plan_review.py"
       ],
       "depends_on": [],
       "acceptance": "Graph-impact questions and recorded revision deltas operate; hypothetical state changes leave the live case unchanged.",
       "evidence": [
         "EV-APP",
-        "EV-UI"
+        "EV-UI",
+        "EV-INFORMATION-LOOP-20261026"
       ],
       "blockers": [],
-      "next_action": "Connect future ingestion only through reviewed revisioned updates."
+      "next_action": "Connect future ingestion only through reviewed revisioned updates. Information-loop integration: exact-source verification passed; see docs/delivery/sessions/2026-10-26-information-loop.md; independent operator benefit and agency disclosure remain separate."
     },
     {
       "id": "B02-06",
@@ -807,10 +1699,10 @@
       "title": "Reliable reviewed graph proposals for new situations",
       "status": "blocked",
       "required": true,
-      "owner": "Codex",
-      "working_branch": "feat/v02-review-evidence-20261018",
-      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
-      "updated_on": "2026-10-18",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-26",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "evals/live_generation.py",
@@ -837,13 +1729,18 @@
         "EV-EVALUATION-READINESS",
         "EV-REVIEW-EVIDENCE-20261018",
         "EV-ANTHROPIC-SETUP",
-        "EV-OCT25-INTEGRATION"
+        "EV-ANTHROPIC-20261026",
+        "EV-OCT25-INTEGRATION",
+        "EV-DECISION-CONTRACTS-20261026",
+        "EV-SONNET-NATIVE-20261026",
+        "EV-NATIVE-USAGE-20261026",
+        "EV-PROVIDER-DIAGNOSTICS-20261026"
       ],
       "blockers": [
-        "Owner selected Anthropic, with prepared claude-sonnet-4-6 compatibility settings; account availability/pricing, active credentials/destination and real inference remain unverified. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, supply key securely and Save/Publish. Fictional fixtures up to US$5 remain authorised.",
+        "Native Sonnet frozen generation and actual-provider native journey now pass. Account cap absence explicitly accepted for bounded fictional tests; no cap is claimed. Independent semantic/reliability acceptance remains outstanding.",
         "Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate."
       ],
-      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate. Latest integration: see sessions/2026-10-26-sonnet-native.md. Native actual-provider engineering now passes; retain independent protocol/held-out labels and human gates. Do not re-block this authorised test on dashboard login or assume a provider cap. No reserved lane owner/status/acceptance change. Safe provider rejection projection passed source-bound native acceptance at f22f967. Preserve original five-request failed diagnostic. Native cost mapping remains unimplemented; three read-only old-request cost receipts and broader gateway funding documentation now support a provider-scoped investigation (EM-331/EM-332). Preserve unknown/BYOK/unit boundaries before a separately frozen diagnostic."
     },
     {
       "id": "B02-10",
@@ -851,10 +1748,10 @@
       "title": "Robust source extraction, deadlines and entity reconciliation",
       "status": "partial",
       "required": true,
-      "owner": "Codex",
-      "working_branch": "fix/v02-provider-failure-evidence-20261015",
-      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
-      "updated_on": "2026-10-15",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "endstate/time_review.py",
@@ -878,7 +1775,7 @@
         "Independent multi-source identity/date usefulness review remains outstanding.",
         "No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed."
       ],
-      "next_action": "Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Evaluate multi-source identity/date workflows with professional fixtures; preserve exact source and preview/apply boundaries."
     },
     {
       "id": "B02-11",
@@ -886,10 +1783,10 @@
       "title": "Independent quality evaluation and production-model selection",
       "status": "partial",
       "required": true,
-      "owner": "Codex",
-      "working_branch": "feat/v02-review-evidence-20261018",
-      "base_commit": "e513237f5b66c0689fa870e0d82873d8b71e4d8a",
-      "updated_on": "2026-10-18",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-26",
       "code_paths": [
         "evals/live_generation.py",
         "evals/classification-cases.json",
@@ -913,12 +1810,35 @@
         "EV-NATIVE-CLOSEOUT",
         "EV-PROVIDER-FAILURE-REVIEW",
         "EV-EVALUATION-READINESS",
-        "EV-REVIEW-EVIDENCE-20261018"
+        "EV-REVIEW-EVIDENCE-20261018",
+        "EV-REVIEW-REFRESH-RACE",
+        "EV-NATIVE-REVIEW-20261026",
+        "EV-DECISION-SMOKE-20261026",
+        "EV-FORECAST-MEASUREMENT-20261026",
+        "EV-SPECIALIST-WORKER-20261026",
+        "EV-SPECIALIST-PRESENTATION-20261026",
+        "EV-SONNET-NATIVE-20261026",
+        "EV-HISTORICAL-REPLAY-20261026",
+        "EV-HISTORICAL-COMPARISON-20261026",
+        "EV-PROVIDER-JSON-MODE-20261026",
+        "EV-PROVIDER-JSON-NATIVE-20261026",
+        "EV-COORDINATED-PLANNING-20261026",
+        "EV-COORDINATED-NATIVE-20261026",
+        "EV-COORDINATED-EVAL-PREP-20261026",
+        "EV-COORDINATED-EVAL-FIRST-20261026",
+        "EV-PROVIDER-DIAGNOSTICS-20261026",
+        "EV-NATIVE-COST-POLICY-20261026",
+        "EV-NATIVE-COST-VERIFIED-20261026",
+        "EV-COORD-NATIVE-COST-LIVE-20261026",
+        "EV-DRAFT-OUTPUT-V4-20261026",
+        "EV-DRAFT-OUTPUT-NATIVE-20261026",
+        "EV-COORDINATED-V4-LIVE-20261026",
+        "EV-COORDINATED-UI-20261026"
       ],
       "blockers": [
         "Independent reviewer labels, approved prospective protocol and actual-provider comparison are not completed."
       ],
-      "next_action": "Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Obtain genuine prospective owner/qualified reviewer approval and independently authored held-out labels. Existing manual v1 forms remain legitimate; optional v2 forms/offline checker identify recording gaps without granting acceptance. Run authorised actual-provider comparisons only afterward; neither templates nor native software checks are semantic approval. Integration follow-up: verify the reviewed specialist worker checkpoint in docs/delivery/sessions/2026-10-26-specialist-worker.md; preserve partial status and all remaining gates. Read-only presentation follow-up: docs/delivery/sessions/2026-10-26-specialist-presentation.md. No acceptance status or reserved lane ownership change. Latest integration: see sessions/2026-10-26-sonnet-native.md. Native actual-provider engineering now passes; retain independent protocol/held-out labels and human gates. Do not re-block this authorised test on dashboard login or assume a provider cap. No reserved lane owner/status/acceptance change. Corrected five-model diagnostic: sessions/2026-10-26-historical-comparison.md. All indicate recognition; stop reusing this transaction. Next predictive evidence requires prospective/held-out representative cases and declared baselines, not another rerun. No lane owner/status/acceptance change. Owner-selected next-set additions: glm-5.3-uncensored and deepseek-v4.1-flash (catalogue-only). Respect explicit output capability contracts; no silent schema fallback. Distinguish independent panel from coordinated system and compare with a single-model baseline. Bounded coordinated backend integration: sessions/2026-10-26-coordinated-planning.md. Native/wheel checkpoint 4e0f635 is source-verified; freeze the fictional baseline/panel/coordinated diagnostic next. Exact GLM/DeepSeek live calls and readable coordinated presentation remain unimplemented; no quality, scope or reserved-lane promotion. Bounded fictional diagnostic preparation: sessions/2026-10-26-coordinated-evaluation.md; verify exact harness source, freeze and run selected profiles once. Shared-stage baselines are not independent replications; no owner, acceptance or partial-status change. First frozen live attempt failed/partial (five requests, no revision). Preserve exact source/evidence; diagnose native cost-unit mapping and rejected-envelope metadata offline before any new separately frozen attempt. Opus/Clef/GPT were not called. See EM-331 and evaluation session closeout; no gate promotion. Safe provider rejection projection passed source-bound native acceptance at f22f967. Preserve original five-request failed diagnostic. Native cost mapping remains unimplemented; three read-only old-request cost receipts and broader gateway funding documentation now support a provider-scoped investigation (EM-331/EM-332). Preserve unknown/BYOK/unit boundaries before a separately frozen diagnostic. Provider-scoped cost adapter follow-up: sessions/2026-10-26-native-cost-policy.md. Controlled tests pass; full source-bound native/package acceptance and additive publication next. No new inference or original-run repair; preserve all independent/human/quality gates and lane ownership. Native cost follow-up now passed full native/package acceptance at 5780368 (EV-NATIVE-COST-VERIFIED-20261026), superseding its pending-check note. Next publish documentation and freeze a separate fictional diagnostic; do not resume the original five-request run or known historical case. All human/independent/pilot/production gates and reserved ownership remain unchanged. Separate bbcb8c4 native-cost follow-up now retained as partial/failed: full Sonnet challenge panel then overlength revision; Opus fenced JSON. Next tighten versioned draft instructions without relaxing rejection, preserve semantic omissions and build readable coordinated results. No current inference protocol may be resumed. Prompt v4 now clarifies JSON/length and enabling-work requirements with unchanged validators; 477 controlled checks pass. Next full native/package verification and a separately frozen diagnostic; no claim that instructions fix model compliance or semantic quality. Native software acceptance now passes on d85742d. Next separately frozen actual-provider diagnostic and read-only coordinated-result presentation. Stronger instructions remain live/semantic-unverified. New frozen v4 actual-provider set retained: 10 requests, one complete Opus method, Sonnet/GLM/DeepSeek failures; no quality pass. Next read-only original/challenges/revision/failure UI without more inference. Read-only coordinated stages now implemented locally with 294 focused checks/57 native browser checks; finish full native/package verification. No model-quality or production promotion. Native closeout supersedes the preceding pending UI verification: 11e328c1eaa3ed6817cdb794e1878410b85a8de3 passes 2493 source/2493 wheel/493 native checks; readable stages are implemented, not independent acceptance. Publish and settle CI; independent qualified review and an explicitly authorised outcome pilot remain separate human gates. No reserved lane ownership or acceptance change."
     },
     {
       "id": "B02-12",
@@ -926,10 +1846,10 @@
       "title": "Full twenty-step real-model V0.2 acceptance journey",
       "status": "blocked",
       "required": true,
-      "owner": "Codex",
-      "working_branch": "feat/v02-review-evidence-20261018",
-      "base_commit": "e513237f5b66c0689fa870e0d82873d8b71e4d8a",
-      "updated_on": "2026-10-18",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-26",
       "code_paths": [
         "tests/browser_v2.py",
         "evals/full_journey.py",
@@ -955,12 +1875,15 @@
         "EV-COMPATIBLE-CODE",
         "EV-EVALUATION-READINESS",
         "EV-REVIEW-EVIDENCE-20261018",
-        "EV-OCT25-INTEGRATION"
+        "EV-OCT25-INTEGRATION",
+        "EV-NATIVE-REVIEW-20261026",
+        "EV-DECISION-SMOKE-20261026",
+        "EV-SONNET-NATIVE-20261026"
       ],
       "blockers": [
-        "Full real-provider and genuinely human twenty-step journey remains unperformed; controlled-response native integration is not that journey."
+        "Actual-provider scripted native twenty-step journey now passes; genuinely human acceptance and independent quality remain unperformed. Scripted review and synthetic observations do not meet those gates."
       ],
-      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate. Latest integration: see sessions/2026-10-26-sonnet-native.md. Native actual-provider engineering now passes; retain independent protocol/held-out labels and human gates. Do not re-block this authorised test on dashboard login or assume a provider cap. No reserved lane owner/status/acceptance change."
     },
     {
       "id": "B02-13",
@@ -998,10 +1921,10 @@
       "title": "Source chunking, duplication and reviewer-safe object reconciliation",
       "status": "partial",
       "required": true,
-      "owner": "Codex",
-      "working_branch": "fix/v02-provider-failure-evidence-20261015",
-      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
-      "updated_on": "2026-10-15",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [
         "eightball/v2/source_contracts.py",
         "eightball/v2/source_desk.py",
@@ -1017,7 +1940,10 @@
         "tests/test_time_review.py",
         "tests/test_grounding.py",
         "tests/browser_grounding.py",
-        "tests/test_source_view_races.py"
+        "tests/test_source_view_races.py",
+        "docs/delivery/lane-reports/intelligence.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
       ],
       "depends_on": [],
       "acceptance": "Longer sources retain exact provenance; duplicates and entity merges cannot rewrite observed meanings or lose attribution.",
@@ -1027,13 +1953,15 @@
         "EV-SOURCE-CLARITY-LOCAL",
         "EV-SOURCE-SEARCH-RACE",
         "EV-NATIVE-CLOSEOUT",
-        "EV-PROVIDER-FAILURE-REVIEW"
+        "EV-PROVIDER-FAILURE-REVIEW",
+        "EV-LANE-INTELLIGENCE-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
       ],
       "blockers": [
         "Independent multi-source identity/date usefulness review remains outstanding.",
         "No automatic coreference, global actor merge, business-calendar semantics or reliable arbitrary model extraction is claimed."
       ],
-      "next_action": "Complete professional source/reconciliation review; keep native original/excerpt/export and request-order regressions."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Complete professional source/reconciliation review; keep native original/excerpt/export and request-order regressions. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "B02-15",
@@ -1041,9 +1969,9 @@
       "title": "Model progress/cancellation and accurate installation status",
       "status": "partial",
       "required": true,
-      "owner": "Codex",
-      "working_branch": "room/check-repo-with-three-sub-agents-pj2t",
-      "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
       "updated_on": "2026-10-30",
       "code_paths": [
         "eightball/v2/analysis_jobs.py",
@@ -1053,6 +1981,9 @@
         "tests/test_compatible_integration.py",
         "evals/provider_lifecycle.py",
         "tests/test_provider_lifecycle.py",
+        "docs/delivery/lane-reports/intelligence.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md",
         "eightball/providers.py",
         "eightball/v2/intelligence.py",
         "evals/live_generation.py",
@@ -1072,12 +2003,18 @@
         "EV-EVALUATION-READINESS",
         "EV-ANTHROPIC-SETUP",
         "EV-OCT25-INTEGRATION",
+        "EV-LANE-INTELLIGENCE-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026",
+        "EV-NATIVE-REVIEW-20261026",
+        "EV-DECISION-SMOKE-20261026",
+        "EV-SONNET-LIFECYCLE-20261026",
+        "EV-LIFECYCLE-SOFTWARE-20261026",
         "EV-SECURITY-FIXES"
       ],
       "blockers": [
-        "Lifecycle behaviour with the selected real inference provider remains unverified."
+        "Selected Sonnet API/process cancellation, supersession and restart observations pass; actual-provider native-UI lifecycle/installation-status acceptance remain unverified. Remote receipt, cancellation and billing are not established by local job states."
       ],
-      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately. Integration lifecycle checkpoint: retain the source-matched Sonnet API/process evidence and unknown remote states. Complete the remaining actual-provider native-UI lifecycle/installation-status review without treating software results as human or provider-side cancellation acceptance."
     },
     {
       "id": "B02-16",
@@ -1085,10 +2022,10 @@
       "title": "Complete accessibility and supported-environment validation",
       "status": "partial",
       "required": true,
-      "owner": "Codex",
-      "working_branch": "fix/v02-provider-failure-evidence-20261015",
-      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
-      "updated_on": "2026-10-15",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [
         "tests/browser_accessibility.py",
         "web/v2/ui.js",
@@ -1112,7 +2049,7 @@
       "blockers": [
         "Human screen-reader and supported-browser/OS review remains outstanding; Linux/Chromium native software tests passed."
       ],
-      "next_action": "Complete the recorded human accessibility and supported-platform review, not another UI feature. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Complete the recorded human accessibility and supported-platform review, not another UI feature. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations."
     },
     {
       "id": "B02-17",
@@ -1146,11 +2083,15 @@
       "title": "V0.2 acceptance and release decision",
       "status": "blocked",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "B02-01",
         "B02-02",
@@ -1176,86 +2117,121 @@
       "evidence": [
         "EV-QWEN",
         "EV-MAIN-CONSOLIDATION",
-        "EV-OCT25-INTEGRATION"
+        "EV-OCT25-INTEGRATION",
+        "EV-LANE-INTELLIGENCE-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
       ],
       "blockers": [
         "Real-model journey and developer-quality work remain unaccepted."
       ],
-      "next_action": "Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "B03-01",
       "milestone": "B03",
       "title": "Identity, organisations and matter-scoped authorisation",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-identity",
+      "working_branch": "devin/1792969169-roadmap-identity",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "eightball/authorisation.py",
+        "tests/test_authorisation.py",
+        "eightball/agency_access.py",
+        "tests/test_agency_access.py",
+        "eightball/v2/event_api.py",
+        "web/v2/event-review.js",
+        "tests/browser_event_review.py",
+        "docs/delivery/lane-reports/identity.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [],
       "acceptance": "Authenticated identities and cross-tenant/matter denial tests cover read, write, export, search and model inference.",
       "evidence": [
-        "EV-SECURITY"
+        "EV-SECURITY",
+        "EV-AGENCY-POLICY",
+        "EV-AGENCY-API",
+        "EV-EVENT-API",
+        "EV-EVENT-REVIEW-UI",
+        "EV-LANE-IDENTITY-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
       ],
       "blockers": [],
-      "next_action": "Implement from the approved production threat model."
+      "next_action": "Coordination claim: identity; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "B03-02",
       "milestone": "B03",
       "title": "Encrypted evidence vault and retention controls",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-vault",
+      "working_branch": "devin/1792969169-roadmap-vault",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "docs/delivery/lane-reports/vault.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "B03-01"
       ],
       "acceptance": "Immutable originals, hashes, upload quarantine/scanning, encryption, retention/hold/deletion and audited access are tested.",
       "evidence": [
-        "EV-SECURITY"
+        "EV-SECURITY",
+        "EV-LANE-VAULT-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
       ],
       "blockers": [],
-      "next_action": "Implement without weakening source provenance."
+      "next_action": "Coordination claim: vault; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Implement without weakening source provenance. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "B03-03",
       "milestone": "B03",
       "title": "Scoped specialist collaboration and real client portal",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-collaboration",
+      "working_branch": "devin/1792969169-roadmap-collaboration",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "docs/delivery/lane-reports/collaboration.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "B03-01",
         "B03-02"
       ],
       "acceptance": "Experts receive revocable matter/object grants; clients receive separately reviewed projections, never internal records by default.",
       "evidence": [
-        "EV-SECURITY"
+        "EV-SECURITY",
+        "EV-LANE-COLLABORATION-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
       ],
       "blockers": [],
-      "next_action": "Build authenticated views rather than relabelling the existing preview."
+      "next_action": "Coordination claim: collaboration; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Build authenticated views rather than relabelling the existing preview. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "B03-04",
       "milestone": "B03",
       "title": "Authorised ingestion, event handling and notifications",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-events",
+      "working_branch": "devin/1792969169-roadmap-events",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-26",
+      "code_paths": [
+        "docs/delivery/lane-reports/events.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "B03-01",
         "ES02-01",
@@ -1263,29 +2239,39 @@
       ],
       "acceptance": "Actual source connectors, durable updates and notifications respect permissions, source review, ordering and retry limits.",
       "evidence": [
-        "EV-SECURITY"
+        "EV-SECURITY",
+        "EV-LANE-EVENTS-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026",
+        "EV-SPECIALIST-WORKER-20261026",
+        "EV-SPECIALIST-PRESENTATION-20261026"
       ],
       "blockers": [],
-      "next_action": "Build one authorised connector through ENDSTATE event contracts."
+      "next_action": "Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Build one authorised connector through ENDSTATE event contracts. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately. Integration follow-up: verify the reviewed specialist worker checkpoint in docs/delivery/sessions/2026-10-26-specialist-worker.md; preserve partial status and all remaining gates. Read-only presentation follow-up: docs/delivery/sessions/2026-10-26-specialist-presentation.md. No acceptance status or reserved lane ownership change."
     },
     {
       "id": "B03-05",
       "milestone": "B03",
       "title": "Independent audit checkpoints, recovery and operational monitoring",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-operations",
+      "working_branch": "devin/1792969169-roadmap-operations",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "docs/delivery/lane-reports/operations.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [],
       "acceptance": "Restore rehearsal, audit anchoring, revocation and operational incident tests pass without sensitive log leakage.",
       "evidence": [
-        "EV-SECURITY"
+        "EV-SECURITY",
+        "EV-LANE-OPERATIONS-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
       ],
       "blockers": [],
-      "next_action": "Set measurable service/recovery targets and test them."
+      "next_action": "Coordination claim: operations; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Set measurable service/recovery targets and test them. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "B03-06",
@@ -1293,11 +2279,15 @@
       "title": "Limited qualified-fixer pilot acceptance",
       "status": "not_started",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-operations",
+      "working_branch": "devin/1792969169-roadmap-operations",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "docs/delivery/lane-reports/operations.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "B02-18",
         "B03-01",
@@ -1307,9 +2297,12 @@
         "B03-05"
       ],
       "acceptance": "Authorised pilot users validate usefulness, safety, corrections and confidentiality; critical findings closed before wider release.",
-      "evidence": [],
+      "evidence": [
+        "EV-LANE-OPERATIONS-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
+      ],
       "blockers": [],
-      "next_action": "Recruit/review pilot criteria only after data and access gates pass."
+      "next_action": "Coordination claim: operations; fictional_pilot_tooling_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Recruit/review pilot criteria only after data and access gates pass. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "B04-01",
@@ -1317,61 +2310,80 @@
       "title": "Professionally reviewed fixer and crisis playbooks",
       "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [
-        "eightball/v2/playbooks.py"
+        "eightball/v2/playbooks.py",
+        "docs/delivery/lane-reports/intelligence.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
       ],
       "depends_on": [],
       "acceptance": "Specialists approve versioned patterns, assumptions, authority and confirmation criteria; examples are not presented as proven solutions.",
       "evidence": [
-        "EV-REMAINING"
+        "EV-REMAINING",
+        "EV-LANE-INTELLIGENCE-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
       ],
       "blockers": [],
-      "next_action": "Review existing starters with qualified operators."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Review existing starters with qualified operators. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "B04-02",
       "milestone": "B04",
       "title": "Governed precedent retrieval",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "B03-01",
         "B03-02"
       ],
       "acceptance": "Permissioned, source-linked precedent is case/matter scoped; access revocation and leakage tests pass. No automatic training.",
-      "evidence": [],
+      "evidence": [
+        "EV-LANE-INTELLIGENCE-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
+      ],
       "blockers": [],
-      "next_action": "Agree governance and retention before indexing previous cases."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Agree governance and retention before indexing previous cases. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "B04-03",
       "milestone": "B04",
       "title": "Measured operator benefit from richer resolution intelligence",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "B03-06",
         "B04-01",
         "B04-02"
       ],
       "acceptance": "Held-out/pilot evidence shows useful questions and plans without unsupported causal or success-probability claims.",
-      "evidence": [],
+      "evidence": [
+        "EV-LANE-INTELLIGENCE-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
+      ],
       "blockers": [],
-      "next_action": "Benchmark against the accepted baseline with real professional review."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Benchmark against the accepted baseline with real professional review. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "B10-01",
@@ -1379,18 +2391,25 @@
       "title": "Commercial onboarding, support and launch readiness",
       "status": "not_started",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-operations",
+      "working_branch": "devin/1792969169-roadmap-operations",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "docs/delivery/lane-reports/operations.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "B03-06"
       ],
       "acceptance": "Customer onboarding, support, service terms, brand/licence clearance and operating ownership are ready for the accepted scope.",
-      "evidence": [],
+      "evidence": [
+        "EV-LANE-OPERATIONS-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
+      ],
       "blockers": [],
-      "next_action": "Define commercial acceptance with the product owner; no inferred public release."
+      "next_action": "Coordination claim: operations; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Define commercial acceptance with the product owner; no inferred public release. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "B10-02",
@@ -1398,19 +2417,26 @@
       "title": "8BALL V1 fixer production release",
       "status": "not_started",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-operations",
+      "working_branch": "devin/1792969169-roadmap-operations",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "docs/delivery/lane-reports/operations.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "B10-01",
         "B04-03"
       ],
       "acceptance": "All advertised capabilities, security, accessibility, recovery, model policy and customer acceptance are evidenced for supported environments.",
-      "evidence": [],
+      "evidence": [
+        "EV-LANE-OPERATIONS-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
+      ],
       "blockers": [],
-      "next_action": "Record explicit release and deployment decisions after gates."
+      "next_action": "Coordination claim: operations; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Record explicit release and deployment decisions after gates. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "ES01-01",
@@ -1456,10 +2482,11 @@
       ],
       "acceptance": "8BALL calls the extracted core; the core imports no 8BALL UI, named client or fixer playbook.",
       "evidence": [
-        "EV-KERNEL"
+        "EV-KERNEL",
+        "EV-INFORMATION-LOOP-20261026"
       ],
       "blockers": [],
-      "next_action": "Continue 8BALL through the shared kernel; do not duplicate the planner for another domain."
+      "next_action": "Continue 8BALL through the shared kernel; do not duplicate the planner for another domain. Information-loop integration: exact-source verification passed; see docs/delivery/sessions/2026-10-26-information-loop.md; independent operator benefit and agency disclosure remain separate."
     },
     {
       "id": "ES01-03",
@@ -1546,6 +2573,8 @@
         "EV-INTEGRATION-LOCAL",
         "EV-INTEGRATION-BLOCKED",
         "EV-NATIVE-CLOSEOUT",
+        "EV-NATIVE-REVIEW-20261026",
+        "EV-LIFECYCLE-SOFTWARE-20261026",
         "EV-SECURITY-FIXES"
       ],
       "blockers": [],
@@ -1555,79 +2584,153 @@
       "id": "ES02-01",
       "milestone": "ES02",
       "title": "Normalised event and authority contract",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-events",
+      "working_branch": "devin/1792969169-roadmap-events",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "endstate/events.py",
+        "eightball/event_inbox.py",
+        "tests/test_event_inbox.py",
+        "docs/delivery/lane-reports/events.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "ES01-01"
       ],
       "acceptance": "Events carry source, version, occurrence/receipt time, matter scope and review status; incoming text never gets command authority.",
-      "evidence": [],
+      "evidence": [
+        "EV-EVENT-INBOX",
+        "EV-LANE-EVENTS-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
+      ],
       "blockers": [],
-      "next_action": "Define the observe/propose/review/commit/replan boundary."
+      "next_action": "Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Connect reviewed proposal/commit boundaries and a durable worker/outbox with scope and permission revalidation; preserve exact revision, cancellation and failed-attempt history. Inbox ingestion alone never applies case changes. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "ES02-02",
       "milestone": "ES02",
       "title": "Durable ordered updates, idempotency and replay",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-events",
+      "working_branch": "devin/1792969169-roadmap-events",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "endstate/events.py",
+        "eightball/event_inbox.py",
+        "tests/test_event_inbox.py",
+        "eightball/event_work.py",
+        "tests/test_event_work.py",
+        "eightball/v2/event_reviews.py",
+        "tests/test_event_reviews.py",
+        "eightball/v2/event_outbox.py",
+        "docs/delivery/lane-reports/events.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "ES02-01"
       ],
       "acceptance": "Duplicate, delayed, reordered and retried events cannot corrupt state or revive expired permissions.",
-      "evidence": [],
+      "evidence": [
+        "EV-EVENT-INBOX",
+        "EV-EVENT-WORK",
+        "EV-EVENT-CONSUMPTION",
+        "EV-EVENT-OUTBOX",
+        "EV-EVENT-CASE-BINDING-GAP",
+        "EV-EVENT-RESULT-SIZE",
+        "EV-EVENT-RESULT-RETENTION",
+        "EV-LANE-EVENTS-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
+      ],
       "blockers": [],
-      "next_action": "Implement event/outbox contracts and fault-injection tests."
+      "next_action": "Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "ES02-03",
       "milestone": "ES02",
       "title": "Reviewed graph amendments and affected-route explanations",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-events",
+      "working_branch": "devin/1792969169-roadmap-events",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "eightball/v2/event_reviews.py",
+        "tests/test_event_reviews.py",
+        "eightball/v2/event_api.py",
+        "tests/test_agency_access.py",
+        "web/v2/event-review.js",
+        "tests/browser_event_review.py",
+        "docs/delivery/lane-reports/events.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "ES02-01",
         "ES01-02"
       ],
       "acceptance": "New information can propose a graph/dependency change, but cannot remove restrictions until reviewed at the correct revision.",
-      "evidence": [],
+      "evidence": [
+        "EV-EVENT-CONSUMPTION",
+        "EV-EVENT-API",
+        "EV-EVENT-CASE-BINDING-GAP",
+        "EV-EVENT-REVIEW-UI",
+        "EV-EVENT-REVIEW-CSP-FAILURE",
+        "EV-LANE-EVENTS-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
+      ],
       "blockers": [],
-      "next_action": "Separate observed fact updates from catalogue/graph amendments."
+      "next_action": "Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Complete authenticated host worker dispatch, actual OIDC sign-in and measured event-to-review/replanning evidence. The scoped review page now uses the existing graph editor; preserve production isolation and genuine model/human acceptance gates. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "ES02-04",
       "milestone": "ES02",
       "title": "Freshness, cancellation and performance evidence",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-events",
+      "working_branch": "devin/1792969169-roadmap-events",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "eightball/event_work.py",
+        "tests/test_event_work.py",
+        "eightball/v2/event_reviews.py",
+        "tests/test_event_reviews.py",
+        "eightball/v2/event_outbox.py",
+        "eightball/v2/event_api.py",
+        "tests/test_agency_access.py",
+        "web/v2/event-review.js",
+        "tests/browser_event_review.py",
+        "docs/delivery/lane-reports/events.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "ES02-02",
         "ES02-03"
       ],
       "acceptance": "Measured latencies include ingestion, inference and review; incremental replan results match full recomputation; cancelled/stale work cannot commit.",
-      "evidence": [],
+      "evidence": [
+        "EV-EVENT-WORK",
+        "EV-EVENT-CONSUMPTION",
+        "EV-EVENT-OUTBOX",
+        "EV-EVENT-API",
+        "EV-EVENT-REVIEW-UI",
+        "EV-EVENT-RESULT-SIZE",
+        "EV-EVENT-RESULT-RETENTION",
+        "EV-LANE-EVENTS-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
+      ],
       "blockers": [],
-      "next_action": "Define target workloads and latency budgets before a real-time claim."
+      "next_action": "Coordination claim: events; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Integrate authenticated host worker dispatch with current case/permission rechecks and retained provider evidence, then measure end-to-end latency and replanning. Preserve actual OIDC, production isolation and independent/model/human gates. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "ES03-01",
@@ -1635,14 +2738,17 @@
       "title": "Provider-independent reviewed outcome compiler",
       "status": "partial",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "work/hf-black-drafting",
-      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
-      "updated_on": "2026-10-15",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "endstate/compilation.py",
-        "tests/test_endstate_compilation.py"
+        "tests/test_endstate_compilation.py",
+        "docs/delivery/lane-reports/intelligence.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
       ],
       "depends_on": [
         "ES01-01"
@@ -1654,10 +2760,12 @@
         "EV-STAGED-CODE",
         "EV-STAGED-MODEL",
         "EV-HF-BLACK-LOCAL",
-        "EV-GENERATION-ROLE-CONTRACT"
+        "EV-GENERATION-ROLE-CONTRACT",
+        "EV-LANE-INTELLIGENCE-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
       ],
       "blockers": [],
-      "next_action": "Validate the target-aware compiler on real providers without weakening acceptance; retain independent semantic review. This local change does not complete the compiler quality gate."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Validate the target-aware compiler on real providers without weakening acceptance; retain independent semantic review. This local change does not complete the compiler quality gate. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "ES03-02",
@@ -1665,10 +2773,10 @@
       "title": "Shared real-model semantic acceptance",
       "status": "blocked",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [],
       "depends_on": [
         "B02-09",
@@ -1682,7 +2790,7 @@
       "blockers": [
         "Failed real graph generation; no independent quality approval."
       ],
-      "next_action": "Resolve the 8BALL gate once and link the same evidence here."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Resolve the 8BALL gate once and link the same evidence here."
     },
     {
       "id": "ES03-03",
@@ -1690,10 +2798,10 @@
       "title": "Optional Jev live judgement integration",
       "status": "blocked",
       "required": false,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [
         "eightball/providers.py"
       ],
@@ -1705,7 +2813,7 @@
       "blockers": [
         "No authorised TypeSafe credentials supplied for live evaluation."
       ],
-      "next_action": "Configure through a secure runtime secret mechanism only when authorised."
+      "next_action": "Coordination claim: intelligence; optional_hold_no_implementation. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Configure through a secure runtime secret mechanism only when authorised."
     },
     {
       "id": "ES03-04",
@@ -1713,21 +2821,26 @@
       "title": "Local-model installation and live provider status",
       "status": "partial",
       "required": true,
-      "owner": "ChatGPT",
-      "working_branch": "work/hf-black-drafting",
-      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
-      "updated_on": "2026-09-23",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [
         "eightball/v2/runtime_status.py",
-        "eightball/v2/hosted.py"
+        "eightball/v2/hosted.py",
+        "docs/delivery/lane-reports/intelligence.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
       ],
       "depends_on": [],
       "acceptance": "Runtime, selected weights, version and connection status are actually detected; downloads are explicit and user-approved.",
       "evidence": [
-        "EV-HF-BLACK-LOCAL"
+        "EV-HF-BLACK-LOCAL",
+        "EV-LANE-INTELLIGENCE-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
       ],
       "blockers": [],
-      "next_action": "Retain truthful runtime/configuration status; complete setup/cancellation and actual-provider verification separately."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Retain truthful runtime/configuration status; complete setup/cancellation and actual-provider verification separately. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "ES03-05",
@@ -1735,10 +2848,10 @@
       "title": "Failure handling, model trace and governed provider selection",
       "status": "partial",
       "required": true,
-      "owner": "Codex",
-      "working_branch": "feat/v02-review-evidence-20261018",
-      "base_commit": "12ffdadb2f094e8f31fbd60486b5f775894b32ec",
-      "updated_on": "2026-10-18",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [
         "eightball/v2/intelligence.py",
         "eightball/v2/store.py"
@@ -1755,125 +2868,167 @@
         "EV-ANTHROPIC-SETUP"
       ],
       "blockers": [],
-      "next_action": "Retain new strict API transport traces and controlled failure evidence; evaluate the selected actual model and independent source/plan quality before closing the broader gate."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Retain new strict API transport traces and controlled failure evidence; evaluate the selected actual model and independent source/plan quality before closing the broader gate."
     },
     {
       "id": "ES04-01",
       "milestone": "ES04",
       "title": "Versioned domain-pack contract",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-domain-packs",
+      "working_branch": "devin/1792969169-roadmap-domain-packs",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "docs/delivery/lane-reports/domain-packs.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "ES01-04"
       ],
       "acceptance": "Domain packs supply vocabulary, object mappings, action catalogues, policies, confirmation rules, prompts and integrations without core forks.",
-      "evidence": [],
+      "evidence": [
+        "EV-LANE-DOMAIN-PACKS-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
+      ],
       "blockers": [],
-      "next_action": "Derive the contract from 8BALL and adjacent fixtures."
+      "next_action": "Coordination claim: domain-packs; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Derive the contract from 8BALL and adjacent fixtures. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "ES04-02",
       "milestone": "ES04",
       "title": "8BALL domain pack on ENDSTATE",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-domain-packs",
+      "working_branch": "devin/1792969169-roadmap-domain-packs",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "docs/delivery/lane-reports/domain-packs.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "ES04-01",
         "B02-17"
       ],
       "acceptance": "Fixer terminology/playbooks/experience are product-owned and use the shared contracts; existing routes/data remain compatible.",
-      "evidence": [],
+      "evidence": [
+        "EV-LANE-DOMAIN-PACKS-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
+      ],
       "blockers": [],
-      "next_action": "Separate domain responsibilities only where real code supports the boundary."
+      "next_action": "Coordination claim: domain-packs; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Separate domain responsibilities only where real code supports the boundary. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "ES04-03",
       "milestone": "ES04",
       "title": "Adjacent-domain proof and commercial-lane gate",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-domain-packs",
+      "working_branch": "devin/1792969169-roadmap-domain-packs",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "docs/delivery/lane-reports/domain-packs.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "ES04-01"
       ],
       "acceptance": "Sales/support examples run on the same engine with their own evaluation/permissions; new product launches need explicit approval.",
-      "evidence": [],
+      "evidence": [
+        "EV-LANE-DOMAIN-PACKS-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
+      ],
       "blockers": [],
-      "next_action": "Demonstrate reuse before considering sales, service or social-client products."
+      "next_action": "Coordination claim: domain-packs; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Demonstrate reuse before considering sales, service or social-client products. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "ES04-04",
       "milestone": "ES04",
       "title": "Decide and validate distribution interface",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-domain-packs",
+      "working_branch": "devin/1792969169-roadmap-domain-packs",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "docs/delivery/lane-reports/domain-packs.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "ES04-02",
         "ES04-03"
       ],
       "acceptance": "SDK/API/MCP options have a justified scope, auth/version contracts and consumer tests; do not declare all three products shipped.",
-      "evidence": [],
+      "evidence": [
+        "EV-LANE-DOMAIN-PACKS-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
+      ],
       "blockers": [],
-      "next_action": "Choose the smallest actual integration need with the owner."
+      "next_action": "Coordination claim: domain-packs; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Choose the smallest actual integration need with the owner. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "ES10-01",
       "milestone": "ES10",
       "title": "Compatibility, performance, licensing and support policy",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-domain-packs",
+      "working_branch": "devin/1792969169-roadmap-domain-packs",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "docs/delivery/lane-reports/domain-packs.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "ES04-04"
       ],
       "acceptance": "Supported engine consumers, migrations, limits, licences and operational ownership are documented and exercised.",
-      "evidence": [],
+      "evidence": [
+        "EV-LANE-DOMAIN-PACKS-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
+      ],
       "blockers": [],
-      "next_action": "Validate against real product/consumer requirements."
+      "next_action": "Coordination claim: domain-packs; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Validate against real product/consumer requirements. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "ES10-02",
       "milestone": "ES10",
       "title": "ENDSTATE V1 release gate",
-      "status": "not_started",
+      "status": "partial",
       "required": true,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-23",
-      "code_paths": [],
+      "owner": "Devin / roadmap-domain-packs",
+      "working_branch": "devin/1792969169-roadmap-domain-packs",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
+      "code_paths": [
+        "docs/delivery/lane-reports/domain-packs.md",
+        "eightball/agency_host.py",
+        "docs/v2/AGENCY-HOST.md"
+      ],
       "depends_on": [
         "ES10-01",
         "ES03-02",
         "ES02-04"
       ],
       "acceptance": "Reusable contracts and quality/support promises have evidence; independent release approval is recorded.",
-      "evidence": [],
+      "evidence": [
+        "EV-LANE-DOMAIN-PACKS-20261026",
+        "EV-INTEGRATION-ENGINEERING-20261026"
+      ],
       "blockers": [],
-      "next_action": "Do not block accepted 8BALL sales solely on a standalone-engine release."
+      "next_action": "Coordination claim: domain-packs; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Do not block accepted 8BALL sales solely on a standalone-engine release. Integration checkpoint: see docs/delivery/sessions/2026-10-26-roadmap-integration.md; preserve all existing blockers and complete required external acceptance separately."
     },
     {
       "id": "ES03-06",
@@ -1906,10 +3061,10 @@
       "title": "Actual hosted-model comparison on preserved fixtures",
       "status": "blocked",
       "required": false,
-      "owner": "Codex",
-      "working_branch": "feat/v02-evaluation-readiness-20261016",
-      "base_commit": "0fed04b5e299f4a2e53050456559133c1231b088",
-      "updated_on": "2026-10-16",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [
         "evals/live_huggingface.py",
         "evals/generation-cases.json"
@@ -1925,7 +3080,7 @@
       "blockers": [
         "No authorised HF token/model/provider configured; no real hosted inference performed."
       ],
-      "next_action": "After explicit configuration, run the manual hosted harness without changing the original four inputs; then use independent labelled cases before model selection."
+      "next_action": "Coordination claim: intelligence; optional_hold_no_implementation. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): After explicit configuration, run the manual hosted harness without changing the original four inputs; then use independent labelled cases before model selection."
     },
     {
       "id": "B02-19",
@@ -1933,10 +3088,10 @@
       "title": "Black operator visual system and transparent intelligence controls",
       "status": "partial",
       "required": true,
-      "owner": "Codex",
-      "working_branch": "fix/v02-provider-failure-evidence-20261015",
-      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
-      "updated_on": "2026-10-15",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [
         "web/v2/style.css",
         "web/v2/views.js",
@@ -1951,12 +3106,13 @@
         "EV-HF-BLACK-LOCAL",
         "EV-GRAPH-EXPLORER-LOCAL",
         "EV-NATIVE-CLOSEOUT",
-        "EV-PROVIDER-FAILURE-REVIEW"
+        "EV-PROVIDER-FAILURE-REVIEW",
+        "EV-AGENCY-API"
       ],
       "blockers": [
         "Owner visual review and broader human accessibility acceptance remain outstanding."
       ],
-      "next_action": "Review the current black workspace without expanding scope; preserve passing native controls. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Review the current black workspace without expanding scope; preserve passing native controls. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations."
     },
     {
       "id": "B02-20",
@@ -1964,10 +3120,10 @@
       "title": "Black relationship explorer with local focus, directed flow and records view",
       "status": "implemented",
       "required": true,
-      "owner": "Codex",
-      "working_branch": "fix/v02-provider-failure-evidence-20261015",
-      "base_commit": "45f8794733df9635d8daf5146a37fb94af9e8e90",
-      "updated_on": "2026-10-15",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [
         "web/v2/graph-model.js",
         "web/v2/graph-view.js",
@@ -1994,7 +3150,7 @@
       "blockers": [
         "Representative dense-case operator usability and broader accessibility review remain outstanding."
       ],
-      "next_action": "Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations."
+      "next_action": "Coordination claim: intelligence; engineering_only. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Review realistic graph density and operator comprehension; native graph controls/audit invariants now pass. Use the unperformed docs/delivery/review/HUMAN-ACCEPTANCE.template.md for the owner end review and appropriately qualified reviewers; record actual configurations and observations."
     },
     {
       "id": "DOC-04",
@@ -2093,10 +3249,10 @@
       "title": "Evidence-linked Emergent Insights and review workspace",
       "status": "implemented",
       "required": false,
-      "owner": "ChatGPT",
-      "working_branch": "feat/situation-intelligence-v2",
-      "base_commit": "14c57907d26ea914e372e544bba4b0bd3988f5dc",
-      "updated_on": "2026-09-26",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [
         "eightball/v2/insights.py",
         "web/v2/insights-view.js"
@@ -2113,7 +3269,7 @@
       "blockers": [
         "Operator acceptance remains outstanding; the complete native insight journey now passes."
       ],
-      "next_action": "Perform owner/fixer insight review without changing evidence/authority semantics."
+      "next_action": "Coordination claim: intelligence; optional_hold_no_implementation. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Perform owner/fixer insight review without changing evidence/authority semantics."
     },
     {
       "id": "ES02-05",
@@ -2145,10 +3301,10 @@
       "title": "Operator usefulness and full Emergent Insights acceptance",
       "status": "not_started",
       "required": false,
-      "owner": "ChatGPT",
-      "working_branch": "feat/emergent-insights-local",
-      "base_commit": "824ca6421ff3100e1af596347f2d1247dde8f8dc",
-      "updated_on": "2026-09-24",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [
         "docs/v2/EMERGENT-INSIGHTS.md"
       ],
@@ -2158,7 +3314,7 @@
       "acceptance": "Owner/operator review of false positives, missed patterns, duplicate noise, thresholds and the complete native review journey before the feature is accepted.",
       "evidence": [],
       "blockers": [],
-      "next_action": "Review false positives, missed findings, review burden and source interpretation with the owner/fixer; do not claim usefulness from code tests alone."
+      "next_action": "Coordination claim: intelligence; optional_hold_no_implementation. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Review false positives, missed findings, review burden and source interpretation with the owner/fixer; do not claim usefulness from code tests alone."
     },
     {
       "id": "B03-07",
@@ -2216,7 +3372,8 @@
       "acceptance": "Versioned neutral input/output contracts distinguish candidate routes from a host-authorised course; changes to consulted sources, targets, guards, authority, estimates, clocks and resources produce traceable reconsideration results. Unknown scope requires review. Existing approval invalidation is preserved.",
       "evidence": [
         "EV-CHOSEN-COURSE-LOCAL",
-        "EV-NATIVE-CLOSEOUT"
+        "EV-NATIVE-CLOSEOUT",
+        "EV-FOUR-SOURCE-20261026"
       ],
       "blockers": [
         "Original durable event prerequisites remain unaccepted.",
@@ -2230,10 +3387,10 @@
       "title": "Recover and reproduce reported human draft-repair implementation",
       "status": "blocked",
       "required": false,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-24",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [],
       "depends_on": [
         "ES03-01",
@@ -2246,7 +3403,7 @@
       "blockers": [
         "The latest supplied repair handoff explicitly reports that no completed working tree was found. Only verified alpha.7 source was recovered in this review."
       ],
-      "next_action": "Recover the exact later source/package or explicitly rebuild the bounded repair on the last verified source. Reproduce its actual tests before marking implemented; never relabel alpha.7 as the reported repair build."
+      "next_action": "Coordination claim: intelligence; optional_hold_no_implementation. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Recover the exact later source/package or explicitly rebuild the bounded repair on the last verified source. Reproduce its actual tests before marking implemented; never relabel alpha.7 as the reported repair build."
     },
     {
       "id": "B04-04",
@@ -2254,10 +3411,10 @@
       "title": "Permissioned correction replay and operator-value evaluation",
       "status": "deferred",
       "required": false,
-      "owner": null,
-      "working_branch": null,
-      "base_commit": null,
-      "updated_on": "2026-09-24",
+      "owner": "Devin / roadmap-intelligence",
+      "working_branch": "devin/1792969169-roadmap-intelligence",
+      "base_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+      "updated_on": "2026-10-25",
       "code_paths": [],
       "depends_on": [
         "B03-01",
@@ -2266,7 +3423,7 @@
       "acceptance": "An approved evaluation protocol measures the cost and benefit of suggestions/repairs on representative cases. Corrections retain provenance, access and retention limits; no cross-client retrieval or model training occurs without separate permission.",
       "evidence": [],
       "blockers": [],
-      "next_action": "Retain as an owner-review candidate. Define metrics and lawful dataset handling before collecting additional client information; no measured benefit is claimed."
+      "next_action": "Coordination claim: intelligence; optional_hold_no_implementation. Implement only the owned paths in ROADMAP-LANES.md; shared wiring and canonical ledger updates belong to integration. Prior next action (still subject to this bounded claim): Retain as an owner-review candidate. Define metrics and lawful dataset handling before collecting additional client information; no measured benefit is claimed."
     },
     {
       "id": "DOC-07",
@@ -2326,6 +3483,9 @@
     }
   ],
   "next_task_ids": [
+    "ES02-01",
+    "ES02-02",
+    "B03-01",
     "B02-09",
     "B02-10",
     "B02-11",

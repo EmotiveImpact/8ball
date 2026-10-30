@@ -4,6 +4,89 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 cumulative native verification · Retain source-bound native evidence for the cumulative integration
+
+2026-10-30 · `local_unreleased`
+
+Retain the unchanged original native acceptance report and a receipt bound to the exact security-plus-coordination integration source.
+
+### Added
+
+- Compressed unchanged native report and source-bound verification receipt for c0b4d63798bd762218e2125e3d2dd4dca5816820.
+
+### Changed
+
+- Current handoff and canonical checkpoint distinguish verified integration source from this later documentation and unfinished human/model/production gates.
+
+### Verification
+
+- 2561 source tests, 2561 installed-wheel regressions, 24 JavaScript modules and 493 native checks across thirteen suites passed.
+- 179 focused checks passed; exact source/artifact inspection valid before documentation closeout; history guards pass against both parents.
+- Staged credential-value scan passed; no values printed.
+
+### Limitations
+
+- Exact tested integration c0b4d63798bd762218e2125e3d2dd4dca5816820 only, not a full local rerun of later documentation.
+- Compressed unchanged report retains binary artifact hashes, not those binaries; exact local inspection passed before documentation closeout.
+- Both parents retain original changelog entries, all evidence and discovery observations; seven incoming ID collisions use explicit source-qualified relocations.
+- No new inference, paid retry, authority changes, main merge, deployment or release.
+- Independent semantic quality, human accessibility, operator benefit and production readiness remain separate open gates.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-347 now has focused tamper and both-parent preservation coverage; no additional discovery identified.
+- Risk: Software integration does not resolve deferred security hypotheses, independent quality, operator acceptance or production gates.
+- Architecture: Retain source-qualified relocation provenance without rewriting either parent changelog.
+- Roadmap decision: existing_task DOC-06; no acceptance promotion or new required product task.
+Registered discoveries: EM-347.
+
+Roadmap items: `DOC-06`, `B02-11`, `B02-15`, `ES01-05`.
+
+Evidence: [docs/evidence/cumulative-native-2026-10-30.json](docs/evidence/cumulative-native-2026-10-30.json), [docs/evidence/cumulative-native-passed-2026-10-30.json.xz](docs/evidence/cumulative-native-passed-2026-10-30.json.xz), [docs/delivery/sessions/2026-10-30-cumulative-integration.md](docs/delivery/sessions/2026-10-30-cumulative-integration.md).
+
+## 0.2.0-alpha.8 cumulative source integration · Retain security safeguards alongside coordinated planning
+
+2026-10-30 · `local_unreleased`
+
+Combine the newer static-path, bounded-provider and audited-migration safeguards with the existing coordinated planning and read-only result stages, retaining both source histories.
+
+### Added
+
+- Explicit source-qualified relocation receipts for seven colliding discovery IDs; both original records, histories and evidence remain inspectable.
+
+### Changed
+
+- Native Studio checks the canonical version, title and delivery badge with visible limits; retain the existing longer bounded installed-suite allowance.
+
+### Fixed
+
+- Parallel discovery IDs no longer replace unrelated observations during integration.
+
+### Verification
+
+- Focused checks and full native/package acceptance pending for this cumulative source; prior receipts remain bound to their exact original sources.
+
+### Limitations
+
+- No new inference, prediction claim, independent human acceptance, main merge, deployment or release.
+- Historical security changelog/receipt references EM-099 through EM-105 at 825ad6668c2c7d128da367476fe16cb8d214b837 resolve to EM-340 through EM-346 in the cumulative register; those original records are retained in id_relocations.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-347: matching IDs allocated independently do not establish that the underlying discoveries match.
+- Risk: An unqualified merge can silently erase or misattribute audit history.
+- Architecture: Require exact original text, decision-history prefixes and evidence preservation for every explicit relocation.
+- Roadmap decision: existing_task DOC-06 only; preserve every unfinished model, operator and release gate.
+Registered discoveries: EM-347.
+
+Roadmap items: `DOC-06`, `B02-11`, `B02-15`, `ES01-05`.
+
+Evidence: [docs/delivery/sessions/2026-10-30-cumulative-integration.md](docs/delivery/sessions/2026-10-30-cumulative-integration.md), [docs/evidence/security-fixes-2026-10-30.json](docs/evidence/security-fixes-2026-10-30.json), [docs/evidence/coordinated-result-ui-native-2026-10-26.json](docs/evidence/coordinated-result-ui-native-2026-10-26.json).
+
 ## 0.2.0-alpha.8 · Static-path, provider-response and legacy-lineage safeguards
 
 2026-10-30 · `pushed_unreleased`
@@ -55,6 +138,2779 @@ Registered discoveries: EM-099, EM-100, EM-101, EM-102, EM-103, EM-104, EM-105.
 Roadmap items: `B01-02`, `B02-15`, `ES01-03`, `B01-03`, `ES01-05`, `DOC-04`.
 
 Evidence: [docs/delivery/sessions/2026-10-30-security-fixes.md](docs/delivery/sessions/2026-10-30-security-fixes.md), [docs/evidence/security-fixes-2026-10-30.json](docs/evidence/security-fixes-2026-10-30.json).
+
+## 0.2.0-alpha.8 coordinated result source-bound verification · Retain verified native and installed-engine evidence for coordinated results
+
+2026-10-26 · `local_unreleased`
+
+All source, installed-wheel and 13 native browser suites pass at the exact coordinated-result implementation; inspection confirms original source/evidence bindings.
+
+### Added
+
+- Compressed unchanged native report and bound receipt for 11e328c1eaa3ed6817cdb794e1878410b85a8de3.
+
+### Changed
+
+- Canonical next action and handoff distinguish implemented readable stages from independent quality and human acceptance.
+
+### Verification
+
+- 2493 source tests and 2493 installed-wheel regressions, none skipped or failed.
+- 24 JavaScript modules and 493 native checks across 13 suites, including 57 event-review checks.
+- Source/evidence inspection valid/passed before documentation closeout; credential-value scan passed.
+
+### Limitations
+
+- Exact verified source 11e328c1eaa3ed6817cdb794e1878410b85a8de3 only; this later documentation does not inherit an unperformed full software run.
+- No new inference, price check, retry, repair, fallback, historical replay or resumed protocol.
+- Not independent semantic quality, human accessibility, usefulness or production acceptance. No merge, deployment or release.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-339 now has source-bound native coverage and offline actual-result checks; no additional discovery.
+- Risk: A fully readable result still does not resolve its objections or perform enabling work.
+- Architecture: Keep original, challenge, revision, failures, raw source and authority boundaries distinct.
+- Roadmap decision: existing_task B02-11; leave partial status and all human gates unchanged.
+Registered discoveries: EM-339.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/evidence/coordinated-result-ui-native-2026-10-26.json](docs/evidence/coordinated-result-ui-native-2026-10-26.json), [docs/evidence/coordinated-result-ui-native-passed-2026-10-26.json.xz](docs/evidence/coordinated-result-ui-native-passed-2026-10-26.json.xz), [docs/delivery/sessions/2026-10-26-coordinated-result-ui.md](docs/delivery/sessions/2026-10-26-coordinated-result-ui.md).
+
+## 0.2.0-alpha.8 coordinated result presentation · Read original plans, independent challenges and separate revisions without applying them
+
+2026-10-26 · `local_unreleased`
+
+Read-only incoming-review presentation reconstructs valid drafts and comparisons, preserves failed/missing stages, and checks source/stage bindings before showing typed results.
+
+### Added
+
+- Coordinated original/challenge/revision/diagnostic/synthesis sections with exact target quotes, conditional proposed work, unresolved differences, costs and hashes.
+- Offline projection coverage for all four actual v4 results, malformed records and canonical key reordering; native read-only, stale and revocation tests.
+
+### Changed
+
+- Existing specialist rendering reused for independent challenges; answer distributions remain explicitly uncalibrated.
+- Shared namespace and challenge-input construction extracted without changing inference behavior.
+
+### Verification
+
+- 294 focused Python checks passed; 57 native event-review browser checks passed.
+- Python compilation and changed JS syntax passed; full native/package acceptance pending.
+
+### Limitations
+
+- No new model inference, repair, retry, automatic action or case amendment.
+- Raw output retained when integrity cannot be reconstructed; hashes are not independent attestations.
+- No model-quality, human accessibility, operator benefit, production, merge/deployment/release approval.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-339: canonical object ordering is not the original byte-bound challenge input.
+- Risk: A polished result could be mistaken for resolved objections, permission or operational sufficiency.
+- Architecture: Recompile retained drafts and reconstruct comparisons locally; verify raw/semantic/input bindings; keep current authority and explicit human commands.
+- Roadmap decision: existing_task B02-11 presentation only; keep acceptance partial.
+Registered discoveries: EM-339.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-coordinated-result-ui.md](docs/delivery/sessions/2026-10-26-coordinated-result-ui.md), [eightball/v2/coordinated_results.py](eightball/v2/coordinated_results.py), [web/v2/event-review.js](web/v2/event-review.js), [tests/browser_event_review.py](tests/browser_event_review.py).
+
+## 0.2.0-alpha.8 coordinated v4 diagnostic · Retain one complete Opus method and three failed proposer attempts
+
+2026-10-26 · `local_unreleased`
+
+A fresh frozen actual-provider set records ten requests with source/case audit unchanged. Opus reaches a distinct revision after three independent challenges; the overall set remains partial/failed.
+
+### Added
+
+- Exact UTF-8 protocol, pre-call plan, admission, transport and result archive with hashes and credential scan.
+- EM-338 records full reported output allowance with no usable DeepSeek content.
+
+### Changed
+
+- One actual coordinated method is now observed complete. Minority insufficiency remains unresolved; independent usefulness/quality is not established.
+
+### Verification
+
+- Ten actual hosted/native requests: Opus 7, Sonnet 1, GLM 1, DeepSeek 1. All case audit chains and source unchanged.
+- Specialists report 39585 nano-USD; planning unpriced. No retries, fallback, key correction, truncation, substitution or historical replay.
+
+### Limitations
+
+- Sonnet overlength confirmation; GLM overlength and misspelled required field; DeepSeek length stop with null content.
+- Explicit repair work now present in Opus output, but inspection/sign-off/authorisation/opening orchestration and timing still need independent review.
+- No native UI interaction, predictive/model-quality/operator-benefit/production/merge/deployment/release acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: One valid actual-provider revision can coexist with unresolved minority uncertainty and operational gaps.
+- Discovery: Full reported token allowance can yield no usable assistant answer.
+- Risk: Mistaking method completion for model quality, unanimity, achieved outcome or a proven prompt improvement.
+- Architecture: Preserve stages, receipts, failure metadata, source bindings and independent human authority; do not silently enlarge budget or repair output.
+- Roadmap decision: existing_task B02-11 evidence/presentation follow-up only; no new required scope.
+Registered discoveries: EM-335, EM-336, EM-337, EM-338.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-coordinated-draft-v4-live.md](docs/delivery/sessions/2026-10-26-coordinated-draft-v4-live.md), [docs/evidence/coordinated-draft-v4-live-2026-10-26.json](docs/evidence/coordinated-draft-v4-live-2026-10-26.json), [docs/evidence/coordinated-draft-v4-live-2026-10-26.json.xz](docs/evidence/coordinated-draft-v4-live-2026-10-26.json.xz).
+
+## 0.2.0-alpha.8 draft prompt v4 verified · Bind native software acceptance to draft instruction source
+
+2026-10-26 · `local_unreleased`
+
+Close software verification for d85742d without converting stronger instructions or retained failures into a model-quality claim.
+
+### Added
+
+- Compressed original native report plus source/artifact hash and credential-scan receipt.
+
+### Changed
+
+- Draft v4 software gate passed; actual-provider compliance, useful plans and coordinated UI remain separate unfinished checks.
+
+### Verification
+
+- 2455 source tests and 2455 installed-wheel regressions passed; zero failures, errors or skipped tests.
+- 24 browser modules checked and 475 checks across all 13 native suites passed.
+- Source/artifact inspection valid before this documentation-only closeout.
+
+### Limitations
+
+- Exact d85742d software source only, not later documentation or runtime changes.
+- Prompt compliance and operational sufficiency remain unverified; old failed outputs remain rejected.
+- Native artifacts stay in the ignored run directory; the compressed report preserves their hashes, not every binary artifact.
+- No new inference, price check, historical replay, retry, repair, substitution or original-protocol resume.
+- No independent quality, operator benefit, production, merge/deployment/release acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Existing EM-335/336/337 retained: native software correctness is not model compliance or operational usefulness.
+- Risk: Prompt clarification may still fail or distract; no new inference has tested it.
+- Architecture: Bind acceptance to exact runtime bytes; later documentation does not retroactively change the checked source.
+- Roadmap decision: existing_task B02-11 software verification only; no scope or gate promotion.
+Registered discoveries: EM-335, EM-336, EM-337.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-draft-output-contract.md](docs/delivery/sessions/2026-10-26-draft-output-contract.md), [docs/evidence/draft-output-v4-software-2026-10-26.json](docs/evidence/draft-output-v4-software-2026-10-26.json), [docs/evidence/draft-output-v4-software-passed-2026-10-26.json.xz](docs/evidence/draft-output-v4-software-passed-2026-10-26.json.xz).
+
+## 0.2.0-alpha.8 draft prompt v4 · Clarify strict draft output and enabling-work requirements
+
+2026-10-26 · `local_unreleased`
+
+Version clearer generation instructions after the second incomplete coordinated run, while retaining unchanged schema/authority gates and original failures.
+
+### Added
+
+- Explicit bare-object, maxLength and quotation-preservation guidance shared by frame/route and initial/revision prompts.
+- 180/181-character boundary tests and controlled offline replay of retained Sonnet/Opus generation failures.
+
+### Changed
+
+- Draft prompt version v4 clarifies that requests or records cannot replace enabling work for an operational outcome; unknown/refusal is not permission.
+
+### Verification
+
+- 477 focused compilation/coordination/evaluation/transport checks passed; compilation and whitespace checks passed.
+- Original failed outputs remain rejected without additional generation or repair.
+
+### Limitations
+
+- Stronger instructions do not prove better compliance or operationally sufficient plans.
+- Full native/package verification pending; no new inference, price read or billing lookup.
+- B02-11 partial; no dedicated coordinated UI, independent quality, merge/deployment/release.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Existing EM-335/336/337 refined without claiming passing software makes a valid revised plan or useful model.
+- Risk: Longer instructions may compete for attention; prompt presence and boundary tests are not semantic quality evidence.
+- Architecture: Version source-bound prompts, retain failed outputs and keep unchanged validators/human authority.
+- Roadmap decision: existing_task B02-11 prompt clarification; no scope or acceptance promotion.
+Registered discoveries: EM-335, EM-336, EM-337.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-draft-output-contract.md](docs/delivery/sessions/2026-10-26-draft-output-contract.md), [endstate/compilation.py](endstate/compilation.py), [tests/test_coordinated_planning.py](tests/test_coordinated_planning.py), [tests/test_endstate_compilation.py](tests/test_endstate_compilation.py).
+
+## 0.2.0-alpha.8 native cost live diagnostic · Preserve complete specialist challenges and failed planning revisions
+
+2026-10-26 · `local_unreleased`
+
+Separately frozen Sonnet/Opus follow-up reached all three native reviewers, but remained incomplete. Preserve both new failures without repairing either prior protocol.
+
+### Added
+
+- Exact protocol/source/transport/report archive and bounded receipt for seven live requests.
+
+### Changed
+
+- B02-11 links initial Sonnet plan, minority prerequisite objection, overlength revision and Opus fenced response; status stays partial.
+
+### Verification
+
+- Recorded source unchanged and both case audit chains unchanged.
+- All 3 specialist costs normalized exactly; reported total 37926 nano-USD, not an invoice.
+- Exact archive round trip and known-credential-value scan passed.
+
+### Limitations
+
+- No valid revised candidate or final synthesis; no end-to-end coordinated success.
+- Planning charges remain unknown; no retries, repair, fallback, resumed protocol or historical rerun.
+- No independent quality, native UI, prediction, operator benefit, merge/deployment/release acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Complete panels can still fail revision limits; prompt-only output remains request-dependent; positive choice labels do not establish operational completeness.
+- Risk: Treating minority objections, invalid revisions or omitted work as resolved would overstate the outcome.
+- Architecture: Version clearer output instructions without changing validators; preserve original/challenge/failed-revision boundaries in future read-only UI.
+- Roadmap decision: existing_task B02-11 evidence and instruction/presentation follow-up only.
+Registered discoveries: EM-335, EM-336, EM-337.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md](docs/delivery/sessions/2026-10-26-coordinated-native-cost-live.md), [docs/evidence/coordinated-native-cost-live-2026-10-26.json](docs/evidence/coordinated-native-cost-live-2026-10-26.json).
+
+## 0.2.0-alpha.8 native cost evidence · Bind provider-scoped cost handling to full native software acceptance
+
+2026-10-26 · `local_unreleased`
+
+Archive exact 5780368 source-bound native/package evidence without retrofitting the first failed coordinated result.
+
+### Added
+
+- Compressed exact native acceptance report and hash-bound receipt.
+
+### Changed
+
+- Current cost-policy claim now links complete native/package verification; previous focused/pending records remain historical.
+
+### Verification
+
+- 2445 source tests, 2445 installed-wheel regressions, 24 JavaScript modules and 475 native checks in 13 suites passed at 5780368. Exact source/artifact inspection valid before documentation closeout; no model inference.
+- Known credential values absent from retained report; exact archive decompression checked.
+
+### Limitations
+
+- No model inference or price/billing read during this verification.
+- First coordinated live attempt remains partial/failed; a separate frozen diagnostic is still needed.
+- B02-11 partial; no independent quality, dedicated coordinated UI, merge/deployment/release.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Existing EM-333/334 now have source-bound acceptance evidence; no new required scope.
+- Risk: A known reported cost is not an invoice, guarantee of free use or provider spending cap.
+- Architecture: Preserve exact source/archive hashes and distinguish software acceptance from real provider completion or semantic quality.
+- Roadmap decision: existing_task B02-11 documentation/evidence closeout only; no status or reserved ownership promotion.
+Registered discoveries: EM-333, EM-334.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-native-cost-policy.md](docs/delivery/sessions/2026-10-26-native-cost-policy.md), [docs/evidence/native-cost-policy-software-2026-10-26.json](docs/evidence/native-cost-policy-software-2026-10-26.json).
+
+## 0.2.0-alpha.8 native cost policy · Interpret native decision costs only within their verified funding contract
+
+2026-10-26 · `local_unreleased`
+
+Provider-scoped exact USD-to-nano conversion with retained original numbers, conflict/unknown handling and versioned worker authority.
+
+### Added
+
+- Bounded original numeric literal and body-hash retention alongside canonical response hashes.
+- Safe per-model accounting receipts in standalone and coordinated worker results.
+
+### Changed
+
+- Fixed Experiential native adapter maps only confirmed platform-funded USD to exact integer nano-USD.
+- Cost-policy versions participate in worker configuration checks; spec hashes remain separate.
+
+### Fixed
+
+- Contradictory pricing/funding/amounts remain unknown rather than selecting a convenient value.
+- Cost numeric overflow produces a controlled validation failure; fractional/hostile numeric literals never silently round to known costs.
+
+### Verification
+
+- 616 focused native/worker/coordinated/compatible tests passed; compilation and whitespace checks passed.
+- Full source-bound native/package acceptance is next; all fixtures used controlled HTTP, not live inference.
+
+### Limitations
+
+- No extra billing HTTP lookup, new model request, original-run repair, automatic retry or model substitution.
+- Provider-reported amounts are not invoices, a guarantee of free use or an enforceable spending cap.
+- B02-11 partial; no dedicated coordinated UI, predictive/independent quality acceptance, merge/deployment/release.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Accounting interpretation affects continuation authority independently of the request spec.
+- Discovery: Original numeric precision and conflicting fields need their own retained provenance.
+- Risk: BYOK/platform zero can hide separate upstream cost.
+- Risk: Float parsing or conflicting fields could understate spend without visibly malformed data.
+- Architecture: Keep provider unit semantics out of the generic engine and bind policy changes to current worker authority.
+- Architecture: Use bounded exact source numbers, separate body/canonical hashes and explicit unknown outcomes.
+- Roadmap decision: existing_task B02-11 bounded accounting follow-up; no acceptance or reserved ownership promotion.
+Registered discoveries: EM-332, EM-333, EM-334.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-native-cost-policy.md](docs/delivery/sessions/2026-10-26-native-cost-policy.md), [docs/evidence/native-cost-receipt-read-2026-10-26.json](docs/evidence/native-cost-receipt-read-2026-10-26.json).
+
+## 0.2.0-alpha.8 provider diagnostics evidence · Bind rejected-response diagnostics to full native software acceptance
+
+2026-10-26 · `local_unreleased`
+
+Retain the exact f22f967 software receipt and separate read-only native accounting observations; no further inference.
+
+### Added
+
+- Compressed source-bound native acceptance report, hashes and exact verification summary.
+- Safe record of three exact-ID/model usage lookups for earlier fictional native smoke requests.
+
+### Changed
+
+- Append verified software closeout and broader gateway funding-contract clarification without erasing prior evidence.
+
+### Verification
+
+- 2355 source tests, 2355 installed-wheel regressions, 24 JavaScript modules and 475 native checks in 13 suites passed at f22f967.
+- Source/artifact inspection valid/passed before docs-only closeout; credential-value scan passed.
+- Three read-only gateway usage lookups HTTP200 with matching request IDs/models; no paid model call or price lookup.
+
+### Limitations
+
+- Generic native cost translation remains unimplemented; provider/funding/unknown-unit boundaries and decimal handling require controlled tests.
+- Earlier five-request coordinated run remains failed/partial, zero revisions. No retry, repair, fallback or substitute model.
+- No dedicated coordinated UI, quality/predictive acceptance, merge, deployment or release.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Safe diagnostic retention passes actual worker storage and full software acceptance.
+- Discovery: Exact-request usage lookup and broader documented funding semantics offer evidence beyond a familiar field name.
+- Risk: Zero platform charges do not prove free upstream usage or known future prices.
+- Risk: Neither later receipts nor improved metadata repair an earlier failed run.
+- Architecture: Keep provider-scoped normalization separate from generic engine cost authority; retain source amounts and avoid hidden network reads.
+- Roadmap decision: existing_task B02-09/B02-11 diagnostics verified; next bounded accounting adapter, no acceptance promotion.
+Registered discoveries: EM-331, EM-332.
+
+Roadmap items: `B02-09`, `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-provider-diagnostics.md](docs/delivery/sessions/2026-10-26-provider-diagnostics.md), [docs/evidence/provider-diagnostics-software-2026-10-26.json](docs/evidence/provider-diagnostics-software-2026-10-26.json), [docs/evidence/provider-diagnostics-software-passed-2026-10-26.json.xz](docs/evidence/provider-diagnostics-software-passed-2026-10-26.json.xz), [docs/evidence/native-cost-receipt-read-2026-10-26.json](docs/evidence/native-cost-receipt-read-2026-10-26.json).
+
+## 0.2.0-alpha.8 provider failure diagnostics · Keep safe provider diagnostics before rejecting unsupported output
+
+2026-10-26 · `local_unreleased`
+
+Preserve allowlisted stop/usage/shape evidence without making failed output valid or retaining hidden reasoning.
+
+### Added
+
+- Known compatible stop reasons, supplied integer token counts and boolean/type-only assistant shape in failed planning receipts.
+- Controlled malformed/fenced/native-thinking-only fixtures, including actual worker retention and unchanged case audits.
+
+### Changed
+
+- Retain Anthropic stop reason before missing-text rejection; native cache accounting and all output validation remain unchanged.
+
+### Fixed
+
+- Earlier compatible shape rejection discarded supplied stop/token metadata; native missing text discarded its stop reason.
+
+### Verification
+
+- 463 controlled provider/integration/method/specialist tests passed; Python compilation and whitespace passed.
+- Full source-bound native/wheel acceptance pending. No standalone static linter/type-checker configured.
+
+### Limitations
+
+- No new model calls, unit conversion, retry, fallback or repair. Original live failure remains closed and its DeepSeek cause unknown.
+- Native cost contract still unverified; zero known normalised cost is not zero charge.
+- No coordinated-report UI, independent quality/predictive acceptance, merge, deployment or release.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Strict failure must preserve safe diagnostic fields before rejection.
+- Discovery: A common cost field name does not transfer units between protocol families.
+- Risk: Raw envelope retention would expose hidden reasoning or arbitrary provider fields.
+- Risk: Overinterpreting diagnostics or omitted bytes would manufacture a cause for the earlier failure.
+- Architecture: Keep diagnostic projection in adapters and preserve all authority/validation boundaries; verify a request-bound native cost source separately.
+- Roadmap decision: existing_task B02-09/B02-11 diagnostics and cost-contract investigation; no acceptance promotion.
+Registered discoveries: EM-331, EM-332.
+
+Roadmap items: `B02-09`, `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-provider-diagnostics.md](docs/delivery/sessions/2026-10-26-provider-diagnostics.md), [eightball/v2/compatible.py](eightball/v2/compatible.py), [tests/test_compatible_provider.py](tests/test_compatible_provider.py), [tests/test_coordinated_evaluation.py](tests/test_coordinated_evaluation.py).
+
+## 0.2.0-alpha.8 coordinated diagnostic evidence · Retain first live coordinated-method failures and verified software source
+
+2026-10-26 · `local_unreleased`
+
+Bind native acceptance and a failed five-request fictional diagnostic to 00cc0a7 without rewriting the original protocol or treating partial results as coordination success.
+
+### Added
+
+- Exact original protocol/result/admission/receipt JSON archive with per-file hashes, plus compressed native report and summary bindings.
+- EM-331 rejected-envelope diagnostic gap and native cost-unit follow-up.
+
+### Changed
+
+- Retain original/panel/missing revision stages and all unstarted models; B02-11 remains partial.
+
+### Verification
+
+- 2336 source tests, 2336 installed-wheel regressions, 24 JavaScript modules and 475 native checks across 13 browser suites passed at 00cc0a7.
+- Exact-source native inspection valid/passed before closeout; source unchanged through the live diagnostic.
+- Live: GLM fenced JSON rejected, DeepSeek envelope rejected, Sonnet original compiled, Jev answers validated but cost unknown. Five requests total, no retries or case changes, zero revisions.
+- Exact archived text/hash equality checked; both configured credential values absent from retained evidence.
+
+### Limitations
+
+- Clef/GPT/Opus not called after frozen stop condition. No completed coordinated method, dedicated coordinated UI, model-quality ranking, independent review or predictive evidence.
+- DeepSeek failure cause not recoverable from its body hash. Planning charges and provider billing unverified; zero known normalized specialist cost is not zero charge.
+- Native acceptance binds implementation 00cc0a7, not future fixes. No merge, deployment, release or public SDK.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: An early envelope rejection can discard the diagnostic metadata needed to understand a real integration failure.
+- Risk: Unknown units must not become zero-cost claims; omitted bytes cannot be recovered from hashes.
+- Risk: Software contract tests do not predict actual model compliance with strict JSON or response envelopes.
+- Architecture: Keep provider-specific unit translation and bounded metadata retention in adapters, not inferred generic engine authority.
+- Roadmap decision: existing_task B02-11 offline adapter investigation; retain the failed first run and all remaining quality gates.
+Registered discoveries: EM-327, EM-330, EM-331.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-coordinated-evaluation.md](docs/delivery/sessions/2026-10-26-coordinated-evaluation.md), [docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json](docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json), [docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json.xz](docs/evidence/coordinated-evaluation-first-attempt-2026-10-26.json.xz), [docs/evidence/coordinated-evaluation-software-passed-2026-10-26.json.xz](docs/evidence/coordinated-evaluation-software-passed-2026-10-26.json.xz).
+
+## 0.2.0-alpha.8 coordinated diagnostic preparation · Freeze fictional model-method evaluation without automatic retries
+
+2026-10-26 · `local_unreleased`
+
+Add an opt-in fictional real-host evaluation of original proposal, independent challenges and separate revision for exact GLM, DeepSeek, Sonnet and Opus profiles.
+
+### Added
+
+- Frozen input/profile/question/source manifest and exclusive no-resume admission.
+- Safe per-request receipt checkpoints and set-wide incomplete-challenge stopping.
+- New fictional loading-bay scenario and controlled harness tests.
+
+### Changed
+
+- Reuse existing host source review, permissions, configuration checks and explicit lease; restore provider environment afterward.
+
+### Verification
+
+- 30 dedicated harness tests and 444 combined method/provider/host tests passed; no real inference.
+- Python compilation and whitespace checks passed; full source-bound native/wheel run pending.
+
+### Limitations
+
+- Shared intermediate baselines are not independent experiments, free-form objections or a quality benchmark.
+- One fictional scenario has no empirical outcome label. No dedicated UI, predictive quality, independent labels, merge or deployment.
+- Planning charges remain unpriced under explicit bounded permission; decision thresholds can overshoot and are not a provider billing cap. Gateway upstream pinning/fallback is unverified.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: An evaluation batch needs a shared stop policy; bounded constituent methods alone do not prevent spending after an incomplete challenge.
+- Risk: Repeated admission, unknown-cost continuation or model substitution could defeat a declared protocol.
+- Risk: Reused intermediate baselines and model agreement cannot establish causal improvement or real-world prediction.
+- Architecture: Keep the opt-in evaluation harness outside the engine, reusing existing pure method and actual host boundaries.
+- Roadmap decision: existing_task B02-11 evaluation preparation only; preserve partial status and reserved lane ownership.
+Registered discoveries: EM-325, EM-328, EM-330.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-coordinated-evaluation.md](docs/delivery/sessions/2026-10-26-coordinated-evaluation.md), [evals/coordinated_planning.py](evals/coordinated_planning.py), [evals/coordinated-case.json](evals/coordinated-case.json), [tests/test_coordinated_evaluation.py](tests/test_coordinated_evaluation.py).
+
+## 0.2.0-alpha.8 coordinated planning verification · Retain source-bound native verification for bounded coordinated planning
+
+2026-10-26 · `pushed_unreleased`
+
+Publish the verified propose/challenge/revise backend while keeping live inference, readable coordinated presentation and independent quality gates separate.
+
+### Added
+
+- Exact-source native receipt and compressed report for implementation 4e0f635; inspected before documentation-only closeout.
+
+### Changed
+
+- Update the canonical evidence and append emergence decisions without promoting B02-11 or altering reserved lane ownership.
+
+### Verification
+
+- 2306 source tests and 2306 installed-wheel regressions passed; 24 JavaScript modules, Python compilation and every delivery guard passed.
+- 475 checks passed across 13 native browser suites; source unchanged during run and evidence inspection valid. Final focused preparation had passed 260 method/tracking checks.
+
+### Limitations
+
+- No actual model calls, dedicated coordinated report UI, independent quality or empirical prediction evidence. B02-11 stays partial.
+- Planning cost remains unpriced under explicit finite call/token permission; decision cost does not cover planning. No merge, deployment, release or public SDK publication.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: No additional product discovery in verification; retain EM-325 and EM-327 through EM-329 with tested source bindings.
+- Risk: Engineering acceptance does not establish live compatibility, operator benefit or predictive quality.
+- Architecture: Keep pure ENDSTATE coordination separate from reviewed host authority and explicitly limited provider retention.
+- Roadmap decision: existing_task B02-11 verification only; next frozen fictional actual-provider diagnostic, no scope or acceptance promotion.
+Registered discoveries: EM-325, EM-327, EM-328, EM-329.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-coordinated-planning.md](docs/delivery/sessions/2026-10-26-coordinated-planning.md), [docs/evidence/coordinated-planning-software-2026-10-26.json](docs/evidence/coordinated-planning-software-2026-10-26.json), [docs/evidence/coordinated-planning-software-passed-2026-10-26.json.xz](docs/evidence/coordinated-planning-software-passed-2026-10-26.json.xz).
+
+## 0.2.0-alpha.8 coordinated planning · Retain an original plan, independent challenges and a separate revision
+
+2026-10-26 · `local_unreleased`
+
+Add an opt-in bounded ENDSTATE propose/challenge/revise backend on the existing reviewed worker host, without selecting or committing a plan.
+
+### Added
+
+- Strict CoordinatedPlanningSpec and provider-neutral method; original, normalized challenges, revision and final synthesis reference remain separate.
+- Host adapter retains planner and native specialist receipts and reuses current-authority checkpoints before/after every provider call.
+
+### Changed
+
+- Reuse the independent specialist comparator without another queue; keep baseline behavior and protocols unchanged.
+- Bind method and server-owned planning configuration to source-processing review, with four maximum generation attempts and explicit unpriced token allowance.
+- Bound both provider credential rotations to review; retain declared native answers rather than unrequested envelope fields, and stop further generation when planning receipts exceed 200,000 bytes.
+
+### Verification
+
+- 163 initial focused checks passed, then 259 expanded checks. The final focused rerun passed 260 checks (193 method/host/specialist and 67 delivery/history); compilation and diff checks passed. Full native/wheel verification remains pending.
+
+### Limitations
+
+- Backend opt-in only; no coordinated presentation or model-selection UI. Choice reviewers do not provide unrestricted free-form critique.
+- Decision cost threshold does not cover unknown planning charges or enforce provider billing; explicit finite generation allowance is required. No live calls, predictive or independent-quality approval, merge, deployment or release.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A coordinated method needs retained original/challenge/revision stages rather than more independent answers.
+- Discovery: Mixed-protocol accounting and bounded choice questions limit what this first method can claim.
+- Risk: Unpriced planning cannot inherit a decision-only dollar budget; predefined questions can miss important objections.
+- Risk: Opaque hashes cannot replace omitted raw bytes; unrequested or unvalidated native envelope fields must not be represented as retained validated answers.
+- Architecture: Keep pure ENDSTATE coordination distinct from host authority, transport and billing limits; preserve raw/normalized stages and dissent without voting.
+- Roadmap decision: existing_task B02-11 engineering continuation; retain partial status, reserved lane ownership and all independent/prospective/held-out/human gates. No new required scope.
+Registered discoveries: EM-325, EM-327, EM-328, EM-329.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-coordinated-planning.md](docs/delivery/sessions/2026-10-26-coordinated-planning.md), [docs/v2/SPECIALIST-REVIEW.md](docs/v2/SPECIALIST-REVIEW.md), [tests/test_coordinated_planning.py](tests/test_coordinated_planning.py).
+
+## 0.2.0-alpha.8 provider contract verification · Retain native verification of explicit provider JSON contracts
+
+2026-10-26 · `pushed_unreleased`
+
+Retain exact-source software acceptance separately from the unfinished coordinated workflow and live GLM/DeepSeek diagnostics.
+
+### Added
+
+- Compressed native report and source-bound software receipt for e1e7142.
+
+### Changed
+
+- Append the native verification checkpoint without changing reserved lane owners or B02-11 partial status.
+
+### Fixed
+
+- Correct the discovery-history cross-link: prompt-only implementation belongs to EM-326, not coordinated-method evidence EM-325. Preserve the earlier note and append the correction.
+
+### Verification
+
+- 2172 source tests, 2172 installed-wheel regressions, 24 JavaScript modules and 475 checks across 13 native browser suites passed. Source/artifact inspection matched before this documentation-only closeout.
+
+### Limitations
+
+- Initial incorrect-Node-path failure remains retained. No new inference, coordinated-method acceptance, predictive-quality approval, merge, deployment or release. Remote review service remains errored without findings at the prior pushed checkpoint; no gate bypass.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: No new product finding beyond EM-326: full native checks preserve the explicit remote-versus-local validation distinction.
+- Risk: Passing software checks does not establish live provider compatibility or coordinated-planning value.
+- Architecture: Retain the exact tested source digest and preserve unknown costs and capability limits in the next bounded method.
+- Roadmap decision: existing_task B02-11 verification only; EM-325 coordination remains unimplemented. No new required scope or acceptance promotion.
+Registered discoveries: EM-325, EM-326.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/evidence/provider-json-mode-software-2026-10-26.json](docs/evidence/provider-json-mode-software-2026-10-26.json), [docs/evidence/provider-json-mode-software-passed-2026-10-26.json.xz](docs/evidence/provider-json-mode-software-passed-2026-10-26.json.xz), [docs/delivery/sessions/2026-10-26-provider-json-mode.md](docs/delivery/sessions/2026-10-26-provider-json-mode.md).
+
+## 0.2.0-alpha.8 explicit provider response contract · Support explicit prompt-only JSON without changing local validation
+
+2026-10-26 · `local_unreleased`
+
+Prepare the owner-selected GLM transport capability with an explicit frozen response mode, not a silent schema fallback.
+
+### Added
+
+- Server-owned EIGHTBALL_API_JSON_MODE selection, visible in configuration status and transport receipts.
+- Exact outbound request hashes and per-call response-contract metadata.
+
+### Changed
+
+- Standard acceptance strips the optional response setting along with provider credentials; compatible defaults and native Anthropic protocol remain unchanged.
+
+### Verification
+
+- 261 focused compatible transport, CLI, application and acceptance-runner checks passed; Python compilation and diff whitespace checks passed.
+
+### Limitations
+
+- No GLM or DeepSeek inference, coordinated-workflow acceptance, predictive-quality approval, merge or deployment. Full native regression is pending.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A selected provider's inability to force schema output can be represented explicitly without weakening the application's JSON, target-coverage or proposal validators.
+- Risk: Prompt-only output can still be malformed; provider-side enforcement is not claimed. Changing a response contract after rejection must not become an automatic retry.
+- Architecture: Keep response mode server-owned, frozen per session and hashed with each bounded request; disclose it independently of model quality.
+- Roadmap decision: existing_task B02-11 capability refinement, following EM-326; no acceptance, model-default or reserved lane ownership change.
+Registered discoveries: EM-326.
+
+Roadmap items: `B02-11`.
+
+Evidence: [eightball/v2/compatible.py](eightball/v2/compatible.py), [tests/test_compatible_provider.py](tests/test_compatible_provider.py), [tests/test_compatible_integration.py](tests/test_compatible_integration.py), [tests/test_acceptance_runner.py](tests/test_acceptance_runner.py), [docs/v2/QWEN-SETUP.md](docs/v2/QWEN-SETUP.md), [docs/delivery/sessions/2026-10-26-provider-json-mode.md](docs/delivery/sessions/2026-10-26-provider-json-mode.md).
+
+## 0.2.0-alpha.8 comparison evidence closeout · Record source-bound software checks and two next-set model selections
+
+2026-10-26 · `pushed_unreleased`
+
+Preserve inconclusive diagnostic and clarify independent-panel versus swarm scope; queue the exact owner-selected GLM/DeepSeek variants without inference or default changes.
+
+### Added
+
+- Source-bound native verification receipt and full compressed report.
+- Catalogue-only receipt for glm-5.3-uncensored and deepseek-v4.1-flash; explicit GLM structured-output limitation.
+
+### Changed
+
+- Clarify next evaluation contracts and preserve all earlier results.
+
+### Verification
+
+- At cd9335f: 2152 source tests, 2152 installed-wheel regressions, 24 JS modules and 475 checks in 13 native browser suites passed. Source and artifact inspection matched.
+- Authenticated catalogue returned both exact model IDs; live inference remains untested.
+
+### Limitations
+
+- Historical recognition remains unresolved; no predictive-quality pass, model ranking, coordinated swarm demonstration, merge or deployment.
+- GLM catalogue does not support structured output; future prompt-only JSON must still pass strict local validation. Catalogue is not live availability or independent provenance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: The owner expected a coordinated system experiment, but this was an independent panel; model count is not evidence of coordination.
+- Discovery: An exact catalogue match can still lack the structured-output capability assumed by a generic adapter.
+- Risk: Misrepresenting a panel as the full product or silently weakening a response contract.
+- Architecture: Keep method identity and provider capability/validation contracts explicit.
+- Roadmap decision: existing_task B02-11 refinements only; no model-quality approval or new scope.
+Registered discoveries: EM-321, EM-322, EM-323, EM-324, EM-325, EM-326.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/evidence/historical-comparison-software-2026-10-26.json](docs/evidence/historical-comparison-software-2026-10-26.json), [docs/evidence/next-comparison-models-2026-10-26.json](docs/evidence/next-comparison-models-2026-10-26.json), [docs/v2/FORECAST-EVALUATION.md](docs/v2/FORECAST-EVALUATION.md), [docs/delivery/sessions/2026-10-26-historical-comparison.md](docs/delivery/sessions/2026-10-26-historical-comparison.md).
+
+## 0.2.0-alpha.8 historical model comparison · Retain a corrected five-model historical diagnostic without selecting a winner
+
+2026-10-26 · `pushed_unreleased`
+
+One authorised native request each to Sonnet 5.5, Opus 5.5, Jev, Clef and GPT-6 Luna; all indicate recognition, so predictive quality remains unproved.
+
+### Added
+
+- Frozen HR-002, all five responses/receipts, source-bound separate scores and archived inference/scoring scripts.
+
+### Changed
+
+- Two source-summary corrections in a new case; original HR-001 remains unchanged. No default model or production code change.
+
+### Fixed
+
+- Separate post-inference scorer uses the actual outcome URL/hash and source_reference field; original frozen runner retained unchanged.
+
+### Verification
+
+- 149 focused forecasting, historical-runner and native-decision contract tests passed.
+- Offline selected-endpoint, all 8 band mappings, abstention, confidence separation, frozen hash and non-overwrite checks passed.
+- Archived inference script and separate resolution adapter compile. No application/runtime code changed.
+
+### Limitations
+
+- All five self-report recognition; recognition disclosure is not independent evidence of memory or blindness.
+- One known historical outcome; author knew it and chose the example. No calibration or ranking inference.
+- Claude estimates are continuous; native decision models explicitly select coarse probability points. Do not substitute reported choice confidence or choice probability.
+- Case HR-002 corrects two summaries. HR-001 remains unchanged; changed input, stochastic variation and format differences prevent attributing differences solely to model.
+- Read-only illustrative planning control is separate, not a complete merger model or tested end-to-end multi-agent application.
+- Full native software checks are separate from predictive evidence; no merge, release or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Jev selected the 80% event-probability option while reporting confidence 0.47 and option probability 0.54. These are three distinct quantities; only the predeclared option value was used as the event estimate.
+- Discovery: Sonnet returned valid 55% JSON but treated closing within a first extension as still landing in 2018, while the extension ends March 2019. Its recognition note named a different financial partner. Both Claude responses assumed a premium absent from the masked input; Opus inferred regulatory risk from the fee and extension structure.
+- Discovery: On the new corrected HR-002 input, Sonnet gave 55% rather than original HR-001 45%; Opus gave 40%, Jev and GPT chose 80%, Clef chose 65%. All indicated recognition. Changed input, model, output format and sampling are confounded; one known event is not five independent trials.
+- Discovery: All five selected or described antitrust progress as the most useful next observation despite different event estimates. No observation-acquisition or reforecast experiment was performed.
+- Risk: Recognition, hindsight, precision differences and plausible but erroneous reasons invalidate a predictive-quality win.
+- Architecture: Preserve event probabilities, choice confidence, question priority and action authority as distinct records.
+- Roadmap decision: existing_task B02-11 remains partial; preserve reserved lane owner/status and independent quality gates.
+Registered discoveries: EM-321, EM-322, EM-323, EM-324.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/evidence/historical-comparison-2026-10-26.json](docs/evidence/historical-comparison-2026-10-26.json), [docs/delivery/sessions/2026-10-26-historical-comparison.md](docs/delivery/sessions/2026-10-26-historical-comparison.md).
+
+## 0.2.0-alpha.8 historical replay software evidence · Retain exact-source software acceptance without promoting the historical result
+
+2026-10-26 · `pushed_unreleased`
+
+Publish the first diagnostic and later protocol as separate evidence levels; the historical forecast remains inconclusive.
+
+### Added
+
+- Source-bound native acceptance receipt and compressed full report for exact code 3404d8272b576a0bcf6294393fe3a1aa77966823.
+
+### Changed
+
+- Append publication/verification closeout without rewriting the preceding local diagnostic entry or actual provider output.
+
+### Verification
+
+- 2152 source tests, 2152 installed-wheel regressions, compilation/schema checks, 24 JS modules and all 13 native browser suites / 475 checks passed. Source unchanged and inspection matched before documentation-only closeout.
+
+### Limitations
+
+- No new inference; later v2 protocol tests do not improve the original recognised, source-imperfect v1 case. Predictive quality and independent human/production gates remain open. Review-service error is not approval; no merge or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-318 through EM-320 remain retained; this verification adds no new product finding.
+- Risk: Software success cannot remove recognition, input errors or hindsight contamination.
+- Architecture: Keep native measurement, experiment validity and case authority separate.
+- Roadmap decision: existing_task B02-11 only; no scope, acceptance or reserved owner change.
+Registered discoveries: EM-318, EM-319, EM-320.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-historical-replay.md](docs/delivery/sessions/2026-10-26-historical-replay.md), [docs/evidence/historical-replay-software-2026-10-26.json](docs/evidence/historical-replay-software-2026-10-26.json), [docs/evidence/historical-replay-software-passed-2026-10-26.json.xz](docs/evidence/historical-replay-software-passed-2026-10-26.json.xz).
+
+## 0.2.0-alpha.8 historical forecast diagnostic · Retain an inconclusive masked historical forecast and harden the experiment protocol
+
+2026-10-26 · `local_unreleased`
+
+An actual forecast is measurable without being valid prediction evidence: preserve recognition, source-summary errors and the original output.
+
+### Added
+
+- Separate public historical case/outcome fixtures, exact original runner archive, raw response, source hashes, resolution and explicit retrospective audit.
+- A bounded two-phase experimental runner with input checkpoints, strict probability-or-abstention handling, no retries and non-overwriting resolutions.
+
+### Changed
+
+- Keep the original v1 experiment separate from the later v2 offline-hardened protocol and post-forecast conditional planning control.
+
+### Fixed
+
+- Remove the overbroad keyword preflight check and use the receipt property correctly; both original preflight failures made zero provider requests.
+- Reject coerced probabilities/recognition fields, retain interruption and failure checkpoints, bind case/input/answer before resolution, and avoid logging exception content.
+
+### Verification
+
+- One actual Sonnet 5.5 request returned p=0.45; observed=false gives Brier=0.2025 versus fixed-half=0.25. Model reported recognising the transaction and its outcome.
+- 52 new offline protocol tests plus 34 existing forecast tests passed. Full native software acceptance follows as a separate source-bound checkpoint; no additional inference.
+
+### Limitations
+
+- Inconclusive for predictive skill: n=1, retrospective author-selected case, admitted recognition, no independent blinding, and two source-summary errors.
+- The first run was forecast-component integration, not the complete planning/challenge/review app flow. Later repairs and offline planning do not improve its result.
+- Known token estimates are not verified bills. No case evidence, action approval, gate promotion, merge or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Name masking did not establish blindness in this actual case.
+- Discovery: Paraphrase can change a financial denominator or contractual condition.
+- Discovery: Experiment wrappers need strict durable validation even when reusing a trusted provider transport.
+- Risk: A lower score can coexist with an invalid experiment; never erase source errors or recognition.
+- Architecture: Reuse ENDSTATE measurement and the existing provider transport; keep experiment validity separate from numerical scoring and case authority.
+- Roadmap decision: existing_task B02-11 refinement only; no scope, owner or acceptance promotion.
+Registered discoveries: EM-318, EM-319, EM-320.
+
+Roadmap items: `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-historical-replay.md](docs/delivery/sessions/2026-10-26-historical-replay.md), [docs/evidence/historical-replay-audit-2026-10-26.json](docs/evidence/historical-replay-audit-2026-10-26.json), [docs/evidence/historical-replay-forecast-2026-10-26.json](docs/evidence/historical-replay-forecast-2026-10-26.json), [docs/evidence/historical-replay-resolution-2026-10-26.json](docs/evidence/historical-replay-resolution-2026-10-26.json), [docs/evidence/historical-replay-input-2026-10-26.json](docs/evidence/historical-replay-input-2026-10-26.json), [docs/evidence/historical-replay-runner-v1-2026-10-26.py.xz](docs/evidence/historical-replay-runner-v1-2026-10-26.py.xz), [docs/evidence/historical-replay-sources-2026-10-26.json](docs/evidence/historical-replay-sources-2026-10-26.json), [docs/evidence/historical-replay-planning-control-2026-10-26.json](docs/evidence/historical-replay-planning-control-2026-10-26.json), [evals/historical_replay.py](evals/historical_replay.py), [tests/test_historical_replay.py](tests/test_historical_replay.py).
+
+## 0.2.0-alpha.8 selected-provider lifecycle evidence · Retain Sonnet local lifecycle observations and allow bounded CI setup time
+
+2026-10-26 · `pushed_unreleased`
+
+Exercise cancellation, supersession and owned-process restart without confusing local finality with remote cancellation.
+
+### Added
+
+- Fresh source-matched generation prerequisite, all lifecycle checkpoints and unmodified final reports.
+
+### Changed
+
+- Clarify the remaining B02-15 scope while preserving partial status and lane ownership.
+- Raise verify timeout from 20 to 40 minutes after the retained Chromium dependency-installation timeout; all checks and security gates remain.
+
+### Fixed
+
+- Source clarity native test waits for the reconsideration counter, not a pre-existing unrelated deadline count. Assertions, real HTTP and production code remain unchanged.
+- Keep 120-second build/install command limits but allow 600 seconds for the complete installed-wheel regression suite; timeout and assertion failures still fail without retry. The enclosing package step gets 900 seconds for packaging plus regression.
+
+### Verification
+
+- At a312837: five actual Sonnet generation requests passed four frozen fixtures. Source-matched cancel/stale/restart observations passed all eight checks each, with three local first-call admissions and no further stages or published proposals.
+- Focused and full native software verification is recorded in the source-bound closeout receipt.
+- Initial focused run: 323 passed and one delivery guard failed because the new checkpoint replaced reserved next-action lineage. Restore the full original coordination record and append the checkpoint; retain the failed output.
+- Two failed full runs retained: unqualified invocation omitted the documented Node PATH; corrected invocation passed source/package checks but exposed an asynchronous grounding-test wait matching the wrong counter.
+- After the targeted wait correction: 74 source-clarity tests and 27 native browser checks passed. Full source-bound rerun follows.
+- A third source-stable native run passed 2,096 source tests and all 475 browser checks, but the installed suite exceeded its inherited 120-second command cap. Retained before correction; four new bounded-command/failure tests pass.
+- The first budget-fix verification was deliberately stopped after review found the enclosing package watchdog still used 180 seconds; its partial report is retained, not a pass. The enclosing bound is now 900 seconds.
+- Final exact e3c92f0 source passed 2100 source and 2100 installed-wheel tests, compilation, 24 JavaScript modules and all 13 native browser suites / 475 checks. Source/artifact inspection matched before documentation-only closeout. All earlier failures and the deliberately interrupted run remain retained.
+
+### Limitations
+
+- Remote request receipt/completion/cancellation/billing remain unknown; no provider-side cancellation or zero-charge claim.
+- No actual-provider native-UI lifecycle, independent semantic/human/predictive/production acceptance. No application runtime change.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A locally final job can still have an unknown remote outcome.
+- Discovery: Setup can consume a CI allowance before verification finishes.
+- Discovery: A matching page-wide number is not evidence that a source refresh completed.
+- Discovery: A complete installed regression suite needs a different time allowance from an individual build command.
+- Risk: Do not confuse local cancellation with billing cancellation or partial CI steps with full acceptance.
+- Architecture: Retain existing local job finality, source-bound receipts and independent provider facts. No new engine subsystem.
+- Roadmap decision: existing_task B02-15 and ES01-05 only; no scope or acceptance promotion.
+Registered discoveries: EM-314, EM-315, EM-316, EM-317.
+
+Roadmap items: `B02-15`, `ES01-05`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-provider-lifecycle.md](docs/delivery/sessions/2026-10-26-provider-lifecycle.md), [docs/evidence/sonnet55-lifecycle-2026-10-26.json](docs/evidence/sonnet55-lifecycle-2026-10-26.json), [evals/provider_lifecycle.py](evals/provider_lifecycle.py), [docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz](docs/evidence/lifecycle-delivery-regression-2026-10-26.log.xz), [docs/evidence/sonnet55-lifecycle-software-missing-node-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-missing-node-2026-10-26.json.xz), [docs/evidence/sonnet55-lifecycle-software-stale-counter-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-stale-counter-2026-10-26.json.xz), [tests/browser_grounding.py](tests/browser_grounding.py), [docs/evidence/sonnet55-lifecycle-software-package-timeout-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-package-timeout-2026-10-26.json.xz), [scripts/build_endstate.py](scripts/build_endstate.py), [tests/test_build_endstate.py](tests/test_build_endstate.py), [docs/evidence/sonnet55-lifecycle-software-interrupted-2026-10-26.json.xz](docs/evidence/sonnet55-lifecycle-software-interrupted-2026-10-26.json.xz), [scripts/acceptance.py](scripts/acceptance.py), [docs/evidence/sonnet55-lifecycle-software-2026-10-26.json](docs/evidence/sonnet55-lifecycle-software-2026-10-26.json).
+
+## 0.2.0-alpha.8 native usage completeness · Preserve unknown cache usage in normalized receipts
+
+2026-10-26 · `pushed_unreleased`
+
+Normalize prompt totals only when all native input components are known.
+
+### Changed
+
+- Keep supplied native counters while treating absent cache components as unknown.
+
+### Fixed
+
+- Do not undercount prompt tokens when output usage is missing, or label uncached input as a complete prompt total.
+
+### Verification
+
+- Expanded controlled regression: five failures and four passes before correction; retained failure log.
+- After correction: 308 focused tests passed. Exact 08b1cde code passed 2096 source and 2096 installed-wheel tests, compilation, 24 JS modules, and 474 checks in 13 native browser suites; source/artifact inspection passed before documentation closeout.
+- Offline re-normalization of 12 retained native HTTP200 response receipts gives identical complete counts; not additional inference.
+
+### Limitations
+
+- No additional inference or billing verification. Earlier live receipts have all four components and unchanged estimates.
+- Historical live source hashes remain historical; independent quality, prediction, human acceptance and release are not established.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A partial meter reading is not a complete total.
+- Risk: Cross-provider normalization can silently drop known cache use or erase missingness.
+- Architecture: Require input component completeness independently of output usage; retain native counters.
+- Roadmap decision: existing_task B02-09 only; no new scope or acceptance status changes.
+Registered discoveries: EM-313.
+
+Roadmap items: `B02-09`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-native-usage.md](docs/delivery/sessions/2026-10-26-native-usage.md), [docs/evidence/native-usage-regression-before-2026-10-26.log.xz](docs/evidence/native-usage-regression-before-2026-10-26.log.xz), [tests/test_compatible_provider.py](tests/test_compatible_provider.py), [docs/evidence/native-usage-software-2026-10-26.json](docs/evidence/native-usage-software-2026-10-26.json).
+
+## 0.2.0-alpha.8 native Sonnet integration · Connect native Sonnet and verify the actual-provider journey
+
+2026-10-26 · `pushed_unreleased`
+
+Native Anthropic Messages, truthful usage/protocol receipts and exact target-quote prompt guidance with unchanged local guards.
+
+### Added
+
+- Native text/usage parsing, exact model identity and protocol-matched lifecycle prerequisites.
+
+### Changed
+
+- Direct Anthropic uses Messages; all other hosts retain their existing transport. Prompt v3 explains existing lexical target coverage.
+
+### Fixed
+
+- Compatibility request rejection is avoided by selecting the verified native protocol, without an automatic fallback or weakening source/graph validation.
+
+### Verification
+
+- 375 focused controlled regressions passed.
+- Actual frozen Sonnet run passed all four fixtures (three conditional routes); actual-provider native journey passed all 20 scripted checks. Earlier HTTP400 and lexical-coverage failures retained.
+- First native software run: 2089 passed/1 failed, also in installed wheel; stale copied lane blockers, not a runtime failure. All 13 browser suites passed. Failed report/logs retained and exact ledger text synchronized before rerun.
+- Exact code 6ce61517d7dac347d98170b66274917f3f2e5006: 2090 source tests, 2090 installed-wheel regressions, compilation, 24 JavaScript modules and 474 checks in all 13 native suites passed. Source/artifact inspection passed before documentation-only closeout; 67 tracking/history regressions also passed.
+
+### Limitations
+
+- US$0.088500 known Sonnet usage-based estimate, not an invoice; rejected billing unknown. No account-wide cap or retries.
+- Live cancellation experiment not run. Independent semantic/predictive/professional/human/production acceptance, merge and deployment remain open.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Wire success does not establish proposal or semantic quality.
+- Discovery: Exact lexical coverage failure need not mean a missing semantic criterion.
+- Risk: Familiar fixtures do not measure held-out quality; mechanical constraints can reject otherwise meaningful output.
+- Architecture: Keep transport in the product adapter and version prompts without changing engine validation or authority.
+- Roadmap decision: Existing B02-09/B02-11/B02-12 only; preserve all independent acceptance and reserved lane ownership.
+Registered discoveries: EM-311, EM-312.
+
+Roadmap items: `B02-09`, `B02-11`, `B02-12`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-sonnet-native.md](docs/delivery/sessions/2026-10-26-sonnet-native.md), [docs/evidence/sonnet-native-2026-10-26.json](docs/evidence/sonnet-native-2026-10-26.json), [tests/test_compatible_provider.py](tests/test_compatible_provider.py), [tests/test_compatible_integration.py](tests/test_compatible_integration.py), [tests/test_endstate_compilation.py](tests/test_endstate_compilation.py), [docs/evidence/sonnet-native-software-failed-2026-10-26.json.xz](docs/evidence/sonnet-native-software-failed-2026-10-26.json.xz), [docs/evidence/sonnet-native-software-2026-10-26.json](docs/evidence/sonnet-native-software-2026-10-26.json).
+
+## 0.2.0-alpha.8 information-check loop · Connect retained uncertainty to explicit checks and reconsideration
+
+2026-10-26 · `pushed_unreleased`
+
+What to check next, explicit linked case questions, separate evidence-backed answers/observations and immutable current-case rechecks.
+
+### Added
+
+- ENDSTATE declared-structure information agenda; no invented information value or probability.
+- Explicit local question creation linked to the originating brief, revision and contribution; repeated rechecks reuse the same question.
+- Current answer-support and condition states beside saved review history, with existing evidence/observation controls.
+
+### Changed
+
+- Reuse existing case-command transactions; check creation invalidates approvals while viewing and rehearsal saving remain read-only.
+- Review tab switches preserve unsubmitted check fields. Existing v1 brief replay and source-free export remain unchanged.
+
+### Fixed
+
+- Reject stale/cross-case/expired/duplicate checks and roll back failed writes; never turn answered or addressed labels into facts.
+
+### Verification
+
+- 275 focused rehearsal/packet/Plan Review/grounding/time-review/course regressions and 57 native Plan Review checks passed.
+- Exact a7cc1d6 native run passed:2057 source and2057 installed-wheel regressions,24 JavaScript modules,474 checks across13 native suites. Source/artifact bytes matched on inspection before documentation-only closeout; no inference.
+
+### Limitations
+
+- Local operator only; agency check routes stay unavailable. No automatic sends, model calls, course selection or observations.
+- Operator benefit, predictive skill, independent review, production and release remain unverified.
+- Functional code pushed to existing PR6; no merge or deployment. Documentation-only closeout and current CI remain separately recorded.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Repeated reconsideration needs stable check identity rather than duplicate questions.
+- Discovery: Current evidence support must stay distinct from immutable recorded answers and review dispositions.
+- Risk: Display ordering can look like proven value of information; repeated reviews can add operator burden.
+- Architecture: Reuse ENDSTATE declarations and existing case commands, adding a read-only current projection rather than another store or scheduler.
+- Roadmap decision: Existing B02-05/ES01-02 refinement explicitly requested by owner; no optional durable-event scope or predictive gate promotion.
+Registered discoveries: EM-310.
+
+Roadmap items: `B02-05`, `ES01-02`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-information-loop.md](docs/delivery/sessions/2026-10-26-information-loop.md), [docs/v2/ASSUMPTION-CHALLENGE.md](docs/v2/ASSUMPTION-CHALLENGE.md), [tests/test_rehearsal.py](tests/test_rehearsal.py), [tests/browser_plan_review.py](tests/browser_plan_review.py), [docs/evidence/information-loop-native-2026-10-26.json](docs/evidence/information-loop-native-2026-10-26.json).
+
+## 0.2.0-alpha.8 retained specialist comparison · Read retained specialist differences without decoding raw output
+
+2026-10-26 · `pushed_unreleased`
+
+Permission-scoped, read-only individual answers, missing responses and cost uncertainty in the existing incoming-change review.
+
+### Added
+
+- Validated specialist presentation with per-model choices, missing/failed answers, unresolved differences and historical revision labels.
+- Disclosure of request/response hashes, retained token usage and known versus unknown reported costs.
+
+### Changed
+
+- EventReviews reconstructs the summary through ENDSTATE contracts and checks exact source/spec/revision bindings before returning a presentation.
+- Existing lock, refresh and detected-revocation boundaries also clear the specialist comparison.
+
+### Fixed
+
+- Inconsistent/unknown-version reports do not receive a typed comparison; original output remains unchanged and inspectable.
+
+### Verification
+
+- 131 focused specialist/event-review/dispatch tests passed.
+- 39 native event-review browser checks passed, including inert hostile markup, no write on inspection, read-only permissions, partial/absent results, invalid summaries, stale revisions and narrow viewports.
+- Exact ba1fd41 native acceptance passed:2038 source and2038 installed-wheel regressions,24 JavaScript modules,466 checks in13 native suites. Source/artifacts matched before documentation closeout; no inference.
+
+### Limitations
+
+- Code pushed to existing PR6; no merge or deployment. Documentation-only closeout is checked separately.
+- Model selection remains host-configured. Independent review, model quality, empirical predictive skill and measurable operator value remain open.
+- Report hashes and cost fields are not independent provider attestations or billing guarantees.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A retained aggregate can contradict its individual answers; formatting alone can conceal disagreement.
+- Discovery: Readable results refine the existing workflow without establishing the value of larger model-selection controls.
+- Risk: A polished summary can create misplaced confidence or add review burden.
+- Architecture: Reuse ENDSTATE validation inside the authorised host projection; retain raw output and fail closed rather than creating another comparison algorithm.
+- Roadmap decision: Existing-task presentation refinement; EM-308 larger controls/value candidate stays unaccepted.
+Registered discoveries: EM-308, EM-309.
+
+Roadmap items: `B03-04`, `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-specialist-presentation.md](docs/delivery/sessions/2026-10-26-specialist-presentation.md), [docs/v2/SPECIALIST-REVIEW.md](docs/v2/SPECIALIST-REVIEW.md), [tests/test_specialist_review.py](tests/test_specialist_review.py), [tests/browser_event_review.py](tests/browser_event_review.py), [docs/evidence/specialist-presentation-native-2026-10-26.json](docs/evidence/specialist-presentation-native-2026-10-26.json).
+
+## 0.2.0-alpha.8 bounded specialist worker · Connect explicit specialist comparisons to the reviewed event worker
+
+2026-10-26 · `local_unreleased`
+
+Opt-in reviewed-text advisory checks with per-call authority, configuration binding and a shared inference slot; not forecasting or semantic acceptance.
+
+### Added
+
+- Pure ENDSTATE review specifications and retained model differences/missing answers.
+- Explicit host processor over native single-use decision sessions, no retry or case commands.
+
+### Changed
+
+- Processing reviews bind models/questions/budgets; every call and publication rechecks authority and revision.
+- Agency event processing shares the existing local-analysis inference slot.
+
+### Fixed
+
+- Late configuration, source, permission, revision, cancellation and lease races suppress further calls and cooperative-result publication.
+
+### Verification
+
+- 204 focused specialist/dispatch/agency/transport/kernel tests passed with mocked HTTP and local database transactions; 67 tracking tests passed after correcting reserved lane ownership.
+- First native run retained:2021 source tests passed, lane-ownership tracking failed, installed-package regression failed on the same mismatch; all13 native browser suites passed. Compilation and whitespace checks passed.
+- Final native run passed at 33f0d8d:2026 source tests,2026 installed-wheel regressions,24 JavaScript modules,13 browser suites/454 checks. Source remained unchanged and exact-source/artifact inspection matched before documentation-only closeout; prior failures retained.
+- Code checkpoint 33f0d8d confirmed pushed to the existing PR6 branch; this source-bound documentation closeout follows. CI is separate and not yet claimed for the new head.
+
+### Limitations
+
+- Local/unreleased at preparation; no new inference, charges, merge or deployment.
+- Host-configured seam, not dedicated operator controls or a finished model swarm.
+- Reported-cost stopping is not a hard billing cap; no calibrated predictor or model-quality acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A multi-model processor needs authority/revision/source/lease checks between calls and in the final transaction, not only around the entire pipeline.
+- Discovery: Changing models, questions or budgets after source review must invalidate processing admission.
+- Discovery: A provider response can omit costs or arrive after the budget is exceeded. Unknown cost must stop subsequent calls, never mean free.
+- Discovery: Independent event and local-analysis slots would permit extra parallel provider requests. The application now shares one slot.
+- Discovery: The reviewed worker retains a typed specialist report but does not yet offer dedicated model selection and readable comparison controls or measured operator benefit.
+- Risk: Overclaiming predictive skill, billing guarantees or operator benefit from software contracts.
+- Architecture: Pure comparison in ENDSTATE; source access and current lifecycle remain in the existing host.
+- Roadmap decision: Existing-task refinements and decision records; EM-308 remains a candidate without scope/status promotion.
+Registered discoveries: EM-304, EM-305, EM-306, EM-307, EM-308.
+
+Roadmap items: `B03-04`, `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-specialist-worker.md](docs/delivery/sessions/2026-10-26-specialist-worker.md), [tests/test_specialist_review.py](tests/test_specialist_review.py), [docs/v2/SPECIALIST-REVIEW.md](docs/v2/SPECIALIST-REVIEW.md).
+
+## 0.2.0-alpha.8 forecast measurement · Measure forecasts without calling conditional plans predictions
+
+2026-10-26 · `local_unreleased`
+
+Provider-free scoring and an explicit missing-predictor diagnostic, not predictive-quality acceptance.
+
+### Added
+
+- Typed forecasts/resolutions, strict clocks/probabilities, abstention and missing outcomes, coverage-aware Brier scoring.
+- Six paired fictional worlds with separately read outcomes and immutable run outputs.
+
+### Changed
+
+- Internal wheel smoke exercises forecast measurement without provider/application dependencies.
+
+### Verification
+
+- 34 new forecast tests;70 forecast/kernel and106 forecast/kernel/runner tests passed. Compilation passed.
+- Diagnostic executed:0/6 configured forecasts; no empirical prediction tested.
+- Initial full Pytest omitted installed Node from PATH:96 failed,1877 passed,6 skipped. Corrected native source cb56479a33145c14a0683baab751ac00fea18a64c6e9ff5841a541b2eed5be32 passed1979 source tests,1979 installed-wheel regressions and454 checks across13 native browser suites; source/evidence inspection passed before documentation-only closeout.
+
+### Limitations
+
+- Local at preparation; no merge/release/deployment or further inference.
+- No configured predictor, independent blinding, empirical calibration or predictive accuracy. Canonical acceptance statuses unchanged.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Planning and transport success leave outcome prediction absent.
+- Discovery: Absent forecasts/outcomes need null scores and explicit coverage.
+- Discovery: Separate labels/hashes do not prove independent blinding.
+- Risk: Synthetic scores or choice confidence can be mistaken for empirical skill.
+- Architecture: Pure ENDSTATE measurement; host permissions and factual observations remain separate.
+- Roadmap decision: existing_task refinements and decision_record; no required scope or acceptance changes.
+Registered discoveries: EM-301, EM-302, EM-303.
+
+Roadmap items: `B02-11`, `ES01-05`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-forecast-measurement.md](docs/delivery/sessions/2026-10-26-forecast-measurement.md), [docs/v2/FORECAST-EVALUATION.md](docs/v2/FORECAST-EVALUATION.md), [tests/test_forecasting.py](tests/test_forecasting.py).
+
+## 0.2.0-alpha.8 verified checkpoint repair · Repair test-clock and dialog-focus failures before publication
+
+2026-10-26 · `local_unreleased`
+
+Prepare the complete verified local checkpoint for the existing unmerged PR; retain failures and separate review-service errors from software correctness.
+
+### Changed
+
+- Retain the exact passing native source and prior failed experiments in the publication handoff.
+
+### Fixed
+
+- Restore the OIDC expiry test’s original clock rather than freezing time for later wall-clock-signed tokens.
+- Initial dialog focus is synchronous; a controlled regression prevents delayed focus stealing the first edit.
+
+### Verification
+
+- Native source52e3af995e132ce9c70b9d98ff0aecf9c0a30388ab3695d0f424a1eb63d0b92e passed1945 source tests,1945 installed regressions and13 native suites/454 checks; exact inspection valid before documentation closeout.
+- Focused OIDC suite rerun:29 passed. Full native checks on the published head remain required.
+
+### Limitations
+
+- Local at preparation; the current PR head and checks determine publication. No merge, release, deployment or further provider inference.
+- Review service previously errored without findings. Independent/model/professional/production gates remain open.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Mixed fixture clocks can reject otherwise valid tokens.
+- Discovery: Errored review services provide no correctness verdict.
+- Risk: Weakening token validation would hide the fixture defect. Missing review is not approval.
+- Architecture: No production authority or pure-engine boundary changes; separate fixture time and review evidence.
+- Roadmap decision: existing_task repair and decision_record; no status, required scope or acceptance criterion changes.
+Registered discoveries: EM-298, EM-299, EM-300.
+
+Roadmap items: `B03-01`, `B02-15`, `B02-18`, `ES01-05`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-checkpoint-repair.md](docs/delivery/sessions/2026-10-26-checkpoint-repair.md), [tests/test_oidc_login.py](tests/test_oidc_login.py), [tests/browser_accessibility.py](tests/browser_accessibility.py).
+
+## 0.2.0-alpha.8 local native-review checkpoint · Retain dissent, replay scenarios and export checked decision packets
+
+2026-10-26 · `local_unreleased`
+
+Extend ENDSTATE-native review capabilities and the8BALL local-operator workflow; add separately opt-in native decision transports without granting model authority.
+
+### Added
+
+- Attributed hypotheses, immutable dispositions and explicit unresolved-objection acknowledgement.
+- Exact-change scenario manifests and deterministic replay on neutral snapshots.
+- Verified saved-brief packets with server-owned permissions, stale/history guards and narrative-free restricted indices.
+- Bounded Jev/Clef/GPT native transports and three separately authorized fictional smoke receipts.
+
+### Changed
+
+- Internal wheel smoke and recursive import guards exercise the new provider-free primitives. Standard acceptance strips all selected provider credentials.
+- Native Plan Review regression covers actual packet downloads, retained edits and stale denial.
+
+### Fixed
+
+- Agency host/event routing distinction; frozen permission comparisons; nested predecessor lookup; saving unpreviewed disposition edits.
+- Initial modal focus is synchronous so a pending timer cannot interrupt the first edit.
+
+### Verification
+
+- 230 focused scenario/rehearsal/packet/kernel/domain/transport tests passed before the final strict-refusal follow-up.
+- 127 focused importlib-mode packet/transport/runner tests passed; native Plan Review passed49 checks.
+- 1945 source Python tests passed before documentation closeout.
+- Three native fictional answers validated; Jev/GPT selected review, Clef selected accept. Gateway recorded total USD0.000008547.
+- Final full source-bound native acceptance is a separate unique artifact; no full-run success is asserted in this pre-run checkpoint.
+- First full native run20261026T020659Z-5bbe5470 failed accessibility;1945 source tests, installed-wheel regression and12 browser suites/417 checks passed. Failed report inspected valid before repair. Corrected focused accessibility passes37 checks; fresh full acceptance follows.
+
+### Limitations
+
+- Local uncommitted work after4f31c6b; not included in PR6 yet. No merge, release, deployment, upstream runtime or public SDK.
+- No model swarm or named-person predictions; no independent quality/operator/production acceptance. Sonnet5.5 inference untested.
+- Packets are incomplete internal projections, not sharing authority. Agency packet routes remain disabled.
+- No provider hard-cap/top-up or atomic gateway routing guarantee. Five older research snapshot discrepancies remain preserved.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Opposing advisory answers survive successful native transports
+- Discovery: An event-route toggle is not an agency-mode security boundary
+- Discovery: A mutable permission set can erase evidence of revocation
+- Discovery: A saved brief pointer is not a complete decision audit
+- Discovery: Unpreviewed operator edits must not silently save an older review
+- Discovery: Nested reusable packages need the same import-boundary check
+- Discovery: A narrative-free reference index is not anonymised public data
+- Discovery: A free-tier flag does not guarantee zero recorded cost
+- Discovery: Deferred modal focus can interrupt early input, producing an unintended original-value save rather than an empty required-field submission.
+- Risk: Successful transports can disagree; a reference index is not anonymous; an event-mode switch is not the full authorization boundary.
+- Architecture: Reusable calculations and projections stay in ENDSTATE; authority, storage, transport and UI stay in8BALL.
+- Roadmap decision: existing_task engineering refinements plus visible deferred/candidate concerns; no status, required flag or acceptance criterion changed.
+Registered discoveries: EM-290, EM-291, EM-292, EM-293, EM-294, EM-295, EM-296, EM-297, EM-298.
+
+Roadmap items: `B02-11`, `B02-12`, `B02-15`, `ES01-05`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-native-review-and-decisions.md](docs/delivery/sessions/2026-10-26-native-review-and-decisions.md), [docs/v2/ASSUMPTION-CHALLENGE.md](docs/v2/ASSUMPTION-CHALLENGE.md), [docs/v2/DECISION-PROVIDERS.md](docs/v2/DECISION-PROVIDERS.md), [tests/test_decision_packet.py](tests/test_decision_packet.py), [tests/browser_plan_review.py](tests/browser_plan_review.py).
+
+## 0.2.0-alpha.8 research and contract checkpoint · Preserve four pinned source studies and native decision-model contracts
+
+2026-10-26 · `local_unreleased`
+
+Source-only research and recommendations, not four installed dependencies or accepted model specialists. Keeps original authority/evidence boundaries and optional task scopes unchanged.
+
+### Added
+
+- Four exact source Gitlinks, manifests, individual code/licence studies and a combined three-slice recommendation.
+- Owner-confirmed native Jev/Clef/GPT protocol investigation; read-only catalogue access only.
+
+### Changed
+
+- Research inventory now records 32 repositories with explicit omissions and five older VM discrepancies.
+
+### Fixed
+
+- Research helper checks configured origins rather than environment-rewritten proxy transport URLs; seven focused controlled tests cover the boundary.
+
+### Verification
+
+- Four new source snapshots and materialized blob identities verified; HighwayEnv batch-file newline normalization recorded.
+- Seven focused source-helper tests pass. Working-tree regression: 1793 passed, one dependency deprecation warning; Python compilation and all browser-module syntax checks pass. This working tree also includes unfinished rehearsal code; these totals are not source-bound feature or browser acceptance.
+- Full archive verification failed on five older snapshots; existing data retained. No upstream code, model, dependency or test was executed.
+
+### Limitations
+
+- No measured operator benefit, runtime dependency adoption, model inference, professional/human acceptance, merge, release or deployment. Native brief remains unfinished and needs dedicated coverage.
+- PR6 has a retained installed-wheel CI failure at the preceding pushed source; local logical-clock fixture fix is separate from this research checkpoint.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Retained dissent, exact-change replay checks, reference-focused history and truthful missing-input labels strengthen existing native capabilities; source/runtime/licence boundaries remain distinct.
+- Risk: Votes, rewards, similarity, class probabilities and shared-model agreement are not evidence or case-success probabilities. Export and privacy boundaries require server enforcement.
+- Architecture: Keep ENDSTATE typed and provider-free; 8BALL owns current authority, transport, persistence and operator interaction. Reuse existing Plan Review/Insights/Course seams instead of parallel engines.
+- Roadmap decision: Existing-task refinement and source-inspection candidates only; no task status, required flag, acceptance criterion or optional hold changed.
+Registered discoveries: EM-260, EM-261, EM-262, EM-263, EM-264, EM-265, EM-266, EM-267, EM-268, EM-269, EM-270, EM-271, EM-272, EM-273, EM-274, EM-275, EM-276, EM-277, EM-278, EM-279, EM-280, EM-281, EM-282, EM-283, EM-284, EM-285, EM-286, EM-287, EM-288, EM-289.
+
+Roadmap items: `B02-09`, `ES02-06`.
+
+Evidence: [docs/research/github-2026-10-26/README.md](docs/research/github-2026-10-26/README.md), [docs/research/github-2026-10-26/synthesis.md](docs/research/github-2026-10-26/synthesis.md), [docs/research/github-2026-10-26/decision-projects-source-manifest.json](docs/research/github-2026-10-26/decision-projects-source-manifest.json), [docs/v2/DECISION-PROVIDERS.md](docs/v2/DECISION-PROVIDERS.md), [tests/test_research_copy.py](tests/test_research_copy.py).
+
+## 0.2.0-alpha.8 provider verification correction · Preserve the failed native provider checkpoint and repair tracking consistency
+
+2026-10-26 · `local_unreleased`
+
+The first Sonnet configuration full run passed all native browsers but failed two source and installed tracking tests. Preserve its evidence and repair the missing reserved-claim prefix and stale derived blocker text, without changing tests or provider behavior.
+
+### Added
+
+- Source-bound failed-run receipt; the original raw run remains retained.
+
+### Changed
+
+- ROADMAP-LANES reflects the canonical B02-09 blockers; original builder ownership remains explicit.
+
+### Fixed
+
+- Restored the intelligence coordination-claim prefix on the B02-09 next action.
+
+### Verification
+
+- Run 20261026T004726Z-ff1767e8 on clean 83c04f3 failed: 1784/1786 source tests; installed regressions failed the same two tracking tests. All 13 native suites/439 checks passed, as did compile, JS, schemas and structural fixtures.
+- Failed-run --inspect valid before edits. A fresh complete native run is required after the correction.
+
+### Limitations
+
+- Not a passing full-run receipt, model inference or model quality result. Provider cap/credit/top-up and independent acceptance gates remain open. No merge, release or deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: The existing EM-257 tracking boundary recurred: changing a task blocker requires updating its derived lane representation while preserving reserved ownership.
+- Risk: Native browser success cannot mask source or installed-package tracking failures.
+- Architecture: Keep full source-bound checks and immutable failures; do not weaken the assertions or introduce a second editable status board.
+- Roadmap decision: existing_task correction under B02-09; no scope or status promotion.
+Registered discoveries: EM-257.
+
+Roadmap items: `B02-09`.
+
+Evidence: [docs/evidence/sonnet-55-native-failed-2026-10-26.json](docs/evidence/sonnet-55-native-failed-2026-10-26.json), [docs/delivery/sessions/2026-10-26-sonnet-55.md](docs/delivery/sessions/2026-10-26-sonnet-55.md).
+
+## 0.2.0-alpha.8 Sonnet 5.5 configuration · Select Sonnet 5.5, preserve failed inference and migrate bounded request parameters
+
+2026-10-26 · `local_unreleased`
+
+Owner selected Sonnet 5.5, not Opus. Account catalogue lists claude-sonnet-5-5 active; no successful inference exists. Direct Anthropic requests omit unsupported sampling controls without raising limits or adding retries. Historical Sonnet 4.6 HTTP400 failures are retained exactly.
+
+### Added
+
+- Hash-addressed compressed original failed provider report and safe catalogue/selection receipt; recorded the missing billing-cap preflight and hold on further inference.
+
+### Changed
+
+- Opt-in Anthropic configuration examples select claude-sonnet-5-5. Direct Anthropic call receipts record omitted sampling and provider-default thinking; other endpoints retain their existing parameters.
+
+### Fixed
+
+- Avoid sending temperature to direct Anthropic models that reject sampling controls. This is not a diagnosis of the older Sonnet 4.6 failures.
+
+### Verification
+
+- 181 focused compatible transport/CLI/integration/retention tests passed in 3.44s with HTTP doubles; one existing Starlette/AnyIO deprecation warning.
+- Read-only catalogue GET HTTP200: 14 entries, no further page, selected Sonnet 5.5 active. No inference performed by that check. Full source-bound native acceptance follows this functional checkpoint.
+
+### Limitations
+
+- Configuration is opt-in, not a deployed/global environment update. Compatibility response_format is not remotely enforced; native Messages adapter is not implemented.
+- No Sonnet 5.5 generation, model quality or independent human/production acceptance. Earlier Sonnet 4.6 attempt failed all four fixtures; exact rejection cause unknown.
+- Provider-enforced US$5 cap, account credit and disabled automatic top-up remain unverified. No further inference until preflight is confirmed; no merge/release/deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A new model name also changes protocol and thinking/output-budget semantics; catalogue access cannot establish inference success.
+- Discovery: Fictional fixture permission and token ceilings did not establish the required provider-enforced spending cap; preserve the missed preflight explicitly.
+- Risk: Ignored schema requests and unverified billing limits can be mistaken for model/cost guarantees. Unknown older 400 causes must not be rewritten as a new-model incompatibility.
+- Architecture: Keep vendor protocol handling outside ENDSTATE, fixed limits/local validation and explicit external permission. Native Messages and dollar-denominated enforcement are separate work.
+- Roadmap decision: existing_task and decision_record under B02-09: bounded Sonnet selection/request migration, historical failed evidence and billing hold. No acceptance promotion or new required scope.
+Registered discoveries: EM-258, EM-259.
+
+Roadmap items: `B02-09`.
+
+Evidence: [docs/evidence/anthropic-selection-2026-10-26.json](docs/evidence/anthropic-selection-2026-10-26.json), [docs/evidence/anthropic-compatible-2026-10-26.json.xz](docs/evidence/anthropic-compatible-2026-10-26.json.xz), [docs/delivery/sessions/2026-10-26-sonnet-55.md](docs/delivery/sessions/2026-10-26-sonnet-55.md), [tests/test_compatible_provider.py](tests/test_compatible_provider.py).
+
+## 0.2.0-alpha.8 integrated native receipt · Fresh exact-source native engineering acceptance for all seven lanes
+
+2026-10-26 · `pushed_unreleased`
+
+Pushed source 05525c9 passed 1782 source tests,1782 installed-wheel regressions and13 native suites/439 checks. Source-bound inspection valid before this separate documentation receipt; previous full failed run retained. No model,production,human or release acceptance.
+
+### Added
+
+- Durable passing source/report/archive hashes and full retained failed/passing evidence bundle.
+
+### Changed
+
+- Current entry points and integration sprint evidence now point at the completed engineering run,not baseline or focused counts. Reserved builder task claims remain unchanged.
+
+### Verification
+
+- Native run 20261026T002344Z-5641058a on clean05525c9826e476b7f9996f187190b87ef8e1f9ec;1782/1782 source and installed regressions;all13 suites/439 native checks.
+- Python compilation,23 browser-module node checks,delivery/changelog/emergence validation,schemas and structural fixture benchmark passed.
+- --inspect valid before receipt edits;source stayed unchanged. No CI workflows target this devin branch: no remote-CI pass claimed.
+
+### Limitations
+
+- This receipt is later documentation,not part of its tested source hash. Exact earlier source and raw artifacts are required for inspection.
+- No paid/live inference,model quality,professional/human accessibility,real-client/pilot,production/security/commercial acceptance,merge,release or deployment.
+- Missing production adapters intentionally fail closed. Optional holds remain.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Full-source tracking and isolated installed-kernel execution are separate verification contracts; native UI green alone cannot excuse their failure.
+- Risk: Later receipt bytes must not be confused with tested source or external acceptance.
+- Architecture: Keep original lane claims and isolated wheel imports; file-relative subprocess CLI paths remove cwd assumptions.
+- Roadmap decision: existing_task: retain both failed and passing receipts and correct bounded verification mismatches. No new required scope or task promotion.
+Registered discoveries: EM-257.
+
+Roadmap items: `ES01-03`, `B03-05`, `B10-01`, `B10-02`, `B03-06`.
+
+Evidence: [docs/evidence/roadmap-integration-native-2026-10-26.json](docs/evidence/roadmap-integration-native-2026-10-26.json), [docs/evidence/roadmap-integration-failed-2026-10-26.json](docs/evidence/roadmap-integration-failed-2026-10-26.json), [docs/delivery/sessions/2026-10-26-roadmap-integration.md](docs/delivery/sessions/2026-10-26-roadmap-integration.md).
+
+## 0.2.0-alpha.8 integration verification repair · Preserve lane claims and cwd-independent operational CLI verification
+
+2026-10-26 · `local_unreleased`
+
+First full integrated run retained as failed: all13 native suites/439 checks passed, but reserved task ownership and isolated CLI test paths needed correction. No production gate or installed-kernel isolation was weakened.
+
+### Changed
+
+- Restore original builder owner,branch and source-base claims; keep current integration checkpoint separately recorded.
+
+### Fixed
+
+- Operations readiness/recovery/pilot test CLIs use paths relative to their source files, not process working directory.
+
+### Verification
+
+- First full run:1781/1782 source tests;1778/1782 installed regressions;13 native suites/439 browser checks passed. Exact failed report inspection valid. Corrected full native run pending.
+- 69 focused tracking/operations/readiness/recovery/pilot tests passed after correction.
+
+### Limitations
+
+- No whole-run pass for5dbd40f. No provider inference or independent human/security/production acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Integrated full-source and installed-wheel runs expose tracking/isolation contradictions that focused lane totals cannot exclude.
+- Risk: A successful browser run is not an overall acceptance pass; failed evidence must remain source-bound and recoverable.
+- Architecture: Preserve original ownership history and run the installed kernel outside the checkout, while CLI paths resolve their real source files.
+- Roadmap decision: existing_task: repair integration-only verification mismatches, retain failed run and rerun full exact-source acceptance. No scope expansion or external gate promotion.
+Registered discoveries: EM-254.
+
+Roadmap items: `B03-05`, `B10-01`, `B10-02`, `B03-06`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-roadmap-integration.md](docs/delivery/sessions/2026-10-26-roadmap-integration.md), [tests/test_operations_readiness.py](tests/test_operations_readiness.py), [tests/test_operations_recovery.py](tests/test_operations_recovery.py), [tests/test_pilot_tooling.py](tests/test_pilot_tooling.py), [docs/evidence/roadmap-integration-failed-2026-10-26.json](docs/evidence/roadmap-integration-failed-2026-10-26.json).
+
+## 0.2.0-alpha.8 engineering integration · Optional agency host and integrated roadmap controls
+
+2026-10-26 · `local_unreleased`
+
+Seven exact lane histories wired to a current-principal, current-source optional 8BALL host and usable isolated desk; local workflows and ENDSTATE boundaries retained. This entry records the local source checkpoint, not a later publication or native pass.
+
+### Added
+
+- Explicit shared host, cookie-session desk/client and event review controls, read-only fictional packs, reviewed reference and scoped operations adapters.
+
+### Changed
+
+- Nested pure ENDSTATE packages registered and checked in installed wheel; canonical lane fragments and later agency baseline receipt reconciled additively.
+
+### Fixed
+
+- Vault advertised maximum fits an exact-path400000-byte cap without raising the global cap; current-session,source and processing policy rechecks fail closed.
+
+### Verification
+
+- 1778 pre-final source tests passed; initial native agency14 checks passed. Latest19 focused host/vault tests passed under importlib mode. Final full native/wheel/source inspection pending; earlier failures retained in session.
+
+### Limitations
+
+- Fictional seeded sessions/scanner/controlled worker output are not real IdP,malware or model evidence. No automatic sends,live inference,downloads,real-client pilot,independent human/security or production acceptance. Required gates unchanged.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Host integration exposed package omissions, UI lifecycle mismatch and post-claim identity exception mismatch. Corrected checks distinguish source, client disclosure, processing consent and current session.
+- Discovery: 262144 bytes encode to about349528 base64 bytes before JSON overhead; the default300000-byte middleware rejected the advertised vault maximum. Exact-path cap400000 and actual/misdeclared/oversized tests reconcile it.
+- Discovery: The integrated host intentionally omits scanner, processing policy, dependent-copy deletion, processor and revocation probe implementations in JSON startup. Fictional seeded sessions/scanner/worker output exercise software controls only.
+- Risk: Missing production policies and external acceptance cannot be replaced by software controls.
+- Architecture: Current identity/storage/source/authority adapters stay in 8BALL; ENDSTATE nested packages stay pure and independently installed.
+- Roadmap decision: existing_task: integrate bounded functional controls and preserve every prior blocker and candidate; no production or whole-roadmap completion claim. ER-01..15 recorded.
+Registered discoveries: EM-254, EM-255, EM-256.
+
+Roadmap items: `B03-01`, `B03-02`, `B03-03`, `B03-04`, `B03-05`, `B04-01`, `B04-02`, `ES02-01`, `ES02-02`, `ES02-03`, `ES02-04`.
+
+Evidence: [docs/delivery/sessions/2026-10-26-roadmap-integration.md](docs/delivery/sessions/2026-10-26-roadmap-integration.md), [docs/v2/AGENCY-HOST.md](docs/v2/AGENCY-HOST.md), [tests/test_agency_host.py](tests/test_agency_host.py), [tests/browser_agency.py](tests/browser_agency.py).
+
+## 0.2.0-alpha.8 · Verify complete result retention and publish current build plan
+
+2026-10-25 · `local_unreleased`
+
+Record source-bound full-suite evidence for complete processing output and update the continuing build handoff.
+
+### Added
+
+- Source-bound native verification receipt.
+
+### Changed
+
+- Latest tracker, entry point and next-agent prompt now reference the verified development branch and full build goal.
+
+### Verification
+
+- 1349 source /1349 installed-engine /423 native browser checks across twelve suites passed; exact inspection and both checkpoint CI workflows passed.
+- 36 focused work/review tests passed.
+
+### Limitations
+
+- Authenticated background dispatch and actual-model/independent/human acceptance remain unfinished.
+- Oversized transport failures still need separate raw provider evidence; no silent truncation or retries.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Character count and UTF-8 byte count differ for multilingual text. A character-only bound neither matches the provider envelope limit nor reliably bounds stored output. Exact and one-byte-over tests demonstrated the difference.
+- Risk: Capacity correction is not proof of model quality or complete worker integration.
+- Architecture: Provider-independent byte-bounded output retention and exact review/export lineage.
+- Roadmap decision: existing_task: correct ES02 retention and continue authenticated worker integration.
+Registered discoveries: EM-110, EM-112.
+
+Roadmap items: `ES02-02`, `ES02-04`.
+
+Evidence: [docs/evidence/complete-result-retention-native-2026-10-25.json](docs/evidence/complete-result-retention-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-complete-result-retention.md](docs/delivery/sessions/2026-10-25-complete-result-retention.md).
+
+## 0.2.0-alpha.8-collaboration-engineering · Revocable expert grants and exact reviewed client projections
+
+2026-10-25 · `local_unreleased`
+
+Opt-in B03-03 collaboration components with current injected authority, exact matter/object/source scope, independent disclosure review and a client-only content allowlist; no shared-router or production portal activation.
+
+### Added
+
+- Transactional immutable specialist/client grants, expiry, durable revocation, audit and explicit-object expert reads; separately authored projection drafts, exact recipient/grant/content review, terminal withdrawal and client allowlisted reads.
+- Mandatory policy/case/source adapters, concrete agreed VaultSources transaction-gate wrapper, agency-only route registration and separate internal/client CSP-safe browser mounts.
+- 37 controlled SQLite/API regressions plus precise central wiring/migration/security instructions and complete ER-01..15 lane receipt.
+
+### Changed
+
+- No shared application/router/navigation/dependency/acceptance or canonical tracking edits; original alpha import/audit and local app remain untouched.
+
+### Verification
+
+- 37 focused collaboration/projection/API tests passed (one dependency warning); 35 pre-existing authority/access tests passed; Python compilation and all 19 JavaScript modules passed syntax checks.
+- Initial full pytest without nvm Node PATH: 96 failed, 1296 passed; corrected PATH yielded 1392 passed on the pre-anti-enumeration checkpoint. Final independent native run pending at this checkpoint; failures retained in lane receipt.
+
+### Limitations
+
+- Local unreleased component checkpoint, not B03-03 acceptance. Actual request-bound identity/case/vault integration, exact agency route mappings, body/error middleware and navigation remain integrator-owned.
+- No native new-flow usability review, production tenant infrastructure, independent human disclosure/security acceptance, secure portal, inference, external send, recall, merge or deployment claim.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Disclosure review binds recipient and immutable grant as well as content; safe metadata is not commit authorization; client lifecycle checks must not grant internal source access; exact review/refresh burden needs measurement.
+- Risk: Malicious/missing host adapters, broad client route aliases, source readiness races, semantic leakage in curated text and overclaiming component/native evidence.
+- Architecture: Use the same active SQLite write transaction for current authority, source policy and disclosure/audit mutation; retain explicit capability roles and client allowlist with no local bearer fallback.
+- Roadmap decision: Existing-task B03-03 refinements only; EM-176 remains a candidate. No new required scope or global acceptance promotion.
+Registered discoveries: EM-173, EM-174, EM-175, EM-176.
+
+Roadmap items: `B03-03`.
+
+Evidence: [docs/v2/COLLABORATION.md](docs/v2/COLLABORATION.md), [docs/delivery/lane-reports/collaboration.md](docs/delivery/lane-reports/collaboration.md), [tests/test_collaboration.py](tests/test_collaboration.py), [tests/test_collaboration_api.py](tests/test_collaboration_api.py), [tests/test_projection.py](tests/test_projection.py).
+
+## 0.2.0-alpha.8 · Collaboration checkpoint pushed with source-bound partial native results
+
+2026-10-25 · `pushed_unreleased`
+
+Records the pushed engineering checkpoint and final native failures without converting component verification into B03-03 acceptance; preserves the earlier local checkpoint record.
+
+### Changed
+
+- Documented final identity same-principal requirement for request-bound CurrentPolicy adapters; shared integration remains mandatory and default-deny.
+
+### Fixed
+
+- Package-qualified sibling fixture imports now work in isolated installed-wheel importlib regressions.
+
+### Verification
+
+- Functional checkpoint 6537ccc29b5b4d2be141f69142b48602c472ecfd is pushed/remote-verified; native run 20261025T234326Z-658b2934 bound stable source SHA-256 f3396dfd0b005a035e90b8aa75a836de5600c5549079422d13acc819ac0a0af1.
+- 1393 source and 1393 installed-wheel tests passed, 37 focused tests passed in default/importlib modes, compile/19 JavaScript/schema/structural/delivery/emergence checks passed; eleven existing native suites passed 379 checks.
+- Overall native run failed ONLY canonical changelog base guard and Studio line149 local-unreleased assertion against frozen pushed_unreleased state. Inspect valid=true, native_browser_verified=false, model_quality_approved=false, released=false. Earlier missing-Node/setuptools/test-import/accessibility failures retained in receipt.
+
+### Limitations
+
+- Tested fingerprint covers exact 6537ccc source, not later record-only changes or future integration. No native journey for the new opt-in collaboration mounts, global B03-03 acceptance, production portal, external send, live inference, independent review, merge or release.
+- Integrator must append canonical fragments, preserve truthful shipping history, resolve frozen Studio expectation and inject current actor/reviewer, same-DB case/vault/source-policy, route/body/cache and UI wiring before a new integrated acceptance run.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: No new scope promoted: existing exact-recipient/digest/grant and source-transaction/client-authority refinements stand; isolated package verification exposed a test portability defect invisible in ordinary pytest.
+- Risk: A valid failed native receipt is not acceptance; host actor replacement, shared-route broadening, unavailable source adapters and unmeasured disclosure-review burden remain explicit.
+- Architecture: Bind one current principal and same-DB source lifecycle to every final gate; retain current reviewer policy independently and rerun source-bound combined verification.
+- Roadmap decision: B03-03 remains unaccepted. EM-173..175 existing-task refinements and EM-176 candidate retain their dispositions; EM-177 records test portability as an existing-task verification refinement, not a new required task.
+Registered discoveries: EM-173, EM-174, EM-175, EM-176, EM-177.
+
+Roadmap items: `B03-03`.
+
+Evidence: [docs/v2/COLLABORATION.md](docs/v2/COLLABORATION.md), [docs/delivery/lane-reports/collaboration.md](docs/delivery/lane-reports/collaboration.md), [tests/test_collaboration_api.py](tests/test_collaboration_api.py), [tests/test_projection.py](tests/test_projection.py).
+
+## 0.2.0-alpha.8-domain-packs-preview · Internal data-only domain-pack and consumer preview
+
+2026-10-25 · `pushed_unreleased`
+
+Add strict domain-pack inputs, explicit all-section content pins, conservative migration reports and a read-only scoped consumer; four fictional catalogues use the unchanged kernel without launching another product.
+
+### Added
+
+- Versioned bounded JSON pack schema/loader with native graph/action/policy contracts, vocabulary, mappings, explicit confirmation rules, inert prompts and host-registered integration declarations.
+- Neutral/sales/support fictional reuse fixtures and an exact export of the existing product-owned supplier playbook; detached current-authority scoped read-only consumer and conservative review-only migrations.
+- Source-isolated consumer and negative tests, distribution/ownership documentation, exact lane receipt and complete emergence review.
+
+### Verification
+
+- 95 focused tests passed (59 domain-pack + 36 retained kernel); 1415 full source tests passed with one upstream Starlette/AnyIO deprecation warning.
+- Python compilation and all 18 browser-module syntax checks passed. Ten original native browser suites completed with 352 checks; Studio failed the frozen newest-changelog local-unreleased assertion, with no bridge or fake pass.
+- Existing internal-wheel smoke passed; full installed-wheel regressions FAILED collection because the integration-owned package manifest omits the new subpackage. Initial setup/focused failures and corrected commands are retained in the receipt.
+
+### Limitations
+
+- Source-only internal engineering preview, not complete ES04/ES10 or native/package acceptance. Integrator must include endstate.domain_packs in the frozen manifest, reconcile truthful changelog/test state and rerun combined native acceptance.
+- No current transactional production isolation, async cancellation fencing, real model/professional/human acceptance, second application, public SDK/API/MCP, connector execution, automatic case migration, licence/support commitment or independent release approval.
+- No shared/canonical tracking edits in this builder; lane-local fragments need serial integration and regeneration.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A canonical all-section pack digest can detect changes to prompts, policies and adapter declarations, but neither a digest nor a caller subject authenticates a consumer. The read-only consumer needs independently host-authenticated identity, current scoped grants and a fresh revision-bound snapshot; local bearer identity, cross-scope requests and post-read revocation are rejected in focused tests.
+- Discovery: The support reuse fixture originally had confirmed policy state. A reusable pack must reject that state, while a live host snapshot may independently record manual policy review. Focused tests show that review alone still cannot satisfy an unobserved authority predicate, and that unrelated catalogue changes fail review matching.
+- Discovery: The frozen setuptools manifest lists only endstate. The internal wheel smoke passes but omits endstate.domain_packs; the actual installed-wheel regression run fails test collection with ModuleNotFoundError. Source-isolated reuse and 1415 source tests therefore do not prove this preview ships. No top-level LICENSE/LICENCE file or independent release approval was found/created in this checkpoint.
+- Risk: Pack declarations or hashes mistaken for host authority, executable integration registration or verified facts.
+- Risk: Source-only packaging success mistaken for distribution/release or complete native acceptance.
+- Architecture: Keep data-only templates detached from source-backed case state; host injects current-authority/scoped reads and retains transactional commits.
+- Architecture: Package manifest and canonical tracking are integration-owned; no automatic public exposure or live migrations.
+- Roadmap decision: existing_task / decision_record only for ES04-01..04 and ES10-01..02; preserve all prerequisite, human, licence/support and independent release gates. No new required tasks.
+Registered discoveries: EM-213, EM-214, EM-215.
+
+Roadmap items: `ES04-01`, `ES04-02`, `ES04-03`, `ES04-04`, `ES10-01`, `ES10-02`.
+
+Evidence: [endstate/domain_packs/contracts.py](endstate/domain_packs/contracts.py), [endstate/domain_packs/loader.py](endstate/domain_packs/loader.py), [endstate/domain_packs/consumer.py](endstate/domain_packs/consumer.py), [tests/test_domain_packs.py](tests/test_domain_packs.py), [tests/fixtures/domain_packs/fixer.json](tests/fixtures/domain_packs/fixer.json), [tests/fixtures/domain_packs/neutral.json](tests/fixtures/domain_packs/neutral.json), [tests/fixtures/domain_packs/sales.json](tests/fixtures/domain_packs/sales.json), [tests/fixtures/domain_packs/support.json](tests/fixtures/domain_packs/support.json), [docs/endstate/DOMAIN-PACKS.md](docs/endstate/DOMAIN-PACKS.md), [docs/delivery/lane-reports/domain-packs.md](docs/delivery/lane-reports/domain-packs.md).
+
+## unreleased · Explicit current-policy event dispatch and conservative replan parity
+
+2026-10-25 · `pushed_unreleased`
+
+Adds reviewed text intake, bounded current-authority worker attempts, source-policy-gated graph consumption and local timing without implicit inference, retries or sends. Production identity/vault/provider wiring and combined acceptance remain open.
+
+### Added
+
+- Optional explicit manual-text intake/source-processing review/attempt/cancel/status API registration; no HTTP provider-execution route.
+- Durable one-call dispatch under current grants/review/source policy; three explicit attempts maximum, safe failure/late-output retention and local stage metrics.
+- Bounded detached exact-clock unchanged-planning-input cache with full recomputation fallback and exact typed-response parity tests.
+
+### Changed
+
+- Inbox/work operations can share an owning transaction with authority checks and rollback.
+- Dispatched graph preview/review/commit and content status require a current source policy; missing adapter fails closed.
+- Review route registration accepts the same source policy used by the worker; shared application/router files remain unchanged.
+
+### Fixed
+
+- No automatic re-execution after cancellation, restart, expired leases or uncertain result persistence.
+- No replan reuse that revives revision-bound approval or ignores the explicit planning clock.
+
+### Verification
+
+- Functional checkpoint f749627f9f7456ddcc5744f22374c57f8c5e64be: full pytest 1410 passed, one upstream deprecation warning, 61.70s; focused event suite 101 passed, 4.98s.
+- Python compileall, all 18 browser JS node --check and git diff --check passed.
+- Existing frozen canonical delivery/changelog/emergence checks passed. Base-relative changelog check retained its expected new-entry failure until central fragment merge.
+- Initial fixture failures (wrong review exception class, nonexistent Store.commit, assignment validation before boundary) retained in lane receipt and corrected without weakening production checks.
+- One actual-clock fictional local processing/review/replan timing exercise retained; no actual-model/human/performance acceptance implied.
+
+### Limitations
+
+- The unreleased engineering checkpoint is pushed only to the assigned branch; final remote-head equality is separately verified in the handoff. No release, main merge, PR change or deployment.
+- No native UI/testing-agent, real provider inference, external connector/delivery, production source policy, independent quality or human acceptance run.
+- Source policy callback must connect current object/quarantine/scan/retention/processing/egress checks; a test policy is not a managed service.
+- Replan reuse is conservative unchanged-input caching, not a general partial-graph algorithm; real combined provider/human/durability latency remains open.
+- Partition freezes canonical JSON/generated files; only lane-local records are committed, and the integrator must merge/regenerate/check centrally.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Source review and current source policy are independent; uncertain calls cannot safely auto-retry; replan reuse must preserve exact clocks/approval revisions.
+- Risk: Absent production policy/provider integration, arbitrary retry resets and mislabelled fixture latency could undermine authority or paid-call safety.
+- Architecture: Host-owned identity/source policy and transactions remain outside ENDSTATE; derived calculation cache never gains storage/action/course authority.
+- Roadmap decision: Existing-task engineering only. EM-113/114/115/117 adopted as bounded existing-task refinements, not acceptance; EM-116 deferred owner-review candidate. No new required task or verified status.
+Registered discoveries: EM-113, EM-114, EM-115, EM-116, EM-117.
+
+Roadmap items: `ES02-01`, `ES02-02`, `ES02-03`, `ES02-04`, `B03-04`.
+
+Evidence: [docs/delivery/lane-reports/events.md](docs/delivery/lane-reports/events.md), [tests/test_event_dispatch.py](tests/test_event_dispatch.py), [tests/test_event_replan.py](tests/test_event_replan.py), [docs/endstate/EVENT-INBOX.md](docs/endstate/EVENT-INBOX.md).
+
+## v0.2 alpha.13 identity engineering lane · Current identity transactions and pinned OIDC session seam
+
+2026-10-25 · `pushed_unreleased`
+
+Add fail-closed current identity/grant transactions and opt-in OIDC code/PKCE browser sessions without mounting shared routes or claiming production provider acceptance.
+
+### Added
+
+- CurrentAuthority reauthentication and same-database all-object/all-operation require/transaction services.
+- Pinned public-client code/S256-PKCE exchange, one-use attempts, durable hashed opaque sessions and explicit local logout/revocation.
+- Separate register_identity_routes and isolated mountIdentity UI; offline signed identity/protocol/isolation regressions.
+
+### Changed
+
+- AgencyAccess can consume optional durable sessions while retaining the existing bearer guard map/allowed hook and default-deny unknown routes.
+- Publish exact same-transaction object/revision/policy integration contract; common app/router/nav/manifests are untouched.
+
+### Fixed
+
+- Stale SQLite WAL snapshots cannot authorize from old grants.
+- Changed authenticated principals roll back even when both identities hold grants.
+- Cancellation/expiry after provider exchange prevents session publication and no failed exchange is retried.
+
+### Verification
+
+- Final source-bound native runner on e9eefcda1aa5e446e7db96486b02ffbdc7d1b05d: 1422 source tests and 1422 actual installed-wheel regressions passed; compile/all JS/schema/structural/delivery/emergence checks passed.
+- Final native evidence is valid but overall failed: eleven suites/379 checks passed; frozen canonical base-changelog and Studio shipping-state assertion failures remain for central reconciliation. Exact report/source hashes and all results are in the identity receipt.
+- 101 focused authorisation/agency/identity/OIDC tests passed with one existing deprecation warning after final stability hardening.
+- Earlier full suite passed 1420 tests before the final two stability tests; final executed full/native evidence is preserved in the identity lane receipt.
+- First native run retained as failed: missing setuptools (installed afterward) and frozen Studio shipping-state assertion; eleven other native suites passed. No all-native pass is claimed.
+
+### Limitations
+
+- Not mounted in shared routers/navigation; integrated consuming services must supply exact object ownership/revision/vault-policy adapters and current identity checks.
+- No live OIDC provider, actual MFA verification, provider account administration/rotation, PostgreSQL row policies, independent security review, live inference or native identity UI acceptance.
+- Canonical delivery/register/changelog reconciliation and shipping-state test repair are central integration work; no merge/deploy/release/PR change is authorized.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Object-only grants and a subset of operations cannot authorize whole-case access or another object; every requested operation must be checked against every consumed object.
+- Discovery: An active SQLite read transaction can retain pre-revocation grants; obtaining a writer reservation before authority reads makes that stale snapshot fail closed.
+- Discovery: Rechecking only that some current principal has grants can permit a transaction to begin as one actor and end as another equally permitted actor.
+- Discovery: A login attempt consumed before provider exchange still needs cancellation and expiry checks before publishing the returned identity session.
+- Discovery: Revoking a local opaque session neither terminates a provider account/session nor withdraws independently issued API tokens or future sign-ins.
+- Risk: Fixture identity/MFA claims cannot stand in for independent provider and production-isolation review.
+- Risk: Unused expired attempt retention requires an explicit protected-store host policy, not a hidden background scan.
+- Risk: Frozen shipping-state/native-test mismatch must remain failed evidence until reconciled centrally.
+- Architecture: Keep 8BALL host identity outside the reusable ENDSTATE kernel; reuse existing Identity/Resource/Operation/Grant.
+- Architecture: Authentication, current object/matter grants, source-policy/revision review and domain action approval remain separate consuming-transaction checks.
+- Roadmap decision: Bounded existing_task B03-01 engineering only; EM-139 remains a candidate and production gates stay external. No canonical status or required-scope expansion.
+Registered discoveries: EM-133, EM-134, EM-135, EM-136, EM-137, EM-138, EM-139, EM-140.
+
+Roadmap items: `B03-01`.
+
+Evidence: [docs/delivery/lane-reports/identity.md](docs/delivery/lane-reports/identity.md), [docs/v2/AGENCY-ACCESS.md](docs/v2/AGENCY-ACCESS.md), [tests/test_identity_authority.py](tests/test_identity_authority.py), [tests/test_oidc_login.py](tests/test_oidc_login.py), [tests/test_identity_api.py](tests/test_identity_api.py).
+
+## 0.2.0-alpha.8 intelligence checkpoint · Exact-version reviewed hypotheses and scoped source-linked references
+
+2026-10-25 · `local_unreleased`
+
+Adds bounded neutral knowledge contracts, injected transactional reference services and explicit route/UI seams without mounting shared application paths or changing any acceptance status.
+
+### Added
+
+- Exact source hash/Unicode-offset support and immutable version/digest-bound review, terminal retirement, scoped lexical search and history.
+- Registerable API and isolated graphite review/search component with explicit context/API adapters; existing starter drafts remain unvalidated hypotheses.
+- Fictional revocation/isolation/stale-revision/rollback/concurrency/restart/idempotency and fake-DOM component tests.
+
+### Changed
+
+- Runtime inventory validation and exact configured-weight digest/size/details allowlists; unreachable/ambiguous remains unknown, not false.
+
+### Fixed
+
+- New reference versions cannot inherit prior review; changed or withdrawn source access cannot be recovered through idempotent replay.
+
+### Verification
+
+- Final source-tree pytest: 1427 passed, 0 failed/errors/skips, one Starlette/AnyIO deprecation warning. Final changed service/runtime/UI focus: 71 passed, including six Node/fake-DOM component tests.
+- Python compilation, all browser JavaScript syntax, schema export and structural plan-review bench 8/8 passed.
+- Final native runner 20261025T233752Z-c6a9eb2a: overall FAILED. 379 checks in 11 native suites passed; Studio assertion failed. Source unchanged during run; source SHA-256 75f3bcec64c6dc76bd7b9de8b71ec19486188160148f6004f1c8715451b04f97. Earlier failed run retained separately; final adapter/capacity hardening rerun without changing any shared gate.
+- Installed-wheel regressions FAILED: frozen package allowlist omits endstate.intelligence. Base-aware changelog FAILED pending central fragment merge. Existing generated-register checks passed.
+
+### Limitations
+
+- At receipt creation this branch's changes were local; exact committed/pushed head is returned separately after remote verification. No merge, PR change, release or deployment.
+- Shared routing, current identity/vault/source eligibility adapters, schema migration, navigation and package manifest remain integration-owned and unmodified.
+- New component has six Node/fake-DOM checks, not native UI/human accessibility acceptance. Current native suites cover existing-app preservation only.
+- No model download/inference, professional approval, held-out semantic evaluation, pilot/value measurement, production tenant/retention security approval or optional runtime work.
+- Journal quotes remain at rest after withdrawal; output denial is not secure erasure. Search is bounded lexical case/matter-scoped reference lookup, not semantic learning or outcome proof.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-233: Reference review must identify exact content without becoming fact or action authority.
+- Discovery: EM-234: Withdrawal denial and terminal retirement need different source-access rules.
+- Discovery: EM-235: A model inventory listing is not a loaded or quality-approved model.
+- Discovery: EM-236: Nested engine contracts require an explicit distribution declaration as well as source tests.
+- Discovery: EM-237: Inspectable precedent can increase review burden without proving operator benefit.
+- Discovery: EM-238: Native shipping-state assertions can fail independently of functional app preservation.
+- Risk: Source support is not truth or expertise; replay/review cannot revive revoked permission.
+- Risk: Incomplete package declaration, missing transactional policy adapters and uncertain-write retries can undermine a source-tree-only claim.
+- Risk: Review burden may exceed value; local quote retention is not managed deletion.
+- Architecture: Keep ENDSTATE contracts free of service imports; identity/source storage/API policy stay injected in 8BALL.
+- Architecture: Central integration must explicitly include the nested package and scoped route/UI/policy adapters, merge register fragments and run exact-tree acceptance.
+- Roadmap decision: Existing-task engineering and explicit integration requests only. No new required task, acceptance promotion, optional-hold implementation or release permission. EM-237 remains an unmeasured operator hypothesis; owner review of all six findings is pending.
+Registered discoveries: EM-233, EM-234, EM-235, EM-236, EM-237, EM-238.
+
+Roadmap items: `B04-01`, `B04-02`, `B04-03`, `B02-14`, `B02-15`, `ES03-01`, `ES03-04`, `B02-18`.
+
+Evidence: [docs/delivery/lane-reports/intelligence.md](docs/delivery/lane-reports/intelligence.md), [tests/test_learning_knowledge.py](tests/test_learning_knowledge.py), [tests/test_learning_knowledge_ui.py](tests/test_learning_knowledge_ui.py), [tests/test_runtime_status.py](tests/test_runtime_status.py).
+
+## 0.2.0-alpha.8-operations-engineering · Scoped operations journal and fictional recovery/readiness tooling
+
+2026-10-25 · `pushed_unreleased`
+
+Add unmounted, current-authority incident/revocation services and offline signed checkpoint, sandbox restore and artifact/pilot tools; preserve all production, legal, independent and human gates.
+
+### Added
+
+- Opt-in scoped ops schema and relative agency routes with injected per-operation current authority, hash-linked history, exact revisions and actor/scope-bound idempotency.
+- Six-surface revocation observations rechecked at closure; ordered incident states, terminal cancellation, sanitized adapter failures and transactional rollback.
+- Maintained Ed25519 checkpoint verification and actual new-file SQLite backup/replay rehearsal preserving alpha import lineage, without source mutation or implicit retry.
+- Bounded source/environment/hash/freshness readiness artifact consumption and conservative fictional pilot analysis; CLIs, operations support/onboarding runbook and 82 tests.
+
+### Verification
+
+- 82 operations tests included in 1438 passing full source tests on functional source 7c80f5ef30466eefbbaede6c9d33a3fc9207c21c; Python compilation, 18 browser-module syntax checks and Git whitespace checks passed.
+- 10/11 original native suites passed 352 checks; extra event-review passed 27 checks. Studio failed three times (including an exact committed-source rerun) at line149: truthful pushed-unreleased partition entry conflicts with hardcoded local-unreleased assertion. This is not complete native acceptance.
+- Canonical generated docs/checks passed unchanged; base-aware changelog check awaits central fragment append. Proposed JSON union schema/history checked separately, not installed into canonical ledgers. Initial missing-Node full-run failures and corrected PATH are retained in the receipt.
+
+### Limitations
+
+- No shared migration/router wiring, current production adapters, remote consistency, independent key/anchor custody, encrypted managed backup, retention or accepted operational SLOs. Whole-DB restore is host-only fictional rehearsal, not matter-filtered export.
+- No actual inference, real pilot, qualified-human/security/accessibility/legal/brand/customer acceptance, deployment/release authority, new research runtime, PR/main change or completion of B03-05/B03-06/B10-01/B10-02. Artifact consistency is not authenticated approval.
+- Studio native failure remains open for integration; retained reports are custom lane evidence, not a fabricated acceptance-runner success receipt.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Signing/verifying real Ed25519 checkpoints rejects altered digest, scope, revision and key, but the tool cannot verify that key or checkpoint custody is independent of the database administrator.
+- Discovery: The real SQLite backup/replay rehearsal verifies explicit case checkpoints including alpha import lineage, while copying every database byte; organisation/matter labels cannot turn that copy into a scoped export.
+- Discovery: Transactional tests show missing/unavailable surface probes cannot establish denial, close must rerun all six surfaces, and adapter failure or post-command revocation rolls back. A local transaction cannot guarantee atomic remote vault/search/worker state.
+- Discovery: A complete source-bound artifact matrix in tests remains evidence_supplied_pending_authentication with human_decisions_authenticated and release/deploy/real-pilot authority false, even when every claimed evidence kind is present.
+- Discovery: Fictional protocol tests preserve failed and unknown observations, missing dimensions and critical/high blockers. Supplying a resolution digest removes an unresolved-reference gap but does not turn the original failed observation into pass.
+- Discovery: Strict operation schemas and sanitized probe-exception tests exclude arbitrary source text and adapter exception details while preserving opaque IDs, category, revision and evidence digests. That exclusion alone does not show that an incident can be diagnosed adequately.
+- Discovery: The native Studio suite failed twice at current build and limits visible: the frozen partition changelog says pushed unreleased, but the existing test also demands local unreleased although the running version substring is present.
+- Risk: External custody/authenticity and remote revocation races cannot be established by fixture callbacks or files.
+- Risk: Whole-database copying, support narrative leakage and historical pilot failures must not be hidden by scoped labels or a supplied digest.
+- Risk: Shipping metadata can block native acceptance independently of the running code; retain failures and exact source boundaries.
+- Architecture: Keep operations in host-only modules outside ENDSTATE; inject same-transaction agency authority and safe probes, never local bearer fallback.
+- Architecture: Use explicit independent trust/recovery infrastructure and authenticated human decisions before production/pilot/release claims.
+- Roadmap decision: existing_task refinements for B03-05/B03-06/B10-01/B10-02; EM-199 retained integration decision. No new required task or accepted external gate.
+Registered discoveries: EM-193, EM-194, EM-195, EM-196, EM-197, EM-198, EM-199.
+
+Roadmap items: `B03-05`, `B03-06`, `B10-01`, `B10-02`.
+
+Evidence: [docs/operations/2026-10-25-operations-2101512c.md](docs/operations/2026-10-25-operations-2101512c.md), [docs/delivery/lane-reports/operations.md](docs/delivery/lane-reports/operations.md), [docs/operations/README.md](docs/operations/README.md), [docs/operations/verification-2101512c.json](docs/operations/verification-2101512c.json), [tests/test_operations_journal.py](tests/test_operations_journal.py), [tests/test_operations_recovery.py](tests/test_operations_recovery.py), [tests/test_operations_readiness.py](tests/test_operations_readiness.py), [tests/test_pilot_tooling.py](tests/test_pilot_tooling.py).
+
+## 0.2.0-alpha.8-vault-engineering · Isolated encrypted originals and transaction-bound source gates
+
+2026-10-25 · `pushed_unreleased`
+
+Implement bounded fictional text-original vault services, registerable API and explicit-control UI seam for existing B03-02. No shared app wiring or production/independent acceptance is claimed.
+
+### Added
+
+- AES-GCM envelope-encrypted immutable exact UTF-8 originals with SHA-256, quarantine and explicit hash/revision-bound scanner lifecycle, cancellation/restart/idempotency without automatic retry.
+- Current-authority scope/object checks, separate privileged controls, retention/hold/guarded local-only ciphertext deletion, append-only locally verified audit chain and same-transaction require_source publication gate.
+- Bounded strict registerable FastAPI routes, scoped mountable UI and44 fictional service/ASGI/security tests.
+
+### Changed
+
+- No shared router/store/navigation/manifests, Source Desk, existing alpha source or frozen canonical delivery register changed. Integrator must explicitly mount and inject current identity/session, key/scanner/deletion/provenance adapters.
+
+### Verification
+
+- 44 focused vault tests pass; final full shell regression1400 passed in60.05s on functional commita228fa169a40b9014b930bf4aeac215960f751f8, Python compilation and all19 browser-module syntax checks passed; only a dependency TestClient deprecation warning remains.
+- Initial full run96 Node-PATH failures/1299 passes retained, corrected by using existing nvm Node24 on PATH. Later added post-unwrap expiry test exposed caller-row-factory dependency (targeted1fail43pass/full1fail1399pass); cursor-local Row handling and authority recheck fixed it, retaining regression without weakening tests.
+- Unmodified canonical delivery/emergence validators pass and changelog --check passes; changelog --check --base remains the explicit central-integration gate until canonical fragments are appended. Virtual additive119-discovery/59-entry merge passed existing schema/evidence/history/base validators and rendering in an isolated460-file overlay without canonical edits. Lane fragments are proposals, not a replacement status ledger.
+
+### Limitations
+
+- Fictional local bounded UTF-8 text engineering only; not managed KMS, real malware detection, independent audit anchoring, storage-wide/legal erasure, backup/recovery or production tenant-isolation evidence.
+- No common-router/UI/navigation or Source Desk/projection wiring, native/browser/accessibility/operator/professional acceptance, real client data, paid/live inference or external send. B03-01 and all security/production gates remain open.
+- Delivery proposal may be applied centrally only with this lane's remote-head verification; no PR/main/release/deployment/pilot permission is implied.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: The vault's existing WRITE grant cannot safely imply scan, lawful-hold, retention, local-deletion or audit powers. A separate current transactional control callback is required and missing control denies.
+- Discovery: Revocation, scan cancellation and hold/retention revision changes during scanning invalidate publication even when a scanner later reports clean. Interrupted scans must not automatically resume or repeat on command replay.
+- Discovery: Deleting a local encrypted blob can preserve an immutable descriptor and audited tombstone while leaving derived text, WAL/filesystem remnants, backups, replicas and provider retention outside its scope. Without current dependency clearance the vault must deny deletion.
+- Discovery: A source handle returned before projection publication can become stale, revoked or unavailable. The final source gate must run on the caller's same-database transaction and verify current scope, exact revision/hash, clean release and authenticated ciphertext, with audit rolled back alongside the mutation.
+- Discovery: AES-GCM protects original bytes and authenticates their descriptor, but filenames, scope metadata and audit identifiers remain outside the content envelope. SQLite triggers/hash chains do not protect against an administrator rewriting or truncating the database and chain.
+- Discovery: The isolated panel separates immutable original version from mutable vault revision and clears visible object data/disables mutations after an uncertain command outcome. Disposal/generation guards reject late responses; no automatic retry is performed. These are implemented safeguards, not browser or operator-value evidence.
+- Risk: Separate-connection revocation races, stale scan/projection publication, privileged-control conflation, overclaimed deletion and metadata/audit/key custody.
+- Architecture: Source/collaboration final checks must share one BEGIN IMMEDIATE transaction; handles never authorize later transactions. Privileged controls and injected infrastructure stay distinct from kernel calculation and factual evidence.
+- Roadmap decision: existing_task B03-02 safeguards only: EM-153/154/155/156/158 adopted bounded implementation; EM-157 deferred production custody/security gate. No new required task, owner approval or broad status promotion.
+Registered discoveries: EM-153, EM-154, EM-155, EM-156, EM-157, EM-158.
+
+Roadmap items: `B03-02`.
+
+Evidence: [docs/v2/VAULT.md](docs/v2/VAULT.md), [docs/delivery/lane-reports/vault.md](docs/delivery/lane-reports/vault.md), [tests/test_vault.py](tests/test_vault.py), [tests/test_vault_api.py](tests/test_vault_api.py).
+
+## 0.2.0-alpha.8-roadmap-coordination · Seven bounded roadmap ownership reservations
+
+2026-10-25 · `pushed_unreleased`
+
+Partition existing requirements into seven disjoint engineering lanes on the requested inspected source base; no runtime code or product acceptance is delivered.
+
+### Added
+
+- Exact lane branches, requirements, ownership allowlists, current-authority router/service seam and reserved EM-113..252 discovery ranges; EM-253 records the coordination decision.
+
+### Changed
+
+- Canonical owner/branch/base/date and bounded next-action prefixes only; original task statuses, acceptance/required flags, evidence, dependencies and genuine blockers remain intact. Shared wiring and delivery-register integration stay serial and integration-owned.
+
+### Verification
+
+- Delivery, changelog and emergence validators passed against baca8ad9efa531e5f172058845852963d7d5234a; 67 tracking tests and 1356 full shell regressions passed. Python compilation, all 18 browser-module syntax checks and Git diff whitespace checks passed; prior task gates/history were preserved by explicit baseline comparison. Initial PATH-only Node failures and the corrected command are retained in the session receipt.
+
+### Limitations
+
+- Coordination only, not builder implementation, native/browser acceptance, actual inference, expert quality, production isolation, customer/legal acceptance, real pilot or release approval. Optional research/runtime and classifier work remains held; no PR/main/deployment changes.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Existing ledger task paths share routers, authorisation, worker and delivery registers; task-ID assignment alone does not partition implementation or prevent discovery-ID collisions. A reproducible seven-lane plan needs disjoint owned paths, a current-authority service/registration seam, reserved EM ranges and serial integration of lane-local evidence fragments.
+- Risk: Task-path overlap, later source/evidence drift, parallel registry collisions and optional/professional scope overclaiming.
+- Architecture: Use the real authenticated APIRouter registration seam with injected current-authority lane services; integration owns shared routers/state/nav/manifests and canonical delivery artifacts.
+- Roadmap decision: decision_record for existing DOC-03/DOC-06 only; no new required task, implementation or acceptance promotion.
+Registered discoveries: EM-253.
+
+Roadmap items: `DOC-03`, `DOC-06`.
+
+Evidence: [docs/delivery/ROADMAP-LANES.md](docs/delivery/ROADMAP-LANES.md), [docs/delivery/progress.json](docs/delivery/progress.json), [docs/delivery/sessions/2026-10-25-roadmap-partition.md](docs/delivery/sessions/2026-10-25-roadmap-partition.md), [tests/test_delivery_tracking.py](tests/test_delivery_tracking.py).
+
+## 0.2.0-alpha.8 · Retain complete structured processing output
+
+2026-10-25 · `local_unreleased`
+
+Correct the provisional text cap so complete ordinary graph output survives processing, review and export without truncation.
+
+### Added
+
+- Full graph and UTF-8 byte-boundary regressions.
+
+### Changed
+
+- Result cap now matches the supported 500000-byte hosted response-envelope limit.
+- Previous final browser-review receipt and screenshots were pushed after GitHub access recovered.
+
+### Fixed
+
+- Ordinary fictional graph output exceeded the previous 12000-character result cap.
+
+### Verification
+
+- 36 focused work/review tests passed; cumulative native verification pending.
+- Remote branch confirmed previous closeout 98ee073 after successful push.
+
+### Limitations
+
+- Authenticated background dispatch and actual-model/independent/human acceptance remain unfinished.
+- Oversized transport failures still need separate raw provider evidence; no silent truncation or retries.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Character count and UTF-8 byte count differ for multilingual text. A character-only bound neither matches the provider envelope limit nor reliably bounds stored output. Exact and one-byte-over tests demonstrated the difference.
+- Risk: Capacity correction is not proof of model quality or complete worker integration.
+- Architecture: Provider-independent byte-bounded output retention and exact review/export lineage.
+- Roadmap decision: existing_task: correct ES02 retention and continue authenticated worker integration.
+Registered discoveries: EM-110, EM-112.
+
+Roadmap items: `ES02-02`, `ES02-04`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-complete-result-retention.md](docs/delivery/sessions/2026-10-25-complete-result-retention.md), [docs/evidence/event-result-size-boundary-2026-10-25.json](docs/evidence/event-result-size-boundary-2026-10-25.json).
+
+## 0.2.0-alpha.8 · Verify browser event review across twelve native suites
+
+2026-10-25 · `local_unreleased`
+
+Record the corrected source-bound browser review result and screenshots, retaining failed runs and explicit publication/output-retention blockers.
+
+### Added
+
+- Verified native receipt and desktop/mobile screenshots.
+
+### Changed
+
+- Current handoff and both product trackers point to the verified UI checkpoint.
+
+### Verification
+
+- 1346 source /1346 installed-engine /423 native browser checks across 12 suites passed; exact inspection valid. Corrected checkpoint CI unavailable after GitHub authentication failure.
+- 84 focused code/runner tests and 27 standalone event-review checks passed.
+
+### Limitations
+
+- Development account-token flow, not actual OIDC browser sign-in or genuine human acceptance.
+- Full structured output exceeds current work-result text cap; preserve docs/evidence/event-result-size-boundary-2026-10-25.json and fix retention before worker dispatch.
+- Authenticated worker dispatch, production isolation and actual-model/independent acceptance remain unfinished.
+- Final receipt/screenshot edits are documentation-only and committed locally pending GitHub reconnection.
+- Both GitHub API authentication and Git remote authentication failed after the code checkpoint was pushed. Refresh/reconnect the environment GitHub connection, then push this branch.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Ordinary structured graphs exceed the provisional result cap.
+- Discovery: Native test waits must respect CSP and real notification lifetimes.
+- Risk: A green older suite cannot establish an uncovered integration requirement.
+- Architecture: Preserve full output before worker integration; keep CSP unchanged.
+- Roadmap decision: existing_task: record verified bounded review UI, preserve full-output retention as unfinished and pause publication at the demonstrated authentication blocker.
+Registered discoveries: EM-108, EM-109, EM-110, EM-111.
+
+Roadmap items: `B03-01`, `ES02-03`, `ES02-04`.
+
+Evidence: [docs/evidence/endstate-review-ui-native-2026-10-25.json](docs/evidence/endstate-review-ui-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-review-ui.md](docs/delivery/sessions/2026-10-25-endstate-review-ui.md), [docs/screenshots/8ball-event-review-2026-10-25.png](docs/screenshots/8ball-event-review-2026-10-25.png), [docs/screenshots/8ball-event-review-mobile-2026-10-25.png](docs/screenshots/8ball-event-review-mobile-2026-10-25.png).
+
+## 0.2.0-alpha.8 · Preserve native review failures and correct CSP-safe screenshot wait
+
+2026-10-25 · `local_unreleased`
+
+Retain integrated and standalone failures, correct only the screenshot wait, and record structured-output retention as unfinished worker work.
+
+### Added
+
+- Native/CI failure receipt and explicit result-size boundary experiment.
+
+### Changed
+
+- Screenshot wait uses a locator assertion and an explicit deadline beyond the existing notification lifetime.
+
+### Fixed
+
+- CSP-incompatible string evaluation in browser-test screenshot wait.
+
+### Verification
+
+- Prior source/package and original eleven native suites passed; new event-review suite failed. Corrected native rerun pending.
+
+### Limitations
+
+- Full provider-output retention exceeds the current work-result cap and remains unfinished.
+- Actual OIDC login, worker dispatch, production isolation and genuine model/human acceptance remain open.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Ordinary structured graphs exceed the provisional result cap.
+- Discovery: Native test waits must respect CSP and real notification lifetimes.
+- Risk: A green older suite cannot establish an uncovered integration requirement.
+- Architecture: Preserve full output before worker integration; keep CSP unchanged.
+- Roadmap decision: existing_task: correct test harness and retain the worker boundary as unfinished scope.
+Registered discoveries: EM-110, EM-111.
+
+Roadmap items: `B03-01`, `ES02-03`, `ES02-04`.
+
+Evidence: [docs/evidence/event-review-native-csp-failure-2026-10-25.json](docs/evidence/event-review-native-csp-failure-2026-10-25.json), [docs/evidence/event-result-size-boundary-2026-10-25.json](docs/evidence/event-result-size-boundary-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-review-ui.md](docs/delivery/sessions/2026-10-25-endstate-review-ui.md).
+
+## 0.2.0-alpha.8 · Review incoming changes through the browser
+
+2026-10-25 · `local_unreleased`
+
+Show original source/output, author a reviewed amendment in Plan Studio, preview effects and commit explicitly with recoverable session handling.
+
+### Added
+
+- Case-scoped review page and permission-checked preview endpoint.
+- Twelfth native browser suite with original source, read-only, stale, lost acknowledgement and mobile checks.
+
+### Changed
+
+- Plan Studio can omit its separate live-review shortcut when embedded in event review.
+
+### Verification
+
+- 27 standalone native browser checks passed; full native validation pending.
+- Initial incorrect fieldset assertion is preserved and replaced with actual disabled-control assertions.
+
+### Limitations
+
+- Development account-token flow only; real OIDC sign-in and genuine human acceptance remain unfinished.
+- No authenticated worker dispatch, external send or production isolation.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Lost acknowledgement is an unknown outcome, not permission to retry.
+- Discovery: Disabled-state tests must inspect actual interactive descendants.
+- Risk: Late responses must not restore sensitive material after locking.
+- Architecture: Session epochs, explicit refresh, existing editor semantics and a case-scoped transactional preview.
+- Roadmap decision: existing_task: advance browser event review while retaining all production/model/human gates.
+Registered discoveries: EM-108, EM-109.
+
+Roadmap items: `B03-01`, `ES02-03`, `ES02-04`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-endstate-review-ui.md](docs/delivery/sessions/2026-10-25-endstate-review-ui.md), [docs/evidence/event-review-browser-first-failure-2026-10-25.json](docs/evidence/event-review-browser-first-failure-2026-10-25.json), [web/v2/event-review.js](web/v2/event-review.js).
+
+## 0.2.0-alpha.8 · Verify authenticated event review and case-binding correction
+
+2026-10-25 · `local_unreleased`
+
+Record corrected full native evidence while retaining the separately demonstrated same-matter failure.
+
+### Added
+
+- Source-bound corrected native receipt.
+
+### Changed
+
+- Both product trackers, entry page and handoff now reference the verified API checkpoint.
+
+### Verification
+
+- 1345 source /1345 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed.
+- 65 focused API/event/review/lifecycle tests passed.
+
+### Limitations
+
+- No inferred historical ownership or automatic replay.
+- Browser review, worker, production and original human/model gates remain unfinished.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Two cases may share a matter and revision. An attempt storing only matter scope and base revision can then be consumed by either case. The existing full native suite passed while an additional reproduction demonstrated this missing lineage constraint.
+- Risk: Matching matter/revision alone can conceal wrong-case lineage.
+- Architecture: Explicit case binding at enqueue; preserve unknown identity in historical rows.
+- Roadmap decision: existing_task: correct demonstrated ES02 lineage gap.
+Registered discoveries: EM-106, EM-107.
+
+Roadmap items: `ES02-02`, `ES02-03`.
+
+Evidence: [docs/evidence/endstate-event-api-native-2026-10-25.json](docs/evidence/endstate-event-api-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-event-api.md](docs/delivery/sessions/2026-10-25-endstate-event-api.md).
+
+## 0.2.0-alpha.8 · Bind reviewed processing to its intended case
+
+2026-10-25 · `local_unreleased`
+
+Correct demonstrated cross-case consumption within one matter by binding new case attempts explicitly.
+
+### Added
+
+- Nullable historical case-binding migration and cross-case/migration regressions.
+
+### Changed
+
+- Unbound attempts remain retained but cannot create case changes.
+
+### Fixed
+
+- An unbound result could previously commit against a different same-matter case at a matching revision.
+
+### Verification
+
+- Preserved prior native pass and separate failing correctness reproduction; focused/full correction validation follows.
+
+### Limitations
+
+- No inferred historical ownership or automatic replay.
+- Browser review, worker, production and original human/model gates remain unfinished.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Two cases may share a matter and revision. An attempt storing only matter scope and base revision can then be consumed by either case. The existing full native suite passed while an additional reproduction demonstrated this missing lineage constraint.
+- Risk: Matching matter/revision alone can conceal wrong-case lineage.
+- Architecture: Explicit case binding at enqueue; preserve unknown identity in historical rows.
+- Roadmap decision: existing_task: correct demonstrated ES02 lineage gap.
+Registered discoveries: EM-107.
+
+Roadmap items: `ES02-02`, `ES02-03`.
+
+Evidence: [docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json](docs/evidence/endstate-event-api-case-binding-gap-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-event-api.md](docs/delivery/sessions/2026-10-25-endstate-event-api.md).
+
+## 0.2.0-alpha.8 · Connect reviewed ENDSTATE events to authenticated API
+
+2026-10-25 · `local_unreleased`
+
+Expose explicit source/result review and local notice delivery through signed identity and transactional permission checks.
+
+### Added
+
+- Event detail/review and notice pull/acknowledgement routes for shared-registry agency mode.
+- Signed API regression coverage for identity spoofing, scope, stale/cancelled work and revoked permissions.
+
+### Changed
+
+- HTTP review explicitly requires current read and write permission.
+
+### Verification
+
+- Focused and cumulative native validation pending.
+
+### Limitations
+
+- No browser review screen, OIDC browser login, worker daemon, production isolation or external send.
+- No actual-model or genuine independent/human acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A route guard may pass before a grant is revoked, and a separate registry cannot participate in the case transaction. A write response containing source/result provenance also requires current read access, even when write permission is present.
+- Risk: A successful route guard alone is not transaction-wide authority.
+- Architecture: Shared registry/case database and read/write revalidation in review commit.
+- Roadmap decision: existing_task: advance authenticated review without relaxing production gates.
+Registered discoveries: EM-106.
+
+Roadmap items: `B03-01`, `ES02-03`, `ES02-04`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-endstate-event-api.md](docs/delivery/sessions/2026-10-25-endstate-event-api.md), [eightball/v2/event_api.py](eightball/v2/event_api.py).
+
+## 0.2.0-alpha.8 · Verify durable local delivery against full native suite
+
+2026-10-25 · `local_unreleased`
+
+Record exact-source native and checkpoint CI evidence for the local transactional outbox.
+
+### Added
+
+- Source-bound verification receipt.
+
+### Changed
+
+- Current handoff, tracker evidence and entry page now point to the verified outbox checkpoint.
+
+### Verification
+
+- 1331 source /1331 installed-engine /396 native browser checks passed; exact inspection and both checkpoint CI workflows passed.
+- 40 focused event/review/outbox tests passed.
+
+### Limitations
+
+- No daemon, browser integration, external delivery, PostgreSQL isolation or historical backfill.
+- No model or human acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A committed graph review can be lost to downstream readers if notice creation occurs after its transaction. Atomic creation plus independent durable per-reader acknowledgement survives restarts, but repeats remain possible and acknowledgement cannot carry execution authority.
+- Risk: Repeated delivery is expected until acknowledgement.
+- Architecture: Case/review/outbox share one local transaction.
+- Roadmap decision: existing_task: advance ES02 while preserving unfinished acceptance gates.
+Registered discoveries: EM-105.
+
+Roadmap items: `ES02-02`, `ES02-04`.
+
+Evidence: [docs/evidence/endstate-outbox-native-2026-10-25.json](docs/evidence/endstate-outbox-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-outbox.md](docs/delivery/sessions/2026-10-25-endstate-outbox.md).
+
+## 0.2.0-alpha.8 · Persist reviewed change notices with per-reader delivery
+
+2026-10-25 · `local_unreleased`
+
+Create local notices atomically with reviewed graph commits and retain ordered, permission-checked delivery acknowledgements.
+
+### Added
+
+- Transactional outbox and per-reader restart-safe delivery.
+- Rollback, concurrency, ordering, revocation and tampering regressions.
+
+### Verification
+
+- Focused and cumulative native validation pending.
+
+### Limitations
+
+- No daemon, browser integration, external delivery, PostgreSQL isolation or historical backfill.
+- No model or human acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: A committed graph review can be lost to downstream readers if notice creation occurs after its transaction. Atomic creation plus independent durable per-reader acknowledgement survives restarts, but repeats remain possible and acknowledgement cannot carry execution authority.
+- Risk: Repeated delivery is expected until acknowledgement.
+- Architecture: Case/review/outbox share one local transaction.
+- Roadmap decision: existing_task: advance ES02 while preserving unfinished acceptance gates.
+Registered discoveries: EM-105.
+
+Roadmap items: `ES02-02`, `ES02-04`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-endstate-outbox.md](docs/delivery/sessions/2026-10-25-endstate-outbox.md), [eightball/v2/event_outbox.py](eightball/v2/event_outbox.py).
+
+## 0.2.0-alpha.8 · Verify reviewed consumption and clarify the current entry point
+
+2026-10-25 · `local_unreleased`
+
+Record source-bound native evidence and preserve historical entry notes in an archive.
+
+### Added
+
+- Source-bound acceptance receipt.
+
+### Changed
+
+- START-HERE now links the standing goal, current tracker and original requirements; previous entry text preserved unchanged.
+
+### Verification
+
+- 1323 source /1323 installed-engine /396 native browser checks passed; exact inspection and checkpoint CI passed.
+
+### Limitations
+
+- Authenticated reviewer identity is supplied by trusted host; public agency writes remain disabled.
+- No PostgreSQL tenant policies, automatic worker/outbox, live model or genuine human/independent acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Review provenance and permission must be bound to the actual transaction, not just the preceding processing attempt.
+- Risk: A grant can expire during calculation; a rehashed receipt alone must not substitute original results or explanations.
+- Architecture: Single local database transaction, explicit review request hash, conditional case-chain-linked export and a final expiry check.
+- Roadmap decision: existing_task: advance ES02-03 without exposing incomplete agency write routes or claiming production acceptance.
+Registered discoveries: EM-104.
+
+Roadmap items: `ES02-02`, `ES02-03`, `ES02-04`.
+
+Evidence: [docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json](docs/evidence/endstate-reviewed-consumption-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md](docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md).
+
+## 0.2.0-alpha.8 · Commit reviewed event graph amendments atomically
+
+2026-10-25 · `local_unreleased`
+
+Bind explicit reviewed graph changes to original events/results and current case revision/permission in a single local transaction.
+
+### Added
+
+- Local reviewed-consumption service and conditional case export records.
+- Tests for duplicate/concurrent consumption, stale revisions, scope/permission denial, rollback, expiry during calculation and provenance tampering.
+
+### Changed
+
+- ES02-03 now partial; existing graph validation, approval invalidation and change explanations are reused.
+
+### Verification
+
+- 32 focused event/review/lifecycle tests passed; cumulative native validation pending.
+
+### Limitations
+
+- Authenticated reviewer identity is supplied by trusted host; public agency writes remain disabled.
+- No PostgreSQL tenant policies, automatic worker/outbox, live model or genuine human/independent acceptance.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Review provenance and permission must be bound to the actual transaction, not just the preceding processing attempt.
+- Risk: A grant can expire during calculation; a rehashed receipt alone must not substitute original results or explanations.
+- Architecture: Single local database transaction, explicit review request hash, conditional case-chain-linked export and a final expiry check.
+- Roadmap decision: existing_task: advance ES02-03 without exposing incomplete agency write routes or claiming production acceptance.
+Registered discoveries: EM-104.
+
+Roadmap items: `ES02-02`, `ES02-03`, `ES02-04`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md](docs/delivery/sessions/2026-10-25-endstate-reviewed-consumption.md), [eightball/v2/event_reviews.py](eightball/v2/event_reviews.py).
+
+## 0.2.0-alpha.8 · Verify durable processing and corrected review recovery
+
+2026-10-25 · `local_unreleased`
+
+Record passing cumulative software evidence after retaining and fixing the observed Plan Review race.
+
+### Added
+
+- Source-bound passing receipt linked to the original failed run.
+
+### Changed
+
+- Canonical tracker and handoff record the next reviewed case-transaction boundary.
+
+### Verification
+
+- 1309 source and1309 installed-engine tests passed.
+- 396 native browser checks across11 suites passed.
+- Exact source/artifact inspection valid before receipt edits; both checkpoint CI workflows passed.
+
+### Limitations
+
+- No independent review or model/human acceptance.
+- Durable processing still requires actual transactional case integration.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Discarding stale data must also resolve pending user-interface states.
+- Risk: Intermittent refresh ordering can leave an inaccessible review despite green CI elsewhere.
+- Architecture: Bind completion/error handling to dialog ownership and revision; manual reopening only.
+- Roadmap decision: existing_task: preserve demonstrated failure and add deterministic native coverage.
+Registered discoveries: EM-102, EM-103.
+
+Roadmap items: `ES02-02`, `ES02-04`, `B02-11`.
+
+Evidence: [docs/evidence/endstate-processing-native-2026-10-25.json](docs/evidence/endstate-processing-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-processing.md](docs/delivery/sessions/2026-10-25-endstate-processing.md), [docs/evidence/endstate-processing-failed-2026-10-25.json](docs/evidence/endstate-processing-failed-2026-10-25.json).
+
+## 0.2.0-alpha.8 · Resolve stale Plan Review loading after a case refresh
+
+2026-10-25 · `local_unreleased`
+
+Fix the race demonstrated during cumulative validation without publishing stale review results or automatically retrying.
+
+### Added
+
+- Deterministic native in-flight revision-change checks and retained failed-run receipt.
+
+### Changed
+
+- Context changes now show a manual reopen action instead of endless review loading.
+
+### Verification
+
+- First cumulative run failed in native Plan Review; exact inspection valid/failed.
+- After correction all35 focused native Plan Review checks passed; cumulative rerun follows.
+
+### Limitations
+
+- No independent review or model/human acceptance.
+- Durable processing still requires actual transactional case integration.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Discarding stale data must also resolve pending user-interface states.
+- Risk: Intermittent refresh ordering can leave an inaccessible review despite green CI elsewhere.
+- Architecture: Bind completion/error handling to dialog ownership and revision; manual reopening only.
+- Roadmap decision: existing_task: preserve demonstrated failure and add deterministic native coverage.
+Registered discoveries: EM-103.
+
+Roadmap items: `B02-11`, `ES02-04`.
+
+Evidence: [docs/evidence/endstate-processing-failed-2026-10-25.json](docs/evidence/endstate-processing-failed-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-processing.md](docs/delivery/sessions/2026-10-25-endstate-processing.md), [tests/browser_plan_review.py](tests/browser_plan_review.py).
+
+## 0.2.0-alpha.8 · Add durable event-processing attempts and cancellation
+
+2026-10-25 · `local_unreleased`
+
+Persist explicit processing attempts with exclusive claims, bounded leases, cancellation and revision/permission disposition.
+
+### Added
+
+- Durable processing lifecycle bound to an existing scoped inbox record.
+- Tests for restart, duplicate claims, cancellation, expiry, stale results and revoked permission.
+
+### Changed
+
+- ES02-04 now partial; all remaining acceptance and integration requirements stay open.
+
+### Verification
+
+- 18 focused inbox/lifecycle tests passed; cumulative validation pending.
+
+### Limitations
+
+- Trusted host must supply authenticated scope and current revision/permission observations; no public API is installed.
+- No worker daemon/outbox, automatic model call, case mutation or production transactional isolation.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Expired processing leases cannot establish whether a remote request was executed.
+- Risk: Silent reclamation can repeat paid or irreversible operations.
+- Architecture: Explicit attempts and interruption; late results cannot publish after cancellation.
+- Roadmap decision: existing_task: advance ES02-02/04 while preserving unfinished gates.
+Registered discoveries: EM-102.
+
+Roadmap items: `ES02-02`, `ES02-04`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-endstate-processing.md](docs/delivery/sessions/2026-10-25-endstate-processing.md), [eightball/event_work.py](eightball/event_work.py).
+
+## 0.2.0-alpha.8 · Verify ENDSTATE inbox and shared build tracking
+
+2026-10-25 · `local_unreleased`
+
+Record cumulative native and checkpoint CI results for the durable inbox and written build goal.
+
+### Added
+
+- Source-bound event-inbox verification receipt.
+
+### Changed
+
+- Both product trackers link the verified increment and retain unfinished gates.
+
+### Verification
+
+- 1302 source tests and1302 installed-engine regressions passed.
+- 394 native browser checks across11 suites passed.
+- Exact source/artifact inspection valid before final receipt edits; both checkpoint CI workflows passed.
+
+### Limitations
+
+- No live connectors, durable worker/outbox, reviewed case commits or automatic replanning yet.
+- 8BALL accounts, vault, collaboration, production and genuine model/human acceptance remain unfinished.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Occurrence time and receipt order are separate; retries must retain their original receipt.
+- Risk: Automatic replay could wrongly reauthorise work if connected directly to commands.
+- Architecture: Pure kernel contract; database remains in host. Scope asserted before append.
+- Roadmap decision: existing_task: ES02-01/02 increment, no acceptance or deployment promotion.
+Registered discoveries: EM-101.
+
+Roadmap items: `ES02-01`, `ES02-02`, `DOC-06`.
+
+Evidence: [docs/evidence/endstate-event-inbox-native-2026-10-25.json](docs/evidence/endstate-event-inbox-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-endstate-event-inbox.md](docs/delivery/sessions/2026-10-25-endstate-event-inbox.md), [docs/delivery/BUILD-GOAL.md](docs/delivery/BUILD-GOAL.md).
+
+## 0.2.0-alpha.8 · Build the ENDSTATE event contract and durable host inbox
+
+2026-10-25 · `local_unreleased`
+
+Retain scoped incoming events with duplicate/conflict handling and durable arrival order; publish one explicit build goal and refresh both product trackers.
+
+### Added
+
+- Neutral pending-event/receipt contracts and SQLite host inbox.
+- Eleven tests for restart, concurrent duplicates, changed retries, delayed events, scope and corruption.
+- BUILD-GOAL.md with completion criteria and links to canonical status.
+
+### Changed
+
+- ES02-01/02 now partial; current branch/PR and next tasks refreshed without erasing prior inspections.
+
+### Verification
+
+- 11 focused event/inbox tests passed; cumulative native verification pending.
+
+### Limitations
+
+- No live connectors, durable worker/outbox, reviewed case commits or automatic replanning yet.
+- 8BALL accounts, vault, collaboration, production and genuine model/human acceptance remain unfinished.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Occurrence time and receipt order are separate; retries must retain their original receipt.
+- Risk: Automatic replay could wrongly reauthorise work if connected directly to commands.
+- Architecture: Pure kernel contract; database remains in host. Scope asserted before append.
+- Roadmap decision: existing_task: ES02-01/02 increment, no acceptance or deployment promotion.
+Registered discoveries: EM-101.
+
+Roadmap items: `ES02-01`, `ES02-02`, `DOC-06`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-endstate-event-inbox.md](docs/delivery/sessions/2026-10-25-endstate-event-inbox.md), [docs/endstate/EVENT-INBOX.md](docs/endstate/EVENT-INBOX.md), [docs/delivery/BUILD-GOAL.md](docs/delivery/BUILD-GOAL.md).
+
+## 0.2.0-alpha.8 · Verify agency access and publish the clearer overview
+
+2026-10-25 · `local_unreleased`
+
+Record cumulative native verification, checkpoint CI and final uncertainty wording correction.
+
+### Added
+
+- Source-bound verification receipt and owner-accessible overview screenshot.
+
+### Changed
+
+- Display unknown and disputed counts separately.
+
+### Verification
+
+- 1291 source +1291 installed-engine +394 native browser checks passed on7fbb34a.
+- Both checkpoint CI workflows passed; exact artifact/source inspection valid.
+- Final wording passed node syntax and54 native workspace checks.
+
+### Limitations
+
+- No live OIDC browser login/MFA, PostgreSQL row enforcement, write/worker authorisation or production acceptance.
+- Remaining roadmap steps and V0.2 actual-model/human gates remain open.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Authenticated identity alone cannot protect aggregate and asynchronous local routes.
+- Risk: Grant revocation must span transaction/worker paths; in-flight responses cannot be recalled.
+- Architecture: Explicit deny-by-default opt-in boundary, no client-created grants or silent migrations.
+- Roadmap decision: existing_task: continue B03-01 and B02-19; no production deployment or gate promotion.
+Registered discoveries: EM-100.
+
+Roadmap items: `B03-01`, `B02-19`.
+
+Evidence: [docs/evidence/agency-api-overview-native-2026-10-25.json](docs/evidence/agency-api-overview-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-agency-api-overview.md](docs/delivery/sessions/2026-10-25-agency-api-overview.md), [docs/screenshots/8ball-overview-2026-10-25.png](docs/screenshots/8ball-overview-2026-10-25.png).
+
+## 0.2.0-alpha.8 · Add authenticated agency read access and a clearer Situation Room
+
+2026-10-25 · `local_unreleased`
+
+Persist scoped grants, validate signed issuer/audience-bound tokens and enforce an opt-in API read boundary; lead the workspace with a plain-language summary.
+
+### Added
+
+- Persistent registry, RS256 token validation and API denial tests.
+- Situation summary, evidence/change links and keyboard-expandable graph.
+
+### Changed
+
+- Agency mode denies all unintegrated routes; local mode remains compatible.
+
+### Verification
+
+- 24 focused policy/API tests passed.
+- Initial native workspace journey passed 51 checks; new disclosure checks and cumulative run follow.
+
+### Limitations
+
+- No live OIDC browser login/MFA, PostgreSQL row enforcement, write/worker authorisation or production acceptance.
+- Remaining roadmap steps and V0.2 actual-model/human gates remain open.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Authenticated identity alone cannot protect aggregate and asynchronous local routes.
+- Risk: Grant revocation must span transaction/worker paths; in-flight responses cannot be recalled.
+- Architecture: Explicit deny-by-default opt-in boundary, no client-created grants or silent migrations.
+- Roadmap decision: existing_task: continue B03-01 and B02-19; no production deployment or gate promotion.
+Registered discoveries: EM-100.
+
+Roadmap items: `B03-01`, `B02-19`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-agency-api-overview.md](docs/delivery/sessions/2026-10-25-agency-api-overview.md), [docs/v2/AGENCY-ACCESS.md](docs/v2/AGENCY-ACCESS.md).
+
+## 0.2.0-alpha.8 · Publish the current workspace screenshot for owner review
+
+2026-10-25 · `local_unreleased`
+
+Make the actual local workspace screenshot accessible on GitHub at the owner request.
+
+### Added
+
+- docs/screenshots/8ball-situation-room-2026-10-25.png
+
+### Verification
+
+- Screenshot captured from native Chromium against the local application with fictional test data.
+- The screenshot capture journey passed 51 workspace checks.
+
+### Limitations
+
+- Screenshot is not human acceptance, real-model evidence or a production deployment.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: No new product finding; publish existing fictional workspace evidence for owner access.
+- Risk: A screenshot must not imply production or model acceptance.
+- Architecture: None; application source unchanged.
+- Roadmap decision: no_action: evidence publication only; no task status changes.
+Registered discoveries: EM-099.
+
+Roadmap items: `B03-01`.
+
+Evidence: [docs/screenshots/8ball-situation-room-2026-10-25.png](docs/screenshots/8ball-situation-room-2026-10-25.png), [docs/delivery/sessions/2026-10-25-agency-authorisation.md](docs/delivery/sessions/2026-10-25-agency-authorisation.md).
+
+## 0.2.0-alpha.8 · Verify agency policy foundation against existing workflows
+
+2026-10-25 · `local_unreleased`
+
+Record cumulative native software verification without claiming production enforcement.
+
+### Added
+
+- Source-bound native verification receipt.
+
+### Verification
+
+- 1280 source tests and 1280 installed-engine regressions passed.
+- 391 native browser checks across all eleven suites passed.
+- Exact source/artifact inspection valid before receipt edits.
+
+### Limitations
+
+- Not connected to the local API. No OIDC, persistent membership, PostgreSQL row policy or production isolation claim.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Object grants must not expand into aggregate matter operations.
+- Risk: Policy-only tests do not prove request or transaction enforcement.
+- Architecture: Use verified identity and server-owned membership; enforce all consumed objects.
+- Roadmap decision: Proceed with B03-01 under explicit full-product scope; no production deployment.
+Registered discoveries: EM-099.
+
+Roadmap items: `B03-01`.
+
+Evidence: [docs/evidence/agency-authorisation-native-2026-10-25.json](docs/evidence/agency-authorisation-native-2026-10-25.json), [docs/delivery/sessions/2026-10-25-agency-authorisation.md](docs/delivery/sessions/2026-10-25-agency-authorisation.md).
+
+## 0.2.0-alpha.8 · Begin the agency permission foundation
+
+2026-10-25 · `local_unreleased`
+
+Owner authorised the full product roadmap; add exact issuer/subject, tenant/matter/object and operation-scoped permission calculation.
+
+### Added
+
+- Immutable identity/resource/grant records and deny-by-default policy.
+- 13 denial tests covering all six operations, foreign scopes, revocation, expiry and read-only object grants.
+
+### Changed
+
+- B03-01 is partial; existing V0.2 acceptance remains unchanged.
+
+### Verification
+
+- 13 policy tests passed; cumulative native verification follows.
+
+### Limitations
+
+- Not connected to the local API. No OIDC, persistent membership, PostgreSQL row policy or production isolation claim.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: Object grants must not expand into aggregate matter operations.
+- Risk: Policy-only tests do not prove request or transaction enforcement.
+- Architecture: Use verified identity and server-owned membership; enforce all consumed objects.
+- Roadmap decision: Proceed with B03-01 under explicit full-product scope; no production deployment.
+Registered discoveries: EM-099.
+
+Roadmap items: `B03-01`.
+
+Evidence: [docs/delivery/sessions/2026-10-25-agency-authorisation.md](docs/delivery/sessions/2026-10-25-agency-authorisation.md), [tests/test_authorisation.py](tests/test_authorisation.py).
 
 ## 0.2.0-alpha.8 · Combined build passes native verification and checkpoint CI
 

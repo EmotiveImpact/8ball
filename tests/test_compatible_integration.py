@@ -33,7 +33,7 @@ BASE_URL = 'https://fixture-provider.invalid/v1'
 @pytest.fixture(autouse=True)
 def compatible_configuration(monkeypatch):
     for name in ('EIGHTBALL_API_BASE_URL', 'EIGHTBALL_API_MODEL', 'EIGHTBALL_API_PROVIDER',
-                 'EIGHTBALL_API_KEY', 'EIGHTBALL_API_ROUTING_PROVIDER'):
+                 'EIGHTBALL_API_KEY', 'EIGHTBALL_API_ROUTING_PROVIDER', 'EIGHTBALL_API_JSON_MODE'):
         monkeypatch.delenv(name, raising=False)
     monkeypatch.setenv('EIGHTBALL_API_BASE_URL', BASE_URL)
     monkeypatch.setenv('EIGHTBALL_API_MODEL', 'qwen/fixture-model')
@@ -85,6 +85,58 @@ def controlled_provider(outputs=None, handler=None):
         return httpx.Client(transport=httpx.MockTransport(respond), **kwargs)
 
     return factory, calls
+
+
+@pytest.mark.parametrize('purpose', ['extract', 'graph'])
+@pytest.mark.parametrize('transport', ['anthropic', 'prompt_only'])
+def test_prompt_only_uses_existing_unassisted_proposal_gate(monkeypatch, purpose, transport):
+    monkeypatch.setenv('EIGHTBALL_API_BASE_URL', 'https://api.anthropic.com/v1')
+    monkeypatch.setenv('EIGHTBALL_API_PROVIDER', 'anthropic')
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', 'claude-sonnet-5-5')
+    if transport == 'prompt_only':
+        monkeypatch.setenv('EIGHTBALL_API_BASE_URL', BASE_URL)
+        monkeypatch.setenv('EIGHTBALL_API_PROVIDER', 'fixture-provider')
+        monkeypatch.setenv('EIGHTBALL_API_JSON_MODE', 'prompt_only')
+    case = fixture_case(); before = case.model_dump(mode='json')
+    outputs = ([{'items': [{'kind': 'claim', 'text': 'Supplier refused',
+                           'source': {'evidence_id': 'source', 'quote': case.evidence[0].text}}]}]
+               if purpose == 'extract' else [frame(), deepcopy(STAGED['routes'])])
+    def respond(req):
+        assert 'response_format' not in json.loads(req.content)
+        if transport == 'prompt_only':
+            assert str(req.url) == BASE_URL + '/chat/completions'
+            return httpx.Response(200, json=envelope(outputs.pop(0)))
+        assert str(req.url) == 'https://api.anthropic.com/v1/messages'
+        return httpx.Response(200, json={'model': 'claude-sonnet-5-5', 'type': 'message',
+            'role': 'assistant', 'stop_reason': 'end_turn', 'content': [
+                {'type': 'thinking', 'thinking': '', 'signature': 'opaque'},
+                {'type': 'text', 'text': json.dumps(outputs.pop(0))}],
+            'usage': {'input_tokens': 30, 'output_tokens': 20}})
+    factory, calls = controlled_provider(handler=respond)
+    with factory() as cl:
+        proposal = propose(case, 'openai_compatible', purpose, ['source'], allow_external=True, client=cl)
+    assert case.model_dump(mode='json') == before
+    assert len(calls) == (2 if purpose == 'graph' else 1)
+    assert proposal.raw_output['transport']['transport'] == ('anthropic_messages' if transport == 'anthropic' else 'openai_compatible')
+    assert proposal.raw_output['transport']['response_mode'] == 'prompt_only'
+    assert all(i.kind not in ('observation', 'approval') for i in proposal.items)
+    assert all(i.object['approval_required'] for i in proposal.items if i.kind == 'action')
+
+
+@pytest.mark.parametrize('invalid', ['extra_field', 'target_quote', 'value_type'])
+def test_prompt_only_invalid_frame_stops_before_routes(monkeypatch, invalid):
+    monkeypatch.setenv('EIGHTBALL_API_JSON_MODE', 'prompt_only')
+    case = fixture_case()
+    before = case.model_dump(mode='json')
+    output = frame()
+    if invalid == 'extra_field': output['execution_authorized'] = True
+    if invalid == 'target_quote': output['target_bindings'][0]['target_quote'] = 'Unrelated target'
+    if invalid == 'value_type': output['verification']['minutes'] = 'one'
+    factory, calls = controlled_provider(outputs=[output])
+    with factory() as cl, pytest.raises(ValueError):
+        propose(case, 'openai_compatible', 'graph', ['source'], allow_external=True, client=cl)
+    assert len(calls) == 1 and case.model_dump(mode='json') == before
+    assert 'response_format' not in json.loads(calls[0].content)
 
 
 def queued(tmp_path, outputs=None, handler=None):
@@ -248,13 +300,21 @@ def test_two_stages_keep_the_same_explicit_configuration(monkeypatch):
 
 
 @pytest.mark.parametrize('stop', ['cancel', 'stale', 'restart'])
-def test_inflight_stage_one_stop_discards_output_and_never_sends_stage_two(tmp_path, stop):
+@pytest.mark.parametrize('native', [False, True])
+def test_inflight_stage_one_stop_discards_output_and_never_sends_stage_two(tmp_path, stop, native, monkeypatch):
+    if native:
+        monkeypatch.setenv('EIGHTBALL_API_BASE_URL', 'https://api.anthropic.com/v1')
+        monkeypatch.setenv('EIGHTBALL_API_PROVIDER', 'anthropic')
+        monkeypatch.setenv('EIGHTBALL_API_MODEL', 'claude-sonnet-5-5')
     entered, release = Event(), Event()
 
     def respond(req):
         entered.set()
         assert release.wait(5)
-        return httpx.Response(200, json=envelope(frame()))
+        result = ({'model': 'claude-sonnet-5-5', 'type': 'message', 'role': 'assistant',
+                   'stop_reason': 'end_turn', 'content': [{'type': 'text', 'text': json.dumps(frame())}]}
+                  if native else envelope(frame()))
+        return httpx.Response(200, json=result)
 
     store, case, manager, calls = queued(tmp_path, handler=respond)
     job = manager.submit(case.id, request(case, 'graph'))

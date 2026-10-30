@@ -43,3 +43,7 @@ python tests/browser_plan_review.py
 ```
 
 Run all existing native browser suites as well. The supplied explicit ASGI bridge is a labelled fallback only when native navigation is unavailable. It does not establish native networking, browser storage, downloads, CSP enforcement or professional effectiveness. No model or paid service is called by Plan Review or the offline structural bench.
+
+## Local native challenge extension, 26 October 2026
+
+See [Assumption challenges and decision packets](ASSUMPTION-CHALLENGE.md) for retained dissent, exact-change scenario replay, immutable dispositions, current-server export checks and the two deliberately incomplete packet modes. These are local operator tools, not model-driven social simulation or agency/client sharing. Existing human rubric, evidence and action approvals remain separate.
