@@ -20,7 +20,7 @@
     "integration_authority": "docs/decisions/0007-owner-build-consolidation.md",
     "source_merged_not_release_accepted": true,
     "current_sprint": {
-      "branch": "room/start-a-claude-code-sub-agent-to-review-n4qh",
+      "branch": "room/last-commit-sub-agent-code-review-n4qh",
       "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
       "status_as_of": "2026-10-30",
       "merged": false,
@@ -779,7 +779,7 @@
       "status": "blocked",
       "required": true,
       "owner": "Claude Code",
-      "working_branch": "room/start-a-claude-code-sub-agent-to-review-n4qh",
+      "working_branch": "room/last-commit-sub-agent-code-review-n4qh",
       "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
       "updated_on": "2026-10-30",
       "code_paths": [
@@ -1014,7 +1014,7 @@
       "status": "partial",
       "required": true,
       "owner": "Claude Code",
-      "working_branch": "room/start-a-claude-code-sub-agent-to-review-n4qh",
+      "working_branch": "room/last-commit-sub-agent-code-review-n4qh",
       "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
       "updated_on": "2026-10-30",
       "code_paths": [
@@ -1703,7 +1703,7 @@
       "status": "partial",
       "required": true,
       "owner": "Claude Code",
-      "working_branch": "room/start-a-claude-code-sub-agent-to-review-n4qh",
+      "working_branch": "room/last-commit-sub-agent-code-review-n4qh",
       "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
       "updated_on": "2026-10-30",
       "code_paths": [

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "date": "2026-10-30",
   "base_commit": "1038291bf219d04e7fe4a6a01c332d1ac277fdba",
-  "tested_source": "uncommitted working tree on room/start-a-claude-code-sub-agent-to-review-n4qh; committed unchanged except documentation-only receipt edits",
+  "tested_source": "uncommitted working tree on room/last-commit-sub-agent-code-review-n4qh; committed unchanged except documentation-only receipt edits",
   "run_id": "20261030T091427Z-8431ded8",
   "source_sha256": "32062567da795d6da3cedf72052d2fcf666e1671a1cb65716167d0113df5e62f",
   "report_sha256": "340844624c094281501a976ca0630b796fe50e533f743819345f1adad12ab073",

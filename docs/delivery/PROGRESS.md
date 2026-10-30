@@ -193,7 +193,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Status: `blocked`. Owner: Claude Code. Updated: 2026-10-30.
   - Acceptance: Actual-model graph fixtures pass with all referenced actions present, meaningful alternative paths and explicit final verification. No silent template substitution.
   - Next: Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
-  - Branch/base: `room/start-a-claude-code-sub-agent-to-review-n4qh` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
+  - Branch/base: `room/last-commit-sub-agent-code-review-n4qh` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
   - Existing code: `eightball/v2/intelligence.py`, `evals/live_generation.py`, `endstate/compilation.py`, `tests/test_endstate_compilation.py`, `eightball/v2/compatible.py`, `evals/live_compatible.py`, `evals/live_huggingface.py`, `tests/test_hosted_eval_retention.py`, `docs/v2/ANTHROPIC-SETUP.md`.
   - Evidence: `EV-QWEN`, `EV-STAGED-CODE`, `EV-STAGED-MODEL`, `EV-HF-BLACK-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-QWEN-20260927`, `EV-GENERATION-ROLE-CONTRACT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION`, `EV-REVIEW-FIXES-20261030` (registry below).
   - Blocker: Owner selected Anthropic, with prepared claude-sonnet-4-6 compatibility settings; account availability/pricing, active credentials/destination and real inference remain unverified. Owner must edit existing EIGHTBALL_API_KEY destination to api.anthropic.com, supply key securely and Save/Publish. Fictional fixtures up to US$5 remain authorised. Independent semantic evaluation must check branch-neutral readiness, relevant confirmation evidence, all target parts, alternatives and final-verification separation. Historical replay does not satisfy this gate.
@@ -247,7 +247,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Status: `partial`. Owner: Claude Code. Updated: 2026-10-30.
   - Acceptance: The UI reports actual runtime/weights/credential state and cancels work without stale commits. No silent large model download.
   - Next: Follow docs/delivery/NEXT-BUILD.md from the consolidated current source. Complete the unchanged task acceptance using actual provider and appropriate independent/human evidence; integration does not close this gate.
-  - Branch/base: `room/start-a-claude-code-sub-agent-to-review-n4qh` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
+  - Branch/base: `room/last-commit-sub-agent-code-review-n4qh` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
   - Dependencies: `ES03-04`.
   - Existing code: `eightball/v2/analysis_jobs.py`, `web/v2/job-view.js`, `tests/test_analysis_jobs.py`, `eightball/v2/compatible.py`, `tests/test_compatible_integration.py`, `evals/provider_lifecycle.py`, `tests/test_provider_lifecycle.py`, `web/v2/views.js`, `web/v2/forms.js`, `eightball/v2/hosted.py`.
   - Evidence: `EV-REMAINING`, `EV-HF-BLACK-LOCAL`, `EV-PLAN-STUDIO-LOCAL`, `EV-NATIVE-CLOSEOUT`, `EV-PROVIDER-FAILURE-REVIEW`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-ANTHROPIC-SETUP`, `EV-OCT25-INTEGRATION`, `EV-REVIEW-FIXES-20261030` (registry below).
@@ -545,7 +545,7 @@ Built, verified, merged, packaged, deployed and commercially released are distin
   - Status: `partial`. Owner: Claude Code. Updated: 2026-10-30.
   - Acceptance: Provider replacement, refusal, timeout, malformed output, prompt injection and trace retention satisfy shared gates with measured quality.
   - Next: Retain new strict API transport traces and controlled failure evidence; evaluate the selected actual model and independent source/plan quality before closing the broader gate.
-  - Branch/base: `room/start-a-claude-code-sub-agent-to-review-n4qh` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
+  - Branch/base: `room/last-commit-sub-agent-code-review-n4qh` / `1038291bf219d04e7fe4a6a01c332d1ac277fdba`.
   - Existing code: `eightball/v2/intelligence.py`, `eightball/v2/store.py`.
   - Evidence: `EV-APP`, `EV-QWEN`, `EV-CLASSIFIER`, `EV-COMPATIBLE-CODE`, `EV-EVALUATION-READINESS`, `EV-REVIEW-EVIDENCE-20261018`, `EV-ANTHROPIC-SETUP`, `EV-REVIEW-FIXES-20261030` (registry below).
 

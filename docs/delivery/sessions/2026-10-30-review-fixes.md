@@ -1,6 +1,6 @@
 # Review fixes for merge 1038291
 
-Date: 30 October 2026. Branch `room/start-a-claude-code-sub-agent-to-review-n4qh`,
+Date: 30 October 2026. Branch `room/last-commit-sub-agent-code-review-n4qh`,
 base `1038291` (current main, the owner-authorised consolidation merge PR4).
 An independent Claude Code review of that merge found no high-severity defects
 and reproduced the claimed 1,267 source tests and 391 native browser checks.

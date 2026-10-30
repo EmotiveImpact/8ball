@@ -1,6 +1,6 @@
 # Current handoff: review fixes on consolidated main
 
-Branch `room/start-a-claude-code-sub-agent-to-review-n4qh`, base `1038291` (main
+Branch `room/last-commit-sub-agent-code-review-n4qh`, base `1038291` (main
 after PR4). An independent review of that merge found no high-severity defects.
 This sprint fixes its confirmed findings: failed lifecycle provider jobs now
 fail and stop further paid trials (EM-099), interrupted evidence keeps its
