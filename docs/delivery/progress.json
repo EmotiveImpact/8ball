@@ -44,7 +44,8 @@
       "merged": false,
       "tested_source_commit": "7599eb2da19850e321fa7bb9cc06e68137ab0f4b",
       "source_sha256": "d19cae1f2544e7ba325ffeed81ea64d30e07789d5cc08369eddbecbff346ccdb",
-      "receipt": "docs/evidence/course-integration-native-2026-11-01.json"
+      "receipt": "docs/evidence/course-integration-native-2026-11-01.json",
+      "remote_prerequisite": "Initial final-head verify failed before acceptance on unsupported ubuntu-26.04; pin verify to ubuntu-24.04. Corrected remote native acceptance pending; separate Devin Review service error remains."
     },
     "verified_sprint_history": [
       {

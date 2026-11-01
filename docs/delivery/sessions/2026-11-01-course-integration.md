@@ -60,3 +60,13 @@ changed files passed without printing values. Native application code and tests
 are unchanged from the tested merge commit. No unpushed application edits remain
 after the evidence-only commit is published.
 Branch checkpoint remains unmerged/unreleased; no production deployment.
+
+## EM-348: native runner prerequisite correction
+
+Final-head GitHub job 124880774434 rejected Playwright Chromium installation
+on ubuntu-26.04 before acceptance. The floating ubuntu-latest label had changed.
+Pin only verify to ubuntu-24.04, supported by the installed package, preserving
+all native install/acceptance steps and existing budgets. Application code stays
+unchanged; corrected remote execution is pending, not inferred from local tests.
+[Failure evidence](../../evidence/ci-runner-2026-11-01.json). This existing_task
+DOC-06 reproducibility correction does not promote any quality/production gate.

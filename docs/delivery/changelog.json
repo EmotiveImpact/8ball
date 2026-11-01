@@ -3,6 +3,54 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-11-01-native-runner-pin",
+      "date": "2026-11-01",
+      "version": "0.2.0-alpha.8 native CI prerequisites",
+      "title": "Pin native-browser CI to the supported Ubuntu 24.04 runner",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "DOC-06"
+      ],
+      "summary": "Retain the failed floating-runner install and keep the complete native acceptance job on a platform supported by the pinned Playwright package.",
+      "added": [
+        "Failed job evidence and EM-348 capture the observed runner/package incompatibility."
+      ],
+      "changed": [
+        "Only verify runs-on changes from ubuntu-latest to ubuntu-24.04; no browser install or native acceptance stage is skipped."
+      ],
+      "fixed": [
+        "Playwright chromium dependency install no longer targets the unsupported ubuntu26.04-x64 platform."
+      ],
+      "verification": [
+        "Earlier exact-source application acceptance remains bound to 7599eb2; application code is unchanged.",
+        "Local history/tracking and pinned-platform prerequisite checks run before commit; full corrected remote native acceptance is pending."
+      ],
+      "limitations": [
+        "Runner correction is pending remote execution, not an application or model quality claim.",
+        "Devin Review is separately errored without a job ID or findings; no review gate is bypassed."
+      ],
+      "evidence_paths": [
+        "docs/evidence/ci-runner-2026-11-01.json",
+        ".github/workflows/ci.yml",
+        "docs/delivery/sessions/2026-11-01-course-integration.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-348: floating OS labels changed native browser prerequisite compatibility without application edits."
+        ],
+        "risks": [
+          "Future runner upgrades need their own explicit browser verification."
+        ],
+        "architecture_implications": [
+          "Pin the supported OS, not a fake browser transport or weakened acceptance command."
+        ],
+        "roadmap_decision": "existing_task DOC-06 reproducibility only; all quality and authority gates remain unchanged.",
+        "insight_ids": [
+          "EM-348"
+        ]
+      }
+    },
+    {
       "id": "2026-11-01-course-integration-evidence",
       "date": "2026-11-01",
       "version": "0.2.0-alpha.8 cumulative native evidence",

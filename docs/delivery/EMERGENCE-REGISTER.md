@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-11-01. **247 recorded discoveries.**
+Last review: 2026-11-01. **248 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -4401,3 +4401,20 @@ The two branches independently assigned EM-099 through EM-105 to different disco
 
 - 2026-10-30 · adopted · Devin integration: existing_task DOC-06: retain both branches with explicit, checked collision provenance; no new product scope or acceptance promotion.
 - 2026-11-01 · adopted · Devin integration: existing_task DOC-06: subsequent main updates to original EM-102 must resolve to source-qualified EM-343, not the unrelated branch EM-102. Preserve both history prefixes, original relocation receipts and new nested-course evidence.
+
+### [ ] EM-348: Floating CI runner images can invalidate a pinned native-browser prerequisite
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-11-01. **Origin:** Cumulative branch final-head GitHub verify job.
+
+Final-head verify ran on ubuntu-26.04 after ubuntu-latest changed; the installed Playwright version rejected chromium dependency installation before native acceptance began. Main previously passed, which does not establish this new runner is compatible.
+
+**Product implication:** Pin this browser-bearing job to supported ubuntu-24.04; retain all native tests, failure evidence and explicit future runner upgrade verification. Do not mask infrastructure failures as application passes.
+
+**Roadmap links:** `DOC-06` (verified).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/evidence/ci-runner-2026-11-01.json`, `.github/workflows/ci.yml`, `docs/delivery/sessions/2026-11-01-course-integration.md`.
+
+**Decision history:**
+
+- 2026-11-01 · adopted · Devin integration: existing_task DOC-06: bounded reproducibility correction, no product scope change or acceptance promotion.

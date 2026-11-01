@@ -1,0 +1,17 @@
+{
+  "scope": "CI browser prerequisite failure, not an application test failure",
+  "failed_head": "d4d8f2dc0aee774eb3f5295fc099d402c3cbfc20",
+  "job_url": "https://github.com/EmotiveImpact/8ball/actions/runs/41317574341/job/124880774434",
+  "job_id": 124880774434,
+  "observed_at": "2026-11-01T14:43:30Z",
+  "runner_image": "ubuntu-26.04",
+  "runner_image_version": "20261025.179.1",
+  "failure_stage": "python -m playwright install --with-deps chromium",
+  "observed_error": "Playwright does not support chromium on ubuntu26.04-x64",
+  "playwright_reported_version": "1.57.0-beta-1764944708000",
+  "correction": "Pin the existing verify job to supported ubuntu-24.04; keep browser install and all native acceptance stages unchanged.",
+  "official_system_requirements": "https://playwright.dev/python/docs/intro#system-requirements",
+  "application_code_changed": false,
+  "remote_verification_of_correction": "pending",
+  "limits": "No skipped browser tests, mock transport, security relaxation, main merge or deployment. Devin Review is a separate errored service check with no exposed job ID or findings."
+}

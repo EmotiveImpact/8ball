@@ -7906,6 +7906,33 @@
           "reason": "existing_task DOC-06: subsequent main updates to original EM-102 must resolve to source-qualified EM-343, not the unrelated branch EM-102. Preserve both history prefixes, original relocation receipts and new nested-course evidence."
         }
       ]
+    },
+    {
+      "id": "EM-348",
+      "title": "Floating CI runner images can invalidate a pinned native-browser prerequisite",
+      "origin": "Cumulative branch final-head GitHub verify job",
+      "first_seen": "2026-11-01",
+      "evidence_level": "observed_in_build",
+      "observation": "Final-head verify ran on ubuntu-26.04 after ubuntu-latest changed; the installed Playwright version rejected chromium dependency installation before native acceptance began. Main previously passed, which does not establish this new runner is compatible.",
+      "product_implication": "Pin this browser-bearing job to supported ubuntu-24.04; retain all native tests, failure evidence and explicit future runner upgrade verification. Do not mask infrastructure failures as application passes.",
+      "task_ids": [
+        "DOC-06"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/evidence/ci-runner-2026-11-01.json",
+        ".github/workflows/ci.yml",
+        "docs/delivery/sessions/2026-11-01-course-integration.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-11-01",
+          "decision": "adopted",
+          "by": "Devin integration",
+          "reason": "existing_task DOC-06: bounded reproducibility correction, no product scope change or acceptance promotion."
+        }
+      ]
     }
   ],
   "id_relocations": [

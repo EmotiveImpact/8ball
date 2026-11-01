@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 native CI prerequisites · Pin native-browser CI to the supported Ubuntu 24.04 runner
+
+2026-11-01 · `local_unreleased`
+
+Retain the failed floating-runner install and keep the complete native acceptance job on a platform supported by the pinned Playwright package.
+
+### Added
+
+- Failed job evidence and EM-348 capture the observed runner/package incompatibility.
+
+### Changed
+
+- Only verify runs-on changes from ubuntu-latest to ubuntu-24.04; no browser install or native acceptance stage is skipped.
+
+### Fixed
+
+- Playwright chromium dependency install no longer targets the unsupported ubuntu26.04-x64 platform.
+
+### Verification
+
+- Earlier exact-source application acceptance remains bound to 7599eb2; application code is unchanged.
+- Local history/tracking and pinned-platform prerequisite checks run before commit; full corrected remote native acceptance is pending.
+
+### Limitations
+
+- Runner correction is pending remote execution, not an application or model quality claim.
+- Devin Review is separately errored without a job ID or findings; no review gate is bypassed.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-348: floating OS labels changed native browser prerequisite compatibility without application edits.
+- Risk: Future runner upgrades need their own explicit browser verification.
+- Architecture: Pin the supported OS, not a fake browser transport or weakened acceptance command.
+- Roadmap decision: existing_task DOC-06 reproducibility only; all quality and authority gates remain unchanged.
+Registered discoveries: EM-348.
+
+Roadmap items: `DOC-06`.
+
+Evidence: [docs/evidence/ci-runner-2026-11-01.json](docs/evidence/ci-runner-2026-11-01.json), [.github/workflows/ci.yml](.github/workflows/ci.yml), [docs/delivery/sessions/2026-11-01-course-integration.md](docs/delivery/sessions/2026-11-01-course-integration.md).
+
 ## 0.2.0-alpha.8 cumulative native evidence · Retain exact-source nested-course integration verification
 
 2026-11-01 · `local_unreleased`
