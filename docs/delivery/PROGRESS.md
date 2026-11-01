@@ -1353,4 +1353,4 @@ These references have specific scopes and may be historical. A reference to a de
 
 - Kind: `controlled_full_plan_contract_host_and_native_ui`.
 - Repository evidence: [docs/delivery/sessions/2026-11-01-operating-planning.md](../../docs/delivery/sessions/2026-11-01-operating-planning.md).
-- Result/scope: Full-plan software and read-only UI, not independent semantic acceptance. First native source passed 2661 source/installed tests and 517 native checks, then was superseded by the tiny-magnitude correction; 134 final focused checks passed and full rerun is pending. No live inference or production completion.
+- Result/scope: Final committed software passed 2664 source and installed-wheel tests, 25 JS modules and 517 native checks; exact-source/artifact inspection valid before additive documentation. Original objections, SOPs, arithmetic unknowns and failed outputs remain read-only. No live inference, independent quality, commercial validation or production acceptance.

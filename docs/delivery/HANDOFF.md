@@ -1,3 +1,25 @@
+# Full operating-plan software checkpoint — 1 November 2026
+
+ENDSTATE remains the engine beneath 8BALL, not a new model or replacement app.
+Branch `devin/1792969169-roadmap-integrated`; tested source `f49afd453c101d05ca385cbb73070a0fc65283af`.
+2,664 source tests, 2,664 installed-wheel regressions, 25 JavaScript modules and
+517 checks in thirteen native browser suites passed. Source/artifact inspection
+was valid before this additive evidence closeout; 134 focused checks passed.
+[Scope, source and limits](sessions/2026-11-01-operating-planning.md).
+
+## Emergence Review
+
+EM-349–355 retain exact-goal binding, strict arithmetic/unknowns, explainable
+same-model role reviews, offline read-only replay, bounds and the tiny-magnitude
+correction. ER-01–15 reviewed; no optional or quality gate promoted.
+
+Source is committed; this evidence-only closeout is a separate commit. PR #6
+records the current remote head/checks. Next: publish evidence, settle remote
+checks, then retain actual-provider semantic, independent human/accessibility
+and production gates. No new inference, main merge, deployment or release.
+
+---
+
 # Verified cumulative course checkpoint — 1 November 2026
 
 Branch `devin/1792969169-roadmap-integrated`; tested source `7599eb2da19850e321fa7bb9cc06e68137ab0f4b`.

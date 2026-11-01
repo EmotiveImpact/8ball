@@ -4537,3 +4537,4 @@ A short six-calculation repeated-product chain produced a 1000050-character fixe
 **Decision history:**
 
 - 2026-11-01 · adopted · Devin integration: existing_task: bounded deterministic arithmetic and safe rendering. Preserve the earlier passing native source as superseded, not evidence for this later correction.
+- 2026-11-01 · adopted · Devin integration: existing_task: lower bound and canonical zero verified at f49afd453c101d05ca385cbb73070a0fc65283af in 2664 source and installed-wheel tests, 517 native checks and exact-source/artifact inspection. This is bounded software verification, not numeric-model truth or plan quality.

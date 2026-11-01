@@ -4,6 +4,48 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 operating-plan evidence · Retain exact-source full operating-plan software acceptance
+
+2026-11-01 · `local_unreleased`
+
+Bind final cumulative native and installed-wheel verification to the committed operating-plan source; keep semantic, human, production and commercial gates open.
+
+### Added
+
+- Compressed unchanged native report and hash-bound receipt, dated handoff and exact source boundary.
+
+### Changed
+
+- Shared delivery records identify the final tested operating-plan commit and separate additive evidence documentation.
+
+### Verification
+
+- At f49afd453c101d05ca385cbb73070a0fc65283af: 2664 source tests, 2664 installed-wheel regressions, 25 JS modules and 517 native checks across thirteen browser suites passed.
+- All 23 acceptance stages passed; source/artifact inspection valid before additive documentation. 134 focused kernel/new-flow checks passed.
+
+### Limitations
+
+- Exact tested source f49afd453c101d05ca385cbb73070a0fc65283af only; additive evidence documentation is not a new full native run.
+- Compressed report preserves source/artifact hashes, not all artifact binaries; local source/artifact inspection passed before closeout.
+- Fictional controlled fixtures are not live inference, independent experts, observed customer reactions, commercial demand or a GBP100000 forecast.
+- Written role reviews use separate contexts on one selected generative model, not private internal reasoning or explanations from native decision models.
+- Planning, state, evidence, selection, spending and authority remain separate. B02-09/B02-11/B02-12/B02-16/B02-18 gates remain open.
+- Earlier format/provider failures and the superseded pre-floor arithmetic acceptance remain unchanged. No retries, fallback, merge, deployment or public package publication.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-355: lower magnitude bounds prevent tiny repeated products expanding output or approaching silent Decimal underflow.
+- Risk: A passing full native suite does not establish better plans or preserve the meaning of an incorrectly authored human brief.
+- Architecture: Keep the exact tested source and original acceptance bytes distinct from later delivery documentation.
+- Roadmap decision: existing_task DOC-06 evidence closeout; no semantic, human, production or optional gate promoted.
+Registered discoveries: EM-349, EM-350, EM-351, EM-352, EM-353, EM-354, EM-355.
+
+Roadmap items: `ES03-01`, `ES03-05`, `B02-09`, `B02-11`, `B02-12`.
+
+Evidence: [docs/evidence/operating-planning-native-2026-11-01.json](docs/evidence/operating-planning-native-2026-11-01.json), [docs/delivery/sessions/2026-11-01-operating-planning.md](docs/delivery/sessions/2026-11-01-operating-planning.md).
+
 ## 0.2.0-alpha.8 full operating-plan method · Preserve complete outcomes, checked arithmetic, explained challenges and proposed SOPs
 
 2026-11-01 · `local_unreleased`

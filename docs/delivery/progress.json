@@ -38,11 +38,14 @@
       "base_commit": "2f910b947e4f3af348c3331482bf08fc693d7fbc",
       "status_as_of": "2026-11-01",
       "objective": "Complete exact-goal full operating-plan software, written role challenges, arithmetic, SOPs and read-only host presentation.",
-      "verification": "98 new contract/method/host tests and 134 focused kernel/new-flow checks passed. First complete native run passed 2661 source/installed tests and 517 native checks; source/artifact inspection valid before the EM-355 numeric-bound correction. Final cumulative native/package rerun pending.",
+      "verification": "PASSED exact tested source: 2664 source tests, 2664 installed-wheel regressions, 25 JS modules and 517 checks in thirteen native suites; 134 focused checks and valid source/artifact inspection before additive evidence documentation. No inference, independent quality or production acceptance.",
       "evidence": "docs/delivery/sessions/2026-11-01-operating-planning.md",
       "merged": false,
       "live_inference_performed": false,
-      "next_action": "Run full native acceptance, inspect exact source/artifacts, push the bounded checkpoint and settle remote software checks; preserve all independent/human/provider/production gates."
+      "next_action": "Publish additive evidence checkpoint and settle remote CI; keep actual-provider semantic, independent human/accessibility and production gates open. No merge/deployment/release authorization.",
+      "tested_source_commit": "f49afd453c101d05ca385cbb73070a0fc65283af",
+      "source_sha256": "080356af99648c4b108f13ca0c83fc89b6927a18b8b9c38ee1233aaafd0eb026",
+      "receipt": "docs/evidence/operating-planning-native-2026-11-01.json"
     },
     "verified_sprint_history": [
       {
@@ -1339,7 +1342,7 @@
     "EV-OPERATING-PLANNING-20261101": {
       "kind": "controlled_full_plan_contract_host_and_native_ui",
       "path": "docs/delivery/sessions/2026-11-01-operating-planning.md",
-      "result": "Full-plan software and read-only UI, not independent semantic acceptance. First native source passed 2661 source/installed tests and 517 native checks, then was superseded by the tiny-magnitude correction; 134 final focused checks passed and full rerun is pending. No live inference or production completion."
+      "result": "Final committed software passed 2664 source and installed-wheel tests, 25 JS modules and 517 native checks; exact-source/artifact inspection valid before additive documentation. Original objections, SOPs, arithmetic unknowns and failed outputs remain read-only. No live inference, independent quality, commercial validation or production acceptance."
     }
   },
   "milestones": [
