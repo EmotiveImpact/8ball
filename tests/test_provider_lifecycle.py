@@ -59,6 +59,10 @@ def generation_report(tmp_path, *, provider='openai_compatible', **changes):
                                        for i in range(len(frame['success_criteria']))]
             responses = [frame, deepcopy(STAGED['routes'])]
         def respond(request):
+            if getattr(configured, 'protocol', None) == 'anthropic_messages':
+                return httpx.Response(200, json={'model': configured.model, 'type': 'message',
+                    'role': 'assistant', 'stop_reason': 'end_turn',
+                    'content': [{'type': 'text', 'text': json.dumps(responses.pop(0))}]})
             return httpx.Response(200, json={'model': 'controlled-served-model',
                 'choices': [{'index': 0, 'finish_reason': 'stop', 'message': {'role': 'assistant',
                     'content': json.dumps(responses.pop(0))}}]})
@@ -91,6 +95,21 @@ def generation_report(tmp_path, *, provider='openai_compatible', **changes):
     path = tmp_path / 'generation.json'
     path.write_text(json.dumps(report))
     return path
+
+
+def test_native_generation_prerequisite_requires_actual_protocol(tmp_path, monkeypatch):
+    monkeypatch.setenv('EIGHTBALL_API_BASE_URL', 'https://api.anthropic.com/v1')
+    monkeypatch.setenv('EIGHTBALL_API_PROVIDER', 'anthropic')
+    monkeypatch.setenv('EIGHTBALL_API_MODEL', 'claude-sonnet-5-5')
+    path = generation_report(tmp_path)
+    cfg = lifecycle.compatible_settings()
+    result = lifecycle.generation_prerequisite(path, 'openai_compatible', cfg, SOURCE, FIXTURES)
+    assert result['status'] == 'matching_local_report' and not result['independent_approval']
+    data = json.loads(path.read_text())
+    data['results'][0]['proposal']['raw_output']['transport']['transport'] = 'openai_compatible'
+    path.write_text(json.dumps(data))
+    with pytest.raises(lifecycle.SetupBlocked):
+        lifecycle.generation_prerequisite(path, 'openai_compatible', cfg, SOURCE, FIXTURES)
 
 
 class ControlledAPI:

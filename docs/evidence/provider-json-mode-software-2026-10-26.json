@@ -1,0 +1,37 @@
+{
+  "version": "source-bound-software-receipt.v1",
+  "tested_commit": "e1e714276cbdd400c76a121337c7f0cf0b17991d",
+  "mode": "native",
+  "run_id": "20261026T114121Z-9fa4e813",
+  "source_sha256": "b7ab9ea110242fc01f2cc339dcc4db2fc91dd75b7179e9c3334fac3ecf025c4a",
+  "status": "passed",
+  "source_tests": {
+    "tests": 2172,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 2172
+  },
+  "installed_tests": {
+    "tests": 2172,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "javascript_modules": 24,
+  "native_browser_suites": 13,
+  "browser_checks": 475,
+  "source_unchanged_during_run": true,
+  "inspection": {
+    "valid": true,
+    "reason": "Source and local evidence bytes match; this is not a signed attestation",
+    "run_status": "passed",
+    "native_browser_verified": true,
+    "model_quality_approved": false,
+    "released": false
+  },
+  "report": "docs/evidence/provider-json-mode-software-passed-2026-10-26.json.xz",
+  "report_uncompressed_sha256": "c3215e91f85bc84f89193b5a326575dd7424cc03bbaba09f0f06b2c07ff86448",
+  "predictive_quality_approved": false,
+  "notice": "Exact snapshot inspected before documentation-only closeout. Initial incorrect-Node-path source run retained separately; native rerun passed with Node v24.19.0. No live inference, coordinated-method or predictive-quality claim."
+}

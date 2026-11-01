@@ -125,6 +125,8 @@ def render(data: dict[str, Any]) -> str:
         '`python scripts/delivery.py --write`. Do not maintain a second set of statuses here.', '',
         f'Last status review: {data["updated_on"]}.', '',
         '**8BALL is the fixer product. ENDSTATE is the reusable engine underneath it.**', '',
+        'Build objective and completion criteria: [BUILD-GOAL.md](BUILD-GOAL.md). '
+        'The sections below are the current status for both tracks, not separate backlogs.', '',
         '## Checkpoint and release boundary', '',
         f'- Active integration branch: `{r["development_branch"]}`; PR #{r["pull_request"]}.',
         f'- Inspected application baseline: `{r["inspected_code_commit"]}`.',

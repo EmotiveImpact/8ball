@@ -1,5 +1,10 @@
 # ENDSTATE embedded package preview
 
+The additional internal [full operating-plan method](../v2/OPERATING-PLANNING.md)
+preserves exact goals, checked scenario arithmetic, explained role challenges,
+revision dispositions and proposed SOPs. It is not an execution adapter or a
+claim of independently accepted plan quality; legacy contracts stay unchanged.
+
 ENDSTATE is the read-only calculation kernel used by 8BALL. This internal alpha
 can now be built as a wheel containing only `endstate/`, its metadata and type
 marker. It does not contain 8BALL, client data, a database, web UI, HTTP service,
@@ -32,3 +37,7 @@ wire formats. Input and output schemas can be exported using
 ## Scoped native compatibility acceptance, 26 September 2026
 
 ES01-05 is verified for the internal package compatibility scope at `14c57907d26ea914e372e544bba4b0bd3988f5dc`: all 938 application/code tests against the installed wheel and all eleven native application suites passed. See [native receipt](../evidence/native-closeout-2026-09-26.json). This does not publish a supported SDK, cover untested platforms, approve model quality or release the production product.
+
+## Additional internal primitives, 26 October 2026
+
+The internal wheel now also includes neutral scenario comparisons/replay, attributed challenge contracts, host-verified packet projection and typed advisory-choice validation. The isolated smoke imports and exercises these under the existing no-runtime-services guard. Permissions, network dispatch and persistence remain host responsibilities. No new public API stability or production acceptance is claimed.

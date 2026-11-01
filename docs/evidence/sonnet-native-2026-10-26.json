@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "model": "claude-sonnet-5-5",
+  "starting_commit": "3c758b51389dcee5fdc02679136cfa98dce9db37",
+  "reports": [
+    {
+      "kind": "compatible-rejection",
+      "path": "docs/evidence/sonnet55-compatible-rejection-2026-10-26.json.xz",
+      "raw_sha256": "39e3db9f88f7c24b3d9b040fe7cffcc0143e65117609a1e7de56508e5cb9c03c",
+      "compressed_sha256": "e41c8fc0a8c249579ac71f81f08f11e8ae539a6ddbcb86a806040e18662aa880",
+      "source_sha256": "0e85a4688598c89662504dbd90a39c90916205ce180223124f168f14a18f728e",
+      "status": "rejected_or_unavailable",
+      "requests": 1,
+      "usage_based_usd": null
+    },
+    {
+      "kind": "native-probe",
+      "path": "docs/evidence/sonnet55-native-probe-2026-10-26.json.xz",
+      "raw_sha256": "c8601fd01dfb025dbaff6239ab45bef9b64711f30f45d7e1c8550d66a198b2e9",
+      "compressed_sha256": "4d92129ed63c4c3888bcf725f666aed2a424170de9e0bbf9c05e48528e4f73aa",
+      "source_sha256": null,
+      "status": "response_received",
+      "requests": 1,
+      "usage_based_usd": "0.000288"
+    },
+    {
+      "kind": "native-generation-failed",
+      "path": "docs/evidence/sonnet55-native-generation-failed-2026-10-26.json.xz",
+      "raw_sha256": "e425df30ccf0b91eb4d20567ff05cb5626d5567ac3d0f551e8cdbf67c349eccf",
+      "compressed_sha256": "1c3f4b0ccc71cefb3e69d2b808da6b7400b5a29b4a0f19cc2402984c35a2df68",
+      "source_sha256": "916e80f352d02ddc55d893fc1461c08940e9713504cf196500fd951bc234a91b",
+      "status": "failed",
+      "requests": 4,
+      "usage_based_usd": "0.021042"
+    },
+    {
+      "kind": "native-generation-passed",
+      "path": "docs/evidence/sonnet55-native-generation-passed-2026-10-26.json.xz",
+      "raw_sha256": "110b739b3926c1fcb4e1e2ab73a6cc2cccdcd9c669b7de3b14108a6e30b730f2",
+      "compressed_sha256": "3105f900d85e153db1d63fc479890de07fec578b6b1f8c4744ce2682a99550e4",
+      "source_sha256": "505d21c812375c6d4e324809a4ab7aa1391faf107ac4e8d5c50074a6da6f61d6",
+      "status": "passed",
+      "requests": 5,
+      "usage_based_usd": "0.035742"
+    },
+    {
+      "kind": "native-journey-passed",
+      "path": "docs/evidence/sonnet55-native-journey-passed-2026-10-26.json.xz",
+      "raw_sha256": "90d4523871ec805688785c9b7aed9effae90238be4235cf2d3425d215fa23c4d",
+      "compressed_sha256": "67465374a55bc9cbc2dd63d015cab599a861c52c40c3756064d01d8f0d967107",
+      "source_sha256": "8ea334893922b2897129b21c31f75540dd5718bd8faff1587bd27902f1b71db2",
+      "status": "passed",
+      "requests": 3,
+      "usage_based_usd": "0.031428"
+    }
+  ],
+  "budget_usd": "5",
+  "known_sonnet_usage_based_usd": "0.088500",
+  "unknown_billing_requests": 1,
+  "actual_invoice_verified": false,
+  "automatic_retries": false,
+  "independent_quality_approved": false,
+  "predictive_accuracy_approved": false,
+  "production_approved": false,
+  "merged": false,
+  "pricing": {
+    "input_usd_per_million": 2,
+    "output_usd_per_million": 10,
+    "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+  },
+  "notes": [
+    "All fixtures fictional; native journey uses scripted reviews and synthetic observations.",
+    "No provider-enforced account cap; owner explicitly authorised bounded testing.",
+    "Generation pass precedes one test-only fixture correction; runtime hashes are unchanged.",
+    "Live cancellation/stale/restart not exercised; controlled HTTP tests are separate evidence.",
+    "Historical Sonnet 4.6 failures and their unknown billing are preserved separately."
+  ],
+  "runtime_sha256": {
+    "eightball/v2/compatible.py": "190a607227483cfa15a2453c0e8b12a0bf53552804187b5b6ddf2dea0f319dc6",
+    "endstate/compilation.py": "d97663b8e7d5024e09e4de0fce7bfdfc1c631db38acd9c836df1add1cd7a1bc6",
+    "evals/provider_lifecycle.py": "994b6b52bc534e9f9163f8f4f4e6eb13342e102ee51f1e92444cec57c037b95c"
+  }
+}

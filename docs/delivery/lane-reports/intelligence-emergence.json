@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-10-25",
+  "items": [
+    {
+      "id": "EM-233",
+      "title": "Reference review must identify exact content without becoming fact or action authority",
+      "first_seen": "2026-10-25",
+      "origin": "intelligence-lane-f3c5604865654b42ad08e573aa871c3e",
+      "evidence_level": "supported_by_tests",
+      "observation": "A new playbook or precedent version cannot inherit review of an earlier draft; a review binds the current version and digest, while author identity and factual/action approval remain separate. Controlled tests reject self-review, stale digests and review inheritance.",
+      "product_implication": "Reusable patterns can be inspectable hypotheses without quietly approving case facts, selected courses or external actions.",
+      "evidence_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "tests/test_learning_knowledge.py"
+      ],
+      "task_ids": [
+        "B04-01",
+        "B04-02"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: implement exact-version review infrastructure only. Specialist qualifications, professional approval, plan application and real outcomes still require separate evidence."
+        }
+      ]
+    },
+    {
+      "id": "EM-234",
+      "title": "Withdrawal denial and terminal retirement need different source-access rules",
+      "first_seen": "2026-10-25",
+      "origin": "intelligence-lane-f3c5604865654b42ad08e573aa871c3e",
+      "evidence_level": "supported_by_tests",
+      "observation": "Controlled source retraction/change/revocation tests deny reference retrieval, review and payload-idempotency replay, including historical quotes. Retirement remains available after source withdrawal so safety removal is not blocked by the source it must stop exposing. Draft quotes remain at rest; denial is not secure erasure.",
+      "product_implication": "Current source eligibility belongs in a transaction-aware adapter. Managed retention and production deletion must not be claimed from local service filtering.",
+      "evidence_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "tests/test_learning_knowledge.py"
+      ],
+      "task_ids": [
+        "B04-02",
+        "B02-14"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: keep source access fail-closed and preserve terminal retirement; defer managed retention/deletion and actual vault-policy integration to their authorised owners."
+        },
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: final adapter/capacity checks require literal active=True, actual source text and a known nonnegative integer case revision, and permit terminal retirement beyond the normal journal cap. Truthy metadata and capacity limits must not bypass current policy or block safety removal. Controlled negative tests added; no broader source-policy/retention acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-235",
+      "title": "A model inventory listing is not a loaded or quality-approved model",
+      "first_seen": "2026-10-25",
+      "origin": "intelligence-lane-f3c5604865654b42ad08e573aa871c3e",
+      "evidence_level": "supported_by_tests",
+      "observation": "Controlled runtime metadata tests distinguish exact configured weights and selected digest/size/detail fields from invalid or ambiguous inventory. Registry ports are not model tags. Invalid inventory remains unknown, and listed weights do not establish loaded state, inference or quality.",
+      "product_implication": "The fixer needs separate readouts for connection/runtime version, verified inventory, selected weights and unperformed quality/inference checks.",
+      "evidence_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "eightball/v2/runtime_status.py",
+        "tests/test_runtime_status.py"
+      ],
+      "task_ids": [
+        "B02-15",
+        "ES03-04"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "existing_task: tighten read-only metadata contracts without model loading, silent downloads or actual-model acceptance; shared status-view wiring remains integration-owned."
+        }
+      ]
+    },
+    {
+      "id": "EM-236",
+      "title": "Nested engine contracts require an explicit distribution declaration as well as source tests",
+      "first_seen": "2026-10-25",
+      "origin": "intelligence-lane-f3c5604865654b42ad08e573aa871c3e",
+      "evidence_level": "observed_in_build",
+      "observation": "The source-tree suite passes but the installed-wheel regression fails collection with ModuleNotFoundError for endstate.intelligence: the frozen root setuptools declaration includes only endstate. Source-tree success cannot prove distribution completeness.",
+      "product_implication": "ENDSTATE's neutral contracts must be packaged and recursively fingerprinted before an integrated distribution can rely on them.",
+      "evidence_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "pyproject.toml"
+      ],
+      "task_ids": [
+        "ES03-01",
+        "B02-18"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "decision_record: request integration-owned package allowlist/fingerprint changes and retain the failed wheel evidence. Do not edit a frozen manifest, skip the test or claim package acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-237",
+      "title": "Inspectable precedent can increase review burden without proving operator benefit",
+      "first_seen": "2026-10-25",
+      "origin": "intelligence-lane-f3c5604865654b42ad08e573aa871c3e",
+      "evidence_level": "operator_hypothesis",
+      "observation": "The implemented search is bounded lexical title/summary matching over scoped references; unreviewed precedent is excluded and empty results are scoped negatives. These deterministic checks do not show that more reference screens or reviews produce better decisions.",
+      "product_implication": "Measure sound-decision time, missed constraints, inappropriate reuse and correction burden with qualified human judgement before claiming useful learning or success probabilities.",
+      "evidence_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "tests/test_learning_knowledge.py"
+      ],
+      "task_ids": [
+        "B04-03",
+        "B04-01",
+        "B04-02"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "deferred",
+          "by": "Devin",
+          "reason": "existing_task: retain an owner-review hypothesis under B04-03, not a new required feature or optional B04-04 replay implementation. No human/pilot/value result is fabricated."
+        }
+      ]
+    },
+    {
+      "id": "EM-238",
+      "title": "Native shipping-state assertions can fail independently of functional app preservation",
+      "first_seen": "2026-10-25",
+      "origin": "intelligence-lane-f3c5604865654b42ad08e573aa871c3e",
+      "evidence_level": "observed_in_build",
+      "observation": "The native Studio suite fails its current-build assertion at line 149 because it requires literal local unreleased while the frozen coordination changelog entry is pushed_unreleased. Eleven other native suites pass, but the complete native runner correctly remains failed.",
+      "product_implication": "Truthful shipping state, generated changelog content and native fixture expectations must be reconciled centrally without changing state labels merely to obtain green checks.",
+      "evidence_paths": [
+        "docs/delivery/lane-reports/intelligence.md",
+        "tests/browser_studio.py"
+      ],
+      "task_ids": [
+        "B02-18"
+      ],
+      "acceptance_task_ids": [],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin",
+          "reason": "decision_record: retain the failed Studio/native result and ask integration to reconcile exact version/shipping semantics and rerun the complete source-bound runner; no broad native acceptance."
+        }
+      ]
+    }
+  ]
+}

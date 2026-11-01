@@ -1,0 +1,84 @@
+{
+  "version": "historical-replay-audit.v1",
+  "assembled_at": "2026-10-26T10:28:18.358587+00:00",
+  "verdict": "inconclusive_retrospective_diagnostic",
+  "base_commit": "3ddaa2f42f88b0bdb8ad41212f454b01588e29b4",
+  "actual_run_source": "Uncommitted v1 runner at the base commit, archived after inference; not a precommitted experiment. Subsequent v2 harness has offline protocol tests only.",
+  "archived_runner_sha256": "5edc18f8f8fd090b4dfaeb95cb9a385f97722822ca474413c388eb00037e570f",
+  "artifact_sha256": {
+    "historical-replay-forecast-2026-10-26.json": "07de59ee28ca8469009be324697fb7fe1b36df14d36c9844157741612a4f99b9",
+    "historical-replay-input-2026-10-26.json": "72fc03d3bd92c453a2917eeaf8fe854e4ab746aaca841f6e5d0aef2825657679",
+    "historical-replay-resolution-2026-10-26.json": "727eb7681bc73ee66c5b8a24ec36aef93c47858710c4e01c9571059c45677735",
+    "historical-replay-runner-v1-2026-10-26.py.xz": "b934a02e50753032b2d0b310a0454763b6c4b8e38fc7cb6cd50fd533b4060e1f",
+    "historical-replay-sources-2026-10-26.json": "69f0107d26c4b1d0f6d3c460e29426e837a2b54d1b45c5998616237c53f93b5f",
+    "historical-replay-planning-control-2026-10-26.json": "76d533688a213377a4db839bef161cefe8884f6709aacf13e97d795570646e74"
+  },
+  "actual_provider_requests": 1,
+  "retries": 0,
+  "api_provider": "anthropic",
+  "protocol": "anthropic_messages",
+  "served_model": "claude-sonnet-5-5",
+  "prompt_version": "historical-forecast.v1",
+  "immutable_model_weights_revision_known": false,
+  "forecast_probability": 0.45,
+  "observed_value": false,
+  "brier": 0.2025,
+  "fixed_half_baseline_brier": 0.25,
+  "recognises_real_case": true,
+  "predictive_quality_approved": false,
+  "facts_attested": false,
+  "execution_authorized": false,
+  "data_scope": "Public SEC transaction documents, manually masked; no private customer records. Outcome and source URLs absent from the model payload.",
+  "native_usage": {
+    "input_tokens": 1329,
+    "output_tokens": 508,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  },
+  "pricing": {
+    "input_usd_per_million": 2,
+    "output_usd_per_million": 10,
+    "source": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "basis": "Rates retained from the earlier native Sonnet verification, not an invoice."
+  },
+  "this_request_usage_estimate_usd": 0.007738,
+  "known_sonnet_usage_estimate_usd": 0.131566,
+  "known_decision_reported_cost_usd": 8.547e-06,
+  "authorised_total_budget_usd": 5,
+  "billing_limitations": "Rejected/interrupted request billing remains unknown. No provider-enforced cap or verified invoice.",
+  "preflight_failures": [
+    {
+      "error": "Overbroad terminat keyword rejected legitimate pre-cutoff termination clauses.",
+      "provider_requests": 0
+    },
+    {
+      "error": "receipt property was mistakenly called as a function before generate.",
+      "provider_requests": 0
+    }
+  ],
+  "preflight_evidence_basis": "Reconstructed from retained session tool output; these are not contemporaneously written runner reports.",
+  "source_review_errata": [
+    {
+      "field": "context.terms[5]",
+      "error": "roughly 9% of equity value",
+      "correction": "The fee-to-value comparison used the approximately US$1.365 billion announced transaction value including net debt, not equity value. The frozen model input remains unchanged.",
+      "source_id": "announcement"
+    },
+    {
+      "field": "context.terms[4]",
+      "error": "antitrust-related conditions are the only unsatisfied conditions",
+      "correction": "Section 8.01(b)(i) refers to any unsatisfied condition in 7.01(b) or 7.01(c): governmental antitrust consents and no legal restraints. The frozen summary narrows this wording; no corrected-input rerun was used to improve the score.",
+      "source_id": "agreement"
+    }
+  ],
+  "limitations": [
+    "One selected historical case; not a representative benchmark or prospective forecast.",
+    "The model explicitly reports recollection of the transaction and outcome; renaming did not establish blindness.",
+    "The author knew the outcome; source selection, emphasis on the notice deadline and omitted historical context may leak hindsight.",
+    "Two source-summary errors invalidate a source-faithful interpretation independently of recognition.",
+    "The first call used the app native transport plus ENDSTATE scoring, not the complete planning/challenge/review UI loop.",
+    "First-run input/schema were reconstructed after the response and matched their pre-call-computed report hashes; this is not independent registration.",
+    "Raw public pages remain local under artifacts/historical-replay-research-20261026; committed source references/hash manifest do not independently attest content.",
+    "Later harness fixes, source errata and offline planning do not retroactively improve this model result."
+  ]
+}

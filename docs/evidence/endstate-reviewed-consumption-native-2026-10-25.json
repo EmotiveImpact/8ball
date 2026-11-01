@@ -1,0 +1,30 @@
+{
+  "tested_commit": "87c5322c23ebe7a3fc062ce15985a3d82d84eea2",
+  "run_id": "20261025T154145Z-f1acffc9",
+  "source_sha256": "89693b147238ce3b9817a059929ff74e6d673029148bf66d85352e1f8142545d",
+  "report_sha256": "7274f1bff029cadc06e589109d0fce86a3d961730494846443c6bf284b2d508e",
+  "status": "passed",
+  "source_tests": 1323,
+  "installed_engine_tests": 1323,
+  "native_browser_checks": 396,
+  "native_suites": 11,
+  "inspection_valid_before_receipt_edits": true,
+  "source_unchanged_during_run": true,
+  "checkpoint_ci": [
+    40208276077,
+    40208276162
+  ],
+  "checkpoint_ci_conclusion": "success",
+  "raw_artifacts": "artifacts/acceptance/20261025T154145Z-f1acffc9",
+  "raw_artifacts_committed": false,
+  "limitations": [
+    "Trusted host supplies authenticated reviewer identity; no public agency write endpoint or browser event review yet.",
+    "Local SQLite transactions do not establish production tenant isolation.",
+    "Durable worker/outbox integration, actual model evaluation and genuine human acceptance remain unfinished.",
+    "Receipt and navigation edits are documentation-only; final-head CI is separate."
+  ],
+  "model_inference_performed": false,
+  "independent_review_performed": false,
+  "released": false,
+  "deployed": false
+}

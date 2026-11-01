@@ -44,7 +44,7 @@ def checked_repository(record):
 def populate(record):
     target, url, commit = checked_repository(record)
     if (target / '.git').exists():
-        if git(target, 'remote', 'get-url', 'origin') != url:
+        if git(target, 'config', '--get', 'remote.origin.url') != url:
             raise ValueError('Unexpected origin URL; preserve checkout: ' + str(target))
         if git(target, 'status', '--porcelain=v1', '--untracked-files=all'):
             raise ValueError('Preserve modified checkout before populating: ' + str(target))
@@ -83,7 +83,7 @@ def verify(record):
         raise ValueError('Source checkout is not populated: ' + str(target))
     if git(target, 'rev-parse', '--verify', 'HEAD') != commit:
         raise ValueError('Checkout does not match its pin: ' + str(target))
-    if git(target, 'remote', 'get-url', 'origin') != url:
+    if git(target, 'config', '--get', 'remote.origin.url') != url:
         raise ValueError('Unexpected origin URL: ' + str(target))
     if git(target, 'status', '--porcelain=v1', '--untracked-files=all'):
         raise ValueError('Source checkout has local changes: ' + str(target))

@@ -1,0 +1,59 @@
+{
+  "tested_commit": "5dbd40fc4e7fe2d22fde8af6f49ddcae53135172",
+  "run_id": "20261026T001616Z-38c61066",
+  "source_sha256": "0ba1ad76445adaa05a70ed14e31d68eb67ba3fd1a4bec479a45331d7844a98e2",
+  "report_sha256": "30237cfc4f0d434e19a4a339c0f67ba677ec3cda061fab815f65b98df48a9611",
+  "status": "failed",
+  "source_counts": {
+    "tests": 1782,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 1781
+  },
+  "installed_counts": {
+    "tests": 1782,
+    "passed": 1778,
+    "failures": 4,
+    "errors": 0,
+    "skipped": 0
+  },
+  "native_browser_checks": 439,
+  "native_suites": 13,
+  "inspection_valid_before_source_edits": true,
+  "inspection_result": {
+    "valid": true,
+    "reason": "Source and local evidence bytes match; this is not a signed attestation",
+    "run_status": "failed",
+    "native_browser_verified": true,
+    "model_quality_approved": false,
+    "released": false
+  },
+  "source_unchanged_during_run": true,
+  "failed_checks": [
+    {
+      "name": "unit",
+      "log": "unit.log",
+      "log_sha256": "878e42662879f421c42ce958c3273edd51e451904a99a379315c5b79ae58e53d"
+    },
+    {
+      "name": "endstate-package",
+      "log": "endstate-package.log",
+      "log_sha256": "2c6ead47ce37b4cd606fb7b468346309c0a0b793c9835ceea4520f51e2bf9fb2"
+    }
+  ],
+  "failure_reasons": [
+    "Ledger task owner/branch/base claims overwritten during integration; restore reserved builder claims rather than weaken test.",
+    "Three installed-wheel operations CLI tests used cwd-relative script paths; correct to file-relative absolute paths, preserving isolated installed-kernel runner."
+  ],
+  "raw_artifacts": "artifacts/acceptance/20261026T001616Z-38c61066",
+  "raw_artifacts_committed": false,
+  "model_inference_performed": false,
+  "independent_review_performed": false,
+  "released": false,
+  "deployed": false,
+  "limitations": [
+    "This receipt describes a failed exact-source run, not the corrected checkpoint or a whole-run acceptance pass.",
+    "No real IdP,malware,provider,professional,human,real-client,pilot or production acceptance."
+  ]
+}

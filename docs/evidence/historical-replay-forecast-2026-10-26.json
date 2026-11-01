@@ -1,0 +1,97 @@
+{
+  "version": "historical-replay.v1",
+  "prompt_version": "historical-forecast.v1",
+  "case_id": "HR-001",
+  "case_sha256": "c8b755fdbd8c99d70431b592a5e1c358e4328892808b171b508585de29a1ee35",
+  "input_sha256": "24d3c427aafbddec92933d04b7a42420dc0f15ff542e51aba9450fd742415e63",
+  "schema_sha256": "dc473fcd3000f219f0b211681a6a5dade6d21aef4dc14874cf9ee82017c81fea",
+  "kind": "retrospective_masked_replay",
+  "masking": "Real party names, exact per-share price, exact store counts and exact fee amounts are replaced or rounded. Approximations are marked. Nothing dated after the information cutoff is included.",
+  "provider": {
+    "transport": "anthropic_messages",
+    "api_provider": "anthropic",
+    "endpoint_host": "api.anthropic.com",
+    "requested_model": "claude-sonnet-5-5",
+    "routing_provider": "anthropic",
+    "automatic_routing": false,
+    "explicit_operator_permission": true,
+    "calls": []
+  },
+  "requested_at": "2026-10-26T10:17:56.278260+00:00",
+  "status": "forecast_frozen",
+  "actual_model_inference": true,
+  "outcome_supplied_to_model": false,
+  "forecast": {
+    "id": "HR-001",
+    "event": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018.",
+    "as_of": "2018-06-18T23:59:59Z",
+    "horizon": "2018-12-31T23:59:59Z",
+    "input_sha256": "24d3c427aafbddec92933d04b7a42420dc0f15ff542e51aba9450fd742415e63",
+    "predictor": "anthropic:claude-sonnet-5-5:historical-forecast.v1",
+    "probability": 0.45,
+    "abstention_reason": null
+  },
+  "served_model": "claude-sonnet-5-5",
+  "answer": {
+    "probability": 0.45,
+    "abstention_reason": null,
+    "assumptions": [
+      "The case description is accurate and complete; no hidden conditions or side agreements affect closing.",
+      "Stockholder approval is likely given a unanimous board recommendation and an all-cash premium, with no sign of a competing bid.",
+      "HSR clearance is probable without a second request, because the buyer is a financial sponsor with limited overlap; the case does not say whether other regulatory approvals (for example state-level or consumer-finance licensing) are needed.",
+      "Retail rent-to-own businesses often need state-level licensing or regulatory approvals that can delay closing, so I assume timing risk from these is moderate.",
+      "The End Date of 17 December 2018 sits close to the 31 December horizon; if the extension is invoked because of antitrust delay, closing by year-end is unlikely.",
+      "Company A's operating results do not deteriorate enough for the buyer to seek to renegotiate or walk away.",
+      "Financing is available as committed, and the buyer's reverse termination fee keeps it committed to closing."
+    ],
+    "most_informative_observation": "Whether the HSR waiting period expired or was terminated early without a second request (and whether any other regulatory body raised concerns), typically visible within 30-60 days of signing.",
+    "recognises_real_case": true,
+    "recognition_note": "The description resembles a rent-to-own retailer taken private by a sponsor-backed vehicle in mid-2018. I have some recollection of the transaction and its outcome, but I am answering only from the supplied terms and the stated cutoff."
+  },
+  "forecast_sha256": "f348a6bd6c817cb5cea5af25eab2d2afe4d1df602d81a27e644e795c62c6fd0d",
+  "completed_at": "2026-10-26T10:18:01.646777+00:00",
+  "receipt": {
+    "transport": "anthropic_messages",
+    "api_provider": "anthropic",
+    "endpoint_host": "api.anthropic.com",
+    "requested_model": "claude-sonnet-5-5",
+    "routing_provider": "anthropic",
+    "automatic_routing": false,
+    "explicit_operator_permission": true,
+    "calls": [
+      {
+        "input_sha256": "24d3c427aafbddec92933d04b7a42420dc0f15ff542e51aba9450fd742415e63",
+        "schema_sha256": "dc473fcd3000f219f0b211681a6a5dade6d21aef4dc14874cf9ee82017c81fea",
+        "instructions_sha256": "3ec7121a91036fb1026d491baf3af7f04546c41df7e875d35bdd7c48d6f8903a",
+        "max_output_tokens": 4096,
+        "status": "response_received",
+        "sampling_parameters": "omitted",
+        "thinking": "provider_default",
+        "effort": "medium",
+        "remote_schema_enforcement": false,
+        "http_status": 200,
+        "response_body_sha256": "8d5f3180d5481f13d3b113cccdfc2468c30b0a5debb1eaf36c03b5cd638b782e",
+        "response_body_bytes": 2168,
+        "served_model": "claude-sonnet-5-5",
+        "provider_usage": {
+          "input_tokens": 1329,
+          "output_tokens": 508,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "provider_stop_reason": "end_turn",
+        "raw_content_sha256": "8fdb61d1447021993d13dfa6f62238882f843b36331833869059ac33b34e7b66",
+        "usage": {
+          "prompt_tokens": 1329,
+          "completion_tokens": 508,
+          "total_tokens": 1837
+        },
+        "response_sha256": "00a7e46b840b6f1243c949ecf0816a880e5a4f5f0a2b609beb9c9f78a0f4e653",
+        "finish_reason": "stop",
+        "raw_content": "{\"probability\":0.45,\"abstention_reason\":null,\"assumptions\":[\"The case description is accurate and complete; no hidden conditions or side agreements affect closing.\",\"Stockholder approval is likely given a unanimous board recommendation and an all-cash premium, with no sign of a competing bid.\",\"HSR clearance is probable without a second request, because the buyer is a financial sponsor with limited overlap; the case does not say whether other regulatory approvals (for example state-level or consumer-finance licensing) are needed.\",\"Retail rent-to-own businesses often need state-level licensing or regulatory approvals that can delay closing, so I assume timing risk from these is moderate.\",\"The End Date of 17 December 2018 sits close to the 31 December horizon; if the extension is invoked because of antitrust delay, closing by year-end is unlikely.\",\"Company A's operating results do not deteriorate enough for the buyer to seek to renegotiate or walk away.\",\"Financing is available as committed, and the buyer's reverse termination fee keeps it committed to closing.\"],\"most_informative_observation\":\"Whether the HSR waiting period expired or was terminated early without a second request (and whether any other regulatory body raised concerns), typically visible within 30-60 days of signing.\",\"recognises_real_case\":true,\"recognition_note\":\"The description resembles a rent-to-own retailer taken private by a sponsor-backed vehicle in mid-2018. I have some recollection of the transaction and its outcome, but I am answering only from the supplied terms and the stated cutoff.\"}",
+        "elapsed_ms": 5368.1
+      }
+    ]
+  },
+  "notice": "Retrospective replay recorded after the real outcome existed. The forecast as_of is the information cutoff, not when this request was made. Recognition of the masked case or memorised history cannot be excluded."
+}

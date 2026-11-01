@@ -1,0 +1,37 @@
+{
+  "version": "source-bound-software-receipt.v1",
+  "tested_commit": "cd9335f76e9a16fa285b28eb880475c38c3e1e83",
+  "mode": "native",
+  "run_id": "20261026T111245Z-9b24ceae",
+  "source_sha256": "f781de191fc2cf20adab3696b1bd5272a411f1678f90cf1f73db6e296173f17a",
+  "status": "passed",
+  "source_tests": {
+    "tests": 2152,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 2152
+  },
+  "installed_tests": {
+    "tests": 2152,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "javascript_modules": 24,
+  "native_browser_suites": 13,
+  "browser_checks": 475,
+  "source_unchanged_during_run": true,
+  "inspection": {
+    "valid": true,
+    "reason": "Source and local evidence bytes match; this is not a signed attestation",
+    "run_status": "passed",
+    "native_browser_verified": true,
+    "model_quality_approved": false,
+    "released": false
+  },
+  "report": "docs/evidence/historical-comparison-software-passed-2026-10-26.json.xz",
+  "report_uncompressed_sha256": "8cfc434e36453b2890adc36ef2a213b8b8e69543fae8888d04b1b3403fb8ded2",
+  "predictive_quality_approved": false,
+  "notice": "Exact snapshot verified before this documentation/catalogue-only closeout; no model calls during software checks."
+}

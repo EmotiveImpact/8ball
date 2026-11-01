@@ -1,0 +1,208 @@
+{
+  "ran_at": "2026-10-26T10:28:18.358262+00:00",
+  "kind": "post_forecast_offline_control",
+  "context_sha256": "24d3c427aafbddec92933d04b7a42420dc0f15ff542e51aba9450fd742415e63",
+  "planning": {
+    "snapshot": {
+      "id": "HR-001",
+      "owner": "Operator",
+      "deadline": "2018-12-31T23:59:59Z",
+      "budget": 10000,
+      "graph": {
+        "conditions": [
+          {
+            "id": "confirmed",
+            "provenance": {
+              "origin": "operator",
+              "references": [],
+              "note": "",
+              "run_id": null
+            },
+            "title": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018.",
+            "confirmation": "Independent observed outcome evidence",
+            "kind": "prerequisite",
+            "due_at": null,
+            "criticality": "ordinary",
+            "actor_id": null
+          }
+        ],
+        "actions": [
+          {
+            "id": "attempt",
+            "provenance": {
+              "origin": "operator",
+              "references": [],
+              "note": "",
+              "run_id": null
+            },
+            "title": "Attempt the declared objective",
+            "owner": "Operator",
+            "purpose": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018.",
+            "requires": {
+              "op": "all",
+              "condition_id": null,
+              "value": true,
+              "args": []
+            },
+            "guard": {
+              "op": "all",
+              "condition_id": null,
+              "value": true,
+              "args": []
+            },
+            "effects": [
+              {
+                "condition_id": "confirmed",
+                "value": true
+              }
+            ],
+            "minutes": 15,
+            "cost": 0,
+            "risk": "low",
+            "approval_required": true,
+            "contingent": true,
+            "wait_minutes": null,
+            "earliest_start": null,
+            "expires_at": null,
+            "reversibility": "reversible",
+            "side_effects": [],
+            "actor_ids": [],
+            "resources": [],
+            "decision_id": null,
+            "decision_option": null,
+            "enabled": true,
+            "contingencies": []
+          }
+        ],
+        "objectives": [
+          {
+            "id": "goal",
+            "provenance": {
+              "origin": "operator",
+              "references": [],
+              "note": "",
+              "run_id": null
+            },
+            "title": "The announced all-cash acquisition of Company A by Buyer B is completed (merger consummated) on or before 31 December 2018.",
+            "mandatory": true,
+            "priority": 1,
+            "success": {
+              "op": "atom",
+              "condition_id": "confirmed",
+              "value": true,
+              "args": []
+            },
+            "failure": null
+          }
+        ]
+      },
+      "evidence": [],
+      "observations": [],
+      "actors": [],
+      "relationships": [],
+      "events": [],
+      "claims": [],
+      "constraints": [],
+      "resources": [],
+      "decisions": [],
+      "questions": [],
+      "completed": [],
+      "approvals": [],
+      "revision": 0
+    },
+    "result": {
+      "revision": 0,
+      "computed_at": "2018-06-18T23:59:59+00:00",
+      "states": {
+        "confirmed": {
+          "status": "unknown",
+          "observations": [],
+          "evidence": []
+        }
+      },
+      "action_states": {
+        "attempt": {
+          "id": "attempt",
+          "status": "approval_required",
+          "missing": [],
+          "guards": [],
+          "reasons": [],
+          "effects_evidenced": false,
+          "approval_expires_at": null,
+          "selected_decision": null
+        }
+      },
+      "objective_states": {
+        "goal": "unknown"
+      },
+      "objective_failures": [],
+      "routes": [
+        {
+          "id": "c789077cc3039b",
+          "title": "Attempt the declared objective",
+          "actions": [
+            "attempt"
+          ],
+          "schedule": [
+            {
+              "action_id": "attempt",
+              "start_minute": 0,
+              "active_end_minute": 15,
+              "end_minute": 15,
+              "wait_known": false
+            }
+          ],
+          "prerequisites": {
+            "attempt": []
+          },
+          "dependencies": [],
+          "evidence_gaps": [],
+          "used_conditions": [
+            "confirmed"
+          ],
+          "hard_breaches": [],
+          "soft_warnings": [],
+          "decisions": [],
+          "external_dependencies": [
+            "attempt"
+          ],
+          "unknown_waits": [
+            "attempt"
+          ],
+          "irreversible_actions": [],
+          "contingencies": [],
+          "minutes": 15,
+          "remaining_cost": 0,
+          "spent": 0,
+          "total_cost": 0,
+          "slack_minutes": 282225.0,
+          "risk": 0,
+          "provisional": true,
+          "evidence_coverage": {
+            "supported": 0,
+            "required": 1
+          },
+          "objectives": {
+            "goal": "true"
+          },
+          "status": "conditional",
+          "ready": [],
+          "approvals": [
+            "attempt"
+          ],
+          "fingerprint": "7016e3f7b79392fd2220973ec057992e85febcefffd061f5bd5e3e0db3a9ec3d"
+        }
+      ],
+      "outcome_evidenced": false,
+      "search_truncated": false,
+      "expansions": 1,
+      "sort_by": "fewest_unknowns",
+      "limits": "64 candidate routes; 4,096 recursive expansions. Greedy capacity-one scheduling, not global optimisation. Unknown waits are lower bounds. External outcomes require evidence."
+    },
+    "input_unchanged": true,
+    "kind": "illustrative_author_created_graph",
+    "notice": "A conditional-route control, not a complete merger model or an event forecast. Its duration is an author-created placeholder, not historical evidence."
+  },
+  "provider_requests": 0,
+  "notice": "Run after the actual forecast was frozen and resolved. Not fed to Sonnet; not part of its reasoning. The current v2 runner tests preparation before inference with controlled replies, not another actual inference."
+}
