@@ -1,3 +1,23 @@
+# Verified cumulative course checkpoint — 1 November 2026
+
+Branch `devin/1792969169-roadmap-integrated`; tested source `7599eb2da19850e321fa7bb9cc06e68137ab0f4b`.
+2,566 source tests, 2,566 installed-wheel regressions, 24 JavaScript modules and
+499 checks in thirteen native browser suites passed. Source/artifact inspection
+valid before this additive evidence closeout; both-parent histories and 147
+focused checks passed. [Scope, source and limits](sessions/2026-11-01-course-integration.md).
+
+## Emergence Review
+
+EM-347 follow-up preserves subsequent imported EM-102 decisions/evidence at
+EM-343 through the existing exact relocation receipt. Original observations,
+all failed evidence and histories remain unchanged; no task gate promoted.
+
+Next: publish the additive branch checkpoint and settle its remote checks.
+No app inference, main merge, deployment, release or independent quality/human
+acceptance is authorized. Earlier handoffs below retain their original scope.
+
+---
+
 # Current course integration, 1 November 2026
 
 PR6 branch `devin/1792969169-roadmap-integrated`, starting head `0e3846211f2915199bd06bcd77889866d6211995`, incoming main `bab6fa8bb83d78d324fa0f0935a09d33e2bdcda6`. Preserve the nested signed prerequisite fix, full native course journey and coordinated-planning/result work together. Verification of this cumulative tree is pending; prior counts below remain source-bound. [Current source and checks](sessions/2026-11-01-course-integration.md).

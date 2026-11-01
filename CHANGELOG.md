@@ -4,6 +4,44 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 cumulative native evidence · Retain exact-source nested-course integration verification
+
+2026-11-01 · `local_unreleased`
+
+Record inspected native and installed-package acceptance for the cumulative course/security/coordinated-planning tree, preserving every unfinished authority and quality gate.
+
+### Added
+
+- Bound native receipt and compressed unchanged original report with source and artifact checksums.
+
+### Changed
+
+- Shared handoff records the exact tested integration and keeps later evidence-only changes separate.
+
+### Verification
+
+- At 7599eb2da19850e321fa7bb9cc06e68137ab0f4b: 2,566 source tests, 2,566 installed-wheel regressions, 24 JavaScript modules and 499 browser checks across all thirteen native suites passed.
+- 147 focused course/history checks and both parents changelog/emergence guards passed; exact source/artifact inspection valid before documentation closeout.
+
+### Limitations
+
+- Native software verification is not independent semantic quality, commercial validation, human acceptance or production readiness.
+- No app model calls, main merge, deployment or release; previous evidence remains source-bound.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-347 follow-up: later imported discovery decisions must retain source-qualified identity through existing relocation receipts.
+- Risk: Later documentation must not inherit exact-source native acceptance without its own disclosed boundary.
+- Architecture: Keep immutable original report bytes and hashes; append evidence/history instead of editing prior records.
+- Roadmap decision: existing_task DOC-06 evidence closeout only; no optional task or quality gate promoted.
+Registered discoveries: EM-347.
+
+Roadmap items: `DOC-06`, `B03-07`, `ES02-06`, `B02-11`.
+
+Evidence: [docs/evidence/course-integration-native-2026-11-01.json](docs/evidence/course-integration-native-2026-11-01.json), [docs/delivery/sessions/2026-11-01-course-integration.md](docs/delivery/sessions/2026-11-01-course-integration.md).
+
 ## 0.2.0-alpha.8 cumulative course integration · Retain nested signed prerequisite fixes with coordinated planning
 
 2026-11-01 · `local_unreleased`

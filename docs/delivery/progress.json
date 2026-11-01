@@ -39,9 +39,12 @@
       "status_as_of": "2026-11-01",
       "objective": "Preserve nested selected-course prerequisite correction alongside coordinated planning and both audit histories.",
       "incoming_main": "bab6fa8bb83d78d324fa0f0935a09d33e2bdcda6",
-      "verification": "Pending for this cumulative tree; earlier evidence remains source-bound.",
+      "verification": "PASSED exact tested source: 2,566 source tests, 2,566 installed-wheel regressions, 24 JavaScript modules and 499 checks in thirteen native suites; 147 focused checks; both-parent history guards and source/artifact inspection valid before additive documentation.",
       "evidence": "docs/delivery/sessions/2026-11-01-course-integration.md",
-      "merged": false
+      "merged": false,
+      "tested_source_commit": "7599eb2da19850e321fa7bb9cc06e68137ab0f4b",
+      "source_sha256": "d19cae1f2544e7ba325ffeed81ea64d30e07789d5cc08369eddbecbff346ccdb",
+      "receipt": "docs/evidence/course-integration-native-2026-11-01.json"
     },
     "verified_sprint_history": [
       {

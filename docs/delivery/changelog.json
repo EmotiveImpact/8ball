@@ -3,6 +3,54 @@
   "product": "8BALL, powered by ENDSTATE",
   "entries": [
     {
+      "id": "2026-11-01-course-integration-evidence",
+      "date": "2026-11-01",
+      "version": "0.2.0-alpha.8 cumulative native evidence",
+      "title": "Retain exact-source nested-course integration verification",
+      "delivery": "local_unreleased",
+      "task_ids": [
+        "DOC-06",
+        "B03-07",
+        "ES02-06",
+        "B02-11"
+      ],
+      "summary": "Record inspected native and installed-package acceptance for the cumulative course/security/coordinated-planning tree, preserving every unfinished authority and quality gate.",
+      "added": [
+        "Bound native receipt and compressed unchanged original report with source and artifact checksums."
+      ],
+      "changed": [
+        "Shared handoff records the exact tested integration and keeps later evidence-only changes separate."
+      ],
+      "fixed": [],
+      "verification": [
+        "At 7599eb2da19850e321fa7bb9cc06e68137ab0f4b: 2,566 source tests, 2,566 installed-wheel regressions, 24 JavaScript modules and 499 browser checks across all thirteen native suites passed.",
+        "147 focused course/history checks and both parents changelog/emergence guards passed; exact source/artifact inspection valid before documentation closeout."
+      ],
+      "limitations": [
+        "Native software verification is not independent semantic quality, commercial validation, human acceptance or production readiness.",
+        "No app model calls, main merge, deployment or release; previous evidence remains source-bound."
+      ],
+      "evidence_paths": [
+        "docs/evidence/course-integration-native-2026-11-01.json",
+        "docs/delivery/sessions/2026-11-01-course-integration.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "EM-347 follow-up: later imported discovery decisions must retain source-qualified identity through existing relocation receipts."
+        ],
+        "risks": [
+          "Later documentation must not inherit exact-source native acceptance without its own disclosed boundary."
+        ],
+        "architecture_implications": [
+          "Keep immutable original report bytes and hashes; append evidence/history instead of editing prior records."
+        ],
+        "roadmap_decision": "existing_task DOC-06 evidence closeout only; no optional task or quality gate promoted.",
+        "insight_ids": [
+          "EM-347"
+        ]
+      }
+    },
+    {
       "id": "2026-11-01-nested-course-integration",
       "date": "2026-11-01",
       "version": "0.2.0-alpha.8 cumulative course integration",

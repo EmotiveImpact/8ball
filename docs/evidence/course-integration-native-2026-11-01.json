@@ -1,0 +1,35 @@
+{
+  "scope": "Cumulative nested-course correction, coordinated planning/results and preserved security/audit histories; native software checks only.",
+  "source_commit": "7599eb2da19850e321fa7bb9cc06e68137ab0f4b",
+  "source_sha256": "d19cae1f2544e7ba325ffeed81ea64d30e07789d5cc08369eddbecbff346ccdb",
+  "run_id": "20261101T143324Z-c3b003fe",
+  "native_report_archive": "docs/evidence/course-integration-native-passed-2026-11-01.json.xz",
+  "archive_sha256": "1aa4a352102420f7e58ca61602f374ce44861d21b8b9e96f8454f76ed90b519c",
+  "original_report_sha256": "92b033b91eb3de1a2233bd4f504d17fa1290d7e339a182b7860327aa6944f79d",
+  "inspection_before_documentation_closeout": {
+    "valid": true,
+    "run_status": "passed",
+    "reason": "Exact source and local artifact bytes matched before and after the merge commit, before this additive documentation. Not a signed attestation."
+  },
+  "counts": {
+    "source_tests": 2566,
+    "installed_wheel_regressions": 2566,
+    "javascript_modules": 24,
+    "native_browser_checks": 499,
+    "native_browser_suites": 13,
+    "focused_course_history_checks": 147
+  },
+  "model_inference_performed": false,
+  "native_browser_verified": true,
+  "model_quality_approved": false,
+  "predictive_quality_approved": false,
+  "merged": false,
+  "released": false,
+  "deployed": false,
+  "limits": [
+    "Exact tested commit 7599eb2da19850e321fa7bb9cc06e68137ab0f4b only; later additive evidence documentation is not a new full native run.",
+    "Compressed original report retains artifact hashes, not the binaries; exact local inspection passed before closeout.",
+    "Earlier source-bound failures and evidence remain unchanged. Main-branch original EM-102 additions are retained under the existing EM-343 relocation.",
+    "No new app inference, automatic authority, main merge, deployment or release. Independent semantic, human/operator and production gates remain open."
+  ]
+}
