@@ -21,6 +21,7 @@ from .commands import Command, apply
 from .event_outbox import EventOutbox
 from .authoring import GraphPreview, preview_graph
 from .coordinated_results import project_coordinated
+from .operating_results import project_operating
 
 
 class EventReviews:
@@ -82,6 +83,9 @@ class EventReviews:
                 coordinated = project_coordinated(work['result'], receipt, case_id, work['base_revision'])
                 if coordinated is not None:
                     result['coordinated_planning'] = coordinated
+                operating = project_operating(work['result'], receipt, case_id, work['base_revision'])
+                if operating is not None:
+                    result['operating_planning'] = operating
             self.outbox.authorize(db, case_id, reader)
             return result
 

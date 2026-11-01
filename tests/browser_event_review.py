@@ -25,6 +25,8 @@ from endstate.intelligence.planning import coordinate
 from hashlib import sha256
 from tests.test_coordinated_planning import spec as coordination_spec, outputs
 from tests.test_specialist_review import attempt
+from endstate.intelligence.operating import coordinate_operating
+from tests.test_operating_planning import specification as operating_spec, outputs as operating_outputs
 from eightball.store import digest
 OUT=Path(os.getenv('EIGHTBALL_ARTIFACTS',str(ROOT/'artifacts/event-review')));OUT.mkdir(parents=True,exist_ok=True)
 checks=[]
@@ -105,6 +107,28 @@ def main():
         invalid_plan,invalid_plan_work=make(10,lambda receipt,case:coordinated_output(receipt,case,'invalid'))
         initial_failure,initial_failure_work=make(11,lambda receipt,case:coordinated_output(receipt,case,'failed_initial'))
         invalid_hash,invalid_hash_work=make(12,lambda receipt,case:coordinated_output(receipt,case,'invalid_hash'))
+        def operating_output(receipt,case,mode='completed'):
+            spec=operating_spec();values=operating_outputs();calls=[]
+            for value in values[1:4]:value['concerns'][0]['source_quote']=receipt.event.text
+            values[0]['strategies'][0]['why_this_route']+=' <img src=x onerror="window.injected=true">'
+            values[4]['plan']['strategies']=json.loads(json.dumps(values[0]['strategies']))
+            if mode=='failed':values[2]['unexpected']='Rejected response retained without retry.'
+            def generate(*args):
+                value=values[len(calls)];raw=json.dumps(value)
+                calls.append(dict(raw_content=raw,raw_content_sha256=sha256(raw.encode()).hexdigest(),
+                    request_sha256='c'*64,response_sha256='d'*64,served_model='native-browser-fixture'))
+                return value,'native-browser-fixture'
+            result=coordinate_operating(spec,receipt.event.text,'coord_'+digest(receipt.model_dump(mode='json'))[:32],generate,None,lambda:None)
+            result.update(kind='operating_planning',case_id=case.id,base_revision=case.revision,
+                receipt_sha256=digest(receipt.model_dump(mode='json')),spec_sha256=digest(spec.model_dump(mode='json')),
+                planning_receipt=dict(requested_model='native-browser-fixture',calls=calls),specialist_receipts=[],
+                max_output_tokens_per_planning_call=4096,planning_cost_status='unknown_not_provider_reported',
+                charge_status='provider_billing_not_verified')
+            if mode=='invalid':result['comparison']['improvement_established']=True
+            return json.dumps(result,sort_keys=True)
+        full_plan,full_plan_work=make(13,operating_output)
+        broken_full,broken_full_work=make(14,lambda r,c:operating_output(r,c,'invalid'))
+        failed_full,failed_full_work=make(15,lambda r,c:operating_output(r,c,'failed'))
         code='''import os,uvicorn
 from pathlib import Path
 from eightball.api import make_app
@@ -271,6 +295,38 @@ uvicorn.run(make_app(s,'unused-local-token-with-32-characters',agency_access=a),
                     check('lock clears every coordinated stage',result.count()==0 and page.locator('.review-originals').count()==0)
                     login();registry.revoke('read3');page.get_by_role('button',name='Refresh review').click();expect(page.locator('#review-login')).to_be_visible()
                     check('revocation clears coordinated stages and raw output',result.count()==0 and page.locator('.review-originals').count()==0)
+                    grant('read4',Operation.READ);open_review(full_plan,full_plan_work);login()
+                    full=page.locator('.operating-result');expect(full).to_be_visible()
+                    expect(full).to_contain_text('Method completed — quality not approved')
+                    check('full human goal and every original requirement stay visible','fictional GBP 1000 surplus' in full.inner_text() and 'No upfront cash spending' in full.inner_text())
+                    check('original written challenges and revision stay separate',full.locator('.operating-candidate').count()==2 and full.locator('.operating-challenge').count()==3)
+                    check('written reasons corrections and unresolved dispositions are readable','Why it matters: Surplus cannot be calculated' in full.inner_text() and 'Instructions improved but no actual fee observation' in full.inner_text())
+                    check('checked revenue cannot become unknown-cost profit','2000' in full.inner_text() and 'unknown_cost' in full.inner_text() and 'Same-model independent role contexts' in full.inner_text())
+                    before=store.audit(full_plan.id);writes.clear()
+                    check('operating result has no execution or approval controls',full.locator('button,input,textarea').count()==0 and page.locator('#review-rationale').is_disabled())
+                    full.locator('.operating-step summary').first.focus();page.keyboard.press('Enter')
+                    expect(full).to_contain_text('Create a sample.')
+                    check('SOP separates completion from observed effect','Separate outcome evidence needed' in full.inner_text() and full.locator('.operating-step').first.get_attribute('open') is not None)
+                    check('full plan model markup stays inert',full.locator('img').count()==0 and page.evaluate('window.injected===undefined'))
+                    for width in (320,390,768):
+                        page.set_viewport_size({'width':width,'height':1100})
+                        check('full operating plan fits viewport '+str(width),page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'))
+                    page.set_viewport_size({'width':1500,'height':1100});page.screenshot(path=str(OUT/'8BALL-Full-Operating-Plan.png'),full_page=True)
+                    check('full plan inspection makes no writes',writes==[] and store.audit(full_plan.id)==before)
+                    page.reload();login();expect(full).to_be_visible()
+                    check('full plan survives reload without changing the case',store.audit(full_plan.id)==before)
+                    store.change(full_plan.id,Command(event_id='operating-stale',expected_revision=0,kind='metadata',payload={'budget':333}))
+                    page.get_by_role('button',name='Refresh review').click();expect(full).to_contain_text('Historical result for case revision 0; current revision 1')
+                    check('stale full plan never silently becomes current',page.locator('#review-rationale').is_disabled())
+                    open_review(broken_full,broken_full_work);login();expect(page.locator('#app')).to_contain_text('Full operating-plan result could not be validated')
+                    check('inconsistent full plan keeps raw output without interpreted stages',full.count()==0 and '"improvement_established": true' in page.get_by_label('Original processing output',exact=True).inner_text())
+                    open_review(failed_full,failed_full_work);login();expect(full).to_contain_text('Incomplete method — no completed synthesis')
+                    check('failed written review retains validated earlier stages only',full.locator('.operating-candidate').count()==1 and full.locator('.operating-challenge').count()==1)
+                    full.get_by_text('Rejected or incomplete challenge output',exact=True).click();expect(full).to_contain_text('Rejected response retained without retry')
+                    check('rejected written output is inspectable not silently repaired',full.locator('.operating-candidate').count()==1)
+                    page.get_by_role('button',name='Lock review').click();check('locking clears full operating-plan material',full.count()==0)
+                    login();registry.revoke('read4');page.get_by_role('button',name='Refresh review').click();expect(page.locator('#review-login')).to_be_visible()
+                    check('revocation clears full operating-plan and raw material',full.count()==0 and page.locator('.review-originals').count()==0)
                     check('no browser runtime errors',not errors)
                     report={'checks_passed':len(checks),'checks':checks,'network':'Native loopback HTTP','model_inference_tested':False,'independent_review_performed':False,'human_accessibility_tested':False,'errors':errors,'limits':['Test-generated signed JWTs, not actual OIDC browser sign-in.','Native automated review is not genuine human acceptance.']}
                     (OUT/'browser-event-review-report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))

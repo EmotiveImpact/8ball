@@ -4,6 +4,54 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 full operating-plan method · Preserve complete outcomes, checked arithmetic, explained challenges and proposed SOPs
+
+2026-11-01 · `local_unreleased`
+
+Add an opt-in full operating-plan protocol and read-only presentation without changing legacy coordinated v1 or granting execution authority.
+
+### Added
+
+- Neutral exact-goal/requirements contract, bounded dimension-aware Decimal calculations and detailed proposed operating steps.
+- Independent-context written role reviews, complete revision dispositions and inspectable structural comparison.
+- Current-authority event host integration, offline report reconstruction, read-only viewer, internal wheel and schema exports.
+
+### Changed
+
+- Only decimal is added to the kernel standard-library import allowlist; all service/network/storage import bans remain.
+
+### Fixed
+
+- Missing costs stay unknown instead of producing free or falsely complete profit; goal drift and unexplained revision changes fail visibly.
+- Nonzero calculated magnitudes outside 1e-30–1e30 fail before fixed-point rendering; exact zero cannot retain arbitrary fractional padding (EM-355).
+
+### Verification
+
+- 98 new contract/method/host tests, 134 focused kernel/new-flow checks and 75 native event-review checks passed.
+- First complete native run: 2661 source/installed tests, 25 JS modules and 517 checks in thirteen native suites passed; source/artifact inspection valid before the subsequent numeric-bound correction. Final cumulative rerun pending.
+- Initial full source run retained 2660 passes and one missing-decimal-allowlist failure, now corrected.
+
+### Limitations
+
+- Same configured generative model in separate role contexts, not independent human experts or native decision-model explanations.
+- No new inference, semantic/market acceptance, observed effects, profit forecast, execution adapter, merge, deployment or release.
+- Existing call/time/token/request/receipt bounds remain; arbitrary-size plans and automatic decomposition are unsupported.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-349–353 separate exact-goal binding, review attribution, typed units, Decimal context and explained real changes.
+- Risk: Structural coverage does not establish useful strategy; bounded full-plan output may be incomplete or rejected (EM-354).
+- Risk: Tiny repeated products can underflow or expand retained output unless checked before formatting; the first passing native source is superseded by that correction (EM-355).
+- Architecture: Neutral contracts and orchestration remain in ENDSTATE; providers, authority, receipts and UI remain host-owned.
+- Roadmap decision: Existing-task refinements only; defer bounded decomposition, preserve all current quality/human/production gates and lane owners.
+Registered discoveries: EM-349, EM-350, EM-351, EM-352, EM-353, EM-354, EM-355.
+
+Roadmap items: `ES03-01`, `ES03-05`, `B02-09`, `B02-11`, `B02-12`.
+
+Evidence: [docs/delivery/sessions/2026-11-01-operating-planning.md](docs/delivery/sessions/2026-11-01-operating-planning.md), [docs/v2/OPERATING-PLANNING.md](docs/v2/OPERATING-PLANNING.md).
+
 ## 0.2.0-alpha.8 native CI prerequisites · Pin native-browser CI to the supported Ubuntu 24.04 runner
 
 2026-11-01 · `local_unreleased`

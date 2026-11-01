@@ -91,6 +91,22 @@ comparison=summarize(ReviewSpec(id='review',models=['jev-latest'],max_seconds=30
  criteria={'review':'More review needed.','continue':'Continue human review, not approval.'})]),[])
 assert comparison['answered_models']==0 and comparison['questions'][0]['missing_models']==['jev-latest']
 assert not comparison['facts_attested'] and not comparison['execution_authorized']
+from endstate.operating import OutcomeBrief
+from endstate.intelligence.operating import OperatingPlanningSpec,coordinate_operating
+brief=OutcomeBrief(outcome='Review a fictional complete outcome without replacing it with a subtask.',
+ requirements=[dict(id='success',kind='success',text='Keep the complete requested outcome.')],
+ deadline=None,budget=None,currency=None)
+spec=OperatingPlanningSpec(id='package-operating',brief=brief,roles=[dict(id='skeptic',instructions='Challenge unsupported claims.')],
+ max_seconds=30,planning_cost_policy='explicit_unpriced_token_bound')
+calls=[]
+def reject(schema,instructions,context):
+ calls.append(context)
+ return {'unexpected':'Retained invalid fixture output'},'package-fixture'
+operating=coordinate_operating(spec,'Fictional reviewed source','package-fixture',reject,None,lambda:None)
+assert operating['stop_reason']=='invalid_initial_input_or_result' and len(calls)==1
+assert operating['initial'] is None and operating['final_synthesis'] is None
+assert operating['attempts'][0]['output']=={'unexpected':'Retained invalid fixture output'}
+assert not operating['execution_authorized'] and not operating['facts_attested']
 import endstate
 assert pathlib.Path(endstate.__file__).resolve().is_relative_to(pathlib.Path(sys.argv[1]).resolve())
 print(json.dumps({'installed_outside_repository':True,'routes':len(r.plan['routes']),
@@ -98,6 +114,7 @@ print(json.dumps({'installed_outside_repository':True,'routes':len(r.plan['route
  'scenario_replay':True,'restricted_packet':True,'typed_advisory_contract':True,
  'forecast_measurement_only':True,
  'specialist_comparison_only':True,
+ 'operating_plan_contract_and_failure_retention':True,
  'forbidden_runtime_imports':[],'model_inference':False}))
 '''
         test=json.loads(run([sys.executable,'-I','-c',snippet,str(target)],temp))

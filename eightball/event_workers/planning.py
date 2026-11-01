@@ -44,12 +44,18 @@ def _specialist_receipt(session):
 
 
 class CoordinatedPlanningProcessor:
+    spec_type = CoordinatedPlanningSpec
+    version = VERSION
+    max_generation_calls = MAX_GENERATION_CALLS
+    method = staticmethod(coordinate)
+    kind = 'coordinated_planning'
+
     def __init__(self, spec: CoordinatedPlanningSpec, *, allow_external: bool,
                  planning_session_factory=CompatibleSession,
                  specialist_session_factory=DecisionSession, timer=perf_counter):
         if allow_external is not True:
             raise PermissionError('Explicit external processing permission is required')
-        self.spec = CoordinatedPlanningSpec.model_validate(spec.model_dump(mode='python'))
+        self.spec = self.spec_type.model_validate(spec.model_dump(mode='python'))
         self.planning_session_factory = planning_session_factory
         self.specialist_session_factory = specialist_session_factory
         self.timer = timer
@@ -59,21 +65,25 @@ class CoordinatedPlanningProcessor:
 
     @property
     def configuration_sha256(self):
-        spec = CoordinatedPlanningSpec.model_validate(self.spec.model_dump(mode='python'))
+        spec = self.spec_type.model_validate(self.spec.model_dump(mode='python'))
         try:
             configuration = asdict(settings())
         except HostedSetupRequired:
             configuration = {'invalid': True}
-        return digest(dict(version=VERSION, spec=spec.model_dump(mode='json'),
+        return digest(dict(version=self.version, spec=spec.model_dump(mode='json'),
                            planning_settings=configuration,
                            specialist_credential=os.getenv('EXPERIENTIAL_API_KEY', '').strip(),
                            specialist_cost_policy=COST_POLICY,
-                           max_generation_calls=MAX_GENERATION_CALLS,
+                           max_generation_calls=self.max_generation_calls,
                            max_output_tokens_per_call=MAX_OUTPUT_TOKENS,
                            max_planning_receipt_bytes=MAX_PLANNING_RECEIPT_BYTES))
 
+    def reviewer(self, spec, session_factory):
+        return SpecialistReviewProcessor(spec.review, allow_external=True,
+                                         session_factory=session_factory, timer=self.timer)
+
     def run(self, receipt, snapshot, checkpoint):
-        spec = CoordinatedPlanningSpec.model_validate(self.spec.model_dump(mode='python'))
+        spec = self.spec_type.model_validate(self.spec.model_dump(mode='python'))
         checkpoint()
         deadline = self.timer() + spec.max_seconds
         planning_session = None
@@ -109,18 +119,19 @@ class CoordinatedPlanningProcessor:
             specialist_sessions.append(session)
             return session
 
-        reviewer = SpecialistReviewProcessor(spec.review, allow_external=True,
-                                            session_factory=specialist_factory, timer=self.timer)
+        reviewer = self.reviewer(spec, specialist_factory)
 
         def review(text, check):
+            if reviewer is None:
+                raise ValueError('Native decision review is not part of this configured method')
             return reviewer.compare(text, check, deadline=deadline)
 
-        report = coordinate(spec, receipt.event.text, 'coord_' + digest(
+        report = self.method(spec, receipt.event.text, 'coord_' + digest(
             receipt.model_dump(mode='json'))[:32], generate, review, checkpoint)
         checkpoint()
         if self.timer() >= deadline:
             report.update(stop_reason='time_budget', final_synthesis=None)
-        report.update(kind='coordinated_planning', case_id=snapshot.id,
+        report.update(kind=self.kind, case_id=snapshot.id,
                       base_revision=snapshot.revision,
                       receipt_sha256=digest(receipt.model_dump(mode='json')),
                       spec_sha256=digest(spec.model_dump(mode='json')),

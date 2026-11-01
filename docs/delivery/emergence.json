@@ -7933,6 +7933,194 @@
           "reason": "existing_task DOC-06: bounded reproducibility correction, no product scope change or acceptance promotion."
         }
       ]
+    },
+    {
+      "id": "EM-349",
+      "title": "Exact-goal binding is stronger than a plausible narrow subtask but weaker than semantic coverage",
+      "origin": "Full operating-plan engineering sprint",
+      "first_seen": "2026-11-01",
+      "evidence_level": "supported_by_tests",
+      "observation": "The operating contract binds every candidate to the exact caller-authored goal and requirements. A requirement-to-step reference can be structurally valid while the step is semantically inadequate; the new contract therefore reports structural coverage only.",
+      "product_implication": "Keep exact goal and full brief hashes, explicit success/constraint coverage and independent semantic acceptance separate.",
+      "task_ids": [
+        "ES03-01",
+        "B02-09"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-11-01-operating-planning.md",
+        "docs/v2/OPERATING-PLANNING.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-11-01",
+          "decision": "adopted",
+          "by": "Devin integration",
+          "reason": "existing_task: bounded full-plan contracts; no model-quality or required-gate promotion."
+        }
+      ]
+    },
+    {
+      "id": "EM-350",
+      "title": "Written independent-context challenges must not be attributed to native choice models",
+      "origin": "Full operating-plan engineering sprint",
+      "first_seen": "2026-11-01",
+      "evidence_level": "observed_in_build",
+      "observation": "Native specialist answers retained by coordinated v1 do not include the detailed reasons the owner now needs. The new method collects written role reviews with separate contexts on the explicitly configured generative model and identifies that shared model.",
+      "product_implication": "Retain original native answers unchanged. Label same-model role reviews honestly and do not claim independent model families, customer reactions or hidden internal thinking.",
+      "task_ids": [
+        "B02-11",
+        "ES03-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-11-01-operating-planning.md",
+        "docs/v2/OPERATING-PLANNING.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-11-01",
+          "decision": "adopted",
+          "by": "Devin integration",
+          "reason": "existing_task: explicit provenance and readable challenge outputs, not invented explanations or independent acceptance."
+        }
+      ]
+    },
+    {
+      "id": "EM-351",
+      "title": "Strict provider schemas need bounded unit-dimension records rather than arbitrary mapping keys",
+      "origin": "Full operating-plan engineering sprint",
+      "first_seen": "2026-11-01",
+      "evidence_level": "observed_in_build",
+      "observation": "The existing strict schema adapter closes object properties. A free-form units dictionary would become a closed empty object on remote schema-enforced routes. Bounded name/power dimension lists preserve units without relaxing that adapter.",
+      "product_implication": "Use schema-compatible dimension lists, reject duplicate dimensions and validate unit arithmetic independently of model assertions.",
+      "task_ids": [
+        "ES03-01",
+        "ES03-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-11-01-operating-planning.md",
+        "docs/v2/OPERATING-PLANNING.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-11-01",
+          "decision": "adopted",
+          "by": "Devin integration",
+          "reason": "existing_task: portable typed arithmetic; preserve strict JSON/schema and provider failure rules."
+        }
+      ]
+    },
+    {
+      "id": "EM-352",
+      "title": "Scenario arithmetic must own its Decimal context as well as its precision",
+      "origin": "Full operating-plan engineering sprint",
+      "first_seen": "2026-11-01",
+      "evidence_level": "supported_by_tests",
+      "observation": "Decimal local contexts otherwise inherit caller rounding and traps. The new checker uses its own 50-digit ROUND_HALF_EVEN context; a regression changes caller precision, rounding and Inexact trapping without changing the result. The first full run also exposed the kernel import allowlist missing this pure standard-library dependency.",
+      "product_implication": "Keep arithmetic deterministic and unknown costs unknown. Allow only decimal in the existing explicit import allowlist; do not admit application, network or storage services.",
+      "task_ids": [
+        "ES03-01"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-11-01-operating-planning.md",
+        "docs/v2/OPERATING-PLANNING.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-11-01",
+          "decision": "adopted",
+          "by": "Devin integration",
+          "reason": "existing_task: deterministic scenario checking only, never verified economics, observed profit or forecasting accuracy."
+        }
+      ]
+    },
+    {
+      "id": "EM-353",
+      "title": "Every retained objection and actual plan-field change needs a corresponding disposition",
+      "origin": "Full operating-plan engineering sprint",
+      "first_seen": "2026-11-01",
+      "evidence_level": "supported_by_tests",
+      "observation": "The revision validator rejects dropped or duplicated concerns, invented references, claimed changes to unchanged fields and unexplained actual field changes. A browser markup probe initially changed its original strategy without preserving or explaining the corresponding revision and was correctly rejected.",
+      "product_implication": "Retain the baseline, all independent role contexts, revision and reasons; a structural difference does not establish that coordination improved plan quality.",
+      "task_ids": [
+        "B02-11",
+        "ES03-01"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-11-01-operating-planning.md",
+        "docs/v2/OPERATING-PLANNING.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-11-01",
+          "decision": "adopted",
+          "by": "Devin integration",
+          "reason": "existing_task: traceable corrections and unresolved dissent; no resolution, quality or outcome authority."
+        }
+      ]
+    },
+    {
+      "id": "EM-354",
+      "title": "Large operating plans need explicit bounded decomposition, not silent goal shrinkage",
+      "origin": "Full operating-plan engineering sprint",
+      "first_seen": "2026-11-01",
+      "evidence_level": "operator_hypothesis",
+      "observation": "The complete-plan schema can describe more work than fits the unchanged 4096-token response, 150000-byte request and bounded retained-result limits. The method fails visibly at these bounds and does not truncate, retry or substitute a narrower goal. A separately authorised decomposition protocol may be useful.",
+      "product_implication": "Do not promise arbitrary-size planning or raise provider budgets automatically. Evaluate explicit parent-goal binding, subplan coverage, cost and recovery before adding multi-stage decomposition.",
+      "task_ids": [
+        "ES03-01"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "docs/delivery/sessions/2026-11-01-operating-planning.md",
+        "docs/v2/OPERATING-PLANNING.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-11-01",
+          "decision": "deferred",
+          "by": "Devin integration",
+          "reason": "new_candidate: keep bounded decomposition visible for owner review; no new required scope or paid calls."
+        }
+      ]
+    },
+    {
+      "id": "EM-355",
+      "title": "Tiny arithmetic results need a lower magnitude bound before fixed-point formatting",
+      "origin": "Final source inspection after the first complete operating-plan native run",
+      "first_seen": "2026-11-01",
+      "evidence_level": "supported_by_tests",
+      "observation": "A short six-calculation repeated-product chain produced a 1000050-character fixed-point value and approached Decimal underflow. The upper 1e30 bound did not protect the small-magnitude side. Three added regressions cover the chain, exact fractional zero and the supported lower boundary.",
+      "product_implication": "Reject nonzero computed magnitudes outside 1e-30 through 1e30 before rendering, canonicalize exact zero, preserve invalid versus unknown, and rerun cumulative native/package acceptance. Do not hide a tiny unsupported result as a calculated zero.",
+      "task_ids": [
+        "ES03-01",
+        "ES03-05"
+      ],
+      "acceptance_task_ids": [],
+      "evidence_paths": [
+        "endstate/operating.py",
+        "tests/test_operating.py",
+        "docs/delivery/sessions/2026-11-01-operating-planning.md"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-11-01",
+          "decision": "adopted",
+          "by": "Devin integration",
+          "reason": "existing_task: bounded deterministic arithmetic and safe rendering. Preserve the earlier passing native source as superseded, not evidence for this later correction."
+        }
+      ]
     }
   ],
   "id_relocations": [

@@ -1,5 +1,10 @@
 # ENDSTATE embedded package preview
 
+The additional internal [full operating-plan method](../v2/OPERATING-PLANNING.md)
+preserves exact goals, checked scenario arithmetic, explained role challenges,
+revision dispositions and proposed SOPs. It is not an execution adapter or a
+claim of independently accepted plan quality; legacy contracts stay unchanged.
+
 ENDSTATE is the read-only calculation kernel used by 8BALL. This internal alpha
 can now be built as a wheel containing only `endstate/`, its metadata and type
 marker. It does not contain 8BALL, client data, a database, web UI, HTTP service,

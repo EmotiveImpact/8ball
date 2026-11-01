@@ -1,6 +1,7 @@
 import {S,esc,warning,note,modal,closeModal,toast} from './ui.js';
 import {studioPage,studioClick,studioChange} from './studio-view.js';
 import {createStudioDraft,studioDirty} from './studio-model.js';
+import {operatingPlanning} from './operating-results.js';
 
 const params=new URLSearchParams(location.search),caseId=params.get('case'),workId=params.get('work');
 const sessionMode=params.get('session')==='1';
@@ -41,7 +42,7 @@ function render(){
  else if(loading)content='<p role="status">Loading the original source and current case…</p>';
  else if(!view)content=warning(message||'This review could not be opened.')+button('Try again','refresh');
  else content=`<p class="note">${esc(S.current.case.desired_outcome)}</p><div class="review-status" role="status">${esc(message|| (view.state==='committed'?'Review committed. The original source and processing output remain preserved.':!view.reviewable?'This result cannot be committed: its case revision or processing state has changed.':!view.can_review?'Read-only access. You can inspect the original material; write permission is required to amend the case.':'Pending review · Nothing has changed in the case.'))}</div>
- ${view.source_receipt?specialistComparison()+coordinatedPlanning():''}
+ ${view.source_receipt?specialistComparison()+coordinatedPlanning()+operatingPlanning(view.operating_planning,view.current_revision):''}
  ${view.source_receipt?`<div class="review-originals"><section class="panel"><h2>Original source</h2><p class="note">Source ${esc(view.source_receipt.event.source_id)} · Version ${esc(view.source_receipt.event.source_version)}</p><div class="review-text" tabindex="0" aria-label="Original source">${esc(view.source_receipt.event.text)}</div></section><section class="panel"><h2>Original processing output</h2><p class="note">Unreviewed suggestion. Reading it does not establish facts or approve actions.</p><div class="review-text" tabindex="0" aria-label="Original processing output">${esc(view.original_result??'No processing output has been retained.')}</div></section></div>`:warning('Source processing review is no longer current. Original material and output are withheld; refresh current authority before continuing.')}
  ${view.state!=='committed'?`<p class="body-copy">The editor starts from the current case graph. Make only the amendments you have checked against the source and suggestion. Preview the effects before committing.</p><fieldset class="review-editor" ${editable()?'':'disabled'}><legend class="sr-only">Reviewed graph amendment</legend><label class="field review-reason"><span>Why is this amendment justified?</span><textarea id="review-rationale" minlength="10" maxlength="2000" rows="3">${esc(rationale)}</textarea></label>${studioPage({showLiveReview:false})}</fieldset>`:''}
  <section class="panel review-notices"><h2>Change notices</h2>${button('Check change notices','notice-pull')}${notice?`<p>Case revision ${notice.revision} has a recorded reviewed amendment.</p>${button('Acknowledge receipt','notice-ack')}<p class="note">Acknowledges delivery only. No case action is approved.</p>`:''}</section>`;

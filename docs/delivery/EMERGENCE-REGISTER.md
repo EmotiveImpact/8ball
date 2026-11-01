@@ -4,7 +4,7 @@
 
 8BALL remains the fixer product. ENDSTATE supplies reusable calculations. This is the build-discovery register, not a client-case insight ledger.
 
-Last review: 2026-11-01. **248 recorded discoveries.**
+Last review: 2026-11-01. **255 recorded discoveries.**
 
 **Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.
 
@@ -4418,3 +4418,122 @@ Final-head verify ran on ubuntu-26.04 after ubuntu-latest changed; the installed
 **Decision history:**
 
 - 2026-11-01 · adopted · Devin integration: existing_task DOC-06: bounded reproducibility correction, no product scope change or acceptance promotion.
+
+### [ ] EM-349: Exact-goal binding is stronger than a plausible narrow subtask but weaker than semantic coverage
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-11-01. **Origin:** Full operating-plan engineering sprint.
+
+The operating contract binds every candidate to the exact caller-authored goal and requirements. A requirement-to-step reference can be structurally valid while the step is semantically inadequate; the new contract therefore reports structural coverage only.
+
+**Product implication:** Keep exact goal and full brief hashes, explicit success/constraint coverage and independent semantic acceptance separate.
+
+**Roadmap links:** `ES03-01` (partial), `B02-09` (blocked).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-11-01-operating-planning.md`, `docs/v2/OPERATING-PLANNING.md`.
+
+**Decision history:**
+
+- 2026-11-01 · adopted · Devin integration: existing_task: bounded full-plan contracts; no model-quality or required-gate promotion.
+
+### [ ] EM-350: Written independent-context challenges must not be attributed to native choice models
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-11-01. **Origin:** Full operating-plan engineering sprint.
+
+Native specialist answers retained by coordinated v1 do not include the detailed reasons the owner now needs. The new method collects written role reviews with separate contexts on the explicitly configured generative model and identifies that shared model.
+
+**Product implication:** Retain original native answers unchanged. Label same-model role reviews honestly and do not claim independent model families, customer reactions or hidden internal thinking.
+
+**Roadmap links:** `B02-11` (partial), `ES03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-11-01-operating-planning.md`, `docs/v2/OPERATING-PLANNING.md`.
+
+**Decision history:**
+
+- 2026-11-01 · adopted · Devin integration: existing_task: explicit provenance and readable challenge outputs, not invented explanations or independent acceptance.
+
+### [ ] EM-351: Strict provider schemas need bounded unit-dimension records rather than arbitrary mapping keys
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** observed_in_build.
+**First recorded:** 2026-11-01. **Origin:** Full operating-plan engineering sprint.
+
+The existing strict schema adapter closes object properties. A free-form units dictionary would become a closed empty object on remote schema-enforced routes. Bounded name/power dimension lists preserve units without relaxing that adapter.
+
+**Product implication:** Use schema-compatible dimension lists, reject duplicate dimensions and validate unit arithmetic independently of model assertions.
+
+**Roadmap links:** `ES03-01` (partial), `ES03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-11-01-operating-planning.md`, `docs/v2/OPERATING-PLANNING.md`.
+
+**Decision history:**
+
+- 2026-11-01 · adopted · Devin integration: existing_task: portable typed arithmetic; preserve strict JSON/schema and provider failure rules.
+
+### [ ] EM-352: Scenario arithmetic must own its Decimal context as well as its precision
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-11-01. **Origin:** Full operating-plan engineering sprint.
+
+Decimal local contexts otherwise inherit caller rounding and traps. The new checker uses its own 50-digit ROUND_HALF_EVEN context; a regression changes caller precision, rounding and Inexact trapping without changing the result. The first full run also exposed the kernel import allowlist missing this pure standard-library dependency.
+
+**Product implication:** Keep arithmetic deterministic and unknown costs unknown. Allow only decimal in the existing explicit import allowlist; do not admit application, network or storage services.
+
+**Roadmap links:** `ES03-01` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-11-01-operating-planning.md`, `docs/v2/OPERATING-PLANNING.md`.
+
+**Decision history:**
+
+- 2026-11-01 · adopted · Devin integration: existing_task: deterministic scenario checking only, never verified economics, observed profit or forecasting accuracy.
+
+### [ ] EM-353: Every retained objection and actual plan-field change needs a corresponding disposition
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-11-01. **Origin:** Full operating-plan engineering sprint.
+
+The revision validator rejects dropped or duplicated concerns, invented references, claimed changes to unchanged fields and unexplained actual field changes. A browser markup probe initially changed its original strategy without preserving or explaining the corresponding revision and was correctly rejected.
+
+**Product implication:** Retain the baseline, all independent role contexts, revision and reasons; a structural difference does not establish that coordination improved plan quality.
+
+**Roadmap links:** `B02-11` (partial), `ES03-01` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-11-01-operating-planning.md`, `docs/v2/OPERATING-PLANNING.md`.
+
+**Decision history:**
+
+- 2026-11-01 · adopted · Devin integration: existing_task: traceable corrections and unresolved dissent; no resolution, quality or outcome authority.
+
+### [ ] EM-354: Large operating plans need explicit bounded decomposition, not silent goal shrinkage
+
+**Disposition:** deferred. **Owner review:** pending. **Original evidence level:** operator_hypothesis.
+**First recorded:** 2026-11-01. **Origin:** Full operating-plan engineering sprint.
+
+The complete-plan schema can describe more work than fits the unchanged 4096-token response, 150000-byte request and bounded retained-result limits. The method fails visibly at these bounds and does not truncate, retry or substitute a narrower goal. A separately authorised decomposition protocol may be useful.
+
+**Product implication:** Do not promise arbitrary-size planning or raise provider budgets automatically. Evaluate explicit parent-goal binding, subplan coverage, cost and recovery before adding multi-stage decomposition.
+
+**Roadmap links:** `ES03-01` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `docs/delivery/sessions/2026-11-01-operating-planning.md`, `docs/v2/OPERATING-PLANNING.md`.
+
+**Decision history:**
+
+- 2026-11-01 · deferred · Devin integration: new_candidate: keep bounded decomposition visible for owner review; no new required scope or paid calls.
+
+### [ ] EM-355: Tiny arithmetic results need a lower magnitude bound before fixed-point formatting
+
+**Disposition:** adopted. **Owner review:** pending. **Original evidence level:** supported_by_tests.
+**First recorded:** 2026-11-01. **Origin:** Final source inspection after the first complete operating-plan native run.
+
+A short six-calculation repeated-product chain produced a 1000050-character fixed-point value and approached Decimal underflow. The upper 1e30 bound did not protect the small-magnitude side. Three added regressions cover the chain, exact fractional zero and the supported lower boundary.
+
+**Product implication:** Reject nonzero computed magnitudes outside 1e-30 through 1e30 before rendering, canonicalize exact zero, preserve invalid versus unknown, and rerun cumulative native/package acceptance. Do not hide a tiny unsupported result as a calculated zero.
+
+**Roadmap links:** `ES03-01` (partial), `ES03-05` (partial).
+**Completion scope:** No scoped completion gate yet; do not tick this idea off.
+**Evidence / source record:** `endstate/operating.py`, `tests/test_operating.py`, `docs/delivery/sessions/2026-11-01-operating-planning.md`.
+
+**Decision history:**
+
+- 2026-11-01 · adopted · Devin integration: existing_task: bounded deterministic arithmetic and safe rendering. Preserve the earlier passing native source as superseded, not evidence for this later correction.

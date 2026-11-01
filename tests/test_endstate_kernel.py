@@ -256,7 +256,7 @@ def test_nested_mutation_is_revalidated_at_the_public_boundary(as_mapping):
 
 
 def test_core_has_no_application_or_runtime_service_imports():
-    allowed = {'__future__', 'dataclasses', 'datetime', 'hashlib', 'json', 'typing', 'uuid', 'pydantic', 're', 'zoneinfo', 'copy', 'math', 'endstate'}
+    allowed = {'__future__', 'dataclasses', 'datetime', 'decimal', 'hashlib', 'json', 'typing', 'uuid', 'pydantic', 're', 'zoneinfo', 'copy', 'math', 'endstate'}
     for path in (ROOT/'endstate').rglob('*.py'):
         for n in ast.walk(ast.parse(path.read_text())):
             if isinstance(n, ast.Import):
