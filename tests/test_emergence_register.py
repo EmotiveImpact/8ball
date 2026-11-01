@@ -114,7 +114,10 @@ def test_explicit_collision_receipts_preserve_both_original_records():
  assert len(targets)==7
  for receipt in d['id_relocations']:
   original=receipt['original'];after=targets[tuple(original[k] for k in checker.IMMUTABLE)]
-  assert after==dict(original,id=receipt['canonical_id'])
+  assert after['id']==receipt['canonical_id']
+  assert all(after[k]==original[k] for k in checker.IMMUTABLE if k!='id')
+  assert after['history'][:len(original['history'])]==original['history']
+  assert set(original['evidence_paths'])<=set(after['evidence_paths'])
   assert receipt['source_commit'] in checker.render(d)
 
 

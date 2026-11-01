@@ -1,3 +1,24 @@
+# Current course integration, 1 November 2026
+
+PR6 branch `devin/1792969169-roadmap-integrated`, starting head `0e3846211f2915199bd06bcd77889866d6211995`, incoming main `bab6fa8bb83d78d324fa0f0935a09d33e2bdcda6`. Preserve the nested signed prerequisite fix, full native course journey and coordinated-planning/result work together. Verification of this cumulative tree is pending; prior counts below remain source-bound. [Current source and checks](sessions/2026-11-01-course-integration.md).
+
+## Emergence Review
+
+EM-347 gains a history addendum: subsequent main-branch EM-102 evidence belongs to its existing source-qualified EM-343, never the unrelated branch EM-102. Both original observations and history prefixes remain. No required scope or acceptance status is promoted.
+
+Next: verify both parent history guards and full native/package acceptance, inspect the exact source and artifacts, then publish the additive branch checkpoint. No main merge, deployment or new app inference.
+
+---
+
+# Current nested-course correction, 30 October 2026
+
+PR8 is already merged into main at `825ad6668c2c7d128da367476fe16cb8d214b837`; its three security fixes are integrated. The owner then instructed fixing all remaining reported issues and merging. This follow-up addresses EM-102 only on `fix/nested-course-prerequisites-20261030`, from that main commit. Selected nested signed prerequisites now stay within expression bounds without dropping requirements or changing OR choice. Original four regression failures are retained. Tested code `84994b3b4aeca1f925bd63cbe74ceb945e91ad1c` passed **1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites**, including 37 course checks. All 21 acceptance steps and exact-source/artifact inspection passed before final receipt-only edits. [PR9](https://github.com/EmotiveImpact/8ball/pull/9) records final-head CI and owner-authorized integration. [Session and full ER review](sessions/2026-10-30-course-prerequisites.md), [receipt](../evidence/course-prerequisites-2026-10-30.json).
+
+B03-07/ES02-06 remain optional and partial; original model, human/independent, identity and durable-event gates remain open. No deployment, release or model call. Older pending-merge text below describes its original checkpoint, not current PR8 state.
+
+
+---
+
 # Current cumulative source integration, 30 October 2026
 
 Branch `devin/1792969169-roadmap-integrated`, tested integration `c0b4d63798bd762218e2125e3d2dd4dca5816820`; incoming main `825ad6668c2c7d128da367476fe16cb8d214b837`. Security fixes and coordinated-planning/result work are retained together. Exact-source native acceptance passed: 2,561 source tests, 2,561 installed-wheel regressions, 24 JS modules and all 493 checks across thirteen native browser suites. Source/artifact inspection valid before this later additive documentation. [Current scope and verification](sessions/2026-10-30-cumulative-integration.md), [bound receipt](../evidence/cumulative-native-2026-10-30.json). Earlier counts below belong only to their original sources.

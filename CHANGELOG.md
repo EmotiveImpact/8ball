@@ -4,6 +4,47 @@
 
 This is product history, not the case decision trail. A build entry is not evidence of a merge, deployment or production-model approval.
 
+## 0.2.0-alpha.8 cumulative course integration · Retain nested signed prerequisite fixes with coordinated planning
+
+2026-11-01 · `local_unreleased`
+
+Retain the main-branch nested-course reassessment correction and native lifecycle checks alongside the coordinated-planning source without changing authority or unfinished gates.
+
+### Added
+
+- Source-bound integration record and retained main-branch course regression/native evidence.
+
+### Changed
+
+- Imported original EM-102 history/evidence is appended to its existing EM-343 source-qualified record, not the unrelated EM-102.
+
+### Fixed
+
+- No valid selected nested prerequisite branch is flattened beyond expression limits; incoming exact OR/sign-preservation coverage retained.
+
+### Verification
+
+- Focused history/course checks and full cumulative native/package acceptance pending; earlier receipts remain bound only to their original sources.
+
+### Limitations
+
+- No new model inference, automatic action, main merge, release or deployment.
+- B03-07/ES02-06 remain optional and partial; independent quality, operator and production gates remain open.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-347: a textual same-ID merge can put subsequent imported history on an unrelated discovery; retain source-qualified resolution.
+- Risk: A passing historical record does not verify the cumulative tree or confer authority.
+- Architecture: Continue explicit relocation receipts and append-only histories; bounded AND grouping retains exact signed/OR semantics.
+- Roadmap decision: existing_task DOC-06 and existing optional B03-07/ES02-06 correction only; no required-scope promotion.
+Registered discoveries: EM-347, EM-343.
+
+Roadmap items: `B03-07`, `ES02-06`, `DOC-06`, `B02-11`.
+
+Evidence: [docs/delivery/sessions/2026-11-01-course-integration.md](docs/delivery/sessions/2026-11-01-course-integration.md), [docs/evidence/course-prerequisites-2026-10-30.json](docs/evidence/course-prerequisites-2026-10-30.json).
+
 ## 0.2.0-alpha.8 cumulative native verification · Retain source-bound native evidence for the cumulative integration
 
 2026-10-30 · `local_unreleased`
@@ -138,6 +179,50 @@ Registered discoveries: EM-099, EM-100, EM-101, EM-102, EM-103, EM-104, EM-105.
 Roadmap items: `B01-02`, `B02-15`, `ES01-03`, `B01-03`, `ES01-05`, `DOC-04`.
 
 Evidence: [docs/delivery/sessions/2026-10-30-security-fixes.md](docs/delivery/sessions/2026-10-30-security-fixes.md), [docs/evidence/security-fixes-2026-10-30.json](docs/evidence/security-fixes-2026-10-30.json).
+
+## 0.2.0-alpha.8 · Nested prerequisite courses remain readable
+
+2026-10-30 · `pushed_unreleased`
+
+Reassess selected nested prerequisite branches without exceeding expression child limits or changing their meaning.
+
+### Added
+
+- Course boundary regressions for 8, 9, 16 and 63 signed prerequisites, exact OR-branch retention, and persisted lifecycle behavior.
+
+### Changed
+
+- Recorded signed requirements are grouped into bounded AND nodes inside the read-only course calculation.
+
+### Fixed
+
+- A successfully selected valid nested course could return HTTP 422 on subsequent inspection.
+
+### Verification
+
+- Original four regression failures and passing 8-child control retained as exact emitted output in the evidence JSON.
+- 137 focused course/kernel/result checks and 37 native Chosen Course checks passed; these overlap the integrated totals.
+- 1329 source tests, 1329 installed-ENDSTATE regressions and 397 native browser checks across all eleven suites passed; all 21 acceptance steps passed. Exact-source/artifact inspection valid before final receipt edits.
+- Tested code 84994b3b4aeca1f925bd63cbe74ceb945e91ad1c; source and artifact inspection valid/passed before final receipt-only edits. PR9 records final-head CI and merge.
+
+### Limitations
+
+- Optional B03-07/ES02-06 remain partial with their original prerequisites and independent/operator acceptance.
+- No model inference, production deployment or release. Hosted-compression candidate EM-103 is unchanged.
+
+### Emergence review
+
+**What did this sprint reveal that we had not properly seen before?**
+
+- Discovery: EM-102: flattening a valid nested expression violated an internal child limit; bounds must survive internal transformations.
+- Risk: Grouping must retain every selected true/false requirement and must never choose a different OR branch.
+- Architecture: Keep bounded regrouping in ENDSTATE course calculation; no schema or authority change.
+- Roadmap decision: Existing-task correction authorized by the owner under B03-07/ES02-06. Preserve original optional acceptance gates and all earlier failed evidence.
+Registered discoveries: EM-102.
+
+Roadmap items: `B03-07`, `ES02-06`.
+
+Evidence: [docs/delivery/sessions/2026-10-30-course-prerequisites.md](docs/delivery/sessions/2026-10-30-course-prerequisites.md), [docs/evidence/course-prerequisites-2026-10-30.json](docs/evidence/course-prerequisites-2026-10-30.json).
 
 ## 0.2.0-alpha.8 coordinated result source-bound verification · Retain verified native and installed-engine evidence for coordinated results
 

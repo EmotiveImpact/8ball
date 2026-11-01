@@ -40,6 +40,19 @@ def fixture_case():
         observations=[Observation(id='o1',condition_id='ready',evidence_id='source',value=True,rationale='Fixture attestation',added_at=NOW)])
 
 
+def nested_case(count=9):
+    requirements = [any_of(atom('p0'), atom('p0', False))]
+    requirements += [atom('p'+str(i), i % 2 == 0) for i in range(1, count)]
+    return Case(title='Fictional nested course', client='Synthetic fixture', summary='Bounded signed prerequisites.',
+        desired_outcome='Verify the result', deadline=NOW+timedelta(days=2),
+        graph=Graph(conditions=[Condition(id='p'+str(i), title='Prerequisite '+str(i), confirmation='Direct evidence') for i in range(count)]+
+                    [Condition(id='goal', title='Verified result', confirmation='Direct result evidence')],
+                    actions=[Action(id='work', title='Reviewed work', owner='Operator', purpose='Reach the result', minutes=1,
+                                    approval_required=True, requires=all_of(*(all_of(*requirements[i:i+8]) for i in range(0, count, 8))),
+                                    effects=[Effect(condition_id='goal')])],
+                    objectives=[Objective(id='target', title='Result', success=atom('goal'))]))
+
+
 def pick(c=None, **kwargs):
     c=c or fixture_case();s=to_snapshot(c)
     route=next(r for r in plan(s,NOW)['routes'] if 'first' in r['actions'])
@@ -139,6 +152,33 @@ def test_fixed_or_branch_cannot_take_a_new_shortcut():
     assert any(x['condition_id']=='ready' for route in r.remaining_plan['routes'] for x in route['evidence_gaps'])
 
 
+@pytest.mark.parametrize('count', [8, 9, 16, 63])
+def test_nested_course_reassessment_preserves_every_selected_signed_prerequisite(count):
+    c = nested_case(count)
+    before = c.model_dump(mode='json')
+    route = next(r for r in plan(to_snapshot(c), NOW)['routes']
+                 if {'condition_id':'p0', 'value':False} in r['prerequisites']['work'])
+    anchor = anchor_route(to_snapshot(c), route['id'], target_digest(c), NOW)
+    result = assessment(c, anchor)
+    assert result.compatible_remainders == 1
+    assert result.remaining_plan['routes'][0]['prerequisites'] == route['prerequisites']
+    assert len(result.remaining_plan['routes'][0]['evidence_gaps']) == count
+    assert not result.execution_authorised and not result.automatically_switched
+    assert c.model_dump(mode='json') == before and not c.approvals and not c.observations
+
+    # Evidence for the other OR branch must not change the original choice.
+    d = c.model_dump(mode='python')
+    d.update(revision=1,
+             evidence=[Evidence(id='new-source', title='Fictional update', source='Fixture', text='p0 is true.', status='reviewed').model_dump()],
+             observations=[Observation(condition_id='p0', evidence_id='new-source', value=True, rationale='Fixture attestation').model_dump()])
+    current = Case.model_validate(d)
+    result = assessment(current, anchor)
+    assert result.selected_route_id == route['id']
+    assert any(g['condition_id']=='p0' and g['value'] is False
+               for r in result.remaining_plan['routes'] for g in r['evidence_gaps'])
+    assert all(r['prerequisites']['work'] == route['prerequisites']['work'] for r in result.remaining_plan['routes'])
+
+
 @pytest.mark.parametrize('state',['true','false','unknown','disputed'])
 def test_explicit_state_watches(state):
     c=fixture_case()
@@ -191,6 +231,46 @@ def event_request(svc,c,operation,**kwargs):
     return CourseEvent(event_id=kwargs.pop('event_id',uid()),expected_revision=c.revision,expected_sequence=v['sequence'],
           course_id=chosen['id'],operation=operation,rationale='The operator records this explicit course judgement.',
           assessment_as_of=a['as_of'],assessment_sha256=a['assessment_sha256'],**kwargs)
+
+
+def test_nested_course_api_read_reload_and_lifecycle_preserve_case_authority(env):
+    store, _, _, client = env
+    fixture = nested_case()
+    response = client.post('/api/v2/cases', json=fixture.model_dump(mode='json', include={
+        'title', 'client', 'summary', 'desired_outcome', 'deadline', 'budget'}))
+    assert response.status_code == 201
+    case_id = response.json()['id']
+    base = '/api/v2/cases/'+case_id
+    response = client.post(base+'/commands', json={'event_id':'nested-graph', 'expected_revision':0,
+        'kind':'replace_graph', 'payload':{'graph':fixture.graph.model_dump(mode='json')}})
+    assert response.status_code == 200
+    case = store.get(case_id)
+    route = next(r for r in plan(to_snapshot(case), NOW)['routes']
+                 if {'condition_id':'p0', 'value':False} in r['prerequisites']['work'])
+    p = client.post(base+'/courses/preview', json={'expected_revision':case.revision, 'route_id':route['id']})
+    assert p.status_code == 200
+    p = p.json()
+    response = client.post(base+'/courses/select', json={'event_id':'nested-choice', 'expected_revision':case.revision,
+        'expected_sequence':p['sequence'], 'route_id':route['id'], 'as_of':p['preview']['as_of'],
+        'preview_sha256':p['preview']['preview_sha256'], 'rationale':'Keep this exact reviewed signed branch.', 'acknowledge_limits':True})
+    assert response.status_code == 200
+    response = client.get(base+'/courses')
+    assert response.status_code == 200
+    result = response.json()['courses'][0]['assessment']['result']
+    assert result['remaining_plan']['routes'][0]['prerequisites'] == route['prerequisites']
+    assert not result['execution_authorised'] and not result['automatically_switched']
+
+    # A fresh service reads the persisted choice and can still change its lifecycle.
+    reopened = Courses(Store(store.path))
+    assert reopened.view(case_id)['current_id'] == 'nested-choice'
+    for operation in ('review', 'pause', 'resume', 'retire'):
+        response = client.post(base+'/courses/events', json=event_request(reopened, case, operation).model_dump(mode='json'))
+        assert response.status_code == 200
+    exported = client.get(base+'/export').json()
+    assert exported['valid'] and exported['chosen_courses']['current_id'] is None
+    assert len(exported['chosen_courses']['records']) == 5
+    assert exported['case'] == case.model_dump(mode='json')
+    assert not exported['case']['approvals'] and not exported['case']['observations'] and not exported['case']['completed']
 
 
 def test_preview_and_reads_do_not_write_case_or_ledger(env):

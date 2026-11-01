@@ -217,7 +217,12 @@ def assess_course(anchor: CourseAnchor, current: PlanningSnapshot, target_sha256
             else:
                 # Preserve the exact selected OR/sign branch. Never silently use a new shortcut.
                 chosen = anchor.route['prerequisites'].get(a['id'], [])
-                a['requires'] = all_of(*(atom(x['condition_id'], x['value']) for x in chosen)).model_dump(mode='python')
+                requirements = [atom(x['condition_id'], x['value']) for x in chosen]
+                # A valid nested branch can contain more than eight literals.
+                # Keep the expression bounds without dropping signed requirements.
+                while len(requirements) > 8:
+                    requirements = [all_of(*requirements[i:i+8]) for i in range(0, len(requirements), 8)]
+                a['requires'] = all_of(*requirements).model_dump(mode='python')
         restricted = PlanningSnapshot.model_validate(data)
         residual = plan(restricted, as_of)
         validate_plan(residual)

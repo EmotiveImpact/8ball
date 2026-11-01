@@ -11,6 +11,7 @@ from eightball.v2.playbooks import demo_case
 from eightball.v2.contracts import Case
 from eightball.v2.commands import Command
 from eightball.models import utcnow
+from endstate.contracts import Graph, Condition, Action, Effect, Objective, all_of, atom
 OUT=Path(os.getenv('EIGHTBALL_ARTIFACTS',str(ROOT/'artifacts/courses')));OUT.mkdir(parents=True,exist_ok=True)
 checks=[]
 def check(name,ok):
@@ -22,6 +23,14 @@ def main():
     with tempfile.TemporaryDirectory() as tmp:
         db=str(Path(tmp)/'cases.db');store=Store(db);case=store.create(demo_case(),fixture=True)
         other=store.create(Case(title='Independent case',client='Fictional',summary='Separate context.',desired_outcome='Another outcome',deadline=utcnow()+timedelta(days=1)))
+        nested=store.create(Case(title='Nested prerequisite course',client='Fictional',summary='Nine explicit signed prerequisites.',
+            desired_outcome='Verify the reviewed result',deadline=utcnow()+timedelta(days=1),
+            graph=Graph(conditions=[Condition(id='p'+str(i),title='Prerequisite '+str(i),confirmation='Direct evidence') for i in range(9)]+
+                        [Condition(id='goal',title='Verified result',confirmation='Direct result evidence')],
+                        actions=[Action(id='work',title='Reviewed work',owner='Operator',purpose='Reach the result',minutes=1,
+                                        approval_required=True,requires=all_of(all_of(*(atom('p'+str(i),i%2==0) for i in range(8))),atom('p8')),
+                                        effects=[Effect(condition_id='goal')])],
+                        objectives=[Objective(id='target',title='Result',success=atom('goal'))])))
         before=store.audit(case.id)
         server=subprocess.Popen([sys.executable,'-m','eightball'],cwd=ROOT,env={**os.environ,'EIGHTBALL_DB':db,'EIGHTBALL_TOKEN':TOKEN},stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
         try:
@@ -131,7 +140,27 @@ def main():
                     check('retired course remains visible','Retired' in page.locator('.dialog').inner_text())
                     exported=store.audit(case.id);check('export preserves selection and every review',len(exported['chosen_courses']['records'])==4 and exported['valid'])
                     check('only intentional budget change altered case facts',exported['case']['revision']==1 and len(exported['events'])==2)
-                    close();page.locator('[data-action=logout]').first.click();expect(page.locator('form[data-form=login]')).to_be_visible()
+                    close();nav('command');page.locator(f'[data-case="{nested.id}"]').click();nav('routes')
+                    page.locator('[data-course-action=choose]').first.click()
+                    page.locator('[data-course-form=preview] [type=submit]').click()
+                    f=page.locator('[data-course-form=select]');f.locator('[name=rationale]').fill('Keep all nine reviewed signed requirements in this course.')
+                    f.locator('[name=acknowledge]').check();f.locator('[type=submit]').click();page.locator('.dialog').wait_for(state='detached')
+                    nav('room');expect(page.locator('[data-course-current]')).to_be_visible()
+                    check('nested nine-prerequisite course remains readable after selection',True)
+                    nested_export=store.audit(nested.id);nested_choice=nested_export['chosen_courses']['current_id']
+                    selected=nested_export['chosen_courses']['records'][0]['selection']['anchor']['route']['prerequisites']['work']
+                    check('nested selection retains all signed prerequisites',len(selected)==9 and any(x['value'] is False for x in selected))
+                    page.reload();expect(page.locator('[data-course-current]')).to_have_attribute('data-course-current',nested_choice)
+                    page.locator('[data-course-action=inspect]').click();expect(page.get_by_role('heading',name='Chosen course',exact=True)).to_be_visible()
+                    check('nested course survives native reload and inspection','Reviewed work' in page.locator('.dialog').inner_text())
+                    check('nested course inspection grants no action authority',page.locator('.dialog [data-action=complete],.dialog [data-action=approve]').count()==0)
+                    page.locator('[data-course-action=transition][data-operation=pause]').click()
+                    f=page.locator('[data-course-form=event]');f.locator('[name=rationale]').fill('Pause this recorded choice without changing any case facts.')
+                    f.locator('[type=submit]').click();page.locator('.dialog').wait_for(state='detached')
+                    expect(page.locator('.course-banner')).to_contain_text('Course paused')
+                    check('nested course lifecycle remains usable',store.audit(nested.id)['chosen_courses']['courses'][0]['lifecycle']=='paused')
+                    check('nested course leaves observations approvals and completion unchanged',store.get(nested.id)==nested)
+                    page.locator('[data-action=logout]').first.click();expect(page.locator('form[data-form=login]')).to_be_visible()
                     check('locking clears selected-course content',page.locator('[data-course-current]').count()==0)
                     check('no browser runtime errors',not errors)
                     report={'checks_passed':len(checks),'checks':checks,'network':'Explicit local ASGI bridge' if BRIDGE else 'Native loopback HTTP',
