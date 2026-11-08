@@ -6,16 +6,28 @@ commands may call a paid service. Ordinary acceptance strips provider settings
 and makes no model calls. Tooling tests do not establish actual-provider,
 semantic or human acceptance.
 
+**26 October native Sonnet checkpoint:** the four frozen fixtures and scripted
+20-step native actual-provider journey now pass using direct Anthropic Messages.
+Earlier compatibility/graph failures are preserved in the
+[evidence index](../evidence/sonnet-native-2026-10-26.json).
+[Current handoff](../delivery/sessions/2026-10-26-sonnet-native.md) separates live
+inference, software regressions, unknown billing and remaining independent gates.
+The live cancellation/stale/restart experiment below remains unperformed.
+
 ## Prerequisites
 
 Use the latest source and configure the owner's exact endpoint/model/provider
 and private key securely. The owner already authorises fictional repository
-examples up to US$5 and expects free access. Confirm actual service limits and
-provider-enforced spending controls before paid use. Fictional case budgets and
-token limits are not an inference dollar ledger.
+examples up to US$5 total, not US$5 per invocation. Confirm actual service pricing,
+limits and billing controls before paid use; do not assume free entitlement. The
+owner explicitly accepted an uncapped Anthropic account for bounded Sonnet tests
+with sufficient credit and automatic top-up off. This is not proof of a hard cap.
+Fictional case budgets and token limits are not an inference dollar ledger.
 
 The compatible transport requires hosted HTTPS DNS:443, a nonempty key and
-strict JSON-schema support. OpenRouter also requires an exact routing provider.
+locally validated JSON proposals. OpenAI-compatible requests ask for strict schema
+output; direct Anthropic uses native Messages with prompt schema instructions,
+not remote schema enforcement. OpenRouter also requires an exact routing provider.
 Explicit catalog `namespace/model:free` variants are supported only on the exact
 OpenRouter host; `openrouter/free` and automatic routing remain rejected.
 Availability, free entitlement and selected-endpoint support still need testing.

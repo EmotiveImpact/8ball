@@ -1,0 +1,16 @@
+{
+  "tested_commit": "4324afe280de1c228fef01a9282baa7798b22c4a",
+  "source_sha256": "3be45e4aad601478bb454cd7db443d7be7bc86beb802593581bffeaebc38cb62",
+  "report_sha256": "71434242ac56b65fc615e066e75657023094f955df4bcd556b560bf6bf3ad7cc",
+  "run_id": "20261025T151314Z-2277beb7",
+  "status": "failed",
+  "inspection_valid_before_fix": true,
+  "failure": "Plan Review opening raced with case refresh and stale response left loading content indefinitely.",
+  "failed_check": "browser-plan_review",
+  "checkpoint_ci_passed": [
+    40205977759,
+    40205977772
+  ],
+  "raw_artifacts": "artifacts/acceptance/20261025T151314Z-2277beb7",
+  "raw_artifacts_committed": false
+}

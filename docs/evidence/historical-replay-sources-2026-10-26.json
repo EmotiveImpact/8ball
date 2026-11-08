@@ -1,0 +1,26 @@
+[
+  {
+    "id": "agreement",
+    "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518196340/d407444dex21.htm",
+    "sha256": "2bda533e5b8918682425098c143bb8476cb812eb0b28927964c2960f281ed7f1",
+    "retrieved": "2026-10-26"
+  },
+  {
+    "id": "filing",
+    "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518196340/d407444d8k.htm",
+    "sha256": "8b27cd56bb9be8b3c544b7c18e32ce92c9b31d64dd1c803b67c2b8afb426a915",
+    "retrieved": "2026-10-26"
+  },
+  {
+    "id": "announcement",
+    "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518196340/d407444dex991.htm",
+    "sha256": "6f499e9eeb07ecbd6cc8484f2f7312c2edfcf4389c655a1754cd1adf5b955643",
+    "retrieved": "2026-10-26"
+  },
+  {
+    "id": "outcome_termination",
+    "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312519116716/d734946dex991.htm",
+    "sha256": "1e6a61eb5602330c116b103252ef351ce955fae906e55971f90f8442fd6a8d75",
+    "retrieved": "2026-10-26"
+  }
+]

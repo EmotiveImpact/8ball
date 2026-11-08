@@ -5,6 +5,8 @@ from .source_contracts import SOURCE_BODY_LIMIT
 
 
 def body_limit(path: str) -> int:
+    if re.fullmatch(r'/api/v2/cases/[a-zA-Z0-9_-]+/vault', path):
+        return 400_000
     return SOURCE_BODY_LIMIT if re.fullmatch(r'/api/v2/cases/[a-zA-Z0-9_-]+/sources/(preview|import)',path) else 300_000
 
 

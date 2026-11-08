@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "lane": "events",
+  "integration_instruction": "Append entries by ID to canonical changelog.json; append emergence items first. The integration_evidence and task_update_suggestions below are additive instructions, not canonical state. Preserve all prior blockers/evidence/required/dependency fields and regenerate centrally.",
+  "entries": [
+    {
+      "id": "2026-10-25-events-current-policy-dispatch",
+      "date": "2026-10-25",
+      "version": "unreleased",
+      "title": "Explicit current-policy event dispatch and conservative replan parity",
+      "summary": "Adds reviewed text intake, bounded current-authority worker attempts, source-policy-gated graph consumption and local timing without implicit inference, retries or sends. Production identity/vault/provider wiring and combined acceptance remain open.",
+      "delivery": "pushed_unreleased",
+      "added": [
+        "Optional explicit manual-text intake/source-processing review/attempt/cancel/status API registration; no HTTP provider-execution route.",
+        "Durable one-call dispatch under current grants/review/source policy; three explicit attempts maximum, safe failure/late-output retention and local stage metrics.",
+        "Bounded detached exact-clock unchanged-planning-input cache with full recomputation fallback and exact typed-response parity tests."
+      ],
+      "changed": [
+        "Inbox/work operations can share an owning transaction with authority checks and rollback.",
+        "Dispatched graph preview/review/commit and content status require a current source policy; missing adapter fails closed.",
+        "Review route registration accepts the same source policy used by the worker; shared application/router files remain unchanged."
+      ],
+      "fixed": [
+        "No automatic re-execution after cancellation, restart, expired leases or uncertain result persistence.",
+        "No replan reuse that revives revision-bound approval or ignores the explicit planning clock."
+      ],
+      "verification": [
+        "Functional checkpoint f749627f9f7456ddcc5744f22374c57f8c5e64be: full pytest 1410 passed, one upstream deprecation warning, 61.70s; focused event suite 101 passed, 4.98s.",
+        "Python compileall, all 18 browser JS node --check and git diff --check passed.",
+        "Existing frozen canonical delivery/changelog/emergence checks passed. Base-relative changelog check retained its expected new-entry failure until central fragment merge.",
+        "Initial fixture failures (wrong review exception class, nonexistent Store.commit, assignment validation before boundary) retained in lane receipt and corrected without weakening production checks.",
+        "One actual-clock fictional local processing/review/replan timing exercise retained; no actual-model/human/performance acceptance implied."
+      ],
+      "limitations": [
+        "The unreleased engineering checkpoint is pushed only to the assigned branch; final remote-head equality is separately verified in the handoff. No release, main merge, PR change or deployment.",
+        "No native UI/testing-agent, real provider inference, external connector/delivery, production source policy, independent quality or human acceptance run.",
+        "Source policy callback must connect current object/quarantine/scan/retention/processing/egress checks; a test policy is not a managed service.",
+        "Replan reuse is conservative unchanged-input caching, not a general partial-graph algorithm; real combined provider/human/durability latency remains open.",
+        "Partition freezes canonical JSON/generated files; only lane-local records are committed, and the integrator must merge/regenerate/check centrally."
+      ],
+      "task_ids": [
+        "ES02-01",
+        "ES02-02",
+        "ES02-03",
+        "ES02-04",
+        "B03-04"
+      ],
+      "evidence_paths": [
+        "docs/delivery/lane-reports/events.md",
+        "tests/test_event_dispatch.py",
+        "tests/test_event_replan.py",
+        "docs/endstate/EVENT-INBOX.md"
+      ],
+      "emergence_review": {
+        "discoveries": [
+          "Source review and current source policy are independent; uncertain calls cannot safely auto-retry; replan reuse must preserve exact clocks/approval revisions."
+        ],
+        "risks": [
+          "Absent production policy/provider integration, arbitrary retry resets and mislabelled fixture latency could undermine authority or paid-call safety."
+        ],
+        "architecture_implications": [
+          "Host-owned identity/source policy and transactions remain outside ENDSTATE; derived calculation cache never gains storage/action/course authority."
+        ],
+        "roadmap_decision": "Existing-task engineering only. EM-113/114/115/117 adopted as bounded existing-task refinements, not acceptance; EM-116 deferred owner-review candidate. No new required task or verified status.",
+        "insight_ids": [
+          "EM-113",
+          "EM-114",
+          "EM-115",
+          "EM-116",
+          "EM-117"
+        ]
+      }
+    }
+  ],
+  "integration_evidence": {
+    "EV-EVENTS-DISPATCH-20261025": {
+      "kind": "software_validation",
+      "path": "docs/delivery/lane-reports/events.md",
+      "code_commit": "f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "result": "1410 full/101 focused tests passed; current grant/source-policy, cross-scope, stale/revocation/cancellation/restart/idempotency/rollback behavior only. No real provider/native/production acceptance."
+    },
+    "EV-EVENTS-REPLAN-20261025": {
+      "kind": "software_validation",
+      "path": "tests/test_event_replan.py",
+      "code_commit": "f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "result": "Complete typed-response parity for exact-input reuse and full fallback; clock, approval revision, graph/budget/completion/sort/snapshot and detached cache cases. Not general incremental performance proof."
+    },
+    "EV-EVENTS-FROZEN-CHANGELOG-20261025": {
+      "kind": "software_validation",
+      "path": "docs/delivery/lane-reports/events.md",
+      "code_commit": "f749627f9f7456ddcc5744f22374c57f8c5e64be",
+      "result": "Expected base-relative canonical changelog failure retained: Changed build needs a new changelog entry. Partition freezes canonical tracking; validate/merge lane fragments centrally."
+    }
+  },
+  "task_update_suggestions": [
+    {
+      "id": "ES02-01",
+      "status": "partial",
+      "append_evidence": [
+        "EV-EVENTS-DISPATCH-20261025"
+      ],
+      "append_code_paths": [
+        "eightball/event_workers/service.py",
+        "tests/test_event_dispatch.py",
+        "docs/delivery/lane-reports/events.md"
+      ],
+      "preserve_all_prior_blockers_and_evidence": true,
+      "next_action": "Integrate verified identity/current source-policy/provider and protected route registration from the events lane; run source-bound combined native acceptance and retain real-provider/production/human/performance gates. No automatic inference/retry/send or broad task verification."
+    },
+    {
+      "id": "ES02-02",
+      "status": "partial",
+      "append_evidence": [
+        "EV-EVENTS-DISPATCH-20261025"
+      ],
+      "append_code_paths": [
+        "eightball/event_workers/service.py",
+        "tests/test_event_dispatch.py",
+        "docs/delivery/lane-reports/events.md"
+      ],
+      "preserve_all_prior_blockers_and_evidence": true,
+      "next_action": "Integrate verified identity/current source-policy/provider and protected route registration from the events lane; run source-bound combined native acceptance and retain real-provider/production/human/performance gates. No automatic inference/retry/send or broad task verification."
+    },
+    {
+      "id": "ES02-03",
+      "status": "partial",
+      "append_evidence": [
+        "EV-EVENTS-DISPATCH-20261025"
+      ],
+      "append_code_paths": [
+        "eightball/event_workers/service.py",
+        "tests/test_event_dispatch.py",
+        "docs/delivery/lane-reports/events.md"
+      ],
+      "preserve_all_prior_blockers_and_evidence": true,
+      "next_action": "Integrate verified identity/current source-policy/provider and protected route registration from the events lane; run source-bound combined native acceptance and retain real-provider/production/human/performance gates. No automatic inference/retry/send or broad task verification."
+    },
+    {
+      "id": "ES02-04",
+      "status": "partial",
+      "append_evidence": [
+        "EV-EVENTS-DISPATCH-20261025",
+        "EV-EVENTS-REPLAN-20261025"
+      ],
+      "append_code_paths": [
+        "eightball/event_workers/service.py",
+        "tests/test_event_dispatch.py",
+        "eightball/event_workers/replan.py",
+        "tests/test_event_replan.py",
+        "docs/delivery/lane-reports/events.md"
+      ],
+      "preserve_all_prior_blockers_and_evidence": true,
+      "next_action": "Integrate verified identity/current source-policy/provider and protected route registration from the events lane; run source-bound combined native acceptance and retain real-provider/production/human/performance gates. No automatic inference/retry/send or broad task verification."
+    },
+    {
+      "id": "B03-04",
+      "status": "partial",
+      "append_evidence": [
+        "EV-EVENTS-DISPATCH-20261025"
+      ],
+      "append_code_paths": [
+        "eightball/event_workers/service.py",
+        "tests/test_event_dispatch.py",
+        "docs/delivery/lane-reports/events.md"
+      ],
+      "preserve_all_prior_blockers_and_evidence": true,
+      "next_action": "Integrate verified identity/current source-policy/provider and protected route registration from the events lane; run source-bound combined native acceptance and retain real-provider/production/human/performance gates. No automatic inference/retry/send or broad task verification."
+    }
+  ]
+}

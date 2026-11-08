@@ -1,0 +1,41 @@
+{
+  "scope": "Bounded full operating-plan contract, deterministic arithmetic, explained same-model role challenges, explicit revision reasons and read-only 8BALL inspection; software checks only.",
+  "source_commit": "f49afd453c101d05ca385cbb73070a0fc65283af",
+  "source_sha256": "080356af99648c4b108f13ca0c83fc89b6927a18b8b9c38ee1233aaafd0eb026",
+  "run_id": "20261101T160915Z-fa82278f",
+  "native_report_archive": "docs/evidence/operating-planning-native-passed-2026-11-01.json.xz",
+  "archive_sha256": "b2f57db2201a0807c9649ddc0788fb9bf04ae125e01661a3f40ebec4b412e4c2",
+  "original_report_sha256": "b8af33121c3f9f72177ec2ec0614443af0d7f27f8f833c32ce14fa7470b52f26",
+  "inspection_before_documentation_closeout": {
+    "valid": true,
+    "reason": "Source and local evidence bytes match; this is not a signed attestation",
+    "run_status": "passed",
+    "native_browser_verified": true,
+    "model_quality_approved": false,
+    "released": false
+  },
+  "counts": {
+    "source_tests": 2664,
+    "installed_wheel_regressions": 2664,
+    "javascript_modules": 25,
+    "native_browser_checks": 517,
+    "native_browser_suites": 13,
+    "focused_kernel_operating_tests": 134
+  },
+  "native_browser_verified": true,
+  "model_inference_performed": false,
+  "independent_semantic_quality_approved": false,
+  "predictive_quality_approved": false,
+  "human_acceptance": false,
+  "merged": false,
+  "deployed": false,
+  "released": false,
+  "limits": [
+    "Exact tested source f49afd453c101d05ca385cbb73070a0fc65283af only; additive evidence documentation is not a new full native run.",
+    "Compressed report preserves source/artifact hashes, not all artifact binaries; local source/artifact inspection passed before closeout.",
+    "Fictional controlled fixtures are not live inference, independent experts, observed customer reactions, commercial demand or a GBP100000 forecast.",
+    "Written role reviews use separate contexts on one selected generative model, not private internal reasoning or explanations from native decision models.",
+    "Planning, state, evidence, selection, spending and authority remain separate. B02-09/B02-11/B02-12/B02-16/B02-18 gates remain open.",
+    "Earlier format/provider failures and the superseded pre-floor arithmetic acceptance remain unchanged. No retries, fallback, merge, deployment or public package publication."
+  ]
+}

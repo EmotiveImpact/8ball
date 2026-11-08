@@ -1,0 +1,222 @@
+{
+  "tested_commit": "05525c9826e476b7f9996f187190b87ef8e1f9ec",
+  "tested_tree": "5b1b702e91d9625640d38bf70672d0cfff058185",
+  "branch": "devin/1792969169-roadmap-integrated",
+  "comparison_base": "baca8ad9efa531e5f172058845852963d7d5234a",
+  "run_id": "20261026T002344Z-5641058a",
+  "mode": "native",
+  "source_sha256": "343c07c778d854fecb94e37edb33f8275d2b94e81147c0537457acaafb7f663a",
+  "report_sha256": "d44f2adb5559661a2d2d4ab19a4e8026cfa482896f92989257d3f4614457b4ef",
+  "status": "passed",
+  "complete": true,
+  "started_at": "2026-10-26T00:23:44.595214+00:00",
+  "finished_at": "2026-10-26T00:29:08.322436+00:00",
+  "source_counts": {
+    "tests": 1782,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 1782
+  },
+  "installed_counts": {
+    "tests": 1782,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 1782
+  },
+  "native_browser_checks": 439,
+  "native_suites": 13,
+  "new_agency_native_checks": 16,
+  "js_modules": 23,
+  "checks": [
+    {
+      "name": "unit",
+      "status": "passed",
+      "seconds": 80.378,
+      "log_sha256": "c51a4793f776c04cb8a49d99edb105eb255842af775b977f7ec55ee1d5204133"
+    },
+    {
+      "name": "compile",
+      "status": "passed",
+      "seconds": 0.064,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "delivery",
+      "status": "passed",
+      "seconds": 0.114,
+      "log_sha256": "fefe956c184759ad8742da10315ebcbca9fe011b8eeb189ffb340a7ba879b9c8"
+    },
+    {
+      "name": "changelog",
+      "status": "passed",
+      "seconds": 0.314,
+      "log_sha256": "3b455e70c4e945643fe33a635123dfc1e1ff1bcae857a4cc2830cd4c80565398"
+    },
+    {
+      "name": "emergence",
+      "status": "passed",
+      "seconds": 0.114,
+      "log_sha256": "c3223862b2f0ca299631d1ed277cc61cd5c2fc1a4c3a5bcc1f52af1f7e0bf5eb"
+    },
+    {
+      "name": "javascript",
+      "status": "passed",
+      "seconds": 0.515,
+      "log_sha256": "3511264809aff84eb94c9f27dcfdf62ecb17b4c8ce09d544f1327d030ef3aa0d"
+    },
+    {
+      "name": "structural-fixtures",
+      "status": "passed",
+      "seconds": 0.214,
+      "log_sha256": "19b8e45a1ecfe06c682f77f215f71cc4b7393f2ab6eb9c64ce12ef20ccf4b523"
+    },
+    {
+      "name": "endstate-package",
+      "status": "passed",
+      "seconds": 78.543,
+      "log_sha256": "26089b30e4cb32ba337d62d5cb55986c5213739103de865173db4da5b7e9d84e"
+    },
+    {
+      "name": "schemas",
+      "status": "passed",
+      "seconds": 0.315,
+      "log_sha256": "5b8823aec02e34ac50831b922ef0cfb0e797c419ba65a3cf3c0c321060894ca9"
+    },
+    {
+      "name": "native-probe",
+      "status": "passed",
+      "seconds": 1.116,
+      "log_sha256": "e69db6d68c42feb9fd8a957b61a643b13f194f21b682799f7d304d76461fc052"
+    },
+    {
+      "name": "browser-legacy",
+      "status": "passed",
+      "seconds": 4.181,
+      "log_sha256": "94c2883f65c987a82030799dbaea28fba6ac571ecfc694c6014d17adfdb3a74c"
+    },
+    {
+      "name": "browser-workspace",
+      "status": "passed",
+      "seconds": 11.442,
+      "log_sha256": "e2be1411579ee5d5dd286f4eb8675ef28f640aa60e7d6a6a87b045d49ec1ac8e"
+    },
+    {
+      "name": "browser-providers",
+      "status": "passed",
+      "seconds": 9.992,
+      "log_sha256": "6e40ca17878fdcbd8b2fd2b1ab5754ee92840a85a6a242cd93198b119d4c34b5"
+    },
+    {
+      "name": "browser-connections",
+      "status": "passed",
+      "seconds": 5.378,
+      "log_sha256": "0c4679f2d072bd26ab8695865901e899d2ae674b6314e4a1fded2e8eddba69cd"
+    },
+    {
+      "name": "browser-studio",
+      "status": "passed",
+      "seconds": 13.397,
+      "log_sha256": "458e2d912f7a9896da88e136e6aeba62970b56186a432d1509f53a09b1471797"
+    },
+    {
+      "name": "browser-sources",
+      "status": "passed",
+      "seconds": 20.418,
+      "log_sha256": "e502fab903e77171c5852d8f068306c9e2f4085d3c2d4a70237ed82e1c8cff20"
+    },
+    {
+      "name": "browser-insights",
+      "status": "passed",
+      "seconds": 27.186,
+      "log_sha256": "1fe8c50d6a0c1bd8078ca9fe5f81a08570682dd5455ca2eaf661c7a20ce748e2"
+    },
+    {
+      "name": "browser-grounding",
+      "status": "passed",
+      "seconds": 27.786,
+      "log_sha256": "26798c44acad67ffd787ece4299a433f67fa806a9e282ba610bc7f77ff60992b"
+    },
+    {
+      "name": "browser-plan_review",
+      "status": "passed",
+      "seconds": 6.681,
+      "log_sha256": "89d4366ce74d6ea9de5fd671a4a0ee21f06bf09f0bf43eb23651d59759ca7d3a"
+    },
+    {
+      "name": "browser-accessibility",
+      "status": "passed",
+      "seconds": 5.125,
+      "log_sha256": "1694bba70004e2b415b4a645d054f81605243be6dfce93d642b3fa47a1013e1d"
+    },
+    {
+      "name": "browser-courses",
+      "status": "passed",
+      "seconds": 13.95,
+      "log_sha256": "bd40c46a44f49338697f4c92f227b0c373d281cd47fd2888668a20a9b1ad3439"
+    },
+    {
+      "name": "browser-event_review",
+      "status": "passed",
+      "seconds": 12.759,
+      "log_sha256": "126d58a69cf6c3bd979c2c0969b4da4423d8e58f7c50b8f6b4a081bc17c97621"
+    },
+    {
+      "name": "browser-agency",
+      "status": "passed",
+      "seconds": 3.476,
+      "log_sha256": "92d86419c2bafe831994d97b7f55fb4c4a09eb0c0e99482dadf68273ac9f8c66"
+    }
+  ],
+  "inspection_valid_before_receipt_edits": true,
+  "inspection_result": {
+    "valid": true,
+    "reason": "Source and local evidence bytes match; this is not a signed attestation",
+    "run_status": "passed",
+    "native_browser_verified": true,
+    "model_quality_approved": false,
+    "released": false
+  },
+  "source_unchanged_during_run": true,
+  "prior_failed_receipt": "docs/evidence/roadmap-integration-failed-2026-10-26.json",
+  "raw_artifacts": "artifacts/acceptance/20261026T002344Z-5641058a",
+  "raw_report": "artifacts/acceptance/20261026T002344Z-5641058a/report.json",
+  "raw_artifacts_committed": false,
+  "evidence_archive": "artifacts/roadmap-integration-acceptance-2026-10-26.tar.gz",
+  "evidence_archive_sha256": "f33f945a65d4e0f806cc3458dcc213887e7b35f1627af2d38bff485a2eb86598",
+  "evidence_archive_bytes": 36970410,
+  "evidence_archive_contents": [
+    "Both exact-source full runs with all raw artifacts,logs,JUnit,wheel/manifest and browser screenshots",
+    "Passing inspection result recorded before receipt/source edits"
+  ],
+  "remote_ci": "0 checks: repository push workflows do not target this devin branch. No remote-CI pass claimed.",
+  "code_checkpoint_pushed": true,
+  "code_checkpoint_remote_head_verified": true,
+  "model_inference_performed": false,
+  "model_quality_approved": false,
+  "independent_review_performed": false,
+  "merged": false,
+  "released": false,
+  "deployed": false,
+  "limitations": [
+    "Receipt/checklist/changelog/handoff edits are later documentation, not part of the tested source manifest. Inspect only on the exact tested commit with matching research pins and raw artifact bytes.",
+    "Fictional seeded durable browser sessions are not real OIDC-provider acceptance. Controlled scanner and worker output are not malware-quality or live inference evidence.",
+    "Missing production scanner,consent/egress/retention,deletion,revocation-probe and processor adapters fail closed; no provider calls or automatic sends were performed.",
+    "Production TLS/identity/security/KMS/multiuser/PostgreSQL/operational infrastructure,independent professional/semantic/accessibility/qualified-fixer/pilot and commercial gates remain unfinished.",
+    "No existing broader task was promoted to verified; the original local workflow,source fixtures,research pins and prior failures remain retained."
+  ],
+  "documentation_verification": {
+    "tests": 67,
+    "passed": 67,
+    "scope": [
+      "tests/test_delivery_tracking.py",
+      "tests/test_changelog.py",
+      "tests/test_emergence_register.py"
+    ],
+    "delivery_check": "passed",
+    "changelog_check_against_runtime_and_assigned_base": "passed",
+    "emergence_check_against_runtime_and_assigned_base": "passed",
+    "not_a_fresh_native_run_on_receipt_bytes": true
+  }
+}

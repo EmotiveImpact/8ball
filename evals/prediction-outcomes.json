@@ -1,0 +1,13 @@
+{
+  "basis": "synthetic",
+  "available_at": "2026-10-02T10:00:00Z",
+  "source": "Author-created opposite possible-world labels; these did not happen in reality.",
+  "outcomes": {
+    "supplier_a": true,
+    "supplier_b": false,
+    "proposal_a": false,
+    "proposal_b": true,
+    "repair_a": true,
+    "repair_b": false
+  }
+}

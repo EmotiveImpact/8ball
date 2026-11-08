@@ -1,0 +1,100 @@
+{
+  "checked_at": "2026-10-26T13:08:04.611085+00:00",
+  "scope": "Read-only one-pass lookup of three previously retained fictional native requests; no inference, no price lookup, no account changes.",
+  "source_records_sha256": "88b37b13a9bbdbac1802fbf25acc7163e98e9faeab6885a858f5d22b2afbd2db",
+  "requests": [
+    {
+      "model": "gpt-6-luna-decisions",
+      "request_id_sha256": "1867e1aba8b56e9283257ce01ea74793a0aa9fb5f25d442588fede56aa444e99",
+      "http_status": 200,
+      "data_keys": [
+        "cache_discount",
+        "cancelled",
+        "finish_reason",
+        "generation_time",
+        "id",
+        "latency",
+        "model",
+        "native_tokens_cached",
+        "native_tokens_completion",
+        "native_tokens_prompt",
+        "native_tokens_reasoning",
+        "provider_name",
+        "streamed",
+        "tokens_completion",
+        "tokens_prompt",
+        "total_cost",
+        "upstream_inference_cost",
+        "usage"
+      ],
+      "matching_id": true,
+      "matching_model": true,
+      "reported_costs": {
+        "total_cost": 0.0
+      },
+      "metering_flags": {}
+    },
+    {
+      "model": "clef-flash",
+      "request_id_sha256": "e49f00d140ae44c0cffb1a2c864e38ffbf37c268e02df8f863a31434c57a2b23",
+      "http_status": 200,
+      "data_keys": [
+        "cache_discount",
+        "cancelled",
+        "finish_reason",
+        "generation_time",
+        "id",
+        "latency",
+        "model",
+        "native_tokens_cached",
+        "native_tokens_completion",
+        "native_tokens_prompt",
+        "native_tokens_reasoning",
+        "provider_name",
+        "streamed",
+        "tokens_completion",
+        "tokens_prompt",
+        "total_cost",
+        "upstream_inference_cost",
+        "usage"
+      ],
+      "matching_id": true,
+      "matching_model": true,
+      "reported_costs": {
+        "total_cost": 0.0
+      },
+      "metering_flags": {}
+    },
+    {
+      "model": "jev-latest",
+      "request_id_sha256": "22eaa76725cfb9332a307a36a85670f26f70c52ef4323bd8da1d4385e072b376",
+      "http_status": 200,
+      "data_keys": [
+        "cache_discount",
+        "cancelled",
+        "finish_reason",
+        "generation_time",
+        "id",
+        "latency",
+        "model",
+        "native_tokens_cached",
+        "native_tokens_completion",
+        "native_tokens_prompt",
+        "native_tokens_reasoning",
+        "provider_name",
+        "streamed",
+        "tokens_completion",
+        "tokens_prompt",
+        "total_cost",
+        "upstream_inference_cost",
+        "usage"
+      ],
+      "matching_id": true,
+      "matching_model": true,
+      "reported_costs": {
+        "total_cost": 8.547e-06
+      },
+      "metering_flags": {}
+    }
+  ]
+}

@@ -8,12 +8,17 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from endstate.api import PlanRequest,PlanResponse
 from endstate.course import CourseAnchor,CourseAssessment
+from endstate.operating import OutcomeBrief,OperatingPlan
+from endstate.intelligence.operating import OperatingPlanningSpec,WrittenReview,RevisedPlan
 
 
 def export(output:Path):
     output.mkdir(parents=True,exist_ok=True)
     records={}
-    for name,contract in [('endstate.plan.v1.request',PlanRequest),('endstate.plan.v1.response',PlanResponse),('endstate.course.v1.anchor',CourseAnchor),('endstate.course.v1.assessment',CourseAssessment)]:
+    for name,contract in [('endstate.plan.v1.request',PlanRequest),('endstate.plan.v1.response',PlanResponse),('endstate.course.v1.anchor',CourseAnchor),('endstate.course.v1.assessment',CourseAssessment),
+        ('endstate.operating.v1.brief',OutcomeBrief),('endstate.operating.v1.plan',OperatingPlan),
+        ('endstate.operating.v1.spec',OperatingPlanningSpec),('endstate.operating.v1.review',WrittenReview),
+        ('endstate.operating.v1.revision',RevisedPlan)]:
         raw=(json.dumps(contract.model_json_schema(),indent=2,ensure_ascii=False)+'\n').encode()
         path=output/(name+'.json');path.write_bytes(raw)
         records[path.name]=hashlib.sha256(raw).hexdigest()

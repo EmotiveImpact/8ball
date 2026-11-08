@@ -1,0 +1,36 @@
+{
+  "scope": "Read-only coordinated-stage presentation and defensive integrity reconstruction; offline source/package/native-browser software acceptance only.",
+  "source_commit": "11e328c1eaa3ed6817cdb794e1878410b85a8de3",
+  "source_sha256": "9097753973b7d47e5a97e6b96d13924381eeb05ae73d5b1a117c6795ba4e0d10",
+  "run_id": "20261026T144252Z-f55eece5",
+  "native_report_archive": "docs/evidence/coordinated-result-ui-native-passed-2026-10-26.json.xz",
+  "archive_sha256": "74bc53af012ebe20545a65688a700cff88de73da4ae2d1085ab6f6c0e3eabe8b",
+  "original_report_sha256": "ac9f98ba4861c7df92b3748c74dbffd05330edc903cb8b6dd405cf5a279d7c9f",
+  "inspection_before_documentation_closeout": {
+    "valid": true,
+    "run_status": "passed",
+    "reason": "Exact source and local evidence bytes matched; not a signed attestation"
+  },
+  "counts": {
+    "source_tests": 2493,
+    "installed_wheel_regressions": 2493,
+    "javascript_modules": 24,
+    "native_browser_checks": 493,
+    "native_browser_suites": 13
+  },
+  "credential_value_scan": "passed",
+  "model_inference_performed": false,
+  "native_browser_verified": true,
+  "model_quality_approved": false,
+  "predictive_quality_approved": false,
+  "merged": false,
+  "released": false,
+  "deployed": false,
+  "limits": [
+    "Exact 11e328c1eaa3ed6817cdb794e1878410b85a8de3 software source only, not later documentation or runtime changes.",
+    "Offline reads of all four actual v4 results do not constitute new provider calls or independent quality evaluation.",
+    "Native artifacts remain in the ignored run directory; compressed original report retains their hashes, not every binary artifact.",
+    "No repair, retry, implicit graph amendment, selected course, evidence, approval or completed action is created by inspection.",
+    "Production identity/storage/operations, human accessibility, usefulness and qualified semantic acceptance remain separate gates."
+  ]
+}

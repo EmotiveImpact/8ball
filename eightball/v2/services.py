@@ -1,7 +1,8 @@
 """Application read models, isolated scenarios, source-preserving V1 import."""
 from datetime import datetime
 from .contracts import *
-from .planner import plan, briefing, changes, literals
+from .planner import plan, briefing, changes, literals, to_snapshot
+from endstate.scenarios import Scenario, project as project_scenario
 from ..models import Evidence,Observation,uid,utcnow
 from ..store import Store as LegacyStore, Conflict
 from .store import Store
@@ -12,44 +13,15 @@ def detail(case,sort_by='fewest_unknowns'):
     return {'case':case.model_dump(mode='json'),'plan':result,'briefing':briefing(case,result)}
 
 
-class Scenario(Strict):
-    expected_revision: int = Field(strict=True,ge=0)
-    budget: Count | None = None
-    deadline: AwareDatetime | None = None
-    conditions: dict[Identifier,bool] = Field(default_factory=dict)
-    unavailable_actions: list[Identifier] = Field(default_factory=list,max_length=64)
-    resource_starts: dict[Identifier,AwareDatetime] = Field(default_factory=dict)
-    decisions: dict[Identifier,Identifier] = Field(default_factory=dict)
-
-    @model_validator(mode='before')
-    @classmethod
-    def strict_truth(cls,data):
-        if isinstance(data,dict) and any(type(v) is not bool for v in data.get('conditions',{}).values()):
-            raise ValueError('Hypothetical conditions must use explicit booleans')
-        return data
-
-
-def simulate(case:Case,scenario:Scenario):
+def scenario_case(case:Case,scenario:Scenario,as_of:datetime):
     if scenario.expected_revision!=case.revision:raise Conflict('Scenario is based on a stale case revision')
-    data=case.model_dump(mode='json');data['approvals']=[]
-    known={c.id for c in case.graph.conditions};aids={a.id for a in case.graph.actions};rids={r.id for r in case.resources}
-    if not set(scenario.conditions)<=known or not set(scenario.unavailable_actions)<=aids or not set(scenario.resource_starts)<=rids:
-        raise ValueError('Scenario references a missing case object')
-    if scenario.budget is not None:data['budget']=scenario.budget
-    if scenario.deadline is not None:data['deadline']=scenario.deadline.isoformat()
-    for cid,value in scenario.conditions.items():
-        e=Evidence(title='Hypothetical assumption',source='Scenario only',text='Not case evidence.',status='reviewed')
-        data['evidence'].append(e.model_dump(mode='json'))
-        data['observations'].append(Observation(condition_id=cid,evidence_id=e.id,value=value,rationale='Scenario only',
-            supersedes=[o.id for o in case.observations if o.condition_id==cid]).model_dump(mode='json'))
-    for a in data['graph']['actions']:
-        if a['id'] in scenario.unavailable_actions:a['enabled']=False
-    for r in data['resources']:
-        if r['id'] in scenario.resource_starts:r['available_from']=scenario.resource_starts[r['id']].isoformat()
-    decisions={d['id']:d for d in data['decisions']}
-    if not set(scenario.decisions)<=decisions.keys():raise ValueError('Unknown scenario decision')
-    for id,option in scenario.decisions.items():decisions[id]['selected']=option
-    clone=Case.model_validate(data);now=utcnow();before=plan(case,now);after=plan(clone,now)
+    projection=project_scenario(to_snapshot(case),scenario,as_of)
+    return Case.model_validate({**case.model_dump(mode='python'),**projection.model_dump(mode='python')})
+
+
+def simulate(case:Case,scenario:Scenario, *, as_of: datetime | None = None):
+    now=as_of if as_of is not None else utcnow()
+    clone=scenario_case(case,scenario,now);before=plan(case,now);after=plan(clone,now)
     return {'simulation':True,'persisted':False,'base_revision':case.revision,'assumptions':scenario.model_dump(mode='json'),
             'plan':after,'briefing':briefing(clone,after),'changes':changes(case,clone,before,after)}
 

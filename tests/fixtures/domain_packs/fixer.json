@@ -1,0 +1,523 @@
+{
+  "schema_version": "endstate.domain-pack.v1",
+  "pack_id": "fixer",
+  "pack_version": "0.1.0",
+  "engine_contract": "endstate.plan.v1",
+  "owner": "8BALL product team",
+  "description": "Product-owned supplier starter exported without changing its graph; hypotheses only.",
+  "distribution": "internal_review_required",
+  "vocabulary": [
+    {
+      "concept": "snapshot",
+      "singular": "Situation",
+      "plural": "Situations"
+    },
+    {
+      "concept": "actor",
+      "singular": "Participant",
+      "plural": "Participants"
+    },
+    {
+      "concept": "action",
+      "singular": "Action",
+      "plural": "Actions"
+    },
+    {
+      "concept": "condition",
+      "singular": "Condition",
+      "plural": "Conditions"
+    },
+    {
+      "concept": "objective",
+      "singular": "Outcome",
+      "plural": "Outcomes"
+    },
+    {
+      "concept": "evidence",
+      "singular": "Source",
+      "plural": "Sources"
+    },
+    {
+      "concept": "observation",
+      "singular": "Observation",
+      "plural": "Observations"
+    },
+    {
+      "concept": "question",
+      "singular": "Question",
+      "plural": "Questions"
+    }
+  ],
+  "object_mappings": [
+    {
+      "product_object": "situation",
+      "engine_object": "snapshot",
+      "description": "Detached read-only planning inputs; host owns records and authority."
+    },
+    {
+      "product_object": "work_item",
+      "engine_object": "action",
+      "description": "An intended effect is not an observation."
+    }
+  ],
+  "catalogue": {
+    "graph": {
+      "conditions": [
+        {
+          "id": "scope",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "8BALL starter catalogue 0.2.0. Illustrative estimates; specialist review required.",
+            "run_id": null
+          },
+          "title": "Supply shortfall documented",
+          "confirmation": "Review direct evidence of: Supply shortfall documented",
+          "kind": "prerequisite",
+          "due_at": null,
+          "criticality": "ordinary",
+          "actor_id": null
+        },
+        {
+          "id": "primary",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "8BALL starter catalogue 0.2.0. Illustrative estimates; specialist review required.",
+            "run_id": null
+          },
+          "title": "Existing supplier recovery agreed",
+          "confirmation": "Review direct evidence of: Existing supplier recovery agreed",
+          "kind": "prerequisite",
+          "due_at": null,
+          "criticality": "ordinary",
+          "actor_id": null
+        },
+        {
+          "id": "alternative",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "8BALL starter catalogue 0.2.0. Illustrative estimates; specialist review required.",
+            "run_id": null
+          },
+          "title": "Alternative supplier approved",
+          "confirmation": "Review direct evidence of: Alternative supplier approved",
+          "kind": "prerequisite",
+          "due_at": null,
+          "criticality": "ordinary",
+          "actor_id": null
+        },
+        {
+          "id": "authority",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "8BALL starter catalogue 0.2.0. Illustrative estimates; specialist review required.",
+            "run_id": null
+          },
+          "title": "Appropriate authority and review obtained",
+          "confirmation": "Review direct evidence of: Appropriate authority and review obtained",
+          "kind": "prerequisite",
+          "due_at": null,
+          "criticality": "ordinary",
+          "actor_id": null
+        },
+        {
+          "id": "accepted",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "8BALL starter catalogue 0.2.0. Illustrative estimates; specialist review required.",
+            "run_id": null
+          },
+          "title": "Resolution accepted and verified",
+          "confirmation": "Direct evidence against the agreed acceptance criteria",
+          "kind": "target",
+          "due_at": null,
+          "criticality": "ordinary",
+          "actor_id": null
+        }
+      ],
+      "actions": [
+        {
+          "id": "scope",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "8BALL starter catalogue 0.2.0. Illustrative estimates; specialist review required.",
+            "run_id": null
+          },
+          "title": "Establish the situation scope",
+          "owner": "Case lead",
+          "purpose": "Establish the situation scope",
+          "requires": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "guard": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "effects": [
+            {
+              "condition_id": "scope",
+              "value": true
+            }
+          ],
+          "minutes": 30,
+          "cost": 100,
+          "risk": "low",
+          "approval_required": false,
+          "contingent": false,
+          "wait_minutes": 0,
+          "earliest_start": null,
+          "expires_at": null,
+          "reversibility": "reversible",
+          "side_effects": [],
+          "actor_ids": [],
+          "resources": [],
+          "decision_id": null,
+          "decision_option": null,
+          "enabled": true,
+          "contingencies": []
+        },
+        {
+          "id": "authority",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "8BALL starter catalogue 0.2.0. Illustrative estimates; specialist review required.",
+            "run_id": null
+          },
+          "title": "Obtain authority and specialist review",
+          "owner": "Operations lead",
+          "purpose": "Obtain authority and specialist review",
+          "requires": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": [
+              {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              }
+            ]
+          },
+          "guard": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "effects": [
+            {
+              "condition_id": "authority",
+              "value": true
+            }
+          ],
+          "minutes": 60,
+          "cost": 300,
+          "risk": "low",
+          "approval_required": false,
+          "contingent": false,
+          "wait_minutes": 0,
+          "earliest_start": null,
+          "expires_at": null,
+          "reversibility": "reversible",
+          "side_effects": [],
+          "actor_ids": [],
+          "resources": [],
+          "decision_id": null,
+          "decision_option": null,
+          "enabled": true,
+          "contingencies": []
+        },
+        {
+          "id": "primary",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "8BALL starter catalogue 0.2.0. Illustrative estimates; specialist review required.",
+            "run_id": null
+          },
+          "title": "Agree supplier recovery",
+          "owner": "Operations lead",
+          "purpose": "Agree supplier recovery",
+          "requires": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": [
+              {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              {
+                "op": "atom",
+                "condition_id": "authority",
+                "value": true,
+                "args": []
+              }
+            ]
+          },
+          "guard": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "effects": [
+            {
+              "condition_id": "primary",
+              "value": true
+            }
+          ],
+          "minutes": 120,
+          "cost": 700,
+          "risk": "low",
+          "approval_required": false,
+          "contingent": false,
+          "wait_minutes": 0,
+          "earliest_start": null,
+          "expires_at": null,
+          "reversibility": "reversible",
+          "side_effects": [],
+          "actor_ids": [],
+          "resources": [],
+          "decision_id": null,
+          "decision_option": null,
+          "enabled": true,
+          "contingencies": []
+        },
+        {
+          "id": "alternative",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "8BALL starter catalogue 0.2.0. Illustrative estimates; specialist review required.",
+            "run_id": null
+          },
+          "title": "Qualify an alternative supplier",
+          "owner": "Operations lead",
+          "purpose": "Qualify an alternative supplier",
+          "requires": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": [
+              {
+                "op": "atom",
+                "condition_id": "scope",
+                "value": true,
+                "args": []
+              },
+              {
+                "op": "atom",
+                "condition_id": "authority",
+                "value": true,
+                "args": []
+              }
+            ]
+          },
+          "guard": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "effects": [
+            {
+              "condition_id": "alternative",
+              "value": true
+            }
+          ],
+          "minutes": 60,
+          "cost": 1300,
+          "risk": "low",
+          "approval_required": true,
+          "contingent": false,
+          "wait_minutes": 0,
+          "earliest_start": null,
+          "expires_at": null,
+          "reversibility": "difficult",
+          "side_effects": [],
+          "actor_ids": [],
+          "resources": [],
+          "decision_id": null,
+          "decision_option": null,
+          "enabled": true,
+          "contingencies": []
+        },
+        {
+          "id": "accept",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "8BALL starter catalogue 0.2.0. Illustrative estimates; specialist review required.",
+            "run_id": null
+          },
+          "title": "Verify and agree the resolution",
+          "owner": "Case lead",
+          "purpose": "Verify and agree the resolution",
+          "requires": {
+            "op": "any",
+            "condition_id": null,
+            "value": true,
+            "args": [
+              {
+                "op": "atom",
+                "condition_id": "primary",
+                "value": true,
+                "args": []
+              },
+              {
+                "op": "atom",
+                "condition_id": "alternative",
+                "value": true,
+                "args": []
+              }
+            ]
+          },
+          "guard": {
+            "op": "all",
+            "condition_id": null,
+            "value": true,
+            "args": []
+          },
+          "effects": [
+            {
+              "condition_id": "accepted",
+              "value": true
+            }
+          ],
+          "minutes": 30,
+          "cost": 100,
+          "risk": "low",
+          "approval_required": true,
+          "contingent": true,
+          "wait_minutes": null,
+          "earliest_start": null,
+          "expires_at": null,
+          "reversibility": "reversible",
+          "side_effects": [],
+          "actor_ids": [],
+          "resources": [],
+          "decision_id": null,
+          "decision_option": null,
+          "enabled": true,
+          "contingencies": []
+        }
+      ],
+      "objectives": [
+        {
+          "id": "resolution",
+          "provenance": {
+            "origin": "playbook",
+            "references": [],
+            "note": "8BALL starter catalogue 0.2.0. Illustrative estimates; specialist review required.",
+            "run_id": null
+          },
+          "title": "Restore a disrupted supply arrangement.",
+          "mandatory": true,
+          "priority": 1,
+          "success": {
+            "op": "atom",
+            "condition_id": "accepted",
+            "value": true,
+            "args": []
+          },
+          "failure": null
+        }
+      ]
+    },
+    "constraints": [],
+    "resources": [],
+    "actors": [],
+    "questions": [
+      {
+        "id": "acceptance",
+        "provenance": {
+          "origin": "playbook",
+          "references": [],
+          "note": "8BALL starter catalogue 0.2.0. Illustrative estimates; specialist review required.",
+          "run_id": null
+        },
+        "question": "What would prove the situation is resolved?",
+        "why": "Define acceptance before selecting a route.",
+        "condition_ids": [
+          "accepted"
+        ],
+        "owner": "Case lead",
+        "needed_by": null,
+        "answer": "",
+        "evidence_ids": [],
+        "status": "open"
+      }
+    ]
+  },
+  "confirmation_rules": [
+    {
+      "condition_id": "scope",
+      "evidence_requirement": "Review direct evidence of: Supply shortfall documented",
+      "reviewer_role": "Case lead",
+      "mode": "explicit_reviewed_observation"
+    },
+    {
+      "condition_id": "primary",
+      "evidence_requirement": "Review direct evidence of: Existing supplier recovery agreed",
+      "reviewer_role": "Case lead",
+      "mode": "explicit_reviewed_observation"
+    },
+    {
+      "condition_id": "alternative",
+      "evidence_requirement": "Review direct evidence of: Alternative supplier approved",
+      "reviewer_role": "Case lead",
+      "mode": "explicit_reviewed_observation"
+    },
+    {
+      "condition_id": "authority",
+      "evidence_requirement": "Review direct evidence of: Appropriate authority and review obtained",
+      "reviewer_role": "Case lead",
+      "mode": "explicit_reviewed_observation"
+    },
+    {
+      "condition_id": "accepted",
+      "evidence_requirement": "Direct evidence against the agreed acceptance criteria",
+      "reviewer_role": "Case lead",
+      "mode": "explicit_reviewed_observation"
+    }
+  ],
+  "prompts": [
+    {
+      "id": "reviewed_graph",
+      "purpose": "graph",
+      "text": "Propose only from explicitly supplied sources and target. Unknown is not false. Keep completion, intended effects, observed results, selected courses and action authority separate. Preserve exact source references; no sends or observations. Return proposals for operator review.",
+      "output_contract": "Host-selected proposal schema; product adapter must bind version and source scope.",
+      "disposition": "proposal_only"
+    }
+  ],
+  "integrations": [
+    {
+      "id": "source_adapter",
+      "adapter_key": "fixer_source",
+      "contract_version": "1.0.0",
+      "operations": [
+        "source_ingest"
+      ],
+      "required_permissions": [
+        "source_read"
+      ],
+      "activation": "host_registration_required",
+      "external_permission": "explicit_per_operation"
+    }
+  ]
+}

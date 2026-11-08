@@ -30,6 +30,9 @@ def build(output:Path,regressions=False):
         wheel=wheels[0]
         with zipfile.ZipFile(wheel) as z:
             names=z.namelist()
+            expected = {str(p.relative_to(ROOT)) for p in (ROOT/'endstate').rglob('*.py')}
+            if not expected.issubset(names):
+                raise ValueError('Wheel omits kernel packages: ' + ', '.join(sorted(expected - set(names))))
             if any(not (n.startswith('endstate/') or '.dist-info/' in n) for n in names):
                 raise ValueError('Wheel contains files outside the kernel and its metadata')
             if any(n.endswith(('.db','.sqlite3','.zip','.gguf','.safetensors')) for n in names):
@@ -64,10 +67,54 @@ r=calculate(PlanRequest(snapshot=snapshot,as_of=now))
 assert len(r.plan['routes'])==2 and not r.plan['outcome_evidenced']
 assert r.plan['action_states']['a']['status']=='approval_required'
 assert PlanResponse.model_validate_json(r.model_dump_json()).model_dump(mode='json')==r.model_dump(mode='json')
+from endstate.scenarios import Scenario,compare,verify
+from endstate.decision_packet import Selection,project
+from endstate.intelligence.decisions import ChoiceQuestion,validate_choice
+before=snapshot.model_dump_json()
+comparison=compare(snapshot,Scenario(expected_revision=0,budget=0),now)
+assert verify(snapshot,comparison) and snapshot.model_dump_json()==before
+packet=project({'reference_hashes':{'case:summary':'0'*64},'private':'Fictional private narrative'},
+               Selection(mode='reference_index',references=['case:summary']),{'case:summary'})
+assert packet['brief'] is None and 'Fictional private narrative' not in json.dumps(packet)
+q=ChoiceQuestion(id='review',instructions='Review only',criteria={'review':'Seek evidence','defer':'Defer review'})
+assert validate_choice({'type':'choice','choice':'review','confidence':1.0,'probabilities':{'review':1.0,'defer':0.0}},q)['choice']=='review'
+from endstate.forecasting import Forecast,Resolution,evaluate,forecast_digest
+f=Forecast(id='delivery',event='Delivery confirmed before tomorrow',as_of=now,horizon=now+timedelta(days=1),
+           input_sha256='0'*64,predictor='package_fixture',probability=0.5)
+o=Resolution(forecast_id=f.id,forecast_sha256=forecast_digest(f),value=False,available_at=now+timedelta(days=2),
+             source_reference='Synthetic package fixture',source_sha256='1'*64,basis='synthetic')
+evaluation=evaluate([f],[o],as_of=now+timedelta(days=2))
+assert evaluation['brier']==0.25 and not evaluation['predictive_quality_approved'] and not evaluation['facts_attested']
+from endstate.intelligence.coordination import ReviewSpec,summarize
+comparison=summarize(ReviewSpec(id='review',models=['jev-latest'],max_seconds=30,
+ max_reported_cost_nano_usd=100,questions=[dict(id='check',instructions='Missing evidence requires review.',
+ criteria={'review':'More review needed.','continue':'Continue human review, not approval.'})]),[])
+assert comparison['answered_models']==0 and comparison['questions'][0]['missing_models']==['jev-latest']
+assert not comparison['facts_attested'] and not comparison['execution_authorized']
+from endstate.operating import OutcomeBrief
+from endstate.intelligence.operating import OperatingPlanningSpec,coordinate_operating
+brief=OutcomeBrief(outcome='Review a fictional complete outcome without replacing it with a subtask.',
+ requirements=[dict(id='success',kind='success',text='Keep the complete requested outcome.')],
+ deadline=None,budget=None,currency=None)
+spec=OperatingPlanningSpec(id='package-operating',brief=brief,roles=[dict(id='skeptic',instructions='Challenge unsupported claims.')],
+ max_seconds=30,planning_cost_policy='explicit_unpriced_token_bound')
+calls=[]
+def reject(schema,instructions,context):
+ calls.append(context)
+ return {'unexpected':'Retained invalid fixture output'},'package-fixture'
+operating=coordinate_operating(spec,'Fictional reviewed source','package-fixture',reject,None,lambda:None)
+assert operating['stop_reason']=='invalid_initial_input_or_result' and len(calls)==1
+assert operating['initial'] is None and operating['final_synthesis'] is None
+assert operating['attempts'][0]['output']=={'unexpected':'Retained invalid fixture output'}
+assert not operating['execution_authorized'] and not operating['facts_attested']
 import endstate
 assert pathlib.Path(endstate.__file__).resolve().is_relative_to(pathlib.Path(sys.argv[1]).resolve())
 print(json.dumps({'installed_outside_repository':True,'routes':len(r.plan['routes']),
  'input_unchanged':snapshot.observations==[],'approval_preserved':True,'roundtrip_exact':True,
+ 'scenario_replay':True,'restricted_packet':True,'typed_advisory_contract':True,
+ 'forecast_measurement_only':True,
+ 'specialist_comparison_only':True,
+ 'operating_plan_contract_and_failure_retention':True,
  'forbidden_runtime_imports':[],'model_inference':False}))
 '''
         test=json.loads(run([sys.executable,'-I','-c',snippet,str(target)],temp))
@@ -86,9 +133,7 @@ result=pytest.main([str(root/'tests'),'-q','--import-mode=importlib','--junitxml
 assert pathlib.Path(endstate.__file__).resolve().is_relative_to(target.resolve())
 sys.exit(result)
 """
-            # The complete suite can exceed the offline build-command deadline.
-            # Keep it bounded within the acceptance runner's 300-second step.
-            log=run([sys.executable,'-I','-c',code,str(ROOT),str(target),str(output.resolve())],temp,timeout=240)
+            log=run([sys.executable,'-I','-c',code,str(ROOT),str(target),str(output.resolve())],temp,timeout=600)
             (output/'installed-regressions.log').write_text(log)
             import xml.etree.ElementTree as ET
             suites=list(ET.parse(output/'installed-junit.xml').getroot().findall('testsuite'))
@@ -99,7 +144,7 @@ sys.exit(result)
         report={'schema_version':1,'status':'passed','distribution':'internal_alpha_only',
                 'python':sys.version.split()[0],'wheel':wheel.name,
                 'sha256':hashlib.sha256(wheel.read_bytes()).hexdigest(),'contents':names,
-                'kernel_sources':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'endstate').glob('*.py'))},
+                'kernel_sources':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'endstate').rglob('*.py'))},
                 'test':test,'installed_regressions':regression,'network_used':False,'published':False,
                 'limits':['Current installed Python and Pydantic only; other platforms require their own run.',
                           'Read-only calculation package; no hosted API, action execution or commercial support claim.']}

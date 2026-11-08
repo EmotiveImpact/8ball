@@ -1,0 +1,21 @@
+{
+  "tested_commit": "a5d82bdacafc0d898660ce3ba4a5183a8d7240c3",
+  "source_sha256": "52db367985559b20ff48c3f71dce650390723bde238fb2af3397c834fdebc00c",
+  "run_id": "20261025T142013Z-bbf05044",
+  "report_sha256": "ac0b622e1540d65c37372693224ee6e38a40c11d539fcfb984d59ab10d40abe1",
+  "status": "passed",
+  "source_tests": 1280,
+  "installed_engine_tests": 1280,
+  "native_browser_checks": 391,
+  "native_suites": 11,
+  "inspection_valid_before_receipt_edits": true,
+  "source_unchanged_during_run": true,
+  "raw_artifacts": "artifacts/acceptance/20261025T142013Z-bbf05044",
+  "raw_artifacts_committed": false,
+  "model_inference_performed": false,
+  "production_security_accepted": false,
+  "limitations": [
+    "Policy component is not yet integrated with OIDC, API or database enforcement.",
+    "Controlled tests and unsigned local receipt are not independent security review."
+  ]
+}

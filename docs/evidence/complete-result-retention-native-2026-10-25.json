@@ -1,0 +1,32 @@
+{
+  "tested_commit": "baca8ad9efa531e5f172058845852963d7d5234a",
+  "run_id": "20261025T225354Z-51a2367e",
+  "source_sha256": "416658d68189939a516ec6668a4e393160c662533c6e982d117877e44725ee04",
+  "report_sha256": "d88f132d8cd1e41088e3cd11ef4e5564412a9e5751c2c5c44454ad6c045e94f7",
+  "status": "passed",
+  "source_tests": 1349,
+  "installed_engine_tests": 1349,
+  "native_browser_checks": 423,
+  "native_suites": 12,
+  "focused_work_review_tests": 36,
+  "inspection_valid_before_receipt_edits": true,
+  "source_unchanged_during_run": true,
+  "checkpoint_ci": [
+    40242301342,
+    40242301344
+  ],
+  "checkpoint_ci_conclusion": "success",
+  "prior_failure": "docs/evidence/event-result-size-boundary-2026-10-25.json",
+  "raw_artifacts": "artifacts/acceptance/20261025T225354Z-51a2367e",
+  "raw_artifacts_committed": false,
+  "limitations": [
+    "Authenticated worker dispatch and end-to-end actual-provider integration remain unfinished.",
+    "Exact bounded retention is not model quality, production isolation, real OIDC login or genuine human acceptance.",
+    "Over-limit transport failures require separate provider evidence; no truncation or automatic retry.",
+    "Final documentation receipt is separate from this tested source checkpoint."
+  ],
+  "model_inference_performed": false,
+  "independent_review_performed": false,
+  "released": false,
+  "deployed": false
+}

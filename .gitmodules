@@ -110,3 +110,19 @@
 	path = research/external/ruvnet/ruflo
 	url = https://github.com/ruvnet/ruflo.git
 	shallow = true
+[submodule "research/external/loomio/loomio"]
+	path = research/external/loomio/loomio
+	url = https://github.com/loomio/loomio.git
+	shallow = true
+[submodule "research/external/Farama-Foundation/HighwayEnv"]
+	path = research/external/Farama-Foundation/HighwayEnv
+	url = https://github.com/Farama-Foundation/HighwayEnv.git
+	shallow = true
+[submodule "research/external/aurelio-labs/semantic-router"]
+	path = research/external/aurelio-labs/semantic-router
+	url = https://github.com/aurelio-labs/semantic-router.git
+	shallow = true
+[submodule "research/external/richardcc/assault-ai-pilot"]
+	path = research/external/richardcc/assault-ai-pilot
+	url = https://github.com/richardcc/assault-ai-pilot.git
+	shallow = true

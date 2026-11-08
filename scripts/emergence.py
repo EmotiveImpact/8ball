@@ -3,7 +3,7 @@
 Task delivery states are read only from progress.json, never duplicated here.
 """
 from __future__ import annotations
-import argparse,json,re,subprocess
+import argparse,hashlib,json,re,subprocess
 from datetime import date
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -12,6 +12,27 @@ OUTPUT='docs/delivery/EMERGENCE-REGISTER.md'
 DECISIONS={'adopted','candidate','deferred','declined','superseded'}
 EVIDENCE={'observed_in_build','supported_by_tests','operator_hypothesis','market_hypothesis'}
 IMMUTABLE=('id','title','origin','first_seen','evidence_level','observation','product_implication')
+
+def relocation_targets(data):
+ by_id={i['id']:i for i in data['items']};targets={};used=set()
+ for relocation in data.get('id_relocations',[]):
+  original=relocation['original'];new_id=relocation['canonical_id'];old_id=original['id']
+  encoded=json.dumps(original,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()
+  if (not re.fullmatch(r'[0-9a-f]{40}',relocation['source_commit']) or
+      hashlib.sha256(encoded).hexdigest()!=relocation['original_sha256'] or not relocation['reason'].strip()):
+   raise ValueError('Invalid discovery relocation provenance')
+  after=by_id.get(new_id);collision=by_id.get(old_id)
+  if (after is None or collision is None or new_id==old_id or new_id in used or
+      all(original[k]==collision[k] for k in IMMUTABLE)):
+   raise ValueError('Discovery relocation requires a distinct retained ID collision')
+  if (any(original[k]!=after[k] for k in IMMUTABLE if k!='id') or
+      after['history'][:len(original['history'])]!=original['history'] or
+      not set(original['evidence_paths'])<=set(after['evidence_paths'])):
+   raise ValueError('Relocated discovery must preserve original text, history and evidence')
+  key=tuple(original[k] for k in IMMUTABLE)
+  if key in targets:raise ValueError('Ambiguous discovery relocation')
+  targets[key]=after;used.add(new_id)
+ return targets
 
 def validate(data,root=ROOT):
  if data.get('schema_version')!=1 or not data.get('items'):raise ValueError('Emergence register is empty or version invalid')
@@ -40,6 +61,7 @@ def validate(data,root=ROOT):
   raise ValueError('Original ten review passes must remain present')
  for p in data['required_prompts']:
   if not re.fullmatch(r'ER-\d{2}',p['id']) or not p['text'].strip() or p['scope'] not in ('build','situation','both'):raise ValueError('Invalid review prompt')
+ relocation_targets(data)
 
 def render(data,root=ROOT):
  tasks={t['id']:t for t in json.loads((root/'docs/delivery/progress.json').read_text())['tasks']}
@@ -50,6 +72,11 @@ def render(data,root=ROOT):
   '**Read the marks correctly:** `[x]` requires the linked acceptance scope to be verified. `[ ]` means open, partial, implemented-but-unaccepted, or a candidate. Strikethrough means declined or superseded, not deleted. An owner can reopen any decision with a new history entry.','',
   '## Mandatory questions at sprint close','']
  for p in data['required_prompts']:lines += [f'- **{p["id"]} ({p["scope"]}):** {p["text"]}']
+ if data.get('id_relocations'):
+  lines += ['','## Source-qualified ID collisions','',
+   'Historical IDs in the named source remain unchanged there. Use these canonical IDs for the imported discoveries; both original records and their decision histories are retained.','']
+  for relocation in data['id_relocations']:
+   lines += [f'- `{relocation["original"]["id"]}` at `{relocation["source_commit"]}` → `{relocation["canonical_id"]}`: {relocation["original"]["title"]}.']
  lines += ['','## Complete owner-review register','']
  for i in data['items']:
   decision=i['history'][-1]['decision'];accepted=i['acceptance_task_ids']
@@ -76,10 +103,18 @@ def check_base(data,base,root=ROOT):
  if data['required_prompts'][:len(original_prompts)]!=original_prompts:
   raise ValueError('Recorded review prompts cannot be removed, reordered or rewritten; append a new pass')
  by_id={i['id']:i for i in data['items']}
+ relocations=relocation_targets(data)
+ previous_relocations=old.get('id_relocations',[])
+ if data.get('id_relocations',[])[:len(previous_relocations)]!=previous_relocations:
+  raise ValueError('Discovery relocation history cannot be rewritten')
  for before in old['items']:
   after=by_id.get(before['id'])
+  relocated=False
+  if after is not None and any(before[k]!=after[k] for k in IMMUTABLE):
+   replacement=relocations.get(tuple(before[k] for k in IMMUTABLE))
+   if replacement is not None:after=replacement;relocated=True
   if after is None:raise ValueError('A recorded discovery cannot be removed')
-  if any(before[k]!=after[k] for k in IMMUTABLE):raise ValueError('Original discovery text is immutable; add a linked correction')
+  if any(before[k]!=after[k] for k in IMMUTABLE if not (relocated and k=='id')):raise ValueError('Original discovery text is immutable; add a linked correction')
   if after['history'][:len(before['history'])]!=before['history']:raise ValueError('Discovery decision history cannot be rewritten')
   if not set(before['evidence_paths'])<=set(after['evidence_paths']):raise ValueError('Prior evidence cannot be silently removed')
 

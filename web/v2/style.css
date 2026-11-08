@@ -155,3 +155,6 @@ body{font-feature-settings:"cv11","ss01";-webkit-font-smoothing:antialiased}
 .course-actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.course-actions span{border:1px solid #414141;border-radius:4px;font-size:11px;padding:6px 10px}
 .course-watches{padding:14px;background:#101010;margin-bottom:18px;font-size:12px}.course-history{border-bottom:1px solid #353535;padding:18px 0}.course-history p{font-size:12px;color:var(--sub);margin-top:7px}
 @media(max-width:700px){.course-empty,.course-banner{align-items:flex-start;flex-wrap:wrap;padding:17px;gap:13px}.course-mark{display:none}.course-main{flex-basis:100%}.course-main h2{font-size:20px}.course-banner .toolbar{width:100%}.course-stats{gap:17px}.course-stats strong{font-size:21px}}
+/* Keep the overview readable; graph exploration remains explicitly available. */
+.room-map-disclosure > summary { padding: 20px; cursor: pointer; font-size: 16px; font-weight: 600; }
+.room-map-disclosure > summary:focus-visible { outline: 2px solid var(--text, #eee); outline-offset: -4px; }

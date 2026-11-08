@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-10-25",
+  "items": [
+    {
+      "id": "EM-153",
+      "title": "Vault controls need authority distinct from ordinary case WRITE",
+      "evidence_level": "supported_by_tests",
+      "observation": "The vault's existing WRITE grant cannot safely imply scan, lawful-hold, retention, local-deletion or audit powers. A separate current transactional control callback is required and missing control denies.",
+      "product_implication": "Under existing B03-02, integrate explicit least-privilege control authority with current B03-01 identity/session policy rather than exposing privileged controls through the local operator token.",
+      "origin": "Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd",
+      "first_seen": "2026-10-25",
+      "task_ids": [
+        "B03-02"
+      ],
+      "acceptance_task_ids": [
+        "B03-02"
+      ],
+      "evidence_paths": [
+        "docs/v2/VAULT.md",
+        "docs/delivery/lane-reports/vault.md",
+        "tests/test_vault.py",
+        "tests/test_vault_api.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / roadmap-vault",
+          "reason": "existing_task: implemented fail-closed separate control seam and negative tests; no production role matrix, owner approval or broad gate is implied."
+        }
+      ]
+    },
+    {
+      "id": "EM-154",
+      "title": "A clean scan verdict is publishable only for its exact live attempt and vault revision",
+      "evidence_level": "supported_by_tests",
+      "observation": "Revocation, scan cancellation and hold/retention revision changes during scanning invalidate publication even when a scanner later reports clean. Interrupted scans must not automatically resume or repeat on command replay.",
+      "product_implication": "Keep scan claim, processing and release separate; recheck current authority and exact attempt/revision at publication, require explicit cancellation/restart and state that cancellation cannot recall bytes already supplied to a scanner.",
+      "origin": "Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd",
+      "first_seen": "2026-10-25",
+      "task_ids": [
+        "B03-02"
+      ],
+      "acceptance_task_ids": [
+        "B03-02"
+      ],
+      "evidence_paths": [
+        "docs/v2/VAULT.md",
+        "docs/delivery/lane-reports/vault.md",
+        "tests/test_vault.py",
+        "tests/test_vault_api.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / roadmap-vault",
+          "reason": "existing_task: implemented revision-bound scan publication/cancel/restart/idempotency tests within B03-02; real scanner isolation and bounded adapter execution remain integration gates."
+        }
+      ]
+    },
+    {
+      "id": "EM-155",
+      "title": "Local ciphertext deletion is not proof of storage-wide or legal erasure",
+      "evidence_level": "supported_by_tests",
+      "observation": "Deleting a local encrypted blob can preserve an immutable descriptor and audited tombstone while leaving derived text, WAL/filesystem remnants, backups, replicas and provider retention outside its scope. Without current dependency clearance the vault must deny deletion.",
+      "product_implication": "Label deletion local_vault_ciphertext_only, enforce hold/retention plus same-transaction dependency guard and preserve independent erasure/recovery evidence as an existing B03-02 production gate.",
+      "origin": "Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd",
+      "first_seen": "2026-10-25",
+      "task_ids": [
+        "B03-02"
+      ],
+      "acceptance_task_ids": [
+        "B03-02"
+      ],
+      "evidence_paths": [
+        "docs/v2/VAULT.md",
+        "docs/delivery/lane-reports/vault.md",
+        "tests/test_vault.py",
+        "tests/test_vault_api.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / roadmap-vault",
+          "reason": "existing_task: implemented guarded local deletion and exact scope labeling/tests, not a compliance-erasure or managed-backup claim; broader production proof remains open."
+        }
+      ]
+    },
+    {
+      "id": "EM-156",
+      "title": "Reviewed source handles are references, not future publication authority",
+      "evidence_level": "supported_by_tests",
+      "observation": "A source handle returned before projection publication can become stale, revoked or unavailable. The final source gate must run on the caller's same-database transaction and verify current scope, exact revision/hash, clean release and authenticated ciphertext, with audit rolled back alongside the mutation.",
+      "product_implication": "Use Vault.require_source(db, identity=..., case_id=..., object_id=..., expected_revision=..., expected_sha256=...) immediately at final shared BEGIN IMMEDIATE commit/publish boundary; never authorize from a cached handle or separate connection.",
+      "origin": "Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd",
+      "first_seen": "2026-10-25",
+      "task_ids": [
+        "B03-02"
+      ],
+      "acceptance_task_ids": [
+        "B03-02"
+      ],
+      "evidence_paths": [
+        "docs/v2/VAULT.md",
+        "docs/delivery/lane-reports/vault.md",
+        "tests/test_vault.py",
+        "tests/test_vault_api.py"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / roadmap-vault",
+          "reason": "existing_task: added safe metadata-only transaction gate and rollback/staleness/revocation/quarantine/ciphertext tests for B03-02 integration; collaboration wrapper agreement and cumulative integration tests remain separate."
+        }
+      ]
+    },
+    {
+      "id": "EM-157",
+      "title": "Content-envelope encryption and a local audit chain do not solve metadata custody",
+      "evidence_level": "observed_in_build",
+      "observation": "AES-GCM protects original bytes and authenticates their descriptor, but filenames, scope metadata and audit identifiers remain outside the content envelope. SQLite triggers/hash chains do not protect against an administrator rewriting or truncating the database and chain.",
+      "product_implication": "Require explicit whole-storage protection, key custody, independent audit anchoring and recovery threat review before any production claim; do not relabel the local wrapper/audit chain as managed infrastructure.",
+      "origin": "Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd",
+      "first_seen": "2026-10-25",
+      "task_ids": [
+        "B03-02"
+      ],
+      "acceptance_task_ids": [
+        "B03-02"
+      ],
+      "evidence_paths": [
+        "docs/v2/VAULT.md",
+        "docs/delivery/lane-reports/vault.md",
+        "eightball/vault/crypto.py",
+        "eightball/vault/schema.sql"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "deferred",
+          "by": "Devin / roadmap-vault",
+          "reason": "existing_task: preserve B03-02 production security/custody/recovery gates. No external infrastructure or independent security decision was authorized; bounded local implementation states these limits rather than inventing evidence."
+        }
+      ]
+    },
+    {
+      "id": "EM-158",
+      "title": "Uncertain vault command outcomes need an explicit refresh boundary",
+      "evidence_level": "observed_in_build",
+      "observation": "The isolated panel separates immutable original version from mutable vault revision and clears visible object data/disables mutations after an uncertain command outcome. Disposal/generation guards reject late responses; no automatic retry is performed. These are implemented safeguards, not browser or operator-value evidence.",
+      "product_implication": "Integrate the panel only with host-current agency auth and dispose on session/case change; measure correction burden and safe publication/deletion decisions after native and operator testing rather than treating screen or test counts as value.",
+      "origin": "Vault builder 2026-10-25 / session9c76974dc65748658ac94e333ea877fd",
+      "first_seen": "2026-10-25",
+      "task_ids": [
+        "B03-02"
+      ],
+      "acceptance_task_ids": [
+        "B03-02"
+      ],
+      "evidence_paths": [
+        "docs/v2/VAULT.md",
+        "docs/delivery/lane-reports/vault.md",
+        "web/v2/vault-panel.js"
+      ],
+      "owner_review": "pending",
+      "history": [
+        {
+          "date": "2026-10-25",
+          "decision": "adopted",
+          "by": "Devin / roadmap-vault",
+          "reason": "existing_task: implemented a focused explicit-control UI seam under B03-02 without shared navigation changes; native/accessibility/real operator evidence remains unaccepted."
+        }
+      ]
+    }
+  ]
+}

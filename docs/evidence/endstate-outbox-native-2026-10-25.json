@@ -1,0 +1,31 @@
+{
+  "tested_commit": "49f5e04fe8f4f122818c09343aba030338a26347",
+  "run_id": "20261025T155430Z-0381a8ea",
+  "source_sha256": "dad6771398912b43878f463718c78c20e8e3e56cfb26ec991701328b1f73014f",
+  "report_sha256": "b16acb0d799134a28748809f20ea434c86c769d5aba18772334701c06956319d",
+  "status": "passed",
+  "source_tests": 1331,
+  "installed_engine_tests": 1331,
+  "native_browser_checks": 396,
+  "native_suites": 11,
+  "focused_event_tests": 40,
+  "inspection_valid_before_receipt_edits": true,
+  "source_unchanged_during_run": true,
+  "checkpoint_ci": [
+    40209159166,
+    40209159271
+  ],
+  "checkpoint_ci_conclusion": "success",
+  "raw_artifacts": "artifacts/acceptance/20261025T155430Z-0381a8ea",
+  "raw_artifacts_committed": false,
+  "limitations": [
+    "Local trusted-host pull delivery only; no HTTP/browser notification surface or worker daemon.",
+    "No external sends, production PostgreSQL isolation or silent historical backfill.",
+    "No actual model call, independent professional review or genuine human acceptance.",
+    "Final documentation receipt changes are separate from this tested code checkpoint."
+  ],
+  "model_inference_performed": false,
+  "independent_review_performed": false,
+  "released": false,
+  "deployed": false
+}

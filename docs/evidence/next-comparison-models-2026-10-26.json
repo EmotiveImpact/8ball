@@ -1,0 +1,66 @@
+{
+  "status": "catalogue_only_no_inference",
+  "models": [
+    {
+      "id": "deepseek-v4.1-flash",
+      "owned_by": "exp",
+      "uncensored": false,
+      "supports_completions": true,
+      "supports_structured_output": true,
+      "supports_reasoning": true,
+      "reasoning_effort": "high",
+      "sampling_requires_reasoning_none": false,
+      "reasoning_output_exposed": true,
+      "reasoning_output_hidden": false,
+      "reasoning_content_native": true,
+      "chat_max_tokens_field": "max_tokens",
+      "context_window_tokens": 1048576,
+      "maximum_output_tokens": 393216,
+      "supported_reasoning_efforts": [
+        "none",
+        "minimal",
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "minimum_temperature": 0.0,
+      "maximum_temperature": 2.0
+    },
+    {
+      "id": "glm-5.3-uncensored",
+      "owned_by": "exp",
+      "uncensored": true,
+      "supports_completions": true,
+      "supports_structured_output": false,
+      "supports_reasoning": true,
+      "reasoning_effort": "high",
+      "sampling_requires_reasoning_none": false,
+      "reasoning_output_exposed": true,
+      "reasoning_output_hidden": false,
+      "reasoning_content_native": true,
+      "chat_max_tokens_field": "max_tokens",
+      "context_window_tokens": 1048576,
+      "maximum_output_tokens": 131072,
+      "supported_reasoning_efforts": [
+        "low",
+        "high"
+      ],
+      "minimum_temperature": 0.0,
+      "maximum_temperature": 2.0
+    }
+  ],
+  "observed_on": "2026-10-26",
+  "source": "https://api.experientiallabs.ai/v1/models",
+  "http_status": 200,
+  "protocol": "https://api.experientiallabs.ai/v1/chat/completions",
+  "documentation": [
+    "https://platform.experientiallabs.ai/models/glm-5.3-uncensored",
+    "https://platform.experientiallabs.ai/models/deepseek-v4.1-flash"
+  ],
+  "inference_requests": 0,
+  "default_model_changed": false,
+  "pricing_checked": false,
+  "notice": "Owner-selected next-set additions only. GLM reports supports_structured_output=false; prompt-only JSON plus strict local validation requires explicit preparation, no silent fallback. DeepSeek selected variant is Flash. Not a claim of live availability, quality, route pinning or a coordinated swarm."
+}

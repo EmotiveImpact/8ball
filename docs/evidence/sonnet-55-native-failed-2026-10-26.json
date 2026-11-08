@@ -1,0 +1,487 @@
+{
+  "tested_commit": "83c04f3fecf58534077a9d1fc601e3ef0b77edca",
+  "run_id": "20261026T004726Z-ff1767e8",
+  "mode": "native",
+  "status": "failed",
+  "source_sha256": "52ff6caf82dfe42c306c14ddb60e6a9eb781c8d9e309ad057966b79fa2a5f2fa",
+  "report_sha256": "8a17bb485ebc2bea6784125e0cd296a1a6877664795a186aa1565e987d1121c5",
+  "source_counts": {
+    "tests": 1786,
+    "failures": 2,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 1784
+  },
+  "native_browser_checks": 439,
+  "native_suites": 13,
+  "inspection_before_edits": "valid; source and local evidence bytes matched; failed run, not signed attestation",
+  "checks": [
+    {
+      "name": "unit",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=/home/ubuntu/repos/8ball/artifacts/acceptance/20261026T004726Z-ff1767e8/junit.xml"
+      ],
+      "status": "failed",
+      "exit_code": 1,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:47:26.647335+00:00",
+      "finished_at": "2026-10-26T00:48:43.149490+00:00",
+      "seconds": 76.502,
+      "log": "unit.log",
+      "log_sha256": "b8cbc94d9e5f80439795099eef11749ce51b063d785637353af633d4f38a0b70",
+      "counts": {
+        "tests": 1786,
+        "failures": 2,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 1784
+      }
+    },
+    {
+      "name": "compile",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "eightball",
+        "endstate"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:48:43.167120+00:00",
+      "finished_at": "2026-10-26T00:48:43.281524+00:00",
+      "seconds": 0.114,
+      "log": "compile.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "delivery",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "scripts/delivery.py",
+        "--check"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:48:43.282229+00:00",
+      "finished_at": "2026-10-26T00:48:43.396192+00:00",
+      "seconds": 0.114,
+      "log": "delivery.log",
+      "log_sha256": "fefe956c184759ad8742da10315ebcbca9fe011b8eeb189ffb340a7ba879b9c8"
+    },
+    {
+      "name": "changelog",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "scripts/changelog.py",
+        "--check",
+        "--base",
+        "f4ecde62529fc5525220bba6afe4b0ae0c06b63b"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:48:43.396892+00:00",
+      "finished_at": "2026-10-26T00:48:43.661506+00:00",
+      "seconds": 0.265,
+      "log": "changelog.log",
+      "log_sha256": "c8a7a9fc22e7f507b14b6f81d03e98ba0a9a13a8ca1e47a2a7914facbed8485b"
+    },
+    {
+      "name": "emergence",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "scripts/emergence.py",
+        "--check",
+        "--base",
+        "f4ecde62529fc5525220bba6afe4b0ae0c06b63b"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:48:43.662246+00:00",
+      "finished_at": "2026-10-26T00:48:43.776154+00:00",
+      "seconds": 0.114,
+      "log": "emergence.log",
+      "log_sha256": "3e653eb762f7942a60058156a0715c375b29173bffa05cba6f55b62e5b1b1fac"
+    },
+    {
+      "name": "javascript",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "-c",
+        "from pathlib import Path;import subprocess;files=[Path('web/app.js'),*sorted(Path('web/v2').glob('*.js'))];[subprocess.run(['node','--check',str(p)],check=True) for p in files];print(len(files),'modules checked')"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:48:43.776858+00:00",
+      "finished_at": "2026-10-26T00:48:44.291691+00:00",
+      "seconds": 0.515,
+      "log": "javascript.log",
+      "log_sha256": "3511264809aff84eb94c9f27dcfdf62ecb17b4c8ce09d544f1327d030ef3aa0d"
+    },
+    {
+      "name": "structural-fixtures",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "evals/plan_review_bench.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:48:44.292530+00:00",
+      "finished_at": "2026-10-26T00:48:44.506919+00:00",
+      "seconds": 0.214,
+      "log": "structural-fixtures.log",
+      "log_sha256": "19b8e45a1ecfe06c682f77f215f71cc4b7393f2ab6eb9c64ce12ef20ccf4b523"
+    },
+    {
+      "name": "endstate-package",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "scripts/build_endstate.py",
+        "--regressions",
+        "--output",
+        "/home/ubuntu/repos/8ball/artifacts/acceptance/20261026T004726Z-ff1767e8/package"
+      ],
+      "status": "failed",
+      "exit_code": 1,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:48:44.507708+00:00",
+      "finished_at": "2026-10-26T00:50:02.521391+00:00",
+      "seconds": 78.014,
+      "log": "endstate-package.log",
+      "log_sha256": "bf0de882005b7e5f025a11509c136c689b6dd4f774e5e4de2d7bf1488915e3c2"
+    },
+    {
+      "name": "schemas",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "scripts/export_endstate_schemas.py",
+        "--output",
+        "/home/ubuntu/repos/8ball/artifacts/acceptance/20261026T004726Z-ff1767e8/schemas"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:50:02.522234+00:00",
+      "finished_at": "2026-10-26T00:50:02.836842+00:00",
+      "seconds": 0.315,
+      "log": "schemas.log",
+      "log_sha256": "5b8823aec02e34ac50831b922ef0cfb0e797c419ba65a3cf3c0c321060894ca9"
+    },
+    {
+      "name": "native-probe",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "-c",
+        "\nimport json,threading,os,shutil\nfrom http.server import ThreadingHTTPServer,BaseHTTPRequestHandler\nfrom playwright.sync_api import sync_playwright\nclass Handler(BaseHTTPRequestHandler):\n def do_GET(self):\n  self.send_response(200);self.end_headers();self.wfile.write(b'<h1>8BALL native probe</h1>')\n def log_message(self,*args):pass\nserver=ThreadingHTTPServer(('127.0.0.1',0),Handler)\nthreading.Thread(target=server.serve_forever,daemon=True).start()\nresult={'status':'failed','policy_changed':False}\ntry:\n with sync_playwright() as p:\n  browser=p.chromium.launch(headless=True,executable_path=os.getenv('EIGHTBALL_BROWSER') or shutil.which('chromium'),args=['--no-sandbox'])\n  try:\n   page=browser.new_page();page.goto('http://127.0.0.1:'+str(server.server_port),timeout=8000)\n   assert page.locator('h1').inner_text()=='8BALL native probe'\n   result.update(status='passed',reason='Native loopback navigation succeeded')\n  finally:browser.close()\nexcept Exception as exc:\n message=str(exc)\n blocked='ERR_BLOCKED_BY_ADMINISTRATOR' in message\n result.update(status='blocked' if blocked else 'failed',reason='Native navigation blocked by administrator policy' if blocked else type(exc).__name__,diagnostic=message[:1000])\nfinally:server.shutdown();server.server_close()\nprint(json.dumps(result))\n"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:50:02.837712+00:00",
+      "finished_at": "2026-10-26T00:50:03.753535+00:00",
+      "seconds": 0.916,
+      "log": "native-probe.log",
+      "log_sha256": "e69db6d68c42feb9fd8a957b61a643b13f194f21b682799f7d304d76461fc052",
+      "probe": {
+        "status": "passed",
+        "policy_changed": false,
+        "reason": "Native loopback navigation succeeded"
+      }
+    },
+    {
+      "name": "browser-legacy",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "tests/browser_smoke.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:50:03.754535+00:00",
+      "finished_at": "2026-10-26T00:50:07.477088+00:00",
+      "seconds": 3.723,
+      "log": "browser-legacy.log",
+      "log_sha256": "94c2883f65c987a82030799dbaea28fba6ac571ecfc694c6014d17adfdb3a74c",
+      "report": "browser-legacy/browser-report.json",
+      "browser": {
+        "count": 27,
+        "transport": "real loopback HTTP",
+        "sha256": "c553e60bb97ef58196ee5bee1f4fde22203273a6f5bade21c2d298c2faa549c6"
+      }
+    },
+    {
+      "name": "browser-workspace",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "tests/browser_v2.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:50:07.478208+00:00",
+      "finished_at": "2026-10-26T00:50:18.618557+00:00",
+      "seconds": 11.14,
+      "log": "browser-workspace.log",
+      "log_sha256": "e2be1411579ee5d5dd286f4eb8675ef28f640aa60e7d6a6a87b045d49ec1ac8e",
+      "report": "browser-workspace/browser-v2-report.json",
+      "browser": {
+        "count": 54,
+        "transport": "Native loopback HTTP",
+        "sha256": "369f8fed6e2f6d700d5fc0b785dbf623480eaf6003cb1c04b998a2807a56742a"
+      }
+    },
+    {
+      "name": "browser-providers",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "tests/browser_development.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:50:18.619679+00:00",
+      "finished_at": "2026-10-26T00:50:28.507735+00:00",
+      "seconds": 9.888,
+      "log": "browser-providers.log",
+      "log_sha256": "6e40ca17878fdcbd8b2fd2b1ab5754ee92840a85a6a242cd93198b119d4c34b5",
+      "report": "browser-providers/development-browser-report.json",
+      "browser": {
+        "count": 22,
+        "transport": "native loopback HTTP",
+        "sha256": "6e40ca17878fdcbd8b2fd2b1ab5754ee92840a85a6a242cd93198b119d4c34b5"
+      }
+    },
+    {
+      "name": "browser-connections",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "tests/browser_graph.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:50:28.508862+00:00",
+      "finished_at": "2026-10-26T00:50:33.534761+00:00",
+      "seconds": 5.026,
+      "log": "browser-connections.log",
+      "log_sha256": "0c4679f2d072bd26ab8695865901e899d2ae674b6314e4a1fded2e8eddba69cd",
+      "report": "browser-connections/browser-graph-report.json",
+      "browser": {
+        "count": 42,
+        "transport": "Native loopback HTTP",
+        "sha256": "c0f21b9d6f57e53711802c0eeedae5647da1b4a0195eef504a797f16ce41f39c"
+      }
+    },
+    {
+      "name": "browser-studio",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "tests/browser_studio.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:50:33.535951+00:00",
+      "finished_at": "2026-10-26T00:50:46.581668+00:00",
+      "seconds": 13.046,
+      "log": "browser-studio.log",
+      "log_sha256": "458e2d912f7a9896da88e136e6aeba62970b56186a432d1509f53a09b1471797",
+      "report": "browser-studio/studio-browser-report.json",
+      "browser": {
+        "count": 44,
+        "transport": "native loopback HTTP",
+        "sha256": "458e2d912f7a9896da88e136e6aeba62970b56186a432d1509f53a09b1471797"
+      }
+    },
+    {
+      "name": "browser-sources",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "tests/browser_sources.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:50:46.582834+00:00",
+      "finished_at": "2026-10-26T00:51:06.798416+00:00",
+      "seconds": 20.216,
+      "log": "browser-sources.log",
+      "log_sha256": "e502fab903e77171c5852d8f068306c9e2f4085d3c2d4a70237ed82e1c8cff20",
+      "report": "browser-sources/source-browser-report.json",
+      "browser": {
+        "count": 39,
+        "transport": "native HTTP",
+        "sha256": "4abf02bc619f78c83f5133f848ceb2ef4cdb5b7810dbf8d8e9b8c93dcc93df27"
+      }
+    },
+    {
+      "name": "browser-insights",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "tests/browser_insights.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:51:06.799575+00:00",
+      "finished_at": "2026-10-26T00:51:32.832487+00:00",
+      "seconds": 26.033,
+      "log": "browser-insights.log",
+      "log_sha256": "1fe8c50d6a0c1bd8078ca9fe5f81a08570682dd5455ca2eaf661c7a20ce748e2",
+      "report": "browser-insights/insights-browser-report.json",
+      "browser": {
+        "count": 40,
+        "transport": "Native loopback HTTP",
+        "sha256": "05a47f8e44b3e856cc19ad85bc4f2154835e5c6fed34788232f11969f304a952"
+      }
+    },
+    {
+      "name": "browser-grounding",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "tests/browser_grounding.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:51:32.833668+00:00",
+      "finished_at": "2026-10-26T00:51:58.965634+00:00",
+      "seconds": 26.132,
+      "log": "browser-grounding.log",
+      "log_sha256": "26798c44acad67ffd787ece4299a433f67fa806a9e282ba610bc7f77ff60992b",
+      "report": "browser-grounding/browser-grounding-report.json",
+      "browser": {
+        "count": 26,
+        "transport": "Native loopback HTTP",
+        "sha256": "4c0acde1ff3c693ac7714a556d7292a02bd4b8363b5c48091ee8ca5640153c35"
+      }
+    },
+    {
+      "name": "browser-plan_review",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "tests/browser_plan_review.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:51:58.966804+00:00",
+      "finished_at": "2026-10-26T00:52:04.042244+00:00",
+      "seconds": 5.075,
+      "log": "browser-plan_review.log",
+      "log_sha256": "89d4366ce74d6ea9de5fd671a4a0ee21f06bf09f0bf43eb23651d59759ca7d3a",
+      "report": "browser-plan_review/browser-plan-review-report.json",
+      "browser": {
+        "count": 35,
+        "transport": "Native loopback HTTP",
+        "sha256": "246a4c540eab74e1821aaba225917f8d799d7a021a1b75c0b0238a49a165ee27"
+      }
+    },
+    {
+      "name": "browser-accessibility",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "tests/browser_accessibility.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:52:04.043437+00:00",
+      "finished_at": "2026-10-26T00:52:08.919602+00:00",
+      "seconds": 4.876,
+      "log": "browser-accessibility.log",
+      "log_sha256": "1694bba70004e2b415b4a645d054f81605243be6dfce93d642b3fa47a1013e1d",
+      "report": "browser-accessibility/accessibility-browser-report.json",
+      "browser": {
+        "count": 36,
+        "transport": "Native loopback HTTP",
+        "sha256": "1694bba70004e2b415b4a645d054f81605243be6dfce93d642b3fa47a1013e1d"
+      }
+    },
+    {
+      "name": "browser-courses",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "tests/browser_courses.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:52:08.920857+00:00",
+      "finished_at": "2026-10-26T00:52:22.471662+00:00",
+      "seconds": 13.551,
+      "log": "browser-courses.log",
+      "log_sha256": "bd40c46a44f49338697f4c92f227b0c373d281cd47fd2888668a20a9b1ad3439",
+      "report": "browser-courses/browser-courses-report.json",
+      "browser": {
+        "count": 31,
+        "transport": "Native loopback HTTP",
+        "sha256": "3dac79f1093e5145895cff92481ea8ce62a0b1d530544fca15c319c226663226"
+      }
+    },
+    {
+      "name": "browser-event_review",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "tests/browser_event_review.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:52:22.473138+00:00",
+      "finished_at": "2026-10-26T00:52:35.038419+00:00",
+      "seconds": 12.565,
+      "log": "browser-event_review.log",
+      "log_sha256": "126d58a69cf6c3bd979c2c0969b4da4423d8e58f7c50b8f6b4a081bc17c97621",
+      "report": "browser-event_review/browser-event-review-report.json",
+      "browser": {
+        "count": 27,
+        "transport": "Native loopback HTTP",
+        "sha256": "126d58a69cf6c3bd979c2c0969b4da4423d8e58f7c50b8f6b4a081bc17c97621"
+      }
+    },
+    {
+      "name": "browser-agency",
+      "command": [
+        "/home/ubuntu/repos/8ball/.venv/bin/python",
+        "tests/browser_agency.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "timed_out": false,
+      "started_at": "2026-10-26T00:52:35.039754+00:00",
+      "finished_at": "2026-10-26T00:52:38.161159+00:00",
+      "seconds": 3.121,
+      "log": "browser-agency.log",
+      "log_sha256": "92d86419c2bafe831994d97b7f55fb4c4a09eb0c0e99482dadf68273ac9f8c66",
+      "report": "browser-agency/browser-agency-report.json",
+      "browser": {
+        "count": 16,
+        "transport": "Native loopback HTTPS/TLS",
+        "sha256": "92d86419c2bafe831994d97b7f55fb4c4a09eb0c0e99482dadf68273ac9f8c66"
+      }
+    }
+  ],
+  "raw_report": "artifacts/acceptance/20261026T004726Z-ff1767e8/report.json",
+  "raw_artifacts_committed": false,
+  "model_inference_performed": false,
+  "model_quality_approved": false,
+  "merged": false,
+  "released": false,
+  "deployed": false,
+  "limitations": [
+    "Full run failed source and installed-package tracking assertions. No full-run pass claimed.",
+    "Raw artifacts remain local; exact source and artifact bytes required for full inspection. Later documentation is not covered by the old source hash."
+  ]
+}

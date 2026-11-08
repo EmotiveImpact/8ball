@@ -20,6 +20,7 @@ def configure(monkeypatch):
     monkeypatch.setenv('EIGHTBALL_API_PROVIDER', 'fixture-provider')
     monkeypatch.setenv('EIGHTBALL_API_KEY', KEY)
     monkeypatch.delenv('EIGHTBALL_API_ROUTING_PROVIDER', raising=False)
+    monkeypatch.delenv('EIGHTBALL_API_JSON_MODE', raising=False)
 
 
 @pytest.mark.parametrize('flags', [[], ['--allow-hosted']])

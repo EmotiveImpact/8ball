@@ -1,0 +1,32 @@
+{
+  "tested_commit": "f75dad585a86deb75b3e8703be70cbe042c49f7a",
+  "run_id": "20261025T160554Z-0b049748",
+  "source_sha256": "b4c3c6a70128e12ce169956e72f5c36b9f1ad0e50765d747acbbfab7a6863651",
+  "report_sha256": "198d3a0d7fce041d98f4e9e415499df334553bf5fcbf19b4cc9c351addd5cb97",
+  "existing_native_suite_status": "passed",
+  "source_tests": 1341,
+  "installed_engine_tests": 1341,
+  "native_browser_checks": 396,
+  "native_suites": 11,
+  "inspection_valid_before_edits": true,
+  "checkpoint_ci": [
+    40210057772,
+    40210057788
+  ],
+  "checkpoint_ci_conclusion": "success",
+  "additional_correctness_reproduction": {
+    "status": "failed",
+    "setup": "Two fictional cases share one matter and revision 0. A pending processing attempt has no explicit case binding. Submit its reviewed command against the second case.",
+    "expected": "Unbound result cannot change either case until a case-bound attempt is created.",
+    "observed": {
+      "original_case_revision": 0,
+      "other_case_revision": 1,
+      "demonstrated_unbound_cross_case_consumption": true
+    },
+    "execution": "Isolated temporary SQLite database using tests/test_event_reviews.py review fixture; repository source unchanged."
+  },
+  "limitation": "Existing passing suites did not cover same-matter case binding. Do not infer acceptance from their pass.",
+  "model_inference_performed": false,
+  "independent_review_performed": false,
+  "released": false
+}

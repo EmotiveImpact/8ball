@@ -118,6 +118,21 @@ def list_playbooks():
              'conditions':len(get_playbook(i)['graph'].conditions),'actions':len(get_playbook(i)['graph'].actions)} for i,v in CATALOGUE.items()]
 
 
+def reviewable_playbook(id):
+    """Copy a starter into a review-only draft, never approve or apply it."""
+    from endstate.intelligence.knowledge import KnowledgeDraft
+    contents = get_playbook(id)
+    return KnowledgeDraft(
+        kind='playbook', title=CATALOGUE[id][0], summary=CATALOGUE[id][2],
+        graph=contents['graph'],
+        assumptions=['Starter estimates and dependencies require matter-specific specialist review.'],
+        authority_requirements=['Check the operator mandate and each action’s separate current approval.'],
+        confirmation_criteria=[condition.confirmation for condition in contents['graph'].conditions],
+        limitations=['Unvalidated starter hypothesis; not a proven solution or specialist approval.',
+                     'Graph-only reference, not an executable case import or a replacement for the complete starter.',
+                     'Review supplementary questions, constraints and authority in the original starter before use.'])
+
+
 def make_case(title,client,summary,desired_outcome,deadline,budget=10000,playbook=None,**kwargs):
     contents=get_playbook(playbook) if playbook else {}
     return Case(title=title,client=client,summary=summary,desired_outcome=desired_outcome,deadline=deadline,budget=budget,
